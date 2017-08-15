@@ -14,12 +14,12 @@ class ExchangeWidget extends Component {
 			exchangeProceeded: false,
 			isConfirmEnabled: false,
 			depositValue: 1,
-			receiveValue: 2,
+			receiveValue: '...',
 			depositCoin: 'BTC',
 			receiveCoin: 'ETH',
 			depositCoinPrevious: 'BTC',
 			receiveCoinPrevious: 'ETH',
-			lastEdited: null
+			lastEdited: 'deposit'
 	  	};
 
 	  	this.apiBaseUrl = `https://nexchange.co.uk/en/api/v1/price/`;
@@ -29,6 +29,11 @@ class ExchangeWidget extends Component {
 	  	this.updatePrices = this.updatePrices.bind(this);	  	
 	  	this.proceedExchange = this.proceedExchange.bind(this);	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
+	}
+
+	componentWillMount() {
+		let apiUrl = this.apiBaseUrl + `${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
+		this.updatePrices(apiUrl);
 	}
 
 	componentDidUpdate() {
