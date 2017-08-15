@@ -34,6 +34,12 @@ class CurrencySelector extends Component {
 		});
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			selectedCoin: nextProps.selectedCoin
+		})
+	}
+
 	render() {
 		let coins = this.coins.map(coin => {
 			return (

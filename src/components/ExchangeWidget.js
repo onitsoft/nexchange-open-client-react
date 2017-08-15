@@ -17,8 +17,8 @@ class ExchangeWidget extends Component {
 			receiveValue: 2,
 			depositCoin: 'BTC',
 			receiveCoin: 'ETH',
-			previousDepositCoin: 'BTC',
-			previousReceiveCoin: 'ETH',
+			depositCoinPrevious: 'BTC',
+			receiveCoinPrevious: 'ETH',
 			lastEdited: null
 	  	};
 
@@ -31,14 +31,14 @@ class ExchangeWidget extends Component {
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	}
 
-	componentDidUpdate(foo, newState) {
-		if (this.state.depositCoin != this.state.previousDepositCoin ||
-			this.state.receiveCoin != this.state.previousReceiveCoin) {
+	componentDidUpdate() {
+		if (this.state.depositCoin != this.state.depositCoinPrevious ||
+			this.state.receiveCoin != this.state.receiveCoinPrevious) {
 			let apiUrl = this.apiBaseUrl + `${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
 			this.setState({
 				lastEdited: 'deposit',
-				previousReceiveCoin: this.state.receiveCoin,
-				previousDepositCoin: this.state.depositCoin
+				receiveCoinPrevious: this.state.receiveCoin,
+				depositCoinPrevious: this.state.depositCoin
 			}, () => {
 				this.updatePrices(apiUrl);
 			});
@@ -81,10 +81,17 @@ class ExchangeWidget extends Component {
 	}
 
 	setNewCoin(type, coin) {
-		let newState = {};
-
-		newState[`${type}Coin`] = coin;
-		this.setState(newState);
+		if ((type == 'deposit' && coin == this.state.receiveCoin) ||
+			(type == 'receive' && coin == this.state.depositCoin)) {
+			this.setState({
+				depositCoin: this.state.receiveCoin,
+				receiveCoin: this.state.depositCoin
+			})
+		} else {
+			let newState = {};
+			newState[`${type}Coin`] = coin;
+			this.setState(newState);
+		}
 	}
 
 	proceedExchange() {
@@ -101,11 +108,11 @@ class ExchangeWidget extends Component {
 		return (
 			<div>
 			  <div className="col-xs-12 col-sm-6">
-			    <CoinInput post-select="postSelect" change-counter-price="changeCounterPrice" type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} value={this.state.depositValue} />
+			    <CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} value={this.state.depositValue} />
 			  </div>
 
 			  <div className="col-xs-12 col-sm-6">
-			    <CoinInput post-select="postSelect" change-counter-price="changeCounterPrice" type="receive" onChange={this.handleChange} onCoinSelect={this.setNewCoin} value={this.state.receiveValue} />
+			    <CoinInput type="receive" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.receiveCoin} value={this.state.receiveValue} />
 			  </div>
 
 			  {this.state.exchangeProceeded ?
