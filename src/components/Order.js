@@ -16,7 +16,7 @@ class Order extends Component {
 
 	triggerCopyTooltip() {
 		this.setState({copied: true});
-		setTimeout(() => this.setState({copied: false}), 1500)
+		setTimeout(() => this.setState({copied: false}), 1000)
 	}
 
 	render() {
@@ -70,25 +70,16 @@ class Order extends Component {
 					    					<b id="deposit-address">0x123f681646d4a755815f9cb19e1acc8565a0c2ac</b>
 					    				</h3>
 
-
-
-
-
-
-
 								        <CopyToClipboard text={this.state.address}
 								          onCopy={() => this.triggerCopyTooltip()}>
 											<button id="copyToClipboard" type="button" className="btn btn-default">
-												<div className={this.state.copied ? "tooltip fade top in" : "tooltip"} role="tooltip">
+												<div className={this.state.copied ? "tooltip top in" : "tooltip"} role="tooltip">
 													<div className="tooltip-arrow"></div>
 													<div className="tooltip-inner">Adddress copied!</div>
 												</div>
 												Copy the address
 											</button>
 					    				</CopyToClipboard>
-
-
-
 					    			</div>
 
 					    			
