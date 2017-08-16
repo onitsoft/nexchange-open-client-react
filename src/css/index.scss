@@ -4,6 +4,9 @@
 @import 'main';
 @import 'icons';
 
+#Team {
+	img { max-width: 100%; }
+}
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
