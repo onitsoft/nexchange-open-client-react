@@ -9,18 +9,14 @@ class Order extends Component {
 		super(props);
 
 		this.state = {
-			copied: null
+			copied: false,
+			address: '0x123f681646d4a755815f9cb19e1acc8565a0c2ac'
 		};
-
-
-	}
-
-	componentDidMount() {
-		$('#copyToClipboard').tooltip('show');
 	}
 
 	triggerCopyTooltip() {
-		$('#copyToClipboard').tooltip('show');
+		this.setState({copied: true});
+		setTimeout(() => this.setState({copied: false}), 1500)
 	}
 
 	render() {
@@ -80,20 +76,19 @@ class Order extends Component {
 
 
 
-								        <CopyToClipboard text='123213'
+								        <CopyToClipboard text={this.state.address}
 								          onCopy={() => this.triggerCopyTooltip()}>
-
-
 											<button id="copyToClipboard" type="button" className="btn btn-default">
-											Copy to address
-
+												<div className={this.state.copied ? "tooltip fade top in" : "tooltip"} role="tooltip">
+													<div className="tooltip-arrow"></div>
+													<div className="tooltip-inner">Adddress copied!</div>
+												</div>
+												Copy the address
 											</button>
-
 					    				</CopyToClipboard>
 
 
-										<div className="tooltip fade top in" role="tooltip">
-										</div>
+
 					    			</div>
 
 					    			
