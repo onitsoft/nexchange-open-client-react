@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import CopyToClipboard from 'react-copy-to-clipboard';
+
 
 
 class Order extends Component {
@@ -10,12 +12,48 @@ class Order extends Component {
 
 		this.state = {
 			copied: false,
-			address: '0x123f681646d4a755815f9cb19e1acc8565a0c2ac'
+			address: '0x123f681646d4a755815f9cb19e1acc8565a0c2ac',
+			timeRemaining: 1500,
+			created_on: '2017-08-16T16:09:32.054643Z'
 		};
+
+		this.API_BASE_URL = `https://nexchange.co.uk/en/api/v1`;
+
+		//this.getOrderDetails = this.getOrderDetails.bind(this);
+		this.tick = this.tick.bind(this);
+		
+
+		//this.getOrderDetails();
+	}
+
+	componentDidMount() {
+		this.tick();
+		this.interval = setInterval(this.tick, 1000);
+	}
+
+	tick() {
+		let now = moment().subtract(15, 'minutes');
+		let createdOn = moment(this.state.created_on);
+		let diff = createdOn.diff(now);
+
+		if (diff < 0)
+			diff = 'ORDER EXPIRED'
+		else
+			diff = moment.utc(diff).format('mm:ss')
+
+		this.setState({
+			timeRemaining: diff
+		});
 	}
 
 	getOrderDetails() {
-		
+		axios.get(`${this.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	triggerCopyTooltip() {
@@ -68,11 +106,11 @@ class Order extends Component {
 					    			</div>
 
 					    			<div className="col-xs-12 col-sm-9">
-					    				<h4 className="text-success">Time remaining: TIMER HERE</h4>
+					    				<h4 className="text-success">Time remaining: {this.state.timeRemaining}</h4>
 
-					    				<h3>Send <b>1 BTC</b> to the address<br/>
+					    				<h4>Send <b>1 BTC</b> to the address<br/>
 					    					<b id="deposit-address">0x123f681646d4a755815f9cb19e1acc8565a0c2ac</b>
-					    				</h3>
+					    				</h4>
 
 								        <CopyToClipboard text={this.state.address}
 								          onCopy={() => this.triggerCopyTooltip()}>
