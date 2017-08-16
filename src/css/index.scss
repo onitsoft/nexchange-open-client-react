@@ -5,6 +5,13 @@
 @import 'icons';
 
 p { font-size: 16px; line-height: 1.5em; }
+#header {
+	.navbar-nav { margin-top: 15px; }
+	a { color: #333; font-size: 16px;
+		&:hover { text-decoration: none; }
+	}
+	.fa { position: relative; top: -2px; }
+}
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}

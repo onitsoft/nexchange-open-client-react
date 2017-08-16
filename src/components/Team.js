@@ -20,14 +20,14 @@ class Team extends Component {
 
             <p>Nexchange is a platform made by crypto enthusiasts, for crypto enthusiasts.</p>
 
-            <p>Our commitment to our community is to:
-              <ul>
-                <li>Maintain minimal spreads over the entire course of our operation.</li>
-                <li>Never take or hold a position against a client</li>
-                <li>Keep minimal execution times as our flagship, never deliberately hinder orders because of market conditions.</li>
-                <li>Guaranteed execution: we will never revert or refund an Order which was accepted by our API.</li>
-              </ul>
-            </p>
+            <p>Our commitment to our community is to:</p>
+            
+            <ul>
+              <li>Maintain minimal spreads over the entire course of our operation.</li>
+              <li>Never take or hold a position against a client</li>
+              <li>Keep minimal execution times as our flagship, never deliberately hinder orders because of market conditions.</li>
+              <li>Guaranteed execution: we will never revert or refund an Order which was accepted by our API.</li>
+            </ul>
 
             <p>We believe the the best purpose of achieving our goal is open source, and we encourage every each and one of you to fork one of our example repositories and make your own client of the exchange API.</p>
 
