@@ -6,7 +6,9 @@
 
 p { font-size: 16px; line-height: 1.5em; }
 #header {
-	.navbar-nav { margin-top: 15px; }
+	.navbar-nav { margin-top: 15px;
+		li a:hover { text-decoration: underline; background: none; }
+	}
 	a { color: #333; font-size: 16px;
 		&:hover { text-decoration: none; }
 	}
