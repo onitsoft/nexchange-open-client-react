@@ -1,14 +1,126 @@
 import React, { Component } from 'react';
+import copy from 'copy-to-clipboard';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 
 class Order extends Component {
-  render() {
-    return (
-      <div className="Order">
-        ORDER PAGE
-      </div>
-    );
-  }
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			copied: null
+		};
+
+
+	}
+
+	componentDidMount() {
+		$('#copyToClipboard').tooltip('show');
+	}
+
+	triggerCopyTooltip() {
+		$('#copyToClipboard').tooltip('show');
+	}
+
+	render() {
+		return (
+			<div id="order">
+				<div className="container">
+					<div className="row">
+					    <div className="col-xs-12">
+					    	<h3 id="order-ref">Order ID: <b>19kajkjqQWE</b></h3>
+					    </div>
+					</div>
+
+					<div className="row">
+					    <div className="col-xs-12 col-sm-6">
+					    	<div className="box media">
+					    		<div className="media-left">
+					    			<i className={`coin-icon BTC`}></i>
+					    		</div>
+
+					    		<div className="media-body">
+						    		<h5><b>Deposit 1 BTC</b></h5>
+						    		<h6>0x123f681646d4a755815f9cb19e1acc8565a0c2ac</h6>
+					    		</div>
+					    	</div>
+					    </div>
+
+					    <div className="col-xs-12 col-sm-6">
+					    	<div className="box media">
+					    		<div className="media-left">
+					    			<i className={`coin-icon ETH`}></i>
+					    		</div>
+
+					    		<div className="media-body">
+						    		<h5><b>Receive 25 ETH</b></h5>
+						    		<h6>0x123f681646d4a755815f9cb19e1acc8565a0c2ac</h6>
+					    		</div>
+					    	</div>
+					    </div>
+
+					    <div className="col-xs-12">
+					    	<div className="box">
+					    		<div className="row">
+					    			<div className="col-xs-12 col-sm-3">
+					    				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=bitcoin:1KTFHHwtdNmGrbY5MfWhtswpG9tuxZwwoA?amount=0.0363" />
+					    			</div>
+
+					    			<div className="col-xs-12 col-sm-9">
+					    				<h4 className="text-success">Time remaining: TIMER HERE</h4>
+
+					    				<h3>Send <b>1 BTC</b> to the address<br/>
+					    					<b id="deposit-address">0x123f681646d4a755815f9cb19e1acc8565a0c2ac</b>
+					    				</h3>
+
+
+
+
+
+
+
+								        <CopyToClipboard text='123213'
+								          onCopy={() => this.triggerCopyTooltip()}>
+
+
+											<button id="copyToClipboard" type="button" className="btn btn-default">
+											Copy to address
+
+											</button>
+
+					    				</CopyToClipboard>
+
+
+										<div className="tooltip fade top in" role="tooltip">
+										</div>
+					    			</div>
+
+					    			
+					    		</div>
+
+					    		<div className="row">
+					    			<div className="col-xs-12">
+						    			AWAITING DEPOSIT
+						    			AWAITING EXCHANGE
+						    			ALL DONE
+					    			</div>
+					    		</div>
+
+					    		
+					    	</div>
+					    </div>
+					</div>
+
+					<div className="row">
+					    <div className="col-xs-12">
+
+					    </div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Order;

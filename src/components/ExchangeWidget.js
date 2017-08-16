@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 //import '../css/components/ExchangeWidget.scss';
 
@@ -130,7 +131,11 @@ class ExchangeWidget extends Component {
 			    {!this.state.exchangeProceeded ? (
 			    	<button className="btn btn-block btn-success" onClick={this.proceedExchange}>Get Started!</button>
 			    ) : (
-			    	<button className="btn btn-block btn-warning" disabled={this.state.isConfirmEnabled ? null : 'disabled'}>Confirm & Place Order</button>
+			    	<Link to="/order/123">
+				    	<button className="btn btn-block btn-warning" disabled={this.state.isConfirmEnabled ? null : 'disabled'}>
+				    		Confirm & Place Order
+				    	</button>
+			    	</Link>
 			    )}
 			  </div>
 			</div>

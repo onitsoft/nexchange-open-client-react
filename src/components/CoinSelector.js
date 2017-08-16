@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CurrencySelector extends Component {
+class CoinSelector extends Component {
 
 	constructor(props) {
 		super(props);
@@ -70,4 +70,4 @@ class CurrencySelector extends Component {
 	}
 }
 
-export default CurrencySelector;
+export default CoinSelector;

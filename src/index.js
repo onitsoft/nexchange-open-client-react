@@ -14,6 +14,10 @@ import './css/index.scss';
 import registerServiceWorker from './registerServiceWorker';
 
 import reducers from './reducers'
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import App from './components/App';
 import Order from './components/Order';
 
@@ -24,10 +28,14 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
   	<BrowserRouter>
   		<div>
+  			<Header />
+
   			<Switch>
   				<Route path="/order/:orderId" component={Order} />
 	  			<Route path="/" component={App} />
 	  		</Switch>
+
+	  		<Footer />
   		</div>
   	</BrowserRouter>
   </Provider>

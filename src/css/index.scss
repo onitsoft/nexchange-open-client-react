@@ -5,14 +5,31 @@
 @import 'icons';
 
 p { font-size: 16px; line-height: 1.5em; }
+img { max-width: 100%; }
+.control-label { text-transform:capitalize; }
+a:hover { text-decoration: none; }
 #header {
+	.navbar-header { padding-bottom: 10px; }
+	.navbar-toggle { top: 15px; }
+	.logo-container { margin-left: 15px;
+		@media (min-width: $screen-sm-min) { margin-left: 0; }
+	}
+	.icon-bar { background: #000; }
 	.navbar-nav { margin-top: 15px;
 		li a:hover { text-decoration: underline; background: none; }
 	}
 	a { color: #333; font-size: 16px;
-		&:hover { text-decoration: none; }
+		&:hover, , &:visited, &:focus, &:active { text-decoration: none; }
 	}
 	.fa { position: relative; top: -2px; }
+}
+
+#order { background: #f8f7f8; padding: 15px 0;
+	#order-ref { margin-bottom: 15px; }
+	.box { padding: 15px; margin-bottom: 30px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+		h5, h6 { margin: 0; }
+		.coin-icon { position: relative; top: 8px; }
+	}
 }
 
 @media (min-width: $screen-sm-min) {}

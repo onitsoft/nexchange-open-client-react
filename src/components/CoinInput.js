@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CurrencySelector from './CurrencySelector';
+import CoinSelector from './CoinSelector';
 //import '../css/components/CoinInput.scss';
 
 class CoinInput extends Component {
@@ -10,7 +10,7 @@ class CoinInput extends Component {
         <label htmlFor={this.props.type} className="control-label">{this.props.type}</label>
         <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} value={this.props.value} onChange={this.props.onChange} />
 
-        <CurrencySelector selectedCoin={this.props.selectedCoin} type={this.props.type} onCoinSelect={this.props.onCoinSelect} />
+        <CoinSelector selectedCoin={this.props.selectedCoin} type={this.props.type} onCoinSelect={this.props.onCoinSelect} />
       </div>
     );
   }
