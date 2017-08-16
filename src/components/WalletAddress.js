@@ -5,7 +5,7 @@ class WalletAddress extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: ''
+			address: ''
 		}
 
 		this.onChange = this.onChange.bind(this);
@@ -22,13 +22,13 @@ class WalletAddress extends Component {
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        return rules[this.props.coin].test(this.state.value);
+        return rules[this.props.coin].test(this.state.address);
     }
 
     onChange(event) {
-    	this.setState({value: event.target.value}, () => {
+    	this.setState({address: event.target.value}, () => {
     		let isWalletAddressValid = this.validateWalletAddress();
-			this.props.toggleConfirm(isWalletAddressValid);
+			this.props.toggleConfirm(this.state.address, isWalletAddressValid);
     	});
     }
 
@@ -36,7 +36,7 @@ class WalletAddress extends Component {
 		return (
 			<div className="form-group label-floating has-warning">
 				<label htmlFor="withdraw-addr" className="control-label">Your {this.props.coin} Address</label>
-				<input type="text" ref={(input) => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.value} />
+				<input type="text" ref={(input) => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.address} />
 			</div>
 		);
 	}

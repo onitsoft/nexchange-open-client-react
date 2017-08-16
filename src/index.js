@@ -31,7 +31,7 @@ ReactDOM.render(
   			<Header />
 
   			<Switch>
-  				<Route path="/order/:orderId" component={Order} />
+  				<Route path="/order/:orderRef" component={Order} />
 	  			<Route path="/" component={App} />
 	  		</Switch>
 

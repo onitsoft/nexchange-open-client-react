@@ -25,7 +25,7 @@ class Order extends Component {
 				<div className="container">
 					<div className="row">
 					    <div className="col-xs-12">
-					    	<h3 id="order-ref">Order ID: <b>19kajkjqQWE</b></h3>
+					    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
 					    </div>
 					</div>
 
