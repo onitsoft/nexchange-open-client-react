@@ -42,7 +42,14 @@
     "webpack": "3.5.1",
     "webpack-dev-server": "2.7.1",
     "webpack-manifest-plugin": "1.2.1",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "lodash": "^3.10.1",
+    "react-redux": "4.3.0",
+    "react-router": "^2.0.1",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.0.4",
+    "redux-form": "^6.6.3",
+    "redux-promise": "^0.5.3"
   },
   "devDependencies": {
     "node-sass": "^4.5.3",
