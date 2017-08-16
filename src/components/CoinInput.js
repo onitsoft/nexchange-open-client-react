@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CoinSelector from './CoinSelector';
-//import '../css/components/CoinInput.scss';
 
 class CoinInput extends Component {
 
