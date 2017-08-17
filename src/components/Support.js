@@ -69,11 +69,12 @@ class Support extends Component {
               <textarea className="form-control" placeholder="Message" rows="2" required></textarea>
 
               <button type="submit" className="btn btn-success">Send</button>
+              <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
             </form>
           </div>
 
           <div className="modal-footer">
-            <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} >Close</button>
+            
           </div>
         </div>
       </Modal>
