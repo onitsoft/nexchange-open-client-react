@@ -51,7 +51,7 @@ class Header extends Component {
 						</li>
 
 						<li>
-							<a rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/cryptoNexchange" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Like us on Facebook">
+							<a rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/nexchange.io" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Like us on Facebook">
 								<Icon name="facebook" />
 							</a>
 						</li>
