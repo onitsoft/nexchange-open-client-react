@@ -7,6 +7,9 @@ import config from '../config';
 
 import OrderStatus from './OrderStatus';
 
+
+import { Container } from 'react-bootstrap';
+
 class Order extends Component {
 
 	constructor(props) {
@@ -21,8 +24,8 @@ class Order extends Component {
 			depositAddress: '...',
 			receiveAmount: '...',
 			receiveCoin: '...',
-			receiveAddress: '...'
-
+			receiveAddress: '...',
+			timerClassName: 'success'
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -46,6 +49,11 @@ class Order extends Component {
 		let createdOn = moment(this.state.createdOn);
 		let diff = createdOn.diff(now);
 
+		if (diff < 100000)
+			this.setState({timerClassName: 'danger'});
+		else if (diff < 362930)
+			this.setState({timerClassName: 'warning'});
+
 		if (diff < 0)
 			diff = 'ORDER EXPIRED'
 		else
@@ -54,14 +62,14 @@ class Order extends Component {
 		this.setState({
 			timeRemaining: diff
 		});
+
+
 	}
 
 	getOrderDetails() {
 		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
 			.then((response) => {
 				let data = response.data;
-
-				console.log(data);
 
 				this.setState({
 					depositAmount: parseFloat(data.amount_base),
@@ -128,7 +136,7 @@ class Order extends Component {
 					    			</div>
 
 					    			<div id="order-payment-details" className="col-xs-12 col-sm-9">
-					    				<h3 className="text-success">Time remaining: {this.state.timeRemaining}</h3>
+					    				<h3>Time remaining: <span className="text-success"><b>{this.state.timeRemaining}</b></span></h3>
 
 					    				<h4>Send <b>{this.state.depositAmount} {this.state.depositCoin}</b> to the address<br/>
 					    					<b id="deposit-address">{this.state.depositAddress}</b>

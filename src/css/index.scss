@@ -19,7 +19,7 @@ a:hover { text-decoration: none; }
 		li a:hover { text-decoration: underline; background: none; }
 	}
 	a { color: #333; font-size: 16px;
-		&:hover, , &:visited, &:focus, &:active { text-decoration: none; }
+		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; }
 	}
 	.fa { position: relative; top: -2px; }
 }

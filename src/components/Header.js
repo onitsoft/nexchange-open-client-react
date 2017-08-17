@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-
-import {Icon} from 'react-fa'
+import { Link } from 'react-router-dom';
+import {Icon} from 'react-fa';
 
 import '../css/components/Header.scss';
+
+import Example from './Example';
 
 class Header extends Component {
   render() {
@@ -47,11 +48,11 @@ class Header extends Component {
 					</li>
 		    	</ul>
 		    </div>
+
+		    <Example />
 		</div>
     );
   }
 }
 
 export default Header;
-
-
