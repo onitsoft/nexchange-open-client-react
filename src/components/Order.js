@@ -120,14 +120,14 @@ class Order extends Component {
 					    	</div>
 					    </div>
 
-					    <div className="col-xs-12">
+					    <div id="order-payment" className="col-xs-12">
 					    	<div className="box">
 					    		<div className="row">
 					    			<div className="col-xs-12 col-sm-3">
 					    				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=bitcoin:1KTFHHwtdNmGrbY5MfWhtswpG9tuxZwwoA?amount=0.0363" />
 					    			</div>
 
-					    			<div className="col-xs-12 col-sm-9">
+					    			<div id="order-payment-details" className="col-xs-12 col-sm-9">
 					    				<h3 className="text-success">Time remaining: {this.state.timeRemaining}</h3>
 
 					    				<h4>Send <b>{this.state.depositAmount} {this.state.depositCoin}</b> to the address<br/>
@@ -145,8 +145,6 @@ class Order extends Component {
 											</button>
 					    				</CopyToClipboard>
 					    			</div>
-
-					    			
 					    		</div>
 
 					    		<div className="row">
