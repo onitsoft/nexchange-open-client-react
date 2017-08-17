@@ -10,7 +10,7 @@ class Main extends Component {
 					<div className="col-xs-12">
 						<div className="brand">
 					        <h1>Exchange crypto-currencies</h1>
-					        <h3>Do it now, simply. securely, transparently, and within seconds.</h3>
+					        <h3>Do it now, simply, securely, transparently, and within seconds!</h3>
 						</div>
 					</div>
 
