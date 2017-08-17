@@ -26,7 +26,9 @@ a:hover { text-decoration: none; }
 
 #order { background: #f8f7f8; padding: 15px 0;
 	#order-ref { margin-bottom: 15px; }
-	.box { padding: 15px; margin-bottom: 30px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+	.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
+		
 		h5, h6 { margin: 0; }
 		.coin-icon { position: relative; top: 8px; }
 	}

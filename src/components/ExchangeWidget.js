@@ -91,7 +91,7 @@ class ExchangeWidget extends Component {
 				"amount_base": this.state.depositAmount,
 				"is_default_rule": true,
 				"pair": {
-					"name": `${this.state.depositCoin}${this.state.receiveCoin}`
+					"name": `${this.state.receiveCoin}${this.state.depositCoin}`
 				},
 				"withdraw_address": {
 					"address": this.state.receiveAddress,
@@ -188,10 +188,3 @@ class ExchangeWidget extends Component {
 }
 
 export default ExchangeWidget;
-
-
-// <Link to="/order/123">
-// <button className="btn btn-block btn-warning" onClick={this.placeOrder} disabled={this.state.isConfirmEnabled ? null : 'disabled'}>
-// 	Confirm & Place Order
-// </button>
-// </Link>

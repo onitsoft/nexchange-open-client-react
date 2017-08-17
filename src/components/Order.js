@@ -3,7 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-
+import OrderStatus from './OrderStatus';
 
 class Order extends Component {
 
@@ -12,9 +12,15 @@ class Order extends Component {
 
 		this.state = {
 			copied: false,
-			address: '0x123f681646d4a755815f9cb19e1acc8565a0c2ac',
-			timeRemaining: 1500,
-			created_on: '2017-08-16T16:09:32.054643Z'
+			createdOn: '...',
+			timeRemaining: '...',
+			depositAmount: '...',
+			depositCoin: '...',
+			depositAddress: '...',
+			receiveAmount: '...',
+			receiveCoin: '...',
+			receiveAddress: '...'
+
 		};
 
 		this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
@@ -34,8 +40,10 @@ class Order extends Component {
 	}
 
 	tick() {
+		if (this.state.createdOn == '...') return;
+
 		let now = moment().subtract(15, 'minutes');
-		let createdOn = moment(this.state.created_on);
+		let createdOn = moment(this.state.createdOn);
 		let diff = createdOn.diff(now);
 
 		if (diff < 0)
@@ -51,7 +59,19 @@ class Order extends Component {
 	getOrderDetails() {
 		axios.get(`${this.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
 			.then((response) => {
-				console.log(response);
+				let data = response.data;
+
+				console.log(data);
+
+				this.setState({
+					depositAmount: parseFloat(data.amount_base),
+					depositCoin: data.deposit_address.currency_code,
+					depositAddress: data.deposit_address.address,
+					receiveAmount: parseFloat(data.amount_quote),
+					receiveCoin: data.withdraw_address.currency_code,
+					receiveAddress: data.withdraw_address.address,
+					createdOn: data.created_on
+				})
 			})
 			.catch((error) => {
 				console.log(error);
@@ -81,8 +101,8 @@ class Order extends Component {
 					    		</div>
 
 					    		<div className="media-body">
-						    		<h5><b>Deposit 1 BTC</b></h5>
-						    		<h6>0x123f681646d4a755815f9cb19e1acc8565a0c2ac</h6>
+						    		<h5><b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b></h5>
+						    		<h6>{this.state.depositAddress}</h6>
 					    		</div>
 					    	</div>
 					    </div>
@@ -94,8 +114,8 @@ class Order extends Component {
 					    		</div>
 
 					    		<div className="media-body">
-						    		<h5><b>Receive 25 ETH</b></h5>
-						    		<h6>0x123f681646d4a755815f9cb19e1acc8565a0c2ac</h6>
+						    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin} </b></h5>
+						    		<h6>{this.state.receiveAddress}</h6>
 					    		</div>
 					    	</div>
 					    </div>
@@ -108,10 +128,10 @@ class Order extends Component {
 					    			</div>
 
 					    			<div className="col-xs-12 col-sm-9">
-					    				<h4 className="text-success">Time remaining: {this.state.timeRemaining}</h4>
+					    				<h3 className="text-success">Time remaining: {this.state.timeRemaining}</h3>
 
-					    				<h4>Send <b>1 BTC</b> to the address<br/>
-					    					<b id="deposit-address">0x123f681646d4a755815f9cb19e1acc8565a0c2ac</b>
+					    				<h4>Send <b>{this.state.depositAmount} {this.state.depositCoin}</b> to the address<br/>
+					    					<b id="deposit-address">{this.state.depositAddress}</b>
 					    				</h4>
 
 								        <CopyToClipboard text={this.state.address}
@@ -131,9 +151,7 @@ class Order extends Component {
 
 					    		<div className="row">
 					    			<div className="col-xs-12">
-						    			AWAITING DEPOSIT
-						    			AWAITING EXCHANGE
-						    			ALL DONE
+						    			<OrderStatus />
 					    			</div>
 					    		</div>
 
