@@ -8,7 +8,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 class Order extends Component {
 
 	constructor(props) {
-		super(props);
+		super();
 
 		this.state = {
 			copied: false,
@@ -17,18 +17,20 @@ class Order extends Component {
 			created_on: '2017-08-16T16:09:32.054643Z'
 		};
 
-		this.API_BASE_URL = `https://nexchange.co.uk/en/api/v1`;
+		this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
 
-		//this.getOrderDetails = this.getOrderDetails.bind(this);
+		this.getOrderDetails = this.getOrderDetails.bind(this);
 		this.tick = this.tick.bind(this);
-		
-
-		//this.getOrderDetails();
 	}
 
 	componentDidMount() {
-		this.tick();
 		this.interval = setInterval(this.tick, 1000);
+		this.tick();
+		this.getOrderDetails();
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
 	}
 
 	tick() {

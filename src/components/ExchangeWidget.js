@@ -10,7 +10,8 @@ import WalletAddress from './WalletAddress.js';
 class ExchangeWidget extends Component {
 	
 	constructor(props) {
-		super(props);
+		super();
+		
 		this.state = {
 			exchangeProceeded: false,
 			orderPlaced: false,
@@ -35,7 +36,7 @@ class ExchangeWidget extends Component {
 	  	this.placeOrder = this.placeOrder.bind(this);	  	
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		let apiUrl = `${this.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
 		this.updatePrices(apiUrl);
 	}
@@ -71,7 +72,7 @@ class ExchangeWidget extends Component {
 
 				if (isNaN(newAmount))
 					newAmount = '...'
-				
+
 				this.setState({depositAmount: newAmount});
 			}
 		})
@@ -89,7 +90,9 @@ class ExchangeWidget extends Component {
 			data: {
 				"amount_base": this.state.depositAmount,
 				"is_default_rule": true,
-				"pair": 123,
+				"pair": {
+					"name": `${this.state.depositCoin}${this.state.receiveCoin}`
+				},
 				"withdraw_address": {
 					"address": this.state.receiveAddress,
 					"name": ""
