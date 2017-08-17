@@ -61,6 +61,10 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }
 
+#order-status {
+	.step { float: left; width: 33.33%; }
+}
+
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
 @media (min-width: $screen-lg-min) {}

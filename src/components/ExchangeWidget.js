@@ -88,7 +88,7 @@ class ExchangeWidget extends Component {
 			method: 'post',
 			url: `${config.API_BASE_URL}/orders/`,
 			data: {
-				"amount_base": this.state.depositAmount,
+				"amount_base": this.state.receiveAmount,
 				"is_default_rule": true,
 				"pair": {
 					"name": `${this.state.receiveCoin}${this.state.depositCoin}`

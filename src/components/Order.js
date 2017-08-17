@@ -72,10 +72,10 @@ class Order extends Component {
 				let data = response.data;
 
 				this.setState({
-					depositAmount: parseFloat(data.amount_base),
+					depositAmount: parseFloat(data.amount_quote),
 					depositCoin: data.deposit_address.currency_code,
 					depositAddress: data.deposit_address.address,
-					receiveAmount: parseFloat(data.amount_quote),
+					receiveAmount: parseFloat(data.amount_base),
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on
@@ -163,12 +163,6 @@ class Order extends Component {
 
 					    		
 					    	</div>
-					    </div>
-					</div>
-
-					<div className="row">
-					    <div className="col-xs-12">
-
 					    </div>
 					</div>
 				</div>
