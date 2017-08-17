@@ -10,9 +10,9 @@ class Team extends Component {
             <h1>About Us</h1>
 
             <p>We are a group of multi-national, multi-disciplinary, multi-planetary (just kidding) professionals.
-            Each one of us has a rich experience in in his unique domain, and together we create an unbeatable team.</p>
+            Each one of us has a rich experience in his unique domain, and together we create an unbeatable team.</p>
 
-            <p>We came together to make the Nexchange Platfrorm after observing the latest developments in the cryptocurrency world with great pain (in regards to exchanges performance / reliability).</p>
+            <p>We came together to make the Nexchange Platform after observing the latest developments in the cryptocurrency world with great pain (in regards to exchanges performance / reliability).</p>
 
             <p>However, instead of standing still and coping with the situation we decided to create our own platform, based on a 100% open and transparent API, and a 100% open source Frontend code.</p>
 
@@ -24,12 +24,13 @@ class Team extends Component {
             
             <ul>
               <li>Maintain minimal spreads over the entire course of our operation.</li>
-              <li>Never take or hold a position against a client</li>
+              <li>Never take or hold a position against a client.</li>
               <li>Keep minimal execution times as our flagship, never deliberately hinder orders because of market conditions.</li>
               <li>Guaranteed execution: we will never revert or refund an Order which was accepted by our API.</li>
             </ul>
 
-            <p>We believe the the best purpose of achieving our goal is open source, and we encourage every each and one of you to fork one of our example repositories and make your own client of the exchange API.</p>
+            <p>We believe the best purpose of achieving our goal is via the community, using open source and our open API</p>
+            <p>Thus, we encourage every each and one of you to fork one of our example repositories and make your own client of the exchange API.</p>
 
             <p><b>Nexchange is a platform made by crypto enthusiasts, for crypto enthusiasts.</b></p>
 
