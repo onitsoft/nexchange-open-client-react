@@ -30,7 +30,7 @@ class Header extends Component {
             </button>
             <h4 className="modal-title">FAQ</h4>
           </div>
-          
+
           <div className="modal-body">
             <h3>Who are you?</h3>
             <p>Nexchange is an automated cryptocurrency exchange service, operated by YOA LTD. (registered in United Kingdom).</p>
@@ -43,7 +43,7 @@ class Header extends Component {
             <p>We allow you to exchange one cryptocurrency for another.</p>
             <p>Right now we support Bitcoin (BTC), Ethereum (ETC) and Litecoin (LTC).</p>
             <p>We will be adding more currencies in the near future, stay tuned!</p>
-            <p>Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a></p>
+            <p>Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>.</p>
 
             <h3>How long does it take to convert?</h3>
             <p>Initiation a transaction doesn’t take more than a couple of minutes. Actual processing takes about 5-10 minutes before you receive your coins.</p>
