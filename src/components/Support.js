@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Icon} from 'react-fa';
 import { Button, Modal, Overflowing, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap';
 
-class FAQ extends Component {
+class Support extends Component {
   constructor(props) {
     super();
 
@@ -28,7 +28,7 @@ class FAQ extends Component {
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className="modal-title">FAQ</h4>
+            <h4 className="modal-title">Support</h4>
           </div>
 
           <div className="modal-body">
@@ -90,4 +90,4 @@ class FAQ extends Component {
   }
 }
 
-export default FAQ;
+export default Support;
