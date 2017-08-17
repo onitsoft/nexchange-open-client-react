@@ -46,6 +46,7 @@ a:hover { text-decoration: none; }
 		@media (min-width: $screen-md-min) { margin-top: 5px; }
 		@media (min-width: $screen-lg-min) { margin-top: 10px; }
 	}
+	.box { padding-bottom: 5px; }
 
 	@media (min-width: $screen-sm-min) { text-align: left; }
 }
