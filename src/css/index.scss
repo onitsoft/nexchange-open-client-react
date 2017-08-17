@@ -19,7 +19,7 @@ a:hover { text-decoration: none; }
 		li a:hover { text-decoration: underline; background: none; }
 	}
 	a { color: #333; font-size: 16px;
-		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; }
+		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; outline: none; }
 	}
 	.fa { position: relative; top: -2px; }
 }
@@ -49,6 +49,12 @@ a:hover { text-decoration: none; }
 	.box { padding-bottom: 5px; }
 
 	@media (min-width: $screen-sm-min) { text-align: left; }
+}
+
+.modal-title { margin-top: -10px; font-size: 30px; }
+.modal-body {
+	h3:first-child { margin-top: 0; }
+	h3 { margin-top: 35px; }
 }
 
 @media (min-width: $screen-sm-min) {}
