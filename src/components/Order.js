@@ -16,8 +16,9 @@ class Order extends Component {
 			timeRemaining: 1500,
 			created_on: '2017-08-16T16:09:32.054643Z'
 		};
-
-		this.API_BASE_URL = `https://nexchange.co.uk/en/api/v1`;
+		
+		// TODO: Move to config!
+		this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
 
 		//this.getOrderDetails = this.getOrderDetails.bind(this);
 		this.tick = this.tick.bind(this);
