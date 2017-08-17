@@ -26,7 +26,7 @@ class ExchangeWidget extends Component {
 			receiveAddress: null
 	  	};
 
-	  	this.API_BASE_URL = `https://nexchange.co.uk/en/api/v1`;
+	  	this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
 
 	  	this.handleChange = this.handleChange.bind(this);
 	  	this.setNewCoin = this.setNewCoin.bind(this);	  	
@@ -61,9 +61,17 @@ class ExchangeWidget extends Component {
 
 			if (this.state.lastEdited == 'deposit') {
 				let newAmount = parseFloat(this.state.depositAmount) * basePrice;
+
+				if (isNaN(newAmount))
+					newAmount = '...'
+
 				this.setState({receiveAmount: newAmount});
 			} else {
 				let newAmount = parseFloat(this.state.receiveAmount) * basePrice;
+
+				if (isNaN(newAmount))
+					newAmount = '...'
+				
 				this.setState({depositAmount: newAmount});
 			}
 		})
