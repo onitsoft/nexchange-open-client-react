@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {Icon} from 'react-fa';
 
 import FAQ from './FAQ';
+import Support from './Support';
 
 import '../css/components/Header.scss';
 
@@ -12,7 +13,8 @@ class Header extends Component {
 		super();
 
 		this.state = {
-			showFaqModal: false
+			showFaqModal: false,
+			showSupportModal: false
 		}
 	}
 
@@ -41,7 +43,7 @@ class Header extends Component {
 						</li>
 
 						<li>
-							<a href="javascript:void(0)">Support</a>
+							<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})}>Support</a>
 						</li>
 
 						<li>
@@ -59,6 +61,7 @@ class Header extends Component {
 			    </div>
 
 			    <FAQ showModal={this.state.showFaqModal} onClose={() => this.setState({showFaqModal: false})} />
+			    <Support showModal={this.state.showSupportModal} onClose={() => this.setState({showSupportModal: false})} />
 			</div>
 	    );
 	}

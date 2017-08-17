@@ -56,6 +56,10 @@ a:hover { text-decoration: none; }
 	h3:first-child { margin-top: 0; }
 	h3 { margin-top: 35px; }
 }
+textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
+
+#support-modal .form-group { margin: 0; }
+#support-form { margin-top: 15px; }
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
