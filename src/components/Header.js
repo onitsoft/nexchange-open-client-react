@@ -45,7 +45,7 @@ class Header extends Component {
 						</li>
 
 						<li>
-							<a rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/cryptoNexchange" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Follow us on Twitter">
+							<a rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Follow us on Twitter">
 								<Icon name="twitter" />
 							</a>
 						</li>
