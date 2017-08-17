@@ -25,8 +25,8 @@ class ExchangeWidget extends Component {
 			lastEdited: 'deposit',
 			receiveAddress: null
 	  	};
-
-	  	this.API_BASE_URL = `https://nexchange.co.uk/en/api/v1`;
+		// TODO: move to config!
+	  	this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
 
 	  	this.handleChange = this.handleChange.bind(this);
 	  	this.setNewCoin = this.setNewCoin.bind(this);	  	
