@@ -3,8 +3,10 @@ import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import CoinInput from './CoinInput.js';
-import WalletAddress from './WalletAddress.js';
+import config from '../config';
+
+import CoinInput from './CoinInput';
+import WalletAddress from './WalletAddress';
 
 
 class ExchangeWidget extends Component {
@@ -27,8 +29,6 @@ class ExchangeWidget extends Component {
 			receiveAddress: null
 	  	};
 
-	  	this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
-
 	  	this.handleChange = this.handleChange.bind(this);
 	  	this.setNewCoin = this.setNewCoin.bind(this);	  	
 	  	this.updatePrices = this.updatePrices.bind(this);	  	  	
@@ -37,14 +37,14 @@ class ExchangeWidget extends Component {
 	}
 
 	componentDidMount() {
-		let apiUrl = `${this.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
+		let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
 		this.updatePrices(apiUrl);
 	}
 
 	componentDidUpdate() {
 		if (this.state.depositCoin != this.state.depositCoinPrevious ||
 			this.state.receiveCoin != this.state.receiveCoinPrevious) {
-			let apiUrl = `${this.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
+			let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
 			this.setState({
 				lastEdited: 'deposit',
 				receiveCoinPrevious: this.state.receiveCoin,
@@ -86,7 +86,7 @@ class ExchangeWidget extends Component {
 
 		axios({
 			method: 'post',
-			url: `${this.API_BASE_URL}/orders/`,
+			url: `${config.API_BASE_URL}/orders/`,
 			data: {
 				"amount_base": this.state.depositAmount,
 				"is_default_rule": true,
@@ -114,7 +114,7 @@ class ExchangeWidget extends Component {
 	
 	handleChange(event) {
 	    let lastEdited = event.target.name,
-	    	apiUrl = this.API_BASE_URL,
+	    	apiUrl = config.API_BASE_URL,
 	    	newState = {lastEdited: lastEdited};
 
 	    newState[`${lastEdited}Amount`] = event.target.value;

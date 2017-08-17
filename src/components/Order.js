@@ -3,6 +3,8 @@ import axios from 'axios';
 import moment from 'moment';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+import config from '../config';
+
 import OrderStatus from './OrderStatus';
 
 class Order extends Component {
@@ -22,8 +24,6 @@ class Order extends Component {
 			receiveAddress: '...'
 
 		};
-
-		this.API_BASE_URL = `https://nexchange.io/en/api/v1`;
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
 		this.tick = this.tick.bind(this);
@@ -57,7 +57,7 @@ class Order extends Component {
 	}
 
 	getOrderDetails() {
-		axios.get(`${this.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
+		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
 			.then((response) => {
 				let data = response.data;
 
