@@ -75,6 +75,12 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 	}
 }
 
+.alert { margin-bottom: 0; }
+.alert.fade.in.invisible {
+	visibility: visible ;
+	opacity: 0;
+}
+
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
 @media (min-width: $screen-lg-min) {}

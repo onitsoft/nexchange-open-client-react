@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import _ from 'lodash';
 
 import config from '../config';
 
@@ -26,14 +27,22 @@ class ExchangeWidget extends Component {
 			depositCoinPrevious: 'BTC',
 			receiveCoinPrevious: 'ETH',
 			lastEdited: 'deposit',
-			receiveAddress: null
+			receiveAddress: null,
+			minDepositAmount: {
+				'BTC': 0,
+				'ETH': 0,
+				'LTC': 0
+			}
 	  	};
 
 	  	this.handleChange = this.handleChange.bind(this);
 	  	this.setNewCoin = this.setNewCoin.bind(this);	  	
 	  	this.updatePrices = this.updatePrices.bind(this);	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
-	  	this.placeOrder = this.placeOrder.bind(this);	  	
+	  	this.placeOrder = this.placeOrder.bind(this);	
+	  	this.fetchMinDeposit = this.fetchMinDeposit.bind(this);	
+
+	  	this.fetchMinDeposit();
 	}
 
 	componentDidMount() {
@@ -53,6 +62,29 @@ class ExchangeWidget extends Component {
 				this.updatePrices(apiUrl);
 			});
 		}
+	}
+
+	fetchMinDeposit() {
+		axios.get(`${config.API_BASE_URL}/currency`)
+			.then(response => {
+				let BTC = _.find(response.data, {code: 'BTC'}),
+					ETH = _.find(response.data, {code: 'ETH'}),
+					LTC = _.find(response.data, {code: 'LTC'}),
+					minBTC = parseFloat(BTC.minimal_amount),
+					minETH = parseFloat(ETH.minimal_amount),
+					minLTC = parseFloat(LTC.minimal_amount);
+
+				this.setState({
+					minDepositAmount: {
+						'BTC': minBTC,
+						'ETH': minETH,
+						'LTC': minLTC
+					}
+				})
+			})
+			.catch(error => {
+
+			});
 	}
 
 	updatePrices(apiUrl) {
@@ -155,33 +187,33 @@ class ExchangeWidget extends Component {
 
 		return (
 			<div>
-			  <div className="col-xs-12 col-sm-6">
-			    <CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} value={this.state.depositAmount} />
-			  </div>
+				<div className="col-xs-12 col-sm-6">
+					<CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} value={this.state.depositAmount} />
+				</div>
 
-			  <div className="col-xs-12 col-sm-6">
-			    <CoinInput type="receive" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.receiveCoin} value={this.state.receiveAmount} />
-			  </div>
+				<div className="col-xs-12 col-sm-6">
+					<CoinInput type="receive" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.receiveCoin} value={this.state.receiveAmount} />
+				</div>
 
-			  {this.state.exchangeProceeded ?
-			  	<div className="col-xs-12">
-			  		<WalletAddress coin={this.state.receiveCoin} toggleConfirm={this.toggleConfirm} />
-			  	</div> : null
-			  }
+				{this.state.exchangeProceeded ?
+					<div className="col-xs-12">
+						<WalletAddress coin={this.state.receiveCoin} toggleConfirm={this.toggleConfirm} />
+					</div> : null
+				}
 
-			  <div className="col-xs-12 text-center">
-			    {!this.state.exchangeProceeded ? (
-			    	<button className="btn btn-block btn-success" onClick={() => this.setState({exchangeProceeded: true})}>
-			    		Get Started !
-			    	</button>
-			    ) : (
-			    	<button className="btn btn-block btn-warning" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
-			    		Confirm & Place Order
+				<div className="col-xs-12 text-center">
+					{!this.state.exchangeProceeded ? (
+						<button className="btn btn-block btn-success" onClick={() => this.setState({exchangeProceeded: true})}>
+							Get Started !
+						</button>
+					) : (
+						<button className="btn btn-block btn-warning" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
+							Confirm & Place Order
 
-			    		{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
-			    	</button>
-			    )}
-			  </div>
+							{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
+						</button>
+					)}
+				</div>
 			</div>
 		);
 	}
