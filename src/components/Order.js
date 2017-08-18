@@ -62,8 +62,6 @@ class Order extends Component {
 		this.setState({
 			timeRemaining: diff
 		});
-
-
 	}
 
 	getOrderDetails() {
@@ -142,7 +140,7 @@ class Order extends Component {
 					    					<b id="deposit-address">{this.state.depositAddress}</b>
 					    				</h4>
 
-								        <CopyToClipboard text={this.state.address}
+								        <CopyToClipboard text={this.state.depositAddress}
 								          onCopy={() => this.triggerCopyTooltip()}>
 											<button id="copyToClipboard" type="button" className="btn btn-default">
 												<div className={this.state.copied ? "tooltip top in" : "tooltip"} role="tooltip">

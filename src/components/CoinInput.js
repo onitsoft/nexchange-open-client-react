@@ -57,7 +57,7 @@ class CoinInput extends Component {
 				sum = parseFloat(nextProps.receive) * this.props.price;
 
 			nextProps.lastEdited = this.props.type;
-			nextProps[opposite] = (isNaN(sum) ? '...' : sum);
+			nextProps[opposite] = (isNaN(sum) ? '...' : sum.toFixed(8));
 			nextProps['update'] = false;
 			this.props.updateAmounts(nextProps)
 		}
