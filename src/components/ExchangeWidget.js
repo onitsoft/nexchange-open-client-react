@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -28,7 +28,7 @@ class ExchangeWidget extends Component {
 			receiveCoinPrevious: 'ETH',
 			lastEdited: 'deposit',
 			receiveAddress: null,
-			minDepositAmount: {
+			minDepositAmounts: {
 				'BTC': 0,
 				'ETH': 0,
 				'LTC': 0
@@ -43,6 +43,10 @@ class ExchangeWidget extends Component {
 	  	this.fetchMinDeposit = this.fetchMinDeposit.bind(this);	
 
 	  	this.fetchMinDeposit();
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.setNewCoin(newProps.type, newProps.coin);
 	}
 
 	componentDidMount() {
@@ -75,7 +79,7 @@ class ExchangeWidget extends Component {
 					minLTC = parseFloat(LTC.minimal_amount);
 
 				this.setState({
-					minDepositAmount: {
+					minDepositAmounts: {
 						'BTC': minBTC,
 						'ETH': minETH,
 						'LTC': minLTC
@@ -188,7 +192,7 @@ class ExchangeWidget extends Component {
 		return (
 			<div>
 				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} value={this.state.depositAmount} />
+					<CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} minDepositAmounts={this.state.minDepositAmounts} value={this.state.depositAmount} />
 				</div>
 
 				<div className="col-xs-12 col-sm-6">
@@ -219,4 +223,11 @@ class ExchangeWidget extends Component {
 	}
 }
 
-export default ExchangeWidget;
+
+function mapStateToProps(state) {
+	return {
+		selectedCoin: state.selectedCoin
+	}
+}
+
+export default connect(mapStateToProps)(ExchangeWidget);

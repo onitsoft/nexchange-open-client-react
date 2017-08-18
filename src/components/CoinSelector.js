@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { selectCoin } from '../actions/index.js';
 
 class CoinSelector extends Component {
 
@@ -26,6 +30,15 @@ class CoinSelector extends Component {
 	}
 
 	selectCoin(coin) {
+		console.log("COIN SELECT COIN", coin)
+
+		this.props.selectCoin({
+			coin: coin,
+			type: this.props.type
+		});
+
+
+
 		this.setState({
 			isDropdownVisible: false,
 			selectedCoin: coin
@@ -70,4 +83,9 @@ class CoinSelector extends Component {
 	}
 }
 
-export default CoinSelector;
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ selectCoin: selectCoin }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(CoinSelector);

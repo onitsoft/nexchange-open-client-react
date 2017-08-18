@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-// import { reducer as FormReducer } from 'redux-form' 
 import ErrorReducer from './reducer_error_alert';
+import SelectedCoinReducer from './reducer_selected_coin';
 
 const rootReducer = combineReducers({
 	error: ErrorReducer,
-	// form: FormReducer,
+	selectedCoin: SelectedCoinReducer,
 });
 
 export default rootReducer;
