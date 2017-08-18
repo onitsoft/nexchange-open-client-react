@@ -61,10 +61,41 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }
 
-#order-status {
-	.step { float: left; width: 33.33%; }
+#order-status { padding: 0 0 15px 0; overflow: hidden;
+	.step { float: left; width: 33.33%; text-align: center;
+		.step-text { background: #fff; padding: 0 15px; font-weight: 500; text-transform: uppercase;
+			&.active {
+				-webkit-animation: color-change 1.5s infinite alternate;
+				-moz-animation: color-change 1.5s infinite alternate;
+				-ms-animation: color-change 1.5s infinite alternate;
+				-o-animation: color-change 1.5s infinite alternate;
+				animation: color-change 1.5s infinite alternate;
+			}
+		}
+	}
 }
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
 @media (min-width: $screen-lg-min) {}
+
+@-webkit-keyframes color-change {
+	from { color: #9d9d9d; }
+	to { color: #3c763d; }
+}
+@-moz-keyframes color-change {
+	from { color: #9d9d9d; }
+	to { color: #3c763d; }
+}
+@-ms-keyframes color-change {
+	from { color: #9d9d9d; }
+	to { color: #3c763d; }
+}
+@-o-keyframes color-change {
+	from { color: #9d9d9d; }
+	to { color: #3c763d; }
+}
+@keyframes color-change {
+	from { color: #9d9d9d; }
+	to { color: #3c763d; }
+}
