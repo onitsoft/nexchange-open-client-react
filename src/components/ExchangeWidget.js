@@ -28,15 +28,9 @@ class ExchangeWidget extends Component {
 			receiveCoinPrevious: 'ETH',
 			lastEdited: 'deposit',
 			receiveAddress: null,
-			minDepositAmounts: {
-				'BTC': 0,
-				'ETH': 0,
-				'LTC': 0
-			}
 	  	};
 
-	  	this.handleChange = this.handleChange.bind(this);
-	  	this.setNewCoin = this.setNewCoin.bind(this);	  	
+	  	this.handleChange = this.handleChange.bind(this);  	
 	  	this.updatePrices = this.updatePrices.bind(this);	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);	
@@ -45,50 +39,46 @@ class ExchangeWidget extends Component {
 	  	this.fetchMinDeposit();
 	}
 
-	componentWillReceiveProps(newProps) {
-		this.setNewCoin(newProps.type, newProps.coin);
-	}
-
 	componentDidMount() {
-		let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
-		this.updatePrices(apiUrl);
+		// let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
+		// this.updatePrices(apiUrl);
 	}
 
 	componentDidUpdate() {
-		if (this.state.depositCoin != this.state.depositCoinPrevious ||
-			this.state.receiveCoin != this.state.receiveCoinPrevious) {
-			let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
-			this.setState({
-				lastEdited: 'deposit',
-				receiveCoinPrevious: this.state.receiveCoin,
-				depositCoinPrevious: this.state.depositCoin
-			}, () => {
-				this.updatePrices(apiUrl);
-			});
-		}
+		// if (this.state.depositCoin != this.state.depositCoinPrevious ||
+		// 	this.state.receiveCoin != this.state.receiveCoinPrevious) {
+		// 	let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
+		// 	this.setState({
+		// 		lastEdited: 'deposit',
+		// 		receiveCoinPrevious: this.state.receiveCoin,
+		// 		depositCoinPrevious: this.state.depositCoin
+		// 	}, () => {
+		// 		this.updatePrices(apiUrl);
+		// 	});
+		// }
 	}
 
 	fetchMinDeposit() {
-		axios.get(`${config.API_BASE_URL}/currency`)
-			.then(response => {
-				let BTC = _.find(response.data, {code: 'BTC'}),
-					ETH = _.find(response.data, {code: 'ETH'}),
-					LTC = _.find(response.data, {code: 'LTC'}),
-					minBTC = parseFloat(BTC.minimal_amount),
-					minETH = parseFloat(ETH.minimal_amount),
-					minLTC = parseFloat(LTC.minimal_amount);
+		// axios.get(`${config.API_BASE_URL}/currency`)
+		// 	.then(response => {
+		// 		let BTC = _.find(response.data, {code: 'BTC'}),
+		// 			ETH = _.find(response.data, {code: 'ETH'}),
+		// 			LTC = _.find(response.data, {code: 'LTC'}),
+		// 			minBTC = parseFloat(BTC.minimal_amount),
+		// 			minETH = parseFloat(ETH.minimal_amount),
+		// 			minLTC = parseFloat(LTC.minimal_amount);
 
-				this.setState({
-					minDepositAmounts: {
-						'BTC': minBTC,
-						'ETH': minETH,
-						'LTC': minLTC
-					}
-				})
-			})
-			.catch(error => {
+		// 		this.setState({
+		// 			minDepositAmounts: {
+		// 				'BTC': minBTC,
+		// 				'ETH': minETH,
+		// 				'LTC': minLTC
+		// 			}
+		// 		})
+		// 	})
+		// 	.catch(error => {
 
-			});
+		// 	});
 	}
 
 	updatePrices(apiUrl) {
@@ -165,20 +155,6 @@ class ExchangeWidget extends Component {
 		});
 	}
 
-	setNewCoin(type, coin) {
-		if ((type == 'deposit' && coin == this.state.receiveCoin) ||
-			(type == 'receive' && coin == this.state.depositCoin)) {
-			this.setState({
-				depositCoin: this.state.receiveCoin,
-				receiveCoin: this.state.depositCoin
-			})
-		} else {
-			let newState = {};
-			newState[`${type}Coin`] = coin;
-			this.setState(newState);
-		}
-	}
-
 	toggleConfirm(address, isConfirmEnabled) {
 		// TODO: this should be refactored to Redux as now
 		// isConfirmEnabled is passed from child
@@ -192,11 +168,11 @@ class ExchangeWidget extends Component {
 		return (
 			<div>
 				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="deposit" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.depositCoin} minDepositAmounts={this.state.minDepositAmounts} value={this.state.depositAmount} />
+					<CoinInput type="deposit" onChange={this.handleChange} selectedCoin={this.state.depositCoin} minDepositAmounts={this.state.minDepositAmounts} value={this.state.depositAmount} />
 				</div>
 
 				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="receive" onChange={this.handleChange} onCoinSelect={this.setNewCoin} selectedCoin={this.state.receiveCoin} value={this.state.receiveAmount} />
+					<CoinInput type="receive" onChange={this.handleChange} selectedCoin={this.state.receiveCoin} value={this.state.receiveAmount} />
 				</div>
 
 				{this.state.exchangeProceeded ?

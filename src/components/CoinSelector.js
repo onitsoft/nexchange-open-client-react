@@ -9,66 +9,48 @@ class CoinSelector extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedCoin: this.props.selectedCoin,
+			selectedCoin: this.props.selectedCoin.present[this.props.type],
 			isDropdownVisible: false
 		}
 
-	  	this.coins = [
-			{name: 'BTC', fullName: 'Bitcoin'},
-			{name: 'LTC', fullName: 'Litecoin'},
-			{name: 'ETH', fullName: 'Ethereum'}
-    	];
-
-    	this.toggleCoinDropdown = this.toggleCoinDropdown.bind(this);
     	this.selectCoin = this.selectCoin.bind(this);
-	}
 
-	toggleCoinDropdown() {
-		this.setState({
-			isDropdownVisible: !this.state.isDropdownVisible
-		});
+    	console.log("OLD PROPS", this.props);
 	}
 
 	selectCoin(coin) {
-		console.log("COIN SELECT COIN", coin)
+		this.props.selectedCoin.present[this.props.type] = coin;
 
-		this.props.selectCoin({
-			coin: coin,
-			type: this.props.type
-		});
-
-
+		this.props.selectCoin(this.props.selectedCoin);
 
 		this.setState({
 			isDropdownVisible: false,
 			selectedCoin: coin
-		}, () => {
-			this.props.onCoinSelect(this.props.type, this.state.selectedCoin);
 		});
 	}
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			selectedCoin: nextProps.selectedCoin
-		})
+			selectedCoin: this.props.selectedCoin.present[this.props.type]
+		});
 	}
 
 	render() {
-		let coins = this.coins.map(coin => {
+		let coins = this.props.coinsInfo.map(coin => {
 			return (
-				<div className="row coin" key={coin.name} onClick={() => this.selectCoin(coin.name)}>
-					<div className="col-xs-4">{coin.name}</div>
+				<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>
+					<div className="col-xs-4">{coin.ticker}</div>
 					<div className="col-xs-3 text-center">
-						<i className={`coin-icon ${coin.name}`}></i>
+						<i className={`coin-icon ${coin.ticker}`}></i>
 					</div>
-					<div className="col-xs-5">{coin.fullName}</div>
+					<div className="col-xs-5">{coin.name}</div>
 				</div>
 			);
 		});
 
 		return (
 			<div>
-				<div className="selectedCoin" onClick={this.toggleCoinDropdown}>
+				<div className="selectedCoin" onClick={() => this.setState({isDropdownVisible: !this.state.isDropdownVisible})}>
 					{this.state.selectedCoin} <i className={`coin-icon ${this.state.selectedCoin}`}></i>
 				</div>
 
@@ -84,8 +66,16 @@ class CoinSelector extends Component {
 }
 
 
+function mapStateToProps(state) {
+	return {
+		minDeposit: state.minDeposit,
+		selectedCoin: state.selectedCoin,
+		coinsInfo: state.coinsInfo
+	}
+}
+
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({ selectCoin: selectCoin }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CoinSelector);
+export default connect(mapStateToProps, mapDispatchToProps)(CoinSelector);
