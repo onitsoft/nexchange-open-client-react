@@ -36,7 +36,11 @@ class ExchangeWidget extends Component {
 		nextProps['lastEdited'] = 'deposit';
 
 		this.props.updateAmounts(nextProps);
-		this.props.fetchPrice('BTCETH');
+		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+
+    	setInterval(() => {
+    		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+    	}, config.PRICE_FETCH_INTERVAL);
 	}
 
 	placeOrder() {
