@@ -10,7 +10,6 @@ import CoinSelector from './CoinSelector';
 
 
 class CoinInput extends Component {
-
 	constructor(props) {
 		super(props);
 
@@ -22,18 +21,9 @@ class CoinInput extends Component {
 	}
 	
 	onChange(event) {
-		let value = event.target.value,
-			selectedCoin = this.props.selectedCoin.present[this.props.type],
-			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
+		let value = event.target.value;
 
-		if (value < minAmount) {
-			this.props.errorAlert({
-				message: `Deposit amount cannot be less than ${minAmount}`,
-				show: true
-			});
-		} else {
-			this.props.errorAlert({show: false});
-		}
+		this.validateReceiveAmount(value);
 
 		let nextProps = Object.assign({}, this.props.amounts);
 		nextProps.lastEdited = this.props.type;
@@ -53,13 +43,30 @@ class CoinInput extends Component {
 				opposite = (this.props.amounts.lastEdited == 'receive' ? 'deposit' : 'receive'),
 				sum = parseFloat(nextProps.deposit) * this.props.price;
 
-			if (this.props.type == 'receive')
+			if (this.props.type == 'receive') {
 				sum = parseFloat(nextProps.receive) * this.props.price;
+			} else {
+				this.validateReceiveAmount(sum);
+			}
 
 			nextProps.lastEdited = this.props.type;
 			nextProps[opposite] = (isNaN(sum) ? '...' : sum.toFixed(8));
 			nextProps['update'] = false;
 			this.props.updateAmounts(nextProps)
+		}
+	}
+
+	validateReceiveAmount(value) {
+		let selectedCoin = this.props.selectedCoin.present['receive'],
+			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
+
+		if (value < minAmount || isNaN(value)) {
+			this.props.errorAlert({
+				message: `Receive amount cannot be less than ${minAmount}`,
+				show: true
+			});
+		} else {
+			this.props.errorAlert({show: false});
 		}
 	}
 

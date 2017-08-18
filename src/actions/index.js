@@ -32,5 +32,10 @@ export function fetchPrice(pair) {
 }
 
 export function validateAmounts() {
-	
+
+
+	return {
+		type: 'VALIDATE_AMOUNTS',
+		payload: null
+	}
 }
