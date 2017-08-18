@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectCoin } from '../actions/index.js';
+import { selectCoin, updateAmounts, fetchPrice } from '../actions/index.js';
 
 class CoinSelector extends Component {
 
@@ -19,6 +19,13 @@ class CoinSelector extends Component {
 	selectCoin(coin) {
 		this.props.selectedCoin.present[this.props.type] = coin;
 		this.props.selectCoin(this.props.selectedCoin);
+
+		let nextProps = Object.assign({}, this.props.amounts);
+		nextProps['update'] = true;
+		nextProps['lastEdited'] = 'deposit';
+		this.props.updateAmounts(nextProps);
+
+		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
 
 		this.setState({
 			isDropdownVisible: false,
@@ -66,12 +73,17 @@ class CoinSelector extends Component {
 function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
-		coinsInfo: state.coinsInfo
+		coinsInfo: state.coinsInfo,
+		amounts: state.amounts
 	}
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ selectCoin: selectCoin }, dispatch)
+	return bindActionCreators({
+		selectCoin: selectCoin,
+		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice
+	}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinSelector);

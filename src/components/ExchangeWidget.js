@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import _ from 'lodash';
+
+import { fetchPrice, updateAmounts } from '../actions/index.js';
 
 import config from '../config';
 
@@ -20,17 +23,10 @@ class ExchangeWidget extends Component {
 			orderPlaced: false,
 			isConfirmEnabled: false,
 			loading: false,
-			depositAmount: 1,
 			receiveAmount: '...',
-			depositCoin: 'BTC',
-			receiveCoin: 'ETH',
-			depositCoinPrevious: 'BTC',
-			receiveCoinPrevious: 'ETH',
-			lastEdited: 'deposit',
 			receiveAddress: null,
 	  	};
-
-	  	this.updatePrices = this.updatePrices.bind(this);	  	  	
+	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);	
 	  	this.fetchMinDeposit = this.fetchMinDeposit.bind(this);	
@@ -39,22 +35,11 @@ class ExchangeWidget extends Component {
 	}
 
 	componentDidMount() {
-		// let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
-		// this.updatePrices(apiUrl);
-	}
-
-	componentDidUpdate() {
-		// if (this.state.depositCoin != this.state.depositCoinPrevious ||
-		// 	this.state.receiveCoin != this.state.receiveCoinPrevious) {
-		// 	let apiUrl = `${config.API_BASE_URL}/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
-		// 	this.setState({
-		// 		lastEdited: 'deposit',
-		// 		receiveCoinPrevious: this.state.receiveCoin,
-		// 		depositCoinPrevious: this.state.depositCoin
-		// 	}, () => {
-		// 		this.updatePrices(apiUrl);
-		// 	});
-		// }
+		let nextProps = Object.assign({}, this.props.amounts);
+		nextProps['update'] = true;
+		nextProps['lastEdited'] = 'deposit';
+		this.props.updateAmounts(nextProps);
+		this.props.fetchPrice('BTCETH');
 	}
 
 	fetchMinDeposit() {
@@ -80,43 +65,19 @@ class ExchangeWidget extends Component {
 		// 	});
 	}
 
-	updatePrices(apiUrl) {
-		axios.get(apiUrl)
-		.then((response) => {
-			let basePrice = response.data[0].ticker.ask;
-
-			if (this.state.lastEdited == 'deposit') {
-				let newAmount = parseFloat(this.state.depositAmount) * basePrice;
-
-				if (isNaN(newAmount))
-					newAmount = '...'
-
-				this.setState({receiveAmount: newAmount});
-			} else {
-				let newAmount = parseFloat(this.state.receiveAmount) * basePrice;
-
-				if (isNaN(newAmount))
-					newAmount = '...'
-
-				this.setState({depositAmount: newAmount});
-			}
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-	}
-
 	placeOrder() {
 		this.setState({loading: true});
+
+		console.log(this.props);
 
 		axios({
 			method: 'post',
 			url: `${config.API_BASE_URL}/orders/`,
 			data: {
-				"amount_base": this.state.receiveAmount,
+				"amount_base": this.props.amounts.receive,
 				"is_default_rule": true,
 				"pair": {
-					"name": `${this.state.receiveCoin}${this.state.depositCoin}`
+					"name": `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`
 				},
 				"withdraw_address": {
 					"address": this.state.receiveAddress,
@@ -126,6 +87,8 @@ class ExchangeWidget extends Component {
 	        contentType : "application/json"
 		})
 		.then((response) => {
+			console.log(response);
+
 			this.setState({
 				orderRef: response.data.unique_reference,
 				orderPlaced: true,
@@ -134,23 +97,6 @@ class ExchangeWidget extends Component {
 		})
 		.catch((error) => {
 			console.log(error);
-		});
-	}
-	
-	handleChange(event) {
-	    let lastEdited = event.target.name,
-	    	apiUrl = config.API_BASE_URL,
-	    	newState = {lastEdited: lastEdited};
-
-	    newState[`${lastEdited}Amount`] = event.target.value;
-
-	    if (lastEdited == 'receive')
-	    	apiUrl += `/price/${this.state.receiveCoin}${this.state.depositCoin}/latest/`;
-	    else
-	    	apiUrl += `/price/${this.state.depositCoin}${this.state.receiveCoin}/latest/`;
-
-		this.setState(newState, () => {
-			this.updatePrices(apiUrl);
 		});
 	}
 
@@ -176,7 +122,7 @@ class ExchangeWidget extends Component {
 
 				{this.state.exchangeProceeded ?
 					<div className="col-xs-12">
-						<WalletAddress coin={this.state.receiveCoin} toggleConfirm={this.toggleConfirm} />
+						<WalletAddress coin={this.props.selectedCoin.present.receive} toggleConfirm={this.toggleConfirm} />
 					</div> : null
 				}
 
@@ -201,8 +147,16 @@ class ExchangeWidget extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selectedCoin: state.selectedCoin
+		selectedCoin: state.selectedCoin,
+		amounts: state.amounts
 	}
 }
 
-export default connect(mapStateToProps)(ExchangeWidget);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice
+	}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExchangeWidget);
