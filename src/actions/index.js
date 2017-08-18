@@ -1,4 +1,5 @@
 import axios from 'axios';
+import config from '../config';
 
 export function errorAlert(error) {
 	return {
@@ -22,7 +23,7 @@ export function updateAmounts(amount) {
 }
 
 export function fetchPrice(pair) {
-	const url = `https://nexchange.io/en/api/v1/price/${pair}/latest/`;
+	const url = `${config.API_BASE_URL}/price/${pair}/latest/`;
 	const request = axios.get(url);
 
 	return {

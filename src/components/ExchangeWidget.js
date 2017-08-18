@@ -77,8 +77,9 @@ class ExchangeWidget extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.state.exchangeProceeded)
+		if (this.state.exchangeProceeded && nextProps.error.type == 'INVALID_AMOUNT') {
 			this.setState({exchangeProceeded: !nextProps.error.show})
+		}
 	}
 
 	render() {

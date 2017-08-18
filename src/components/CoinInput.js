@@ -63,7 +63,8 @@ class CoinInput extends Component {
 		if (value < minAmount || isNaN(value)) {
 			this.props.errorAlert({
 				message: `Receive amount cannot be less than ${minAmount}`,
-				show: true
+				show: true,
+				type: 'INVALID_AMOUNT'
 			});
 		} else {
 			this.props.errorAlert({show: false});

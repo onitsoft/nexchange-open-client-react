@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { errorAlert } from '../actions/index.js';
 
 
 class WalletAddress extends Component {
@@ -23,7 +26,14 @@ class WalletAddress extends Component {
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        return rules[this.props.selectedCoin.present.receive].test(this.state.address);
+        let isValid = rules[this.props.selectedCoin.present.receive].test(this.state.address);
+
+        if (!isValid) 
+        	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.present.receive} wallet address.`});
+        else
+        	this.props.errorAlert({Show: false});
+
+        return isValid;
     }
 
     onChange(event) {
@@ -55,4 +65,10 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(WalletAddress);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		errorAlert: errorAlert,
+	}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WalletAddress);
