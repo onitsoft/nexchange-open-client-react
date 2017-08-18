@@ -58,12 +58,7 @@ class CoinSelector extends Component {
 					{this.state.selectedCoin} <i className={`coin-icon ${this.state.selectedCoin}`}></i>
 				</div>
 
-				{this.state.isDropdownVisible ? 
-					<div className="coin-currency-dropdown">
-						{coins}
-					</div> :
-					null
-				}
+				{this.state.isDropdownVisible ? <div className="coin-currency-dropdown">{coins}</div> : null}
 			</div>
 		);
 	}

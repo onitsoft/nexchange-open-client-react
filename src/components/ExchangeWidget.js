@@ -23,52 +23,24 @@ class ExchangeWidget extends Component {
 			orderPlaced: false,
 			isConfirmEnabled: false,
 			loading: false,
-			receiveAmount: '...',
 			receiveAddress: null,
 	  	};
 	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
-	  	this.placeOrder = this.placeOrder.bind(this);	
-	  	this.fetchMinDeposit = this.fetchMinDeposit.bind(this);	
-
-	  	this.fetchMinDeposit();
+	  	this.placeOrder = this.placeOrder.bind(this);
 	}
 
 	componentDidMount() {
 		let nextProps = Object.assign({}, this.props.amounts);
 		nextProps['update'] = true;
 		nextProps['lastEdited'] = 'deposit';
+
 		this.props.updateAmounts(nextProps);
 		this.props.fetchPrice('BTCETH');
 	}
 
-	fetchMinDeposit() {
-		// axios.get(`${config.API_BASE_URL}/currency`)
-		// 	.then(response => {
-		// 		let BTC = _.find(response.data, {code: 'BTC'}),
-		// 			ETH = _.find(response.data, {code: 'ETH'}),
-		// 			LTC = _.find(response.data, {code: 'LTC'}),
-		// 			minBTC = parseFloat(BTC.minimal_amount),
-		// 			minETH = parseFloat(ETH.minimal_amount),
-		// 			minLTC = parseFloat(LTC.minimal_amount);
-
-		// 		this.setState({
-		// 			minDepositAmounts: {
-		// 				'BTC': minBTC,
-		// 				'ETH': minETH,
-		// 				'LTC': minLTC
-		// 			}
-		// 		})
-		// 	})
-		// 	.catch(error => {
-
-		// 	});
-	}
-
 	placeOrder() {
 		this.setState({loading: true});
-
-		console.log(this.props);
 
 		axios({
 			method: 'post',
@@ -87,8 +59,6 @@ class ExchangeWidget extends Component {
 	        contentType : "application/json"
 		})
 		.then((response) => {
-			console.log(response);
-
 			this.setState({
 				orderRef: response.data.unique_reference,
 				orderPlaced: true,
@@ -104,6 +74,11 @@ class ExchangeWidget extends Component {
 		// TODO: this should be refactored to Redux as now
 		// isConfirmEnabled is passed from child
 		this.setState({isConfirmEnabled: isConfirmEnabled, receiveAddress: address});
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (this.state.exchangeProceeded)
+			this.setState({exchangeProceeded: !nextProps.error.show})
 	}
 
 	render() {
@@ -122,19 +97,18 @@ class ExchangeWidget extends Component {
 
 				{this.state.exchangeProceeded ?
 					<div className="col-xs-12">
-						<WalletAddress coin={this.props.selectedCoin.present.receive} toggleConfirm={this.toggleConfirm} />
+						<WalletAddress toggleConfirm={this.toggleConfirm} />
 					</div> : null
 				}
 
 				<div className="col-xs-12 text-center">
 					{!this.state.exchangeProceeded ? (
-						<button className="btn btn-block btn-success" onClick={() => this.setState({exchangeProceeded: true})}>
+						<button className="btn btn-block btn-success" onClick={() => this.setState({exchangeProceeded: true})} disabled={this.props.error.show ? 'disabled' : null}>
 							Get Started !
 						</button>
 					) : (
 						<button className="btn btn-block btn-warning" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
 							Confirm & Place Order
-
 							{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 						</button>
 					)}
@@ -148,14 +122,15 @@ class ExchangeWidget extends Component {
 function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
-		amounts: state.amounts
+		amounts: state.amounts,
+		error: state.error,
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		updateAmounts: updateAmounts,
-		fetchPrice: fetchPrice
+		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 

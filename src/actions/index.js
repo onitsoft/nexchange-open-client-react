@@ -30,12 +30,3 @@ export function fetchPrice(pair) {
 		payload: request
 	}
 }
-
-export function validateAmounts() {
-
-
-	return {
-		type: 'VALIDATE_AMOUNTS',
-		payload: null
-	}
-}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class WalletAddress extends Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,7 +23,7 @@ class WalletAddress extends Component {
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        return rules[this.props.coin].test(this.state.address);
+        return rules[this.props.selectedCoin.present.receive].test(this.state.address);
     }
 
     onChange(event) {
@@ -32,14 +33,26 @@ class WalletAddress extends Component {
     	});
     }
 
+    componentWillReceiveProps(nextProps) {
+    	let isWalletAddressValid = this.validateWalletAddress();
+    	this.props.toggleConfirm(this.state.address, isWalletAddressValid);
+    }
+
 	render() {
 		return (
 			<div className="form-group label-floating has-warning">
-				<label htmlFor="withdraw-addr" className="control-label">Your {this.props.coin} Address</label>
+				<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
 				<input type="text" ref={(input) => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.address} />
 			</div>
 		);
 	}
 }
 
-export default WalletAddress;
+
+function mapStateToProps(state) {
+	return {
+		selectedCoin: state.selectedCoin,
+	}
+}
+
+export default connect(mapStateToProps)(WalletAddress);

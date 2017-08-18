@@ -11,7 +11,6 @@ const rootReducer = combineReducers({
 	selectedCoin: SelectedCoinReducer,
 	coinsInfo: CoinsInfoReducer,
 	price: PriceReducer,
-
 });
 
 export default rootReducer;
