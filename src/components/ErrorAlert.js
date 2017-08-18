@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {Icon} from 'react-fa';
+import { Icon } from 'react-fa';
 
 import FAQ from './FAQ';
 import Support from './Support';
@@ -9,22 +10,8 @@ import '../css/components/Header.scss';
 
 
 class ErrorAlert extends Component {
-	constructor(props) {
-		super();
-
-		this.state = {
-			show: false,
-			message: null
-		}
-	}
-
-	componentWillUpdate(newProps) {
-		if (this.state.message != newProps.data.message)
-			this.setState(newProps.data)
-	}
-
 	render() {
-		if (!this.state.show) return null;
+		if (!this.props.error.show) return null;
 
 	    return (
 			<div className="alert alert-warning">
@@ -35,11 +22,18 @@ class ErrorAlert extends Component {
 					<button type="button" className="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true"><i className="material-icons">clear</i></span>
 					</button>
-				     <b>Error Alert:</b> {this.state.message}
+				     <b>Error Alert:</b> {this.props.error.message}
 				</div>
 			</div>
 	    );
 	}
 }
 
-export default ErrorAlert;
+
+function mapStateToProps(state) {
+	return {
+		error: state.error
+	}
+}
+
+export default connect(mapStateToProps)(ErrorAlert);

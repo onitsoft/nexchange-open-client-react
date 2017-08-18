@@ -30,7 +30,6 @@ class ExchangeWidget extends Component {
 			receiveAddress: null,
 	  	};
 
-	  	this.handleChange = this.handleChange.bind(this);  	
 	  	this.updatePrices = this.updatePrices.bind(this);	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);	
@@ -168,11 +167,11 @@ class ExchangeWidget extends Component {
 		return (
 			<div>
 				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="deposit" onChange={this.handleChange} selectedCoin={this.state.depositCoin} minDepositAmounts={this.state.minDepositAmounts} value={this.state.depositAmount} />
+					<CoinInput type="deposit" />
 				</div>
 
 				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="receive" onChange={this.handleChange} selectedCoin={this.state.receiveCoin} value={this.state.receiveAmount} />
+					<CoinInput type="receive" />
 				</div>
 
 				{this.state.exchangeProceeded ?

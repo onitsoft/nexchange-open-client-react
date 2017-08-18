@@ -10,7 +10,7 @@ let initialState = {
 }
 
 export default (state = initialState, action) => {
-	if (action.payload && action.payload.present.deposit == action.payload.present.receive) {
+	if (action.type='COIN_SELECTED' && action.payload && action.payload.deposit && action.payload.present.deposit == action.payload.present.receive) {
 		action.payload.present.deposit = action.payload.past.receive;
 		action.payload.present.receive = action.payload.past.deposit;
 

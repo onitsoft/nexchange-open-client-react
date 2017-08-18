@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import _ from 'lodash';
 
 import { errorAlert } from '../actions/index.js';
 
@@ -13,38 +14,46 @@ class CoinInput extends Component {
 		super(props);
 
 		this.state = {
-			minDepositAmounts: this.props.minDepositAmounts
+			value: (this.props.type == 'deposit' ? 1 : '...')
 		}
 
 		this.onChange = this.onChange.bind(this);
 	}
-
-	// componentDidMount() {
-	// 	setTimeout(() => {
-	// 		this.props.errorAlert({
-	// 			message: 'Blah blah blah',
-	// 			show: true
-	// 		});
-	// 	}, 2000);
-	// }
 	
 	onChange(event) {
-		let value = event.target.value;
+		let value = event.target.value,
+			selectedCoin = this.props.selectedCoin.present[this.props.type],
+			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
 
-		console.log("ON CHANGE!!!")
+		if (value < minAmount) {
+			this.props.errorAlert({
+				message: `Deposit amoount cannot be less than ${minAmount}`,
+				show: true
+			});
+		} else {
+			this.props.errorAlert({show: false});
+		}
 
-		this.props.onChange(event);
+		this.setState({value: value})
 	}
 
 	render() {
 		return (
 		  <div className="form-group label-floating has-success">
 		    <label htmlFor={this.props.type} className="control-label">{this.props.type}</label>
-		    <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} value={this.props.value} onChange={this.onChange} />
+		    <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} value={this.state.value} onChange={this.onChange} />
 
-		    <CoinSelector selectedCoin={this.props.selectedCoin} type={this.props.type} onCoinSelect={this.props.onCoinSelect} />
+		    <CoinSelector type={this.props.type} />
 		  </div>
 		);
+	}
+}
+
+
+function mapStateToProps(state) {
+	return {
+		selectedCoin: state.selectedCoin,
+		coinsInfo: state.coinsInfo
 	}
 }
 
@@ -52,4 +61,4 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({ errorAlert: errorAlert }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CoinInput);
+export default connect(mapStateToProps, mapDispatchToProps)(CoinInput);

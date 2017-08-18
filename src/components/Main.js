@@ -9,7 +9,7 @@ class Main extends Component {
 	render() {
 	    return (
 			<div id="main" className="header">
-				<ErrorAlert data={this.props.error} />
+				<ErrorAlert />
 
 				<div className="container">
 					<div className="row">
@@ -28,10 +28,4 @@ class Main extends Component {
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		error: state.error
-	}
-}
-
-export default connect(mapStateToProps)(Main);
+export default Main;

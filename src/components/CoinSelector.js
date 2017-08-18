@@ -18,7 +18,6 @@ class CoinSelector extends Component {
 
 	selectCoin(coin) {
 		this.props.selectedCoin.present[this.props.type] = coin;
-
 		this.props.selectCoin(this.props.selectedCoin);
 
 		this.setState({
@@ -66,7 +65,6 @@ class CoinSelector extends Component {
 
 function mapStateToProps(state) {
 	return {
-		minDeposit: state.minDeposit,
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo
 	}
