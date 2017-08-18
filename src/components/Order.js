@@ -25,6 +25,7 @@ class Order extends Component {
 			receiveAmount: '...',
 			receiveCoin: '...',
 			receiveAddress: '...',
+			orderStatus: 1,
 			timerClassName: 'success'
 		};
 
@@ -76,7 +77,8 @@ class Order extends Component {
 					receiveAmount: parseFloat(data.amount_base),
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
-					createdOn: data.created_on
+					createdOn: data.created_on,
+					orderStatus: data.status_name[0][0]
 				})
 			})
 			.catch((error) => {
@@ -103,7 +105,7 @@ class Order extends Component {
 					    <div className="col-xs-12 col-sm-6">
 					    	<div className="box media">
 					    		<div className="media-left">
-					    			<i className={`coin-icon BTC`}></i>
+					    			<i className={`coin-icon ${this.state.depositCoin}`}></i>
 					    		</div>
 
 					    		<div className="media-body">
@@ -116,11 +118,11 @@ class Order extends Component {
 					    <div className="col-xs-12 col-sm-6">
 					    	<div className="box media">
 					    		<div className="media-left">
-					    			<i className={`coin-icon ETH`}></i>
+					    			<i className={`coin-icon ${this.state.receiveCoin}`}></i>
 					    		</div>
 
 					    		<div className="media-body">
-						    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin} </b></h5>
+						    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
 						    		<h6>{this.state.receiveAddress}</h6>
 					    		</div>
 					    	</div>
@@ -155,7 +157,7 @@ class Order extends Component {
 
 					    		<div className="row">
 					    			<div className="col-xs-12">
-						    			<OrderStatus />
+						    			<OrderStatus status={this.state.orderStatus} />
 					    			</div>
 					    		</div>
 
