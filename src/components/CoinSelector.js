@@ -14,8 +14,6 @@ class CoinSelector extends Component {
 		}
 
     	this.selectCoin = this.selectCoin.bind(this);
-
-    	console.log("OLD PROPS", this.props);
 	}
 
 	selectCoin(coin) {
