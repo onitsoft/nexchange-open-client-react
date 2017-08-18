@@ -28,6 +28,7 @@ class ExchangeWidget extends Component {
 	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);
+	  	this.fetchPrice = this.fetchPrice.bind(this);
 	}
 
 	componentDidMount() {
@@ -37,9 +38,13 @@ class ExchangeWidget extends Component {
 
 		this.props.updateAmounts(nextProps);
 		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+		this.fetchPrice();
+	}
 
-    	setInterval(() => {
+	fetchPrice() {
+    	setTimeout(() => {
     		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+    		this.fetchPrice();
     	}, config.PRICE_FETCH_INTERVAL);
 	}
 
