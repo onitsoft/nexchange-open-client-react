@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import CopyToClipboard from 'react-copy-to-clipboard';
 
 import config from '../config';
 
+import OrderPayment from './OrderPayment';
 import OrderStatus from './OrderStatus';
+import OrderExpired from './OrderExpired';
 
-
-import { Container } from 'react-bootstrap';
 
 class Order extends Component {
 
@@ -26,7 +25,8 @@ class Order extends Component {
 			receiveCoin: '...',
 			receiveAddress: '...',
 			orderStatus: 1,
-			timerClassName: 'success'
+			timerClassName: 'success',
+			orderExpired: false
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -55,10 +55,13 @@ class Order extends Component {
 		else if (diff < 362930)
 			this.setState({timerClassName: 'warning'});
 
-		if (diff < 0)
-			diff = 'ORDER EXPIRED'
-		else
+		if (diff < 0) {
+			this.setState({orderExpired: true});
+			clearInterval(this.interval);
+			return;
+		} else {
 			diff = moment.utc(diff).format('mm:ss')
+		}
 
 		this.setState({
 			timeRemaining: diff
@@ -84,21 +87,6 @@ class Order extends Component {
 			.catch((error) => {
 				console.log(error);
 			});
-	}
-
-	triggerCopyTooltip() {
-		$('#copy-to-clipboard').tooltip({
-			trigger: 'click',
-			placement: 'top'
-		});
-
-		$('#copy-to-clipboard').tooltip('hide')
-			.attr('data-original-title', 'Wallet address copied!')
-			.tooltip('show');
-
-		setTimeout(() => {
-			$('#copy-to-clipboard').tooltip('destroy');
-		}, 1000);
 	}
 
 	render() {
@@ -138,27 +126,14 @@ class Order extends Component {
 					    	</div>
 					    </div>
 
-					    <div id="order-payment" className="col-xs-12">
+
+					    <div  className="col-xs-12">
 					    	<div className="box">
-					    		<div className="row">
-					    			<div className="col-xs-12 col-sm-3">
-					    				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=bitcoin:1KTFHHwtdNmGrbY5MfWhtswpG9tuxZwwoA?amount=0.0363" />
-					    			</div>
-
-					    			<div id="order-payment-details" className="col-xs-12 col-sm-9">
-					    				<h3>Time remaining: <span className="text-success"><b>{this.state.timeRemaining}</b></span></h3>
-
-					    				<h4>Send <b>{this.state.depositAmount} {this.state.depositCoin}</b> to the address<br/>
-					    					<b id="deposit-address">{this.state.depositAddress}</b>
-					    				</h4>
-
-								        <CopyToClipboard text={this.state.depositAddress}
-								          onCopy={() => this.triggerCopyTooltip()}>
-											<button id="copy-to-clipboard" type="button" className="btn btn-default">
-												Copy the address
-											</button>
-					    				</CopyToClipboard>
-					    			</div>
+						    		<div className="row">
+								    {this.state.orderExpired ? 
+								    	<OrderExpired /> :
+								    	<OrderPayment depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
+								    }
 					    		</div>
 
 					    		<div className="row">
