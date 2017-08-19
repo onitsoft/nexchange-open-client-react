@@ -4,9 +4,8 @@
 @import 'main';
 @import 'icons';
 
-p { font-size: 16px; line-height: 1.5em; }
+p { font-size: 19px; line-height: 1.5em; }
 img { max-width: 100%; }
-.control-label { text-transform:capitalize; }
 a:hover { text-decoration: none; }
 #header {
 	.navbar-header { padding-bottom: 10px; }
@@ -24,6 +23,11 @@ a:hover { text-decoration: none; }
 	.fa { position: relative; top: -2px; }
 }
 
+#main {
+	.form-group label.control-label { font-size: 13px; text-transform: capitalize; }
+	input { font-size: 17px; }
+}
+
 #order { background: #f8f7f8; padding: 15px 0;
 	#order-ref { margin-bottom: 15px; }
 	.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
@@ -35,8 +39,9 @@ a:hover { text-decoration: none; }
 }
 
 #order-payment { text-align: center;
+	h3, h4 { font-size: 20px;}
 	#deposit-address { word-wrap: break-word; }
-	img { margin-top: -15px;
+	img { margin-top: -15px; max-width: 150px;
 		@media (min-width: $screen-sm-min) { margin-top: -7px; }
 	}
 	#order-payment-details {
@@ -47,15 +52,22 @@ a:hover { text-decoration: none; }
 	}
 	.box { padding-bottom: 5px; }
 
-	@media (min-width: $screen-sm-min) { text-align: left; }
+	@media (min-width: $screen-sm-min) { text-align: left;
+		img { max-width: 100%; }
+		h3 { font-size: 24px; }
+	}
 }
 
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
-	h3:first-child { margin-top: 0; }
 	h3 { margin-top: 35px; }
+	h3:first-child { margin-top: 0; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
+#faq-modal {
+	p { font-size: 16px; }
+	.modal-header { position: absolute; top: 0; right: 0; z-index: 1; }
+}
 
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }
@@ -63,7 +75,9 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #order-status { padding: 0 0 5px 0; overflow: hidden;
 	.step { float: left; width: 100%; text-align: left; // 
 		// h4 { background: #fff; padding: 0 15px; text-transform: uppercase; font-size: 16px; font-weight: 500; }
-		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777777; } // font-size: 14px;]
+		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777777;
+
+		} // font-size: 14px;]
 		&.active h4 {
 			-webkit-animation: color-change 1s infinite alternate;
 			-moz-animation: color-change 1s infinite alternate;
@@ -71,10 +85,7 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 			-o-animation: color-change 1s infinite alternate;
 			animation: color-change 1s infinite alternate;
 		}
-
-		&.done h4 {
-			color: #5cb85c;
-		}
+		&.done h4 { color: #5cb85c; }
 
 		@media (min-width: 480px) { text-align: center; }
 		@media (min-width: $screen-sm-min) { width: 33.33%; }

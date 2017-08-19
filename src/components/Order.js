@@ -71,8 +71,6 @@ class Order extends Component {
 			.then((response) => {
 				let data = response.data;
 
-				console.log('newData', data, this.props.match.params.orderRef);
-
 				this.setState({
 					loading: false,
 					depositAmount: parseFloat(data.amount_quote),

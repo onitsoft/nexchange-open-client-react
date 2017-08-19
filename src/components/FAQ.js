@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Icon} from 'react-fa';
-import { Button, Modal, Overflowing, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 class FAQ extends Component {
   constructor(props) {
@@ -23,12 +22,11 @@ class FAQ extends Component {
   render() {
     return (
       <Modal show={this.state.showModal} onHide={this.props.onClose} >
-        <div className="modal-content">
+        <div id="faq-modal" className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className="modal-title">FAQ</h4>
           </div>
 
           <div className="modal-body">
@@ -37,9 +35,7 @@ class FAQ extends Component {
             <p>Our customer support phone number is +442081442192.</p>
 
             <h3>What do you do?</h3>
-            <p>We allow you to exchange one cryptocurrency for another.</p>
-            <p>Currently, we support Bitcoin (BTC), Ethereum (ETC) and Litecoin (LTC).</p>
-            <p>We will be adding more currencies very soon, stay tuned!</p>
+            <p>We allow you to exchange one cryptocurrency for another. Currently, we support Bitcoin (BTC), Ethereum (ETC) and Litecoin (LTC). We will be adding more currencies very soon, stay tuned!</p>
             <p>Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>.</p>
 
             <h3>What is your fee?</h3>
