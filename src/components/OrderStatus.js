@@ -8,15 +8,15 @@ class OrderStatus extends Component {
       	<hr/>
       	
     		<div id="step-one" className={(this.props.status > 1 || this.props.status == -1) ? "step done" : "step active"}>
-    			<h4>1. Awaiting deposit {this.props.status > 1 || this.props.status == -1 ? <i className="fa fa-check" aria-hidden="true"></i> : <i className="fa fa-clock-o" aria-hidden="true"></i>}</h4>
+    			<h4>1. Awaiting deposit {this.props.status > 1 || this.props.status == -1 ? <i className="fa fa-check"></i> : <i className="fa fa-clock-o"></i>}</h4>
     		</div>
 
      		<div id="step-two" className={this.props.status == -1 ? "step active" : (this.props.status >= 2 ? "step done" : "step")}>
-    			<h4>2. Awaiting confirmations {this.props.status == -1 ? "step active" : (this.props.status >= 2 ? <i className="fa fa-check" aria-hidden="true"></i> : <i className="fa fa-clock-o" aria-hidden="true"></i>)}</h4> 
+    			<h4>2. Awaiting confirmations {this.props.status == -1 ? <i className="fa fa-clock-o"></i> : (this.props.status >= 2 ? <i className="fa fa-check"></i> : <i className="fa fa-clock-o"></i>)}</h4> 
     		</div>
     		
     		<div id="step-three" className={this.props.status >= 2 ? "step active" : "step"}>
-    			<h4>3. All done {this.props.status >= 2 ? <i className="fa fa-check" aria-hidden="true"></i> : <i className="fa fa-clock-o" aria-hidden="true"></i>}</h4>
+    			<h4>3. All done {this.props.status < 2 ? <i className="fa fa-clock-o"></i> : (this.props.status > 2 ? <i className="fa fa-check"></i> : <i className="fa fa-clock-o"></i>)}</h4>
     		</div>
       </div>
     );

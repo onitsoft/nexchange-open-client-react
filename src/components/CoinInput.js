@@ -26,6 +26,7 @@ class CoinInput extends Component {
 		this.validateReceiveAmount(value);
 
 		let nextProps = Object.assign({}, this.props.amounts);
+		let oppositeType = (this.props.type == 'deposit' ? 'receive' : 'deposit');
 		nextProps.lastEdited = this.props.type;
 		nextProps[this.props.type] = value;
 		nextProps.update = true;

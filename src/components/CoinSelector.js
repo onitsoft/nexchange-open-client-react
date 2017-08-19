@@ -17,8 +17,9 @@ class CoinSelector extends Component {
 	}
 
 	selectCoin(coin) {
-		this.props.selectedCoin.present[this.props.type] = coin;
-		this.props.selectCoin(this.props.selectedCoin);
+		let newSelectedCoinProps = Object.assign({}, this.props.selectedCoin);
+		newSelectedCoinProps.present[this.props.type] = coin;
+		this.props.selectCoin(newSelectedCoinProps);
 
 		let nextProps = Object.assign({}, this.props.amounts);
 		nextProps['update'] = true;

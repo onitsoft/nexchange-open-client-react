@@ -62,9 +62,10 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #support-form { margin-top: 15px; }
 
 #order-status { padding: 0 0 15px 0; overflow: hidden;
-	.step { float: left; width: 33.33%; text-align: center;
-		h4 { background: #fff; padding: 0 15px; text-transform: uppercase; font-size: 16px; font-weight: 500; }
-		&.active {
+	.step { float: left; width: 100%; text-align: left; // 
+		// h4 { background: #fff; padding: 0 15px; text-transform: uppercase; font-size: 16px; font-weight: 500; }
+		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777777; } // font-size: 14px;]
+		&.active h4 {
 			-webkit-animation: color-change 1s infinite alternate;
 			-moz-animation: color-change 1s infinite alternate;
 			-ms-animation: color-change 1s infinite alternate;
@@ -72,9 +73,12 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 			animation: color-change 1s infinite alternate;
 		}
 
-		&.done {
+		&.done h4 {
 			color: #5cb85c;
 		}
+
+		@media (min-width: 480px) { text-align: center; }
+		@media (min-width: $screen-sm-min) { width: 33.33%; }
 	}
 }
 
