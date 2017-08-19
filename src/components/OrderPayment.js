@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Icon} from 'react-fa';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+import OrderExpired from './OrderExpired';
+
 
 class OrderPayment extends Component {
 	constructor(props) {
@@ -24,6 +26,9 @@ class OrderPayment extends Component {
 	}
 
 	render() {
+		if (this.props.expired)
+			return <OrderExpired />;
+
 	    return (
 	    	<div id="order-payment">
     			<div className="col-xs-12 col-sm-3">

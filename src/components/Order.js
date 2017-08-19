@@ -6,7 +6,6 @@ import config from '../config';
 
 import OrderPayment from './OrderPayment';
 import OrderStatus from './OrderStatus';
-import OrderExpired from './OrderExpired';
 
 
 class Order extends Component {
@@ -26,21 +25,20 @@ class Order extends Component {
 			receiveAddress: '...',
 			orderStatus: 1,
 			timerClassName: 'success',
-			orderExpired: false
+			expired: false,
+			loading: true
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
 		this.tick = this.tick.bind(this);
 	}
 
-	componentDidMount() {
-		this.interval = setInterval(this.tick, 1000);
-		this.tick();
-		this.getOrderDetails();
-	}
-
 	componentWillUnmount() {
 		clearInterval(this.interval);
+	}
+
+	componentDidMount() {
+		this.getOrderDetails();
 	}
 
 	tick() {
@@ -56,7 +54,7 @@ class Order extends Component {
 			this.setState({timerClassName: 'warning'});
 
 		if (diff < 0) {
-			this.setState({orderExpired: true});
+			this.setState({expired: true});
 			clearInterval(this.interval);
 			return;
 		} else {
@@ -73,7 +71,10 @@ class Order extends Component {
 			.then((response) => {
 				let data = response.data;
 
+				console.log('newData', data, this.props.match.params.orderRef);
+
 				this.setState({
+					loading: false,
 					depositAmount: parseFloat(data.amount_quote),
 					depositCoin: data.deposit_address.currency_code,
 					depositAddress: data.deposit_address.address,
@@ -81,12 +82,22 @@ class Order extends Component {
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on,
-					orderStatus: data.status_name[0][0]
+					orderStatus: data.status_name[0][0],
+				}, () => {
+					this.interval = setInterval(this.tick, 1000);
+					this.tick();
 				})
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.location !== prevProps.location) {
+			this.getOrderDetails();
+			clearInterval(this.interval);
+		}
 	}
 
 	render() {
@@ -130,10 +141,11 @@ class Order extends Component {
 					    <div  className="col-xs-12">
 					    	<div className="box">
 						    		<div className="row">
-								    {this.state.orderExpired ? 
-								    	<OrderExpired /> :
-								    	<OrderPayment depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
-								    }
+						    		{this.state.loading ?
+						    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
+						    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
+						    		}
+
 					    		</div>
 
 					    		<div className="row">
