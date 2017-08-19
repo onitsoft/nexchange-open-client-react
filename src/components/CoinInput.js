@@ -41,7 +41,7 @@ class CoinInput extends Component {
 				type: 'INVALID_AMOUNT'
 			});
 		} else {
-			this.props.errorAlert({show: false});
+			this.props.errorAlert({show: false, type: 'INVALID_AMOUNT'});
 		}
 	}
 

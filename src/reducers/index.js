@@ -10,7 +10,6 @@ const rootReducer = combineReducers({
 	amounts: UpdateAmountsReducer,
 	selectedCoin: SelectedCoinReducer,
 	coinsInfo: CoinsInfoReducer,
-	price: PriceReducer,
 });
 
 export default rootReducer;

@@ -19,14 +19,16 @@ class WalletAddress extends Component {
 		this.nameInput.focus(); 
 	}
 
-    validateWalletAddress() {
+    validateWalletAddress(coin = this.props.selectedCoin.present.receive) {
         let rules = {
             BTC: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/,
             LTC: /^L[1-9A-Za-z]{25,34}$/,
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        let isValid = rules[this.props.selectedCoin.present.receive].test(this.state.address);
+        let isValid = rules[coin].test(this.state.address);
+
+        console.log("IS VALID", isValid);
 
         if (!isValid) 
         	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.present.receive} wallet address.`});
@@ -44,7 +46,7 @@ class WalletAddress extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-    	let isWalletAddressValid = this.validateWalletAddress();
+    	let isWalletAddressValid = this.validateWalletAddress(nextProps.selectedCoin.present.receive);
     	this.props.toggleConfirm(this.state.address, isWalletAddressValid);
     }
 

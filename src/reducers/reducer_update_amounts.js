@@ -28,19 +28,6 @@ export default (state = initialState, action) => {
 		if (action.payload.useNewPrice == true) {
 			newState['ask'] = parseFloat(action.payload.ask);
 		} else {
-			// let opposite = (action.payload.lastEdited == 'receive' ? 'deposit' : 'receive'),
-			// 	sum = parseFloat(nextProps.receive) * ask;
-
-			// if (this.props.type == 'receive') {
-				
-			// } else {
-			// 	this.validateReceiveAmount(sum);
-			// }
-
-			// nextProps.lastEdited = this.props.type;
-			// nextProps[opposite] = (isNaN(sum) ? '...' : sum.toFixed(8));
-			// nextProps['update'] = false;
-			// this.props.updateAmounts(nextProps)
 
 		}
 
@@ -49,11 +36,6 @@ export default (state = initialState, action) => {
 
 		return newState;
 	}
-
-	// switch(action.type) {
-	// case 'UPDATE_AMOUNTS':
-	// 	return action.payload
-	// }
 
 	return state
 }
