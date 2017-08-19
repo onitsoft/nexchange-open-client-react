@@ -31,21 +31,8 @@ class ExchangeWidget extends Component {
 	}
 
 	componentDidMount() {
-		// let nextProps = Object.assign({}, this.props.amounts);
-		// nextProps['update'] = true;
-		// nextProps['lastEdited'] = 'deposit';
-
-		// this.props.updateAmounts(nextProps);
-		// this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
-		// this.fetchPrice();
+		this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, useNewPrice: true, lastEdited: 'deposit'});
 	}
-
-	// fetchPrice() {
- //    	setTimeout(() => {
- //    		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
- //    		this.fetchPrice();
- //    	}, config.PRICE_FETCH_INTERVAL);
-	// }
 
 	placeOrder() {
 		this.setState({loading: true});
