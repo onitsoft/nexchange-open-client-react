@@ -13,44 +13,41 @@ class CoinInput extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			value: this.props.amounts[this.props.type]
-		}
+		// this.state = {
+		// 	value: this.props.amounts[this.props.type]
+		// }
 
 		this.onChange = this.onChange.bind(this);
 	}
 	
 	onChange(event) {
-		let value = event.target.value;
-
-		//this.validateReceiveAmount(value);
-
-		// let nextProps = Object.assign({}, this.props.amounts);
-		// let oppositeType = (this.props.type == 'deposit' ? 'receive' : 'deposit');
-		// nextProps.lastEdited = this.props.type;
-		// nextProps[this.props.type] = value;
-		// nextProps.update = true;
-		// this.props.updateAmounts(nextProps)
+		let value = event.target.value,
+			pair = `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`;
 
 		if (this.props.type == 'receive')
-			this.props.updateAmounts({pair: `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
-		else
-			this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
+			pair = `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`
+
+		this.props.updateAmounts({pair: pair, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
 	}
 
 	validateReceiveAmount(value) {
-	// 	let selectedCoin = this.props.selectedCoin.present['receive'],
-	// 		minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
+		let selectedCoin = this.props.selectedCoin.present['receive'],
+			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
 
-	// 	if (value < minAmount || isNaN(value)) {
-	// 		this.props.errorAlert({
-	// 			message: `Receive amount cannot be less than ${minAmount}`,
-	// 			show: true,
-	// 			type: 'INVALID_AMOUNT'
-	// 		});
-	// 	} else {
-	// 		this.props.errorAlert({show: false});
-	// 	}
+		if (value < minAmount || isNaN(value)) {
+			this.props.errorAlert({
+				message: `Receive amount cannot be less than ${minAmount}`,
+				show: true,
+				type: 'INVALID_AMOUNT'
+			});
+		} else {
+			this.props.errorAlert({show: false});
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type])
+			this.validateReceiveAmount(nextProps.amounts.receive)
 	}
 
 	render() {

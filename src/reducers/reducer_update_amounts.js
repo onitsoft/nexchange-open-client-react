@@ -22,13 +22,11 @@ export default (state = initialState, action) => {
 		if (action.payload.amount)
 			newState[action.payload.lastEdited] = action.payload.amount;
 
-		newState[opposite] = sum;
+		newState[opposite] = sum.toFixed(8);
 
 
 		if (action.payload.useNewPrice == true) {
 			newState['ask'] = parseFloat(action.payload.ask);
-
-
 		} else {
 			// let opposite = (action.payload.lastEdited == 'receive' ? 'deposit' : 'receive'),
 			// 	sum = parseFloat(nextProps.receive) * ask;
