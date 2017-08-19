@@ -21,23 +21,13 @@ class CoinSelector extends Component {
 		newSelectedCoinProps.present[this.props.type] = coin;
 		this.props.selectCoin(newSelectedCoinProps);
 
-		let nextProps = Object.assign({}, this.props.amounts);
-		nextProps['update'] = true;
-		nextProps['lastEdited'] = 'deposit';
-		this.props.updateAmounts(nextProps);
+		this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', useNewPrice: true});
 
-		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
-
-		this.setState({
-			isDropdownVisible: false,
-			selectedCoin: coin
-		});
+		this.setState({isDropdownVisible: false, selectedCoin: coin});
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({
-			selectedCoin: this.props.selectedCoin.present[this.props.type]
-		});
+		this.setState({selectedCoin: this.props.selectedCoin.present[this.props.type]});
 	}
 
 	render() {
@@ -70,7 +60,7 @@ function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
-		amounts: state.amounts
+		amounts: state.amounts,
 	}
 }
 
@@ -78,7 +68,6 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		selectCoin: selectCoin,
 		updateAmounts: updateAmounts,
-		fetchPrice: fetchPrice
 	}, dispatch)
 }
 

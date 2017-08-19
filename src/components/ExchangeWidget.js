@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import _ from 'lodash';
 
-import { fetchPrice, updateAmounts } from '../actions/index.js';
+import { updateAmounts } from '../actions/index.js';
 
 import config from '../config';
 
@@ -28,25 +28,24 @@ class ExchangeWidget extends Component {
 	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);
-	  	this.fetchPrice = this.fetchPrice.bind(this);
 	}
 
 	componentDidMount() {
-		let nextProps = Object.assign({}, this.props.amounts);
-		nextProps['update'] = true;
-		nextProps['lastEdited'] = 'deposit';
+		// let nextProps = Object.assign({}, this.props.amounts);
+		// nextProps['update'] = true;
+		// nextProps['lastEdited'] = 'deposit';
 
-		this.props.updateAmounts(nextProps);
-		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
-		this.fetchPrice();
+		// this.props.updateAmounts(nextProps);
+		// this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+		// this.fetchPrice();
 	}
 
-	fetchPrice() {
-    	setTimeout(() => {
-    		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
-    		this.fetchPrice();
-    	}, config.PRICE_FETCH_INTERVAL);
-	}
+	// fetchPrice() {
+ //    	setTimeout(() => {
+ //    		this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
+ //    		this.fetchPrice();
+ //    	}, config.PRICE_FETCH_INTERVAL);
+	// }
 
 	placeOrder() {
 		this.setState({loading: true});
@@ -140,7 +139,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		updateAmounts: updateAmounts,
-		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 

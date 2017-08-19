@@ -46,6 +46,7 @@
     "redux": "^3.0.4",
     "redux-form": "^6.6.3",
     "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",

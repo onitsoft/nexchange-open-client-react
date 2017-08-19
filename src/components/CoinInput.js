@@ -23,53 +23,34 @@ class CoinInput extends Component {
 	onChange(event) {
 		let value = event.target.value;
 
-		this.validateReceiveAmount(value);
+		//this.validateReceiveAmount(value);
 
-		let nextProps = Object.assign({}, this.props.amounts);
-		let oppositeType = (this.props.type == 'deposit' ? 'receive' : 'deposit');
-		nextProps.lastEdited = this.props.type;
-		nextProps[this.props.type] = value;
-		nextProps.update = true;
-		this.props.updateAmounts(nextProps)
+		// let nextProps = Object.assign({}, this.props.amounts);
+		// let oppositeType = (this.props.type == 'deposit' ? 'receive' : 'deposit');
+		// nextProps.lastEdited = this.props.type;
+		// nextProps[this.props.type] = value;
+		// nextProps.update = true;
+		// this.props.updateAmounts(nextProps)
 
 		if (this.props.type == 'receive')
-			this.props.fetchPrice(`${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`);
+			this.props.updateAmounts({pair: `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
 		else
-			this.props.fetchPrice(`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
-	}
-
-	componentWillReceiveProps(nextProps) {
-		if (this.props.type == this.props.amounts.lastEdited && this.props.amounts.update != false) {
-			let nextProps = Object.assign({}, this.props.amounts),
-				opposite = (this.props.amounts.lastEdited == 'receive' ? 'deposit' : 'receive'),
-				sum = parseFloat(nextProps.deposit) * this.props.price;
-
-			if (this.props.type == 'receive') {
-				sum = parseFloat(nextProps.receive) * this.props.price;
-			} else {
-				this.validateReceiveAmount(sum);
-			}
-
-			nextProps.lastEdited = this.props.type;
-			nextProps[opposite] = (isNaN(sum) ? '...' : sum.toFixed(8));
-			nextProps['update'] = false;
-			this.props.updateAmounts(nextProps)
-		}
+			this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
 	}
 
 	validateReceiveAmount(value) {
-		let selectedCoin = this.props.selectedCoin.present['receive'],
-			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
+	// 	let selectedCoin = this.props.selectedCoin.present['receive'],
+	// 		minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
 
-		if (value < minAmount || isNaN(value)) {
-			this.props.errorAlert({
-				message: `Receive amount cannot be less than ${minAmount}`,
-				show: true,
-				type: 'INVALID_AMOUNT'
-			});
-		} else {
-			this.props.errorAlert({show: false});
-		}
+	// 	if (value < minAmount || isNaN(value)) {
+	// 		this.props.errorAlert({
+	// 			message: `Receive amount cannot be less than ${minAmount}`,
+	// 			show: true,
+	// 			type: 'INVALID_AMOUNT'
+	// 		});
+	// 	} else {
+	// 		this.props.errorAlert({show: false});
+	// 	}
 	}
 
 	render() {
@@ -98,7 +79,6 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		errorAlert: errorAlert,
 		updateAmounts: updateAmounts,
-		fetchPrice: fetchPrice
 	}, dispatch)
 }
 
