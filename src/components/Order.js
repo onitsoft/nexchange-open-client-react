@@ -87,8 +87,18 @@ class Order extends Component {
 	}
 
 	triggerCopyTooltip() {
-		this.setState({copied: true});
-		setTimeout(() => this.setState({copied: false}), 1000)
+		$('#copy-to-clipboard').tooltip({
+			trigger: 'click',
+			placement: 'top'
+		});
+
+		$('#copy-to-clipboard').tooltip('hide')
+			.attr('data-original-title', 'Wallet address copied!')
+			.tooltip('show');
+
+		setTimeout(() => {
+			$('#copy-to-clipboard').tooltip('destroy');
+		}, 1000);
 	}
 
 	render() {
@@ -144,11 +154,7 @@ class Order extends Component {
 
 								        <CopyToClipboard text={this.state.depositAddress}
 								          onCopy={() => this.triggerCopyTooltip()}>
-											<button id="copyToClipboard" type="button" className="btn btn-default">
-												<div className={this.state.copied ? "tooltip top in" : "tooltip"} role="tooltip">
-													<div className="tooltip-arrow"></div>
-													<div className="tooltip-inner">Adddress copied!</div>
-												</div>
+											<button id="copy-to-clipboard" type="button" className="btn btn-default">
 												Copy the address
 											</button>
 					    				</CopyToClipboard>
@@ -160,8 +166,6 @@ class Order extends Component {
 						    			<OrderStatus status={this.state.orderStatus} />
 					    			</div>
 					    		</div>
-
-					    		
 					    	</div>
 					    </div>
 					</div>
