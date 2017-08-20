@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import axios from 'axios';
+import moment from 'moment'
 
 import config from '../config';
 import { errorAlert, updateAmounts, fetchPrice } from '../actions/index.js';
@@ -12,22 +13,19 @@ import CoinSelector from './CoinSelector';
 class CoinInput extends Component {
 	constructor(props) {
 		super(props);
-
-		// this.state = {
-		// 	value: this.props.amounts[this.props.type]
-		// }
-
 		this.onChange = this.onChange.bind(this);
 	}
 	
 	onChange(event) {
-		let value = event.target.value,
-			pair = `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`;
+		let pair = (this.props.type == 'receive' ?
+			`${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}` :
+			`${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`);
 
-		if (this.props.type == 'receive')
-			pair = `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`
-
-		this.props.updateAmounts({pair: pair, lastEdited: this.props.type, amount: event.target.value, useNewPrice: true});
+		if (this.props.price.pair != pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL) { // and also price not fetched in last 30secs
+			this.props.fetchPrice({pair: pair, amount: event.target.value, lastEdited: this.props.type});
+		} else {
+			this.props.updateAmounts({amount: event.target.value, lastEdited: this.props.type, price: this.props.price.price});
+		}
 	}
 
 	validateReceiveAmount(value) {
@@ -68,7 +66,7 @@ function mapStateToProps(state) {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
 		amounts: state.amounts,
-		price: state.price
+		price: state.price,
 	}
 }
 
@@ -76,6 +74,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		errorAlert: errorAlert,
 		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 

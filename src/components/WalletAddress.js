@@ -28,8 +28,6 @@ class WalletAddress extends Component {
 
         let isValid = rules[coin].test(this.state.address);
 
-        console.log("IS VALID", isValid);
-
         if (!isValid) 
         	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.present.receive} wallet address.`});
         else

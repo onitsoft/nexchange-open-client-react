@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectCoin, updateAmounts, fetchPrice } from '../actions/index.js';
+import { selectCoin, fetchPrice } from '../actions/index.js';
 
 class CoinSelector extends Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedCoin: this.props.selectedCoin.present[this.props.type],
 			isDropdownVisible: false
 		}
 
@@ -21,7 +20,7 @@ class CoinSelector extends Component {
 		newSelectedCoinProps.present[this.props.type] = coin;
 		this.props.selectCoin(newSelectedCoinProps);
 
-		this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', useNewPrice: true});
+		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
 	}
@@ -31,22 +30,23 @@ class CoinSelector extends Component {
 	}
 
 	render() {
-		let coins = this.props.coinsInfo.map(coin => {
-			return (
-				<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>
-					<div className="col-xs-4">{coin.ticker}</div>
-					<div className="col-xs-3 text-center">
-						<i className={`coin-icon ${coin.ticker}`}></i>
+		let selectedCoin = this.props.selectedCoin.present[this.props.type],
+			coins = this.props.coinsInfo.map(coin => {
+				return (
+					<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>
+						<div className="col-xs-4">{coin.ticker}</div>
+						<div className="col-xs-3 text-center">
+							<i className={`coin-icon ${coin.ticker}`}></i>
+						</div>
+						<div className="col-xs-5">{coin.name}</div>
 					</div>
-					<div className="col-xs-5">{coin.name}</div>
-				</div>
-			);
-		});
+				);
+			});
 
 		return (
 			<div>
 				<div className="selectedCoin" onClick={() => this.setState({isDropdownVisible: !this.state.isDropdownVisible})}>
-					{this.state.selectedCoin} <i className={`coin-icon ${this.state.selectedCoin}`}></i>
+					{selectedCoin} <i className={`coin-icon ${selectedCoin}`}></i>
 				</div>
 
 				{this.state.isDropdownVisible ? <div className="coin-currency-dropdown">{coins}</div> : null}
@@ -67,7 +67,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		selectCoin: selectCoin,
-		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 

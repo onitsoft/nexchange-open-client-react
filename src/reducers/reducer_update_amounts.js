@@ -1,38 +1,20 @@
 let initialState = {
 	deposit: 1,
 	receive: '...',
-	ask: null,
-	lastEdited: null,
-	useNewPrice: false
+	lastEdited: null
 }
 
 export default (state = initialState, action) => {
-	console.log('UPDATE AMOUNTS', action)
-
 	if (action.type == 'UPDATE_AMOUNTS') {
 		let newState = Object.assign({}, state),
 			opposite = (action.payload.lastEdited == 'receive' ? 'deposit' : 'receive'),
-			ask = (action.payload.ask ? action.payload.ask : state.ask),
+			price = (action.payload.price ? action.payload.price : state.price),
 			quote = (action.payload.amount ? action.payload.amount : state[action.payload.lastEdited]),
-			sum = parseFloat(quote) * ask;
+			sum = parseFloat(quote) * price;
 
 		newState['lastEdited'] = action.payload.lastEdited;
-
-		// new input amount
-		if (action.payload.amount)
-			newState[action.payload.lastEdited] = action.payload.amount;
-
+		newState[action.payload.lastEdited] = action.payload.amount;
 		newState[opposite] = sum.toFixed(8);
-
-
-		if (action.payload.useNewPrice == true) {
-			newState['ask'] = parseFloat(action.payload.ask);
-		} else {
-
-		}
-
-
-		console.log(action.payload, state, newState);
 
 		return newState;
 	}

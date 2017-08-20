@@ -1,7 +1,7 @@
 export default (state = null, action) => {
 	switch(action.type) {
-	case 'FETCH_PRICE':
-		return action.payload.data[0].ticker.ask
+	case 'PRICE_FETCHED':
+		return action.payload;
 	}
 
 	return state

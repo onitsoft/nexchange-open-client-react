@@ -5,9 +5,8 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import _ from 'lodash';
 
-import { updateAmounts } from '../actions/index.js';
-
 import config from '../config';
+import { fetchPrice } from '../actions/index.js';
 
 import CoinInput from './CoinInput';
 import WalletAddress from './WalletAddress';
@@ -28,10 +27,23 @@ class ExchangeWidget extends Component {
 	  	  	
 	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
 	  	this.placeOrder = this.placeOrder.bind(this);
+	  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
 	componentDidMount() {
-		this.props.updateAmounts({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, useNewPrice: true, lastEdited: 'deposit'});
+		this.updatePrices();
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.timeout);
+	}
+
+	updatePrices() {
+		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
+
+		this.timeout = setTimeout(() => {
+			this.updatePrices();
+		}, config.PRICE_FETCH_INTERVAL);
 	}
 
 	placeOrder() {
@@ -125,7 +137,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 
