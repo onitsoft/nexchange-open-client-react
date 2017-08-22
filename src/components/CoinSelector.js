@@ -36,7 +36,7 @@ class CoinSelector extends Component {
 					<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>
 						<div className="col-xs-4">{coin.ticker}</div>
 						<div className="col-xs-3 text-center">
-							<i className={`coin-icon ${coin.ticker}`}></i>
+							<i className={`cc-${coin.ticker} ${coin.ticker}`}></i>
 						</div>
 						<div className="col-xs-5">{coin.name}</div>
 					</div>
@@ -47,7 +47,7 @@ class CoinSelector extends Component {
 			<div>
 				<div className="selectedCoin" onClick={() => this.setState({isDropdownVisible: !this.state.isDropdownVisible})}>
 					<span>{selectedCoin}</span>
-					<i className={`coin-icon ${selectedCoin}`}></i>
+					<i className={`coin-icon cc-${selectedCoin} ${selectedCoin}`}></i>
 					<i className="fa fa-angle-down"></i>
 				</div>
 

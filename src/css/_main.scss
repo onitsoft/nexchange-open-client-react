@@ -1,5 +1,5 @@
-#main { background: #f8f7f8; padding-bottom: 25px;
-	h3 { margin-top: 0; }
+#main { position: relative; background: #f8f7f8; padding-bottom: 25px; background-image: url(../img/landscape.jpg); background-position: 50% 8%; background-size: cover; color: #fff;
+	h3 { margin-top: 0; font-weight: 400; }
 	.brand { margin-bottom: 50px; }
 
 	.coin-currency-dropdown {
@@ -20,10 +20,11 @@
 		.coin { width: 200px; margin-bottom: 10px; cursor: pointer; }
 	}
 
-	.selectedCoin { position: absolute; top: 0; right: 5px; cursor: pointer; font-size: 16px;
-		i.coin-icon { position: relative; top: 5px; margin-left: 5px; }
-		i.fa-angle-down { margin-left: 5px; }
+	.selectedCoin { position: absolute; top: 5px; right: 10px; cursor: pointer; font-size: 18px; font-weight: 700; color: #fff;
+		i.fa-angle-down { position: relative; top: 2px; margin-left: 8px; }
+		.coin-icon { position: relative; top: 1px; }
+		span { position: relative; top: 2px; left: -10px; }
 	}
 
-	@media (min-width: $screen-md-min) { padding: 25px 0 50px; }
+	@media (min-width: $screen-sm-min) { padding: 40px 0 75px; }
 }

@@ -94,32 +94,34 @@ class ExchangeWidget extends Component {
 			return <Redirect to={`/order/${this.state.orderRef}`} />
 
 		return (
-			<div>
-				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="deposit" />
-				</div>
+			<div className="col-xs-12">
+				<div id="exchange-widget">
+					<div className="col-xs-12 col-sm-6">
+						<CoinInput type="deposit" />
+					</div>
 
-				<div className="col-xs-12 col-sm-6">
-					<CoinInput type="receive" />
-				</div>
+					<div className="col-xs-12 col-sm-6">
+						<CoinInput type="receive" />
+					</div>
 
-				{this.state.exchangeProceeded ?
-					<div className="col-xs-12">
-						<WalletAddress toggleConfirm={this.toggleConfirm} />
-					</div> : null
-				}
+					{this.state.exchangeProceeded ?
+						<div className="col-xs-12">
+							<WalletAddress toggleConfirm={this.toggleConfirm} />
+						</div> : null
+					}
 
-				<div className="col-xs-12 text-center">
-					{!this.state.exchangeProceeded ? (
-						<button className="btn btn-block btn-success" onClick={() => this.setState({exchangeProceeded: true})} disabled={this.props.error.show ? 'disabled' : null}>
-							Get Started !
-						</button>
-					) : (
-						<button className="btn btn-block btn-warning" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
-							Confirm & Place Order
-							{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
-						</button>
-					)}
+					<div className="col-xs-12 text-center">
+						{!this.state.exchangeProceeded ? (
+							<button className="btn btn-block btn-success proceed" onClick={() => this.setState({exchangeProceeded: true})} disabled={this.props.error.show ? 'disabled' : null}>
+								Get Started !
+							</button>
+						) : (
+							<button className="btn btn-block btn-warning proceed" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
+								Confirm & Place Order
+								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
+							</button>
+						)}
+					</div>
 				</div>
 			</div>
 		);

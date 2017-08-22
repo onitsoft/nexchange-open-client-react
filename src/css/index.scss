@@ -1,8 +1,19 @@
 @import 'bootstrap';
 @import 'material-kit';
+@import 'cryptocoins';
 
 @import 'main';
 @import 'icons';
+
+h1 { font-size: 34px;
+	@media (min-width: $screen-sm-min) { font-size: 46px; }
+}
+
+h3 { font-size: 26px;
+	@media (min-width: $screen-sm-min) { font-size: 34px; }
+}
+
+.header-text { font-size: 36px; }
 
 p { font-size: 19px; line-height: 1.5em; }
 img { max-width: 100%; }
@@ -24,8 +35,19 @@ a:hover { text-decoration: none; }
 }
 
 #main {
-	.form-group label.control-label { font-size: 14px; text-transform: capitalize; }
-	input { font-size: 17px; }
+	.form-group label.control-label { color: rgb(44, 180, 160); font-size: 16px; text-transform: capitalize; }
+	input { font-size: 18px; background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff); color: #fff;
+		&.is-focused {
+			background-image: linear-gradient(#337ab7, #337ab7), linear-gradient(#D2D2D2, #D2D2D2) !important;
+		}
+	}
+	button.proceed { display: inline-block; width: 100%; margin-top: 20px; font-size: 20px;
+	    background: rgb(44, 180, 160);
+	    background: -moz-linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
+	    background: -webkit-linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
+	    background: linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
+		@media (min-width: $screen-sm-min) { width: 400px; }
+	}
 }
 
 #order { background: #f8f7f8; padding: 15px 0;
@@ -74,10 +96,7 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 
 #order-status { padding: 0 0 5px 0; overflow: hidden;
 	.step { float: left; width: 100%; text-align: left; // 
-		// h4 { background: #fff; padding: 0 15px; text-transform: uppercase; font-size: 16px; font-weight: 500; }
-		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777777;
-
-		} // font-size: 14px;]
+		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777; }
 		&.active h4 {
 			-webkit-animation: color-change 1s infinite alternate;
 			-moz-animation: color-change 1s infinite alternate;
@@ -99,7 +118,15 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
     float: right;
     border: 1px solid red;
 }
-.alert { margin-bottom: 0; }
+.alert { position: absolute; top: 0; left: 0; width: 100%; z-index: 2; }
+
+#Team { margin-top: 20px; margin-bottom: 30px;
+	h1 { margin-top: 45px; }
+}
+
+#exchange-widget { background: rgba(0,0,0,.4); display: inline-block;width: 100%;color: #000;padding: 5px; border-radius: 4px;
+	@media (min-width: $screen-sm-min) { padding: 25px; }
+}
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
