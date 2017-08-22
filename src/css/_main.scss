@@ -20,7 +20,10 @@
 		.coin { width: 200px; margin-bottom: 10px; cursor: pointer; }
 	}
 
-	.selectedCoin { position: absolute; top: 0; right: 15px; cursor: pointer;
-		i { position: relative; top: 5px; margin-left: 5px; }
+	.selectedCoin { position: absolute; top: 0; right: 5px; cursor: pointer; font-size: 16px;
+		i.coin-icon { position: relative; top: 5px; margin-left: 5px; }
+		i.fa-angle-down { margin-left: 5px; }
 	}
+
+	@media (min-width: $screen-md-min) { padding: 25px 0 50px; }
 }

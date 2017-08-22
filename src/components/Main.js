@@ -8,7 +8,7 @@ class Main extends Component {
 
 	render() {
 	    return (
-			<div id="main" className="header">
+			<div id="main">
 				<ErrorAlert />
 
 				<div className="container">

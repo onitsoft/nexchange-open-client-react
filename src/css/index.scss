@@ -24,7 +24,7 @@ a:hover { text-decoration: none; }
 }
 
 #main {
-	.form-group label.control-label { font-size: 13px; text-transform: capitalize; }
+	.form-group label.control-label { font-size: 14px; text-transform: capitalize; }
 	input { font-size: 17px; }
 }
 
@@ -92,6 +92,13 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 	}
 }
 
+.down-arrow {  width: 40px;
+    height: 40px;
+    background-size: contain;
+    display: block;
+    float: right;
+    border: 1px solid red;
+}
 .alert { margin-bottom: 0; }
 
 @media (min-width: $screen-sm-min) {}

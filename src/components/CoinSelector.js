@@ -46,7 +46,9 @@ class CoinSelector extends Component {
 		return (
 			<div>
 				<div className="selectedCoin" onClick={() => this.setState({isDropdownVisible: !this.state.isDropdownVisible})}>
-					{selectedCoin} <i className={`coin-icon ${selectedCoin}`}></i>
+					<span>{selectedCoin}</span>
+					<i className={`coin-icon ${selectedCoin}`}></i>
+					<i className="fa fa-angle-down"></i>
 				</div>
 
 				{this.state.isDropdownVisible ? <div className="coin-currency-dropdown">{coins}</div> : null}
