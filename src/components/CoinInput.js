@@ -30,11 +30,18 @@ class CoinInput extends Component {
 
 	validateReceiveAmount(value) {
 		let selectedCoin = this.props.selectedCoin.present['receive'],
-			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount;
+			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount,
+			maxAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).max_amount;
 
 		if (value < minAmount || isNaN(value)) {
 			this.props.errorAlert({
 				message: `Receive amount cannot be less than ${minAmount}`,
+				show: true,
+				type: 'INVALID_AMOUNT'
+			});
+		} else if (value > maxAmount) {
+			this.props.errorAlert({
+				message: `Receive amount cannot be more than ${maxAmount}`,
 				show: true,
 				type: 'INVALID_AMOUNT'
 			});
