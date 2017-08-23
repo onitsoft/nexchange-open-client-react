@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
 
 		newState['lastEdited'] = action.payload.lastEdited;
 		newState[action.payload.lastEdited] = action.payload.amount;
-		newState[opposite] = sum.toFixed(decimalPlaces);
+		newState[opposite] = (!isNaN(decimalPlaces) && !isNaN(sum) && isFinite(decimalPlaces) ? sum.toFixed(decimalPlaces) : '...');
 
 		return newState;
 	}
