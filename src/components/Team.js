@@ -4,7 +4,7 @@ import team from '../img/team.jpg';
 class Team extends Component {
   render() {
     return (
-      <div id="Team" className="container">
+      <div id="team" className="container">
         <div className="row">
           <div className="col-xs-12">
             <h3>About Us</h3>

@@ -6,7 +6,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import config from '../config';
-import { fetchPrice } from '../actions/index.js';
+import { fetchPrice, setWallet } from '../actions/index.js';
 
 import CoinInput from './CoinInput';
 import WalletAddress from './WalletAddress';
@@ -18,14 +18,10 @@ class ExchangeWidget extends Component {
 		super();
 		
 		this.state = {
-			exchangeProceeded: false,
 			orderPlaced: false,
-			isConfirmEnabled: false,
 			loading: false,
-			receiveAddress: null,
 	  	};
-	  	  	
-	  	this.toggleConfirm = this.toggleConfirm.bind(this);	  	
+	  	  	 	
 	  	this.placeOrder = this.placeOrder.bind(this);
 	  	this.updatePrices = this.updatePrices.bind(this);
 	}
@@ -51,6 +47,7 @@ class ExchangeWidget extends Component {
 
 		axios({
 			method: 'post',
+			contentType : 'application/json',
 			url: `${config.API_BASE_URL}/orders/`,
 			data: {
 				"amount_base": this.props.amounts.receive,
@@ -59,33 +56,26 @@ class ExchangeWidget extends Component {
 					"name": `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`
 				},
 				"withdraw_address": {
-					"address": this.state.receiveAddress,
+					"address": this.props.wallet.address,
 					"name": ""
 				}
-			},
-	        contentType : "application/json"
+			}
 		})
-		.then((response) => {
+		.then(response => {
 			this.setState({
 				orderRef: response.data.unique_reference,
 				orderPlaced: true,
 				loading: false
-			})
+			});
 		})
-		.catch((error) => {
+		.catch(error => {
 			console.log(error);
 		});
 	}
 
-	toggleConfirm(address, isConfirmEnabled) {
-		// TODO: this should be refactored to Redux as now
-		// isConfirmEnabled is passed from child
-		this.setState({isConfirmEnabled: isConfirmEnabled, receiveAddress: address});
-	}
-
 	componentWillReceiveProps(nextProps) {
-		if (this.state.exchangeProceeded && nextProps.error.type == 'INVALID_AMOUNT') {
-			this.setState({exchangeProceeded: !nextProps.error.show})
+		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT') {
+			this.props.setWallet({address: '', valid: false, show: false})
 		}
 	}
 
@@ -104,19 +94,15 @@ class ExchangeWidget extends Component {
 						<CoinInput type="receive" />
 					</div>
 
-					{this.state.exchangeProceeded ?
-						<div className="col-xs-12">
-							<WalletAddress toggleConfirm={this.toggleConfirm} />
-						</div> : null
-					}
+					<WalletAddress />
 
 					<div className="col-xs-12 text-center">
-						{!this.state.exchangeProceeded ? (
-							<button className="btn btn-block btn-success proceed" onClick={() => this.setState({exchangeProceeded: true})} disabled={this.props.error.show ? 'disabled' : null}>
+						{!this.props.wallet.show ? (
+							<button className="btn btn-block btn-success proceed" onClick={() => this.props.setWallet({show: true})} disabled={this.props.error.show ? 'disabled' : null}>
 								Get Started !
 							</button>
 						) : (
-							<button className="btn btn-block btn-warning proceed" onClick={this.placeOrder} disabled={(this.state.isConfirmEnabled && !this.state.loading) ? null : 'disabled'}>
+							<button className="btn btn-block btn-warning proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
 								Confirm & Place Order
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>
@@ -134,12 +120,14 @@ function mapStateToProps(state) {
 		selectedCoin: state.selectedCoin,
 		amounts: state.amounts,
 		error: state.error,
+		wallet: state.wallet,
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		fetchPrice: fetchPrice,
+		setWallet: setWallet,
 	}, dispatch)
 }
 

@@ -10,6 +10,13 @@ export function errorAlert(error) {
 	}
 }
 
+export function setWallet(payload) {
+	return {
+		type: 'SET_WALLET',
+		payload: payload
+	}
+}
+
 export function selectCoin(coin) {
 	return {
 		type: 'COIN_SELECTED',

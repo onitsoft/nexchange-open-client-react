@@ -112,7 +112,7 @@ class Order extends Component {
 					    <div className="col-xs-12 col-sm-6">
 					    	<div className="box media">
 					    		<div className="media-left">
-					    			<i className={`coin-icon ${this.state.depositCoin}`}></i>
+					    			<i className={`coin-icon cc-${this.state.depositCoin} ${this.state.depositCoin}`}></i>
 					    		</div>
 
 					    		<div className="media-body">
@@ -125,7 +125,7 @@ class Order extends Component {
 					    <div className="col-xs-12 col-sm-6">
 					    	<div className="box media">
 					    		<div className="media-left">
-					    			<i className={`coin-icon ${this.state.receiveCoin}`}></i>
+					    			<i className={`coin-icon cc-${this.state.receiveCoin} ${this.state.receiveCoin}`}></i>
 					    		</div>
 
 					    		<div className="media-body">
@@ -138,12 +138,11 @@ class Order extends Component {
 
 					    <div  className="col-xs-12">
 					    	<div className="box">
-						    		<div className="row">
-						    		{this.state.loading ?
-						    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
-						    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
-						    		}
-
+						    	<div className="row">
+					    		{this.state.loading ?
+					    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
+					    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
+					    		}
 					    		</div>
 
 					    		<div className="row">

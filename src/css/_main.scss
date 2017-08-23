@@ -1,4 +1,4 @@
-#main { position: relative; background-color: #082f4d; padding: 25px 0 25px 0; background-image: url(../img/landscape.jpg); background-position: top left; background-size: cover; color: #fff;
+#main { position: relative; background-color: #082f4d; padding: 25px 0 75px 0; background-image: url(../img/landscape.jpg); background-position: top left; background-size: cover; color: #fff;
 	h3 { margin-top: 0; font-weight: 400; }
 	.brand { margin-bottom: 50px;
 		@media (min-width: $screen-sm-min) { padding-left: 35px; }
@@ -27,6 +27,8 @@
 		.coin-icon { position: relative; top: 1px; }
 		span { position: relative; top: 2px; left: -10px; }
 	}
+
+	.alert { position: absolute; top: 0; left: 0; width: 100%; z-index: 2; }
 
 	@media (min-width: $screen-sm-min) { padding: 40px 0 75px; }
 }
