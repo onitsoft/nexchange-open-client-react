@@ -6,6 +6,7 @@
 @import 'main';
 @import 'exchange-widget';
 @import 'wallet-address';
+@import 'faq';
 
 
 h1 { font-size: 34px;
@@ -73,10 +74,6 @@ a:hover { text-decoration: none; }
 	h3:first-child { margin-top: 0; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
-#faq-modal {
-	p { font-size: 16px; }
-	.modal-header { position: absolute; top: 0; right: 0; z-index: 1; }
-}
 
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }

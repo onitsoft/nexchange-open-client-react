@@ -22,7 +22,7 @@ class FAQ extends Component {
   render() {
     return (
       <Modal show={this.state.showModal} onHide={this.props.onClose} >
-        <div id="faq-modal" className="modal-content">
+        <div id="faq" className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
               <i className="material-icons">clear</i>
@@ -78,6 +78,17 @@ class FAQ extends Component {
 
             <h3>What does the beta version include?</h3>
             <p>At the moment, only the core exchange feature of our product is available for users to enjoy as part of our public beta initiative, which means that everything you see on screen works perfectly. Our goal with the beta is to expose Nexchange to as many users as possible in order to fine-tune our design and user experience to the highest possible degree. To achieve this goal, your input as a user is invaluable. If you have any feedback for us, please feel free to contact us at <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
+
+            <h3>Do I need a wallet? How do I get one?</h3>
+            <p>In order to use Nexchange, you need to have your own wallet. The main upside of this feature is that we don’t hold your coins, and thus you retain full control over your assets at all times.</p>
+            <p>If you need some help obtaining a wallet for your desired cryptocurrency, please look here:</p>
+            <ul>
+              <li>Bitcoin (BTC): <a href="https://bitcoin.org/en/choose-your-wallet">https://bitcoin.org/en/choose-your-wallet</a></li>
+              <li>Ethereum (ETH): <a href="https://github.com/ethereum/mist/releases">https://github.com/ethereum/mist/releases</a></li>
+              <li>Litecoin (LTC): <a href="https://litecoin.org/">https://litecoin.org/</a></li>
+            </ul>
+
+            <p>Please note that we are not affiliated with the websites mentioned above, these links are for user’s reference purposes only. We will not accept any liability, obligation or responsibility whatsoever for the content of external websites.</p>
           </div>
 
           <div className="modal-footer">
