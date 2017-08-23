@@ -41,7 +41,7 @@ class Support extends Component {
             
               <div className="col-xs-12 col-sm-6">
                 <h3>Email</h3>
-                <p><a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a></p>
+                <p><a href="mailto:support@nexchange.io">support@nexchange.io</a></p>
               </div>
             </div>
 
