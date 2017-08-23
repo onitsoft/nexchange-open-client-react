@@ -41,6 +41,10 @@ class WalletAddress extends Component {
 		});
     }
 
+    componentWillMount() {
+    	this.props.setWallet({address: '', valid: false, show: false});
+    }
+
     componentWillReceiveProps(nextProps) {
     	if (nextProps.wallet.show && (this.props.wallet.show != nextProps.wallet.show)) {
     		setTimeout(() => this.nameInput.focus(), 300);
@@ -52,7 +56,7 @@ class WalletAddress extends Component {
 			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
 				<div className="form-group label-floating has-warning">
 					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
-					<input type="text" ref={input => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.props.wallet.address} />
+					<input type="text" ref={input => { this.nameInput = input; }} className="form-control addr" id="withdraw-addr" onChange={this.onChange} />
 				</div>
 			</div>
 		);

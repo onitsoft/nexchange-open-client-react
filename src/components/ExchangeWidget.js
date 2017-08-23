@@ -66,7 +66,7 @@ class ExchangeWidget extends Component {
 				orderRef: response.data.unique_reference,
 				orderPlaced: true,
 				loading: false
-			})
+			});
 		})
 		.catch(error => {
 			console.log(error);
@@ -75,7 +75,7 @@ class ExchangeWidget extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT') {
-			this.props.setWallet({show: false})
+			this.props.setWallet({address: '', valid: false, show: false})
 		}
 	}
 
