@@ -50,7 +50,7 @@ class WalletAddress extends Component {
 	render() {
 		return (
 			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
-				<div className="form-group label-floating has-warning" style={{marginTop: "35px"}}>
+				<div className="form-group label-floating has-warning">
 					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
 					<input type="text" ref={input => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.props.wallet.address} />
 				</div>
