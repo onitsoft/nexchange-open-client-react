@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import scrollToElement from 'scroll-to-element';
 
 import ExchangeWidget from '../components/ExchangeWidget';
 import ErrorAlert from '../components/ErrorAlert';
@@ -23,6 +24,12 @@ class Main extends Component {
 
 						<ExchangeWidget />
 					</div>
+				</div>
+
+				<div id="mouse-scroll" onClick={() => scrollToElement('#team')}>
+					<span className="arrow-1" aria-hidden="true"></span>
+					<span className="arrow-2" aria-hidden="true"></span>
+					<span className="arrow-3" aria-hidden="true"></span>
 				</div>
 			</div>
 	    );

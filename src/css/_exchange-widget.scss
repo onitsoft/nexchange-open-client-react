@@ -5,12 +5,12 @@
 		&.is-focused { background-image: linear-gradient(#337ab7, #337ab7), linear-gradient(#D2D2D2, #D2D2D2) !important; }
 	}
 
-	button.proceed { display: inline-block; width: 100%; margin-top: 20px; font-size: 20px;
+	button.proceed { display: inline-block; width: 100%; margin-top: 20px; font-size: 16px; padding-left: 0; padding-right: 0; text-align: center;
 	    background: rgb(44, 180, 160);
 	    background: -moz-linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
 	    background: -webkit-linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
 	    background: linear-gradient(to bottom, #115771 0,rgb(44, 180, 160) 100%);
-		@media (min-width: $screen-sm-min) { width: 400px; }
+		@media (min-width: $screen-sm-min) { width: 400px; font-size: 20px; }
 	}
 
 	@media (min-width: $screen-sm-min) { padding: 25px; }
