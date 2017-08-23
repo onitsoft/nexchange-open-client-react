@@ -21,7 +21,7 @@ class ErrorAlert extends Component {
 						<span aria-hidden="true"><i className="material-icons">clear</i></span>
 					</button>
 
-				    <b>Error Alert:</b> {this.props.error.message}
+				    <b>Warning:</b> {this.props.error.message}
 				</div>
 			</div>
 	    );
