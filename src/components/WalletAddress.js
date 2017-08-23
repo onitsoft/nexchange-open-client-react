@@ -2,57 +2,58 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { errorAlert } from '../actions/index.js';
+import { errorAlert, setWallet } from '../actions/index.js';
 
 
 class WalletAddress extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			address: ''
-		}
 
 		this.onChange = this.onChange.bind(this);
 	}
 
-	componentDidMount() {
-		this.nameInput.focus(); 
-	}
-
-    validateWalletAddress(coin = this.props.selectedCoin.present.receive) {
+    validateWalletAddress(address) {
         let rules = {
             BTC: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/,
             LTC: /^L[1-9A-Za-z]{25,34}$/,
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        let isValid = rules[coin].test(this.state.address);
+        let coin = this.props.selectedCoin.present.receive,
+        	isValid = rules[coin].test(address);
 
         if (!isValid) 
         	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.present.receive} wallet address.`});
         else
-        	this.props.errorAlert({Show: false});
+        	this.props.errorAlert({show: false});
 
         return isValid;
     }
 
     onChange(event) {
-    	this.setState({address: event.target.value}, () => {
-    		let isWalletAddressValid = this.validateWalletAddress();
-			this.props.toggleConfirm(this.state.address, isWalletAddressValid);
-    	});
+		let address = event.target.value,
+			valid = this.validateWalletAddress(address);
+
+		this.props.setWallet({
+			address: address,
+			valid: valid,
+			show: true
+		});
     }
 
     componentWillReceiveProps(nextProps) {
-    	let isWalletAddressValid = this.validateWalletAddress(nextProps.selectedCoin.present.receive);
-    	this.props.toggleConfirm(this.state.address, isWalletAddressValid);
+    	if (nextProps.wallet.show && (this.props.wallet.show != nextProps.wallet.show)) {
+    		setTimeout(() => this.nameInput.focus(), 300);
+    	}
     }
 
 	render() {
 		return (
-			<div className="form-group label-floating has-warning" style={{marginTop: "35px"}}>
-				<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
-				<input type="text" ref={(input) => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.address} />
+			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
+				<div className="form-group label-floating has-warning" style={{marginTop: "35px"}}>
+					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
+					<input type="text" ref={input => { this.nameInput = input; }} name="amount" className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.props.wallet.address} />
+				</div>
 			</div>
 		);
 	}
@@ -62,12 +63,14 @@ class WalletAddress extends Component {
 function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
+		wallet: state.wallet,
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		errorAlert: errorAlert,
+		setWallet: setWallet,
 	}, dispatch)
 }
 

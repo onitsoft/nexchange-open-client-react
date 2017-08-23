@@ -1,0 +1,3 @@
+#wallet-address { max-height: 0; visibility: hidden; overflow: hidden; opacity: 0; transition: all 0.25s;
+	&.active { max-height: 100px; visibility: visible; opacity: 1; }
+}

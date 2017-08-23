@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ExchangeWidget from '../components/ExchangeWidget';
 import ErrorAlert from '../components/ErrorAlert';
 
+
 class Main extends Component {
 
 	render() {
