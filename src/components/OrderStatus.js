@@ -16,7 +16,7 @@ class OrderStatus extends Component {
     		</div>
 
      		<div id="step-two" className={this.props.status == -1 ? "step active" : (this.props.status >= 2 ? "step done" : "step")}>
-    			<h4 data-toggle="tooltip" data-placement="top" title="" data-original-title="We can see that your order is on the blockchain and are now waiting for the required number of confirmations.">2. Awaiting confirmations {this.props.status == -1 ? <i className="fa fa-clock-o"></i> : (this.props.status >= 2 ? <i className="fa fa-check"></i> : <i className="fa fa-clock-o"></i>)}</h4> 
+    			<h4 data-toggle="tooltip" data-placement="top" title="" data-original-title="Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.">2. Awaiting confirmations {this.props.status == -1 ? <i className="fa fa-clock-o"></i> : (this.props.status >= 2 ? <i className="fa fa-check"></i> : <i className="fa fa-clock-o"></i>)}</h4> 
     		</div>
     		
     		<div id="step-three" className={this.props.status >= 2 ? "step active" : "step"}>

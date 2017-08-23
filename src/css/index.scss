@@ -45,6 +45,22 @@ a:hover { text-decoration: none; }
 
 		h5, h6 { margin: 0; }
 		.coin-icon { position: relative; top: 8px; font-size: 28px; }
+		.text-warning { color: rgb(44, 180, 160); }		
+	}
+	.coin-box { padding-left: 10px; }
+	#copy-to-clipboard { background: #2cb4a0; background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%); }
+	#time-remaining { color: #2cb4a0; }
+
+	@media (min-width: $screen-sm-min) { padding: 75px 0; }
+
+	@media (min-width: $screen-md-min) {
+		h5, h6 { font-size: 16px; }
+		.box .coin-icon { top: 12px; }
+	}
+
+	@media (min-width: $screen-md-min) {
+		h5, h6 { font-size: 17px; }
+		.box .coin-icon { top: 12px; }
 	}
 }
 
@@ -54,11 +70,11 @@ a:hover { text-decoration: none; }
 	img { margin-top: -15px; max-width: 150px;
 		@media (min-width: $screen-sm-min) { margin-top: -7px; }
 	}
-	#order-payment-details {
+	#order-payment-details { margin-top: 10px;
 		h3 { margin-top: 0; }
 		@media (min-width: $screen-sm-min) { margin-left: -15px; }
-		@media (min-width: $screen-md-min) { margin-top: 5px; }
-		@media (min-width: $screen-lg-min) { margin-top: 10px; }
+		@media (min-width: $screen-md-min) { margin-top: 10px; }
+		@media (min-width: $screen-lg-min) { margin-top: 27px; }
 	}
 	.box { padding-bottom: 5px; }
 
@@ -105,21 +121,21 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 
 @-webkit-keyframes color-change {
 	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
+	to { color: rgb(44, 180, 160); }
 }
 @-moz-keyframes color-change {
 	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
+	to { color: rgb(44, 180, 160); }
 }
 @-ms-keyframes color-change {
 	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
+	to { color: rgb(44, 180, 160); }
 }
 @-o-keyframes color-change {
 	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
+	to { color: rgb(44, 180, 160); }
 }
 @keyframes color-change {
 	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
+	to { color: rgb(44, 180, 160); }
 }
