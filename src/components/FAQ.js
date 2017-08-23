@@ -77,7 +77,7 @@ class FAQ extends Component {
             <p>If you need help, feel free to contact us.</p>
 
             <h3>What does the beta version include?</h3>
-            <p>At the moment, only the core exchange feature of our product is available for users to enjoy as part of our public beta initiative, which means that everything you see on screen works perfectly. Our goal with the beta is to expose Nexchange to as many users as possible in order to fine-tune our design and user experience to the highest possible degree. To achieve this goal, your input as a user is invaluable. If you have any feedback for us, please feel free to contact us at <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>.</p>
+            <p>At the moment, only the core exchange feature of our product is available for users to enjoy as part of our public beta initiative, which means that everything you see on screen works perfectly. Our goal with the beta is to expose Nexchange to as many users as possible in order to fine-tune our design and user experience to the highest possible degree. To achieve this goal, your input as a user is invaluable. If you have any feedback for us, please feel free to contact us at <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
           </div>
 
           <div className="modal-footer">
