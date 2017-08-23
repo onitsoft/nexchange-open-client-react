@@ -24,17 +24,13 @@ class Order extends Component {
 			receiveCoin: '...',
 			receiveAddress: '...',
 			orderStatus: 1,
-			timerClassName: 'success',
 			expired: false,
-			loading: true
+			loading: true,
+			paymentWindow: null
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
 		this.tick = this.tick.bind(this);
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.interval);
 	}
 
 	componentDidMount() {
@@ -44,14 +40,9 @@ class Order extends Component {
 	tick() {
 		if (this.state.createdOn == '...') return;
 
-		let now = moment().subtract(15, 'minutes');
+		let now = moment().subtract(this.state.paymentWindow, 'minutes');
 		let createdOn = moment(this.state.createdOn);
 		let diff = createdOn.diff(now);
-
-		if (diff < 100000)
-			this.setState({timerClassName: 'danger'});
-		else if (diff < 362930)
-			this.setState({timerClassName: 'warning'});
 
 		if (diff < 0) {
 			this.setState({expired: true});
@@ -81,6 +72,7 @@ class Order extends Component {
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on,
 					orderStatus: data.status_name[0][0],
+					paymentWindow: parseInt(data.payment_window)
 				}, () => {
 					this.interval = setInterval(this.tick, 1000);
 					this.tick();
@@ -89,6 +81,10 @@ class Order extends Component {
 			.catch((error) => {
 				console.log(error);
 			});
+
+		this.timeout = setTimeout(() => {
+			this.getOrderDetails();
+		}, config.ORDER_DETAILS_FETCH_INTERVAL);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -96,6 +92,11 @@ class Order extends Component {
 			this.getOrderDetails();
 			clearInterval(this.interval);
 		}
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
+		clearTimeout(this.timeout);
 	}
 
 	render() {
@@ -110,7 +111,7 @@ class Order extends Component {
 
 					<div className="row">
 					    <div className="col-xs-12 col-sm-6">
-					    	<div className="box media">
+					    	<div className="coin-box box media">
 					    		<div className="media-left">
 					    			<i className={`coin-icon cc-${this.state.depositCoin} ${this.state.depositCoin}`}></i>
 					    		</div>
@@ -123,7 +124,7 @@ class Order extends Component {
 					    </div>
 
 					    <div className="col-xs-12 col-sm-6">
-					    	<div className="box media">
+					    	<div className="coin-box box media">
 					    		<div className="media-left">
 					    			<i className={`coin-icon cc-${this.state.receiveCoin} ${this.state.receiveCoin}`}></i>
 					    		</div>
@@ -141,7 +142,7 @@ class Order extends Component {
 						    	<div className="row">
 					    		{this.state.loading ?
 					    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
-					    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} timerClassName={this.state.timerClassName} />
+					    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />
 					    		}
 					    		</div>
 

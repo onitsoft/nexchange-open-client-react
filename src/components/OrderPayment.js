@@ -31,12 +31,12 @@ class OrderPayment extends Component {
 
 	    return (
 	    	<div id="order-payment">
-    			<div className="col-xs-12 col-sm-3">
+    			<div className="col-xs-12 col-sm-4 col-md-3">
     				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=bitcoin:1KTFHHwtdNmGrbY5MfWhtswpG9tuxZwwoA?amount=0.0363" />
     			</div>
 
-    			<div id="order-payment-details" className="col-xs-12 col-sm-9">
-    				<h3>Time remaining: <span className={`text-${this.props.timerClassName}`}><b>{this.props.timeRemaining}</b></span></h3>
+    			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
+    				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
 
     				<h4>Send <b>{this.props.depositAmount} {this.props.depositCoin}</b> to the address<br/>
     					<b id="deposit-address">{this.props.depositAddress}</b>

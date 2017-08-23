@@ -1,0 +1,95 @@
+#order { background: #f8f7f8; padding: 15px 0;
+	#order-ref { margin-bottom: 15px; }
+	.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
+
+		h5, h6 { margin: 0; }
+		.coin-icon { position: relative; top: 8px; font-size: 28px; }
+		.text-warning { color: $green; }		
+	}
+	.coin-box { padding-left: 10px; }
+	#copy-to-clipboard { background: #2cb4a0; background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%); }
+	#time-remaining { color: #2cb4a0; }
+
+	@media (min-width: $screen-sm-min) { padding: 50px 0; }
+
+	@media (min-width: $screen-md-min) { padding: 75px 0;
+		h5, h6 { font-size: 16px; }
+		.box .coin-icon { top: 12px; }
+	}
+
+	@media (min-width: $screen-md-min) {
+		h5, h6 { font-size: 17px; }
+		.box .coin-icon { top: 12px; }
+	}
+}
+
+#order-payment { text-align: center; padding-top: 10px;
+	h3, h4 { font-size: 20px;}
+	#deposit-address { word-wrap: break-word; }
+	img { margin-top: -15px; max-width: 150px;
+		@media (min-width: $screen-sm-min) { margin-top: -7px; }
+	}
+	#order-payment-details { margin-top: 10px;
+		h3 { margin-top: 0; }
+		@media (min-width: $screen-sm-min) { margin-left: -15px; }
+		@media (min-width: $screen-md-min) { margin-top: 10px; }
+		@media (min-width: $screen-lg-min) { margin-top: 30px; }
+	}
+	.box { padding-bottom: 5px; }
+
+	@media (min-width: $screen-sm-min) { text-align: left;
+		img { max-width: 100%; }
+		h3 { font-size: 24px; }
+	}
+}
+
+#order-status { padding: 8px 0 5px 0; overflow: hidden;
+	hr { margin-top: 5px; }
+	.step { width: 100%; margin-top: 15px; text-align: center;
+		h4 { margin: 0; background: #fff; text-transform: uppercase; font-size: 15px; font-weight: 500; color: #adadad; }
+		.glyphicon { font-size: 30px; color: #adadad; }
+		&.active h4, &.active .glyphicon {
+			-webkit-animation: color-change 1s infinite alternate;
+			-moz-animation: color-change 1s infinite alternate;
+			-ms-animation: color-change 1s infinite alternate;
+			-o-animation: color-change 1s infinite alternate;
+			animation: color-change 1s infinite alternate;
+		}
+		&.done h4, &.done .glyphicon { color: $green; }
+
+		@media (min-width: $screen-sm-min) { width: 33.33%; float: left; }
+	}
+	.progres-container { width: 100%; padding-top: 25px; clear: both;
+		.progress .progress-bar.progress-bar-info { background: $green; }
+		.progress.progress-line-info { background: rgba(44, 180, 160, 0.2); }
+		.progress.progress-line-info { margin-bottom: 5px; }
+
+		@media (min-width: $screen-md-min) { padding: 25px 60px 0; }
+	}
+}
+
+@media (min-width: $screen-sm-min) {}
+@media (min-width: $screen-md-min) {}
+@media (min-width: $screen-lg-min) {}
+
+@-webkit-keyframes color-change {
+	from { color: #adadad; }
+	to { color: $green; }
+}
+@-moz-keyframes color-change {
+	from { color: #adadad; }
+	to { color: $green; }
+}
+@-ms-keyframes color-change {
+	from { color: #adadad; }
+	to { color: $green; }
+}
+@-o-keyframes color-change {
+	from { color: #adadad; }
+	to { color: $green; }
+}
+@keyframes color-change {
+	from { color: #adadad; }
+	to { color: $green; }
+}

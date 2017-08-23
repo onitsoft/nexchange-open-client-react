@@ -3,11 +3,13 @@
 @import 'cryptocoins';
 @import 'icons';
 
+$green: rgb(44, 180, 160);
+
 @import 'main';
 @import 'exchange-widget';
 @import 'wallet-address';
 @import 'faq';
-
+@import 'order';
 
 h1 { font-size: 34px;
 	@media (min-width: $screen-sm-min) { font-size: 46px; }
@@ -38,36 +40,6 @@ a:hover { text-decoration: none; }
 	.fa { position: relative; top: -2px; }
 }
 
-#order { background: #f8f7f8; padding: 15px 0;
-	#order-ref { margin-bottom: 15px; }
-	.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
-		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
-
-		h5, h6 { margin: 0; }
-		.coin-icon { position: relative; top: 8px; font-size: 28px; }
-	}
-}
-
-#order-payment { text-align: center;
-	h3, h4 { font-size: 20px;}
-	#deposit-address { word-wrap: break-word; }
-	img { margin-top: -15px; max-width: 150px;
-		@media (min-width: $screen-sm-min) { margin-top: -7px; }
-	}
-	#order-payment-details {
-		h3 { margin-top: 0; }
-		@media (min-width: $screen-sm-min) { margin-left: -15px; }
-		@media (min-width: $screen-md-min) { margin-top: 5px; }
-		@media (min-width: $screen-lg-min) { margin-top: 10px; }
-	}
-	.box { padding-bottom: 5px; }
-
-	@media (min-width: $screen-sm-min) { text-align: left;
-		img { max-width: 100%; }
-		h3 { font-size: 24px; }
-	}
-}
-
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
 	h3 { margin-top: 35px; }
@@ -78,23 +50,6 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }
 
-#order-status { padding: 0 0 5px 0; overflow: hidden;
-	.step { float: left; width: 100%; text-align: left; // 
-		h4 { background: #fff; text-transform: uppercase; font-size: 14px; font-weight: 500; color: #777; }
-		&.active h4 {
-			-webkit-animation: color-change 1s infinite alternate;
-			-moz-animation: color-change 1s infinite alternate;
-			-ms-animation: color-change 1s infinite alternate;
-			-o-animation: color-change 1s infinite alternate;
-			animation: color-change 1s infinite alternate;
-		}
-		&.done h4 { color: #5cb85c; }
-
-		@media (min-width: 480px) { text-align: center; }
-		@media (min-width: $screen-sm-min) { width: 33.33%; }
-	}
-}
-
 #team { margin-top: 20px; margin-bottom: 30px;
 	h1 { margin-top: 45px; }
 }
@@ -102,24 +57,3 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
 @media (min-width: $screen-lg-min) {}
-
-@-webkit-keyframes color-change {
-	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
-}
-@-moz-keyframes color-change {
-	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
-}
-@-ms-keyframes color-change {
-	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
-}
-@-o-keyframes color-change {
-	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
-}
-@keyframes color-change {
-	from { color: #9d9d9d; }
-	to { color: #5cb85c; }
-}
