@@ -33,10 +33,6 @@ class Order extends Component {
 		this.tick = this.tick.bind(this);
 	}
 
-	componentWillUnmount() {
-		clearInterval(this.interval);
-	}
-
 	componentDidMount() {
 		this.getOrderDetails();
 	}
@@ -85,6 +81,10 @@ class Order extends Component {
 			.catch((error) => {
 				console.log(error);
 			});
+
+		this.timeout = setTimeout(() => {
+			this.getOrderDetails();
+		}, config.ORDER_DETAILS_FETCH_INTERVAL);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -92,6 +92,11 @@ class Order extends Component {
 			this.getOrderDetails();
 			clearInterval(this.interval);
 		}
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
+		clearTimeout(this.timeout);
 	}
 
 	render() {
