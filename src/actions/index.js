@@ -20,6 +20,9 @@ export function setWallet(payload) {
 export function selectCoin(payload) {
 	// DISPATCH COIN_SELECTED AND
 	// THEN UPDATE AMOUNTS
+	// ACTUALLY, WRONG PLACE, SHOULD
+	// DETECT SELECTED COIN PROPS CHANGE AND THEN
+	// UPDATE AMOUNTS
 	// return (dispatch, getState) {
 	// }
 

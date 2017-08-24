@@ -8,10 +8,6 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-	if (action.type=='COIN_SELECTED') {
-		console.log("COIN SELECTED", state, action.payload);
-	}
-
 	let payload = Object.assign({}, action.payload);
 	if (action.type=='COIN_SELECTED') {
 		if (payload.deposit == payload.receive) {
