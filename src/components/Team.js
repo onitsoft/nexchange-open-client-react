@@ -54,8 +54,8 @@ class Team extends Component {
               medium: "https://medium.com/@karolisram",
             }} />
 
-          <TeamMember id="justas" name="Justas Ažna" title="Software Developer" country="LT"
-            description="Heirloom 90's cliche leggings. Tumblr gentrify chia, pok pok forage you probably haven't heard of them cronut. +1 lomo wolf, master cleanse truffaut before they sold out."
+          <TeamMember id="justas" name="Justas Ažna" title="Devops Orchestrator" country="LT"
+            description="Shuffling Docker, Swarm & Kubernates. Proponent about micro-components design, and seamless scalability. Python & Javascript as secondary weapons of choice."
             social={{
               linkedin: "https://www.linkedin.com/in/justasazna/",
               github: "https://github.com/reederz",
