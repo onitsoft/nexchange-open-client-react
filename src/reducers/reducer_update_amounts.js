@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
 			opposite = (action.payload.lastEdited == 'receive' ? 'deposit' : 'receive'),
 			price = (action.payload.price ? action.payload.price : state.price),
 			quote = (action.payload.amount ? action.payload.amount : state[action.payload.lastEdited]),
-			sum = parseFloat(quote) * price,
+			sum = (action.payload.lastEdited == 'receive' ? parseFloat(quote) * price : parseFloat(quote) / price),
 			decimalPlaces = getDecimalPlaces(sum);
 
 		newState['lastEdited'] = action.payload.lastEdited;

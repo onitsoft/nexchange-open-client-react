@@ -1,26 +1,24 @@
 const initialState = {
-	past: {
-		deposit: 'BTC',
-		receive: 'ETH'
-	},
-	present: {
+	deposit: 'BTC',
+	receive: 'ETH',
+	prev: {
 		deposit: 'BTC',
 		receive: 'ETH'
 	}
 }
 
 export default (state = initialState, action) => {
-	if (action.type=='COIN_SELECTED' && action.payload && action.payload.present && action.payload.present.deposit == action.payload.present.receive) {
-		action.payload.present.deposit = action.payload.past.receive;
-		action.payload.present.receive = action.payload.past.deposit;
+	let payload = Object.assign({}, action.payload);
+	if (action.type=='COIN_SELECTED') {
+		if (payload.deposit == payload.receive) {
+			payload.deposit = payload.prev.receive;
+			payload.receive = payload.prev.deposit;
+		}
 
-		action.payload.past.deposit = action.payload.present.deposit;
-		action.payload.past.receive = action.payload.present.receive;
-	}
+		payload.prev.deposit = payload.deposit;
+		payload.prev.receive = payload.receive;
 
-	switch(action.type) {
-	case 'COIN_SELECTED':
-		return Object.assign({}, action.payload)
+		return payload;
 	}
 
 	return state
