@@ -13,11 +13,11 @@ $recent-orders-row-height: 55px;
 		&:hover {
 			.overlay { opacity: 1; background: rgba(232, 232, 232, 0.4);
 				@include transition-property(all);
-				@include transition-duration(800ms); 
+				@include transition-duration(600ms); 
 			}
 			.recent-order-amount {
         @include transition-property(all);
-        @include transition-duration(500ms); 
+        @include transition-duration(400ms); 
 				opacity: 0;
 			}
 		}
