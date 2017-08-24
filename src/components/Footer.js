@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
     	<footer>
 			<div className="container">
-			  <p className="text-muted">&copy; Nexchange open client v0.0.1</p>
+			  <p className="text-muted">&copy; Nexchange Open Client BETA</p>
 			</div>
     	</footer>
     );
