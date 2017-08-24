@@ -56,6 +56,10 @@
 @include make-grid(xs);
 
 
+@media (min-width: $screen-ms-min) {
+  @include make-grid(ms);
+}
+
 // Small grid
 //
 // Columns, offsets, pushes, and pulls for the small device range, from phones

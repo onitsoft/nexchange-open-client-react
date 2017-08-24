@@ -47,7 +47,7 @@ class Team extends Component {
             }} />
 
           <TeamMember id="karolis" name="Karolis Ramanauskas" title="Software Developer" country="LT"
-            description="Heirloom 90's cliche leggings. Tumblr gentrify chia, pok pok forage you probably haven't heard of them cronut. +1 lomo wolf, master cleanse truffaut before they sold out."
+            description="Full-stack developer. Entpreneur by heart. Brings products to life through his fingertips."
             social={{
               linkedin: "https://www.linkedin.com/in/karolisram/",
               github: "https://github.com/ramkarolis/",

@@ -15,7 +15,7 @@ class TeamMember extends Component {
 		}
 
 	    return (
-			<div className="col-xs-12 col-sm-6 col-md-4 text-center">
+			<div className="col-xs-12 col-ms-6 col-md-4 text-center">
 				<div className="team-member">
 					<img src={`/img/team/${this.props.id}.jpg`} className="img-circle img-responsive" />
 
