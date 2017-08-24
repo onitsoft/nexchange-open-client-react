@@ -5,7 +5,7 @@
 	}
 }
 
-#mouse-scroll { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); cursor: pointer;
+#mouse-scroll { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); cursor: pointer;
 	span { display: block; width: 8px; height: 8px; -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); transform: rotate(45deg); border-right: 3px solid #fff; border-bottom: 3px solid #fff; margin: 0 0 3px 5px; 
 		-webkit-animation: mouse-scroll 1s infinite;
 	    -moz-animation: mouse-scroll 1s infinite;
