@@ -20,7 +20,7 @@ class CoinSelector extends Component {
 		newSelectedCoinProps.present[this.props.type] = coin;
 		this.props.selectCoin(newSelectedCoinProps);
 
-		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
+		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
 	}
