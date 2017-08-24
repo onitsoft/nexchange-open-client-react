@@ -36,7 +36,7 @@ class OrderStatus extends Component {
 	}
 
 	render() {
-		let orders = this.state.orders.slice(0,10).map(order => {
+		let orders = this.state.orders.slice(0,config.RECENT_ORDERS_COUNT).map(order => {
 			return (
 				<div key={order.unique_reference} className="recent-order">
 					<a href={`${config.API_BASE_URL}/orders/${order.unique_reference}?format=json`} target="_blank" className="overlay">Click to view on API</a>

@@ -8,15 +8,16 @@ $recent-orders-row-height: 55px;
 		.fa-arrow-right { position: relative; top: 4px; color: $green; }
 		.recent-order-amount { opacity: 1; }
 		.overlay { position: absolute; top: 0; left: 0; width: 100%; height: $recent-orders-row-height; line-height: $recent-orders-row-height; font-size: 20px; background: rgba(232, 232, 232, 1); z-index: 1; color: $green; opacity: 0; font-weight: 700;
-
 			.fa-link { margin-left: 8px; }
 		}
 		&:hover {
-			.overlay { opacity: 1; background: rgba(232, 232, 232, 0.5);
+			.overlay { opacity: 1; background: rgba(232, 232, 232, 0.4);
 				@include transition-property(all);
-				@include transition-duration(350ms); 
+				@include transition-duration(800ms); 
 			}
 			.recent-order-amount {
+        @include transition-property(all);
+        @include transition-duration(500ms); 
 				opacity: 0;
 			}
 		}
@@ -24,8 +25,6 @@ $recent-orders-row-height: 55px;
 	.coin-icon { font-size: 34px; margin: 0 19px; position: relative; top: 10px; }
 	p { font-size: 18px; position: relative; top: 8px; }
 }
-
-
 
 .spinner {
   margin: 100px auto;
