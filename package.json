@@ -34,6 +34,7 @@
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "react": "^15.6.1",
+    "react-bookmark": "^0.8.0",
     "react-bootstrap": "^0.31.2",
     "react-copy-to-clipboard": "^5.0.0",
     "react-dev-utils": "^3.1.0",
