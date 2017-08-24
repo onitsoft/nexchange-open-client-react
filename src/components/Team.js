@@ -28,7 +28,7 @@ class Team extends Component {
             }} />
 
           <TeamMember id="mantas" name="Mantas Rukuiža" title="Business Development" country="LT"
-            description="Life time technology enterpreneur. Growth hacker by day, recreational yacht sailor at passtime"
+            description="Life time tech entrepreneur, marketing strategist, blockchain fan & certified sailing yacht captain."
             social={{
               linkedin: "https://www.linkedin.com/in/mantas-rukui%C5%BEa-136a84139/",
             }} />
