@@ -6,6 +6,7 @@ import config from '../config';
 
 import OrderPayment from './OrderPayment';
 import OrderStatus from './OrderStatus';
+import Bookmark from './Bookmark';
 
 
 class Order extends Component {
@@ -26,7 +27,8 @@ class Order extends Component {
 			orderStatus: 1,
 			expired: false,
 			loading: true,
-			paymentWindow: null
+			paymentWindow: null,
+			showBookmarkModal: false,
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -104,8 +106,9 @@ class Order extends Component {
 			<div id="order">
 				<div className="container">
 					<div className="row">
-					    <div className="col-xs-12">
+					    <div id="order-header" className="col-xs-12">
 					    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+					    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
 					    </div>
 					</div>
 
@@ -155,6 +158,8 @@ class Order extends Component {
 					    </div>
 					</div>
 				</div>
+
+			    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 			</div>
 		);
 	}
