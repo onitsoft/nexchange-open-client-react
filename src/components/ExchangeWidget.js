@@ -27,7 +27,9 @@ class ExchangeWidget extends Component {
 	}
 
 	componentDidMount() {
-		this.updatePrices();
+		setTimeout(() => {
+			this.updatePrices();
+		}, 100);
 	}
 
 	componentWillUnmount() {
