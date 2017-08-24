@@ -295,6 +295,8 @@ $screen-xs-min:              $screen-xs !default;
 //** Deprecated `$screen-phone` as of v3.0.1
 $screen-phone:               $screen-xs-min !default;
 
+$screen-ms-min: 			 480px !default;
+
 // Small screen / tablet
 //** Deprecated `$screen-sm` as of v3.0.1
 $screen-sm:                  768px !default;
