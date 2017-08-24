@@ -19,11 +19,11 @@ class WalletAddress extends Component {
             ETH: /^0x[0-9a-fA-F]{40}$/,
         };
 
-        let coin = this.props.selectedCoin.present.receive,
+        let coin = this.props.selectedCoin.receive,
         	isValid = rules[coin].test(address);
 
         if (!isValid) 
-        	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.present.receive} wallet address.`});
+        	this.props.errorAlert({show: true, message: `Invalid wallet address. Please put valid ${this.props.selectedCoin.receive} wallet address.`});
         else
         	this.props.errorAlert({show: false});
 
@@ -55,7 +55,7 @@ class WalletAddress extends Component {
 		return (
 			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
 				<div className="form-group label-floating has-warning">
-					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.present.receive} Address</label>
+					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.receive} Address</label>
 					<input type="text" ref={input => { this.nameInput = input; }} className="form-control addr" id="withdraw-addr" onChange={this.onChange} />
 				</div>
 			</div>
