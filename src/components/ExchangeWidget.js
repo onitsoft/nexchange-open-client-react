@@ -35,7 +35,7 @@ class ExchangeWidget extends Component {
 	}
 
 	updatePrices() {
-		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
+		this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
 
 		this.timeout = setTimeout(() => {
 			this.updatePrices();
@@ -53,7 +53,7 @@ class ExchangeWidget extends Component {
 				"amount_base": this.props.amounts.receive,
 				"is_default_rule": true,
 				"pair": {
-					"name": `${this.props.selectedCoin.present.receive}${this.props.selectedCoin.present.deposit}`
+					"name": `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
 				},
 				"withdraw_address": {
 					"address": this.props.wallet.address,

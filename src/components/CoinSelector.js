@@ -17,20 +17,22 @@ class CoinSelector extends Component {
 
 	selectCoin(coin) {
 		let newSelectedCoinProps = Object.assign({}, this.props.selectedCoin);
-		newSelectedCoinProps.present[this.props.type] = coin;
+		newSelectedCoinProps[this.props.type] = coin;
 		this.props.selectCoin(newSelectedCoinProps);
 
-		this.props.fetchPrice({pair: `${this.props.selectedCoin.present.deposit}${this.props.selectedCoin.present.receive}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
+		setTimeout(() => {
+			this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
+		}, 100);
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({selectedCoin: this.props.selectedCoin.present[this.props.type]});
+		this.setState({selectedCoin: this.props.selectedCoin[this.props.type]});
 	}
 
 	render() {
-		let selectedCoin = this.props.selectedCoin.present[this.props.type],
+		let selectedCoin = this.props.selectedCoin[this.props.type],
 			coins = this.props.coinsInfo.map(coin => {
 				return (
 					<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>

@@ -3,10 +3,10 @@ import moment from 'moment';
 import config from '../config';
 
 
-export function errorAlert(error) {
+export function errorAlert(payload) {
 	return {
 		type: 'ERROR_ALERT',
-		payload: error
+		payload: payload
 	}
 }
 
@@ -17,10 +17,18 @@ export function setWallet(payload) {
 	}
 }
 
-export function selectCoin(coin) {
+export function selectCoin(payload) {
+	// DISPATCH COIN_SELECTED AND
+	// THEN UPDATE AMOUNTS
+	// ACTUALLY, WRONG PLACE, SHOULD
+	// DETECT SELECTED COIN PROPS CHANGE AND THEN
+	// UPDATE AMOUNTS
+	// return (dispatch, getState) {
+	// }
+
 	return {
 		type: 'COIN_SELECTED',
-		payload: coin
+		payload: payload
 	}
 }
 
