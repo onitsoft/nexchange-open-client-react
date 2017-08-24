@@ -60,8 +60,8 @@ class Header extends Component {
 			    	</ul>
 			    </div>
 
-			    <FAQ showModal={this.state.showFaqModal} onClose={() => this.setState({showFaqModal: false})} />
-			    <Support showModal={this.state.showSupportModal} onClose={() => this.setState({showSupportModal: false})} />
+			    <FAQ show={this.state.showFaqModal} onClose={() => this.setState({showFaqModal: false})} />
+			    <Support show={this.state.showSupportModal} onClose={() => this.setState({showSupportModal: false})} />
 			</div>
 	    );
 	}

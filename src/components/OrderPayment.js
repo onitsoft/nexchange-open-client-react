@@ -41,12 +41,9 @@ class OrderPayment extends Component {
     				<h4>Send <b>{this.props.depositAmount} {this.props.depositCoin}</b> to the address<br/>
     					<b id="deposit-address">{this.props.depositAddress}</b>
     				</h4>
-
-			        <CopyToClipboard text={this.props.depositAddress}
-			          onCopy={() => this.triggerCopyTooltip()}>
-						<button id="copy-to-clipboard" type="button" className="btn btn-default">
-							Copy the address
-						</button>
+    				
+			        <CopyToClipboard text={this.props.depositAddress} onCopy={() => this.triggerCopyTooltip()}>
+						<button id="copy-to-clipboard" type="button" className="btn btn-default">Copy the address</button>
     				</CopyToClipboard>
     			</div>
 		    </div>

@@ -7,21 +7,21 @@ class FAQ extends Component {
     super();
 
     this.state = {
-      showModal: false
+      show: false
     }
   }
 
   componentDidUpdate() {
-    if (this.state.showModal != this.props.showModal) {
+    if (this.state.show != this.props.show) {
       this.setState({
-        showModal: this.props.showModal
+        show: this.props.show
       });
     }
   }
 
   render() {
     return (
-      <Modal show={this.state.showModal} onHide={this.props.onClose} >
+      <Modal show={this.state.show} onHide={this.props.onClose} >
         <div id="faq" className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>

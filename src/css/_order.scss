@@ -69,6 +69,21 @@
 	}
 }
 
+#order-header {
+	h3 { float: left; }
+	#bookmark-button { float: right; font-size: 20px; padding: 0; margin-top: 32px; color: #2cb4a0; }
+}
+
+#bookmark {
+	.bookmark-text{ font-size: 19px; }
+	.input-group-addon { cursor: pointer; 
+		i { font-size: 18px; }
+	}
+	.form-group { margin-top: 10px; }
+	input { font-size: 18px; }
+}
+
+
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
 @media (min-width: $screen-lg-min) {}
