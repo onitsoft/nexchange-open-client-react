@@ -41,17 +41,19 @@ class OrderStatus extends Component {
 				<div key={order.unique_reference} className="recent-order">
 					<a href={`${config.API_BASE_URL}/orders/${order.unique_reference}?format=json`} target="_blank" className="overlay">Click to view on API</a>
 
-					<div className="col-xs-4">
-						<i className={`coin-icon cc-${order.deposit_address.currency_code} ${order.deposit_address.currency_code}`}></i>
-						<i className="fa fa-arrow-right" aria-hidden="true"></i>
-						<i className={`coin-icon cc-${order.withdraw_address.currency_code} ${order.withdraw_address.currency_code}`}></i>
+					<div className="col-xs-4 coins-container">
+						<div className="coins">
+							<i className={`coin-icon cc-${order.deposit_address.currency_code} ${order.deposit_address.currency_code}`}></i>
+							<i className="fa fa-arrow-right" aria-hidden="true"></i>
+							<i className={`coin-icon cc-${order.withdraw_address.currency_code} ${order.withdraw_address.currency_code}`}></i>
+						</div>
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
 						<p>{parseFloat(order.amount_quote).toFixed(2)} <b>{order.deposit_address.currency_code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b>{order.withdraw_address.currency_code}</b></p>
 					</div>
 
-					<div className="col-xs-4">
+					<div className="col-xs-4 created-on">
 						<p>{new moment(order.created_on).fromNow()}</p>
 					</div>
 				</div>
