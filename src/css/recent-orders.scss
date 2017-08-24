@@ -1,6 +1,27 @@
-#recent-orders {
-	h3 { margin-bottom: 25px; }
-	.recent-order { height: 45px; padding-top: 7px; overflow: hidden; text-align: center; border-bottom: 1px solid #ccc; }
-	.coin-icon { font-size: 30px; margin: 0 15px; position: relative; top: 3px; }
-	p { font-size: 16px; position: relative; top: 4px; }
+$recent-orders-row-height: 55px;
+
+#recent-orders { padding: 15px 0 35px; background: #f8f7f8;
+	h3 { margin-bottom: 35px; }
+	.recent-orders-container {  }
+	.recent-order { height: $recent-orders-row-height; padding-top: 7px; overflow: hidden; position: relative; text-align: center; border-bottom: 1px solid rgba(44, 180, 160, 0.27);
+		&:nth-child(odd) { background: rgba(253, 253, 253, 0.99); }
+		.fa-arrow-right { position: relative; top: 4px; color: $green; }
+		.recent-order-amount { opacity: 1; }
+		.overlay { position: absolute; top: 0; left: 0; width: 100%; height: $recent-orders-row-height; line-height: $recent-orders-row-height; font-size: 20px; background: rgba(232, 232, 232, 1); z-index: 1; color: $green; opacity: 0; font-weight: 700;
+
+			.fa-link { margin-left: 8px; }
+		}
+		&:hover {
+			.overlay { opacity: 1; background: rgba(232, 232, 232, 0.5);
+				@include transition-property(all);
+				@include transition-duration(350ms); 
+			}
+			.recent-order-amount {
+				opacity: 0;
+			}
+		}
+		// b { color: $green; }
+	}
+	.coin-icon { font-size: 34px; margin: 0 19px; position: relative; top: 10px; }
+	p { font-size: 18px; position: relative; top: 8px; }
 }

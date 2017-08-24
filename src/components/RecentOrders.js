@@ -19,8 +19,6 @@ class OrderStatus extends Component {
 	fetchRecentOrders() {
         axios.get(`${config.API_BASE_URL}/orders/?page=1`)
         	.then(response => {
-        		console.log(response.data.results);
-
         		let orders = response.data.results;
         		this.setState({orders: orders});
         	})
@@ -38,36 +36,42 @@ class OrderStatus extends Component {
 	}
 
 	render() {
-		let orders = this.state.orders.map(order => {
-			console.log(order);
+		let orders = this.state.orders.slice(0,10).map(order => {
 			return (
 				<div key={order.unique_reference} className="recent-order">
+					<a href={`${config.API_BASE_URL}/orders/${order.unique_reference}?format=json`} target="_blank" className="overlay">Click to view on API</a>
+
 					<div className="col-xs-4">
 						<i className={`coin-icon cc-${order.deposit_address.currency_code} ${order.deposit_address.currency_code}`}></i>
 						<i className="fa fa-arrow-right" aria-hidden="true"></i>
 						<i className={`coin-icon cc-${order.withdraw_address.currency_code} ${order.withdraw_address.currency_code}`}></i>
 					</div>
 
-					<div className="col-xs-4">
-						<p>{parseFloat(order.amount_quote).toFixed(2)} {order.deposit_address.currency_code} to {parseFloat(order.amount_base).toFixed(2)} {order.withdraw_address.currency_code}</p>
+					<div className="col-xs-4 recent-order-amount">
+						<p>{parseFloat(order.amount_quote).toFixed(2)} <b>{order.deposit_address.currency_code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b>{order.withdraw_address.currency_code}</b></p>
 					</div>
 
 					<div className="col-xs-4">
 						<p>{new moment(order.created_on).fromNow()}</p>
+						
 					</div>
 				</div>
 			);
 		});
 
 		return (
-			<div id="recent-orders" className="container">
+			<div id="recent-orders" >
+			<div className="container">
 				<div className="row">
 					<div className="col-xs-12">
 						<h3>Recent Orders</h3>
 
-						{orders}
+						<div className="recent-orders-container">
+							{orders}
+						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 		);
 	}

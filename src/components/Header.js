@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {Icon} from 'react-fa';
+import scrollToElement from 'scroll-to-element';
 
 import FAQ from './FAQ';
 import Support from './Support';
@@ -39,8 +40,16 @@ class Header extends Component {
 			    <div className="collapse navbar-collapse" id="navigation-index">
 			    	<ul className="nav navbar-nav navbar-right">
 						<li>
+							<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})} onClick={() => scrollToElement('#team')}>About</a>
+						</li>
+			    	
+						<li>
 							<a href="javascript:void(0)" onClick={() => this.setState({showFaqModal: true})}>FAQ</a>
 						</li>
+
+			    		<li>
+			    			<a href="http://docs.nexchange2.apiary.io/" target="_blank">API Docs</a>
+			    		</li>
 
 						<li>
 							<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})}>Support</a>
