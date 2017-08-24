@@ -1,7 +1,6 @@
 @import 'bootstrap';
 @import 'material-kit';
 @import 'cryptocoins';
-@import 'icons';
 
 $green: rgb(44, 180, 160);
 
@@ -10,6 +9,8 @@ $green: rgb(44, 180, 160);
 @import 'wallet-address';
 @import 'faq';
 @import 'order';
+@import 'recent-orders';
+
 
 h1 { font-size: 34px;
 	@media (min-width: $screen-sm-min) { font-size: 46px; }
@@ -51,8 +52,8 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 #support-modal .form-group { margin: 0; }
 #support-form { margin-top: 15px; }
 
-#team { margin-top: 20px; margin-bottom: 30px;
-	h1 { margin-top: 45px; }
+#team { margin-bottom: 30px;
+	h3 { margin-top: 35px; margin-bottom: 25px; }
 }
 
 @media (min-width: $screen-sm-min) {}
