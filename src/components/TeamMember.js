@@ -5,8 +5,6 @@ import LT from '../img/flags/LT.svg';
 
 class TeamMember extends Component {
 	render() {
-		console.log(this.props.social);
-
 		let social = [];
 		for (const key of Object.keys(this.props.social)) {
 		    social.push(
