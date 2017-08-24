@@ -21,7 +21,7 @@ class Bookmark extends Component {
     });
 
     $('#bookmark .fa-clipboard').tooltip('hide')
-      .attr('data-original-title', 'Wallet address copied!')
+      .attr('data-original-title', 'Copied!')
       .tooltip('show');
 
     setTimeout(() => {
