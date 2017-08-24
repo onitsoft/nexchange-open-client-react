@@ -11,15 +11,15 @@
 	#copy-to-clipboard { background: #2cb4a0; background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%); }
 	#time-remaining { color: #2cb4a0; }
 
-	@media (min-width: $screen-sm-min) { padding: 50px 0; }
-
-	@media (min-width: $screen-md-min) { padding: 75px 0;
-		h5, h6 { font-size: 16px; }
+	@media (min-width: $screen-sm-min) { padding: 25px 0;
+		h5 { font-size: 15px; }
+		h6 { font-size: 12px; }
 		.box .coin-icon { top: 12px; }
 	}
 
 	@media (min-width: $screen-md-min) {
-		h5, h6 { font-size: 17px; }
+		h5 { font-size: 17px; }
+		h6 { font-size: 16px; }
 		.box .coin-icon { top: 12px; }
 	}
 }
@@ -70,8 +70,12 @@
 }
 
 #order-header {
-	h3 { float: left; }
-	#bookmark-button { float: right; font-size: 20px; padding: 0; margin-top: 32px; color: #2cb4a0; }
+	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: #2cb4a0; }
+
+	@media (min-width: $screen-sm-min) {
+		h3 { float: left; }
+		#bookmark-button { float: right; margin-top: 32px; }
+	}
 }
 
 #bookmark {
