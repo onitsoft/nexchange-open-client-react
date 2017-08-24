@@ -3,7 +3,7 @@
 }
 
 #team-members {
-	.team-member { height: 100%; margin-top: 30px; padding: 25px 15px 15px 15px; background: #fff; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	.team-member { height: 100%; margin-top: 30px; padding: 25px 15px 15px 15px; background: #fff; box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -6px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 		img { display: inline-block; margin-bottom: 15px; width: 50%; }
 		h3 { font-size: 20px; margin: 0; font-weight: 400; }
 		h4 { font-size: 18px; margin: 0; }
@@ -20,13 +20,9 @@
 				}
  			}
 		}
-
-		@media (min-width: $screen-ms-min) { height: 415px; }
-		@media (min-width: $screen-sm-min) { height: 415px; }
+	
+		@media (min-width: $screen-ms-min) { height: 390px; }
+		@media (min-width: $screen-sm-min) { height: 390px; }
+		@media (min-width: $screen-md-min) { height: 390px; }
 	}
 }
-
-
-@media (min-width: $screen-sm-min) {}
-@media (min-width: $screen-md-min) {}
-@media (min-width: $screen-lg-min) {}

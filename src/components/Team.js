@@ -28,7 +28,7 @@ class Team extends Component {
             }} />
 
           <TeamMember id="mantas" name="Mantas Rukuiža" title="Business Development" country="LT"
-            description="Heirloom 90's cliche leggings. Tumblr gentrify chia, pok pok forage you probably haven't heard of them cronut. +1 lomo wolf, master cleanse truffaut before they sold out."
+            description="Life time technology enterpreneur. Growth hacker by day, recreational yacht sailor at passtime"
             social={{
               linkedin: "https://www.linkedin.com/in/mantas-rukui%C5%BEa-136a84139/",
             }} />
@@ -55,7 +55,7 @@ class Team extends Component {
             }} />
 
           <TeamMember id="justas" name="Justas Ažna" title="Devops Orchestrator" country="LT"
-            description="Shuffling Docker, Swarm & Kubernates. Proponent about micro-components design, and seamless scalability. Python & Javascript as secondary weapons of choice."
+            description="Shuffling Docker, Swarm & Kubernates. Proponent about micro-components design, and seamless scalability."
             social={{
               linkedin: "https://www.linkedin.com/in/justasazna/",
               github: "https://github.com/reederz",
