@@ -53,25 +53,24 @@ class OrderStatus extends Component {
 
 					<div className="col-xs-4">
 						<p>{new moment(order.created_on).fromNow()}</p>
-						
 					</div>
 				</div>
 			);
 		});
 
 		return (
-			<div id="recent-orders" >
-			<div className="container">
-				<div className="row">
-					<div className="col-xs-12">
-						<h3>Recent Orders</h3>
+			<div id="recent-orders">
+				<div className="container">
+					<div className="row">
+						<div className="col-xs-12">
+							<h3>Recent Orders</h3>
 
-						<div className="recent-orders-container">
-							{orders}
+							<div className="recent-orders-container">
+								{orders}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		);
 	}
