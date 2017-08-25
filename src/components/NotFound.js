@@ -8,15 +8,6 @@ import Support from './Support';
 
 
 class NotFound extends Component {
-	constructor(props) {
-		super();
-
-		this.state = {
-			showFaqModal: false,
-			showSupportModal: false
-		}
-	}
-
 	render() {
 	    return (
 			<div id="not-found" className="text-center">
