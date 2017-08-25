@@ -11,6 +11,7 @@ $green: rgb(44, 180, 160);
 @import 'order';
 @import 'recent-orders';
 @import 'team';
+@import 'support';
 @import 'not-found';
 
 
@@ -47,15 +48,19 @@ a:hover { text-decoration: none; }
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
 	h3 { margin-top: 35px; }
-	h3:first-child { margin-top: 0; }
+	h3:first-child { margin-top: -8px; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
 
-#support-modal .form-group { margin: 0; }
-#support-form { margin-top: 15px; }
-
 #team { margin-bottom: 30px;
 	h3 { margin-top: 35px; margin-bottom: 25px; }
+}
+
+.styled-btn {
+	background: #2cb4a0;
+	background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
 }
 
 @media (min-width: $screen-sm-min) {}

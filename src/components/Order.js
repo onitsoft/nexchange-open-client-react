@@ -11,7 +11,6 @@ import NotFound from './NotFound';
 
 
 class Order extends Component {
-
 	constructor(props) {
 		super();
 
