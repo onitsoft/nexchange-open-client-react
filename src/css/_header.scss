@@ -1,16 +1,26 @@
 #header {
 	.btn-just-icon { text-align: left; }
-	.navbar-header { padding-bottom: 10px; }
 	.navbar-toggle { top: 15px; }
 	.logo-container { margin-left: 15px;
 		@media (min-width: $screen-sm-min) { margin-left: 0; }
 	}
 	.icon-bar { background: #000; }
-	.navbar-nav { margin-top: 15px;
+	.navbar-nav { margin-top: 0;
 		li a:hover { text-decoration: underline; background: none; }
 	}
 	a { color: #333; font-size: 16px;
 		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; outline: none; }
 	}
 	.fa { position: relative; top: -2px; }
+
+	@media (min-width: $screen-sm-min) {
+		.navbar-nav { margin-top: 15px; }
+		.navbar-header { padding-bottom: 10px; }
+	}
+	@media (min-width: $screen-md-min) {
+
+	}
+	@media (min-width: $screen-lg-min) {
+
+	}
 }

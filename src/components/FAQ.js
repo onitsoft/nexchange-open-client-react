@@ -72,7 +72,7 @@ class FAQ extends Component {
 
             <h3>How do I track my order?</h3>
             <p>Every order has a unique id like this:</p>
-            <img src="img/faq.png" style={{margin: "10px 0"}} />
+            <img src="/img/faq.png" style={{margin: "10px 0"}} />
             <p>Make sure you record your order id. We recommend bookmarking the page, you can always navigate to it later.</p>
             <p>Once you have sent the cryptocurrency, losing connection, closing the tab or navigating elsewhere will not impact the transaction.</p>
             <p>If you need help, feel free to contact us.</p>
