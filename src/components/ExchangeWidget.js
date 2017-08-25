@@ -6,7 +6,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import config from '../config';
-import { fetchPrice, setWallet } from '../actions/index.js';
+import { fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 
 import CoinInput from './CoinInput';
 import WalletAddress from './WalletAddress';
@@ -70,14 +70,24 @@ class ExchangeWidget extends Component {
 			});
 		})
 		.catch(error => {
-			console.log(error);
+			this.props.errorAlert({
+				message: `${error.response.data.non_field_errors[0]}`,
+				show: true,
+				type: 'PLACE_ORDER'
+			});
+
+			this.setState({
+				orderPlaced: false,
+				loading: false,
+			});
+
+			console.log(error.response);
 		});
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT') {
-			this.props.setWallet({address: '', valid: false, show: false})
-		}
+		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT')
+			this.props.setWallet({address: '', valid: false, show: false});
 	}
 
 	render() {
@@ -99,7 +109,7 @@ class ExchangeWidget extends Component {
 
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
-							<button className="btn btn-block proceed" onClick={() => this.props.setWallet({show: true})} disabled={this.props.error.show ? 'disabled' : null}>
+							<button className="btn btn-block proceed" onClick={() => this.props.setWallet({show: true})} disabled={this.props.error.show && this.props.error.type == 'INVALID_AMOUNT' ? 'disabled' : null}>
 								Get Started !
 							</button>
 						) : (
@@ -129,6 +139,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		fetchPrice: fetchPrice,
 		setWallet: setWallet,
+		errorAlert: errorAlert,
 	}, dispatch)
 }
 
