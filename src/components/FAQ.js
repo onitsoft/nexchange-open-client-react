@@ -54,7 +54,6 @@ class FAQ extends Component {
               <li>Once everything is done, you will receive your ETH. Hurray! You just successfully exchanged your cryptocurrency.</li>
             </ol>
             <p>Once you have paid for your order, it cannot be reversed. Please ensure that you have put in the right address.</p>
-            <p>In case of an issue, your order will be refunded to your original wallet.</p>
 
             <h3>Do you collect any private information?</h3>
             <p>We do not collect or store any private information about you. The process is completely anonymous.</p>
