@@ -27,35 +27,36 @@ class Team extends Component {
               github: "https://github.com/BeOleg",
             }} />
 
-          <TeamMember id="mantas" name="Mantas Rukuiža" title="Business Development" country="LT"
-            description="Life time tech entrepreneur, marketing strategist, blockchain fan & certified sailing yacht captain."
-            social={{
-              linkedin: "https://www.linkedin.com/in/mantas-rukui%C5%BEa-136a84139/",
-            }} />
-
           <TeamMember id="daniel" name="Daniel Blank" title="Product Manager" country="IL"
             description="Product manager. Former IDF and FinTech coder with a deep passion for great products. Cryptocurrency enthusiast since 2013."
             social={{
               linkedin: "https://www.linkedin.com/in/daniel-blank-72166284/",
+              quora: "https://www.quora.com/profile/Daniel-Blank-7",
+            }} />
+
+          <TeamMember id="mantas" name="Mantas Rukuiža" title="Business Development" country="LT"
+            description="Business development expert. Life time tech entrepreneur, marketing strategist, blockchain fan & certified sailing yacht captain."
+            social={{
+              linkedin: "https://www.linkedin.com/in/mantas-rukui%C5%BEa-136a84139/",
             }} />
 
           <TeamMember id="sarunas" name="Šarūnas Ažna" title="Software Developer" country="LT"
-            description="Backed developer and physicist. Fan of animation, crypto currencies and plays the saxophone."
+            description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
             social={{
               linkedin: "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
               "github": "https://github.com/SarunasAzna",
             }} />
 
           <TeamMember id="karolis" name="Karolis Ramanauskas" title="Software Developer" country="LT"
-            description="Full-stack developer. Entpreneur by heart. Brings products to life through his fingertips."
+            description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
             social={{
               linkedin: "https://www.linkedin.com/in/karolisram/",
               github: "https://github.com/ramkarolis/",
               medium: "https://medium.com/@karolisram",
             }} />
 
-          <TeamMember id="justas" name="Justas Ažna" title="Devops Orchestrator" country="LT"
-            description="Shuffling Docker, Swarm & Kubernates. Proponent about micro-components design, and seamless scalability."
+          <TeamMember id="justas" name="Justas Ažna" title="DevOps Orchestrator" country="LT"
+            description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
             social={{
               linkedin: "https://www.linkedin.com/in/justasazna/",
               github: "https://github.com/reederz",

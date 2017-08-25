@@ -50,7 +50,7 @@ class OrderStatus extends Component {
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
-						<p>{parseFloat(order.amount_quote).toFixed(2)} <b>{order.deposit_address.currency_code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b>{order.withdraw_address.currency_code}</b></p>
+						<p>{parseFloat(order.amount_quote).toFixed(2)} <b className="hidden-xs">{order.deposit_address.currency_code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b className="hidden-xs">{order.withdraw_address.currency_code}</b></p>
 					</div>
 
 					<div className="col-xs-4 created-on">
@@ -59,8 +59,6 @@ class OrderStatus extends Component {
 				</div>
 			);
 		});
-
-		console.log(orders.length);
 
 		return (
 			<div id="recent-orders">
