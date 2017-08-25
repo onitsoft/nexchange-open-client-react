@@ -24,11 +24,13 @@ h3 { font-size: 26px;
 	@media (min-width: $screen-sm-min) { font-size: 34px; }
 }
 
-.header-text { font-size: 36px; }
+a { color: $green; 
+	&:hover, &:focus, &:visited { text-decoration: none; }
+}
 
+.header-text { font-size: 36px; }
 p { font-size: 19px; line-height: 1.5em; }
 img { max-width: 100%; }
-a:hover { text-decoration: none; }
 
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
@@ -42,10 +44,12 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 }
 
 .styled-btn {
-	background: #2cb4a0;
-	background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
-	background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
-	background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	&, &:focus, &:visited {
+		background: #2cb4a0;
+		background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+		background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+		background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	}
 }
 
 @media (min-width: $screen-sm-min) {}

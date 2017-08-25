@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {Icon} from 'react-fa';
-import { Button, Modal, Overflowing, OverlayTrigger, Popover, Tooltip } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import axios from 'axios';
+
+import config from '../config';
+
 
 class Support extends Component {
   constructor(props) {
     super();
 
     this.state = {
-      show: false
+      name: null,
+      phone: null,
+      email: null,
+      order: null,
+      subject: null,
+      message: null,
+      loading: false,
+      success: null
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidUpdate() {
@@ -18,6 +30,48 @@ class Support extends Component {
         show: this.props.show
       });
     }
+  }
+
+  handleSubmit(event) {
+    this.setState({loading: true, success: true});
+
+    setTimeout(() => {
+      this.setState({loading: false});
+    }, 1000);
+
+    axios({
+      method: 'post',
+      contentType : 'application/json',
+      url: `${config.API_BASE_URL}/suport`,
+      data: this.state
+    })
+    .then(response => {
+      // this.setState({
+      //   orderRef: response.data.unique_reference,
+      //   orderPlaced: true,
+      //   loading: false
+      // });
+    })
+    .catch(error => {
+      // this.setState({
+      //   orderPlaced: false,
+      //   loading: false,
+      // });
+
+      console.log(error.response);
+    });
+
+    event.preventDefault();
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
@@ -45,36 +99,42 @@ class Support extends Component {
               </div>
             </div>
 
-            <form id="support-form">
+            <form id="support-form" onSubmit={this.handleSubmit}>
+              {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
+              {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try later.</h4> : null}
+
               <div className="form-group is-empty">
-                <input type="name" className="form-control" placeholder="Name" required />
+                <input type="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
                 <span className="material-input"></span>
+                <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="phone" className="form-control" placeholder="Telephone" />
+                <input type="phone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
                 <span className="material-input"></span>
+                <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="email" className="form-control" placeholder="Email" required />
+                <input type="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
                 <span className="material-input"></span>
+                <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="text" className="form-control" placeholder="Subject" />
+                <input type="text" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
                 <span className="material-input"></span>
+                <span className="material-icons form-control-feedback">clear</span>
               </div>
 
-              <textarea className="form-control" placeholder="Message" rows="2" required></textarea>
+              <textarea className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
 
-              <button type="submit" className="btn styled-btn btn-md">Send</button>
+              <button type="submit" className="btn styled-btn btn-md" disabled={this.state.loading ? "disabled" : null}>
+                Send
+                {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
+              </button>
               <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
             </form>
-          </div>
-
-          <div className="modal-footer">
-            
           </div>
         </div>
       </Modal>
