@@ -8,7 +8,7 @@ class TeamMember extends Component {
 		let social = [];
 		for (const key of Object.keys(this.props.social)) {
 		    social.push(
-		    	<a href={this.props.social[key]} key={key} target="_blank"><i className={key == 'medium' ? `fa fa-${key}` : `fa fa-${key}-square`} aria-hidden="true"></i></a>
+		    	<a href={this.props.social[key]} key={key} target="_blank"><i className={key == 'medium' || key == 'quora' ? `fa fa-${key}` : `fa fa-${key}-square`} aria-hidden="true"></i></a>
 		    );
 		}
 
@@ -18,7 +18,6 @@ class TeamMember extends Component {
 					<img src={`/img/team/${this.props.id}.jpg`} className="img-circle img-responsive" />
 
 					<h3>{this.props.name} <img src={`/img/flags/${this.props.country}.svg`} className="flag" /></h3>
-					<h4>{this.props.title}</h4>
 
 					<div className="social">
 						{social}
