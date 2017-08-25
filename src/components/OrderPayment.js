@@ -12,7 +12,7 @@ const OrderPayment = (props) => {
 
 	let blockchainUrl;
 	if (coin == 'ETH') {
-		blockcypherUrl = `https://etherscan.io/tx/${transId}`;
+		blockchainUrl = `https://etherscan.io/tx/${transId}`;
 	} else if (coin == 'LTC') {
 		blockchainUrl = `https://live.blockcypher.com/ltc/tx/${transId}/`;
 	} else if (coin == 'BTC') {
