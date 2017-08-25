@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectCoin, fetchPrice } from '../actions/index.js';
+import { selectCoin, fetchPrice, setWallet } from '../actions/index.js';
 
 class CoinSelector extends Component {
 
@@ -25,6 +25,8 @@ class CoinSelector extends Component {
 		}, 100);
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
+
+    	this.props.setWallet({address: '', valid: false, show: false});
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -72,6 +74,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		selectCoin: selectCoin,
 		fetchPrice: fetchPrice,
+		setWallet: setWallet,
 	}, dispatch)
 }
 
