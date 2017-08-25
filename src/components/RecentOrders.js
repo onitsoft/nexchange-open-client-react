@@ -43,14 +43,14 @@ class OrderStatus extends Component {
 
 					<div className="col-xs-4 coins-container">
 						<div className="coins">
-							<i className={`coin-icon cc-${order.deposit_address.currency_code} ${order.deposit_address.currency_code}`}></i>
+							<i className={`coin-icon cc-${order.pair.quote.code} ${order.pair.quote.code}`}></i>
 							<i className="fa fa-arrow-right" aria-hidden="true"></i>
-							<i className={`coin-icon cc-${order.withdraw_address.currency_code} ${order.withdraw_address.currency_code}`}></i>
+							<i className={`coin-icon cc-${order.pair.base.code} ${order.pair.base.code}`}></i>
 						</div>
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
-						<p>{parseFloat(order.amount_quote).toFixed(2)} <b className="hidden-xs">{order.deposit_address.currency_code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b className="hidden-xs">{order.withdraw_address.currency_code}</b></p>
+						<p>{parseFloat(order.amount_quote).toFixed(2)} <b className="hidden-xs">{order.pair.quote.code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b className="hidden-xs">{order.pair.quote.base}</b></p>
 					</div>
 
 					<div className="col-xs-4 created-on">

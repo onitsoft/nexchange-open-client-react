@@ -9,10 +9,10 @@
 		h4 { font-size: 18px; margin: 0; }
 		p { font-size: 14px; margin: 10px 0 0 0; }
 		.flag { display: inline-block; width: 20px; margin: -3px 0 0 7px; }
-		.social { font-size: 32px; margin-top: 10px; cursor: pointer;
+		.social { font-size: 28px; margin-top: 10px; cursor: pointer;
 			i { margin: 0 4px; @include transition-property(color); @include transition-duration(150ms); }
  			a { color: #d6d6d6; 
- 				.fa-quora { font-size: 29px; }
+ 				.fa-quora { font-size: 25px; }
 				&:hover {
 					.fa-linkedin-square { color: #0077b5; }
 					.fa-twitter-square { color: #1da1f2; }
