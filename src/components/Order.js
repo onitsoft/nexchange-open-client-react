@@ -70,8 +70,6 @@ class Order extends Component {
 			.then((response) => {
 				let data = response.data;
 
-				console.log(data);
-
 				this.setState({
 					loading: false,
 					depositAmount: parseFloat(data.amount_quote),

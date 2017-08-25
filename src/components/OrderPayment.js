@@ -6,7 +6,8 @@ import config from '../config';
 const OrderPayment = (props) => {
 	let coin = props.order.pair.quote.code;
 	let wait = (coin == 'ETH' || coin == 'BTC' ? 60 : 30);
-	let	estimate = wait - (wait * (3/6));
+	let requiredConfirmations = (coin == 'ETH' ? 12 : (coin == 'BTC' ? 1 : 6));
+	let	estimate = wait - (wait * (props.order.transactions[0].confirmations/requiredConfirmations));
 	let transId = props.order.transactions[0].tx_id;
 
 	let blockchainUrl;
@@ -20,7 +21,7 @@ const OrderPayment = (props) => {
 
 	return (
 		<div id="order-payment-confirmations" className="col-xs-12 text-center">
-			<h2 style={{margin: "0"}}>Awaiting Confirmations ({props.order.transactions[0].confirmations}/6)</h2>
+			<h2 style={{margin: "0"}}>Awaiting Confirmations ({props.order.transactions[0].confirmations}/{requiredConfirmations})</h2>
 			<h5>Transaction ID: <span style={{color: "#2cb4a0"}}>{props.order.transactions[0].tx_id}</span></h5>
 			<h5>By our estimations it will take another {estimate} minutes to get all confirmations.</h5>
 
