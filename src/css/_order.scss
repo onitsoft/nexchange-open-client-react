@@ -1,4 +1,8 @@
 #order { background: #f8f7f8; padding: 15px 0;
+	a { color: $green; 
+		&:visited, &:focus { text-decoration: none; }
+		&:hover { text-decoration: underline; }
+	}
 	#order-ref { margin-bottom: 15px; }
 	.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
 		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
@@ -67,7 +71,7 @@
 		.progress.progress-line-info { background: rgba(44, 180, 160, 0.2); }
 		.progress.progress-line-info { margin-bottom: 5px; }
 
-		@media (min-width: $screen-md-min) { padding: 25px 60px 0; }
+		@media (min-width: $screen-md-min) { padding: 25px 0 0; }
 	}
 }
 

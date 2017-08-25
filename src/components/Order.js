@@ -4,7 +4,11 @@ import moment from 'moment';
 
 import config from '../config';
 
+import OrderInitial from './OrderInitial';
 import OrderPayment from './OrderPayment';
+import OrderPaid from './OrderPaid';
+import OrderSuccess from './OrderSuccess';
+import OrderFailure from './OrderFailure';
 import OrderStatus from './OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from './NotFound';
@@ -29,7 +33,8 @@ class Order extends Component {
 			loading: true,
 			paymentWindow: null,
 			showBookmarkModal: false,
-			notFound: false
+			notFound: false,
+			order: null,
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -65,6 +70,8 @@ class Order extends Component {
 			.then((response) => {
 				let data = response.data;
 
+				console.log(data);
+
 				this.setState({
 					loading: false,
 					depositAmount: parseFloat(data.amount_quote),
@@ -74,8 +81,9 @@ class Order extends Component {
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on,
-					orderStatus: data.status_name[0][0],
-					paymentWindow: parseInt(data.payment_window)
+					orderStatus: -1, //data.status_name[0][0],
+					paymentWindow: parseInt(data.payment_window),
+					order: data
 				}, () => {
 					this.interval = setInterval(this.tick, 1000);
 					this.tick();
@@ -107,6 +115,19 @@ class Order extends Component {
 	render() {
 		if (this.state.notFound)
 			return <NotFound />;
+
+		let orderDetails = null;
+		if (this.state.orderStatus == 1 ) {
+			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />;
+		} else if (this.state.orderStatus == -1) {
+			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />
+		} else if (this.state.orderStatus == 2) {
+			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />
+		} else if (this.state.orderStatus >= 3) {
+			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
+		} else if (this.state.orderStatus == 0 || this.state.orderStatus == -2) {
+			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
+		}
 
 		return (
 			<div id="order">
@@ -151,7 +172,7 @@ class Order extends Component {
 						    	<div className="row">
 					    		{this.state.loading ?
 					    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
-					    			<OrderPayment expired={this.state.expired} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />
+					    			orderDetails
 					    		}
 					    		</div>
 
