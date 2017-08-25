@@ -9,6 +9,7 @@ class WalletAddress extends Component {
 	constructor(props) {
 		super(props);
 
+		this.state = { address: this.props.address }
 		this.onChange = this.onChange.bind(this);
 	}
 
@@ -34,6 +35,8 @@ class WalletAddress extends Component {
 		let address = event.target.value,
 			valid = this.validateWalletAddress(address);
 
+		this.setState({address: address});
+
 		this.props.setWallet({
 			address: address,
 			valid: valid,
@@ -46,6 +49,10 @@ class WalletAddress extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+    	if (nextProps.wallet.address != this.state.address) {
+    		this.setState({address: nextProps.wallet.address});
+    	}
+
     	if (nextProps.wallet.show && (this.props.wallet.show != nextProps.wallet.show)) {
     		setTimeout(() => this.nameInput.focus(), 300);
     	}
@@ -56,7 +63,7 @@ class WalletAddress extends Component {
 			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
 				<div className="form-group label-floating has-warning">
 					<label htmlFor="withdraw-addr" className="control-label">Your {this.props.selectedCoin.receive} Address</label>
-					<input type="text" ref={input => { this.nameInput = input; }} className="form-control addr" id="withdraw-addr" onChange={this.onChange} />
+					<input type="text" ref={input => { this.nameInput = input; }} className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.address} />
 				</div>
 			</div>
 		);
