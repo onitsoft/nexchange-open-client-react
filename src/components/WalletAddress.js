@@ -9,7 +9,7 @@ class WalletAddress extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { address: this.props.address }
+		this.state = { address: '' }
 		this.onChange = this.onChange.bind(this);
 	}
 
@@ -49,7 +49,7 @@ class WalletAddress extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-    	if (nextProps.wallet.address != this.state.address) {
+    	if (nextProps.wallet.address != null && (nextProps.wallet.address != this.state.address)) {
     		this.setState({address: nextProps.wallet.address});
     	}
 
