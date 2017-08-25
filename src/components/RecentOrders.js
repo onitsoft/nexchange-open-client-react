@@ -50,7 +50,7 @@ class OrderStatus extends Component {
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
-						<p>{parseFloat(order.amount_quote).toFixed(3)} <b className="hidden-xs">{order.pair.quote.code}</b> to {parseFloat(order.amount_base).toFixed(3)} <b className="hidden-xs">{order.pair.quote.base}</b></p>
+						<p>{Math.round(parseFloat(order.amount_quote) * 1000) / 1000} <b className="hidden-xs">{order.pair.quote.code}</b> to {Math.round(parseFloat(order.amount_base) * 1000) / 1000} <b className="hidden-xs">{order.pair.base.code}</b></p>
 					</div>
 
 					<div className="col-xs-4 created-on">
