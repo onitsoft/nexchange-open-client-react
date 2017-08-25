@@ -13,7 +13,6 @@ import WalletAddress from './WalletAddress';
 
 
 class ExchangeWidget extends Component {
-	
 	constructor(props) {
 		super();
 		

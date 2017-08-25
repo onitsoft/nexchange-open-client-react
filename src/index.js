@@ -21,6 +21,7 @@ import Footer from './components/Footer';
 
 import App from './components/App';
 import Order from './components/Order';
+import NotFound from './components/NotFound';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
@@ -32,8 +33,9 @@ ReactDOM.render(
   			<Header />
 
   			<Switch>
-  				<Route path="/order/:orderRef" component={Order} />
-	  			<Route path="/" component={App} />
+  				<Route exact path="/order/:orderRef" component={Order} />
+	  			<Route exact path="/" component={App} />
+          <Route component={NotFound} />
 	  		</Switch>
 
 	  		<Footer />
