@@ -13,7 +13,6 @@ import WalletAddress from './WalletAddress';
 
 
 class ExchangeWidget extends Component {
-	
 	constructor(props) {
 		super();
 		
@@ -100,11 +99,11 @@ class ExchangeWidget extends Component {
 
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
-							<button className="btn btn-block btn-success proceed" onClick={() => this.props.setWallet({show: true})} disabled={this.props.error.show ? 'disabled' : null}>
+							<button className="btn btn-block proceed" onClick={() => this.props.setWallet({show: true})} disabled={this.props.error.show ? 'disabled' : null}>
 								Get Started !
 							</button>
 						) : (
-							<button className="btn btn-block btn-warning proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
+							<button className="btn btn-block proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
 								Confirm & Place Order
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>

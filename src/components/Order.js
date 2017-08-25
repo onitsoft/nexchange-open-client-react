@@ -7,10 +7,10 @@ import config from '../config';
 import OrderPayment from './OrderPayment';
 import OrderStatus from './OrderStatus';
 import Bookmark from './Bookmark';
+import NotFound from './NotFound';
 
 
 class Order extends Component {
-
 	constructor(props) {
 		super();
 
@@ -29,6 +29,7 @@ class Order extends Component {
 			loading: true,
 			paymentWindow: null,
 			showBookmarkModal: false,
+			notFound: false
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -82,6 +83,7 @@ class Order extends Component {
 			})
 			.catch((error) => {
 				console.log(error);
+				this.setState({notFound: true})
 			});
 
 		this.timeout = setTimeout(() => {
@@ -91,8 +93,9 @@ class Order extends Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.location !== prevProps.location) {
-			this.getOrderDetails();
+			clearTimeout(this.timeout);
 			clearInterval(this.interval);
+			this.getOrderDetails();
 		}
 	}
 
@@ -102,6 +105,9 @@ class Order extends Component {
 	}
 
 	render() {
+		if (this.state.notFound)
+			return <NotFound />;
+
 		return (
 			<div id="order">
 				<div className="container">

@@ -1,7 +1,14 @@
 #faq {
 	.modal-header { position: absolute; top: 0; right: 0; z-index: 1; }
-	h3 { font-size: 30px; }
-	p, li { font-size: 20px; }
+	h3 { font-size: 24px; }
+	p, li { font-size: 18px; }
 	li { margin-bottom: 10px; line-height: 1.5em; }
 	ul, ol { margin-bottom: 20px; }
+
+	@media (min-width: $screen-sm-min) {
+		h3 { font-size: 30px; }
+		p { font-size: 20px; }
+	}
+	@media (min-width: $screen-md-min) {}
+	@media (min-width: $screen-lg-min) {}
 }

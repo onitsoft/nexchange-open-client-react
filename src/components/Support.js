@@ -22,7 +22,7 @@ class Support extends Component {
 
   render() {
     return (
-      <Modal id="support-modal" show={this.state.show} onHide={this.props.onClose} >
+      <Modal id="support" show={this.state.show} onHide={this.props.onClose} >
         <div className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
@@ -68,7 +68,7 @@ class Support extends Component {
 
               <textarea className="form-control" placeholder="Message" rows="2" required></textarea>
 
-              <button type="submit" className="btn btn-success">Send</button>
+              <button type="submit" className="btn styled-btn btn-md">Send</button>
               <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
             </form>
           </div>

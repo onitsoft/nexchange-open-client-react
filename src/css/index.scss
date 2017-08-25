@@ -4,6 +4,7 @@
 
 $green: rgb(44, 180, 160);
 
+@import 'header';
 @import 'main';
 @import 'exchange-widget';
 @import 'wallet-address';
@@ -11,6 +12,8 @@ $green: rgb(44, 180, 160);
 @import 'order';
 @import 'recent-orders';
 @import 'team';
+@import 'support';
+@import 'not-found';
 
 
 h1 { font-size: 34px;
@@ -26,35 +29,23 @@ h3 { font-size: 26px;
 p { font-size: 19px; line-height: 1.5em; }
 img { max-width: 100%; }
 a:hover { text-decoration: none; }
-#header {
-	.navbar-header { padding-bottom: 10px; }
-	.navbar-toggle { top: 15px; }
-	.logo-container { margin-left: 15px;
-		@media (min-width: $screen-sm-min) { margin-left: 0; }
-	}
-	.icon-bar { background: #000; }
-	.navbar-nav { margin-top: 15px;
-		li a:hover { text-decoration: underline; background: none; }
-	}
-	a { color: #333; font-size: 16px;
-		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; outline: none; }
-	}
-	.fa { position: relative; top: -2px; }
-}
-
 
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
 	h3 { margin-top: 35px; }
-	h3:first-child { margin-top: 0; }
+	h3:first-child { margin-top: -8px; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
 
-#support-modal .form-group { margin: 0; }
-#support-form { margin-top: 15px; }
-
 #team { margin-bottom: 30px;
 	h3 { margin-top: 35px; margin-bottom: 25px; }
+}
+
+.styled-btn {
+	background: #2cb4a0;
+	background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+	background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
 }
 
 @media (min-width: $screen-sm-min) {}
