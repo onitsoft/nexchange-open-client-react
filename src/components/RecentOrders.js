@@ -50,7 +50,7 @@ class OrderStatus extends Component {
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
-						<p>{parseFloat(order.amount_quote).toFixed(2)} <b className="hidden-xs">{order.pair.quote.code}</b> to {parseFloat(order.amount_base).toFixed(2)} <b className="hidden-xs">{order.pair.quote.base}</b></p>
+						<p>{parseFloat(order.amount_quote).toFixed(3)} <b className="hidden-xs">{order.pair.quote.code}</b> to {parseFloat(order.amount_base).toFixed(3)} <b className="hidden-xs">{order.pair.quote.base}</b></p>
 					</div>
 
 					<div className="col-xs-4 created-on">
