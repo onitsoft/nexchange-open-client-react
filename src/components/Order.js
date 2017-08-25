@@ -9,6 +9,7 @@ import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
 import OrderSuccess from './OrderSuccess';
 import OrderFailure from './OrderFailure';
+import OrderExpired from './OrderExpired';
 import OrderStatus from './OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from './NotFound';
@@ -115,6 +116,9 @@ class Order extends Component {
 			return <NotFound />;
 
 		let orderDetails = null;
+		if (this.state.expired)
+			orderDetails = <OrderExpired />;
+		
 		if (this.state.orderStatus == 1 ) {
 			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />;
 		} else if (this.state.orderStatus == -1) {
