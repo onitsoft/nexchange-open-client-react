@@ -91,8 +91,9 @@ class Order extends Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.location !== prevProps.location) {
-			this.getOrderDetails();
+			clearTimeout(this.timeout);
 			clearInterval(this.interval);
+			this.getOrderDetails();
 		}
 	}
 

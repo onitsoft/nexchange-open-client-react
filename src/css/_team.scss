@@ -4,7 +4,7 @@
 
 #team-members {
 	.team-member { height: 100%; margin-top: 30px; padding: 25px 15px 15px 15px; background: #fff; box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -6px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-		img { display: inline-block; margin-bottom: 15px; width: 55%; }
+		img { display: inline-block; margin-bottom: 15px; width: 55%; max-width: 160px; }
 		h3 { font-size: 20px; margin: 0; font-weight: 400; }
 		h4 { font-size: 18px; margin: 0; }
 		p { font-size: 14px; margin: 10px 0 0 0; }

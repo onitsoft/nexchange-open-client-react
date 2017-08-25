@@ -17,18 +17,13 @@ $recent-orders-row-height: 55px;
       .fa-arrow-right { position: relative; top: -3px; left: 2px; color: $green; } 
     }
 
-		&:hover {
-			.overlay { opacity: 1; background: rgba(232, 232, 232, 0.4); @include transition-property(all); @include transition-duration(600ms); }
-			.recent-order-amount { @include transition-property(all); @include transition-duration(400ms);  opacity: 0; }
-		}
-
     @media (min-width: $screen-ms-min) {
       p { font-size: 14px; }
       .coins { 
         .coin-icon { font-size: 28px; margin: 0 8px; }
       }
     }
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-sm-min) {      
       p { font-size: 16px; }
       .overlay { font-size: 20px; }
       .coins { 
@@ -37,6 +32,11 @@ $recent-orders-row-height: 55px;
       }
     }
     @media (min-width: $screen-md-min) {
+      &:hover {
+        .overlay { opacity: 1; background: rgba(232, 232, 232, 0.4); @include transition-property(all); @include transition-duration(600ms); }
+        .recent-order-amount { @include transition-property(all); @include transition-duration(400ms);  opacity: 0; }
+      }
+      
       p { font-size: 18px; }
       .coins { 
         .coin-icon { margin: 0 19px; }

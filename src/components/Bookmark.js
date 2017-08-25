@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
-import BookmarkText from 'react-bookmark';
+import platform from 'platform';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 
@@ -49,7 +49,7 @@ class Bookmark extends Component {
           </div>
 
           <div className="modal-body">
-            <BookmarkText className="bookmark-text" href={window.location.href} title="Nexchange: Order Status" />
+            <p className="bookmark-text">Press <b>{platform.os.family == 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.</p>
 
             <div className="input-group">
               <div className="form-group is-empty"><input type="text" className="form-control" placeholder="With Material Icons" value={window.location.href} disabled /><span className="material-input"></span></div>
