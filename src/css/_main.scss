@@ -25,7 +25,9 @@
 		span { position: relative; top: 2px; left: -10px; }
 	}
 
-	.alert { position: absolute; top: 0; left: 0; width: 100%; z-index: 2; }
+	.alert { position: fixed; top: 0; left: 0; width: 100%; z-index: 2; }
 
-	@media (min-width: $screen-sm-min) { padding: 40px 0 135px; }
+	@media (min-width: $screen-sm-min) { padding: 40px 0 135px;
+		.alert { position: absolute; }
+	}
 }
