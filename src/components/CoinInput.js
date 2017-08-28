@@ -28,28 +28,34 @@ class CoinInput extends Component {
 
 	validateReceiveAmount(value) {
 		let selectedCoin = this.props.selectedCoin['receive'],
-			minAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).min_amount,
-			maxAmount = _.find(this.props.coinsInfo, {ticker: selectedCoin}).max_amount;
+			minAmount = _.find(this.props.coinsInfo, {code: selectedCoin}).minimal_amount;
+
+		//	maxAmount = _.find(this.props.coinsInfo, {code: selectedCoin}).max_amount;
 
 		if (value < minAmount || isNaN(value)) {
 			this.props.errorAlert({
-				message: `Receive amount cannot be less than ${minAmount}`,
+				message: `Receive amount for ${selectedCoin} cannot be less than ${minAmount}`,
 				show: true,
 				type: 'INVALID_AMOUNT'
 			});
-		} else if (value > maxAmount) {
-			this.props.errorAlert({
-				message: `Receive amount cannot be more than ${maxAmount}`,
-				show: true,
-				type: 'INVALID_AMOUNT'
-			});
+		
+		// } else if (value > maxAmount) {
+		// 	this.props.errorAlert({
+		// 		message: `Receive amount cannot be more than ${maxAmount}`,
+		// 		show: true,
+		// 		type: 'INVALID_AMOUNT'
+		// 	});
+
 		} else {
 			this.props.errorAlert({show: false, type: 'INVALID_AMOUNT'});
 		}
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type])
+		if (this.props.pair != nextProps.pair)
+			this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
+
+		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type] && this.props.coinsInfo.length)
 			this.validateReceiveAmount(nextProps.amounts.receive)
 	}
 
