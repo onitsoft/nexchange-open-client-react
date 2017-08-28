@@ -35,21 +35,31 @@ class FAQ extends Component {
             <p>Our customer support phone number in UK is <a href="tel:+442081442192">+442081442192</a>.</p>
 
             <h3>What do you do?</h3>
-            <p>We allow you to exchange one cryptocurrency for another. Currently, we support Bitcoin (BTC), Ethereum (ETC) and Litecoin (LTC). We will be adding more currencies very soon, stay tuned!</p>
+            <p>We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.</p>
+            <p>We will be adding more currencies very soon, stay tuned!</p>
             <p>Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
 
             <h3>What is your fee?</h3>
             <p>Our service fee is 0.5%. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
 
             <h3>How long does a conversion take?</h3>
-            <p>Initiating a transaction doesn’t take more than a couple of minutes. The actual processing takes about 5–10 minutes before you receive your coins in your desired currency.</p>
+            <p>Initiating a transaction doesn’t take more than a couple of minutes. The actual processing takes about 10–60 minutes before you receive your coins in your desired currency. The transaction time depends on the selected currencies and their respective blockchains.</p>
 
             <h3>How does it work?</h3>
             <p>Here is how you use the exchange:</p>
             <ol>
-              <li><b>Enter</b> your desired <b>amount, choose</b> the currency type you <b>want to spend</b>, and the currency type you <b>want to buy</b> (e.g. if you want to spend 1 BTC to buy ETH at the exchange rate shown, you enter “1” and click on “GET STARTED”)</li>
-              <li><b>Enter your destination address</b> (e.g. if you are buying ETH, you enter your ETH wallet address)</li>
-              <li>You will be prompted to <b>send</b> your coins to a <b>specified address</b>.</li>
+              <li>
+                <b>Enter</b> your desired <b>amount, choose</b> the currency type you <b>want to spend</b>, and the currency type you <b>want to buy</b> (e.g. if you want to spend 1 BTC to buy ETH at the exchange rate shown, you enter “1” and click on “GET STARTED”)
+                <img src="/img/step1.png" />
+              </li>
+              <li>
+                <b>Enter your destination address</b> (e.g. if you are buying ETH, you enter your ETH wallet address)
+                <img src="/img/step2.png" />
+              </li>
+              <li>
+                You will be prompted to <b>send</b> your coins to a <b>specified address</b>.
+                <img src="/img/step3.png" />
+              </li>
               <li>Once we receive your coins, the processing of your order will start immediately.</li>
               <li>Once everything is done, you will receive your ETH. Hurray! You just successfully exchanged your cryptocurrency.</li>
             </ol>
