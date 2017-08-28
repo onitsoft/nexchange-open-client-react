@@ -88,7 +88,7 @@ class ExchangeWidget extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT')
+		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
 			this.props.setWallet({address: '', valid: false, show: false});
 	}
 
