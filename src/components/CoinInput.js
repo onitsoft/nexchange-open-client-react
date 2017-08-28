@@ -28,7 +28,7 @@ class CoinInput extends Component {
 
 	validateReceiveAmount(value) {
 		let selectedCoin = this.props.selectedCoin['receive'],
-			minAmount = _.find(this.props.coinsInfo, {code: selectedCoin}).minimal_amount;
+			minAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedCoin}).minimal_amount);
 
 		//	maxAmount = _.find(this.props.coinsInfo, {code: selectedCoin}).max_amount;
 
