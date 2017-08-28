@@ -70,8 +70,12 @@ class ExchangeWidget extends Component {
 			});
 		})
 		.catch(error => {
+			console.log(error.response)
+
+			let message = (error.response.data.non_field_errors && error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : 'Something went wrong. Please try again later.');
+
 			this.props.errorAlert({
-				message: `${error.response.data.non_field_errors[0]}`,
+				message: message,
 				show: true,
 				type: 'PLACE_ORDER'
 			});
@@ -80,8 +84,6 @@ class ExchangeWidget extends Component {
 				orderPlaced: false,
 				loading: false,
 			});
-
-			console.log(error.response);
 		});
 	}
 
