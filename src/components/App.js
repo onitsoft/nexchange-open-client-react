@@ -27,14 +27,6 @@ class App extends Component {
 	}
 }
 
-// function mapStateToProps(state) {
-// 	return {
-// 		selectedCoin: state.selectedCoin,
-// 		amounts: state.amounts,
-// 		error: state.error,
-// 		wallet: state.wallet,
-// 	}
-// }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
