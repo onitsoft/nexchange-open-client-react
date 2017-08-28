@@ -1,5 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
+import _ from 'lodash';
 import config from '../config';
 
 
@@ -18,17 +19,14 @@ export function setWallet(payload) {
 }
 
 export function selectCoin(payload) {
-	// DISPATCH COIN_SELECTED AND
-	// THEN UPDATE AMOUNTS
-	// ACTUALLY, WRONG PLACE, SHOULD
-	// DETECT SELECTED COIN PROPS CHANGE AND THEN
-	// UPDATE AMOUNTS
-	// return (dispatch, getState) {
-	// }
+	return (dispatch, getState) => {
+		dispatch({ type: 'COIN_SELECTED', payload: payload });
 
-	return {
-		type: 'COIN_SELECTED',
-		payload: payload
+    	dispatch({type: 'SET_WALLET', payload: {
+    		address: '',
+    		valid: false,
+    		show: false
+    	}});
 	}
 }
 
@@ -37,6 +35,31 @@ export function updateAmounts(payload) {
 		type: 'UPDATE_AMOUNTS',
 		payload: payload
 	}
+}
+
+export function fetchCoinDetails(payload) {
+	const url = `${config.API_BASE_URL}/currency/`;
+	const request = axios.get(url);
+
+	// {
+	// 	headers: {
+	// 		'Access-Control-Allow-Origin': '*',
+	// 		'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+	// 		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+	// 	}
+	// });
+
+    return (dispatch, getState) => {
+        request
+	        .then(response => {
+	        	if (!response.data.length) return;
+
+	        	let coins = _.filter(response.data, {has_enabled_pairs: true});
+	        	dispatch({type: 'COINS_INFO', payload: coins});
+	        }).catch(error => {
+	        	console.log(error);
+	        });    
+    };
 }
 
 export function fetchPrice(payload) {

@@ -16,17 +16,13 @@ class CoinSelector extends Component {
 	}
 
 	selectCoin(coin) {
-		let newSelectedCoinProps = Object.assign({}, this.props.selectedCoin);
-		newSelectedCoinProps[this.props.type] = coin;
-		this.props.selectCoin(newSelectedCoinProps);
+		this.props.selectCoin(Object.assign({}, this.props.selectedCoin, {[this.props.type]: coin}));
 
 		setTimeout(() => {
 			this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-		}, 100);
+		}, 300)
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
-
-    	this.props.setWallet({address: '', valid: false, show: false});
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -37,12 +33,12 @@ class CoinSelector extends Component {
 		let selectedCoin = this.props.selectedCoin[this.props.type],
 			coins = this.props.coinsInfo.map(coin => {
 				return (
-					<div className="row coin" key={coin.ticker} onClick={() => this.selectCoin(coin.ticker)}>
-						<div className="col-xs-4">{coin.ticker}</div>
+					<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
+						<div className="col-xs-4">{coin.code}</div>
 						<div className="col-xs-3 text-center">
-							<i className={`cc-${coin.ticker} ${coin.ticker}`}></i>
+							<i className={`cc-${coin.code} ${coin.code}`}></i>
 						</div>
-						<div className="col-xs-5">{coin.name}</div>
+						<div className="col-xs-5 text-capitalize">{coin.name}</div>
 					</div>
 				);
 			});
