@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CoinSelector from './CoinSelector';
 
+
 class OrderStatus extends Component {
   componentDidMount() {
     $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
