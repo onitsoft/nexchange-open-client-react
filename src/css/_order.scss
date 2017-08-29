@@ -93,6 +93,14 @@
 	input { font-size: 18px; }
 }
 
+.order-status-section {
+	h2 { font-size: 24px; }
+
+	@media (min-width: $screen-sm-min) {
+		h2 { font-size: 30px; }
+	}
+}
+
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}

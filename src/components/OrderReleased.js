@@ -3,7 +3,7 @@ import moment from 'moment';
 import config from '../config';
 
 
-class OrderPayment extends Component {
+class OrderReleased extends Component {
 	constructor(props) {
 		super(props);
 
@@ -31,7 +31,7 @@ class OrderPayment extends Component {
 		this.coin = props.order.pair.base;
 		this.coinName = this.coin.code;
 		this.minConfirmations = this.coin.min_confirmations;
-		this.tx = props.order.transactions[0];
+		this.tx = props.order.transactions[1];
 		this.txId = this.tx.tx_id;
 
 		if (this.coinName == 'BTC') this.confirmationWaitTime = 600000;
@@ -65,8 +65,9 @@ class OrderPayment extends Component {
 	render() {
 		return (
 			<div className="col-xs-12 text-center order-status-section">
-				<h2 style={{margin: "0"}}>Awaiting confirmations ({this.tx.confirmations}/{this.minConfirmations})</h2>
-				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{this.tx.tx_id}</a></h5>
+				<h2 style={{margin: "0"}}>Funds released, awaiting confirmations ({this.tx.confirmations}/{this.minConfirmations})</h2>
+				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" className="text-green">{this.txId}</a></h5>
+
 				{this.state.countdown >= 0 ? (
 					<h5>Estimated time left until all confirmations: <b className="text-green">{moment.utc(this.state.countdown).format('mm:ss')}</b></h5>
 				) : (
@@ -81,4 +82,4 @@ class OrderPayment extends Component {
 
 };
 
-export default OrderPayment;
+export default OrderReleased;
