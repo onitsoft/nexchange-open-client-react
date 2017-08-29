@@ -33,32 +33,30 @@ class Support extends Component {
   }
 
   handleSubmit(event) {
-    this.setState({loading: true, success: true});
-
-    setTimeout(() => {
-      this.setState({loading: false});
-    }, 1000);
+    this.setState({loading: true});
 
     axios({
       method: 'post',
       contentType : 'application/json',
-      url: `${config.API_BASE_URL}/suport`,
-      data: this.state
+      url: `${config.API_BASE_URL}/support/`,
+      data: {
+        email: this.state.email,
+        name: this.state.name,
+        telephone: this.state.telephone,
+        message: this.state.message,
+        subject: this.state.subject,
+        message: this.state.message
+      }
     })
     .then(response => {
-      // this.setState({
-      //   orderRef: response.data.unique_reference,
-      //   orderPlaced: true,
-      //   loading: false
-      // });
+      console.log(response.data)
+
+      this.setState({loading: false, success: true});
     })
     .catch(error => {
-      // this.setState({
-      //   orderPlaced: false,
-      //   loading: false,
-      // });
-
       console.log(error.response);
+
+      this.setState({loading: false, success: false});
     });
 
     event.preventDefault();
