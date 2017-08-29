@@ -5,6 +5,11 @@ import config from '../config';
 
 const OrderDetailsButtons = (props) => {
 
+
+
+
+
+
 	let	estimate = wait - (wait * (props.order.transactions[0].confirmations/requiredConfirmations));
 	let transId = props.order.transactions[0].tx_id;
 
