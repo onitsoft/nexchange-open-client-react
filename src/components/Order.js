@@ -118,8 +118,7 @@ class Order extends Component {
 		let orderDetails = null;
 		if (this.state.expired)
 			orderDetails = <OrderExpired />;
-		
-		if (this.state.orderStatus == 1 ) {
+		else if (this.state.orderStatus == 1 ) {
 			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />;
 		} else if (this.state.orderStatus == -1) {
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />
