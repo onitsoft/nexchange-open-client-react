@@ -99,7 +99,7 @@ class Support extends Component {
 
             <form id="support-form" onSubmit={this.handleSubmit}>
               {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
-              {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try later.</h4> : null}
+              {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
 
               <div className="form-group is-empty">
                 <input type="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
