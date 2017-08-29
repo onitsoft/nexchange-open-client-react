@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import LazyLoad from "vanilla-lazyload";
-
 import TeamMember from './TeamMember';
 
+
 class Team extends Component {
-  componentDidMount() {
-    new LazyLoad({
-      class_loaded: "loaded",
-      throttle: 10,
-      threshold: 300
-    });
-  }
-  
   render() {
     return (
       <div id="team" className="container">
