@@ -100,6 +100,8 @@ module.exports = {
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
       new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+
+
     ],
   },
   module: {
@@ -199,6 +201,17 @@ module.exports = {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'file-loader'
           },
+
+          // {
+          //   test: require.resolve('jquery'),
+          //   use: [{
+          //     loader: 'expose-loader',
+          //     options: 'jQuery'
+          //   },{
+          //     loader: 'expose-loader',
+          //     options: '$'
+          //   }]
+          // },
 
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
