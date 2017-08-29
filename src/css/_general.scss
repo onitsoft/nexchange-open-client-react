@@ -1,3 +1,5 @@
+p, a { word-wrap: break-word; }
+
 p { font-size: 19px; line-height: 1.5em; }
 
 h1 { font-size: 34px;
@@ -13,7 +15,6 @@ a { color: $green;
 }
 
 .header-text { font-size: 36px; }
-
 
 img { max-width: 100%; }
 
@@ -32,6 +33,8 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 		background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
 	}
 }
+
+.text-green { color: $green; }
 
 @media (min-width: $screen-sm-min) {}
 @media (min-width: $screen-md-min) {}
