@@ -8,6 +8,8 @@ import thunk from 'redux-thunk';
 import $ from "jquery";
 import registerServiceWorker from './registerServiceWorker';
 
+import "./css/index.scss";
+
 import reducers from './reducers'
 
 import Header from './components/Header';
