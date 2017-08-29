@@ -338,8 +338,5 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-  },
-  externals: {
-    jquery: 'jQuery'
   }
 };

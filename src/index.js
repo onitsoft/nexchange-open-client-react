@@ -5,13 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ReduxPromise from 'redux-promise';
 import thunk from 'redux-thunk';
-
-import "./js/bootstrap.min.js";
-import "./js/material.min.js";
-import "./js/material-kit.js";
-
-import './css/index.scss';
-
+import $ from "jquery";
 import registerServiceWorker from './registerServiceWorker';
 
 import reducers from './reducers'

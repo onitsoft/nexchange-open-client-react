@@ -269,9 +269,5 @@ module.exports = {
   // cumbersome.
   performance: {
     hints: false,
-  },
-
-  externals: {
-    jquery: 'jQuery'
   }
 };
