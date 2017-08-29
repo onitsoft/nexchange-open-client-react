@@ -3,11 +3,11 @@ import moment from 'moment';
 import config from '../config';
 
 
-const OrderPayment = (props) => {
-	let coin = props.order.pair.quote.code;
+const OrderReleased = (props) => {
+	let coin = props.order.pair.base.code;
 	let wait = (coin == 'ETH' || coin == 'BTC' ? 60 : 30);
 	let requiredConfirmations = (coin == 'ETH' ? 12 : (coin == 'BTC' ? 1 : 6));
-	let tx = props.order.transactions[0];
+	let tx = props.order.transactions[1];
 	let	estimate = wait - (wait * (tx.confirmations/requiredConfirmations));
 	let txId = tx.tx_id;
 
@@ -22,8 +22,8 @@ const OrderPayment = (props) => {
 
 	return (
 		<div id="order-payment-confirmations" className="col-xs-12 text-center">
-			<h2 style={{margin: "0"}}>Awaiting Confirmations ({tx.confirmations}/{requiredConfirmations})</h2>
-			<h5>Transaction ID: <a href={blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{tx.tx_id}</a></h5>
+			<h2 style={{margin: "0"}}>Funds released, awaiting confirmations ({tx.confirmations}/{requiredConfirmations})</h2>
+			<h5>Transaction ID: <a href={blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{txId}</a></h5>
 			<h5>By our estimations it will take another {estimate} minutes to get all confirmations.</h5>
 
 			<a href={`${config.API_BASE_URL}/orders/${props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
@@ -32,4 +32,4 @@ const OrderPayment = (props) => {
 	)
 };
 
-export default OrderPayment;
+export default OrderReleased;
