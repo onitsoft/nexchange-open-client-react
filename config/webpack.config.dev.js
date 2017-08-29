@@ -180,7 +180,6 @@ module.exports = {
             ],
           },
 
-
           {
             test: /\.scss$/,
             use: [{
@@ -201,17 +200,6 @@ module.exports = {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'file-loader'
           },
-
-          // {
-          //   test: require.resolve('jquery'),
-          //   use: [{
-          //     loader: 'expose-loader',
-          //     options: 'jQuery'
-          //   },{
-          //     loader: 'expose-loader',
-          //     options: '$'
-          //   }]
-          // },
 
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
