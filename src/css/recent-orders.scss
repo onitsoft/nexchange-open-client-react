@@ -34,7 +34,7 @@ $recent-orders-row-height: 55px;
     @media (min-width: $screen-md-min) {
       &:hover {
         .overlay { opacity: 1; background: rgba(232, 232, 232, 0.4); @include transition-property(all); @include transition-duration(600ms); }
-        .recent-order-amount { @include transition-property(all); @include transition-duration(400ms);  opacity: 0; }
+        .recent-order-amount { opacity: 0; @include transition-property(all); @include transition-duration(400ms); }
       }
       
       p { font-size: 18px; }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import IL from '../img/flags/IL.svg';
-import LT from '../img/flags/LT.svg';
 
 
 class TeamMember extends Component {
@@ -15,9 +13,10 @@ class TeamMember extends Component {
 	    return (
 			<div className="col-xs-12 col-ms-6 col-md-4 text-center">
 				<div className="team-member">
-					<img src={`/img/team/${this.props.id}.jpg`} className="img-circle img-responsive" />
 
-					<h3>{this.props.name} <img src={`/img/flags/${this.props.country}.svg`} className="flag" /></h3>
+					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-original={`/img/team/${this.props.id}.jpg`} className="img-circle img-responsive lazy-loading-image" />
+
+					<h3>{this.props.name} <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-original={`/img/flags/${this.props.country}.svg`} className="flag lazy-loading-image" /></h3>
 
 					<div className="social">
 						{social}
