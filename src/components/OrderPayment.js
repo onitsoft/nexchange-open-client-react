@@ -54,8 +54,10 @@ class OrderPayment extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setVariables(nextProps);
-		this.estimateCountdown(nextProps);
+		if (this.props.order.transactions[0].confirmations != nextProps.order.transactions[0].confirmations) {
+			this.setVariables(nextProps);
+			this.estimateCountdown(nextProps);
+		}
 	}
 
 	componentWillUnmount() {
