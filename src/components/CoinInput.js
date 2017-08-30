@@ -19,8 +19,6 @@ class CoinInput extends Component {
 	onChange(event) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
 
-		console.log('update amounts', event.target.value);
-
 		if (this.props.price.pair != pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL) {
 			this.props.fetchPrice({pair: pair, amount: event.target.value, lastEdited: this.props.type});
 		} else {
