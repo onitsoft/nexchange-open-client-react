@@ -65,7 +65,7 @@ class OrderReleased extends Component {
 	render() {
 		return (
 			<div className="col-xs-12 text-center order-status-section">
-				<h2 style={{margin: "0"}}>Funds released, awaiting confirmations ({this.tx.confirmations}/{this.minConfirmations})</h2>
+				<h2 style={{margin: "0"}}>Funds released, awaiting confirmations</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" className="text-green">{this.txId}</a></h5>
 
 				{this.state.countdown >= 0 ? (
@@ -83,3 +83,5 @@ class OrderReleased extends Component {
 };
 
 export default OrderReleased;
+
+// ({this.tx.confirmations}/{this.minConfirmations})

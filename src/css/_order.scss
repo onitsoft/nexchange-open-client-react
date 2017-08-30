@@ -62,7 +62,7 @@
 			-o-animation: color-change 1s infinite alternate;
 			animation: color-change 1s infinite alternate;
 		}
-		&.done h4, &.done .glyphicon { color: $green; }
+		&.done h4, &.done .glyphicon { color: $green; } // $green
 
 		@media (min-width: $screen-sm-min) { width: 33.33%; float: left; }
 	}
@@ -108,21 +108,21 @@
 
 @-webkit-keyframes color-change {
 	from { color: #adadad; }
-	to { color: $green; }
+	to { color: #fbc02d; }
 }
 @-moz-keyframes color-change {
 	from { color: #adadad; }
-	to { color: $green; }
+	to { color: #fbc02d; }
 }
 @-ms-keyframes color-change {
 	from { color: #adadad; }
-	to { color: $green; }
+	to { color: #fbc02d; }
 }
 @-o-keyframes color-change {
 	from { color: #adadad; }
-	to { color: $green; }
+	to { color: #fbc02d; }
 }
 @keyframes color-change {
 	from { color: #adadad; }
-	to { color: $green; }
+	to { color: #fbc02d; }
 }

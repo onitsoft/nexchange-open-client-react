@@ -81,7 +81,7 @@ class Order extends Component {
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on,
-					orderStatus: data.status_name[0][0],
+					orderStatus: 4, //, data.status_name[0][0],
 					paymentWindow: parseInt(data.payment_window),
 					order: data
 				}, () => {

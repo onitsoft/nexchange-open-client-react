@@ -10,8 +10,10 @@ class OrderStatus extends Component {
   render() {
     let width = "0%";
 
-    if (this.props.status > 2) {
+    if (this.props.status == 4) {
       width = "100%";
+    } else if (this.props.status == 3) {
+      width = "90%";
     } else if (this.props.status == 2) {
       width = "66.6%";
     } else if (this.props.status == -1) {
@@ -32,7 +34,7 @@ class OrderStatus extends Component {
     			<h4>2. Awaiting confirmations</h4> 
     		</div>
     		
-    		<div id="step-three" className={this.props.status == 2 ? "step active" : (this.props.status >= 3 ? "step done" : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
+    		<div id="step-three" className={this.props.status == 2 ? "step active" : (this.props.status >= 3 ? (this.props.status == 3 ? "step active" : "step done" ) : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
           <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
     			<h4>3. All done</h4>
     		</div>

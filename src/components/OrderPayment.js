@@ -65,10 +65,10 @@ class OrderPayment extends Component {
 	render() {
 		return (
 			<div className="col-xs-12 text-center order-status-section">
-				<h2 style={{margin: "0"}}>Awaiting confirmations ({this.tx.confirmations}/{this.minConfirmations})</h2>
+				<h2 style={{margin: "0"}}>Transaction detected, awaiting confirmations</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{this.tx.tx_id}</a></h5>
 				{this.state.countdown >= 0 ? (
-					<h5>Estimated time left until all confirmations: <b className="text-green">{moment.utc(this.state.countdown).format('mm:ss')}</b></h5>
+					<h5>Estimated time left for all confirmations: <b className="text-green">{moment.utc(this.state.countdown).format('mm:ss')}</b></h5>
 				) : (
 					<h5>The transaction should have gotten the required number of confirmation by now.</h5>					
 				)}
@@ -82,3 +82,5 @@ class OrderPayment extends Component {
 };
 
 export default OrderPayment;
+
+//  ({this.tx.confirmations}/{this.minConfirmations})
