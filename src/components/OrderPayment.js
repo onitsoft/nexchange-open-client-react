@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import config from '../config';
 
+import CountDown from './CountDown';
+
 
 class OrderPayment extends Component {
 	constructor(props) {
@@ -12,51 +14,39 @@ class OrderPayment extends Component {
 		}
 
 		this.estimateCountdown = this.estimateCountdown.bind(this);
-		this.setVariables = this.setVariables.bind(this);
 
-		this.setVariables(props);
-	}
-
-	componentDidMount() {
-		this.interval = setInterval(() => {
-			this.setState({
-				countdown: this.state.countdown - 1000
-			})
-		}, 1000);
-
-		this.estimateCountdown(this.props);
-	}
-
-	setVariables(props) {
 		this.coin = props.order.pair.base;
-		this.coinName = this.coin.code;
 		this.minConfirmations = this.coin.min_confirmations;
 		this.tx = props.order.transactions[0];
 		this.txId = this.tx.tx_id;
 
-		if (this.coinName == 'BTC') this.confirmationWaitTime = 600000;
-		else if (this.coinName == 'LTC') this.confirmationWaitTime = 150000; // 2.5mins
-		else if (this.coinName == 'ETH') this.confirmationWaitTime = 60000; // ETH, 0.2mins
-
-		this.allConfirmationsWaitTime = this.confirmationWaitTime * this.minConfirmations;
-
-		if (this.coinName == 'ETH') this.blockchainUrl = `https://etherscan.io/tx/${this.txId}`;
-		else if (this.coinName == 'LTC') this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${this.txId}/`;
-		else if (this.coinName == 'BTC') this.blockchainUrl = `https://live.blockcypher.com/btc/tx/${this.txId}/`;
+		if (this.coin.code == 'ETH') this.blockchainUrl = `https://etherscan.io/tx/${this.txId}`;
+		else if (this.coin.code == 'LTC') this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${this.txId}/`;
+		else if (this.coin.code == 'BTC') this.blockchainUrl = `https://live.blockcypher.com/btc/tx/${this.txId}/`;
 	}
 
-	estimateCountdown(props) {
-		let estimate = this.allConfirmationsWaitTime - (this.allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
+	componentDidMount() {
+		this.estimateCountdown(this.props);
+	}
 
-		this.setState({
-			countdown: estimate
-		});
+	estimateCountdown() {
+		let confirmationWaitTime;
+		if (this.coin.code == 'BTC') confirmationWaitTime = 600000;
+		else if (this.coin.code == 'LTC') confirmationWaitTime = 150000; // 2.5mins
+		else if (this.coin.code == 'ETH') confirmationWaitTime = 60000; // ETH, 0.2mins
+
+		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
+		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
+
+		this.setState({estimate});
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (this.props.order.transactions[0].confirmations != nextProps.order.transactions[0].confirmations) {
-			this.setVariables(nextProps);
-			this.estimateCountdown(nextProps);
+			let coin = props.order.pair.base;
+			this.minConfirmations = this.coin.min_confirmations;
+
+			this.estimateCountdown();
 		}
 	}
 
@@ -69,11 +59,12 @@ class OrderPayment extends Component {
 			<div className="col-xs-12 text-center order-status-section">
 				<h2 style={{margin: "0"}}>Transaction detected, awaiting confirmations</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{this.tx.tx_id}</a></h5>
-				{this.state.countdown >= 0 ? (
-					<h5>Estimated time left for all confirmations: <b className="text-green">{moment.utc(this.state.countdown).format('mm:ss')}</b></h5>
-				) : (
-					<h5>The transaction should have gotten the required number of confirmation by now.</h5>					
-				)}
+
+				<CountDown
+					time={this.state.estimate}
+					defaultMsg="Estimated time left for all confirmations:"
+					expiredMsg="The transaction should have received the required number of confirmation by now."
+				/>
 
 				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
 				<a href={this.blockchainUrl} target="_blank"><h4 style={{margin: "5px 0 18px", "fontWeight": "500"}}>See your order details on blockchain</h4></a>
