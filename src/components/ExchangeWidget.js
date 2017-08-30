@@ -68,6 +68,8 @@ class ExchangeWidget extends Component {
 				orderPlaced: true,
 				loading: false
 			});
+
+			ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
 		})
 		.catch(error => {
 			console.log(error.response)
