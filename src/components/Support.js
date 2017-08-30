@@ -11,7 +11,7 @@ class Support extends Component {
 
     this.state = {
       name: null,
-      phone: null,
+      telephone: null,
       email: null,
       order: null,
       subject: null,
@@ -34,6 +34,13 @@ class Support extends Component {
 
   handleSubmit(event) {
     this.setState({loading: true});
+
+    console.log(this.state.email,
+        this.state.name,
+        this.state.telephone,
+        this.state.message,
+        this.state.subject,
+        this.state.message)
 
     axios({
       method: 'post',
@@ -102,30 +109,30 @@ class Support extends Component {
               {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
 
               <div className="form-group is-empty">
-                <input type="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
+                <input type="name" name="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
                 <span className="material-input"></span>
                 <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="phone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
+                <input type="telephone" name="telephone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
                 <span className="material-input"></span>
                 <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
+                <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
                 <span className="material-input"></span>
                 <span className="material-icons form-control-feedback">clear</span>
               </div>
 
               <div className="form-group is-empty">
-                <input type="text" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
+                <input type="text" name="subject" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
                 <span className="material-input"></span>
                 <span className="material-icons form-control-feedback">clear</span>
               </div>
 
-              <textarea className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
+              <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
 
               <button type="submit" className="btn styled-btn btn-md" disabled={this.state.loading ? "disabled" : null}>
                 Send
