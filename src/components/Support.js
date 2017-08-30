@@ -17,11 +17,13 @@ class Support extends Component {
       subject: null,
       message: null,
       loading: false,
-      success: null
+      success: null,
+      showForm: true
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.close = this.close.bind(this);
   }
 
   componentDidUpdate() {
@@ -58,15 +60,20 @@ class Support extends Component {
     .then(response => {
       console.log(response.data)
 
-      this.setState({loading: false, success: true});
+      this.setState({loading: false, showForm: false, success: true});
     })
     .catch(error => {
       console.log(error.response);
 
-      this.setState({loading: false, success: false});
+      this.setState({loading: false, showForm: false, success: false});
     });
 
     event.preventDefault();
+  }
+
+  close() {
+    this.setState({success: null, showForm: true});
+    this.props.onClose();
   }
 
   handleInputChange(event) {
@@ -81,10 +88,10 @@ class Support extends Component {
 
   render() {
     return (
-      <Modal id="support" show={this.state.show} onHide={this.props.onClose} >
+      <Modal id="support" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
             <h4 className="modal-title">Support</h4>
@@ -108,37 +115,42 @@ class Support extends Component {
               {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
               {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
 
-              <div className="form-group is-empty">
-                <input type="name" name="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
-                <span className="material-input"></span>
-                <span className="material-icons form-control-feedback">clear</span>
-              </div>
+              {this.state.showForm ? (
+                <div>
+                  <div className="form-group is-empty">
+                    <input type="name" name="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
+                    <span className="material-input"></span>
+                    <span className="material-icons form-control-feedback">clear</span>
+                  </div>
 
-              <div className="form-group is-empty">
-                <input type="telephone" name="telephone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
-                <span className="material-input"></span>
-                <span className="material-icons form-control-feedback">clear</span>
-              </div>
+                  <div className="form-group is-empty">
+                    <input type="telephone" name="telephone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
+                    <span className="material-input"></span>
+                    <span className="material-icons form-control-feedback">clear</span>
+                  </div>
 
-              <div className="form-group is-empty">
-                <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
-                <span className="material-input"></span>
-                <span className="material-icons form-control-feedback">clear</span>
-              </div>
+                  <div className="form-group is-empty">
+                    <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
+                    <span className="material-input"></span>
+                    <span className="material-icons form-control-feedback">clear</span>
+                  </div>
 
-              <div className="form-group is-empty">
-                <input type="text" name="subject" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
-                <span className="material-input"></span>
-                <span className="material-icons form-control-feedback">clear</span>
-              </div>
+                  <div className="form-group is-empty">
+                    <input type="text" name="subject" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
+                    <span className="material-input"></span>
+                    <span className="material-icons form-control-feedback">clear</span>
+                  </div>
 
-              <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
+                  <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
 
-              <button type="submit" className="btn styled-btn btn-md" disabled={this.state.loading ? "disabled" : null}>
-                Send
-                {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
-              </button>
-              <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
+                  <button type="submit" className="btn styled-btn btn-md" disabled={this.state.loading ? "disabled" : null}>
+                    Send
+                    {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
+                  </button>
+
+                  <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
+                </div>
+              ) : <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{padding: "0"}}>Close</button>}
             </form>
           </div>
         </div>
