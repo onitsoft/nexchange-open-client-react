@@ -41,14 +41,6 @@ export function fetchCoinDetails(payload) {
 	const url = `${config.API_BASE_URL}/currency/`;
 	const request = axios.get(url);
 
-	// {
-	// 	headers: {
-	// 		'Access-Control-Allow-Origin': '*',
-	// 		'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-	// 		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-	// 	}
-	// });
-
     return (dispatch, getState) => {
         request
 	        .then(response => {
@@ -74,7 +66,7 @@ export function fetchPrice(payload) {
 	        	dispatch({type: 'PRICE_FETCHED', payload: {
 	        		price: response.data[0].ticker.ask,
 	        		pair: payload.pair,
-	        		lastFetched: new moment()
+	        		lastFetched: new moment(),
 	        	}});
 
 	        	if (payload.amount) {

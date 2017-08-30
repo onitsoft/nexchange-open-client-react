@@ -1,7 +1,7 @@
 let initialState = {
 	deposit: 1,
 	receive: '...',
-	lastEdited: null
+	lastEdited: 'deposit'
 }
 
 export default (state = initialState, action) => {

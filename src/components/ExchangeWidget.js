@@ -22,13 +22,12 @@ class ExchangeWidget extends Component {
 	  	};
 	  	  	 	
 	  	this.placeOrder = this.placeOrder.bind(this);
+	  	this.placeOrderOnBackend = this.placeOrderOnBackend.bind(this);
 	  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
 	componentDidMount() {
-		setTimeout(() => {
-			this.updatePrices();
-		}, 100);
+		this.updatePrices();
 	}
 
 	componentWillUnmount() {
@@ -39,19 +38,38 @@ class ExchangeWidget extends Component {
 		this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: 'deposit', amount: this.props.amounts.deposit});
 
 		this.timeout = setTimeout(() => {
-			this.updatePrices();
+			this.updatePrices(true);
 		}, config.PRICE_FETCH_INTERVAL);
 	}
 
 	placeOrder() {
 		this.setState({loading: true});
 
+		if (this.props.amounts.lastEdited == 'receive')
+			this.placeOrderOnBackend(this.props.amounts.receive);
+
+	    axios.get(`${config.API_BASE_URL}/price/${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}/latest/`)
+	        .then(response => {
+	        	if (!response.data.length) return;
+
+				let price = response.data[0].ticker.ask,
+					quote = this.props.amounts.deposit,
+					amount = parseFloat(quote) / price;
+
+				this.placeOrderOnBackend(amount.toFixed(8));
+	        }).catch(error => {
+	        	console.log(error);
+	        	this.props.errorAlert({message: 'Something went wrong. Please try again later', show: true, type: 'PLACE_ORDER'});
+	        });
+	}
+
+	placeOrderOnBackend(amount) {
 		axios({
 			method: 'post',
 			contentType : 'application/json',
 			url: `${config.API_BASE_URL}/orders/`,
 			data: {
-				"amount_base": this.props.amounts.receive,
+				"amount_base": amount, 
 				"is_default_rule": true,
 				"pair": {
 					"name": `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
@@ -63,11 +81,7 @@ class ExchangeWidget extends Component {
 			}
 		})
 		.then(response => {
-			this.setState({
-				orderRef: response.data.unique_reference,
-				orderPlaced: true,
-				loading: false
-			});
+			this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
 
 			ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
 		})
@@ -75,17 +89,8 @@ class ExchangeWidget extends Component {
 			console.log(error.response)
 
 			let message = (error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : 'Something went wrong. Please try again later.');
-
-			this.props.errorAlert({
-				message: message,
-				show: true,
-				type: 'PLACE_ORDER'
-			});
-
-			this.setState({
-				orderPlaced: false,
-				loading: false,
-			});
+			this.props.errorAlert({message: message, show: true, type: 'PLACE_ORDER'});
+			this.setState({orderPlaced: false, loading: false});
 		});
 	}
 
@@ -136,6 +141,7 @@ function mapStateToProps(state) {
 		amounts: state.amounts,
 		error: state.error,
 		wallet: state.wallet,
+		price: state.price,
 	}
 }
 
