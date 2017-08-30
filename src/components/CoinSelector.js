@@ -23,6 +23,8 @@ class CoinSelector extends Component {
 		}, 300)
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
+
+		ga('send', 'event', 'Order', 'select coin');
 	}
 
 	componentWillReceiveProps(nextProps) {

@@ -24,6 +24,8 @@ class CoinInput extends Component {
 		} else {
 			this.props.updateAmounts({amount: event.target.value, lastEdited: this.props.type, price: this.props.price.price});
 		}
+
+		ga('send', 'event', 'Order', 'change amount');
 	}
 
 	validateReceiveAmount(value) {

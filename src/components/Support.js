@@ -94,7 +94,7 @@ class Support extends Component {
             <div className="row">
               <div className="col-xs-12 col-sm-6">
                 <h3>Phone</h3>
-                <p>+442081442192<br/>
+                <p onClick={() => ga('send', 'event', 'General', 'click support number')}>+442081442192<br/>
                   +16464612858 (US)</p>
               </div>
             

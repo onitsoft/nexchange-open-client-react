@@ -48,7 +48,7 @@ class Header extends Component {
 						</li>
 
 			    		<li>
-			    			<a href="http://docs.nexchange2.apiary.io/" target="_blank">API Docs</a>
+			    			<a href="http://docs.nexchange2.apiary.io/" target="_blank" onClick={() => ga('send', 'event', 'General', 'api docs click')}>API Docs</a>
 			    		</li>
 
 						<li>
