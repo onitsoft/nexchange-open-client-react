@@ -71,7 +71,7 @@
 }
 
 #order-header {
-	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: #2cb4a0; }
+	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: $green; }
 
 	@media (min-width: $screen-sm-min) {
 		h3 { float: left; }
