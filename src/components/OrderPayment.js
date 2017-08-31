@@ -21,7 +21,7 @@ class OrderPayment extends Component {
 
 		if (this.coin.code == 'ETH') this.blockchainUrl = `https://etherscan.io/tx/${this.txId}`;
 		else if (this.coin.code == 'LTC') this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${this.txId}/`;
-		else if (this.coin.code == 'BTC') this.blockchainUrl = `https://live.blockcypher.com/btc/tx/${this.txId}/`;
+		else if (this.coin.code == 'BTC') this.blockchainUrl = `https://blockchain.info/tx/${this.txId}`;
 	}
 
 	componentDidMount() {
