@@ -13,6 +13,10 @@ class CountDown extends Component {
 	}
 
 	componentDidMount() {
+		$(function () {
+		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+		});
+
 		this.setState({
 			initialTimeSet: this.state.time
 		})
@@ -41,7 +45,7 @@ class CountDown extends Component {
 		if (this.state.time <= 0)
 			return <h5>{this.props.expiredMsg}</h5>
 
-		return <h5>{this.props.defaultMsg} {this.state.time ? moment.utc(this.state.time).format('mm:ss') : '...'}</h5>
+		return <h5>{this.props.defaultMsg} {this.state.time ? moment.utc(this.state.time).format('mm:ss') : '...'} {this.props.info}</h5>
 	}
 
 };

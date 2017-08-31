@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import config from '../config';
+import _ from 'lodash';
 
 import CountDown from './CountDown';
 
@@ -13,9 +14,9 @@ class OrderPayment extends Component {
 
 		this.estimateCountdown = this.estimateCountdown.bind(this);
 
-		this.coin = props.order.pair.base;
+		this.coin = props.order.pair.quote;
 		this.minConfirmations = this.coin.min_confirmations;
-		this.tx = props.order.transactions[0];
+		this.tx = _.find(props.order.transactions, {type: 'D'});
 		this.txId = this.tx.tx_id;
 
 		if (this.coin.code == 'ETH') this.blockchainUrl = `https://etherscan.io/tx/${this.txId}`;
@@ -47,8 +48,8 @@ class OrderPayment extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.order.transactions[0].confirmations != nextProps.order.transactions[0].confirmations) {
-			let coin = props.order.pair.base;
+		if (_.find(this.props.order.transactions, {type: 'D'}).confirmations != _.find(nextProps.order, {type: 'D'}).confirmations) {
+			let coin = nextProps.order.pair.quote;
 			this.minConfirmations = this.coin.min_confirmations;
 
 			this.estimateCountdown();
@@ -69,6 +70,7 @@ class OrderPayment extends Component {
 					time={this.state.estimate}
 					defaultMsg="Estimated time left for all confirmations:"
 					expiredMsg="The transaction should have received the required number of confirmation by now."
+					info={<i className="fa fa-question-circle-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="This estimation assumes optimal network fee."></i>}
 				/>
 
 				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
