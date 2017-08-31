@@ -32,18 +32,16 @@ class OrderReleased extends Component {
 		this.estimateCountdown(this.props);
 	}
 
-	componentDidMount() {
-		this.estimateCountdown(this.props);
-	}
-
 	estimateCountdown() {
 		let confirmationWaitTime;
 		if (this.coin.code == 'BTC') confirmationWaitTime = 600000;
 		else if (this.coin.code == 'LTC') confirmationWaitTime = 150000; // 2.5mins
 		else if (this.coin.code == 'ETH') confirmationWaitTime = 60000; // ETH, 0.2mins
 
+		let diff = new moment().diff(this.screenFirstSeen);
+
 		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
-		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
+		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations)) - diff;
 
 		if (this.state.estimate != estimate)
 			this.setState({estimate});
