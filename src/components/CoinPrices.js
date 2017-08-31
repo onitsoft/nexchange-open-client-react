@@ -9,9 +9,9 @@ class CoinPrices extends Component {
 
 		this.state = {
 			rates: {
-				ethbtc: '...',
-				ltcbtc: '...',
-				ethltc: '...'
+				ethbtc: null,
+				ltcbtc: null,
+				ethltc: null
 			},
 			change: {
 				ethbtc: '',
@@ -46,7 +46,7 @@ class CoinPrices extends Component {
 	        	if (!response.data.length) return;
 
 	        	let rates = this.state.rates,
-	        		rate = parseFloat(response.data[0].ticker.ask).toFixed(5),
+	        		rate = parseFloat(response.data[0].ticker.ask),
 	        		key = pair.toLowerCase();
 
 	        	if (this.state.rate != '') {
@@ -82,17 +82,17 @@ class CoinPrices extends Component {
 					<div id="coin-prices">
 						<div className={`coin-price ${this.state.change['ethbtc']}`} ref={el => { this.ethbtc = el; }}>
 							<h5>ETH/BTC</h5>
-							<h6>{this.state.rates.ethbtc}</h6>
+							<h6>{this.state.rates.ethbtc ? this.state.rates.ethbtc.toFixed(5) : '...'}</h6>
 						</div>
 
 						<div className={`coin-price ${this.state.change['ltcbtc']}`} ref={el => { this.ltcbtc = el; }}>
 							<h5>LTC/BTC</h5>
-							<h6>{this.state.rates.ltcbtc}</h6>
+							<h6>{this.state.rates.ltcbtc ? this.state.rates.ltcbtc.toFixed(5) : '...'}</h6>
 						</div>
 
 						<div className={`coin-price ${this.state.change['ethltc']}`} ref={el => { this.ethltc = el; }}>
 							<h5>ETH/LTC</h5>
-							<h6>{this.state.rates.ethltc}</h6>
+							<h6>{this.state.rates.ethltc ? this.state.rates.ethltc.toFixed(5) : '...'}</h6>
 						</div>
 					</div>
 				</div>
