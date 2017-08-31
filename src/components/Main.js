@@ -23,25 +23,6 @@ class Main extends Component {
 						</div>
 
 						<ExchangeWidget />
-
-						<div className="col-xs-12 text-center">
-							<div id="coin-prices">
-								<div className="coin-price">
-									<h5>BTC <i className="coin-icon cc-BTC"></i></h5>
-									<h6>$4,676.3000</h6>
-								</div>
-
-								<div className="coin-price">
-									<h5>ETH <i className="coin-icon cc-ETH"></i></h5>
-									<h6>$387.3400</h6>
-								</div>
-
-								<div className="coin-price">
-									<h5>LTC <i className="coin-icon cc-LTC"></i></h5>
-									<h6>$66.8830</h6>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 
