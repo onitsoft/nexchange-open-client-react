@@ -2,6 +2,8 @@
 	.coin-price { float: left; width: 33.33%; 
 		h5 { font-weight: 700; }
 		h5, h6 { margin: 0; font-size: 14px; }
+		&.up h5, &.up h6 { @include animation(price-up 2.5s ease-in-out); }
+		&.down h5, &.down h6 { @include animation(price-down 2.5s ease-in-out); }
 		i { position: relative; top: -1px; margin-left: 5px; }
 	}
 
@@ -10,4 +12,16 @@
 			h5, h6 { font-size: 18px; }
 		}
 	}
+}
+
+@include keyframes(price-up) {
+	0% { color: #fff; }
+	50% { color: #00cd22; }
+	100% { color: #fff; }
+}
+
+@include keyframes(price-down) {
+	0% { color: #fff; }
+	50% { color: #f00; }
+	100% { color: #fff; }
 }
