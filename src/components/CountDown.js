@@ -7,11 +7,16 @@ class CountDown extends Component {
 		super(props);
 
 		this.state = {
-			time: null
+			time: null,
+			initialTimeSet: null
 		}
 	}
 
 	componentDidMount() {
+		this.setState({
+			initialTimeSet: this.state.time
+		})
+
 		this.interval = setInterval(() => {
 			this.setState({
 				time: this.state.time - 1000
@@ -20,9 +25,12 @@ class CountDown extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({
-			time: nextProps.time
-		})
+		if (nextProps.time != this.state.initialTimeSet) {
+			this.setState({
+				time: nextProps.time,
+				initialTimeSet: nextProps.time
+			})
+		}
 	}
 
 	componentWillUnmount() {
