@@ -60,7 +60,7 @@ class Order extends Component {
 			return;
 		} else {
 			diff = moment.utc(diff).format('mm:ss')
-		}-1, //
+		}
 
 		this.setState({
 			timeRemaining: diff
@@ -81,7 +81,7 @@ class Order extends Component {
 					receiveCoin: data.withdraw_address.currency_code,
 					receiveAddress: data.withdraw_address.address,
 					createdOn: data.created_on,
-					orderStatus: 3, //data.status_name[0][0],
+					orderStatus: data.status_name[0][0],
 					paymentWindow: parseInt(data.payment_window),
 					order: data
 				}, () => {

@@ -70,6 +70,7 @@ class OrderPayment extends Component {
 					time={this.state.estimate}
 					defaultMsg="Estimated time left for all confirmations:"
 					expiredMsg="The transaction should have received the required number of confirmation by now."
+					info={<i className="fa fa-question-circle-o" data-toggle="tooltip" data-placement="top" title="" data-original-title="This estimation assumes optimal network fee."></i>}
 				/>
 
 				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
