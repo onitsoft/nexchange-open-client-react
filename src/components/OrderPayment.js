@@ -38,7 +38,8 @@ class OrderPayment extends Component {
 		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
 		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
 
-		this.setState({estimate});
+		if (this.state.estimate != estimate)
+			this.setState({estimate});
 	}
 
 	componentWillReceiveProps(nextProps) {
