@@ -96,28 +96,7 @@
 	}
 }
 
-
-@media (min-width: $screen-sm-min) {}
-@media (min-width: $screen-md-min) {}
-@media (min-width: $screen-lg-min) {}
-
-@-webkit-keyframes color-change {
+@include keyframes(color-change) {
 	from { color: #adadad; }
-	to { color: #fbc02d; }
-}
-@-moz-keyframes color-change {
-	from { color: #adadad; }
-	to { color: #fbc02d; }
-}
-@-ms-keyframes color-change {
-	from { color: #adadad; }
-	to { color: #fbc02d; }
-}
-@-o-keyframes color-change {
-	from { color: #adadad; }
-	to { color: #fbc02d; }
-}
-@keyframes color-change {
-	from { color: #adadad; }
-	to { color: #fbc02d; }
+	to { color: #fbc02d; } 
 }
