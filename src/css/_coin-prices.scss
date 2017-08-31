@@ -1,0 +1,13 @@
+#coin-prices { display: inline-block; width: 100%; padding-top: 65px; overflow: hidden;
+	.coin-price { float: left; width: 33.33%; 
+		h5 { font-weight: 700; }
+		h5, h6 { margin: 0; font-size: 14px; }
+		i { position: relative; top: -1px; margin-left: 5px; }
+	}
+
+	@media (min-width: $screen-ms-min) { width: auto;
+		.coin-price { width: 150px; 
+			h5, h6 { font-size: 18px; }
+		}
+	}
+}

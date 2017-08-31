@@ -27,7 +27,7 @@
 
 	.alert { position: fixed; top: 0; left: 0; width: 100%; z-index: 2; }
 
-	@media (min-width: $screen-sm-min) { padding: 40px 0 135px;
+	@media (min-width: $screen-sm-min) { padding: 40px 0 75px;
 		.alert { position: absolute; }
 	}
 }
