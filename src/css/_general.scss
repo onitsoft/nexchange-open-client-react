@@ -1,3 +1,5 @@
+body { color: $blue; }
+
 p, a { word-wrap: break-word; }
 
 p { font-size: 19px; line-height: 1.5em; }
@@ -25,12 +27,12 @@ img { max-width: 100%; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
 
-.styled-btn {
+.btn-themed {
 	&, &:focus, &:visited {
-		background: #2cb4a0;
-		background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
-		background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
-		background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%);
+		background: $blue;
+		background: -moz-linear-gradient(to bottom, $blue 0, $green 100%);
+		background: -webkit-linear-gradient(to bottom, $blue 0, $green 100%);
+		background: linear-gradient(to bottom, $blue 0, $green 100%);
 	}
 }
 

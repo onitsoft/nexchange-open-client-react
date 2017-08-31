@@ -18,7 +18,7 @@ class Main extends Component {
 						<div className="col-xs-12">
 							<div className="brand">
 						        <h1>Exchange Cryptocurrencies</h1>
-						        <h3>Simple. <span style={{color: "#2cb4a0"}}>Secure</span>. Transparent.</h3>
+						        <h3>Simple. <span className="text-green">Secure</span>. Transparent.</h3>
 							</div>
 						</div>
 
