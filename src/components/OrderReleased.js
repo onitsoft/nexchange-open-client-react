@@ -9,9 +9,7 @@ class OrderReleased extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			countdown: '...'
-		}
+		this.state = {estimate: 0};
 
 		this.estimateCountdown = this.estimateCountdown.bind(this);
 
@@ -26,12 +24,10 @@ class OrderReleased extends Component {
 	}
 
 	componentDidMount() {
-		this.interval = setInterval(() => {
-			this.setState({
-				countdown: this.state.countdown - 1000
-			})
-		}, 1000);
+		if (localStorage.getItem(`funds-released-${this.props.order.unique_reference}`) == null)
+			localStorage.setItem(`funds-released-${this.props.order.unique_reference}`, moment().toISOString());
 
+		this.screenFirstSeen = new moment(localStorage.getItem(`funds-released-${this.props.order.unique_reference}`));
 		this.estimateCountdown(this.props);
 	}
 

@@ -9,9 +9,7 @@ class OrderPayment extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			countdown: '...'
-		}
+		this.state = {estimate: 0};
 
 		this.estimateCountdown = this.estimateCountdown.bind(this);
 
@@ -26,6 +24,10 @@ class OrderPayment extends Component {
 	}
 
 	componentDidMount() {
+		if (localStorage.getItem(`funds-received-${this.props.order.unique_reference}`) == null)
+			localStorage.setItem(`funds-received-${this.props.order.unique_reference}`, moment().toISOString());
+
+		this.screenFirstSeen = new moment(localStorage.getItem(`funds-received-${this.props.order.unique_reference}`));
 		this.estimateCountdown(this.props);
 	}
 
@@ -35,8 +37,10 @@ class OrderPayment extends Component {
 		else if (this.coin.code == 'LTC') confirmationWaitTime = 150000; // 2.5mins
 		else if (this.coin.code == 'ETH') confirmationWaitTime = 60000; // ETH, 0.2mins
 
+		let diff = new moment().diff(this.screenFirstSeen);
+
 		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
-		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
+		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations)) - diff;
 
 		if (this.state.estimate != estimate)
 			this.setState({estimate});
