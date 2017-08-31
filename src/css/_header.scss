@@ -1,11 +1,14 @@
-#header {
+#header { 
 	.btn-just-icon { text-align: left; }
-	.navbar-toggle { top: 15px; }
-	.logo-container { margin-left: 15px;
+	.navbar-toggle { top: 11px; }
+	.logo-container { margin: 15px 0 15px 15px; overflow: hidden;
+		img { width: 34px; }
+		img, h1 { float: left; }
+		h1 { margin: 6px 0 0 10px; font-size: 28px; }
 		@media (min-width: $screen-sm-min) { margin-left: 0; }
 	}
 	.icon-bar { background: #000; }
-	.navbar-nav { margin-top: 0;
+	.navbar-nav { margin: 0;
 		li a:hover { text-decoration: underline; background: none; }
 	}
 	a { color: #333; font-size: 16px;
@@ -14,8 +17,15 @@
 	.fa { position: relative; top: -2px; }
 
 	@media (min-width: $screen-sm-min) {
-		.navbar-nav { margin-top: 15px; }
-		.navbar-header { padding-bottom: 10px; }
+		// .navbar-nav { margin-top: 15px; }
+		// .navbar-header { padding-bottom: 10px; }
+		
+		.navbar-nav { margin-top: 20px; }
+
+		.logo-container {
+			img { width: auto; }
+			h1 { margin: 11px 0 0 15px; font-size: 36px; }
+		}
 	}
 	@media (min-width: $screen-md-min) {
 

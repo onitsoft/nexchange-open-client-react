@@ -32,7 +32,8 @@ class Header extends Component {
 
 			    	<Link to="/">
 			        	<div className="logo-container">
-			                <h1 className="header-text">NE<span style={{color: "#2cb4a0"}}>X</span>CHANGE</h1>
+			        		<img src="/img/logo.png" />
+			                <h1 className="header-text">NE<span className="text-green">X</span>CHANGE</h1>
 						</div>
 			      	</Link>
 			    </div>

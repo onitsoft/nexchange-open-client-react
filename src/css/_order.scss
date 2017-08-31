@@ -12,7 +12,6 @@
 		.text-warning { color: $green; }		
 	}
 	.coin-box { padding-left: 10px; }
-	#copy-to-clipboard { background: #2cb4a0; background: -moz-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: -webkit-linear-gradient(to bottom, #115771 0, #2cb4a0 100%); background: linear-gradient(to bottom, #115771 0, #2cb4a0 100%); }
 	#time-remaining { color: #2cb4a0; }
 
 	@media (min-width: $screen-sm-min) { padding: 25px 0;
@@ -56,13 +55,9 @@
 		h4 { margin: 0; background: #fff; text-transform: uppercase; font-size: 15px; font-weight: 500; color: #adadad; }
 		.glyphicon { font-size: 30px; color: #adadad; }
 		&.active h4, &.active .glyphicon {
-			-webkit-animation: color-change 1s infinite alternate;
-			-moz-animation: color-change 1s infinite alternate;
-			-ms-animation: color-change 1s infinite alternate;
-			-o-animation: color-change 1s infinite alternate;
-			animation: color-change 1s infinite alternate;
+			@include animation(color-change 1s infinite alternate);
 		}
-		&.done h4, &.done .glyphicon { color: $green; } // $green
+		&.done h4, &.done .glyphicon { color: $green; }
 
 		@media (min-width: $screen-sm-min) { width: 33.33%; float: left; }
 	}

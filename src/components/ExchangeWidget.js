@@ -118,11 +118,11 @@ class ExchangeWidget extends Component {
 
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
-							<button className="btn btn-block proceed" onClick={() => this.props.setWallet({address: '', valid: false, show: true})} disabled={this.props.error.show && this.props.error.type == 'INVALID_AMOUNT' ? 'disabled' : null}>
+							<button className="btn btn-block btn-themed proceed" onClick={() => this.props.setWallet({address: '', valid: false, show: true})} disabled={this.props.error.show && this.props.error.type == 'INVALID_AMOUNT' ? 'disabled' : null}>
 								Get Started !
 							</button>
 						) : (
-							<button className="btn btn-block proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
+							<button className="btn btn-block btn-themed proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
 								Confirm & Place Order
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>

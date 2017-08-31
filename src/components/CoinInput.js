@@ -64,7 +64,7 @@ class CoinInput extends Component {
 	render() {
 		return (
 		  <div className="form-group label-floating has-success">
-		    <label htmlFor={this.props.type} className="control-label">{this.props.type}</label>
+		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
 		    <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} onChange={this.onChange} value={this.props.amounts[this.props.type]} />
 
 		    <CoinSelector type={this.props.type} />

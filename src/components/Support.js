@@ -143,7 +143,7 @@ class Support extends Component {
 
                   <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
 
-                  <button type="submit" className="btn styled-btn btn-md" disabled={this.state.loading ? "disabled" : null}>
+                  <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? "disabled" : null}>
                     Send
                     {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
                   </button>
