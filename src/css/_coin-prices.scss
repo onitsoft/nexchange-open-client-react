@@ -16,12 +16,12 @@
 
 @include keyframes(price-up) {
 	0% { color: #fff; }
-	50% { color: #00cd22; }
+	50% { color: #4BB543; }
 	100% { color: #fff; }
 }
 
 @include keyframes(price-down) {
 	0% { color: #fff; }
-	50% { color: #f00; }
+	50% { color: #ff3131; }
 	100% { color: #fff; }
 }

@@ -49,11 +49,11 @@ class CoinPrices extends Component {
 	        		rate = parseFloat(response.data[0].ticker.ask),
 	        		key = pair.toLowerCase();
 
-	        	if (this.state.rate != '') {
+	        	if (rates[key] != null) {
 	        		let change = this.state.change;
 
-	        		if (rate > this.state.rate) change[key] = 'up';
-	        		else if (rate < this.state.rate) change[key] = 'down';
+	        		if (rate > rates[key]) change[key] = 'up';
+	        		else if (rate < rates[key]) change[key] = 'down';
 
 	        		this.setState({change});
 
