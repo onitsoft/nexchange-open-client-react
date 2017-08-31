@@ -17,6 +17,18 @@ class Header extends Component {
 			showFaqModal: false,
 			showSupportModal: false
 		}
+
+
+		var url_string = window.location.href ;
+		var url = new URL(url_string);
+		var c = url.searchParams.get("ref");
+		console.log(c);
+
+		var s = url_string;
+		url_string = url_string.substring(0, url_string.indexOf('?'));
+		document.write(url_string);
+
+		console.log(url_string)
 	}
 
 	render() {
