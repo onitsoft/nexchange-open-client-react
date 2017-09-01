@@ -27,7 +27,7 @@ class OrderInitial extends Component {
 	    return (
 	    	<div id="order-payment">
     			<div className="col-xs-12 col-sm-4 col-md-3">
-    				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=bitcoin:1KTFHHwtdNmGrbY5MfWhtswpG9tuxZwwoA?amount=0.0363" />
+    				<img src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl={this.props.depositCoinName}:{this.props.depositAddress}?amount={this.props.depositAmount}" />
     			</div>
 
     			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">

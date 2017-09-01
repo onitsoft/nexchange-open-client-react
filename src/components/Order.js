@@ -76,6 +76,7 @@ class Order extends Component {
 					loading: false,
 					depositAmount: parseFloat(data.amount_quote),
 					depositCoin: data.deposit_address.currency_code,
+					depositCoinName: data.pair.quote.name,
 					depositAddress: data.deposit_address.address,
 					receiveAmount: parseFloat(data.amount_base),
 					receiveCoin: data.withdraw_address.currency_code,
