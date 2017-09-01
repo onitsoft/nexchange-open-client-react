@@ -68,7 +68,7 @@ class Order extends Component {
 	}
 
 	getOrderDetails() {
-		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}`)
+		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/`)
 			.then((response) => {
 				let data = response.data;
 
@@ -129,7 +129,7 @@ class Order extends Component {
 			orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
 		else if (this.state.orderStatus == 4)
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
-		else if (this.state.orderStatus == 0 || this.state.orderStatus == -2)
+		else if (this.state.orderStatus == 0 || this.state.orderStatus <= -2)
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
 
 		return (

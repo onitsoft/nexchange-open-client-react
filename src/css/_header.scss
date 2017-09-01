@@ -17,20 +17,10 @@
 	.fa { position: relative; top: -2px; }
 
 	@media (min-width: $screen-sm-min) {
-		// .navbar-nav { margin-top: 15px; }
-		// .navbar-header { padding-bottom: 10px; }
-		
 		.navbar-nav { margin-top: 20px; }
-
 		.logo-container {
 			img { width: auto; }
 			h1 { margin: 11px 0 0 15px; font-size: 36px; }
 		}
-	}
-	@media (min-width: $screen-md-min) {
-
-	}
-	@media (min-width: $screen-lg-min) {
-
 	}
 }
