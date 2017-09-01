@@ -54,15 +54,29 @@ class Header extends Component {
 							<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})}>Support</a>
 						</li>
 
-						<li>
-							<a rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Follow us on Twitter">
-								<Icon name="twitter" />
+						<li className="social-mobile">
+							<a href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Follow us on Twitter">
+								<i className="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+
+							<a href="https://www.facebook.com/nexchange.io" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+								<i className="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+
+							<a href="https://nexchange.typeform.com/to/lpyAtX" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+								<i className="fa fa-slack" aria-hidden="true"></i>
 							</a>
 						</li>
 
-						<li>
+						<li className="visible-sm visible-md visible-lg">
 							<a rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/nexchange.io" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Like us on Facebook">
-								<Icon name="facebook" />
+								<i className="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+						</li>
+
+						<li className="visible-sm visible-md visible-lg">
+							<a rel="tooltip" title="" data-placement="bottom" href="https://nexchange.typeform.com/to/lpyAtX" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Join us on Slack">
+								<i className="fa fa-slack" aria-hidden="true"></i>
 							</a>
 						</li>
 			    	</ul>
