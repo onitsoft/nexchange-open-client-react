@@ -27,7 +27,7 @@ class Order extends Component {
 		}
 		this.state = {
 			copied: false,
-			depositCoinName: null,
+			depositCoinName: '...',
 			createdOn: '...',
 			timeRemaining: '...',
 			depositAmount: '...',
