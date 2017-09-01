@@ -6,8 +6,6 @@ import scrollToElement from 'scroll-to-element';
 import FAQ from './FAQ';
 import Support from './Support';
 
-import '../css/components/Header.scss';
-
 
 class Header extends Component {
 	constructor(props) {
@@ -18,7 +16,6 @@ class Header extends Component {
 			showSupportModal: false
 		}
 	}
-
 
 	render() {
 	    return (
