@@ -23,7 +23,7 @@ class OrderInitial extends Component {
 		}, 1000);
 	}
 	
-	function getDepositAddressQr () {
+	getDepositAddressQr () {
 		return "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=" 
 			+ this.props.depositCoinName + ":" 
 			+ this.props.depositAddress + "?amount=" 
