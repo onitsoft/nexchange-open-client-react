@@ -16,8 +16,16 @@
 	}
 	ul li a { padding-left: 0; }
 	.fa { position: relative; top: -2px; }
-
+	.social-mobile a {
+		float: left;
+	}
+	
 	@media (min-width: $screen-sm-min) {
+		ul li a { padding-left: 10px; }
+		.navbar-nav { margin-top: 15px; }
+	}
+
+	@media (min-width: $screen-md-min) {
 		ul li a { padding-left: 15px; }
 		.navbar-nav { margin-top: 20px; }
 		.logo-container {
