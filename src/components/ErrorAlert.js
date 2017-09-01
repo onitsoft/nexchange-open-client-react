@@ -6,8 +6,6 @@ import { Icon } from 'react-fa';
 import FAQ from './FAQ';
 import Support from './Support';
 
-import '../css/components/Header.scss';
-
 
 class ErrorAlert extends Component {
 	render() {
