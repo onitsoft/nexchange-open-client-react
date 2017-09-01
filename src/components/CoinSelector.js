@@ -7,7 +7,6 @@ import { selectCoin, fetchPrice, setWallet } from '../actions/index.js';
 
 
 class CoinSelector extends Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
