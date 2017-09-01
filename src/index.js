@@ -19,6 +19,7 @@ import './css/index.scss';
 
 import reducers from './reducers'
 
+import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -33,6 +34,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
   	<BrowserRouter>
   		<div>
+        <Referrals />
   			<Header />
 
   			<Switch>

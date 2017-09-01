@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import {Icon} from 'react-fa';
 import scrollToElement from 'scroll-to-element';
 
@@ -11,13 +11,14 @@ import '../css/components/Header.scss';
 
 class Header extends Component {
 	constructor(props) {
-		super();
+		super(props);
 
 		this.state = {
 			showFaqModal: false,
 			showSupportModal: false
 		}
 	}
+
 
 	render() {
 	    return (
