@@ -19,9 +19,15 @@ import NotFound from './NotFound';
 class Order extends Component {
 	constructor(props) {
 		super();
-
+		function getDepositAddressQr () {
+		        return "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=" 
+				+ this.props.depositCoinName + ":" 
+				+ this.props.depositAddress + "?amount=" 
+				+ this.props.depositAmount;
+		}
 		this.state = {
 			copied: false,
+			depositCoinName: null,
 			createdOn: '...',
 			timeRemaining: '...',
 			depositAmount: '...',
@@ -37,6 +43,7 @@ class Order extends Component {
 			showBookmarkModal: false,
 			notFound: false,
 			order: null,
+			getDepositAddressQr: getDepositAddressQr
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
