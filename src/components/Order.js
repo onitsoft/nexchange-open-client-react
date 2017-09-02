@@ -68,32 +68,32 @@ class Order extends Component {
 	}
 
 	getOrderDetails() {
-		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/`)
-			.then((response) => {
-				let data = response.data;
+		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/?_=${Math.round((new Date()).getTime())}`)
+		.then((response) => {
+			let data = response.data;
 
-				this.setState({
-					loading: false,
-					depositAmount: parseFloat(data.amount_quote),
-					depositCoin: data.deposit_address.currency_code,
-					depositCoinName: data.pair.quote.name,
-					depositAddress: data.deposit_address.address,
-					receiveAmount: parseFloat(data.amount_base),
-					receiveCoin: data.withdraw_address.currency_code,
-					receiveAddress: data.withdraw_address.address,
-					createdOn: data.created_on,
-					orderStatus: data.status_name[0][0],
-					paymentWindow: parseInt(data.payment_window),
-					order: data
-				}, () => {
-					this.interval = setInterval(this.tick, 1000);
-					this.tick();
-				})
+			this.setState({
+				loading: false,
+				depositAmount: parseFloat(data.amount_quote),
+				depositCoin: data.deposit_address.currency_code,
+				depositCoinName: data.pair.quote.name,
+				depositAddress: data.deposit_address.address,
+				receiveAmount: parseFloat(data.amount_base),
+				receiveCoin: data.withdraw_address.currency_code,
+				receiveAddress: data.withdraw_address.address,
+				createdOn: data.created_on,
+				orderStatus: data.status_name[0][0],
+				paymentWindow: parseInt(data.payment_window),
+				order: data
+			}, () => {
+				this.interval = setInterval(this.tick, 1000);
+				this.tick();
 			})
-			.catch((error) => {
-				console.log(error);
-				this.setState({notFound: true})
-			});
+		})
+		.catch((error) => {
+			console.log(error);
+			this.setState({notFound: true})
+		});
 
 		this.timeout = setTimeout(() => {
 			this.getOrderDetails();
