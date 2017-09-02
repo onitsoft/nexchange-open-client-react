@@ -121,7 +121,7 @@ class Order extends Component {
 		if (this.state.expired && this.state.orderStatus == 1)
 			orderDetails = <OrderExpired />;
 		else if (this.state.orderStatus == 1)
-			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />;
+			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
 		else if (this.state.orderStatus == -1)
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
 		else if (this.state.orderStatus == 2)
