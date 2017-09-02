@@ -34,7 +34,7 @@ class OrderInitial extends Component {
 	    return (
 	    	<div id="order-payment">
     			<div className="col-xs-12 col-sm-4 col-md-3">
-    				<img src={getDepositAddressQr()} />
+    				<img src={this.getDepositAddressQr()} />
     			</div>
 
     			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
