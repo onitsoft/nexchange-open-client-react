@@ -19,9 +19,9 @@ import NotFound from './NotFound';
 class Order extends Component {
 	constructor(props) {
 		super();
-
 		this.state = {
 			copied: false,
+			depositCoinName: '...',
 			createdOn: '...',
 			timeRemaining: '...',
 			depositAmount: '...',
@@ -36,7 +36,7 @@ class Order extends Component {
 			paymentWindow: null,
 			showBookmarkModal: false,
 			notFound: false,
-			order: null,
+			order: null
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -68,31 +68,32 @@ class Order extends Component {
 	}
 
 	getOrderDetails() {
-		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/`)
-			.then((response) => {
-				let data = response.data;
+		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/?_=${Math.round((new Date()).getTime())}`)
+		.then((response) => {
+			let data = response.data;
 
-				this.setState({
-					loading: false,
-					depositAmount: parseFloat(data.amount_quote),
-					depositCoin: data.deposit_address.currency_code,
-					depositAddress: data.deposit_address.address,
-					receiveAmount: parseFloat(data.amount_base),
-					receiveCoin: data.withdraw_address.currency_code,
-					receiveAddress: data.withdraw_address.address,
-					createdOn: data.created_on,
-					orderStatus: data.status_name[0][0],
-					paymentWindow: parseInt(data.payment_window),
-					order: data
-				}, () => {
-					this.interval = setInterval(this.tick, 1000);
-					this.tick();
-				})
+			this.setState({
+				loading: false,
+				depositAmount: parseFloat(data.amount_quote),
+				depositCoin: data.deposit_address.currency_code,
+				depositCoinName: data.pair.quote.name,
+				depositAddress: data.deposit_address.address,
+				receiveAmount: parseFloat(data.amount_base),
+				receiveCoin: data.withdraw_address.currency_code,
+				receiveAddress: data.withdraw_address.address,
+				createdOn: data.created_on,
+				orderStatus: data.status_name[0][0],
+				paymentWindow: parseInt(data.payment_window),
+				order: data
+			}, () => {
+				this.interval = setInterval(this.tick, 1000);
+				this.tick();
 			})
-			.catch((error) => {
-				console.log(error);
-				this.setState({notFound: true})
-			});
+		})
+		.catch((error) => {
+			console.log(error);
+			this.setState({notFound: true})
+		});
 
 		this.timeout = setTimeout(() => {
 			this.getOrderDetails();
@@ -120,7 +121,7 @@ class Order extends Component {
 		if (this.state.expired && this.state.orderStatus == 1)
 			orderDetails = <OrderExpired />;
 		else if (this.state.orderStatus == 1)
-			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositAddress={this.state.depositAddress} timeRemaining={this.state.timeRemaining} />;
+			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
 		else if (this.state.orderStatus == -1)
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
 		else if (this.state.orderStatus == 2)
