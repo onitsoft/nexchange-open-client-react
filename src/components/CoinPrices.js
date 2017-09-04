@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import config from '../config';
+
+import { errorAlert, updateAmounts, fetchPrice } from '../actions/index.js';
 
 
 class CoinPrices extends Component {
@@ -57,6 +61,9 @@ class CoinPrices extends Component {
 
 	        		this.setState({change});
 
+	        		if (pair.toLowerCase() == `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase())
+						this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+
 	        		setTimeout(() => {
 	        			let change = this.state.change;
 
@@ -100,4 +107,20 @@ class CoinPrices extends Component {
 	}
 }
 
-export default CoinPrices;
+
+function mapStateToProps(state) {
+	return {
+		selectedCoin: state.selectedCoin,
+		amounts: state.amounts,
+		price: state.price,
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		updateAmounts: updateAmounts,
+		fetchPrice: fetchPrice,
+	}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoinPrices);
