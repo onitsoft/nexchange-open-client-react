@@ -86,21 +86,24 @@ class Order extends Component {
 				paymentWindow: parseInt(data.payment_window),
 				order: data
 			}, () => {
+				clearInterval(this.interval);
 				this.interval = setInterval(this.tick, 1000);
 				this.tick();
+
+				this.timeout = setTimeout(() => {
+					this.getOrderDetails();
+				}, config.ORDER_DETAILS_FETCH_INTERVAL);
 			})
 		})
 		.catch((error) => {
-			console.log(error);
-
-			// if details already exist, no error, use previous
-			if (this.state.loading)
-				this.setState({notFound: true})
+			if (error.response.status == 429) {
+				this.timeout = setTimeout(() => {
+					this.getOrderDetails();
+				}, config.ORDER_DETAILS_FETCH_INTERVAL * 2);
+			} else {
+				this.setState({notFound: true});
+			}
 		});
-
-		this.timeout = setTimeout(() => {
-			this.getOrderDetails();
-		}, config.ORDER_DETAILS_FETCH_INTERVAL);
 	}
 
 	componentDidUpdate(prevProps) {
