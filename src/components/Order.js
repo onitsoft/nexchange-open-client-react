@@ -92,7 +92,10 @@ class Order extends Component {
 		})
 		.catch((error) => {
 			console.log(error);
-			this.setState({notFound: true})
+
+			// if details already exist, no error, use previous
+			if (this.state.loading)
+				this.setState({notFound: true})
 		});
 
 		this.timeout = setTimeout(() => {
