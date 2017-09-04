@@ -75,7 +75,7 @@ class Header extends Component {
 						</li>
 
 						<li className="visible-sm visible-md visible-lg">
-							<a rel="tooltip" title="" data-placement="bottom" href="https://nexchange.typeform.com/to/lpyAtX" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Join us on Slack">
+							<a rel="tooltip" title="" data-placement="bottom" href="https://join.slack.com/t/nexchangecommunity/shared_invite/MjM0OTU1ODc4NTkyLTE1MDQ0Mzc3NjEtYzZiMTYxMjdhNA" target="_blank" className="btn btn-simple btn-just-icon" data-original-title="Join us on Slack">
 								<i className="fa fa-slack" aria-hidden="true"></i>
 							</a>
 						</li>
