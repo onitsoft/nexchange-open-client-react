@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import jsonp from "jsonp";
 
 const getAjaxUrl = url => url.replace("/post?", "/post-json?");
-const subscribeUrl = "https://nexchange.us16.list-manage.com/subscribe/post?u=e0edfc2b2b7de21db0675f85d&amp;id=a48f384d78";
+const subscribeUrl = "https://nexchange.us16.list-manage.com/subscribe/post?u=918b60ce5b05d82384c293db0&amp;id=b2af978303";
+
 
 class SubscriptionForm extends React.Component {
 	constructor(props, ...args) {
@@ -60,31 +61,37 @@ class SubscriptionForm extends React.Component {
 
 		return (
 			<div id="subscription-form">
-				<div className="container">
-					<form action={action} method="post" noValidate className="row">
-						<div className="col-xs-10">
-							<div className="form-group is-empty has-success">
-								<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter emailt to receive updates about Nexchange" className="form-control" required />
-							<span className="material-input"></span></div>
-						</div>
+				<div className="container text-center">
+					<h2>Get in touch</h2>
 
-						<div className="col-xs-2">
-							<button 
-								disabled={
-									this.state.status === "sending" ||
-									this.state.status === "success"
-								}
-								type="submit"
-								className="btn btn-themed"
-								onClick={this.onSubmit}
-							>
-								Subscribe
-							</button>
-						</div>
+					<form action={action} method="post" noValidate>
+						<div id="subscription-form-inner">
 
-						<div className="col-xs-12 message">
-						{status === "success" && (<p className="success">Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.</p>)}
-						{status === "error" && (<p className="failure">Something went wrong. Please try again later.</p>)}
+							<div className="col-xs-12 col-sm-10">
+								<div className="form-group is-empty has-success">
+									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter your email to receive updates about Nexchange" className="form-control" required />
+								<span className="material-input"></span></div>
+							</div>
+
+							<div className="col-xs-12 col-sm-2">
+								<button 
+									disabled={
+										this.state.status === "sending" ||
+										this.state.status === "success"
+									}
+									type="submit"
+									className="btn btn-themed"
+									onClick={this.onSubmit}
+								>
+									Subscribe
+								</button>
+							</div>
+
+							<div className="col-xs-12 message">
+							{status === "success" && (<p className="success">Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.</p>)}
+							{status === "error" && (<p className="failure">Something went wrong. Please try again later.</p>)}
+							</div>
+
 						</div>
 					</form>
 				</div>

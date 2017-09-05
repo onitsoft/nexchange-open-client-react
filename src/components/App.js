@@ -22,8 +22,8 @@ class App extends Component {
 		  <div className="App">
 		    <Main />
 		    <RecentOrders />
-			<SubscriptionForm />
 		    <Team />
+		    <SubscriptionForm />
 		  </div>
 		);
 	}
