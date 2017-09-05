@@ -1,0 +1,16 @@
+#subscription-form { padding: 15px 0; background: $blue;
+	.form-group { margin: 15px 0 0 0;
+		input { margin: 0; }
+	}
+	button { width: 100%; }
+	input { font-size: 18px; background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff); color: #fff; }
+	.message p { color: #fff;
+		&.success{ color: #55b559; }
+		&.failure { color: #f44336; }
+	}
+
+	::-webkit-input-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); }
+	::-moz-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); } /* firefox 19+ */
+	:-ms-input-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); } /* ie */
+	input:-moz-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); }
+}
