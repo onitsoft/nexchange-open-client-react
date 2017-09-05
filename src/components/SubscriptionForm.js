@@ -75,7 +75,7 @@ class SubscriptionForm extends React.Component {
 									this.state.status === "success"
 								}
 								type="submit"
-								className="btn btn-primary btn-success"
+								className="btn btn-themed"
 								onClick={this.onSubmit}
 							>
 								Subscribe
