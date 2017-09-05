@@ -7,6 +7,7 @@ import { fetchCoinDetails } from '../actions';
 import Main from '../components/Main';
 import Team from '../components/Team';
 import RecentOrders from '../components/RecentOrders';
+import SubscriptionForm from '../components/SubscriptionForm';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
 		    <Main />
 		    <RecentOrders />
 		    <Team />
+		    <SubscriptionForm />
 		  </div>
 		);
 	}
