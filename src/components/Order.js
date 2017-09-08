@@ -41,7 +41,6 @@ class Order extends Component {
 			showTermsModal: false,
 			notFound: false,
 			order: null,
-			refCode: 'hello-this-is-ref'
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -199,25 +198,27 @@ class Order extends Component {
 						    	</div>
 						    </div>
 
+						    {this.state.order ? 
 						    <div id="share-referral" className="col-xs-12">
 						    	<div className="box">
 						    		<div className="row">
 						    			<div className="col-xs-12">
 											<h2>Earn free coins by referring your friends</h2>
-											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.refCode}`} className="text-green">{config.DOMAIN}{this.state.refCode}</a></h4>
+											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} className="text-green">{config.DOMAIN}/?ref={this.state.order.referral_code[0].code}</a></h4>
 											<h4><a href="javascript:void(0)" onClick={() => this.setState({showTermsModal: true})}>Terms & Conditions</a></h4>
 
 											<h4>Share it on social!</h4>
 											
 											<div className="share">
-											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.refCode}`} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
-											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.refCode}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank"><i className=	"fa fa-twitter-square" aria-hidden="true"></i></a>
-											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.refCode}`} target="_blank"><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
+											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
+											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank"><i className=	"fa fa-twitter-square" aria-hidden="true"></i></a>
+											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank"><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
 											</div>
 						    			</div>
 						    		</div>
 						    	</div>
-						    </div>
+						    </div> 
+						    : null }
 						</div>
 					</div>
 
