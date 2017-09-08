@@ -17,28 +17,29 @@ import './css/index.scss';
 import reducers from './reducers';
 import Loadable from 'react-loadable';
 
-import asyncComponent from './components/AsyncComponent';
 import LoadingComponent from './components/LoadingComponent';
 
 import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+// const AsyncApp = Loadable({
+//   loader: () => import("./components/App"),
+//   loading: LoadingComponent
+// });
 
-const AsyncApp = Loadable({
-  loader: () => import("./components/App"),
-  loading: LoadingComponent
-});
-
-const AsyncOrder = Loadable({
-  loader: () => import("./components/Order"),
-  loading: LoadingComponent
-});
+// const AsyncOrder = Loadable({
+//   loader: () => import("./components/Order"),
+//   loading: LoadingComponent
+// });
 
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
   loading: LoadingComponent
 });
+
+import App from './components/App';
+import Order from './components/Order';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
@@ -51,8 +52,8 @@ ReactDOM.render(
   			<Header />
 
   			<Switch>
-  				<Route exact path="/order/:orderRef" component={AsyncOrder} />
-	  			<Route exact path="/" component={AsyncApp} />
+  				<Route exact path="/order/:orderRef" component={Order} />
+	  			<Route exact path="/" component={App} />
           <Route component={AsyncNotFound} />
 	  		</Switch>
 
