@@ -16,14 +16,14 @@ import './css/index.scss';
 
 import reducers from './reducers'
 
+import asyncComponent from './components/AsyncComponent';
 import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import App from './components/App';
-import Order from './components/Order';
-import NotFound from './components/NotFound';
-
+const AsyncApp = asyncComponent(() => import("./components/App"));
+const AsyncOrder = asyncComponent(() => import("./components/Order"));
+const AsyncNotFound = asyncComponent(() => import("./components/NotFound"));
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
@@ -35,9 +35,9 @@ ReactDOM.render(
   			<Header />
 
   			<Switch>
-  				<Route exact path="/order/:orderRef" component={Order} />
-	  			<Route exact path="/" component={App} />
-          <Route component={NotFound} />
+  				<Route exact path="/order/:orderRef" component={AsyncOrder} />
+	  			<Route exact path="/" component={AsyncApp} />
+          <Route component={AsyncNotFound} />
 	  		</Switch>
 
 	  		<Footer />

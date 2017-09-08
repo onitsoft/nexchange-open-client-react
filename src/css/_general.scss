@@ -32,18 +32,3 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 }
 
 .text-green { color: $green !important; }
-
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}

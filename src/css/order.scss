@@ -1,3 +1,9 @@
+@import "variables";
+@import "mixins";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+
 #order { background: #f8f7f8; padding: 15px 0;
 	a { color: $green; 
 		&:visited, &:focus { text-decoration: none; }
