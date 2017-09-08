@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
+import '../css/order.scss';
+
 import config from '../config';
 
 import OrderInitial from './OrderInitial';

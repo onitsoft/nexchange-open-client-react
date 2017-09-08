@@ -51,11 +51,11 @@ a, a:hover, a:focus {
 @import '_form';
 //@import '_welljumbo';   // Not designed yet by Creative Tim, you can use it as it is
 @import '_buttons';
-@import '_checkboxes';
-@import '_togglebutton';
-@import '_radios';
+//@import '_checkboxes';
+//@import '_togglebutton';
+//@import '_radios';
 @import '_inputs';
-@import '_pagination';
+//@import '_pagination';
 @import '_labels';
 @import '_pills';
 @import '_footers';
@@ -67,20 +67,20 @@ legend {
 //@import '_lists';  // Not designed yet by Creative Tim, you can use it as it is
 @import '_navbar';
 
-@import '_dropdown';
+//@import '_dropdown';
 @import '_info-areas';
 @import '_alerts';
 @import '_progress';
 @import '_typography';
-@import '_tabs';
+//@import '_tabs';
 @import '_popups';
 //@import '_carousel';
-@import '_cards';
-@import '_dialogs';
-@import '_panels';
-@import '_dividers';
+//@import '_cards';
+//@import '_dialogs';
+//@import '_panels';
+//@import '_dividers';
 
-@import '_images';
+//@import '_images';
 
 
 // Prevent highlight on mobile

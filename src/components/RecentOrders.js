@@ -4,6 +4,9 @@ import moment from 'moment';
 
 import config from '../config';
 
+import LoadingComponent from './LoadingComponent';
+
+
 class OrderStatus extends Component {
 	constructor(props) {
 		super(props);
@@ -69,18 +72,7 @@ class OrderStatus extends Component {
 
 							<div className="recent-orders-container">
 								{orders.length < 1 ? (
-									<div className="spinner">
-									  <div className="rect1"></div>
-									  <div className="rect2"></div>
-									  <div className="rect3"></div>
-									  <div className="rect4"></div>
-									  <div className="rect5"></div>
-									  <div className="rect6"></div>
-									  <div className="rect7"></div>
-									  <div className="rect8"></div>
-									  <div className="rect9"></div>
-									  <div className="rect10"></div>
-									</div>
+									<LoadingComponent isLoading={true} />
 								) : (
 									orders
 								)}

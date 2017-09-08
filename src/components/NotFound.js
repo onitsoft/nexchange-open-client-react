@@ -1,4 +1,6 @@
 import React from 'react';
+import '../css/not-found.scss';
+
 
 const NotFound = () => (
 	<div id="not-found" className="text-center">

@@ -1,5 +1,5 @@
-$green: #1db6ad;
-$blue: #084262;
+@import 'variables';
+@import 'mixins';
 
 @import 'bootstrap';
 @import 'material-kit';
@@ -11,11 +11,9 @@ $blue: #084262;
 @import 'exchange-widget';
 @import 'wallet-address';
 @import 'faq';
-@import 'order';
 @import 'recent-orders';
 @import 'team';
 @import 'support';
-@import 'not-found';
 @import 'coin-prices';
-@import 'subscription-form.scss';
+@import 'subscription-form';
 @import 'footer';
