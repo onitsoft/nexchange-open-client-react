@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ReduxPromise from 'redux-promise';
 import thunk from 'redux-thunk';
-
-import registerServiceWorker from './registerServiceWorker';
 
 import 'expose-loader?$!jquery';
 import 'expose-loader?jQuery!jquery';
