@@ -1,4 +1,4 @@
-body, html { height: 100%; }
+body, html { height: 100%; background: #f8f7f8; }
 #root { position: relative; min-height: 100%; padding-bottom: 65px; }
 
 body { color: #044264; }
@@ -10,8 +10,8 @@ h1 { font-size: 34px;
 h3 { font-size: 26px;
 	@media (min-width: $screen-sm-min) { font-size: 34px; }
 }
-a { color: $green; 
-	&:hover, &:focus, &:visited { text-decoration: none; }
+a { color: $green;
+	&:visited, &:focus { outline: none; }
 }
 .header-text { font-size: 36px; }
 img { max-width: 100%; }

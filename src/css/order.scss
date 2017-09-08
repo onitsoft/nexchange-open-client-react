@@ -4,7 +4,7 @@
 @import "bootstrap/mixins";
 
 
-#order { background: #f8f7f8; padding: 15px 0;
+#order { background: #f8f7f8; padding: 15px 0 0 0;
 	a { color: $green; 
 		&:visited, &:focus { text-decoration: none; }
 		&:hover { text-decoration: underline; }
@@ -30,7 +30,7 @@
 		}
 	}
 
-	@media (min-width: $screen-md-min) { padding: 50px 0;
+	@media (min-width: $screen-md-min) { padding: 50px 0 0 0;
 		h5 { font-size: 17px; }
 		h6 { font-size: 16px; }
 		.box .coin-icon { top: 12px; }
@@ -104,6 +104,13 @@
 	@media (min-width: $screen-sm-min) {
 		h2 { font-size: 30px; }
 	}
+}
+
+#share-referral { text-align: center;
+	.box { padding: 20px; }
+	.share { margin-top: 15px; }
+	.fa { font-size: 45px; margin: 0 15px 0 0; color: #d6d6d6; }
+	h2 { margin-top: 0; }
 }
 
 @include keyframes(color-change) {

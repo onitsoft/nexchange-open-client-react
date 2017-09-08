@@ -48,6 +48,7 @@
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
     "react-router-dom": "^4.0.0",
+    "react-share": "^1.16.0",
     "redux": "^3.0.4",
     "redux-form": "^6.6.3",
     "redux-thunk": "^2.2.0",

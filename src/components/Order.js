@@ -16,6 +16,7 @@ import OrderExpired from './OrderExpired';
 import OrderStatus from './OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from './NotFound';
+import ReferralTerms from './ReferralTerms';
 
 
 class Order extends Component {
@@ -37,8 +38,10 @@ class Order extends Component {
 			loading: true,
 			paymentWindow: null,
 			showBookmarkModal: false,
+			showTermsModal: false,
 			notFound: false,
-			order: null
+			order: null,
+			refCode: 'hello-this-is-ref'
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -142,63 +145,85 @@ class Order extends Component {
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
 
 		return (
-			<div id="order">
-				<div className="container">
-					<div className="row">
-					    <div id="order-header" className="col-xs-12">
-					    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
-					    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
-					    </div>
+			<div>
+				<div id="order">
+					<div className="container">
+						<div className="row">
+						    <div id="order-header" className="col-xs-12">
+						    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+						    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
+						    </div>
+						</div>
+
+						<div className="row">
+						    <div className="col-xs-12 col-sm-6">
+						    	<div className="coin-box box media">
+						    		<div className="media-left">
+						    			<i className={`coin-icon cc-${this.state.depositCoin} ${this.state.depositCoin}`}></i>
+						    		</div>
+
+						    		<div className="media-body">
+							    		<h5><b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b></h5>
+							    		<h6>{this.state.depositAddress}</h6>
+						    		</div>
+						    	</div>
+						    </div>
+
+						    <div className="col-xs-12 col-sm-6">
+						    	<div className="coin-box box media">
+						    		<div className="media-left">
+						    			<i className={`coin-icon cc-${this.state.receiveCoin} ${this.state.receiveCoin}`}></i>
+						    		</div>
+
+						    		<div className="media-body">
+							    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
+							    		<h6>{this.state.receiveAddress}</h6>
+						    		</div>
+						    	</div>
+						    </div>
+
+						    <div className="col-xs-12">
+						    	<div className="box">
+							    	<div className="row">
+						    		{this.state.loading ?
+						    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
+						    			orderDetails
+						    		}
+						    		</div>
+
+						    		<div className="row">
+						    			<div className="col-xs-12">
+							    			<OrderStatus status={this.state.orderStatus} />
+						    			</div>
+						    		</div>
+						    	</div>
+						    </div>
+
+						    <div id="share-referral" className="col-xs-12">
+						    	<div className="box">
+						    		<div className="row">
+						    			<div className="col-xs-12">
+											<h2>Earn free coins by referring your friends</h2>
+											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.refCode}`} className="text-green">{config.DOMAIN}{this.state.refCode}</a></h4>
+											<h4><a href="javascript:void(0)" onClick={() => this.setState({showTermsModal: true})}>Terms & Conditions</a></h4>
+
+											<h4>Share it on social!</h4>
+											
+											<div className="share">
+											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.refCode}`} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
+											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.refCode}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank"><i className=	"fa fa-twitter-square" aria-hidden="true"></i></a>
+											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.refCode}`} target="_blank"><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
+											</div>
+						    			</div>
+						    		</div>
+						    	</div>
+						    </div>
+						</div>
 					</div>
 
-					<div className="row">
-					    <div className="col-xs-12 col-sm-6">
-					    	<div className="coin-box box media">
-					    		<div className="media-left">
-					    			<i className={`coin-icon cc-${this.state.depositCoin} ${this.state.depositCoin}`}></i>
-					    		</div>
-
-					    		<div className="media-body">
-						    		<h5><b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b></h5>
-						    		<h6>{this.state.depositAddress}</h6>
-					    		</div>
-					    	</div>
-					    </div>
-
-					    <div className="col-xs-12 col-sm-6">
-					    	<div className="coin-box box media">
-					    		<div className="media-left">
-					    			<i className={`coin-icon cc-${this.state.receiveCoin} ${this.state.receiveCoin}`}></i>
-					    		</div>
-
-					    		<div className="media-body">
-						    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
-						    		<h6>{this.state.receiveAddress}</h6>
-					    		</div>
-					    	</div>
-					    </div>
-
-
-					    <div  className="col-xs-12">
-					    	<div className="box">
-						    	<div className="row">
-					    		{this.state.loading ?
-					    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
-					    			orderDetails
-					    		}
-					    		</div>
-
-					    		<div className="row">
-					    			<div className="col-xs-12">
-						    			<OrderStatus status={this.state.orderStatus} />
-					    			</div>
-					    		</div>
-					    	</div>
-					    </div>
-					</div>
+					<ReferralTerms show={this.state.showTermsModal} onClose={() => this.setState({showTermsModal: false})} />
+				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 				</div>
-
-			    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 			</div>
 		);
 	}
