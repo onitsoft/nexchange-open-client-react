@@ -14,16 +14,32 @@ import "./js/material-kit.js";
 
 import './css/index.scss';
 
-import reducers from './reducers'
+import reducers from './reducers';
+import Loadable from 'react-loadable';
 
 import asyncComponent from './components/AsyncComponent';
+import LoadingComponent from './components/LoadingComponent';
+
 import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const AsyncApp = asyncComponent(() => import("./components/App"));
-const AsyncOrder = asyncComponent(() => import("./components/Order"));
-const AsyncNotFound = asyncComponent(() => import("./components/NotFound"));
+
+const AsyncApp = Loadable({
+  loader: () => import("./components/App"),
+  loading: LoadingComponent
+});
+
+const AsyncOrder = Loadable({
+  loader: () => import("./components/Order"),
+  loading: LoadingComponent
+});
+
+const AsyncNotFound = Loadable({
+  loader: () => import("./components/NotFound"),
+  loading: LoadingComponent
+});
+
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 

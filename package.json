@@ -43,6 +43,7 @@
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.10",
     "react-fa": "^4.2.0",
+    "react-loadable": "^4.0.5",
     "react-onclickoutside": "^6.5.0",
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
