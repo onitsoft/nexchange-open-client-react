@@ -1,5 +1,5 @@
 #hero { position: relative; background-color: #082f4d; padding: 25px 0 75px 0; background-image: url(../img/landscape.jpg); background-position: top left; background-size: cover; color: #fff;
-	h3 { margin-top: 0; font-weight: 400; }
+	h2 { margin-top: 0; font-weight: 400; font-size: 26px; }
 	.brand { margin-bottom: 50px; }
 	.coin-currency-dropdown {
 	    border-radius: 3px;
@@ -29,5 +29,6 @@
 
 	@media (min-width: $screen-sm-min) { padding: 40px 0 75px;
 		.alert { position: absolute; }
+		h2 { font-size: 34px; }
 	}
 }

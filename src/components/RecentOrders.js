@@ -22,6 +22,8 @@ class OrderStatus extends Component {
 	fetchRecentOrders() {
         axios.get(`${config.API_BASE_URL}/orders/?page=1`)
         	.then(response => {
+        		console.log(response.data)
+
         		let orders = response.data.results;
         		this.setState({orders: orders});
         	})
@@ -68,7 +70,7 @@ class OrderStatus extends Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-xs-12">
-							<h3>Recent Orders</h3>
+							<h2>Recent Orders</h2>
 
 							<div className="recent-orders-container">
 								{orders.length < 1 ? (
