@@ -23,22 +23,12 @@ import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// const AsyncApp = Loadable({
-//   loader: () => import("./components/App"),
-//   loading: LoadingComponent
-// });
-
-// const AsyncOrder = Loadable({
-//   loader: () => import("./components/Order"),
-//   loading: LoadingComponent
-// });
-
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
   loading: LoadingComponent
 });
 
-import App from './components/App';
+import Home from './components/Home';
 import Order from './components/Order';
 
 
@@ -53,7 +43,7 @@ ReactDOM.render(
 
   			<Switch>
   				<Route exact path="/order/:orderRef" component={Order} />
-	  			<Route exact path="/" component={App} />
+	  			<Route exact path="/" component={Home} />
           <Route component={AsyncNotFound} />
 	  		</Switch>
 

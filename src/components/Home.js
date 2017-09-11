@@ -4,13 +4,13 @@ import { bindActionCreators } from 'redux';
 
 import { fetchCoinDetails } from '../actions';
 
-import Main from '../components/Main';
-import Team from '../components/Team';
+import Hero from '../components/Hero';
+import About from '../components/About';
 import RecentOrders from '../components/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
 
 
-class App extends Component {
+class Home extends Component {
 	constructor(props) {
 		super(props);
 
@@ -19,10 +19,10 @@ class App extends Component {
 
 	render() {
 		return (
-		  <div className="App">
-		    <Main />
+		  <div>
+		    <Hero />
 		    <RecentOrders />
-		    <Team />
+		    <About />
 		    <SubscriptionForm />
 		  </div>
 		);
@@ -36,4 +36,4 @@ function mapDispatchToProps(dispatch) {
 	}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(Home);

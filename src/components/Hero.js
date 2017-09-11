@@ -6,8 +6,8 @@ import CoinPrices from '../components/CoinPrices';
 import ErrorAlert from '../components/ErrorAlert';
 
 
-const Main = () => (
-	<div id="main">
+const Hero = () => (
+	<div id="hero">
 		<ErrorAlert />
 
 		<div className="container">
@@ -32,4 +32,4 @@ const Main = () => (
 	</div>
 );
 
-export default Main;
+export default Hero;
