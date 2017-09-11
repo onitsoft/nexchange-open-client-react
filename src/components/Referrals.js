@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+import config from '../config';
+
 
 class Referrals extends Component {
 	constructor(props) {
@@ -9,11 +11,11 @@ class Referrals extends Component {
 	}
 
 	componentDidMount() {
-		axios.interceptors.request.use(function (config) {
-			let referral = localStorage.getItem('referral');
-		    if (referral) config.headers['x-referral-token'] = referral;
+		axios.interceptors.request.use(function (requestConfig) {
+			let referral = (config.REFERRAL_CODE ? config.REFERRAL_CODE : localStorage.getItem('referral'));
+		    if (referral) requestConfig.headers['x-referral-token'] = referral;
 
-		    return config;
+		    return requestConfig;
 		  }, function (error) {
 		    return Promise.reject(error);
 		  });
