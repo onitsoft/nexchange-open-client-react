@@ -6,6 +6,7 @@ const config = {
 	ORDER_DETAILS_FETCH_INTERVAL: 20000,
 	RECENT_ORDERS_INTERVAL: 20000,
 	RECENT_ORDERS_COUNT: 11,
+	REFERRAL_CODE: null
 }
 
 export default config;
