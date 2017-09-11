@@ -11,7 +11,7 @@ const TeamMember = props => {
 	return (
 		<div className="col-xs-12 col-ms-6 col-md-4 text-center">
 			<div className="team-member">
-				<img src={`/img/team/${props.id}.jpg`} className="img-circle img-responsive lazy-loading-image" />
+				<img src={`/img/team/${props.id}.jpg`} className="img-circle img-responsive lazy-loading-image" alt={`${props.name} profile`} />
 
 				<h3>{props.name} <img src={`/img/flags/${props.country}.svg`} className="flag lazy-loading-image" /></h3>
 
