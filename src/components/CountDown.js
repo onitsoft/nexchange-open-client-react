@@ -17,21 +17,27 @@ class CountDown extends Component {
 		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 		});
 
-		this.setState({
-			initialTimeSet: this.state.time
-		})
+		if (localStorage.getItem(this.props.id) == null)
+			localStorage.setItem(this.props.id, moment().toISOString());
 
-		this.interval = setInterval(() => {
-			this.setState({
-				time: this.state.time - 1000
-			})
-		}, 1000);
+		this.screenFirstSeen = new moment(localStorage.getItem(this.props.id));
+		let diff = new moment().diff(this.screenFirstSeen);
+
+		this.setState({time: this.props.time - diff, initialTimeSet: this.props.time}, () => {
+			this.interval = setInterval(() => {
+				this.setState({
+					time: this.state.time - 1000
+				})
+			}, 1000);
+		});
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.time != this.state.initialTimeSet) {
+			let diff = new moment().diff(this.screenFirstSeen);
+
 			this.setState({
-				time: nextProps.time,
+				time: nextProps.time - diff,
 				initialTimeSet: nextProps.time
 			})
 		}
