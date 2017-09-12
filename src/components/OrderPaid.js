@@ -31,7 +31,7 @@ class OrderPaid extends Component {
 					expiredMsg="This transaction is taking longer than expected, should be completed soon."
 				/>
 
-				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 18px", "fontWeight": "500"}}>See your order details on our API</h4></a>
+				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 18px", "fontWeight": "500"}}>See your order details on our API</h4></a>
 			</div>
 		)
 	}

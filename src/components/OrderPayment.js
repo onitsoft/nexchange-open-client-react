@@ -25,10 +25,6 @@ class OrderPayment extends Component {
 	}
 
 	componentDidMount() {
-		if (localStorage.getItem(`funds-received-${this.props.order.unique_reference}`) == null)
-			localStorage.setItem(`funds-received-${this.props.order.unique_reference}`, moment().toISOString());
-
-		this.screenFirstSeen = new moment(localStorage.getItem(`funds-received-${this.props.order.unique_reference}`));
 		this.estimateCountdown(this.props);
 	}
 
@@ -38,10 +34,8 @@ class OrderPayment extends Component {
 		else if (this.coin.code == 'LTC') confirmationWaitTime = 150000; // 2.5mins
 		else if (this.coin.code == 'ETH') confirmationWaitTime = 60000; // ETH, 0.2mins
 
-		let diff = new moment().diff(this.screenFirstSeen);
-
 		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
-		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations)) - diff;
+		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
 
 		if (this.state.estimate != estimate)
 			this.setState({estimate});
@@ -61,19 +55,36 @@ class OrderPayment extends Component {
 	}
 
 	render() {
+		if (this.txId == '' || this.txId == null) {
+			return (
+				<div className="col-xs-12 text-center order-status-section">
+					<h2 style={{margin: "0"}}>Transaction deposit...</h2>
+					<CountDown
+						id={`funds-received-txidnull-${this.props.order.unique_reference}`}
+						time={300000}
+						defaultMsg="Estimated time:"
+						expiredMsg="The transaction should have become available in the blockchain by now. No stress, we will handle it."
+					/>
+
+					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
+				</div>
+			)
+		}
+
 		return (
 			<div className="col-xs-12 text-center order-status-section">
 				<h2 style={{margin: "0"}}>Transaction detected, awaiting confirmations</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{this.tx.tx_id}</a></h5>
 
 				<CountDown
+					id={`funds-received-${this.props.order.unique_reference}`}
 					time={this.state.estimate}
 					defaultMsg="Estimated time left for all confirmations:"
 					expiredMsg="The transaction should have received the required number of confirmation by now."
 					info={<i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This estimation assumes optimal network fee."></i>}
 				/>
 
-				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}?format=json`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
+				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
 				<a href={this.blockchainUrl} target="_blank"><h4 style={{margin: "5px 0 18px", "fontWeight": "500"}}>See your order details on blockchain</h4></a>
 			</div>
 		)
