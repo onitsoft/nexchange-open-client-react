@@ -18,6 +18,16 @@ import Bookmark from './Bookmark';
 import NotFound from './NotFound';
 import ReferralTerms from './ReferralTerms';
 
+const STATUS_CODES = {
+	0: 'CANCELLED',
+	11: 'INITIAL',
+	12: 'PAID_UNCONFIRMED',
+	13: 'PAID',
+	14: 'PRE_RELEASE',
+	15: 'RELEASE',
+	16: 'COMPLETED'
+}
+
 
 class Order extends Component {
 	constructor(props) {
@@ -100,7 +110,7 @@ class Order extends Component {
 			})
 		})
 		.catch((error) => {
-			if (error.response.status == 429) {
+			if (error.response && error.response.status == 429) {
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
 				}, config.ORDER_DETAILS_FETCH_INTERVAL * 2);
@@ -128,19 +138,19 @@ class Order extends Component {
 			return <NotFound />;
 
 		let orderDetails = null;
-		if (this.state.expired && this.state.orderStatus == 1)
+		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderExpired />;
-		else if (this.state.orderStatus == 1)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-		else if (this.state.orderStatus == -1)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 2)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID')
 			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 3)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'RELEASE')
 			orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 4)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
-		else if (this.state.orderStatus == 0 || this.state.orderStatus <= -2)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'CANCELLED' ||  STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
 
 		return (
