@@ -40,7 +40,7 @@ class FAQ extends Component {
             <p>Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
 
             <h3>What is your fee?</h3>
-            <p>Our service fee is 0.5%. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
+            <p>Our service fee is 0% throughout September. We will gradually increase it to 0.5% over the next few months, starting on October 1st. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
 
             <h3>How long does a conversion take?</h3>
             <p>Initiating a transaction doesn’t take more than a couple of minutes. The actual processing takes about 10–60 minutes before you receive your coins in your desired currency. The transaction time depends on the selected currencies and their respective blockchains.</p>

@@ -27,6 +27,10 @@ class ExchangeWidget extends Component {
 	}
 
 	componentDidMount() {
+		$(function() {
+		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+		});
+		
 		this.updatePrices();
 	}
 
@@ -127,6 +131,13 @@ class ExchangeWidget extends Component {
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>
 						)}
+
+						<p id="fee-info">* Current fee is 0%. <i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
+							data-original-title={`For ${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} you will receive ${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive}.
+												  The fee will amount to ${(this.props.amounts.receive * 0).toFixed(2)} ${this.props.selectedCoin.receive}.
+												  `
+												}>
+					</i></p>
 					</div>
 				</div>
 			</div>

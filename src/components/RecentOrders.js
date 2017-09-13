@@ -22,8 +22,6 @@ class OrderStatus extends Component {
 	fetchRecentOrders() {
         axios.get(`${config.API_BASE_URL}/orders/?page=1`)
         	.then(response => {
-        		console.log(response.data)
-
         		let orders = response.data.results;
         		this.setState({orders: orders});
         	})
