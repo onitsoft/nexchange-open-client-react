@@ -13,6 +13,10 @@
 		&.bitcointalk { background: #f7931a; }
 	}
 	.publish-date { position: absolute; bottom: 15px; left: 15px; padding-top: 20px; display: inline-block; }
+	
+	@media (max-width: 500px) {
+		.social-link { clear: both; float: left; width: 100%; margin-top: 22px; }
+	}
 
 	@media (min-width: $screen-sm-min) {
 		.box { height: 260px; }
