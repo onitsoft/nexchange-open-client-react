@@ -1,0 +1,14 @@
+#testimonials { background-image: url(/static/media/landscape.27bd83ec.jpg); padding: 15px 0 40px 0;
+	h2 { color: #fff; }
+	.box { margin-top: 15px; }
+	img  { float: left; max-width: 50px; }
+	.profile-info { float: left; padding-left: 15px;
+		h4 { margin: 0; }
+	}
+	i { position: relative; left: -7px; }
+	.testimonial-text {  padding-top: 25px; clear: both; font-weight: 500; font-size: 16px; line-height: 1.5em;	}
+	.social-link { float: right; margin: 0; padding: 10px 20px; background: #55acee; 
+		color: #fff;
+	}
+	.publish-date { padding-top: 20px; margin-left: 5px; display: inline-block; }
+}

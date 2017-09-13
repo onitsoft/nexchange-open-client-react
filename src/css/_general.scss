@@ -21,6 +21,7 @@ img { max-width: 100%; }
 	h3:first-child { margin-top: -8px; }
 }
 textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
+.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff; }
 
 .btn-themed {
 	&, &:focus, &:visited {
