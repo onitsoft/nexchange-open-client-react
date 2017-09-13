@@ -15,12 +15,18 @@ class CoinPrices extends Component {
 			rates: {
 				btceth: null,
 				btcltc: null,
-				ltceth: null
+				ltceth: null,
+				btcusd: null,
+				ethusd: null,
+				ltcusd: null,
 			},
 			change: {
 				btceth: '',
 				btcltc: '',
-				ltceth: ''
+				ltceth: '',
+				btcusd: '',
+				ethusd: '',
+				ltcusd: '',
 			}
 		}
 
@@ -36,6 +42,9 @@ class CoinPrices extends Component {
 		this.fetchPrice('btceth');
 		this.fetchPrice('btcltc');
 		this.fetchPrice('ltceth');
+		this.fetchPrice('btcusd');
+		this.fetchPrice('ethusd');
+		this.fetchPrice('ltcusd');
 
 		this.timeout = setTimeout(() => {
 			this.fetchPrices();
@@ -50,14 +59,16 @@ class CoinPrices extends Component {
 	        	if (!response.data.length) return;
 
 	        	let rates = this.state.rates,
-	        		rate = 1 / parseFloat(response.data[0].ticker.ask),
-	        		key = pair.toLowerCase();
+	        		rate = 1 / parseFloat(response.data[0].ticker.ask);
 
-	        	if (rates[key] != null) {
+	        	if (pair.indexOf('usd') != -1)
+	        		rate = ((parseFloat(response.data[0].ticker.ask) + parseFloat(response.data[0].ticker.bid)) / 2) * 0.97;
+
+	        	if (rates[pair] != null) {
 	        		let change = this.state.change;
 
-	        		if (rate > rates[key]) change[key] = 'up';
-	        		else if (rate < rates[key]) change[key] = 'down';
+	        		if (rate > rates[pair]) change[pair] = 'up';
+	        		else if (rate < rates[pair]) change[pair] = 'down';
 
 	        		this.setState({change});
 
@@ -67,12 +78,12 @@ class CoinPrices extends Component {
 	        		setTimeout(() => {
 	        			let change = this.state.change;
 
-	        			change[key] = '';
+	        			change[pair] = '';
 	        			this.setState({change});
 	        		}, 3000);
 	        	}
 
-	        	rates[key] = rate;
+	        	rates[pair] = rate;
 	        	this.setState({rates});
 	        }).catch(error => {
 	        	console.log(error);
@@ -87,6 +98,21 @@ class CoinPrices extends Component {
 	    return (
 			<div className="col-xs-12 text-center">
 					<div id="coin-prices">
+						<div className={`coin-price ${this.state.change['btcusd']}`} ref={el => { this.btcusd = el; }}>
+							<h5>BTC</h5>
+							<h6>${this.state.rates.btcusd ? this.state.rates.btcusd.toFixed(2) : '...'}</h6>
+						</div>
+
+						<div className={`coin-price ${this.state.change['ethusd']}`} ref={el => { this.ethusd = el; }}>
+							<h5>ETH</h5>
+							<h6>${this.state.rates.ethusd ? this.state.rates.ethusd.toFixed(2) : '...'}</h6>
+						</div>
+
+						<div className={`coin-price ${this.state.change['ltcusd']}`} ref={el => { this.ltcusd = el; }}>
+							<h5>LTC</h5>
+							<h6>${this.state.rates.ltcusd ? this.state.rates.ltcusd.toFixed(2) : '...'}</h6>
+						</div>
+
 						<div className={`coin-price ${this.state.change['btceth']}`} ref={el => { this.btceth = el; }}>
 							<h5>ETH/BTC</h5>
 							<h6>{this.state.rates.btceth ? this.state.rates.btceth.toFixed(5) : '...'}</h6>

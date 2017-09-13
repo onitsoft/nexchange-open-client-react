@@ -1,5 +1,5 @@
-#coin-prices { display: inline-block; width: 100%; padding-top: 25px; overflow: hidden;
-	.coin-price { float: left; width: 33.33%; 
+#coin-prices { display: inline-block; width: 100%; overflow: hidden;
+	.coin-price { float: left; width: 33.33%; margin-top: 25px;
 		h5 { font-weight: 700; }
 		h5, h6 { margin: 0; font-size: 14px; }
 		&.up h5, &.up h6 { @include animation(price-up 2.5s ease-in-out); }
@@ -7,10 +7,14 @@
 		i { position: relative; top: -1px; margin-left: 5px; }
 	}
 
-	@media (min-width: $screen-ms-min) { width: auto; padding-top: 65px;
-		.coin-price { width: 150px; 
+	@media (min-width: $screen-ms-min) { 
+		.coin-price {
 			h5, h6 { font-size: 18px; }
 		}
+	}
+
+	@media (min-width: $screen-md-min) { width: auto; padding-top: 40px;
+		.coin-price { width: 150px; }
 	}
 }
 

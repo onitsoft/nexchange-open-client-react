@@ -13,7 +13,7 @@ class CountDown extends Component {
 	}
 
 	componentDidMount() {
-		$(function () {
+		$(function() {
 		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 		});
 
