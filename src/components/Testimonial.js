@@ -18,22 +18,17 @@ class Testimonials extends Component {
 		return (
 			<div className="col-xs-12 col-sm-6">
 					<div className="box testimonial">
-						<img src="/img/testimonials/cryptotalk.jpg" alt="Crypto Talk profile" className="img-circle img-responsive" />
+						<img src={`${this.props.img}`} alt={`${this.props.name} profile`} className="img-circle img-responsive" />
 
 						<div className="profile-info">
-							<h4>Crypto Talk‏</h4>
-							<small><a href="https://twitter.com/bitreff" target="_blank">@bitreff</a></small>
+							<h4>{this.props.name}</h4>
 						</div>
 
-						<a href="https://twitter.com/bitreff/status/907478815890325504" target="_blank" className="btn social-link"><i className="fa fa-twitter"></i><span className="social-link-text">Twitter</span></a>
+						<a href={this.props.link} target="_blank" className={`btn social-link ${this.props.network}`}><i className={`fa fa-${this.props.network}`}></i><span className="social-link-text">{this.props.network.toLowerCase()}</span></a>
 
-						<div className="testimonial-text">
-							Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.
-						</div>
+						<div className="testimonial-text">{this.props.text}</div>
 
-						<i className="publish-date">
-							September 11, 2017, 10:39 PM
-						</i>
+						<i className="publish-date">{this.props.date}</i>
 					</div>
 			</div>
 		);
