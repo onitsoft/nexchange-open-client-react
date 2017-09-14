@@ -32,12 +32,6 @@ const Team = () => (
                 quora: "https://www.quora.com/profile/Daniel-Blank-7",
               }} />
 
-            <TeamMember id="mantas" name="Mantas Rukuiža" title="Business Development" country="LT"
-              description="Business development expert. Life time tech entrepreneur, marketing strategist, blockchain fan & certified sailing yacht captain."
-              social={{
-                linkedin: "https://www.linkedin.com/in/mantas-rukui%C5%BEa-136a84139/",
-              }} />
-
             <TeamMember id="sarunas" name="Šarūnas Ažna" title="Software Developer" country="LT"
               description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
               social={{
