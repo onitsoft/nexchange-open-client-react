@@ -88,6 +88,7 @@ class ExchangeWidget extends Component {
 			this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
 
 			ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
+			qp('track', 'Generic');
 		})
 		.catch(error => {
 			console.log(error.response)
