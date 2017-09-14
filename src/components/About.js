@@ -53,6 +53,14 @@ const Team = () => (
                 linkedin: "https://www.linkedin.com/in/justasazna/",
                 github: "https://github.com/reederz",
               }} />
+
+            <TeamMember id="chirag" name="Chirag Neb" title="Growth Hacker" country="IN"
+              description="Information Technology Generalist, International Trader, Growth Hacker and a newly minted Blockchain Fan!"
+              social={{
+                linkedin: "https://www.linkedin.com/in/chirag-neb-8b120886/",
+                twitter: "https://twitter.com/chiragneb",
+                github: "https://github.com/chiragneb",
+              }} />
           </div>
         </div>
       </div>
