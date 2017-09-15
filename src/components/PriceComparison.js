@@ -141,7 +141,7 @@ class PriceComparison extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12">
-                            <h2>Rates Comparison</h2>
+                            <h2>Real Time Rates</h2>
 
                             <div className="comparison-table">
                                 <table className="table">
