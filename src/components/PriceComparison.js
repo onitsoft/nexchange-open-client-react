@@ -21,10 +21,6 @@ class PriceComparison extends Component {
 
     componentDidMount() {
         this.fetchRates();
-
-        this.timeout = setTimeout(() => {
-            this.fetchRates();
-        }, config.PRICE_COMPARISON_INTERVAL);
     }
 
     priceDiff(p1, p2) {
@@ -129,6 +125,10 @@ class PriceComparison extends Component {
         .catch(error => {
             console.log(error);
         });
+
+        this.timeout = setTimeout(() => {
+            this.fetchRates();
+        }, config.PRICE_COMPARISON_INTERVAL);
     }
 
     componentWillUnmount() {
