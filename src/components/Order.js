@@ -203,7 +203,7 @@ class Order extends Component {
 						    	<div className="box">
 						    		<div className="row">
 						    			<div className="col-xs-12">
-											<h2>Earn free coins by referring your friends</h2>
+											<h2>Share this unique referral link with your friends to earn some coins!</h2>
 											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} className="text-green">{config.DOMAIN}/?ref={this.state.order.referral_code[0].code}</a></h4>
 											<h4><a href="javascript:void(0)" onClick={() => this.setState({showTermsModal: true})}>Terms & Conditions</a></h4>
 
