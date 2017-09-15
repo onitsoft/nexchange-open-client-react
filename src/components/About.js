@@ -29,6 +29,7 @@ const Team = () => (
               description="Product manager. Former IDF and FinTech coder with a deep passion for great products. Cryptocurrency enthusiast since 2013."
               social={{
                 linkedin: "https://www.linkedin.com/in/daniel-blank-72166284/",
+                twitter: "https://twitter.com/daniel_a_blank",
                 quora: "https://www.quora.com/profile/Daniel-Blank-7",
               }} />
 
