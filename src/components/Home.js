@@ -9,6 +9,7 @@ import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import RecentOrders from '../components/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
+import PriceComparison from '../components/PriceComparison';
 
 
 class Home extends Component {
@@ -24,6 +25,7 @@ class Home extends Component {
 		    <Hero />
 		    <RecentOrders />
 		    <Testimonials />
+		    <PriceComparison />
 		    <About />
 		    <SubscriptionForm />
 		  </div>
