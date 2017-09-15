@@ -8,6 +8,6 @@ const config = {
 	RECENT_ORDERS_COUNT: 11,
 	PRICE_COMPARISON_INTERVAL: 180000,
 	REFERRAL_CODE: null
-}
+};
 
 export default config;
