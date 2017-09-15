@@ -164,19 +164,19 @@ class PriceComparison extends Component {
                                         </tr>
 
                                         <tr>
+                                            <td><b>1 ETH</b></td>
+                                            <td>{this.state.nexchange.dogeeth} DOGE</td>
+                                            <td>{this.state.shapeshift.dogeeth} DOGE {this.priceDiff(this.state.nexchange.dogeeth, this.state.shapeshift.dogeeth)}</td>
+                                            <td>{this.state.changelly.dogeeth} DOGE {this.priceDiff(this.state.nexchange.dogeeth, this.state.changelly.dogeeth)}</td>
+                                            <td>{this.showBestRate(this.state.shapeshift.dogeeth, this.state.changelly.dogeeth, this.state.nexchange.dogeeth)}</td>
+                                        </tr>
+
+                                        <tr>
                                             <td><b>1 LTC</b></td>
                                             <td>{this.state.nexchange.btcltc} BTC</td>
                                             <td>{this.state.shapeshift.btcltc} BTC {this.priceDiff(this.state.nexchange.btcltc, this.state.shapeshift.btcltc)}</td>
                                             <td>{this.state.changelly.btcltc} BTC {this.priceDiff(this.state.nexchange.btcltc, this.state.changelly.btcltc)}</td>
                                             <td>{this.showBestRate(this.state.shapeshift.btcltc, this.state.changelly.btcltc, this.state.nexchange.btcltc)}</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><b>1 BTC</b></td>
-                                            <td>{this.state.nexchange.dogebtc} DOGE</td>
-                                            <td>{this.state.shapeshift.dogebtc} DOGE {this.priceDiff(this.state.nexchange.dogebtc, this.state.shapeshift.dogebtc)}</td>
-                                            <td>{this.state.changelly.dogebtc} DOGE {this.priceDiff(this.state.nexchange.dogebtc, this.state.changelly.dogebtc)}</td>
-                                            <td>{this.showBestRate(this.state.shapeshift.dogebtc, this.state.changelly.dogebtc, this.state.nexchange.dogebtc)}</td>
                                         </tr>
 
                                         <tr>
@@ -188,19 +188,19 @@ class PriceComparison extends Component {
                                         </tr>
 
                                         <tr>
-                                            <td><b>1 ETH</b></td>
-                                            <td>{this.state.nexchange.dogeeth} DOGE</td>
-                                            <td>{this.state.shapeshift.dogeeth} DOGE {this.priceDiff(this.state.nexchange.dogeeth, this.state.shapeshift.dogeeth)}</td>
-                                            <td>{this.state.changelly.dogeeth} DOGE {this.priceDiff(this.state.nexchange.dogeeth, this.state.changelly.dogeeth)}</td>
-                                            <td>{this.showBestRate(this.state.shapeshift.dogeeth, this.state.changelly.dogeeth, this.state.nexchange.dogeeth)}</td>
-                                        </tr>
-
-                                        <tr>
                                             <td><b>1 LTC</b></td>
                                             <td>{this.state.nexchange.dogeltc} DOGE</td>
                                             <td>{this.state.shapeshift.dogeltc} DOGE {this.priceDiff(this.state.nexchange.dogeltc, this.state.shapeshift.dogeltc)}</td>
                                             <td>{this.state.changelly.dogeltc} DOGE {this.priceDiff(this.state.nexchange.dogeltc, this.state.changelly.dogeltc)}</td>
                                             <td>{this.showBestRate(this.state.shapeshift.dogeltc, this.state.changelly.dogeltc, this.state.nexchange.dogeltc)}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><b>1 BTC</b></td>
+                                            <td>{this.state.nexchange.dogebtc} DOGE</td>
+                                            <td>{this.state.shapeshift.dogebtc} DOGE {this.priceDiff(this.state.nexchange.dogebtc, this.state.shapeshift.dogebtc)}</td>
+                                            <td>{this.state.changelly.dogebtc} DOGE {this.priceDiff(this.state.nexchange.dogebtc, this.state.changelly.dogebtc)}</td>
+                                            <td>{this.showBestRate(this.state.shapeshift.dogebtc, this.state.changelly.dogebtc, this.state.nexchange.dogebtc)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
