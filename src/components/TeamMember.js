@@ -13,7 +13,7 @@ const TeamMember = props => {
 			<div className="team-member">
 				<img src={`/img/team/${props.id}.jpg`} className="img-circle img-responsive lazy-loading-image" alt={`${props.name} profile`} />
 
-				<h3>{props.name} <img src={`/img/flags/${props.country}.svg`} className="flag lazy-loading-image" /></h3>
+				<h3>{props.name} <img data-toggle="tooltip" data-placement="top" data-original-title={props.fullCountryName} alt={props.fullCountryName} src={`/img/flags/${props.country}.svg`} className="flag lazy-loading-image" /></h3>
 
 				<div className="social">
 					{social}
