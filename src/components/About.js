@@ -16,7 +16,7 @@ const Team = () => (
           <p>To support our mission of making crypto accessible to everyone, we’ve made our <b><a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank">front end client completely open source <i className="fa fa-github" aria-hidden="true"></i></a></b>.</p>
 
           <div id="team-members" className="row">
-            <TeamMember id="oleg" name="Oleg Belousov" title="Founder" country="IL"
+            <TeamMember id="oleg" name="Oleg Belousov" country="IL" fullCountryName="Israel"
               description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
               social={{
                 linkedin: "https://www.linkedin.com/in/oleg-belousov-b4112145/",
@@ -25,7 +25,7 @@ const Team = () => (
                 github: "https://github.com/BeOleg",
               }} />
 
-            <TeamMember id="daniel" name="Daniel Blank" title="Product Manager" country="IL"
+            <TeamMember id="daniel" name="Daniel Blank" country="IL" fullCountryName="Israel"
               description="Product manager. Former IDF and FinTech coder with a deep passion for great products. Cryptocurrency enthusiast since 2013."
               social={{
                 linkedin: "https://www.linkedin.com/in/daniel-blank-72166284/",
@@ -33,14 +33,14 @@ const Team = () => (
                 quora: "https://www.quora.com/profile/Daniel-Blank-7",
               }} />
 
-            <TeamMember id="sarunas" name="Šarūnas Ažna" title="Software Developer" country="LT"
+            <TeamMember id="sarunas" name="Šarūnas Ažna" country="LT" fullCountryName="Lithuania"
               description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
               social={{
                 linkedin: "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
                 "github": "https://github.com/SarunasAzna",
               }} />
 
-            <TeamMember id="karolis" name="Karolis Ramanauskas" title="Software Developer" country="LT"
+            <TeamMember id="karolis" name="Karolis Ramanauskas" country="LT" fullCountryName="Lithuania"
               description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
               social={{
                 linkedin: "https://www.linkedin.com/in/karolisram/",
@@ -48,14 +48,14 @@ const Team = () => (
                 medium: "https://medium.com/@karolisram",
               }} />
 
-            <TeamMember id="justas" name="Justas Ažna" title="DevOps Orchestrator" country="LT"
+            <TeamMember id="justas" name="Justas Ažna" country="LT" fullCountryName="Lithuania"
               description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
               social={{
                 linkedin: "https://www.linkedin.com/in/justasazna/",
                 github: "https://github.com/reederz",
               }} />
 
-            <TeamMember id="chirag" name="Chirag Neb" title="Growth Hacker" country="IN"
+            <TeamMember id="chirag" name="Chirag Neb" country="IN" fullCountryName="India"
               description="Information Technology Generalist, International Trader, Growth Hacker and a newly minted Blockchain Fan!"
               social={{
                 linkedin: "https://www.linkedin.com/in/chirag-neb-8b120886/",
