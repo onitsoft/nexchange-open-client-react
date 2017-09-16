@@ -110,7 +110,7 @@ class CoinPrices extends Component {
 
 						<div className={`coin-price ${this.state.change['dogebtc']}`} ref={el => { this.dogebtc = el; }}>
 							<h5>BTC/DOGE</h5>
-							<h6>{this.state.rates.dogebtc ? this.state.rates.dogebtc.toFixed(2) : '...'}</h6>
+							<h6>{this.state.rates.dogebtc ? this.state.rates.dogebtc.toFixed(1) : '...'}</h6>
 						</div>
 
 						<div className={`coin-price ${this.state.change['ethltc']}`} ref={el => { this.ethltc = el; }}>
@@ -120,12 +120,12 @@ class CoinPrices extends Component {
 
 						<div className={`coin-price ${this.state.change['dogeeth']}`} ref={el => { this.dogeeth = el; }}>
 							<h5>ETH/DOGE</h5>
-							<h6>{this.state.rates.dogeeth ? this.state.rates.dogeeth.toFixed(2) : '...'}</h6>
+							<h6>{this.state.rates.dogeeth ? this.state.rates.dogeeth.toFixed(1) : '...'}</h6>
 						</div>
 
 						<div className={`coin-price ${this.state.change['dogeltc']}`} ref={el => { this.dogeltc = el; }}>
 							<h5>LTC/DOGE</h5>
-							<h6>{this.state.rates.dogeltc ? this.state.rates.dogeltc.toFixed(2) : '...'}</h6>
+							<h6>{this.state.rates.dogeltc ? this.state.rates.dogeltc.toFixed(1) : '...'}</h6>
 						</div>
 					</div>
 				</div>
