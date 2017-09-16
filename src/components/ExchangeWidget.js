@@ -49,8 +49,9 @@ class ExchangeWidget extends Component {
 	placeOrder() {
 		this.setState({loading: true});
 
-		if (this.props.amounts.lastEdited == 'receive')
+		if (this.props.amounts.lastEdited == 'receive') {
 			this.placeOrderOnBackend(this.props.amounts.receive);
+		}
 
 	    axios.get(`${config.API_BASE_URL}/price/${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}/latest/`)
 	        .then(response => {
@@ -100,6 +101,15 @@ class ExchangeWidget extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		if ($('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby")) {
+			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
+
+			$(`#${tooltipId} .tooltip-inner`).html(`
+				For ${(nextProps.amounts.deposit)} ${nextProps.selectedCoin.deposit} you will receive
+				${(nextProps.amounts.receive * 1)} ${nextProps.selectedCoin.receive}.
+				The fee will amount to ${(nextProps.amounts.receive * 0)} ${nextProps.selectedCoin.receive}.`);
+		}		
+
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
 			this.props.setWallet({address: '', valid: false, show: false});
 	}
@@ -133,12 +143,15 @@ class ExchangeWidget extends Component {
 							</button>
 						)}
 
-						<p id="fee-info">* Current fee is 0%. <i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
-							data-original-title={`For ${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} you will receive ${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive}.
-												  The fee will amount to ${(this.props.amounts.receive * 0).toFixed(2)} ${this.props.selectedCoin.receive}.
-												  `
-												}>
-					</i></p>
+						<p id="fee-info">* Current fee is 0%.
+							<i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
+								data-original-title={
+									`For ${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} you will receive
+									${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive}.
+									The fee will amount to ${(this.props.amounts.receive * 0)} ${this.props.selectedCoin.receive}.`
+							}>
+							</i>
+						</p>
 					</div>
 				</div>
 			</div>
