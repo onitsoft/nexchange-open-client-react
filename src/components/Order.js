@@ -110,6 +110,8 @@ class Order extends Component {
 			})
 		})
 		.catch((error) => {
+			console.log(error);
+
 			if (error.response && error.response.status == 429) {
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
