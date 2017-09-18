@@ -40,7 +40,7 @@ class Header extends Component {
 				    <div className="collapse navbar-collapse" id="navigation-index">
 				    	<ul className="nav navbar-nav navbar-right">
 							<li>
-								<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})} onClick={() => scrollToElement('#team')}>About</a>
+								<a href="javascript:void(0)" onClick={() => scrollToElement('#team')}>About</a>
 							</li>
 				    	
 							<li>
@@ -50,6 +50,10 @@ class Header extends Component {
 				    		<li>
 				    			<a href="http://docs.nexchange2.apiary.io/" target="_blank" onClick={() => ga('send', 'event', 'General', 'api docs click')}>API Docs</a>
 				    		</li>
+
+							<li>
+								<a href="javascript:void(0)" onClick={() => scrollToElement('#price-comparison')}><span className="hidden-sm">Compare </span>Rates</a>
+							</li>
 
 							<li>
 								<a href="javascript:void(0)" onClick={() => this.setState({showSupportModal: true})}>Support</a>
