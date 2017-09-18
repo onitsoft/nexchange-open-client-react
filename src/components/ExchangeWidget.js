@@ -107,7 +107,7 @@ class ExchangeWidget extends Component {
 			$(`#${tooltipId} .tooltip-inner`).html(`
 				For ${(nextProps.amounts.deposit)} ${nextProps.selectedCoin.deposit} you will receive
 				${(nextProps.amounts.receive * 1)} ${nextProps.selectedCoin.receive}.
-				The fee will amount to ${(nextProps.amounts.receive * 0)} ${nextProps.selectedCoin.receive}.`);
+				The fee will amount to ${(nextProps.amounts.deposit * 0)} ${nextProps.selectedCoin.deposit}.`);
 		}		
 
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
@@ -148,7 +148,7 @@ class ExchangeWidget extends Component {
 								data-original-title={
 									`For ${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} you will receive
 									${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive}.
-									The fee will amount to ${(this.props.amounts.receive * 0)} ${this.props.selectedCoin.receive}.`
+									The fee will amount to ${(this.props.amounts.deposit * 0)} ${this.props.selectedCoin.deposit}.`
 							}>
 							</i>
 						</p>
