@@ -6,17 +6,17 @@ import '../css/order.scss';
 
 import config from '../config';
 
-import OrderInitial from './OrderInitial';
+import OrderInitial from '../components/OrderInitial';
 import OrderPayment from './OrderPayment';
-import OrderPaid from './OrderPaid';
-import OrderReleased from './OrderReleased';
-import OrderSuccess from './OrderSuccess';
-import OrderFailure from './OrderFailure';
-import OrderExpired from './OrderExpired';
-import OrderStatus from './OrderStatus';
+import OrderPaid from '../components/OrderPaid';
+import OrderReleased from '../components/OrderReleased';
+import OrderSuccess from '../components/OrderSuccess';
+import OrderFailure from '../components/OrderFailure';
+import OrderExpired from '../components/OrderExpired';
+import OrderStatus from '../components/OrderStatus';
 import Bookmark from './Bookmark';
-import NotFound from './NotFound';
-import ReferralTerms from './ReferralTerms';
+import NotFound from '../components/NotFound';
+import ReferralTerms from '../components/ReferralTerms';
 
 const STATUS_CODES = {
 	0: 'CANCELLED',

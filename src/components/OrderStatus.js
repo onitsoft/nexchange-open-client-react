@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CoinSelector from './CoinSelector';
+import CoinSelector from '../containers/CoinSelector';
 
 const STATUS_CODES = {
   0: 'CANCELLED',
