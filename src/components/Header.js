@@ -17,6 +17,16 @@ class Header extends Component {
 		}
 	}
 
+	componentDidMount() {
+		let hash = window.location.hash;
+		if (hash && hash != '') {
+			hash = hash.replace('#', '');
+
+			let el = document.getElementById(hash);
+			if (el) el.scrollIntoView(); 
+		}
+	}
+
 	render() {
 	    return (
 	    	<div id="header">
@@ -40,7 +50,7 @@ class Header extends Component {
 				    <div className="collapse navbar-collapse" id="navigation-index">
 				    	<ul className="nav navbar-nav navbar-right">
 							<li>
-								<a href="javascript:void(0)" onClick={() => scrollToElement('#team')}>About</a>
+								<a href="/#about" onClick={() => scrollToElement('#about')}>About</a>
 							</li>
 				    	
 							<li>
@@ -52,7 +62,7 @@ class Header extends Component {
 				    		</li>
 
 							<li>
-								<a href="javascript:void(0)" onClick={() => scrollToElement('#price-comparison')}><span className="hidden-sm">Compare </span>Rates</a>
+								<a href="/#compare" onClick={() => scrollToElement('#compare')}><span className="hidden-sm">Compare </span>Rates</a>
 							</li>
 
 							<li>
