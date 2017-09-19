@@ -137,7 +137,7 @@ class PriceComparison extends Component {
 
     render() {
         return (
-            <div id="price-comparison">
+            <div id="compare">
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12">

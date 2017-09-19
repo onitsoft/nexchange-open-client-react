@@ -1,11 +1,11 @@
 import React from 'react';
 import TeamMember from './TeamMember';
 
-const Team = () => (
-  <div id="team">
+const About = () => (
+  <div id="about">
     <div className="container">
       <div className="row">
-        <div id="team-description" className="col-xs-12">
+        <div className="col-xs-12">
           <h2>About Us</h2>
 
           <p>Nexchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.</p>
@@ -69,4 +69,4 @@ const Team = () => (
   </div>
 );
 
-export default Team;
+export default About;
