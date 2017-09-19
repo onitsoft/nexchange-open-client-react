@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+import Helpers from '../helpers';
 import config from '../config';
 
 
@@ -47,8 +48,11 @@ class Referrals extends Component {
 	}
 
 	render() {
-		if (this.isRef())
+		let params = Helpers.urlParams();
+		if (params != null && params.hasOwnProperty('ref')) {
+			localStorage.setItem('referral', params['ref']);
 			return this.redirectRef();
+		}
 
 	    return null;
 	}
