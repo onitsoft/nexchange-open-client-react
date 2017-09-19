@@ -2,6 +2,7 @@ import axios from 'axios';
 import moment from 'moment';
 import _ from 'lodash';
 import config from '../config';
+import Helpers from '../helpers';
 
 
 export function errorAlert(payload) {
@@ -46,7 +47,11 @@ export function fetchCoinDetails(payload) {
 	        .then(response => {
 	        	if (!response.data.length) return;
 
-	        	let coins = _.filter(response.data, {has_enabled_pairs: true}); 
+	        	let params = Helpers.urlParams();
+	        	let coins = _.filter(response.data, {has_enabled_pairs: true}).filter(coin => {
+	        		return (params && params.hasOwnProperty('test')) ? true : _.contains(config['ENABLED_COINS'], coin.code);
+	        	}); 
+
 	        	dispatch({type: 'COINS_INFO', payload: coins});
 	        }).catch(error => {
 	        	console.log(error);
