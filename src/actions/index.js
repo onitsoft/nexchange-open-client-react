@@ -46,7 +46,10 @@ export function fetchCoinDetails(payload) {
 	        .then(response => {
 	        	if (!response.data.length) return;
 
-	        	let coins = _.filter(response.data, {has_enabled_pairs: true}); 
+	        	let coins = _.filter(response.data, {has_enabled_pairs: true}).filter(coin => {
+	        		return _.contains(config['ENABLED_COINS'], coin.code);
+	        	}); 
+
 	        	dispatch({type: 'COINS_INFO', payload: coins});
 	        }).catch(error => {
 	        	console.log(error);

@@ -7,7 +7,8 @@ const config = {
 	RECENT_ORDERS_INTERVAL: 20000,
 	RECENT_ORDERS_COUNT: 11,
 	PRICE_COMPARISON_INTERVAL: 60000,
-	REFERRAL_CODE: null
+	REFERRAL_CODE: null,
+	ENABLED_COINS: ['BTC', 'ETH', 'DOGE', 'LTC']
 };
 
 export default config;
