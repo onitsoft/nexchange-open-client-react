@@ -7,9 +7,9 @@ import { fetchCoinDetails } from '../actions';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
-import RecentOrders from '../components/RecentOrders';
+import RecentOrders from '../containers/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
-import PriceComparison from '../components/PriceComparison';
+import PriceComparison from '../containers/PriceComparison';
 
 
 class Home extends Component {

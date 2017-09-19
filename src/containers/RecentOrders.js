@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import config from '../config';
 
-import LoadingComponent from './LoadingComponent';
+import LoadingComponent from '../components/LoadingComponent.js';
 
 
 class OrderStatus extends Component {

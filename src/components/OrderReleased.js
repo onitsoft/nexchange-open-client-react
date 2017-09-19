@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import config from '../config';
 import _ from 'lodash';
-
-import CountDown from './CountDown';
 
 
 class OrderReleased extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {estimate: 0};
 
 		this.coin = props.order.pair.base;
 		this.minConfirmations = this.coin.min_confirmations;

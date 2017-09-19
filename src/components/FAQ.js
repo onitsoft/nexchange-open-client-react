@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap';
 
 class FAQ extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       show: false
