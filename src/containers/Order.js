@@ -86,6 +86,10 @@ class Order extends Component {
 		.then((response) => {
 			let data = response.data;
 
+			if (this.state.orderStatus == 11 && data.status_name[0][0] == 12) {
+				ga('send', 'event', 'Order', 'order paid', data.unique_reference);
+			}
+
 			this.setState({
 				loading: false,
 				depositAmount: parseFloat(data.amount_quote),
