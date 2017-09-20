@@ -16,7 +16,7 @@ class Referrals extends Component {
 			let referral = (config.REFERRAL_CODE ? config.REFERRAL_CODE : localStorage.getItem('referral'));
 
 		    if (referral && requestConfig.url && requestConfig.url.indexOf(config.API_BASE_URL.toLowerCase()) > -1)
-			    requestConfig.headers['HTTP_X_REFERRAL_TOKEN'] = referral;
+			    requestConfig.headers['x-referral-token'] = referral;
 
 		    return requestConfig;
 		  }, function (error) {
