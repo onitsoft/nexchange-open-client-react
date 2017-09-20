@@ -15,7 +15,7 @@ class Referrals extends Component {
 		axios.interceptors.request.use(function (requestConfig) {
 			let referral = (config.REFERRAL_CODE ? config.REFERRAL_CODE : localStorage.getItem('referral'));
 
-		    if (referral && requestConfig.url && requestConfig.url.indexOf(config.NAME.toLowerCase()) > -1)
+		    if (referral && requestConfig.url && requestConfig.url.indexOf(config.API_BASE_URL.toLowerCase()) > -1)
 			    requestConfig.headers['HTTP_X_REFERRAL_TOKEN'] = referral;
 
 		    return requestConfig;
