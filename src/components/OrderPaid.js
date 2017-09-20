@@ -8,8 +8,8 @@ class OrderPaid extends Component {
 	constructor(props) {
 		super(props);
 
-		this.coin = this.props.order.pair.base;
-		this.tx = _.find(this.props.order.transactions, {type: 'W'});
+		this.coin = this.props.order.pair.quote;
+		this.tx = _.find(this.props.order.transactions, {type: 'D'});
 		this.txId = this.tx.tx_id;
 	}
 
@@ -18,7 +18,6 @@ class OrderPaid extends Component {
 			return (
 				<div className="col-xs-12 text-center order-status-section">
 					<h2 style={{margin: "0"}}>Processing withdrawal...</h2>
-
 					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
 				</div>
 			)
