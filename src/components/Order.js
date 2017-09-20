@@ -6,27 +6,17 @@ import '../css/order.scss';
 
 import config from '../config';
 
-import OrderInitial from '../components/OrderInitial';
+import OrderInitial from './OrderInitial';
 import OrderPayment from './OrderPayment';
-import OrderPaid from '../components/OrderPaid';
-import OrderReleased from '../components/OrderReleased';
-import OrderSuccess from '../components/OrderSuccess';
-import OrderFailure from '../components/OrderFailure';
-import OrderExpired from '../components/OrderExpired';
-import OrderStatus from '../components/OrderStatus';
+import OrderPaid from './OrderPaid';
+import OrderReleased from './OrderReleased';
+import OrderSuccess from './OrderSuccess';
+import OrderFailure from './OrderFailure';
+import OrderExpired from './OrderExpired';
+import OrderStatus from './OrderStatus';
 import Bookmark from './Bookmark';
-import NotFound from '../components/NotFound';
-import ReferralTerms from '../components/ReferralTerms';
-
-const STATUS_CODES = {
-	0: 'CANCELLED',
-	11: 'INITIAL',
-	12: 'PAID_UNCONFIRMED',
-	13: 'PAID',
-	14: 'PRE_RELEASE',
-	15: 'RELEASE',
-	16: 'COMPLETED'
-}
+import NotFound from './NotFound';
+import ReferralTerms from './ReferralTerms';
 
 
 class Order extends Component {
@@ -86,10 +76,6 @@ class Order extends Component {
 		.then((response) => {
 			let data = response.data;
 
-			if (this.state.orderStatus == 11 && data.status_name[0][0] == 12) {
-				ga('send', 'event', 'Order', 'order paid', data.unique_reference);
-			}
-
 			this.setState({
 				loading: false,
 				depositAmount: parseFloat(data.amount_quote),
@@ -114,9 +100,7 @@ class Order extends Component {
 			})
 		})
 		.catch((error) => {
-			console.log(error);
-
-			if (error.response && error.response.status == 429) {
+			if (error.response.status == 429) {
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
 				}, config.ORDER_DETAILS_FETCH_INTERVAL * 2);
@@ -144,19 +128,19 @@ class Order extends Component {
 			return <NotFound />;
 
 		let orderDetails = null;
-		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
+		if (this.state.expired && this.state.orderStatus == 1)
 			orderDetails = <OrderExpired />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'INITIAL')
+		else if (this.state.orderStatus == 1)
 			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
+		else if (this.state.orderStatus == -1)
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID')
+		else if (this.state.orderStatus == 2)
 			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'RELEASE')
+		else if (this.state.orderStatus == 3)
 			orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
+		else if (this.state.orderStatus == 4)
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
-		else if ( STATUS_CODES[this.state.orderStatus] == 'CANCELLED' ||  STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
+		else if (this.state.orderStatus == 0 || this.state.orderStatus <= -2)
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
 
 		return (
@@ -165,7 +149,7 @@ class Order extends Component {
 					<div className="container">
 						<div className="row">
 						    <div id="order-header" className="col-xs-12">
-						    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+						    	<h3 id="order-ref">İşlem Kodu: <b>{this.props.match.params.orderRef}</b></h3>
 						    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
 						    </div>
 						</div>
@@ -178,7 +162,7 @@ class Order extends Component {
 						    		</div>
 
 						    		<div className="media-body">
-							    		<h5><b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b></h5>
+							    		<h5><b>Göndereceğiniz {this.state.depositAmount} {this.state.depositCoin}</b></h5>
 							    		<h6>{this.state.depositAddress}</h6>
 						    		</div>
 						    	</div>
@@ -191,7 +175,7 @@ class Order extends Component {
 						    		</div>
 
 						    		<div className="media-body">
-							    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
+							    		<h5><b>Alacağınız {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
 							    		<h6>{this.state.receiveAddress}</h6>
 						    		</div>
 						    	</div>
@@ -201,7 +185,7 @@ class Order extends Component {
 						    	<div className="box">
 							    	<div className="row">
 						    		{this.state.loading ?
-						    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
+						    			<div className="col-xs-12 text-center"><h2>Yükleniyor...</h2></div> :
 						    			orderDetails
 						    		}
 						    		</div>
@@ -213,28 +197,6 @@ class Order extends Component {
 						    		</div>
 						    	</div>
 						    </div>
-
-						    {this.state.order ? 
-						    <div id="share-referral" className="col-xs-12">
-						    	<div className="box">
-						    		<div className="row">
-						    			<div className="col-xs-12">
-											<h2>Share this unique referral link with your friends to earn some coins!</h2>
-											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} className="text-green">{config.DOMAIN}/?ref={this.state.order.referral_code[0].code}</a></h4>
-											<h4><a href="javascript:void(0)" onClick={() => this.setState({showTermsModal: true})}>Terms & Conditions</a></h4>
-
-											<h4>Share it on social!</h4>
-											
-											<div className="share">
-											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
-											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank"><i className=	"fa fa-twitter-square" aria-hidden="true"></i></a>
-											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank"><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
-											</div>
-						    			</div>
-						    		</div>
-						    	</div>
-						    </div> 
-						    : null }
 						</div>
 					</div>
 

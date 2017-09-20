@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 
-class FAQ extends Component {
+class ReferralTerms extends Component {
   constructor(props) {
     super();
 
@@ -22,12 +22,13 @@ class FAQ extends Component {
   render() {
     return (
       <Modal show={this.state.show} onHide={this.props.onClose} >
-        <div id="faq" className="modal-content">
+        <div id="referral-terms" className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
               <i className="material-icons">clear</i>
             </button>
           </div>
+
 
           <div className="modal-body">
             <h3>Siz Kimsiniz?</h3>
@@ -38,34 +39,34 @@ class FAQ extends Component {
             <p>Şimdilik Bitcoin, Ethereum, Litecoin ve DogeCoin olmak üzere tam 4 para birimini destekliyoruz ancak bu sayıyı daha da arttırmamız an meselesi!</p>
 
             <h3>Ücret nedir?</h3>
-            <p>Eylül ayı boyunca hizmetimiz karşılığı hiçbir komisyon kesintisi yapmıyoruz. Yani bu kısa süre için <b>%0 komisyon</b> ile işlemlerinizi gerçekleştirebilirsiniz. Ekim ayından itibaren ufak bir komisyon belirleyeceğiz ancak yine de yabancı sitelerde bulabileceklerinizden bile düşük tutmaya gayret edeceğiz.</p>
-            <p>Burada, cüzdanınıza geri transfer ücreti dahil, hiçbir zaman hiçbir gizli ek ücretle karşılaşmayacaksınız. <b>Alım satım işleminiz sırasında son tutar olarak ekranda ne görüyorsanız, cüzdanınıza gelecek olan miktar da daima o olacak!</b></p>
+            <p>Eylül ayı boyunca hizmetimiz karşılığı hiçbir komisyon kesintisi yapmıyoruz. Yani bu kısa süre için <b>%0 komisyon</b> ile işlemlerinizi gerçekleştirebilirsiniz. Ekim ayından itibaren bizi ne kadar sevdiğinize göre ufak bir komisyon belirleyeceğiz ancak yine de yabancı sitelerde bulabileceklerinizden bile düşük tutmaya gayret edeceğiz.</p>
+            <p>Burada hiçbir zaman hiçbir gizli ücretle karşılaşmayacaksınız. <b>Alım satım işleminiz sırasında son tutar olarak ekranda ne görüyorsanız, cüzdanınıza gelecek olan miktar da daima o olacak!</b></p>
 
             <h3>İşlem süresi ne kadar?</h3>
             <p>İşleminizi başlatmak genellikle birkaç dakikadan uzun sürmez. Paranızın belirlediğiniz cüzdana aktarımı ise aktarılacak olan para biriminin blockchain yoğunluğuna ve hızına göre genellikle 10 ila 60 dakika arasında gerçekleşir.</p>
 
             <h3>Nasıl yapacağım?</h3>
-            <p>Aslında o kadar basit ki, kendiniz de rahatlıkla çözebilirsiniz. İşte şöyle:</p>
+            <p>Aslında o kadar basit ki, kurcalayarak bile çözebilirsiniz. İşte şöyle:</p>
             <ol>
               <li>
-                İlk kutucuğa <b>satmak</b> istediğiniz para biriminin miktarını girip <b>türünü</b> seçiyorsunuz ve en sağdan da <b>almak istediğiniz</b> para birimininin türünü seçiyorsunuz. O anki kur durumuna göre sistemimiz hesabı otomatik olarak yapıyor. Eğer aklınıza yattıysa alttaki kırmızı "Hemen Çevir!" butonuna basıp işleminize devam edebilirsiniz.
+                İlk kutucuğa <b>satmak</b> istediğiniz para biriminin miktarını girip <b>türünü</b> seçin ve en sağdan da <b>almak istediğiniz</b> para birimini seçin. O anki kur durumuna göre sistemimiz hesabı otomatik olarak yapacaktır. Eğer aklınıza yattıysa alttaki kırmızı "Hemen Çevir!" butonuna basın.
                 <img src="/img/step1.png" alt="Nasil yapacagim 1 adim" />
               </li>
               <li>
-                Yeni açılan kutucuğa <b>çevirmek istediğiniz</b> para birimine ait bir cüzdan adresi giriyorsunuz (örn. BTC satıp ETH almak istiyorsanız buraya ETH cüzdan adresi girmelisiniz)
+                Yeni açılan kutucuğa <b>çevirmek istediğiniz</b> para birimine ait bir cüzdan adresi girin (örn. BTC satıp ETH almak istiyorsanız buraya ETH cüzdan adresi girmelisiniz)
                 <img src="/img/step2.png" alt="Nasil yapacagim 2 adim" />
               </li>
               <li>
                 O anda sistem tarafından size özel yaratılan bir adrese, <b>ilk adımda belirttiğiniz para birimi ve miktarını göndermeniz istenecek.</b>
                 <img src="/img/step3.png" alt="Nasil yapacagim 3 adim" />
               </li>
-              <li>Paranız bizim hesabımıza geçer geçmez işlemlerinize başlayacağız ve kısa süre içinde istediğiniz para birimine çevirip cüzdanınıza göndermiş olacağız.</li>
-              <li>Tebrikler! Kripto paranızı başarıyla satıp yerine yenisini aldınız.</li>
+              <li>Paranız bizim hesabımıza geçer geçmez işlemlerinize hemen başlayacağız ve kısa süre içinde istediğiniz para birimine çevirip cüzdanınıza göndermiş olacağız.</li>
+              <li>Tebrikler! Kripto paranızı başarıyla sattınız.</li>
             </ol>
             <p>Yaptığınız ödeme işlemi tersine çevirilemez. Lütfen paranızın çevirilip size döneceği adresi doğru girdiğinize emin olun.</p>
 
             <h3>Hiçbir kişisel bilgimi vermek istemiyorum. Bu mümkün mü?</h3>
-            <p>Sorun değil, biz de almak istemiyoruz zaten. <b>Kripto Bürosu'nda sizin hiçbir kişisel bilginiz istenmez ve saklanmaz.</b> Yaptığınız işlemler sadece size özel kalır.</p>
+            <p>Sorun değil, biz de almak istemiyoruz zaten. Kripto Bürosu'nda sizin hiçbir kişisel bilginiz istenmez ve saklanmaz. Yaptığınız işlemler sadece size özel kalır.</p>
 
             <h3>Paralarımın güvenliğini nasıl sağlayacaksınız?</h3>
             <p>Şu anda Kripto Bürosu olarak hiçbir cüzdan hizmeti sağlamıyoruz, yani kimsenin parasını bünyemizde barındırmıyoruz. Bütün işlemler sizin iki cüzdanınız arasında gerçekleşiyor:</p>
@@ -93,7 +94,7 @@ class FAQ extends Component {
           </div>
 
           <div className="modal-footer">
-            <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} >Kapat</button>
+            <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.props.onClose} >Close</button>
           </div>
         </div>
       </Modal>
@@ -101,4 +102,4 @@ class FAQ extends Component {
   }
 }
 
-export default FAQ;
+export default ReferralTerms;

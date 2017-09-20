@@ -49,9 +49,8 @@ class ExchangeWidget extends Component {
 	placeOrder() {
 		this.setState({loading: true});
 
-		if (this.props.amounts.lastEdited == 'receive') {
+		if (this.props.amounts.lastEdited == 'receive')
 			this.placeOrderOnBackend(this.props.amounts.receive);
-		}
 
 	    axios.get(`${config.API_BASE_URL}/price/${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}/latest/`)
 	        .then(response => {
@@ -64,7 +63,7 @@ class ExchangeWidget extends Component {
 				this.placeOrderOnBackend(amount.toFixed(8));
 	        }).catch(error => {
 	        	console.log(error);
-	        	this.props.errorAlert({message: 'Something went wrong. Please try again later', show: true, type: 'PLACE_ORDER'});
+	        	this.props.errorAlert({message: 'Hata! Lütfen daha sonra tekrar deneyin.', show: true, type: 'PLACE_ORDER'});
 	        });
 	}
 
@@ -89,7 +88,6 @@ class ExchangeWidget extends Component {
 			this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
 
 			ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
-			qp('track', 'Generic');
 		})
 		.catch(error => {
 			console.log(error.response)
@@ -101,15 +99,6 @@ class ExchangeWidget extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if ($('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby")) {
-			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
-
-			$(`#${tooltipId} .tooltip-inner`).html(`
-				For ${(nextProps.amounts.deposit)} ${nextProps.selectedCoin.deposit} you will receive
-				${(nextProps.amounts.receive * 1)} ${nextProps.selectedCoin.receive}.
-				The fee will amount to ${(nextProps.amounts.deposit * 0)} ${nextProps.selectedCoin.deposit}.`);
-		}		
-
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
 			this.props.setWallet({address: '', valid: false, show: false});
 	}
@@ -134,24 +123,21 @@ class ExchangeWidget extends Component {
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
 							<button className="btn btn-block btn-themed proceed" onClick={() => this.props.setWallet({address: '', valid: false, show: true})} disabled={this.props.error.show && this.props.error.type == 'INVALID_AMOUNT' ? 'disabled' : null}>
-								Get Started !
+								Hemen Çevİr !
 							</button>
 						) : (
 							<button className="btn btn-block btn-themed proceed" onClick={this.placeOrder} disabled={(this.props.wallet.valid && !this.state.loading) ? null : 'disabled'}>
-								Confirm & Place Order
+								Onayla
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>
 						)}
 
-						<p id="fee-info">* Current fee is 0%.
-							<i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
-								data-original-title={
-									`For ${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} you will receive
-									${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive}.
-									The fee will amount to ${(this.props.amounts.deposit * 0)} ${this.props.selectedCoin.deposit}.`
-							}>
-							</i>
-						</p>
+						<p id="fee-info">* Şu anda komisyon: 0%. <i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
+							data-original-title={`${(this.props.amounts.deposit)} ${this.props.selectedCoin.deposit} karşılığı ${(this.props.amounts.receive * 1)} ${this.props.selectedCoin.receive} alacaksınız.
+												  Bu işlemin komisyonu ${(this.props.amounts.receive * 0).toFixed(2)} ${this.props.selectedCoin.receive} 'dir.
+												  `
+												}>
+					</i></p>
 					</div>
 				</div>
 			</div>

@@ -62,14 +62,14 @@ class SubscriptionForm extends React.Component {
 		return (
 			<div id="subscription-form">
 				<div className="container text-center">
-					<h2>Get in touch</h2>
+					<h2>Haberdar Olun</h2>
 
 					<form action={action} method="post" noValidate>
 						<div id="subscription-form-inner">
 
 							<div className="col-xs-12 col-sm-10">
 								<div className="form-group is-empty has-success">
-									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter your email to receive updates about Nexchange" className="form-control" required />
+									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Kripto Bürosu'ndaki yeniliklerden haberdar olmak için e-posta adresinizi girin" className="form-control" required />
 								<span className="material-input"></span></div>
 							</div>
 
@@ -83,7 +83,7 @@ class SubscriptionForm extends React.Component {
 									className="btn btn-themed"
 									onClick={this.onSubmit}
 								>
-									Subscribe
+									Kayıt Ol
 								</button>
 							</div>
 

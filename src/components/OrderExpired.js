@@ -14,10 +14,10 @@ class OrderExpired extends Component {
 	render() {
 	    return (
 			<div className="text-center">
-			    <h2 style={{margin: "0"}}>Order Expired</h2>
-			    <h5>Your order is expired. You can make a new exchange order.</h5>
+			    <h2 style={{margin: "0"}}>Çok geç...</h2>
+			    <h5>İşleminiz zaman aşımına uğradı. Yeni bir işlem başlatabilirsiniz.</h5>
 
-			    <h4 style={{margin: "25px 0 18px", "fontWeight": "500"}} className="text-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively.">Already sent?</h4>
+			    <h4 style={{margin: "25px 0 18px", "fontWeight": "500"}} className="text-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eğer gönderim işlemini başlattıysanız merak etmeyin. Para hesabımıza geçtiğinde bu sayfadaki işlem durumu otomatik olarak yenilenecektir.">Ama ben göndermiştim?</h4>
 			</div>
 	    );
 	}

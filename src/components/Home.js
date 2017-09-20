@@ -6,10 +6,8 @@ import { fetchCoinDetails } from '../actions';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
-import Testimonials from '../components/Testimonials';
-import RecentOrders from '../containers/RecentOrders';
+import RecentOrders from '../components/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
-import PriceComparison from '../containers/PriceComparison';
 
 
 class Home extends Component {
@@ -24,8 +22,6 @@ class Home extends Component {
 		  <div>
 		    <Hero />
 		    <RecentOrders />
-		    <Testimonials />
-		    <PriceComparison />
 		    <About />
 		    <SubscriptionForm />
 		  </div>

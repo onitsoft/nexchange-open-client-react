@@ -20,7 +20,7 @@ const LoadingComponent = ({isLoading, error}) => {
   }
   // Handle the error state
   else if (error) {
-    return <h2>Sorry, there was a problem loading the page :(</h2>;
+    return <h2>Üzgünüm. Sayfa yüklenirken bir hata oldu. :(</h2>;
   }
   else {
     return null;

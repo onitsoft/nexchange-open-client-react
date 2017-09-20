@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import _ from 'lodash';
-
-import Helpers from '../helpers';
+import 'moment/locale/tr';
 import config from '../config';
 
-import LoadingComponent from '../components/LoadingComponent.js';
+import LoadingComponent from './LoadingComponent';
 
 
 class OrderStatus extends Component {
@@ -24,14 +22,7 @@ class OrderStatus extends Component {
 	fetchRecentOrders() {
         axios.get(`${config.API_BASE_URL}/orders/?page=1`)
         	.then(response => {
-        		let orders = response.data.results.filter(order => {
-		        	let params = Helpers.urlParams();
-		        	return (params && params.hasOwnProperty('test')) ? true : (
-		        		order.withdraw_address && order.deposit_address &&
-		        		_.contains(config['ENABLED_COINS'], order.withdraw_address.currency_code) &&
-		        		_.contains(config['ENABLED_COINS'], order.deposit_address.currency_code));
-        		});
-
+        		let orders = response.data.results;
         		this.setState({orders: orders});
         	})
         	.catch(error => {
@@ -51,7 +42,7 @@ class OrderStatus extends Component {
 		let orders = this.state.orders.slice(0,config.RECENT_ORDERS_COUNT).map(order => {
 			return (
 				<div key={order.unique_reference} className="recent-order">
-					<a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className="overlay">Click to view on API</a>
+
 
 					<div className="col-xs-4 coins-container">
 						<div className="coins">
@@ -62,7 +53,7 @@ class OrderStatus extends Component {
 					</div>
 
 					<div className="col-xs-4 recent-order-amount">
-						<p>{Math.round(parseFloat(order.amount_quote) * 1000) / 1000} <b className="hidden-xs">{order.pair.quote.code}</b> to {Math.round(parseFloat(order.amount_base) * 1000) / 1000} <b className="hidden-xs">{order.pair.base.code}</b></p>
+						<p>{Math.round(parseFloat(order.amount_quote) * 1000) / 1000} <b className="hidden-xs">{order.pair.quote.code}</b> --> {Math.round(parseFloat(order.amount_base) * 1000) / 1000} <b className="hidden-xs">{order.pair.base.code}</b></p>
 					</div>
 
 					<div className="col-xs-4 created-on">
@@ -77,7 +68,7 @@ class OrderStatus extends Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-xs-12">
-							<h2>Recent Orders</h2>
+							<h2>Son İşlemler</h2>
 
 							<div className="recent-orders-container">
 								{orders.length < 1 ? (

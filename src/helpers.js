@@ -14,15 +14,6 @@ class Helpers {
 
 		return obj;
 	}
-
-	static getBlockchainUrl(coin, txId) {
-		if (coin == 'ETH') return this.blockchainUrl = `https://etherscan.io/tx/${txId}`;
-		else if (coin == 'LTC') return this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${txId}/`;
-		else if (coin == 'BTC') return this.blockchainUrl = `https://blockchain.info/tx/${txId}`;
-		else if (coin == 'DOGE') return this.blockchainUrl = `https://dogechain.info/tx/${txId}`; 
-
-		return null;
-	}
 }
 
 export default Helpers;

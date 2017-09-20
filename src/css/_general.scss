@@ -10,7 +10,7 @@ h1 { font-size: 34px;
 h2 { font-size: 26px;
 	@media (min-width: $screen-sm-min) { font-size: 34px; }
 }
-a { color: $green;
+a { color: $red;
 	&:visited, &:focus { outline: none; }
 }
 .header-text { font-size: 36px; }
@@ -26,10 +26,10 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 .btn-themed {
 	&, &:focus, &:visited {
 		background: $blue;
-		background: -moz-linear-gradient(to bottom, $blue 0, $green 100%);
-		background: -webkit-linear-gradient(to bottom, $blue 0, $green 100%);
-		background: linear-gradient(to bottom, $blue 0, $green 100%);
+		background: -moz-linear-gradient(to bottom, $blue 0, $red 100%);
+		background: -webkit-linear-gradient(to bottom, $blue 0, $red 100%);
+		background: linear-gradient(to bottom, $red 0, $red 100%);
 	}
 }
 
-.text-green { color: $green !important; }
+.text-green { color: $red !important; }

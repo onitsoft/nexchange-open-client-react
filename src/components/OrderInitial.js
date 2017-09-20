@@ -15,7 +15,7 @@ class OrderInitial extends Component {
 		});
 
 		$('#copy-to-clipboard').tooltip('hide')
-			.attr('data-original-title', 'Wallet address copied!')
+			.attr('data-original-title', 'Cüzdan adresi kopyalandı!')
 			.tooltip('show');
 
 		setTimeout(() => {
@@ -38,14 +38,14 @@ class OrderInitial extends Component {
     			</div>
 
     			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
-    				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
+    				<h3>Kalan Süre: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
 
-    				<h4>Send <b>{this.props.depositAmount} {this.props.depositCoin}</b> to the address<br/>
+    				<h4>Aşağıdaki adrese <b>{this.props.depositAmount} {this.props.depositCoin}</b> gönderin lütfen.<br/>
     					<b id="deposit-address">{this.props.depositAddress}</b>
     				</h4>
     				
 			        <CopyToClipboard text={this.props.depositAddress} onCopy={() => this.triggerCopyTooltip()}>
-						<button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">Copy the address</button>
+						<button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">Adresi kopyala</button>
     				</CopyToClipboard>
     			</div>
 		    </div>

@@ -94,61 +94,56 @@ class Support extends Component {
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className="modal-title">Support</h4>
+            <h4 className="modal-title">Bize Yazın</h4>
           </div>
 
           <div className="modal-body">
             <div className="row">
-              <div className="col-xs-12 col-sm-6">
-                <h3>Phone</h3>
-                <p onClick={() => ga('send', 'event', 'General', 'click support number')}>+442081442192<br/>
-                  +16464612858 (US)</p>
-              </div>
+
             
               <div className="col-xs-12 col-sm-6">
-                <h3>Email</h3>
-                <p><a href="mailto:support@nexchange.io">support@nexchange.io</a></p>
+                <p><a href="mailto:destek@kriptoburosu.com">destek@kriptoburosu.com</a></p>
               </div>
             </div>
 
             <form id="support-form" onSubmit={this.handleSubmit}>
-              {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
-              {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
+              {this.state.success  == true ? <h4 className="text-success">Başarıyla gönderildi. Size en kısa zamanda dönüş yapacağız.</h4> : null}
+              {this.state.success  == false ? <h4 className="text-danger">Ters giden bir şeyler var. Lütfen daha sonra tekrar deneyin.</h4> : null}
 
               {this.state.showForm ? (
                 <div>
                   <div className="form-group is-empty">
-                    <input type="name" name="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
+                    <input type="name" name="name" className="form-control" placeholder="İsim" onChange={this.handleInputChange} required />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
-                    <input type="telephone" name="telephone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
+                    <input type="telephone" name="telephone" className="form-control" placeholder="Telefon" onChange={this.handleInputChange} />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
-                    <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
+                    <input type="email" name="email" className="form-control" placeholder="E-posta" onChange={this.handleInputChange} required />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
-                    <input type="text" name="subject" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
+                    <input type="text" name="subject" className="form-control" placeholder="Konu" onChange={this.handleInputChange} />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
-                  <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
+                  <textarea name="message" className="form-control" placeholder="Mesaj" rows="2" onChange={this.handleInputChange} required></textarea>
 
                   <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? "disabled" : null}>
-                    Send
+                    Gönder
                     {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
                   </button>
 
-                  <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
+                  <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{float:"right", padding: "15px 0 0 0"}}>Vazgeç</button>
                 </div>
               ) : <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{padding: "0"}}>Close</button>}
             </form>

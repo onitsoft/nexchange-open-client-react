@@ -14,13 +14,30 @@ class Referrals extends Component {
 	componentDidMount() {
 		axios.interceptors.request.use(function (requestConfig) {
 			let referral = (config.REFERRAL_CODE ? config.REFERRAL_CODE : localStorage.getItem('referral'));
-		    if (referral && requestConfig.url && requestConfig.url.indexOf(config.API_BASE_URL.toLowerCase()) > -1)
+		    if (referral && config.url && config.url.indexOf(config.API_BASE_URL) > -1) {
 			    requestConfig.headers['x-referral-token'] = referral;
+			}
 
 		    return requestConfig;
-		}, function (error) {
+		  }, function (error) {
 		    return Promise.reject(error);
-		});
+		  });
+	}
+
+	isRef() {
+		let url = window.location.search.substring(1),
+			params = url.split('&');
+
+		for (let i = 0; i < params.length; i++) {
+			let param = params[i].split('=');
+
+			if (param[0] == 'ref') {
+				localStorage.setItem('referral', param[1]);
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	redirectRef() {

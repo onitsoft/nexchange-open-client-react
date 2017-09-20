@@ -1,8 +1,8 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
 
-import ExchangeWidget from '../containers/ExchangeWidget';
-import CoinPrices from '../containers/CoinPrices';
+import ExchangeWidget from '../components/ExchangeWidget';
+import CoinPrices from '../components/CoinPrices';
 import ErrorAlert from '../components/ErrorAlert';
 
 
@@ -14,8 +14,8 @@ const Hero = () => (
 			<div className="row">
 				<div className="col-xs-12">
 					<div className="brand">
-				        <h1>Exchange Cryptocurrencies</h1>
-				        <h2>Simple. <span className="text-green">Secure</span>. Transparent.</h2>
+				        <h1>Dijital Para Takası</h1>
+				        <h2>Hızlı. <span className="text-green">Güvenli</span>. Gizli.</h2>
 					</div>
 				</div>
 
