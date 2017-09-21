@@ -24,7 +24,7 @@ const Hero = () => (
 			</div>
 		</div>
 
-		<div id="mouse-scroll" onClick={() => scrollToElement('#team')}>
+		<div id="mouse-scroll" onClick={() => scrollToElement('#about')}>
 			<span className="arrow-1" aria-hidden="true"></span>
 			<span className="arrow-2" aria-hidden="true"></span>
 			<span className="arrow-3" aria-hidden="true"></span>
