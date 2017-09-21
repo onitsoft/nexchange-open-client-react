@@ -8,6 +8,6 @@ const config = {
 	RECENT_ORDERS_COUNT: 11,
 	REFERRAL_CODE: 'R9VAJP4SRJJ',
 	ENABLED_COINS: ['BTC', 'ETH', 'DOGE', 'LTC']
-}
+};
 
 export default config;

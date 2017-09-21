@@ -6,17 +6,27 @@ import '../css/order.scss';
 
 import config from '../config';
 
-import OrderInitial from './OrderInitial';
+import OrderInitial from '../components/OrderInitial';
 import OrderPayment from './OrderPayment';
-import OrderPaid from './OrderPaid';
-import OrderReleased from './OrderReleased';
-import OrderSuccess from './OrderSuccess';
-import OrderFailure from './OrderFailure';
-import OrderExpired from './OrderExpired';
-import OrderStatus from './OrderStatus';
+import OrderPaid from '../components/OrderPaid';
+import OrderReleased from '../components/OrderReleased';
+import OrderSuccess from '../components/OrderSuccess';
+import OrderFailure from '../components/OrderFailure';
+import OrderExpired from '../components/OrderExpired';
+import OrderStatus from '../components/OrderStatus';
 import Bookmark from './Bookmark';
-import NotFound from './NotFound';
-import ReferralTerms from './ReferralTerms';
+import NotFound from '../components/NotFound';
+import ReferralTerms from '../components/ReferralTerms';
+
+const STATUS_CODES = {
+	0: 'CANCELLED',
+	11: 'INITIAL',
+	12: 'PAID_UNCONFIRMED',
+	13: 'PAID',
+	14: 'PRE_RELEASE',
+	15: 'RELEASE',
+	16: 'COMPLETED'
+}
 
 
 class Order extends Component {
@@ -100,7 +110,9 @@ class Order extends Component {
 			})
 		})
 		.catch((error) => {
-			if (error.response.status == 429) {
+			console.log(error);
+
+			if (error.response && error.response.status == 429) {
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
 				}, config.ORDER_DETAILS_FETCH_INTERVAL * 2);
@@ -128,19 +140,19 @@ class Order extends Component {
 			return <NotFound />;
 
 		let orderDetails = null;
-		if (this.state.expired && this.state.orderStatus == 1)
+		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderExpired />;
-		else if (this.state.orderStatus == 1)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-		else if (this.state.orderStatus == -1)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 2)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'PAID')
 			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 3)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'RELEASE')
 			orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (this.state.orderStatus == 4)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
-		else if (this.state.orderStatus == 0 || this.state.orderStatus <= -2)
+		else if ( STATUS_CODES[this.state.orderStatus] == 'CANCELLED' ||  STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
 
 		return (
@@ -150,7 +162,6 @@ class Order extends Component {
 						<div className="row">
 						    <div id="order-header" className="col-xs-12">
 						    	<h3 id="order-ref">İşlem Kodu: <b>{this.props.match.params.orderRef}</b></h3>
-						    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
 						    </div>
 						</div>
 
@@ -197,11 +208,11 @@ class Order extends Component {
 						    		</div>
 						    	</div>
 						    </div>
+
+
 						</div>
 					</div>
 
-					<ReferralTerms show={this.state.showTermsModal} onClose={() => this.setState({showTermsModal: false})} />
-				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 				</div>
 			</div>
 		);

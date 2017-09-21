@@ -18,7 +18,6 @@ import reducers from './reducers';
 import Loadable from 'react-loadable';
 
 import LoadingComponent from './components/LoadingComponent';
-
 import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -28,8 +27,8 @@ const AsyncNotFound = Loadable({
   loading: LoadingComponent
 });
 
-import Home from './components/Home';
-import Order from './components/Order';
+import Home from './containers/Home';
+import Order from './containers/Order';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)

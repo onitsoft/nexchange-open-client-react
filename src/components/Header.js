@@ -17,6 +17,16 @@ class Header extends Component {
 		}
 	}
 
+	componentDidMount() {
+		let hash = window.location.hash;
+		if (hash && hash != '') {
+			hash = hash.replace('#', '');
+
+			let el = document.getElementById(hash);
+			if (el) el.scrollIntoView(); 
+		}
+	}
+
 	render() {
 	    return (
 	    	<div id="header">

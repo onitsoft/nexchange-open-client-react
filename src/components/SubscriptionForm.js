@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import jsonp from "jsonp";
 
 const getAjaxUrl = url => url.replace("/post?", "/post-json?");
-const subscribeUrl = "https://nexchange.us16.list-manage.com/subscribe/post?u=918b60ce5b05d82384c293db0&amp;id=b2af978303";
+const subscribeUrl = "//kriptoburosu.us16.list-manage.com/subscribe/post?u=e03e0dde8cf6f915dff05dc69&amp;id=9ea3a976b3";
 
 
 class SubscriptionForm extends React.Component {
@@ -88,8 +88,8 @@ class SubscriptionForm extends React.Component {
 							</div>
 
 							<div className="col-xs-12 message">
-							{status === "success" && (<p className="success">Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.</p>)}
-							{status === "error" && (<p className="failure">Something went wrong. Please try again later.</p>)}
+							{status === "success" && (<p className="success">Neredeyse tamam... Onay için size gönderilen e-postadaki bağlantıya tıklamanız yeterli.</p>)}
+							{status === "error" && (<p className="failure">Hata! Lütfen daha sonra tekrar deneyin.</p>)}
 							</div>
 
 						</div>

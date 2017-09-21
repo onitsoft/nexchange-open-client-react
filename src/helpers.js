@@ -1,4 +1,5 @@
 
+
 class Helpers {
 	static urlParams() {
 		let url = window.location.search.substring(1),

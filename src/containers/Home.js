@@ -6,7 +6,7 @@ import { fetchCoinDetails } from '../actions';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
-import RecentOrders from '../components/RecentOrders';
+import RecentOrders from '../containers/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
 
 

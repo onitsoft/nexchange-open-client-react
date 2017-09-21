@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import helpers from '../helpers';
 import config from '../config';
 import _ from 'lodash';
-
-import CountDown from './CountDown';
 
 
 class OrderReleased extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {estimate: 0};
-
-		this.estimateCountdown = this.estimateCountdown.bind(this);
 
 		this.coin = props.order.pair.base;
 		this.minConfirmations = this.coin.min_confirmations;
@@ -24,34 +18,12 @@ class OrderReleased extends Component {
 		else if (this.coin.code == 'BTC') this.blockchainUrl = `https://blockchain.info/tx/${this.txId}`;
 	}
 
-	componentDidMount() {
-		this.estimateCountdown(this.props);
-	}
-
-	estimateCountdown() {
-		let confirmationWaitTime;
-		if (this.coin.code == 'BTC') confirmationWaitTime = 600000;
-		else if (this.coin.code == 'LTC') confirmationWaitTime = 150000; // 2.5mins
-		else if (this.coin.code == 'ETH') confirmationWaitTime = 60000; // ETH, 0.2mins
-
-		let allConfirmationsWaitTime = confirmationWaitTime * this.minConfirmations;
-		let estimate = allConfirmationsWaitTime - (allConfirmationsWaitTime * (this.tx.confirmations/this.minConfirmations));
-
-		if (this.state.estimate != estimate)
-			this.setState({estimate});
-	}
-
 	componentWillReceiveProps(nextProps) {
 		if (_.find(this.props.order.transactions, {type: 'W'}).confirmations != _.find(nextProps.order, {type: 'W'}).confirmations) {
 			let coin = nextProps.order.pair.base;
 			this.minConfirmations = this.coin.min_confirmations;
 
-			this.estimateCountdown();
 		}
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.interval);
 	}
 
 	render() {
@@ -59,13 +31,7 @@ class OrderReleased extends Component {
 			return (
 				<div className="col-xs-12 text-center order-status-section">
 					<h2 style={{margin: "0"}}>Processing withdrawal...</h2>
-					<CountDown
-						id={`funds-released-txidnull-${this.props.order.unique_reference}`}
-						time={300000}
-						defaultMsg="Tahmini süre:"
-						expiredMsg="Bu işlemin şimdiye kadar çekilmiş olması gerekirdi. Tasalanmayın, halledeceğiz."
-					/>
-
+		
 					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>İşlem detaylarınızı inceleyebilirsiniz</h4></a>
 				</div>
 			)
@@ -76,21 +42,10 @@ class OrderReleased extends Component {
 				<h2 style={{margin: "0"}}>Paranız gönderildi, onaylar bekleniyor</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" className="text-green">{this.txId}</a></h5>
 
-				<CountDown
-					id={`funds-released-${this.props.order.unique_reference}`}
-					time={this.state.estimate}
-					defaultMsg="Tüm onaylar için kalan tahmini süre:"
-					expiredMsg="İşlemin şimdiye kadar istenen miktarda onay alması gerekirdi."
-				/>
-
-				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>İşlem detaylarınızı inceleyebilirsiniz</h4></a>
-				<a href={this.blockchainUrl} target="_blank"><h4 style={{margin: "5px 0 18px", "fontWeight": "500"}}>İşlem detaylarınızı blockchainde inceleyebilirsiniz</h4></a>
-			</div>
+				</div>
 		)
 	}
 
 };
 
 export default OrderReleased;
-
-// ({this.tx.confirmations}/{this.minConfirmations})

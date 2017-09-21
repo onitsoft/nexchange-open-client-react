@@ -1,8 +1,8 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
 
-import ExchangeWidget from '../components/ExchangeWidget';
-import CoinPrices from '../components/CoinPrices';
+import ExchangeWidget from '../containers/ExchangeWidget';
+import CoinPrices from '../containers/CoinPrices';
 import ErrorAlert from '../components/ErrorAlert';
 
 

@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import 'moment/locale/tr';
+import _ from 'lodash';
+
+import Helpers from '../helpers';
 import config from '../config';
 
-import LoadingComponent from './LoadingComponent';
+import LoadingComponent from '../components/LoadingComponent.js';
 
 
 class OrderStatus extends Component {
@@ -22,7 +25,14 @@ class OrderStatus extends Component {
 	fetchRecentOrders() {
         axios.get(`${config.API_BASE_URL}/orders/?page=1`)
         	.then(response => {
-        		let orders = response.data.results;
+   	        		let orders = response.data.results.filter(order => {
+		        	let params = Helpers.urlParams();
+		        	return (params && params.hasOwnProperty('test')) ? true : (
+		        		order.withdraw_address && order.deposit_address &&
+		        		_.contains(config['ENABLED_COINS'], order.withdraw_address.currency_code) &&
+		        		_.contains(config['ENABLED_COINS'], order.deposit_address.currency_code));
+        		});
+
         		this.setState({orders: orders});
         	})
         	.catch(error => {
