@@ -85,12 +85,12 @@ class PriceComparison extends Component {
         .then(response => {
             this.setState({
                 changelly: {
-                    btceth: (parseFloat(response.data['ETH']['BTC']) * 0.995).toFixed(4),
-                    btcltc: (parseFloat(response.data['LTC']['BTC']) * 0.995).toFixed(4),
-                    dogebtc: (parseFloat(response.data['BTC']['DOGE']) * 0.995).toFixed(1),
-                    ethltc: (parseFloat(response.data['LTC']['ETH']) * 0.995).toFixed(2),
-                    dogeeth: (parseFloat(response.data['ETH']['DOGE']) * 0.995).toFixed(1),
-                    dogeltc: (parseFloat(response.data['LTC']['DOGE']) * 0.995).toFixed(1),
+                    btceth: (parseFloat(response.data['ETH']['BTC']) * 0.98).toFixed(4),
+                    btcltc: (parseFloat(response.data['LTC']['BTC']) * 0.98).toFixed(4),
+                    dogebtc: (parseFloat(response.data['BTC']['DOGE']) * 0.98).toFixed(1),
+                    ethltc: (parseFloat(response.data['LTC']['ETH']) * 0.98).toFixed(4),
+                    dogeeth: (parseFloat(response.data['ETH']['DOGE']) * 0.98).toFixed(1),
+                    dogeltc: (parseFloat(response.data['LTC']['DOGE']) * 0.98).toFixed(1),
                 }
             }, () => {
                 this.priceDiff();
@@ -111,12 +111,12 @@ class PriceComparison extends Component {
         .then(axios.spread((btceth, btcltc, dogebtc, ethltc, dogeeth, dogeltc) => {
             this.setState({
                 shapeshift: {
-                    btceth: (parseFloat(btceth.data.rate) * 0.998).toFixed(4),
-                    btcltc: (parseFloat(btcltc.data.rate) * 0.998).toFixed(4),
-                    dogebtc: (parseFloat(dogebtc.data.rate) * 0.998).toFixed(1),
-                    ethltc: (parseFloat(ethltc.data.rate) * 0.998).toFixed(4),
-                    dogeeth: (parseFloat(dogeeth.data.rate) * 0.998).toFixed(1),
-                    dogeltc: (parseFloat(dogeltc.data.rate) * 0.998).toFixed(1)
+                    btceth: (parseFloat(btceth.data.rate) * 0.97).toFixed(4),
+                    btcltc: (parseFloat(btcltc.data.rate) * 0.97).toFixed(4),
+                    dogebtc: (parseFloat(dogebtc.data.rate) * 0.97).toFixed(1),
+                    ethltc: (parseFloat(ethltc.data.rate) * 0.97).toFixed(4),
+                    dogeeth: (parseFloat(dogeeth.data.rate) * 0.97).toFixed(1),
+                    dogeltc: (parseFloat(dogeltc.data.rate) * 0.97).toFixed(1)
                 }
             }, () => {
                 this.priceDiff();
