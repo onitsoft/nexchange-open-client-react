@@ -41,11 +41,11 @@ class CoinSelector extends Component {
 			coins = this.props.coinsInfo.map(coin => {
 				return (
 					<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
-						<div className="col-xs-3">{coin.code}</div>
+						<div className="col-xs-4">{coin.code}</div>
 						<div className="col-xs-3 text-center">
 							<i className={`cc-${coin.code} ${coin.code}`}></i>
 						</div>
-						<div className="col-xs-6 text-capitalize">{coin.name}</div>
+						<div className="col-xs-5 text-capitalize">{coin.name}</div>
 					</div>
 				);
 			});
