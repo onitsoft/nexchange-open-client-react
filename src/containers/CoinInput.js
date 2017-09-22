@@ -19,6 +19,10 @@ class CoinInput extends Component {
 	onChange(event) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
 
+		if (event.target.value == '') {
+			event.target.value = '';
+		}
+
 		if (this.props.price.pair != pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL) {
 			this.props.fetchPrice({pair: pair, amount: event.target.value, lastEdited: this.props.type});
 		} else {
@@ -63,7 +67,7 @@ class CoinInput extends Component {
 
 	render() {
 		return (
-		  <div className="form-group label-floating has-success">
+		  <div className="form-group label-floating has-success is-focused">
 		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
 		    <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} onChange={this.onChange} value={this.props.amounts[this.props.type]} />
 
