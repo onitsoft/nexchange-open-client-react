@@ -52,11 +52,15 @@
 }
 
 .cc-XVG-alt:before {
-  content: "\E0F3";
+  content: "\E075";
+  background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
 }
 
 .cc-XVG:before {
-  content: "\E0F4";
+  content: "\E075";
+  background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
 }
 
 .BTC { color: #F7931A; }
