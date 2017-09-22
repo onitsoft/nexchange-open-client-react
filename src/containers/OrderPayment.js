@@ -17,9 +17,8 @@ class OrderPayment extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (_.find(this.props.order.transactions, {type: 'D'}).confirmations != _.find(nextProps.order, {type: 'D'}).confirmations) {
-			this.tx = _.find(nextProps.order.transactions, {type: 'D'});
-		}
+		this.tx = _.find(nextProps.order.transactions, {type: 'D'});
+		this.txId = this.tx.tx_id;
 	}
 
 	render() {
@@ -27,7 +26,6 @@ class OrderPayment extends Component {
 			return (
 				<div className="col-xs-12 text-center order-status-section">
 					<h2 style={{margin: "0"}}>Waiting for transaction deposit...</h2>
-
 					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>See your order details on our API</h4></a>
 				</div>
 			)
