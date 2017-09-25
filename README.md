@@ -16,4 +16,4 @@ Anybody is welcome to make contributions to our repository, especially if you di
 
 ## License
 
-Nexchange Open Client (ReactJS) is [Apache 2.0 licensed](https://github.com/onitsoft/nexchange-open-client-react/blob/master/LICENSE). Please give us credit when using our open client for your own projects.
+Nexchange Open Client (ReactJS) is [Apache 2.0 licensed](https://github.com/onitsoft/nexchange-open-client-react/blob/master/LICENSE). Please give us credit in clearly visible location i.e. footer or similar, when using our open client for your own projects.
