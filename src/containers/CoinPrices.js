@@ -60,10 +60,7 @@ class CoinPrices extends Component {
 
 	        	let rates = this.state.rates,
 	        		rate = 1 / parseFloat(response.data[0].ticker.ask);
-
-	        	if (pair.indexOf('usd') != -1)
-	        		rate = ((parseFloat(response.data[0].ticker.ask) + parseFloat(response.data[0].ticker.bid)) / 2) * 0.97;
-
+	        		
 	        	if (rates[pair] != null) {
 	        		let change = this.state.change;
 
