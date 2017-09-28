@@ -86,6 +86,40 @@ class FAQ extends Component {
             <p>Once you have sent the cryptocurrency, losing connection, closing the tab or navigating elsewhere will not impact the transaction.</p>
             <p>If you need help, feel free to contact us.</p>
 
+            <h3>How do referrals work?</h3>
+            <p>Whenever you create an order, a referral code is automatically generated for you.</p>
+            <p>Current referral conditions are as follows:</p>
+            <ol>
+              <li>We pay $5 worth of your receive currency on this order, per each person referred.</li>
+              <li>We send payments in aggregate each end of day.</li>
+              <li>You will be receiving your funds to the withdraw address specified on this order.</li>
+              <li>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</li>
+            </ol>
+            <p>These are subject to change at any time.</p>
+
+            <h3>I see a 15-minute timer on my order window, what happens when it runs out?</h3>
+            <p>There's a 15-minute window between the moment you open the order and the moment we detect the coins that you sent on the blockchain. During this time interval, we effectively freeze the price for your order.</p>
+            <p>If the 15 minute time window closes, the order is canceled because the price will have expired and will need to be recalculated.</p>
+            <p>If you did not send your funds in time, simply initiate a new order.</p>
+            <p>If you did send your funds, but for some reason they were not detected, contact us through the support chat and we will help you out.</p>
+
+            <h3>Do you have any promotions running at the moment?</h3>
+            <p>Yes. We are currently running a bonus coins promotion. The rules are simple:</p>
+            <ol>
+              <li>Make a trade on our platform.</li>
+              <li>Post a positive social status about us.</li>
+              <li>Send us the links to your order and your social status in the support chat on the website.</li>
+              <li>Receive 100% of your trade size to your wallet.</li>
+            </ol>
+
+            <p>Limitations:</p>
+            <ol>
+              <li>The reward is up to a $10 ceiling. If you trade more than $10 worth of cryptocurrency,  you will only receive $10.</li>
+              <li>Your social account must be at least one year old and have over 200 followers.</li>
+            </ol>
+
+            <p><b>We reserve the right to deny the bonus coins on any grounds we see fit.</b></p>
+
             <h3>What does the beta version include?</h3>
             <p>At the moment, only the core exchange feature of our product is available for users to enjoy as part of our public beta initiative, which means that everything you see on screen works perfectly. Our goal with the beta is to expose Nexchange to as many users as possible in order to fine-tune our design and user experience to the highest possible degree. To achieve this goal, your input as a user is invaluable. If you have any feedback for us, please feel free to contact us at <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
 
