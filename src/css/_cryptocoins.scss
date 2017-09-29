@@ -63,6 +63,18 @@
   color: transparent;
 }
 
+.selectedCoin .cc-XVG-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/xvg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-XVG:before {
+  content: "\E075";
+  background-image: url(../img/logos/xvg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
 .BTC { color: #F7931A; }
 .LTC { color: #838383; }
 .ETH { color: #282828; }
