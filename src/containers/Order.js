@@ -18,6 +18,7 @@ import OrderStatus from '../components/OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from '../components/NotFound';
 import ReferralTerms from '../components/ReferralTerms';
+import Notifications from '../containers/Notifications';
 
 const STATUS_CODES = {
 	0: 'CANCELLED',
@@ -238,6 +239,8 @@ class Order extends Component {
 						    	</div>
 						    </div> 
 						    : null }
+
+						    <Notifications order={this.state.data} /> 
 						</div>
 					</div>
 
