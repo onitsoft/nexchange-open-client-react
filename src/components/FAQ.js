@@ -53,7 +53,7 @@ class FAQ extends Component {
             <QuestionAnswer
               question="What is your fee?"
               answer={
-                <p>Our service fee is 0% throughout September. We will gradually increase it to 0.5% over the next few months, starting on October 1st. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
+                <p>Our service fee is 0.5%. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
               }/>  
 
             <QuestionAnswer

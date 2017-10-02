@@ -104,7 +104,7 @@ class ExchangeWidget extends Component {
 		if ($('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby")) {
 			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
 
-			$(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0)} ${nextProps.selectedCoin.deposit}.`);
+			$(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0.005)} ${nextProps.selectedCoin.deposit}.`);
 		}		
 
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
@@ -140,9 +140,9 @@ class ExchangeWidget extends Component {
 							</button>
 						)}
 
-						<p id="fee-info">* Current fee is 0%.
+						<p id="fee-info">* Current fee is 0.5%.
 							<i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
-								data-original-title={`The fee amounts to ${(this.props.amounts.deposit * 0)} ${this.props.selectedCoin.deposit}.`}>
+								data-original-title={`The fee amounts to ${(this.props.amounts.deposit * 0.005)} ${this.props.selectedCoin.deposit}.`}>
 							</i>
 						</p>
 					</div>
