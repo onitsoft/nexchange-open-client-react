@@ -82,6 +82,13 @@ class FAQ extends Component {
             <p>İşleminizi başlattıktan sonra eğer bizim tarafımızdan bildirilen cüzdana satmak istediğiniz para biriminizin transferini başlattıysanız, sayfayı kapatmak, elektrik ya da internet kesintisi gibi durumlar işlemin sürekliliğini etkilemeyecektir. Almak istediğiniz para birimi hesabınıza kısa sürede gelecek.</p>
             <p>Eğer aklınıza takılan bir şey olursa bizimle iletişim kurmaktan çekinmeyin.</p>
 
+             <h3>Param hesabıma geçmedi! Şimdi ne olacak?</h3>
+            <p>Eğer doğru cüzdan adresi girdiniz ve doğru miktarı istenilen adrese gönderdiyseniz bu mümkün değil. Bir yerde bir yanlışlık olmalı. İşlem kodunuzu, ayrıca mümkünse gönderim yaptığınız cüzdan adresini ve gönderdiğiniz miktarı bizimle hemen <a href="mailto:destek@kriptoburosu.com">destek@kriptoburosu.com</a> adresinden paylaşırsanız, sorununuzu en kısa sürede, sizin tercih ettiğiniz şekilde çözeriz.</p>
+
+
+            <h3>Yanlış miktarda para göndermişim!</h3>
+            <p>Sakin olun. Problem değil. Bizimle hemen <a href="mailto:destek@kriptoburosu.com">destek@kriptoburosu.com</a> adresinden iletişim kurun ve ne yapabileceğimize birlikte bakalım.</p>
+
             <h3>Nereden cüzdan alabilirim?</h3>
             <p>Kripto Bürosu'nu kullanmak için bir cizdana ihtiyacınız var çünkü biz sizin paranızı saklamayacağız ve kendi güvenliğinizi sağlayıp "sitenin başına bir şey mi geldi" korkusundan muaf olacaksınız. Çok iyi değil mi?</p>
             <p>Biraz araştırmayla çeşitli para birimlerini bir arada tutabilen cüzdanlar bulabilirsiniz ancak biz kimseye kefil olmak istemiyoruz. Aşağıda belirtilen cüzdanlar ilgili birimlerin resmi kabul edilen cüzdanlarıdır:</p>

@@ -5,9 +5,8 @@ import config from '../config';
 const OrderFailure = (props) => (
   <div id="order-failure" className="col-xs-12 text-center">
       <h2 style={{margin: "0"}}>Order Processing Failed</h2>
-      <h5>Tİşleminizle ilgili bir problem oluştu. Lütfen <a href={`mailto:${config.SUPPORT_EMAIL}`}>{config.SUPPORT_EMAIL} adresinden destek talebinde bulunun.</a></h5>
+      <h5>İşleminizle ilgili bir problem oluştu. Lütfen <a href={`mailto:${config.SUPPORT_EMAIL}`}>{config.SUPPORT_EMAIL} adresinden destek talebinde bulunun.</a></h5>
 
-      <a href={`${config.API_BASE_URL}/orders/${props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 18px", "fontWeight": "500"}}>İşlem detayları</h4></a>
   </div>
 );
 

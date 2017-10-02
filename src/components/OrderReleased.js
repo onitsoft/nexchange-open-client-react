@@ -30,9 +30,8 @@ class OrderReleased extends Component {
 		if (this.txId == '' || this.txId == null) {
 			return (
 				<div className="col-xs-12 text-center order-status-section">
-					<h2 style={{margin: "0"}}>Processing withdrawal...</h2>
+					<h2 style={{margin: "0"}}>Ödemeniz gerçekleştiriliyor...</h2>
 		
-					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>İşlem detaylarınızı inceleyebilirsiniz</h4></a>
 				</div>
 			)
 		}
@@ -40,7 +39,7 @@ class OrderReleased extends Component {
 		return (
 			<div className="col-xs-12 text-center order-status-section">
 				<h2 style={{margin: "0"}}>Paranız gönderildi, onaylar bekleniyor</h2>
-				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" className="text-green">{this.txId}</a></h5>
+				<h5>Blok Zincir: <a href={this.blockchainUrl} target="_blank" className="text-green">{this.txId}</a></h5>
 
 				</div>
 		)

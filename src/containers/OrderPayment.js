@@ -31,7 +31,6 @@ class OrderPayment extends Component {
 				<div className="col-xs-12 text-center order-status-section">
 					<h2 style={{margin: "0"}}>Yatırma işlemi bekleniyor...</h2>
 
-					<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>İşeminizi inceleyin.</h4></a>
 				</div>
 			)
 		}
@@ -41,7 +40,6 @@ class OrderPayment extends Component {
 				<h2 style={{margin: "0"}}>İşem tespit edildi, onaylar bekleniyor.</h2>
 				<h5>Transaction ID: <a href={this.blockchainUrl} target="_blank" style={{color: "#2cb4a0"}}>{this.tx.tx_id}</a></h5>
 
-				<a href={`${config.API_BASE_URL}/orders/${this.props.orderRef}`} target="_blank"><h4 style={{margin: "25px 0 0px", "fontWeight": "500"}}>İşleminizi inceleyin.</h4></a>
 				<a href={helpers.getBlockchainUrl(this.coin.code, this.txId)} target="_blank"><h4 style={{margin: "5px 0 18px", "fontWeight": "500"}}>Detayları blok zincirde görüntüleyin.</h4></a>
 			</div>
 		)

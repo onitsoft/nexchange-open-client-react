@@ -17,7 +17,7 @@ class OrderExpired extends Component {
 			    <h2 style={{margin: "0"}}>Çok geç...</h2>
 			    <h5>İşleminiz zaman aşımına uğradı. Yeni bir işlem başlatabilirsiniz.</h5>
 
-			    <h4 style={{margin: "25px 0 18px", "fontWeight": "500"}} className="text-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eğer gönderim işlemini başlattıysanız merak etmeyin. Para hesabımıza geçtiğinde bu sayfadaki işlem durumu otomatik olarak yenilenecektir.">Ama ben göndermiştim?</h4>
+			    <h4 style={{margin: "25px 0 18px", "fontWeight": "500"}} className="text-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eğer gönderim işlemini başlattıysanız merak etmeyin, bazen blok zincir yoğunlukları buna sebep olabiliyor. Para hesabımıza geçtiğinde bu sayfadaki işlem durumu otomatik olarak yenilenecektir. Hatta siz kapatıp gitseniz de biz gönderimi gerçekleştireceğiz :)">Ama ben göndermiştim?</h4>
 			</div>
 	    );
 	}

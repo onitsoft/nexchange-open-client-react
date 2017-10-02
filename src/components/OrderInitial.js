@@ -40,7 +40,7 @@ class OrderInitial extends Component {
     			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
     				<h3>Kalan Süre: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
 
-    				<h4>Aşağıdaki adrese <b>{this.props.depositAmount} {this.props.depositCoin}</b> gönderin lütfen.<br/>
+    				<h4>Lütfen aşağıdaki adrese <b>{this.props.depositAmount} {this.props.depositCoin}</b> gönderin.<br/>
     					<b id="deposit-address">{this.props.depositAddress}</b>
     				</h4>
     				

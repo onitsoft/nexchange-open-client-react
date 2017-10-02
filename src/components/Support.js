@@ -47,7 +47,7 @@ class Support extends Component {
     axios({
       method: 'post',
       contentType : 'application/json',
-      url: `${config.API_BASE_URL}/support/`,
+      url: `https://formspree.io/destek@kriptoburosu.com`,
       data: {
         email: this.state.email,
         name: this.state.name,
@@ -98,10 +98,9 @@ class Support extends Component {
           </div>
 
           <div className="modal-body">
-            <div className="row">
+                       <div className="row">
 
-            
-              <div className="col-xs-12 col-sm-6">
+                        <div className="col-xs-12 col-sm-6">
                 <p><a href="mailto:destek@kriptoburosu.com">destek@kriptoburosu.com</a></p>
               </div>
             </div>
