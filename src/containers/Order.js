@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import scrollToElement from 'scroll-to-element';
 
 import '../css/order.scss';
 
@@ -211,7 +212,8 @@ class Order extends Component {
 						    		</div>
 
 						    		<div className="row">
-						    			<div className="col-xs-12">
+						    			<div className="col-xs-12 text-center">
+						    				<a href="javascript:void()" onClick={() => scrollToElement('#notifications')}><h4 style={{fontWeight: 500}}>You don’t have to wait on this page. Click here to get notifications on order progress</h4></a>
 							    			<OrderStatus status={this.state.orderStatus} />
 						    			</div>
 						    		</div>

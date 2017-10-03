@@ -27,16 +27,21 @@ class Notifications extends Component {
 		    		<div className="row">
 		    			<div className="col-xs-12">
 							<h2>Get notified about your order!</h2>
-							<h4>Provide email/phone and whenever order status updates, we will let you know</h4>
 
-							<div className="col-xs-12 col-sm-8 col-sm-push-2">
-								<div className="form-group is-empty has-success">
-									<input type="email" name="email" placeholder="Email" className="form-control" required />
-								<span className="material-input"></span></div>
+							<div className="row">
+								<div className="col-xs-12 col-md-8 col-md-push-2">
+									<form>
+										<div className="form-group">
+											<input type="email" name="email" placeholder="Email" className="form-control" required />
+										<span className="material-input"></span></div>
 
-								<div className="form-group is-empty has-success">
-									<input type="phone" name="phone" placeholder="Email" className="form-control" required />
-								<span className="material-input"></span></div>
+										<div className="form-group">
+											<input type="tel" name="tel" placeholder="Telephone (optional)" className="form-control" />
+										<span className="material-input"></span></div>
+
+										<button type="submit" className="btn btn-themed btn-lg">Receive notifications</button>
+									</form>
+								</div>
 							</div>
 		    			</div>
 		    		</div>

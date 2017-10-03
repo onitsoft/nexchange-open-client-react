@@ -116,6 +116,12 @@
 	}
 }
 
+#notifications {
+	.form-group { margin-top: 10px; }
+	button { width: 100%; margin-bottom: 0; }
+	@media (min-width: $screen-sm-min) { button { width: auto; } }
+}
+
 @include keyframes(color-change) {
 	from { color: #adadad; }
 	to { color: #fbc02d; } 
