@@ -86,6 +86,7 @@ class DesktopNotifications extends Component {
     						Notify.requestPermission(() => {
     							this.setState({track: true})
 	    						localStorage.setItem(`track-${this.props.order.unique_reference}`, true)
+	    						ga('send', 'event', 'Order', 'track', this.props.order.unique_reference);
     						});
     					}
     				}}><h4 style={{fontWeight: 500}}>You don’t have to wait on this page. Click here to get notifications on order progress</h4></a>
