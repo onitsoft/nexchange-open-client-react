@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import scrollToElement from 'scroll-to-element';
+import Notify from 'notifyjs';
 
 import '../css/order.scss';
 
@@ -20,6 +21,8 @@ import Bookmark from './Bookmark';
 import NotFound from '../components/NotFound';
 import ReferralTerms from '../components/ReferralTerms';
 import Notifications from '../containers/Notifications';
+import DesktopNotifications from '../containers/DesktopNotifications';
+
 
 const STATUS_CODES = {
 	0: 'CANCELLED',
@@ -31,6 +34,13 @@ const STATUS_CODES = {
 	16: 'COMPLETED'
 }
 
+function onGranted() {
+	console.log('granted');
+}
+
+function onDenied() {
+	console.log('denied');
+}
 
 class Order extends Component {
 	constructor(props) {
@@ -46,7 +56,7 @@ class Order extends Component {
 			receiveAmount: '...',
 			receiveCoin: '...',
 			receiveAddress: '...',
-			orderStatus: 1,
+			orderStatus: null,
 			expired: false,
 			loading: true,
 			paymentWindow: null,
@@ -211,12 +221,11 @@ class Order extends Component {
 						    		}
 						    		</div>
 
-						    		<div className="row">
-						    			<div className="col-xs-12 text-center">
-						    				<a href="javascript:void()" onClick={() => scrollToElement('#notifications')}><h4 style={{fontWeight: 500}}>You don’t have to wait on this page. Click here to get notifications on order progress</h4></a>
-							    			<OrderStatus status={this.state.orderStatus} />
-						    			</div>
-						    		</div>
+						    		{(this.state.order && [12,13,14,15].indexOf(this.state.order.status_name[0][0]) > -1) ?
+						    			<DesktopNotifications order={this.state.order} /> : null
+						    		}
+
+						    		<OrderStatus status={this.state.orderStatus} />
 						    	</div>
 						    </div>
 
@@ -242,7 +251,7 @@ class Order extends Component {
 						    </div> 
 						    : null }
 
-						    <Notifications order={this.state.data} /> 
+						    {/*<Notifications order={this.state.data} />*/}
 						</div>
 					</div>
 
