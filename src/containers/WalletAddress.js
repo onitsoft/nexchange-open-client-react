@@ -19,7 +19,8 @@ class WalletAddress extends Component {
             LTC: /^L[1-9A-Za-z]{25,34}$/,
             ETH: /^0x[0-9a-fA-F]{40}$/,
             DOGE: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
-            XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/
+            XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
+            BCH: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/
         };
 
         let coin = this.props.selectedCoin.receive,
