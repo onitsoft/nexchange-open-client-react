@@ -15,10 +15,7 @@ const ReferralTerms = props => (
       <div className="modal-body">
         <div className="row">
           <div className="col-xs-12">
-            <p>1. We pay $5 worth of your receive currency on this order, per each person referred.</p>
-            <p>2. We send payments in aggregate each end of day.</p>
-            <p>3. You will be receiving your funds to the withdraw address specified on this order.</p>
-            <p>4. If you would like to change withdrawal address or preferred currency, let us know in support and we will take care of it.</p>
+            <p> Please contact support to hear more about our affiliate program.</p>
           </div>
         </div>
       </div>
