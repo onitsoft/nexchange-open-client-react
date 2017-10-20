@@ -9,7 +9,7 @@ const config = {
 	RECENT_ORDERS_COUNT: 11,
 	PRICE_COMPARISON_INTERVAL: 60000,
 	REFERRAL_CODE: null,
-	ENABLED_COINS: ['BTC', 'ETH', 'DOGE', 'LTC', 'XVG']
+	ENABLED_COINS: ['BTC', 'ETH', 'DOGE', 'LTC', 'XVG', 'BCH']
 };
 
 export default config;
