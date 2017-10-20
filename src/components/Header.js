@@ -70,7 +70,7 @@ class Header extends Component {
 							</li>
 
 							<li className="social-mobile">
-								<a href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon" rel="tooltip" title="" data-placement="bottom" data-original-title="Follow us on Twitter">
+								<a href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
 									<i className="fa fa-twitter" aria-hidden="true"></i>
 								</a>
 
@@ -78,8 +78,14 @@ class Header extends Component {
 									<i className="fa fa-facebook" aria-hidden="true"></i>
 								</a>
 
-								<a href="https://nexchange.typeform.com/to/lpyAtX" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+								<a href="https://join.slack.com/t/nexchangecommunity/shared_invite/MjM0OTU1ODc4NTkyLTE1MDQ0Mzc3NjEtYzZiMTYxMjdhNA" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
 									<i className="fa fa-slack" aria-hidden="true"></i>
+								</a>
+							</li>
+
+							<li className="visible-sm visible-md visible-lg">
+								<a href="https://twitter.com/NexchangeIO" target="_blank" className="btn btn-simple btn-just-icon" rel="tooltip" title="" data-placement="bottom" data-original-title="Follow us on Twitter">
+									<i className="fa fa-twitter" aria-hidden="true"></i>
 								</a>
 							</li>
 

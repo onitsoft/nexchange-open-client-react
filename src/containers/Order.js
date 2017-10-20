@@ -247,7 +247,7 @@ class Order extends Component {
 					</div>
 
 					<ReferralTerms show={this.state.showTermsModal} onClose={() => this.setState({showTermsModal: false})} />
-				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} orderRef={this.props.match.params.orderRef} />
+				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 				</div>
 			</div>
 		);
