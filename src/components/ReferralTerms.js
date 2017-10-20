@@ -15,7 +15,7 @@ const ReferralTerms = props => (
       <div className="modal-body">
         <div className="row">
           <div className="col-xs-12">
-            <p> Please contact support to hear more about our affiliate program.</p>
+            <p> You will receive 50% of our revenues (0.25% of the turnover) of all of your referrals. This offer is currently not limited by time! For more details, and further assistance, please contact support via our Live chat!</p>
           </div>
         </div>
       </div>
