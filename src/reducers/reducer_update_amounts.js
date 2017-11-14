@@ -1,5 +1,5 @@
 let initialState = {
-	deposit: 1,
+	deposit: 6000,
 	receive: '...',
 	lastEdited: 'deposit'
 }
