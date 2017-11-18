@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
+import Helpers from '../helpers';
 
 import { selectCoin, fetchPrice, setWallet } from '../actions/index.js';
 
@@ -21,7 +22,7 @@ class CoinSelector extends Component {
 
 		setTimeout(() => {
 			this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-		}, 300)
+		}, 300);
 
 		this.setState({isDropdownVisible: false, selectedCoin: coin});
 
@@ -38,7 +39,24 @@ class CoinSelector extends Component {
 
 	render() {
 		let selectedCoin = this.props.selectedCoin[this.props.type],
-			coins = this.props.coinsInfo.map(coin => {
+			filteredCoins = this.props.coinsInfo.filter(coin => {
+	        	let params = Helpers.urlParams();
+
+	        	if (params && params.hasOwnProperty('test')) {
+					if (this.props.type.toUpperCase() == 'DEPOSIT') {
+						return coin.is_base_of_enabled_pair_for_test;
+					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
+						return coin.is_quote_of_enabled_pair_for_test;
+					}
+	        	} else {
+					if (this.props.type.toUpperCase() == 'DEPOSIT') {
+						return coin.is_base_of_enabled_pair;
+					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
+						return coin.is_quote_of_enabled_pair;
+					}
+	        	}
+			}),
+			coins = filteredCoins.map(coin => {
 				return (
 					<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
 						<div className="col-xs-4">{coin.code}</div>
