@@ -235,7 +235,7 @@ class Order extends Component {
 											
 											<div className="share">
 											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank" onClick={this.trackRefShare}><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
-											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank" onClick={this.trackRefShare}><i className=	"fa fa-twitter-square" aria-hidden="true"></i></a>
+											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank" onClick={this.trackRefShare}><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
 											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank" onClick={this.trackRefShare}><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
 											</div>
 						    			</div>
