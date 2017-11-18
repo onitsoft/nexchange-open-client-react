@@ -51,13 +51,9 @@ export function fetchCoinDetails(payload) {
 	        		coins;
 
 	        	if (params && params.hasOwnProperty('test')) {
-					coins = _.filter(response.data, {has_enabled_pairs_for_test: true}).filter(coin => {
-						return coin.code;
-					});
+					coins = _.filter(response.data, {has_enabled_pairs_for_test: true});
 	        	} else {
-					coins = _.filter(response.data, {has_enabled_pairs: true}).filter(coin => {
-						return coin.code;
-					});
+					coins = _.filter(response.data, {has_enabled_pairs: true});
 	        	}
 
 	        	dispatch({type: 'COINS_INFO', payload: coins});
