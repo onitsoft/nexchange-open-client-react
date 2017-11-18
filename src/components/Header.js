@@ -30,6 +30,19 @@ class Header extends Component {
 	render() {
 	    return (
 	    	<div id="header">
+				<div className="alert alert-danger">
+					<div className="container">
+						<div className="alert-icon">
+							<i className="material-icons">error_outline</i>
+						</div>
+						<button type="button" className="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true"><i className="material-icons">clear</i></span>
+						</button>
+
+						Exchange is experiencing some issues. Read more about it <a href="https://www.reddit.com/r/Bitcoin/comments/7cm7jx/uphold_freezes_account_due_to_165_btc_deposit/" style={{color:"#fff","text-decoration":"underline"}} target="_blank">here</a>.
+					</div>
+				</div>
+
 				<div className="container">
 				    <div className="navbar-header">
 				    	<button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
