@@ -52,6 +52,9 @@ class Order extends Component {
 			showTermsModal: false,
 			notFound: false,
 			order: null,
+			originalRate: '...',
+			btcRate: '...',
+			usdRate: '...'
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
@@ -61,6 +64,24 @@ class Order extends Component {
 
 	componentDidMount() {
 		this.getOrderDetails();
+	}
+
+	fetchRate(pair) {
+        axios.all([
+            axios.get(`${config.API_BASE_URL}/price/${pair}/latest/`),
+            axios.get(`${config.API_BASE_URL}/price/${this.state.depositCoin}BTC/latest/`),
+            axios.get(`${config.API_BASE_URL}/price/BTCUSD/latest/`),
+        ])
+        .then(axios.spread((originalRate, btcRate, btcusdRate) => {
+            this.setState({
+                originalRate: originalRate.data[0].ticker.ask,
+                btcRate: btcRate.data[0].ticker.ask,
+                usdRate: btcRate.data[0].ticker.ask * btcusdRate.data[0].ticker.ask
+            });
+        }))
+        .catch(error => {
+            console.log(error);
+        });
 	}
 
 	tick() {
@@ -109,6 +130,10 @@ class Order extends Component {
 				clearInterval(this.interval);
 				this.interval = setInterval(this.tick, 1000);
 				this.tick();
+
+				if (this.state.originalRate === '...') {
+					this.fetchRate(`${this.state.depositCoin}${this.state.receiveCoin}`);
+				}
 
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
@@ -199,7 +224,16 @@ class Order extends Component {
 						    		</div>
 
 						    		<div className="media-body">
-							    		<h5><b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b></h5>
+							    		<h5>
+							    			<b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b>
+							    			<i className="fa fa-question-circle"
+							    				data-toggle="tooltip"
+							    				data-placement="top"
+							    				title=""
+							    				data-original-title={`${this.state.depositCoin}/${this.state.receiveCoin} ${this.state.originalRate}\n${this.state.depositCoin}/BTC ${this.state.btcRate}\n${this.state.depositCoin}/USD ${this.state.usdRate}`}
+							    				style={{marginLeft:8}}>
+							    			</i>
+							    		</h5>
 							    		<h6>{this.state.receiveAddress}</h6>
 						    		</div>
 						    	</div>
