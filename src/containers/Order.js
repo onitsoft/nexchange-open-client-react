@@ -67,21 +67,21 @@ class Order extends Component {
 	}
 
 	fetchRate(pair) {
-        axios.all([
-            axios.get(`${config.API_BASE_URL}/price/${pair}/latest/`),
-            axios.get(`${config.API_BASE_URL}/price/${this.state.depositCoin}BTC/latest/`),
-            axios.get(`${config.API_BASE_URL}/price/BTCUSD/latest/`),
-        ])
-        .then(axios.spread((originalRate, btcRate, btcusdRate) => {
-            this.setState({
-                originalRate: originalRate.data[0].ticker.ask,
-                btcRate: btcRate.data[0].ticker.ask,
-                usdRate: btcRate.data[0].ticker.ask * btcusdRate.data[0].ticker.ask
-            });
-        }))
-        .catch(error => {
-            console.log(error);
-        });
+        // axios.all([
+        //     axios.get(`${config.API_BASE_URL}/price/${pair}/latest/`),
+        //     axios.get(`${config.API_BASE_URL}/price/${this.state.depositCoin}BTC/latest/`),
+        //     axios.get(`${config.API_BASE_URL}/price/BTCUSD/latest/`),
+        // ])
+        // .then(axios.spread((originalRate, btcRate, btcusdRate) => {
+        //     this.setState({
+        //         originalRate: originalRate.data[0].ticker.ask,
+        //         btcRate: btcRate.data[0].ticker.ask,
+        //         usdRate: btcRate.data[0].ticker.ask * btcusdRate.data[0].ticker.ask
+        //     });
+        // }))
+        // .catch(error => {
+        //     console.log(error);
+        // });
 	}
 
 	tick() {
@@ -131,9 +131,9 @@ class Order extends Component {
 				this.interval = setInterval(this.tick, 1000);
 				this.tick();
 
-				if (this.state.originalRate === '...') {
-					this.fetchRate(`${this.state.depositCoin}${this.state.receiveCoin}`);
-				}
+				// if (this.state.originalRate === '...') {
+				// 	this.fetchRate(`${this.state.depositCoin}${this.state.receiveCoin}`);
+				// }
 
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
@@ -211,7 +211,20 @@ class Order extends Component {
 						    		</div>
 
 						    		<div className="media-body">
-							    		<h5><b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b></h5>
+							    		<h5>
+							    			<b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b>
+
+							    			{this.state.order ?
+								    			<i className="fa fa-question-circle"
+								    				data-toggle="tooltip"
+								    				data-placement="top"
+								    				title=""
+								    				data-original-title={`\n`}
+								    				style={{marginLeft:8}}
+								    				data-original-title={`1 ${this.state.depositCoin} = ${(1/this.state.order.price.rate).toFixed(8)} ${this.state.receiveCoin}\n1 ${this.state.depositCoin} = ${((1/this.state.order.price.rate)*this.state.order.price.rate_usd).toFixed(8)} USD\n1 ${this.state.depositCoin} = ${(((1/this.state.order.price.rate))*this.state.order.price.rate_btc).toFixed(8)} BTC`}>
+								    			</i> : null
+								    		}
+							    		</h5>
 							    		<h6>{this.state.depositAddress}</h6>
 						    		</div>
 						    	</div>
@@ -226,13 +239,16 @@ class Order extends Component {
 						    		<div className="media-body">
 							    		<h5>
 							    			<b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b>
-							    			<i className="fa fa-question-circle"
-							    				data-toggle="tooltip"
-							    				data-placement="top"
-							    				title=""
-							    				data-original-title={`${this.state.depositCoin}/${this.state.receiveCoin} ${this.state.originalRate}\n${this.state.depositCoin}/BTC ${this.state.btcRate}\n${this.state.depositCoin}/USD ${this.state.usdRate}`}
-							    				style={{marginLeft:8}}>
-							    			</i>
+
+							    			{this.state.order ? 
+								    			<i className="fa fa-question-circle"
+								    				data-toggle="tooltip"
+								    				data-placement="top"
+								    				title=""
+								    				data-original-title={`1 ${this.state.receiveCoin} = ${this.state.order.price.rate.toFixed(8)} ${this.state.depositCoin}\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_usd.toFixed(8)} USD\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_btc.toFixed(8)} BTC`}
+								    				style={{marginLeft:8}}>
+								    			</i> : null
+								    		}
 							    		</h5>
 							    		<h6>{this.state.receiveAddress}</h6>
 						    		</div>
