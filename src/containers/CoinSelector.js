@@ -44,15 +44,15 @@ class CoinSelector extends Component {
 
 	        	if (params && params.hasOwnProperty('test')) {
 					if (this.props.type.toUpperCase() == 'DEPOSIT') {
-						return coin.is_base_of_enabled_pair_for_test;
-					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
 						return coin.is_quote_of_enabled_pair_for_test;
+					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
+						return coin.is_base_of_enabled_pair_for_test;
 					}
 	        	} else {
 					if (this.props.type.toUpperCase() == 'DEPOSIT') {
-						return coin.is_base_of_enabled_pair;
-					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
 						return coin.is_quote_of_enabled_pair;
+					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
+						return coin.is_base_of_enabled_pair;
 					}
 	        	}
 			}),

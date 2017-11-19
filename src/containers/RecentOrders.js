@@ -26,12 +26,12 @@ class OrderStatus extends Component {
 		if (coinsInfo == null) coinsInfo = this.props.coinsInfo;
 
 		let params = Helpers.urlParams(),
-			depositCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair),
-			receiveCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair);
+			depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair),
+			receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair);
 
 		if (params && params.hasOwnProperty('test')) {
-			depositCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair_for_test);
-			receiveCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair_for_test);
+			depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair_for_test);
+			receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair_for_test);
 		}
 
 		depositCurrencies = depositCurrencies.map(coin => coin.code);
