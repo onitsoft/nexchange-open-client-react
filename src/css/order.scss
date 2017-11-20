@@ -18,7 +18,9 @@
 		.coin-icon { position: relative; top: 8px; font-size: 28px; }
 		.text-warning { color: $green; }		
 	}
-	.coin-box { padding-left: 10px; }
+	.coin-box { padding-left: 10px;
+		.tooltip-inner { text-align: left; }
+	}
 	#time-remaining { color: #2cb4a0; }
 
 	@media (min-width: $screen-sm-min) { padding: 25px 0;

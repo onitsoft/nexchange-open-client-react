@@ -64,6 +64,10 @@ class Order extends Component {
 
 	componentDidMount() {
 		this.getOrderDetails();
+
+		$(function() {
+		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+		});
 	}
 
 	fetchRate(pair) {
@@ -134,6 +138,10 @@ class Order extends Component {
 				// if (this.state.originalRate === '...') {
 				// 	this.fetchRate(`${this.state.depositCoin}${this.state.receiveCoin}`);
 				// }
+
+				$(function() {
+				    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+				});
 
 				this.timeout = setTimeout(() => {
 					this.getOrderDetails();
@@ -218,10 +226,8 @@ class Order extends Component {
 								    			<i className="fa fa-question-circle"
 								    				data-toggle="tooltip"
 								    				data-placement="top"
-								    				title=""
-								    				data-original-title={`\n`}
 								    				style={{marginLeft:8}}
-								    				data-original-title={`1 ${this.state.depositCoin} = ${(1/this.state.order.price.rate).toFixed(8)} ${this.state.receiveCoin}\n1 ${this.state.depositCoin} = ${((1/this.state.order.price.rate)*this.state.order.price.rate_usd).toFixed(8)} USD\n1 ${this.state.depositCoin} = ${(((1/this.state.order.price.rate))*this.state.order.price.rate_btc).toFixed(8)} BTC`}>
+								    				data-original-title={`Rates at order creation:\n1 ${this.state.depositCoin} = ${(1/this.state.order.price.rate).toFixed(8)} ${this.state.receiveCoin}\n1 ${this.state.depositCoin} = ${((1/this.state.order.price.rate)*this.state.order.price.rate_usd).toFixed(8)} USD\n1 ${this.state.depositCoin} = ${(((1/this.state.order.price.rate))*this.state.order.price.rate_btc).toFixed(8)} BTC`}>
 								    			</i> : null
 								    		}
 							    		</h5>
@@ -244,8 +250,7 @@ class Order extends Component {
 								    			<i className="fa fa-question-circle"
 								    				data-toggle="tooltip"
 								    				data-placement="top"
-								    				title=""
-								    				data-original-title={`1 ${this.state.receiveCoin} = ${this.state.order.price.rate.toFixed(8)} ${this.state.depositCoin}\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_usd.toFixed(8)} USD\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_btc.toFixed(8)} BTC`}
+								    				data-original-title={`Rates at order creation:\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate.toFixed(8)} ${this.state.depositCoin}\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_usd.toFixed(8)} USD\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_btc.toFixed(8)} BTC`}
 								    				style={{marginLeft:8}}>
 								    			</i> : null
 								    		}
