@@ -44,3 +44,5 @@ input[type='number']:hover::-webkit-inner-spin-button,
 input[type='number']:hover::-webkit-outer-spin-button {
 -webkit-appearance: none; 
  margin: 0; }
+
+.tooltip-inner { white-space:pre-wrap; }
