@@ -186,9 +186,13 @@ class Order extends Component {
 		let orderDetails = null;
 		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderExpired />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'INITIAL')
-			orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
+		else if (STATUS_CODES[this.state.orderStatus] == 'INITIAL') {
+			if (this.state.depositCoin === 'EUR' || this.state.depositCoin === 'BTC') {
+				orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
+			} else {
+				orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
+			}
+		} else if (STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
 			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
 		else if (STATUS_CODES[this.state.orderStatus] == 'PAID')
 			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
@@ -200,8 +204,6 @@ class Order extends Component {
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
 		else if (STATUS_CODES[this.state.orderStatus] == 'CANCELLED')
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
-
-		orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
 
 		return (
 			<div>
