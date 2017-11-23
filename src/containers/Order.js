@@ -7,6 +7,7 @@ import '../css/order.scss';
 import config from '../config';
 
 import OrderInitial from '../components/OrderInitial';
+import OrderInitialFiat from '../components/OrderInitialFiat';
 import OrderPayment from './OrderPayment';
 import OrderPaid from '../components/OrderPaid';
 import OrderPreReleased from '../components/OrderPreReleased';
@@ -120,11 +121,11 @@ class Order extends Component {
 			this.setState({
 				loading: false,
 				depositAmount: parseFloat(data.amount_quote),
-				depositCoin: data.deposit_address.currency_code,
+				depositCoin: data.pair.quote.code,
 				depositCoinName: data.pair.quote.name,
-				depositAddress: data.deposit_address.address,
+				depositAddress: (data.deposit_address ? data.deposit_address.address : null),
 				receiveAmount: parseFloat(data.amount_base),
-				receiveCoin: data.withdraw_address.currency_code,
+				receiveCoin: data.pair.base.code,
 				receiveAddress: data.withdraw_address.address,
 				createdOn: data.created_on,
 				orderStatus: data.status_name[0][0],
@@ -199,6 +200,8 @@ class Order extends Component {
 			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
 		else if (STATUS_CODES[this.state.orderStatus] == 'CANCELLED')
 			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
+
+		orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
 
 		return (
 			<div>
