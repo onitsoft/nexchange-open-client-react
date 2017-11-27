@@ -17,7 +17,13 @@ class CreditCardModal extends Component {
       name: '',
       expiry: '',
       cvc: '',
-      focused: 'false'
+      focused: 'false',
+      errors: {
+        number: '',
+        name: '',
+        expiry: '',
+        cvc: ''
+      }
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -34,17 +40,44 @@ class CreditCardModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    this.props.onClose();
+    this.props.successfulPayment();
   }
 
   close() {
-    this.setState({success: null, showForm: true});
     this.props.onClose();
   }
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
+
+    if (name === 'number') {
+      value = value.replace(/[^0-9 \,]/, '').replace(/\s/g, '');
+
+      if (value.length > 16)
+        value = value.slice(0, value.length-1);
+    }
+
+    if (name === 'expiry') {
+      if (value.length > this.state.expiry.length) {
+        value = value.replace(/[^0-9 \,]/, '');
+        if (value.length > 4)
+          value = value.slice(0, value.length-1);
+
+        if (value.length >= 2)
+          value = value.slice(0,2) + '/' + value.slice(2, value.length);
+      } else {
+        if (value.length == 3) {
+          value = value.replace(/[^0-9 \,]/, '');
+        }
+      }
+    }
+ 
+    if (name === 'cvc' && value.length > 3) {
+      value = value.slice(0, value.length-1);
+    }
 
     this.setState({
       [name]: value
@@ -79,28 +112,38 @@ class CreditCardModal extends Component {
                   {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
                   {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
 
-                  <div className="form-group is-empty">
-                    <input type="name" name="name" className="form-control" placeholder="Your name" onChange={this.handleInputChange} required />
+                  <div className="form-group label-floating">
+                    <input type="text" name="name" className="form-control" placeholder="Your name" onChange={this.handleInputChange} value={this.state.name} required />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
-                  <div className="form-group is-empty">
-                    <input type="number" name="number" className="form-control" placeholder="•••• •••• •••• ••••" onChange={this.handleInputChange} />
+                  <div className={`form-group label-floating ${this.state.errors.number.length ? 'has-error' : ''}`}>
+                    {this.state.errors.number.true ?
+                      <label className="control-label">{this.state.errors.number.message}</label>
+                      : null
+                    }
+                    <input type="text" name="number" className="form-control" placeholder="•••• •••• •••• ••••" onChange={this.handleInputChange} value={this.state.number} required />
                     <span className="material-input"></span>
                     <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
-                  <div className="form-group is-empty">
-                    <input type="text" name="expiry" className="form-control" placeholder="MM / YY" onChange={this.handleInputChange} required />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
-                  </div>
+                  <div className="row">
+                    <div className="col-xs-6">
+                      <div className="form-group label-floating">
+                        <input type="text" name="expiry" className="form-control" placeholder="MM/YY" onChange={this.handleInputChange} value={this.state.expiry} required />
+                        <span className="material-input"></span>
+                        <span className="material-icons form-control-feedback">clear</span>
+                      </div>
+                    </div>
 
-                  <div className="form-group is-empty">
-                    <input type="number" name="cvc" className="form-control" placeholder="CVC" onChange={this.handleInputChange} />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
+                    <div className="col-xs-6">
+                      <div className="form-group label-floating">
+                        <input type="number" name="cvc" className="form-control" placeholder="CVC" onChange={this.handleInputChange} value={this.state.cvc} required />
+                        <span className="material-input"></span>
+                        <span className="material-icons form-control-feedback">clear</span>
+                      </div>
+                    </div>
                   </div>
 
                   <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? "disabled" : null}>

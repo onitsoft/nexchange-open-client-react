@@ -3,6 +3,7 @@ import {Icon} from 'react-fa';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 import CreditCardModal from './CreditCardModal';
+import KYCModal from './KYCModal';
 
 
 class OrderInitial extends Component {
@@ -10,8 +11,11 @@ class OrderInitial extends Component {
 		super(props);
 
 		this.state = {
-			showCreditCardModal: false
+			showCreditCardModal: false,
+			showKYCModal: true
 		}
+
+		this.successfulPayment = this.successfulPayment.bind(this);
 	}
 
 	triggerCopyTooltip() {
@@ -27,6 +31,10 @@ class OrderInitial extends Component {
 		setTimeout(() => {
 			$('#copy-to-clipboard').tooltip('destroy');
 		}, 1000);
+	}
+
+	successfulPayment() {
+		this.setState({showCreditCardModal: false, showKYCModal: true});
 	}
 
 	render() {
@@ -47,7 +55,8 @@ class OrderInitial extends Component {
 					</button>
     			</div>
 
-			    <CreditCardModal show={this.state.showCreditCardModal} onClose={() => this.setState({showCreditCardModal: false})} />
+			    <CreditCardModal show={this.state.showCreditCardModal} successfulPayment={this.successfulPayment} onClose={() => this.setState({showCreditCardModal: false})} />
+			    <KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} />
 		    </div>
 	    );
 	}

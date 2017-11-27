@@ -1,9 +1,9 @@
 const initialState = {
-	deposit: 'XVG',
-	receive: 'DOGE',
+	deposit: 'USD',
+	receive: 'BTC',
 	prev: {
-		deposit: 'XVG',
-		receive: 'DOGE'
+		deposit: 'USD',
+		receive: 'BTC'
 	}
 }
 

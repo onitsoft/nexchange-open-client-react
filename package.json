@@ -43,6 +43,7 @@
     "react-credit-cards": "^0.6.0",
     "react-dev-utils": "^3.1.0",
     "react-dom": "^15.6.1",
+    "react-dropzone": "^4.2.3",
     "react-error-overlay": "^1.0.10",
     "react-fa": "^4.2.0",
     "react-loadable": "^4.0.5",
