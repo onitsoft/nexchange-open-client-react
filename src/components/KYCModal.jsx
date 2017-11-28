@@ -12,21 +12,14 @@ class KYCModal extends Component {
 
     this.state = {
       show: false,
+      filesReady: false,
+      governmentID: '',
+      residenceProof: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.close = this.close.bind(this);
-  }
-
-  onDropID(acceptedFiles, rejectedFiles) {
-    console.log(acceptedFiles);
-    console.log(rejectedFiles);
-  }
-
-  onDropResidence(acceptedFiles, rejectedFiles) {
-    console.log(acceptedFiles);
-    console.log(rejectedFiles);
   }
 
   componentDidUpdate() {
@@ -35,13 +28,13 @@ class KYCModal extends Component {
     }
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-
+  close() {
     this.props.onClose();
   }
 
-  close() {
+  handleSubmit(event) {
+    event.preventDefault();
+
     this.props.onClose();
   }
 
@@ -52,33 +45,14 @@ class KYCModal extends Component {
 
     this.setState({
       [name]: value
+    }, () => {
+      if (this.state.residenceProof.length && this.state.governmentID.length) {
+        this.setState({filesReady: true});
+      }
     });
   }
 
   render() {
-    const dropzoneStyle = {
-      width: '100%',
-      height: '200px',
-      borderWidth: '2px',
-      borderColor: 'rgb(102, 102, 102)',
-      borderStyle: 'dashed',
-      borderRadius: '5px',
-      textAlign: 'center',
-      paddingTop: '65px',
-      margin: '15px 0',
-    };
-
-    const dropzoneActiveStyle = {
-    };
-
-    const dropzoneAcceptStyle = {
-      background: 'rgba(29, 182, 173, 0.2)'
-    };
-
-    const dropzoneRejectStyle = {
-      background: '#ff572275'
-    };
-
     return (
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
@@ -90,33 +64,22 @@ class KYCModal extends Component {
           </div>
 
           <div className="modal-body">
-            <h2>Government issued ID</h2>
-            <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
+            <form onSubmit={this.handleSubmit}>
+              <h2>Government issued ID</h2>
+              <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
 
-            <Dropzone onDrop={this.onDropID.bind(this)}
-              accept="image/jpeg, image/png"
-              style={dropzoneStyle}
-              activeStyle={dropzoneActiveStyle}
-              acceptStyle={dropzoneAcceptStyle}
-              rejectStyle={dropzoneRejectStyle}
-            >
-              <p>Try dropping some files here, or click to select files to upload.</p>
-              <p>Only *.jpeg and *.png images will be accepted.</p>
-            </Dropzone>
+              <input type="file" name="governmentID" onChange={this.handleInputChange} accept="image/*" />
 
-            <h2>Proof of residence</h2>
-            <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
+              <h2>Proof of residence</h2>
+              <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
 
-            <Dropzone onDrop={this.onDropResidence.bind(this)}
-              accept="image/jpeg, image/png"
-              style={dropzoneStyle}
-              activeStyle={dropzoneActiveStyle}
-              acceptStyle={dropzoneAcceptStyle}
-              rejectStyle={dropzoneRejectStyle}
-            >
-              <p>Try dropping some files here, or click to select files to upload.</p>
-              <p>Only *.jpeg and *.png images will be accepted.</p>
-            </Dropzone>
+              <input type="file" name="residenceProof" onChange={this.handleInputChange} accept="image/*" />
+
+              <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
+                <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
+                Upload files
+              </button>
+            </form>
           </div>
         </div>
       </Modal>

@@ -11,8 +11,8 @@ class OrderInitial extends Component {
 		super(props);
 
 		this.state = {
-			showCreditCardModal: false,
-			showKYCModal: true
+			showCreditCardModal: true,
+			showKYCModal: false
 		}
 
 		this.successfulPayment = this.successfulPayment.bind(this);
