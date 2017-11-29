@@ -2,18 +2,10 @@ import React, { Component } from 'react';
 import {Icon} from 'react-fa';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-import CreditCardModal from './CreditCardModal';
-import KYCModal from './KYCModal';
-
 
 class OrderInitial extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			showCreditCardModal: true,
-			showKYCModal: false
-		}
 
 		this.successfulPayment = this.successfulPayment.bind(this);
 	}
@@ -55,7 +47,7 @@ class OrderInitial extends Component {
 					</a>
     			</div>
 
-			    <KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} />
+			    
 		    </div>
 	    );
 	}

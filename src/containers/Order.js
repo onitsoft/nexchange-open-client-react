@@ -206,50 +206,43 @@ class Order extends Component {
 		}
 
 		return (
-			<div>
-				<div id="order">
-					<div className="container">
-						<div className="row">
-						    <div id="order-header" className="col-xs-12">
-						    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
-						    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
-						    </div>
-						</div>
-
-						<div className="row">
-							<CoinProcessed
-								order={this.state.order}
-								type="Deposit"
-							/>
-
-							<CoinProcessed
-								order={this.state.order}
-								type="Receive"
-							/>
-
-						    <div className="col-xs-12">
-						    	<div className="box">
-							    	<div className="row">
-						    		{this.state.loading ?
-						    			<div className="col-xs-12 text-center"><h2>Loading</h2></div> :
-						    			orderDetails
-						    		}
-						    		</div>
-
-						    		<div className="row">
-						    			<div className="col-xs-12">
-							    			<OrderStatus status={this.state.orderStatus} />
-						    			</div>
-						    		</div>
-						    	</div>
-						    </div>
-
-						    {this.state.order ? <ReferralBox order={this.state.order} /> : null }
-						</div>
+			<div id="order">
+				<div className="container">
+					<div className="row">
+					    <div id="order-header" className="col-xs-12">
+					    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+					    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
+					    </div>
 					</div>
 
-				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
+					<div className="row">
+						<CoinProcessed
+							order={this.state.order}
+							type="Deposit"
+						/>
+
+						<CoinProcessed
+							order={this.state.order}
+							type="Receive"
+						/>
+
+					    <div className="col-xs-12">
+					    	<div className="box">
+					    		{this.state.loading ?
+					    			<div className="row">
+					    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
+					    			</div> : orderDetails
+					    		}
+					    		
+						    	<OrderStatus status={this.state.orderStatus} />
+					    	</div>
+					    </div>
+
+					    {this.state.order ? <ReferralBox order={this.state.order} /> : null }
+					</div>
 				</div>
+
+			    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 			</div>
 		);
 	}
