@@ -7,18 +7,25 @@ import '../css/order.scss';
 import config from '../config';
 
 import OrderInitial from '../components/OrderInitial';
-import OrderInitialFiat from '../components/OrderInitialFiat';
 import OrderPayment from './OrderPayment';
 import OrderPaid from '../components/OrderPaid';
 import OrderPreReleased from '../components/OrderPreReleased';
 import OrderReleased from '../components/OrderReleased';
+
+import OrderInitialFiat from '../components/OrderInitialFiat';
+import OrderPaymentFiat from './OrderPaymentFiat';
+import OrderPaidFiat from '../components/OrderPaidFiat';
+import OrderPreReleasedFiat from '../components/OrderPreReleasedFiat';
+import OrderReleasedFiat from '../components/OrderReleasedFiat';
+
 import OrderSuccess from '../components/OrderSuccess';
 import OrderFailure from '../components/OrderFailure';
 import OrderExpired from '../components/OrderExpired';
 import OrderStatus from '../components/OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from '../components/NotFound';
-import ReferralTerms from '../components/ReferralTerms';
+
+import ReferralBox from '../containers/ReferralBox';
 
 const STATUS_CODES = {
 	0: 'CANCELLED',
@@ -71,24 +78,6 @@ class Order extends Component {
 		});
 	}
 
-	fetchRate(pair) {
-        // axios.all([
-        //     axios.get(`${config.API_BASE_URL}/price/${pair}/latest/`),
-        //     axios.get(`${config.API_BASE_URL}/price/${this.state.depositCoin}BTC/latest/`),
-        //     axios.get(`${config.API_BASE_URL}/price/BTCUSD/latest/`),
-        // ])
-        // .then(axios.spread((originalRate, btcRate, btcusdRate) => {
-        //     this.setState({
-        //         originalRate: originalRate.data[0].ticker.ask,
-        //         btcRate: btcRate.data[0].ticker.ask,
-        //         usdRate: btcRate.data[0].ticker.ask * btcusdRate.data[0].ticker.ask
-        //     });
-        // }))
-        // .catch(error => {
-        //     console.log(error);
-        // });
-	}
-
 	tick() {
 		if (this.state.createdOn == '...') return;
 
@@ -136,10 +125,6 @@ class Order extends Component {
 				this.interval = setInterval(this.tick, 1000);
 				this.tick();
 
-				// if (this.state.originalRate === '...') {
-				// 	this.fetchRate(`${this.state.depositCoin}${this.state.receiveCoin}`);
-				// }
-
 				$(function() {
 				    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 				});
@@ -186,24 +171,38 @@ class Order extends Component {
 		let orderDetails = null;
 		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderExpired />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'INITIAL') {
-			if (this.state.depositCoin === 'EUR' || this.state.depositCoin === 'USD') {
-				orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-			} else {
+
+		if (this.state.depositCoin === 'EUR' || this.state.depositCoin === 'USD') {
+			if (STATUS_CODES[this.state.orderStatus] == 'INITIAL')
+				orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
+				orderDetails = <OrderPaymentFiat orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PAID')
+				orderDetails = <OrderPaidFiat orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
+				orderDetails = <OrderPreReleasedFiat orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'RELEASE')
+				orderDetails = <OrderReleasedFiat orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
+				orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'CANCELLED')
+				orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
+		} else {
+			if (STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 				orderDetails = <OrderInitial expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} />;
-			}
-		} else if (STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
-			orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'PAID')
-			orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
-			orderDetails = <OrderPreReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'RELEASE')
-			orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
-			orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
-		else if (STATUS_CODES[this.state.orderStatus] == 'CANCELLED')
-			orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PAID_UNCONFIRMED')
+				orderDetails = <OrderPayment orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PAID')
+				orderDetails = <OrderPaid orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'PRE_RELEASE')
+				orderDetails = <OrderPreReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'RELEASE')
+				orderDetails = <OrderReleased orderRef={this.props.match.params.orderRef} order={this.state.order} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'COMPLETED')
+				orderDetails = <OrderSuccess orderRef={this.props.match.params.orderRef} />;
+			else if (STATUS_CODES[this.state.orderStatus] == 'CANCELLED')
+				orderDetails = <OrderFailure orderRef={this.props.match.params.orderRef} />;
+		}
 
 		return (
 			<div>
@@ -282,31 +281,10 @@ class Order extends Component {
 						    	</div>
 						    </div>
 
-						    {this.state.order ? 
-						    <div id="share-referral" className="col-xs-12">
-						    	<div className="box">
-						    		<div className="row">
-						    			<div className="col-xs-12">
-											<h2>Share this unique referral link with your friends to earn some coins!</h2>
-											<h4>Here is your unique referral link: <a href={`${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} className="text-green" target="_blank" onClick={this.trackRefShare}>{config.DOMAIN}/?ref={this.state.order.referral_code[0].code}</a></h4>
-											<h4><a href="javascript:void(0)" onClick={() => this.setState({showTermsModal: true})}>Terms & Conditions</a></h4>
-
-											<h4>Share it on social!</h4>
-											
-											<div className="share">
-											    <a href={`https://facebook.com/sharer.php?u=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank" onClick={this.trackRefShare}><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
-											    <a href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}&text=I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`} target="_blank" onClick={this.trackRefShare}><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
-											   	<a href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.state.order.referral_code[0].code}`} target="_blank" onClick={this.trackRefShare}><i className=	"fa fa-linkedin-square" aria-hidden="true"></i></a>
-											</div>
-						    			</div>
-						    		</div>
-						    	</div>
-						    </div> 
-						    : null }
+						    {this.state.order ? <ReferralBox order={this.state.order} /> : null }
 						</div>
 					</div>
 
-					<ReferralTerms show={this.state.showTermsModal} onClose={() => this.setState({showTermsModal: false})} />
 				    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 				</div>
 			</div>

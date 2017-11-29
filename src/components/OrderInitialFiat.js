@@ -49,10 +49,10 @@ class OrderInitial extends Component {
 
     				<h4>Pay <b>{this.props.depositAmount} {this.props.depositCoin}</b></h4>
 
-					<button type="button" className="btn btn-default btn-themed">
+					<a href={this.props.order.payment_url} target="_blank" className="btn btn-default btn-themed">
 						<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
 						Pay now
-					</button>
+					</a>
     			</div>
 
 			    <KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} />

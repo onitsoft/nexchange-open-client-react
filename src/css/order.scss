@@ -8,6 +8,9 @@
 	a { color: $green; 
 		&:visited, &:focus { text-decoration: none; }
 		&:hover { text-decoration: underline; }
+		&.btn { color: #fff;
+			&:hover { text-decoration: none; }
+		}
 	}
 	#order-ref { margin-bottom: 15px; }
 	.box {
