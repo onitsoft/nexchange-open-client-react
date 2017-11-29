@@ -6,39 +6,17 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 class OrderInitial extends Component {
 	constructor(props) {
 		super(props);
-
-		this.successfulPayment = this.successfulPayment.bind(this);
-	}
-
-	triggerCopyTooltip() {
-		$('#copy-to-clipboard').tooltip({
-			trigger: 'click',
-			placement: 'top'
-		});
-
-		$('#copy-to-clipboard').tooltip('hide')
-			.attr('data-original-title', 'Wallet address copied!')
-			.tooltip('show');
-
-		setTimeout(() => {
-			$('#copy-to-clipboard').tooltip('destroy');
-		}, 1000);
-	}
-
-	successfulPayment() {
-		this.setState({showCreditCardModal: false, showKYCModal: true});
 	}
 
 	render() {
 	    return (
 	    	<div id="order-payment">
-    			<div className="col-xs-12 col-sm-4 col-md-3">
-    				<img src="" />
+    			<div className="col-xs-12 col-ms-6 col-sm-4 col-md-3">
+    				<img src="/img/cards.jpg" />
     			</div>
 
-    			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
+    			<div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-8 col-md-9">
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
-
     				<h4>Pay <b>{this.props.depositAmount} {this.props.depositCoin}</b></h4>
 
 					<a href={this.props.order.payment_url} target="_blank" className="btn btn-default btn-themed">
