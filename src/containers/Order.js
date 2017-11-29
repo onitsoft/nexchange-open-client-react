@@ -25,6 +25,7 @@ import OrderStatus from '../components/OrderStatus';
 import Bookmark from './Bookmark';
 import NotFound from '../components/NotFound';
 
+import CoinProcessed from '../components/CoinProcessed';
 import ReferralBox from '../containers/ReferralBox';
 
 const STATUS_CODES = {
@@ -216,53 +217,15 @@ class Order extends Component {
 						</div>
 
 						<div className="row">
-						    <div className="col-xs-12 col-sm-6">
-						    	<div className="coin-box box media">
-						    		<div className="media-left">
-						    			<i className={`coin-icon cc-${this.state.depositCoin} ${this.state.depositCoin}`}></i>
-						    		</div>
+							<CoinProcessed
+								order={this.state.order}
+								type="Deposit"
+							/>
 
-						    		<div className="media-body">
-							    		<h5>
-							    			<b>Deposit {this.state.depositAmount} {this.state.depositCoin}</b>
-
-							    			{this.state.order ?
-								    			<i className="fa fa-question-circle"
-								    				data-toggle="tooltip"
-								    				data-placement="top"
-								    				style={{marginLeft:8}}
-								    				data-original-title={`Rates at order creation:\n1 ${this.state.depositCoin} = ${(1/this.state.order.price.rate).toFixed(8)} ${this.state.receiveCoin}\n1 ${this.state.depositCoin} = ${((1/this.state.order.price.rate)*this.state.order.price.rate_usd).toFixed(8)} USD\n1 ${this.state.depositCoin} = ${(((1/this.state.order.price.rate))*this.state.order.price.rate_btc).toFixed(8)} BTC`}>
-								    			</i> : null
-								    		}
-							    		</h5>
-							    		<h6>{this.state.depositAddress} &nbsp;</h6>
-						    		</div>
-						    	</div>
-						    </div>
-
-						    <div className="col-xs-12 col-sm-6">
-						    	<div className="coin-box box media">
-						    		<div className="media-left">
-						    			<i className={`coin-icon cc-${this.state.receiveCoin} ${this.state.receiveCoin}`}></i>
-						    		</div>
-
-						    		<div className="media-body">
-							    		<h5>
-							    			<b>Receive {this.state.receiveAmount} {this.state.receiveCoin}</b>
-
-							    			{this.state.order ? 
-								    			<i className="fa fa-question-circle"
-								    				data-toggle="tooltip"
-								    				data-placement="top"
-								    				data-original-title={`Rates at order creation:\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate.toFixed(8)} ${this.state.depositCoin}\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_usd.toFixed(8)} USD\n1 ${this.state.receiveCoin} = ${this.state.order.price.rate_btc.toFixed(8)} BTC`}
-								    				style={{marginLeft:8}}>
-								    			</i> : null
-								    		}
-							    		</h5>
-							    		<h6>{this.state.receiveAddress}</h6>
-						    		</div>
-						    	</div>
-						    </div>
+							<CoinProcessed
+								order={this.state.order}
+								type="Receive"
+							/>
 
 						    <div className="col-xs-12">
 						    	<div className="box">
