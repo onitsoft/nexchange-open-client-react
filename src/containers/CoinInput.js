@@ -36,21 +36,12 @@ class CoinInput extends Component {
 		let selectedCoin = this.props.selectedCoin['receive'],
 			minAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedCoin}).minimal_amount);
 
-		//	maxAmount = _.find(this.props.coinsInfo, {code: selectedCoin}).max_amount;
-
 		if (value < minAmount || isNaN(value)) {
 			this.props.errorAlert({
 				message: `Receive amount for ${selectedCoin} cannot be less than ${minAmount}`,
 				show: true,
 				type: 'INVALID_AMOUNT'
 			});
-		
-		// } else if (value > maxAmount) {
-		// 	this.props.errorAlert({
-		// 		message: `Receive amount cannot be more than ${maxAmount}`,
-		// 		show: true,
-		// 		type: 'INVALID_AMOUNT'
-		// 	});
 
 		} else {
 			this.props.errorAlert({show: false, type: 'INVALID_AMOUNT'});

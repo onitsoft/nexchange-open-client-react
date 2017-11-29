@@ -236,7 +236,7 @@ class Order extends Component {
 								    			</i> : null
 								    		}
 							    		</h5>
-							    		<h6>{this.state.depositAddress}</h6>
+							    		<h6>{this.state.depositAddress} &nbsp;</h6>
 						    		</div>
 						    	</div>
 						    </div>

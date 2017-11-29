@@ -49,13 +49,12 @@ class OrderInitial extends Component {
 
     				<h4>Pay <b>{this.props.depositAmount} {this.props.depositCoin}</b></h4>
 
-					<button type="button" className="btn btn-default btn-themed" onClick={() => this.setState({showCreditCardModal: true})}>
+					<button type="button" className="btn btn-default btn-themed">
 						<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
 						Pay now
 					</button>
     			</div>
 
-			    <CreditCardModal show={this.state.showCreditCardModal} successfulPayment={this.successfulPayment} onClose={() => this.setState({showCreditCardModal: false})} />
 			    <KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} />
 		    </div>
 	    );
