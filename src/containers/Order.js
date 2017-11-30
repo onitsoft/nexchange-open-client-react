@@ -173,6 +173,8 @@ class Order extends Component {
 		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 			orderDetails = <OrderExpired />;
 
+
+		
 		if (this.state.depositCoin === 'EUR' || this.state.depositCoin === 'USD') {
 			if (STATUS_CODES[this.state.orderStatus] == 'INITIAL')
 				orderDetails = <OrderInitialFiat expired={this.state.expired} depositAmount={this.state.depositAmount} depositCoin={this.state.depositCoin} depositCoinName={this.state.depositCoinName} depositAddress={this.state.depositAddress}  timeRemaining={this.state.timeRemaining} order={this.state.order} />;
