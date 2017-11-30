@@ -43,7 +43,6 @@ class OrderInitial extends Component {
     				<h4>Send <b>{this.props.order.amount_quote} {this.props.order.pair.quote.code}</b> to the address<br/>
     					<b id="deposit-address">{this.props.order.deposit_address.address}</b>
     				</h4>
-    				
 
 			        <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
 						<button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">Copy the address</button>

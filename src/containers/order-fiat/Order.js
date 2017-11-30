@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import STATUS_CODES from '../../statusCodes';
+import React from 'react';
+
+import '../../css/order-fiat.scss';
 
 import OrderInitial from './OrderInitial';
 import OrderPayment from './OrderPayment';
@@ -10,43 +11,40 @@ import OrderReleased from './OrderReleased';
 import OrderSuccess from '../order/OrderSuccess';
 import OrderFailure from '../order/OrderFailure';
 
+import STATUS_CODES from '../../statusCodes';
 
-class Order extends Component {
-	constructor(props) {
-		super(props);
 
-		this.state = {
-
-		};
+const Order = (props) => {
+	let order;
+	switch (STATUS_CODES[props.order.status_name[0][0]]) {
+		case 'INITIAL':
+			order = <OrderInitial {...props} />;
+			break;
+		case 'PAID_UNCONFIRMED':
+			order = <OrderPayment {...props} />;
+			break;
+		case 'PAID':
+			order = <OrderPaid {...props} />;
+			break;
+		case 'PRE_RELEASE':
+			order = <OrderPreReleased {...props} />;
+			break;
+		case 'RELEASE':
+			order = <OrderReleased {...props} />;
+			break;
+		case 'COMPLETED':
+			order = <OrderSuccess {...props} />;
+			break;
+		case 'CANCELLED':
+			order = <OrderFailure {...props} />;
+			break;
+		default:
+			order = <h2>Unknown order state, something went wrong</h2>;
 	}
 
-	render() {
-		switch (STATUS_CODES[this.props.order.status_name[0][0]]) {
-			case 'INITIAL':
-				return <OrderInitial {...this.props} />;
-				break;
-			case 'PAID_UNCONFIRMED':
-				return <OrderPayment {...this.props} />;
-				break;
-			case 'PAID':
-				return <OrderPaid {...this.props} />;
-				break;
-			case 'PRE_RELEASE':
-				return <OrderPreReleased {...this.props} />;
-				break;
-			case 'RELEASE':
-				return <OrderReleased {...this.props} />;
-				break;
-			case 'COMPLETED':
-				return <OrderSuccess {...this.props} />;
-				break;
-			case 'CANCELLED':
-				return <OrderFailure {...this.props} />;
-				break;
-			default:
-				return <h2>Unknown order state, something went wrong</h2>;
-		}
-	}
+	return <div id="order-fiat">
+		{order}
+	</div>;
 };
 
 export default Order;

@@ -23,7 +23,6 @@ class Order extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			createdOn: '...',
 			timeRemaining: '...',
 			expired: false,
 			loading: true,
@@ -42,9 +41,9 @@ class Order extends Component {
 	}
 
 	tick() {
-		if (this.state.createdOn == '...') return;
+		if (!this.state.order) return;
 
-		let now = moment().subtract(this.state.order.paymentWindow, 'minutes');
+		let now = moment().subtract(this.state.order.payment_window, 'minutes');
 		let createdOn = moment(this.state.order.created_on);
 		let diff = createdOn.diff(now);
 
@@ -77,6 +76,7 @@ class Order extends Component {
 			}, () => {
 				clearInterval(this.interval);
 				this.interval = setInterval(this.tick, 1000);
+
 				this.tick();
 
 				$(function() {
@@ -123,18 +123,21 @@ class Order extends Component {
 			return <NotFound />;
 
 		let orderDetails = null;
-		if (this.state.expired && STATUS_CODES[this.state.orderStatus] == 'INITIAL')
-			orderDetails = <OrderExpired />;
-
 		if (this.state.order) {
-			if (this.state.order.pair.quote.code === 'EUR' || this.state.order.pair.quote.code === 'USD') {
-				orderDetails = <OrderFiat
-					order={this.state.order}
-					{...this.props} />
+			if (this.state.expired && STATUS_CODES[this.state.order.status_name[0][0]] == 'INITIAL') {
+				orderDetails = <OrderExpired />;
 			} else {
-				orderDetails = <OrderCrypto
-					order={this.state.order}
-					{...this.props} />
+				if (this.state.order.pair.quote.code === 'EUR' || this.state.order.pair.quote.code === 'USD') {
+					orderDetails = <OrderFiat
+						order={this.state.order}
+						timeRemaining={this.state.timeRemaining}
+						{...this.props} />
+				} else {
+					orderDetails = <OrderCrypto
+						order={this.state.order}
+						timeRemaining={this.state.timeRemaining}
+						{...this.props} />
+				}
 			}
 		}
 
@@ -160,7 +163,7 @@ class Order extends Component {
 					    			</div> : orderDetails
 					    		}
 					    		
-						    	<OrderStatus status={this.state.orderStatus} />
+						    	{this.state.order ? <OrderStatus status={this.state.order.status_name[0][0]} /> : null}
 					    	</div>
 					    </div>
 

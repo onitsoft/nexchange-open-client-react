@@ -35,6 +35,9 @@ class KYCModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    console.log(this.state.residenceProof);
+    console.log(this.state.governmentID);
+
     this.props.onClose();
   }
 

@@ -1,0 +1,9 @@
+#share-referral { text-align: center;
+	.box { padding: 20px; }
+	.share { margin-top: 15px; }
+	.fa { font-size: 45px; margin: 0 15px 0 0; color: #d6d6d6; }
+	h2 { margin-top: 0; font-size: 22px;
+		@media (min-width: $screen-sm-min) { font-size: 26px; }
+		@media (min-width: $screen-md-min) { font-size: 34px; }
+	}
+}

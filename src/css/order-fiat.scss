@@ -1,0 +1,9 @@
+@import "bootstrap/variables";
+
+#order-fiat {
+	#order-payment { text-align: center;
+		img { max-width: 200px; }
+
+		@media (min-width: $screen-ms-min) { text-align: left; }
+	}
+}

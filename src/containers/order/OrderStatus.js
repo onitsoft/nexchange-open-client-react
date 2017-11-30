@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import STATUS_CODES from '../../statusCodes';
-import CoinSelector from '../CoinSelector';
 
 
 class OrderStatus extends Component {

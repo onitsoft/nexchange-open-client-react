@@ -6,18 +6,16 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 class OrderInitial extends Component {
 	constructor(props) {
 		super(props);
-
-		console.log(this.props);
 	}
 
 	render() {
 	    return (
 	    	<div id="order-payment">
-    			<div className="col-xs-12 col-ms-6 col-sm-4 col-md-3">
+    			<div className="col-xs-12 col-ms-6 col-sm-5 col-md-4 text-center">
     				<img src="/img/cards.jpg" />
     			</div>
 
-    			<div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-8 col-md-9">
+    			<div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-7 col-md-8">
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
     				<h4>Pay <b>{parseFloat(this.props.order.amount_quote)} {this.props.order.pair.quote.code}</b></h4>
 
