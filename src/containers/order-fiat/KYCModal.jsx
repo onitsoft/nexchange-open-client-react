@@ -35,8 +35,24 @@ class KYCModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log(this.state.residenceProof);
-    console.log(this.state.governmentID);
+    let formData = new FormData(),
+      residenceProof = document.querySelector('#residenceProof'),
+      governmentID = document.querySelector('#governmentID');
+
+    formData.append('identity_document', governmentID.files[0]);
+    formData.append('utility_document', residenceProof.files[0]);
+    formData.append('order_reference', this.props.match.params.orderRef)
+    axios.post(`${config.API_BASE_URL}/kyc`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
 
     this.props.onClose();
   }
@@ -71,12 +87,12 @@ class KYCModal extends Component {
               <h2>Government issued ID</h2>
               <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
 
-              <input type="file" name="governmentID" onChange={this.handleInputChange} accept="image/*" />
+              <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
 
               <h2>Proof of residence</h2>
               <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
 
-              <input type="file" name="residenceProof" onChange={this.handleInputChange} accept="image/*" />
+              <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>

@@ -24,6 +24,10 @@
 		.tooltip-inner { text-align: left; }
 	}
 	#time-remaining { color: #2cb4a0; }
+	.order-status-section { 
+		h2 { margin-top: 0; }
+		.explanation { font-size: 16px; margin-top: 15px; }
+	}
 
 	@media (min-width: $screen-sm-min) { padding: 25px 0;
 		h5 { font-size: 15px; }
