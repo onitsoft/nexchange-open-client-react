@@ -28,7 +28,7 @@ const AsyncNotFound = Loadable({
 });
 
 import Home from './containers/Home';
-import Order from './containers/Order';
+import Order from './containers/order/Order';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)

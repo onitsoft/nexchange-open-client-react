@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import Dropzone from 'react-dropzone'
 
-import config from '../config';
+import config from '../../config';
 
 
 class KYCModal extends Component {

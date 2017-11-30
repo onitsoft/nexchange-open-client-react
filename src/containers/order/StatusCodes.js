@@ -1,0 +1,12 @@
+
+const STATUS_CODES = {
+	0: 'CANCELLED',
+	11: 'INITIAL',
+	12: 'PAID_UNCONFIRMED',
+	13: 'PAID',
+	14: 'PRE_RELEASE',
+	15: 'RELEASE',
+	16: 'COMPLETED'
+};
+
+export default STATUS_CODES;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import KYCModal from '../components/KYCModal';
+import KYCModal from './KYCModal';
 
 
 class OrderPayment extends Component {

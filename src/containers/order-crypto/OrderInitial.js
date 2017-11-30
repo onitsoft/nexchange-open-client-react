@@ -40,11 +40,12 @@ class OrderInitial extends Component {
     			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
 
-    				<h4>Send <b>{this.props.depositAmount} {this.props.depositCoin}</b> to the address<br/>
-    					<b id="deposit-address">{this.props.depositAddress}</b>
+    				<h4>Send <b>{this.props.order.amount_quote} {this.props.order.pair.quote.code}</b> to the address<br/>
+    					<b id="deposit-address">{this.props.order.deposit_address.address}</b>
     				</h4>
     				
-			        <CopyToClipboard text={this.props.depositAddress} onCopy={() => this.triggerCopyTooltip()}>
+
+			        <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
 						<button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">Copy the address</button>
     				</CopyToClipboard>
     			</div>
