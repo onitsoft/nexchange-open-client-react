@@ -25,9 +25,9 @@ class OrderInitial extends Component {
 	
 	getDepositAddressQr () {
 		return "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=" 
-			+ this.props.depositCoinName + ":" 
-			+ this.props.depositAddress + "?amount=" 
-			+ this.props.depositAmount;
+			+ this.props.order.pair.quote.code + ":" 
+			+ this.props.order.deposit_address.address + "?amount=" 
+			+ this.props.order.amount_quote;
 	}
 
 	render() {

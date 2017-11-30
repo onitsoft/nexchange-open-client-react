@@ -23,8 +23,6 @@ class Order extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			copied: false,
-			depositCoinName: '...',
 			createdOn: '...',
 			timeRemaining: '...',
 			expired: false,
