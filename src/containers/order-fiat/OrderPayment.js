@@ -21,9 +21,17 @@ class OrderPayment extends Component {
 		axios.get(`${config.API_BASE_URL}/kyc/${this.props.match.params.orderRef}`)
 		.then(response => {
 			this.setState({kyc: response.data});
+
+			setTimeout(() => {
+				this.checkKYC();
+			}, config.KYC_DETAILS_FETCH_INTERVAL);
 		})
 		.catch(error => {
 			console.log(error);
+
+			setTimeout(() => {
+				this.checkKYC();
+			}, config.KYC_DETAILS_FETCH_INTERVAL);
 		});
 	}
 
@@ -40,7 +48,7 @@ class OrderPayment extends Component {
 			if (!this.state.kyc.id_document_status && !this.state.kyc.residence_document_status) {
 				inner = (
 					<div>
-						<h2>Payment received, awaiting for verification</h2>
+						<h2>Payment received, awaiting verification</h2>
 
 						<p className="explanation">In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</p>
 					</div>
