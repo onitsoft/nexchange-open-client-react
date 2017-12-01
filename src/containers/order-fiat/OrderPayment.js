@@ -22,14 +22,14 @@ class OrderPayment extends Component {
 		.then(response => {
 			this.setState({kyc: response.data});
 
-			setTimeout(() => {
+			this.timeout = setTimeout(() => {
 				this.checkKYC();
 			}, config.KYC_DETAILS_FETCH_INTERVAL);
 		})
 		.catch(error => {
 			console.log(error);
 
-			setTimeout(() => {
+			this.timeout = setTimeout(() => {
 				this.checkKYC();
 			}, config.KYC_DETAILS_FETCH_INTERVAL);
 		});

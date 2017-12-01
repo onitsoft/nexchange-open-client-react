@@ -14,7 +14,10 @@ class KYCModal extends Component {
       show: false,
       filesReady: false,
       governmentID: '',
-      residenceProof: ''
+      residenceProof: '',
+      title: 'Get verified',
+      button: 'Upload file(s)',
+      titleClass: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,6 +38,8 @@ class KYCModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    this.setState({title: 'Uploading...', titleClass: 'warning', button: 'Uploading...', filesReady: false});
+
     let formData = new FormData();
 
     let governmentID = document.querySelector('#governmentID');
@@ -53,12 +58,18 @@ class KYCModal extends Component {
     })
     .then(response => {
       console.log(response);
+
+      this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});
+
+      setTimeout(() => {
+        this.props.onClose();
+      }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
     })
     .catch(error => {
       console.log(error);
-    });
 
-    this.props.onClose();
+      this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', button: 'Upload file(s)'});
+    });
   }
 
   handleInputChange(event) {
@@ -74,6 +85,8 @@ class KYCModal extends Component {
 
       if (needUploadResidence && needUploadID && this.state.residenceProof.length && this.state.governmentID.length)
         this.setState({filesReady: true});
+      else if (needUploadResidence && needUploadID && (!this.state.residenceProof.length || !this.state.governmentID.legth))
+        this.setState({filesReady: false});
       else if (needUploadResidence && this.state.residenceProof.length)
         this.setState({filesReady: true});
       else if (needUploadID && this.state.governmentID.length)
@@ -91,7 +104,7 @@ class KYCModal extends Component {
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className="modal-title">Get verified</h4>
+            <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
           </div>
 
           <div className="modal-body">
@@ -112,7 +125,7 @@ class KYCModal extends Component {
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
-                Upload file(s)
+                {this.state.button}
               </button>
             </form>
           </div>
