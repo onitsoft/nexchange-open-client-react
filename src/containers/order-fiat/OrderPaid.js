@@ -15,7 +15,7 @@ class OrderPaid extends Component {
 		return (
 			<div id="order-paid" className="col-xs-12 text-center">
 				<h2 style={{margin: "0"}}>Payment & verification received</h2>
-				<h5></h5>
+				<h5>We are now preparing to release your coins</h5>
 			</div> 
 		)
 	}

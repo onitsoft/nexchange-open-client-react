@@ -6,9 +6,10 @@ import '../../css/order.scss';
 
 import config from '../../config';
 
-import OrderStatus from './OrderStatus';
 import OrderCrypto from '../order-crypto/Order';
 import OrderFiat from '../order-fiat/Order';
+import OrderStatusCrypto from '../order-crypto/OrderStatus';
+import OrderStatusFiat from '../order-fiat/OrderStatus';
 import OrderExpired from './OrderExpired';
 
 import Bookmark from '../Bookmark';
@@ -122,18 +123,20 @@ class Order extends Component {
 		if (this.state.notFound)
 			return <NotFound />;
 
-		let orderDetails = null;
+		let orderInfo = null, orderStatus;
 		if (this.state.order) {
 			if (this.state.expired && STATUS_CODES[this.state.order.status_name[0][0]] == 'INITIAL') {
-				orderDetails = <OrderExpired />;
+				orderInfo = <OrderExpired />;
 			} else {
 				if (this.state.order.pair.quote.code === 'EUR' || this.state.order.pair.quote.code === 'USD') {
-					orderDetails = <OrderFiat
+					orderStatus = <OrderStatusFiat status={this.state.order.status_name[0][0]} />;
+					orderInfo = <OrderFiat
 						order={this.state.order}
 						timeRemaining={this.state.timeRemaining}
 						{...this.props} />
 				} else {
-					orderDetails = <OrderCrypto
+					orderStatus = <OrderStatusCrypto status={this.state.order.status_name[0][0]} />;
+					orderInfo = <OrderCrypto
 						order={this.state.order}
 						timeRemaining={this.state.timeRemaining}
 						{...this.props} />
@@ -160,10 +163,10 @@ class Order extends Component {
 					    		{this.state.loading ?
 					    			<div className="row">
 					    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
-					    			</div> : orderDetails
+					    			</div> : orderInfo
 					    		}
 					    		
-						    	{this.state.order ? <OrderStatus status={this.state.order.status_name[0][0]} /> : null}
+						    	{orderStatus}
 					    	</div>
 					    </div>
 

@@ -1,6 +1,6 @@
 @import "bootstrap/variables";
 
-#order-fiat {
+#order-fiat { display: inline-block; width: 100%;
 	#order-payment { text-align: center;
 		img { max-width: 200px; }
 
