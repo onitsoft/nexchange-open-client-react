@@ -35,12 +35,16 @@ class KYCModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    let formData = new FormData(),
-      residenceProof = document.querySelector('#residenceProof'),
-      governmentID = document.querySelector('#governmentID');
+    let formData = new FormData();
 
-    formData.append('identity_document', governmentID.files[0]);
-    formData.append('utility_document', residenceProof.files[0]);
+    let governmentID = document.querySelector('#governmentID');
+    if (governmentID)
+      formData.append('identity_document', governmentID.files[0]);
+
+    let residenceProof = document.querySelector('#residenceProof');
+    if (residenceProof)
+      formData.append('utility_document', residenceProof.files[0]);
+
     formData.append('order_reference', this.props.match.params.orderRef)
     axios.post(`${config.API_BASE_URL}/kyc/`, formData, {
         headers: {
@@ -60,14 +64,22 @@ class KYCModal extends Component {
   handleInputChange(event) {
     const target = event.target;
     const name = target.name;
-    let value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({
       [name]: value
     }, () => {
-      if (this.state.residenceProof.length && this.state.governmentID.length) {
+      let needUploadResidence = (document.querySelector('#residenceProof') ? true : false),
+        needUploadID = (document.querySelector('#governmentID') ? true : false);
+
+      if (needUploadResidence && needUploadID && this.state.residenceProof.length && this.state.governmentID.length)
         this.setState({filesReady: true});
-      }
+      else if (needUploadResidence && this.state.residenceProof.length)
+        this.setState({filesReady: true});
+      else if (needUploadID && this.state.governmentID.length)
+        this.setState({filesReady: true});
+      else
+        this.setState({filesReady: false});
     });
   }
 
@@ -84,19 +96,23 @@ class KYCModal extends Component {
 
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
-              <h2>Government issued ID</h2>
-              <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
+              {this.props.kyc.id_document_status !== 'APPROVED' ? 
+                <div>
+                  <h2>Government issued ID</h2>
+                  <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
+                  <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
+                </div> : null}
 
-              <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
-
-              <h2>Proof of residence</h2>
-              <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
-
-              <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
+              {this.props.kyc.residence_document_status !== 'APPROVED' ?
+                <div>
+                  <h2>Proof of residence</h2>
+                  <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
+                  <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
+                </div> : null}
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
-                Upload files
+                Upload file(s)
               </button>
             </form>
           </div>

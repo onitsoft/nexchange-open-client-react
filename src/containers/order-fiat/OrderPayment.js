@@ -21,8 +21,6 @@ class OrderPayment extends Component {
 		axios.get(`${config.API_BASE_URL}/kyc/${this.props.match.params.orderRef}`)
 		.then(response => {
 			this.setState({kyc: response.data});
-
-			console.log(response.data);
 		})
 		.catch(error => {
 			console.log(error);
@@ -97,7 +95,10 @@ class OrderPayment extends Component {
 				{buttonText}
 			</button> : null}
 
-			<KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} {...this.props} />
+			{this.state.kyc ?
+				<KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} kyc={this.state.kyc} {...this.props} />
+				: null
+			}
 		</div>
 	}
 
