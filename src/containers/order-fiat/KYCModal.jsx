@@ -42,7 +42,7 @@ class KYCModal extends Component {
     formData.append('identity_document', governmentID.files[0]);
     formData.append('utility_document', residenceProof.files[0]);
     formData.append('order_reference', this.props.match.params.orderRef)
-    axios.post(`${config.API_BASE_URL}/kyc`, formData, {
+    axios.post(`${config.API_BASE_URL}/kyc/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

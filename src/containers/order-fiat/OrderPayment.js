@@ -65,17 +65,17 @@ class OrderPayment extends Component {
 				);
 
 				if (this.state.kyc.id_document_status == 'REJECTED' && this.state.kyc.residence_document_status == 'REJECTED') {
-					buttonText = "Retry to get verified";
+					buttonText = "Retry verification";
 				} else if (
 					(this.state.kyc.id_document_status == 'APPROVED'
 					|| this.state.kyc.id_document_status == 'PENDING')
 					&& this.state.kyc.residence_document_status == 'REJECTED') {
-					buttonText = "Reverify proof of residence";
+					buttonText = "Retry proof of residence verification";
 				} else if (
 					(this.state.kyc.residence_document_status == 'APPROVED'
 					|| this.state.kyc.residence_document_status == 'PENDING')
 					&& this.state.kyc.id_document_status == 'REJECTED') {
-					buttonText = "Reverify government issued ID"
+					buttonText = "Retry government issued ID verification";
 				}
 			}
 		} else if (this.state.kyc.id_document_status == 'APPROVED' && this.state.kyc.residence_document_status == 'APPROVED') {
