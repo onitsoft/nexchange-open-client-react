@@ -48,7 +48,7 @@ class OrderPayment extends Component {
 					</div>
 				);
 
-				button = "Get verified";
+				buttonText = "Get verified";
 			} else {
 				inner = (
 					<div>
