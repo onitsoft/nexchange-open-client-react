@@ -1,9 +1,8 @@
 @import "bootstrap/variables";
 
 #order-crypto {
-	#order-payment { text-align: center; padding-top: 10px; overflow: hidden;
-		h3, h4 { font-size: 20px;}
-		h3 { margin-top: 0; }
+	#order-payment { padding-top: 10px; overflow: hidden;
+		h3, h4 { font-size: 20px; }
 		#deposit-address { word-wrap: break-word; }
 		img { margin-top: -15px; max-width: 100%;
 			@media (min-width: $screen-sm-min) { margin-top: -7px; }
@@ -15,7 +14,6 @@
 		}
 		.box { padding-bottom: 5px; }
 	
-		@media (min-width: $screen-ms-min) { text-align: left; }
 		@media (min-width: $screen-sm-min) {
 			img { max-width: 100%; }
 			h3 { font-size: 24px; }

@@ -11,11 +11,11 @@ class OrderInitial extends Component {
 	render() {
 	    return (
 	    	<div id="order-payment">
-    			<div className="col-xs-12 col-ms-6 col-sm-5 col-md-4 text-center">
+    			<div className="col-xs-12 col-ms-5 col-sm-5 col-md-3 text-center">
     				<img src="/img/cards.jpg" />
     			</div>
 
-    			<div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-7 col-md-8">
+    			<div id="order-payment-details" className="col-xs-12 col-ms-7 col-sm-7 col-md-9">
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
     				<h4>Pay <b>{parseFloat(this.props.order.amount_quote)} {this.props.order.pair.quote.code}</b></h4>
 

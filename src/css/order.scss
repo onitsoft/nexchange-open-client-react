@@ -35,7 +35,7 @@
 		.box h4 { font-size: 18px; }
 	}
 
-	@media (min-width: $screen-md-min) { padding: 50px 0 0 0;
+	@media (min-width: $screen-md-min) {
 		h5 { font-size: 17px; }
 		h6 { font-size: 16px; }
 	}
@@ -44,14 +44,15 @@
 #order-header {
 	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: $green; }
 
-	@media (min-width: $screen-sm-min) {
+	@media (min-width: $screen-ms-min) {
 		h3 { float: left; }
 		#bookmark-button { float: right; margin-top: 22px; }
 	}
 }
 
 #order-payment { text-align: center;
-	@media (min-width: $screen-sm-min) { text-align: left; }
+	h3 { margin-top: 0; }
+	@media (min-width: $screen-ms-min) { text-align: left; }
 }
 
 #bookmark {
