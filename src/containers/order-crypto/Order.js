@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../css/order-crypto.scss';
+
 import OrderInitial from './OrderInitial';
 import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
@@ -40,7 +42,7 @@ const Order = (props) => {
 			order = <h2>Unknown order state, something went wrong</h2>;
 	}
 
-	return <div id="order-fiat">
+	return <div id="order-crypto">
 		{order}
 	</div>;
 };

@@ -33,11 +33,11 @@ class OrderInitial extends Component {
 	render() {
 	    return (
 	    	<div id="order-payment">
-    			<div className="col-xs-12 col-sm-4 col-md-3">
+    			<div className="col-xs-12 col-ms-4 col-sm-4 col-md-3">
     				<img src={this.getDepositAddressQr()} />
     			</div>
 
-    			<div id="order-payment-details" className="col-xs-12 col-sm-8 col-md-9">
+    			<div id="order-payment-details" className="col-xs-12 col-ms-8 col-sm-8 col-md-9">
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
 
     				<h4>Send <b>{this.props.order.amount_quote} {this.props.order.pair.quote.code}</b> to the address<br/>

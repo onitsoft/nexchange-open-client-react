@@ -41,12 +41,6 @@
 	}
 }
 
-#order-payment {
-	#order-payment-details { 
-		h3 { margin-top: 0; }
-	}
-}
-
 #order-header {
 	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: $green; }
 
@@ -54,6 +48,10 @@
 		h3 { float: left; }
 		#bookmark-button { float: right; margin-top: 22px; }
 	}
+}
+
+#order-payment { text-align: center;
+	@media (min-width: $screen-sm-min) { text-align: left; }
 }
 
 #bookmark {

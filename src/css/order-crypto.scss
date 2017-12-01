@@ -1,22 +1,24 @@
+@import "bootstrap/variables";
+
 #order-crypto {
 	#order-payment { text-align: center; padding-top: 10px; overflow: hidden;
 		h3, h4 { font-size: 20px;}
+		h3 { margin-top: 0; }
 		#deposit-address { word-wrap: break-word; }
-		img { margin-top: -15px; max-width: 150px;
+		img { margin-top: -15px; max-width: 100%;
 			@media (min-width: $screen-sm-min) { margin-top: -7px; }
 		}
-		#order-payment-details { margin-top: 10px;
+		#order-payment-details {
 			@media (min-width: $screen-sm-min) { margin-left: -15px; }
 			@media (min-width: $screen-md-min) { margin-top: 10px; }
 			@media (min-width: $screen-lg-min) { margin-top: 30px; }
 		}
 		.box { padding-bottom: 5px; }
-
-		@media (min-width: $screen-sm-min) { text-align: left; padding-left: 13px;
+	
+		@media (min-width: $screen-ms-min) { text-align: left; }
+		@media (min-width: $screen-sm-min) {
 			img { max-width: 100%; }
 			h3 { font-size: 24px; }
 		}
-		@media (min-width: $screen-md-min) { padding-left: 50px; }
-		@media (min-width: $screen-lg-min) { padding-left: 60px; }
 	}	
 }
