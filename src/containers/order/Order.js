@@ -75,10 +75,13 @@ class Order extends Component {
 				loading: false,
 				order: order
 			}, () => {
-				clearInterval(this.interval);
-				this.interval = setInterval(this.tick, 1000);
+				if (this.interval)
+					clearInterval(this.interval);
 
-				this.tick();
+				if (STATUS_CODES[this.state.order.status_name[0][0]] === 'INITIAL') {
+					this.interval = setInterval(this.tick, 1000);
+					this.tick();
+				}
 
 				$(function() {
 				    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
