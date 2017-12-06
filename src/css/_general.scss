@@ -3,7 +3,7 @@ body, html { height: 100%; background: #f8f7f8; }
 
 body { color: #044264; }
 p, a { word-wrap: break-word; }
-p { font-size: 19px; line-height: 1.5em; }
+p, li { font-size: 19px; line-height: 1.5em; }
 h1 { font-size: 34px;
 	@media (min-width: $screen-sm-min) { font-size: 46px; }
 }

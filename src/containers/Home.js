@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { fetchCoinDetails } from '../actions';
 
 import Hero from '../components/Hero';
