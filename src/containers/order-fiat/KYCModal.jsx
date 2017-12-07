@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
-import Dropzone from 'react-dropzone'
 
 import config from '../../config';
 

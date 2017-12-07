@@ -22,8 +22,6 @@ const TermsConditions = (props) => {
 				<p>Nexchange.io doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.</p>
 
 				<p>By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by Nexchange.io.</p>
-
-				<p>Also, by using this site you acknowledge to be over 18 years old.</p>
 			</div>
 		</div>
 	</div>;
