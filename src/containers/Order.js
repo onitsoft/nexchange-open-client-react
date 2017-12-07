@@ -251,7 +251,7 @@ class Order extends Component {
 						    </div> 
 						    : null }
 
-						    {/*<Notifications order={this.state.data} />*/}
+						    <Notifications order={this.state.data} />
 						</div>
 					</div>
 
