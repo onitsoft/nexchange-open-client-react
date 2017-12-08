@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import helpers from '../../helpers';
-import config from '../../config';
+import helpers from '../helpers';
+import config from '../config';
 import _ from 'lodash';
 
-import CountDown from '../CountDown';
+import CountDown from './CountDown';
 
 
 class OrderPayment extends Component {
