@@ -1,0 +1,8 @@
+#kyc-modal {
+	h2 { line-height: 100%; margin-bottom: 0;
+		&:last-child { margin-top: 30px; }
+	}
+	.modal-body { padding-top: 0; }
+	input { margin-top: 15px; line-height: 0; }
+	button[type="submit"] { margin-top: 30px; }
+}

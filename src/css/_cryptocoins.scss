@@ -70,6 +70,26 @@
   color: transparent;
 }
 
+.cc-EUR:before {
+  content: "\E075";
+  background-image: url(../img/logos/eur.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-USD:before {
+  content: "\E075";
+  background-image: url(../img/logos/usd.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-USD:before {
+  background-image: url(../img/logos/usd-white.png);
+}
+
+.selectedCoin .cc-EUR:before {
+  background-image: url(../img/logos/eur-white.png);
+}
+
 .selectedCoin .cc-XVG-alt:before {
   content: "\E075";
   background-image: url(../img/logos/xvg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;

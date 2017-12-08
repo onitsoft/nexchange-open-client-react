@@ -17,14 +17,18 @@ class Header extends Component {
 		}
 	}
 
-	componentDidMount() {
+	checkScroll() {
 		let hash = window.location.hash;
 		if (hash && hash != '') {
 			hash = hash.replace('#', '');
 
 			let el = document.getElementById(hash);
 			if (el) el.scrollIntoView(); 
-		}
+		}		
+	}
+
+	componentDidMount() {
+		this.checkScroll();
 	}
 
 	render() {

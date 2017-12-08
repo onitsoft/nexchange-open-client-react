@@ -116,11 +116,11 @@
       &.label-static,
       &.label-floating.is-focused,
       &.label-floating:not(.is-empty) {
-        @include label-static(-30px, $static-font-size, $static-line-height);
+        @include label-static($label-top, $static-font-size, $static-line-height);
       }
       // #559 Fix for webkit/chrome autofill - rule must be separate because it breaks firefox otherwise #731
       &.label-floating input.form-control:-webkit-autofill ~ label.control-label {
-        @include label-static(-30px, $static-font-size, $static-line-height);
+        @include label-static($label-top, $static-font-size, $static-line-height);
       }
     }
   }
