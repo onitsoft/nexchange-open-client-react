@@ -22,6 +22,7 @@ class ExchangeWidget extends Component {
 	  	};
 	  	  	 	
 	  	this.placeOrder = this.placeOrder.bind(this);
+	  	this.placeOrderOnBackend = this.placeOrderOnBackend.bind(this);
 	  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
@@ -48,27 +49,41 @@ class ExchangeWidget extends Component {
 	placeOrder() {
 		this.setState({loading: true});
 
-		let data = {
-			'is_default_rule': true,
-			'pair': {
-				'name': `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
-			},
-			'withdraw_address': {
-				'address': this.props.wallet.address,
-				'name': ''
-			}
-		};
+		if (this.props.amounts.lastEdited == 'receive') {
+			this.placeOrderOnBackend(this.props.amounts.receive);
+		}
 
-		if (this.props.amounts.lastEdited === 'receive')
-			data['amount_base'] = this.props.amounts.receive;
-		else if (this.props.amounts.lastEdited === 'deposit')
-			data['amount_quote'] = this.props.amounts.deposit;
+	    axios.get(`${config.API_BASE_URL}/price/${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}/latest/`)
+	        .then(response => {
+	        	if (!response.data.length) return;
 
+				let price = response.data[0].ticker.ask,
+					quote = this.props.amounts.deposit,
+					amount = parseFloat(quote) / price;
+
+				this.placeOrderOnBackend(amount.toFixed(8));
+	        }).catch(error => {
+	        	console.log(error);
+	        	this.props.errorAlert({message: 'Something went wrong. Please try again later', show: true, type: 'PLACE_ORDER'});
+	        });
+	}
+
+	placeOrderOnBackend(amount) {
 		axios({
 			method: 'post',
 			contentType : 'application/json',
 			url: `${config.API_BASE_URL}/orders/`,
-			data: data
+			data: {
+				"amount_base": amount, 
+				"is_default_rule": true,
+				"pair": {
+					"name": `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
+				},
+				"withdraw_address": {
+					"address": this.props.wallet.address,
+					"name": ""
+				}
+			}
 		})
 		.then(response => {
 			this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
@@ -89,7 +104,7 @@ class ExchangeWidget extends Component {
 		if ($('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby")) {
 			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
 
-			$(`#${tooltipId.tooltip-inner}`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0.005)} ${nextProps.selectedCoin.deposit}.`);
+			$(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0.005)} ${nextProps.selectedCoin.deposit}.`);
 		}		
 
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
