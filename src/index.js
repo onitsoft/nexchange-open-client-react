@@ -29,6 +29,9 @@ const AsyncNotFound = Loadable({
 
 import Home from './containers/Home';
 import Order from './containers/Order';
+import TermsConditions from './containers/TermsConditions';
+import Privacy from './containers/Privacy';
+import RefundCancellation from './containers/RefundCancellation';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
@@ -41,6 +44,9 @@ ReactDOM.render(
   			<Header />
 
   			<Switch>
+          <Route exact path="/terms-and-conditions" component={TermsConditions} />
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/refund-cancellation" component={RefundCancellation} />
   				<Route exact path="/order/:orderRef" component={Order} />
 	  			<Route exact path="/" component={Home} />
           <Route component={AsyncNotFound} />
