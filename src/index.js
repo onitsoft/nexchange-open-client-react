@@ -46,7 +46,7 @@ ReactDOM.render(
   			<Switch>
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/refund-cancellation" component={RefundCancellation} />
+          {/*<Route exact path="/refund-cancellation" component={RefundCancellation} />*/}
   				<Route exact path="/order/:orderRef" component={Order} />
 	  			<Route exact path="/" component={Home} />
           <Route component={AsyncNotFound} />
