@@ -1,7 +1,7 @@
 const config = {
 	NAME: 'Nexchange',
-	DOMAIN: 'http://207.154.223.232:8000/',
-	API_BASE_URL: 'http://207.154.223.232:8000/en/api/v1',
+	DOMAIN: 'http://nexchange.io/',
+	API_BASE_URL: 'http://api.nexchange.io/en/api/v1',
 	SUPPORT_EMAIL: 'support@nexchange.io',
 	PRICE_FETCH_INTERVAL: 60000,
 	ORDER_DETAILS_FETCH_INTERVAL: 20000,
