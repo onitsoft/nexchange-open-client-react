@@ -28,7 +28,7 @@ const AsyncNotFound = Loadable({
 });
 
 import Home from './containers/Home';
-import Order from './containers/Order';
+import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
 import RefundCancellation from './containers/RefundCancellation';

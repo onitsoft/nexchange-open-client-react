@@ -1,0 +1,22 @@
+@import "bootstrap/variables";
+
+#order-status { padding: 8px 0 5px 0; overflow: hidden;
+	hr { margin-top: 5px; }
+	.step { width: 100%; margin-top: 15px; text-align: center;
+		h4 { margin: 0; background: #fff; text-transform: uppercase; font-size: 15px; font-weight: 500; color: #adadad; }
+		.glyphicon { font-size: 30px; color: #adadad; }
+		&.active h4, &.active .glyphicon {
+			@include animation(color-change 1s infinite alternate);
+		}
+		&.done h4, &.done .glyphicon { color: $green; }
+
+		@media (min-width: $screen-sm-min) { width: 33.33%; float: left; }
+	}
+	.progres-container { width: 100%; padding-top: 25px; clear: both;
+		.progress .progress-bar.progress-bar-info { background: $green; }
+		.progress.progress-line-info { background: rgba(44, 180, 160, 0.2); }
+		.progress.progress-line-info { margin-bottom: 5px; }
+
+		@media (min-width: $screen-md-min) { padding: 25px 0 0; }
+	}
+}

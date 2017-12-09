@@ -1,0 +1,15 @@
+@import "bootstrap/variables";
+
+#order-fiat { display: inline-block; width: 100%;
+	#order-payment {
+		img { max-width: 170px;
+			@media (min-width: $screen-md-min) { margin-top: 15px; max-width: 100%; }
+		}
+	}
+
+	#cards {
+		h3 { margin-top: 15px;
+			@media (min-width: $screen-ms-min) { margin-top: 0; }
+		}
+	}
+}
