@@ -74,7 +74,7 @@ class CreditCardModal extends Component {
         }
       }
     }
- 
+
     if (name === 'cvc' && value.length > 3) {
       value = value.slice(0, value.length-1);
     }
