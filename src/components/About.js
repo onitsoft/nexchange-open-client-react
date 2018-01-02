@@ -44,7 +44,7 @@ const About = () => (
               description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
               social={{
                 linkedin: "https://www.linkedin.com/in/karolisram/",
-                github: "https://github.com/superarolis/",
+                github: "https://github.com/superkarolis/",
                 medium: "https://medium.com/@karolisram",
               }} />
 
