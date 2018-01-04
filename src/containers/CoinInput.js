@@ -46,7 +46,9 @@ class CoinInput extends Component {
 
 	validateDepositAmount(value) {
 		let selectedCoin = this.props.selectedCoin['deposit'],
-			maxAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedCoin}).maximal_amount);
+			maxAmount = _.find(this.props.coinsInfo, {code: selectedCoin});
+
+		if (maxAmount) maxAmount = parseFloat(maxAmount.maximal_amount);
 
 		value = parseFloat(value);
 
