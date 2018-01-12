@@ -58,6 +58,14 @@
   content: "\E018";
 }
 
+.cc-EOS-alt::before {
+  content: "\E040";
+}
+
+.cc-EOS::before {
+  content: "\E041";
+}
+
 .cc-XVG-alt:before {
   content: "\E075";
   background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
@@ -67,6 +75,54 @@
 .cc-XVG:before {
   content: "\E075";
   background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-XRB-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/xrb.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-XRB:before {
+  content: "\E075";
+  background-image: url(../img/logos/xrb.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-BDG-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/bdg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-BDG:before {
+  content: "\E075";
+  background-image: url(../img/logos/bdg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-USD-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/usd.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-USD:before {
+  content: "\E075";
+  background-image: url(../img/logos/usd.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-EUR-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/eur.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.cc-EUR:before {
+  content: "\E075";
+  background-image: url(../img/logos/eur.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
   color: transparent;
 }
 
@@ -82,9 +138,61 @@
   color: transparent;
 }
 
+.selectedCoin .cc-XRB-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/xrb-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-XRB:before {
+  content: "\E075";
+  background-image: url(../img/logos/xrb-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-BDG-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/bdg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-BDG:before {
+  content: "\E075";
+  background-image: url(../img/logos/bdg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-USD-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/usd-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-USD:before {
+  content: "\E075";
+  background-image: url(../img/logos/usd-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-EUR-alt:before {
+  content: "\E075";
+  background-image: url(../img/logos/eur-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
+
+.selectedCoin .cc-EUR:before {
+  content: "\E075";
+  background-image: url(../img/logos/eur-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  color: transparent;
+}
 
 .BTC, .BCH { color: #F7931A; }
 .LTC { color: #838383; }
 .ETH { color: #282828; }
 .DOGE { color: #BA9F33; }
 .XVG { color: #42AFB2; }
+.EOS { color: #19191A; }
+.XRB { color: #0070ff; }
+.BDG { color: #471d66; }
+.USD { color: #34b67a; }
+.EUR { color: #5fccff; }
