@@ -15,14 +15,13 @@ import WalletAddress from './WalletAddress';
 class ExchangeWidget extends Component {
 	constructor(props) {
 		super();
-		
+
 		this.state = {
 			orderPlaced: false,
 			loading: false,
 	  	};
-	  	  	 	
+
 	  	this.placeOrder = this.placeOrder.bind(this);
-	  	this.placeOrderOnBackend = this.placeOrderOnBackend.bind(this);
 	  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
@@ -30,7 +29,7 @@ class ExchangeWidget extends Component {
 		$(function() {
 		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 		});
-		
+
 		this.updatePrices();
 	}
 
@@ -47,43 +46,27 @@ class ExchangeWidget extends Component {
 	}
 
 	placeOrder() {
-		this.setState({loading: true});
+		let data = {
+			'amount_base': 0,
+			'amount_quote': 0,
+			'is_default_rule': true,
+			'pair': {
+				'name': `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
+			},
+			'withdraw_address': {
+				'address': this.props.wallet.address,
+				'name': ''
+			}
+		};
 
-		if (this.props.amounts.lastEdited == 'receive') {
-			this.placeOrderOnBackend(this.props.amounts.receive);
-		}
+		if (this.props.amounts.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.amounts.receive);
+		else if (this.props.amounts.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.amounts.deposit);
 
-	    axios.get(`${config.API_BASE_URL}/price/${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}/latest/`)
-	        .then(response => {
-	        	if (!response.data.length) return;
-
-				let price = response.data[0].ticker.ask,
-					quote = this.props.amounts.deposit,
-					amount = parseFloat(quote) / price;
-
-				this.placeOrderOnBackend(amount.toFixed(8));
-	        }).catch(error => {
-	        	console.log(error);
-	        	this.props.errorAlert({message: 'Something went wrong. Please try again later', show: true, type: 'PLACE_ORDER'});
-	        });
-	}
-
-	placeOrderOnBackend(amount) {
 		axios({
 			method: 'post',
 			contentType : 'application/json',
 			url: `${config.API_BASE_URL}/orders/`,
-			data: {
-				"amount_base": amount, 
-				"is_default_rule": true,
-				"pair": {
-					"name": `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
-				},
-				"withdraw_address": {
-					"address": this.props.wallet.address,
-					"name": ""
-				}
-			}
+			data: data
 		})
 		.then(response => {
 			this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
@@ -105,7 +88,7 @@ class ExchangeWidget extends Component {
 			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
 
 			$(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0.005)} ${nextProps.selectedCoin.deposit}.`);
-		}		
+		}
 
 		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
 			this.props.setWallet({address: '', valid: false, show: false});
