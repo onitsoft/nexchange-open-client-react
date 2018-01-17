@@ -27,34 +27,32 @@ class CoinInput extends Component {
 		ga('send', 'event', 'Order', 'change amount');
 	}
 
-	validateReceiveAmount(value) {
-		let selectedCoin = this.props.selectedCoin['receive'],
-			minAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedCoin}).minimal_amount);
-
-		value = parseFloat(value);
-
-		if (value < minAmount || isNaN(value)) {
-			this.props.errorAlert({
-				message: `Receive amount for ${selectedCoin} cannot be less than ${minAmount}`,
-				show: true,
-				type: 'INVALID_AMOUNT'
-			});
-		} else {
-			this.props.errorAlert({show: false, type: 'INVALID_AMOUNT'});
-		}
-	}
-
-	validateDepositAmount(value) {
-		let selectedCoin = this.props.selectedCoin['deposit'],
-			maxAmount = _.find(this.props.coinsInfo, {code: selectedCoin});
+	validateAmounts(depositValue, receiveValue) {
+		let selectedReceiveCoin = this.props.selectedCoin['receive'],
+			selectedDepositCoin = this.props.selectedCoin['deposit'],
+			minAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedReceiveCoin}).minimal_amount),
+			maxAmount = _.find(this.props.coinsInfo, {code: selectedDepositCoin});
 
 		if (maxAmount) maxAmount = parseFloat(maxAmount.maximal_amount);
 
-		value = parseFloat(value);
+		depositValue = parseFloat(depositValue);
+		receiveValue = parseFloat(receiveValue);
 
-		if (parseFloat(value) > maxAmount || isNaN(value)) {
+		if (isNaN(depositValue) || isNaN(receiveValue)) {
 			this.props.errorAlert({
-				message: `Deposit amount for ${selectedCoin} cannot be more than ${maxAmount}`,
+				message: `Amount values cannot be empty`,
+				show: true,
+				type: 'INVALID_AMOUNT'
+			});
+		} else if (depositValue > maxAmount) {
+			this.props.errorAlert({
+				message: `Deposit amount for ${selectedDepositCoin} cannot be more than ${maxAmount}`,
+				show: true,
+				type: 'INVALID_AMOUNT'
+			});
+		} else if (receiveValue < minAmount) {
+			this.props.errorAlert({
+				message: `Receive amount for ${selectedReceiveCoin} cannot be less than ${minAmount}`,
 				show: true,
 				type: 'INVALID_AMOUNT'
 			});
@@ -64,13 +62,25 @@ class CoinInput extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.pair != nextProps.pair)
+		if (this.props.pair !== nextProps.pair)
 			this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 
 		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type] && this.props.coinsInfo.length) {
-			this.validateReceiveAmount(nextProps.amounts.receive)
-			this.validateDepositAmount(nextProps.amounts.deposit)
+			// this.validateReceiveAmount(nextProps.amounts.receive)
+			// this.validateDepositAmount(nextProps.amounts.deposit)
+
+			this.validateAmounts(nextProps.amounts.deposit, nextProps.amounts.receive);
 		}
+
+		// if (this.props.coinsInfo.length) {
+		// 	if (this.props.type === 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type]) {
+		// 		console.log("RECEIVE INPUT")
+		// 		this.validateDepositAmount(nextProps.amounts.deposit)
+		// 	} else if (this.props.type === 'deposit' && nextProps.amounts.deposit !== this.props.amounts[this.props.type]) {
+		// 		console.log("DEPOSIT INPUT");
+		// 		this.validateReceiveAmount(nextProps.amounts.receive)
+		// 	}
+		// }
 	}
 
 	render() {
@@ -92,6 +102,7 @@ function mapStateToProps(state) {
 		coinsInfo: state.coinsInfo,
 		amounts: state.amounts,
 		price: state.price,
+		error: state.error
 	}
 }
 
