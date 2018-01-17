@@ -66,10 +66,9 @@ class Order extends Component {
 		.then((response) => {
 			let order = response.data;
 
-			// >>>>> FIX THIS, SEND GA EVENT ON ORDER SWITCH TO 12 <<<<<<
-			// if (this.state.orderStatus == 11 && data.status_name[0][0] == 12) {
-			// 	ga('send', 'event', 'Order', 'order paid', data.unique_reference);
-			// }
+			if (this.state.order && this.state.order.status_name[0][0] === 11 && order.status_name[0][0] === 12) {
+				ga('send', 'event', 'Order', 'order paid', order.unique_reference);
+			}
 
 			this.setState({
 				loading: false,
@@ -168,7 +167,7 @@ class Order extends Component {
 					    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
 					    			</div> : orderInfo
 					    		}
-					    		
+
 						    	{orderStatus}
 					    	</div>
 					    </div>
