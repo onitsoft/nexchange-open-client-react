@@ -27,7 +27,7 @@ class OrderStatus extends Component {
         <div className="col-xs-12">
           <div id="order-status">
           	<hr/>
-          	
+
         		<div id="step-one" className={this.props.status == 0 ? "step" : (this.props.status > 11 ? "step done" : "step active")} data-toggle="tooltip" data-placement="top" title="" data-original-title="In this step we are waiting for your deposit.">
               <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
         			<h4>1. Awaiting deposit</h4>
@@ -35,9 +35,9 @@ class OrderStatus extends Component {
 
          		<div id="step-two" className={STATUS_CODES[this.props.status] == 'PAID_UNCONFIRMED' ? "step active" : (this.props.status >= 13 ? "step done" : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification.">
               <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
-        			<h4>2. Awaiting verification</h4> 
+        			<h4>2. Awaiting verification</h4>
         		</div>
-        		
+
         		<div id="step-three" className={this.props.status == 13 || this.props.status == 14 ? "step active" : (this.props.status >= 15 ? (this.props.status == 15 ? "step active" : "step done" ) : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
               <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
         			<h4>3. All done</h4>
