@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 
-const ErrorAlert = (props) => (
-	<div className={props.error.show ? "alert alert-warning" : "alert alert-warning hidden"}>
+const ErrorAlert = (props) => {
+	return (<div className={props.error.show ? "alert alert-warning" : "alert alert-warning hidden"}>
 		 <div className="container">
 			<div className="alert-icon">
 				<i className="material-icons">error_outline</i>
@@ -12,10 +12,10 @@ const ErrorAlert = (props) => (
 				<span aria-hidden="true"><i className="material-icons">clear</i></span>
 			</button>
 
-		    <b>Warning:</b> {props.error.message}
+		  <b>Warning:</b> {props.error.message}
 		</div>
-	</div>
-);
+	</div>);
+};
 
 
 function mapStateToProps(state) {

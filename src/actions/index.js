@@ -23,11 +23,11 @@ export function selectCoin(payload) {
 	return (dispatch, getState) => {
 		dispatch({ type: 'COIN_SELECTED', payload: payload });
 
-    	dispatch({type: 'SET_WALLET', payload: {
-    		address: '',
-    		valid: false,
-    		show: false
-    	}});
+  	dispatch({type: 'SET_WALLET', payload: {
+  		address: '',
+  		valid: false,
+  		show: false
+  	}});
 	}
 }
 
@@ -51,15 +51,15 @@ export function fetchCoinDetails(payload) {
 	        		coins;
 
 	        	if (params && params.hasOwnProperty('test')) {
-					coins = _.filter(response.data, {has_enabled_pairs_for_test: true});
+							coins = _.filter(response.data, {has_enabled_pairs_for_test: true});
 	        	} else {
-					coins = _.filter(response.data, {has_enabled_pairs: true});
+							coins = _.filter(response.data, {has_enabled_pairs: true});
 	        	}
 
 	        	dispatch({type: 'COINS_INFO', payload: coins});
 	        }).catch(error => {
 	        	console.log(error);
-	        });    
+	        });
     };
 }
 
@@ -87,6 +87,6 @@ export function fetchPrice(payload) {
 	        	}
 	        }).catch(error => {
 	        	console.log(error);
-	        });    
+	        });
     };
 }
