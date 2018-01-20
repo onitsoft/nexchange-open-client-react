@@ -38,24 +38,25 @@ class CoinSelector extends Component {
 
 	render() {
 		let selectedCoin = this.props.selectedCoin[this.props.type],
+			type = this.props.type,
+			lastSelectedType = this.props.selectedCoin.lastSelected,
+			lastSelectedCoin = this.props.selectedCoin[lastSelectedType],
 			filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
 
-	      if (params && params.hasOwnProperty('test')) {
-					if (this.props.type.toUpperCase() === 'DEPOSIT') {
-						return coin.is_quote_of_enabled_pair_for_test;
-					} else if (this.props.type.toUpperCase() === 'RECEIVE') {
-						return coin.is_base_of_enabled_pair_for_test;
+				if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
+					if (lastSelectedType === 'deposit') {
+						return this.props.pairs[lastSelectedCoin][coin.code];
+					} else if (lastSelectedType === 'receive') {
+						return this.props.pairs[coin.code][lastSelectedCoin];
 					}
-				} else {
-					if (this.props.type.toUpperCase() === 'DEPOSIT') {
-						return coin.is_quote_of_enabled_pair;
-					} else if (this.props.type.toUpperCase() === 'RECEIVE') {
-						return coin.is_base_of_enabled_pair;
-					}
-	    	}
+				}
 
-				return false;
+	      if (params && params.hasOwnProperty('test')) {
+					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
+				}
+
+				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
 			}),
 			coins = filteredCoins.map(coin => {
 				return (
@@ -89,6 +90,7 @@ function mapStateToProps(state) {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
 		amounts: state.amounts,
+		pairs: state.pairs
 	}
 }
 

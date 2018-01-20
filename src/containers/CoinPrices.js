@@ -71,8 +71,9 @@ class CoinPrices extends Component {
 
 	        		this.setState({change});
 
-	        		if (pair.toLowerCase() == `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase())
-						this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+	        		if (pair.toLowerCase() === `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase()) {
+								this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+							}
 
 	        		setTimeout(() => {
 	        			let change = this.state.change;

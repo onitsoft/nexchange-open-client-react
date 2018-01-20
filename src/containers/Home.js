@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCoinDetails } from '../actions';
+import { fetchCoinDetails, fetchPairs } from '../actions';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -17,6 +17,7 @@ class Home extends Component {
 		super(props);
 
 		this.props.fetchCoinDetails();
+		this.props.fetchPairs();
 	}
 
 	render() {
@@ -37,6 +38,7 @@ class Home extends Component {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		fetchCoinDetails: fetchCoinDetails,
+		fetchPairs: fetchPairs,
 	}, dispatch)
 }
 
