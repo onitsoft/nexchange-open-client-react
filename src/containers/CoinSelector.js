@@ -11,20 +11,17 @@ class CoinSelector extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isDropdownVisible: false
+			isDropdownVisible: false,
+			selectedCoin: null
 		}
 
-    	this.selectCoin = this.selectCoin.bind(this);
+    this.selectCoin = this.selectCoin.bind(this);
 	}
 
 	selectCoin(coin) {
-		this.props.selectCoin(Object.assign({}, this.props.selectedCoin, {[this.props.type]: coin}));
+		this.props.selectCoin(Object.assign({}, this.props.selectedCoin, {[this.props.type]: coin, lastSelected: this.props.type}));
 
-		setTimeout(() => {
-			this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-		}, 300);
-
-		this.setState({isDropdownVisible: false, selectedCoin: coin});
+		this.setState({isDropdownVisible: false});
 
 		ga('send', 'event', 'Order', 'select coin');
 	}
@@ -34,27 +31,32 @@ class CoinSelector extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({selectedCoin: this.props.selectedCoin[this.props.type]});
+		if (this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type]) {
+			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
+		}
 	}
 
 	render() {
 		let selectedCoin = this.props.selectedCoin[this.props.type],
+			type = this.props.type,
+			lastSelectedType = this.props.selectedCoin.lastSelected,
+			lastSelectedCoin = this.props.selectedCoin[lastSelectedType],
 			filteredCoins = this.props.coinsInfo.filter(coin => {
-	        	let params = Helpers.urlParams();
+	   		let params = Helpers.urlParams();
 
-	        	if (params && params.hasOwnProperty('test')) {
-					if (this.props.type.toUpperCase() == 'DEPOSIT') {
-						return coin.is_quote_of_enabled_pair_for_test;
-					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
-						return coin.is_base_of_enabled_pair_for_test;
+				if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
+					if (lastSelectedType === 'deposit') {
+						return this.props.pairs[lastSelectedCoin][coin.code];
+					} else if (lastSelectedType === 'receive') {
+						return this.props.pairs[coin.code][lastSelectedCoin];
 					}
-	        	} else {
-					if (this.props.type.toUpperCase() == 'DEPOSIT') {
-						return coin.is_quote_of_enabled_pair;
-					} else if (this.props.type.toUpperCase() == 'RECEIVE') {
-						return coin.is_base_of_enabled_pair;
-					}
-	        	}
+				}
+
+	      if (params && params.hasOwnProperty('test')) {
+					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
+				}
+
+				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
 			}),
 			coins = filteredCoins.map(coin => {
 				return (
@@ -88,6 +90,7 @@ function mapStateToProps(state) {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
 		amounts: state.amounts,
+		pairs: state.pairs
 	}
 }
 

@@ -19,7 +19,7 @@ class CoinInput extends Component {
 	onChange(event) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
 
-		if (this.props.price.pair != pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL)
+		if (this.props.price.pair !== pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL)
 			this.props.fetchPrice({pair: pair, amount: event.target.value, lastEdited: this.props.type});
 		else
 			this.props.updateAmounts({amount: event.target.value, lastEdited: this.props.type, price: this.props.price.price});
@@ -62,25 +62,13 @@ class CoinInput extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.pair !== nextProps.pair)
+		if (this.props.pair !== nextProps.pair) {
 			this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-
-		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type] && this.props.coinsInfo.length) {
-			// this.validateReceiveAmount(nextProps.amounts.receive)
-			// this.validateDepositAmount(nextProps.amounts.deposit)
-
-			this.validateAmounts(nextProps.amounts.deposit, nextProps.amounts.receive);
 		}
 
-		// if (this.props.coinsInfo.length) {
-		// 	if (this.props.type === 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type]) {
-		// 		console.log("RECEIVE INPUT")
-		// 		this.validateDepositAmount(nextProps.amounts.deposit)
-		// 	} else if (this.props.type === 'deposit' && nextProps.amounts.deposit !== this.props.amounts[this.props.type]) {
-		// 		console.log("DEPOSIT INPUT");
-		// 		this.validateReceiveAmount(nextProps.amounts.receive)
-		// 	}
-		// }
+		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type] && this.props.coinsInfo.length) {
+			this.validateAmounts(nextProps.amounts.deposit, nextProps.amounts.receive);
+		}
 	}
 
 	render() {

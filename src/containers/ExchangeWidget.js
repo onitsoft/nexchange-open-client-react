@@ -19,10 +19,10 @@ class ExchangeWidget extends Component {
 		this.state = {
 			orderPlaced: false,
 			loading: false,
-	  	};
+	  };
 
-	  	this.placeOrder = this.placeOrder.bind(this);
-	  	this.updatePrices = this.updatePrices.bind(this);
+  	this.placeOrder = this.placeOrder.bind(this);
+  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
 	componentDidMount() {

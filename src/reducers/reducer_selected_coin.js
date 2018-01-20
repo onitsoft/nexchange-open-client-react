@@ -4,7 +4,8 @@ const initialState = {
 	prev: {
 		deposit: 'XVG',
 		receive: 'DOGE'
-	}
+	},
+	lastSelected: 'deposit'
 }
 
 export default (state = initialState, action) => {
