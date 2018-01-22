@@ -42,8 +42,6 @@ const Order = (props) => {
 			order = <h2>Unknown order state, something went wrong</h2>;
 	}
 
-	order = <OrderReleased {...props} />;
-
 	return <div id="order-crypto">
 		{order}
 	</div>;
