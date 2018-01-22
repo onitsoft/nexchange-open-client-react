@@ -16,13 +16,15 @@ class Helpers {
 	}
 
 	static getBlockchainUrl(coin, txId) {
-		if (coin in ['ETH', 'EOS', 'BDG']) return this.blockchainUrl = `https://etherscan.io/tx/${txId}`;
-		else if (coin == 'LTC') return this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${txId}/`;
-		else if (coin == 'BTC') return this.blockchainUrl = `https://blockchain.info/tx/${txId}`;
-		else if (coin == 'DOGE') return this.blockchainUrl = `https://dogechain.info/tx/${txId}`;
-		else if (coin == 'XVG') return this.blockchainUrl = `https://verge-blockchain.info/tx/${txId}`;
-		else if (coin == 'BCH') return this.blockchainUrl = `https://blockchair.com/bitcoin-cash/transaction/${txId}`;
-    else if (coin == 'XRB') return this.blockchainUrl = `https://www.raiblocks.club/block/${txId}`;
+		if (coin === 'ETH') return this.blockchainUrl = `https://etherscan.io/tx/${txId}`;
+		else if (coin === 'EOS') return this.blockchainUrl = `https://etherscan.io/tx/${txId}`;
+		else if (coin === 'BDG') return this.blockchainUrl = `https://etherscan.io/tx/${txId}`;
+		else if (coin === 'LTC') return this.blockchainUrl = `https://live.blockcypher.com/ltc/tx/${txId}/`;
+		else if (coin === 'BTC') return this.blockchainUrl = `https://blockchain.info/tx/${txId}`;
+		else if (coin === 'DOGE') return this.blockchainUrl = `https://dogechain.info/tx/${txId}`;
+		else if (coin === 'XVG') return this.blockchainUrl = `https://verge-blockchain.info/tx/${txId}`;
+		else if (coin === 'BCH') return this.blockchainUrl = `https://blockchair.com/bitcoin-cash/transaction/${txId}`;
+    else if (coin === 'XRB') return this.blockchainUrl = `https://www.raiblocks.club/block/${txId}`;
 
 		return null;
 	}
