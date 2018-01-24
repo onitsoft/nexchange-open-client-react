@@ -22,17 +22,16 @@ import Referrals from './components/Referrals';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const AsyncNotFound = Loadable({
-  loader: () => import("./components/NotFound"),
-  loading: LoadingComponent
-});
-
 import Home from './containers/Home';
 import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
 import RefundCancellation from './containers/RefundCancellation';
 
+const AsyncNotFound = Loadable({
+  loader: () => import("./components/NotFound"),
+  loading: LoadingComponent
+});
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
