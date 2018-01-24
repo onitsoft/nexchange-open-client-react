@@ -59,12 +59,13 @@ class CoinProcessed extends Component {
 			else if (this.props.type === 'Receive')
 				rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
 
-			if (this.state.order.user_provided_amount === 1 && this.props.type === 'Deposit') {
-				rates += `\n\nWithdrawal fee: \n`;
-				rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
-			} else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Receive') {
+
+			if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
 				rates += `\n\nWithdrawal fee: \n`;
 				rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
+			} else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
+				rates += `\n\nWithdrawal fee: \n`;
+				rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
 			}
 		}
 
