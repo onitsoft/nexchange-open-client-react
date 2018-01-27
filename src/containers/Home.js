@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials';
 import RecentOrders from '../containers/RecentOrders';
 import SubscriptionForm from '../components/SubscriptionForm';
 import PriceComparison from '../containers/PriceComparison';
+import Trustpilot from '../components/Trustpilot';
 
 
 class Home extends Component {
@@ -24,8 +25,10 @@ class Home extends Component {
 		return (
 		  <div>
 		    <Hero />
+
 		    <RecentOrders />
-		    <Testimonials />
+				<Trustpilot />
+				<Testimonials />
 		    <PriceComparison />
 		    <About />
 		    <SubscriptionForm />
