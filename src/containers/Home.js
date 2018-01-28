@@ -32,7 +32,7 @@ class Home extends Component {
 			this.props.fetchPrice({
 				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
 				lastEdited: 'deposit',
-				amount: parseFloat(depositCoin.minimal_amount)*10
+				amount: parseFloat(depositCoin.minimal_amount)*100
 			});
 		}
 	}
