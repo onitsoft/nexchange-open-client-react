@@ -116,7 +116,7 @@ export function fetchPairs(payload) {
             receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
 
             // If pair is invalid, try again until valid
-            if (!_.filter(coins, {code: receiveCoin}).length || pairs[depositCoin][receiveCoin] === false) {
+            if (!_.filter(coins, {code: receiveCoin, is_base_of_enabled_pair: true }).length || pairs[depositCoin][receiveCoin] === false) {
               pickRandomCoins(coins);
             }
           }
