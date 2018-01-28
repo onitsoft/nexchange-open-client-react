@@ -1,16 +1,16 @@
 let initialState = {
-	deposit: 6000,
-	receive: '...',
+	deposit: '',
+	receive: '',
 	lastEdited: 'deposit'
 }
 
 export default (state = initialState, action) => {
-	if (action.type == 'UPDATE_AMOUNTS') {
+	if (action.type === 'UPDATE_AMOUNTS') {
 		let newState = Object.assign({}, state),
 			opposite = (action.payload.lastEdited == 'receive' ? 'deposit' : 'receive'),
 			price = (action.payload.price ? action.payload.price : state.price),
 			quote = (action.payload.amount ? action.payload.amount : (action.payload.amount == "" ? 0 : state[action.payload.lastEdited])),
-			sum = (action.payload.lastEdited == 'receive' ? parseFloat(quote) * price : parseFloat(quote) / price);
+			sum = (action.payload.lastEdited === 'receive' ? parseFloat(quote) * price : parseFloat(quote) / price);
 
 		newState['lastEdited'] = action.payload.lastEdited;
 		newState[action.payload.lastEdited] = action.payload.amount;
