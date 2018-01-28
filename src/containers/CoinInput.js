@@ -66,20 +66,6 @@ class CoinInput extends Component {
 			this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 		}
 
-		// console.log(
-		// 	nextProps.type === 'receive',
-		// 	nextProps.amounts.receive !== this.props.amounts[this.props.type],
-		// 	nextProps.selectedCoin !== null,
-		// 	nextProps.coinsInfo.length,
-		// )
-    //
-		// console.log(
-		// 	nextProps.type,
-		// 	nextProps.amounts.receive, this.props.amounts[this.props.type],
-		// 	nextProps.selectedCoin,
-		// 	nextProps.coinsInfo
-		// )
-
 		if (nextProps.type === 'receive' &&
 				nextProps.amounts.receive !== this.props.amounts[this.props.type] &&
 				nextProps.selectedCoin !== null &&
