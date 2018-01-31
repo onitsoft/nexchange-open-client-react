@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
 import Helpers from '../helpers';
 
-import { selectCoin, fetchPrice, setWallet } from '../actions/index.js';
+import { selectCoin, fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 
 
 class CoinSelector extends Component {
@@ -38,9 +38,25 @@ class CoinSelector extends Component {
 		}
 
 		// This condition means that selected coin has been changed and price
-		// needs to be refetched.
+		// needs to be refetched. Need to check if pair is valid first.
 		if (this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type]) {
 			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
+		}
+
+		// Check if pair is valid. If not, show error.
+		if (nextProps.selectedCoin.deposit &&
+			nextProps.selectedCoin.receive &&
+			!this.props.pairs[nextProps.selectedCoin.deposit][nextProps.selectedCoin.receive]) {
+				let validPairs = Object.keys(this.props.pairs[nextProps.selectedCoin.deposit])
+					.map(coin => coin)
+					.filter(coin => this.props.pairs[nextProps.selectedCoin.deposit][coin] === true)
+					.join(', ');
+
+				this.props.errorAlert({
+					message: `You cannot buy ${nextProps.selectedCoin.receive} with ${nextProps.selectedCoin.deposit}. Try ${validPairs}.`,
+					show: true,
+					type: 'INVALID_PAIR'
+				});
 		}
 	}
 
@@ -50,18 +66,16 @@ class CoinSelector extends Component {
 
 		if (!selectedCoin) return null;
 
-		let lastSelectedType = this.props.selectedCoin.lastSelected,
-			lastSelectedCoin = this.props.selectedCoin[lastSelectedType],
-			filteredCoins = this.props.coinsInfo.filter(coin => {
+		let filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
 
-				if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
-					if (lastSelectedType === 'deposit') {
-						return this.props.pairs[lastSelectedCoin][coin.code];
-					} else if (lastSelectedType === 'receive') {
-						return this.props.pairs[coin.code][lastSelectedCoin];
-					}
-				}
+				// if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
+				// 	if (lastSelectedType === 'deposit') {
+				// 		return this.props.pairs[lastSelectedCoin][coin.code];
+				// 	} else if (lastSelectedType === 'receive') {
+				// 		return this.props.pairs[coin.code][lastSelectedCoin];
+				// 	}
+				// }
 
 	      if (params && params.hasOwnProperty('test')) {
 					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
@@ -101,7 +115,7 @@ function mapStateToProps(state) {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
 		amounts: state.amounts,
-		pairs: state.pairs
+		pairs: state.pairs,
 	}
 }
 
@@ -110,6 +124,7 @@ function mapDispatchToProps(dispatch) {
 		selectCoin: selectCoin,
 		fetchPrice: fetchPrice,
 		setWallet: setWallet,
+		errorAlert: errorAlert,
 	}, dispatch)
 }
 
