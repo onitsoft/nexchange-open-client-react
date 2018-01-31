@@ -27,11 +27,11 @@ class CoinInput extends Component {
 		ga('send', 'event', 'Order', 'change amount');
 	}
 
-	validateAmounts(depositValue, receiveValue) {
-		let selectedReceiveCoin = this.props.selectedCoin['receive'],
-			selectedDepositCoin = this.props.selectedCoin['deposit'],
-			minAmount = parseFloat(_.find(this.props.coinsInfo, {code: selectedReceiveCoin}).minimal_amount),
-			maxAmount = _.find(this.props.coinsInfo, {code: selectedDepositCoin});
+	validateAmounts(selectedCoins, coinsInfo, depositValue, receiveValue) {
+		let selectedReceiveCoin = selectedCoins['receive'],
+			selectedDepositCoin = selectedCoins['deposit'],
+			minAmount = parseFloat(_.find(coinsInfo, {code: selectedReceiveCoin}).minimal_amount),
+			maxAmount = _.find(coinsInfo, {code: selectedDepositCoin});
 
 		if (maxAmount) maxAmount = parseFloat(maxAmount.maximal_amount);
 
@@ -66,8 +66,11 @@ class CoinInput extends Component {
 			this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 		}
 
-		if (this.props.type == 'receive' && nextProps.amounts.receive != this.props.amounts[this.props.type] && this.props.coinsInfo.length) {
-			this.validateAmounts(nextProps.amounts.deposit, nextProps.amounts.receive);
+		if (nextProps.type === 'receive' &&
+				nextProps.amounts.receive !== this.props.amounts[this.props.type] &&
+				nextProps.selectedCoin !== null &&
+				nextProps.coinsInfo.length) {
+			this.validateAmounts(nextProps.selectedCoin, nextProps.coinsInfo, nextProps.amounts.deposit, nextProps.amounts.receive);
 		}
 	}
 

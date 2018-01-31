@@ -107,6 +107,39 @@ export function fetchPairs(payload) {
           }
 
         	dispatch({type: 'PAIRS_FETCHED', payload: pairs});
+
+          let depositCoin, receiveCoin;
+
+          // Picks random deposit and receive coins.
+          function pickRandomCoins(coins) {
+            depositCoin = coins[Math.floor(Math.random()*coins.length)].code;
+            receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
+
+            // If pair is invalid, try again until valid
+            if (!_.filter(coins, {code: receiveCoin, is_base_of_enabled_pair: true }).length || pairs[depositCoin][receiveCoin] === false) {
+              pickRandomCoins(coins);
+            }
+          }
+          pickRandomCoins(payload);
+
+          function pickRandomReceiveCoin(coins) {
+            let objKeys = Object.keys(coins),
+              randomCoin = objKeys[Math.floor(Math.random() * objKeys.length)];
+
+            return randomCoin;
+          }
+
+					dispatch({type: 'COIN_SELECTED',
+						payload: {
+							deposit: depositCoin,
+							receive: receiveCoin,
+							prev: {
+								deposit: depositCoin,
+								receive: receiveCoin,
+							},
+							lastSelected: 'deposit'
+						}
+					});
         }).catch(error => {
         	console.log(error);
         });

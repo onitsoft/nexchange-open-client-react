@@ -31,15 +31,26 @@ class CoinSelector extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		// This condition means that we have selected default currency pairs
+		// and now need to fetch price.
+		if (this.props.selectedCoin.deposit === null && nextProps.selectedCoin.deposit) {
+			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
+		}
+
+		// This condition means that selected coin has been changed and price
+		// needs to be refetched.
 		if (this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type]) {
 			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
 		}
 	}
 
 	render() {
-		let selectedCoin = this.props.selectedCoin[this.props.type],
-			type = this.props.type,
-			lastSelectedType = this.props.selectedCoin.lastSelected,
+		let type = this.props.type,
+			selectedCoin = this.props.selectedCoin[type];
+
+		if (!selectedCoin) return null;
+
+		let lastSelectedType = this.props.selectedCoin.lastSelected,
 			lastSelectedCoin = this.props.selectedCoin[lastSelectedType],
 			filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
