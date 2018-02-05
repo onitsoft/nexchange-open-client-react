@@ -15,6 +15,7 @@ class CoinPrices extends Component {
 			rates: {
 				btceth: null,
 				btcltc: null,
+				btcbdg: null,
 				dogebtc: null,
 				ethltc: null,
 				dogeeth: null,
@@ -22,6 +23,7 @@ class CoinPrices extends Component {
 			},
 			change: {
 				btceth: null,
+				btcbdg: null,
 				btcltc: null,
 				dogebtc: null,
 				ethltc: null,
@@ -40,10 +42,10 @@ class CoinPrices extends Component {
 
 	fetchPrices() {
 		this.fetchPrice('btceth');
+		this.fetchPrice('btcbdg');
 		this.fetchPrice('btcltc');
 		this.fetchPrice('dogebtc');
 		this.fetchPrice('ethltc');
-		this.fetchPrice('dogeeth');
 		this.fetchPrice('dogeltc');
 
 		this.timeout = setTimeout(() => {
@@ -60,7 +62,7 @@ class CoinPrices extends Component {
 
 	        	let rates = this.state.rates,
 	        		rate = 1 / parseFloat(response.data[0].ticker.ask);
-	        		
+
 	        	if (rates[pair] != null) {
 	        		let change = this.state.change;
 
@@ -69,8 +71,9 @@ class CoinPrices extends Component {
 
 	        		this.setState({change});
 
-	        		if (pair.toLowerCase() == `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase())
-						this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+	        		if (pair.toLowerCase() === `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase()) {
+								this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+							}
 
 	        		setTimeout(() => {
 	        			let change = this.state.change;
@@ -84,7 +87,7 @@ class CoinPrices extends Component {
 	        	this.setState({rates});
 	        }).catch(error => {
 	        	console.log(error);
-	        });  
+	        });
 	}
 
 	componentWillUnmount() {
@@ -100,6 +103,11 @@ class CoinPrices extends Component {
 							<h6>{this.state.rates.btceth ? this.state.rates.btceth.toFixed(5) : '...'}</h6>
 						</div>
 
+						<div className={`coin-price ${this.state.change['btcbdg']}`} ref={el => { this.btceth = el; }}>
+							<h5>BDG/BTC</h5>
+							<h6>{this.state.rates.btcbdg ? this.state.rates.btcbdg.toFixed(6) : '...'}</h6>
+						</div>
+
 						<div className={`coin-price ${this.state.change['btcltc']}`} ref={el => { this.btcltc = el; }}>
 							<h5>LTC/BTC</h5>
 							<h6>{this.state.rates.btcltc ? this.state.rates.btcltc.toFixed(5) : '...'}</h6>
@@ -113,11 +121,6 @@ class CoinPrices extends Component {
 						<div className={`coin-price ${this.state.change['ethltc']}`} ref={el => { this.ethltc = el; }}>
 							<h5>LTC/ETH</h5>
 							<h6>{this.state.rates.ethltc ? this.state.rates.ethltc.toFixed(5) : '...'}</h6>
-						</div>
-
-						<div className={`coin-price ${this.state.change['dogeeth']}`} ref={el => { this.dogeeth = el; }}>
-							<h5>ETH/DOGE</h5>
-							<h6>{this.state.rates.dogeeth ? this.state.rates.dogeeth.toFixed(1) : '...'}</h6>
 						</div>
 
 						<div className={`coin-price ${this.state.change['dogeltc']}`} ref={el => { this.dogeltc = el; }}>
