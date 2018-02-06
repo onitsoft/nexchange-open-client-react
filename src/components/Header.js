@@ -42,7 +42,7 @@ class Header extends Component {
 				    	<Link to="/">
 				        	<div className="logo-container">
 				        		<img src="/img/logo.png" />
-				                <h1 className="header-text">NE<span className="text-green">X</span>CHANGE</h1>
+				                <h1 className="header-text">E<span className="text-green">X</span>CHANGE</h1>
 							</div>
 				      	</Link>
 				    </div>
