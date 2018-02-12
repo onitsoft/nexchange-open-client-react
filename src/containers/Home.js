@@ -15,10 +15,14 @@ import Trustpilot from '../components/Trustpilot';
 
 
 class Home extends Component {
-	constructor(props) {
-		super(props);
+	componentDidMount() {
+		console.log('HOME');
 
 		this.props.fetchCoinDetails();
+
+		if (this.props.coinsInfo.length) {
+			this.props.fetchPairs(this.props.coinsInfo);
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
