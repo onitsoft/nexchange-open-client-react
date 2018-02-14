@@ -29,16 +29,6 @@ class Home extends Component {
 		if (this.props.coinsInfo.length !== nextProps.coinsInfo.length) {
 			this.props.fetchPairs(nextProps.coinsInfo);
 		}
-
-		if (this.props.coinsInfo.length && nextProps.selectedCoin.deposit) {
-			let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
-
-			this.props.fetchPrice({
-				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-				lastEdited: 'deposit',
-				amount: parseFloat(depositCoin.minimal_amount)*100
-			});
-		}
 	}
 
 	render() {

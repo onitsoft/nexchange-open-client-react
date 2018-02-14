@@ -38,9 +38,24 @@ class CoinSelector extends Component {
 		}
 
 		// This condition means that selected coin has been changed and price
-		// needs to be refetched. Need to check if pair is valid first.
-		if (this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type]) {
-			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
+		// needs to be refetched.
+		if (this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type] &&
+			((this.props.type === 'deposit' && nextProps.selectedCoin.lastSelected === 'deposit') ||
+			(this.props.type === 'receive' && nextProps.selectedCoin.lastSelected === 'receive'))
+		) {
+			let lastEdited = nextProps.selectedCoin.lastSelected;
+			let amount = nextProps.amounts[lastEdited];
+
+			if (nextProps.selectedCoin.lastSelected === 'deposit') {
+				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
+				amount = parseFloat(depositCoin.minimal_amount)*100;
+			}
+
+			this.props.fetchPrice({
+				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
+				lastEdited: lastEdited,
+				amount: amount
+			});
 		}
 
 		// Check if pair is valid. If not, show error.
