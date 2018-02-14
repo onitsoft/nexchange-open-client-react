@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import {Icon} from 'react-fa';
+import { connect } from 'react-redux';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import _ from 'lodash';
 
 
 class OrderInitial extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	triggerCopyTooltip() {
 		$('#copy-to-clipboard').tooltip({
 			trigger: 'click',
@@ -22,12 +19,18 @@ class OrderInitial extends Component {
 			$('#copy-to-clipboard').tooltip('destroy');
 		}, 1000);
 	}
-	
+
 	getDepositAddressQr () {
-		return "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=" 
-			+ this.props.order.pair.quote.code + ":" 
-			+ this.props.order.deposit_address.address + "?amount=" 
-			+ this.props.order.amount_quote;
+		let name = _.find(this.props.coinsInfo, {code: this.props.order.pair.quote.code}).name;
+
+		if (name === 'bitcoin') {
+			return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
+				${name}:${this.props.order.deposit_address.address}
+				?amount=${this.props.order.amount_quote}`;
+		}
+
+		return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
+			${this.props.order.deposit_address.address}`;
 	}
 
 	render() {
@@ -53,4 +56,11 @@ class OrderInitial extends Component {
 	}
 }
 
-export default OrderInitial;
+
+function mapStateToProps(state) {
+	return {
+		coinsInfo: state.coinsInfo
+	}
+}
+
+export default connect(mapStateToProps)(OrderInitial);

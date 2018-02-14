@@ -23,7 +23,7 @@ class Header extends Component {
 			hash = hash.replace('#', '');
 
 			let el = document.getElementById(hash);
-			if (el) el.scrollIntoView(); 
+			if (el) el.scrollIntoView();
 		}
 	}
 
@@ -52,7 +52,7 @@ class Header extends Component {
 							<li>
 								<a href="/#about" onClick={() => scrollToElement('#about')}>About</a>
 							</li>
-				    	
+
 							<li>
 								<a href="javascript:void(0)" onClick={() => this.setState({showFaqModal: true})}>FAQ</a>
 							</li>

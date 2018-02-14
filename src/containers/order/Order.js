@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import moment from 'moment';
+
+import { fetchCoinDetails } from '../../actions';
 
 import '../../css/order.scss';
 
@@ -39,6 +43,7 @@ class Order extends Component {
 
 	componentDidMount() {
 		this.getOrderDetails();
+		this.props.fetchCoinDetails();
 	}
 
 	tick() {
@@ -176,10 +181,17 @@ class Order extends Component {
 					</div>
 				</div>
 
-			    <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
+				<Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({showBookmarkModal: false})} />
 			</div>
 		);
 	}
 }
 
-export default Order;
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		fetchCoinDetails: fetchCoinDetails
+	}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Order);
