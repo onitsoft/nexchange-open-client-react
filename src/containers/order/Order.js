@@ -134,7 +134,11 @@ class Order extends Component {
 		if (this.state.notFound)
 			return <NotFound />;
 
+<<<<<<< HEAD
 		let orderInfo = null, orderStatus, isCrypto;
+=======
+		let orderInfo = null, orderStatus, refundAddress = null;
+>>>>>>> Only show refund address box on status_name > 11
 		if (this.state.order) {
 			isCrypto = this.state.order.pair.quote.is_crypto;
 
@@ -153,6 +157,10 @@ class Order extends Component {
 						order={this.state.order}
 						timeRemaining={this.state.timeRemaining}
 						{...this.props} />
+
+					if (this.state.order.status_name > 11) {
+						refundAddress = <RefundAddress order={this.state.order} />;
+					}
 				}
 			}
 		}
