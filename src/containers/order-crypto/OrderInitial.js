@@ -20,12 +20,12 @@ class OrderInitial extends Component {
 		}, 1000);
 	}
 
-	getDepositAddressQr () {
-		let name = _.find(this.props.coinsInfo, {code: this.props.order.pair.quote.code}).name;
+	getDepositAddressQr() {
+		let coinInfo = _.find(this.props.coinsInfo, {code: this.props.order.pair.quote.code});
 
-		if (name === 'bitcoin') {
+		if (coinInfo && coinInfo.name === 'bitcoin') {
 			return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-				${name}:${this.props.order.deposit_address.address}
+				${coinInfo.name}:${this.props.order.deposit_address.address}
 				?amount=${this.props.order.amount_quote}`;
 		}
 
