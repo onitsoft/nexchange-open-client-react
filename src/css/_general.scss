@@ -15,6 +15,12 @@ h2 { font-size: 26px;
 a { color: $green;
 	&:visited, &:focus { outline: none; }
 }
+.error {
+	color: #f44336 !important;
+}
+.success {
+	color: #4caf50 !important;
+}
 .header-text { font-size: 36px; }
 img { max-width: 100%; }
 .modal { z-index: 9999; }
@@ -51,3 +57,11 @@ input[type='number']:hover::-webkit-outer-spin-button {
 .tooltip-inner { white-space:pre-wrap; }
 
 .sticky-inner-wrapper { z-index: 9999; }
+
+.form-group.has-error.is-focused .form-control {
+	background-image: linear-gradient(#337ab7, #337ab7), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+input { font-size: 18px; background-image: linear-gradient(#084262, #084262), linear-gradient(#084262, #084262); color: #084262;
+	&.is-focused, &.has-error { background-image: linear-gradient(#337ab7, #337ab7), linear-gradient(#D2D2D2, #D2D2D2) !important; }
+}
