@@ -1,5 +1,5 @@
 body, html { height: 100%; background: #f8f7f8; }
-#root { position: relative; min-height: 100%; 
+#root { position: relative; min-height: 100%;
 	@media (min-width: $screen-md-min) { padding-bottom: 105px; }
 }
 
@@ -42,9 +42,11 @@ input[type='number'] {
 }
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button,
-input[type='number']:hover::-webkit-inner-spin-button, 
+input[type='number']:hover::-webkit-inner-spin-button,
 input[type='number']:hover::-webkit-outer-spin-button {
--webkit-appearance: none; 
+-webkit-appearance: none;
  margin: 0; }
 
 .tooltip-inner { white-space:pre-wrap; }
+
+.sticky-inner-wrapper { z-index: 9999; }
