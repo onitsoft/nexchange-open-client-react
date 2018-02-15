@@ -38,9 +38,11 @@ class Order extends Component {
 			showBookmarkModal: false,
 			notFound: false,
 			order: null,
+			userStatus: null
 		};
 
 		this.getOrderDetails = this.getOrderDetails.bind(this);
+		this.getUser = this.getUser.bind(this);
 		this.tick = this.tick.bind(this);
 		this.trackRefShare = this.trackRefShare.bind(this);
 	}
@@ -48,6 +50,7 @@ class Order extends Component {
 	componentDidMount() {
 		this.getOrderDetails();
 		this.props.fetchCoinDetails();
+		this.getUser();
 	}
 
 	tick() {
@@ -70,9 +73,19 @@ class Order extends Component {
 		});
 	}
 
+	getUser() {
+		axios.get(`${config.API_BASE_URL}/users/me/`)
+		.then(result => {
+			this.setState({userStatus: result.response.status});
+		})
+		.catch(error => {
+			this.setState({userStatus: error.response.status});
+		});
+	}
+
 	getOrderDetails() {
 		axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/?_=${Math.round((new Date()).getTime())}`)
-		.then((response) => {
+		.then(response => {
 			let order = response.data;
 
 			if (this.state.order && this.state.order.status_name[0][0] === 11 && order.status_name[0][0] === 12) {
@@ -158,7 +171,7 @@ class Order extends Component {
 						timeRemaining={this.state.timeRemaining}
 						{...this.props} />
 
-					if (this.state.order.status_name > 11) {
+					if (this.state.order.status_name[0][0] > 11 && this.state.userStatus === 200) {
 						refundAddress = <RefundAddress order={this.state.order} />;
 					}
 				}
@@ -169,27 +182,27 @@ class Order extends Component {
 			<div id="order" className={isCrypto ? 'order-crypto' : 'order-fiat'}>
 				<div className="container">
 					<div className="row">
-					    <div id="order-header" className="col-xs-12">
-					    	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
-					    	<button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
-					    </div>
+						<div id="order-header" className="col-xs-12">
+					  	<h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+					    <button id="bookmark-button" type="button" className="btn btn-default btn-simple" onClick={() => this.setState({showBookmarkModal:true})}>BOOKMARK</button>
+						</div>
 					</div>
 
 					<div className="row">
 						<CoinProcessed order={this.state.order} type="Deposit" />
 						<CoinProcessed order={this.state.order} type="Receive" />
 
-					    <div className="col-xs-12">
-					    	<div className="box">
-					    		{this.state.loading ?
-					    			<div className="row">
-					    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
-					    			</div> : orderInfo
-					    		}
+				    <div className="col-xs-12">
+				    	<div className="box">
+				    		{this.state.loading ?
+				    			<div className="row">
+				    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
+				    			</div> : orderInfo
+				    		}
 
-						    	{orderStatus}
-					    	</div>
-					    </div>
+					    	{orderStatus}
+				    	</div>
+				    </div>
 
 						{this.state.order && <Notifications order={this.state.order} /> }
 						{this.state.order && <RefundAddress order={this.state.order} />}
