@@ -16,8 +16,6 @@ import Trustpilot from '../components/Trustpilot';
 
 class Home extends Component {
 	componentDidMount() {
-		console.log('HOME');
-
 		this.props.fetchCoinDetails();
 
 		if (this.props.coinsInfo.length) {

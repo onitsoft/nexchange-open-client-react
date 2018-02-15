@@ -125,12 +125,6 @@ class ExchangeWidget extends Component {
 								{this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
 							</button>
 						)}
-
-						<p id="fee-info">* Current fee is 0.5%.
-							<i className="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title=""
-								data-original-title={`The fee amounts to ${(this.props.amounts.deposit * 0.005)} ${this.props.selectedCoin.deposit}.`}>
-							</i>
-						</p>
 					</div>
 				</div>
 			</div>
