@@ -47,7 +47,8 @@ const Order = (props) => {
 	}
 
 	return <div id="order-crypto">
-		{order}
+		{/*order*/}
+		{<OrderPayment {...props} />}
 	</div>;
 };
 

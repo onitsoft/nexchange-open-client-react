@@ -15,22 +15,24 @@ class CoinProcessed extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.type === 'Deposit') {
-			this.setState({
-				coin: nextProps.order.pair.quote.code,
-				oppositeCoin: nextProps.order.pair.base.code,
-				amount: parseFloat(nextProps.order.amount_quote),
-				address: nextProps.order.deposit_address ? nextProps.order.deposit_address.address : '',
-				order: nextProps.order
-			});
-		} else if (nextProps.type === 'Receive') {
-			this.setState({
-				coin: nextProps.order.pair.base.code,
-				oppositeCoin: nextProps.order.pair.quote.code,
-				amount: parseFloat(nextProps.order.amount_base),
-				address: nextProps.order.withdraw_address ? nextProps.order.withdraw_address.address : '',
-				order: nextProps.order
-			});
+		if (nextProps.order) {
+			if (nextProps.type === 'Deposit') {
+				this.setState({
+					coin: nextProps.order.pair.quote.code,
+					oppositeCoin: nextProps.order.pair.base.code,
+					amount: parseFloat(nextProps.order.amount_quote),
+					address: nextProps.order.deposit_address ? nextProps.order.deposit_address.address : '',
+					order: nextProps.order
+				});
+			} else if (nextProps.type === 'Receive') {
+				this.setState({
+					coin: nextProps.order.pair.base.code,
+					oppositeCoin: nextProps.order.pair.quote.code,
+					amount: parseFloat(nextProps.order.amount_base),
+					address: nextProps.order.withdraw_address ? nextProps.order.withdraw_address.address : '',
+					order: nextProps.order
+				});
+			}
 		}
 	}
 
