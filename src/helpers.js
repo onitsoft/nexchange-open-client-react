@@ -24,7 +24,7 @@ class Helpers {
 		else if (coin === 'DOGE') return this.blockchainUrl = `https://dogechain.info/tx/${txId}`;
 		else if (coin === 'XVG') return this.blockchainUrl = `https://verge-blockchain.info/tx/${txId}`;
 		else if (coin === 'BCH') return this.blockchainUrl = `https://blockchair.com/bitcoin-cash/transaction/${txId}`;
-    else if (coin === 'XRB') return this.blockchainUrl = `https://www.raiblocks.club/block/${txId}`;
+    else if (coin === 'NANO') return this.blockchainUrl = `https://www.raiblocks.club/block/${txId}`;
 
 		return null;
 	}

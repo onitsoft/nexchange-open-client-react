@@ -78,13 +78,13 @@
   color: transparent;
 }
 
-.cc-XRB-alt:before {
+.cc-NANO-alt:before {
   content: "\E075";
   background-image: url(../img/logos/xrb.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
   color: transparent;
 }
 
-.cc-XRB:before {
+.cc-NANO:before {
   content: "\E075";
   background-image: url(../img/logos/xrb.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
   color: transparent;
@@ -138,13 +138,13 @@
   color: transparent;
 }
 
-.selectedCoin .cc-XRB-alt:before {
+.selectedCoin .cc-NANO-alt:before {
   content: "\E075";
   background-image: url(../img/logos/xrb-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
   color: transparent;
 }
 
-.selectedCoin .cc-XRB:before {
+.selectedCoin .cc-NANO:before {
   content: "\E075";
   background-image: url(../img/logos/xrb-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
   color: transparent;
@@ -192,7 +192,7 @@
 .DOGE { color: #BA9F33; }
 .XVG { color: #42AFB2; }
 .EOS { color: #19191A; }
-.XRB { color: #0070ff; }
+.NANO { color: #0070ff; }
 .BDG { color: #471d66; }
 .USD { color: #34b67a; }
 .EUR { color: #5fccff; }
