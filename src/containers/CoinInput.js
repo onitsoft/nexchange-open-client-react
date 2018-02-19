@@ -2,11 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
-import axios from 'axios';
-import moment from 'moment'
-
-import config from '../config';
-import { errorAlert, fetchPrice } from '../actions/index.js';
+import { fetchPrice } from '../actions/index.js';
 import CoinSelector from './CoinSelector';
 
 
@@ -41,13 +37,7 @@ class CoinInput extends PureComponent {
 		} else if (nextProps.type === 'deposit') {
 			this.setState({ value: nextProps.price.deposit });
 		}
-
-		// if (this.props.pair !== nextProps.pair) {
-		// 	this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-		// }
 	}
-
-	// this.props.price[this.props.type]
 
 	render() {
 		return (
@@ -71,15 +61,12 @@ class CoinInput extends PureComponent {
 function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
-		coinsInfo: state.coinsInfo,
-		price: state.price,
-		error: state.error
+		price: state.price
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		errorAlert: errorAlert,
 		fetchPrice: fetchPrice,
 	}, dispatch)
 }
