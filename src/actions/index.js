@@ -77,9 +77,11 @@ export function fetchPrice(payload) {
         if ('receive' in payload) {
           data['deposit'] = response.data.amount_quote;
           data['receive'] = payload.receive;
+          data['lastEdited'] = 'receive';
         } else if ('deposit' in payload) {
           data['deposit'] = payload.deposit;
           data['receive'] = response.data.amount_base;
+          data['lastEdited'] = 'deposit';
         }
 
       	dispatch({type: 'PRICE_FETCHED', payload: data});
@@ -90,19 +92,20 @@ export function fetchPrice(payload) {
 				}});
       }).catch(error => {
         let data = {
-        	pair: payload.pair,
-      		lastFetched: new moment(),
+        	pair: payload.pair
         }
 
         if ('receive' in payload) {
           data['deposit'] = '...';
           data['receive'] = payload.receive;
+          data['lastEdited'] = 'receive';
         } else if ('deposit' in payload) {
           data['deposit'] = payload.deposit;
           data['receive'] = '...';
+          data['lastEdited'] = 'deposit';
         }
 
-        //dispatch({type: 'PRICE_FETCHED', payload: data});
+        dispatch({type: 'PRICE_FETCHED', payload: data});
 
         let regex = /[^[\']+(?=')/g;
         let match = regex.exec(error.response.data.detail);
