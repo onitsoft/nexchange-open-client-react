@@ -33,8 +33,14 @@ class CoinSelector extends Component {
 	componentWillReceiveProps(nextProps) {
 		// This condition means that we have selected default currency pairs
 		// and now need to fetch price.
-		if (this.props.selectedCoin.deposit === null && nextProps.selectedCoin.deposit) {
-			this.props.fetchPrice({pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`, lastEdited: nextProps.amounts.lastEdited, amount: nextProps.amounts[nextProps.amounts.lastEdited]});
+		if (this.props.selectedCoin.deposit === null && nextProps.selectedCoin.deposit && nextProps.type === 'deposit') {
+			let depositCoin = _.filter(nextProps.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
+
+			this.props.fetchPrice({
+				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
+				lastEdited: 'deposit',
+				deposit: parseFloat(depositCoin.minimal_amount)*100
+			});
 		}
 
 		// This condition means that selected coin has been changed and price
@@ -44,18 +50,21 @@ class CoinSelector extends Component {
 			(this.props.type === 'receive' && nextProps.selectedCoin.lastSelected === 'receive'))
 		) {
 			let lastEdited = nextProps.selectedCoin.lastSelected;
-			let amount = nextProps.amounts[lastEdited];
+			let amount = nextProps.price[lastEdited];
+			let data = {
+				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
+				lastEdited: lastEdited
+			};
 
 			if (nextProps.selectedCoin.lastSelected === 'deposit') {
 				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
 				amount = parseFloat(depositCoin.minimal_amount)*100;
+				data['deposit'] = amount;
+			} else {
+				data['receive'] = amount;
 			}
 
-			this.props.fetchPrice({
-				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-				lastEdited: lastEdited,
-				amount: amount
-			});
+			this.props.fetchPrice(data);
 		}
 
 		// Check if pair is valid. If not, show error.
@@ -83,14 +92,6 @@ class CoinSelector extends Component {
 
 		let filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
-
-				// if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
-				// 	if (lastSelectedType === 'deposit') {
-				// 		return this.props.pairs[lastSelectedCoin][coin.code];
-				// 	} else if (lastSelectedType === 'receive') {
-				// 		return this.props.pairs[coin.code][lastSelectedCoin];
-				// 	}
-				// }
 
 	      if (params && params.hasOwnProperty('test')) {
 					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
@@ -129,8 +130,8 @@ function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
-		amounts: state.amounts,
 		pairs: state.pairs,
+		price: state.price
 	}
 }
 

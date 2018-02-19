@@ -14,8 +14,8 @@ const Hero = () => (
 			<div className="row">
 				<div className="col-xs-12">
 					<div className="brand">
-				        <h1>Exchange Cryptocurrencies</h1>
-				        <h2>Simple. <span className="text-green">Secure</span>. Transparent.</h2>
+		        <h1>Exchange Cryptocurrencies</h1>
+		        <h2>Simple. <span className="text-green">Secure</span>. Transparent.</h2>
 					</div>
 				</div>
 
