@@ -51,21 +51,20 @@ class CoinSelector extends Component {
 		) {
 			let lastEdited = nextProps.selectedCoin.lastSelected;
 			let amount = nextProps.price[lastEdited];
+			let data = {
+				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
+				lastEdited: lastEdited
+			};
 
 			if (nextProps.selectedCoin.lastSelected === 'deposit') {
 				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
 				amount = parseFloat(depositCoin.minimal_amount)*100;
+				data['deposit'] = amount;
+			} else {
+				data['receive'] = amount;
 			}
 
-			let data = {
-				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-				lastEdited: lastEdited,
-				amount: amount
-			};
-
-			// data[lastEdited] = ;
-      //
-			// this.props.fetchPrice();
+			this.props.fetchPrice(data);
 		}
 
 		// Check if pair is valid. If not, show error.
@@ -93,14 +92,6 @@ class CoinSelector extends Component {
 
 		let filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
-
-				// if (this.props.pairs && type !== lastSelectedType && lastSelectedCoin !== coin.code) {
-				// 	if (lastSelectedType === 'deposit') {
-				// 		return this.props.pairs[lastSelectedCoin][coin.code];
-				// 	} else if (lastSelectedType === 'receive') {
-				// 		return this.props.pairs[coin.code][lastSelectedCoin];
-				// 	}
-				// }
 
 	      if (params && params.hasOwnProperty('test')) {
 					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;

@@ -45,13 +45,6 @@ class CoinInput extends PureComponent {
 		// if (this.props.pair !== nextProps.pair) {
 		// 	this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 		// }
-
-		// if (nextProps.type === 'receive' &&
-		// 		nextProps.amounts.receive !== this.props.amounts[this.props.type] &&
-		// 		nextProps.selectedCoin !== null &&
-		// 		nextProps.coinsInfo.length) {
-		// 	this.validateAmounts(nextProps.selectedCoin, nextProps.coinsInfo, nextProps.amounts.deposit, nextProps.amounts.receive);
-		// }
 	}
 
 	// this.props.price[this.props.type]
