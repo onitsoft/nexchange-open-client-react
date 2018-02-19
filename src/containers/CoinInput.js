@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import { fetchPrice } from '../actions/index.js';
 import CoinSelector from './CoinSelector';
+import {debounce} from 'throttle-debounce';
 
 
 class CoinInput extends PureComponent {
@@ -15,21 +16,31 @@ class CoinInput extends PureComponent {
 		}
 
 		this.onChange = this.onChange.bind(this);
+		this.fetchAmounts = debounce(300, this.fetchAmounts);
 	}
 
 	onChange(event) {
+		this.setState({value: event.target.value});
+		this.fetchAmounts(event.target.value);
+
+		ga('send', 'event', 'Order', 'change amount');
+	}
+
+	printChange(e) {
+  	this.fetchAmounts(e.target.value);
+  }
+
+	fetchAmounts(value) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
 		let data = {
 			pair: pair,
 			lastEdited: this.props.type
 		};
 
-		data[this.props.type] = event.target.value;
-		this.setState({value: event.target.value});
-		this.props.fetchPrice(data);
+		data[this.props.type] = value;
 
-		ga('send', 'event', 'Order', 'change amount');
-	}
+		this.props.fetchPrice(data);
+  }
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.type === 'receive') {
@@ -47,7 +58,7 @@ class CoinInput extends PureComponent {
 					className="form-control coin"
 					id={`coin-input-${this.props.type}`}
 					name={this.props.type}
-					onChange={this.onChange}
+					onChange={this.onChange.bind(this)}
 					value={this.state.value}
 				/>
 
