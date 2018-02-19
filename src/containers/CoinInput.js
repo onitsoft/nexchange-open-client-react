@@ -16,7 +16,7 @@ class CoinInput extends PureComponent {
 		}
 
 		this.onChange = this.onChange.bind(this);
-		this.fetchAmounts = debounce(300, this.fetchAmounts);
+		this.fetchAmounts = debounce(700, this.fetchAmounts);
 	}
 
 	onChange(event) {

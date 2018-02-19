@@ -6,7 +6,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import config from '../config';
-import { fetchPrice, setWallet, errorAlert } from '../actions/index.js';
+import { setWallet, errorAlert } from '../actions/index.js';
 
 import CoinInput from './CoinInput';
 import WalletAddress from './WalletAddress';
@@ -134,7 +134,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		fetchPrice: fetchPrice,
 		setWallet: setWallet,
 		errorAlert: errorAlert,
 	}, dispatch)
