@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import config from '../config';
 
-import { errorAlert, updateAmounts, fetchPrice } from '../actions/index.js';
+import { errorAlert, fetchPrice } from '../actions/index.js';
 
 
 class CoinPrices extends Component {
@@ -41,15 +41,15 @@ class CoinPrices extends Component {
 	}
 
 	fetchPrices() {
-		this.fetchPrice('btceth');
-		this.fetchPrice('btcbdg');
-		this.fetchPrice('btcltc');
-		this.fetchPrice('dogebtc');
-		this.fetchPrice('ethltc');
-		this.fetchPrice('dogeltc');
+		// this.fetchPrice('btceth');
+		// this.fetchPrice('btcbdg');
+		// this.fetchPrice('btcltc');
+		// this.fetchPrice('dogebtc');
+		// this.fetchPrice('ethltc');
+		// this.fetchPrice('dogeltc');
 
 		this.timeout = setTimeout(() => {
-			this.fetchPrices();
+			//this.fetchPrices();
 		}, config.PRICE_FETCH_INTERVAL);
 	}
 
@@ -72,7 +72,7 @@ class CoinPrices extends Component {
 	        		this.setState({change});
 
 	        		if (pair.toLowerCase() === `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`.toLowerCase()) {
-								this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
+								//this.props.updateAmounts({amount: this.props.amounts[this.props.amounts.lastEdited], lastEdited: this.props.amounts.lastEdited, price: parseFloat(response.data[0].ticker.ask)});
 							}
 
 	        		setTimeout(() => {
@@ -144,7 +144,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		updateAmounts: updateAmounts,
 		fetchPrice: fetchPrice,
 	}, dispatch)
 }

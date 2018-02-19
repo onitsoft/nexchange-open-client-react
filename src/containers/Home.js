@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
-import { fetchCoinDetails, fetchPairs, fetchPrice } from '../actions';
+import { fetchCoinDetails, fetchPairs } from '../actions';
 
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -57,7 +57,6 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		fetchCoinDetails: fetchCoinDetails,
 		fetchPairs: fetchPairs,
-		fetchPrice: fetchPrice,
 	}, dispatch)
 }
 

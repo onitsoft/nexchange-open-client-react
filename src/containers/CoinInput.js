@@ -6,7 +6,7 @@ import axios from 'axios';
 import moment from 'moment'
 
 import config from '../config';
-import { errorAlert, updateAmounts, fetchPrice } from '../actions/index.js';
+import { errorAlert, fetchPrice } from '../actions/index.js';
 import CoinSelector from './CoinSelector';
 
 
@@ -18,11 +18,21 @@ class CoinInput extends Component {
 
 	onChange(event) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+		let data = {
+			pair: pair,
+			lastEdited: this.props.type
+		};
 
-		if (this.props.price.pair !== pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL)
-			this.props.fetchPrice({pair: pair, amount: event.target.value, lastEdited: this.props.type});
-		else
-			this.props.updateAmounts({amount: event.target.value, lastEdited: this.props.type, price: this.props.price.price});
+		data[this.props.type] = event.target.value;
+
+		console.log("SENDING DATA", data);
+
+		//if (this.props.price.pair !== pair || new moment().diff(this.props.price.lastFetched) > config.PRICE_FETCH_INTERVAL)
+
+		this.props.fetchPrice(data);
+
+		//else
+		//	this.props.updateAmounts({amount: event.target.value, lastEdited: this.props.type, price: this.props.price.price});
 
 		ga('send', 'event', 'Order', 'change amount');
 	}
@@ -66,19 +76,19 @@ class CoinInput extends Component {
 		// 	this.props.fetchPrice({pair: nextProps.pair, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
 		// }
 
-		if (nextProps.type === 'receive' &&
-				nextProps.amounts.receive !== this.props.amounts[this.props.type] &&
-				nextProps.selectedCoin !== null &&
-				nextProps.coinsInfo.length) {
-			this.validateAmounts(nextProps.selectedCoin, nextProps.coinsInfo, nextProps.amounts.deposit, nextProps.amounts.receive);
-		}
+		// if (nextProps.type === 'receive' &&
+		// 		nextProps.amounts.receive !== this.props.amounts[this.props.type] &&
+		// 		nextProps.selectedCoin !== null &&
+		// 		nextProps.coinsInfo.length) {
+		// 	this.validateAmounts(nextProps.selectedCoin, nextProps.coinsInfo, nextProps.amounts.deposit, nextProps.amounts.receive);
+		// }
 	}
 
 	render() {
 		return (
 		  <div className="form-group label-floating has-success is-focused">
 		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
-		    <input type="number" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} onChange={this.onChange} value={this.props.amounts[this.props.type]} />
+		    <input type="text" className="form-control coin" id={`coin-input-${this.props.type}`} name={this.props.type} onChange={this.onChange} value={this.props.price[this.props.type]} />
 
 		    <CoinSelector type={this.props.type} />
 		  </div>
@@ -91,7 +101,6 @@ function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
 		coinsInfo: state.coinsInfo,
-		amounts: state.amounts,
 		price: state.price,
 		error: state.error
 	}
@@ -100,7 +109,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		errorAlert: errorAlert,
-		updateAmounts: updateAmounts,
 		fetchPrice: fetchPrice,
 	}, dispatch)
 }

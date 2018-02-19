@@ -22,27 +22,16 @@ class ExchangeWidget extends Component {
 	  };
 
   	this.placeOrder = this.placeOrder.bind(this);
-  	this.updatePrices = this.updatePrices.bind(this);
 	}
 
 	componentDidMount() {
 		$(function() {
-		    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+			$('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 		});
-
-		this.updatePrices();
 	}
 
 	componentWillUnmount() {
 		clearTimeout(this.timeout);
-	}
-
-	updatePrices() {
-		this.props.fetchPrice({pair: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`, lastEdited: this.props.amounts.lastEdited, amount: this.props.amounts[this.props.amounts.lastEdited]});
-
-		this.timeout = setTimeout(() => {
-			this.updatePrices();
-		}, config.PRICE_FETCH_INTERVAL);
 	}
 
 	placeOrder() {
