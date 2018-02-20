@@ -48,8 +48,8 @@ class ExchangeWidget extends Component {
 			}
 		};
 
-		if (this.props.amounts.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.amounts.receive);
-		else if (this.props.amounts.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.amounts.deposit);
+		if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
+		else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
 		axios({
 			method: 'post',
@@ -125,10 +125,9 @@ class ExchangeWidget extends Component {
 function mapStateToProps(state) {
 	return {
 		selectedCoin: state.selectedCoin,
-		amounts: state.amounts,
+		price: state.price,
 		error: state.error,
 		wallet: state.wallet,
-		price: state.price,
 	}
 }
 
