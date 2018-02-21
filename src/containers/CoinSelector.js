@@ -56,7 +56,10 @@ class CoinSelector extends Component {
 				lastEdited: lastEdited
 			};
 
-			if (nextProps.selectedCoin.lastSelected === 'deposit') {
+			if (nextProps.selectedCoin.lastSelected === 'deposit' ||
+				nextProps.price.deposit === '...' ||
+				nextProps.price.receive === '...'
+			) {
 				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
 				amount = parseFloat(depositCoin.minimal_amount)*100;
 				data['deposit'] = amount;
