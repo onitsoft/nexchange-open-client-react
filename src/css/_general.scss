@@ -17,6 +17,7 @@ a { color: $green;
 }
 .header-text { font-size: 36px; }
 img { max-width: 100%; }
+.modal { z-index: 9999; }
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
 	h3 { margin-top: 35px; }
