@@ -54,6 +54,15 @@ const About = () => (
                 twitter: "https://twitter.com/chiragneb",
                 github: "https://github.com/chiragneb",
               }} />
+
+            <TeamMember id="you" name="You?"
+              description={
+                <div>
+                  <p>We are actively hiring for the N.exchange dream team. We are especially looking for talented developers, marketing personnel, a community manager and content writers.</p>
+                  <p>Drop us a line at <a href="mailto:careers@nexchange.io">careers@nexchange.io</a></p>
+                </div>
+              }
+            />
           </div>
         </div>
       </div>
