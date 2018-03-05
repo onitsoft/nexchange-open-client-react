@@ -29,7 +29,9 @@ class CoinInput extends PureComponent {
 		this.setState({value: event.target.value});
 		this.fetchAmounts(event.target.value);
 
-		ga('send', 'event', 'Order', 'change amount');
+		if (window.ga) {
+			window.ga('send', 'event', 'Order', 'change amount');
+		}
 	}
 
 	onFocus(event) {
