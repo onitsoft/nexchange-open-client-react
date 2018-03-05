@@ -15,7 +15,7 @@ class CoinSelector extends Component {
 			selectedCoin: null
 		}
 
-    this.selectCoin = this.selectCoin.bind(this);
+    	this.selectCoin = this.selectCoin.bind(this);
 	}
 
 	selectCoin(coin) {
@@ -96,23 +96,23 @@ class CoinSelector extends Component {
 		let filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
 
-	      if (params && params.hasOwnProperty('test')) {
-					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
-				}
+			if (params && params.hasOwnProperty('test')) {
+				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
+			}
 
-				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
-			}),
-			coins = filteredCoins.map(coin => {
-				return (
-					<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
-						<div className="col-xs-4">{coin.code}</div>
-						<div className="col-xs-3 text-center">
-							<i className={`cc-${coin.code} ${coin.code}`}></i>
-						</div>
-						<div className="col-xs-5 text-capitalize">{coin.name}</div>
+			return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
+		}),
+		coins = filteredCoins.map(coin => {
+			return (
+				<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
+					<div className="col-xs-4">{coin.code}</div>
+					<div className="col-xs-3 text-center">
+						<i className={`cc-${coin.code} ${coin.code}`}></i>
 					</div>
-				);
-			});
+					<div className="col-xs-5 text-capitalize">{coin.name}</div>
+				</div>
+			);
+		});
 
 		return (
 			<div>
