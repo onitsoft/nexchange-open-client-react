@@ -32,4 +32,19 @@ describe('Coin input states',()=>{
     coinInput.find('input').simulate('change', { target: { value: 10 } });
     expect(coinInput.find('input').props().value).toBe(10);
   });
+
+  it('only allow to set numeric values', () => {
+    coinInput.find('input').simulate('change', { target: { value: 'asd' } });
+    expect(coinInput.find('input').props().value).toBe('...');
+  });
+
+  it('field becomes empty on focus and "..." again on blur', () => {
+    coinInput.find('input').props().onFocus();
+    coinInput.update();
+    expect(coinInput.find('input').props().value).toBe('');
+
+    coinInput.find('input').props().onBlur();
+    coinInput.update();
+    expect(coinInput.find('input').props().value).toBe('...');
+  });
 });

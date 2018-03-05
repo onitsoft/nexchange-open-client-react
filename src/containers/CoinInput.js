@@ -33,14 +33,14 @@ class CoinInput extends PureComponent {
 		}
 	}
 
-	onFocus(event) {
-		if (event.target.value === '...') {
+	onFocus() {
+		if (this.state.value === '...') {
 			this.setState({value: ''});
 		}
 	}
 
 	onBlur(event) {
-		if (event.target.value === '') {
+		if (this.state.value === '') {
 			this.setState({value: '...'});
 		}
 	}
@@ -70,14 +70,14 @@ class CoinInput extends PureComponent {
 		  <div className="form-group label-floating has-success is-focused">
 		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
 		    <input type="text"
-					className="form-control coin"
-					id={`coin-input-${this.props.type}`}
-					name={this.props.type}
-					onChange={this.onChange.bind(this)}
-					onFocus={this.onFocus.bind(this)}
-					onBlur={this.onBlur.bind(this)}
-					value={this.state.value}
-				/>
+				className="form-control coin"
+				id={`coin-input-${this.props.type}`}
+				name={this.props.type}
+				onChange={this.onChange.bind(this)}
+				onFocus={this.onFocus.bind(this)}
+				onBlur={this.onBlur.bind(this)}
+				value={this.state.value}
+			/>
 
 		    <CoinSelector type={this.props.type} />
 		  </div>
