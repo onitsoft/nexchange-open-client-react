@@ -7,7 +7,7 @@ import Helpers from '../helpers';
 import { selectCoin, fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 
 
-class CoinSelector extends Component {
+export class CoinSelector extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {

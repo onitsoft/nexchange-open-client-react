@@ -20,6 +20,10 @@ describe('Coin input states',()=>{
     coinInput = wrapper.dive();
   });
 
+  it('CoinInput renders', () => {
+    expect(coinInput.length).toEqual(1)
+  });
+
   it('initial coin input should be "..."', () => {
     expect(coinInput.find('input').props().value).toBe('...');
   });
@@ -28,15 +32,4 @@ describe('Coin input states',()=>{
     coinInput.find('input').simulate('change', { target: { value: 10 } });
     expect(coinInput.find('input').props().value).toBe(10);
   });
-
-  // it('renders', () => {
-  //   const wrapper = mount(<Provider store={store}><CoinSelector /></Provider>);
-    
-  //   const coinSelector = wrapper.dive({context: {store}}).dive();
-
-  //   // Now you can do stuff like...
-  //   coinSelector.instance().selectCoin('ETH')
-
-  // });
-
 });
