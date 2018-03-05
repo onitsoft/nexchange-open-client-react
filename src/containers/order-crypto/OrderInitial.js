@@ -21,9 +21,9 @@ class OrderInitial extends Component {
 	}
 
 	getDepositAddressQr () {
-		let name = _.find(this.props.coinsInfo, {code: this.props.order.pair.quote.code}).name;
+		let name = _.find(this.props.coinsInfo, {code: this.props.order.pair.quote.code});
 
-		if (name === 'bitcoin') {
+		if (name && name.name === 'bitcoin') {
 			return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
 				${name}:${this.props.order.deposit_address.address}
 				?amount=${this.props.order.amount_quote}`;
