@@ -48,6 +48,7 @@ class Support extends Component {
       method: 'post',
       contentType : 'application/json',
       url: `${config.API_BASE_URL}/support/`,
+      headers: {'Authorization': 'Bearer ' + localStorage.token},
       data: {
         email: this.state.email,
         name: this.state.name,
