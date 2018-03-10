@@ -90,24 +90,6 @@ class CoinSelector extends Component {
 				});
 		}
 	}
-	
-	putFiatFirst(coins) {
-		function currencyToHandle(currency) {
-			const currencyIdx = _.findIndex(coins, { name: currency });
-			const currencyObj = coins[currencyIdx];
-	
-			if (currencyIdx > -1) {
-				coins.splice(currencyIdx, 1);
-				coins.unshift(currencyObj);
-			}
-		}
-		
-		currencyToHandle('GBP');
-		currencyToHandle('EUR');
-		currencyToHandle('USD');
-
-		return coins;
-	}
 
 	renderCoinsDropdown(type) {
 		let filteredCoins = this.props.coinsInfo.filter(coin => {
@@ -120,7 +102,7 @@ class CoinSelector extends Component {
 			return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
 		});
 
-		filteredCoins = this.putFiatFirst(filteredCoins);
+		filteredCoins = _.sortBy(filteredCoins, 'is_crypto');
 
 		const coins = filteredCoins.map(coin => {
 			return (
