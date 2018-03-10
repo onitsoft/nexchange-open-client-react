@@ -41,9 +41,8 @@ class OrderStatus extends Component {
         	.then(response => {
         		let orders = response.data.results.filter(order => {
 		        	return (params && params.hasOwnProperty('test')) ? true : (
-		        		order.withdraw_address && order.deposit_address &&
-		        		_.contains(receiveCurrencies, order.withdraw_address.currency_code) &&
-		        		_.contains(depositCurrencies, order.deposit_address.currency_code));
+		        		_.contains(receiveCurrencies, order.pair.base.code) &&
+		        		_.contains(depositCurrencies, order.pair.quote.code));
         		});
 
         		this.setState({orders: orders});

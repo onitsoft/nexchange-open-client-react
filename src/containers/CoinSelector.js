@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
 import Helpers from '../helpers';
+import _ from 'lodash';
 
 import { selectCoin, fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 
@@ -30,6 +31,10 @@ class CoinSelector extends Component {
 		this.setState({isDropdownVisible: false});
 	}
 
+	calculateDepositAmount(coin) {
+		return (['EUR', 'GBP', 'USD'].indexOf(coin.name) > -1) ? 100 : parseFloat(coin.minimal_amount)*100;
+	}
+
 	componentWillReceiveProps(nextProps) {
 		// This condition means that we have selected default currency pairs
 		// and now need to fetch price.
@@ -39,7 +44,7 @@ class CoinSelector extends Component {
 			this.props.fetchPrice({
 				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
 				lastEdited: 'deposit',
-				deposit: parseFloat(depositCoin.minimal_amount)*100
+				deposit: this.calculateDepositAmount(depositCoin)
 			});
 		}
 
@@ -61,8 +66,7 @@ class CoinSelector extends Component {
 				nextProps.price.receive === '...'
 			) {
 				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
-				amount = parseFloat(depositCoin.minimal_amount)*100;
-				data['deposit'] = amount;
+				data['deposit'] = this.calculateDepositAmount(depositCoin);
 			} else {
 				data['receive'] = amount;
 			}
@@ -87,32 +91,39 @@ class CoinSelector extends Component {
 		}
 	}
 
+	renderCoinsDropdown(type) {
+		let filteredCoins = this.props.coinsInfo.filter(coin => {
+	   		let params = Helpers.urlParams();
+
+	      	if (params && params.hasOwnProperty('test')) {
+				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
+			}
+
+			return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
+		});
+
+		filteredCoins = _.sortBy(filteredCoins, 'is_crypto');
+
+		const coins = filteredCoins.map(coin => {
+			return (
+				<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
+					<div className="col-xs-4">{coin.code}</div>
+					<div className="col-xs-3 text-center">
+						<i className={`cc-${coin.code} ${coin.code}`}></i>
+					</div>
+					<div className="col-xs-5 text-capitalize">{coin.name}</div>
+				</div>
+			);
+		});
+
+		return coins;
+	}
+
 	render() {
 		let type = this.props.type,
 			selectedCoin = this.props.selectedCoin[type];
 
 		if (!selectedCoin) return null;
-
-		let filteredCoins = this.props.coinsInfo.filter(coin => {
-	   		let params = Helpers.urlParams();
-
-	      if (params && params.hasOwnProperty('test')) {
-					return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
-				}
-
-				return (type.toUpperCase() === 'DEPOSIT') ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
-			}),
-			coins = filteredCoins.map(coin => {
-				return (
-					<div className="row coin" key={coin.code} onClick={() => this.selectCoin(coin.code)}>
-						<div className="col-xs-4">{coin.code}</div>
-						<div className="col-xs-3 text-center">
-							<i className={`cc-${coin.code} ${coin.code}`}></i>
-						</div>
-						<div className="col-xs-5 text-capitalize">{coin.name}</div>
-					</div>
-				);
-			});
 
 		return (
 			<div>
@@ -122,7 +133,7 @@ class CoinSelector extends Component {
 					<i className="fa fa-angle-down"></i>
 				</div>
 
-				{this.state.isDropdownVisible ? <div className="coin-currency-dropdown">{coins}</div> : null}
+				{this.state.isDropdownVisible && <div className="coin-currency-dropdown">{this.renderCoinsDropdown(type)}</div>}
 			</div>
 		);
 	}
