@@ -49,7 +49,6 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
-
 						<p className="explanation">In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</p>
 					</div>
 				);

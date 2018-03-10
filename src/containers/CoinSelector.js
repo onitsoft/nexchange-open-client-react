@@ -31,6 +31,10 @@ class CoinSelector extends Component {
 		this.setState({isDropdownVisible: false});
 	}
 
+	calculateDepositAmount(coin) {
+		return (['EUR', 'GBP', 'USD'].indexOf(coin.name) > -1) ? 100 : parseFloat(coin.minimal_amount)*100;
+	}
+
 	componentWillReceiveProps(nextProps) {
 		// This condition means that we have selected default currency pairs
 		// and now need to fetch price.
@@ -40,7 +44,7 @@ class CoinSelector extends Component {
 			this.props.fetchPrice({
 				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
 				lastEdited: 'deposit',
-				deposit: parseFloat(depositCoin.minimal_amount)*100
+				deposit: this.calculateDepositAmount(depositCoin)
 			});
 		}
 
@@ -62,8 +66,7 @@ class CoinSelector extends Component {
 				nextProps.price.receive === '...'
 			) {
 				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
-				amount = parseFloat(depositCoin.minimal_amount)*100;
-				data['deposit'] = amount;
+				data['deposit'] = this.calculateDepositAmount(depositCoin);
 			} else {
 				data['receive'] = amount;
 			}
@@ -106,12 +109,7 @@ class CoinSelector extends Component {
 		return coins;
 	}
 
-	render() {
-		let type = this.props.type,
-			selectedCoin = this.props.selectedCoin[type];
-
-		if (!selectedCoin) return null;
-
+	renderCoinsDropdown(type) {
 		let filteredCoins = this.props.coinsInfo.filter(coin => {
 	   		let params = Helpers.urlParams();
 
@@ -136,6 +134,15 @@ class CoinSelector extends Component {
 			);
 		});
 
+		return coins;
+	}
+
+	render() {
+		let type = this.props.type,
+			selectedCoin = this.props.selectedCoin[type];
+
+		if (!selectedCoin) return null;
+
 		return (
 			<div>
 				<div className="selectedCoin" onClick={() => this.setState({isDropdownVisible: !this.state.isDropdownVisible})}>
@@ -144,7 +151,7 @@ class CoinSelector extends Component {
 					<i className="fa fa-angle-down"></i>
 				</div>
 
-				{this.state.isDropdownVisible ? <div className="coin-currency-dropdown">{coins}</div> : null}
+				{this.state.isDropdownVisible && <div className="coin-currency-dropdown">{this.renderCoinsDropdown(type)}</div>}
 			</div>
 		);
 	}

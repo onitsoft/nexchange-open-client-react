@@ -56,8 +56,6 @@ class KYCModal extends Component {
         }
     })
     .then(response => {
-      console.log(response);
-
       this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});
 
       setTimeout(() => {
