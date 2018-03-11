@@ -14,12 +14,16 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
   text-decoration: none;
   text-transform: none;
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.cc-window::before, .cc-window [class*="cc-"]::before {
+  content: none;
+  font-family: none;
 }
 
 .cc-ETH-alt:before {
