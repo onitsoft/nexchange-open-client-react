@@ -34,7 +34,7 @@ class WalletAddress extends Component {
     let coin = this.props.selectedCoin.receive,
     	isValid = rules[coin].test(address);
 
-    if (!isValid)
+    if (!isValid && address.length)
     	this.props.errorAlert({show: true, message: `${address} is not a valid ${this.props.selectedCoin.receive} address.`});
     else
     	this.props.errorAlert({show: false});
@@ -43,16 +43,16 @@ class WalletAddress extends Component {
   }
 
   onChange(event) {
-		let address = event.target.value.replace(new RegExp(/ /g, 'g'), ''),
-			valid = this.validateWalletAddress(address);
+	let address = event.target.value.replace(new RegExp(/ /g, 'g'), ''),
+		valid = this.validateWalletAddress(address);
 
-		this.setState({address: address});
+	this.setState({ address });
 
-		this.props.setWallet({
-			address: address,
-			valid: valid,
-			show: true
-		});
+	this.props.setWallet({
+		address: address,
+		valid: valid,
+		show: true
+	});
   }
 
   componentWillMount() {
