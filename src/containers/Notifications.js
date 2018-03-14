@@ -8,6 +8,11 @@ class Notifications extends Component {
 	constructor(props) {
 		super();
 		this.state = {
+			email: '',
+			message: {
+				text: '',
+				error: false
+			}
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -24,8 +29,40 @@ class Notifications extends Component {
 		});
 	}
 
-	handleSubmit() {
-		
+	handleSubmit(event) {
+		event.preventDefault();
+
+		axios
+			.put(`${config.API_BASE_URL}/users/me/`)
+			.then(data => {
+				console.log(data.response);
+
+				this.setState({
+					message: {
+						text: 'Success, you set your email.',
+						error: true
+					}
+				});
+			})
+			.catch(error => {
+				console.log(error.response);
+
+				if (error.response.status === 401) {
+					this.setState({
+						message: {
+							text: 'You do not have access to get notifications for this order.',
+							error: true
+						}
+					});
+				} else {
+					this.setState({
+						message: {
+							text: 'Something went wrong. Try again later.',
+							error: true
+						}
+					});
+				}
+			});
 	}
 
 	render() {
@@ -35,17 +72,29 @@ class Notifications extends Component {
 		    		<div className="row">
 		    			<div className="col-xs-12">
 							<h2>Get notified about your order!</h2>
-
+				
 							<div className="row">
 								<div className="col-xs-12 col-md-8 col-md-push-2">
+									<h4 className={this.state.message.error ? 'text-danger' : 'text-success'}>{this.state.message.text}</h4>
+
 									<form onSubmit={this.handleSubmit}>
 										<div className="form-group">
-											<input type="email" name="email" placeholder="Email" className="form-control" required />
-										<span className="material-input"></span></div>
+											<input
+												type="email"
+												name="email" 
+												placeholder="Email"
+												className="form-control"
+												onChange={this.handleInputChange}
+												value={this.state.email}
+												required
+											/>
+											<span className="material-input"></span>
+										</div>
 
-										<div className="form-group">
+										{/*<div className="form-group">
 											<input type="tel" name="tel" placeholder="Telephone (optional)" className="form-control" />
-										<span className="material-input"></span></div>
+											<span className="material-input"></span>
+										</div>*/}
 
 										<button type="submit" className="btn btn-themed btn-lg">Receive notifications</button>
 									</form>
