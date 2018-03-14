@@ -25,14 +25,6 @@ const About = () => (
                 github: "https://github.com/BeOleg",
               }} />
 
-            <TeamMember id="daniel" name="Daniel Blank" country="IL" fullCountryName="Israel"
-              description="Product manager. Former IDF and FinTech coder with a deep passion for great products. Cryptocurrency enthusiast since 2013."
-              social={{
-                linkedin: "https://www.linkedin.com/in/daniel-blank-72166284/",
-                twitter: "https://twitter.com/daniel_a_blank",
-                quora: "https://www.quora.com/profile/Daniel-Blank-7",
-              }} />
-
             <TeamMember id="sarunas" name="Šarūnas Ažna" country="LT" fullCountryName="Lithuania"
               description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
               social={{
@@ -44,7 +36,7 @@ const About = () => (
               description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
               social={{
                 linkedin: "https://www.linkedin.com/in/karolisram/",
-                github: "https://github.com/ramkarolis/",
+                github: "https://github.com/superkarolis/",
                 medium: "https://medium.com/@karolisram",
               }} />
 
@@ -62,6 +54,15 @@ const About = () => (
                 twitter: "https://twitter.com/chiragneb",
                 github: "https://github.com/chiragneb",
               }} />
+
+            <TeamMember id="you" name="You?"
+              description={
+                <div>
+                  <p>We are actively hiring for the N.exchange dream team. We are especially on the lookout for talented developers, marketing personnel, a community manager and content writers.</p>
+                  <p>Drop us a line at <a href="mailto:careers@nexchange.io">careers@nexchange.io</a>.</p>
+                </div>
+              }
+            />
           </div>
         </div>
       </div>

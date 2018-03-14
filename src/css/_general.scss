@@ -1,9 +1,11 @@
 body, html { height: 100%; background: #f8f7f8; }
-#root { position: relative; min-height: 100%; padding-bottom: 65px; }
+#root { position: relative; min-height: 100%;
+	@media (min-width: $screen-md-min) { padding-bottom: 105px; }
+}
 
 body { color: #044264; }
 p, a { word-wrap: break-word; }
-p { font-size: 19px; line-height: 1.5em; }
+p, li { font-size: 19px; line-height: 1.5em; }
 h1 { font-size: 34px;
 	@media (min-width: $screen-sm-min) { font-size: 46px; }
 }
@@ -15,6 +17,7 @@ a { color: $green;
 }
 .header-text { font-size: 36px; }
 img { max-width: 100%; }
+.modal { z-index: 9999; }
 .modal-title { margin-top: -10px; font-size: 30px; }
 .modal-body {
 	h3 { margin-top: 35px; }
@@ -34,8 +37,17 @@ textarea.form-control:focus { outline: none; border-color: none; box-shadow: non
 
 .text-green { color: $green !important; }
 
-.bookmark-input {
-   height: 36px;
-   font-size: 20px;
-   width: 100%;
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance:textfield;
 }
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']:hover::-webkit-inner-spin-button,
+input[type='number']:hover::-webkit-outer-spin-button {
+-webkit-appearance: none;
+ margin: 0; }
+
+.tooltip-inner { white-space:pre-wrap; }
+
+.sticky-inner-wrapper { z-index: 9999; }

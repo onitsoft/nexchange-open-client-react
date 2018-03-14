@@ -1,82 +1,234 @@
 @font-face {
-  font-family: "cryptocoins-icons";
-  src: url('../fonts/cryptocoins/cryptocoins-icons.eot');
-  src: url('../fonts/cryptocoins/cryptocoins-icons.eot?#iefix') format('eot'),
-    url('../fonts/cryptocoins/cryptocoins-icons.woff') format('woff'),
-    url('../fonts/cryptocoins/cryptocoins-icons.ttf') format('truetype');
+  font-family: "cryptocoins";
+  src: url('../fonts/cryptocoins/cryptocoins.woff2') format('woff2'),
+    url('../fonts/cryptocoins/cryptocoins.woff') format('woff'),
+    url('../fonts/cryptocoins/cryptocoins.ttf') format('truetype');
 }
 
 /* .cc:before { */
 [class*="cc-"]::before {
-  font-family: "cryptocoins-icons";
+  content: "\E075";
+  font-family: "cryptocoins";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
   text-decoration: none;
   text-transform: none;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cc-window::before, .cc-window [class*="cc-"]::before {
+  content: none;
+  font-family: none;
 }
 
 .cc-ETH-alt:before {
-  content: "\E040";
+  content: "\E046";
 }
 
 .cc-ETH:before {
-  content: "\E041";
+  content: "\E047";
 }
 
 .cc-BTC-alt:before {
-  content: "\E022";
+  content: "\E024";
 }
 
 .cc-BTC:before {
-  content: "\E023";
+  content: "\E025";
 }
 
 .cc-DOGE-alt:before {
-  content: "\E038";
+  content: "\E03C";
 }
 
 .cc-DOGE:before {
-  content: "\E039";
+  content: "\E03D";
 }
 
 .cc-LTC-alt:before {
-  content: "\E074";
+  content: "\E07C";
 }
 
 .cc-LTC:before {
-  content: "\E075";
+  content: "\E07D";
+}
+
+.cc-BCH-alt::before {
+  content: "\E017";
+}
+
+.cc-BCH::before {
+  content: "\E018";
+}
+
+.cc-EOS-alt::before {
+  content: "\E040";
+}
+
+.cc-EOS::before {
+  content: "\E041";
 }
 
 .cc-XVG-alt:before {
-  content: "\E075";
-  background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  background-image: url(../img/logos/xvg.png);
   color: transparent;
 }
 
 .cc-XVG:before {
-  content: "\E075";
-  background-image: url(../img/logos/xvg.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
+  background-image: url(../img/logos/xvg.png);
+  color: transparent;
+}
+
+.cc-NANO-alt:before {
+  background-image: url(../img/logos/xrb.png);
+  color: transparent;
+}
+
+.cc-NANO:before {
+  background-image: url(../img/logos/xrb.png);
+  color: transparent;
+}
+
+.cc-BDG-alt:before {
+  background-image: url(../img/logos/bdg.png);
+  color: transparent;
+}
+
+.cc-OMG:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAACRlBMVEVHb0VHb0dHb0hHcEZHcEdHcElHcEpHcEtHcExHcE1Ib0JIb0VIcUZJcEFJcEJJckJKcUJKcUNLckZLckdLc0VLc0ZLc0lMckZNdElNdEtMc0xMdEtNdE1MdE5MdFFNdE9NdE5NdU9MdE9Od1NLc09LdFBNdVJMdFNOeFlMdldNdFRLc1ZMdFVMdFZNdllJcVhMdVhLdVtMdVtMdltNdlxIeX1HeIBIeIRFeIdFeotIeYxDb4tFeY1FeI1BcZFEepRFfJhDe5Y9a5E8apZBepxBe6VBe6c+bqk9bak4Z605aq47e7w5ebs3esU3esY4e8g2esg4fMo5fcs1eso3e8kwYsUyY8cvYcQxY8gvYcQyZcczetA0e9EvYccvYcoze9YtYMouYc8vYdAvYdIuY9Ezfdoxe9sye9swetwxe90wet0yfN8xdt8vc+QscuEwfOovfOwseuooXN0te/AmZOQre/Mre/MlW+UrevUlW+clePYmePclePwjd/0keP0eVu8jd/0dVe8jef8ief8XT/gXT/kXUPoXUPsXUfYXUfoXUfsXUvcYUfYYUfsYUf0YUvYZUfIZUfYZUvYZUvgZUvwaUvEaUvIaUvMaU/IaU/oaWfoaXPsbUfAbUvAbUvEbU/AbU/EbU/IbVfEbV/sbWPIbaf8cV/ocW/McW/Qcbf8cbv0cdv8dWfoddf8ddv8dd/8ebPseb/8edv8ed/8fcPwfcP0fcf8fdP8fdv4fdv8fd/8gcv8gdv8gd/8geP8gef8hd/8heP/AlXaAAAAAhHRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAgMDAwQEBQUHBwcJCQoKDA0ODg8PEBISEjpCQkZLTlJSU1tcXF1fZmZydX2Ai4uVl5+ipqenp6iorq6wsLGxsbG1uLi6vb2/wMLDw8XFxsbK0NHW2Nna3uDj5Obm6O7u9vj4+fn6/f52NjkvAAABe0lEQVR4AWPgAAIuOZvg4prashhHTV52IB8oyCZolnFg06ade3Zt2pZnK8oKEmQXd2tetwcI9m1ZvqB/sZcYG1BQ0HXfTpDY5pWL5ixYMK3PU5Sdgcu0CSy2LjWqdcHCBQtmzLTmZ5BNB+tdna0nFdq+ACjcU6TNYHEQLJZpwsCiEt4LEp3sxOC7CaQ304ibk5NFLaJrwYIFE2MZ8jcBxbKMuTk5ODhZVCM7FyyYXs5QDbQ3zYABKAYSVQrrWbCgnqFqz75VKVo8EEEmaf/ZcxY2MhRs3rKoJdkAJMrJqBCwfseKCZUMfptXzFnQlqzLzMnJKB+4fs++rZMSGCx3LwCCzkQdHkbFIJCT985yZlDO6Z4P9EhXkrokWGzPphJ9Bj7zNdMWAIXb4kI2gcR2bbcTYOAQcZ8ybcGCeXOXbgaJ7dzsI8TOwMEm4bGsY+qSDfvBend5y7CCA1nEKnfj2l1AkU27Cu2FWcEhz8HOp+EQXVrXUBHvYgiODgCi9aRx4tgGkgAAAABJRU5ErkJggg==);
+  color: transparent;
+}
+
+.cc-BDG:before {
+  background-image: url(../img/logos/bdg.png);
+  color: transparent;
+}
+
+.cc-USD-alt:before {
+  background-image: url(../img/logos/usd.png);
+  color: transparent;
+}
+
+.cc-USD:before {
+  background-image: url(../img/logos/usd.png);
+  color: transparent;
+}
+
+.cc-GBP:before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB3aWR0aD0iMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjMDAwMDRDIiBkPSJNMTQwNCAxMTM3djM2N3EwIDE0LTkgMjN0LTIzIDloLTk1NnEtMTQgMC0yMy05dC05LTIzdi0xNTBxMC0xMyA5LjUtMjIuNXQyMi41LTkuNWg5N3YtMzgzaC05NXEtMTQgMC0yMy05LjV0LTktMjIuNXYtMTMxcTAtMTQgOS0yM3QyMy05aDk1di0yMjNxMC0xNzEgMTIzLjUtMjgydDMxNC41LTExMXExODUgMCAzMzUgMTI1IDkgOCAxMCAyMC41dC03IDIyLjVsLTEwMyAxMjdxLTkgMTEtMjIgMTItMTMgMi0yMy03LTUtNS0yNi0xOXQtNjktMzItOTMtMThxLTg1IDAtMTM3IDQ3dC01MiAxMjN2MjE1aDMwNXExMyAwIDIyLjUgOXQ5LjUgMjN2MTMxcTAgMTMtOS41IDIyLjV0LTIyLjUgOS41aC0zMDV2Mzc5aDQxNHYtMTgxcTAtMTMgOS0yMi41dDIzLTkuNWgxNjJxMTQgMCAyMyA5LjV0OSAyMi41eiIvPjwvc3ZnPg==);
+  color: transparent;
+}
+
+.cc-EUR-alt:before {
+  background-image: url(../img/logos/eur.png);
+  color: transparent;
+}
+
+.cc-EUR:before {
+  background-image: url(../img/logos/eur.png);
+  color: transparent;
+}
+
+.cc-REP:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAACH1BMVEX////9/P38+/z7+vv59/j59/n28/b18vXz7vLx7PDUxNDSwc7LuMfMusjKtsbItMTIs8PGsMHFsMHDrL7Aqbu/p7q9pLe9pLe3nbG5oLSxlauylaumhp+nhqClhJ2lhJ6adZKadZKSaomTbIqOZYWPZoaJXn+KX4CGWXyHW31+T3N/UHR5SG55SG5zQGdzQGhuOWJvO2NuOmJvO2RsN2BtOGFrNV5tOGFsN2BqNF5OD0BREkJSFERTFkVUFkZUF0ZVGEdVGUhWGUhWGkhWGklXGklXG0lXG0pYG0pYHEpYHEtYHUtZHUtZHktZHkxaH0xaH01bIE1bIE5bIU5cIU5cIk9dIk9dI09dI1BdJFBeJFFeJVFfJVFfJVJfJlJfJ1JfJ1NgJ1NgKFNhKFRiKVViKlZkLFdlLlhoMVtpM11rNl9tOGBwPGRxPmVzQWh0QWh0Qmh1Q2p2RGt4R215SG56Sm97SnB9TnKBU3aBVHeCVniEV3qGWnyHW32IXX6IXX+JXn+JYICKX4CMYoKMYoOMY4ONZISPZoWPZoaQaIeRaYiSa4mUbYuXc4+ZdJCZdJGadZGadZKbdpOceJSceJWeepaffZilhZ6nh6CoiaGpiaKqiqOsjaWtj6aukKevkaivkqivkqmwk6qxlKuylqyzl6yzl621mq+4nbK6oLS6obS8o7a8pLe/qLrAqrvGsMHIs8PKt8bNu8nSws/UxdEENnAhAAAAOnRSTlMAAwYHCgsPERUXR0lTU1ZXW1xdX2VoaWtxcXx9jY2PkKChqauvsri7vsDKz9LX3OHj5ejo6ens7O3xBnl8iwAAAWVJREFUeAFjAAMmfiXD5ERTFWFWBjjg1gr2i4iKivQP0OGDiUn5ecfFRScmR8XF+bnKQMSkHSLi4uKcV2/wBFJRdvIgMS4fkJhf2eYt1SDRaEcBBgZmbe84IAhd1Ne7LDEayPLXZ2PgCQaJeXRMrGzs6ncBsT1FGJT9QCalrvTq6rRZmQk2SZ3BGES7TG6vWzilu3a6M5ATacGQDKTCs5bWzA4Jn9m2IA9kWBJDEpB0nVEyNSc4In1O4XyQAxIZzCPiQvJXtC7O8vROX96zsDwgLtKSQdU/zmXtpoaWleXFq4ua1m/0ivPTZBAMiAvsWl1qlTF5VbZ1wZpJwXFukgwsun6Jbllz56VVNYfNWpLrEhdkxMHAwOsSlRDqVrFs7bpl9d7B8bH2oiDPy9oBfecbNWFaCtDqGFtFSDDJOfkDeZ5uQLlAewVGaIAK6Xn6RQC94u9uII4IenYxNZOkRDMNCU4wFwCf93pjO/YmIgAAAABJRU5ErkJggg==);
+  color: transparent;
+}
+
+.cc-GNT:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABpFBMVEUAF1oAGFsAGl0AGl4AG14AHF8AHV8AHWAAHmAAH2AAH2EAIGIAIWIAImIAImMAI2MAI2QAJGQAJGUAJWUAJmUAJmYAJ2YAJ2cAKGcAKGgAKWcAKWgAKmgAKmkBI2QBJmUCKmgDJGUDJ2YDKmgDK2gDK2kJKmkKMW4LLGoMNG8NLWoSOHMSOXMTOnQUOnMUOnQVN3IVOnQWOnMXOnMXOnQZPXYbPHUeP3gjR30kSH0lRXwlSH4mSX8oRn0pR30qSH4rSX4tT4MuUIQ4WIpAWotBYI9EXo1EYpBEY5JFY5FGYY9GZJFHYZBHYpBIY5BIZpNOZ5RPa5dSa5dUbplVcpxWcpxXc5xacpxcd59geqJkfaRkfqVlf6Vqg6hshalthalthapvhqpvhqtvh6txiKxxiaxxia1yia1ziq10i650jK51iq13jrB6j7B9krODl7eEmbiHm7mIm7mKnbqLnLqZqMKaqcKbqsObq8WcqsScrMWdrcaersaltMuntcuotsypt82quM6ruc+tu9Dx9Pfx9Pjy9fjy9fnz9vn09vr19/r///8sCtC1AAABPklEQVR42j2Q91/CMBDFI6JiWsKukVwVFfdAFBX3HrhxTxy4t+KeuMX+0zYteD+9++blc3cPKby+78YDxd7A2M2X1mow3kWIxJhEzJ0vKbiFCQBQCnZmwZs63DFSgFxSVZ050W+lxiiH75gCY4VLx4eXu2UUqOlVQb9tRGVieBGbFmYxMCDNCfQoMrXIfqVES49sXIv3aIQbmbDcazD2RLgBzCHkl/irVHs6NXnW6NK0D3ncXICj5OCkwi5z7fakIEsbCiMGOkx+Z7bpWGw+X5NSDQppg0goUpC3EtYHDaIHfaU9nzOnPLnSLUq0cquw2p2RFdxWDUCCP0h5y6bAnE0XA33nLQ6mnhnngUTTKcg2/8xcg1UGaljXo9vAFpAlQXDJYMFrqZCfO0Q9ZLH96T955fN6tN5bVDd89aG1f3D2W59DLPuYAAAAAElFTkSuQmCC);
+  color: transparent;
+}
+
+.cc-QTM:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB5lBMVEVQrd9Rrd9Srd9Srt9Ur+BWsOBXsOBYsOBYseBftOJgtOJlt+NoueRpueRqueRruuRsuuVtu+Vuu+VvvOVyveZ0vuZ3wOd6wOZ6wed7weZ7wed7weh8wed8wuh9w+h/w+mCxemExuqHyOqJyOuKyOqKyeuLyeuLyuuOy+yPy+yQzOyRzOySze2Uzu2Vzu2Wz+6Xz+6Y0O6Z0O6b0e+f0++g1PCh1PCi1O+i1PCi1fCj1O6j1O+j1e+j1fCk1vGm1e+m1vGn1vCo1/Co1/Go2PGp2PGp2PKq2PKq2fKr2fGr2fKs2vKt2vKu2fCw2/Ox3PO33/S43/S53/S84fW94vW/4/bA4/XA4/bB4/XB5PfC5PfD5ffE5PbF5fbF5vfG5vfG5vjH5vfH5vjH5/jI5vbI5/jJ5vfJ5/fJ6PjK5/fK6PjK6PnL6PfL6fjL6fnM6fnN6fjO6fjO6vnO6vrQ6/nQ6/rR6/rS7PrT7PrV7frW7fnX7fnX7/vZ7/zc8Pvc8fzd8fvd8fze8fze8v3f8v3g8/3h8/zh8/3i8/zi8/3i9P3o9/7p9/7r+P7s+P7s+f/u+v/v+v/x+//y+//z+//0/P/0/f/1/P/1/f/2/P/3/f/4/v/6/v/6///8///9///+//////8klGbAAAABUklEQVR4AWNYiAVABKskra2s7MXDkAQXBAgqBsyfn6rM4zwdJthrnGy50Kx1usF8t2TDJohgnWBHffTCSVoaXQtrkiaLxIEFVbQ8+c2sHbmZncxd+SzMhEGCc/hqW9kqpk60c2ud1ckZPY2zHyhYoJ3qUOqz0K1lqvHCyCzXPJ1woKBjuWz2Qo8M/4ULQ+OcF3ZJFHsABSUDWeJT3BiCU1Ji2fXSMjnd1LoXMkgFsSRmejGFZKbHc+hn5nB6qPcAtZfJZSz0zvUDak9wW9guXeQF1F4ItKjEb6F7M9CiqGzXfJ1IoOBcoJNYy6dMtHVpmdnGGT2VawLI8aqangKWNo7cjEDH81uYiIJ91CDU0Qj0prYW0JvJk8XkO8AB0mecYLnQtH2GwXzXBKOO6bqVkKALFFQImD8vVYnXY+bChbONIiCBXC0DCmSZGDBnvi/W6AAA7kioQqFE0XgAAAAASUVORK5CYII=);
+  color: transparent;
+}
+
+.cc-BAT:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEVXBZNYEJFaCZBcB49eCI9eCY9eGJxhEpliEZViEZZjEZRkFZdlF4trIJZ8DG5/NpSANJCANJGANZCAOZKBNIeCK4eDJ4WDL36MJ1yTAF+XAFuXGnOYAFqYEWeZAFmZAFqZAFyZAF6ZAGWZAl6aAFeaAGKaAGaaAGmbAF+cCWOdAGCdAGSdDmaeAGOeAGaeAWSfAGShHHeiBGOiDV2jGm+kEFumh8mrisSri8KsJGetLXmtNICticWui8Oui8SvCTi0FEi0GEq2HU62S423HE65VZO6REi+TXy/nsPAOFXBWmvBhK7BpcXDcKXHeqrOSzXQfJXRWDfRm8XTlrzesczfqbXiudLq0ODsxsPt2OXw1NP1yK/15OL2YyH2dDb2h1L2lWb2pHr26PH27+73XR33bS/3eT/3nnT37fP4TAn4Twn4UQz4WBT4sov4waL5RAD5SAT5cS75vp75z7j6QAD6iVP62sX64dP65dX68vf68+/6+f77PQD77+z7+Pv7/P38PQD8QAD8tIv86Nr87uT88uv89PH89e/89vP8+vj9PQD9PgD9QgD9QwD9RAD9SAD9/vz+QQD+RAD+RQD+RgD+TAD+UQL++vX+////QAD/QwD/RAD/RQD/RgD/SAD/TQD///3///7///9c2XeaAAAA+0lEQVR4AWNYhAUgBOuTsQhGe1WjCS5cNL3QPghDZW6vg2EGmmBLzjwXSb9FM5AFZyQ0zHdS04lEUrlwRlnB5KmO6gquyNonpHVPmeappK8chiSYVzK3qzTKWFvDug4u2B47cVJm+aIAOQOpYKjgjBmJDf016TMW1VqqapkkQVVWZM/uSWkFeiBURU/GF6oyvmtKYxFI2wJ3RV3NcLBgcf6cWXFVbUDQEWGqq+AMEuxMnZnlJsIvJCAkKCQsKm0kHwIUbOrzF2dj5+IAAk4Obl4xWatKhuZACUYGFlYWVhBgYWFm4uHzZojxMLOxs7WztbWDAFtzCx+s0QEArTa6+252laQAAAAASUVORK5CYII=);
   color: transparent;
 }
 
 .selectedCoin .cc-XVG-alt:before {
-  content: "\E075";
-  background-image: url(../img/logos/xvg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
-  color: transparent;
+  background-image: url(../img/logos/xvg-white.png);
 }
 
 .selectedCoin .cc-XVG:before {
-  content: "\E075";
-  background-image: url(../img/logos/xvg-white.png); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;
-  color: transparent;
+  background-image: url(../img/logos/xvg-white.png);
 }
 
-.BTC { color: #F7931A; }
+.selectedCoin .cc-NANO-alt:before {
+  background-image: url(../img/logos/xrb-white.png);
+}
+
+.selectedCoin .cc-NANO:before {
+  background-image: url(../img/logos/xrb-white.png);
+}
+
+.selectedCoin .cc-BDG-alt:before {
+  background-image: url(../img/logos/bdg-white.png);
+}
+
+.selectedCoin .cc-BDG:before {
+  background-image: url(../img/logos/bdg-white.png);
+}
+
+.selectedCoin .cc-USD-alt:before {
+  background-image: url(../img/logos/usd-white.png);
+}
+
+.selectedCoin .cc-USD:before {
+  background-image: url(../img/logos/usd-white.png);
+}
+
+.selectedCoin .cc-GBP:before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB3aWR0aD0iMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTQwNCAxMTM3djM2N3EwIDE0LTkgMjN0LTIzIDloLTk1NnEtMTQgMC0yMy05dC05LTIzdi0xNTBxMC0xMyA5LjUtMjIuNXQyMi41LTkuNWg5N3YtMzgzaC05NXEtMTQgMC0yMy05LjV0LTktMjIuNXYtMTMxcTAtMTQgOS0yM3QyMy05aDk1di0yMjNxMC0xNzEgMTIzLjUtMjgydDMxNC41LTExMXExODUgMCAzMzUgMTI1IDkgOCAxMCAyMC41dC03IDIyLjVsLTEwMyAxMjdxLTkgMTEtMjIgMTItMTMgMi0yMy03LTUtNS0yNi0xOXQtNjktMzItOTMtMThxLTg1IDAtMTM3IDQ3dC01MiAxMjN2MjE1aDMwNXExMyAwIDIyLjUgOXQ5LjUgMjN2MTMxcTAgMTMtOS41IDIyLjV0LTIyLjUgOS41aC0zMDV2Mzc5aDQxNHYtMTgxcTAtMTMgOS0yMi41dDIzLTkuNWgxNjJxMTQgMCAyMyA5LjV0OSAyMi41eiIvPjwvc3ZnPg==);
+}
+
+.selectedCoin .cc-EUR-alt:before {
+  background-image: url(../img/logos/eur-white.png);
+}
+
+.selectedCoin .cc-EUR:before {
+  background-image: url(../img/logos/eur-white.png);
+}
+
+.selectedCoin .cc-OMG:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABI1BMVEX+///////+///+///9/v/+///+///9/v/+///9/v/9/v/9/v/9/v/8/v/8/f/+/v/8/f/9/v/9/v/9/v/9/v/8/f/9/v/8/f/7/f/7/f/6/P/6/P76/P/6/P77/P77/f/6/P75+/76/P/5/P76/P75/P76/P76/P77/f/6/P76/P77/P/7/P77/P/7/P76/P/6/P/6/P/7/f/7/f/5+/77/f/6/P77/P76/P77/f/6/P77/P77/P76/P77/P77/f/8/f/7/f/8/f/8/f/7/f/8/f/7/f78/f/7/f/8/f/7/f/7/f77/f/7/P77/P78/f/8/f/6/P78/f/7/P77/P78/f77/P77/f78/v/8/v/8/f/8/f/8/f/9/v/9/v/+//////8uIMT8AAAAX3RSTlMAAAECAwMEBQUGBwgJCwwMDQ4PEBESFT5GR0tQU1dXWGBhYWNka2t3eoKGkJGanKSoq6usra2ytLW1trq8vb/Bw8TExsfHycnKys7U1Nvd3d7i4+bo6ers8fL6+/z8/RLmH28AAADZSURBVHgBVZDVcsUwDER3yylDyswMbQopMzNDem/8/19xbVl+yHlQds9oNBODjvrhzde/7GNvsl2qyL6r3Aj5w2iQc6qExSqRs6bAkpO9uneeqh0h6i59vIlrtn166cCAT9c9ZNOOz1NYle+tdWSzv7CPx+DE7rr2iR87L2Iqje5uCb92nrUFWb1uaxlPxnKqqw2Ja99YM46TLnEbUo4waITjTjJKfJ5BdKe2BereYrBff/Ngy3jGCHLeFFihk1jQXWG5Vh956D7o5wlQJVvH0/fs/+twultqBZWZXD5PX3DkAAAAAElFTkSuQmCC);
+}
+
+.selectedCoin .cc-OMG:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABI1BMVEX+///////+///+///9/v/+///+///9/v/+///9/v/9/v/9/v/9/v/8/v/8/f/+/v/8/f/9/v/9/v/9/v/9/v/8/f/9/v/8/f/7/f/7/f/6/P/6/P76/P/6/P77/P77/f/6/P75+/76/P/5/P76/P75/P76/P76/P77/f/6/P76/P77/P/7/P77/P/7/P76/P/6/P/6/P/7/f/7/f/5+/77/f/6/P77/P76/P77/f/6/P77/P77/P76/P77/P77/f/8/f/7/f/8/f/8/f/7/f/8/f/7/f78/f/7/f/8/f/7/f/7/f77/f/7/P77/P78/f/8/f/6/P78/f/7/P77/P78/f77/P77/f78/v/8/v/8/f/8/f/8/f/9/v/9/v/+//////8uIMT8AAAAX3RSTlMAAAECAwMEBQUGBwgJCwwMDQ4PEBESFT5GR0tQU1dXWGBhYWNka2t3eoKGkJGanKSoq6usra2ytLW1trq8vb/Bw8TExsfHycnKys7U1Nvd3d7i4+bo6ers8fL6+/z8/RLmH28AAADZSURBVHgBVZDVcsUwDER3yylDyswMbQopMzNDem/8/19xbVl+yHlQds9oNBODjvrhzde/7GNvsl2qyL6r3Aj5w2iQc6qExSqRs6bAkpO9uneeqh0h6i59vIlrtn166cCAT9c9ZNOOz1NYle+tdWSzv7CPx+DE7rr2iR87L2Iqje5uCb92nrUFWb1uaxlPxnKqqw2Ja99YM46TLnEbUo4waITjTjJKfJ5BdKe2BereYrBff/Ngy3jGCHLeFFihk1jQXWG5Vh956D7o5wlQJVvH0/fs/+twultqBZWZXD5PX3DkAAAAAElFTkSuQmCC);
+}
+
+.selectedCoin .cc-REP:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABa1BMVEX////////////////////////////////////////////////9/f3////5+Pn////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////5+Pn9/f3////////////////////////////////7+vv////+/v7////////////////////////////9/f3////////////////////////////5+Pn///////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAA9PAAAAeHRSTlMAAwYHCgsPERUXR0lKTE1SU1RWV1hbXF1fY2VnaGlqa2xwcXV2d3h5ent8fX6Ag4aIjI2PkJaYm56goaipqqusrK2vsLGys7S1tre4uLu8vsDBwsTEx8rNz9DS1NXX2Nvc3eHj5ejp6uvs7e7x8vP19vf4+fv8/f6P/xzNAAABBklEQVR4AU3OZVMCURTG8WN3KGKAgoIhYYCCrtgiYmMjhqwsgd0+H987DzuMvxfnnP+LO3OFKi2LBpBb762RsqZzmFKdYvKyf7+5gkI+kNMCmhWlEXTZ2nwMsopUJUuPx1dW3R8872ulHRTTrk7WNJBNlrnfHNjeheORsS9Z7vlo3BeOJAKMB+HKjx5Nf30GY16dKZyB67ABvE6m/UwpqqEPbnnywPNwxJNU+SSbava1xKPOs9TQ3UZHm8qEdKsZsV2gELJncGufU+mS6hu1jAl/4WDpZWpEV5GtF/P3p2PWLvcOz35Rgjx/tNA7jwWhGfyjVUhJTxqmjFPK6gb2ckDx0NXA/ANt8Hq5ZCMrXAAAAABJRU5ErkJggg==);
+}
+
+.selectedCoin .cc-GNT:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAA81BMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+gVAkOAAAAUHRSTlMAAQIDDg8QEVdZWlxeZGVnaGl8f4CBhYyNjo+QkpOUlZaXmJqbnKGipqusra6ytre4ury/wMHExc7X2Nna297g4eLm6err7u/w8fP2+Pn6+xDMlMcAAADZSURBVHgBTZB3U4NAEEeXmKIxGoNdo2BXFEGwiEUsUrDo7/t/GmV3j8n7682727mdI6Y9H74B2cWwSw0zCZT7WU3WGBM4LY7aqgLxDQC3btPSjlY3bfertj5R+4lbcAyceKxph+bAjD+A33XxBYp0+hZI9sRjykWKFf986V28JCg/22ufxpuIqxBNLFV82/ZgxmO9tw8cBuahochWBXxvmJU6KcvBHfDisD53ifpsr4uX18tyzh+1w5qfncqau2T9x5YLQdoUCYMHKI8DIktrbxRlQBaNetz+AH8FWJy6RIRrAAAAAElFTkSuQmCC);
+}
+
+.selectedCoin .cc-QTM:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAABuklEQVQoz43Ty0vUcRTG4S+BGgSZigWCLlqlZkZB2iIJC2e8jJNZUC3SZXZx5uco6UQbw0QYsRZZtAi6iOUiqEVoF8JWpcskDPxfnhajOEULOavD+cDhvO97grCzKmxOeGVIRkbKC+f+Dxbr88lz/YqV6PDUssi+f8Fq9yRlFbmrQblJu0W63ddQCB61pM4x5wUHzHigTnBSl0rvdW2Ds2akLBo1LO2b3waNGLRoTNaHLXCPL5o1+qVFuSqjMo4oVWdFj/1W1eTBVtO63NbqhiCtUaVxQa9OkTbTLuTBSIs3OgRpcQOC4JKEjOCwBWel7BKCeVetS4iJbLgsJq7bT1Ni2qxImXVQCF7rs65bu7QNV7Rrl7RmSlzMqrTHeTDSYl5ccFO7a4LgoqS0oN6CMwbzq1vldBpx2nVBpFHF5jFxkZic3i15PmvSYM0pZaqMijTaq9Z3Pfb7oXpL8EdyblnaFHx5U/CUJVlZ7/62sNZxPZsWPlQnaJZQ6a05h7ZDUWNcwpgidzSoMKlEWsKEehVymgpj1u+jZ/oVKdbhia/SygRBqQnJwnA2mzMkY9igl5IFkxIDYaev8Afw+PeSvLCyTgAAAABJRU5ErkJggg==);
+}
+
+.selectedCoin .cc-BAT:before {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAz1BMVEX////////////////////////////////////////////////////////////////////+/f3////////////////////////////////////////////////9/P3//////////v////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+KVnABAAAARHRSTlMAAQIDBAsMDRAWGB0kKS0wMz0+R0lOWV1iZWdsf4OFh4mKjJCZpKWtuLy/wMHExdLV1tfc3d/l5unq7fDy8/X2+Pv8/VF5mi8AAACeSURBVHjahc/XDoJQEEXRa28o9l6wd7H3Arr//5sEYiJeTdxPk/V0Rvwp+MMyY++X+aeUvrAC27BkkT1Qk7ADcI1/mHrHru82zwjMHZB1YR7oJQzQ/e/ZKzgpQgPXrCrQECK0gUP0ZbEzrO0ni0D7hV2g4FxDMFXnSj9g4vNaeZI3GDhzZsBxvrTTDSBnYRmpRUAoF+SaItXS5OriV08isiQt+LuLOQAAAABJRU5ErkJggg==);
+}
+
+.BTC, .BCH { color: #F7931A; }
 .LTC { color: #838383; }
 .ETH { color: #282828; }
 .DOGE { color: #BA9F33; }
 .XVG { color: #42AFB2; }
+.EOS { color: #19191A; }
+.NANO { color: #0070ff; }
+.BDG { color: #471d66; }
+.USD { color: #34b67a; }
+.EUR { color: #5fccff; }

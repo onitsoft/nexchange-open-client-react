@@ -3,11 +3,13 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-
 #order { background: #f8f7f8; padding: 15px 0 0 0;
 	a { color: $green; 
 		&:visited, &:focus { text-decoration: none; }
 		&:hover { text-decoration: underline; }
+		&.btn { color: #fff;
+			&:hover { text-decoration: none; }
+		}
 	}
 	#order-ref { margin-bottom: 15px; }
 	.box {
@@ -15,78 +17,48 @@
 		
 		h4 { font-size: 15px; }
 		h5, h6 { margin: 0; text-transform: none; }
+		h6::before {
+			display: inline-block;
+			content:"\00a0";
+			width: 0;
+			height: 0;
+		}
 		.coin-icon { position: relative; top: 8px; font-size: 28px; }
 		.text-warning { color: $green; }		
 	}
-	.coin-box { padding-left: 10px; }
+	.coin-box { padding-left: 10px;
+		.tooltip-inner { text-align: left; }
+	}
 	#time-remaining { color: #2cb4a0; }
+	.order-status-section { 
+		h2 { margin-top: 0; }
+		.explanation { font-size: 16px; margin-top: 15px; }
+	}
 
 	@media (min-width: $screen-sm-min) { padding: 25px 0;
 		h5 { font-size: 15px; }
 		h6 { font-size: 12px; }
-		.box {
-			h4 { font-size: 18px; }
-			.coin-icon { top: 12px; }
-		}
+		.box h4 { font-size: 18px; }
 	}
 
-	@media (min-width: $screen-md-min) { padding: 50px 0 0 0;
+	@media (min-width: $screen-md-min) {
 		h5 { font-size: 17px; }
 		h6 { font-size: 16px; }
-		.box .coin-icon { top: 12px; }
-	}
-}
-
-#order-payment { text-align: center; padding-top: 10px; overflow: hidden;
-	h3, h4 { font-size: 20px;}
-	#deposit-address { word-wrap: break-word; }
-	img { margin-top: -15px; max-width: 150px;
-		@media (min-width: $screen-sm-min) { margin-top: -7px; }
-	}
-	#order-payment-details { margin-top: 10px;
-		h3 { margin-top: 0; }
-		@media (min-width: $screen-sm-min) { margin-left: -15px; }
-		@media (min-width: $screen-md-min) { margin-top: 10px; }
-		@media (min-width: $screen-lg-min) { margin-top: 30px; }
-	}
-	.box { padding-bottom: 5px; }
-
-	@media (min-width: $screen-sm-min) { text-align: left; padding-left: 13px;
-		img { max-width: 100%; }
-		h3 { font-size: 24px; }
-	}
-	@media (min-width: $screen-md-min) { padding-left: 50px; }
-	@media (min-width: $screen-lg-min) { padding-left: 60px; }
-}
-
-#order-status { padding: 8px 0 5px 0; overflow: hidden;
-	hr { margin-top: 5px; }
-	.step { width: 100%; margin-top: 15px; text-align: center;
-		h4 { margin: 0; background: #fff; text-transform: uppercase; font-size: 15px; font-weight: 500; color: #adadad; }
-		.glyphicon { font-size: 30px; color: #adadad; }
-		&.active h4, &.active .glyphicon {
-			@include animation(color-change 1s infinite alternate);
-		}
-		&.done h4, &.done .glyphicon { color: $green; }
-
-		@media (min-width: $screen-sm-min) { width: 33.33%; float: left; }
-	}
-	.progres-container { width: 100%; padding-top: 25px; clear: both;
-		.progress .progress-bar.progress-bar-info { background: $green; }
-		.progress.progress-line-info { background: rgba(44, 180, 160, 0.2); }
-		.progress.progress-line-info { margin-bottom: 5px; }
-
-		@media (min-width: $screen-md-min) { padding: 25px 0 0; }
 	}
 }
 
 #order-header {
 	#bookmark-button { font-size: 20px; padding: 0; margin-top: 0; color: $green; }
 
-	@media (min-width: $screen-sm-min) {
+	@media (min-width: $screen-ms-min) {
 		h3 { float: left; }
 		#bookmark-button { float: right; margin-top: 22px; }
 	}
+}
+
+#order-payment { text-align: center;
+	h3 { margin-top: 0; }
+	@media (min-width: $screen-ms-min) { text-align: left; }
 }
 
 #bookmark {
@@ -126,3 +98,6 @@
 	from { color: #adadad; }
 	to { color: #fbc02d; } 
 }
+
+@import "order-status";
+@import "referral";

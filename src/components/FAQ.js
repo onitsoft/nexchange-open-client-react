@@ -35,7 +35,8 @@ class FAQ extends Component {
               question="Who are you?"
               answer={
                 <div>
-                  <p>Nexchange is an automated cryptocurrency exchange service, operated by <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank">YOA LTD. (registered in London, United Kingdom)</a>.</p>
+                  <p>Nexchange is an automated cryptocurrency exchange service, operated by <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank">YOA LTD. (registered company No. 10009845)</a>.</p>
+                  <p>Our VAT number - GB233 5420 37.<br/>Our registered office address - Suite 11, Penhurst House, 352-254 Battersea Park Road, London, England, SW11 3BY.</p>
                   <p>Our customer support phone number in UK is <a href="tel:+442081442192">+442081442192</a>.</p>
                 </div>
               }/>
