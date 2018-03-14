@@ -21,6 +21,8 @@ import NotFound from '../../components/NotFound';
 import CoinProcessed from './CoinProcessed';
 import ReferralBox from '../../containers/ReferralBox';
 
+import Notifications from '../../containers/Notifications';
+
 import STATUS_CODES from '../../statusCodes';
 
 
@@ -176,8 +178,14 @@ class Order extends Component {
 						    	{orderStatus}
 					    	</div>
 					    </div>
+						
+						{(this.state.order && [12,13,14,15].indexOf(this.state.order.status_name[0][0]) > -1) &&
+							<Notifications />
+						}
 
-					    {this.state.order ? <ReferralBox order={this.state.order} /> : null }
+						<Notifications />
+
+					    {this.state.order && <ReferralBox order={this.state.order} /> }
 					</div>
 				</div>
 

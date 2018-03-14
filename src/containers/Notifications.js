@@ -9,15 +9,23 @@ class Notifications extends Component {
 		super();
 		this.state = {
 		};
+
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidMount() {
+	handleInputChange(event) {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+	
+		this.setState({
+		  [name]: value
+		});
 	}
 
-	componentDidUpdate(prevProps) {
-	}
-
-	componentWillUnmount() {
+	handleSubmit() {
+		
 	}
 
 	render() {
@@ -30,7 +38,7 @@ class Notifications extends Component {
 
 							<div className="row">
 								<div className="col-xs-12 col-md-8 col-md-push-2">
-									<form>
+									<form onSubmit={this.handleSubmit}>
 										<div className="form-group">
 											<input type="email" name="email" placeholder="Email" className="form-control" required />
 										<span className="material-input"></span></div>
