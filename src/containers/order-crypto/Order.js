@@ -39,7 +39,7 @@ const Order = (props) => {
 			order = <OrderFailure {...props} />;
 			break;
 		default:
-			order = <h2>Unknown order state, something went wrong</h2>;
+			order = <div className="text-center"><h2>Unknown order state, something went wrong</h2></div>;
 	}
 
 	return <div id="order-crypto">
