@@ -71,7 +71,8 @@ class CoinProcessed extends Component {
 
 		return (
 		    <div className="col-xs-12 col-sm-6">
-		    	<div className="coin-box box media">
+		    	<div
+					className={`coin-box box media ${(this.props.type === 'Deposit' && this.props.order && !this.props.order.pair.quote.is_crypto) ? 'fiat' : ''}`}>
 		    		<div className="media-left">
 		    			<i className={`coin-icon cc-${this.state.coin} ${this.state.coin}`}></i>
 		    		</div>
