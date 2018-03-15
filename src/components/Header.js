@@ -81,6 +81,10 @@ class Header extends Component {
 								<a href="https://join.slack.com/t/nexchangecommunity/shared_invite/MjM0OTU1ODc4NTkyLTE1MDQ0Mzc3NjEtYzZiMTYxMjdhNA" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
 									<i className="fa fa-slack" aria-hidden="true"></i>
 								</a>
+
+								<a href="https://t.me/joinchat/F5JKfhGOMrzDKsJSmPbf9Q" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+									<i className="fa fa-telegram" aria-hidden="true"></i>
+								</a>
 							</li>
 
 							<li className="visible-sm visible-md visible-lg">
@@ -98,6 +102,12 @@ class Header extends Component {
 							<li className="visible-sm visible-md visible-lg">
 								<a href="https://join.slack.com/t/nexchangecommunity/shared_invite/MjM0OTU1ODc4NTkyLTE1MDQ0Mzc3NjEtYzZiMTYxMjdhNA" target="_blank" className="btn btn-simple btn-just-icon" rel="tooltip" title="" data-placement="bottom" data-original-title="Join us on Slack">
 									<i className="fa fa-slack" aria-hidden="true"></i>
+								</a>
+							</li>
+
+							<li className="visible-sm visible-md visible-lg">
+								<a href="https://t.me/joinchat/F5JKfhGOMrzDKsJSmPbf9Q" target="_blank" className="btn btn-simple btn-just-icon" rel="tooltip" title="" data-placement="bottom" data-original-title="Join us on Telegram">
+									<i className="fa fa-telegram" aria-hidden="true"></i>
 								</a>
 							</li>
 				    	</ul>
