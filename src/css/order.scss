@@ -26,8 +26,8 @@
 
 	&.order-fiat {
 		.box.fiat {
-			h5 { margin-top: 9px; padding-bottom: 9px;
-				@media (min-width: $screen-sm-min) { margin-top: 10; padding-bottom: 14px; }
+			h5 { margin-top: 11px; padding-bottom: 7px;
+				@media (min-width: $screen-sm-min) { margin-top: 11px; padding-bottom: 13px; }
 			}
 		}
 	}
