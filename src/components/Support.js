@@ -120,26 +120,18 @@ class Support extends Component {
                 <div>
                   <div className="form-group is-empty">
                     <input type="name" name="name" className="form-control" placeholder="Name" onChange={this.handleInputChange} required />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
                     <input type="telephone" name="telephone" className="form-control" placeholder="Telephone" onChange={this.handleInputChange} />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
                     <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handleInputChange} required />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <div className="form-group is-empty">
                     <input type="text" name="subject" className="form-control" placeholder="Subject" onChange={this.handleInputChange} />
-                    <span className="material-input"></span>
-                    <span className="material-icons form-control-feedback">clear</span>
                   </div>
 
                   <textarea name="message" className="form-control" placeholder="Message" rows="2" onChange={this.handleInputChange} required></textarea>
