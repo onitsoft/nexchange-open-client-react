@@ -65,7 +65,7 @@ class CoinInput extends PureComponent {
 
 	render() {
 		return (
-		  <div className="form-group label-floating has-success is-focused">
+		  <div className="form-group label-floating">
 		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
 			<input 
 				type="text"
