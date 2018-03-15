@@ -9,16 +9,17 @@ class OrderStatus extends Component {
 
   render() {
     let width = "0%";
+    const status = this.props.status;
 
-    if (STATUS_CODES[this.props.status] == 'COMPLETED') {
+    if (STATUS_CODES[status] == 'COMPLETED') {
       width = "100%";
-    } else if (STATUS_CODES[this.props.status] == 'RELEASE') {
+    } else if (STATUS_CODES[status] == 'RELEASE') {
       width = "90%";
-    } else if (STATUS_CODES[this.props.status] == 'PRE_RELEASE') {
+    } else if (STATUS_CODES[status] == 'PRE_RELEASE') {
       width = "75%";
-    } else if (STATUS_CODES[this.props.status] == 'PAID') {
+    } else if (STATUS_CODES[status] == 'PAID') {
       width = "66.6%";
-    } else if (STATUS_CODES[this.props.status] == 'PAID_UNCONFIRMED') {
+    } else if (STATUS_CODES[status] == 'PAID_UNCONFIRMED') {
       width = "33.3%";
     }
 
@@ -28,17 +29,17 @@ class OrderStatus extends Component {
           <div id="order-status">
             <hr/>
             
-            <div id="step-one" className={this.props.status == 0 ? "step" : (this.props.status > 11 ? "step done" : "step active")} data-toggle="tooltip" data-placement="top" title="" data-original-title="In this step we are waiting for your deposit.">
+            <div id="step-one" className={[0,8].indexOf(status) > -1 ? "step" : (status > 11 ? "step done" : "step active")} data-toggle="tooltip" data-placement="top" title="" data-original-title="In this step we are waiting for your deposit.">
               <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
               <h4>1. Awaiting deposit</h4>
             </div>
 
-            <div id="step-two" className={STATUS_CODES[this.props.status] == 'PAID_UNCONFIRMED' ? "step active" : (this.props.status >= 13 ? "step done" : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.">
+            <div id="step-two" className={STATUS_CODES[status] == 'PAID_UNCONFIRMED' ? "step active" : (status >= 13 ? "step done" : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.">
               <span className="glyphicon glyphicon-transfer" aria-hidden="true"></span>
               <h4>2. Awaiting confirmations</h4> 
             </div>
             
-            <div id="step-three" className={this.props.status == 13 || this.props.status == 14 ? "step active" : (this.props.status >= 15 ? (this.props.status == 15 ? "step active" : "step done" ) : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
+            <div id="step-three" className={status == 13 || status == 14 ? "step active" : (status >= 15 ? (status == 15 ? "step active" : "step done" ) : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
               <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
               <h4>3. All done</h4>
             </div>
