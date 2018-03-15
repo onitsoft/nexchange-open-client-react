@@ -180,8 +180,10 @@ class Order extends Component {
 						    	{orderStatus}
 					    	</div>
 					    </div>
-						{<Notifications />}
-					    	{this.state.order && <ReferralBox order={this.state.order} /> }
+
+						<Notifications />
+
+					    {this.state.order && <ReferralBox order={this.state.order} /> }
 					</div>
 				</div>
 
