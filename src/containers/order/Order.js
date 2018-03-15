@@ -132,17 +132,19 @@ class Order extends Component {
 		if (this.state.notFound)
 			return <NotFound />;
 
-		let orderInfo = null, orderStatus;
+		let orderInfo = null, orderStatus, isCrypto;
 		if (this.state.order) {
+			isCrypto = this.state.order.pair.quote.is_crypto;
+
 			if (this.state.expired && STATUS_CODES[this.state.order.status_name[0][0]] == 'INITIAL') {
 				orderInfo = <OrderExpired />;
 			} else {
-				if (this.state.order.pair.quote.code === 'EUR' || this.state.order.pair.quote.code === 'USD') {
+				if (!isCrypto) {
 					orderStatus = <OrderStatusFiat status={this.state.order.status_name[0][0]} />;
 					orderInfo = <OrderFiat
 						order={this.state.order}
 						timeRemaining={this.state.timeRemaining}
-						{...this.props} />
+						{...this.props} />;
 				} else {
 					orderStatus = <OrderStatusCrypto status={this.state.order.status_name[0][0]} />;
 					orderInfo = <OrderCrypto
@@ -154,7 +156,7 @@ class Order extends Component {
 		}
 
 		return (
-			<div id="order">
+			<div id="order" className={isCrypto ? 'order-crypto' : 'order-fiat'}>
 				<div className="container">
 					<div className="row">
 					    <div id="order-header" className="col-xs-12">

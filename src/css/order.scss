@@ -13,19 +13,25 @@
 	}
 	#order-ref { margin-bottom: 15px; }
 	.box {
-		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
-		
 		h4 { font-size: 15px; }
 		h5, h6 { margin: 0; text-transform: none; }
-		h6::before {
-			display: inline-block;
-			content:"\00a0";
-			width: 0;
-			height: 0;
+		.coin-icon { position: relative; top: 8px; font-size: 28px;
+			@media (min-width: $screen-sm-min) { top: 9px; }
+			@media (min-width: $screen-md-min) { top: 11px; }
 		}
-		.coin-icon { position: relative; top: 8px; font-size: 28px; }
 		.text-warning { color: $green; }		
+
+		@media (min-width: $screen-sm-min) { margin-bottom: 30px; }
 	}
+
+	&.order-fiat {
+		.box.fiat {
+			h5 { margin-top: 9px; padding-bottom: 9px;
+				@media (min-width: $screen-sm-min) { margin-top: 10; padding-bottom: 14px; }
+			}
+		}
+	}
+
 	.coin-box { padding-left: 10px;
 		.tooltip-inner { text-align: left; }
 	}
@@ -34,6 +40,7 @@
 		h2 { margin-top: 0; }
 		.explanation { font-size: 16px; margin-top: 15px; }
 	}
+
 
 	@media (min-width: $screen-sm-min) { padding: 25px 0;
 		h5 { font-size: 15px; }
