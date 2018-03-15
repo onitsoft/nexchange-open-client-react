@@ -180,12 +180,8 @@ class Order extends Component {
 						    	{orderStatus}
 					    	</div>
 					    </div>
-						
-						{(this.state.order && [12,13,14,15].indexOf(this.state.order.status_name[0][0]) > -1) &&
-							<Notifications />
-						}
-
-					    {this.state.order && <ReferralBox order={this.state.order} /> }
+						{<Notifications />}
+					    	{this.state.order && <ReferralBox order={this.state.order} /> }
 					</div>
 				</div>
 
