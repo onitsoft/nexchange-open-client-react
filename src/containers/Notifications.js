@@ -33,12 +33,12 @@ class Notifications extends Component {
 		event.preventDefault();
 
 		axios({
-			method: 'put',
-			contentType : 'application/json',
-			url: `${config.API_BASE_URL}/users/me/`,
+            method: 'put',
+            contentType : 'application/json',
+            url: `${config.API_BASE_URL}/users/me/`,
             data: {email: this.state.email},
             headers: {'Authorization': 'Bearer ' + localStorage.token}
-		    })
+		})
 			.then(data => {
 				console.log(data.response);
 
