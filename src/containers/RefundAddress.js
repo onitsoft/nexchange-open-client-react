@@ -11,6 +11,8 @@ import axios from 'axios';
 import config from '../config';
 >>>>>>> Show refund box only on order status > 11 and if user is authorized.
 
+import Helpers from '../helpers';
+
 
 class RefundAddress extends Component {
 	constructor(props) {
@@ -19,6 +21,7 @@ class RefundAddress extends Component {
 			value: '',
 			message: {
 				text: '',
+<<<<<<< HEAD
 <<<<<<< HEAD
 				type: ''
 			}
@@ -33,10 +36,17 @@ class RefundAddress extends Component {
 		console.log(props);
 
 >>>>>>> Show refund box only on order status > 11 and if user is authorized.
+=======
+				type: ''
+			}
+		};
+
+>>>>>>> rebase in progress; onto bc2cb08
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	handleChange(event) {
   	this.setState({value: event.target.value});
@@ -97,13 +107,40 @@ class RefundAddress extends Component {
 		});
 	}
 
+=======
+>>>>>>> rebase in progress; onto bc2cb08
 	handleChange(event) {
-		this.setState({ value: event.target.value });
-	}
+  		this.setState({value: event.target.value});
+
+		if (event.target.value.length > 0) {
+			Helpers.validateWalletAddress(event.target.value, this.props.order.pair.quote.code, () => {
+				this.setState({
+					message: {
+						text: `${event.target.value} is not a valid ${this.props.order.pair.quote.code} address`,
+						type: 'error'
+					}
+				})
+			}, () => {
+				this.setState({
+					message: {
+						text: '',
+						type: ''
+					}
+				})
+			});
+		} else {
+			this.setState({
+				message: {
+					text: '',
+					type: ''
+				}
+			})
+		}
+  }
 
 	handleSubmit(event) {
-		event.preventDefault();
-	}
+    	event.preventDefault();
+  	}
 
 	render() {
 		if (this.state.show === false) return null;
@@ -135,17 +172,22 @@ class RefundAddress extends Component {
 
 							<div className="row">
 								<div className="col-xs-12 col-md-8 col-md-push-2">
-									<form>
-										<div className="form-group">
-											<input
-												type="refund-address"
+									<form onSubmit={this.handleSubmit}>
+										<div className="form-group" style={{marginTop: 0}}>
+											<label className={`${this.state.message.type}`}>{this.state.message.text}</label>
+
+											<input type="text"
 												name="refund-address"
 												placeholder="Refund address"
 												className="form-control"
+												value={this.state.value}
 												onChange={this.handleChange}
 												required />
+<<<<<<< HEAD
 											<span className="material-input"></span>
 >>>>>>> Show refund box only on order status > 11 and if user is authorized.
+=======
+>>>>>>> rebase in progress; onto bc2cb08
 										</div>
 
 										<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>
