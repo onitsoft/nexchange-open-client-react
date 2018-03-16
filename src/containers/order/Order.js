@@ -20,6 +20,7 @@ import Bookmark from '../Bookmark';
 import NotFound from '../../components/NotFound';
 import CoinProcessed from './CoinProcessed';
 import ReferralBox from '../../containers/ReferralBox';
+import RefundAddress from '../../containers/RefundAddress'
 
 import Notifications from '../../containers/Notifications';
 
@@ -183,7 +184,9 @@ class Order extends Component {
 
 						<Notifications />
 
-					    {this.state.order && <ReferralBox order={this.state.order} /> }
+						{this.state.order && <RefundAddress order={this.state.order} />}
+
+					    {this.state.order && <ReferralBox order={this.state.order} />}
 					</div>
 				</div>
 
