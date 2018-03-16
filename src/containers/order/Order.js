@@ -21,12 +21,8 @@ import NotFound from '../../components/NotFound';
 import CoinProcessed from './CoinProcessed';
 import ReferralBox from '../../containers/ReferralBox';
 import RefundAddress from '../../containers/RefundAddress'
-<<<<<<< HEAD
 
 import Notifications from '../../containers/Notifications';
-=======
->>>>>>> 370d11665e9372dda21c47299c35f5cf1cb7c76c
-
 import STATUS_CODES from '../../statusCodes';
 
 
@@ -149,15 +145,7 @@ class Order extends Component {
 		if (this.state.notFound)
 			return <NotFound />;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 		let orderInfo = null, orderStatus, isCrypto;
-=======
-		let orderInfo = null, orderStatus, refundAddress = null;
->>>>>>> Only show refund address box on status_name > 11
-=======
-		let orderInfo = null, orderStatus, refundAddress = null;
->>>>>>> 370d11665e9372dda21c47299c35f5cf1cb7c76c
 		if (this.state.order) {
 			isCrypto = this.state.order.pair.quote.is_crypto;
 
