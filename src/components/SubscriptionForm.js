@@ -67,13 +67,13 @@ class SubscriptionForm extends React.Component {
 					<form action={action} method="post" noValidate>
 						<div id="subscription-form-inner">
 
-							<div className="col-xs-12 col-sm-10">
+							<div className="col-xs-12 col-sm-9">
 								<div className="form-group is-empty has-success">
 									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter your email to receive updates about Nexchange" className="form-control" required />
 								<span className="material-input"></span></div>
 							</div>
 
-							<div className="col-xs-12 col-sm-2">
+							<div className="col-xs-12 col-sm-3">
 								<button 
 									disabled={
 										this.state.status === "sending" ||
