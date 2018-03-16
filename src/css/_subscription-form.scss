@@ -5,7 +5,7 @@
 		input { margin: 0; }
 	}
 	button { width: 100%; }
-	input { font-size: 18px; background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff); color: #fff; }
+	input { font-size: 18px; background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff); }
 	.message p { color: #fff; padding: 0;
 		&.success{ color: $green; }
 		&.failure { color: #ff695e; }
