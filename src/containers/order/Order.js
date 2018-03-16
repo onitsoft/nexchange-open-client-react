@@ -192,17 +192,17 @@ class Order extends Component {
 						<CoinProcessed order={this.state.order} type="Deposit" />
 						<CoinProcessed order={this.state.order} type="Receive" />
 
-				    <div className="col-xs-12">
-				    	<div className="box">
-				    		{this.state.loading ?
-				    			<div className="row">
-				    				<div className="col-xs-12 text-center"><h2>Loading</h2></div>
-				    			</div> : orderInfo
-				    		}
+						<div className="col-xs-12">
+							<div className="box">
+								{this.state.loading ?
+									<div className="row">
+										<div className="col-xs-12 text-center"><h2>Loading</h2></div>
+									</div> : orderInfo
+								}
 
-					    	{orderStatus}
-				    	</div>
-				    </div>
+								{orderStatus}
+							</div>
+						</div>
 
 						{this.state.order && <Notifications order={this.state.order} /> }
 						{this.state.order && <RefundAddress order={this.state.order} />}

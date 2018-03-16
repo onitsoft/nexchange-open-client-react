@@ -16,6 +16,7 @@ class WalletAddress extends Component {
 	}
 
   onChange(event) {
+<<<<<<< HEAD
 		let address = event.target.value.replace(new RegExp(/ /g, 'g'), ''),
 			valid = Helpers.validateWalletAddress(address, this.props.selectedCoin.receive,
 				() => {
@@ -24,6 +25,12 @@ class WalletAddress extends Component {
 				() => {
 					this.props.errorAlert({show: false});
 				});
+=======
+		let address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
+		const valid = Helpers.validateWalletAddress(address, this.props.selectedCoin.receive,
+			() => this.props.errorAlert({show: true, message: `${address} is not a valid ${this.props.selectedCoin.receive} address.`}),
+			() => this.props.errorAlert({show: false}));
+>>>>>>> Show refund box only on order status > 11 and if user is authorized.
 
 	this.setState({ address });
 
