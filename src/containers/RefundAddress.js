@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config';
 
+import Helpers from '../helpers';
+
 
 class RefundAddress extends Component {
 	constructor(props) {
@@ -10,47 +12,46 @@ class RefundAddress extends Component {
 			value: '',
 			message: {
 				text: '',
-				error: false
-			},
-			show: false
+				type: ''
+			}
 		};
-
-		console.log(props);
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidMount() {
-		axios({
-			method: 'get',
-			contentType : 'application/json',
-			url: `${config.API_BASE_URL}/users/me/`,
-			data: {email: this.state.email},
-			headers: {'Authorization': 'Bearer ' + localStorage.token}
-		})
-		.then(data => {
-			console.log(data);
-
-			// TODO: Remove 11 later. Only show on order status 12,13,14,15
-			if (data.status === 200 &&
-				[11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) > -1)
-			{
-				this.setState({ show: true });
-			}
-		})
-		.catch(error => {
-			console.log(error);
-		});
-	}
-
 	handleChange(event) {
-		this.setState({ value: event.target.value });
-	}
+  		this.setState({value: event.target.value});
+
+		if (event.target.value.length > 0) {
+			Helpers.validateWalletAddress(event.target.value, this.props.order.pair.quote.code, () => {
+				this.setState({
+					message: {
+						text: `${event.target.value} is not a valid ${this.props.order.pair.quote.code} address`,
+						type: 'error'
+					}
+				})
+			}, () => {
+				this.setState({
+					message: {
+						text: '',
+						type: ''
+					}
+				})
+			});
+		} else {
+			this.setState({
+				message: {
+					text: '',
+					type: ''
+				}
+			})
+		}
+  }
 
 	handleSubmit(event) {
-		event.preventDefault();
-	}
+    	event.preventDefault();
+  	}
 
 	render() {
 		if (this.state.show === false) return null;
@@ -64,16 +65,17 @@ class RefundAddress extends Component {
 
 							<div className="row">
 								<div className="col-xs-12 col-md-8 col-md-push-2">
-									<form>
-										<div className="form-group">
-											<input
-												type="refund-address"
+									<form onSubmit={this.handleSubmit}>
+										<div className="form-group" style={{marginTop: 0}}>
+											<label className={`${this.state.message.type}`}>{this.state.message.text}</label>
+
+											<input type="text"
 												name="refund-address"
 												placeholder="Refund address"
 												className="form-control"
+												value={this.state.value}
 												onChange={this.handleChange}
 												required />
-											<span className="material-input"></span>
 										</div>
 
 										<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>

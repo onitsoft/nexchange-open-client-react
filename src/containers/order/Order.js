@@ -182,6 +182,7 @@ class Order extends Component {
 					    	</div>
 					    </div>
 
+
 						<Notifications />
 
 						{this.state.order && <RefundAddress order={this.state.order} />}
