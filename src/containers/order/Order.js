@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import moment from 'moment';
+import 'moment/locale/en-gb';
 
 import { fetchCoinDetails } from '../../actions';
 
