@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-
+import 'moment/locale/en-gb';
 
 class CountDown extends Component {
 	constructor(props) {
