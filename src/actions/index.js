@@ -1,5 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
+import 'moment/locale/en-gb';
 import _ from 'lodash';
 import config from '../config';
 import Helpers from '../helpers';
