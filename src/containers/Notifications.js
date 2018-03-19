@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config';
+<<<<<<< HEAD
+=======
+import Box from '../components/Box';
+>>>>>>> Use containment to reduce some bloat on order components.
 
 class Notifications extends Component {
 	constructor(props) {
@@ -82,19 +86,17 @@ class Notifications extends Component {
 		}
 
 		return (
-		    <div id="notifications" className="col-xs-12">
-		    	<div className="box">
-		    		<div className="row">
-		    			<div className="col-xs-12">
-							<h2>Get notified about your order!</h2>
-				
-							<div className="row">
-								<div className="col-xs-12 col-md-8 col-md-push-2">
-									<form onSubmit={this.handleSubmit}>
-										<h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>
-											{this.state.message.text}
-										</h4>
+			<Box id="notifications">
+				<h2>Get notified about your order!</h2>
+	
+				<div className="row">
+					<div className="col-xs-12 col-md-8 col-md-push-2">
+						<form onSubmit={this.handleSubmit}>
+							<h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>
+								{this.state.message.text}
+							</h4>
 
+<<<<<<< HEAD
 										<div className="form-group">
 											<input
 												type="email"
@@ -116,6 +118,31 @@ class Notifications extends Component {
 		    		</div>
 		    	</div>
 		    </div> 
+=======
+							<div className="form-group">
+								<input
+									type="email"
+									name="email" 
+									placeholder="Email"
+									className="form-control"
+									onChange={this.handleInputChange}
+									value={this.state.email}
+									required
+								/>
+								<span className="material-input"></span>
+							</div>
+
+							{/*<div className="form-group">
+								<input type="tel" name="tel" placeholder="Telephone (optional)" className="form-control" />
+								<span className="material-input"></span>
+							</div>*/}
+
+							<button type="submit" className="btn btn-themed btn-lg">Receive notifications</button>
+						</form>
+					</div>
+				</div>
+		    </Box> 
+>>>>>>> Use containment to reduce some bloat on order components.
 		);
 	}
 }
