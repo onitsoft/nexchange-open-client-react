@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import config from '../config';
 import ReferralTerms from '../components/ReferralTerms';
 import Box from '../components/Box';
@@ -34,8 +33,4 @@ class ReferralBox extends Component {
 	}
 };
 
-const mapStateToProps = ({ order }) => {
-    return { order };
-}
-
-export default connect(mapStateToProps)(ReferralBox);
+export default ReferralBox;

@@ -190,9 +190,7 @@ export const fetchOrder = orderId => async dispatch => {
       console.log(error)
 
       if (error.response && error.response.status === 429) {
-        setTimeout(() => {
-          this.getOrderDetails();
-        }, config.ORDER_DETAILS_FETCH_INTERVAL);
+        dispatch({ type: FETCH_ORDER, payload: 429 });
       } else if (error.response) {
         dispatch({ type: FETCH_ORDER, payload: 404 });
       }

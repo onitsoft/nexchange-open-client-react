@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
+import Helpers from '../../helpers';
 
 class CoinProcessed extends Component {
 	constructor(props) {
@@ -23,10 +22,6 @@ class CoinProcessed extends Component {
 				order: this.props.order
 			};
 		}
-	}
-	
-	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 	}
 
 	render() {
@@ -67,7 +62,7 @@ class CoinProcessed extends Component {
 		return (
 		    <div className="col-xs-12 col-sm-6">
 		    	<div
-					className={`coin-box box media ${(this.props.type === 'Deposit' && !this.props.order.pair.quote.is_crypto) ? 'fiat' : ''}`}>
+					className={`coin-box box media ${(this.props.type === 'Deposit' && Helpers.isFiatOrder(this.props.order)) ? 'fiat' : ''}`}>
 		    		<div className="media-left">
 		    			<i className={`coin-icon cc-${this.state.coin} ${this.state.coin}`}></i>
 		    		</div>
@@ -93,8 +88,4 @@ class CoinProcessed extends Component {
 	}
 };
 
-const mapStateToProps = ({ order }) => {
-    return { order };
-}
-
-export default connect(mapStateToProps)(CoinProcessed);
+export default CoinProcessed;

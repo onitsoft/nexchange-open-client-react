@@ -55,6 +55,10 @@ class Helpers {
 
     return isValid;
   }
+
+  static isFiatOrder(order) {
+	return !order.pair.quote.is_crypto;
+  }
 }
 
 export default Helpers;

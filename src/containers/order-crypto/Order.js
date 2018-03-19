@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../css/order-crypto.scss';
 
-import OrderInitial from './OrderInitial';
+import OrderInitial from '../order/OrderInitial';
 import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
 import OrderPreReleased from './OrderPreReleased';

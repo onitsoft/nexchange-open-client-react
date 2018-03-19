@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Helpers from '../helpers';
 import Box from '../components/Box';
 
@@ -86,8 +85,4 @@ class RefundAddress extends Component {
 	// refundAddress = < order={this.props.order} />;
 //}
 
-const mapStateToProps = ({ order }) => {
-    return { order };
-}
-
-export default connect(mapStateToProps)(RefundAddress);
+export default RefundAddress;
