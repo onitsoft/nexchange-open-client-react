@@ -47,14 +47,10 @@ const Order = (props) => {
 			order = <div className="text-center"><h2>Unknown order state, something went wrong</h2></div>;
 	}
 
-	return (
-		<div className="col-xs-12">
-			<div className="box">
-				{order}
-				<OrderStatus status={props.order.status_name[0][0]} />
-			</div>
-		</div>
-	)
+	return <div>
+		{order}
+		<OrderStatus status={props.order.status_name[0][0]} />
+	</div>;
 };
 
 export default Order;

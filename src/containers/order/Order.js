@@ -63,7 +63,10 @@ class Order extends Component {
 							<CoinProcessed type="Receive" order={this.state.order} {...this.props} />
 							<OrderInfo order={this.state.order} {...this.props} />
 							<Notifications order={this.state.order} {...this.props} />
-							<RefundAddress order={this.state.order} {...this.props} />
+
+							{!Helpers.isFiatOrder(this.state.order) &&
+								<RefundAddress order={this.state.order} {...this.props} />}
+								
 							<ReferralBox order={this.state.order} {...this.props} />
 						</div>
 					</div>

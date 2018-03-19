@@ -51,6 +51,8 @@ class RefundAddress extends Component {
   	}
 
 	render() {
+		if (this.props.order)
+
 		return (
 			<Box id="refund-box">
 				<h2>Refund address</h2>

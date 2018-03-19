@@ -196,8 +196,6 @@ export const fetchOrder = orderId => async dispatch => {
       }
     });
 
-  // dispatch({ type: FETCH_ORDER, payload: res });
-
   // axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/?_=${Math.round((new Date()).getTime())}`)
   // .then(response => {
   //   let order = response.data;
