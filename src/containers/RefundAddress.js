@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helpers from '../helpers';
-
+import Box from '../components/Box';
 
 class RefundAddress extends Component {
 	constructor(props) {
@@ -53,38 +53,31 @@ class RefundAddress extends Component {
 
 	render() {
 		return (
-			<div id="refund-box" className="col-xs-12">
-				<div className="box">
-					<div className="row">
-						<div className="col-xs-12">
-							<h2>Refund address</h2>
+			<Box id="refund-box">
+				<h2>Refund address</h2>
 
-							<div className="row">
-								<div className="col-xs-12 col-md-8 col-md-push-2">
-									<form onSubmit={this.handleSubmit}>
-										<h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>
-											{this.state.message.text}
-										</h4>
+				<div className="row">
+					<div className="col-xs-12 col-md-8 col-md-push-2">
+						<form onSubmit={this.handleSubmit}>
+							<h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>
+								{this.state.message.text}
+							</h4>
 
-										<div className="form-group">
-											<input type="text"
-												name="refund-address"
-												placeholder="Refund address"
-												className="form-control"
-												value={this.state.value}
-												onChange={this.handleChange}
-												required />
-										</div>
-
-										<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>
-									</form>
-								</div>
+							<div className="form-group">
+								<input type="text"
+									name="refund-address"
+									placeholder="Refund address"
+									className="form-control"
+									value={this.state.value}
+									onChange={this.handleChange}
+									required />
 							</div>
 
-						</div>
+							<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>
+						</form>
 					</div>
 				</div>
-			</div>
+			</Box>
 		);
 	}
 }
