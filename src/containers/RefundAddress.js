@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import config from '../config';
 import Helpers from '../helpers';
 import Box from '../components/Box';
 
@@ -10,11 +12,30 @@ class RefundAddress extends Component {
 			message: {
 				text: '',
 				error: ''
-			}
+			},
+			disabled: true,
+			userStatus: null,
+
 		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	componentDidMount() {
+		axios({
+            method: 'get',
+            contentType : 'application/json',
+            url: `${config.API_BASE_URL}/users/me/`,
+            data: {email: this.state.email},
+            headers: {'Authorization': 'Bearer ' + localStorage.token}
+		})
+			.then(data => {
+				this.setState({ userStatus: data.status });
+			})
+			.catch(error => {
+				console.log(error);
+			});
 	}
 
 	handleChange(event) {
@@ -30,6 +51,7 @@ class RefundAddress extends Component {
 				})
 			}, () => {
 				this.setState({
+					disabled: false,
 					message: {
 						text: '',
 						error: ''
@@ -38,20 +60,49 @@ class RefundAddress extends Component {
 			});
 		} else {
 			this.setState({
+				disabled: true,
 				message: {
 					text: '',
 					error: ''
 				}
 			})
 		}
-  }
+  	}
 
 	handleSubmit(event) {
-    	event.preventDefault();
+		event.preventDefault();
+		
+		axios({
+				method: 'put',
+				contentType : 'application/json',
+				url: `${config.API_BASE_URL}/order/${this.props.order.unique_reference}/`,
+				data: { refund_address: this.state.value },
+				headers: {'Authorization': 'Bearer ' + localStorage.token}
+			})
+			.then(data => {
+				this.setState({
+					message: {
+						text: 'Success, you set a refund address.',
+						error: false
+					}
+				});
+			})
+			.catch(error => {
+				this.setState({
+					message: {
+						text: 'Something went wrong. Try again later.',
+						error: true
+					}
+				});
+			});
   	}
 
 	render() {
-		if (this.props.order)
+		// TODO: Should be [12,13,14,15], left 11 for testing purposes
+		if ([11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) === -1
+			|| this.state.userStatus !== 200) {
+			return null;
+		}
 
 		return (
 			<Box id="refund-box">
@@ -74,7 +125,12 @@ class RefundAddress extends Component {
 									required />
 							</div>
 
-							<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>
+							<button
+								type="submit"
+								className="btn btn-themed btn-lg"
+								disabled={this.state.disabled}>
+								Set refund address
+							</button>
 						</form>
 					</div>
 				</div>
@@ -82,9 +138,5 @@ class RefundAddress extends Component {
 		);
 	}
 }
-
-//if (this.props.order.status_name[0][0] > 11 && this.state.userStatus === 200) {
-	// refundAddress = < order={this.props.order} />;
-//}
 
 export default RefundAddress;
