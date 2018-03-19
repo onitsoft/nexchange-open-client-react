@@ -37,6 +37,10 @@ class OrderInitial extends Component {
 		this.setState({ time });
 	}
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         if (this.state.time < 0) {
             return <OrderExpired />;

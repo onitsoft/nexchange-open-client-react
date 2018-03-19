@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import _ from 'lodash';
 
 class OrderInitial extends Component {
 	triggerCopyTooltip() {
@@ -47,11 +45,4 @@ class OrderInitial extends Component {
 	}
 }
 
-
-function mapStateToProps(state) {
-	return {
-		coinsInfo: state.coinsInfo
-	}
-}
-
-export default connect(mapStateToProps)(OrderInitial);
+export default OrderInitial;

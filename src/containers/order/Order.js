@@ -11,7 +11,7 @@ import OrderTop from './OrderTop';
 import CoinProcessed from './CoinProcessed';
 
 import NotFound from '../../components/NotFound';
-import Loading from '../../components/NotFound';
+import Loading from '../../components/Loading';
 
 import Notifications from '../../containers/Notifications';
 import RefundAddress from '../../containers/RefundAddress'
@@ -20,10 +20,8 @@ import ReferralBox from '../../containers/ReferralBox';
 
 class Order extends Component {
 	constructor(props) {
-		super();
-		this.state = {
-			expired: false
-		};
+		super(props);
+		this.state = { order: null };
 	}
 
 	componentDidMount() {
@@ -46,27 +44,27 @@ class Order extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		// TODO: Handle order 429 case
-		// console.log(nextProps)
+		this.setState({ order: nextProps.order });
 	}
 
 	render() {
-		if (this.props.order === null) {
+		if (this.state.order == null) {
 			return <Loading />;
-		} else if (this.props.order === 404) {
+		} else if (this.state.order === 404) {
 			return <NotFound />;
-		} else if (typeof this.props.order === 'object') {
+		} else if (typeof this.state.order === 'object') {
 			return (
-				<div id="order" className={Helpers.isFiatOrder(this.props.order) ? 'order-fiat' : 'order-crypto'}>
+				<div id="order" className={Helpers.isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
 					<div className="container">
-						<OrderTop {...this.props} />
+						<OrderTop order={this.state.order} {...this.props} />
 	
 						<div className="row">
-							<CoinProcessed type="Deposit" {...this.props} />
-							<CoinProcessed type="Receive" {...this.props} />
-							<OrderInfo {...this.props} />
-							<Notifications {...this.props} />
-							<RefundAddress {...this.props} />
-							<ReferralBox {...this.props} />
+							<CoinProcessed type="Deposit" order={this.state.order} {...this.props} />
+							<CoinProcessed type="Receive" order={this.state.order} {...this.props} />
+							<OrderInfo order={this.state.order} {...this.props} />
+							<Notifications order={this.state.order} {...this.props} />
+							<RefundAddress order={this.state.order} {...this.props} />
+							<ReferralBox order={this.state.order} {...this.props} />
 						</div>
 					</div>
 				</div>
