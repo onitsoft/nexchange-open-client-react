@@ -7,7 +7,7 @@ import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
 import OrderPreReleased from './OrderPreReleased';
 import OrderReleased from './OrderReleased';
-import OrderStatusCrypto from './OrderStatus';
+import OrderStatus from './OrderStatus';
 
 import OrderSuccess from '../order/OrderSuccess';
 import OrderFailure from '../order/OrderFailure';
@@ -51,7 +51,7 @@ const Order = (props) => {
 		<div className="col-xs-12">
 			<div className="box">
 				{order}
-				<OrderStatusCrypto status={props.order.status_name[0][0]} />
+				<OrderStatus status={props.order.status_name[0][0]} />
 			</div>
 		</div>
 	)

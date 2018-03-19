@@ -5,6 +5,7 @@ import Helpers from '../../helpers';
 import OrderInitialFiat from '../order-fiat/OrderInitial';
 import OrderInitialCrypto from '../order-crypto/OrderInitial';
 import OrderExpired from '../order/OrderExpired';
+import Loading from '../../components/Loading';
 
 class OrderInitial extends Component {
     constructor(props) {
@@ -42,8 +43,10 @@ class OrderInitial extends Component {
     }
 
     render() {
-        if (this.state.time < 0) {
-            return <OrderExpired />;
+        if (this.state.time === '...') {
+            return <Loading />
+        } else if (this.state.time < 0) {
+            return <OrderExpired {...this.props} />;
         } else if (Helpers.isFiatOrder(this.props.order)) {
             return <OrderInitialFiat time={this.state.time} {...this.props} />
         } else {

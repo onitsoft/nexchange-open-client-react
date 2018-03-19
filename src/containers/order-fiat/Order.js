@@ -7,6 +7,7 @@ import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
 import OrderPreReleased from './OrderPreReleased';
 import OrderReleased from './OrderReleased';
+import OrderStatus from './OrderStatus';
 
 import OrderSuccess from '../order/OrderSuccess';
 import OrderFailure from '../order/OrderFailure';
@@ -48,6 +49,7 @@ const Order = (props) => {
 
 	return <div id="order-fiat">
 		{order}
+		<OrderStatus status={props.order.status_name[0][0]} />
 	</div>;
 };
 
