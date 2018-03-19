@@ -38,7 +38,8 @@ class RefundAddress extends Component {
 >>>>>>> Show refund box only on order status > 11 and if user is authorized.
 =======
 				type: ''
-			}
+			},
+			show: true
 		};
 
 >>>>>>> rebase in progress; onto bc2cb08

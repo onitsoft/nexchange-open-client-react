@@ -146,15 +146,14 @@ class Order extends Component {
 		if (this.state.notFound)
 			return <NotFound />;
 
-		let orderInfo = null, orderStatus, isCrypto;
-
+		let orderInfo = null, orderStatus, isCrypto, refundAddress;
 		if (this.state.order) {
 			isCrypto = this.state.order.pair.quote.is_crypto;
 
 			if (this.state.expired && STATUS_CODES[this.state.order.status_name[0][0]] == 'INITIAL') {
 				orderInfo = <OrderExpired />;
 			} else {
-				if (!isCrypto) {
+				if (isCrypto === false) {
 					orderStatus = <OrderStatusFiat status={this.state.order.status_name[0][0]} />;
 					orderInfo = <OrderFiat
 						order={this.state.order}
@@ -166,6 +165,10 @@ class Order extends Component {
 						order={this.state.order}
 						timeRemaining={this.state.timeRemaining}
 						{...this.props} />
+
+					//if (this.state.order.status_name[0][0] > 11 && this.state.userStatus === 200) {
+						refundAddress = <RefundAddress order={this.state.order} />;
+					//}
 				}
 			}
 		}
@@ -196,8 +199,8 @@ class Order extends Component {
 							</div>
 						</div>
 
-						{this.state.order && <Notifications order={this.state.order} /> }
-						{this.state.order && <RefundAddress order={this.state.order} />}
+						<Notifications />
+						{refundAddress}
 					    {this.state.order && <ReferralBox order={this.state.order} />}
 					</div>
 				</div>
