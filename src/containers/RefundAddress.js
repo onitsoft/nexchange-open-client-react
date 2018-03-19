@@ -12,7 +12,8 @@ class RefundAddress extends Component {
 			message: {
 				text: '',
 				type: ''
-			}
+			},
+			show: true
 		};
 
 		this.handleChange = this.handleChange.bind(this);
