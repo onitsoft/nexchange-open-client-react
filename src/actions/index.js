@@ -1,5 +1,5 @@
 import axios from 'axios';
-import moment from 'moment';
+import { FETCH_ORDER } from './types';
 import _ from 'lodash';
 import config from '../config';
 import Helpers from '../helpers';
@@ -174,4 +174,70 @@ export function fetchPairs(payload) {
       	console.log(error);
       });
   };
+}
+
+export const fetchOrder = orderId => async dispatch => {
+	const url = `${config.API_BASE_URL}/orders/${orderId}/?_=${Math.round((new Date()).getTime())}`;
+  const request = axios.get(url);
+
+  request
+    .then(res => {
+      const order = res.data;
+
+      dispatch({ type: FETCH_ORDER, payload: order });
+    })
+    .catch(error => {
+      console.log(error)
+
+      if (error.response && error.response.status === 429) {
+        setTimeout(() => {
+          this.getOrderDetails();
+        }, config.ORDER_DETAILS_FETCH_INTERVAL);
+      } else if (error.response) {
+        dispatch({ type: FETCH_ORDER, payload: 404 });
+      }
+    });
+
+  // dispatch({ type: FETCH_ORDER, payload: res });
+
+  // axios.get(`${config.API_BASE_URL}/orders/${this.props.match.params.orderRef}/?_=${Math.round((new Date()).getTime())}`)
+  // .then(response => {
+  //   let order = response.data;
+
+  //   if (this.state.order && this.state.order.status_name[0][0] === 11 && order.status_name[0][0] === 12) {
+  //     ga('send', 'event', 'Order', 'order paid', order.unique_reference);
+  //   }
+
+  //   this.setState({
+  //     loading: false,
+  //     order: order
+  //   }, () => {
+  //     if (this.interval)
+  //       clearInterval(this.interval);
+
+  //     if (STATUS_CODES[this.state.order.status_name[0][0]] === 'INITIAL') {
+  //       this.interval = setInterval(this.tick, 1000);
+  //       this.tick();
+  //     }
+
+  //     $(function() {
+  //         $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+  //     });
+
+  //     this.timeout = setTimeout(() => {
+  //       this.getOrderDetails();
+  //     }, config.ORDER_DETAILS_FETCH_INTERVAL);
+  //   })
+  // })
+  // .catch((error) => {
+  //   console.log(error);
+
+  //   if (error.response && error.response.status == 429) {
+  //     this.timeout = setTimeout(() => {
+  //       this.getOrderDetails();
+  //     }, config.ORDER_DETAILS_FETCH_INTERVAL * 2);
+  //   } else {
+  //     this.setState({notFound: true});
+  //   }
+  // });
 }

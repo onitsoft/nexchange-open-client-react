@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import config from '../config';
+import { connect } from 'react-redux';
 import Helpers from '../helpers';
 
 
@@ -11,9 +10,8 @@ class RefundAddress extends Component {
 			value: '',
 			message: {
 				text: '',
-				type: ''
-			},
-			show: true
+				error: ''
+			}
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -28,14 +26,14 @@ class RefundAddress extends Component {
 				this.setState({
 					message: {
 						text: `${event.target.value} is not a valid ${this.props.order.pair.quote.code} address`,
-						type: 'error'
+						error: 'error'
 					}
 				})
 			}, () => {
 				this.setState({
 					message: {
 						text: '',
-						type: ''
+						error: ''
 					}
 				})
 			});
@@ -43,7 +41,7 @@ class RefundAddress extends Component {
 			this.setState({
 				message: {
 					text: '',
-					type: ''
+					error: ''
 				}
 			})
 		}
@@ -54,10 +52,8 @@ class RefundAddress extends Component {
   	}
 
 	render() {
-		if (this.state.show === false) return null;
-
 		return (
-			<div id="share-referral" className="col-xs-12">
+			<div id="refund-box" className="col-xs-12">
 				<div className="box">
 					<div className="row">
 						<div className="col-xs-12">
@@ -66,9 +62,11 @@ class RefundAddress extends Component {
 							<div className="row">
 								<div className="col-xs-12 col-md-8 col-md-push-2">
 									<form onSubmit={this.handleSubmit}>
-										<div className="form-group" style={{marginTop: 0}}>
-											<label className={`${this.state.message.type}`}>{this.state.message.text}</label>
+										<h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>
+											{this.state.message.text}
+										</h4>
 
+										<div className="form-group">
 											<input type="text"
 												name="refund-address"
 												placeholder="Refund address"
@@ -91,5 +89,12 @@ class RefundAddress extends Component {
 	}
 }
 
+//if (this.props.order.status_name[0][0] > 11 && this.state.userStatus === 200) {
+	// refundAddress = < order={this.props.order} />;
+//}
 
-export default RefundAddress;
+const mapStateToProps = ({ order }) => {
+    return { order };
+}
+
+export default connect(mapStateToProps)(RefundAddress);
