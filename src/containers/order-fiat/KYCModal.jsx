@@ -42,18 +42,21 @@ class KYCModal extends Component {
     let formData = new FormData();
 
     let governmentID = document.querySelector('#governmentID');
-    if (governmentID)
+    if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
+    }
 
     let residenceProof = document.querySelector('#residenceProof');
-    if (residenceProof)
+    if (residenceProof) {
       formData.append('utility_document', residenceProof.files[0]);
+    }
 
-    formData.append('order_reference', this.props.match.params.orderRef)
+    formData.append('order_reference', this.props.match.params.orderRef);
+
     axios.post(`${config.API_BASE_URL}/kyc/`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     })
     .then(response => {
       this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});

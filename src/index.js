@@ -27,7 +27,8 @@ import Home from './containers/Home';
 import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
-import RefundCancellation from './containers/RefundCancellation';
+
+Raven.config('https://106d176e22bf455a8b6d9fac02f65de3@sentry.io/307712').install()
 
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
