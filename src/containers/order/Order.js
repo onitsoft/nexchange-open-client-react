@@ -49,6 +49,12 @@ class Order extends Component {
 
 		if (nextProps.order !== 429) {
 			this.setState({ order: nextProps.order });
+
+			if (this.props.order && 
+				this.props.order.status_name[0][0] === 11 && 
+				nextProps.order.status_name[0][0] === 12) {
+				ga('send', 'event', 'Order', 'order paid', nextProps.unique_reference);
+			}
 		}
 	}
 
