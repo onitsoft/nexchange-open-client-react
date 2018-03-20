@@ -22,7 +22,7 @@ class Notifications extends Component {
 		axios({
 				method: 'get',
 				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/users/me/order/${this.props.order.unique_reference}`,
+				url: `${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`,
 				headers: {'Authorization': 'Bearer ' + localStorage.token}
 			})
 			.then(data => {
