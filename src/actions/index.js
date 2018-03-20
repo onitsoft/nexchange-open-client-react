@@ -192,7 +192,7 @@ export const fetchOrder = orderId => async dispatch => {
       if (error.response && error.response.status === 429) {
         dispatch({ type: FETCH_ORDER, payload: 429 });
       } else if (error.response) {
-        dispatch({ type: FETCH_ORDER, payload: 404 });
+        dispatch({ type: FETCH_ORDER, payload: 429 });
       }
     });
 

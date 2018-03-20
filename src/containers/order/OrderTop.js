@@ -14,7 +14,7 @@ class OrderTop extends Component {
         return (
             <div className="row">
                 <div id="order-header" className="col-xs-12">
-                    <h3 id="order-ref">Order Reference: <b>{this.props.match.params.orderRef}</b></h3>
+                    <h3 id="order-ref">Order Reference: <b>{this.props.order.unique_reference}</b></h3>
                     
                     <button
                         id="bookmark-button"

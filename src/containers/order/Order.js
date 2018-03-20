@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCoinDetails, fetchOrder } from '../../actions';
+import { fetchOrder } from '../../actions';
 
 import '../../css/order.scss';
 import Helpers from '../../helpers';
+import config from '../../config';
 
 import OrderInfo from './OrderInfo';
 import OrderTop from './OrderTop';
@@ -26,7 +27,6 @@ class Order extends Component {
 
 	componentDidMount() {
 		this.props.fetchOrder(this.props.match.params.orderRef);
-		this.props.fetchCoinDetails();
 	}
 
 	componentDidUpdate(prevProps) {
@@ -43,8 +43,13 @@ class Order extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		// TODO: Handle order 429 case
-		this.setState({ order: nextProps.order });
+		this.timeout = setTimeout(() => {
+			this.props.fetchOrder(this.props.match.params.orderRef);
+		}, config.ORDER_DETAILS_FETCH_INTERVAL);
+
+		if (nextProps.order !== 429) {
+			this.setState({ order: nextProps.order });
+		}
 	}
 
 	render() {
@@ -56,18 +61,18 @@ class Order extends Component {
 			return (
 				<div id="order" className={Helpers.isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
 					<div className="container">
-						<OrderTop order={this.state.order} {...this.props} />
+						<OrderTop order={this.state.order} />
 	
 						<div className="row">
-							<CoinProcessed type="Deposit" order={this.state.order} {...this.props} />
-							<CoinProcessed type="Receive" order={this.state.order} {...this.props} />
-							<OrderInfo order={this.state.order} {...this.props} />
-							<Notifications order={this.state.order} {...this.props} />
+							<CoinProcessed type="Deposit" order={this.state.order} />
+							<CoinProcessed type="Receive" order={this.state.order} />
+							<OrderInfo order={this.state.order} />
+							<Notifications order={this.state.order} />
 
 							{!Helpers.isFiatOrder(this.state.order) &&
-								<RefundAddress order={this.state.order} {...this.props} />}
+								<RefundAddress order={this.state.order} />}
 								
-							<ReferralBox order={this.state.order} {...this.props} />
+							<ReferralBox order={this.state.order} />
 						</div>
 					</div>
 				</div>
@@ -80,4 +85,4 @@ const mapStateToProps = ({ order }) => {
     return { order };
 }
 
-export default connect(mapStateToProps, { fetchCoinDetails, fetchOrder })(Order);
+export default connect(mapStateToProps, { fetchOrder })(Order);
