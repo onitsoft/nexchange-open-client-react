@@ -39,6 +39,10 @@ class OrderPayment extends Component {
 		this.checkKYC();
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this.timeout);
+	}
+
 	render() {
 		let inner;
 		let buttonText;
