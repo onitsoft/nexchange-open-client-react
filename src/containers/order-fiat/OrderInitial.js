@@ -27,11 +27,11 @@ class OrderInitial extends Component {
     				<h3>Accepted cards:</h3>
 
     				<div className="visible-xs-block visible-sm-block">
-    					<img src="/img/cards2.png" />
+    					<img src="/img/order/cards-mobile.png" alt="Credit cards accepted" />
     				</div>
 
     				<div className="visible-md-block visible-lg-block">
-    					<img src="/img/cards3.png" />
+    					<img src="/img/order/cards-desktop.png" alt="Credit cards accepted" />
     				</div>
     			</div>
 		    </div>

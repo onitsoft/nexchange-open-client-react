@@ -71,15 +71,15 @@ class FAQ extends Component {
                   <ol>
                     <li>
                       <b>Enter</b> your desired <b>amount, choose</b> the currency type you <b>want to spend</b>, and the currency type you <b>want to buy</b> (e.g. if you want to spend 1 BTC to buy ETH at the exchange rate shown, you enter “1” and click on “GET STARTED”)
-                      <img src="/img/step1.png" alt="How does it work, step 1" />
+                      <img src="/img/faq/step1.png" alt="How does it work, step 1" />
                     </li>
                     <li>
                       <b>Enter your destination address</b> (e.g. if you are buying ETH, you enter your ETH wallet address)
-                      <img src="/img/step2.png" alt="How does it work, step 2" />
+                      <img src="/img/faq/step2.png" alt="How does it work, step 2" />
                     </li>
                     <li>
                       You will be prompted to <b>send</b> your coins to a <b>specified address</b>.
-                      <img src="/img/step3.png" alt="How does it work, step 3" />
+                      <img src="/img/faq/step3.png" alt="How does it work, step 3" />
                     </li>
                     <li>Once we receive your coins, the processing of your order will start immediately.</li>
                     <li>Once everything is done, you will receive your ETH. Hurray! You just successfully exchanged your cryptocurrency.</li>
@@ -118,7 +118,7 @@ class FAQ extends Component {
               answer={
                 <div>
                   <p>Every order has a unique id like this:</p>
-                  <img src="/img/faq.png" style={{margin: "10px 0"}} alt="Order ID example" />
+                  <img src="/img/faq/faq.png" style={{margin: "10px 0"}} alt="Order ID example" />
                   <p>Make sure you record your order id. We recommend bookmarking the page, you can always navigate to it later.</p>
                   <p>Once you have sent the cryptocurrency, losing connection, closing the tab or navigating elsewhere will not impact the transaction.</p>
                   <p>If you need help, feel free to contact us.</p>
