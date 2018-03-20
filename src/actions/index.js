@@ -34,7 +34,7 @@ export function selectCoin(payload) {
 export function fetchCoinDetails(payload) {
 	const url = `${config.API_BASE_URL}/currency/`;
 	const request = axios.get(url);
-	const isWhiteLabel = config.REFERRAL_CODE.length > 0;
+	const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
 
   return (dispatch, getState) => {
     request
@@ -49,7 +49,7 @@ export function fetchCoinDetails(payload) {
       	} else if(isWhiteLabel){
 					coins = _.filter(response.data, {has_enabled_pairs: true, is_crypto: true});
         } else {
-          				coins = _.filter(response.data, {has_enabled_pairs: true});
+          coins = _.filter(response.data, {has_enabled_pairs: true});
         }
 
       	dispatch({type: 'COINS_INFO', payload: coins});
