@@ -109,28 +109,18 @@
   color: transparent;
 }
 
-.cc-USD-alt:before {
-  background-image: url(../img/logos/usd.png);
-  color: transparent;
-}
-
 .cc-USD:before {
-  background-image: url(../img/logos/usd.png);
+  background-image: url(../img/logos/usd.svg);
   color: transparent;
 }
 
 .cc-GBP:before {
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB3aWR0aD0iMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjMDAwMDRDIiBkPSJNMTQwNCAxMTM3djM2N3EwIDE0LTkgMjN0LTIzIDloLTk1NnEtMTQgMC0yMy05dC05LTIzdi0xNTBxMC0xMyA5LjUtMjIuNXQyMi41LTkuNWg5N3YtMzgzaC05NXEtMTQgMC0yMy05LjV0LTktMjIuNXYtMTMxcTAtMTQgOS0yM3QyMy05aDk1di0yMjNxMC0xNzEgMTIzLjUtMjgydDMxNC41LTExMXExODUgMCAzMzUgMTI1IDkgOCAxMCAyMC41dC03IDIyLjVsLTEwMyAxMjdxLTkgMTEtMjIgMTItMTMgMi0yMy03LTUtNS0yNi0xOXQtNjktMzItOTMtMThxLTg1IDAtMTM3IDQ3dC01MiAxMjN2MjE1aDMwNXExMyAwIDIyLjUgOXQ5LjUgMjN2MTMxcTAgMTMtOS41IDIyLjV0LTIyLjUgOS41aC0zMDV2Mzc5aDQxNHYtMTgxcTAtMTMgOS0yMi41dDIzLTkuNWgxNjJxMTQgMCAyMyA5LjV0OSAyMi41eiIvPjwvc3ZnPg==);
-  color: transparent;
-}
-
-.cc-EUR-alt:before {
-  background-image: url(../img/logos/eur.png);
+  background-image: url(../img/logos/gbp.svg);
   color: transparent;
 }
 
 .cc-EUR:before {
-  background-image: url(../img/logos/eur.png);
+  background-image: url(../img/logos/eur.svg);
   color: transparent;
 }
 
@@ -178,24 +168,16 @@
   background-image: url(../img/logos/bdg-white.png);
 }
 
-.selectedCoin .cc-USD-alt:before {
-  background-image: url(../img/logos/usd-white.png);
-}
-
 .selectedCoin .cc-USD:before {
-  background-image: url(../img/logos/usd-white.png);
+  background-image: url(../img/logos/usd-white.svg);
 }
 
 .selectedCoin .cc-GBP:before {
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB3aWR0aD0iMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTQwNCAxMTM3djM2N3EwIDE0LTkgMjN0LTIzIDloLTk1NnEtMTQgMC0yMy05dC05LTIzdi0xNTBxMC0xMyA5LjUtMjIuNXQyMi41LTkuNWg5N3YtMzgzaC05NXEtMTQgMC0yMy05LjV0LTktMjIuNXYtMTMxcTAtMTQgOS0yM3QyMy05aDk1di0yMjNxMC0xNzEgMTIzLjUtMjgydDMxNC41LTExMXExODUgMCAzMzUgMTI1IDkgOCAxMCAyMC41dC03IDIyLjVsLTEwMyAxMjdxLTkgMTEtMjIgMTItMTMgMi0yMy03LTUtNS0yNi0xOXQtNjktMzItOTMtMThxLTg1IDAtMTM3IDQ3dC01MiAxMjN2MjE1aDMwNXExMyAwIDIyLjUgOXQ5LjUgMjN2MTMxcTAgMTMtOS41IDIyLjV0LTIyLjUgOS41aC0zMDV2Mzc5aDQxNHYtMTgxcTAtMTMgOS0yMi41dDIzLTkuNWgxNjJxMTQgMCAyMyA5LjV0OSAyMi41eiIvPjwvc3ZnPg==);
-}
-
-.selectedCoin .cc-EUR-alt:before {
-  background-image: url(../img/logos/eur-white.png);
+  background-image: url(../img/logos/gbp-white.svg);
 }
 
 .selectedCoin .cc-EUR:before {
-  background-image: url(../img/logos/eur-white.png);
+  background-image: url(../img/logos/eur-white.svg);
 }
 
 .selectedCoin .cc-OMG:before {
