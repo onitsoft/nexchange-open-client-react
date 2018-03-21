@@ -81,14 +81,12 @@ class CoinProcessed extends Component {
 			    		<h5>
 			    			<b>{this.props.type} {this.state.amount} {this.state.coin}</b>
 
-							{this.state.order ?
-								<i className="fa fa-question-circle"
-									data-toggle="tooltip"
-									data-placement="top"
-									style={{marginLeft:8}}
-									data-original-title={rates}>
-								</i> : null
-							}
+							<i className="fa fa-question-circle"
+								data-toggle="tooltip"
+								data-placement="top"
+								style={{marginLeft:8}}
+								data-original-title={rates}>
+							</i> 
 			    		</h5>
 			    		<h6>{this.state.address}</h6>
 		    		</div>

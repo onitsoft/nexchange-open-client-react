@@ -22,6 +22,16 @@ const TermsConditions = (props) => {
 				<p>Nexchange.io doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.</p>
 
 				<p>By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by Nexchange.io.</p>
+			
+				<p>You are prohibited from using or accessing Nexchange from the following jurisdictions:</p>
+
+				<ol>
+					<li>New York State</li>
+					<li>Washington State</li>
+					<li>North Korea</li>
+				</ol>
+
+				<p>Transactions from users in these jurisdictions are prohibited, and Nexchange may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.<br/><br/></p>
 			</div>
 		</div>
 	</div>;
