@@ -5,36 +5,6 @@ class CoinProcessed extends Component {
 	constructor(props) {
 		super(props);
 
-<<<<<<< HEAD
-		this.state = {
-			coin: '',
-			oppositeCoin: '',
-			amount: '...',
-			address: '...',
-			order: null
-		}
-	}
-
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.order) {
-			if (nextProps.type === 'Deposit') {
-				this.setState({
-					coin: nextProps.order.pair.quote.code,
-					oppositeCoin: nextProps.order.pair.base.code,
-					amount: parseFloat(nextProps.order.amount_quote),
-					address: nextProps.order.deposit_address ? nextProps.order.deposit_address.address : '',
-					order: nextProps.order
-				});
-			} else if (nextProps.type === 'Receive') {
-				this.setState({
-					coin: nextProps.order.pair.base.code,
-					oppositeCoin: nextProps.order.pair.quote.code,
-					amount: parseFloat(nextProps.order.amount_base),
-					address: nextProps.order.withdraw_address ? nextProps.order.withdraw_address.address : '',
-					order: nextProps.order
-				});
-			}
-=======
 		if (this.props.type === 'Deposit') {
 			this.state = {
 				coin: this.props.order.pair.quote.code,
@@ -51,7 +21,6 @@ class CoinProcessed extends Component {
 				address: this.props.order.withdraw_address ? this.props.order.withdraw_address.address : '',
 				order: this.props.order
 			};
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 		}
 	}
 

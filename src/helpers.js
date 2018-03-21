@@ -55,13 +55,10 @@ class Helpers {
 
     return isValid;
   }
-<<<<<<< HEAD
-=======
 
   static isFiatOrder(order) {
 	return !order.pair.quote.is_crypto;
   }
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 }
 
 export default Helpers;

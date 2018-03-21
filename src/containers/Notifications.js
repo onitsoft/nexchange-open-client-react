@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import Box from '../components/Box';
->>>>>>> Use containment to reduce some bloat on order components.
-=======
-import Box from '../components/Box';
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 
 class Notifications extends Component {
 	constructor(props) {
@@ -85,12 +78,8 @@ class Notifications extends Component {
 	}
 
 	render() {
-<<<<<<< HEAD
-		if (this.state.show === false) {
-=======
 		// TODO: Should be [12,13,14,15], left 11 for testing purposes
 		if ([11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) === -1) {
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 			return null;
 		}
 
@@ -105,30 +94,6 @@ class Notifications extends Component {
 								{this.state.message.text}
 							</h4>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-										<div className="form-group">
-											<input
-												type="email"
-												name="email" 
-												placeholder="Email"
-												className="form-control"
-												onChange={this.handleChange}
-												value={this.state.value}
-												required
-											/>
-											<span className="material-input"></span>
-										</div>
-
-										<button type="submit" className="btn btn-themed btn-lg">Receive notifications</button>
-									</form>
-								</div>
-							</div>
-		    			</div>
-		    		</div>
-		    	</div>
-		    </div> 
-=======
 							<div className="form-group">
 								<input
 									type="email"
@@ -141,36 +106,12 @@ class Notifications extends Component {
 								/>
 								<span className="material-input"></span>
 							</div>
-
-=======
-							<div className="form-group">
-								<input
-									type="email"
-									name="email" 
-									placeholder="Email"
-									className="form-control"
-									onChange={this.handleInputChange}
-									value={this.state.email}
-									required
-								/>
-								<span className="material-input"></span>
-							</div>
-
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
-							{/*<div className="form-group">
-								<input type="tel" name="tel" placeholder="Telephone (optional)" className="form-control" />
-								<span className="material-input"></span>
-							</div>*/}
 
 							<button type="submit" className="btn btn-themed btn-lg">Receive notifications</button>
 						</form>
 					</div>
 				</div>
 		    </Box> 
-<<<<<<< HEAD
->>>>>>> Use containment to reduce some bloat on order components.
-=======
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 		);
 	}
 }

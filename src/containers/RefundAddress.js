@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config';
-<<<<<<< HEAD
-
-=======
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 import Helpers from '../helpers';
 import Box from '../components/Box';
 
@@ -15,17 +11,11 @@ class RefundAddress extends Component {
 			value: '',
 			message: {
 				text: '',
-<<<<<<< HEAD
-				error: false
-			},
-			show: false
-=======
 				error: ''
 			},
 			disabled: true,
 			userStatus: null,
 
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -34,27 +24,6 @@ class RefundAddress extends Component {
 
 	componentDidMount() {
 		axios({
-<<<<<<< HEAD
-			method: 'get',
-			contentType : 'application/json',
-			url: `${config.API_BASE_URL}/users/me/`,
-			data: {email: this.state.email},
-			headers: {'Authorization': 'Bearer ' + localStorage.token}
-		})
-		.then(data => {
-			console.log(data);
-
-			// TODO: Remove 11 later. Only show on order status 12,13,14,15
-			if (data.status === 200 &&
-				[11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) > -1)
-			{
-				this.setState({ show: true });
-			}
-		})
-		.catch(error => {
-			console.log(error);
-		});
-=======
             method: 'get',
             contentType : 'application/json',
             url: `${config.API_BASE_URL}/users/me/`,
@@ -67,7 +36,6 @@ class RefundAddress extends Component {
 			.catch(error => {
 				console.log(error);
 			});
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 	}
 
 	handleChange(event) {
@@ -78,46 +46,20 @@ class RefundAddress extends Component {
 				this.setState({
 					message: {
 						text: `${event.target.value} is not a valid ${this.props.order.pair.quote.code} address`,
-<<<<<<< HEAD
-						type: 'error'
-=======
 						error: 'error'
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 					}
 				})
 			}, () => {
 				this.setState({
-<<<<<<< HEAD
-					message: {
-						text: '',
-						type: ''
-=======
 					disabled: false,
 					message: {
 						text: '',
 						error: ''
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 					}
 				})
 			});
 		} else {
 			this.setState({
-<<<<<<< HEAD
-				message: {
-					text: '',
-					type: ''
-				}
-			})
-		}
-  }
-
-	handleSubmit(event) {
-    	event.preventDefault();
-  	}
-
-	render() {
-		if (this.state.show === false) return null;
-=======
 				disabled: true,
 				message: {
 					text: '',
@@ -161,7 +103,6 @@ class RefundAddress extends Component {
 			|| this.state.userStatus !== 200) {
 			return null;
 		}
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 
 		return (
 			<Box id="refund-box">
@@ -184,16 +125,12 @@ class RefundAddress extends Component {
 									required />
 							</div>
 
-<<<<<<< HEAD
-							<button type="submit" className="btn btn-themed btn-lg">Set refund address</button>
-=======
 							<button
 								type="submit"
 								className="btn btn-themed btn-lg"
 								disabled={this.state.disabled}>
 								Set refund address
 							</button>
->>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 						</form>
 					</div>
 				</div>
