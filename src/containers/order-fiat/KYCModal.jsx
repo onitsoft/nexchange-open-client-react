@@ -156,7 +156,7 @@ class KYCModal extends Component {
                     right: 7,
                     zIndex: 99999999
                   }}
-                  data-original-title={`This will help you to get in touch in case we need any further information from you.\n
+                  data-original-title={`Help us reach you in case we need any further information from you.\n
 This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}>
 								</i>
               </div>

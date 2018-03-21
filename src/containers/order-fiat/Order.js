@@ -46,8 +46,6 @@ const Order = (props) => {
 			order = <h2>Unknown order state, something went wrong</h2>;
 	}
 
-	order = <OrderPayment {...props} />;
-
 	return <div id="order-fiat">
 		{order}
 	</div>;
