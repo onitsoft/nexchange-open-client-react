@@ -39,13 +39,14 @@ class RefundAddress extends Component {
 	}
 
 	handleChange(event) {
-  		this.setState({value: event.target.value});
+		const address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
+  		this.setState({value: address});
 
-		if (event.target.value.length > 0) {
-			Helpers.validateWalletAddress(event.target.value, this.props.order.pair.quote.code, () => {
+		if (address.length > 0) {
+			Helpers.validateWalletAddress(address, this.props.order.pair.quote.code, () => {
 				this.setState({
 					message: {
-						text: `${event.target.value} is not a valid ${this.props.order.pair.quote.code} address`,
+						text: `${address} is not a valid ${this.props.order.pair.quote.code} address`,
 						error: 'error'
 					}
 				})
