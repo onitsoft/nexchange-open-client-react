@@ -105,6 +105,10 @@
 	@media (min-width: $screen-sm-min) { button { width: auto; } }
 }
 
+#kyc-modal {
+	.tooltip-inner { text-align: left !important; }
+}
+
 @include keyframes(color-change) {
 	from { color: #adadad; }
 	to { color: #fbc02d; } 

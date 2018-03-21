@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
-
 import config from '../../config';
 
 
@@ -25,8 +24,12 @@ class KYCModal extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.show != this.props.show) {
-      this.setState({show: this.props.show});
+    if (this.state.show !== this.props.show) {
+      this.setState({show: this.props.show}, () => {
+        $(function() {
+          $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+        });
+      });
     }
   }
 
@@ -67,6 +70,20 @@ class KYCModal extends Component {
 
       this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', button: 'Upload file(s)'});
     });
+
+    if (this.state.email) {
+      axios({
+				method: 'put',
+				contentType : 'application/json',
+				url: `${config.API_BASE_URL}/users/me/`,
+				data: {email: this.state.value},
+				headers: {'Authorization': 'Bearer ' + localStorage.token}
+			})
+			.then(data => {
+			})
+			.catch(error => {
+			});
+    }
   }
 
   handleInputChange(event) {
@@ -119,6 +136,30 @@ class KYCModal extends Component {
                   <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div> : null}
+
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email" 
+                  placeholder="Email (optional)"
+                  className="form-control"
+                  onChange={this.handleChange}
+                  value={this.state.email}
+                />
+
+								<i className="fa fa-question-circle"
+									data-toggle="tooltip"
+									data-placement="left"
+									style={{
+                    position: "absolute",
+                    top: 12,
+                    right: 7,
+                    zIndex: 99999999
+                  }}
+                  data-original-title={`This will help you to get in touch in case we need any further information from you.\n
+This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}>
+								</i>
+              </div>
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
