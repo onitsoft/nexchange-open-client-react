@@ -85,7 +85,7 @@
 	}
 }
 
-#share-referral, #notifications { text-align: center;
+#share-referral, #notifications, #refund-box { text-align: center;
 	.box { padding: 20px; }
 	.share { margin-top: 15px; }
 	.fa { font-size: 45px; margin: 0 15px 0 0; color: #d6d6d6; }
@@ -95,7 +95,11 @@
 	}
 }
 
-#notifications {
+#notifications, #refund-box {
+	h4 { width: 120%; }
+}
+
+#notifications, #refund-box {
 	.form-group { margin-top: 10px; }
 	button { width: 100%; margin-bottom: 0; }
 	form { padding-top: 15px;

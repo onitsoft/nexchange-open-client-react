@@ -1,6 +1,5 @@
 import axios from 'axios';
-import moment from 'moment';
-import 'moment/locale/en-gb';
+import { FETCH_ORDER } from './types';
 import _ from 'lodash';
 import config from '../config';
 import Helpers from '../helpers';
@@ -178,4 +177,24 @@ export function fetchPairs(payload) {
       	console.log(error);
       });
   };
+}
+
+export const fetchOrder = orderId => async dispatch => {
+	const url = `${config.API_BASE_URL}/orders/${orderId}/?_=${Math.round((new Date()).getTime())}`;
+  const request = axios.get(url);
+
+  request
+    .then(res => {
+      const order = res.data;
+      dispatch({ type: FETCH_ORDER, payload: order });
+    })
+    .catch(error => {
+      console.log(error)
+
+      if (error.response && error.response.status === 429) {
+        dispatch({ type: FETCH_ORDER, payload: 429 });
+      } else if (error.response) {
+        dispatch({ type: FETCH_ORDER, payload: 404 });
+      }
+    });
 }

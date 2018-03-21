@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
+import Helpers from '../../helpers';
 
 class CoinProcessed extends Component {
 	constructor(props) {
 		super(props);
 
+<<<<<<< HEAD
 		this.state = {
 			coin: '',
 			oppositeCoin: '',
@@ -33,6 +34,24 @@ class CoinProcessed extends Component {
 					order: nextProps.order
 				});
 			}
+=======
+		if (this.props.type === 'Deposit') {
+			this.state = {
+				coin: this.props.order.pair.quote.code,
+				oppositeCoin: this.props.order.pair.base.code,
+				amount: parseFloat(this.props.order.amount_quote),
+				address: this.props.order.deposit_address ? this.props.order.deposit_address.address : '',
+				order: this.props.order
+			};
+		} else if (this.props.type === 'Receive') {
+			this.state = {
+				coin: this.props.order.pair.base.code,
+				oppositeCoin: this.props.order.pair.quote.code,
+				amount: parseFloat(this.props.order.amount_base),
+				address: this.props.order.withdraw_address ? this.props.order.withdraw_address.address : '',
+				order: this.props.order
+			};
+>>>>>>> c6197f7867b8170a2b2fe05faaf575f42f11ec8c
 		}
 	}
 
@@ -74,7 +93,7 @@ class CoinProcessed extends Component {
 		return (
 		    <div className="col-xs-12 col-sm-6">
 		    	<div
-					className={`coin-box box media ${(this.props.type === 'Deposit' && this.props.order && !this.props.order.pair.quote.is_crypto) ? 'fiat' : ''}`}>
+					className={`coin-box box media ${(this.props.type === 'Deposit' && Helpers.isFiatOrder(this.props.order)) ? 'fiat' : ''}`}>
 		    		<div className="media-left">
 		    			<i className={`coin-icon cc-${this.state.coin} ${this.state.coin}`}></i>
 		    		</div>

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import _ from 'lodash';
-
 
 class OrderInitial extends Component {
 	triggerCopyTooltip() {
@@ -29,11 +26,11 @@ class OrderInitial extends Component {
 	    return (
 	    	<div id="order-payment">
     			<div className="col-xs-12 col-ms-4 col-sm-4 col-md-3">
-    				<img src={this.getDepositAddressQr()} />
+    				<img src={this.getDepositAddressQr()} alt="Deposit QR code" />
     			</div>
 
     			<div id="order-payment-details" className="col-xs-12 col-ms-8 col-sm-8 col-md-9">
-    				<h3>Time remaining: <span id="time-remaining"><b>{this.props.timeRemaining}</b></span></h3>
+    				<h3>Time remaining: <span id="time-remaining"><b>{this.props.time}</b></span></h3>
 
     				<h4>Send <b>{this.props.order.amount_quote} {this.props.order.pair.quote.code}</b> to the address<br/>
     					<b id="deposit-address">{this.props.order.deposit_address.address}</b>
@@ -48,11 +45,4 @@ class OrderInitial extends Component {
 	}
 }
 
-
-function mapStateToProps(state) {
-	return {
-		coinsInfo: state.coinsInfo
-	}
-}
-
-export default connect(mapStateToProps)(OrderInitial);
+export default OrderInitial;

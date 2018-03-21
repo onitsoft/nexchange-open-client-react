@@ -2,11 +2,12 @@ import React from 'react';
 
 import '../../css/order-fiat.scss';
 
-import OrderInitial from './OrderInitial';
+import OrderInitial from '../order/OrderInitial';
 import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
 import OrderPreReleased from './OrderPreReleased';
 import OrderReleased from './OrderReleased';
+import OrderStatus from './OrderStatus';
 
 import OrderSuccess from '../order/OrderSuccess';
 import OrderFailure from '../order/OrderFailure';
@@ -46,8 +47,9 @@ const Order = (props) => {
 			order = <h2>Unknown order state, something went wrong</h2>;
 	}
 
-	return <div id="order-fiat">
+	return <div>
 		{order}
+		<OrderStatus status={props.order.status_name[0][0]} />
 	</div>;
 };
 
