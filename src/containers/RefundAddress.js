@@ -75,7 +75,7 @@ class RefundAddress extends Component {
 		axios({
 				method: 'put',
 				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/order/${this.props.order.unique_reference}/`,
+				url: `${config.API_BASE_URL}/orders/${this.props.order.unique_reference}/`,
 				data: { refund_address: this.state.value },
 				headers: {'Authorization': 'Bearer ' + localStorage.token}
 			})
