@@ -31,7 +31,14 @@ const TermsConditions = (props) => {
 					<li>North Korea</li>
 				</ol>
 
-				<p>Transactions from users in these jurisdictions are prohibited, and Nexchange may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.<br/><br/></p>
+				<p>Transactions from users in these jurisdictions are prohibited, and Nexchange may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.</p>
+			
+				<h3>Refund Policy</h3>
+
+				<p>We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.</p>
+				<p>Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from Nexchange.</p>
+
+				<br/>
 			</div>
 		</div>
 	</div>;
