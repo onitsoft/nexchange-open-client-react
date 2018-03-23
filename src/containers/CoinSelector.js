@@ -39,12 +39,9 @@ class CoinSelector extends Component {
 		// This condition means that we have selected default currency pairs
 		// and now need to fetch price.
 		if (this.props.selectedCoin.deposit === null && nextProps.selectedCoin.deposit && nextProps.type === 'deposit') {
-			let depositCoin = _.filter(nextProps.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
-
 			this.props.fetchPrice({
 				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-				lastEdited: 'deposit',
-				deposit: this.calculateDepositAmount(depositCoin)
+				lastEdited: 'deposit'
 			});
 		}
 
@@ -54,24 +51,10 @@ class CoinSelector extends Component {
 			((this.props.type === 'deposit' && nextProps.selectedCoin.lastSelected === 'deposit') ||
 			(this.props.type === 'receive' && nextProps.selectedCoin.lastSelected === 'receive'))
 		) {
-			let lastEdited = nextProps.selectedCoin.lastSelected;
-			let amount = nextProps.price[lastEdited];
-			let data = {
+			this.props.fetchPrice({
 				pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-				lastEdited: lastEdited
-			};
-
-			if (nextProps.selectedCoin.lastSelected === 'deposit' ||
-				nextProps.price.deposit === '...' ||
-				nextProps.price.receive === '...'
-			) {
-				let depositCoin = _.filter(this.props.coinsInfo, {code: nextProps.selectedCoin.deposit})[0];
-				data['deposit'] = this.calculateDepositAmount(depositCoin);
-			} else {
-				data['receive'] = amount;
-			}
-
-			this.props.fetchPrice(data);
+				lastEdited: nextProps.selectedCoin.lastSelected
+			});
 		}
 
 		// Check if pair is valid. If not, show error.
