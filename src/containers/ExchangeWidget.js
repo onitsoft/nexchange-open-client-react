@@ -102,7 +102,7 @@ class ExchangeWidget extends Component {
 						<CoinInput type="receive" />
 					</div>
 
-					<WalletAddress />
+					<WalletAddress onSubmit={this.placeOrder} />
 
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
