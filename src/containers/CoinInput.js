@@ -19,6 +19,7 @@ class CoinInput extends PureComponent {
 		this.fetchAmounts = debounce(450, this.fetchAmounts);
 		this.onFocus = this.onFocus.bind(this);
 		this.onBlur = this.onBlur.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	onChange(event) {
@@ -43,6 +44,11 @@ class CoinInput extends PureComponent {
 		}
 	}
 
+	handleSubmit(event) {
+		event.preventDefault();
+		this.props.onSubmit();
+	}
+
 	fetchAmounts(value) {
 		let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
 		let data = {
@@ -65,21 +71,24 @@ class CoinInput extends PureComponent {
 
 	render() {
 		return (
-		  <div className="form-group label-floating">
-		    <label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
-			<input 
-				type="text"
-				className="form-control coin"
-				id={`coin-input-${this.props.type}`}
-				name={this.props.type}
-				onChange={this.onChange.bind(this)}
-				onFocus={this.onFocus.bind(this)}
-				onBlur={this.onBlur.bind(this)}
-				value={this.state.value}
-			/>
+			<div className="col-xs-12 col-sm-6">
+				<form className="form-group label-floating" onSubmit={this.handleSubmit}>
+					<label htmlFor={this.props.type} className="control-label text-green">{this.props.type}</label>
+					<input 
+						type="text"
+						className="form-control coin"
+						id={`coin-input-${this.props.type}`}
+						name={this.props.type}
+						onChange={this.onChange.bind(this)}
+						onFocus={this.onFocus.bind(this)}
+						onBlur={this.onBlur.bind(this)}
+						value={this.state.value}
+						ref={input => { this.nameInput = input; }}
+					/>
 
-		    <CoinSelector type={this.props.type} />
-		  </div>
+					<CoinSelector type={this.props.type} />
+				</form>
+			</div>
 		);
 	}
 }

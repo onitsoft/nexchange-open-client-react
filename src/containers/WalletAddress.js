@@ -71,9 +71,9 @@ class WalletAddress extends Component {
 			this.setState({address: nextProps.wallet.address});
 		}
 
-		if (nextProps.wallet.show && (this.props.wallet.show != nextProps.wallet.show)) {
-			setTimeout(() => this.nameInput.focus(), 300);
-		}
+		// if (nextProps.wallet.show && (this.props.wallet.show !== nextProps.wallet.show)) {
+		// 	setTimeout(() => this.props.inputRef.focus(), 300);
+		// }
   	}
 
 	render() {
@@ -91,7 +91,7 @@ class WalletAddress extends Component {
 					
 					<input
 						type="text" 
-						ref={input => { this.nameInput = input; }}
+						ref={this.props.inputRef}
 						className="form-control addr" id="withdraw-addr"
 						onChange={this.handleChange}
 						value={this.state.address} 
