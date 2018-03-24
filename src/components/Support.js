@@ -37,12 +37,15 @@ class Support extends Component {
   handleSubmit(event) {
     this.setState({loading: true});
 
-    console.log(this.state.email,
-        this.state.name,
-        this.state.telephone,
-        this.state.message,
-        this.state.subject,
-        this.state.message)
+		axios({
+      method: 'put',
+      contentType : 'application/json',
+      url: `${config.API_BASE_URL}/users/me/`,
+      data: {email: this.state.value},
+      headers: {'Authorization': 'Bearer ' + localStorage.token}
+    })
+    .then(data => {})
+    .catch(error => {});
 
     axios({
       method: 'post',
@@ -54,18 +57,13 @@ class Support extends Component {
         name: this.state.name,
         telephone: this.state.telephone,
         message: this.state.message,
-        subject: this.state.subject,
-        message: this.state.message
+        subject: this.state.subject
       }
     })
     .then(response => {
-      console.log(response.data)
-
       this.setState({loading: false, showForm: false, success: true});
     })
     .catch(error => {
-      console.log(error.response);
-
       this.setState({loading: false, showForm: false, success: false});
     });
 
