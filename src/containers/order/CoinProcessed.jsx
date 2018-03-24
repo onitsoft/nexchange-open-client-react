@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class CoinProcessed extends Component {
 	constructor(props) {
 		super(props);

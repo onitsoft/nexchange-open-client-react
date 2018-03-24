@@ -11,15 +11,15 @@ class OrderStatus extends Component {
     let width = "0%";
     const status = this.props.status;
 
-    if (STATUS_CODES[status] == 'COMPLETED') {
+    if (STATUS_CODES[status] === 'COMPLETED') {
       width = "100%";
-    } else if (STATUS_CODES[status] == 'RELEASE') {
+    } else if (STATUS_CODES[status] === 'RELEASE') {
       width = "90%";
-    } else if (STATUS_CODES[status] == 'PRE_RELEASE') {
+    } else if (STATUS_CODES[status] === 'PRE_RELEASE') {
       width = "75%";
-    } else if (STATUS_CODES[status] == 'PAID') {
+    } else if (STATUS_CODES[status] === 'PAID') {
       width = "66.6%";
-    } else if (STATUS_CODES[status] == 'PAID_UNCONFIRMED') {
+    } else if (STATUS_CODES[status] === 'PAID_UNCONFIRMED') {
       width = "33.3%";
     }
 
