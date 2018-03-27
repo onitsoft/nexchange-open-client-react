@@ -46,6 +46,8 @@ const Order = (props) => {
 			order = <div className="text-center"><h2>Unknown order state, something went wrong</h2></div>;
 	}
 
+	order = <OrderInitial {...props} />;
+
 	return <div>
 		{order}
 		<OrderStatus status={props.order.status_name[0][0]} />
