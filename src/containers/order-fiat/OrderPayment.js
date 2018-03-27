@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-
 import KYCModal from './KYCModal';
-
 
 class OrderPayment extends Component {
 	constructor(props) {
@@ -18,21 +16,20 @@ class OrderPayment extends Component {
 	}
 
 	checkKYC() {
-		axios.get(`${config.API_BASE_URL}/kyc/${this.props.match.params.orderRef}`)
-		.then(response => {
-			this.setState({kyc: response.data});
+		axios
+			.get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
+			.then(response => {
+				this.setState({kyc: response.data});
 
-			this.timeout = setTimeout(() => {
-				this.checkKYC();
-			}, config.KYC_DETAILS_FETCH_INTERVAL);
-		})
-		.catch(error => {
-			console.log(error);
-
-			this.timeout = setTimeout(() => {
-				this.checkKYC();
-			}, config.KYC_DETAILS_FETCH_INTERVAL);
-		});
+				this.timeout = setTimeout(() => {
+					this.checkKYC();
+				}, config.KYC_DETAILS_FETCH_INTERVAL);
+			})
+			.catch(error => {
+				this.timeout = setTimeout(() => {
+					this.checkKYC();
+				}, config.KYC_DETAILS_FETCH_INTERVAL);
+			});
 	}
 
 	componentDidMount() {

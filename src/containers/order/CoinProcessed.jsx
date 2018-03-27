@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helpers from '../../helpers';
 
 class CoinProcessed extends Component {
 	constructor(props) {

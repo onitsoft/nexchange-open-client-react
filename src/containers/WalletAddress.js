@@ -16,7 +16,7 @@ class WalletAddress extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-  	onChange(event) {
+  	handleChange(event) {
 		let address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
 		const valid = Helpers.validateWalletAddress(address, this.props.selectedCoin.receive,
 			() => this.props.errorAlert({show: true, message: `${address} is not a valid ${this.props.selectedCoin.receive} address.`}),
