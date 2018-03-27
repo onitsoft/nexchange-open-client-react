@@ -132,7 +132,7 @@ class FAQ extends Component {
                   <p>Whenever you create an order, a referral code is automatically generated for you.</p>
                   <p>Current referral conditions are as follows:</p>
                   <ol>
-                    <li>We pay $5 worth of your receive currency on this order, per each person referred.</li>
+                    <li>We pay half of our revenues to the affiliates. 1/4th of revenues for 2nd degree affiliates and 1/8th of revenues for 3rd degree affiliates.</li>
                     <li>We send payments in aggregate each end of day.</li>
                     <li>You will be receiving your funds to the withdraw address specified on this order.</li>
                     <li>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</li>
@@ -172,12 +172,6 @@ class FAQ extends Component {
 
                   <p><b>We reserve the right to deny the bonus coins on any grounds we see fit.</b></p>
                 </div>
-              }/>
-
-            <QuestionAnswer
-              question="What does the beta version include?"
-              answer={
-                <p>At the moment, only the core exchange feature of our product is available for users to enjoy as part of our public beta initiative, which means that everything you see on screen works perfectly. Our goal with the beta is to expose N.exchange to as many users as possible in order to fine-tune our design and user experience to the highest possible degree. To achieve this goal, your input as a user is invaluable. If you have any feedback for us, please feel free to contact us at <a href="mailto:support@nexchange.io">support@nexchange.io</a>.</p>
               }/>
 
             <QuestionAnswer
