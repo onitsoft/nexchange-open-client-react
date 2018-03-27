@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config';
-
+import setUserEmail from '../../helpers/setUserEmail';
+import fetchUserEmail from '../../helpers/fetchUserEmail';
 
 class KYCModal extends Component {
   constructor(props) {
@@ -21,6 +22,12 @@ class KYCModal extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.close = this.close.bind(this);
+  }
+
+  componentDidMount() {
+		fetchUserEmail(email => {
+			this.setState({ email })
+		});
   }
 
   componentDidUpdate() {
@@ -72,17 +79,7 @@ class KYCModal extends Component {
     });
 
     if (this.state.email) {
-      axios({
-				method: 'put',
-				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/users/me/`,
-				data: {email: this.state.value},
-				headers: {'Authorization': 'Bearer ' + localStorage.token}
-			})
-			.then(data => {
-			})
-			.catch(error => {
-			});
+      setUserEmail(this.state.value);
     }
   }
 

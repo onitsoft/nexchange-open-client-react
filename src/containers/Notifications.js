@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config';
+import setUserEmail from '../helpers/setUserEmail';
+import fetchUserEmail from '../helpers/fetchUserEmail';
 
 class Notifications extends Component {
 	constructor(props) {
@@ -20,17 +22,21 @@ class Notifications extends Component {
 
 	componentDidMount() {
 		axios({
-				method: 'get',
-				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`,
-				headers: {'Authorization': 'Bearer ' + localStorage.token}
-			})
-			.then(data => {
-				this.setState({ show: true });
-			})
-			.catch(error => {
-				this.setState({ show: false });
-			});
+			method: 'get',
+			contentType : 'application/json',
+			url: `${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`,
+			headers: {'Authorization': 'Bearer ' + localStorage.token}
+		})
+		.then(data => {
+			this.setState({ show: true });
+		})
+		.catch(error => {
+			this.setState({ show: false });
+		});
+
+		fetchUserEmail(email => {
+			this.setState({ value: email })
+		});
 	}
 
 	handleChange(event) {
@@ -42,6 +48,22 @@ class Notifications extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
+		setUserEmail(this.state.value, () => {
+			this.setState({
+				message: {
+					text: 'Success, you set your email.',
+					error: false
+				}
+			});
+		}, error => {
+			const message = {
+				text: error.response.status === 401 ? 'You do not have access to get notifications for this order.' : 'Something went wrong. Try again later.',
+				error: true
+			}
+
+			this.setState({ message });
+		});
+
 		axios({
 				method: 'put',
 				contentType : 'application/json',
@@ -50,29 +72,10 @@ class Notifications extends Component {
 				headers: {'Authorization': 'Bearer ' + localStorage.token}
 			})
 			.then(data => {
-				this.setState({
-					message: {
-						text: 'Success, you set your email.',
-						error: false
-					}
-				});
+
 			})
 			.catch(error => {
-				if (error.response.status === 401) {
-					this.setState({
-						message: {
-							text: 'You do not have access to get notifications for this order.',
-							error: true
-						}
-					});
-				} else {
-					this.setState({
-						message: {
-							text: 'Something went wrong. Try again later.',
-							error: true
-						}
-					});
-				}
+
 			});
 	}
 
