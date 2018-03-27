@@ -16,7 +16,7 @@ export default (email, successCb, errorCb) => {
     })
     .catch(error => {
         if (errorCb) {
-            errorCb(errorCb);
+            errorCb(error);
         }
     });
 }

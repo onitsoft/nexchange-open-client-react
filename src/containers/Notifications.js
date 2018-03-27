@@ -57,8 +57,16 @@ class Notifications extends Component {
 			});
 		}, error => {
 			const message = {
-				text: (error.response && error.response.status === 401) ? 'You do not have access to get notifications for this order.' : 'Something went wrong. Try again later.',
+				text: 'Something went wrong. Try again later.',
 				error: true
+			}
+
+			if (error.response) {
+				if (error.response.status === 401) {
+					message.text = 'You do not have access to get notifications for this order.';
+				} else if (error.response.data && error.response.data.email.length && error.response.data.email[0]) {
+					message.text = error.response.data.email[0];
+				}
 			}
 
 			this.setState({ message });
