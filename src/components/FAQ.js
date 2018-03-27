@@ -132,7 +132,7 @@ class FAQ extends Component {
                   <p>Whenever you create an order, a referral code is automatically generated for you.</p>
                   <p>Current referral conditions are as follows:</p>
                   <ol>
-                    <li>We pay half of our revenues to the affiliates. 1/4th of revenues for 2nd degree affiliates and 1/8th of revenues for 3rd degree affiliates.</li>
+                    <li>We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.</li>
                     <li>We send payments in aggregate each end of day.</li>
                     <li>You will be receiving your funds to the withdraw address specified on this order.</li>
                     <li>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</li>
