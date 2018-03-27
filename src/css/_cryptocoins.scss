@@ -84,13 +84,8 @@
   color: transparent;
 }
 
-.cc-NANO-alt:before {
-  background-image: url(../img/logos/xrb.png);
-  color: transparent;
-}
-
 .cc-NANO:before {
-  background-image: url(../img/logos/xrb.png);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAeCAMAAACi2EgRAAAAAXNSR0IB2cksfwAAAFRQTFRFAAAASpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDiSpDirJJC0gAAABx0Uk5TADBfPxAgT7//j6/vkNDPoGDwgLDAcECfUN/gfxhX3aQAAAFVSURBVHiclVVbgoMgDBQbCz5ofVLX3v+eW5WkFAKl+cwMQwyTWBRsiPICPOJGdb1WUVBI9Yr6iwQ0O6uJXAatOqJLi+iTdePRu7IhUho9snoWHhAeUyITsu4srLJEZmTNaRH+Dl+EvapS6Tv8q9hXXghuE14xqb5C2ZKIaqJeMreTMRn/fG0R3RsQZtxfqZXy4fH6Rh5m1CtTqMASsBUCC3K9C9ImNVuhxjMrZsgKy5vVJT1GnVJU5YiZvzeNWH4zPk8oJkUNNiHLDXrZgSkuV4TaOFEKMLVRisYuYkQ7vIMzu9jFNcjEJhwOlWF1c533OGiDT9aB4C4U49h7BnqllrMhUD6fj11DzwErdxfW9jM0Nwm/7cLIzP64C/lHyduFtIEmFlZZIluaRfDCwn4lPIvmI/4vK5ye8Cywfef/Hn4psXIPo26BA4OKhy8sk/wUDBFd2/81wBhmZ8j3CwAAAABJRU5ErkJggg==);
   color: transparent;
 }
 
@@ -152,12 +147,8 @@
   background-image: url(../img/logos/xvg-white.png);
 }
 
-.selectedCoin .cc-NANO-alt:before {
-  background-image: url(../img/logos/xrb-white.png);
-}
-
 .selectedCoin .cc-NANO:before {
-  background-image: url(../img/logos/xrb-white.png);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAeAQMAAACvyCpgAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAAAfklEQVR4nI2Pyw3DIBBEx+KQSyQ6iFtwB1salOZSKGGPPiA2O0sSyyfnwOgh5iMApB1ABqW5CK+r/uhwKe2W5KTuYszaABarbjPT6RD1SDyK5j6pnNTyiMCV+iRpjy/t6Ujm8Mp10TJoA7ditX5WozNs/xOzrIs+8Cd4UjY/b0BeVOLlJaEHAAAAAElFTkSuQmCC)
 }
 
 .selectedCoin .cc-BDG-alt:before {
@@ -178,10 +169,6 @@
 
 .selectedCoin .cc-EUR:before {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjggMTI4OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgd2lkdGg9IjEyOHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48Y2lyY2xlIGN4PSI2NCIgY3k9IjY0IiByPSI2NCIgc3R5bGU9ImZpbGw6I2ZmZjsiLz48Zz48cGF0aCBkPSJNODMuNjEzLDMyLjU0OGwtMi42MTcsMTIuMjg4Yy0yLjUxNC0yLjUxMy02LjE4Mi0zLjc3MS0xMS4wMDItMy43NzFzLTguNzI0LDEuNzMtMTEuNzEsNS4xOSAgICBjLTEuNjg2LDEuOTUyLTIuODg0LDQuMzkzLTMuNTkzLDcuMzE5SDc5LjA5bC0xLjQxOSw2Ljg3Nkg1My44MDRjLTAuMDMsMC42ODEtMC4wNDQsMS41NTMtMC4wNDQsMi42MTggICAgYzAsMS4wMzUsMC4wMjksMi4xMTMsMC4wODksMy4yMzdoMjIuNThsLTEuNDIsNi44NzZINTQuNzhjMC43MzksMy4xNjUsMS44NzgsNS42NDksMy40MTYsNy40NTIgICAgYzIuOTU3LDMuNDksNi44MDIsNS4yMzUsMTEuNTM1LDUuMjM1YzUuNjc4LDAsMTAuMjAyLTEuNzQ1LDEzLjU3NC01LjIzNXYxMy41NzVjLTMuODQ1LDEuOTIyLTguMzI2LDIuODg0LTEzLjQ0MSwyLjg4NCAgICBjLTguNjM3LDAtMTUuNzM0LTIuOTU3LTIxLjI5My04Ljg3M2MtMy43ODYtNC4wMjEtNi4yODUtOS4wMzMtNy40OTctMTUuMDM4aC02LjU2NWwxLjQxOS02Ljg3Nmg0LjM0OCAgICBjLTAuMDMtMC43MS0wLjA0NC0xLjQ2NC0wLjA0NC0yLjI2M2MwLTEuMzYsMC4wMjktMi41NTgsMC4wODgtMy41OTRoLTUuODExbDEuNDE5LTYuODc2aDUuMjc5ICAgIGMxLjI0Mi01Ljg4NSwzLjcxMS0xMC44MSw3LjQwOS0xNC43NzJjNS41ODktNS45NzQsMTIuOTM4LTguOTYxLDIyLjA0Ny04Ljk2MUM3NS42MjksMjkuODQyLDc5Ljk0NywzMC43NDQsODMuNjEzLDMyLjU0OHoiIHN0eWxlPSJmaWxsOiMwMDA7Ii8+PC9nPjwvZz48L3N2Zz4=);
-}
-
-.selectedCoin .cc-OMG:before {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABI1BMVEX+///////+///+///9/v/+///+///9/v/+///9/v/9/v/9/v/9/v/8/v/8/f/+/v/8/f/9/v/9/v/9/v/9/v/8/f/9/v/8/f/7/f/7/f/6/P/6/P76/P/6/P77/P77/f/6/P75+/76/P/5/P76/P75/P76/P76/P77/f/6/P76/P77/P/7/P77/P/7/P76/P/6/P/6/P/7/f/7/f/5+/77/f/6/P77/P76/P77/f/6/P77/P77/P76/P77/P77/f/8/f/7/f/8/f/8/f/7/f/8/f/7/f78/f/7/f/8/f/7/f/7/f77/f/7/P77/P78/f/8/f/6/P78/f/7/P77/P78/f77/P77/f78/v/8/v/8/f/8/f/8/f/9/v/9/v/+//////8uIMT8AAAAX3RSTlMAAAECAwMEBQUGBwgJCwwMDQ4PEBESFT5GR0tQU1dXWGBhYWNka2t3eoKGkJGanKSoq6usra2ytLW1trq8vb/Bw8TExsfHycnKys7U1Nvd3d7i4+bo6ers8fL6+/z8/RLmH28AAADZSURBVHgBVZDVcsUwDER3yylDyswMbQopMzNDem/8/19xbVl+yHlQds9oNBODjvrhzde/7GNvsl2qyL6r3Aj5w2iQc6qExSqRs6bAkpO9uneeqh0h6i59vIlrtn166cCAT9c9ZNOOz1NYle+tdWSzv7CPx+DE7rr2iR87L2Iqje5uCb92nrUFWb1uaxlPxnKqqw2Ja99YM46TLnEbUo4waITjTjJKfJ5BdKe2BereYrBff/Ngy3jGCHLeFFihk1jQXWG5Vh956D7o5wlQJVvH0/fs/+twultqBZWZXD5PX3DkAAAAAElFTkSuQmCC);
 }
 
 .selectedCoin .cc-OMG:before {
@@ -210,7 +197,6 @@
 .DOGE { color: #BA9F33; }
 .XVG { color: #42AFB2; }
 .EOS { color: #19191A; }
-.NANO { color: #0070ff; }
 .BDG { color: #471d66; }
 .USD { color: #34b67a; }
 .EUR { color: #5fccff; }

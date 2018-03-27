@@ -19,9 +19,10 @@ class ExchangeWidget extends Component {
 		this.state = {
 			orderPlaced: false,
 			loading: false,
-	  };
+		};
 
-  	this.placeOrder = this.placeOrder.bind(this);
+		this.placeOrder = this.placeOrder.bind(this);
+		this.showWalletAddress = this.showWalletAddress.bind(this);
 	}
 
 	componentDidMount() {
@@ -76,15 +77,23 @@ class ExchangeWidget extends Component {
 		});
 	}
 
+	showWalletAddress() {
+		this.props.setWallet({address: '', valid: false, show: true});
+
+		setTimeout(() => {
+			this.walletInputEl.focus();
+		}, 300);
+	}
+
 	componentWillReceiveProps(nextProps) {
 		if ($('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby")) {
 			let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr("aria-describedby");
-
 			$(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${(nextProps.amounts.deposit * 0.005)} ${nextProps.selectedCoin.deposit}.`);
 		}
 
-		if (this.props.wallet.show && nextProps.error.type == 'INVALID_AMOUNT' && nextProps.error.show != false)
+		if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
 			this.props.setWallet({address: '', valid: false, show: false});
+		}
 	}
 
 	render() {
@@ -94,21 +103,26 @@ class ExchangeWidget extends Component {
 		return (
 			<div className="col-xs-12">
 				<div id="exchange-widget">
-					<div className="col-xs-12 col-sm-6">
-						<CoinInput type="deposit" />
-					</div>
+					<CoinInput
+						type="deposit"
+						onSubmit={this.showWalletAddress}
+					/>
 
-					<div className="col-xs-12 col-sm-6">
-						<CoinInput type="receive" />
-					</div>
+					<CoinInput
+						type="receive"
+						onSubmit={this.showWalletAddress}
+					/>
 
-					<WalletAddress />
+					<WalletAddress
+						onSubmit={this.placeOrder}
+						inputRef={el => this.walletInputEl = el}
+					/>
 
 					<div className="col-xs-12 text-center">
 						{!this.props.wallet.show ? (
 							<button
 								className="btn btn-block btn-themed proceed"
-								onClick={() => this.props.setWallet({address: '', valid: false, show: true})}
+								onClick={this.showWalletAddress}
 								disabled={this.props.error.show && (this.props.error.type === 'INVALID_AMOUNT' || this.props.error.type === 'INVALID_PAIR') ? 'disabled' : null}>
 								Get Started !
 							</button>

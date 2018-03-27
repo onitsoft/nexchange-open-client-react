@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Privacy = (props) => {
 	return <div className="container terms">
 		<div className="row">
@@ -8,7 +7,7 @@ const Privacy = (props) => {
 				<h2 style={{marginBottom: 0}}>Privacy</h2>
 				<h4 style={{marginBottom: 30}}>Last updated: <strong>August 9th, 2017</strong></h4>
 				
-				<p>This Privacy Policy explains how “YOA LTD.”, and its wholly owned subsidiaries (collectively, “YOA LTD.” we or us), collects, uses, discloses and protects your information. This policy applies to information we collect when you access or use “YOA LTD.” websites and mobile applications (collectively, Nexchange services) or otherwise interact with us as described below. “YOA LTD.” provides the “YOA LTD.” Services through local operating entities that are wholly owned subsidiaries of “YOA LTD.” (each, a “YOA LTD.” Company). To determine which “YOA LTD.” Company collects your information and is responsible for processing your data.</p>
+				<p>This Privacy Policy explains how “YOA LTD.”, and its wholly owned subsidiaries (collectively, “YOA LTD.” we or us), collects, uses, discloses and protects your information. This policy applies to information we collect when you access or use “YOA LTD.” websites and mobile applications (collectively, N.exchange services) or otherwise interact with us as described below. “YOA LTD.” provides the “YOA LTD.” Services through local operating entities that are wholly owned subsidiaries of “YOA LTD.” (each, a “YOA LTD.” Company). To determine which “YOA LTD.” Company collects your information and is responsible for processing your data.</p>
 
 				<p>We may amend this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of this policy, and in some circumstances, we may provide you with additional notice, including, for example, by adding a statement to the homepage of the “YOA LTD.” Services or by sending you an email notification. We strongly encourage you to review the Privacy Policy whenever you access or use “YOA LTD.” Services to stay informed about our information practices and your privacy rights and choices.</p>
 
@@ -104,7 +103,7 @@ const Privacy = (props) => {
 
 				<p>Account Information: You may access and review or update your online account information at any time by logging into your account and viewing your profile. If you want to close your account, please contact us at support@nexchange.io. However, please note that if you close your account, we may retain your information as required by law or for our legitimate business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any investigations, prevent fraud or enforce our user agreements.</p>
 
-				<p>Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the instructions in those communications. You may also opt out of receiving the Nexchange newsletter or certain administrative emails by modifying your communications preferences through the settings feature of your online account. If you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as those about your account or our ongoing business relations.</p>
+				<p>Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the instructions in those communications. You may also opt out of receiving the N.exchange newsletter or certain administrative emails by modifying your communications preferences through the settings feature of your online account. If you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as those about your account or our ongoing business relations.</p>
 
 				<p>Location: Our mobile applications may collect precise geolocation information from your mobile device with your prior consent. If you initially consent to our collection of location information, you may be able to subsequently stop the collection of this information through your device operating system settings. You may also stop our collection of location information by following the standard uninstall process to remove our mobile applications from your device.</p>
 

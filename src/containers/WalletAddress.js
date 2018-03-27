@@ -12,7 +12,8 @@ class WalletAddress extends Component {
 		super(props);
 
 		this.state = { address: '' }
-		this.onChange = this.onChange.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
   	onChange(event) {
@@ -28,9 +29,14 @@ class WalletAddress extends Component {
 			valid: valid,
 			show: true
 		});
-  	}
+	}
 
-  	componentWillMount() {
+	handleSubmit(event) {
+		event.preventDefault();
+		this.props.onSubmit();
+	}
+
+	componentWillMount() {
 		this.props.setWallet({address: '', valid: false, show: false});
 	}
 
@@ -38,19 +44,29 @@ class WalletAddress extends Component {
 		if (nextProps.wallet.address != null && (nextProps.wallet.address != this.state.address)) {
 			this.setState({address: nextProps.wallet.address});
 		}
-
-		if (nextProps.wallet.show && (this.props.wallet.show !== nextProps.wallet.show)) {
-			setTimeout(() => this.nameInput.focus(), 300);
-		}
   	}
 
 	render() {
 		return (
 			<div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
-				<div className="form-group label-floating has-warning">
-					<label htmlFor="withdraw-addr" className="control-label text-green">Your {this.props.selectedCoin.receive} Address</label>
-					<input type="text" ref={input => { this.nameInput = input; }} className="form-control addr" id="withdraw-addr" onChange={this.onChange} value={this.state.address} />
-				</div>
+				<form
+					className="form-group label-floating has-warning"
+					onSubmit={this.handleSubmit}
+				>
+					<label
+						htmlFor="withdraw-addr"
+						className="control-label text-green">
+						Your {this.props.selectedCoin.receive} Address
+					</label>
+					
+					<input
+						type="text" 
+						ref={this.props.inputRef}
+						className="form-control addr" id="withdraw-addr"
+						onChange={this.handleChange}
+						value={this.state.address} 
+					/>
+				</form>
 			</div>
 		);
 	}

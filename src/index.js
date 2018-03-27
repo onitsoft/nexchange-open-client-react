@@ -27,7 +27,6 @@ import Home from './containers/Home';
 import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
-import RefundCancellation from './containers/RefundCancellation';
 
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
@@ -48,7 +47,6 @@ ReactDOM.render(
   			<Switch>
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
-          {/*<Route exact path="/refund-cancellation" component={RefundCancellation} />*/}
   				<Route exact path="/order/:orderRef" component={Order} />
 	  			<Route exact path="/" component={Home} />
           <Route component={AsyncNotFound} />

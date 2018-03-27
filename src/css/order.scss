@@ -27,7 +27,8 @@
 	&.order-fiat {
 		.box.fiat {
 			h5 { margin-top: 11px; padding-bottom: 7px;
-				@media (min-width: $screen-sm-min) { margin-top: 11px; padding-bottom: 13px; }
+				@media (min-width: $screen-sm-min) { margin-top: 9px; padding-bottom: 9px; }
+				@media (min-width: $screen-md-min) { margin-top: 12px; padding-bottom: 12px; }
 			}
 		}
 	}
@@ -50,7 +51,7 @@
 
 	@media (min-width: $screen-md-min) {
 		h5 { font-size: 17px; }
-		h6 { font-size: 16px; }
+		h6 { font-size: 15px; }
 	}
 }
 
@@ -106,6 +107,12 @@
 		h4 { position: absolute; top: -15px; left: 50%; transform: translate(-50%, 0); }
 	}
 	@media (min-width: $screen-sm-min) { button { width: auto; } }
+}
+
+#kyc-modal {
+	.tooltip-inner { text-align: left !important; }
+	h2 { margin-bottom: 0; }
+	small { display: inline-block; margin-bottom: 10px; }
 }
 
 @include keyframes(color-change) {

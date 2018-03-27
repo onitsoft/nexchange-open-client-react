@@ -85,6 +85,10 @@ export function fetchPrice(payload) {
           data['deposit'] = payload.deposit;
           data['receive'] = response.data.amount_base;
           data['lastEdited'] = 'deposit';
+        } else {
+          data['deposit'] = response.data.amount_quote;
+          data['receive'] = response.data.amount_base;
+          data['lastEdited'] = payload.lastEdited;  
         }
 
       	dispatch({type: 'PRICE_FETCHED', payload: data});
