@@ -15,6 +15,7 @@
 	#order-links {
 		h4 { font-weight: 500; }
 		a { display: inline-block; width: 100%;
+			h4 { margin: 0; }
 			&:first-child { margin-top: 25px; }
 			&:nth-child(2) { margin-top: 0; }
 			&:last-child { margin-bottom: 10px; }

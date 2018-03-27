@@ -72,6 +72,7 @@ class Order extends Component {
 						<div className="row">
 							<CoinProcessed type="Deposit" order={this.state.order} />
 							<CoinProcessed type="Receive" order={this.state.order} />
+							
 							<OrderInfo order={this.state.order} />
 							<Notifications order={this.state.order} />
 
