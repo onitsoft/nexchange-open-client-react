@@ -5,7 +5,7 @@ class Helpers {
 			params = url.split('&'),
 			obj = {};
 
-		if (params[0] == '') return null;
+		if (params[0] === '') return null;
 
 		for (let i = 0; i < params.length; i++) {
 			let param = params[i].split('=');
