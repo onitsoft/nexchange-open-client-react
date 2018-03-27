@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Icon} from 'react-fa';
-
 
 class OrderExpired extends Component {
 	componentDidMount() {
