@@ -123,19 +123,21 @@ class KYCModal extends Component {
 
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.id_document_status !== 'APPROVED' ? 
+              {this.props.kyc.id_document_status !== 'APPROVED' && 
                 <div>
                   <h2>Government issued ID</h2>
                   <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
                   <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
-                </div> : null}
+                </div>}
 
-              {this.props.kyc.residence_document_status !== 'APPROVED' ?
+              {this.props.kyc.residence_document_status !== 'APPROVED' &&
                 <div>
                   <h2>Proof of residence</h2>
-                  <small>e.g. utility bill no more than 3 months old, bank statement, credit card statement.</small>
+                  <small>A high-resolution photo\scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old.
+Delivery address must be a <b>fiscal, residence address (no PO boxes!).</b></small>
+                  <small>Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.</small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
-                </div> : null}
+                </div>}
 
               <div className="form-group">
                 <input
