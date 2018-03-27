@@ -14,7 +14,6 @@ import OrderRefunded from '../order/OrderRefunded';
 
 import STATUS_CODES from '../../statusCodes';
 
-
 const Order = (props) => {
 	let order;
 	switch (STATUS_CODES[props.order.status_name[0][0]]) {
