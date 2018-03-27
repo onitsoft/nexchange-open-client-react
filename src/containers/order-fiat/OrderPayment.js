@@ -73,26 +73,25 @@ class OrderPayment extends Component {
 					</div>
 				);
 
-				if (this.state.kyc.id_document_status == 'REJECTED' && this.state.kyc.residence_document_status == 'REJECTED') {
+				if (this.state.kyc.id_document_status === 'REJECTED' && this.state.kyc.residence_document_status === 'REJECTED') {
 					buttonText = "Retry verification";
 				} else if (
-					(this.state.kyc.id_document_status == 'APPROVED'
-					|| this.state.kyc.id_document_status == 'PENDING')
-					&& this.state.kyc.residence_document_status == 'REJECTED') {
+					(this.state.kyc.id_document_status === 'APPROVED'
+					|| this.state.kyc.id_document_status === 'PENDING')
+					&& this.state.kyc.residence_document_status === 'REJECTED') {
 					buttonText = "Retry proof of residence verification";
 				} else if (
-					(this.state.kyc.residence_document_status == 'APPROVED'
-					|| this.state.kyc.residence_document_status == 'PENDING')
-					&& this.state.kyc.id_document_status == 'REJECTED') {
+					(this.state.kyc.residence_document_status === 'APPROVED'
+					|| this.state.kyc.residence_document_status === 'PENDING')
+					&& this.state.kyc.id_document_status === 'REJECTED') {
 					buttonText = "Retry government issued ID verification";
 				}
 			}
-		} else if (this.state.kyc.id_document_status == 'APPROVED' && this.state.kyc.residence_document_status == 'APPROVED') {
+		} else if (this.state.kyc.id_document_status === 'APPROVED' && this.state.kyc.residence_document_status === 'APPROVED') {
 			inner = (
 				<div>
 					<h2>Payment and verification received</h2>
-
-					<p className="explanation">We have received your payment and our team has verified your identity and proof of residence documents. We will soon release your funds and send you the payment.</p>
+					<p className="explanation">We will proceed to release your funds shortly</p>
 				</div>
 			);
 		}
@@ -100,16 +99,18 @@ class OrderPayment extends Component {
 		return <div className="col-xs-12 text-center order-status-section">
 			{inner}
 
-			{buttonText ?
-			<button type="button" className="btn btn-default btn-themed" onClick={() => this.setState({showKYCModal: true})}>
-				<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
-				{buttonText}
-			</button> : null}
+			{buttonText &&
+				<button type="button" className="btn btn-default btn-themed" onClick={() => this.setState({showKYCModal: true})}>
+					<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
+					{buttonText}
+				</button>}
 
-			{this.state.kyc ?
-				<KYCModal show={this.state.showKYCModal} onClose={() => this.setState({showKYCModal: false})} kyc={this.state.kyc} {...this.props} />
-				: null
-			}
+			{this.state.kyc &&
+				<KYCModal
+					show={this.state.showKYCModal} 
+					onClose={() => this.setState({showKYCModal: false})}
+					kyc={this.state.kyc}
+					{...this.props} />}
 		</div>
 	}
 

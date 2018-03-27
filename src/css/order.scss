@@ -107,6 +107,8 @@
 
 #kyc-modal {
 	.tooltip-inner { text-align: left !important; }
+	h2 { margin-bottom: 0; }
+	small { display: inline-block; margin-bottom: 10px; }
 }
 
 @include keyframes(color-change) {

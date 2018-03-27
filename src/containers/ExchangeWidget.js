@@ -79,7 +79,6 @@ class ExchangeWidget extends Component {
 
 	showWalletAddress() {
 		this.props.setWallet({address: '', valid: false, show: true});
-		this.walletInputEl.focus();
 
 		setTimeout(() => {
 			this.walletInputEl.focus();

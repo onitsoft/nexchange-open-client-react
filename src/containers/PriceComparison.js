@@ -148,7 +148,7 @@ class PriceComparison extends Component {
                                     <thead>
                                         <tr>
                                             <th className="text-center"></th>
-                                            <th><img className="nexchange-logo" src="/img/prices/nexchange2.png" alt="Nexchange" /></th>
+                                            <th><img className="nexchange-logo" src="/img/prices/nexchange2.png" alt="N.exchange" /></th>
                                             <th><img src="/img/prices/shapeshift.png" alt="Shapeshift" /></th>
                                             <th><img src="/img/prices/changelly.png" alt="Changelly" /></th>
                                             <th>Best rate</th>
