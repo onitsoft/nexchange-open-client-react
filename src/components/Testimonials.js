@@ -24,7 +24,7 @@ const Testimonials = props => (
 					name="John Michael"
 					network="facebook"
 					link="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
-					text="Nexchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…"
+					text="N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…"
 					date="September 11, 2017, 01:49 PM" />
 				<Testimonial
 					img="/img/testimonials/tomo.jpg"

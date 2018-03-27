@@ -1,5 +1,5 @@
 const config = {
-	NAME: 'Nexchange',
+	NAME: 'N.exchange',
 	DOMAIN: 'https://n.exchange',
 	API_BASE_URL: 'https://api.nexchange.io/en/api/v1',
 	SUPPORT_EMAIL: 'support@nexchange.io',

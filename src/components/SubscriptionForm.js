@@ -69,7 +69,7 @@ class SubscriptionForm extends React.Component {
 
 							<div className="col-xs-12 col-sm-9">
 								<div className="form-group is-empty has-success">
-									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter your email to receive updates about Nexchange" className="form-control" required />
+									<input ref={node => (this.input = node)} type="email" name="EMAIL" placeholder="Enter your email to receive updates about N.exchange" className="form-control" required />
 								<span className="material-input"></span></div>
 							</div>
 
