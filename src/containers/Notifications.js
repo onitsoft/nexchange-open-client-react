@@ -57,7 +57,7 @@ class Notifications extends Component {
 			});
 		}, error => {
 			const message = {
-				text: error.response.status === 401 ? 'You do not have access to get notifications for this order.' : 'Something went wrong. Try again later.',
+				text: (error.response && error.response.status === 401) ? 'You do not have access to get notifications for this order.' : 'Something went wrong. Try again later.',
 				error: true
 			}
 
