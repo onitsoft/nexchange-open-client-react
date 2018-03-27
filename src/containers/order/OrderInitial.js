@@ -10,11 +10,7 @@ import Loading from '../../components/Loading';
 class OrderInitial extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            time: '...',
-        }
-
+        this.state = { time: '...' }
         this.tick = this.tick.bind(this);
     }
 

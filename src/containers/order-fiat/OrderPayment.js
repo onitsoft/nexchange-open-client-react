@@ -50,7 +50,7 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
-						<p className="explanation">In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</p>
+						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</h5>
 					</div>
 				);
 
@@ -60,7 +60,7 @@ class OrderPayment extends Component {
 					<div>
 						<h2>Verification received, awaiting approval</h2>
 
-						<p className="explanation">We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</p>
+						<h5>We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</h5>
 
 						<hr style={{marginLeft: -15, marginRight: -15}} />
 
@@ -88,7 +88,7 @@ class OrderPayment extends Component {
 			inner = (
 				<div>
 					<h2>Payment and verification received</h2>
-					<p className="explanation">We will proceed to release your funds shortly</p>
+					<h5>We will proceed to release your funds shortly</h5>
 				</div>
 			);
 		}

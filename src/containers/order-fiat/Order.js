@@ -5,7 +5,7 @@ import '../../css/order-fiat.scss';
 import OrderInitial from '../order/OrderInitial';
 import OrderPayment from './OrderPayment';
 import OrderPaid from './OrderPaid';
-import OrderPreReleased from './OrderPreReleased';
+import OrderPreReleased from '../order/OrderPreReleased';
 import OrderReleased from '../order/OrderReleased';
 import OrderStatus from './OrderStatus';
 
