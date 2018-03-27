@@ -12,26 +12,16 @@
 		}
 	}
 	#order-ref { margin-bottom: 15px; }
+	#order-links { 
+		a { display: inline-block; width: 100%;
+			&:first-child { margin-top: 25px; }
+			&:nth-child(2) { margin-top: 0; }
+			&:last-child { margin-bottom: 10px; }
+		}
+	}
 	.box {
 		h2 { margin: 0; }
-		h4 { margin: 0; font-size: 15px; font-weight: 500;
-			&:first-child {
-				margin-top: 25px;
-			}
-
-			// &:nth-child(1) {
-			// 	margin-top: 0;
-			// 	margin-bottom: 5px;
-			// }
-			
-			// &:last-child(2) {
-			// 	margin-top: 25px;
-			// }
-
-			&:last-child {
-				margin-bottom: 5px;
-			}
-		}
+		h4 { margin: 0; font-size: 15px; font-weight: 500; }
 		h5, h6 { margin: 0; text-transform: none; }
 		.coin-icon { position: relative; top: 8px; font-size: 28px;
 			@media (min-width: $screen-sm-min) { top: 9px; }
