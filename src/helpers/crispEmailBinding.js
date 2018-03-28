@@ -14,7 +14,7 @@ export const bindCrispEmail = () => {
 };
 
 export default () => {
-    window.CRISP_READY_TRIGGER = function() {
+    window.CRISP_READY_TRIGGER = () => {
         bindCrispEmail();
     
         window.$crisp.push(["on", "user:email:changed", () => {
