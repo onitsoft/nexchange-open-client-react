@@ -6,12 +6,7 @@ import KYCModal from './KYCModal';
 class OrderPayment extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			showKYCModal: false,
-			kyc: null
-		}
-
+		this.state = { showKYCModal: false }
 		this.checkKYC = this.checkKYC.bind(this);
 	}
 
@@ -68,6 +63,9 @@ class OrderPayment extends Component {
 						<h2>Approval status:</h2>
 						<p style={{margin:0}}><b>Government issued ID:</b> {this.state.kyc.id_document_status}</p>
 						<p><b>Proof of residence:</b> {this.state.kyc.residence_document_status}</p>
+						
+						{this.state.kyc && this.state.kyc.user_visible_comment &&
+							<p>Reason for rejection: {this.state.kyc.user_visible_comment}</p>}
 					</div>
 				);
 

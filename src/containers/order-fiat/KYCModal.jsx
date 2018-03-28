@@ -133,7 +133,7 @@ class KYCModal extends Component {
                 <div>
                   <h2>Proof of residence</h2>
                   <small>A high-resolution photo\scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old.
-Delivery address must be a <b>fiscal, residence address (no PO boxes!).</b></small>
+                    Delivery address must be a <b>fiscal, residence address (no PO boxes!).</b></small>
                   <small>Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.</small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>}
