@@ -33,7 +33,7 @@ class OrderInitial extends Component {
     				<h3>Time remaining: <span id="time-remaining"><b>{this.props.time}</b></span></h3>
 
     				<h4>Send <b>{this.props.order.amount_quote} {this.props.order.pair.quote.code}</b> to the address<br/>
-    					<b id="deposit-address">{this.props.order.deposit_address.address}</b>
+    					<b id="deposit-address" style={{"wordWrap": "break-word"}}>{this.props.order.deposit_address.address}</b>
     				</h4>
 
 			        <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>

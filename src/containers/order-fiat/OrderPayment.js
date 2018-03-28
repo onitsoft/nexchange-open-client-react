@@ -55,7 +55,6 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Verification received, awaiting approval</h2>
-
 						<h5>We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</h5>
 
 						<hr style={{marginLeft: -15, marginRight: -15}} />
