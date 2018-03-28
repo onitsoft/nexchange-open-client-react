@@ -61,7 +61,7 @@
 
 	@media (min-width: $screen-md-min) {
 		h5 { font-size: 17px; }
-		h6 { font-size: 15px; }
+		h6 { font-size: 14px; }
 	}
 }
 
@@ -75,7 +75,7 @@
 }
 
 #order-payment { text-align: center;
-	h3 { margin-top: 0; }
+	h3 { margin-top: 15px; }
 	@media (min-width: $screen-ms-min) { text-align: left; }
 }
 
