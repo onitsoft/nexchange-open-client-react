@@ -81,7 +81,7 @@ class PriceComparison extends Component {
             console.log(error);
         });
 
-        axios.get(`https://nexchange.io/exchange/rates`)
+        axios.get(`https://n.exchange/exchange/rates`)
         .then(response => {
             this.setState({
                 changelly: {

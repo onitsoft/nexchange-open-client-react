@@ -30,6 +30,7 @@ import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
 
 import setAuthToken from './helpers/setAuthToken';
+import crispEmailBinding from './helpers/crispEmailBinding';
 
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
@@ -40,6 +41,14 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
 unregister();
 setAuthToken();
+crispEmailBinding();
+
+
+
+
+
+
+
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
