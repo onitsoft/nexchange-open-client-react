@@ -7,14 +7,14 @@
 		i { position: relative; top: -1px; margin-left: 5px; }
 	}
 
-	@media (min-width: $screen-ms-min) { 
+	@media (min-width: $screen-ms-min) {
 		.coin-price {
 			h5, h6 { font-size: 18px; }
 		}
 	}
 
 	@media (min-width: $screen-md-min) { width: auto; padding-top: 40px;
-		.coin-price { width: 150px; }
+		.coin-price { width: 120px; }
 	}
 }
 
