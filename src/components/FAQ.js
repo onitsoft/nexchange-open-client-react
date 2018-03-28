@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import QuestionAnswer from './QuestionAnswer'
 
@@ -13,7 +12,7 @@ class FAQ extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.show != this.props.show) {
+    if (this.state.show !== this.props.show) {
       this.setState({
         show: this.props.show
       });
@@ -133,7 +132,7 @@ class FAQ extends Component {
                   <p>Current referral conditions are as follows:</p>
                   <ol>
                     <li>We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.</li>
-                    <li>We send payments in aggregate each end of day.</li>
+                    <li>We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.</li>
                     <li>You will be receiving your funds to the withdraw address specified on this order.</li>
                     <li>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</li>
                   </ol>
@@ -156,19 +155,11 @@ class FAQ extends Component {
               question="Do you have any promotions running at the moment?"
               answer={
                 <div>
-                  <p>Yes. We are currently running a bonus coins promotion. The rules are simple:</p>
-                  <ol>
-                    <li>Make a trade on our platform.</li>
-                    <li>Post a positive social status about us.</li>
-                    <li>Send us the links to your order and your social status in the support chat on the website.</li>
-                    <li>Receive 100% of your trade size to your wallet.</li>
-                  </ol>
-
-                  <p>Limitations:</p>
-                  <ol>
-                    <li>The reward is up to a $10 ceiling. If you trade more than $10 worth of cryptocurrency,  you will only receive $10.</li>
-                    <li>Your social account must be at least one year old and have over 200 followers.</li>
-                  </ol>
+                  <p>Yes. Promote N.exchange on social media (such as Twitter).
+                    We would pay you 1000 SAT for every retweet from a legitimate,
+                    real account with over 500 followers and
+                    100 SAT for each like from an account of the same criteria.
+                  </p>
 
                   <p><b>We reserve the right to deny the bonus coins on any grounds we see fit.</b></p>
                 </div>
