@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-
 import Helpers from '../helpers';
 import config from '../config';
-
 
 class Referrals extends Component {
 	componentDidMount() {

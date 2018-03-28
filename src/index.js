@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
+import axios from 'axios';
 
 import 'expose-loader?$!jquery';
 import 'expose-loader?jQuery!jquery';
@@ -28,6 +29,8 @@ import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
 
+import setAuthToken from './helpers/setAuthToken';
+
 const AsyncNotFound = Loadable({
   loader: () => import("./components/NotFound"),
   loading: LoadingComponent
@@ -36,6 +39,7 @@ const AsyncNotFound = Loadable({
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
 unregister();
+setAuthToken();
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
