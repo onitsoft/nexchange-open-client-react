@@ -7,7 +7,7 @@ import fetchUserEmail from '../../helpers/fetchUserEmail';
 
 class KYCModal extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       show: false,
@@ -49,34 +49,36 @@ class KYCModal extends Component {
 
     this.setState({title: 'Uploading...', titleClass: 'warning', button: 'Uploading...', filesReady: false});
 
-    let formData = new FormData();
+    const formData = new FormData();
+    const governmentID = document.querySelector('#governmentID');
+    const residenceProof = document.querySelector('#residenceProof');
+    
+    formData.append('order_reference', this.props.order.unique_reference);
 
-    let governmentID = document.querySelector('#governmentID');
-    if (governmentID)
+    if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
-
-    let residenceProof = document.querySelector('#residenceProof');
-    if (residenceProof)
+    }
+    
+    if (residenceProof) {
       formData.append('utility_document', residenceProof.files[0]);
+    }
 
-    formData.append('order_reference', this.props.match.params.orderRef)
-    axios.post(`${config.API_BASE_URL}/kyc/`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-    })
-    .then(response => {
-      this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});
+    axios
+      .post(`${config.API_BASE_URL}/kyc/`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+      })
+      .then(response => {
+        this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});
 
-      setTimeout(() => {
-        this.props.onClose();
-      }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
-    })
-    .catch(error => {
-      console.log(error);
-
-      this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', button: 'Upload file(s)'});
-    });
+        setTimeout(() => {
+          this.props.onClose();
+        }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
+      })
+      .catch(error => {
+        this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', button: 'Upload file(s)'});
+      });
 
     if (this.state.email) {
       setUserEmail(this.state.value);
@@ -142,7 +144,7 @@ Delivery address must be a <b>fiscal, residence address (no PO boxes!).</b></sma
                   name="email" 
                   placeholder="Email (optional)"
                   className="form-control"
-                  onChange={this.handleChange}
+                  onChange={this.handleInputChange}
                   value={this.state.email}
                 />
 

@@ -12,7 +12,17 @@
 		}
 	}
 	#order-ref { margin-bottom: 15px; }
+	#order-links {
+		h4 { font-weight: 500; }
+		a { display: inline-block; width: 100%;
+			h4 { margin: 0; }
+			&:first-child { margin-top: 25px; }
+			&:nth-child(2) { margin-top: 0; }
+			&:last-child { margin-bottom: 10px; }
+		}
+	}
 	.box {
+		h2 { margin: 0; }
 		h4 { font-size: 15px; }
 		h5, h6 { margin: 0; text-transform: none; }
 		.coin-icon { position: relative; top: 8px; font-size: 28px;
@@ -86,7 +96,7 @@
 	}
 }
 
-#share-referral, #notifications { text-align: center;
+#share-referral, #notifications, #refund-box { text-align: center;
 	.box { padding: 20px; }
 	.share { margin-top: 15px; }
 	.fa { font-size: 45px; margin: 0 15px 0 0; color: #d6d6d6; }
@@ -96,11 +106,15 @@
 	}
 }
 
-#notifications {
+#notifications, #refund-box {
+	h4 { width: 120%; }
+}
+
+#notifications, #refund-box {
 	.form-group { margin-top: 10px; }
 	button { width: 100%; margin-bottom: 0; }
 	form { padding-top: 15px;
-		h4 { position: absolute; top: -15px; left: 50%; transform: translate(-50%, 0); }
+		h4 { position: absolute; top: -5px; left: 50%; transform: translate(-50%, 0); }
 	}
 	@media (min-width: $screen-sm-min) { button { width: auto; } }
 }

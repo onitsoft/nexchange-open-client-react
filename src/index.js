@@ -41,15 +41,15 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
   	<BrowserRouter>
   		<div>
-        <Referrals />
+        	<Referrals />
   			<Header />
 
   			<Switch>
-          <Route exact path="/terms-and-conditions" component={TermsConditions} />
-          <Route exact path="/privacy" component={Privacy} />
-  				<Route exact path="/order/:orderRef" component={Order} />
-	  			<Route exact path="/" component={Home} />
-          <Route component={AsyncNotFound} />
+				<Route exact path="/terms-and-conditions" component={TermsConditions} />
+				<Route exact path="/privacy" component={Privacy} />
+				<Route exact path="/order/:orderRef" component={Order} />
+				<Route exact path="/" component={Home} />
+				<Route component={AsyncNotFound} />
 	  		</Switch>
 
 	  		<Footer />

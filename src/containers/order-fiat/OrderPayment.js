@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-
 import KYCModal from './KYCModal';
-
 
 class OrderPayment extends Component {
 	constructor(props) {
@@ -18,21 +16,20 @@ class OrderPayment extends Component {
 	}
 
 	checkKYC() {
-		axios.get(`${config.API_BASE_URL}/kyc/${this.props.match.params.orderRef}`)
-		.then(response => {
-			this.setState({kyc: response.data});
+		axios
+			.get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
+			.then(response => {
+				this.setState({kyc: response.data});
 
-			this.timeout = setTimeout(() => {
-				this.checkKYC();
-			}, config.KYC_DETAILS_FETCH_INTERVAL);
-		})
-		.catch(error => {
-			console.log(error);
-
-			this.timeout = setTimeout(() => {
-				this.checkKYC();
-			}, config.KYC_DETAILS_FETCH_INTERVAL);
-		});
+				this.timeout = setTimeout(() => {
+					this.checkKYC();
+				}, config.KYC_DETAILS_FETCH_INTERVAL);
+			})
+			.catch(error => {
+				this.timeout = setTimeout(() => {
+					this.checkKYC();
+				}, config.KYC_DETAILS_FETCH_INTERVAL);
+			});
 	}
 
 	componentDidMount() {
@@ -53,7 +50,7 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
-						<p className="explanation">In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</p>
+						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</h5>
 					</div>
 				);
 
@@ -63,7 +60,7 @@ class OrderPayment extends Component {
 					<div>
 						<h2>Verification received, awaiting approval</h2>
 
-						<p className="explanation">We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</p>
+						<h5>We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</h5>
 
 						<hr style={{marginLeft: -15, marginRight: -15}} />
 
@@ -91,7 +88,7 @@ class OrderPayment extends Component {
 			inner = (
 				<div>
 					<h2>Payment and verification received</h2>
-					<p className="explanation">We will proceed to release your funds shortly</p>
+					<h5>We will proceed to release your funds shortly</h5>
 				</div>
 			);
 		}

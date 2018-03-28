@@ -69,7 +69,7 @@ class CreditCardModal extends Component {
         if (value.length >= 2)
           value = value.slice(0,2) + '/' + value.slice(2, value.length);
       } else {
-        if (value.length == 3) {
+        if (value.length === 3) {
           value = value.replace(/[^0-9 \,]/, '');
         }
       }
@@ -109,8 +109,8 @@ class CreditCardModal extends Component {
 
               <div className="col-xs-12 col-sm-6">
                 <form id="credit-card-form" onSubmit={this.handleSubmit}>
-                  {this.state.success  == true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
-                  {this.state.success  == false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
+                  {this.state.success  === true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
+                  {this.state.success  === false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
 
                   <div className="form-group label-floating">
                     <input type="text" name="name" className="form-control" placeholder="Your name" onChange={this.handleInputChange} value={this.state.name} required />

@@ -71,20 +71,6 @@ class Notifications extends Component {
 
 			this.setState({ message });
 		});
-
-		axios({
-				method: 'put',
-				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/users/me/`,
-				data: {email: this.state.value},
-				headers: {'Authorization': 'Bearer ' + localStorage.token}
-			})
-			.then(data => {
-
-			})
-			.catch(error => {
-
-			});
 	}
 
 	render() {

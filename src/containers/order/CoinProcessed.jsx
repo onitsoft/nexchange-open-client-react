@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
+import Helpers from '../../helpers';
 
 class CoinProcessed extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			coin: '',
-			oppositeCoin: '',
-			amount: '...',
-			address: '...',
-			order: null
-		}
-	}
-
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.type === 'Deposit') {
-			this.setState({
-				coin: nextProps.order.pair.quote.code,
-				oppositeCoin: nextProps.order.pair.base.code,
-				amount: parseFloat(nextProps.order.amount_quote),
-				address: nextProps.order.deposit_address ? nextProps.order.deposit_address.address : '',
-				order: nextProps.order
-			});
-		} else if (nextProps.type === 'Receive') {
-			this.setState({
-				coin: nextProps.order.pair.base.code,
-				oppositeCoin: nextProps.order.pair.quote.code,
-				amount: parseFloat(nextProps.order.amount_base),
-				address: nextProps.order.withdraw_address ? nextProps.order.withdraw_address.address : '',
-				order: nextProps.order
-			});
+		if (this.props.type === 'Deposit') {
+			this.state = {
+				coin: this.props.order.pair.quote.code,
+				oppositeCoin: this.props.order.pair.base.code,
+				amount: parseFloat(this.props.order.amount_quote),
+				address: this.props.order.deposit_address ? this.props.order.deposit_address.address : '',
+				order: this.props.order
+			};
+		} else if (this.props.type === 'Receive') {
+			this.state = {
+				coin: this.props.order.pair.base.code,
+				oppositeCoin: this.props.order.pair.quote.code,
+				amount: parseFloat(this.props.order.amount_base),
+				address: this.props.order.withdraw_address ? this.props.order.withdraw_address.address : '',
+				order: this.props.order
+			};
 		}
 	}
 
@@ -71,7 +62,7 @@ class CoinProcessed extends Component {
 		return (
 		    <div className="col-xs-12 col-sm-6">
 		    	<div
-					className={`coin-box box media ${(this.props.type === 'Deposit' && this.props.order && !this.props.order.pair.quote.is_crypto) ? 'fiat' : ''}`}>
+					className={`coin-box box media ${(this.props.type === 'Deposit' && Helpers.isFiatOrder(this.props.order)) ? 'fiat' : ''}`}>
 		    		<div className="media-left">
 		    			<i className={`coin-icon cc-${this.state.coin} ${this.state.coin}`}></i>
 		    		</div>
