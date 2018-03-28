@@ -114,7 +114,7 @@
 	.form-group { margin-top: 10px; }
 	button { width: 100%; margin-bottom: 0; }
 	form { padding-top: 15px;
-		h4 { position: absolute; top: -15px; left: 50%; transform: translate(-50%, 0); }
+		h4 { position: absolute; top: -5px; left: 50%; transform: translate(-50%, 0); }
 	}
 	@media (min-width: $screen-sm-min) { button { width: auto; } }
 }
