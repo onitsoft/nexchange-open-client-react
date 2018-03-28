@@ -15,7 +15,7 @@ class KYCModal extends Component {
       governmentID: '',
       residenceProof: '',
       title: 'Get verified',
-      button: 'Upload file(s)',
+      buttonText: 'Upload file(s)',
       titleClass: ''
     }
 
@@ -47,7 +47,7 @@ class KYCModal extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({title: 'Uploading...', titleClass: 'warning', button: 'Uploading...', filesReady: false});
+    this.setState({title: 'Uploading...', titleClass: 'warning', buttonText: 'Uploading...', filesReady: false});
 
     const formData = new FormData();
     const governmentID = document.querySelector('#governmentID');
@@ -70,18 +70,18 @@ class KYCModal extends Component {
           }
       })
       .then(response => {
-        this.setState({title: 'Verification documents uploaded!', titleClass: 'green', button: 'Uploaded', filesReady: false});
+        this.setState({title: 'Verification documents uploaded!', titleClass: 'green', buttonText: 'Uploaded', filesReady: false});
 
         setTimeout(() => {
           this.props.onClose();
         }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
       })
       .catch(error => {
-        this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', button: 'Upload file(s)'});
+        this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', buttonText: 'Upload file(s)'});
       });
 
     if (this.state.email) {
-      setUserEmail(this.state.value);
+      setUserEmail(this.state.email);
     }
   }
 
@@ -164,7 +164,7 @@ This will also allow us to send you updates about your orders, your referrals, a
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
-                {this.state.button}
+                {this.state.buttonText}
               </button>
             </form>
           </div>
