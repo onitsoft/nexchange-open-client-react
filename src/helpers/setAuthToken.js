@@ -1,11 +1,17 @@
 import axios from 'axios';
+import config from '../config';
 
 export default () => {
-	axios.defaults.headers.common['Authorization'] = '';
-	delete axios.defaults.headers.common['Authorization'];
+	axios.interceptors.request.use(function (requestConfig) {
+		if (requestConfig.url.indexOf(config.API_BASE_URL) > -1) {
+			const token = localStorage.token;
+			requestConfig.headers['Authorization'] = `Bearer ${token}`;
+		}
 
-	const token = localStorage.token;
-	if (token) {
-		axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-	}
+		return requestConfig;
+	}, function (error) {
+		return Promise.reject(error);
+	});
+
+
 }
