@@ -23,13 +23,8 @@ class RefundAddress extends Component {
 	}
 
 	componentDidMount() {
-		axios({
-            method: 'get',
-            contentType : 'application/json',
-            url: `${config.API_BASE_URL}/users/me/`,
-            data: {email: this.state.email},
-            headers: {'Authorization': 'Bearer ' + localStorage.token}
-		})
+		axios
+			.get(`${config.API_BASE_URL}/users/me/`, { email: this.state.email })
 			.then(data => {
 				this.setState({ userStatus: data.status });
 			})
