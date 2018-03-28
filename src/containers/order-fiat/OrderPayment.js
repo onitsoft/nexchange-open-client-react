@@ -6,12 +6,7 @@ import KYCModal from './KYCModal';
 class OrderPayment extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			showKYCModal: false,
-			kyc: null
-		}
-
+		this.state = { showKYCModal: false }
 		this.checkKYC = this.checkKYC.bind(this);
 	}
 
@@ -43,14 +38,15 @@ class OrderPayment extends Component {
 	render() {
 		let inner;
 		let buttonText;
-		if (!this.state.kyc)
+		if (!this.state.kyc) {
 			inner = <h2>Checking KYC status...</h2>;
-		else if (!this.state.kyc.is_verified) {
+		} else if (!this.state.kyc.is_verified) {
 			if (!this.state.kyc.id_document_status && !this.state.kyc.residence_document_status) {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
 						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</h5>
+						<h5 style={{marginTop: 15}}>This is a one-time process, once verified you’ll be able to complete future purchases instantly.</h5>
 					</div>
 				);
 
@@ -67,6 +63,9 @@ class OrderPayment extends Component {
 						<h2>Approval status:</h2>
 						<p style={{margin:0}}><b>Government issued ID:</b> {this.state.kyc.id_document_status}</p>
 						<p><b>Proof of residence:</b> {this.state.kyc.residence_document_status}</p>
+						
+						{this.state.kyc && this.state.kyc.user_visible_comment &&
+							<p>Reason for rejection: {this.state.kyc.user_visible_comment}</p>}
 					</div>
 				);
 
@@ -97,7 +96,11 @@ class OrderPayment extends Component {
 			{inner}
 
 			{buttonText &&
-				<button type="button" className="btn btn-default btn-themed" onClick={() => this.setState({showKYCModal: true})}>
+				<button
+					type="button"
+					className="btn btn-default btn-themed"
+					onClick={() => this.setState({showKYCModal: true})}
+					style={{marginTop: 20}}>
 					<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
 					{buttonText}
 				</button>}
