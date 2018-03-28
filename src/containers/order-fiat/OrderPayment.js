@@ -43,14 +43,15 @@ class OrderPayment extends Component {
 	render() {
 		let inner;
 		let buttonText;
-		if (!this.state.kyc)
+		if (!this.state.kyc) {
 			inner = <h2>Checking KYC status...</h2>;
-		else if (!this.state.kyc.is_verified) {
+		} else if (!this.state.kyc.is_verified) {
 			if (!this.state.kyc.id_document_status && !this.state.kyc.residence_document_status) {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
 						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</h5>
+						<h5 style={{marginTop: 15}}>Once verified you can use the same bank card to buy more without a need to get verified/upload again</h5>
 					</div>
 				);
 
@@ -97,7 +98,11 @@ class OrderPayment extends Component {
 			{inner}
 
 			{buttonText &&
-				<button type="button" className="btn btn-default btn-themed" onClick={() => this.setState({showKYCModal: true})}>
+				<button
+					type="button"
+					className="btn btn-default btn-themed"
+					onClick={() => this.setState({showKYCModal: true})}
+					style={{marginTop: 20}}>
 					<i className="fa fa-credit-card" aria-hidden="true" style={{position: "relative", left: -13}}></i>
 					{buttonText}
 				</button>}
