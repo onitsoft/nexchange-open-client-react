@@ -66,7 +66,7 @@ class OrderPayment extends Component {
 						<p><b>Proof of residence:</b> {this.state.kyc.residence_document_status}</p>
 						
 						{this.state.kyc && this.state.kyc.user_visible_comment &&
-							<p>Reason for rejection: {this.state.kyc.user_visible_comment}</p>}
+							<p><b>Reason for rejection: {this.state.kyc.user_visible_comment}</b></p>}
 					</div>
 				);
 
