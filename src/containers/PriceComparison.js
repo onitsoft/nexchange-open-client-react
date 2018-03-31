@@ -81,7 +81,11 @@ class PriceComparison extends Component {
             console.log(error);
         });
 
-        axios.get(`https://n.exchange/exchange/rates`)
+        axios({
+          method: 'get',
+          url: `https://cors-anywhere.herokuapp.com/https://changelly.com/exchange/rates`,
+          headers: {'Origin': 'https://n.exchange'}
+        })
         .then(response => {
             this.setState({
                 changelly: {
