@@ -75,7 +75,7 @@ class KYCModal extends Component {
 
         setTimeout(() => {
           this.props.onClose();
-        }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
+        }, 3000);
       })
       .catch(error => {
         this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', buttonText: 'Upload file(s)'});
