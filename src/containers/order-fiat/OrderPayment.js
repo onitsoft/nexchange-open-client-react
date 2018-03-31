@@ -10,11 +10,20 @@ class OrderPayment extends Component {
 		this.checkKYC = this.checkKYC.bind(this);
 	}
 
-	checkKYC() {
+	componentDidMount() {
+		this.checkKYC(true);
+	}
+
+	checkKYC(firstTime) {
 		axios
 			.get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
 			.then(response => {
-				this.setState({kyc: response.data});
+				const kyc = response.data;
+				this.setState({ kyc });
+
+				if (firstTime && (kyc.id_document_status !== 'APPROVED' || kyc.residence_document_status !== 'APPROVED')) {
+					this.setState({ showKYCModal: true });
+				}
 
 				this.timeout = setTimeout(() => {
 					this.checkKYC();
@@ -25,10 +34,6 @@ class OrderPayment extends Component {
 					this.checkKYC();
 				}, config.KYC_DETAILS_FETCH_INTERVAL);
 			});
-	}
-
-	componentDidMount() {
-		this.checkKYC();
 	}
 
 	componentWillUnmount() {

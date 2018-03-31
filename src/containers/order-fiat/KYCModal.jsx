@@ -16,7 +16,8 @@ class KYCModal extends Component {
       residenceProof: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
-      titleClass: ''
+      titleClass: '',
+      email: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -118,6 +119,9 @@ class KYCModal extends Component {
               <i className="material-icons">clear</i>
             </button>
             <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
+            <h5 style={{marginBottom: 0}}>
+							<b>This is a one-time process, once verified you’ll be able to complete future purchases instantly.</b>
+						</h5>
           </div>
 
           <div className="modal-body">
