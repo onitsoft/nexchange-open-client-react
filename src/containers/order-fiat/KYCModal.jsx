@@ -44,6 +44,16 @@ class KYCModal extends Component {
 
   close() {
     this.props.onClose();
+
+    this.setState({ 
+      filesReady: false,
+      governmentID: '',
+      residenceProof: '',
+      title: 'Get verified',
+      buttonText: 'Upload file(s)',
+      titleClass: '',
+      message: ''
+    })
   }
 
   handleSubmit(event) {
@@ -77,7 +87,7 @@ class KYCModal extends Component {
 
         setTimeout(() => {
           this.props.onClose();
-        }, 3000);
+        }, 2000);
       })
       .catch(error => {
         this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', buttonText: 'Upload file(s)'});

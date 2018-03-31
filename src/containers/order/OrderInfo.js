@@ -54,8 +54,6 @@ const OrderInfo = props => {
 			order = <div className="text-center"><h2>Unknown order state, something went wrong</h2></div>;
 	}
 
-	order = isFiatOrder ? <OrderPaymentFiat {...props} /> : <OrderPaymentCrypto {...props} />;
-
 	return (
         <div className="col-xs-12">
             <div className="box">

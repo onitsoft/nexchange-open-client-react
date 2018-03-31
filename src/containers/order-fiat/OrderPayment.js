@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
 import KYCModal from './KYCModal';
+import DesktopNotifications from '../DesktopNotifications';
 
 class OrderPayment extends Component {
 	constructor(props) {
@@ -21,7 +22,7 @@ class OrderPayment extends Component {
 				const kyc = response.data;
 				this.setState({ kyc });
 
-				if (firstTime && (kyc.id_document_status !== 'APPROVED' || kyc.residence_document_status !== 'APPROVED')) {
+				if (firstTime && (!kyc.id_document_status || !kyc.residence_document_status)) {
 					this.setState({ showKYCModal: true });
 				}
 
@@ -43,6 +44,8 @@ class OrderPayment extends Component {
 	render() {
 		let inner;
 		let buttonText;
+		let notificationsCtaVisible = false;
+
 		if (!this.state.kyc) {
 			inner = <h2>Checking KYC status...</h2>;
 		} else if (!this.state.kyc.is_verified) {
@@ -75,6 +78,8 @@ class OrderPayment extends Component {
 					</div>
 				);
 
+				notificationsCtaVisible = true;
+
 				if (this.state.kyc.id_document_status === 'REJECTED' && this.state.kyc.residence_document_status === 'REJECTED') {
 					buttonText = "Retry verification";
 				} else if (
@@ -100,6 +105,8 @@ class OrderPayment extends Component {
 
 		return <div className="col-xs-12 text-center order-status-section">
 			{inner}
+
+			<DesktopNotifications kyc={this.state.kyc} {...this.props} visible={notificationsCtaVisible} />
 
 			{buttonText &&
 				<button
