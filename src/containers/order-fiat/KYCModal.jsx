@@ -17,7 +17,8 @@ class KYCModal extends Component {
       title: 'Get verified',
       buttonText: 'Upload file(s)',
       titleClass: '',
-      email: ''
+      email: '',
+      message: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -55,6 +56,7 @@ class KYCModal extends Component {
     const residenceProof = document.querySelector('#residenceProof');
     
     formData.append('order_reference', this.props.order.unique_reference);
+    formData.append('user_provided_comment', this.state.message.slice(0, 255));
 
     if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
@@ -165,6 +167,15 @@ class KYCModal extends Component {
 This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}>
 								</i>
               </div>
+
+              <textarea
+                name="message"
+                className="form-control"
+                placeholder="Message"
+                rows="2"
+                onChange={this.handleInputChange}
+                value={this.state.message}
+                maxLength="255"></textarea>
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
