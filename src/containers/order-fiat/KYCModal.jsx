@@ -16,7 +16,9 @@ class KYCModal extends Component {
       residenceProof: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
-      titleClass: ''
+      titleClass: '',
+      email: '',
+      message: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -42,6 +44,16 @@ class KYCModal extends Component {
 
   close() {
     this.props.onClose();
+
+    this.setState({ 
+      filesReady: false,
+      governmentID: '',
+      residenceProof: '',
+      title: 'Get verified',
+      buttonText: 'Upload file(s)',
+      titleClass: '',
+      message: ''
+    })
   }
 
   handleSubmit(event) {
@@ -54,6 +66,7 @@ class KYCModal extends Component {
     const residenceProof = document.querySelector('#residenceProof');
     
     formData.append('order_reference', this.props.order.unique_reference);
+    formData.append('user_provided_comment', this.state.message.slice(0, 255));
 
     if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
@@ -74,7 +87,7 @@ class KYCModal extends Component {
 
         setTimeout(() => {
           this.props.onClose();
-        }, config.KYC_DETAILS_FETCH_INTERVAL / 2);
+        }, 2000);
       })
       .catch(error => {
         this.setState({title: 'Something went wrong, please try resubmitting', titleClass: 'danger', buttonText: 'Upload file(s)'});
@@ -118,6 +131,9 @@ class KYCModal extends Component {
               <i className="material-icons">clear</i>
             </button>
             <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
+            <h5 style={{marginBottom: 0}}>
+							<b>This is a one-time process, once verified you’ll be able to complete future purchases instantly.</b>
+						</h5>
           </div>
 
           <div className="modal-body">
@@ -161,6 +177,15 @@ class KYCModal extends Component {
 This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}>
 								</i>
               </div>
+
+              <textarea
+                name="message"
+                className="form-control"
+                placeholder="Message"
+                rows="2"
+                onChange={this.handleInputChange}
+                value={this.state.message}
+                maxLength="255"></textarea>
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : "disabled"}>
                 <i className="fa fa-file" aria-hidden="true" style={{position: "relative", left: -8, top: 0, fontSize: "14px"}}></i>
