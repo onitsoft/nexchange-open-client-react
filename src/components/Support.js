@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../config';
 import fetchUserEmail from '../helpers/fetchUserEmail';
-import setUserMail from '../helpers/setUserMail';
+import setUserEmail from '../helpers/setUserEmail';
 
 class Support extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Support extends Component {
 
     this.setState({loading: true});
 
-    setUserMail(this.state.email);
+    setUserEmail(this.state.email);
 
     axios({
       method: 'post',
