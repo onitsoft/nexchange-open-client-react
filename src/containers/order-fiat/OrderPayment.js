@@ -23,9 +23,9 @@ class OrderPayment extends Component {
 				this.setState({ kyc });
 
 				if (firstTime && (!kyc.id_document_status || !kyc.residence_document_status)) {
-					this.setTimeout(() => {
+					setTimeout(() => {
 						this.setState({ showKYCModal: true });
-					}, 2000);
+					}, 1000);
 				}
 
 				this.timeout = setTimeout(() => {
