@@ -3,6 +3,7 @@ import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../config';
 import fetchUserEmail from '../helpers/fetchUserEmail';
+import setUserMail from '../helpers/setUserMail';
 
 class Support extends Component {
   constructor(props) {
@@ -34,17 +35,11 @@ class Support extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+
     this.setState({loading: true});
 
-		axios({
-      method: 'put',
-      contentType : 'application/json',
-      url: `${config.API_BASE_URL}/users/me/`,
-      data: {email: this.state.value},
-      headers: {'Authorization': 'Bearer ' + localStorage.token}
-    })
-    .then(data => {})
-    .catch(error => {});
+    setUserMail(this.state.email);
 
     axios({
       method: 'post',
@@ -65,8 +60,6 @@ class Support extends Component {
     .catch(error => {
       this.setState({loading: false, showForm: false, success: false});
     });
-
-    event.preventDefault();
   }
 
   close() {
