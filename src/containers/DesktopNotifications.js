@@ -13,8 +13,6 @@ class DesktopNotifications extends Component {
     }
     
     notify(nextProps) {
-        console.log("NOTIFY", nextProps.kyc);
-
         const diff = objectsShallowDiff(this.props.kyc, nextProps.kyc)
         let body = ``;
 
@@ -52,8 +50,6 @@ class DesktopNotifications extends Component {
     }
 
 	componentWillReceiveProps(nextProps) {
-        console.log(!shallowEqual(this.props.kyc, nextProps.kyc), nextProps.kyc);
-
         if (this.props.kyc && !shallowEqual(this.props.kyc, nextProps.kyc)) {
             this.notify(nextProps);
         }
