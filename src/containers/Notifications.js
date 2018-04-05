@@ -21,18 +21,14 @@ class Notifications extends Component {
 	}
 
 	componentDidMount() {
-		axios({
-			method: 'get',
-			contentType : 'application/json',
-			url: `${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`,
-			headers: {'Authorization': 'Bearer ' + localStorage.token}
-		})
-		.then(data => {
-			this.setState({ show: true });
-		})
-		.catch(error => {
-			this.setState({ show: false });
-		});
+		axios
+			.get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
+			.then(data => {
+				this.setState({ show: true });
+			})
+			.catch(error => {
+				this.setState({ show: false });
+			});
 
 		fetchUserEmail(email => {
 			this.setState({ email, emailFetched: true })
