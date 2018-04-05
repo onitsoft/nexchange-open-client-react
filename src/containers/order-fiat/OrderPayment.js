@@ -16,6 +16,8 @@ class OrderPayment extends Component {
 	}
 
 	checkKYC(firstTime) {
+		clearTimeout(this.timeout);
+
 		axios
 			.get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
 			.then(response => {
@@ -67,7 +69,10 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Verification received, awaiting approval</h2>
-						<h5>We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.</h5>
+						<h5 style={{marginBottom: 10}}>It seems that you have already completed the verification process.</h5>
+						<h5 style={{marginBottom: 10}}>We are now validating that your documents are still valid i.e. not expired, and that you have not exceeded the trading limit of your current verification tier.</h5>
+						<h5 style={{marginBottom: 10}}>In case we require any further documents from you, we will contact you via <a href="mailto:support@n.exchange">email</a>.</h5>
+						<h5 style={{marginBottom: 10}}>In case you have any question feel free to contact us via the live chat or at <a href="mailto:support@n.exchange">support@n.exchange</a>.</h5>
 
 						<hr style={{marginLeft: -15, marginRight: -15}} />
 
@@ -122,8 +127,11 @@ class OrderPayment extends Component {
 
 			{this.state.kyc &&
 				<KYCModal
-					show={this.state.showKYCModal} 
-					onClose={() => this.setState({showKYCModal: false})}
+					show={ this.state.showKYCModal } 
+					onClose={() => {
+						this.setState({ showKYCModal: false });
+						this.checkKYC();
+					}}
 					kyc={this.state.kyc}
 					{...this.props} />}
 		</div>
