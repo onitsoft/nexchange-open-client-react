@@ -8,7 +8,7 @@ class Notifications extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			value: '',
+			email: '',
 			message: {
 				text: '',
 				error: false
@@ -21,34 +21,30 @@ class Notifications extends Component {
 	}
 
 	componentDidMount() {
-		axios({
-			method: 'get',
-			contentType : 'application/json',
-			url: `${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`,
-			headers: {'Authorization': 'Bearer ' + localStorage.token}
-		})
-		.then(data => {
-			this.setState({ show: true });
-		})
-		.catch(error => {
-			this.setState({ show: false });
-		});
+		axios
+			.get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
+			.then(data => {
+				this.setState({ show: true });
+			})
+			.catch(error => {
+				this.setState({ show: false });
+			});
 
 		fetchUserEmail(email => {
-			this.setState({ value: email })
+			this.setState({ email })
 		});
 	}
 
 	handleChange(event) {
 		this.setState({
-		  value: event.target.value
+		  email: event.target.value
 		});
 	}
 
 	handleSubmit(event) {
 		event.preventDefault();
 
-		setUserEmail(this.state.value, () => {
+		setUserEmail(this.state.email, () => {
 			this.setState({
 				message: {
 					text: 'Success, you set your email.',
@@ -99,7 +95,7 @@ class Notifications extends Component {
 												placeholder="Email"
 												className="form-control"
 												onChange={this.handleChange}
-												value={this.state.value}
+												value={this.state.email}
 												required
 											/>
 											<span className="material-input"></span>

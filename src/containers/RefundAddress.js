@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import axios from 'axios';
 import config from '../config';
 import Helpers from '../helpers';
@@ -8,14 +9,13 @@ class RefundAddress extends Component {
 	constructor(props) {
 		super();
 		this.state = {
-			value: '',
+			address: '',
 			message: {
 				text: '',
 				error: ''
 			},
 			disabled: true,
-			userStatus: null,
-
+			show: false,
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -24,18 +24,18 @@ class RefundAddress extends Component {
 
 	componentDidMount() {
 		axios
-			.get(`${config.API_BASE_URL}/users/me/`, { email: this.state.email })
+			.get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
 			.then(data => {
-				this.setState({ userStatus: data.status });
+				this.setState({ show: true });
 			})
 			.catch(error => {
-				console.log(error);
+				this.setState({ show: false });
 			});
 	}
 
 	handleChange(event) {
 		const address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
-  		this.setState({value: address});
+		this.setState({ address });
 
 		if (address.length > 0) {
 			Helpers.validateWalletAddress(address, this.props.order.pair.quote.code, () => {
@@ -68,12 +68,9 @@ class RefundAddress extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		
-		axios({
-				method: 'put',
-				contentType : 'application/json',
-				url: `${config.API_BASE_URL}/orders/${this.props.order.unique_reference}/`,
-				data: { refund_address: this.state.value },
-				headers: {'Authorization': 'Bearer ' + localStorage.token}
+		axios
+			.put(`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}/`, {
+				refund_address: this.state.address
 			})
 			.then(data => {
 				this.setState({
@@ -91,12 +88,12 @@ class RefundAddress extends Component {
 					}
 				});
 			});
-  	}
+  }
 
 	render() {
 		// TODO: Should be [12,13,14,15], left 11 for testing purposes
 		if ([11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) === -1
-			|| this.state.userStatus !== 200) {
+			|| !this.state.show) {
 			return null;
 		}
 
@@ -116,7 +113,7 @@ class RefundAddress extends Component {
 									name="refund-address"
 									placeholder="Refund address"
 									className="form-control"
-									value={this.state.value}
+									value={this.state.address}
 									onChange={this.handleChange}
 									required />
 							</div>
