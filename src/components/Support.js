@@ -22,7 +22,7 @@ class Support extends Component {
 
   componentDidMount() {
     fetchUserEmail(email => {
-      this.setState({ email })
+      this.setState({ email, emailFetched: true })
     });
   }
 
@@ -138,6 +138,7 @@ class Support extends Component {
                       placeholder="Email"
                       onChange={this.handleInputChange}
                       value={this.state.email}
+                      disabled={this.state.emailFetched}
                       required />
                   </div>
 
