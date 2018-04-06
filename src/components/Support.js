@@ -22,7 +22,7 @@ class Support extends Component {
 
   componentDidMount() {
     fetchUserEmail(email => {
-      this.setState({ email, emailFetched: true })
+      this.setState({ email, emailFetched: email.length > 0 })
     });
   }
 
