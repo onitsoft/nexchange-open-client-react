@@ -57,7 +57,7 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Payment received, awaiting verification</h2>
-						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.</h5>
+						<h5>In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and a proof of residence. If we do not get these documents within 1 hour, we will be forced to refund your order.</h5>
 						<h5 style={{marginTop: 15}}>
 							<b>This is a one-time process, once verified you’ll be able to complete future purchases instantly.</b>
 						</h5>
