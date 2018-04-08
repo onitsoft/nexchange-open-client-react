@@ -70,7 +70,7 @@ class OrderPayment extends Component {
 					<div>
 						<h2>Verification received, awaiting approval</h2>
 						<h5 style={{marginBottom: 10}}>It seems that you have already completed the verification process.</h5>
-						<h5 style={{marginBottom: 10}}>We are now validating that your documents are still valid i.e. not expired, and that you have not exceeded the trading limit of your current verification tier.</h5>
+						<h5 style={{marginBottom: 10}}>We are now verifying that your documents are still valid (i.e. not expired), and that you have not exceeded the volume limitation imposed by your current verification tier.</h5>
 						<h5 style={{marginBottom: 10}}>In case we require any further documents from you, we will contact you via <a href="mailto:support@n.exchange">email</a>.</h5>
 						<h5 style={{marginBottom: 10}}>In case you have any question feel free to contact us via the live chat or at <a href="mailto:support@n.exchange">support@n.exchange</a>.</h5>
 
