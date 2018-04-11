@@ -7,12 +7,18 @@ import DesktopNotifications from '../DesktopNotifications';
 class OrderPayment extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { showKYCModal: false }
+		this.state = { showKYCModal: false, ordersCount: 1 }
 		this.checkKYC = this.checkKYC.bind(this);
 	}
 
 	componentDidMount() {
 		this.checkKYC(true);
+	
+		axios
+			.get(`${config.API_BASE_URL}/users/me/orders/`)
+			.then(response => {
+				this.setState({ ordersCount: response.data.count })
+			});
 	}
 
 	checkKYC(firstTime) {
@@ -69,10 +75,6 @@ class OrderPayment extends Component {
 				inner = (
 					<div>
 						<h2>Verification received, awaiting approval</h2>
-						<h5 style={{marginBottom: 10}}>It seems that you have already completed the verification process.</h5>
-						<h5 style={{marginBottom: 10}}>We are now verifying that your documents are still valid (i.e. not expired), and that you have not exceeded the volume limitation imposed by your current verification tier.</h5>
-						<h5 style={{marginBottom: 10}}>In case we require any further documents from you, we will contact you via <a href="mailto:support@n.exchange">email</a>.</h5>
-						<h5 style={{marginBottom: 10}}>In case you have any question feel free to contact us via the live chat or at <a href="mailto:support@n.exchange">support@n.exchange</a>.</h5>
 
 						<hr style={{marginLeft: -15, marginRight: -15}} />
 
@@ -102,12 +104,24 @@ class OrderPayment extends Component {
 				}
 			}
 		} else if (this.state.kyc.id_document_status === 'APPROVED' && this.state.kyc.residence_document_status === 'APPROVED') {
-			inner = (
-				<div>
-					<h2>Payment and verification received</h2>
-					<h5>We will proceed to release your funds shortly</h5>
-				</div>
-			);
+			if (this.state.ordersCount > 1) {
+				inner = (
+					<div>
+						<h2>Payment and verification received</h2>
+						<h5 style={{marginBottom: 10}}>It seems that you have already completed the verification process.</h5>
+						<h5 style={{marginBottom: 10}}>We are now verifying that your documents are still valid (i.e. not expired), and that you have not exceeded the volume limitation imposed by your current verification tier.</h5>
+						<h5 style={{marginBottom: 10}}>In case we require any further documents from you, we will contact you via <a href="mailto:support@n.exchange">email</a>.</h5>
+						<h5 style={{marginBottom: 10}}>In case you have any question feel free to contact us via the live chat or at <a href="mailto:support@n.exchange">support@n.exchange</a>.</h5>
+					</div>
+				)
+			} else {
+				inner = (
+					<div>
+						<h2>Payment and verification received</h2>
+						<h5>We will proceed to release your funds shortly</h5>
+					</div>
+				);
+			}
 		}
 
 		return <div className="col-xs-12 text-center order-status-section">
