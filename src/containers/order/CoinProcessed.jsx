@@ -4,23 +4,37 @@ import Helpers from '../../helpers';
 class CoinProcessed extends Component {
 	constructor(props) {
 		super(props);
+		this.state = { order: this.props.order };
+		this.prepareState = this.prepareState.bind(this);
+	}
 
-		if (this.props.type === 'Deposit') {
-			this.state = {
-				coin: this.props.order.pair.quote.code,
-				oppositeCoin: this.props.order.pair.base.code,
-				amount: parseFloat(this.props.order.amount_quote),
-				address: this.props.order.deposit_address ? this.props.order.deposit_address.address : '',
-				order: this.props.order
-			};
-		} else if (this.props.type === 'Receive') {
-			this.state = {
-				coin: this.props.order.pair.base.code,
-				oppositeCoin: this.props.order.pair.quote.code,
-				amount: parseFloat(this.props.order.amount_base),
-				address: this.props.order.withdraw_address ? this.props.order.withdraw_address.address : '',
-				order: this.props.order
-			};
+	componentDidMount() {
+		this.prepareState(this.props);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({ order: nextProps.order }, () => {
+			this.prepareState(nextProps);
+		});
+	}
+
+	prepareState(props) {
+		if (props.type === 'Deposit') {
+			this.setState({
+				coin: props.order.pair.quote.code,
+				oppositeCoin: props.order.pair.base.code,
+				amount: parseFloat(props.order.amount_quote),
+				address: props.order.deposit_address ? props.order.deposit_address.address : '',
+				order: props.order
+			});
+		} else if (props.type === 'Receive') {
+			this.setState({
+				coin: props.order.pair.base.code,
+				oppositeCoin: props.order.pair.quote.code,
+				amount: parseFloat(props.order.amount_base),
+				address: props.order.withdraw_address ? props.order.withdraw_address.address : '',
+				order: props.order
+			});
 		}
 	}
 
