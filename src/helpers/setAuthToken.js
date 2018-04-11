@@ -3,6 +3,8 @@ import config from '../config';
 
 export default () => {
 	axios.interceptors.request.use(function (requestConfig) {
+		// Settig authorization header for /kyc endpoint for some
+		// reason breaks it.
 		if (requestConfig.url.indexOf(config.API_BASE_URL) > -1
 			&& requestConfig.url.indexOf('kyc') === -1
 			&& localStorage.token) {
