@@ -28,6 +28,7 @@ import Home from './containers/Home';
 import Order from './containers/order/Order';
 import TermsConditions from './containers/TermsConditions';
 import Privacy from './containers/Privacy';
+import ICO from './containers/ICO';
 
 import setAuthToken from './helpers/setAuthToken';
 import crispEmailBinding from './helpers/crispEmailBinding';
@@ -43,26 +44,20 @@ unregister();
 setAuthToken();
 crispEmailBinding();
 
-
-
-
-
-
-
-
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
   	<BrowserRouter>
   		<div>
-        	<Referrals />
+        <Referrals />
   			<Header />
 
   			<Switch>
-				<Route exact path="/terms-and-conditions" component={TermsConditions} />
-				<Route exact path="/privacy" component={Privacy} />
-				<Route exact path="/order/:orderRef" component={Order} />
-				<Route exact path="/" component={Home} />
-				<Route component={AsyncNotFound} />
+					<Route exact path="/ico" component={ICO} />
+					<Route exact path="/terms-and-conditions" component={TermsConditions} />
+					<Route exact path="/privacy" component={Privacy} />
+					<Route exact path="/order/:orderRef" component={Order} />
+					<Route exact path="/" component={Home} />
+					<Route component={AsyncNotFound} />
 	  		</Switch>
 
 	  		<Footer />

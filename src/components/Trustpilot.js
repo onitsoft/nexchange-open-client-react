@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Truspilot = () => (
 	<div style={{background: '#fff'}}>
 		<div className="container">
