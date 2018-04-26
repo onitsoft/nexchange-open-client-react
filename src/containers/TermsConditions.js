@@ -15,7 +15,7 @@ const TermsConditions = (props) => {
 				
 				<p>N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.</p>
 
-				<p>N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and payment the method chosen by you.</p>
+				<p>N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.</p>
 				
 				<p>All fees are transparent and already included in the calculated order price.
 				The fee can be a subject to reasonable fluctuations due to the mathematical rounding.</p>
