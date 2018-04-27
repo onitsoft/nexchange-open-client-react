@@ -109,16 +109,15 @@ class KYCModal extends Component {
       let needUploadResidence = (document.querySelector('#residenceProof') ? true : false),
         needUploadID = (document.querySelector('#governmentID') ? true : false);
 
-      if (needUploadResidence && needUploadID && this.state.residenceProof.length && this.state.governmentID.length)
-        this.setState({filesReady: true});
-      else if (needUploadResidence && needUploadID && (!this.state.residenceProof.length || !this.state.governmentID.legth))
-        this.setState({filesReady: false});
-      else if (needUploadResidence && this.state.residenceProof.length)
-        this.setState({filesReady: true});
-      else if (needUploadID && this.state.governmentID.length)
-        this.setState({filesReady: true});
-      else
-        this.setState({filesReady: false});
+      if (!this.state.email 
+        || (needUploadID && !this.state.governmentID.length)
+        || (needUploadResidence && !this.state.residenceProof.length))
+      {
+        this.setState({ filesReady: false });
+        return;
+      }
+
+      this.setState({ filesReady: true });
     });
   }
 
@@ -148,7 +147,7 @@ class KYCModal extends Component {
               {this.props.kyc.residence_document_status !== 'APPROVED' &&
                 <div>
                   <h2>Proof of residence</h2>
-                  <small>A high-resolution photo\scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old.
+                  <small>A high-resolution photo\scan of a <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old.
                     Delivery address must be a <b>fiscal, residence address (no PO boxes!).</b></small>
                   <small>Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.</small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
@@ -158,7 +157,7 @@ class KYCModal extends Component {
                 <input
                   type="email"
                   name="email" 
-                  placeholder="Email (optional)"
+                  placeholder="Email"
                   className="form-control"
                   onChange={this.handleInputChange}
                   value={this.state.email}
@@ -182,7 +181,7 @@ This will also allow us to send you updates about your orders, your referrals, a
               <textarea
                 name="message"
                 className="form-control"
-                placeholder="Message"
+                placeholder="Message (optional)"
                 rows="2"
                 onChange={this.handleInputChange}
                 value={this.state.message}

@@ -3,6 +3,7 @@ import axios from 'axios';
 import config from '../../config';
 import KYCModal from './KYCModal';
 import DesktopNotifications from '../DesktopNotifications';
+import OrderPayment from './OrderPayment';
 
 class OrderInitial extends Component {
 	constructor(props) {
@@ -29,8 +30,6 @@ class OrderInitial extends Component {
 			.then(response => {
 				const kyc = response.data;
 				this.setState({ kyc });
-
-				console.log(kyc);
 
 				if (firstTime && (!kyc.id_document_status || !kyc.residence_document_status)) {
 					setTimeout(() => {
@@ -60,8 +59,8 @@ class OrderInitial extends Component {
 
 		if (!this.state.kyc) {
 			inner = <h2>Checking KYC status...</h2>;
-		} else if (!this.state.kyc.is_verified) {
-			if (!this.state.kyc.id_document_status && !this.state.kyc.residence_document_status) {
+		} else if (this.state.kyc.id_document_status !== 'APPROVED' && this.state.kyc.residence_document_status !== 'APPROVED') {
+			if (this.state.kyc.id_document_status === 'UNDEFINED' && this.state.kyc.residence_document_status === 'UNDEFINED') {
 				inner = (
 					<div>
 						<h2>Awaiting verification</h2>
@@ -106,24 +105,7 @@ class OrderInitial extends Component {
 				}
 			}
 		} else if (this.state.kyc.id_document_status === 'APPROVED' && this.state.kyc.residence_document_status === 'APPROVED') {
-			if (this.state.ordersCount > 1) {
-				inner = (
-					<div>
-						<h2>Verification received</h2>
-						<h5 style={{marginBottom: 10}}>It seems that you have already completed the verification process.</h5>
-						<h5 style={{marginBottom: 10}}>We are now verifying that your documents are still valid (i.e. not expired), and that you have not exceeded the volume limitation imposed by your current verification tier.</h5>
-						<h5 style={{marginBottom: 10}}>In case we require any further documents from you, we will contact you via <a href="mailto:support@n.exchange">email</a>.</h5>
-						<h5 style={{marginBottom: 10}}>In case you have any question feel free to contact us via the live chat or at <a href="mailto:support@n.exchange">support@n.exchange</a>.</h5>
-					</div>
-				)
-			} else {
-				inner = (
-					<div>
-						<h2>Verification received</h2>
-						<h5>You will now be redirected to payment window</h5>
-					</div>
-				);
-			}
+			return <OrderPayment {...this.props} />;
 		}
 
 		return <div className="col-xs-12 text-center order-status-section">
