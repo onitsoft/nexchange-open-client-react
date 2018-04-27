@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from '../../config';
 import KYCModal from './KYCModal';
 import DesktopNotifications from '../DesktopNotifications';
-import OrderPayment from './OrderPayment';
+import OrderPaymentForm from './OrderPaymentForm';
 
 class OrderInitial extends Component {
 	constructor(props) {
@@ -105,7 +105,7 @@ class OrderInitial extends Component {
 				}
 			}
 		} else if (this.state.kyc.id_document_status === 'APPROVED' && this.state.kyc.residence_document_status === 'APPROVED') {
-			return <OrderPayment {...this.props} />;
+			return <OrderPaymentForm {...this.props} />;
 		}
 
 		return <div className="col-xs-12 text-center order-status-section">
