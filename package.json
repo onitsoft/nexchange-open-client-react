@@ -62,7 +62,8 @@
     "webpack": "3.5.1",
     "webpack-dev-server": "2.7.1",
     "webpack-manifest-plugin": "1.2.1",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "hoek": "^5.0.3"
   },
   "devDependencies": {
     "expose-loader": "^0.7.3",
