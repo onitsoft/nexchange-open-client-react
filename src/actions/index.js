@@ -88,7 +88,7 @@ export function fetchPrice(payload) {
         } else {
           data['deposit'] = response.data.amount_quote;
           data['receive'] = response.data.amount_base;
-          data['lastEdited'] = payload.lastEdited;  
+          data['lastEdited'] = payload.lastEdited;
         }
 
       	dispatch({type: 'PRICE_FETCHED', payload: data});
@@ -147,10 +147,17 @@ export function fetchPairs(payload) {
 
         let depositCoin, receiveCoin;
 
-        // Picks random deposit and receive coins.
         function pickRandomCoins(coins) {
-          depositCoin = coins[Math.floor(Math.random()*coins.length)].code;
-          receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
+	  let params = Helpers.urlParams();
+	  if (params && params.hasOwnProperty('pair')){
+          depositCoin = params['pair'].substring(0,3);
+          receiveCoin = params['pair'].substring(4,7);
+        } else {
+	  // Picks random deposit and receive coins.
+	  depositCoin = coins[Math.floor(Math.random()*coins.length)].code;
+	  receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
+        }
+
 
           // If pair is invalid, try again until valid
           if (!_.filter(coins, {code: receiveCoin, is_base_of_enabled_pair: true }).length || pairs[depositCoin][receiveCoin] === false) {
