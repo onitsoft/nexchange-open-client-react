@@ -1,0 +1,8 @@
+footer { padding: 15px 0; width: 100%; background: #fff;
+	@media (min-width: $screen-md-min) { position: absolute; bottom: 0; height: 105px; }
+	ul { padding: 0; margin: 0 0 15px 0;
+		li {
+			a { padding: 0; padding-right: 30px; color: #084262; font-size: 16px; font-weight: 300; }
+		}
+	}
+}

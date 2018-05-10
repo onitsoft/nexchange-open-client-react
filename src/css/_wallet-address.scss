@@ -1,0 +1,42 @@
+#wallet-address { max-height: 0; visibility: hidden; overflow: hidden; opacity: 0; transition: all 0.25s;
+	&.active { max-height: 100px; visibility: visible; opacity: 1; }
+	.form-group {
+		@media (min-width: $screen-md-min) { margin-top: 35px; }
+	}
+}
+
+#mouse-scroll { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); cursor: pointer;
+	span { display: block; width: 8px; height: 8px; -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); transform: rotate(45deg); border-right: 3px solid #fff; border-bottom: 3px solid #fff; margin: 0 0 3px 5px; 
+		-webkit-animation: mouse-scroll 1s infinite;
+	    -moz-animation: mouse-scroll 1s infinite;
+	    animation: mouse-scroll 1s infinite;
+	}
+	.arrow-2 { -webkit-animation-delay: .2s; -moz-animation-delay: .2s; animation-delay: .2s; -webkit-animation-direction: alternate; animation-direction: alternate; }
+	.arrow-3 { -webkit-animation-delay: .4s; -moz-animation-delay: .4s; animation-delay: .4s; -webkit-animation-direction: alternate; animation-direction: alternate; }
+}
+
+@-webkit-keyframes mouse-scroll {
+	0% { opacity:1 }
+	50%{ opacity:.5 }
+	100% { opacity:1 }
+}
+@-moz-keyframes mouse-scroll {
+	0% { opacity:1 }
+	50%{ opacity:.5 }
+	100% { opacity:1 }
+}
+@-ms-keyframes mouse-scroll {
+	0% { opacity:1 }
+	50%{ opacity:.5 }
+	100% { opacity:1 }
+}
+@-o-keyframes mouse-scroll {
+	0% { opacity:1 }
+	50%{ opacity:.5 }
+	100% { opacity:1 }
+}
+@keyframes mouse-scroll {
+	0% { opacity:1 }
+	50%{ opacity:.5 }
+	100% { opacity:1 }
+}

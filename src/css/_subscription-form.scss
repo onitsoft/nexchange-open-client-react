@@ -1,0 +1,24 @@
+#subscription-form { padding: 0 0 40px 0; background: $blue; background-image: url(../img/landscape.jpg); background-position: bottom center;
+	#subscription-form-inner { background: rgba(0, 0, 0, 0.4); overflow: hidden; border-radius: 4px; padding: 0 0 5px 0; text-align: left; }
+	h2 { padding: 10px 0 20px 0; color: #fff; font-size: 42px; font-weight: 400; }
+	.form-group { margin: 13px 0 0 0;
+		input { margin: 0; }
+	}
+	button { width: 100%; }
+	input { font-size: 18px; background-image: linear-gradient(0deg, #fff 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #fff 1px, rgba(209, 209, 209, 0) 0); color: #fff; }
+	.message p { color: #fff; padding: 0;
+		&.success{ color: $green; }
+		&.failure { color: #ff695e; }
+	}
+
+	::-webkit-input-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); }
+	::-moz-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); } /* firefox 19+ */
+	:-ms-input-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); } /* ie */
+	input:-moz-placeholder { font-size: 18px; color:rgba(255,255,255,0.5); }
+
+	@media (min-width: $screen-sm-min) {
+		#subscription-form-inner { padding: 15px; }
+	}
+	@media (min-width: $screen-md-min) {}
+	@media (min-width: $screen-lg-min) {}
+}

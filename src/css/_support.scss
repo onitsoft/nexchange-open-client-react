@@ -1,0 +1,18 @@
+#support {
+	.modal-header h4 { font-size: 28px; }
+	h3 { font-size: 24px; }
+	.form-group { margin: 0; }
+	h3 { margin-top: 25px; }
+	h4.text-success { color: $green; }
+	p { font-size: 18px; }
+	.modal-body { padding-top: 0; padding-bottom: 10px; }
+
+	@media (min-width: $screen-sm-min) {
+		.modal-header h4 { font-size: 30px; }
+		h3 { font-size: 28px; }
+		p { font-size: 20px; }
+	}
+}
+
+#support-form { margin-top: 15px; }
+#g-recaptcha { margin-top: 12px; }

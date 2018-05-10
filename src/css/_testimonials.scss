@@ -1,0 +1,32 @@
+#testimonials { background-image: url(../img/landscape.jpg); padding: 15px 0 40px 0;
+	h2 { color: #fff; }
+	.box { position: relative; margin-top: 15px; padding-bottom: 50px; }
+	img  { float: left; max-width: 50px; }
+	.profile-info { float: left; padding-left: 15px;
+		h4 { margin: 10px 0 0 0; }
+	}
+	i { position: relative; left: -7px; }
+	.testimonial-text {  padding-top: 25px; clear: both; font-weight: 500; font-size: 16px; line-height: 1.5em;	}
+	.social-link { float: right; margin: 0; padding: 10px 20px; background: #55acee; color: #fff;
+		&.twitter { background: #55acee; }
+		&.facebook { background: #4267b2; }
+		&.bitcointalk { background: #f7931a; }
+	}
+	.publish-date { position: absolute; bottom: 15px; left: 15px; padding-top: 20px; display: inline-block; }
+	
+	@media (max-width: 500px) {
+		.social-link { clear: both; float: left; width: 100%; margin-top: 22px; }
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.box { height: 260px; }
+	}
+
+	@media (min-width: $screen-md-min) {
+		.box { height: 240px; }
+	}
+
+	@media (min-width: $screen-lg-min) {
+		.box { height: 220px; }
+	}
+}

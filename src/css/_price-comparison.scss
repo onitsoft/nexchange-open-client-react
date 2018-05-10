@@ -1,0 +1,40 @@
+#compare { padding-bottom: 45px; text-align: center;
+	h2 { text-align: left; margin: 35px 0; }
+	table { width: 100%; }
+	img { width: auto; max-height: 40px; }
+	th, tr { font-size: 14px; }
+	thead th { padding-bottom: 20px; font-size: 24px; font-weight: 400; }
+	td { padding: 15px 0; width: 22.5%;
+		&:first-child { width: 10%; }
+	}
+	tbody tr { 
+		height: 55px;
+	    overflow: hidden;
+	    position: relative;
+	    text-align: center;
+	    border-bottom: 1px solid rgba(44, 180, 160, 0.27);
+
+		&:nth-child(odd) { background: rgba(253, 253, 253, 0.99); }
+
+		img { max-height: 25px; width: auto;
+			&.nexchange-logo { max-height: 20px; width: auto; }
+			&.shapeshift-logo { max-height: 30px; width: auto; }
+			&.changelly-logo { position: relative; top: 5px; }
+		}
+
+		td:last-child { padding: 0; }
+	}
+	.comparison-table { width: 100%; overflow-y: scroll;
+		table { min-width: 550px; }
+	}
+	
+	@media (min-width: $screen-md-min) {
+		th, tr { font-size: 18px; }
+		tbody tr img { max-height: 35px; width: auto;
+			&.nexchange-logo { max-height: 30px; width: auto; }
+			&.shapeshift-logo { max-height: 40px; width: auto; }
+			&.changelly-logo { position: relative; top: 5px; }
+		}
+		img { max-height: 60px;	}
+	}
+}

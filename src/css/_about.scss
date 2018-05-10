@@ -1,0 +1,34 @@
+#about { padding-bottom: 65px; background: #fff;
+	h2 { margin-top: 35px; margin-bottom: 25px; }
+}
+
+#team-description {
+	.fa-github { font-size: 40px; position: relative; top: 7px; left: 5px; margin-top: -15px; }
+}
+
+#team-members {
+	.team-member { height: 100%; margin-top: 30px; padding: 25px 15px 15px 15px; background: #fff; box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -6px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		img { display: inline-block; margin-bottom: 15px; width: 55%; max-width: 160px; }
+		h3 { font-size: 20px; margin: 0; font-weight: 400; }
+		h4 { font-size: 18px; margin: 0; }
+		p { font-size: 14px; margin: 10px 0 0 0; }
+		.flag { display: inline-block; width: 20px; margin: -3px 0 0 7px; }
+		.social { font-size: 28px; margin-top: 10px; cursor: pointer;
+			i { margin: 0 4px; @include transition-property(color); @include transition-duration(150ms); }
+ 			a { color: #d6d6d6; 
+ 				.fa-quora { font-size: 25px; }
+				&:hover {
+					.fa-linkedin-square { color: #0077b5; }
+					.fa-twitter-square { color: #1da1f2; }
+					.fa-medium { color: #3CB371; }
+					.fa-quora { color: #b52e30; }
+					.fa-github-square { color: #222222; }
+				}
+ 			}
+		}
+	
+		@media (min-width: $screen-ms-min) { height: 390px; }
+		@media (min-width: $screen-sm-min) { height: 390px; }
+		@media (min-width: $screen-md-min) { height: 385px; }
+	}
+}

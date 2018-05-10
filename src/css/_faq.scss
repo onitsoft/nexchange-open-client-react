@@ -1,0 +1,19 @@
+#faq {
+	.modal-header { position: absolute; top: 0; right: 0; z-index: 1; }
+	h3 { font-size: 24px; cursor: pointer; }
+	p, li { font-size: 18px; }
+	li { margin-bottom: 5px; line-height: 1.5em; }
+	ul, ol { margin-bottom: 20px; }
+	.question-answer {
+		i { font-size: 22px; position: relative; top: -2px; }
+		hr { margin: 0 0 20px 0; }
+		.answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out;
+			&.active { max-height: 1000px; transition: max-height 0.33s ease-in; }
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		h3 { font-size: 30px; }
+		.answer.active { max-height: 500px; transition: max-height 0.33s ease-in; }
+	}
+}

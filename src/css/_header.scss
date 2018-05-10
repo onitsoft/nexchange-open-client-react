@@ -1,0 +1,36 @@
+#header { background: #fff;
+	.btn-just-icon { text-align: left; }
+	.navbar-toggle { top: 11px; }
+	.logo-container { margin: 15px 0 15px 15px; overflow: hidden;
+		img { width: 34px; }
+		img, h1 { float: left; }
+		h1 { margin: 6px 0 0 10px; font-size: 28px; }
+		@media (min-width: $screen-sm-min) { margin-left: 0; }
+	}
+	.icon-bar { background: #000; }
+	.navbar-nav { margin: 0;
+		li a:hover { text-decoration: underline; background: none; }
+	}
+	a { color: $blue; font-size: 16px;
+		&:hover, , &:visited, &:focus, &:active { text-decoration: none; background: none; outline: none; }
+	}
+	ul li a { padding-left: 0; }
+	.fa { position: relative; top: -2px; }
+	.social-mobile a {
+		float: left;
+	}
+	
+	@media (min-width: $screen-sm-min) {
+		ul li a { padding-left: 5px; }
+		.navbar-nav { margin-top: 15px; }
+	}
+
+	@media (min-width: $screen-md-min) {
+		ul li a { padding-left: 15px; }
+		.navbar-nav { margin-top: 20px; }
+		.logo-container {
+			img { width: 50px; }
+			h1 { margin: 11px 0 0 15px; font-size: 36px; }
+		}
+	}
+}

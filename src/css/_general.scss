@@ -1,0 +1,59 @@
+body, html { height: 100%; background: #f8f7f8; }
+#root { position: relative; min-height: 100%;
+	@media (min-width: $screen-md-min) { padding-bottom: 105px; }
+}
+
+body { color: #044264; }
+p, a { word-wrap: break-word; }
+p, li { font-size: 19px; line-height: 1.5em; }
+h1 { font-size: 34px;
+	@media (min-width: $screen-sm-min) { font-size: 46px; }
+}
+h2 { font-size: 26px;
+	@media (min-width: $screen-sm-min) { font-size: 34px; }
+}
+a { color: $green;
+	&:visited, &:focus { outline: none; }
+}
+.error {
+	color: #f44336 !important;
+}
+.success {
+	color: #4caf50 !important;
+}
+.header-text { font-size: 36px; }
+img { max-width: 100%; }
+.modal { z-index: 9999; }
+.modal-title { margin-top: -10px; font-size: 30px; }
+.modal-body {
+	h3 { margin-top: 35px; }
+	h3:first-child { margin-top: -8px; }
+}
+textarea.form-control:focus { outline: none; border-color: none; box-shadow: none; -webkit-box-shadow: none; }
+.box { padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; background: #fff; }
+
+.btn-themed {
+	&, &:focus, &:visited {
+		background: $blue;
+		background: -moz-linear-gradient(to bottom, $blue 0, $green 100%);
+		background: -webkit-linear-gradient(to bottom, $blue 0, $green 100%);
+		background: linear-gradient(to bottom, $blue 0, $green 100%);
+	}
+}
+
+.text-green { color: $green !important; }
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance:textfield;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']:hover::-webkit-inner-spin-button,
+input[type='number']:hover::-webkit-outer-spin-button {
+-webkit-appearance: none;
+ margin: 0; }
+
+.tooltip-inner { white-space:pre-wrap; }
+
+.sticky-inner-wrapper { z-index: 9999; }
