@@ -23,6 +23,7 @@ class Helpers {
 		else if (coin === 'BCH') return this.blockchainUrl = `https://blockchair.com/bitcoin-cash/transaction/${txId}`;
 		else if (coin === 'NANO') return this.blockchainUrl = `https://www.raiblocks.club/block/${txId}`;
 		else if (coin === 'ZEC') return this.blockchainUrl = `https://explorer.zcha.in/transactions/${txId}`;
+        else if (coin === 'USDT') return this.blockchainUrl = `https://omniexplorer.info/tx/${txId}`;
 
 		return null;
 	}
@@ -43,7 +44,8 @@ class Helpers {
 			XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
 			BCH: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/,
 			NANO: /^xrb\_[1|3][a-zA-Z\d]{59}$/,
-			ZEC: /^t[1-9A-Za-z]{34}$/
+			ZEC: /^t[1-9A-Za-z]{34}$/,
+			USDT: /^[1][a-km-zA-HJ-NP-Z0-9]{26,33}$/
     };
 
     let isValid = rules[coin].test(address);
