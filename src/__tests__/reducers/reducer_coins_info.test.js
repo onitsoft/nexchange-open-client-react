@@ -1,6 +1,6 @@
 import reducer from '../../reducers/reducer_coins_info';
 import * as types from '../../actions/types';
-import mockData from '../mocks/currency';
+import mockData from '../__mocks__/currency';
 
 describe('coins info reducer', () => {
   it('should return the initial state', () => {

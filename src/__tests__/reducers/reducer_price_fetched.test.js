@@ -1,6 +1,6 @@
 import reducer from '../../reducers/reducer_price_fetched';
 import * as types from '../../actions/types';
-import mockData from '../mocks/get_price';
+import mockData from '../__mocks__/get_price';
 
 describe('price reducer', () => {
   const initialState = {

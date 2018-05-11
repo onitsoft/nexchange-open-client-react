@@ -1,15 +1,15 @@
-import reducer from '../../reducers/reducer_order';
+import reducer from '../../reducers/reducer_pairs';
 import * as types from '../../actions/types';
-import mockData from '../mocks/order';
+import mockData from '../__mocks__/pair';
 
-describe('order reducer', () => {
+describe('pairs reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(null);
   });
 
-  it('should handle FETCH_ORDER', () => {
+  it('should handle PAIRS_FETCHED', () => {
     const action = {
-      type: types.FETCH_ORDER,
+      type: types.PAIRS_FETCHED,
       payload: mockData
     };
 
