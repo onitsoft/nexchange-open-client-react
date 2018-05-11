@@ -10,8 +10,7 @@ import config from '../config';
 
 import LoadingComponent from '../components/LoadingComponent.js';
 
-
-class OrderStatus extends Component {
+class RecentOrders extends Component {
 	constructor(props) {
 		super(props);
 
@@ -100,11 +99,9 @@ class OrderStatus extends Component {
 							<h2>Recent Orders</h2>
 
 							<div className="recent-orders-container">
-								{orders.length < 1 ? (
-									<LoadingComponent isLoading={true} />
-								) : (
-									orders
-								)}
+								{orders.length < 1
+									? <LoadingComponent isLoading={true} />
+									: orders}
 							</div>
 						</div>
 					</div>
@@ -121,4 +118,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(OrderStatus);
+export default connect(mapStateToProps)(RecentOrders);

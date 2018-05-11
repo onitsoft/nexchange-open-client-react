@@ -2,6 +2,6 @@
   "extends": "react-app",
   "rules": {
     "import/no-webpack-loader-syntax": 0,
-    "no-undef": 0,
+    "no-undef": 0
   }
 }

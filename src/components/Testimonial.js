@@ -1,6 +1,4 @@
 import React from 'react';
-import config from '../config';
-
 
 const Testimonial = props => (
 	<div className="col-xs-12 col-sm-6">

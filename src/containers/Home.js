@@ -14,7 +14,7 @@ import PriceComparison from '../containers/PriceComparison';
 import Trustpilot from '../components/Trustpilot';
 
 
-class Home extends Component {
+export class Home extends Component {
 	componentDidMount() {
 		this.props.fetchCoinDetails();
 

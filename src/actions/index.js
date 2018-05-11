@@ -1,37 +1,36 @@
 import axios from 'axios';
-import { FETCH_ORDER } from './types';
+import * as types from './types';
 import _ from 'lodash';
 import config from '../config';
 import Helpers from '../helpers';
 
-
-export function errorAlert(payload) {
+export const errorAlert = payload => {
 	return {
-		type: 'ERROR_ALERT',
-		payload: payload
+		type: types.ERROR_ALERT,
+		payload
 	}
 }
 
-export function setWallet(payload) {
+export const setWallet = payload => {
 	return {
-		type: 'SET_WALLET',
-		payload: payload
+		type: types.SET_WALLET,
+		payload
 	}
 }
 
-export function selectCoin(payload) {
+export const selectCoin = payload => {
 	return (dispatch, getState) => {
-		dispatch({ type: 'COIN_SELECTED', payload: payload });
+		dispatch({ type: types.COIN_SELECTED, payload });
 
-  	dispatch({type: 'SET_WALLET', payload: {
+  	dispatch(setWallet({
   		address: '',
   		valid: false,
   		show: false
-  	}});
+    }));
 	}
 }
 
-export function fetchCoinDetails(payload) {
+export const fetchCoinDetails = payload => {
 	const url = `${config.API_BASE_URL}/currency/`;
 	const request = axios.get(url);
 	const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
@@ -52,14 +51,14 @@ export function fetchCoinDetails(payload) {
           coins = _.filter(response.data, {has_enabled_pairs: true});
         }
 
-      	dispatch({type: 'COINS_INFO', payload: coins});
+      	dispatch({ type: types.COINS_INFO, payload: coins });
       }).catch(error => {
       	console.log(error);
       });
   };
 }
 
-export function fetchPrice(payload) {
+export const fetchPrice = payload => {
   let url = `${config.API_BASE_URL}/get_price/${payload.pair}/?`;
 
   if (payload.deposit) {
@@ -91,11 +90,11 @@ export function fetchPrice(payload) {
           data['lastEdited'] = payload.lastEdited;  
         }
 
-      	dispatch({type: 'PRICE_FETCHED', payload: data});
+      	dispatch({ type: types.PRICE_FETCHED, payload: data });
 
-        dispatch({type: 'ERROR_ALERT', payload: {
+        dispatch({ type: types.ERROR_ALERT, payload: {
 					show: false,
-					type: 'INVALID_AMOUNT'
+					type: types.INVALID_AMOUNT
 				}});
       }).catch(error => {
         let data = {
@@ -112,23 +111,23 @@ export function fetchPrice(payload) {
           data['lastEdited'] = 'deposit';
         }
 
-        dispatch({type: 'PRICE_FETCHED', payload: data});
+        dispatch({ type: types.PRICE_FETCHED, payload: data });
 
         let regex = /[^[\']+(?=')/g;
         let match = regex.exec(error.response.data.detail);
 
         if (match && match.length) {
-          dispatch({type: 'ERROR_ALERT', payload: {
+          dispatch({type: types.ERROR_ALERT, payload: {
   					message: match[0],
   					show: true,
-  					type: 'INVALID_AMOUNT'
+  					type: types.INVALID_AMOUNT
   				}});
         }
       });
   };
 }
 
-export function fetchPairs(payload) {
+export const fetchPairs = payload => {
 	const url = `${config.API_BASE_URL}/pair/`;
 	const request = axios.get(url);
 
@@ -143,12 +142,19 @@ export function fetchPairs(payload) {
           pairs[pair.quote][pair.base] = !pair.disabled; // pair[deposit][receive]
         }
 
-      	dispatch({type: 'PAIRS_FETCHED', payload: pairs});
+      	dispatch({ type: types.PAIRS_FETCHED, payload: pairs });
 
         let depositCoin, receiveCoin;
 
+        const pickRandomReceiveCoin = coins => {
+          let objKeys = Object.keys(coins),
+            randomCoin = objKeys[Math.floor(Math.random() * objKeys.length)];
+
+          return randomCoin;
+        }
+
         // Picks random deposit and receive coins.
-        function pickRandomCoins(coins) {
+        const pickRandomCoins = coins => {
           depositCoin = coins[Math.floor(Math.random()*coins.length)].code;
           receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
 
@@ -159,24 +165,15 @@ export function fetchPairs(payload) {
         }
         pickRandomCoins(payload);
 
-        function pickRandomReceiveCoin(coins) {
-          let objKeys = Object.keys(coins),
-            randomCoin = objKeys[Math.floor(Math.random() * objKeys.length)];
-
-          return randomCoin;
-        }
-
-				dispatch({type: 'COIN_SELECTED',
-					payload: {
-						deposit: depositCoin,
-						receive: receiveCoin,
-						prev: {
-							deposit: depositCoin,
-							receive: receiveCoin,
-						},
-						lastSelected: 'deposit'
-					}
-				});
+        dispatch(selectCoin({
+          deposit: depositCoin,
+          receive: receiveCoin,
+          prev: {
+            deposit: depositCoin,
+            receive: receiveCoin,
+          },
+          lastSelected: 'deposit'
+        }));
       }).catch(error => {
       	console.log(error);
       });
@@ -190,15 +187,15 @@ export const fetchOrder = orderId => async dispatch => {
   request
     .then(res => {
       const order = res.data;
-      dispatch({ type: FETCH_ORDER, payload: order });
+      dispatch({ type: types.FETCH_ORDER, payload: order });
     })
     .catch(error => {
       console.log(error)
 
       if (error.response && error.response.status === 429) {
-        dispatch({ type: FETCH_ORDER, payload: 429 });
+        dispatch({ type: types.FETCH_ORDER, payload: 429 });
       } else if (error.response) {
-        dispatch({ type: FETCH_ORDER, payload: 404 });
+        dispatch({ type: types.FETCH_ORDER, payload: 404 });
       }
     });
 }

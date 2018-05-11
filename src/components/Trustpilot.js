@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Truspilot = () => (
+const Trustpilot = () => (
 	<div style={{background: '#fff'}}>
 		<div className="container">
 			<div className="row">
@@ -14,4 +14,4 @@ const Truspilot = () => (
 	</div>
 );
 
-export default Truspilot;
+export default Trustpilot;
