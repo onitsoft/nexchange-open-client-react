@@ -16,31 +16,31 @@ describe('creates an action to fetch order details', () => {
     mock.reset();
   });
 
-  it('creates FETCH_ORDER with order details', async () => {
-    const expectedActions = [{ type: types.FETCH_ORDER, payload: mockData }];
+  it('creates SET_ORDER with order details', async () => {
+    const expectedActions = [{ type: types.SET_ORDER, order: mockData }];
     const store = mockStore();
 
-    mock.onGet('https://api.nexchange.io/en/api/v1/orders/123ASD/').reply(200, mockData);
+    mock.onGet('/orders/123ASD/').reply(200, mockData);
     
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('creates FETCH_ORDER with 404 status', async () => {
-    const expectedActions = [{ type: types.FETCH_ORDER, payload: 404 }];
+  it('creates SET_ORDER with 404 status', async () => {
+    const expectedActions = [{ type: types.SET_ORDER, order: 404 }];
     const store = mockStore();
 
-    mock.onGet('https://api.nexchange.io/en/api/v1/orders/123ASD/').reply(404);
+    mock.onGet('/orders/123ASD/').reply(404);
     
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('creates FETCH_ORDER with 429 status', async () => {
-    const expectedActions = [{ type: types.FETCH_ORDER, payload: 429 }];
+  it('creates SET_ORDER with 429 status', async () => {
+    const expectedActions = [{ type: types.SET_ORDER, order: 429 }];
     const store = mockStore();
 
-    mock.onGet('https://api.nexchange.io/en/api/v1/orders/123ASD/').reply(429);
+    mock.onGet('/orders/123ASD/').reply(429);
     
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);

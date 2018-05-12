@@ -22,7 +22,7 @@ describe('creates an action to fetch order details', () => {
     const expectedActions = [{ type: types.COINS_INFO, payload }];
     const store = mockStore();
 
-    mock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, mockData);
+    mock.onGet('/currency/').reply(200, mockData);
     
     await store.dispatch(actions.fetchCoinDetails())
     expect(store.getActions()).toEqual(expectedActions);
