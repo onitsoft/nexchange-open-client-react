@@ -1,7 +1,10 @@
 {
   "extends": "react-app",
+  "env": {
+    "browser": true
+  },
   "rules": {
-    "import/no-webpack-loader-syntax": 0,
-    "no-undef": 0
+    "no-undef": 0,
+    "import/no-webpack-loader-syntax": 0
   }
 }

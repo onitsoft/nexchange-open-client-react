@@ -91,7 +91,6 @@ class RefundAddress extends Component {
   }
 
 	render() {
-		// TODO: Should be [12,13,14,15], left 11 for testing purposes
 		if ([11,12,13,14,15].indexOf(this.props.order.status_name[0][0]) === -1
 			|| !this.state.show) {
 			return null;
