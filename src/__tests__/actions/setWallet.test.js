@@ -5,7 +5,7 @@ it('creates an action to set wallet', () => {
   const payload = {
     address: 'address',
     valid: false,
-    show: true
+    show: true,
   };
   const expectedAction = { type: types.SET_WALLET, payload };
 

@@ -6,17 +6,17 @@ describe('price reducer', () => {
   const initialState = {
     deposit: '...',
     receive: '...',
-    lastEdited: 'deposit'
-  }
+    lastEdited: 'deposit',
+  };
 
-  it('should return the initial state', () => {    
+  it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle PRICE_FETCHED', () => {
     const action = {
       type: types.PRICE_FETCHED,
-      payload: mockData
+      payload: mockData,
     };
 
     expect(reducer([], action)).toEqual(mockData);

@@ -1,59 +1,97 @@
 import React, { Component } from 'react';
 import STATUS_CODES from '../../statusCodes';
 
-
 class OrderStatus extends Component {
   componentDidMount() {
     $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
   }
 
   render() {
-    let width = "0%";
+    let width = '0%';
     const status = this.props.status;
 
     if (STATUS_CODES[status] === 'COMPLETED') {
-      width = "100%";
+      width = '100%';
     } else if (STATUS_CODES[status] === 'RELEASE') {
-      width = "90%";
+      width = '90%';
     } else if (STATUS_CODES[status] === 'PRE_RELEASE') {
-      width = "75%";
+      width = '75%';
     } else if (STATUS_CODES[status] === 'PAID') {
-      width = "66.6%";
+      width = '66.6%';
     } else if (STATUS_CODES[status] === 'PAID_UNCONFIRMED') {
-      width = "33.3%";
+      width = '33.3%';
     }
 
     return (
       <div className="row">
         <div className="col-xs-12">
           <div id="order-status">
-          	<hr/>
+            <hr />
 
-        		<div
+            <div
               id="step-one"
-              className={[0,8].indexOf(status) > -1 ? "step" : (status > 11 ? "step done" : "step active")}
+              className={
+                [0, 8].indexOf(status) > -1
+                  ? 'step'
+                  : status > 11
+                    ? 'step done'
+                    : 'step active'
+              }
               data-toggle="tooltip"
               data-placement="top"
               title=""
               data-original-title="In this step we are waiting for your deposit."
             >
-              <span className="glyphicon glyphicon-save" aria-hidden="true"></span>
-        			<h4>1. Awaiting deposit</h4>
-        		</div>
+              <span className="glyphicon glyphicon-save" aria-hidden="true" />
+              <h4>1. Awaiting deposit</h4>
+            </div>
 
-         		<div id="step-two" className={STATUS_CODES[status] == 'PAID_UNCONFIRMED' ? "step active" : (status >= 13 ? "step done" : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification.">
-              <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
-        			<h4>2. Awaiting verification</h4>
-        		</div>
+            <div
+              id="step-two"
+              className={
+                STATUS_CODES[status] === 'PAID_UNCONFIRMED'
+                  ? 'step active'
+                  : status >= 13
+                    ? 'step done'
+                    : 'step'
+              }
+              data-toggle="tooltip"
+              data-placement="top"
+              title=""
+              data-original-title="We have received your funds and are now waiting
+                for proof of residence and government issued ID verification."
+            >
+              <span className="glyphicon glyphicon-user" aria-hidden="true" />
+              <h4>2. Awaiting verification</h4>
+            </div>
 
-        		<div id="step-three" className={status == 13 || status == 14 ? "step active" : (status >= 15 ? (status == 15 ? "step active" : "step done" ) : "step")} data-toggle="tooltip" data-placement="top" title="" data-original-title="We got the funds and now have transferred our funds to you.">
-              <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
-        			<h4>3. All done</h4>
-        		</div>
+            <div
+              id="step-three"
+              className={
+                status == 13 || status == 14
+                  ? 'step active'
+                  : status >= 15
+                    ? status == 15
+                      ? 'step active'
+                      : 'step done'
+                    : 'step'
+              }
+              data-toggle="tooltip"
+              data-placement="top"
+              title=""
+              data-original-title="We got the funds and now have transferred our funds to you."
+            >
+              <span className="glyphicon glyphicon-ok" aria-hidden="true" />
+              <h4>3. All done</h4>
+            </div>
 
             <div className="progres-container">
               <div className="progress progress-line-info">
-                <div className="progress-bar progress-bar-info" role="progressbar" style={{"width": width}}>
+                <div
+                  className="progress-bar progress-bar-info"
+                  role="progressbar"
+                  style={{ width: width }}
+                >
                   <span className="sr-only">{width} Complete</span>
                 </div>
               </div>

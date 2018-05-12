@@ -21,7 +21,7 @@ describe('creates an action to fetch order details', () => {
     const store = mockStore();
 
     mock.onGet('/orders/123ASD/').reply(200, mockData);
-    
+
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);
   });
@@ -31,7 +31,7 @@ describe('creates an action to fetch order details', () => {
     const store = mockStore();
 
     mock.onGet('/orders/123ASD/').reply(404);
-    
+
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);
   });
@@ -41,10 +41,8 @@ describe('creates an action to fetch order details', () => {
     const store = mockStore();
 
     mock.onGet('/orders/123ASD/').reply(429);
-    
+
     await store.dispatch(actions.fetchOrder('123ASD'));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });
-
-

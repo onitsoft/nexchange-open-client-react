@@ -6,28 +6,30 @@ import Helpers from '../helpers';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
-  payload
+  payload,
 });
 
 export const setWallet = payload => ({
   type: types.SET_WALLET,
-  payload
+  payload,
 });
 
 export const selectCoin = payload => dispatch => {
   dispatch({ type: types.COIN_SELECTED, payload });
 
-  dispatch(setWallet({
-    address: '',
-    valid: false,
-    show: false
-  }));
-}
+  dispatch(
+    setWallet({
+      address: '',
+      valid: false,
+      show: false,
+    })
+  );
+};
 
 export const fetchCoinDetails = payload => dispatch => {
-	const url = `/currency/`;
-	const request = axios.get(url);
-	const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
+  const url = `/currency/`;
+  const request = axios.get(url);
+  const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
 
   return request
     .then(response => {
@@ -39,16 +41,20 @@ export const fetchCoinDetails = payload => dispatch => {
       if (params && params.hasOwnProperty('test')) {
         coins = _.filter(response.data, { has_enabled_pairs_for_test: true });
       } else if (isWhiteLabel) {
-        coins = _.filter(response.data, { has_enabled_pairs: true, is_crypto: true });
+        coins = _.filter(response.data, {
+          has_enabled_pairs: true,
+          is_crypto: true,
+        });
       } else {
         coins = _.filter(response.data, { has_enabled_pairs: true });
       }
 
       dispatch({ type: types.COINS_INFO, payload: coins });
-    }).catch(error => {
+    })
+    .catch(error => {
       console.log(error);
     });
-}
+};
 
 export const fetchPrice = payload => dispatch => {
   let url = `/get_price/${payload.pair}/?`;
@@ -59,12 +65,12 @@ export const fetchPrice = payload => dispatch => {
     url += `amount_base=${payload.receive}`;
   }
 
-	const request = axios.get(url);
+  const request = axios.get(url);
 
   return request
     .then(response => {
       let data = {
-        pair: payload.pair
+        pair: payload.pair,
       };
 
       if ('receive' in payload) {
@@ -78,16 +84,20 @@ export const fetchPrice = payload => dispatch => {
       } else {
         data['deposit'] = response.data.amount_quote;
         data['receive'] = response.data.amount_base;
-        data['lastEdited'] = payload.lastEdited;  
+        data['lastEdited'] = payload.lastEdited;
       }
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
 
-      dispatch({ type: types.ERROR_ALERT, payload: {
-        show: false,
-        type: types.INVALID_AMOUNT
-      }});
-    }).catch(error => {
+      dispatch({
+        type: types.ERROR_ALERT,
+        payload: {
+          show: false,
+          type: types.INVALID_AMOUNT,
+        },
+      });
+    })
+    .catch(error => {
       let data = { pair: payload.pair };
 
       if ('receive' in payload) {
@@ -103,23 +113,25 @@ export const fetchPrice = payload => dispatch => {
       dispatch({ type: types.PRICE_FETCHED, payload: data });
 
       if (error.response && error.response.data) {
-        dispatch(errorAlert({
-          message: error.response.data.detail,
-          show: true,
-          type: types.INVALID_AMOUNT
-        }));
+        dispatch(
+          errorAlert({
+            message: error.response.data.detail,
+            show: true,
+            type: types.INVALID_AMOUNT,
+          })
+        );
       }
     });
-}
+};
 
 export const fetchPairs = payload => {
-	const url = `/pair/`;
-	const request = axios.get(url);
+  const url = `/pair/`;
+  const request = axios.get(url);
 
   return (dispatch, getState) => {
     request
       .then(response => {
-      	if (!response.data.length) return;
+        if (!response.data.length) return;
 
         let pairs = {};
         for (let pair of response.data) {
@@ -127,7 +139,7 @@ export const fetchPairs = payload => {
           pairs[pair.quote][pair.base] = !pair.disabled; // pair[deposit][receive]
         }
 
-      	dispatch({ type: types.PAIRS_FETCHED, payload: pairs });
+        dispatch({ type: types.PAIRS_FETCHED, payload: pairs });
 
         let depositCoin, receiveCoin;
 
@@ -136,42 +148,51 @@ export const fetchPairs = payload => {
             randomCoin = objKeys[Math.floor(Math.random() * objKeys.length)];
 
           return randomCoin;
-        }
+        };
 
         // Picks random deposit and receive coins.
         const pickRandomCoins = coins => {
-          depositCoin = coins[Math.floor(Math.random()*coins.length)].code;
+          depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
           receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
 
           // If pair is invalid, try again until valid
-          if (!_.filter(coins, {code: receiveCoin, is_base_of_enabled_pair: true }).length || pairs[depositCoin][receiveCoin] === false) {
+          if (
+            !_.filter(coins, {
+              code: receiveCoin,
+              is_base_of_enabled_pair: true,
+            }).length ||
+            pairs[depositCoin][receiveCoin] === false
+          ) {
             pickRandomCoins(coins);
           }
-        }
+        };
         pickRandomCoins(payload);
 
-        dispatch(selectCoin({
-          deposit: depositCoin,
-          receive: receiveCoin,
-          prev: {
+        dispatch(
+          selectCoin({
             deposit: depositCoin,
             receive: receiveCoin,
-          },
-          lastSelected: 'deposit'
-        }));
-      }).catch(error => {
-      	console.log(error);
+            prev: {
+              deposit: depositCoin,
+              receive: receiveCoin,
+            },
+            lastSelected: 'deposit',
+          })
+        );
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
-}
+};
 
 export const setOrder = order => ({
   type: types.SET_ORDER,
-  order
+  order,
 });
 
 export const fetchOrder = orderId => async dispatch => {
-	const url = `/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
+  const url = `/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
   const request = axios.get(url);
 
   return request
@@ -186,4 +207,4 @@ export const fetchOrder = orderId => async dispatch => {
         dispatch(setOrder(404));
       }
     });
-}
+};

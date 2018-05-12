@@ -1,4 +1,4 @@
-export const ERROR_ALERT = 'ERROR_ALERT'
+export const ERROR_ALERT = 'ERROR_ALERT';
 export const SET_WALLET = 'SET_WALLET';
 export const COIN_SELECTED = 'COIN_SELECTED';
 export const COINS_INFO = 'COINS_INFO';

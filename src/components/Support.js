@@ -12,8 +12,8 @@ class Support extends Component {
     this.state = {
       loading: false,
       success: null,
-      showForm: true
-    }
+      showForm: true,
+    };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,14 +22,14 @@ class Support extends Component {
 
   componentDidMount() {
     fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 })
+      this.setState({ email, emailFetched: email.length > 0 });
     });
   }
 
   componentDidUpdate() {
     if (this.state.show !== this.props.show) {
       this.setState({
-        show: this.props.show
+        show: this.props.show,
       });
     }
   }
@@ -37,33 +37,33 @@ class Support extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({loading: true});
+    this.setState({ loading: true });
 
     setUserEmail(this.state.email);
 
     axios({
       method: 'post',
-      contentType : 'application/json',
+      contentType: 'application/json',
       url: `${config.API_BASE_URL}/support/`,
-      headers: {'Authorization': 'Bearer ' + localStorage.token},
+      headers: { Authorization: 'Bearer ' + localStorage.token },
       data: {
         email: this.state.email,
         name: this.state.name,
         telephone: this.state.telephone,
         message: this.state.message,
-        subject: this.state.subject
-      }
+        subject: this.state.subject,
+      },
     })
-    .then(response => {
-      this.setState({loading: false, showForm: false, success: true});
-    })
-    .catch(error => {
-      this.setState({loading: false, showForm: false, success: false});
-    });
+      .then(response => {
+        this.setState({ loading: false, showForm: false, success: true });
+      })
+      .catch(error => {
+        this.setState({ loading: false, showForm: false, success: false });
+      });
   }
 
   close() {
-    this.setState({success: null, showForm: true});
+    this.setState({ success: null, showForm: true });
     this.props.onClose();
   }
 
@@ -73,7 +73,7 @@ class Support extends Component {
     const name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
   }
 
@@ -82,7 +82,13 @@ class Support extends Component {
       <Modal id="support" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
+            <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+              onClick={this.close}
+            >
               <i className="material-icons">clear</i>
             </button>
             <h4 className="modal-title">Support</h4>
@@ -92,21 +98,37 @@ class Support extends Component {
             <div className="row">
               <div className="col-xs-12 col-sm-6">
                 <h3>Phone</h3>
-                <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
-                  +442081442192<br/>
+                <p
+                  onClick={() =>
+                    ga('send', 'event', 'General', 'click support number')
+                  }
+                >
+                  +442081442192<br />
                   +16464612858 (US)
                 </p>
               </div>
-            
+
               <div className="col-xs-12 col-sm-6">
                 <h3>Email</h3>
-                <p><a href="mailto:support@nexchange.io">support@nexchange.io</a></p>
+                <p>
+                  <a href="mailto:support@nexchange.io">support@nexchange.io</a>
+                </p>
               </div>
             </div>
 
             <form id="support-form" onSubmit={this.handleSubmit}>
-              {this.state.success === true ? <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4> : null}
-              {this.state.success === false ? <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4> : null}
+              {this.state.success === true ? (
+                <h4 className="text-success">
+                  Your form has been successfully submitted. We'll get back to
+                  you shortly!
+                </h4>
+              ) : null}
+              {this.state.success === false ? (
+                <h4 className="text-danger">
+                  Something went wrong during the form submission, please try
+                  again later.
+                </h4>
+              ) : null}
 
               {this.state.showForm ? (
                 <div>
@@ -118,7 +140,8 @@ class Support extends Component {
                       placeholder="Name"
                       onChange={this.handleInputChange}
                       value={this.state.name}
-                      required />
+                      required
+                    />
                   </div>
 
                   <div className="form-group is-empty">
@@ -128,18 +151,21 @@ class Support extends Component {
                       className="form-control"
                       placeholder="Telephone"
                       onChange={this.handleInputChange}
-                      value={this.state.telephone} />
+                      value={this.state.telephone}
+                    />
                   </div>
 
                   <div className="form-group is-empty">
-                    <input type="email"
+                    <input
+                      type="email"
                       name="email"
                       className="form-control"
                       placeholder="Email"
                       onChange={this.handleInputChange}
                       value={this.state.email}
                       disabled={this.state.emailFetched}
-                      required />
+                      required
+                    />
                   </div>
 
                   <div className="form-group is-empty">
@@ -149,7 +175,8 @@ class Support extends Component {
                       className="form-control"
                       placeholder="Subject"
                       onChange={this.handleInputChange}
-                      value={this.state.subject} />
+                      value={this.state.subject}
+                    />
                   </div>
 
                   <textarea
@@ -159,16 +186,44 @@ class Support extends Component {
                     rows="2"
                     onChange={this.handleInputChange}
                     value={this.state.message}
-                    required></textarea>
+                    required
+                  />
 
-                  <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? "disabled" : null}>
+                  <button
+                    type="submit"
+                    className="btn btn-themed btn-md"
+                    disabled={this.state.loading ? 'disabled' : null}
+                  >
                     Send
-                    {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{marginLeft: "10px"}}></i> : null}
+                    {this.state.loading ? (
+                      <i
+                        className="fa fa-spinner fa-spin"
+                        style={{ marginLeft: '10px' }}
+                      />
+                    ) : null}
                   </button>
 
-                  <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{float:"right", padding: "15px 0 0 0"}}>Close</button>
+                  <button
+                    type="button"
+                    className="btn btn-danger btn-simple"
+                    data-dismiss="modal"
+                    onClick={this.close}
+                    style={{ float: 'right', padding: '15px 0 0 0' }}
+                  >
+                    Close
+                  </button>
                 </div>
-              ) : <button type="button" className="btn btn-danger btn-simple" data-dismiss="modal" onClick={this.close} style={{padding: "0"}}>Close</button>}
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-danger btn-simple"
+                  data-dismiss="modal"
+                  onClick={this.close}
+                  style={{ padding: '0' }}
+                >
+                  Close
+                </button>
+              )}
             </form>
           </div>
         </div>

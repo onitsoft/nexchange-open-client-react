@@ -9,7 +9,7 @@ describe('selected coin reducer', () => {
       deposit: null,
       receive: null,
     },
-    lastSelected: 'deposit'
+    lastSelected: 'deposit',
   };
 
   it('should return the initial state', () => {
@@ -24,12 +24,12 @@ describe('selected coin reducer', () => {
         deposit: 'BTC',
         receive: 'ETH',
       },
-      lastSelected: 'deposit'
-    }
+      lastSelected: 'deposit',
+    };
 
     const action = {
       type: types.COIN_SELECTED,
-      payload
+      payload,
     };
 
     expect(reducer(initialState, action)).toEqual(payload);

@@ -1,1 +1,1 @@
-export default {"detail":"Not found."};
+export default { detail: 'Not found.' };

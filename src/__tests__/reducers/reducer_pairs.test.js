@@ -10,7 +10,7 @@ describe('pairs reducer', () => {
   it('should handle PAIRS_FETCHED', () => {
     const action = {
       type: types.PAIRS_FETCHED,
-      payload: mockData
+      payload: mockData,
     };
 
     expect(reducer(null, action)).toEqual(mockData);

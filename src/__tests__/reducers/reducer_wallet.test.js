@@ -5,7 +5,7 @@ describe('wallet reducer', () => {
   const initialState = {
     address: '',
     valid: false,
-    show: false
+    show: false,
   };
 
   it('should return the initial state', () => {
@@ -15,13 +15,13 @@ describe('wallet reducer', () => {
   it('should handle SET_WALLET', () => {
     const payload = {
       address: 'address',
-  		valid: false,
-  		show: true
+      valid: false,
+      show: true,
     };
 
     const action = {
       type: types.SET_WALLET,
-      payload
+      payload,
     };
 
     expect(reducer(initialState, action)).toEqual(payload);

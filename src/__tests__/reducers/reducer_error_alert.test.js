@@ -4,8 +4,8 @@ import * as types from '../../actions/types';
 describe('error alert reducer', () => {
   const initialState = {
     show: false,
-    message: null
-  }
+    message: null,
+  };
 
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
@@ -14,12 +14,12 @@ describe('error alert reducer', () => {
   it('should handle ERROR_ALERT', () => {
     const payload = {
       show: true,
-      message: 'alert message'
-    }
+      message: 'alert message',
+    };
 
     const action = {
       type: types.ERROR_ALERT,
-      payload
+      payload,
     };
 
     expect(reducer(initialState, action)).toEqual(payload);

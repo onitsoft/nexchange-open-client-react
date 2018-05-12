@@ -23,8 +23,8 @@ describe('creates an action to fetch order details', () => {
     const store = mockStore();
 
     mock.onGet('/currency/').reply(200, mockData);
-    
-    await store.dispatch(actions.fetchCoinDetails())
+
+    await store.dispatch(actions.fetchCoinDetails());
     expect(store.getActions()).toEqual(expectedActions);
   });
 });

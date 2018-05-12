@@ -10,7 +10,7 @@ describe('order reducer', () => {
   it('should handle SET_ORDER', () => {
     const action = {
       type: types.SET_ORDER,
-      order: mockData
+      order: mockData,
     };
 
     expect(reducer(null, action)).toEqual(mockData);

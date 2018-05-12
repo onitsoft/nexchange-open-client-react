@@ -31,8 +31,8 @@ import setAuthToken from './helpers/setAuthToken';
 import crispEmailBinding from './helpers/crispEmailBinding';
 
 const AsyncNotFound = Loadable({
-  loader: () => import("./components/NotFound"),
-  loading: LoadingComponent
+	loader: () => import("./components/NotFound"),
+	loading: LoadingComponent
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
@@ -41,22 +41,22 @@ setAuthToken();
 crispEmailBinding();
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-  	<BrowserRouter>
-  		<div>
-        <Referrals />
-  			<Header />
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<BrowserRouter>
+			<div>
+				<Referrals />
+				<Header />
 
-  			<Switch>
+				<Switch>
 					<Route exact path="/terms-and-conditions" component={TermsConditions} />
 					<Route exact path="/privacy" component={Privacy} />
 					<Route exact path="/order/:orderRef" component={Order} />
 					<Route exact path="/" component={Home} />
 					<Route component={AsyncNotFound} />
-	  		</Switch>
+				</Switch>
 
-	  		<Footer />
-  		</div>
-  	</BrowserRouter>
-  </Provider>
-  , document.getElementById('root'))
+				<Footer />
+			</div>
+		</BrowserRouter>
+	</Provider>
+	, document.getElementById('root'))

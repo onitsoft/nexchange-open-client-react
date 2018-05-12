@@ -10,7 +10,7 @@ describe('coins info reducer', () => {
   it('should handle COINS_INFO', () => {
     const action = {
       type: types.COINS_INFO,
-      payload: mockData
+      payload: mockData,
     };
 
     expect(reducer([], action)).toEqual(mockData);
