@@ -4,30 +4,24 @@ import _ from 'lodash';
 import config from '../config';
 import Helpers from '../helpers';
 
-export const errorAlert = payload => {
-	return {
-		type: types.ERROR_ALERT,
-		payload
-	}
-}
+export const errorAlert = payload => ({
+  type: types.ERROR_ALERT,
+  payload
+});
 
-export const setWallet = payload => {
-	return {
-		type: types.SET_WALLET,
-		payload
-	}
-}
+export const setWallet = payload => ({
+  type: types.SET_WALLET,
+  payload
+});
 
-export const selectCoin = payload => {
-	return dispatch => {
-		dispatch({ type: types.COIN_SELECTED, payload });
+export const selectCoin = payload => dispatch => {
+  dispatch({ type: types.COIN_SELECTED, payload });
 
-  	dispatch(setWallet({
-  		address: '',
-  		valid: false,
-  		show: false
-    }));
-	}
+  dispatch(setWallet({
+    address: '',
+    valid: false,
+    show: false
+  }));
 }
 
 export const fetchCoinDetails = payload => dispatch => {
@@ -171,6 +165,11 @@ export const fetchPairs = payload => {
   };
 }
 
+export const setOrder = order => ({
+  type: types.SET_ORDER,
+  order
+});
+
 export const fetchOrder = orderId => async dispatch => {
 	const url = `${config.API_BASE_URL}/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
   const request = axios.get(url);
@@ -178,13 +177,13 @@ export const fetchOrder = orderId => async dispatch => {
   return request
     .then(res => {
       const order = res.data;
-      dispatch({ type: types.FETCH_ORDER, payload: order });
+      dispatch(setOrder(order));
     })
     .catch(error => {
       if (error.response && error.response.status === 429) {
-        dispatch({ type: types.FETCH_ORDER, payload: 429 });
+        dispatch(setOrder(429));
       } else if (error.response) {
-        dispatch({ type: types.FETCH_ORDER, payload: 404 });
+        dispatch(setOrder(404));
       }
     });
 }

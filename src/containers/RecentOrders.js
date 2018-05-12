@@ -22,9 +22,7 @@ class RecentOrders extends Component {
 		this.fetchRecentOrders();
 	}
 
-	fetchRecentOrders(coinsInfo) {
-		if (coinsInfo == null) coinsInfo = this.props.coinsInfo;
-
+	fetchRecentOrders(coinsInfo = this.props.coinsInfo) {
 		let params = Helpers.urlParams(),
 			depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair),
 			receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair);
@@ -37,23 +35,23 @@ class RecentOrders extends Component {
 		depositCurrencies = depositCurrencies.map(coin => coin.code);
 		receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
-        axios.get(`${config.API_BASE_URL}/orders/?page=1`)
-        	.then(response => {
-        		let orders = response.data.results.filter(order => {
-		        	return (params && params.hasOwnProperty('test')) ? true : (
-		        		_.contains(receiveCurrencies, order.pair.base.code) &&
-		        		_.contains(depositCurrencies, order.pair.quote.code));
-        		});
+		axios.get(`/orders/?page=1`)
+			.then(response => {
+				let orders = response.data.results.filter(order => {
+					return (params && params.hasOwnProperty('test')) ? true : (
+						_.contains(receiveCurrencies, order.pair.base.code) &&
+						_.contains(depositCurrencies, order.pair.quote.code));
+				});
 
-        		this.setState({orders: orders});
-        	})
-        	.catch(error => {
-        		console.log(error);
-        	});
+				this.setState({ orders: orders });
+			})
+			.catch(error => {
+				console.log(error);
+			});
 
-        this.timeout = setTimeout(() => {
-        	this.fetchRecentOrders();
-        }, config.RECENT_ORDERS_INTERVAL);
+		this.timeout = setTimeout(() => {
+			this.fetchRecentOrders();
+		}, config.RECENT_ORDERS_INTERVAL);
 	}
 
 	componentWillUnmount() {
@@ -61,13 +59,13 @@ class RecentOrders extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if(this.props.coinsInfo.length == 0 && nextProps.coinsInfo.length > 0) {
+		if (this.props.coinsInfo.length === 0 && nextProps.coinsInfo.length > 0) {
 			this.fetchRecentOrders(nextProps.coinsInfo);
 		}
 	}
 
 	render() {
-		let orders = this.state.orders.slice(0,config.RECENT_ORDERS_COUNT).map(order => {
+		let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
 			return (
 				<div key={order.unique_reference} className="recent-order">
 					<a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className="overlay">Click to view on API</a>

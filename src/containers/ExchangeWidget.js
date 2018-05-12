@@ -5,13 +5,11 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import _ from 'lodash';
 
-import config from '../config';
-import { setWallet, errorAlert } from '../actions/index.js';
+import { setWallet, errorAlert, setOrder } from '../actions/index.js';
 import { bindCrispEmail } from '../helpers/crispEmailBinding';
 
 import CoinInput from './CoinInput';
 import WalletAddress from './WalletAddress';
-
 
 class ExchangeWidget extends Component {
 	constructor(props) {
@@ -54,9 +52,11 @@ class ExchangeWidget extends Component {
 		else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
 		axios
-			.post(`${config.API_BASE_URL}/orders/`, data)
+			.post(`/orders/`, data)
 			.then(response => {
+				this.props.setOrder(response.data);
 				this.setState({orderRef: response.data.unique_reference, orderPlaced: true, loading: false});
+
 				if (response.data.token) {
 					localStorage.setItem('token', response.data.token);
 				}
@@ -67,8 +67,6 @@ class ExchangeWidget extends Component {
 				window.qp('track', 'Generic');
 			})
 			.catch(error => {
-				console.log(error.response)
-
 				let message = (error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : 'Something went wrong. Please try again later.');
 				this.props.errorAlert({message: message, show: true, type: 'PLACE_ORDER'});
 				this.setState({orderPlaced: false, loading: false});
@@ -137,19 +135,17 @@ class ExchangeWidget extends Component {
 	}
 }
 
-
-function mapStateToProps(state) {
-	return {
-		selectedCoin: state.selectedCoin,
-		price: state.price,
-		error: state.error,
-		wallet: state.wallet,
-	}
-}
+const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
+	selectedCoin,
+	price,
+	error,
+	wallet
+});
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		setWallet: setWallet,
+		setOrder: setOrder,
 		errorAlert: errorAlert,
 	}, dispatch)
 }

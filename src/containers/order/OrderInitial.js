@@ -5,12 +5,13 @@ import Helpers from '../../helpers';
 import OrderInitialFiat from '../order-fiat/OrderInitial';
 import OrderInitialCrypto from '../order-crypto/OrderInitial';
 import OrderExpired from '../order/OrderExpired';
-import Loading from '../../components/Loading';
 
 class OrderInitial extends Component {
     constructor(props) {
         super(props);
-        this.state = { time: '...' }
+        this.state = { time: this.calculateRemainingTime() }
+
+        this.calculateRemainingTime = this.calculateRemainingTime.bind(this);
         this.tick = this.tick.bind(this);
     }
 
@@ -18,9 +19,7 @@ class OrderInitial extends Component {
         this.interval = setInterval(this.tick, 1000);
     }
 
-	tick() {
-		if (!this.props.order) return;
-
+    calculateRemainingTime() {
 		const now = moment().subtract(this.props.order.payment_window, 'minutes');
 		const createdOn = moment(this.props.order.created_on);
 		let time = createdOn.diff(now);
@@ -29,8 +28,15 @@ class OrderInitial extends Component {
 			clearInterval(this.interval);
 		} else {
 			time = moment.utc(time).format('mm:ss')
-		}
+        }
+        
+        return time;
+    }
 
+	tick() {
+		if (!this.props.order) return;
+
+        const time = this.calculateRemainingTime();
 		this.setState({ time });
 	}
 
@@ -39,9 +45,7 @@ class OrderInitial extends Component {
     }
 
     render() {
-        if (this.state.time === '...') {
-            return <Loading />
-        } else if (this.state.time < 0) {
+        if (this.state.time < 0) {
             return <OrderExpired {...this.props} />;
         } else if (Helpers.isFiatOrder(this.props.order)) {
             return <OrderInitialFiat time={this.state.time} {...this.props} />

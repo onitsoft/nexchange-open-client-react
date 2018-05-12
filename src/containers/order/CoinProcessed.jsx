@@ -40,7 +40,8 @@ class CoinProcessed extends Component {
 
 	render() {
 		let rates = ``;
-		if (this.state.order) {
+
+		if (this.state.order && this.state.order.price) {
 			rates += `Rates at order creation: \n`;
 			rates += `1 ${this.state.coin} = `;
 

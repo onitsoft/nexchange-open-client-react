@@ -18,11 +18,15 @@ import Notifications from '../../containers/Notifications';
 import RefundAddress from '../../containers/RefundAddress'
 import ReferralBox from '../../containers/ReferralBox';
 
-
 class Order extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { order: null };
+
+		if (this.props.order && this.props.match.params.orderRef === this.props.order.unique_reference) {
+			this.state = { order: this.props.order };
+		} else {
+			this.state = {};
+		}
 	}
 
 	componentDidMount() {
@@ -43,6 +47,8 @@ class Order extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		this.setState({ order: nextProps.order });
+
 		this.timeout = setTimeout(() => {
 			this.props.fetchOrder(this.props.match.params.orderRef);
 		}, config.ORDER_DETAILS_FETCH_INTERVAL);
@@ -89,8 +95,6 @@ class Order extends Component {
 	}
 }
 
-const mapStateToProps = ({ order }) => {
-    return { order };
-}
+const mapStateToProps = ({ order }) => ({ order });
 
 export default connect(mapStateToProps, { fetchOrder })(Order);
