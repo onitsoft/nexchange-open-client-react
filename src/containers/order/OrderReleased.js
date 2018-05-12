@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import helpers from '../../helpers';
-import config from '../../config';
 import _ from 'lodash';
 import OrderLinks from './OrderLinks';
 
@@ -14,7 +13,7 @@ class OrderReleased extends Component {
     this.txId = this.tx.tx_id;
   }
 
-  componentWillReceiveProps(nextProps) {
+  getDerivedStateFromProps(nextProps) {
     this.tx = _.find(nextProps.order.transactions, { type: 'W' });
     this.txId = this.tx.tx_id;
   }

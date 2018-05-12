@@ -62,7 +62,7 @@ class CoinInput extends PureComponent {
     this.props.fetchPrice(data);
   }
 
-  componentWillReceiveProps(nextProps) {
+  getDerivedStateFromProps(nextProps) {
     if (nextProps.type === 'receive') {
       this.setState({ value: nextProps.price.receive });
     } else if (nextProps.type === 'deposit') {

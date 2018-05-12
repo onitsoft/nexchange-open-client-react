@@ -8,7 +8,7 @@ const TeamMember = props => {
         <a href={props.social[key]} key={key} target="_blank">
           <i
             className={
-              key == 'medium' || key == 'quora'
+              key === 'medium' || key === 'quora'
                 ? `fa fa-${key}`
                 : `fa fa-${key}-square`
             }

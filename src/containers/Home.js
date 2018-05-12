@@ -22,7 +22,7 @@ export class Home extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  getDerivedStateFromProps(nextProps) {
     if (this.props.coinsInfo.length !== nextProps.coinsInfo.length) {
       this.props.fetchPairs(nextProps.coinsInfo);
     }
