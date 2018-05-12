@@ -104,7 +104,7 @@ class ExchangeWidget extends Component {
     }, 300);
   }
 
-  getDerivedStateFromProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (
       $('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby')
     ) {

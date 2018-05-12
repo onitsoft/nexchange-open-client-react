@@ -13,7 +13,7 @@ class OrderReleased extends Component {
     this.txId = this.tx.tx_id;
   }
 
-  getDerivedStateFromProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.tx = _.find(nextProps.order.transactions, { type: 'W' });
     this.txId = this.tx.tx_id;
   }

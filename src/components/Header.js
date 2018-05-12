@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon } from 'react-fa';
 
 import FAQ from './FAQ';
 import Support from './Support';
