@@ -68,7 +68,7 @@ class RecentOrders extends Component {
     clearTimeout(this.timeout);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.coinsInfo.length === 0 && nextProps.coinsInfo.length > 0) {
       this.fetchRecentOrders(nextProps.coinsInfo);
     }

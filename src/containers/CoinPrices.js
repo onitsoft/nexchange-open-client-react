@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import config from '../config';
 
-import { errorAlert, fetchPrice } from '../actions/index.js';
+import { fetchPrice } from '../actions/index.js';
 
 class CoinPrices extends Component {
   constructor(props) {

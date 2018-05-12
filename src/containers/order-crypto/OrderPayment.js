@@ -14,7 +14,7 @@ class OrderPayment extends Component {
     this.txId = this.tx.tx_id;
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.tx = _.find(nextProps.order.transactions, { type: 'D' });
     this.txId = this.tx.tx_id;
   }

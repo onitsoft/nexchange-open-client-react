@@ -12,6 +12,8 @@ import {
   errorAlert,
 } from '../actions/index.js';
 
+require('react-fa');
+
 class CoinSelector extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ class CoinSelector extends Component {
       : parseFloat(coin.minimal_amount) * 100;
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
     if (

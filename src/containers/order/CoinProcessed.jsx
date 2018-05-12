@@ -12,7 +12,7 @@ class CoinProcessed extends Component {
     this.prepareState(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ order: nextProps.order }, () => {
       this.prepareState(nextProps);
     });

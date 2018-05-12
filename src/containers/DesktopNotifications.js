@@ -52,7 +52,7 @@ class DesktopNotifications extends Component {
     ).show();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.kyc && !shallowEqual(this.props.kyc, nextProps.kyc)) {
       this.notify(nextProps);
     }

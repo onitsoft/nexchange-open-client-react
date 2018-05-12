@@ -49,7 +49,7 @@ class Order extends Component {
     clearTimeout(this.timeout);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ order: nextProps.order });
 
     this.timeout = setTimeout(() => {

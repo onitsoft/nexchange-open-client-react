@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import _ from 'lodash';
 
 import { fetchCoinDetails, fetchPairs } from '../actions';
 
@@ -22,7 +21,7 @@ export class Home extends Component {
     }
   }
 
-  static(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.coinsInfo.length !== nextProps.coinsInfo.length) {
       this.props.fetchPairs(nextProps.coinsInfo);
     }

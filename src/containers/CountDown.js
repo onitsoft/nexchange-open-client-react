@@ -35,7 +35,7 @@ class CountDown extends Component {
     );
   }
 
-  componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.time !== this.state.initialTimeSet) {
       let diff = new moment().diff(this.screenFirstSeen);
 
