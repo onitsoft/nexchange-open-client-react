@@ -3,7 +3,9 @@ node_js:
   - 6
 cache:
   directories:
+    - ~/.npm
     - node_modules
+install:
+  - npm install
 script:
-  - npm run build
-  - npm test
+  - $(npm bin)/cypress run --record
