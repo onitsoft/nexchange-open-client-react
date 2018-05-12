@@ -18,9 +18,8 @@ const LoadingComponent = ({ isLoading, error }) => {
         <div className="rect10" />
       </div>
     );
-  }
-  // Handle the error state
-  else if (error) {
+  } else if (error) {
+    // Handle the error state
     return <h2>Sorry, there was a problem loading the page :(</h2>;
   } else {
     return null;

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
-import axios from 'axios';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/lib/styles.scss';
-
-import config from '../config';
 
 class CreditCardModal extends Component {
   constructor(props) {

@@ -1,16 +1,16 @@
 import { SET_WALLET } from '../actions/types';
 
 const initialState = {
-	address: '',
-	valid: false,
-	show: false
+  address: '',
+  valid: false,
+  show: false,
 };
 
 export default (state = initialState, action) => {
-	switch(action.type) {
-		case SET_WALLET:
-			return action.payload
-		default:
-			return state;
-	}
-}
+  switch (action.type) {
+    case SET_WALLET:
+      return action.payload;
+    default:
+      return state;
+  }
+};
