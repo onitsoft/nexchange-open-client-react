@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
-import _ from 'lodash';
+import config from '../config';
 
 import { setWallet, errorAlert, setOrder } from '../actions/index.js';
 import { bindCrispEmail } from '../helpers/crispEmailBinding';
@@ -56,7 +56,7 @@ class ExchangeWidget extends Component {
       data['amount_quote'] = parseFloat(this.props.price.deposit);
 
     axios
-      .post(`/orders/`, data)
+      .post(`${config.API_BASE_URL}/orders/`, data)
       .then(response => {
         this.props.setOrder(response.data);
         this.setState({

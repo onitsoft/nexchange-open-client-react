@@ -44,7 +44,7 @@ class RecentOrders extends Component {
     receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
     axios
-      .get(`/orders/?page=1`)
+      .get(`${config.API_BASE_URL}/orders/?page=1`)
       .then(response => {
         let orders = response.data.results.filter(order => {
           return params && params.hasOwnProperty('test')
