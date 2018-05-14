@@ -12,7 +12,7 @@ class KYCModal extends Component {
     this.state = {
       show: false,
       filesReady: false,
-      governmentID: '',
+      selfie: '',
       residenceProof: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
@@ -47,8 +47,7 @@ class KYCModal extends Component {
 
     this.setState({
       filesReady: false,
-      governmentID: '',
-      residenceProof: '',
+      selfie: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
       titleClass: '',
@@ -67,18 +66,13 @@ class KYCModal extends Component {
     });
 
     const formData = new FormData();
-    const governmentID = document.querySelector('#governmentID');
-    const residenceProof = document.querySelector('#residenceProof');
+    const selfie = document.querySelector('#selfie');
 
     formData.append('order_reference', this.props.order.unique_reference);
     formData.append('user_provided_comment', this.state.message.slice(0, 255));
 
-    if (governmentID) {
-      formData.append('identity_document', governmentID.files[0]);
-    }
-
-    if (residenceProof) {
-      formData.append('utility_document', residenceProof.files[0]);
+    if (selfie) {
+      formData.append('selfie', selfie.files[0]);
     }
 
     axios
@@ -106,10 +100,6 @@ class KYCModal extends Component {
           buttonText: 'Upload file(s)',
         });
       });
-
-    if (this.state.email) {
-      setUserEmail(this.state.email);
-    }
   }
 
   handleInputChange(event) {
@@ -122,16 +112,7 @@ class KYCModal extends Component {
         [name]: value,
       },
       () => {
-        let needUploadResidence = document.querySelector('#residenceProof')
-            ? true
-            : false,
-          needUploadID = document.querySelector('#governmentID') ? true : false;
-
-        if (
-          !this.state.email ||
-          (needUploadID && !this.state.governmentID.length) ||
-          (needUploadResidence && !this.state.residenceProof.length)
-        ) {
+        if (!this.state.selfie.length) {
           this.setState({ filesReady: false });
           return;
         }
@@ -169,72 +150,23 @@ class KYCModal extends Component {
 
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.id_document_status !== 'APPROVED' && (
-                <div>
-                  <h2>Government issued ID</h2>
+              {this.props.kyc.selfie_document_status !== 'APPROVED' && (
+                <div style={{ marginBottom: 45 }}>
+                  <h2>Selfie</h2>
                   <small>
-                    e.g. color scanned passport, driving license, ID card. Shows
-                    date of birth, has expiration date.
+                    i.e. you have to make a selfie of yourself with credit card
+                    in your hands. You may hide middle digits of the credit
+                    card.
                   </small>
                   <input
                     type="file"
-                    name="governmentID"
-                    id="governmentID"
+                    name="selfie"
+                    id="selfie"
                     onChange={this.handleInputChange}
                     accept="image/*"
                   />
                 </div>
               )}
-
-              {this.props.kyc.residence_document_status !== 'APPROVED' && (
-                <div>
-                  <h2>Proof of residence</h2>
-                  <small>
-                    A high-resolution photo\scan of a <b>physical</b>{' '}
-                    (non-digital: no screenshots, web pages or PDFs generated on
-                    the internet) utility bill from a known service provider,
-                    not older than 3 months old. Delivery address must be a{' '}
-                    <b>fiscal, residence address (no PO boxes!).</b>
-                  </small>
-                  <small>
-                    Letters from the bank or credit card company delivered to a{' '}
-                    <b>fiscal address (not a P.O. BOX)</b> are also accepted.
-                  </small>
-                  <input
-                    type="file"
-                    name="residenceProof"
-                    id="residenceProof"
-                    onChange={this.handleInputChange}
-                    accept="image/*"
-                  />
-                </div>
-              )}
-
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="form-control"
-                  onChange={this.handleInputChange}
-                  value={this.state.email}
-                  disabled={this.state.emailFetched}
-                />
-
-                <i
-                  className="fa fa-question-circle"
-                  data-toggle="tooltip"
-                  data-placement="left"
-                  style={{
-                    position: 'absolute',
-                    top: 12,
-                    right: 7,
-                    zIndex: 99999999,
-                  }}
-                  data-original-title={`Help us reach you in case we need any further information from you.\n
-This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}
-                />
-              </div>
 
               <textarea
                 name="message"

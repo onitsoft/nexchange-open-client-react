@@ -7,7 +7,7 @@
   "rules": {
     "no-undef": 0,
     "import/no-webpack-loader-syntax": 0,
-    "max-len": [2, 120, 4, { "ignoreUrls": true }],
+    "max-len": [2, 140, 4, { "ignoreUrls": true }],
     "no-script-url": 0
   }
 }

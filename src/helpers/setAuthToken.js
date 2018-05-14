@@ -8,7 +8,6 @@ export default () => {
       // reason breaks it.
       if (
         requestConfig.url.indexOf(config.API_BASE_URL) > -1 &&
-        requestConfig.url.indexOf('kyc') === -1 &&
         localStorage.token
       ) {
         const token = localStorage.token;

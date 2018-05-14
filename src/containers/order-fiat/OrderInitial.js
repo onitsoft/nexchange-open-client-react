@@ -8,16 +8,12 @@ import OrderPaymentForm from './OrderPaymentForm';
 class OrderInitial extends Component {
   constructor(props) {
     super(props);
-    this.state = { showKYCModal: false, ordersCount: 1 };
+    this.state = { showKYCModal: false };
     this.checkKYC = this.checkKYC.bind(this);
   }
 
   componentDidMount() {
     this.checkKYC(true);
-
-    axios.get(`${config.API_BASE_URL}/users/me/orders/`).then(response => {
-      this.setState({ ordersCount: response.data.count });
-    });
   }
 
   checkKYC(firstTime) {
@@ -79,7 +75,8 @@ class OrderInitial extends Component {
             <h5 style={{ marginTop: 15 }}>
               <b>
                 This is a one-time process, once verified you’ll be able to
-                complete future purchases instantly.
+                complete future purchases instantly until current verification
+                tier limits are reached.
               </b>
             </h5>
           </div>
