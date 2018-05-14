@@ -27,7 +27,7 @@ export const selectCoin = payload => dispatch => {
 };
 
 export const fetchCoinDetails = payload => dispatch => {
-  const url = `/currency/`;
+  const url = `${config.API_BASE_URL}/currency/`;
   const request = axios.get(url);
   const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
 
@@ -57,7 +57,7 @@ export const fetchCoinDetails = payload => dispatch => {
 };
 
 export const fetchPrice = payload => dispatch => {
-  let url = `/get_price/${payload.pair}/?`;
+  let url = `${config.API_BASE_URL}/get_price/${payload.pair}/?`;
 
   if (payload.deposit) {
     url += `amount_quote=${payload.deposit}`;
@@ -125,7 +125,7 @@ export const fetchPrice = payload => dispatch => {
 };
 
 export const fetchPairs = payload => {
-  const url = `/pair/`;
+  const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
   return (dispatch, getState) => {
