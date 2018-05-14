@@ -2,7 +2,6 @@
   "name": "nexchange-open-client-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://api.nexchange.io/en/api/v1",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
