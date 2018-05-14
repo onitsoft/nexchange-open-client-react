@@ -1,8 +1,10 @@
-export default (state = null, action) => {
-	switch(action.type) {
-	case 'PAIRS_FETCHED':
-		return action.payload;
-	}
+import { PAIRS_FETCHED } from '../actions/types';
 
-	return state
-}
+export default (state = null, action) => {
+  switch (action.type) {
+    case PAIRS_FETCHED:
+      return action.payload;
+    default:
+      return state;
+  }
+};

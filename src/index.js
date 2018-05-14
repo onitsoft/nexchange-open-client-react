@@ -4,20 +4,18 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
-import axios from 'axios';
 
 import 'expose-loader?$!jquery';
 import 'expose-loader?jQuery!jquery';
 
-import "./js/bootstrap.min.js";
-import "./js/material.min.js";
-import "./js/material-kit.js";
+import './js/bootstrap.min.js';
+import './js/material.min.js';
+import './js/material-kit.js';
 
 import './css/index.scss';
 
 import reducers from './reducers';
 import Loadable from 'react-loadable';
-import { unregister } from './registerServiceWorker';
 
 import LoadingComponent from './components/LoadingComponent';
 import Referrals from './components/Referrals';
@@ -33,33 +31,37 @@ import setAuthToken from './helpers/setAuthToken';
 import crispEmailBinding from './helpers/crispEmailBinding';
 
 const AsyncNotFound = Loadable({
-  loader: () => import("./components/NotFound"),
-  loading: LoadingComponent
+  loader: () => import('./components/NotFound'),
+  loading: LoadingComponent,
 });
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-unregister();
 setAuthToken();
 crispEmailBinding();
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-  	<BrowserRouter>
-  		<div>
+    <BrowserRouter>
+      <div>
         <Referrals />
-  			<Header />
+        <Header />
 
-  			<Switch>
-					<Route exact path="/terms-and-conditions" component={TermsConditions} />
-					<Route exact path="/privacy" component={Privacy} />
-					<Route exact path="/order/:orderRef" component={Order} />
-					<Route exact path="/" component={Home} />
-					<Route component={AsyncNotFound} />
-	  		</Switch>
+        <Switch>
+          <Route
+            exact
+            path="/terms-and-conditions"
+            component={TermsConditions}
+          />
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/order/:orderRef" component={Order} />
+          <Route exact path="/" component={Home} />
+          <Route component={AsyncNotFound} />
+        </Switch>
 
-	  		<Footer />
-  		</div>
-  	</BrowserRouter>
-  </Provider>
-  , document.getElementById('root'))
+        <Footer />
+      </div>
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root')
+);

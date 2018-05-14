@@ -8,13 +8,13 @@ import PairsReducer from './reducer_pairs';
 import OrderReducer from './reducer_order';
 
 const rootReducer = combineReducers({
-	error: ErrorReducer,
-	selectedCoin: SelectedCoinReducer,
-	coinsInfo: CoinsInfoReducer,
-	price: PriceFetchReducer,
-	wallet: WalletReducer,
-	pairs: PairsReducer,
-	order: OrderReducer
+  error: ErrorReducer,
+  selectedCoin: SelectedCoinReducer,
+  coinsInfo: CoinsInfoReducer,
+  price: PriceFetchReducer,
+  wallet: WalletReducer,
+  pairs: PairsReducer,
+  order: OrderReducer,
 });
 
 export default rootReducer;

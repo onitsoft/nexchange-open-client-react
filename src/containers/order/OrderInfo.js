@@ -22,50 +22,63 @@ import STATUS_CODES from '../../statusCodes';
 import Helpers from '../../helpers';
 
 const OrderInfo = props => {
-    const isFiatOrder = Helpers.isFiatOrder(props.order);
-    let order;
+  const isFiatOrder = Helpers.isFiatOrder(props.order);
+  let order;
 
-	switch (STATUS_CODES[props.order.status_name[0][0]]) {
-		case 'INITIAL':
-			order = <OrderInitial {...props} />;
-			break;
-		case 'PAID_UNCONFIRMED':
-			order = isFiatOrder ? <OrderPaymentFiat {...props} /> : <OrderPaymentCrypto {...props} />;
-			break;
-		case 'PAID':
-			order = isFiatOrder ? <OrderPaidFiat {...props} /> : <OrderPaidCrypto {...props} />;
-			break;
-		case 'PRE_RELEASE':
-			order = <OrderPreReleased {...props} />;
-			break;
-		case 'RELEASE':
-			order = <OrderReleased {...props} />;
-			break;
-		case 'COMPLETED':
-			order = <OrderSuccess {...props} />;
-			break;
-		case 'CANCELLED':
-			order = <OrderFailure {...props} />;
-			break;
-		case 'REFUNDED':
-			order = <OrderRefunded {...props} />;
-			break;
-		default:
-			order = <div className="text-center"><h2>Unknown order state, something went wrong</h2></div>;
-	}
-
-	return (
-        <div className="col-xs-12">
-            <div className="box">
-                {order}
-                
-                {isFiatOrder ?
-                    <OrderStatusFiat status={props.order.status_name[0][0]} /> :
-                    <OrderStatusCrypto status={props.order.status_name[0][0]} />
-                }
-            </div>
+  switch (STATUS_CODES[props.order.status_name[0][0]]) {
+    case 'INITIAL':
+      order = <OrderInitial {...props} />;
+      break;
+    case 'PAID_UNCONFIRMED':
+      order = isFiatOrder ? (
+        <OrderPaymentFiat {...props} />
+      ) : (
+        <OrderPaymentCrypto {...props} />
+      );
+      break;
+    case 'PAID':
+      order = isFiatOrder ? (
+        <OrderPaidFiat {...props} />
+      ) : (
+        <OrderPaidCrypto {...props} />
+      );
+      break;
+    case 'PRE_RELEASE':
+      order = <OrderPreReleased {...props} />;
+      break;
+    case 'RELEASE':
+      order = <OrderReleased {...props} />;
+      break;
+    case 'COMPLETED':
+      order = <OrderSuccess {...props} />;
+      break;
+    case 'CANCELLED':
+      order = <OrderFailure {...props} />;
+      break;
+    case 'REFUNDED':
+      order = <OrderRefunded {...props} />;
+      break;
+    default:
+      order = (
+        <div className="text-center">
+          <h2>Unknown order state, something went wrong</h2>
         </div>
-    );
+      );
+  }
+
+  return (
+    <div className="col-xs-12">
+      <div className="box">
+        {order}
+
+        {isFiatOrder ? (
+          <OrderStatusFiat status={props.order.status_name[0][0]} />
+        ) : (
+          <OrderStatusCrypto status={props.order.status_name[0][0]} />
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default OrderInfo;

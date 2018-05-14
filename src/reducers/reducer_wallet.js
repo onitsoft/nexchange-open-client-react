@@ -1,8 +1,16 @@
-export default (state = {address: '', valid: false, show: false}, action) => {
-	switch(action.type) {
-	case 'SET_WALLET':
-		return action.payload
-	}
+import { SET_WALLET } from '../actions/types';
 
-	return state
-}
+const initialState = {
+  address: '',
+  valid: false,
+  show: false,
+};
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case SET_WALLET:
+      return action.payload;
+    default:
+      return state;
+  }
+};
