@@ -192,7 +192,7 @@ export const setOrder = order => ({
 });
 
 export const fetchOrder = orderId => async dispatch => {
-  const url = `/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
+  const url = `${config.API_BASE_URL}/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
   const request = axios.get(url);
 
   return request
