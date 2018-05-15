@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-import KYCModal from './KYCModalTier1';
+import KYCModalTier1 from './KYCModalTier1';
+import KYCModalTier2 from './KYCModalTier2';
 import DesktopNotifications from '../DesktopNotifications';
-
-class OrderPayment2 extends Component {
-  componentDidMount() {
-    axios
-      .get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
-      .then(response => {
-        const kyc = response.data;
-
-        console.log(kyc);
-      })
-      .catch(error => {});
-  }
-
-  render() {
-    return (
-      <div
-        id="order-paid"
-        className="col-xs-12 text-center order-status-section"
-      />
-    );
-  }
-}
 
 class OrderPayment extends Component {
   constructor(props) {
@@ -37,7 +16,7 @@ class OrderPayment extends Component {
     this.checkKYC(true);
   }
 
-  checkKYC(firstTime) {
+  checkKYC(shouldOpen) {
     clearTimeout(this.timeout);
 
     axios
@@ -47,8 +26,8 @@ class OrderPayment extends Component {
         this.setState({ kyc });
 
         if (
-          firstTime &&
-          (!kyc.id_document_status || !kyc.residence_document_status)
+          shouldOpen &&
+          (!kyc.selfie_document_status || !kyc.residence_document_status)
         ) {
           setTimeout(() => {
             this.setState({ showKYCModal: true });
@@ -77,11 +56,22 @@ class OrderPayment extends Component {
 
     if (!this.state.kyc) {
       inner = <h2>Checking KYC status...</h2>;
-    } else if (this.state.kyc.selfie_document_status !== 'APPROVED') {
-      if (this.state.kyc.selfie_document_status === 'UNDEFINED') {
+    } else if (this.state.kyc.out_of_limit) {
+      const tier = this.state.kyc.limits_message.tier.name;
+      const {
+        selfie_document_status,
+        whitelist_selfie_document_status,
+      } = this.state.kyc;
+
+      if (
+        (tier === 'Tier 1' && selfie_document_status === 'UNDEFINED') ||
+        (tier === 'Tier 2' && whitelist_selfie_document_status === 'UNDEFINED')
+      ) {
         inner = (
           <div>
-            <h2>Awaiting additional verification</h2>
+            <h2>
+              Verification {tier} reached, awaiting additional verification
+            </h2>
             <h5>{this.state.kyc.limits_message.tier.upgrade_note}</h5>
             <h5 style={{ marginTop: 15 }}>
               <b>
@@ -102,9 +92,17 @@ class OrderPayment extends Component {
             <hr style={{ marginLeft: -15, marginRight: -15 }} />
 
             <h2>Approval status:</h2>
-            <p>
-              <b>Selfie:</b> {this.state.kyc.selfie_document_status}
-            </p>
+
+            {tier === 'Tier 1' ? (
+              <p>
+                <b>Selfie:</b> {this.state.kyc.selfie_document_status}
+              </p>
+            ) : (
+              <p>
+                <b>Whitelist selfie:</b>{' '}
+                {this.state.kyc.whitelist_selfie_document_status}
+              </p>
+            )}
 
             {this.state.kyc &&
               this.state.kyc.user_visible_comment && (
@@ -125,8 +123,8 @@ class OrderPayment extends Component {
       }
     } else if (this.state.kyc.selfie_document_status === 'APPROVED') {
       inner = [
-        <h2>Payment & verification received</h2>,
-        <h5>We are now preparing to release your coins</h5>,
+        <h2 key="title">Payment & verification received</h2>,
+        <h5 key="subtitle">We are now preparing to release your coins</h5>,
       ];
     }
 
@@ -156,17 +154,31 @@ class OrderPayment extends Component {
           </button>
         )}
 
-        {this.state.kyc && (
-          <KYCModal
-            show={this.state.showKYCModal}
-            onClose={() => {
-              this.setState({ showKYCModal: false });
-              this.checkKYC();
-            }}
-            kyc={this.state.kyc}
-            {...this.props}
-          />
-        )}
+        {this.state.kyc &&
+          this.state.kyc.limits_message.tier.name === 'Tier 1' && (
+            <KYCModalTier1
+              show={this.state.showKYCModal}
+              onClose={() => {
+                this.setState({ showKYCModal: false });
+                this.checkKYC();
+              }}
+              kyc={this.state.kyc}
+              {...this.props}
+            />
+          )}
+
+        {this.state.kyc &&
+          this.state.kyc.limits_message.tier.name === 'Tier 2' && (
+            <KYCModalTier2
+              show={this.state.showKYCModal}
+              onClose={() => {
+                this.setState({ showKYCModal: false });
+                this.checkKYC();
+              }}
+              kyc={this.state.kyc}
+              {...this.props}
+            />
+          )}
       </div>
     );
   }

@@ -192,7 +192,7 @@ export const setOrder = order => ({
 });
 
 export const fetchOrder = orderId => async dispatch => {
-  const url = `${config.API_BASE_URL}/orders/${orderId}/`; // ?_=${Math.round((new Date()).getTime())}
+  const url = `${config.API_BASE_URL}/orders/${orderId}/`;
   const request = axios.get(url);
 
   return request
@@ -207,4 +207,15 @@ export const fetchOrder = orderId => async dispatch => {
         dispatch(setOrder(404));
       }
     });
+};
+
+export const fetchKyc = orderId => async dispatch => {
+  const url = `${config.API_BASE_URL}/kyc/${orderId}/`;
+  const request = axios.get(url);
+
+  return request
+    .then(res => {
+      dispatch({ type: types.SET_KYC, kyc: res.data });
+    })
+    .catch(error => {});
 };

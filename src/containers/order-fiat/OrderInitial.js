@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-import KYCModal from './KYCModal';
+import KYCModalTier0 from './KYCModalTier0';
 import DesktopNotifications from '../DesktopNotifications';
 import OrderPaymentForm from './OrderPaymentForm';
 
@@ -25,9 +25,12 @@ class OrderInitial extends Component {
         const kyc = response.data;
         this.setState({ kyc });
 
+        console.log(kyc);
+
         if (
           firstTime &&
-          (!kyc.id_document_status || !kyc.residence_document_status)
+          (kyc.id_document_status === 'UNDEFINED' ||
+            kyc.residence_document_status === 'UNDEFINED')
         ) {
           setTimeout(() => {
             this.setState({ showKYCModal: true });
@@ -147,7 +150,6 @@ class OrderInitial extends Component {
           {...this.props}
           visible={notificationsCtaVisible}
         />
-
         {buttonText && (
           <button
             type="button"
@@ -163,9 +165,8 @@ class OrderInitial extends Component {
             {buttonText}
           </button>
         )}
-
         {this.state.kyc && (
-          <KYCModal
+          <KYCModalTier0
             show={this.state.showKYCModal}
             onClose={() => {
               this.setState({ showKYCModal: false });

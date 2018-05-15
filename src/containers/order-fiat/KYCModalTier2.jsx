@@ -4,14 +4,14 @@ import axios from 'axios';
 import config from '../../config';
 import fetchUserEmail from '../../helpers/fetchUserEmail';
 
-class KYCModal extends Component {
+class KYCModalTier2 extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       show: false,
       filesReady: false,
-      selfie: '',
+      whitelist_selfie: '',
       residenceProof: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
@@ -46,7 +46,7 @@ class KYCModal extends Component {
 
     this.setState({
       filesReady: false,
-      selfie: '',
+      whitelist_selfie: '',
       title: 'Get verified',
       buttonText: 'Upload file(s)',
       titleClass: '',
@@ -65,13 +65,13 @@ class KYCModal extends Component {
     });
 
     const formData = new FormData();
-    const selfie = document.querySelector('#selfie');
+    const whitelist_selfie = document.querySelector('#whitelist_selfie');
 
     formData.append('order_reference', this.props.order.unique_reference);
     formData.append('user_provided_comment', this.state.message.slice(0, 255));
 
-    if (selfie) {
-      formData.append('selfie', selfie.files[0]);
+    if (whitelist_selfie) {
+      formData.append('whitelist_selfie', whitelist_selfie.files[0]);
     }
 
     axios
@@ -111,7 +111,7 @@ class KYCModal extends Component {
         [name]: value,
       },
       () => {
-        if (!this.state.selfie.length) {
+        if (!this.state.whitelist_selfie.length) {
           this.setState({ filesReady: false });
           return;
         }
@@ -149,18 +149,19 @@ class KYCModal extends Component {
 
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.selfie_document_status !== 'APPROVED' && (
+              {this.props.kyc.whitelist_selfie_document_status !==
+                'APPROVED' && (
                 <div style={{ marginBottom: 45 }}>
-                  <h2>Selfie</h2>
+                  <h2>Whitelist selfie</h2>
                   <small>
-                    i.e. you have to make a selfie of yourself with credit card
-                    in your hands. You may hide middle digits of the credit
-                    card.
+                    i.e. you have to submit a selfie of yourself holding a paper
+                    with a written today's date and an address that matches the
+                    withdraw address of the order.
                   </small>
                   <input
                     type="file"
-                    name="selfie"
-                    id="selfie"
+                    name="whitelist_selfie"
+                    id="whitelist_selfie"
                     onChange={this.handleInputChange}
                     accept="image/*"
                   />
@@ -202,4 +203,4 @@ class KYCModal extends Component {
   }
 }
 
-export default KYCModal;
+export default KYCModalTier2;
