@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config';
-import KYCModal from './KYCModal';
+import KYCModalTier0 from './KYCModalTier0';
 import DesktopNotifications from '../DesktopNotifications';
 import OrderPaymentForm from './OrderPaymentForm';
 
 class OrderInitial extends Component {
   constructor(props) {
     super(props);
-    this.state = { showKYCModal: false, ordersCount: 1 };
+    this.state = { showKYCModal: false };
     this.checkKYC = this.checkKYC.bind(this);
   }
 
   componentDidMount() {
     this.checkKYC(true);
-
-    axios.get(`${config.API_BASE_URL}/users/me/orders/`).then(response => {
-      this.setState({ ordersCount: response.data.count });
-    });
   }
 
   checkKYC(firstTime) {
@@ -29,9 +25,12 @@ class OrderInitial extends Component {
         const kyc = response.data;
         this.setState({ kyc });
 
+        console.log(kyc);
+
         if (
           firstTime &&
-          (!kyc.id_document_status || !kyc.residence_document_status)
+          (kyc.id_document_status === 'UNDEFINED' ||
+            kyc.residence_document_status === 'UNDEFINED')
         ) {
           setTimeout(() => {
             this.setState({ showKYCModal: true });
@@ -79,7 +78,8 @@ class OrderInitial extends Component {
             <h5 style={{ marginTop: 15 }}>
               <b>
                 This is a one-time process, once verified you’ll be able to
-                complete future purchases instantly.
+                complete future purchases instantly until current verification
+                tier limits are reached.
               </b>
             </h5>
           </div>
@@ -150,7 +150,6 @@ class OrderInitial extends Component {
           {...this.props}
           visible={notificationsCtaVisible}
         />
-
         {buttonText && (
           <button
             type="button"
@@ -166,9 +165,8 @@ class OrderInitial extends Component {
             {buttonText}
           </button>
         )}
-
         {this.state.kyc && (
-          <KYCModal
+          <KYCModalTier0
             show={this.state.showKYCModal}
             onClose={() => {
               this.setState({ showKYCModal: false });

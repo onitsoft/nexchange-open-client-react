@@ -73,12 +73,9 @@ class DesktopNotifications extends Component {
   }
 
   render() {
-    if (
-      !Notify.needsPermission ||
-      (this.props.kyc && this.props.kyc.is_verified) ||
-      !this.props.visible
-    )
+    if (!Notify.needsPermission || !this.props.kyc || !this.props.visible) {
       return null;
+    }
 
     return (
       <div className="row">
