@@ -47,7 +47,7 @@ class OrderInitial extends Component {
   render() {
     if (this.state.time < 0) {
       return <OrderExpired {...this.props} />;
-    } else if (isFiatOrder.isFiatOrder(this.props.order)) {
+    } else if (isFiatOrder(this.props.order)) {
       return <OrderInitialFiat time={this.state.time} {...this.props} />;
     } else {
       return <OrderInitialCrypto time={this.state.time} {...this.props} />;
