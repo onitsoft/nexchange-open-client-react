@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as types from './types';
 import _ from 'lodash';
 import config from '../config';
-import Helpers from '../helpers';
+import urlParams from '../helpers/urlParams';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -35,7 +35,7 @@ export const fetchCoinDetails = payload => dispatch => {
     .then(response => {
       if (!response.data.length) return;
 
-      const params = Helpers.urlParams();
+      const params = urlParams();
       let coins;
 
       if (params && params.hasOwnProperty('test')) {

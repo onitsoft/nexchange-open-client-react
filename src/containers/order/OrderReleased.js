@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import helpers from '../../helpers';
 import _ from 'lodash';
+import getBlockchainUrl from '../../helpers/getBlockchainUrl';
 import OrderLinks from './OrderLinks';
 
 class OrderReleased extends Component {
@@ -38,7 +38,7 @@ class OrderReleased extends Component {
         <h5>
           Transaction ID:{' '}
           <a
-            href={helpers.getBlockchainUrl(this.coin.code, this.txId)}
+            href={getBlockchainUrl(this.coin.code, this.txId)}
             target="_blank"
             className="text-green"
           >

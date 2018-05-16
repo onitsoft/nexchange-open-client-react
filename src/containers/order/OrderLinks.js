@@ -1,6 +1,6 @@
 import React from 'react';
 import config from '../../config';
-import Helpers from '../../helpers';
+import getBlockchainUrl from '../../helpers/getBlockchainUrl';
 
 const OrderLinks = props => (
   <div id="order-links">
@@ -15,10 +15,7 @@ const OrderLinks = props => (
 
     {props.coin &&
       props.txId && (
-        <a
-          href={Helpers.getBlockchainUrl(props.coin, props.txId)}
-          target="_blank"
-        >
+        <a href={getBlockchainUrl(props.coin, props.txId)} target="_blank">
           <h4>See your order details on blockchain</h4>
         </a>
       )}

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { errorAlert, setWallet } from '../actions/index.js';
-
-import Helpers from '../helpers';
+import validateWalletAddress from '../helpers/validateWalletAddress';
 
 class WalletAddress extends Component {
   constructor(props) {
@@ -17,7 +15,7 @@ class WalletAddress extends Component {
 
   handleChange(event) {
     let address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
-    const valid = Helpers.validateWalletAddress(
+    const valid = validateWalletAddress(
       address,
       this.props.selectedCoin.receive,
       () =>
@@ -44,11 +42,11 @@ class WalletAddress extends Component {
     this.props.onSubmit();
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.setWallet({ address: '', valid: false, show: false });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       nextProps.wallet.address != null &&
       nextProps.wallet.address != this.state.address
