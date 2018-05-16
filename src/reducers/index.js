@@ -6,6 +6,7 @@ import PriceFetchReducer from './reducer_price_fetched';
 import WalletReducer from './reducer_wallet';
 import PairsReducer from './reducer_pairs';
 import OrderReducer from './reducer_order';
+import KYCReducer from './reducer_kyc';
 
 const rootReducer = combineReducers({
   error: ErrorReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   wallet: WalletReducer,
   pairs: PairsReducer,
   order: OrderReducer,
+  kyc: KYCReducer,
 });
 
 export default rootReducer;

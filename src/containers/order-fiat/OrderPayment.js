@@ -1,48 +1,28 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchKyc } from '../../actions';
 import config from '../../config';
+import KYCModalTier0 from './KYCModalTier0';
 import KYCModalTier1 from './KYCModalTier1';
 import KYCModalTier2 from './KYCModalTier2';
-import DesktopNotifications from '../DesktopNotifications';
+import OrderPaymentTemplate from './OrderPaymentTemplate';
 
 class OrderPayment extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { showKYCModal: false };
-    this.checkKYC = this.checkKYC.bind(this);
-  }
+  state = {};
 
   componentDidMount() {
-    this.checkKYC(true);
+    this.props.fetchKyc(this.props.order.unique_reference);
   }
 
-  checkKYC(shouldOpen) {
-    clearTimeout(this.timeout);
+  static getDerivedStateFromProps(nextProps) {
+    return nextProps;
+  }
 
-    axios
-      .get(`${config.API_BASE_URL}/kyc/${this.props.order.unique_reference}`)
-      .then(response => {
-        const kyc = response.data;
-        this.setState({ kyc });
-
-        if (
-          shouldOpen &&
-          (!kyc.selfie_document_status || !kyc.residence_document_status)
-        ) {
-          setTimeout(() => {
-            this.setState({ showKYCModal: true });
-          }, 1000);
-        }
-
-        this.timeout = setTimeout(() => {
-          this.checkKYC();
-        }, config.KYC_DETAILS_FETCH_INTERVAL);
-      })
-      .catch(error => {
-        this.timeout = setTimeout(() => {
-          this.checkKYC();
-        }, config.KYC_DETAILS_FETCH_INTERVAL);
-      });
+  componentDidUpdate() {
+    this.timeout = setTimeout(() => {
+      this.props.fetchKyc(this.props.order.unique_reference);
+    }, config.KYC_DETAILS_FETCH_INTERVAL);
   }
 
   componentWillUnmount() {
@@ -50,18 +30,87 @@ class OrderPayment extends Component {
   }
 
   render() {
+    if (!this.props.kyc) {
+      return (
+        <div className="col-xs-12 text-center order-status-section">
+          <h2>Checking KYC status...</h2>
+        </div>
+      );
+    }
+
+    let title;
     let inner;
     let buttonText;
+    let modal;
     let notificationsCtaVisible = false;
 
-    if (!this.state.kyc) {
-      inner = <h2>Checking KYC status...</h2>;
-    } else if (this.state.kyc.out_of_limit) {
-      const tier = this.state.kyc.limits_message.tier.name;
+    if (!this.props.kyc.is_verified) {
+      const { residence_document_status, id_document_status } = this.props.kyc;
+
+      if (
+        id_document_status === 'UNDEFINED' &&
+        residence_document_status === 'UNDEFINED'
+      ) {
+        title = <h2>Awaiting verification</h2>;
+        inner = (
+          <div>
+            <h5>
+              In order to proceed further we must get to know you better by
+              getting a copy of your government issued ID and a proof of
+              residence.
+            </h5>
+
+            <h5 style={{ marginTop: 15 }}>
+              <b>
+                This is a one-time process, once verified you’ll be able to
+                complete future purchases instantly until current verification
+                tier limit is reached.
+              </b>
+            </h5>
+          </div>
+        );
+
+        buttonText = 'Get verified';
+      } else {
+        title = <h2>Verification received, awaiting approval</h2>;
+        inner = (
+          <div>
+            <hr style={{ margin: '15px -15px' }} />
+            <h2>Approval status:</h2>
+            <p style={{ margin: 0 }}>
+              <b>Government issued ID:</b> {id_document_status}
+            </p>
+            <p>
+              <b>Proof of residence:</b> {residence_document_status}
+            </p>
+          </div>
+        );
+
+        notificationsCtaVisible = true;
+
+        if (
+          id_document_status === 'REJECTED' ||
+          residence_document_status === 'REJECTED'
+        ) {
+          buttonText = 'Retry verification';
+        }
+
+        modal = KYCModalTier0;
+      }
+    } else if (this.props.kyc.out_of_limit) {
+      title = <h2>Tier limits reached, additional verification needed</h2>;
+
+      const tier = this.props.kyc.limits_message.tier.name;
       const {
         selfie_document_status,
         whitelist_selfie_document_status,
-      } = this.state.kyc;
+      } = this.props.kyc;
+
+      if (tier === 'Tier 1') {
+        modal = KYCModalTier1;
+      } else if (tier === 'Tier 2') {
+        modal = KYCModalTier2;
+      }
 
       if (
         (tier === 'Tier 1' && selfie_document_status === 'UNDEFINED') ||
@@ -69,10 +118,7 @@ class OrderPayment extends Component {
       ) {
         inner = (
           <div>
-            <h2>
-              Verification {tier} reached, awaiting additional verification
-            </h2>
-            <h5>{this.state.kyc.limits_message.tier.upgrade_note}</h5>
+            <h5>{this.props.kyc.limits_message.tier.upgrade_note}</h5>
             <h5 style={{ marginTop: 15 }}>
               <b>
                 This is a one-time process, once verified you’ll be able to
@@ -85,103 +131,56 @@ class OrderPayment extends Component {
 
         buttonText = 'Get verified';
       } else {
+        title = <h2>Verification received, awaiting approval</h2>;
         inner = (
           <div>
-            <h2>Verification received, awaiting approval</h2>
-
-            <hr style={{ marginLeft: -15, marginRight: -15 }} />
-
+            <hr style={{ margin: '15px -15px' }} />
             <h2>Approval status:</h2>
 
-            {tier === 'Tier 1' ? (
+            {tier === 'Tier 1' && (
               <p>
-                <b>Selfie:</b> {this.state.kyc.selfie_document_status}
-              </p>
-            ) : (
-              <p>
-                <b>Whitelist selfie:</b>{' '}
-                {this.state.kyc.whitelist_selfie_document_status}
+                <b>Selfie:</b> {selfie_document_status}
               </p>
             )}
-
-            {this.state.kyc &&
-              this.state.kyc.user_visible_comment && (
-                <p>
-                  <b>
-                    Reason for rejection: {this.state.kyc.user_visible_comment}
-                  </b>
-                </p>
-              )}
+            {tier === 'Tier 2' && (
+              <p>
+                <b>Whitelist selfie:</b> {whitelist_selfie_document_status}
+              </p>
+            )}
           </div>
         );
 
-        notificationsCtaVisible = true;
-
-        if (this.state.kyc.selfie_document_status === 'REJECTED') {
+        if (
+          selfie_document_status === 'REJECTED' ||
+          whitelist_selfie_document_status === 'REJECTED'
+        ) {
           buttonText = 'Retry verification';
         }
+
+        notificationsCtaVisible = true;
       }
-    } else if (this.state.kyc.selfie_document_status === 'APPROVED') {
-      inner = [
-        <h2 key="title">Payment & verification received</h2>,
-        <h5 key="subtitle">We are now preparing to release your coins</h5>,
-      ];
+    } else {
+      title = <h2>Payment and verification received</h2>;
+      inner = <h5>We will proceed to release your funds shortly</h5>;
     }
 
     return (
-      <div className="col-xs-12 text-center order-status-section">
+      <OrderPaymentTemplate
+        title={title}
+        notificationsCtaVisible={notificationsCtaVisible}
+        buttonText={buttonText}
+        modal={modal}
+        {...this.props}
+      >
         {inner}
-
-        <DesktopNotifications
-          kyc={this.state.kyc}
-          {...this.props}
-          visible={notificationsCtaVisible}
-        />
-
-        {buttonText && (
-          <button
-            type="button"
-            className="btn btn-default btn-themed"
-            onClick={() => this.setState({ showKYCModal: true })}
-            style={{ marginTop: 20 }}
-          >
-            <i
-              className="fa fa-credit-card"
-              aria-hidden="true"
-              style={{ position: 'relative', left: -13 }}
-            />
-            {buttonText}
-          </button>
-        )}
-
-        {this.state.kyc &&
-          this.state.kyc.limits_message.tier.name === 'Tier 1' && (
-            <KYCModalTier1
-              show={this.state.showKYCModal}
-              onClose={() => {
-                this.setState({ showKYCModal: false });
-                this.checkKYC();
-              }}
-              kyc={this.state.kyc}
-              {...this.props}
-            />
-          )}
-
-        {this.state.kyc &&
-          this.state.kyc.limits_message.tier.name === 'Tier 2' && (
-            <KYCModalTier2
-              show={this.state.showKYCModal}
-              onClose={() => {
-                this.setState({ showKYCModal: false });
-                this.checkKYC();
-              }}
-              kyc={this.state.kyc}
-              {...this.props}
-            />
-          )}
-      </div>
+      </OrderPaymentTemplate>
     );
   }
 }
 
-export default OrderPayment;
+const mapStateToProps = ({ kyc }) => ({ kyc });
+
+const mapDistachToProps = dispatch =>
+  bindActionCreators({ fetchKyc }, dispatch);
+
+export default connect(mapStateToProps, mapDistachToProps)(OrderPayment);
