@@ -86,6 +86,8 @@ const About = () => (
                 linkedin: 'https://www.linkedin.com/in/karolisram/',
                 github: 'https://github.com/superkarolis/',
                 medium: 'https://medium.com/@karolisram',
+                twitter: 'https://twitter.com/superkarolis',
+                rss: 'https://www.karolisram.com/',
               }}
             />
 
@@ -99,6 +101,37 @@ const About = () => (
               social={{
                 linkedin: 'https://www.linkedin.com/in/justasazna/',
                 github: 'https://github.com/reederz',
+              }}
+            />
+
+            <TeamMember
+              id="paulina"
+              name="Chirag Neb"
+              country="LT"
+              fullCountryName="Lithuania"
+              description="Product management magician.
+                Loves to build and improve product usability.
+                Blockchain novice.
+                Women in tech supporter and recreational weight lifter."
+              social={{
+                linkedin: 'https://www.linkedin.com/in/baginskapaulina/',
+                twitter: 'https://twitter.com/PaulinaBGGC',
+              }}
+            />
+
+            <TeamMember
+              id="cyrus"
+              name="Cyrus Ghazanfar"
+              country="US"
+              fullCountryName="United States"
+              description="Cyrus likes to code. A lot. Other team members feed him in order to keep him going."
+              social={{
+                linkedin:
+                  'https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/',
+                github: 'https://github.com/cyzanfar',
+                rss: 'https://cyzanfar.github.io/',
+                'stack-overflow':
+                  'http://stackoverflow.com/users/3307520/cyzanfar',
               }}
             />
 
