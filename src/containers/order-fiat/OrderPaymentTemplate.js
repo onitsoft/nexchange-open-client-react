@@ -7,19 +7,26 @@ class OrderPaymentTemplate extends Component {
     this.state = { showKYCModal: false };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ showKYCModal: true });
+    }, 1000);
+  }
+
   render() {
     const KYCModal = this.props.modal;
-    const { user_visible_comment } = this.props.kyc;
+    const { user_visible_comment, is_verified, out_of_limit } = this.props.kyc;
 
     return (
       <div className="col-xs-12 text-center order-status-section">
         {this.props.title}
         {this.props.children}
-        {user_visible_comment && (
-          <p>
-            <b>Reason for rejection:</b> {user_visible_comment}
-          </p>
-        )}
+        {user_visible_comment &&
+          (!is_verified || out_of_limit) && (
+            <p>
+              <b>Reason for rejection:</b> {user_visible_comment}
+            </p>
+          )}
 
         {this.props.buttonText && (
           <button

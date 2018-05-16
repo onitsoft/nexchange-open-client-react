@@ -70,6 +70,7 @@ class OrderPayment extends Component {
           </div>
         );
 
+        modal = KYCModalTier0;
         buttonText = 'Get verified';
       } else {
         title = <h2>Verification received, awaiting approval</h2>;
@@ -87,6 +88,7 @@ class OrderPayment extends Component {
         );
 
         notificationsCtaVisible = true;
+        modal = KYCModalTier0;
 
         if (
           id_document_status === 'REJECTED' ||
@@ -94,8 +96,6 @@ class OrderPayment extends Component {
         ) {
           buttonText = 'Retry verification';
         }
-
-        modal = KYCModalTier0;
       }
     } else if (this.props.kyc.out_of_limit) {
       title = <h2>Tier limits reached, additional verification needed</h2>;
