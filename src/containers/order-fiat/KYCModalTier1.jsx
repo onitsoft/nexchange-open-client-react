@@ -48,8 +48,8 @@ class KYCModal extends Component {
       filesReady: false,
       selfie: '',
       title: 'Get verified',
-      buttonText: 'Upload file(s)',
       titleClass: '',
+      buttonText: 'Upload file(s)',
       message: '',
     });
   }
