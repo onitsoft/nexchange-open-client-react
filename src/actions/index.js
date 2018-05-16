@@ -214,8 +214,6 @@ export const fetchKyc = orderId => async dispatch => {
   const request = axios.get(url);
 
   return request
-    .then(res => {
-      dispatch({ type: types.SET_KYC, kyc: res.data });
-    })
+    .then(res => dispatch({ type: types.SET_KYC, kyc: res.data }))
     .catch(error => {});
 };
