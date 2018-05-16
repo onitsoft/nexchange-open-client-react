@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchOrder } from '../../actions';
 
 import '../../css/order.scss';
-import Helpers from '../../helpers';
+import isFiatOrder from '../../helpers/isFiatOrder';
 import config from '../../config';
 
 import OrderInfo from './OrderInfo';
@@ -86,9 +86,7 @@ class Order extends Component {
         <div
           id="order"
           className={
-            Helpers.isFiatOrder(this.state.order)
-              ? 'order-fiat'
-              : 'order-crypto'
+            isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'
           }
         >
           <div className="container">
@@ -101,7 +99,7 @@ class Order extends Component {
               <OrderInfo order={this.state.order} />
               <Notifications order={this.state.order} />
 
-              {!Helpers.isFiatOrder(this.state.order) && (
+              {!isFiatOrder(this.state.order) && (
                 <RefundAddress order={this.state.order} />
               )}
 

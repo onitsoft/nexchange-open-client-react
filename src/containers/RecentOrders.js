@@ -5,7 +5,7 @@ import moment from 'moment';
 import 'moment/locale/en-gb';
 import _ from 'lodash';
 
-import Helpers from '../helpers';
+import urlParams from '../helpers/urlParams';
 import config from '../config';
 
 import LoadingComponent from '../components/LoadingComponent.js';
@@ -23,7 +23,7 @@ class RecentOrders extends Component {
   }
 
   fetchRecentOrders(coinsInfo = this.props.coinsInfo) {
-    let params = Helpers.urlParams(),
+    let params = urlParams(),
       depositCurrencies = coinsInfo.filter(
         coin => coin.is_quote_of_enabled_pair
       ),

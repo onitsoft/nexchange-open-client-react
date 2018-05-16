@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import Helpers from '../../helpers';
+import isFiatOrder from '../../helpers/isFiatOrder';
 
 import OrderInitialFiat from '../order-fiat/OrderInitial';
 import OrderInitialCrypto from '../order-crypto/OrderInitial';
@@ -47,7 +47,7 @@ class OrderInitial extends Component {
   render() {
     if (this.state.time < 0) {
       return <OrderExpired {...this.props} />;
-    } else if (Helpers.isFiatOrder(this.props.order)) {
+    } else if (isFiatOrder(this.props.order)) {
       return <OrderInitialFiat time={this.state.time} {...this.props} />;
     } else {
       return <OrderInitialCrypto time={this.state.time} {...this.props} />;

@@ -19,10 +19,10 @@ import OrderPaidCrypto from '../order-crypto/OrderPaid';
 import OrderStatusCrypto from '../order-crypto/OrderStatus';
 
 import STATUS_CODES from '../../statusCodes';
-import Helpers from '../../helpers';
+import isFiatOrder from '../../helpers/isFiatOrder';
 
 const OrderInfo = props => {
-  const isFiatOrder = Helpers.isFiatOrder(props.order);
+  const isFiat = isFiatOrder(props.order);
   let order;
 
   switch (STATUS_CODES[props.order.status_name[0][0]]) {
@@ -30,14 +30,14 @@ const OrderInfo = props => {
       order = <OrderInitial {...props} />;
       break;
     case 'PAID_UNCONFIRMED':
-      order = isFiatOrder ? (
+      order = isFiat ? (
         <OrderPaymentFiat {...props} />
       ) : (
         <OrderPaymentCrypto {...props} />
       );
       break;
     case 'PAID':
-      order = isFiatOrder ? (
+      order = isFiat ? (
         <OrderPaidFiat {...props} />
       ) : (
         <OrderPaidCrypto {...props} />
@@ -71,7 +71,7 @@ const OrderInfo = props => {
       <div className="box">
         {order}
 
-        {isFiatOrder ? (
+        {isFiat ? (
           <OrderStatusFiat status={props.order.status_name[0][0]} />
         ) : (
           <OrderStatusCrypto status={props.order.status_name[0][0]} />

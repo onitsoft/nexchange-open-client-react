@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import axios from 'axios';
 import config from '../config';
-import Helpers from '../helpers';
+import validateWalletAddress from '../helpers/validateWalletAddress';
 import Box from '../components/Box';
 
 class RefundAddress extends Component {
@@ -42,7 +42,7 @@ class RefundAddress extends Component {
     this.setState({ address });
 
     if (address.length > 0) {
-      Helpers.validateWalletAddress(
+      validateWalletAddress(
         address,
         this.props.order.pair.quote.code,
         () => {
