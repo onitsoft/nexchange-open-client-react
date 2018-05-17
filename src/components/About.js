@@ -94,7 +94,7 @@ const About = () => (
 
             <TeamMember
               id="paulina"
-              name="Paulina Baginska"
+              name="Paulina Bagińska"
               country="LT"
               fullCountryName="Lithuania"
               description="Product management magician.
