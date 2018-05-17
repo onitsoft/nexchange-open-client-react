@@ -9,38 +9,27 @@ const About = () => (
           <h2>About Us</h2>
 
           <p>
-            N.exchange is a fast, reliable and fully transparent cryptocurrency
-            exchange built by crypto enthusiasts, for crypto enthusiasts.
+            N.exchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto
+            enthusiasts.
+          </p>
+          <p>We are a group of multi-national, multi-disciplinary cryptocurrency professionals.</p>
+          <p>
+            Our team came together to make this platform after seeing firsthand the need for a fast and reliable exchange on the crypto
+            market.
           </p>
           <p>
-            We are a group of multi-national, multi-disciplinary cryptocurrency
-            professionals.
+            We pride ourselves on total transparency: Everything is viewable through our API, starting from order lists and ending with our
+            coin reserves.{' '}
           </p>
           <p>
-            Our team came together to make this platform after seeing firsthand
-            the need for a fast and reliable exchange on the crypto market.
+            N.exchange is built on several core values that guide our team in our day to day operations. Among them are complete
+            transparency, a strive to help make cryptocurrency as accessible as possible, and a passion for open source.
           </p>
           <p>
-            We pride ourselves on total transparency: Everything is viewable
-            through our API, starting from order lists and ending with our coin
-            reserves.{' '}
-          </p>
-          <p>
-            N.exchange is built on several core values that guide our team in
-            our day to day operations. Among them are complete transparency, a
-            strive to help make cryptocurrency as accessible as possible, and a
-            passion for open source.
-          </p>
-          <p>
-            To support our mission of making crypto accessible to everyone,
-            we’ve made our{' '}
+            To support our mission of making crypto accessible to everyone, we’ve made our{' '}
             <b>
-              <a
-                href="https://github.com/onitsoft/nexchange-open-client-react"
-                target="_blank"
-              >
-                front end client completely open source{' '}
-                <i className="fa fa-github" aria-hidden="true" />
+              <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank">
+                front end client completely open source <i className="fa fa-github" aria-hidden="true" />
               </a>
             </b>.
           </p>
@@ -69,8 +58,7 @@ const About = () => (
               description="Backend developer and physicist. Animation fan, cryptocurrencies
                 enthusiast and plays the saxophone."
               social={{
-                linkedin:
-                  'https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/',
+                linkedin: 'https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/',
                 github: 'https://github.com/SarunasAzna',
               }}
             />
@@ -106,7 +94,7 @@ const About = () => (
 
             <TeamMember
               id="paulina"
-              name="Chirag Neb"
+              name="Paulina Baginska"
               country="LT"
               fullCountryName="Lithuania"
               description="Product management magician.
@@ -126,26 +114,10 @@ const About = () => (
               fullCountryName="United States"
               description="Cyrus likes to code. A lot. Other team members feed him in order to keep him going."
               social={{
-                linkedin:
-                  'https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/',
+                linkedin: 'https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/',
                 github: 'https://github.com/cyzanfar',
                 rss: 'https://cyzanfar.github.io/',
-                'stack-overflow':
-                  'http://stackoverflow.com/users/3307520/cyzanfar',
-              }}
-            />
-
-            <TeamMember
-              id="chirag"
-              name="Chirag Neb"
-              country="IN"
-              fullCountryName="India"
-              description="Information Technology Generalist, International Trader, Growth Hacker
-                and a newly minted Blockchain Fan!"
-              social={{
-                linkedin: 'https://www.linkedin.com/in/chirag-neb-8b120886/',
-                twitter: 'https://twitter.com/chiragneb',
-                github: 'https://github.com/chiragneb',
+                'stack-overflow': 'http://stackoverflow.com/users/3307520/cyzanfar',
               }}
             />
 
@@ -155,15 +127,11 @@ const About = () => (
               description={
                 <div>
                   <p>
-                    We are actively hiring for the N.exchange dream team. We are
-                    especially on the lookout for talented developers, marketing
-                    personnel, a community manager and content writers.
+                    We are actively hiring for the N.exchange dream team. We are especially on the lookout for talented developers,
+                    marketing personnel, a community manager and content writers.
                   </p>
                   <p>
-                    Drop us a line at{' '}
-                    <a href="mailto:careers@nexchange.io">
-                      careers@nexchange.io
-                    </a>.
+                    Drop us a line at <a href="mailto:careers@nexchange.io">careers@nexchange.io</a>.
                   </p>
                 </div>
               }
