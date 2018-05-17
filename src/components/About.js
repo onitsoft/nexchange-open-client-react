@@ -112,7 +112,8 @@ const About = () => (
               name="Cyrus Ghazanfar"
               country="US"
               fullCountryName="United States"
-              description="Cyrus likes to code. A lot. Other team members feed him in order to keep him going."
+              description="Learn how to teach, teach how to learn. Passionate about programming,
+                astronomy and recently decentralised and distributed systems"
               social={{
                 linkedin: 'https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/',
                 github: 'https://github.com/cyzanfar',
