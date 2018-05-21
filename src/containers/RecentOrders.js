@@ -19,25 +19,16 @@ class RecentOrders extends Component {
     };
 
     this.fetchRecentOrders = this.fetchRecentOrders.bind(this);
-    this.fetchRecentOrders();
   }
 
   fetchRecentOrders(coinsInfo = this.props.coinsInfo) {
     let params = urlParams(),
-      depositCurrencies = coinsInfo.filter(
-        coin => coin.is_quote_of_enabled_pair
-      ),
-      receiveCurrencies = coinsInfo.filter(
-        coin => coin.is_base_of_enabled_pair
-      );
+      depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair),
+      receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair);
 
     if (params && params.hasOwnProperty('test')) {
-      depositCurrencies = coinsInfo.filter(
-        coin => coin.is_quote_of_enabled_pair_for_test
-      );
-      receiveCurrencies = coinsInfo.filter(
-        coin => coin.is_base_of_enabled_pair_for_test
-      );
+      depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair_for_test);
+      receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair_for_test);
     }
 
     depositCurrencies = depositCurrencies.map(coin => coin.code);
@@ -49,8 +40,7 @@ class RecentOrders extends Component {
         let orders = response.data.results.filter(order => {
           return params && params.hasOwnProperty('test')
             ? true
-            : _.contains(receiveCurrencies, order.pair.base.code) &&
-                _.contains(depositCurrencies, order.pair.quote.code);
+            : _.contains(receiveCurrencies, order.pair.base.code) && _.contains(depositCurrencies, order.pair.quote.code);
         });
 
         this.setState({ orders: orders });
@@ -75,50 +65,34 @@ class RecentOrders extends Component {
   }
 
   render() {
-    let orders = this.state.orders
-      .slice(0, config.RECENT_ORDERS_COUNT)
-      .map(order => {
-        return (
-          <div key={order.unique_reference} className="recent-order">
-            <a
-              href={`${config.API_BASE_URL}/orders/${order.unique_reference}`}
-              target="_blank"
-              className="overlay"
-            >
-              Click to view on API
-            </a>
+    let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
+      return (
+        <div key={order.unique_reference} className="recent-order">
+          <a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className="overlay">
+            Click to view on API
+          </a>
 
-            <div className="col-xs-4 coins-container">
-              <div className="coins">
-                <i
-                  className={`coin-icon cc-${order.pair.quote.code} ${
-                    order.pair.quote.code
-                  }`}
-                />
-                <i className="fa fa-arrow-right" aria-hidden="true" />
-                <i
-                  className={`coin-icon cc-${order.pair.base.code} ${
-                    order.pair.base.code
-                  }`}
-                />
-              </div>
-            </div>
-
-            <div className="col-xs-4 recent-order-amount">
-              <p>
-                {Math.round(parseFloat(order.amount_quote) * 1000) / 1000}{' '}
-                <b className="hidden-xs">{order.pair.quote.code}</b> to{' '}
-                {Math.round(parseFloat(order.amount_base) * 1000) / 1000}{' '}
-                <b className="hidden-xs">{order.pair.base.code}</b>
-              </p>
-            </div>
-
-            <div className="col-xs-4 created-on">
-              <p>{new moment(order.created_on).fromNow()}</p>
+          <div className="col-xs-4 coins-container">
+            <div className="coins">
+              <i className={`coin-icon cc-${order.pair.quote.code} ${order.pair.quote.code}`} />
+              <i className="fa fa-arrow-right" aria-hidden="true" />
+              <i className={`coin-icon cc-${order.pair.base.code} ${order.pair.base.code}`} />
             </div>
           </div>
-        );
-      });
+
+          <div className="col-xs-4 recent-order-amount">
+            <p>
+              {Math.round(parseFloat(order.amount_quote) * 1000) / 1000} <b className="hidden-xs">{order.pair.quote.code}</b> to{' '}
+              {Math.round(parseFloat(order.amount_base) * 1000) / 1000} <b className="hidden-xs">{order.pair.base.code}</b>
+            </p>
+          </div>
+
+          <div className="col-xs-4 created-on">
+            <p>{new moment(order.created_on).fromNow()}</p>
+          </div>
+        </div>
+      );
+    });
 
     return (
       <div id="recent-orders">
@@ -127,13 +101,7 @@ class RecentOrders extends Component {
             <div className="col-xs-12">
               <h2>Recent Orders</h2>
 
-              <div className="recent-orders-container">
-                {orders.length < 1 ? (
-                  <LoadingComponent isLoading={true} />
-                ) : (
-                  orders
-                )}
-              </div>
+              <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
             </div>
           </div>
         </div>

@@ -82,13 +82,7 @@ class Support extends Component {
       <Modal id="support" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-              onClick={this.close}
-            >
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
             <h4 className="modal-title">Support</h4>
@@ -98,11 +92,7 @@ class Support extends Component {
             <div className="row">
               <div className="col-xs-12 col-sm-6">
                 <h3>Phone</h3>
-                <p
-                  onClick={() =>
-                    ga('send', 'event', 'General', 'click support number')
-                  }
-                >
+                <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
                   +442081442192<br />
                   +16464612858 (US)
                 </p>
@@ -118,16 +108,10 @@ class Support extends Component {
 
             <form id="support-form" onSubmit={this.handleSubmit}>
               {this.state.success === true ? (
-                <h4 className="text-success">
-                  Your form has been successfully submitted. We'll get back to
-                  you shortly!
-                </h4>
+                <h4 className="text-success">Your form has been successfully submitted. We'll get back to you shortly!</h4>
               ) : null}
               {this.state.success === false ? (
-                <h4 className="text-danger">
-                  Something went wrong during the form submission, please try
-                  again later.
-                </h4>
+                <h4 className="text-danger">Something went wrong during the form submission, please try again later.</h4>
               ) : null}
 
               {this.state.showForm ? (
@@ -189,18 +173,9 @@ class Support extends Component {
                     required
                   />
 
-                  <button
-                    type="submit"
-                    className="btn btn-themed btn-md"
-                    disabled={this.state.loading ? 'disabled' : null}
-                  >
+                  <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? 'disabled' : null}>
                     Send
-                    {this.state.loading ? (
-                      <i
-                        className="fa fa-spinner fa-spin"
-                        style={{ marginLeft: '10px' }}
-                      />
-                    ) : null}
+                    {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                   </button>
 
                   <button
