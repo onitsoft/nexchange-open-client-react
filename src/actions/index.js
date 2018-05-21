@@ -3,6 +3,7 @@ import * as types from './types';
 import _ from 'lodash';
 import config from '../config';
 import urlParams from '../helpers/urlParams';
+import preparePairs from '../helpers/preparePairs';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -133,11 +134,7 @@ export const fetchPairs = payload => {
       .then(response => {
         if (!response.data.length) return;
 
-        let pairs = {};
-        for (let pair of response.data) {
-          if (!pairs[pair.quote]) pairs[pair.quote] = {};
-          pairs[pair.quote][pair.base] = !pair.disabled; // pair[deposit][receive]
-        }
+        const pairs = preparePairs(response.data);
 
         dispatch({ type: types.PAIRS_FETCHED, payload: pairs });
 
@@ -213,7 +210,5 @@ export const fetchKyc = orderId => async dispatch => {
   const url = `${config.API_BASE_URL}/kyc/${orderId}/`;
   const request = axios.get(url);
 
-  return request
-    .then(res => dispatch({ type: types.SET_KYC, kyc: res.data }))
-    .catch(error => {});
+  return request.then(res => dispatch({ type: types.SET_KYC, kyc: res.data })).catch(error => {});
 };
