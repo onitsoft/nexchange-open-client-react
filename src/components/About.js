@@ -95,8 +95,8 @@ const About = () => (
             <TeamMember
               id="paulina"
               name="Paulina Bagińska"
-              country="LT"
-              fullCountryName="Lithuania"
+              country="PL"
+              fullCountryName="Poland"
               description="Product management magician.
                 Loves to build and improve product usability.
                 Blockchain novice.
@@ -112,8 +112,13 @@ const About = () => (
               name="Cyrus Ghazanfar"
               country="US"
               fullCountryName="United States"
-              description="Learn how to teach, teach how to learn. Passionate about programming,
-                astronomy and recently decentralised and distributed systems"
+              description={
+                <p>
+                  Cornell University MEng, Computer Science.<br />
+                  Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and distributed
+                  systems.
+                </p>
+              }
               social={{
                 linkedin: 'https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/',
                 github: 'https://github.com/cyzanfar',
