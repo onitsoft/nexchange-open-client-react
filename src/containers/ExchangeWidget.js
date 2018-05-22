@@ -40,9 +40,7 @@ class ExchangeWidget extends Component {
       amount_quote: 0,
       is_default_rule: true,
       pair: {
-        name: `${this.props.selectedCoin.receive}${
-          this.props.selectedCoin.deposit
-        }`,
+        name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`,
       },
       withdraw_address: {
         address: this.props.wallet.address,
@@ -50,10 +48,8 @@ class ExchangeWidget extends Component {
       },
     };
 
-    if (this.props.price.lastEdited === 'receive')
-      data['amount_base'] = parseFloat(this.props.price.receive);
-    else if (this.props.price.lastEdited === 'deposit')
-      data['amount_quote'] = parseFloat(this.props.price.deposit);
+    if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
+    else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
     axios
       .post(`${config.API_BASE_URL}/orders/`, data)
@@ -71,20 +67,12 @@ class ExchangeWidget extends Component {
 
         bindCrispEmail();
 
-        window.ga(
-          'send',
-          'event',
-          'Order',
-          'place order',
-          response.data.unique_reference
-        );
+        window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
         window.qp('track', 'Generic');
       })
       .catch(error => {
         let message =
-          error.response &&
-          error.response.data.non_field_errors &&
-          error.response.data.non_field_errors.length
+          error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
             ? error.response.data.non_field_errors[0]
             : 'Something went wrong. Please try again later.';
         this.props.errorAlert({
@@ -105,31 +93,18 @@ class ExchangeWidget extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (
-      $('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby')
-    ) {
-      let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr(
-        'aria-describedby'
-      );
-      $(`#${tooltipId} .tooltip-inner`).html(
-        `The fee amounts to ${nextProps.amounts.deposit * 0.005} ${
-          nextProps.selectedCoin.deposit
-        }.`
-      );
+    if ($('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby')) {
+      let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby');
+      $(`#${tooltipId} .tooltip-inner`).html(`The fee amounts to ${nextProps.amounts.deposit * 0.005} ${nextProps.selectedCoin.deposit}.`);
     }
 
-    if (
-      this.props.wallet.show &&
-      nextProps.error.type === 'INVALID_AMOUNT' &&
-      nextProps.error.show !== false
-    ) {
+    if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
       this.props.setWallet({ address: '', valid: false, show: false });
     }
   }
 
   render() {
-    if (this.state.orderPlaced)
-      return <Redirect to={`/order/${this.state.orderRef}`} />;
+    if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     return (
       <div className="col-xs-12">
@@ -138,10 +113,7 @@ class ExchangeWidget extends Component {
 
           <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
-          <WalletAddress
-            onSubmit={this.placeOrder}
-            inputRef={el => (this.walletInputEl = el)}
-          />
+          <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
           <div className="col-xs-12 text-center">
             {!this.props.wallet.show ? (
@@ -149,9 +121,7 @@ class ExchangeWidget extends Component {
                 className="btn btn-block btn-themed proceed"
                 onClick={this.showWalletAddress}
                 disabled={
-                  this.props.error.show &&
-                  (this.props.error.type === 'INVALID_AMOUNT' ||
-                    this.props.error.type === 'INVALID_PAIR')
+                  this.props.error.show && (this.props.error.type === 'INVALID_AMOUNT' || this.props.error.type === 'INVALID_PAIR')
                     ? 'disabled'
                     : null
                 }
@@ -162,19 +132,10 @@ class ExchangeWidget extends Component {
               <button
                 className="btn btn-block btn-themed proceed"
                 onClick={this.placeOrder}
-                disabled={
-                  this.props.wallet.valid && !this.state.loading
-                    ? null
-                    : 'disabled'
-                }
+                disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
               >
                 Confirm & Place Order
-                {this.state.loading ? (
-                  <i
-                    className="fa fa-spinner fa-spin"
-                    style={{ marginLeft: '10px' }}
-                  />
-                ) : null}
+                {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
               </button>
             )}
           </div>

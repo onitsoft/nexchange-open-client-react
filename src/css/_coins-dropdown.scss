@@ -1,5 +1,4 @@
 .coin-currency-dropdown {
-  z-index: 500;
   border-radius: 3px;
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 100ms linear;
@@ -13,6 +12,16 @@
   padding: 10px 0 0 15px;
   z-index: 1;
   background: #fff;
+
+  .coins-list {
+    max-height: 260px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .coins-search {
+    margin-bottom: 10px;
+  }
 
   .coin {
     width: 270px;
