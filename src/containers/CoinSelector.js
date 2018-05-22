@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 import CoinsDropdown from './CoinsDropdown';
+import '../css/_coin-selector.scss';
 
 require('react-fa');
 

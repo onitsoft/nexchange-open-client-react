@@ -1,8 +1,11 @@
 import React from 'react';
 import _ from 'lodash';
 import urlParams from '../helpers/urlParams';
+import '../css/_coins-dropdown.scss';
 
 const CoinsDropdown = props => {
+  const search = null;
+
   let filteredCoins = props.coinsInfo.filter(coin => {
     let params = urlParams();
 
@@ -27,7 +30,12 @@ const CoinsDropdown = props => {
     );
   });
 
-  return <div className="coin-currency-dropdown">{coins}</div>;
+  return (
+    <div className="coin-currency-dropdown">
+      {search}
+      {coins}
+    </div>
+  );
 };
 
 export default CoinsDropdown;
