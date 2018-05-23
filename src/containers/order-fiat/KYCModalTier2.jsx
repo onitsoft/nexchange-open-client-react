@@ -126,22 +126,13 @@ class KYCModalTier2 extends Component {
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-              onClick={this.close}
-            >
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className={`modal-title text-${this.state.titleClass}`}>
-              {this.state.title}
-            </h4>
+            <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
             <h5 style={{ marginBottom: 0 }}>
               <b>
-                This is a one-time process, once verified you’ll be able to
-                complete future purchases instantly until current verification
+                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
                 tier limits are reached.
               </b>
             </h5>
@@ -149,24 +140,14 @@ class KYCModalTier2 extends Component {
 
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.whitelist_selfie_document_status !==
-                'APPROVED' && (
-                <div style={{ marginBottom: 45 }}>
-                  <h2>Whitelist selfie</h2>
-                  <small>
-                    i.e. you have to submit a selfie of yourself holding a paper
-                    with a written today's date and an address that matches the
-                    withdraw address of the order.
-                  </small>
-                  <input
-                    type="file"
-                    name="whitelist_selfie"
-                    id="whitelist_selfie"
-                    onChange={this.handleInputChange}
-                    accept="image/*"
-                  />
-                </div>
-              )}
+              <div style={{ marginBottom: 45 }}>
+                <h2>Whitelist selfie</h2>
+                <small>
+                  i.e. you have to submit a selfie of yourself holding a paper with a written today's date and an address that matches the
+                  withdraw address of the order.
+                </small>
+                <input type="file" name="whitelist_selfie" id="whitelist_selfie" onChange={this.handleInputChange} accept="image/*" />
+              </div>
 
               <textarea
                 name="message"
@@ -178,11 +159,7 @@ class KYCModalTier2 extends Component {
                 maxLength="255"
               />
 
-              <button
-                type="submit"
-                className="btn btn-themed btn-md"
-                disabled={this.state.filesReady ? null : 'disabled'}
-              >
+              <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
                   className="fa fa-file"
                   aria-hidden="true"
