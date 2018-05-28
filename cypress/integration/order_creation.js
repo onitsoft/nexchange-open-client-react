@@ -1,5 +1,5 @@
-import orderFiat from '../../src/__tests__/__mocks__/orderFiat';
-import orderCrypto from '../../src/__tests__/__mocks__/orderCrypto';
+import orderFiat from '../../src/__mocks__/orderFiat';
+import orderCrypto from '../../src/__mocks__/orderCrypto';
 
 describe('Order creation', function() {
   it('creates XVGEUR (fiat) order and gets redirected to order page', function() {
