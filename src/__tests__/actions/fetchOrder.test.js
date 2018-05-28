@@ -4,7 +4,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import * as types from '../../actions/types';
 import * as actions from '../../actions';
-import mockData from '../__mocks__/order';
+import mockData from '../../__mocks__/order';
 import config from '../../config';
 
 const middlewares = [thunk];

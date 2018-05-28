@@ -4,7 +4,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import * as types from '../../actions/types';
 import * as actions from '../../actions';
-import mockData from '../__mocks__/currency';
+import mockData from '../../__mocks__/currency';
 import _ from 'lodash';
 import config from '../../config';
 

@@ -1,6 +1,6 @@
 import reducer from '../../reducers/reducer_pairs';
 import * as types from '../../actions/types';
-import mockData from '../__mocks__/pair';
+import mockData from '../../__mocks__/pair';
 
 describe('pairs reducer', () => {
   it('should return the initial state', () => {
