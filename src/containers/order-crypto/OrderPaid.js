@@ -28,11 +28,7 @@ class OrderPaid extends Component {
         <h5>We are now preparing to release your coins</h5>
         <h5>
           Transaction ID:{' '}
-          <a
-            href={getBlockchainUrl.getBlockchainUrl(this.coin.code, this.txId)}
-            target="_blank"
-            className="text-green"
-          >
+          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
             {this.txId}
           </a>
         </h5>

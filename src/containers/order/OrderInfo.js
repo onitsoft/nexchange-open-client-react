@@ -30,18 +30,10 @@ const OrderInfo = props => {
       order = <OrderInitial {...props} />;
       break;
     case 'PAID_UNCONFIRMED':
-      order = isFiat ? (
-        <OrderPaymentFiat {...props} />
-      ) : (
-        <OrderPaymentCrypto {...props} />
-      );
+      order = isFiat ? <OrderPaymentFiat {...props} /> : <OrderPaymentCrypto {...props} />;
       break;
     case 'PAID':
-      order = isFiat ? (
-        <OrderPaidFiat {...props} />
-      ) : (
-        <OrderPaidCrypto {...props} />
-      );
+      order = isFiat ? <OrderPaidFiat {...props} /> : <OrderPaidCrypto {...props} />;
       break;
     case 'PRE_RELEASE':
       order = <OrderPreReleased {...props} />;
@@ -71,11 +63,7 @@ const OrderInfo = props => {
       <div className="box">
         {order}
 
-        {isFiat ? (
-          <OrderStatusFiat status={props.order.status_name[0][0]} />
-        ) : (
-          <OrderStatusCrypto status={props.order.status_name[0][0]} />
-        )}
+        {isFiat ? <OrderStatusFiat status={props.order.status_name[0][0]} /> : <OrderStatusCrypto status={props.order.status_name[0][0]} />}
       </div>
     </div>
   );
