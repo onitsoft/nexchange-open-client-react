@@ -17,12 +17,7 @@ const shallowEqual = (objA, objB) => {
     return true;
   }
 
-  if (
-    typeof objA !== 'object' ||
-    objA === null ||
-    typeof objB !== 'object' ||
-    objB === null
-  ) {
+  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
     return false;
   }
 
@@ -34,10 +29,9 @@ const shallowEqual = (objA, objB) => {
   }
 
   for (var i = 0; i < keysA.length; i++) {
-    if (
-      !hasOwnProperty.call(objB, keysA[i]) ||
-      !is(objA[keysA[i]], objB[keysA[i]])
-    ) {
+    if (!hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
+      console.log(objA[keysA[i]], objB[keysA[i]], keysA[i]);
+
       return false;
     }
   }

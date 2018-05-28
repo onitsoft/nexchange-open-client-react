@@ -35,20 +35,12 @@ class OrderPaymentTemplate extends Component {
             onClick={() => this.setState({ showKYCModal: true })}
             style={{ marginTop: 20 }}
           >
-            <i
-              className="fa fa-credit-card"
-              aria-hidden="true"
-              style={{ position: 'relative', left: -13 }}
-            />
+            <i className="fa fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
             {this.props.buttonText}
           </button>
         )}
 
-        <DesktopNotifications
-          kyc={this.props.kyc}
-          visible={this.props.notificationsCtaVisible}
-          {...this.props}
-        />
+        <DesktopNotifications kyc={this.props.kyc} visible={this.props.notificationsCtaVisible} order={this.props.order} />
 
         {KYCModal && (
           <KYCModal

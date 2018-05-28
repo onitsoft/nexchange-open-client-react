@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Notify from 'notifyjs';
 import _ from 'lodash';
-import shallowEqual from '../helpers/shallowEqual';
-import objectsShallowDiff from '../helpers/objectsShallowDiff';
+import equals from 'deep-equal';
 
 class DesktopNotifications extends Component {
   constructor(props) {
@@ -39,21 +38,18 @@ class DesktopNotifications extends Component {
       body = 'Comment has been added';
     }
 
-    new Notify(
-      `KYC status updated for order #${this.props.order.unique_reference}`,
-      {
-        body,
-        closeOnClick: true,
-        notifyClick: function() {
-          window.focus();
-          this.close();
-        },
-      }
-    ).show();
+    new Notify(`KYC status updated for order #${this.props.order.unique_reference}`, {
+      body,
+      closeOnClick: true,
+      notifyClick: function() {
+        window.focus();
+        this.close();
+      },
+    }).show();
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (this.props.kyc && !shallowEqual(this.props.kyc, nextProps.kyc)) {
+    if (this.props.kyc && !equals(this.props.kyc, nextProps.kyc)) {
       this.notify(nextProps);
     }
   }
@@ -61,13 +57,7 @@ class DesktopNotifications extends Component {
   onClick() {
     if (Notify.isSupported()) {
       Notify.requestPermission(() => {
-        window.ga(
-          'send',
-          'event',
-          'Order',
-          'track',
-          this.props.order.unique_reference
-        );
+        window.ga('send', 'event', 'Order', 'track', this.props.order.unique_reference);
       });
     }
   }
@@ -80,14 +70,8 @@ class DesktopNotifications extends Component {
     return (
       <div className="row">
         <div className="col-xs-12 text-center">
-          <a
-            href="javascript:void(0)"
-            className="text-warning"
-            onClick={this.onClick}
-          >
-            <h4 style={{ fontWeight: 500, width: '100%' }}>
-              Click here to get notified about your KYC status change
-            </h4>
+          <a href="javascript:void(0)" className="text-warning" onClick={this.onClick}>
+            <h4 style={{ fontWeight: 500, width: '100%' }}>Click here to get notified about your KYC status change</h4>
           </a>
         </div>
       </div>
