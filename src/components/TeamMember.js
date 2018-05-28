@@ -25,11 +25,7 @@ const TeamMember = props => {
   return (
     <div className="col-xs-12 col-ms-6 col-md-4 text-center">
       <div className="team-member">
-        <img
-          src={`/img/team/${props.id}.jpg`}
-          className="img-circle img-responsive lazy-loading-image"
-          alt={`${props.name} profile`}
-        />
+        <img src={`/img/team/${props.id}.jpg`} className="img-circle img-responsive lazy-loading-image" alt={`${props.name} profile`} />
 
         <h3>
           {props.name}
