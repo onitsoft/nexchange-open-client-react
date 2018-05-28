@@ -1,0 +1,1 @@
+ssh -l root ${FRONT_END_SERVER} "source ~/.bashrc && cd /var/www/nexchange-express-runner/ && rm -rf nexchange-open-client-react && git clone https://github.com/onitsoft/nexchange-open-client-react.git && cd nexchange-open-client-react && npm install --production && npm run build && rm -rf ../nexchange/* && mv build/* ../nexchange/"

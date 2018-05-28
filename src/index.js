@@ -5,8 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
-import 'expose-loader?$!jquery';
-import 'expose-loader?jQuery!jquery';
+import $ from 'jquery';
 
 import './js/bootstrap.min.js';
 import './js/material.min.js';
@@ -48,11 +47,7 @@ ReactDOM.render(
         <Header />
 
         <Switch>
-          <Route
-            exact
-            path="/terms-and-conditions"
-            component={TermsConditions}
-          />
+          <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" component={Home} />
