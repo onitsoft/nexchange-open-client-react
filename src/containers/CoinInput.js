@@ -13,14 +13,10 @@ class CoinInput extends PureComponent {
       value: '...',
     };
 
-    this.onChange = this.onChange.bind(this);
     this.fetchAmounts = debounce(450, this.fetchAmounts);
-    this.onFocus = this.onFocus.bind(this);
-    this.onBlur = this.onBlur.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onChange(event) {
+  onChange = event => {
     const re = /^[0-9.,\b]+$/;
     if (!re.test(event.target.value) && event.target.value !== '') return;
 
@@ -28,26 +24,26 @@ class CoinInput extends PureComponent {
     this.fetchAmounts(event.target.value);
 
     ga('send', 'event', 'Order', 'change amount');
-  }
+  };
 
-  onFocus(event) {
+  onFocus = event => {
     if (event.target.value === '...') {
       this.setState({ value: '' });
     }
-  }
+  };
 
-  onBlur(event) {
+  onBlur = event => {
     if (event.target.value === '') {
       this.setState({ value: '...' });
     }
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit();
-  }
+  };
 
-  fetchAmounts(value) {
+  fetchAmounts = value => {
     let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
     let data = {
       pair: pair,
@@ -55,17 +51,20 @@ class CoinInput extends PureComponent {
     };
 
     data[this.props.type] = value;
-
     this.props.fetchPrice(data);
-  }
+  };
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  focus = () => {
+    this.nameInput.focus();
+  };
+
+  UNSAFE_componentWillReceiveProps = nextProps => {
     if (nextProps.type === 'receive') {
       this.setState({ value: nextProps.price.receive });
     } else if (nextProps.type === 'deposit') {
       this.setState({ value: nextProps.price.deposit });
     }
-  }
+  };
 
   render() {
     return (
@@ -79,16 +78,16 @@ class CoinInput extends PureComponent {
             className="form-control coin amount-input"
             id={`coin-input-${this.props.type}`}
             name={this.props.type}
-            onChange={this.onChange.bind(this)}
-            onFocus={this.onFocus.bind(this)}
-            onBlur={this.onBlur.bind(this)}
+            onChange={this.onChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
             value={this.state.value}
             ref={input => {
               this.nameInput = input;
             }}
           />
 
-          <CoinSelector type={this.props.type} />
+          <CoinSelector type={this.props.type} onSelect={this.focus} />
         </form>
       </div>
     );
