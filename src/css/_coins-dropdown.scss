@@ -13,6 +13,16 @@
   z-index: 500;
   background: #fff;
 
+  .coins-list {
+    max-height: 260px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .coins-search {
+    margin-bottom: 10px;
+  }
+
   .coin {
     width: 270px;
     margin-bottom: 10px;
