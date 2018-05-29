@@ -44,6 +44,7 @@ class OrderPayment extends Component {
     let buttonText;
     let modal;
     let notificationsCtaVisible = false;
+    let showInitial = false;
 
     if (!this.props.kyc.is_verified) {
       const { residence_document_status, id_document_status } = this.props.kyc;
@@ -68,6 +69,7 @@ class OrderPayment extends Component {
 
         modal = KYCModalTier0;
         buttonText = 'Get verified';
+        showInitial = true;
       } else {
         title = <h2>Verification received, awaiting approval</h2>;
         inner = (
@@ -88,6 +90,7 @@ class OrderPayment extends Component {
 
         if (id_document_status === 'REJECTED' || residence_document_status === 'REJECTED') {
           buttonText = 'Retry verification';
+          showInitial = true;
         }
       }
     } else if (this.props.kyc.out_of_limit) {
@@ -114,6 +117,7 @@ class OrderPayment extends Component {
 
         modal = tier === 'Tier 1' ? KYCModalTier1 : KYCModalTier2;
         buttonText = 'Get verified';
+        showInitial = true;
       } else if (tier === 'Tier 3' && (withdrawAddressStatus !== 'PENDING' && withdrawAddressStatus !== 'REJECTED')) {
         inner = (
           <div>
@@ -127,6 +131,7 @@ class OrderPayment extends Component {
 
         modal = KYCModalTier2;
         buttonText = 'Get verified';
+        showInitial = true;
       } else {
         title = <h2>Verification received, awaiting approval</h2>;
         inner = (
@@ -151,6 +156,7 @@ class OrderPayment extends Component {
         if (selfie_document_status === 'REJECTED' || withdrawAddressStatus === 'REJECTED') {
           buttonText = 'Retry verification';
           modal = tier === 'Tier 1' ? KYCModalTier1 : KYCModalTier2;
+          showInitial = true;
         }
 
         notificationsCtaVisible = true;
@@ -166,6 +172,7 @@ class OrderPayment extends Component {
         notificationsCtaVisible={notificationsCtaVisible}
         buttonText={buttonText}
         modal={modal}
+        showInitial={showInitial}
         {...this.props}
       >
         {inner}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Notify from 'notifyjs';
-import _ from 'lodash';
 import equals from 'deep-equal';
 
 class DesktopNotifications extends Component {
@@ -12,34 +11,7 @@ class DesktopNotifications extends Component {
   }
 
   notify(nextProps) {
-    const diff = objectsShallowDiff(this.props.kyc, nextProps.kyc);
-    let body = ``;
-
-    const containsVerified = _.contains(diff, 'is_verified');
-    const containsId = _.contains(diff, 'id_document_status');
-    const containsResidence = _.contains(diff, 'residence_document_status');
-    const containsComment = _.contains(diff, 'user_visible_comment');
-    const idStatus = nextProps.kyc.id_document_status;
-    const residenceStatus = nextProps.kyc.residence_document_status;
-
-    if (containsVerified && nextProps.kyc.is_verified) {
-      body = `Your KYC has been approved.`;
-    } else if (containsId || containsResidence) {
-      if (containsId && containsResidence) {
-        if (idStatus === 'REJECTED' && residenceStatus === 'REJECTED') {
-          body = `ID and proof of residence have been rejected`;
-        }
-      } else if (containsId) {
-        body = `Government issued ID status updated to - ${idStatus}`;
-      } else if (containsResidence) {
-        body = `Residence status updated to - ${residenceStatus}`;
-      }
-    } else if (containsComment) {
-      body = 'Comment has been added';
-    }
-
     new Notify(`KYC status updated for order #${this.props.order.unique_reference}`, {
-      body,
       closeOnClick: true,
       notifyClick: function() {
         window.focus();

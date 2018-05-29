@@ -9,7 +9,7 @@ class OrderPaymentTemplate extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ showKYCModal: true });
+      this.setState({ showKYCModal: this.props.showInitial });
     }, 1000);
   }
 
@@ -49,6 +49,7 @@ class OrderPaymentTemplate extends Component {
               this.setState({ showKYCModal: false });
               this.props.fetchKyc(this.props.order.unique_reference);
             }}
+            showInitial={this.props.showInitial}
             kyc={this.props.kyc}
             {...this.props}
           />
