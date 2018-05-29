@@ -110,7 +110,6 @@ class ExchangeWidget extends Component {
       <div className="col-xs-12">
         <div id="exchange-widget">
           <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-
           <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
           <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />

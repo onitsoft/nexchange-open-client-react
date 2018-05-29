@@ -18,10 +18,24 @@ class CoinsDropdown extends Component {
     this.setState({ value: event.target.value });
   };
 
-  searchCoins = filteredCoins => {
-    if (!this.state.value) return filteredCoins;
+  handleSubmit = event => {
+    event.preventDefault();
+    event.stopPropagation();
 
-    const fuse = new Fuse(filteredCoins, {
+    const coins = this.getCoins();
+    if (coins.length === 1) {
+      this.props.onClick(coins[0].code);
+    }
+  };
+
+  clear = () => {
+    this.setState({ value: '' });
+  };
+
+  searchCoins = coins => {
+    if (!this.state.value) return coins;
+
+    const fuse = new Fuse(coins, {
       shouldSort: true,
       threshold: 0.2,
       keys: ['code', 'name'],
@@ -30,29 +44,7 @@ class CoinsDropdown extends Component {
     return fuse.search(this.state.value);
   };
 
-  clear = () => {
-    this.setState({ value: '' });
-  };
-
-  renderSearch() {
-    return (
-      <div className="coins-search">
-        <i class="fa fa-search" aria-hidden="true" />
-        <input
-          type="text"
-          placeholder="Search"
-          ref={input => (this.searchInput = input)}
-          onChange={this.handleChange}
-          value={this.state.value}
-        />
-        <i className={`material-icons clear ${this.state.value ? 'active' : null}`} onClick={this.clear}>
-          clear
-        </i>
-      </div>
-    );
-  }
-
-  renderCoins() {
+  getCoins = () => {
     const params = urlParams();
     let filteredCoins = this.props.coinsInfo.filter(coin => {
       if (params && params.hasOwnProperty('test')) {
@@ -64,9 +56,31 @@ class CoinsDropdown extends Component {
     filteredCoins = _.sortBy(filteredCoins, 'is_crypto');
     filteredCoins = this.searchCoins(filteredCoins);
 
+    return filteredCoins;
+  };
+
+  renderSearch = () => {
+    return (
+      <form className="coins-search" onSubmit={this.handleSubmit}>
+        <i class="fa fa-search" aria-hidden="true" />
+        <input
+          type="text"
+          placeholder="Search"
+          ref={input => (this.searchInput = input)}
+          onChange={this.handleChange}
+          value={this.state.value}
+        />
+        <i className={`material-icons clear ${this.state.value ? 'active' : null}`} onClick={this.clear}>
+          clear
+        </i>
+      </form>
+    );
+  };
+
+  renderCoins = () => {
     return (
       <div className="coins-list">
-        {filteredCoins.map(coin => (
+        {this.getCoins().map(coin => (
           <div className="row coin" key={coin.code} onClick={() => this.props.onClick(coin.code)}>
             <div className="col-xs-3">
               <b>{coin.code}</b>
@@ -79,16 +93,16 @@ class CoinsDropdown extends Component {
         ))}
       </div>
     );
-  }
+  };
 
-  render() {
+  render = () => {
     return (
       <div className="coin-currency-dropdown">
         {this.renderSearch()}
         {this.renderCoins()}
       </div>
     );
-  }
+  };
 }
 
 export default CoinsDropdown;
