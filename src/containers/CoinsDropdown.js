@@ -23,7 +23,7 @@ const CoinsDropdown = props => {
       <div className="row coin" key={coin.code} onClick={() => props.onClick(coin.code)}>
         <div className="col-xs-4">{coin.code}</div>
         <div className="col-xs-3 text-center">
-          <i className={`cc-${coin.code} ${coin.code}`} />
+          <i className={`cc ${coin.code}`} />
         </div>
         <div className="col-xs-5 text-capitalize">{coin.name}</div>
       </div>

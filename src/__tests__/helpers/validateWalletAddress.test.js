@@ -26,6 +26,9 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'QTM')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BAT')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'REP')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BNB')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'KCS')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'KNC')).toEqual(true);
   });
 
   it('invalidates invalid ETH and ERC20 tokens address', () => {
@@ -37,6 +40,9 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('random address', 'QTM')).toEqual(false);
     expect(validateWalletAddress('random address', 'BAT')).toEqual(false);
     expect(validateWalletAddress('random address', 'REP')).toEqual(false);
+    expect(validateWalletAddress('random address', 'BNB')).toEqual(false);
+    expect(validateWalletAddress('random address', 'KCS')).toEqual(false);
+    expect(validateWalletAddress('random address', 'KNC')).toEqual(false);
   });
 
   it('validates valid DOGE address', () => {
@@ -80,10 +86,20 @@ describe('Validate coin address', () => {
   });
 
   it('validates valid USDT address', () => {
-    expect(validateWalletAddress('1C394PrnPG1bw3r7ERJS1pbauRbtf1Kxcx', 'USDT')).toEqual(true);
+    expect(validateWalletAddress('1Ee8D4v8mXLB73zozR6umsykZ9V5RpHsmo', 'USDT')).toEqual(true);
   });
 
   it('invalidates invalid USDT address', () => {
     expect(validateWalletAddress('random address', 'USDT')).toEqual(false);
+  });
+
+  it('validates valid XMR address', () => {
+    expect(
+      validateWalletAddress('47YGvYSSnxMFRJyptAw5B1BLsfrCdA7172hVCP8mQNaNimSMYvcKoRQXXY9MFYQZ3pVGnKnQhFRrUXxSt5nZar4T5ERVa86', 'XMR')
+    ).toEqual(true);
+  });
+
+  it('invalidates invalid XMR address', () => {
+    expect(validateWalletAddress('random address', 'XMR')).toEqual(false);
   });
 });
