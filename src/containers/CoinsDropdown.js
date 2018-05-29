@@ -10,6 +10,10 @@ class CoinsDropdown extends Component {
     this.state = { value: '' };
   }
 
+  componentDidMount = () => {
+    this.searchInput.focus();
+  };
+
   handleChange = event => {
     this.setState({ value: event.target.value });
   };
@@ -34,7 +38,13 @@ class CoinsDropdown extends Component {
     return (
       <div className="coins-search">
         <i class="fa fa-search" aria-hidden="true" />
-        <input type="text" onChange={this.handleChange} placeholder="Search" value={this.state.value} />
+        <input
+          type="text"
+          placeholder="Search"
+          ref={input => (this.searchInput = input)}
+          onChange={this.handleChange}
+          value={this.state.value}
+        />
         <i className={`material-icons clear ${this.state.value ? 'active' : null}`} onClick={this.clear}>
           clear
         </i>
