@@ -14,7 +14,7 @@ class CoinsDropdown extends Component {
     this.setState({ value: event.target.value });
   };
 
-  searchCoins(filteredCoins) {
+  searchCoins = filteredCoins => {
     if (!this.state.value) return filteredCoins;
 
     const fuse = new Fuse(filteredCoins, {
@@ -24,12 +24,20 @@ class CoinsDropdown extends Component {
     });
 
     return fuse.search(this.state.value);
-  }
+  };
+
+  clear = () => {
+    this.setState({ value: '' });
+  };
 
   renderSearch() {
     return (
-      <div>
-        <input type="text" className="coins-search" onChange={this.handleChange} />
+      <div className="coins-search">
+        <i class="fa fa-search" aria-hidden="true" />
+        <input type="text" onChange={this.handleChange} placeholder="Search" value={this.state.value} />
+        <i className={`material-icons clear ${this.state.value ? 'active' : null}`} onClick={this.clear}>
+          clear
+        </i>
       </div>
     );
   }
@@ -50,11 +58,13 @@ class CoinsDropdown extends Component {
       <div className="coins-list">
         {filteredCoins.map(coin => (
           <div className="row coin" key={coin.code} onClick={() => this.props.onClick(coin.code)}>
-            <div className="col-xs-4">{coin.code}</div>
+            <div className="col-xs-3">
+              <b>{coin.code}</b>
+            </div>
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
             </div>
-            <div className="col-xs-5 text-capitalize">{coin.name}</div>
+            <div className="col-xs-6 text-capitalize">{coin.name}</div>
           </div>
         ))}
       </div>
