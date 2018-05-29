@@ -1,10 +1,10 @@
 export default {
-  id_document_status: 'APPROVED',
+  id_document_status: 'UNDEFINED',
   util_document_status: 'UNDEFINED',
   selfie_document_status: 'UNDEFINED',
   whitelist_selfie_document_status: 'UNDEFINED',
-  is_verified: true,
-  residence_document_status: 'APPROVED',
+  is_verified: false,
+  residence_document_status: 'UNDEFINED',
   user_visible_comment: null,
   out_of_limit: false,
   limits_message: {
