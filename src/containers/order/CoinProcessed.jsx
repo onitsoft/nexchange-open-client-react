@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import isFiatOrder from '../../helpers/isFiatOrder';
 
 class CoinProcessed extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { order: this.props.order };
-    this.prepareState = this.prepareState.bind(this);
-  }
+  state = { order: this.props.order };
 
   componentDidMount() {
     this.prepareState(this.props);
@@ -18,15 +14,13 @@ class CoinProcessed extends Component {
     });
   }
 
-  prepareState(props) {
+  prepareState = props => {
     if (props.type === 'Deposit') {
       this.setState({
         coin: props.order.pair.quote.code,
         oppositeCoin: props.order.pair.base.code,
         amount: parseFloat(props.order.amount_quote),
-        address: props.order.deposit_address
-          ? props.order.deposit_address.address
-          : '',
+        address: props.order.deposit_address ? props.order.deposit_address.address : '',
         order: props.order,
       });
     } else if (props.type === 'Receive') {
@@ -34,13 +28,11 @@ class CoinProcessed extends Component {
         coin: props.order.pair.base.code,
         oppositeCoin: props.order.pair.quote.code,
         amount: parseFloat(props.order.amount_base),
-        address: props.order.withdraw_address
-          ? props.order.withdraw_address.address
-          : '',
+        address: props.order.withdraw_address ? props.order.withdraw_address.address : '',
         order: props.order,
       });
     }
-  }
+  };
 
   render() {
     let rates = ``;
@@ -49,69 +41,33 @@ class CoinProcessed extends Component {
       rates += `Rates at order creation: \n`;
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit')
-        rates += `${(1 / this.state.order.price.rate).toFixed(8)} ${
-          this.state.oppositeCoin
-        }\n`;
-      else if (this.props.type === 'Receive')
-        rates += `${this.state.order.price.rate.toFixed(8)} ${
-          this.state.oppositeCoin
-        }\n`;
+      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate).toFixed(8)} ${this.state.oppositeCoin}\n`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate.toFixed(8)} ${this.state.oppositeCoin}\n`;
 
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit')
-        rates += `${(
-          1 /
-          this.state.order.price.rate *
-          this.state.order.price.rate_usd
-        ).toFixed(8)} USD\n`;
-      else if (this.props.type === 'Receive')
-        rates += `${this.state.order.price.rate_usd.toFixed(8)} USD\n`;
+      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate * this.state.order.price.rate_usd).toFixed(8)} USD\n`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(8)} USD\n`;
 
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit')
-        rates += `${(
-          1 /
-          this.state.order.price.rate *
-          this.state.order.price.rate_btc
-        ).toFixed(8)} BTC`;
-      else if (this.props.type === 'Receive')
-        rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
+      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate * this.state.order.price.rate_btc).toFixed(8)} BTC`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
 
-      if (
-        this.state.order.user_provided_amount === 1 &&
-        this.props.type === 'Receive'
-      ) {
+      if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
         rates += `\n\nWithdrawal fee: \n`;
-        rates += `${this.state.order.withdrawal_fee} ${
-          this.state.order.pair.base.code
-        }`;
-      } else if (
-        this.state.order.user_provided_amount === 0 &&
-        this.props.type === 'Deposit'
-      ) {
+        rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
+      } else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
         rates += `\n\nWithdrawal fee: \n`;
-        rates += `${this.state.order.withdrawal_fee_quote} ${
-          this.state.order.pair.quote.code
-        }`;
+        rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
       }
     }
 
     return (
       <div className="col-xs-12 col-sm-6">
-        <div
-          className={`coin-box box media ${
-            this.props.type === 'Deposit' && isFiatOrder(this.props.order)
-              ? 'fiat'
-              : ''
-          }`}
-        >
+        <div className={`coin-box box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
           <div className="media-left">
-            <i
-              className={`coin-icon cc-${this.state.coin} ${this.state.coin}`}
-            />
+            <i className={`coin-icon cc ${this.state.coin}`} />
           </div>
 
           <div className="media-body">
