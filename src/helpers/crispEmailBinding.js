@@ -2,11 +2,11 @@ import { fetchUserEmail, setUserEmail } from '../actions';
 
 export const bindCrispEmail = store => {
   store.dispatch(fetchUserEmail()).then(res => {
-    const backendEmail = res.value;
+    const backendEmail = res ? res.value : null;
     const crispEmail = window.$crisp.get('user:email');
-    if (!backendEmail.length && crispEmail) {
+    if (!backendEmail && crispEmail) {
       store.dispatch(setUserEmail(crispEmail));
-    } else if (backendEmail.length && !crispEmail) {
+    } else if (backendEmail && !crispEmail) {
       window.$crisp.push(['set', 'user:email', [backendEmail]]);
     }
   });
