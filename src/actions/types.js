@@ -7,3 +7,5 @@ export const PAIRS_FETCHED = 'PAIRS_FETCHED';
 export const INVALID_AMOUNT = 'INVALID_AMOUNT';
 export const SET_ORDER = 'SET_ORDER';
 export const SET_KYC = 'SET_KYC';
+export const SET_EMAIL = 'SET_EMAIL';
+export const SET_EMAIL_AND_MESSAGE = 'SET_EMAIL_AND_MESSAGE';

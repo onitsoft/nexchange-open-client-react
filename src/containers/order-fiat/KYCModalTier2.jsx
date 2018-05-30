@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config';
-import fetchUserEmail from '../../helpers/fetchUserEmail';
 
 class KYCModalTier2 extends Component {
   constructor(props) {

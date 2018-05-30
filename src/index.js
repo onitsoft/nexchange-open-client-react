@@ -10,6 +10,8 @@ import './css/index.scss';
 import reducers from './reducers';
 import Loadable from 'react-loadable';
 
+import { fetchUserEmail } from './actions';
+
 import LoadingComponent from './components/LoadingComponent';
 import Referrals from './components/Referrals';
 import Header from './components/Header';
@@ -35,12 +37,15 @@ const AsyncNotFound = Loadable({
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const store = createStoreWithMiddleware(reducers);
 
 setAuthToken();
 crispEmailBinding();
 
+store.dispatch(fetchUserEmail());
+
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <BrowserRouter>
       <div>
         <Referrals />

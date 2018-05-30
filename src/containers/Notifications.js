@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setUserEmail } from '../actions';
 import config from '../config';
-import setUserEmail from '../helpers/setUserEmail';
-import fetchUserEmail from '../helpers/fetchUserEmail';
 
 class Notifications extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      email: '',
-      message: {
-        text: '',
-        error: false,
-      },
-      show: false,
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    email: '',
+    message: {
+      text: '',
+      error: false,
+    },
+    show: false,
+  };
 
   componentDidMount() {
     axios
-      .get(
-        `${config.API_BASE_URL}/users/me/orders/${
-          this.props.order.unique_reference
-        }`
-      )
+      .get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
       .then(data => {
         this.setState({ show: true });
       })
@@ -34,53 +25,41 @@ class Notifications extends Component {
         this.setState({ show: false });
       });
 
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
+    if (this.props.email.value) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
+      });
+    }
   }
 
-  handleChange(event) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.email !== this.props.email) {
+      if (this.props.email.message) {
+        this.setState({ message: this.props.email.message });
+
+        if (!this.props.email.message.error) {
+          this.setState({ emailFetched: true });
+        }
+      } else {
+        this.setState({
+          email: this.props.email.value,
+          emailFetched: true,
+        });
+      }
+    }
+  }
+
+  handleChange = event => {
     this.setState({
       email: event.target.value,
     });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
-
-    setUserEmail(
-      this.state.email,
-      () => {
-        this.setState({
-          message: {
-            text: 'Success, you set your email.',
-            error: false,
-          },
-        });
-      },
-      error => {
-        const message = {
-          text: 'Something went wrong. Try again later.',
-          error: true,
-        };
-
-        if (error.response) {
-          if (error.response.status === 401) {
-            message.text =
-              'You do not have access to get notifications for this order.';
-          } else if (
-            error.response.data &&
-            error.response.data.email.length &&
-            error.response.data.email[0]
-          ) {
-            message.text = error.response.data.email[0];
-          }
-        }
-
-        this.setState({ message });
-      }
-    );
-  }
+    this.props.setUserEmail(this.state.email);
+  };
 
   render() {
     if (this.state.show === false) {
@@ -97,13 +76,7 @@ class Notifications extends Component {
               <div className="row">
                 <div className="col-xs-12 col-md-8 col-md-push-2">
                   <form onSubmit={this.handleSubmit}>
-                    <h4
-                      className={
-                        this.state.message.error ? 'text-danger' : 'text-green'
-                      }
-                    >
-                      {this.state.message.text}
-                    </h4>
+                    <h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>{this.state.message.text}</h4>
 
                     <div className="form-group">
                       <input
@@ -133,4 +106,10 @@ class Notifications extends Component {
   }
 }
 
-export default Notifications;
+const mapStateToProps = ({ email }) => ({ email });
+const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDistachToProps
+)(Notifications);

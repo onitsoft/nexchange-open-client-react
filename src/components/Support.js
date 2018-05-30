@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../config';
-import fetchUserEmail from '../helpers/fetchUserEmail';
-import setUserEmail from '../helpers/setUserEmail';
 
 class Support extends Component {
   constructor(props) {
@@ -21,9 +19,9 @@ class Support extends Component {
   }
 
   componentDidMount() {
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
+    // fetchUserEmail(email => {
+    //   this.setState({ email, emailFetched: email.length > 0 });
+    // });
   }
 
   componentDidUpdate() {
@@ -39,7 +37,7 @@ class Support extends Component {
 
     this.setState({ loading: true });
 
-    setUserEmail(this.state.email);
+    // setUserEmail(this.state.email);
 
     axios({
       method: 'post',
