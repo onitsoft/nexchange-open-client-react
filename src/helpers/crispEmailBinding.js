@@ -1,27 +1,25 @@
-import fetchUserEmail from './fetchUserEmail';
-import setUserEmail from './setUserEmail.js';
+import { fetchUserEmail, setUserEmail } from '../actions';
 
-export const bindCrispEmail = () => {
-  fetchUserEmail(backendEmail => {
+export const bindCrispEmail = store => {
+  store.dispatch(fetchUserEmail()).then(res => {
+    const backendEmail = res ? res.value : null;
     const crispEmail = window.$crisp.get('user:email');
-
-    if (!backendEmail.length && crispEmail) {
-      setUserEmail(crispEmail);
-    } else if (backendEmail.length && !crispEmail) {
+    if (!backendEmail && crispEmail) {
+      store.dispatch(setUserEmail(crispEmail));
+    } else if (backendEmail && !crispEmail) {
       window.$crisp.push(['set', 'user:email', [backendEmail]]);
     }
   });
 };
 
-export default () => {
+export default store => {
   window.CRISP_READY_TRIGGER = () => {
-    bindCrispEmail();
-
+    bindCrispEmail(store);
     window.$crisp.push([
       'on',
       'user:email:changed',
       () => {
-        bindCrispEmail();
+        bindCrispEmail(store);
       },
     ]);
   };

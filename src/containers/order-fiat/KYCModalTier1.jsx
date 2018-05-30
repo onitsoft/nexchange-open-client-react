@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config';
-import fetchUserEmail from '../../helpers/fetchUserEmail';
 
 class KYCModal extends Component {
   constructor(props) {
@@ -16,19 +15,12 @@ class KYCModal extends Component {
       title: 'Get verified',
       buttonText: 'Upload file(s)',
       titleClass: '',
-      email: '',
       message: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.close = this.close.bind(this);
-  }
-
-  componentDidMount() {
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
   }
 
   componentDidUpdate() {
@@ -126,22 +118,13 @@ class KYCModal extends Component {
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-              onClick={this.close}
-            >
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className={`modal-title text-${this.state.titleClass}`}>
-              {this.state.title}
-            </h4>
+            <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
             <h5 style={{ marginBottom: 0 }}>
               <b>
-                This is a one-time process, once verified you’ll be able to
-                complete future purchases instantly until current verification
+                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
                 tier limits are reached.
               </b>
             </h5>
@@ -153,17 +136,10 @@ class KYCModal extends Component {
                 <div style={{ marginBottom: 45 }}>
                   <h2>Selfie</h2>
                   <small>
-                    i.e. you have to make a selfie of yourself with credit card
-                    in your hands. You may hide middle digits of the credit
+                    i.e. you have to make a selfie of yourself with credit card in your hands. You may hide middle digits of the credit
                     card.
                   </small>
-                  <input
-                    type="file"
-                    name="selfie"
-                    id="selfie"
-                    onChange={this.handleInputChange}
-                    accept="image/*"
-                  />
+                  <input type="file" name="selfie" id="selfie" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
 
@@ -177,11 +153,7 @@ class KYCModal extends Component {
                 maxLength="255"
               />
 
-              <button
-                type="submit"
-                className="btn btn-themed btn-md"
-                disabled={this.state.filesReady ? null : 'disabled'}
-              >
+              <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
                   className="fa fa-file"
                   aria-hidden="true"

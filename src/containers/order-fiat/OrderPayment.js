@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { fetchKyc } from '../../actions';
 import config from '../../config';
 import KYCModalTier0 from './KYCModalTier0';

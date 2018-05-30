@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setUserEmail } from '../../actions';
 import axios from 'axios';
 import config from '../../config';
-import setUserEmail from '../../helpers/setUserEmail';
-import fetchUserEmail from '../../helpers/fetchUserEmail';
 
 class KYCModal extends Component {
   constructor(props) {
@@ -27,17 +28,27 @@ class KYCModal extends Component {
   }
 
   componentDidMount() {
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
+    if (this.props.email.value) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
+      });
+    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function() {
           $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
         });
+      });
+    }
+
+    if (prevProps.email !== this.props.email) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
       });
     }
   }
@@ -108,7 +119,7 @@ class KYCModal extends Component {
       });
 
     if (this.state.email) {
-      setUserEmail(this.state.email);
+      this.props.setUserEmail(this.state.email);
     }
   }
 
@@ -122,9 +133,7 @@ class KYCModal extends Component {
         [name]: value,
       },
       () => {
-        let needUploadResidence = document.querySelector('#residenceProof')
-            ? true
-            : false,
+        let needUploadResidence = document.querySelector('#residenceProof') ? true : false,
           needUploadID = document.querySelector('#governmentID') ? true : false;
 
         if (
@@ -146,22 +155,13 @@ class KYCModal extends Component {
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-              onClick={this.close}
-            >
+            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
               <i className="material-icons">clear</i>
             </button>
-            <h4 className={`modal-title text-${this.state.titleClass}`}>
-              {this.state.title}
-            </h4>
+            <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
             <h5 style={{ marginBottom: 0 }}>
               <b>
-                This is a one-time process, once verified you’ll be able to
-                complete future purchases instantly until current verification
+                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
                 tier limits are reached.
               </b>
             </h5>
@@ -172,17 +172,8 @@ class KYCModal extends Component {
               {this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
                   <h2>Government issued ID</h2>
-                  <small>
-                    e.g. color scanned passport, driving license, ID card. Shows
-                    date of birth, has expiration date.
-                  </small>
-                  <input
-                    type="file"
-                    name="governmentID"
-                    id="governmentID"
-                    onChange={this.handleInputChange}
-                    accept="image/*"
-                  />
+                  <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
+                  <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
 
@@ -190,23 +181,14 @@ class KYCModal extends Component {
                 <div>
                   <h2>Proof of residence</h2>
                   <small>
-                    A high-resolution photo\scan of a <b>physical</b>{' '}
-                    (non-digital: no screenshots, web pages or PDFs generated on
-                    the internet) utility bill from a known service provider,
-                    not older than 3 months old. Delivery address must be a{' '}
+                    A high-resolution photo\scan of a <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the
+                    internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a{' '}
                     <b>fiscal, residence address (no PO boxes!).</b>
                   </small>
                   <small>
-                    Letters from the bank or credit card company delivered to a{' '}
-                    <b>fiscal address (not a P.O. BOX)</b> are also accepted.
+                    Letters from the bank or credit card company delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.
                   </small>
-                  <input
-                    type="file"
-                    name="residenceProof"
-                    id="residenceProof"
-                    onChange={this.handleInputChange}
-                    accept="image/*"
-                  />
+                  <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
 
@@ -246,11 +228,7 @@ This will also allow us to send you updates about your orders, your referrals, a
                 maxLength="255"
               />
 
-              <button
-                type="submit"
-                className="btn btn-themed btn-md"
-                disabled={this.state.filesReady ? null : 'disabled'}
-              >
+              <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
                   className="fa fa-file"
                   aria-hidden="true"
@@ -271,4 +249,10 @@ This will also allow us to send you updates about your orders, your referrals, a
   }
 }
 
-export default KYCModal;
+const mapStateToProps = ({ email }) => ({ email });
+const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDistachToProps
+)(KYCModal);

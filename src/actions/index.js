@@ -212,3 +212,51 @@ export const fetchKyc = orderId => async dispatch => {
 
   return request.then(res => dispatch({ type: types.SET_KYC, kyc: res.data })).catch(error => {});
 };
+
+export const fetchUserEmail = () => async dispatch => {
+  if (!localStorage.token) return;
+
+  const url = `${config.API_BASE_URL}/users/me/`;
+  const request = axios.get(url);
+
+  return request.then(res => dispatch({ type: types.SET_EMAIL, value: res.data.email }));
+};
+
+export const setUserEmail = email => async dispatch => {
+  if (!localStorage.token) return;
+
+  const url = `${config.API_BASE_URL}/users/me/`;
+  const request = axios.put(url, { email });
+
+  return request
+    .then(res => {
+      if (!window.$crisp.get('user:email')) {
+        window.$crisp.push(['set', 'user:email', [email]]);
+      }
+
+      dispatch({
+        type: types.SET_EMAIL_AND_MESSAGE,
+        value: res.data.email,
+        message: {
+          text: 'Success, you set your email.',
+          error: false,
+        },
+      });
+    })
+    .catch(error => {
+      let errorMessage = 'Something went wrong. Try again later.';
+
+      if (error.response && error.response.data && error.response.data.email.length && error.response.data.email[0]) {
+        errorMessage = error.response.data.email[0];
+      }
+
+      dispatch({
+        type: types.SET_EMAIL_AND_MESSAGE,
+        value: '',
+        message: {
+          text: errorMessage,
+          error: true,
+        },
+      });
+    });
+};

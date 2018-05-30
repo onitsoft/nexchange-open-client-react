@@ -35,12 +35,13 @@ const AsyncNotFound = Loadable({
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const store = createStoreWithMiddleware(reducers);
 
 setAuthToken();
-crispEmailBinding();
+crispEmailBinding(store);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <BrowserRouter>
       <div>
         <Referrals />
