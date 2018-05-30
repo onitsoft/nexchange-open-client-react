@@ -1,43 +1,50 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setUserEmail } from '../actions';
 import config from '../config';
 
 class Support extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      loading: false,
-      success: null,
-      showForm: true,
-    };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.close = this.close.bind(this);
-  }
+  state = {
+    loading: false,
+    success: null,
+    showForm: true,
+  };
 
   componentDidMount() {
-    // fetchUserEmail(email => {
-    //   this.setState({ email, emailFetched: email.length > 0 });
-    // });
+    if (this.props.email.value) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
+      });
+    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({
         show: this.props.show,
       });
     }
+
+    if (prevProps.email !== this.props.email) {
+      if (this.props.email.value) {
+        this.setState({
+          email: this.props.email.value,
+          emailFetched: true,
+        });
+      }
+    }
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
 
     this.setState({ loading: true });
 
-    // setUserEmail(this.state.email);
+    this.props.setUserEmail(this.state.email);
 
     axios({
       method: 'post',
@@ -58,14 +65,14 @@ class Support extends Component {
       .catch(error => {
         this.setState({ loading: false, showForm: false, success: false });
       });
-  }
+  };
 
-  close() {
+  close = () => {
     this.setState({ success: null, showForm: true });
     this.props.onClose();
-  }
+  };
 
-  handleInputChange(event) {
+  handleInputChange = event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -73,7 +80,7 @@ class Support extends Component {
     this.setState({
       [name]: value,
     });
-  }
+  };
 
   render() {
     return (
@@ -205,4 +212,10 @@ class Support extends Component {
   }
 }
 
-export default Support;
+const mapStateToProps = ({ email }) => ({ email });
+const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDistachToProps
+)(Support);

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setUserEmail } from '../../actions';
 import axios from 'axios';
 import config from '../../config';
 
@@ -25,17 +28,27 @@ class KYCModal extends Component {
   }
 
   componentDidMount() {
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
+    if (this.props.email.value) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
+      });
+    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function() {
           $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
         });
+      });
+    }
+
+    if (prevProps.email !== this.props.email) {
+      this.setState({
+        email: this.props.email.value,
+        emailFetched: true,
       });
     }
   }
@@ -106,7 +119,7 @@ class KYCModal extends Component {
       });
 
     if (this.state.email) {
-      setUserEmail(this.state.email);
+      this.props.setUserEmail(this.state.email);
     }
   }
 
@@ -236,4 +249,10 @@ This will also allow us to send you updates about your orders, your referrals, a
   }
 }
 
-export default KYCModal;
+const mapStateToProps = ({ email }) => ({ email });
+const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDistachToProps
+)(KYCModal);

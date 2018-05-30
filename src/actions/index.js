@@ -252,7 +252,7 @@ export const setUserEmail = email => async dispatch => {
 
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,
-        email: '',
+        value: '',
         message: {
           text: errorMessage,
           error: true,

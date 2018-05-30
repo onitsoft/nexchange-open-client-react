@@ -15,19 +15,12 @@ class KYCModalTier2 extends Component {
       title: 'Get verified',
       buttonText: 'Upload file(s)',
       titleClass: '',
-      email: '',
       message: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.close = this.close.bind(this);
-  }
-
-  componentDidMount() {
-    fetchUserEmail(email => {
-      this.setState({ email, emailFetched: email.length > 0 });
-    });
   }
 
   componentDidUpdate() {

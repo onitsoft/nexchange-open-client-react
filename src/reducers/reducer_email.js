@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case SET_EMAIL:
       return { ...state, value: action.value, message: action.message };
     case SET_EMAIL_AND_MESSAGE:
-      return { ...state, message: action.message };
+      return { ...state, value: action.value, message: action.message };
     default:
       return state;
   }

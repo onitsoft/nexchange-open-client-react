@@ -37,11 +37,9 @@ class Notifications extends Component {
     if (prevProps.email !== this.props.email) {
       if (this.props.email.message) {
         this.setState({ message: this.props.email.message });
+      }
 
-        if (!this.props.email.message.error) {
-          this.setState({ emailFetched: true });
-        }
-      } else {
+      if (this.props.email.value) {
         this.setState({
           email: this.props.email.value,
           emailFetched: true,
@@ -89,7 +87,6 @@ class Notifications extends Component {
                         disabled={this.state.emailFetched}
                         required
                       />
-                      <span className="material-input" />
                     </div>
 
                     <button type="submit" className="btn btn-themed btn-lg">
