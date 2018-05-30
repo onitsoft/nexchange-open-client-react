@@ -1,26 +1,26 @@
-// import fetchUserEmail from './fetchUserEmail';
-// import setUserEmail from './setUserEmail.js';
+import { fetchUserEmail, setUserEmail } from '../actions';
 
-export const bindCrispEmail = () => {
-  // fetchUserEmail(backendEmail => {
-  //   const crispEmail = window.$crisp.get('user:email');
-  //   if (!backendEmail.length && crispEmail) {
-  //     setUserEmail(crispEmail);
-  //   } else if (backendEmail.length && !crispEmail) {
-  //     window.$crisp.push(['set', 'user:email', [backendEmail]]);
-  //   }
-  // });
+export const bindCrispEmail = store => {
+  store.dispatch(fetchUserEmail()).then(res => {
+    const backendEmail = res.value;
+    const crispEmail = window.$crisp.get('user:email');
+    if (!backendEmail.length && crispEmail) {
+      store.dispatch(setUserEmail(crispEmail));
+    } else if (backendEmail.length && !crispEmail) {
+      window.$crisp.push(['set', 'user:email', [backendEmail]]);
+    }
+  });
 };
 
-export default () => {
-  // window.CRISP_READY_TRIGGER = () => {
-  //   bindCrispEmail();
-  //   window.$crisp.push([
-  //     'on',
-  //     'user:email:changed',
-  //     () => {
-  //       bindCrispEmail();
-  //     },
-  //   ]);
-  // };
+export default store => {
+  window.CRISP_READY_TRIGGER = () => {
+    bindCrispEmail(store);
+    window.$crisp.push([
+      'on',
+      'user:email:changed',
+      () => {
+        bindCrispEmail(store);
+      },
+    ]);
+  };
 };

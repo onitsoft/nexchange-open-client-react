@@ -10,8 +10,6 @@ import './css/index.scss';
 import reducers from './reducers';
 import Loadable from 'react-loadable';
 
-import { fetchUserEmail } from './actions';
-
 import LoadingComponent from './components/LoadingComponent';
 import Referrals from './components/Referrals';
 import Header from './components/Header';
@@ -40,9 +38,7 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 setAuthToken();
-crispEmailBinding();
-
-store.dispatch(fetchUserEmail());
+crispEmailBinding(store);
 
 ReactDOM.render(
   <Provider store={store}>
