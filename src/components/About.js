@@ -137,7 +137,7 @@ const About = () => (
                     marketing personnel, a community manager and content writers.
                   </p>
                   <p>
-                    Drop us a line at <a href="mailto:careers@nexchange.io">careers@nexchange.io</a>.
+                    Drop us a line at <a href="mailto:careers@n.exchange">careers@n.exchange</a>.
                   </p>
                 </div>
               }
