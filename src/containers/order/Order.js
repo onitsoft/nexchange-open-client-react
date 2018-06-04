@@ -99,4 +99,7 @@ class Order extends Component {
 
 const mapStateToProps = ({ order }) => ({ order });
 
-export default connect(mapStateToProps, { fetchOrder })(Order);
+export default connect(
+  mapStateToProps,
+  { fetchOrder }
+)(Order);

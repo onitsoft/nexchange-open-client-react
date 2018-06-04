@@ -82,11 +82,11 @@ class CoinsDropdown extends Component {
       <div className="coins-list">
         {this.getCoins().map(coin => (
           <div className="row coin" key={coin.code} onClick={() => this.props.onClick(coin.code)}>
-            <div className="col-xs-3">
-              <b>{coin.code}</b>
-            </div>
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
+            </div>
+            <div className="col-xs-3">
+              <b>{coin.code}</b>
             </div>
             <div className="col-xs-6 text-capitalize">{coin.name}</div>
           </div>
