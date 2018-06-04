@@ -28,7 +28,7 @@ class KYCModal extends Component {
   }
 
   componentDidMount() {
-    if (this.props.email.value) {
+    if (this.props.email && this.props.email.value) {
       this.setState({
         email: this.props.email.value,
         emailFetched: true,
