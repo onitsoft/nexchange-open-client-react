@@ -36,3 +36,8 @@ $bat-white: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/A
 @include generate-coin('KCS', '../img/logos/kcs.png', '../img/logos/kcs-white.png');
 @include generate-coin('XVG', '../img/logos/xvg.png', '../img/logos/xvg-white.png');
 @include generate-coin('BDG', '../img/logos/bdg.png', '../img/logos/bdg-white.png');
+@include generate-coin('BNT', '../img/logos/bnt.png', '../img/logos/bnt-white.png');
+@include generate-coin('BIX', '../img/logos/bix.png', '../img/logos/bix-white.png');
+@include generate-coin('COB', '../img/logos/cob.png', '../img/logos/cob-white.png');
+@include generate-coin('COSS', '../img/logos/coss.png', '../img/logos/coss-white.png');
+@include generate-coin('HT', '../img/logos/ht.png', '../img/logos/ht-white.png');
