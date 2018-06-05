@@ -31,7 +31,12 @@
   }
 
   #order-ref {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    color: $black;
+
+    @media (min-width: $screen-xs-min) {
+      margin-bottom: 24px;
+    }
   }
 
   #order-links {
@@ -57,17 +62,25 @@
   }
 
   .box {
-    h2 {
-      margin: 0;
+    @media (min-width: $screen-sm-min) {
+      margin-bottom: 24px;
     }
-    h4 {
-      font-size: 15px;
+
+    h5 {
+      font-size: 18px;
     }
+
+    h6 {
+      font-size: 12px;
+    }
+
     h5,
     h6 {
       margin: 0;
       text-transform: none;
+      color: $black;
     }
+
     .coin-icon {
       position: relative;
       top: 8px;
@@ -81,10 +94,6 @@
     }
     .text-warning {
       color: $green;
-    }
-
-    @media (min-width: $screen-sm-min) {
-      margin-bottom: 30px;
     }
   }
 
@@ -112,6 +121,7 @@
     }
   }
   #time-remaining {
+    font-weight: 500;
     color: #2cb4a0;
   }
   .order-status-section {
@@ -123,33 +133,11 @@
       margin-top: 15px;
     }
   }
-
-  @media (min-width: $screen-sm-min) {
-    padding: 25px 0;
-    h5 {
-      font-size: 15px;
-    }
-    h6 {
-      font-size: 12px;
-    }
-    .box h4 {
-      font-size: 18px;
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    h5 {
-      font-size: 17px;
-    }
-    h6 {
-      font-size: 14px;
-    }
-  }
 }
 
 #order-header {
   #bookmark-button {
-    font-size: 20px;
+    font-size: 16px;
     padding: 0;
     margin-top: 0;
     color: $green;
@@ -161,16 +149,33 @@
     }
     #bookmark-button {
       float: right;
-      margin-top: 22px;
+      margin: 28px 0 0 0;
     }
   }
 }
 
 #order-payment {
+  padding: 20px 40px 15px;
   text-align: center;
+
   h3 {
-    margin-top: 15px;
+    margin-top: 6px;
+    font-size: 18px;
+    color: $gray;
   }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  #qr-code {
+    float: left;
+    margin-right: 35px;
+    max-width: 152px;
+    border: 1px solid #efefef;
+    border-radius: 1px;
+  }
+
   @media (min-width: $screen-ms-min) {
     text-align: left;
   }
@@ -291,10 +296,12 @@
 
 @include keyframes(color-change) {
   from {
-    color: #adadad;
+    color: #9c9c9c;
+    fill: #9c9c9c;
   }
   to {
     color: $green;
+    fill: $green;
   }
 }
 
