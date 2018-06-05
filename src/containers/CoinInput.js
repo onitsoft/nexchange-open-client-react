@@ -17,11 +17,13 @@ class CoinInput extends PureComponent {
   }
 
   onChange = event => {
+    let { value } = event.target;
     const re = /^[0-9.,\b]+$/;
-    if (!re.test(event.target.value) && event.target.value !== '') return;
+    if (!re.test(value) && value !== '') return;
 
-    this.setState({ value: event.target.value });
-    this.fetchAmounts(event.target.value);
+    value = value.replace(/,/g, '.');
+    this.setState({ value });
+    this.fetchAmounts(value);
 
     ga('send', 'event', 'Order', 'change amount');
   };
@@ -97,4 +99,7 @@ class CoinInput extends PureComponent {
 const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchPrice }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoinInput);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoinInput);
