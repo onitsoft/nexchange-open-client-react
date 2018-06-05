@@ -135,8 +135,8 @@ class KYCModalTier2 extends Component {
               <div style={{ marginBottom: 45 }}>
                 <h2>Whitelist selfie</h2>
                 <small>
-                  i.e. you have to submit a selfie of yourself holding a paper with a written today's date and an address that matches the
-                  withdraw address of the order.
+                  i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with
+                  today's date and 'N.exchange'. You may hide middle digits of the credit card.
                 </small>
                 <input type="file" name="whitelist_selfie" id="whitelist_selfie" onChange={this.handleInputChange} accept="image/*" />
               </div>
