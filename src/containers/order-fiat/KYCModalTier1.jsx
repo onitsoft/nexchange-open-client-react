@@ -136,7 +136,7 @@ class KYCModal extends Component {
                 <div style={{ marginBottom: 45 }}>
                   <h2>Selfie</h2>
                   <small>
-                    i.e. you have to make a selfie of yourself with a provided credit card in your hands, plus a paper with a written
+                    i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with
                     today's date and 'N.exchange'. You may hide middle digits of the credit card.
                   </small>
                   <input type="file" name="selfie" id="selfie" onChange={this.handleInputChange} accept="image/*" />
