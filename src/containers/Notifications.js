@@ -89,7 +89,7 @@ class Notifications extends Component {
                       />
                     </div>
 
-                    <button type="submit" className="btn btn-themed btn-lg">
+                    <button type="submit" className="btn btn-primary btn-lg">
                       Receive notifications
                     </button>
                   </form>

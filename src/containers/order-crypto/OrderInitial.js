@@ -25,15 +25,12 @@ class OrderInitial extends Component {
 
   render() {
     return (
-      <div id="order-payment">
+      <div id="order-payment" className="row">
         <div className="col-xs-12 col-ms-4 col-sm-4 col-md-3">
           <img src={this.getDepositAddressQr()} alt="Deposit QR code" />
         </div>
 
-        <div
-          id="order-payment-details"
-          className="col-xs-12 col-ms-8 col-sm-8 col-md-9"
-        >
+        <div id="order-payment-details" className="col-xs-12 col-ms-8 col-sm-8 col-md-9">
           <h3>
             Time remaining:{' '}
             <span id="time-remaining">
@@ -52,15 +49,8 @@ class OrderInitial extends Component {
             </b>
           </h4>
 
-          <CopyToClipboard
-            text={this.props.order.deposit_address.address}
-            onCopy={() => this.triggerCopyTooltip()}
-          >
-            <button
-              id="copy-to-clipboard"
-              type="button"
-              className="btn btn-default btn-themed"
-            >
+          <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
+            <button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">
               Copy the address
             </button>
           </CopyToClipboard>
