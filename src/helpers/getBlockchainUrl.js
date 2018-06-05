@@ -1,5 +1,5 @@
 export default (coin, txId) => {
-  if (['ETH', 'EOS', 'BDG', 'GNT', 'OMG', 'QTM', 'BAT', 'REP', 'BNB', 'KCS', 'KNC'].indexOf(coin) > -1)
+  if (['ETH', 'EOS', 'BDG', 'GNT', 'OMG', 'QTM', 'BAT', 'REP', 'BNB', 'KCS', 'KNC', 'HT', 'BNT', 'BIX', 'COB', 'COSS'].indexOf(coin) > -1)
     return `https://etherscan.io/tx/${txId}`;
   else if (coin === 'LTC') return `https://live.blockcypher.com/ltc/tx/${txId}/`;
   else if (coin === 'BTC') return `https://blockchain.info/tx/${txId}`;

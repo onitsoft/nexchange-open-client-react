@@ -29,6 +29,11 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BNB')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'KCS')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'KNC')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'HT')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BNT')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BIX')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'COB')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'COSS')).toEqual(true);
   });
 
   it('invalidates invalid ETH and ERC20 tokens address', () => {
@@ -43,6 +48,11 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('random address', 'BNB')).toEqual(false);
     expect(validateWalletAddress('random address', 'KCS')).toEqual(false);
     expect(validateWalletAddress('random address', 'KNC')).toEqual(false);
+    expect(validateWalletAddress('random address', 'HT')).toEqual(false);
+    expect(validateWalletAddress('random address', 'BNT')).toEqual(false);
+    expect(validateWalletAddress('random address', 'BIX')).toEqual(false);
+    expect(validateWalletAddress('random address', 'COB')).toEqual(false);
+    expect(validateWalletAddress('random address', 'COSS')).toEqual(false);
   });
 
   it('validates valid DOGE address', () => {
