@@ -80,21 +80,10 @@ textarea.form-control:focus {
   width: 100%;
   padding: 15px;
   margin-bottom: 15px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #efefef;
   border-radius: 4px;
   background: #fff;
 }
-
-// .btn-themed {
-//   &,
-//   &:focus,
-//   &:visited {
-//     background: $green;
-//     // background: -moz-linear-gradient(to bottom, $blue 0, $green 100%);
-//     // background: -webkit-linear-gradient(to bottom, $blue 0, $green 100%);
-//     // background: linear-gradient(to bottom, $blue 0, $green 100%);
-//   }
-// }
 
 .text-green {
   color: $green !important;

@@ -26,34 +26,31 @@ class OrderInitial extends Component {
   render() {
     return (
       <div id="order-payment" className="row">
-        <div className="col-xs-12 col-ms-4 col-sm-4 col-md-3">
-          <img src={this.getDepositAddressQr()} alt="Deposit QR code" />
-        </div>
+        <div className="col-xs-12">
+          <img id="qr-code" src={this.getDepositAddressQr()} alt="Deposit QR code" />
 
-        <div id="order-payment-details" className="col-xs-12 col-ms-8 col-sm-8 col-md-9">
-          <h3>
-            Time remaining:{' '}
-            <span id="time-remaining">
-              <b>{this.props.time}</b>
-            </span>
-          </h3>
+          <div id="order-payment-details">
+            <h3>
+              Time remaining: <span id="time-remaining">{this.props.time}</span>
+            </h3>
 
-          <h4>
-            Send{' '}
-            <b>
-              {this.props.order.amount_quote} {this.props.order.pair.quote.code}
-            </b>{' '}
-            to the address<br />
-            <b id="deposit-address" style={{ wordWrap: 'break-word' }}>
-              {this.props.order.deposit_address.address}
-            </b>
-          </h4>
+            <h4>
+              Send{' '}
+              <b>
+                {this.props.order.amount_quote} {this.props.order.pair.quote.code}
+              </b>{' '}
+              to the address<br />
+              <b id="deposit-address" style={{ wordWrap: 'break-word' }}>
+                {this.props.order.deposit_address.address}
+              </b>
+            </h4>
 
-          <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
-            <button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">
-              Copy the address
-            </button>
-          </CopyToClipboard>
+            <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
+              <button id="copy-to-clipboard" type="button" className="btn btn-primary">
+                Copy address
+              </button>
+            </CopyToClipboard>
+          </div>
         </div>
       </div>
     );

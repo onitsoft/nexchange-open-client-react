@@ -37,7 +37,7 @@ class OrderStatus extends Component {
               data-original-title="In this step we are waiting for your deposit."
             >
               <span className="glyphicon glyphicon-save" aria-hidden="true" />
-              <h4>1. Awaiting deposit</h4>
+              <h4>Awaiting deposit</h4>
             </div>
 
             <div
@@ -50,13 +50,13 @@ class OrderStatus extends Component {
                 for proof of residence and government issued ID verification."
             >
               <span className="glyphicon glyphicon-user" aria-hidden="true" />
-              <h4>2. Awaiting verification</h4>
+              <h4>Awaiting verification</h4>
             </div>
 
             <div
               id="step-three"
               className={
-                status == 13 || status == 14 ? 'step active' : status >= 15 ? (status == 15 ? 'step active' : 'step done') : 'step'
+                status === 13 || status === 14 ? 'step active' : status >= 15 ? (status === 15 ? 'step active' : 'step done') : 'step'
               }
               data-toggle="tooltip"
               data-placement="top"
@@ -64,7 +64,7 @@ class OrderStatus extends Component {
               data-original-title="We got the funds and now have transferred our funds to you."
             >
               <span className="glyphicon glyphicon-ok" aria-hidden="true" />
-              <h4>3. All done</h4>
+              <h4>All done</h4>
             </div>
 
             <div className="progres-container">

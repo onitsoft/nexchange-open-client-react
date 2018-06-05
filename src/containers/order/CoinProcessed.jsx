@@ -46,12 +46,13 @@ class CoinProcessed extends Component {
 
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate * this.state.order.price.rate_usd).toFixed(8)} USD\n`;
+      if (this.props.type === 'Deposit')
+        rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_usd).toFixed(8)} USD\n`;
       else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(8)} USD\n`;
 
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate * this.state.order.price.rate_btc).toFixed(8)} BTC`;
+      if (this.props.type === 'Deposit') rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_btc).toFixed(8)} BTC`;
       else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
 
       if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
@@ -72,10 +73,10 @@ class CoinProcessed extends Component {
 
           <div className="media-body">
             <h5>
+              {this.props.type}{' '}
               <b>
-                {this.props.type} {this.state.amount} {this.state.coin}
+                {this.state.amount} {this.state.coin}
               </b>
-
               <i
                 className="fa fa-question-circle"
                 data-toggle="tooltip"
