@@ -24,11 +24,7 @@ class RefundAddress extends Component {
 
   componentDidMount() {
     axios
-      .get(
-        `${config.API_BASE_URL}/users/me/orders/${
-          this.props.order.unique_reference
-        }`
-      )
+      .get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
       .then(data => {
         this.setState({ show: true });
       })
@@ -48,9 +44,7 @@ class RefundAddress extends Component {
         () => {
           this.setState({
             message: {
-              text: `${address} is not a valid ${
-                this.props.order.pair.quote.code
-              } address`,
+              text: `${address} is not a valid ${this.props.order.pair.quote.code} address`,
               error: 'error',
             },
           });
@@ -80,12 +74,9 @@ class RefundAddress extends Component {
     event.preventDefault();
 
     axios
-      .put(
-        `${config.API_BASE_URL}/orders/${this.props.order.unique_reference}/`,
-        {
-          refund_address: this.state.address,
-        }
-      )
+      .put(`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}/`, {
+        refund_address: this.state.address,
+      })
       .then(data => {
         this.setState({
           message: {
@@ -105,10 +96,7 @@ class RefundAddress extends Component {
   }
 
   render() {
-    if (
-      [11, 12, 13, 14, 15].indexOf(this.props.order.status_name[0][0]) === -1 ||
-      !this.state.show
-    ) {
+    if ([12, 13, 14, 15].indexOf(this.props.order.status_name[0][0]) === -1 || !this.state.show) {
       return null;
     }
 
@@ -119,13 +107,7 @@ class RefundAddress extends Component {
         <div className="row">
           <div className="col-xs-12 col-md-8 col-md-push-2">
             <form onSubmit={this.handleSubmit}>
-              <h4
-                className={
-                  this.state.message.error ? 'text-danger' : 'text-green'
-                }
-              >
-                {this.state.message.text}
-              </h4>
+              <h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>{this.state.message.text}</h4>
 
               <div className="form-group">
                 <input
@@ -139,11 +121,7 @@ class RefundAddress extends Component {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn btn-themed btn-lg"
-                disabled={this.state.disabled}
-              >
+              <button type="submit" className="btn btn-themed btn-lg" disabled={this.state.disabled}>
                 Set refund address
               </button>
             </form>
