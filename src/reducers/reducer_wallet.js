@@ -1,4 +1,4 @@
-import { SET_WALLET } from '../actions/types';
+import { SET_WALLET } from 'Actions/types';
 
 const initialState = {
   address: '',

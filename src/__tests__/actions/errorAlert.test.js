@@ -1,5 +1,5 @@
-import * as types from '../../actions/types';
-import * as actions from '../../actions';
+import * as types from 'Actionstypes';
+import * as actions from 'Actions';
 
 it('creates an action to set alert', () => {
   const payload = { show: false, message: null };
