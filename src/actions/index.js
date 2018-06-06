@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as types from './types';
 import _ from 'lodash';
-import config from '../config';
-import urlParams from '../helpers/urlParams';
-import preparePairs from '../helpers/preparePairs';
+import config from 'Config';
+import urlParams from 'Utils/urlParams';
+import preparePairs from 'Utils/preparePairs';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,

@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_wallet';
-import * as types from '../../actions/types';
+import * as types from 'Actionstypes';
 
 describe('wallet reducer', () => {
   const initialState = {

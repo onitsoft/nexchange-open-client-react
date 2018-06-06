@@ -2,8 +2,8 @@
 // import thunk from 'redux-thunk';
 // import axios from 'axios';
 // import MockAdapter from 'axios-mock-adapter';
-// import * as types from '../../actions/types';
-// import * as actions from '../../actions';
+// import * as types from 'Actionstypes';
+// import * as actions from 'Actions';
 // import mockData from '../__mocks__/currency';
 // import _ from 'lodash';
 

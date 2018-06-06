@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_error_alert';
-import * as types from '../../actions/types';
+import * as types from 'Actionstypes';
 
 describe('error alert reducer', () => {
   const initialState = {
