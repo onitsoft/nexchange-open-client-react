@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Deposit from '../../images/deposit.svg';
+import Confirmations from '../../images/confirmations.svg';
+import Done from '../../images/done.svg';
 import STATUS_CODES from 'StatusCodes';
 
 class OrderStatus extends Component {
@@ -36,7 +39,7 @@ class OrderStatus extends Component {
               title=""
               data-original-title="In this step we are waiting for your deposit."
             >
-              <span className="glyphicon glyphicon-save" aria-hidden="true" />
+              <Deposit />
               <h4>1. Awaiting deposit</h4>
             </div>
 
@@ -50,7 +53,7 @@ class OrderStatus extends Component {
                 we are now waiting for the required number of
                 confirmations before you can receive your funds."
             >
-              <span className="glyphicon glyphicon-transfer" aria-hidden="true" />
+              <Confirmations />
               <h4>2. Awaiting confirmations</h4>
             </div>
 
@@ -64,7 +67,7 @@ class OrderStatus extends Component {
               title=""
               data-original-title="We got the funds and now have transferred our funds to you."
             >
-              <span className="glyphicon glyphicon-ok" aria-hidden="true" />
+              <Done />
               <h4>3. All done</h4>
             </div>
 

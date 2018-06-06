@@ -56,7 +56,7 @@ class OrderStatus extends Component {
             <div
               id="step-three"
               className={
-                status == 13 || status == 14 ? 'step active' : status >= 15 ? (status == 15 ? 'step active' : 'step done') : 'step'
+                status === 13 || status === 14 ? 'step active' : status >= 15 ? (status == 15 ? 'step active' : 'step done') : 'step'
               }
               data-toggle="tooltip"
               data-placement="top"

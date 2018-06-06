@@ -66,32 +66,6 @@
       margin-bottom: 24px;
     }
 
-    h5 {
-      font-size: 18px;
-    }
-
-    h6 {
-      font-size: 12px;
-    }
-
-    h5,
-    h6 {
-      margin: 0;
-      text-transform: none;
-      color: $black;
-    }
-
-    .coin-icon {
-      position: relative;
-      top: 8px;
-      font-size: 28px;
-      @media (min-width: $screen-sm-min) {
-        top: 9px;
-      }
-      @media (min-width: $screen-md-min) {
-        top: 11px;
-      }
-    }
     .text-warning {
       color: $green;
     }
@@ -113,13 +87,6 @@
       }
     }
   }
-
-  .coin-box {
-    padding-left: 10px;
-    .tooltip-inner {
-      text-align: left;
-    }
-  }
   #time-remaining {
     font-weight: 500;
     color: #2cb4a0;
@@ -131,25 +98,6 @@
     .explanation {
       font-size: 16px;
       margin-top: 15px;
-    }
-  }
-}
-
-#order-header {
-  #bookmark-button {
-    font-size: 16px;
-    padding: 0;
-    margin-top: 0;
-    color: $green;
-  }
-
-  @media (min-width: $screen-ms-min) {
-    h3 {
-      float: left;
-    }
-    #bookmark-button {
-      float: right;
-      margin: 28px 0 0 0;
     }
   }
 }
