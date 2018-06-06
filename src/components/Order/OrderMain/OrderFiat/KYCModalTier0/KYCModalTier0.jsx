@@ -204,7 +204,7 @@ class KYCModal extends Component {
                 />
 
                 <i
-                  className="fab fa-question-circle"
+                  className="fa fa-question-circle"
                   data-toggle="tooltip"
                   data-placement="left"
                   style={{

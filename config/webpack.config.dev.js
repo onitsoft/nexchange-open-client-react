@@ -214,7 +214,18 @@ module.exports = {
                 },
               },
               {
-                loader: 'sass-loader', // compiles Sass to CSS
+                loader: 'sass-loader',
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: [
+                    path.resolve(__dirname, '../src/css/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/bootstrap/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/material-kit/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/material-kit/_variables_bootstrap.scss'),
+                  ],
+                },
               },
             ],
           },

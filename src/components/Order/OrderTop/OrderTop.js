@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Bookmark from './Bookmark/Bookmark';
+import styles from './OrderTop.scss';
 
 class OrderTop extends Component {
   constructor(props) {
@@ -13,15 +14,14 @@ class OrderTop extends Component {
   render() {
     return (
       <div className="row">
-        <div id="order-header" className="col-xs-12">
-          <h3 id="order-ref">
+        <div className="col-xs-12">
+          <h3 className={styles.ref}>
             Order Reference: <b>{this.props.order.unique_reference}</b>
           </h3>
 
           <button
-            id="bookmark-button"
             type="button"
-            className="btn btn-default btn-simple"
+            className={`${styles.bookmark} btn btn-default btn-simple`}
             onClick={() => this.setState({ showBookmarkModal: true })}
           >
             BOOKMARK

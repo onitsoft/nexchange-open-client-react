@@ -1,0 +1,16 @@
+.bookmark.bookmark.bookmark.bookmark {
+  font-size: 16px;
+  padding: 0;
+  color: $green;
+}
+
+@media (min-width: $screen-ms-min) {
+  .ref.ref {
+    float: left;
+  }
+
+  .bookmark.bookmark {
+    float: right;
+    margin: 28px 0 0 0;
+  }
+}

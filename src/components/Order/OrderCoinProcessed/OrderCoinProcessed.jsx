@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import isFiatOrder from 'Utils/isFiatOrder';
+import styles from './OrderCoinProcessed.scss';
 
 class OrderCoinProcessed extends Component {
   state = { order: this.props.order };
@@ -66,9 +67,9 @@ class OrderCoinProcessed extends Component {
 
     return (
       <div className="col-xs-12 col-sm-6">
-        <div className={`coin-box box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
-          <div className="media-left">
-            <i className={`coin-icon cc ${this.state.coin}`} />
+        <div className={`${styles.box} box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
+          <div className={`${styles['media-left']} media-left`}>
+            <i className={`${styles.coin} cc ${this.state.coin}`} />
           </div>
 
           <div className="media-body">
@@ -78,7 +79,7 @@ class OrderCoinProcessed extends Component {
                 {this.state.amount} {this.state.coin}
               </b>
               <i
-                className="fab fa-question-circle"
+                className="fa fa-question-circle"
                 data-toggle="tooltip"
                 data-placement="top"
                 style={{ marginLeft: 8 }}
