@@ -17,7 +17,8 @@ import Loading from '../../components/Loading';
 
 import Notifications from '../../containers/Notifications';
 import RefundAddress from '../../containers/RefundAddress';
-import ReferralBox from '../../containers/ReferralBox';
+
+import styles from './order.css';
 
 class Order extends Component {
   constructor(props) {
@@ -75,20 +76,20 @@ class Order extends Component {
       return <NotFound />;
     } else if (typeof this.state.order === 'object') {
       return (
-        <div id="order" className={isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
-          <div className="container">
-            <OrderTop order={this.state.order} />
+        <div className={styles.container}>
+          <div id="order" className={isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
+            <div className="container">
+              <OrderTop order={this.state.order} />
 
-            <div className="row">
-              <CoinProcessed type="Deposit" order={this.state.order} />
-              <CoinProcessed type="Receive" order={this.state.order} />
+              <div className="row">
+                <CoinProcessed type="Deposit" order={this.state.order} />
+                <CoinProcessed type="Receive" order={this.state.order} />
 
-              <OrderInfo order={this.state.order} />
-              <Notifications order={this.state.order} />
+                <OrderInfo order={this.state.order} />
+                <Notifications order={this.state.order} />
 
-              {!isFiatOrder(this.state.order) && <RefundAddress order={this.state.order} />}
-
-              <ReferralBox order={this.state.order} />
+                {!isFiatOrder(this.state.order) && <RefundAddress order={this.state.order} />}
+              </div>
             </div>
           </div>
         </div>
