@@ -155,7 +155,7 @@ class KYCModal extends Component {
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
-                  className="fa fa-file"
+                  className="fab fa-file"
                   aria-hidden="true"
                   style={{
                     position: 'relative',

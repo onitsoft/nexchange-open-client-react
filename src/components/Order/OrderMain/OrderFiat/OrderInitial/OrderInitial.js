@@ -17,7 +17,7 @@ const OrderInitial = props => {
           </b>
         </h4>
         <a href={props.order.payment_url} target="_blank" className="btn btn-default btn-lg">
-          <i className="fa fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
+          <i className="fab fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
           Pay now
         </a>
       </div>

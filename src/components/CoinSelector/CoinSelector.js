@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, setWallet, errorAlert } from 'Actions/index.js';
-import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
-import styles from './CoinSelector.css';
+import CoinsDropdown from './CoinsDropdown';
+import '../css/_coin-selector.scss';
+require('react-fa');
 
 class CoinSelector extends Component {
   state = {
@@ -87,12 +88,12 @@ class CoinSelector extends Component {
     return (
       <div>
         <div
-          className={`selected-coin ${styles['selected-coin']}`}
+          className={`selectedCoin selectedCoin-${type}`}
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
-          <span className={styles.span}>{selectedCoin}</span>
-          <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
-          <i className={`fas fa-angle-down ${styles['arrow-down']}`} />
+          <span>{selectedCoin}</span>
+          <i className={`coin-icon cc ${selectedCoin}`} />
+          <i className="fas fa-angle-down" />
         </div>
 
         {this.state.isDropdownVisible && <CoinsDropdown type={type} onClick={this.handleClick} coinsInfo={this.props.coinsInfo} />}
@@ -101,7 +102,12 @@ class CoinSelector extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
+const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({
+  selectedCoin,
+  coinsInfo,
+  pairs,
+  price,
+});
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, setWallet, errorAlert }, dispatch);
 
 export default connect(

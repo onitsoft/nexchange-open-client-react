@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import isFiatOrder from 'Utils/isFiatOrder';
 
-class OrderCoinProcessed extends Component {
+class CoinProcessed extends Component {
   state = { order: this.props.order };
 
   componentDidMount() {
@@ -93,4 +93,4 @@ class OrderCoinProcessed extends Component {
   }
 }
 
-export default OrderCoinProcessed;
+export default CoinProcessed;

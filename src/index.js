@@ -26,6 +26,7 @@ window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
 require('./js/material.min.js');
 require('./js/material-kit.js');
+require('react-fa');
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);

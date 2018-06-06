@@ -41,7 +41,7 @@ class ReferralBox extends Component {
             target="_blank"
             onClick={this.trackRefShare}
           >
-            <i className="fa fa-facebook-official" aria-hidden="true" />
+            <i className="fab fa-facebook-official" aria-hidden="true" />
           </a>
           <a
             href={`https://twitter.com/intent/tweet?url=${config.DOMAIN}?ref=${
@@ -50,14 +50,14 @@ class ReferralBox extends Component {
             target="_blank"
             onClick={this.trackRefShare}
           >
-            <i className="fa fa-twitter-square" aria-hidden="true" />
+            <i className="fab fa-twitter-square" aria-hidden="true" />
           </a>
           <a
             href={`https://www.linkedin.com/shareArticle?mini=true&url=${config.DOMAIN}?ref=${this.props.order.referral_code[0].code}`}
             target="_blank"
             onClick={this.trackRefShare}
           >
-            <i className="fa fa-linkedin-square" aria-hidden="true" />
+            <i className="fab fa-linkedin-square" aria-hidden="true" />
           </a>
         </div>
 

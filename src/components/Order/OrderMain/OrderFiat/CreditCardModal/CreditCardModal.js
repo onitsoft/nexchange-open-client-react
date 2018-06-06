@@ -209,7 +209,7 @@ class CreditCardModal extends Component {
                     Pay now
                     {this.state.loading ? (
                       <i
-                        className="fa fa-spinner fa-spin"
+                        className="fab fa-spinner fa-spin"
                         style={{ marginLeft: '10px' }}
                       />
                     ) : null}

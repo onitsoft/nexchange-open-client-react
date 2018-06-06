@@ -18,7 +18,7 @@ class QuestionAnswer extends Component {
         <h3 onClick={this.onClick}>
           {this.props.question}{' '}
           <i
-            className={`fa fa-${this.state.open ? 'minus' : 'plus'}-square-o`}
+            className={`fab fa-${this.state.open ? 'minus' : 'plus'}-square-o`}
             aria-hidden="true"
           />
         </h3>
