@@ -5,7 +5,10 @@ import onClickOutside from 'react-onclickoutside';
 
 import { selectCoin, fetchPrice, setWallet, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
-import './CoinSelector.css';
+import styles from './CoinSelector.css';
+
+import { Icon } from 'react-fa';
+
 require('react-fa');
 
 class CoinSelector extends Component {
@@ -89,12 +92,12 @@ class CoinSelector extends Component {
     return (
       <div>
         <div
-          className={`selectedCoin selectedCoin-${type}`}
+          className={`selected-coin ${styles['selected-coin']}`}
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
-          <span>{selectedCoin}</span>
-          <i className={`coin-icon cc ${selectedCoin}`} />
-          <i className="fa fa-angle-down" />
+          <span className={styles.span}>{selectedCoin}</span>
+          <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
+          <i className={`fa fa-angle-down ${styles['arrow-down']}`} />
         </div>
 
         {this.state.isDropdownVisible && <CoinsDropdown type={type} onClick={this.handleClick} coinsInfo={this.props.coinsInfo} />}

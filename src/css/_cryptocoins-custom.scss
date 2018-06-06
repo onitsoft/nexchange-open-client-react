@@ -4,7 +4,7 @@
     color: transparent;
   }
 
-  .selectedCoin .cc.#{$coin}::before {
+  .selected-coin .cc.#{$coin}::before {
     background-image: url($whiteUrl);
   }
 }
