@@ -45,6 +45,7 @@ module.exports = {
           // in development "style" loader enables hot editing of CSS.
           {
             test: /\.css$/,
+            exclude: /node_modules/,
             use: [
               require.resolve('style-loader'),
               {
@@ -96,12 +97,18 @@ module.exports = {
 
           {
             test: /\.scss$/,
+            exclude: /node_modules/,
             use: [
               {
                 loader: 'style-loader', // creates style nodes from JS strings
               },
               {
                 loader: 'css-loader', // translates CSS into CommonJS
+                options: {
+                  modules: true,
+                  localIdentName: '[name]__[local]__[hash:base64:5]',
+                  importLoaders: 1,
+                },
               },
               {
                 loader: 'sass-loader', // compiles Sass to CSS
@@ -119,7 +126,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.ejs$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.ejs$/, /\.json$/, /\.scss$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',

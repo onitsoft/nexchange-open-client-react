@@ -34,7 +34,7 @@ input {
   font-size: 16px;
 }
 
-.clear {
+.clear.clear {
   font-size: 18px;
   position: absolute;
   top: 11px;

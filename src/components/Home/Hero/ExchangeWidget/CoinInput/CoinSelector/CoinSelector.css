@@ -1,4 +1,4 @@
-.selectedCoin {
+.selected-coin {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -8,7 +8,7 @@
   color: #fff;
 }
 
-.coin-icon {
+.coin-icon.coin-icon {
   position: relative;
   top: 1px;
   color: #fff;
