@@ -59,6 +59,7 @@
     "react-stickynode": "^1.4.1",
     "react-svg-inline": "^2.1.0",
     "react-svg-loader": "^2.1.0",
+    "reactstrap": "^6.1.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "resolve": "1.6.0",
