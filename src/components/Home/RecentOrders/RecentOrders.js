@@ -75,7 +75,7 @@ class RecentOrders extends Component {
           <div className="col-xs-4 coins-container">
             <div className="coins">
               <i className={`coin-icon cc ${order.pair.quote.code}`} />
-              <i className="fa fa-arrow-right" aria-hidden="true" />
+              <i className="fas fa-arrow-right" aria-hidden="true" />
               <i className={`coin-icon cc ${order.pair.base.code}`} />
             </div>
           </div>

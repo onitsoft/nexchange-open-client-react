@@ -204,7 +204,7 @@ class KYCModal extends Component {
                 />
 
                 <i
-                  className="fa fa-question-circle"
+                  className="fab fa-question-circle"
                   data-toggle="tooltip"
                   data-placement="left"
                   style={{
@@ -230,7 +230,7 @@ This will also allow us to send you updates about your orders, your referrals, a
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
-                  className="fa fa-file"
+                  className="fab fa-file"
                   aria-hidden="true"
                   style={{
                     position: 'relative',

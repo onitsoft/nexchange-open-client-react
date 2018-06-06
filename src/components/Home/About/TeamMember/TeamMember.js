@@ -6,12 +6,12 @@ const TeamMember = props => {
     for (const key of Object.keys(props.social)) {
       let className;
 
-      if (key === 'medium' || key === 'quora' || key === 'stack-overflow') {
-        className = `fa fa-${key}`;
-      } else if (key === 'blog') {
-        className = 'fas fa-laptop';
+      if (key === 'medium' || key === 'quora' || key === 'stack-overflow' || key === 'linkedin') {
+        className = `fab fa-${key}`;
+      } else if (key === 'rss') {
+        className = 'fas fa-rss-square';
       } else {
-        className = `fa fa-${key}-square`;
+        className = `fab fa-${key}-square`;
       }
 
       social.push(

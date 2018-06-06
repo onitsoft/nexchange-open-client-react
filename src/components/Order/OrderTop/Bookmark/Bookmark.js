@@ -85,7 +85,7 @@ class Bookmark extends Component {
                 onCopy={() => this.triggerCopyTooltip()}
               >
                 <span className="input-group-addon">
-                  <i className="fa fa-clipboard" aria-hidden="true" />
+                  <i className="fab fa-clipboard" aria-hidden="true" />
                 </span>
               </CopyToClipboard>
             </div>

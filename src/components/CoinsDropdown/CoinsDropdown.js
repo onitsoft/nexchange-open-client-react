@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Fuse from 'fuse.js';
-import cx from 'classnames';
 import urlParams from 'Utils/urlParams';
-import styles from './CoinsDropdown.css';
+import Fuse from 'fuse.js';
+import '../css/_coins-dropdown.scss';
 
 class CoinsDropdown extends Component {
   constructor(props) {
@@ -62,7 +61,7 @@ class CoinsDropdown extends Component {
 
   renderSearch = () => {
     return (
-      <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
+      <form className="coins-search" onSubmit={this.handleSubmit}>
         <i class="fas fa-search" aria-hidden="true" />
         <input
           type="text"
@@ -71,7 +70,7 @@ class CoinsDropdown extends Component {
           onChange={this.handleChange}
           value={this.state.value}
         />
-        <i className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`} onClick={this.clear}>
+        <i className={`material-icons clear ${this.state.value ? 'active' : null}`} onClick={this.clear}>
           clear
         </i>
       </form>
@@ -80,9 +79,9 @@ class CoinsDropdown extends Component {
 
   renderCoins = () => {
     return (
-      <div className={styles['coins-list']}>
+      <div className="coins-list">
         {this.getCoins().map(coin => (
-          <div className={`row ${styles.coin}`} key={coin.code} onClick={() => this.props.onClick(coin.code)}>
+          <div className="row coin" key={coin.code} onClick={() => this.props.onClick(coin.code)}>
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
             </div>
@@ -98,7 +97,7 @@ class CoinsDropdown extends Component {
 
   render = () => {
     return (
-      <div className={styles['coin-currency-dropdown']}>
+      <div className="coin-currency-dropdown">
         {this.renderSearch()}
         {this.renderCoins()}
       </div>

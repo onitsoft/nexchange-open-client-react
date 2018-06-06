@@ -181,7 +181,7 @@ class Support extends Component {
 
                   <button type="submit" className="btn btn-themed btn-md" disabled={this.state.loading ? 'disabled' : null}>
                     Send
-                    {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                    {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                   </button>
 
                   <button

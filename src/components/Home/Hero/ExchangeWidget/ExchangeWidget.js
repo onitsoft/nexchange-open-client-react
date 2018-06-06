@@ -134,7 +134,7 @@ class ExchangeWidget extends Component {
                 disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
               >
                 Confirm & Place Order
-                {this.state.loading ? <i className="fa fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
               </button>
             )}
           </div>

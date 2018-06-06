@@ -88,19 +88,19 @@ class Header extends Component {
 
               <li className="social-mobile">
                 <a href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
-                  <i className="fa fa-twitter" aria-hidden="true" />
+                  <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
 
                 <a href="/fb" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
-                  <i className="fa fa-facebook" aria-hidden="true" />
+                  <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
 
                 <a href="/slack" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
-                  <i className="fa fa-slack" aria-hidden="true" />
+                  <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
 
                 <a href="/telegram" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
-                  <i className="fa fa-telegram" aria-hidden="true" />
+                  <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
               </li>
 
@@ -114,7 +114,7 @@ class Header extends Component {
                   data-placement="bottom"
                   data-original-title="Follow us on Twitter"
                 >
-                  <i className="fa fa-twitter" aria-hidden="true" />
+                  <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
               </li>
 
@@ -128,7 +128,7 @@ class Header extends Component {
                   data-placement="bottom"
                   data-original-title="Like us on Facebook"
                 >
-                  <i className="fa fa-facebook" aria-hidden="true" />
+                  <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
               </li>
 
@@ -142,7 +142,7 @@ class Header extends Component {
                   data-placement="bottom"
                   data-original-title="Join us on Slack"
                 >
-                  <i className="fa fa-slack" aria-hidden="true" />
+                  <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
               </li>
 
@@ -156,7 +156,7 @@ class Header extends Component {
                   data-placement="bottom"
                   data-original-title="Join us on Telegram"
                 >
-                  <i className="fa fa-telegram" aria-hidden="true" />
+                  <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
               </li>
             </ul>

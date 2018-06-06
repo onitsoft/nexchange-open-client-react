@@ -18,7 +18,7 @@ const Testimonial = props => (
         target="_blank"
         className={`btn social-link ${props.network}`}
       >
-        <i className={`fa fa-${props.network}`} />
+        <i className={`fab fa-${props.network}`} />
         <span className="social-link-text">{props.network.toLowerCase()}</span>
       </a>
 
