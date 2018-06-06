@@ -149,8 +149,15 @@ export const fetchPairs = payload => {
 
         // Picks random deposit and receive coins.
         const pickRandomCoins = coins => {
+          // Checks if url has params. If yes then update accordingly and if no then pick random coins.
+          let params = urlParams();
+	        if (params && params.hasOwnProperty('pair')){
+          depositCoin = params['pair'].substring(3,6);
+          receiveCoin = params['pair'].substring(0,3);
+
+          if (!_.filter(coins,{code: depositCoin,is_quote_of_enabled_pair: true,}).length === true )
           depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
-          receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
+        }
 
           // If pair is invalid, try again until valid
           if (
@@ -160,7 +167,9 @@ export const fetchPairs = payload => {
             }).length ||
             pairs[depositCoin][receiveCoin] === false
           ) {
-            pickRandomCoins(coins);
+            // Picks random deposit and receive coins.
+            depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
+            receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
           }
         };
         pickRandomCoins(payload);
