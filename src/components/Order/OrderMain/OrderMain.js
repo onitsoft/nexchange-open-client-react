@@ -9,14 +9,13 @@ import OrderReleased from './OrderReleased/OrderReleased';
 import OrderSuccess from './OrderSuccess/OrderSuccess';
 import OrderFailure from './OrderFailure/OrderFailure';
 import OrderRefunded from './OrderRefunded/OrderRefunded';
+import OrderStatus from './OrderStatus/OrderStatus';
 
 import OrderPaymentFiat from './OrderFiat/OrderPayment/OrderPayment';
 import OrderPaidFiat from './OrderFiat/OrderPaid/OrderPaid';
-import OrderStatusFiat from './OrderFiat/OrderStatus/OrderStatus';
 
 import OrderPaymentCrypto from './OrderCrypto/OrderPayment/OrderPayment';
 import OrderPaidCrypto from './OrderCrypto/OrderPaid/OrderPaid';
-import OrderStatusCrypto from './OrderCrypto/OrderStatus/OrderStatus';
 
 import STATUS_CODES from 'StatusCodes';
 import isFiatOrder from 'Utils/isFiatOrder';
@@ -61,7 +60,7 @@ const OrderMain = props => {
   return (
     <div className="col-xs-12">
       <div className="box">
-        {isFiat ? <OrderStatusFiat status={props.order.status_name[0][0]} /> : <OrderStatusCrypto status={props.order.status_name[0][0]} />}
+        <OrderStatus isFiat={isFiat} status={props.order.status_name[0][0]} />
         {order}
       </div>
     </div>
