@@ -149,8 +149,21 @@ export const fetchPairs = payload => {
 
         // Picks random deposit and receive coins.
         const pickRandomCoins = coins => {
+          if (window.location.pathname.includes('pair/')){
+            let selectedPair = window.location.pathname.toUpperCase().split("/").pop();
+            $.ajax({
+              url: `${config.API_BASE_URL}/pair/${selectedPair}/?format=json`,
+              type: "GET",
+              async: false,
+              success: function(data) {
+                depositCoin = data.quote;
+                receiveCoin = data.base;
+              }
+            });
+          }
+
+          if (!_.filter(coins,{code: depositCoin,is_quote_of_enabled_pair: true,}).length === true )
           depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
-          receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
 
           // If pair is invalid, try again until valid
           if (
@@ -160,7 +173,9 @@ export const fetchPairs = payload => {
             }).length ||
             pairs[depositCoin][receiveCoin] === false
           ) {
-            pickRandomCoins(coins);
+            // Picks random deposit and receive coins.
+            depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
+            receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
           }
         };
         pickRandomCoins(payload);

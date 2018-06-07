@@ -52,6 +52,7 @@ ReactDOM.render(
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" component={Home} />
+          <Route exact path="/pair/:pair" component={Home} />
           <Route component={AsyncNotFound} />
         </Switch>
 
