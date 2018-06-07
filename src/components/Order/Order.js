@@ -11,7 +11,7 @@ import OrderTop from './OrderTop/OrderTop';
 
 import NotFound from 'Components/NotFound/NotFound';
 import OrderLoading from './OrderLoading/OrderLoading';
-import OrderCoinProcessed from './OrderCoinProcessed/OrderCoinProcessed';
+import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
 import OrderNotifications from './OrderNotifications/OrderNotifications';
 import OrderRefundAddress from './OrderRefundAddress/OrderRefundAddress';
 
@@ -76,8 +76,7 @@ class Order extends Component {
             <OrderTop order={this.state.order} />
 
             <div className="row">
-              <OrderCoinProcessed type="Deposit" order={this.state.order} />
-              <OrderCoinProcessed type="Receive" order={this.state.order} />
+              <OrderCoinsProcessed order={this.state.order} />
 
               <OrderMain order={this.state.order} />
               <OrderNotifications order={this.state.order} />

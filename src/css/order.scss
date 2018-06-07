@@ -87,59 +87,6 @@
       }
     }
   }
-  #time-remaining {
-    font-weight: 500;
-    color: #2cb4a0;
-  }
-  .order-status-section {
-    h2 {
-      margin-top: 0;
-    }
-    .explanation {
-      font-size: 16px;
-      margin-top: 15px;
-    }
-  }
-}
-
-#order-payment {
-  padding: 20px 40px 15px;
-  text-align: center;
-
-  h3 {
-    margin-top: 6px;
-    font-size: 18px;
-    font-weight: 300;
-    color: $gray;
-  }
-
-  h4 {
-    font-size: 14px;
-    font-weight: 400;
-    color: $blue;
-  }
-
-  #qr-code {
-    float: left;
-    margin-right: 35px;
-    max-width: 152px;
-    border: 1px solid #efefef;
-    border-radius: 1px;
-  }
-
-  @media (min-width: $screen-ms-min) {
-    text-align: left;
-  }
-}
-
-#order-payment-details {
-  .btn {
-    margin-bottom: 30px;
-
-    @media (min-width: $screen-xs-min) {
-      margin-bottom: 0;
-    }
-  }
 }
 
 #bookmark {
@@ -245,16 +192,4 @@
   }
 }
 
-@include keyframes(color-change) {
-  from {
-    color: #9c9c9c;
-    fill: #9c9c9c;
-  }
-  to {
-    color: $green;
-    fill: $green;
-  }
-}
-
-@import 'order-status';
 @import 'referral';

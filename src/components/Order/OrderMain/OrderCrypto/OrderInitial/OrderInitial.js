@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import styles from './OrderInitial.scss';
 
 class OrderInitial extends Component {
   triggerCopyTooltip() {
@@ -25,15 +26,15 @@ class OrderInitial extends Component {
 
   render() {
     return (
-      <div id="order-payment" className="row">
-        <div className="col-xs-12 col-ms-4 col-sm-4 col-md-3">
-          <img src={this.getDepositAddressQr()} alt="Deposit QR code" />
+      <div className={styles.container}>
+        <div className={styles['qr-container']}>
+          <img className={styles.qr} src={this.getDepositAddressQr()} alt="Deposit QR code" />
         </div>
 
-        <div id="order-payment-details" className="col-xs-12 col-ms-8 col-sm-8 col-md-9">
+        <div className={styles.details}>
           <h3>
             Time remaining:{' '}
-            <span id="time-remaining">
+            <span className={styles.time}>
               <b>{this.props.time}</b>
             </span>
           </h3>
@@ -44,14 +45,14 @@ class OrderInitial extends Component {
               {this.props.order.amount_quote} {this.props.order.pair.quote.code}
             </b>{' '}
             to the address<br />
-            <b id="deposit-address" style={{ wordWrap: 'break-word' }}>
+            <b className={styles.address} style={{ wordWrap: 'break-word' }}>
               {this.props.order.deposit_address.address}
             </b>
           </h4>
 
           <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
-            <button id="copy-to-clipboard" type="button" className="btn btn-default btn-themed">
-              Copy the address
+            <button id="copy-to-clipboard" type="button" className="btn btn-default">
+              Copy address
             </button>
           </CopyToClipboard>
         </div>

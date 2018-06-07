@@ -66,7 +66,7 @@ class OrderCoinProcessed extends Component {
     }
 
     return (
-      <div className="col-xs-12 col-sm-6">
+      <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
         <div className={`${styles.box} box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
           <div className={`${styles['media-left']} media-left`}>
             <i className={`${styles.coin} cc ${this.state.coin}`} />

@@ -224,6 +224,8 @@ module.exports = {
                     path.resolve(__dirname, '../src/css/bootstrap/_variables.scss'),
                     path.resolve(__dirname, '../src/css/material-kit/_variables.scss'),
                     path.resolve(__dirname, '../src/css/material-kit/_variables_bootstrap.scss'),
+                    path.resolve(__dirname, '../src/css/bootstrap/mixins/_vendor-prefixes.scss'),
+                    path.resolve(__dirname, '../src/css/_mixins.scss'),
                   ],
                 },
               },
