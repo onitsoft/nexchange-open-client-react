@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import order from '../__mocks__/order';
 import orderExpired from '../__mocks__/orderExpired';
 
-import OrderInfo from '../containers/order/OrderInfo';
+import OrderMain from '../components/Order/OrderMain/OrderMain';
 
 import '../css/index.scss';
 import '../css/order.scss';
@@ -44,10 +44,10 @@ storiesOf('Order states (crypto)', module)
       </div>
     </BrowserRouter>
   ))
-  .add('initial (11)', () => <OrderInfo order={order} />)
-  .add('paid unconfirmed (12)', () => <OrderInfo order={orderPaidUnconfirmed} />)
-  .add('paid (13)', () => <OrderInfo order={orderPaid} />)
-  .add('pre-release (14)', () => <OrderInfo order={orderPreRelease} />)
-  .add('release (15)', () => <OrderInfo order={orderRelease} />)
-  .add('completed (16)', () => <OrderInfo order={orderCompleted} />)
-  .add('expired', () => <OrderInfo order={orderExpired} />);
+  .add('initial (11)', () => <OrderMain order={order} />)
+  .add('paid unconfirmed (12)', () => <OrderMain order={orderPaidUnconfirmed} />)
+  .add('paid (13)', () => <OrderMain order={orderPaid} />)
+  .add('pre-release (14)', () => <OrderMain order={orderPreRelease} />)
+  .add('release (15)', () => <OrderMain order={orderRelease} />)
+  .add('completed (16)', () => <OrderMain order={orderCompleted} />)
+  .add('expired', () => <OrderMain order={orderExpired} />);

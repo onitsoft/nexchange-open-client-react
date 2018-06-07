@@ -1,0 +1,50 @@
+.container {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.title {
+  margin: 18px 0 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: $black;
+
+  span {
+    color: $gray;
+  }
+}
+
+.subtitle {
+  margin: 12px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: $blue;
+
+  a {
+    font-weight: 500;
+    color: $blue;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.warning {
+  margin: 15px 0 0 0;
+  color: $green;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.another-order.another-order {
+  display: inline-block;
+  color: $green;
+  font-weight: 500;
+  margin: 15px 0 8px 0;
+
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}

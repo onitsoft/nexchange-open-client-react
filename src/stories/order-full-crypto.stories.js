@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import order from '../__mocks__/order';
 import orderExpired from '../__mocks__/orderExpired';
 
-import Order from '../containers/order/Order';
+import Order from '../components/Order/Order';
 
 import '../css/index.scss';
 import '../css/order.scss';

@@ -15,6 +15,8 @@ import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
 import OrderCta from './OrderCta/OrderCta';
 import OrderRefundAddress from './OrderRefundAddress/OrderRefundAddress';
 
+import styles from './Order.scss';
+
 class Order extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +73,7 @@ class Order extends Component {
       return <NotFound />;
     } else if (typeof this.state.order === 'object') {
       return (
-        <div id="order" className={isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
+        <div className={`${styles.container} ${isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}`}>
           <div className="container">
             <div className="row">
               <OrderTop order={this.state.order} />
