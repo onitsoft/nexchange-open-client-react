@@ -13,7 +13,7 @@ class OrderTop extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div>
         <div className="col-xs-12">
           <h3 className={styles.ref}>
             Order Reference: <b>{this.props.order.unique_reference}</b>

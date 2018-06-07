@@ -3,9 +3,9 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
-
 import GetNotified from './images/get-notified.png';
 import config from 'Config';
+import styles from '../OrderCta.scss';
 
 class OrderNotifications extends Component {
   state = {
@@ -61,61 +61,50 @@ class OrderNotifications extends Component {
     this.props.setUserEmail(this.state.email);
   };
 
-  render() {
-    // TODO: only for temp dev, uncomment later
-    // if (this.state.show === false) {
-    //   return null;
-    // }
+  renderForm() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className={styles['form-group']}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your e-mail address"
+            onChange={this.handleChange}
+            value={this.state.email}
+            disabled={this.state.emailFetched}
+            required
+          />
 
+          <button type="submit" className={`btn btn-primary ${styles.btn}`} disabled={this.state.emailFetched}>
+            Submit
+          </button>
+
+          {this.state.message.text && <h4 className={styles.message}>{this.state.message.text}</h4>}
+        </div>
+      </form>
+    );
+  }
+
+  render() {
     return (
       <div className="col-xs-12">
-        <div id="notifications" className="box">
+        <div className={`box ${styles.container}`}>
           <div className="row">
-            <div className="col-xs-8">
-              <h2>If you would like to be notified about your order please enter your E-mail address below.</h2>
+            <div className="col-xs-12 visible-xs text-center">
+              <img className={styles.img} src={GetNotified} alt="Get notified" />
             </div>
 
-            <div className="col-xs-4">
-              <img src={GetNotified} alt="Get notified" />
+            <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
+              <h2 className={styles.title}>If you would like to be notified about your order please enter your e-mail address below.</h2>
+              {this.renderForm()}
+            </div>
+
+            <div className="col-ms-2 col-sm-5 hidden-xs text-center">
+              <img className={styles.img} src={GetNotified} alt="Get notified" />
             </div>
           </div>
         </div>
       </div>
-
-      // <div className="col-xs-12">
-      //   <div id="notifications" className="box">
-      //     <div className="row">
-      //       <div className="col-xs-12">
-      //         <h2>Get notified about your order!</h2>
-
-      //         <div className="row">
-      //           <div className="col-xs-12 col-md-8 col-md-push-2">
-      //             <form onSubmit={this.handleSubmit}>
-      //               <h4 className={this.state.message.error ? 'text-danger' : 'text-green'}>{this.state.message.text}</h4>
-
-      //               <div className="form-group">
-      //                 <input
-      //                   type="email"
-      //                   name="email"
-      //                   placeholder="Email"
-      //                   className="form-control"
-      //                   onChange={this.handleChange}
-      //                   value={this.state.email}
-      //                   disabled={this.state.emailFetched}
-      //                   required
-      //                 />
-      //               </div>
-
-      //               <button type="submit" className="btn btn-primary btn-lg">
-      //                 Receive notifications
-      //               </button>
-      //             </form>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>
     );
   }
 }

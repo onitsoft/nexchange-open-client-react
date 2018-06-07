@@ -3,6 +3,7 @@ html {
   height: 100%;
   background: #f8f7f8;
 }
+
 #root {
   position: relative;
   min-height: 100%;
@@ -12,29 +13,39 @@ html {
 }
 
 body {
-  color: #044264;
+  color: $blue;
 }
+
+button[disabled],
+html input[disabled] {
+  cursor: not-allowed;
+}
+
 p,
 a {
   word-wrap: break-word;
 }
+
 p,
 li {
   font-size: 19px;
   line-height: 1.5em;
 }
+
 h1 {
   font-size: 34px;
   @media (min-width: $screen-sm-min) {
     font-size: 46px;
   }
 }
+
 h2 {
   font-size: 26px;
   @media (min-width: $screen-sm-min) {
     font-size: 34px;
   }
 }
+
 a {
   color: $green;
   &:visited,
@@ -42,25 +53,32 @@ a {
     outline: none;
   }
 }
+
 .error {
   color: #f44336 !important;
 }
+
 .success {
   color: #4caf50 !important;
 }
+
 .header-text {
   font-size: 36px;
 }
+
 img {
   max-width: 100%;
 }
+
 .modal {
   z-index: 9999;
 }
+
 .modal-title {
   margin-top: -10px;
   font-size: 30px;
 }
+
 .modal-body {
   h3 {
     margin-top: 35px;
@@ -69,12 +87,14 @@ img {
     margin-top: -8px;
   }
 }
+
 textarea.form-control:focus {
   outline: none;
   border-color: none;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
 .box {
   width: 100%;
   padding: 15px;
@@ -83,7 +103,7 @@ textarea.form-control:focus {
   border-radius: 4px;
   background: #fff;
 
-  @media (min-width: $screen-ms-min) {
+  @media (min-width: $screen-sm-min) {
     margin-bottom: 30px;
   }
 }
