@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import isFiatOrder from 'Utils/isFiatOrder';
-import OrderInitialFiat from '../OrderFiat/OrderInitial/OrderInitial';
-import OrderInitialCrypto from '../OrderCrypto/OrderInitial/OrderInitial';
+import OrderInitialFiat from './OrderInitialFiat/OrderInitialFiat';
+import OrderInitialCrypto from './OrderInitialCrypto/OrderInitialCrypto';
 import OrderExpired from '../OrderExpired/OrderExpired';
 
 class OrderInitial extends Component {

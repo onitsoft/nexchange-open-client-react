@@ -25,6 +25,10 @@
   color: $black;
 }
 
+:global .order-fiat .box.fiat h5 {
+  margin: 9px 0;
+}
+
 .tooltip {
   text-align: left;
 }

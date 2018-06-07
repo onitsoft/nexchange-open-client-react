@@ -64,8 +64,6 @@ class OrderCta extends Component {
   };
 
   render() {
-    console.log(!this.props.email.value, this.state.show);
-
     return (
       <div>
         {!this.props.email.value &&

@@ -23,13 +23,6 @@
     }
   }
 
-  #cards img {
-    @media (min-width: $screen-md-min) {
-      max-width: 55%;
-      margin-top: 10px;
-    }
-  }
-
   #order-ref {
     margin-bottom: 5px;
     color: $black;
@@ -70,42 +63,6 @@
       color: $green;
     }
   }
-
-  &.order-fiat {
-    .box.fiat {
-      h5 {
-        margin-top: 11px;
-        padding-bottom: 7px;
-        @media (min-width: $screen-sm-min) {
-          margin-top: 9px;
-          padding-bottom: 9px;
-        }
-        @media (min-width: $screen-md-min) {
-          margin-top: 12px;
-          padding-bottom: 12px;
-        }
-      }
-    }
-  }
-}
-
-#bookmark {
-  .bookmark-text {
-    font-size: 19px;
-  }
-  .input-group-addon {
-    cursor: pointer;
-    padding-top: 0;
-    i {
-      font-size: 18px;
-    }
-  }
-  .form-group {
-    margin-top: 10px;
-  }
-  input {
-    font-size: 18px;
-  }
 }
 
 .order-status-section {
@@ -116,65 +73,6 @@
   @media (min-width: $screen-sm-min) {
     h2 {
       font-size: 30px;
-    }
-  }
-}
-
-#share-referral,
-#notifications,
-#refund-box {
-  text-align: center;
-  .box {
-    padding: 20px;
-  }
-  .share {
-    margin-top: 15px;
-  }
-  .fa {
-    font-size: 45px;
-    margin: 0 15px 0 0;
-    color: #d6d6d6;
-  }
-  h2 {
-    margin-top: 0;
-    font-size: 22px;
-    @media (min-width: $screen-sm-min) {
-      font-size: 26px;
-    }
-    @media (min-width: $screen-md-min) {
-      font-size: 34px;
-    }
-  }
-}
-
-#notifications,
-#refund-box {
-  h4 {
-    width: 120%;
-  }
-}
-
-#notifications,
-#refund-box {
-  .form-group {
-    margin-top: 10px;
-  }
-  button {
-    width: 100%;
-    margin-bottom: 0;
-  }
-  form {
-    padding-top: 15px;
-    h4 {
-      position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-  }
-  @media (min-width: $screen-sm-min) {
-    button {
-      width: auto;
     }
   }
 }
