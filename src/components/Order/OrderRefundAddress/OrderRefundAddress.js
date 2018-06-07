@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from 'Config';
 import validateWalletAddress from 'Utils/validateWalletAddress';
-import Box from 'Components/Box/Box';
 
 class OrderRefundAddress extends Component {
   constructor(props) {
@@ -100,7 +99,7 @@ class OrderRefundAddress extends Component {
     }
 
     return (
-      <Box id="refund-box">
+      <div>
         <h2>Refund address</h2>
 
         <div className="row">
@@ -126,7 +125,7 @@ class OrderRefundAddress extends Component {
             </form>
           </div>
         </div>
-      </Box>
+      </div>
     );
   }
 }

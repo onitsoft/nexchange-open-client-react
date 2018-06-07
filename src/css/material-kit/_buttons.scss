@@ -25,9 +25,6 @@
   &.btn-primary {
     @include btn-styles($green);
   }
-  &.btn-info {
-    @include btn-styles($brand-info);
-  }
   &.btn-success {
     @include btn-styles($brand-success);
   }

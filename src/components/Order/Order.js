@@ -12,7 +12,7 @@ import OrderTop from './OrderTop/OrderTop';
 import NotFound from 'Components/NotFound/NotFound';
 import OrderLoading from './OrderLoading/OrderLoading';
 import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
-import OrderNotifications from './OrderNotifications/OrderNotifications';
+import OrderCta from './OrderCta/OrderCta';
 import OrderRefundAddress from './OrderRefundAddress/OrderRefundAddress';
 
 class Order extends Component {
@@ -73,13 +73,12 @@ class Order extends Component {
       return (
         <div id="order" className={isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}>
           <div className="container">
-            <OrderTop order={this.state.order} />
-
             <div className="row">
+              <OrderTop order={this.state.order} />
               <OrderCoinsProcessed order={this.state.order} />
 
               <OrderMain order={this.state.order} />
-              <OrderNotifications order={this.state.order} />
+              <OrderCta order={this.state.order} />
 
               {!isFiatOrder(this.state.order) && <OrderRefundAddress order={this.state.order} />}
             </div>
