@@ -62,3 +62,12 @@
     text-align: left;
   }
 }
+
+.cards {
+  img {
+    @media (min-width: $screen-md-min) {
+      max-width: 55%;
+      margin-top: 10px;
+    }
+  }
+}

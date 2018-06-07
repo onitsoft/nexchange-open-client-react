@@ -2,7 +2,7 @@
   background: $green;
 
   @media (min-width: $screen-md-min) {
-    padding: 45px 65px;
+    padding: 30px 65px;
   }
 }
 
@@ -11,10 +11,6 @@
   font-size: 20px;
   font-weight: 400;
   color: #fff;
-
-  @media (min-width: $screen-ms-min) {
-    font-size: 24px;
-  }
 
   @media (min-width: $screen-md-min) {
     margin-top: 10px;

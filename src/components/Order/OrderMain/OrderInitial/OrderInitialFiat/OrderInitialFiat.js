@@ -1,12 +1,13 @@
 import React from 'react';
+import styles from '../OrderInitial.scss';
 
 const OrderInitial = props => {
   return (
-    <div id="order-payment" className="row">
+    <div id="order-payment" className={`row ${styles.container}`}>
       <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-4">
         <h3>
           Time remaining:{' '}
-          <span id="time-remaining">
+          <span className={styles.time}>
             <b>{props.time}</b>
           </span>
         </h3>
@@ -17,12 +18,12 @@ const OrderInitial = props => {
           </b>
         </h4>
         <a href={props.order.payment_url} target="_blank" className="btn btn-default btn-lg">
-          <i className="fab fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
+          <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
           Pay now
         </a>
       </div>
 
-      <div id="cards" className="col-xs-12 col-ms-6 col-sm-6 col-md-8">
+      <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
         <h3>Accepted cards:</h3>
 
         <div className="visible-xs-block visible-sm-block">
