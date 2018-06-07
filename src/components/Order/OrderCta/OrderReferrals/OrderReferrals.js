@@ -13,18 +13,18 @@ class OrderReferrals extends Component {
   };
 
   triggerCopyTooltip = () => {
-    $('#copy-to-clipboard').tooltip({
+    $('#copy-to-clipboard-link').tooltip({
       trigger: 'click',
       placement: 'top',
     });
 
-    $('#copy-to-clipboard')
+    $('#copy-to-clipboard-link')
       .tooltip('hide')
       .attr('data-original-title', 'Link copied')
       .tooltip('show');
 
     setTimeout(() => {
-      $('#copy-to-clipboard').tooltip('destroy');
+      $('#copy-to-clipboard-link').tooltip('destroy');
     }, 1000);
   };
 
@@ -35,7 +35,7 @@ class OrderReferrals extends Component {
           <input className={styles['referral-input']} type="text" value={this.state.link} disabled={true} required />
 
           <CopyToClipboard text={this.state.link} onCopy={() => this.triggerCopyTooltip()}>
-            <button id="copy-to-clipboard" type="button" className={`btn btn-primary ${styles.btn}`}>
+            <button id="copy-to-clipboard-link" type="button" className={`btn btn-primary ${styles.btn}`}>
               Copy link
             </button>
           </CopyToClipboard>
@@ -76,7 +76,7 @@ class OrderReferrals extends Component {
 
             <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
               <h2 className={styles.title}>
-                Good! By the way if you want you can share this unique referral link with your friends to earn some coins!
+                By the way, if you want you can share this unique referral link with your friends to earn some coins!
               </h2>
               {this.renderForm()}
             </div>

@@ -1,5 +1,3 @@
-@value blue: #cecece;
-
 .spinner {
   margin: 100px auto;
   width: 100px;
@@ -9,7 +7,7 @@
 }
 
 .spinner > div {
-  background-color: green;
+  background-color: $green;
   height: 100%;
   width: 7px;
   margin: 0 3px 0 0;

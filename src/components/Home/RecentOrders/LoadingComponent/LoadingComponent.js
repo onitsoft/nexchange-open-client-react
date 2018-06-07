@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LoadingComponent.css';
+import styles from './LoadingComponent.scss';
 
 const LoadingComponent = ({ isLoading, error }) => {
   // Handle the loading state
