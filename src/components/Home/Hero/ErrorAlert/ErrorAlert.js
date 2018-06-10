@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { I18n } from 'react-i18next';
 import Sticky from 'react-stickynode';
 
 const ErrorAlert = props => {
   return (
+	<I18n ns="translations">
+	{(t) => (
     <Sticky enabled={true} top={0} bottomBoundary={1200}>
       <div
         className={
@@ -26,10 +29,12 @@ const ErrorAlert = props => {
               <i className="material-icons">clear</i>
             </span>
           </button>
-          <b>Warning:</b> {props.error.message}
+          <b>{t('error.warning')}:</b> {props.error.message}
         </div>
       </div>
     </Sticky>
+	)}
+	</I18n>
   );
 };
 

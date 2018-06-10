@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { I18n } from 'react-i18next';
 
 import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
@@ -28,17 +29,19 @@ class Header extends Component {
     }
   }
 
-  render() {
-    return (
-      <div id="header">
-        <div className="container">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-            </button>
+	render() {
+	    return (
+		<I18n ns="translations">
+		{(t, { i18n }) => (
+	    	<div id="header">
+				<div className="container">
+				    <div className="navbar-header">
+				    	<button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+						  <span className="sr-only">Toggle navigation</span>
+						  <span className="icon-bar" />
+						  <span className="icon-bar" />
+						  <span className="icon-bar" />
+				    	</button>
 
             <Link to="/">
               <div className="logo-container">
@@ -54,13 +57,13 @@ class Header extends Component {
             <ul className="nav navbar-nav navbar-right">
               <li>
                 <a href="/#about" onClick={() => scrollToElement('#about')}>
-                  About
+                  {t('header.about')}
                 </a>
               </li>
 
               <li>
                 <a href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
-                  FAQ
+                  {t('header.faq')}
                 </a>
               </li>
 
@@ -70,21 +73,38 @@ class Header extends Component {
                   target="_blank"
                   onClick={() => ga('send', 'event', 'General', 'api docs click')}
                 >
-                  API Docs
+                  {t('header.apidocs')}
                 </a>
               </li>
 
               <li>
                 <a href="/#compare" onClick={() => scrollToElement('#compare')}>
-                  <span className="hidden-sm">Compare </span>Rates
+                  <span className="hidden-sm">{t('header.compare')} </span>Rates
                 </a>
               </li>
 
               <li>
                 <a href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
-                  Support
+                  {t('header.support')}
                 </a>
               </li>
+
+			  <li className="visible-sm visible-md visible-lg">
+				<ul className="languagepicker">
+				  <li>
+				    <a href="#de" className="selected" onClick={() => i18n.changeLanguage('de')}>
+                    <img className="flag" src="/img/flags/DE.svg" alt="German" />
+                      {t('header.de')}
+                    </a>
+				   </li>
+				   <li>
+                     <a href="#en" className="selected" onClick={() => i18n.changeLanguage('en')}>
+                     <img className="flag" src="/img/flags/EN.svg" alt="English" />
+                       {t('header.en')}
+                     </a>
+				   </li>
+				 </ul>
+				</li>
 
               <li className="social-mobile">
                 <a href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
@@ -112,7 +132,7 @@ class Header extends Component {
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
-                  data-original-title="Follow us on Twitter"
+                  data-original-title={t('header.twitter')}
                 >
                   <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
@@ -126,7 +146,7 @@ class Header extends Component {
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
-                  data-original-title="Like us on Facebook"
+                  data-original-title={t('header.facebook')}
                 >
                   <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
@@ -140,7 +160,7 @@ class Header extends Component {
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
-                  data-original-title="Join us on Slack"
+                  data-original-title={t('header.slack')}
                 >
                   <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
@@ -154,7 +174,7 @@ class Header extends Component {
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
-                  data-original-title="Join us on Telegram"
+                  data-original-title={t('header.telegram')}
                 >
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>

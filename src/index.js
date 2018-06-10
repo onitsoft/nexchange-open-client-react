@@ -4,6 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
+import './i18n';
+
+import './css/index.scss';
+
+import 'expose-loader?$!jquery';
+import 'expose-loader?jQuery!jquery';
+
 
 import Referrals from './components/Referrals/Referrals';
 import Header from './components/Header/Header';
