@@ -109,6 +109,8 @@ class SubscriptionForm extends React.Component {
           </form>
         </div>
       </div>
+	 )}
+	</I18n>
     );
   }
 }

@@ -79,7 +79,7 @@ class Header extends Component {
 
               <li>
                 <a href="/#compare" onClick={() => scrollToElement('#compare')}>
-                  <span className="hidden-sm">{t('header.compare')} </span>Rates
+                  <span className="hidden-sm">{t('header.compare')} </span>
                 </a>
               </li>
 
@@ -186,6 +186,8 @@ class Header extends Component {
           <Support show={this.state.showSupportModal} onClose={() => this.setState({ showSupportModal: false })} />
         </div>
       </div>
+	)}
+	</I18n>
     );
   }
 }
