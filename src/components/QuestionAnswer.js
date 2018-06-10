@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
 
 class QuestionAnswer extends Component {
   constructor(props) {
@@ -14,9 +15,11 @@ class QuestionAnswer extends Component {
 
   render() {
     return (
+	<I18n ns="translations">
+	 {(t) => (
       <div className="question-answer">
         <h3 onClick={this.onClick}>
-          {this.props.question}{' '}
+          {t(`faq.${this.props.id}`)}{' '}
           <i
             className={`fa fa-${this.state.open ? 'minus' : 'plus'}-square-o`}
             aria-hidden="true"
@@ -27,6 +30,8 @@ class QuestionAnswer extends Component {
         </div>
         <hr />
       </div>
+	 )}
+	</I18n>
     );
   }
 }
