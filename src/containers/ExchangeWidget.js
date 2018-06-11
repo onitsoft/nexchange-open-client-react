@@ -71,15 +71,19 @@ class ExchangeWidget extends Component {
         window.qp('track', 'Generic');
       })
       .catch(error => {
+        console.log('Error:', error);
+
         let message =
           error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
             ? error.response.data.non_field_errors[0]
             : 'Something went wrong. Please try again later.';
+
         this.props.errorAlert({
           message: message,
           show: true,
           type: 'PLACE_ORDER',
         });
+
         this.setState({ orderPlaced: false, loading: false });
       });
   }

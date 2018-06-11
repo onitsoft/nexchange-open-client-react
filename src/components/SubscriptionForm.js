@@ -58,7 +58,7 @@ class SubscriptionForm extends React.Component {
   };
 
   render() {
-    const { action, messages, className, style, styles } = this.props;
+    const { action } = this.props;
     const { status } = this.state;
 
     return (
