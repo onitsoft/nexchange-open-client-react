@@ -92,16 +92,16 @@ class Header extends Component {
 			  <li className="visible-sm visible-md visible-lg">
 				<ul className="languagepicker">
 				  <li>
-				    <a href="#de" className="selected" onClick={() => i18n.changeLanguage('de')}>
-                    <img className="flag" src="/img/flags/DE.svg" alt="German" />
-                      {t('header.de')}
-                    </a>
-				   </li>
-				   <li>
+                    <li>
                      <a href="#en" className="selected" onClick={() => i18n.changeLanguage('en')}>
-                     <img className="flag" src="/img/flags/EN.svg" alt="English" />
+                     <img className="flag" src="/img/flags/EN.svg" alt={t('header.en')} />
                        {t('header.en')}
                      </a>
+				   </li>
+				    <a href="#de" className="selected" onClick={() => i18n.changeLanguage('de')}>
+                    <img className="flag" src="/img/flags/DE.svg" alt={t('header.de')} />
+                      {t('header.de')}
+                    </a>
 				   </li>
 				 </ul>
 				</li>

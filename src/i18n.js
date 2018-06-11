@@ -8,8 +8,8 @@ i18n
   .use(Backend)
   .use(reactI18nextModule)
   .init({
-    fallbackLng: 'de',
-    lng: 'de',
+    fallbackLng: 'en',
+    lng: 'en',
     saveMissing: 'true',
 
     // have a common namespace used around the full app
