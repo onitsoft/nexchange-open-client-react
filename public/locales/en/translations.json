@@ -57,7 +57,22 @@
     "sarunas": "Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.",
     "karolis": "Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.",
     "justas": "DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability.",
-    "chirag": "Information Technology Generalist, International Trader, Growth Hacker and a newly minted Blockchain Fan!"
+    "chirag": "Information Technology Generalist, International Trader, Growth Hacker and a newly minted Blockchain Fan!",
+    "paulina": "Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter.",
+    "cyrus": "Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and distributed systems.",
+    "you": "You?",
+    "youdesc": "<0><0>We are actively hiring for the N.exchange dream team. We are especially on the lookout for talented developers, marketing personnel, a community manager and content writers.</0><1>Drop us a line at <1>careers@n.exchange</1>.</1></0>",
+    "israel": "Israel",
+    "lithuania": "Lithuania",
+    "poland": "Poland",
+    "US": "United States"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "1": "Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.",
+    "2": "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
+    "3": "Best new instant exchange service! Fast, easy, low fees...",
+    "4": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but  everything was sorted out. Would use again. 😊"
   },
   "subscription": {
     "1": "Get in touch",
