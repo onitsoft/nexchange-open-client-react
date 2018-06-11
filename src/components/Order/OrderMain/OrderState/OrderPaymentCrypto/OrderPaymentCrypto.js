@@ -4,6 +4,7 @@ import config from '../../config';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import config from 'Config';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 
@@ -28,6 +29,7 @@ class OrderPayment extends Component {
 	  <I18n ns="translations">
 		{(t) => (
         <div className={styles.container}>
+          <OrderStateLoader />
           <h2 className={styles.title}>{t('order.payment1')}...</h2>
           <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
             <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.details')}</h4>
@@ -41,6 +43,7 @@ class OrderPayment extends Component {
 	  <I18n ns="translations">
 		{(t) => (
       <div className={styles.container}>
+        <OrderStateLoader />
         <h2 className={styles.title}>
           {t('order.payment2')}{' '}
           <span>
@@ -49,7 +52,7 @@ class OrderPayment extends Component {
         </h2>
         <h3 className={styles.subtitle}>
           Transaction ID:{' '}
-          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" style={{ color: '#2cb4a0' }}>
+          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
             {this.tx.tx_id}
           </a>
         </h3>

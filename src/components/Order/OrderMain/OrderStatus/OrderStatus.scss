@@ -41,7 +41,7 @@
 
   &.active h4,
   &.active svg {
-    @include animation(color-change 1s infinite alternate);
+    @include animation(color-change 0.75s infinite alternate);
   }
 
   &.done h4,

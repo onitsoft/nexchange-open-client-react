@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 
@@ -37,6 +38,7 @@ class OrderReleased extends Component {
 	<I18n ns="translations">
 	{(t) => (
       <div className={styles.container}>
+        <OrderStateLoader />
         <h2 className={styles.title}>
           {t('order.released')} ({this.tx.confirmations}/{this.minConfirmations})
         </h2>
