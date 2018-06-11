@@ -54,13 +54,13 @@ class FAQ extends Component {
               question="What is your fee?"
               answer={
                 <p>Our service fee is 0.5%. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</p>
-              }/>  
+              }/>
 
             <QuestionAnswer
               question="How long does the exchange process take?"
               answer={
                 <p>Initiating a transaction doesn’t take more than a couple of minutes. The actual processing takes about 10–60 minutes before you receive your coins in your desired currency. The transaction time depends on the selected currencies and their respective blockchains.</p>
-              }/> 
+              }/>
 
             <QuestionAnswer
               question="How does it work?"
@@ -90,14 +90,21 @@ class FAQ extends Component {
             <QuestionAnswer
               question="Do you collect any private information?"
               answer={
-                <p>We do not collect or store any private information about you. The process is completely anonymous.</p>
+                <p>For cryptocurrency only exchange orders , We do not collect or store any private information about you. The process is completely anonymous.
+                   For FIAT (USD,GBP,EUR etc) orders we do a strict compliance according to best KYC/AML standards out there. </p>
               }/>
+
+              <QuestionAnswer
+                  question="What are is the procedure to 'Get Verified' for FIAT to Cryptocurrency Exchange orders?"
+                  answer={
+                    <img src="/img/verification.png" alt="Verification" />
+                }/>
 
             <QuestionAnswer
               question="Are you using a third-party exchange or API?"
               answer={
                 <p>No, our solution is completely independant. We use our internal coin reserves to provide liquidity.</p>
-              }/> 
+              }/>
 
             <QuestionAnswer
               question="How do you manage security?"
