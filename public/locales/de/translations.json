@@ -54,13 +54,20 @@
     "3": "Unser Team ist zusammengekommen, um diese Plattform zu entwickeln, nachdem wir aus erster Hand den Bedarf an einer schnellen, verlässlichen Börse auf dem Markt für Kryptowährungen gespürt haben.",
     "4": "Wir sind stolz auf unsere umfassende Transparenz: Alles ist durch unsere Programmierschnittstelle einsichtbar, angefangen bei Auftrag-Listen bis hin zu unseren Coin-Reserven.",
     "5": "Nexchange fundiert auf mehreren Grundwerten, die unser Team in tagtäglichen Arbeit leiten. Darunter vollständige Transparenz, das Streben, Kryptowährungen so zugänglich wie möglich zu machen und eine Leidenschaft für Open Source.",
-    "6": "<0>Um unsere Mission, Kryptowährungen für jedermann so zugänglich wie möglich zu machen, zu unterstützen, haben wir unseren <1><0>Frontend Client auf Open Source Basis <1></1></0></1>entwickelt.",
+    "6": "<0>Um unsere Mission, Kryptowährungen für jedermann so zugänglich wie möglich zu machen, zu unterstützen, haben wir unseren <2><0>Frontend Client auf Open Source Basis</0></2> entwickelt.</0>",
     "oleg": "Interdisziplinäre Programmierer. Aufstrebender Wegbereiter mit einer starken Leidenschaft für Open Source und die Welt zu verbessern, Schritt für Schritt, jeden Tag.",
     "sarunas": "Backend Entwickler und Physiker. Animationsfan, Begeisterung für Kryptowährungen und spielt Saxofon.",
-    "karolis": "Full-Stack Entwickler. Unternehmer aus vollem Herzen.  Genießt es, Produkte durch Kode zum Leben zu erwecken.",
+    "karolis": "Full-Stack Entwickler. Unternehmer aus vollem Herzen.  Genießt es, Produkte durch Code zum Leben zu erwecken.",
     "justas": "DevOps Orchestrator. Shuffling Docker, Swarm & Kubernetes. Befürworter von micro-component Design und nahtloser Skalierbarkeit.",
     "chirag": "Informationstechnologie Generalist, Internationaler Händler, Wachstumshacker und frischgebackener Blockchain Fan!",
-    "you": "<0>Wir suchen stets Zuwachs für unser N.exchange Dream-Team. Wir suchen insbesondere talentierte Entwickler, Marketing-Personal, einen Community-Manager und Autoren.</0><1>Schreiben Sie einfach an <1>careers@nexchange.io</1>.</1>"
+    "paulina": "Magierin des Produktmanagements. Liebt es, Produkt Usability zu erschaffen und zu verbessern. Women in tech supporter and recreational weightlifter",
+    "cyrus": "Cornell University MEng, Informatik. Lerne zu lehren, lehre zu lernen. Leidenschaft für Programmierung, Astronomie und kürzlich für dezentralisierte und verteilte Systeme.",
+    "you": "Du?",
+    "youdesc": "<0><0>Wir suchen stets Zuwachs für unser N.exchange Dream-Team. Wir suchen insbesondere talentierte Entwickler, Marketing-Personal, einen Community-Manager und Autoren.</0><1>Schreiben Sie einfach an <1>careers@n.exchange</1>.</1></0>",
+    "israel": "Israel",
+    "lithuania": "Litauen",
+    "poland": "Polen",
+    "US": "Vereinigte Staaten"
   },
   "subscription": {
     "1": "Nehmen Sie Kontakt auf",
