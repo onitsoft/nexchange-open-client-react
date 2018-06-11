@@ -8,15 +8,15 @@ i18n
   .use(Backend)
   .use(reactI18nextModule)
   .init({
-    fallbackLng: 'en',
-    lng: 'en',
+    fallbackLng: 'de',
+    lng: 'de',
     saveMissing: 'true',
 
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
 
-    debug: false,
+    debug: true,
 
     interpolation: {
       escapeValue: false, // not needed for react!!

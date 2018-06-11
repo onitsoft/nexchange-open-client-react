@@ -23,8 +23,7 @@ class FAQ extends Component {
   render() {
     return (
       <I18n ns="translations">
-      {
-        (t, { i18n }) => (
+      {(t, { i18n }) => (
       <Modal show={this.state.show} onHide={this.props.onClose} >
         <div id="faq" className="modal-content">
           <div className="modal-header">
@@ -43,10 +42,11 @@ class FAQ extends Component {
             <QuestionAnswer
               id="ques1"
               answer={
+                <Trans i18nKey="faq.ans1">
                 <div>
                   <p>
                     N.exchange is an automated cryptocurrency exchange service,
-                    operated by{' '}
+                    operated by
                     <a
                       href="https://beta.companieshouse.gov.uk/company/10009845"
                       target="_blank"
@@ -64,6 +64,7 @@ class FAQ extends Component {
                     <a href="tel:+442081442192">+442081442192</a>.
                   </p>
                 </div>
+                </Trans>
               }
             />
 
@@ -71,6 +72,7 @@ class FAQ extends Component {
               id="ques2"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans2">
                   <p>
                     We allow you to exchange one cryptocurrency for another. To
                     view our currently supported coins, please click on the coin
@@ -85,6 +87,7 @@ class FAQ extends Component {
                       support@nexchange.io
                     </a>.
                   </p>
+                </Trans>
                 </div>
               }
             />
@@ -92,17 +95,20 @@ class FAQ extends Component {
             <QuestionAnswer
               id="ques3"
               answer={
+              <Trans i18nKey="faq.ans3">
                 <p>
                   Our service fee is 0.5%. There are no hidden fees here: the
                   amount you see on the screen is the exact amount you get in
                   your wallet.
                 </p>
+              </Trans> 
               }
             />
 
             <QuestionAnswer
               id="ques4"
               answer={
+                <Trans i18nKey="faq.ans4">
                 <p>
                   Initiating a transaction doesn’t take more than a couple of
                   minutes. The actual processing takes about 10–60 minutes
@@ -110,6 +116,7 @@ class FAQ extends Component {
                   transaction time depends on the selected currencies and their
                   respective blockchains.
                 </p>
+                </Trans>
               }
             />
 
@@ -117,6 +124,7 @@ class FAQ extends Component {
               id="ques5"
               answer={
                 <div>
+                  <Trans i18nKey="faq.ans5">
                   <p>Here is how you use the exchange:</p>
                   <ol>
                     <li>
@@ -139,7 +147,7 @@ class FAQ extends Component {
                       />
                     </li>
                     <li>
-                      You will be prompted to <b>send</b> your coins to a{' '}
+                      You will be prompted to <b>send</b> your coins to a
                       <b>specified address</b>.
                       <img
                         src="/img/faq/step3.png"
@@ -160,6 +168,7 @@ class FAQ extends Component {
                     Once you have paid for your order, it cannot be reversed.
                     Please ensure that you have put in the right address.
                   </p>
+                  </Trans>
                 </div>
               }
             />
@@ -167,27 +176,32 @@ class FAQ extends Component {
             <QuestionAnswer
               id="ques6"
               answer={
+                <Trans i18nKey="faq.ans6">
                 <p>
                   We do not collect or store any private information about you.
                   The process is completely anonymous.
                 </p>
+                </Trans>
               }
             />
 
             <QuestionAnswer
               id="ques7"
               answer={
+                <Trans i18nKey="faq.ans7">
                 <p>
                   No, our solution is completely independant. We use our
                   internal coin reserves to provide liquidity.
                 </p>
+                </Trans>
               }
             />
 
             <QuestionAnswer
-              question="How do you manage security?"
+              id="ques8"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans8">
                   <p>
                     We do not provide wallet hosting service at the moment. The
                     exchange happens between two of your wallets:
@@ -205,14 +219,16 @@ class FAQ extends Component {
                     Once the transaction has been processed, you are in charge
                     of your wallet balance security.
                   </p>
+                </Trans>
                 </div>
               }
             />
 
             <QuestionAnswer
-              id="ques8"
+              id="ques9"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans9">
                   <p>Every order has a unique id like this:</p>
                   <img
                     src="/img/faq/faq.png"
@@ -229,14 +245,16 @@ class FAQ extends Component {
                     transaction.
                   </p>
                   <p>If you need help, feel free to contact us.</p>
+                </Trans>
                 </div>
               }
             />
 
             <QuestionAnswer
-              id="ques9"
+              id="ques10"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans10">
                   <p>
                     Whenever you create an order, a referral code is
                     automatically generated for you.
@@ -250,7 +268,7 @@ class FAQ extends Component {
                     </li>
                     <li>
                       We send referral payouts once the funds accumulated on
-                      your account reach the threshold. The treshold amount is
+                      your account reach the threshold. The threshold amount is
                       typically 10 times the minimal order amount (no tx fee),
                       but it can be adjusted downward, in which case, you would
                       need to cover the tx fee yourself.
@@ -266,14 +284,16 @@ class FAQ extends Component {
                     </li>
                   </ol>
                   <p>These are subject to change at any time.</p>
+                </Trans>
                 </div>
               }
             />
 
             <QuestionAnswer
-              id="ques10"
+              id="ques11"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans11">
                   <p>
                     There's a 15-minute window between the moment you open the
                     order and the moment we detect the coins that you sent on
@@ -294,14 +314,16 @@ class FAQ extends Component {
                     not detected, contact us through the support chat and we
                     will help you out.
                   </p>
+                </Trans>
                 </div>
               }
             />
 
             <QuestionAnswer
-              id="ques11"
+              id="ques12"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans12">
                   <p>
                     Yes. Promote N.exchange on social media (such as Twitter).
                     We would pay you 1000 SAT for every retweet from a
@@ -315,14 +337,16 @@ class FAQ extends Component {
                       grounds we see fit.
                     </b>
                   </p>
+                </Trans>
                 </div>
               }
             />
 
             <QuestionAnswer
-              id="ques12"
+              id="ques13"
               answer={
                 <div>
+                <Trans i18nKey="faq.ans13">
                   <p>
                     In order to use N.exchange, you need to have your own
                     wallet. The main upside of this feature is that we don’t
@@ -335,19 +359,19 @@ class FAQ extends Component {
                   </p>
                   <ul>
                     <li>
-                      Bitcoin (BTC):{' '}
+                      Bitcoin (BTC):
                       <a href="https://bitcoin.org/en/choose-your-wallet">
                         https://bitcoin.org/en/choose-your-wallet
                       </a>
                     </li>
                     <li>
-                      Ethereum (ETH):{' '}
+                      Ethereum (ETH):
                       <a href="https://github.com/ethereum/mist/releases">
                         https://github.com/ethereum/mist/releases
                       </a>
                     </li>
                     <li>
-                      Litecoin (LTC):{' '}
+                      Litecoin (LTC):
                       <a href="https://litecoin.org/">https://litecoin.org/</a>
                     </li>
                   </ul>
@@ -359,6 +383,7 @@ class FAQ extends Component {
                     or responsibility whatsoever for the content of external
                     websites.
                   </p>
+                </Trans>
                 </div>
               }
             />
