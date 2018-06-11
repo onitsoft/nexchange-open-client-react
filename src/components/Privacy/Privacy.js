@@ -1,15 +1,21 @@
 import React from 'react';
+import { I18n, Trans } from 'react-i18next';
 
 const Privacy = props => {
   return (
+    <I18n ns="translations">
+    {(t) => (
     <div className="container terms">
       <div className="row">
         <div className="col-xs-12">
-          <h2 style={{ marginBottom: 0 }}>Privacy</h2>
-          <h4 style={{ marginBottom: 30 }}>
-            Last updated: <strong>August 9th, 2017</strong>
-          </h4>
+          <h2 style={{ marginBottom: 0 }}>{t('privacy.title')}</h2>
+          <Trans i18nKey="privacy.updated">
+              <h4 style={{ marginBottom: 30 }}>
+                Last updated: <strong>August 9th, 2017</strong>
+              </h4>
+          </Trans>
 
+          <Trans i18nKey="privacy.p1">
           <p>
             This Privacy Policy explains how “YOA LTD.”, and its wholly owned
             subsidiaries (collectively, “YOA LTD.” we or us), collects, uses,
@@ -22,7 +28,9 @@ const Privacy = props => {
             Company). To determine which “YOA LTD.” Company collects your
             information and is responsible for processing your data.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.p1">
           <p>
             We may amend this Privacy Policy from time to time. If we make
             changes, we will notify you by revising the date at the top of this
@@ -33,9 +41,13 @@ const Privacy = props => {
             whenever you access or use “YOA LTD.” Services to stay informed
             about our information practices and your privacy rights and choices.
           </p>
+          </Trans>
 
-          <h2>Collection of information</h2>
+          <Trans i18nKey="privacy.colletinfo">
+            <h2>Collection of information</h2>
+          </Trans>
 
+          <Trans i18nKey="privacy.infoyou">
           <h3>Information You Provide To Us.</h3>
 
           <p>
@@ -44,7 +56,7 @@ const Privacy = props => {
             complete a transaction, fill out a form, respond to surveys, post
             messages to our forums or wikis or otherwise communicate with us.
           </p>
-
+          
           <p>The types of information we may collect are as follows:</p>
 
           <ul>
@@ -66,7 +78,9 @@ const Privacy = props => {
               you choose to provide about yourself.
             </li>
           </ul>
+          </Trans>
 
+          <Trans i18nKey="privacy.infosources">
           <h3>Information We Collect From Other Sources</h3>
 
           <p>
@@ -75,7 +89,9 @@ const Privacy = props => {
             example, we may collect nonpublic personal information about you
             from third parties, including identity verification services.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.infoauto">
           <h3>Information We Collect Automatically</h3>
 
           <p>
@@ -119,7 +135,9 @@ const Privacy = props => {
             recognise that you are already logged on when we receive a page
             request from your browser.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.useinfo">
           <h2>Use of information</h2>
 
           <p>We may use your information as follows:</p>
@@ -155,7 +173,9 @@ const Privacy = props => {
               the “YOA LTD.” Services at the time of collection.
             </li>
           </ul>
+          </Trans>
 
+          <Trans i18nKey="privacy.processinfo">
           <h2>Processing of information</h2>
 
           <p>
@@ -165,7 +185,9 @@ const Privacy = props => {
             the U.S. – EU / Swiss Safe Harbor Compliance section below if you
             are a resident of the European Union or Switzerland.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.disclosure">
           <h2>Disclosure of information </h2>
 
           <p>
@@ -241,7 +263,9 @@ const Privacy = props => {
             affiliated companies or nonaffiliated third parties, which cannot
             reasonably be used to identify you.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.analytics">
           <h2>Analytics services provided by others</h2>
 
           <p>
@@ -254,7 +278,9 @@ const Privacy = props => {
             the popularity of certain content, and better understand your online
             activity.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.security">
           <h2>Security</h2>
 
           <p>
@@ -289,7 +315,10 @@ const Privacy = props => {
             section titled “Applicable Law; Arbitration” in our Terms of Service
             /en/articles/legal_privacy
           </p>
+          </Trans>
 
+
+          <Trans i18nKey="privacy.choices">
           <h2>Your choices</h2>
 
           <p>
@@ -341,7 +370,9 @@ const Privacy = props => {
             and how to block, delete or disable them, please refer to your
             browser instructions, or contact us at support@nexchange.io.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.optout">
           <h2>Why cant I opt out of any sharing?</h2>
           <p>
             We do not engage in any sharing that would require us to provide you
@@ -349,22 +380,29 @@ const Privacy = props => {
             share any information about you with third parties for their own
             marketing purposes.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.access">
           <h2>Access to information</h2>
           <p>
             You have a right to access the information we hold about you. We may
             ask you to pay a fee before providing you with this information.
           </p>
+          </Trans>
 
+          <Trans i18nKey="privacy.contact">
           <h2>Contact us</h2>
           <p>
             If you have any questions or concerns regarding this Privacy Policy,
-            please contact us at{' '}
+            please contact us at
             <a href="mailto:support@nexchange.io">support@nexchange.io</a>.
           </p>
+          </Trans>
         </div>
       </div>
     </div>
+    )}
+	</I18n>
   );
 };
 
