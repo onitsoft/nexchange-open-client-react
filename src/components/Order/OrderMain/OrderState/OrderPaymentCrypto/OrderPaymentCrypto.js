@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import config from 'Config';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 
@@ -24,6 +25,7 @@ class OrderPayment extends Component {
     if (this.txId === '' || this.txId === null) {
       return (
         <div className={styles.container}>
+          <OrderStateLoader />
           <h2 className={styles.title}>Waiting for transaction deposit...</h2>
           <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
             <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>See your order details on our API</h4>
@@ -34,6 +36,7 @@ class OrderPayment extends Component {
 
     return (
       <div className={styles.container}>
+        <OrderStateLoader />
         <h2 className={styles.title}>
           Transaction detected, awaiting confirmations{' '}
           <span>
@@ -42,7 +45,7 @@ class OrderPayment extends Component {
         </h2>
         <h3 className={styles.subtitle}>
           Transaction ID:{' '}
-          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" style={{ color: '#2cb4a0' }}>
+          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
             {this.tx.tx_id}
           </a>
         </h3>

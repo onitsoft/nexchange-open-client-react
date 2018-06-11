@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 
@@ -31,6 +32,7 @@ class OrderReleased extends Component {
 
     return (
       <div className={styles.container}>
+        <OrderStateLoader />
         <h2 className={styles.title}>
           Funds released, awaiting confirmations ({this.tx.confirmations}/{this.minConfirmations})
         </h2>
