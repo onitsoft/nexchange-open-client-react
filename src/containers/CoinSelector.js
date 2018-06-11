@@ -5,6 +5,7 @@ import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, setWallet, errorAlert } from '../actions/index.js';
 import CoinsDropdown from './CoinsDropdown';
 import '../css/_coin-selector.scss';
+import i18n from '../i18n';
 require('react-fa');
 
 class CoinSelector extends Component {
@@ -72,7 +73,8 @@ class CoinSelector extends Component {
         .join(', ');
 
       this.props.errorAlert({
-        message: `You cannot buy ${nextProps.selectedCoin.receive} with ${nextProps.selectedCoin.deposit}. Try ${validPairs}.`,
+        message: `${i18n.t('error.invalidpair')} 
+        ${nextProps.selectedCoin.receive} ${i18n.t('error.with')} ${nextProps.selectedCoin.deposit}. ${i18n.t('error.try')} ${validPairs}.`,
         show: true,
         type: 'INVALID_PAIR',
       });

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from '../../helpers/getBlockchainUrl';
 import OrderLinks from '../order/OrderLinks';
+import { I18n } from 'react-i18next';
 
 class OrderPaid extends Component {
   constructor(props) {
@@ -15,25 +16,31 @@ class OrderPaid extends Component {
   render() {
     if (this.txId === '' || this.txId === null) {
       return (
+	<I18n ns="translations">
+	{(t) => (
         <div className="col-xs-12 text-center order-status-section">
-          <h2>Processing withdrawal...</h2>
+          <h2>{t('order.processing')}</h2>
           <OrderLinks {...this.props} />
         </div>
+	)}</I18n>
       );
     }
 
     return (
+	<I18n ns="translations">
+	{(t) => (
       <div id="order-paid" className="col-xs-12 text-center">
-        <h2>Funds received</h2>
-        <h5>We are now preparing to release your coins</h5>
+        <h2>{t('order.paid1')}</h2>
+        <h5>{t('order.paid2')}</h5>
         <h5>
-          Transaction ID:{' '}
+          {t('order.txid')}:{' '}
           <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
             {this.txId}
           </a>
         </h5>
         <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
       </div>
+	)}</I18n>
     );
   }
 }

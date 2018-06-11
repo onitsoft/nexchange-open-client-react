@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { I18n } from 'react-i18next';
 import axios from 'axios';
 
 import config from '../config';
@@ -28,7 +28,7 @@ class PriceComparison extends Component {
 
     if (diff > 0)
       return <span className="text-danger">(-{Math.abs(diff)}%)</span>;
-    else if (diff == 0) {
+    else if (diff === 0) {
       return <span>({Math.abs(diff)}%)</span>;
     } else {
       return <span className="text-success">(+{Math.abs(diff)}%)</span>;
@@ -182,8 +182,12 @@ class PriceComparison extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Real Time Rates</h2>
-
+		       <I18n ns="translations">
+		        {(t) => (
+		        <div>
+		          <h2>{t('pricecomparison.1')}</h2>
+		        </div>
+		        )}</I18n>
               <div className="comparison-table">
                 <table className="table">
                   <thead>
@@ -205,7 +209,10 @@ class PriceComparison extends Component {
                       <th>
                         <img src="/img/prices/changelly.png" alt="Changelly" />
                       </th>
-                      <th>Best rate</th>
+                   <I18n ns="translations">
+                    {(t) => (
+                      <th>{t('pricecomparison.2')}</th>
+                    )}</I18n>
                     </tr>
                   </thead>
                   <tbody>

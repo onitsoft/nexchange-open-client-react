@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
 
 class OrderExpired extends Component {
   componentDidMount() {
@@ -7,22 +8,24 @@ class OrderExpired extends Component {
 
   render() {
     return (
+	<I18n ns="translations">
+	 {(t) => (
       <div className="text-center">
-        <h2>Order Expired</h2>
-        <h5>Your order is expired. You can make a new exchange order.</h5>
+		<h2>{t('order.expired1')}</h2>
+		<h5>{t('order.expired2')}</h5>
 
         <h4
           className="text-warning"
           data-toggle="tooltip"
           data-placement="top"
-          data-original-title="
-						If you have already sent your coins, don’t worry.
-						Once we get them, the status of the order will be updated retroactively."
+          data-original-title={t('order.expired3')}
           style={{ margin: '25px 0 5px 0', fontWeight: 500 }}
         >
-          Already sent?
+          {t('order.expired4')}
         </h4>
       </div>
+	  )}
+	 </I18n>
     );
   }
 }

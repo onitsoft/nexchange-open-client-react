@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/lib/styles.scss';
+import { I18n } from 'react-i18next';
 
 class CreditCardModal extends Component {
   constructor(props) {
@@ -80,6 +81,8 @@ class CreditCardModal extends Component {
 
   render() {
     return (
+    <I18n ns="translations">
+	{(t) => (
       <Modal id="credit-card-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
@@ -92,7 +95,7 @@ class CreditCardModal extends Component {
             >
               <i className="material-icons">clear</i>
             </button>
-            <h4 className="modal-title">Pay now</h4>
+            <h4 className="modal-title">{t('status.pay')}</h4>
           </div>
 
           <div className="modal-body">
@@ -111,14 +114,12 @@ class CreditCardModal extends Component {
                 <form id="credit-card-form" onSubmit={this.handleSubmit}>
                   {this.state.success === true ? (
                     <h4 className="text-success">
-                      Your form has been successfully submitted. We'll get back
-                      to you shortly!
+                      {t('generalterms.formsucess')}
                     </h4>
                   ) : null}
                   {this.state.success === false ? (
                     <h4 className="text-danger">
-                      Something went wrong during the form submission, please
-                      try again later.
+                      {t('generalterms.formfailed')}
                     </h4>
                   ) : null}
 
@@ -127,7 +128,7 @@ class CreditCardModal extends Component {
                       type="text"
                       name="name"
                       className="form-control"
-                      placeholder="Your name"
+                      placeholder={t('order.fiat.name')}
                       onChange={this.handleInputChange}
                       value={this.state.name}
                       required
@@ -170,7 +171,7 @@ class CreditCardModal extends Component {
                           type="text"
                           name="expiry"
                           className="form-control"
-                          placeholder="MM/YY"
+                          placeholder={'order.fiat.expirationformat'}
                           onChange={this.handleInputChange}
                           value={this.state.expiry}
                           required
@@ -206,7 +207,7 @@ class CreditCardModal extends Component {
                     className="btn btn-themed btn-md"
                     disabled={this.state.loading ? 'disabled' : null}
                   >
-                    Pay now
+                    {t('order.status.pay')}
                     {this.state.loading ? (
                       <i
                         className="fa fa-spinner fa-spin"
@@ -220,6 +221,8 @@ class CreditCardModal extends Component {
           </div>
         </div>
       </Modal>
+    )}
+    </I18n>
     );
   }
 }

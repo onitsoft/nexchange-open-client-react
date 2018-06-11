@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
 import STATUS_CODES from '../../statusCodes';
 
 class OrderStatus extends Component {
@@ -25,6 +26,9 @@ class OrderStatus extends Component {
     }
 
     return (
+      <I18n ns="translations">
+        {
+         (t) => (
       <div className="row">
         <div className="col-xs-12">
           <div id="order-status">
@@ -34,10 +38,10 @@ class OrderStatus extends Component {
               data-toggle="tooltip"
               data-placement="top"
               title=""
-              data-original-title="In this step we are waiting for your deposit."
+              data-original-title={t('order.status11')}
             >
               <span className="glyphicon glyphicon-save" aria-hidden="true" />
-              <h4>1. Awaiting deposit</h4>
+              <h4>{t('order.status1')}</h4>
             </div>
 
             <div
@@ -46,12 +50,10 @@ class OrderStatus extends Component {
               data-toggle="tooltip"
               data-placement="top"
               title=""
-              data-original-title="Your order is on the blockchain,
-                we are now waiting for the required number of
-                confirmations before you can receive your funds."
+              data-original-title={t('order.status21')}
             >
               <span className="glyphicon glyphicon-transfer" aria-hidden="true" />
-              <h4>2. Awaiting confirmations</h4>
+              <h4>{t('order.status2')}</h4>
             </div>
 
             <div
@@ -62,22 +64,25 @@ class OrderStatus extends Component {
               data-toggle="tooltip"
               data-placement="top"
               title=""
-              data-original-title="We got the funds and now have transferred our funds to you."
+              data-original-title={t('order.status31')}
             >
               <span className="glyphicon glyphicon-ok" aria-hidden="true" />
-              <h4>3. All done</h4>
+              <h4>{t('order.status3')}</h4>
             </div>
 
             <div className="progres-container">
               <div className="progress progress-line-info">
                 <div className="progress-bar progress-bar-info" role="progressbar" style={{ width: width }}>
-                  <span className="sr-only">{width} Complete</span>
+                  <span className="sr-only">{width} {t('order.complete')}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+          )
+        }
+      </I18n>
     );
   }
 }

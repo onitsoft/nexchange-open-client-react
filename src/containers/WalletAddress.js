@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n, Interpolate } from 'react-i18next';
 import { errorAlert, setWallet } from '../actions/index.js';
 import validateWalletAddress from '../helpers/validateWalletAddress';
+import i18n from '../i18n';
 
 class WalletAddress extends Component {
   constructor(props) {
@@ -21,9 +23,9 @@ class WalletAddress extends Component {
       () =>
         this.props.errorAlert({
           show: true,
-          message: `${address} is not a valid ${
+          message: `${address} ${i18n.t('error.novalid')} ${
             this.props.selectedCoin.receive
-          } address.`,
+          } ${i18n.t('generalterms.address')}.`,
         }),
       () => this.props.errorAlert({ show: false })
     );
@@ -49,7 +51,7 @@ class WalletAddress extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       nextProps.wallet.address != null &&
-      nextProps.wallet.address != this.state.address
+      nextProps.wallet.address !== this.state.address
     ) {
       this.setState({ address: nextProps.wallet.address });
     }
@@ -57,6 +59,8 @@ class WalletAddress extends Component {
 
   render() {
     return (
+	<I18n ns="translations">
+	{(t) => (
       <div
         id="wallet-address"
         className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}
@@ -66,7 +70,11 @@ class WalletAddress extends Component {
           onSubmit={this.handleSubmit}
         >
           <label htmlFor="withdraw-addr" className="control-label text-green">
-            Your {this.props.selectedCoin.receive} Address
+            <Interpolate i18nKey="generalterms.youraddress" selectedCoin={this.props.selectedCoin.receive} />
+            {/* 
+             =>
+               Your selectedCoin Address
+            */}
           </label>
 
           <input
@@ -79,6 +87,8 @@ class WalletAddress extends Component {
           />
         </form>
       </div>
+	)}
+	</I18n>
     );
   }
 }

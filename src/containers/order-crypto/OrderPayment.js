@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
+import config from '../../config';
 import _ from 'lodash';
 import getBlockchainUrl from '../../helpers/getBlockchainUrl';
-import config from '../../config';
 import OrderLinks from '../order/OrderLinks';
 
 class OrderPayment extends Component {
@@ -22,8 +23,10 @@ class OrderPayment extends Component {
   render() {
     if (this.txId === '' || this.txId === null) {
       return (
+	  <I18n ns="translations">
+		{(t) => (
         <div className="col-xs-12 text-center order-status-section">
-          <h2>Waiting for transaction deposit...</h2>
+          <h2>{t('order.payment1')}</h2>
           <a
             href={`${config.API_BASE_URL}/orders/${
               this.props.order.unique_reference
@@ -31,17 +34,20 @@ class OrderPayment extends Component {
             target="_blank"
           >
             <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>
-              See your order details on our API
+              {t('order.details')}
             </h4>
           </a>
         </div>
+		)}</I18n>
       );
     }
 
     return (
+	  <I18n ns="translations">
+		{(t) => (
       <div className="col-xs-12 text-center order-status-section">
         <h2>
-          Transaction detected, awaiting confirmations ({this.tx.confirmations}/{
+          {t('order.payment2')} ({this.tx.confirmations}/{
             this.minConfirmations
           })
         </h2>
@@ -58,6 +64,7 @@ class OrderPayment extends Component {
 
         <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
       </div>
+	)}</I18n>
     );
   }
 }

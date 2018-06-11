@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setUserEmail } from '../actions';
 import config from '../config';
+import { I18n } from 'react-i18next';
 
 class Notifications extends Component {
   state = {
@@ -65,11 +66,13 @@ class Notifications extends Component {
     }
 
     return (
+	<I18n ns="translations">
+	 {(t) => (
       <div id="notifications" className="col-xs-12">
         <div className="box">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Get notified about your order!</h2>
+              <h2>{t('notify.title')}</h2>
 
               <div className="row">
                 <div className="col-xs-12 col-md-8 col-md-push-2">
@@ -90,7 +93,7 @@ class Notifications extends Component {
                     </div>
 
                     <button type="submit" className="btn btn-primary btn-lg">
-                      Receive notifications
+                      {t('notify.action')}
                     </button>
                   </form>
                 </div>
@@ -99,6 +102,8 @@ class Notifications extends Component {
           </div>
         </div>
       </div>
+	 )}
+	</I18n>
     );
   }
 }
