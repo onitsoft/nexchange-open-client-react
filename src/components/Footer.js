@@ -17,7 +17,7 @@ const Footer = () => (
         {/*<li><Link to="/refund-cancellation">{t('footer.6')}</Link></li>*/}
       </ul>
 
-	  <Trans i18nKey="footer.5">
+	  <Trans i18nKey="footer.3">
       <p className="text-muted">
         All rights reserved, YOA LTD 2016-2017, England & Wales{' '}
         <a
