@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from 'Config';
+import i18n from '../../i18n';
+import { I18n } from 'react-i18next';
 
 class KYCModalTier2 extends Component {
   constructor(props) {
@@ -12,8 +14,8 @@ class KYCModalTier2 extends Component {
       filesReady: false,
       whitelist_selfie: '',
       residenceProof: '',
-      title: 'Get verified',
-      buttonText: 'Upload file(s)',
+      title: i18n.t('order.fiat.kyc.3'),
+      buttonText: i18n.t('order.fiat.kyc.4'),
       titleClass: '',
       message: '',
     };
@@ -39,8 +41,8 @@ class KYCModalTier2 extends Component {
     this.setState({
       filesReady: false,
       whitelist_selfie: '',
-      title: 'Get verified',
-      buttonText: 'Upload file(s)',
+      title: i18n.t('order.fiat.kyc.3'),
+      buttonText: i18n.t('order.fiat.kyc.4'),
       titleClass: '',
       message: '',
     });
@@ -50,9 +52,9 @@ class KYCModalTier2 extends Component {
     event.preventDefault();
 
     this.setState({
-      title: 'Uploading...',
+      title: i18n.t('order.fiat.kyc.uploading'),
       titleClass: 'warning',
-      buttonText: 'Uploading...',
+      buttonText: i18n.t('order.fiat.kyc.uploading'),
       filesReady: false,
     });
 
@@ -74,9 +76,9 @@ class KYCModalTier2 extends Component {
       })
       .then(response => {
         this.setState({
-          title: 'Verification documents uploaded!',
+          title: i18n.t('order.fiat.kyc.status7'),
           titleClass: 'green',
-          buttonText: 'Uploaded',
+          buttonText: i18n.t('order.fiat.kyc.5'),
           filesReady: false,
         });
 
@@ -86,9 +88,9 @@ class KYCModalTier2 extends Component {
       })
       .catch(error => {
         this.setState({
-          title: 'Something went wrong, please try resubmitting',
+          title: i18n.t('order.fiat.kyc.status8'),
           titleClass: 'danger',
-          buttonText: 'Upload file(s)',
+          buttonText: i18n.t('order.fiat.kyc.4'),
         });
       });
   }
@@ -115,6 +117,8 @@ class KYCModalTier2 extends Component {
 
   render() {
     return (
+    <I18n ns="translations">
+    {(t) => (
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
@@ -124,8 +128,7 @@ class KYCModalTier2 extends Component {
             <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
             <h5 style={{ marginBottom: 0 }}>
               <b>
-                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
-                tier limits are reached.
+                {t('order.fiat.tier.explanation')}
               </b>
             </h5>
           </div>
@@ -133,10 +136,9 @@ class KYCModalTier2 extends Component {
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
               <div style={{ marginBottom: 45 }}>
-                <h2>Whitelist selfie</h2>
+                <h2>{t('order.fiat.tier.w_selfie')}</h2>
                 <small>
-                  i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with
-                  today's date and 'N.exchange'. You may hide middle digits of the credit card.
+                  {t('order.fiat.tier.w_selfieexplanation')}
                 </small>
                 <input type="file" name="whitelist_selfie" id="whitelist_selfie" onChange={this.handleInputChange} accept="image/*" />
               </div>
@@ -144,7 +146,7 @@ class KYCModalTier2 extends Component {
               <textarea
                 name="message"
                 className="form-control"
-                placeholder="Message (optional)"
+                placeholder={t('order.fiat.kyc.msg')}
                 rows="2"
                 onChange={this.handleInputChange}
                 value={this.state.message}
@@ -168,6 +170,8 @@ class KYCModalTier2 extends Component {
           </div>
         </div>
       </Modal>
+      )}
+      </I18n>
     );
   }
 }

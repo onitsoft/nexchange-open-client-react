@@ -18,8 +18,6 @@ class OrderCta extends Component {
   };
 
   componentDidMount() {
-    console.log('yo');
-
     axios
       .get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
       .then(data => {

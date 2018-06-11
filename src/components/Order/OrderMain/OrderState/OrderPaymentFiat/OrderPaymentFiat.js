@@ -8,6 +8,8 @@ import KYCModalTier1 from '../OrderFiatModals/KYCModalTier1/KYCModalTier1';
 import KYCModalTier2 from '../OrderFiatModals/KYCModalTier2/KYCModalTier2';
 import OrderPaymentTemplate from './OrderPaymentTemplateFiat/OrderPaymentTemplateFiat';
 import styles from '../OrderState.scss';
+import i18n from '../../i18n';
+import { I18n } from 'react-i18next';
 
 class OrderPayment extends Component {
   state = {};
@@ -35,9 +37,13 @@ class OrderPayment extends Component {
   render() {
     if (!this.props.kyc) {
       return (
+        <I18n ns="translations">
+        {(t) => (
         <div className="text-center order-status-section">
-          <h2>Checking KYC status...</h2>
+          <h2>{t('order.fiat.kyc.statustitle')}...</h2>
         </div>
+        )}
+        </I18n>
       );
     }
 
@@ -52,37 +58,35 @@ class OrderPayment extends Component {
       const { residence_document_status, id_document_status } = this.props.kyc;
 
       if (id_document_status === 'UNDEFINED' && residence_document_status === 'UNDEFINED') {
-        title = <h2 className={styles.title}>Awaiting verification</h2>;
+        title = <h2 className={styles.title}>{i18n.t('order.fiat.status.2')}</h2>;
         inner = (
           <div>
             <h3 className={styles.subtitle}>
-              In order to proceed further we must get to know you better by getting a copy of your government issued ID and a proof of
-              residence.
+              {i18n.t('order.fiat.status.2')}
             </h3>
 
             <h3 className={styles.subtitle}>
               <b>
-                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
-                tier limit is reached.
+                {i18n.t('order.fiat.status.7')}
               </b>
             </h3>
           </div>
         );
 
         modal = KYCModalTier0;
-        buttonText = 'Get verified';
+        buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
       } else {
-        title = <h2 className={styles.title}>Verification received, awaiting approval</h2>;
+        title = <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>;
         inner = (
           <div>
             <hr style={{ margin: '15px -15px' }} />
             <h2>Approval status:</h2>
             <p style={{ margin: 0 }}>
-              <b>Government issued ID:</b> {id_document_status}
+              <b>{i18n.t('order.fiat.kyc.1')}:</b> {id_document_status}
             </p>
             <p>
-              <b>Proof of residence:</b> {residence_document_status}
+              <b>{i18n.t('order.fiat.kyc.2')}:</b> {residence_document_status}
             </p>
           </div>
         );
@@ -91,12 +95,12 @@ class OrderPayment extends Component {
         modal = KYCModalTier0;
 
         if (id_document_status === 'REJECTED' || residence_document_status === 'REJECTED') {
-          buttonText = 'Retry verification';
+          buttonText = i18n.t('order.fiat.kyc.retry');
           showInitial = true;
         }
       }
     } else if (this.props.kyc.out_of_limit) {
-      title = <h2 className={styles.title}>Tier limits reached, additional verification needed</h2>;
+      title = <h2 className={styles.title}>{i18n.t('order.fiat.tier.limit')}</h2>;
 
       const tier = this.props.kyc.limits_message.tier.name;
       const { selfie_document_status, whitelist_selfie_document_status } = this.props.kyc;
@@ -110,53 +114,52 @@ class OrderPayment extends Component {
           <div>
             <h3 className={styles.subtitle}>
               <b>
-                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
-                tier limits are reached.
+                {i18n.t('order.fiat.tier.explanation')}
               </b>
             </h3>
           </div>
         );
 
         modal = tier === 'Tier 1' ? KYCModalTier1 : KYCModalTier2;
-        buttonText = 'Get verified';
+        buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
       } else if (tier === 'Tier 3' && (withdrawAddressStatus !== 'PENDING' && withdrawAddressStatus !== 'REJECTED')) {
         inner = (
           <div>
             <h3 className={styles.subtitle}>
               <b>
-                This is a one-time process, once verified you’ll be able to complete future purchases for this withdrawal address instantly.
+                {i18n.t('order.fiat.tier.explanation2')}
               </b>
             </h3>
           </div>
         );
 
         modal = KYCModalTier2;
-        buttonText = 'Get verified';
+        buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
       } else {
-        title = <h2 className={styles.title}>Verification received, awaiting approval</h2>;
+        title = <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>;
         inner = (
           <div>
             <hr style={{ margin: '15px -15px' }} />
-            <h2>Approval status:</h2>
+            <h2>{i18n.t('order.fiat.status.5')}</h2>
 
             {tier === 'Tier 1' && (
               <p>
-                <b>Selfie:</b> {selfie_document_status}
+                <b>{i18n.t('order.fiat.tier.selfie')}:</b> {selfie_document_status}
               </p>
             )}
 
             {(tier === 'Tier 2' || tier === 'Tier 3') && (
               <p>
-                <b>Whitelist selfie:</b> {withdrawAddressStatus}
+                <b>{i18n.t('order.fiat.tier.w_selfie')}:</b> {withdrawAddressStatus}
               </p>
             )}
           </div>
         );
 
         if (selfie_document_status === 'REJECTED' || withdrawAddressStatus === 'REJECTED') {
-          buttonText = 'Retry verification';
+          buttonText = i18n.t('order.fiat.kyc.retry');
           modal = tier === 'Tier 1' ? KYCModalTier1 : KYCModalTier2;
           showInitial = true;
         }
@@ -164,8 +167,8 @@ class OrderPayment extends Component {
         notificationsCtaVisible = true;
       }
     } else {
-      title = <h2 className={styles.title}>Payment and verification received</h2>;
-      inner = <h3 className={styles.subtitle}>We will proceed to release your funds shortly</h3>;
+      title = <h2 className={styles.title}>{i18n.t('order.fiat.status.paid')}</h2>;
+      inner = <h5 className={styles.subtitle}>{i18n.t('order.fiat.status.success')}</h5>;
     }
 
     return (

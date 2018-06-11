@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import OrderLinks from '../OrderLinks/OrderLinks';
+import { I18n } from 'react-i18next';
 import styles from '../OrderState.scss';
 
 class OrderPaidCrypto extends Component {
@@ -16,25 +17,31 @@ class OrderPaidCrypto extends Component {
   render() {
     if (this.txId === '' || this.txId === null) {
       return (
+		<I18n ns="translations">
+		{(t) => (
         <div className={styles.container}>
-          <h2>Processing withdrawal...</h2>
+          <h2>{t('order.processing')}...</h2>
           <OrderLinks {...this.props} />
         </div>
+		)}</I18n>
       );
     }
 
     return (
+	<I18n ns="translations">
+	{(t) => (
       <div className={styles.container}>
-        <h2 className={styles.title}>Funds received</h2>
-        <h3 className={styles.subtitle}>We are now preparing to release your coins</h3>
+        <h2 className={styles.title}>{t('order.paid1')}</h2>
+        <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
         <h3 className={styles.subtitle}>
-          Transaction ID:{' '}
+          {t('order.txid')}:{' '}
           <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
             {this.txId}
           </a>
         </h3>
         <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
       </div>
+	)}</I18n>
     );
   }
 }

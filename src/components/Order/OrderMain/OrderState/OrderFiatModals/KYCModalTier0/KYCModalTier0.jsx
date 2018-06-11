@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
 import axios from 'axios';
 import config from 'Config';
+import i18n from '../../i18n';
+import { I18n } from 'react-i18next';
 
 class KYCModal extends Component {
   constructor(props) {
@@ -15,8 +17,8 @@ class KYCModal extends Component {
       filesReady: false,
       governmentID: '',
       residenceProof: '',
-      title: 'Get verified',
-      buttonText: 'Upload file(s)',
+      title: i18n.t('order.fiat.kyc.3'),
+      buttonText: i18n.t('order.fiat.kyc.4'),
       titleClass: '',
       email: '',
       message: '',
@@ -58,8 +60,8 @@ class KYCModal extends Component {
       filesReady: false,
       governmentID: '',
       residenceProof: '',
-      title: 'Get verified',
-      buttonText: 'Upload file(s)',
+      title: i18n.t('order.fiat.kyc.3'),
+      buttonText: i18n.t('order.fiat.kyc.4'),
       titleClass: '',
       message: '',
     });
@@ -69,9 +71,9 @@ class KYCModal extends Component {
     event.preventDefault();
 
     this.setState({
-      title: 'Uploading...',
+      title: i18n.t('order.fiat.kyc.uploading'),
       titleClass: 'warning',
-      buttonText: 'Uploading...',
+      buttonText: i18n.t('order.fiat.kyc.uploading'),
       filesReady: false,
     });
 
@@ -98,9 +100,9 @@ class KYCModal extends Component {
       })
       .then(response => {
         this.setState({
-          title: 'Verification documents uploaded!',
+          title: i18n.t('order.fiat.kyc.status7'),
           titleClass: 'green',
-          buttonText: 'Uploaded',
+          buttonText: i18n.t('order.fiat.kyc.5'),
           filesReady: false,
         });
 
@@ -110,9 +112,9 @@ class KYCModal extends Component {
       })
       .catch(error => {
         this.setState({
-          title: 'Something went wrong, please try resubmitting',
+          title: i18n.t('order.fiat.kyc.status8'),
           titleClass: 'danger',
-          buttonText: 'Upload file(s)',
+          buttonText: i18n.t('order.fiat.kyc.4'),
         });
       });
 
@@ -150,6 +152,8 @@ class KYCModal extends Component {
 
   render() {
     return (
+    <I18n ns="translations">
+    {(t) => (
       <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
         <div className="modal-content">
           <div className="modal-header">
@@ -159,8 +163,7 @@ class KYCModal extends Component {
             <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
             <h5 style={{ marginBottom: 0 }}>
               <b>
-                This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification
-                tier limits are reached.
+                {t('order.fiat.tier.explanation')}
               </b>
             </h5>
           </div>
@@ -169,22 +172,20 @@ class KYCModal extends Component {
             <form onSubmit={this.handleSubmit}>
               {this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
-                  <h2>Government issued ID</h2>
-                  <small>e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.</small>
+                  <h2>{t('order.fiat.kyc.1')}</h2>
+                  <small>{t('order.fiat.kyc.11')}</small>
                   <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
 
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
                 <div>
-                  <h2>Proof of residence</h2>
+                  <h2>{t('order.fiat.kyc.2')}</h2>
                   <small>
-                    A high-resolution photo\scan of a <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the
-                    internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a{' '}
-                    <b>fiscal, residence address (no PO boxes!).</b>
+                    {t('order.fiat.kyc.21')}
                   </small>
                   <small>
-                    Letters from the bank or credit card company delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.
+                    {t('order.fiat.kyc.22')}
                   </small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>
@@ -194,7 +195,7 @@ class KYCModal extends Component {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t('generalterms.email')}
                   className="form-control"
                   onChange={this.handleInputChange}
                   value={this.state.email}
@@ -210,15 +211,14 @@ class KYCModal extends Component {
                     right: 7,
                     zIndex: 99999999,
                   }}
-                  data-original-title={`Help us reach you in case we need any further information from you.\n
-This will also allow us to send you updates about your orders, your referrals, and occasional info about our product.`}
+                  data-original-title={t('order.fiat.kyc.6')}
                 />
               </div>
 
               <textarea
                 name="message"
                 className="form-control"
-                placeholder="Message (optional)"
+                placeholder={t('order.fiat.kyc.msg')}
                 rows="2"
                 onChange={this.handleInputChange}
                 value={this.state.message}
@@ -242,6 +242,8 @@ This will also allow us to send you updates about your orders, your referrals, a
           </div>
         </div>
       </Modal>
+      )}
+      </I18n>
     );
   }
 }

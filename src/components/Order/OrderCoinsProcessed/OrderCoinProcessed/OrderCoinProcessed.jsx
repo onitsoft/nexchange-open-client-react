@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
+import i18n from '../../i18n';
+import { I18n } from 'react-i18next';
 
 class OrderCoinProcessed extends Component {
   state = { order: this.props.order };
@@ -39,7 +41,7 @@ class OrderCoinProcessed extends Component {
     let rates = ``;
 
     if (this.state.order && this.state.order.price) {
-      rates += `Rates at order creation: \n`;
+      rates += `${i18n.t('order.rates')}: \n`;
       rates += `1 ${this.state.coin} = `;
 
       if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate).toFixed(8)} ${this.state.oppositeCoin}\n`;
@@ -57,15 +59,17 @@ class OrderCoinProcessed extends Component {
       else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
 
       if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
-        rates += `\n\nWithdrawal fee: \n`;
+        rates += `\n\n${'order.fee'}: \n`;
         rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
       } else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
-        rates += `\n\nWithdrawal fee: \n`;
+        rates += `\n\n${'order.fee'}: \n`;
         rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
       }
     }
 
     return (
+    <I18n ns="translations">
+     {(t) => (
       <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
         <div className={`${styles.box} box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
           <div className={`${styles['media-left']} media-left`}>
@@ -74,7 +78,7 @@ class OrderCoinProcessed extends Component {
 
           <div className="media-body">
             <h5>
-              {this.props.type}{' '}
+              {t('order.'+this.props.type)}{' '}
               <b>
                 {this.state.amount} {this.state.coin}
               </b>
@@ -90,6 +94,8 @@ class OrderCoinProcessed extends Component {
           </div>
         </div>
       </div>
+      )}
+	 </I18n>
     );
   }
 }

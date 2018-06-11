@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
 import axios from 'axios';
 import config from 'Config';
 
@@ -154,8 +155,12 @@ class PriceComparison extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Real Time Rates</h2>
-
+		       <I18n ns="translations">
+		        {(t) => (
+		        <div>
+		          <h2>{t('pricecomparison.1')}</h2>
+		        </div>
+		        )}</I18n>
               <div className="comparison-table">
                 <table className="table">
                   <thead>
@@ -170,7 +175,10 @@ class PriceComparison extends Component {
                       <th>
                         <img src="/img/prices/changelly.png" alt="Changelly" />
                       </th>
-                      <th>Best rate</th>
+                   <I18n ns="translations">
+                    {(t) => (
+                      <th>{t('pricecomparison.2')}</th>
+                    )}</I18n>
                     </tr>
                   </thead>
                   <tbody>

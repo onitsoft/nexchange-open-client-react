@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Notify from 'notifyjs';
+import i18n from '../i18n';
 import equals from 'deep-equal';
 
 class DesktopNotifications extends Component {
@@ -11,7 +12,7 @@ class DesktopNotifications extends Component {
   }
 
   notify(nextProps) {
-    new Notify(`KYC status updated for order #${this.props.order.unique_reference}`, {
+    new Notify(`${i18n.t('notify.kycupdate')} #${this.props.order.unique_reference}`, {
       closeOnClick: true,
       notifyClick: function() {
         window.focus();
@@ -43,7 +44,7 @@ class DesktopNotifications extends Component {
       <div className="row">
         <div className="col-xs-12 text-center">
           <a href="javascript:void(0)" className="text-warning" onClick={this.onClick}>
-            <h4 style={{ fontWeight: 500, width: '100%' }}>Click here to get notified about your KYC status change</h4>
+            <h4 style={{ fontWeight: 500, width: '100%' }}>{t('order.kycstatuscheck')}</h4>
           </a>
         </div>
       </div>

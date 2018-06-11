@@ -4,6 +4,7 @@ import Fuse from 'fuse.js';
 import cx from 'classnames';
 import urlParams from 'Utils/urlParams';
 import styles from './CoinsDropdown.css';
+import { I18n } from 'react-i18next';
 
 class CoinsDropdown extends Component {
   constructor(props) {
@@ -62,11 +63,13 @@ class CoinsDropdown extends Component {
 
   renderSearch = () => {
     return (
+    <I18n ns="translations">
+     {(t) => (
       <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
         <i class="fas fa-search" aria-hidden="true" />
         <input
           type="text"
-          placeholder="Search"
+          placeholder={t('generalterms.search')}
           ref={input => (this.searchInput = input)}
           onChange={this.handleChange}
           value={this.state.value}
@@ -75,6 +78,8 @@ class CoinsDropdown extends Component {
           clear
         </i>
       </form>
+      )}
+	 </I18n>
     );
   };
 
