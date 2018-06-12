@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import OrderLinks from '../OrderLinks/OrderLinks';
-import OrderCheckIcon from '../OrderCheckIcon/OrderCheckIcon';
-import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
+import OrderCheckIcon from '../OrderIcons/OrderCheckIcon/OrderCheckIcon';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import styles from '../OrderState.scss';
 
 class OrderPaidCrypto extends Component {

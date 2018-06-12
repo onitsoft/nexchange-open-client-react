@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import styles from '../OrderState.scss';
 
 const OrderPaid = () => (

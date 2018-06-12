@@ -1,6 +1,6 @@
 import React from 'react';
 import OrderLinks from '../OrderLinks/OrderLinks';
-import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import styles from '../OrderState.scss';
 
 const OrderPreReleased = props => (

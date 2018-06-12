@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OrderAlert from '../OrderIcons/OrderAlert/OrderAlert';
 import styles from '../OrderState.scss';
 
 class OrderExpired extends Component {
@@ -9,8 +10,14 @@ class OrderExpired extends Component {
   render() {
     return (
       <div className={styles.container}>
+        <OrderAlert />
         <h2 className={styles.title}>Order Expired</h2>
-        <h3 className={styles.subtitle}>Your order is expired. You can make a new exchange order.</h3>
+        <h3 className={styles.subtitle}>
+          Your order is expired. You can make a{' '}
+          <a href="/" className={styles['new-order-link']}>
+            new exchange order
+          </a>.
+        </h3>
 
         <h4
           className={styles.warning}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import OrderLinks from '../OrderLinks/OrderLinks';
-import OrderCheckIcon from '../OrderCheckIcon/OrderCheckIcon';
+import OrderCheckIcon from '../OrderIcons/OrderCheckIcon/OrderCheckIcon';
 import styles from '../OrderState.scss';
 
 const OrderSuccess = props => (
