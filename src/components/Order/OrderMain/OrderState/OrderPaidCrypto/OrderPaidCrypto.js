@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import OrderLinks from '../OrderLinks/OrderLinks';
+import OrderCheckIcon from '../OrderCheckIcon/OrderCheckIcon';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import { I18n } from 'react-i18next';
 import styles from '../OrderState.scss';
 
@@ -20,6 +22,7 @@ class OrderPaidCrypto extends Component {
 		<I18n ns="translations">
 		{(t) => (
         <div className={styles.container}>
+          <OrderStateLoader />
           <h2>{t('order.processing')}...</h2>
           <OrderLinks {...this.props} />
         </div>
@@ -31,6 +34,7 @@ class OrderPaidCrypto extends Component {
 	<I18n ns="translations">
 	{(t) => (
       <div className={styles.container}>
+        <OrderCheckIcon />
         <h2 className={styles.title}>{t('order.paid1')}</h2>
         <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
         <h3 className={styles.subtitle}>
