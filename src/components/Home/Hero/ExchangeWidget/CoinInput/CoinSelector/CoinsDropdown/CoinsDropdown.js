@@ -103,7 +103,7 @@ class CoinsDropdown extends Component {
 
   render = () => {
     return (
-      <div className={styles['coin-currency-dropdown']}>
+      <div className={`coin-currency-dropdown ${styles['coin-currency-dropdown']}`}>
         {this.renderSearch()}
         {this.renderCoins()}
       </div>
