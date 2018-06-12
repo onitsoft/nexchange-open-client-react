@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_selected_coin';
-import * as types from 'Actionstypes';
+import * as types from 'Actions/types';
 
 describe('selected coin reducer', () => {
   const initialState = {

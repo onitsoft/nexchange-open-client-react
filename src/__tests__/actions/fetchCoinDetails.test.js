@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import * as types from 'Actionstypes';
+import * as types from 'Actions/types';
 import * as actions from 'Actions';
 import mockData from '../../__mocks__/currency';
 import _ from 'lodash';
