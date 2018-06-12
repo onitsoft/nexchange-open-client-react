@@ -87,7 +87,7 @@ class CoinSelector extends Component {
     return (
       <div>
         <div
-          className={`selected-coin ${styles['selected-coin']}`}
+          className={`selected-coin selectedCoin-${type} ${styles['selected-coin']}`}
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
           <span className={styles.span}>{selectedCoin}</span>
