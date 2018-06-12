@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_pairs';
-import * as types from 'Actionstypes';
+import * as types from 'Actions/types';
 import mockData from '../../__mocks__/pair';
 
 describe('pairs reducer', () => {

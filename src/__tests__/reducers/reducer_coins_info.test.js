@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_coins_info';
-import * as types from 'Actionstypes';
+import * as types from 'Actions/types';
 import mockData from '../../__mocks__/currency';
 
 describe('coins info reducer', () => {

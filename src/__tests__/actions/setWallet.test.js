@@ -1,4 +1,4 @@
-import * as types from 'Actionstypes';
+import * as types from 'Actions/types';
 import * as actions from 'Actions';
 
 it('creates an action to set wallet', () => {
