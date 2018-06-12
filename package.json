@@ -121,7 +121,11 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^Utils(.*)$": "<rootDir>/src/utils$1",
+      "^Components(.*)$": "<rootDir>/src/components$1",
+      "^Config$": "<rootDir>/src/config.js",
+      "^Actions(.*)$": "<rootDir>/src/actions$1",
+      "^StatusCodes": "<rootDir>/src/statusCodes.js"
     },
     "moduleFileExtensions": [
       "web.js",
