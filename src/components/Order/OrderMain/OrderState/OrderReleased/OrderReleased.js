@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
-import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 

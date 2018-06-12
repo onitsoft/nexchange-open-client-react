@@ -4,7 +4,7 @@ import config from '../../config';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import config from 'Config';
-import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import styles from '../OrderState.scss';
 

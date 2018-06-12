@@ -48,3 +48,14 @@
     text-decoration: none;
   }
 }
+
+.new-order-link.new-order-link {
+  color: $green;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $green;
+    text-decoration: none;
+  }
+}
