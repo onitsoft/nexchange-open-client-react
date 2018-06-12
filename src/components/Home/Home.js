@@ -33,22 +33,8 @@ export class Home extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    coinsInfo: state.coinsInfo,
-    selectedCoin: state.selectedCoin,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      fetchCoinDetails: fetchCoinDetails,
-      fetchPairs: fetchPairs,
-    },
-    dispatch
-  );
-}
+const mapStateToProps = ({ coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin });
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs }, dispatch);
 
 export default connect(
   mapStateToProps,
