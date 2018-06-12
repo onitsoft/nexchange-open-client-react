@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import OrderLinks from '../OrderLinks/OrderLinks';
+import OrderCheckIcon from '../OrderCheckIcon/OrderCheckIcon';
+import OrderStateLoader from '../OrderStateLoader/OrderStateLoader';
 import styles from '../OrderState.scss';
 
 class OrderPaidCrypto extends Component {
@@ -17,6 +19,7 @@ class OrderPaidCrypto extends Component {
     if (this.txId === '' || this.txId === null) {
       return (
         <div className={styles.container}>
+          <OrderStateLoader />
           <h2>Processing withdrawal...</h2>
           <OrderLinks {...this.props} />
         </div>
@@ -25,6 +28,7 @@ class OrderPaidCrypto extends Component {
 
     return (
       <div className={styles.container}>
+        <OrderCheckIcon />
         <h2 className={styles.title}>Funds received</h2>
         <h3 className={styles.subtitle}>We are now preparing to release your coins</h3>
         <h3 className={styles.subtitle}>
