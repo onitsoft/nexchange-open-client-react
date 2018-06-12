@@ -126,58 +126,52 @@ export const fetchPrice = payload => dispatch => {
     });
 };
 
-export const fetchPairs = payload => {
+export const fetchPairs = () => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
   return (dispatch, getState) => {
     request
-      .then(response => {
+      .then(async response => {
         if (!response.data.length) return;
 
-        const pairs = preparePairs(response.data);
-
-        dispatch({ type: types.PAIRS_FETCHED, payload: pairs });
+        const pairs = response.data.filter(pair => !pair.disabled);
+        const processedPairs = preparePairs(pairs);
+        dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
 
         let depositCoin, receiveCoin;
+        const coinsFromUrlParams = params => {
+          return new Promise((resolve, reject) => {
+            axios
+              .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
+              .then(res => resolve(res.data))
+              .catch(err => reject(err));
+          });
+        };
 
-        const pickRandomReceiveCoin = coins => {
-          let objKeys = Object.keys(coins),
-            randomCoin = objKeys[Math.floor(Math.random() * objKeys.length)];
-
-          return randomCoin;
+        const pickRandomPair = async () => {
+          const pair = pairs[Math.floor(Math.random() * pairs.length)];
+          depositCoin = pair.quote;
+          receiveCoin = pair.base;
         };
 
         // Picks random deposit and receive coins.
-        const pickRandomCoins = coins => {
+        const pickCoins = async () => {
           // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-          let params = urlParams();
-          if (params && params.hasOwnProperty('pair')){
-            $.ajax({
-              url: `${config.API_BASE_URL}/pair/${params['pair']}/?format=json`,
-              type: "GET",
-              async: false,
-              success: function(data) {
-                depositCoin = data.quote;
-                receiveCoin = data.base;
-              }
-            });
-          }
-
-          // If pair is invalid, try again until valid
-          while (
-            !_.filter(coins, {
-              code: receiveCoin,
-              is_base_of_enabled_pair: true,
-            }).length ||
-            pairs[depositCoin][receiveCoin] === false
-          ) {
-            // Picks random deposit and receive coins.
-            depositCoin = coins[Math.floor(Math.random() * coins.length)].code;
-            receiveCoin = pickRandomReceiveCoin(pairs[depositCoin]);
+          const params = urlParams();
+          if (params && params.hasOwnProperty('pair')) {
+            try {
+              const pair = await coinsFromUrlParams(params);
+              depositCoin = pair.quote;
+              receiveCoin = pair.base;
+            } catch (err) {
+              console.log('Error:', err);
+            }
+          } else {
+            pickRandomPair();
           }
         };
-        pickRandomCoins(payload);
+        await pickCoins();
 
         dispatch(
           selectCoin({
