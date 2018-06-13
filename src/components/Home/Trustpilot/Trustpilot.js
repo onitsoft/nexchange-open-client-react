@@ -17,7 +17,7 @@ const Trustpilot = () => (
             data-schema-type="Organization"
           >
             <a
-              href="https://uk.trustpilot.com/review/nexchange.io"
+              href="https://uk.trustpilot.com/review/n.exchange"
               target="_blank"
             >
               Trustpilot

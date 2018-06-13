@@ -21,7 +21,7 @@
 //     const expectedActions = [{ type: types.COINS_INFO, payload: {} }];
 //     const store = mockStore();
 
-//     mock.onGet('https://api.nexchange.io/en/api/v1/get_price/BCHGBP/?amount_quote=100').reply(200, mockData);
+//     mock.onGet('https://api.n.exchange/en/api/v1/get_price/BCHGBP/?amount_quote=100').reply(200, mockData);
 
 //     await store.dispatch(actions.fetchPrice({ pair: 'BCHGBP', deposit: 100 }));
 

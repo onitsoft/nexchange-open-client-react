@@ -308,7 +308,7 @@ const Privacy = props => {
           <p>
             If you have a complaint regarding “YOA LTD.” compliance with the
             U.S.-EU Safe Harbor Framework or the U.S.-Swiss Safe Harbor
-            Framework, first contact us through support at support@nexchange.io.
+            Framework, first contact us through support at support@n.exchange.
             “YOA LTD.” has elected to use JAMS arbitration as an independent
             recourse mechanism available to settle unresolved complaints
             regarding “YOA LTD.” Safe Harbor commitments. Please refer to the
@@ -325,7 +325,7 @@ const Privacy = props => {
             Account Information: You may access and review or update your online
             account information at any time by logging into your account and
             viewing your profile. If you want to close your account, please
-            contact us at support@nexchange.io. However, please note that if you
+            contact us at support@n.exchange. However, please note that if you
             close your account, we may retain your information as required by
             law or for our legitimate business purposes, such as to collect fees
             owed, resolve disputes, troubleshoot problems, assist with any
@@ -368,7 +368,7 @@ const Privacy = props => {
             settings, but will use such cookies solely for identity verification
             and fraud prevention purposes. For more information about cookies
             and how to block, delete or disable them, please refer to your
-            browser instructions, or contact us at support@nexchange.io.
+            browser instructions, or contact us at support@n.exchange.
           </p>
           </Trans>
 
@@ -395,7 +395,7 @@ const Privacy = props => {
           <p>
             If you have any questions or concerns regarding this Privacy Policy,
             please contact us at
-            <a href="mailto:support@nexchange.io">support@nexchange.io</a>.
+            <a href="mailto:support@n.exchange">support@n.exchange</a>.
           </p>
           </Trans>
         </div>
