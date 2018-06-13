@@ -18,7 +18,7 @@ const RefundCancellation = props => {
           </p>
           <p>
             Get in touch at{' '}
-            <a href="mailto:support@nexchange.io">support@nexchange.io</a> for
+            <a href="mailto:support@n.exchange">support@n.exchange</a> for
             more information.
           </p>
         </div>
