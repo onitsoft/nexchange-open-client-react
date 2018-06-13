@@ -31,7 +31,6 @@ class KYCModal extends Component {
     if (this.props.email && this.props.email.value) {
       this.setState({
         email: this.props.email.value,
-        emailFetched: true,
       });
     }
   }
@@ -48,7 +47,6 @@ class KYCModal extends Component {
     if (prevProps.email !== this.props.email) {
       this.setState({
         email: this.props.email.value,
-        emailFetched: true,
       });
     }
   }
@@ -200,7 +198,6 @@ class KYCModal extends Component {
                   className="form-control"
                   onChange={this.handleInputChange}
                   value={this.state.email}
-                  disabled={this.state.emailFetched}
                 />
 
                 <i

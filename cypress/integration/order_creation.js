@@ -16,7 +16,7 @@ describe('Order creation', function() {
       response: orderFiat,
     });
 
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000?pair=BTCETH');
 
     cy.get('.selectedCoin-deposit')
       .find('i.fa-angle-down')
@@ -54,7 +54,7 @@ describe('Order creation', function() {
       response: orderCrypto,
     });
 
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000?pair=BTCETH');
 
     cy.get('.selectedCoin-deposit')
       .find('i.fa-angle-down')
