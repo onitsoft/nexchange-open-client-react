@@ -10,7 +10,6 @@ import Testimonials from './Testimonials/Testimonials';
 import RecentOrders from './RecentOrders/RecentOrders';
 import SubscriptionForm from './SubscriptionForm/SubscriptionForm';
 import PriceComparison from './PriceComparison/PriceComparison';
-import Trustpilot from './Trustpilot/Trustpilot';
 
 export class Home extends Component {
   componentDidMount() {
@@ -23,7 +22,6 @@ export class Home extends Component {
       <div>
         <Hero />
         <RecentOrders />
-        <Trustpilot />
         <Testimonials />
         <PriceComparison />
         <About />
