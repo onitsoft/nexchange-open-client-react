@@ -49,6 +49,7 @@ class FAQ extends Component {
                     operated by
                     <a
                       href="https://beta.companieshouse.gov.uk/company/10009845"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       YOA LTD. (registered company No. 10009845)

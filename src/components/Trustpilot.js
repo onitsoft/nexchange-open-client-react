@@ -18,6 +18,7 @@ const Trustpilot = () => (
           >
             <a
               href="https://uk.trustpilot.com/review/nexchange.io"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Trustpilot

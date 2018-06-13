@@ -113,7 +113,6 @@ class ExchangeWidget extends Component {
 
   render() {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
-
     return (
       <div className="col-xs-12">
         <div id="exchange-widget">
