@@ -1,5 +1,6 @@
 .box.box {
   padding: 20px 0 20px 10px;
+  overflow: hidden;
 
   @media (min-width: $screen-lg-min) {
     padding-left: 30px;
@@ -35,10 +36,29 @@
 
 .media-left.media-left {
   padding-right: 10px;
+  float: left;
+  width: 50px;
+  text-align: center;
 
   @media (min-width: $screen-lg-min) {
     padding-right: 30px;
+    width: 70px;
   }
+}
+
+.media-right.media-right {
+  padding-right: 10px;
+  float: left;
+  width: calc(100% - 50px);
+
+  @media (min-width: $screen-lg-min) {
+    padding-right: 30px;
+    width: calc(100% - 70px);
+  }
+}
+
+.address {
+  overflow-y: auto;
 }
 
 .coin {

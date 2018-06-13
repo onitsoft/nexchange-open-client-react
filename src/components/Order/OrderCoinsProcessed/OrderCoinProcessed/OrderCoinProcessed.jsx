@@ -71,12 +71,12 @@ class OrderCoinProcessed extends Component {
     <I18n ns="translations">
      {(t) => (
       <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
-        <div className={`${styles.box} box media ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
-          <div className={`${styles['media-left']} media-left`}>
+        <div className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
+          <div className={`${styles['media-left']}`}>
             <i className={`${styles.coin} cc ${this.state.coin}`} />
           </div>
 
-          <div className="media-body">
+          <div className={`${styles['media-right']}`}>
             <h5>
               {t('order.'+this.props.type)}{' '}
               <b>
@@ -90,7 +90,10 @@ class OrderCoinProcessed extends Component {
                 data-original-title={rates}
               />
             </h5>
-            <h6>{this.state.address}</h6>
+
+            <div className={styles.address}>
+              <h6>{this.state.address}</h6>
+            </div>
           </div>
         </div>
       </div>
