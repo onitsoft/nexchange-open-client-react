@@ -4,6 +4,7 @@ import { I18n } from 'react-i18next';
 
 import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
+import LanguagePicker from './LanguagePicker'
 
 let scrollToElement;
 
@@ -69,6 +70,7 @@ class Header extends Component {
                   className="link hidden-sm"
                   href="http://docs.nexchange2.apiary.io/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => ga('send', 'event', 'General', 'api docs click')}
                 >
                   {t('header.apidocs')}
@@ -87,11 +89,7 @@ class Header extends Component {
                 </a>
               </li>
 
-              <li id="ico-link">
-                <a href="https://n.exchange/ico" className="btn btn-block btn-primary">
-                  ICO
-                </a>
-              </li>
+			  <LanguagePicker screenType="large"/>
 
               <li id="social-mobile">
                 <a className="link" href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
@@ -109,6 +107,8 @@ class Header extends Component {
                 <a className="link" href="/telegram" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
+                <br /><br />
+                <LanguagePicker screenType="small" />
               </li>
 
               <li className="visible-sm visible-md visible-lg social-desktop">

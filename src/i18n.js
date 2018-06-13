@@ -8,15 +8,14 @@ i18n
   .use(Backend)
   .use(reactI18nextModule)
   .init({
-    fallbackLng: 'de',
-    lng: 'de',
+    fallbackLng: 'en',
     saveMissing: 'true',
 
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
 
-    debug: true,
+    debug: false,
 
     interpolation: {
       escapeValue: false, // not needed for react!!
@@ -25,8 +24,10 @@ i18n
     react: {
       wait: true
     },
-
-  });
-
+  }, (err, t) => {
+        if (err) {
+            console.error('error while initialising i18next ::: ' + JSON.stringify(err));
+        }
+})
 
 export default i18n;

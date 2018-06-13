@@ -22,6 +22,7 @@ const Footer = () => (
         All rights reserved, YOA LTD 2016-2017, England & Wales{' '}
         <a
           href="https://beta.companieshouse.gov.uk/company/10009845"
+          rel="noopener noreferrer"
           target="_blank"
         >
           registered company No. 10009845
