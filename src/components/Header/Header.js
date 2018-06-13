@@ -45,10 +45,7 @@ class Header extends Component {
 
             <Link to="/">
               <div className="logo-container">
-                <img src="/img/logo.png" alt="Logo" />
-                <h1 className="header-text">
-                  E<span className="text-green">X</span>CHANGE
-                </h1>
+                <img src="/img/logo.svg" alt="Logo" />
               </div>
             </Link>
           </div>
@@ -56,19 +53,20 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navigation-index">
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a href="/#about" onClick={() => scrollToElement('#about')}>
+                <a className="link" href="/#about" onClick={() => scrollToElement('#about')}>
                   {t('header.about')}
                 </a>
               </li>
 
               <li>
-                <a href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
+                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
                   {t('header.faq')}
                 </a>
               </li>
 
               <li>
                 <a
+                  className="link hidden-sm"
                   href="http://docs.nexchange2.apiary.io/"
                   target="_blank"
                   onClick={() => ga('send', 'event', 'General', 'api docs click')}
@@ -78,53 +76,42 @@ class Header extends Component {
               </li>
 
               <li>
-                <a href="/#compare" onClick={() => scrollToElement('#compare')}>
-                  <span className="hidden-sm">{t('header.compare')} </span>
+                <a className="link" href="/#compare" onClick={() => scrollToElement('#compare')}>
+                  {t('header.compare')}
                 </a>
               </li>
 
               <li>
-                <a href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
+                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
                   {t('header.support')}
                 </a>
               </li>
 
-			  <li className="visible-sm visible-md visible-lg">
-				<ul className="languagepicker">
-				  <li>
-                    <li>
-                     <a href="#en" className="selected" onClick={() => i18n.changeLanguage('en')}>
-                     <img className="flag" src="/img/flags/EN.svg" alt={t('header.en')} />
-                       {t('header.en')}
-                     </a>
-				   </li>
-				    <a href="#de" className="selected" onClick={() => i18n.changeLanguage('de')}>
-                    <img className="flag" src="/img/flags/DE.svg" alt={t('header.de')} />
-                      {t('header.de')}
-                    </a>
-				   </li>
-				 </ul>
-				</li>
+              <li id="ico-link">
+                <a href="https://n.exchange/ico" className="btn btn-block btn-primary">
+                  ICO
+                </a>
+              </li>
 
-              <li className="social-mobile">
-                <a href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+              <li id="social-mobile">
+                <a className="link" href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
 
-                <a href="/fb" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a className="link" href="/fb" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
 
-                <a href="/slack" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a className="link" href="/slack" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
 
-                <a href="/telegram" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a className="link" href="/telegram" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
               </li>
 
-              <li className="visible-sm visible-md visible-lg">
+              <li className="visible-sm visible-md visible-lg social-desktop">
                 <a
                   href="/twitter"
                   target="_blank"
@@ -138,7 +125,7 @@ class Header extends Component {
                 </a>
               </li>
 
-              <li className="visible-sm visible-md visible-lg">
+              <li className="visible-sm visible-md visible-lg social-desktop">
                 <a
                   href="/fb"
                   target="_blank"
@@ -152,7 +139,7 @@ class Header extends Component {
                 </a>
               </li>
 
-              <li className="visible-sm visible-md visible-lg">
+              <li className="visible-sm visible-md visible-lg social-desktop">
                 <a
                   href="/slack"
                   target="_blank"
@@ -166,7 +153,7 @@ class Header extends Component {
                 </a>
               </li>
 
-              <li className="visible-sm visible-md visible-lg">
+              <li className="visible-sm visible-md visible-lg social-desktop">
                 <a
                   href="/telegram"
                   target="_blank"

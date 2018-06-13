@@ -4,23 +4,17 @@ import axios from 'axios';
 import config from 'Config';
 
 class PriceComparison extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      nexchange: {},
-      changelly: {},
-      shapeshift: {},
-    };
-
-    this.fetchRates = this.fetchRates.bind(this);
-  }
+  state = {
+    nexchange: {},
+    changelly: {},
+    shapeshift: {},
+  };
 
   componentDidMount() {
     this.fetchRates();
   }
 
-  priceDiff(p1, p2) {
+  priceDiff = (p1, p2) => {
     let diff = (100 - (p2 * 100) / p1).toFixed(2);
 
     if (isNaN(diff)) return '...';
@@ -31,14 +25,15 @@ class PriceComparison extends Component {
     } else {
       return <span className="text-success">(+{Math.abs(diff)}%)</span>;
     }
-  }
+  };
 
-  showBestRate(shapeshiftRate, changellyRate, nexchangeRate) {
+  showBestRate = (shapeshiftRate, changellyRate, nexchangeRate) => {
     let rates = [shapeshiftRate, changellyRate, nexchangeRate],
-      info = ['shapeshift', 'changelly', 'nexchange2'];
+      info = ['shapeshift', 'changelly', 'nexchange'];
 
-    let max = 0,
-      idx = null;
+    let max = 0;
+    let idx = null;
+
     for (let i = 0; i < rates.length; i++) {
       if (rates[i] >= max) {
         idx = i;
@@ -46,10 +41,15 @@ class PriceComparison extends Component {
       }
     }
 
-    return <img className={`${info[idx]}-logo`} src={`/img/prices/${info[idx]}.png`} alt={`${info[idx]}`} />;
-  }
+    let imgUrl = `/img/prices/${info[idx]}.png`;
+    if (info[idx] === 'nexchange') {
+      imgUrl = '/img/prices/logo-icon.svg';
+    }
 
-  fetchRates() {
+    return <img className={`${info[idx]}-logo`} src={imgUrl} alt={`${info[idx]}`} />;
+  };
+
+  fetchRates = () => {
     axios
       .all([
         axios.get(`${config.API_BASE_URL}/price/btceth/latest/`),
@@ -143,7 +143,7 @@ class PriceComparison extends Component {
     this.timeout = setTimeout(() => {
       this.fetchRates();
     }, config.PRICE_COMPARISON_INTERVAL);
-  }
+  };
 
   componentWillUnmount() {
     clearTimeout(this.timeout);
@@ -167,7 +167,7 @@ class PriceComparison extends Component {
                     <tr>
                       <th className="text-center" />
                       <th>
-                        <img className="nexchange-logo" src="/img/prices/nexchange2.png" alt="N.exchange" />
+                        <img className="nexchange-logo" src="/img/prices/logo-icon.svg" alt="N.exchange" />
                       </th>
                       <th>
                         <img src="/img/prices/shapeshift.png" alt="Shapeshift" />
