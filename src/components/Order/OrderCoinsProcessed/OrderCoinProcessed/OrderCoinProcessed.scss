@@ -1,0 +1,69 @@
+.box.box {
+  padding: 20px 0 20px 10px;
+
+  @media (min-width: $screen-lg-min) {
+    padding-left: 30px;
+  }
+}
+
+.box h5 {
+  font-size: 16px;
+
+  @media (min-width: $screen-ms-min) {
+    font-size: 18px;
+  }
+}
+
+.box h6 {
+  font-size: 12px;
+}
+
+.box h5,
+.box h6 {
+  margin: 0;
+  text-transform: none;
+  color: $black;
+}
+
+:global .order-fiat .box.fiat h5 {
+  margin: 9px 0;
+}
+
+.tooltip {
+  text-align: left;
+}
+
+.media-left.media-left {
+  padding-right: 10px;
+
+  @media (min-width: $screen-lg-min) {
+    padding-right: 30px;
+  }
+}
+
+.coin {
+  position: relative;
+  top: 8px;
+  font-size: 30px;
+
+  @media (min-width: $screen-sm-min) {
+    top: 9px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    top: 11px;
+    font-size: 40px;
+  }
+}
+
+.col-sm-6.col-sm-6 {
+  @media (min-width: $screen-md-min) {
+    width: 46%;
+  }
+}
+
+.pull-right-md.pull-right-md {
+  @media (min-width: $screen-md-min) {
+    float: right;
+  }
+}

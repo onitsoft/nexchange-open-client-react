@@ -1,0 +1,27 @@
+.bookmark.bookmark.bookmark.bookmark {
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 16px;
+  color: $green;
+
+  @media (min-width: $screen-ms-min) {
+    float: right;
+    margin: 32px 0 0 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $green;
+  }
+}
+
+.ref.ref {
+  margin: 24px 0 0 0;
+  color: $black;
+
+  @media (min-width: $screen-ms-min) {
+    float: left;
+    margin-bottom: 24px;
+  }
+}

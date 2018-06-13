@@ -1,4 +1,4 @@
-import { ERROR_ALERT } from '../actions/types';
+import { ERROR_ALERT } from 'Actions/types';
 
 const initialState = {
   show: false,

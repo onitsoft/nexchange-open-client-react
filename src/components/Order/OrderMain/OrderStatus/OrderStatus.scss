@@ -1,0 +1,78 @@
+.container {
+  overflow: hidden;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 0 50px;
+  }
+}
+
+.step {
+  width: 100%;
+  text-align: center;
+  margin-top: 18px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (min-width: $screen-ms-min) {
+    margin-top: 10px;
+    width: 33.33%;
+    float: left;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  svg {
+    fill: #9c9c9c;
+    width: 24px;
+    margin-bottom: 6px;
+  }
+
+  h4 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: #adadad;
+  }
+
+  &.active h4,
+  &.active svg {
+    @include animation(color-change 0.75s infinite alternate);
+  }
+
+  &.done h4,
+  &.done svg {
+    color: $green;
+    fill: $green;
+  }
+}
+
+.progress-container {
+  width: 100%;
+  padding-top: 12px;
+  clear: both;
+}
+
+.bar-info.bar-info.bar-info {
+  background: $green;
+}
+
+.line-info.line-info {
+  background: rgba(44, 180, 160, 0.2);
+  margin-bottom: 10px;
+}
+
+@include keyframes(color-change) {
+  from {
+    color: #9c9c9c;
+    fill: #9c9c9c;
+  }
+  to {
+    color: $green;
+    fill: $green;
+  }
+}

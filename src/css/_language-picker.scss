@@ -5,15 +5,15 @@
 	height: 40px;
 	overflow: hidden;
 	transition: all .3s ease;
-	margin: 3px 0px 3px 0px;
+	margin: 3px 10px 10px 8px;
 	vertical-align: top;
 	float: left;
 }
 
 .languagepicker:hover {
 	height: 81px;
-    /* you need to set the height 
-     * height = (40px * amountOflanguages) + amountOflanguages
+    /* you need to set the height manually every time you add a new language!
+     * height = (41 * amountOfLanguages) - 1
      * 40px is the default height of one language selection element
      */
 }
@@ -21,6 +21,7 @@
 .languagepicker a{
 	color: #000;
 	text-decoration: none;
+    font-size: 16px;
 }
 
 .languagepicker li {

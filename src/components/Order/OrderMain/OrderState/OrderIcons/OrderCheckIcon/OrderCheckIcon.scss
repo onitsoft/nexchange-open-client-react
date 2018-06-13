@@ -1,0 +1,12 @@
+.icon {
+  svg {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0 -11px 0;
+  }
+
+  svg path,
+  svg rect {
+    fill: $green;
+  }
+}

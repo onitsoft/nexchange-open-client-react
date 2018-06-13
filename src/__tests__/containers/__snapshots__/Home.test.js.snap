@@ -7,6 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Home
     coinsInfo={Array []}
     fetchCoinDetails={[Function]}
+    fetchPairs={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import coinsInfo from '../__mocks__/currency';
-import CoinsDropdown from '../containers/CoinsDropdown';
+import CoinsDropdown from '../components/Home/Hero/ExchangeWidget/CoinInput/CoinSelector/CoinsDropdown/CoinsDropdown';
 import '../css/index.scss';
 
 storiesOf('Coin selector', module)
