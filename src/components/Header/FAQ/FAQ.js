@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
-import QuestionAnswer from './QuestionAnswer';
+import QuestionAnswer from './QuestionAnswer/QuestionAnswer';
 
 class FAQ extends Component {
   constructor(props) {
