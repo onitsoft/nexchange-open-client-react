@@ -1,0 +1,27 @@
+.selected-coin {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.coin-icon.coin-icon {
+  position: relative;
+  top: 1px;
+  color: #fff;
+}
+
+.arrow-down {
+  position: relative;
+  top: 2px;
+  margin-left: 8px;
+}
+
+.span {
+  position: relative;
+  top: 2px;
+  left: -10px;
+}

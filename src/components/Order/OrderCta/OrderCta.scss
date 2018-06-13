@@ -1,0 +1,137 @@
+.container.container {
+  background: $green;
+
+  @media (min-width: $screen-md-min) {
+    padding: 30px 65px;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: 29px;
+  }
+}
+
+.form-group {
+  position: relative;
+
+  input {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 4px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 20px;
+      padding: 0 30px;
+    }
+  }
+}
+
+.referral-input {
+  color: $green;
+}
+
+.btn.btn.btn {
+  margin: 15px 0 5px 0;
+  width: 100%;
+  border: 1px solid #fff;
+
+  &:hover {
+    border: 1px solid #fff;
+  }
+
+  @media (min-width: $screen-ms-min) {
+    position: absolute;
+    top: 30px;
+    right: 14px;
+    width: auto;
+    margin: 0;
+    padding: 6px 15px;
+    font-size: 12px;
+    color: $green;
+    border: 1px solid $green;
+    background-color: #fff;
+
+    &:hover {
+      border: 1px solid $green;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    right: 30px;
+    top: 35px;
+  }
+}
+
+.text.text {
+  @media (min-width: $screen-md-min) {
+    padding-right: 60px;
+  }
+}
+
+.img {
+  max-width: 100px;
+  margin: 5px 0 20px 0;
+
+  @media (min-width: $screen-ms-min) {
+    max-width: 150px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 180px;
+    margin: 5px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    max-width: 210px;
+  }
+}
+
+.message {
+  color: #fff;
+}
+
+.share {
+  margin-top: 24px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.links {
+  margin-top: 10px;
+
+  @media (min-width: $screen-sm-min) {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 15px;
+  }
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  text-align: center;
+
+  i {
+    margin-top: 9px;
+    color: #fff;
+  }
+}

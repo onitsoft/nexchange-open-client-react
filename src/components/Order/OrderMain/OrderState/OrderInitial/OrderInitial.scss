@@ -1,0 +1,73 @@
+.container {
+  padding-top: 10px;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 20px 50px 15px;
+  }
+
+  h3 {
+    margin-top: 2px;
+    font-size: 19px;
+    font-weight: 300;
+    color: $gray;
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 400;
+    color: $blue;
+  }
+}
+
+.address {
+  word-wrap: break-word;
+}
+
+.qr-container {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+
+  @media (min-width: $screen-sm-min) {
+    float: left;
+    width: auto;
+    margin-top: 0;
+    margin-right: 30px;
+    text-align: left;
+  }
+}
+
+.qr {
+  max-width: 152px;
+  border: 1px solid #efefef;
+  border-radius: 1px;
+}
+
+.time {
+  font-weight: 500;
+  color: #2cb4a0;
+}
+
+.details {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    float: left;
+    width: auto;
+    margin-top: 0;
+    text-align: left;
+  }
+}
+
+.cards {
+  img {
+    @media (min-width: $screen-md-min) {
+      max-width: 55%;
+      margin-top: 10px;
+    }
+  }
+}

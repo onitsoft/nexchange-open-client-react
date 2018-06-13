@@ -1,4 +1,4 @@
-import { PAIRS_FETCHED } from '../actions/types';
+import { PAIRS_FETCHED } from 'Actions/types';
 
 export default (state = null, action) => {
   switch (action.type) {

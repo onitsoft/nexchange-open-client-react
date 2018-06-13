@@ -1,5 +1,4 @@
-
-
+const sharedConfig = require('./webpack.config.shared.js');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
@@ -68,10 +67,7 @@ module.exports = {
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
-      path
-        .relative(paths.appSrc, info.absoluteResourcePath)
-        .replace(/\\/g, '/'),
+    devtoolModuleFilenameTemplate: info => path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/'),
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -89,12 +85,7 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
-    alias: {
-      
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
-    },
+    alias: sharedConfig.alias,
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -121,7 +112,6 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -149,7 +139,6 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
               compact: true,
             },
           },
@@ -182,6 +171,8 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
+                        modules: true,
+                        localIdentName: '[name]__[local]__[hash:base64:5]',
                         sourceMap: shouldUseSourceMap,
                       },
                     },
@@ -215,13 +206,68 @@ module.exports = {
 
           {
             test: /\.scss$/,
-            use: [{
-              loader: "style-loader" // creates style nodes from JS strings
-            }, {
-              loader: "css-loader" // translates CSS into CommonJS
-            }, {
-              loader: "sass-loader" // compiles Sass to CSS
-            }]
+            include: [path.resolve(__dirname, '../src/css')],
+            use: [
+              {
+                loader: 'style-loader', // creates style nodes from JS strings
+              },
+              {
+                loader: 'css-loader', // translates CSS into CommonJS
+              },
+              {
+                loader: 'sass-loader', // compiles Sass to CSS
+              },
+            ],
+          },
+
+          {
+            test: /\.scss$/,
+            include: [path.resolve(__dirname, '../src/components')],
+            use: [
+              {
+                loader: 'style-loader', // creates style nodes from JS strings
+              },
+              {
+                loader: 'css-loader', // translates CSS into CommonJS
+                options: {
+                  modules: true,
+                  localIdentName: '[name]__[local]__[hash:base64:5]',
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: 'sass-loader',
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: [
+                    path.resolve(__dirname, '../src/css/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/bootstrap/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/material-kit/_variables.scss'),
+                    path.resolve(__dirname, '../src/css/material-kit/_variables_bootstrap.scss'),
+                    path.resolve(__dirname, '../src/css/bootstrap/mixins/_vendor-prefixes.scss'),
+                    path.resolve(__dirname, '../src/css/_mixins.scss'),
+                  ],
+                },
+              },
+            ],
+          },
+
+          {
+            test: /\.svg$/,
+            exclude: /font-awesome/,
+            use: [
+              {
+                loader: 'babel-loader',
+              },
+              {
+                loader: 'react-svg-loader',
+                options: {
+                  jsx: true, // true outputs JSX tags
+                },
+              },
+            ],
           },
 
           // "file" loader makes sure assets end up in the `build` folder.

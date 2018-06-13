@@ -5,34 +5,25 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
-import './css/index.scss';
+import Referrals from './components/Referrals/Referrals';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import NotFound from './components/NotFound/NotFound';
+
+import Home from './components/Home/Home';
+import Order from './components/Order/Order';
+import TermsConditions from './components/TermsConditions/TermsConditions';
+import Privacy from './components/Privacy/Privacy';
+
+import setAuthToken from 'Utils/setAuthToken';
+import crispEmailBinding from 'Utils/crispEmailBinding';
 
 import reducers from './reducers';
-import Loadable from 'react-loadable';
-
-import LoadingComponent from './components/LoadingComponent';
-import Referrals from './components/Referrals';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-import Home from './containers/Home';
-import Order from './containers/order/Order';
-import TermsConditions from './containers/TermsConditions';
-import Privacy from './containers/Privacy';
-
-import setAuthToken from './helpers/setAuthToken';
-import crispEmailBinding from './helpers/crispEmailBinding';
+import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
 
 require('./js/bootstrap.min.js');
-require('./js/material.min.js');
-require('./js/material-kit.js');
-
-const AsyncNotFound = Loadable({
-  loader: () => import('./components/NotFound'),
-  loading: LoadingComponent,
-});
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
@@ -52,7 +43,7 @@ ReactDOM.render(
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" component={Home} />
-          <Route component={AsyncNotFound} />
+          <Route component={NotFound} />
         </Switch>
 
         <Footer />
