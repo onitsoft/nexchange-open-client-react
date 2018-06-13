@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
 import i18n from '../../i18n';
@@ -15,6 +16,22 @@ class OrderCoinProcessed extends Component {
     this.setState({ order: nextProps.order }, () => {
       this.prepareState(nextProps);
     });
+  }
+
+  triggerCopyTooltip() {
+    $('#copy-address-to-clipboard').tooltip({
+      trigger: 'click',
+      placement: 'top',
+    });
+
+    $('#copy-address-to-clipboard')
+      .tooltip('hide')
+      .attr('data-original-title', 'Address copied!')
+      .tooltip('show');
+
+    setTimeout(() => {
+      $('#copy-address-to-clipboard').tooltip('destroy');
+    }, 1000);
   }
 
   prepareState = props => {
@@ -91,8 +108,16 @@ class OrderCoinProcessed extends Component {
               />
             </h5>
 
-            <div className={styles.address}>
-              <h6>{this.state.address}</h6>
+            <div>
+              <div className={styles.address}>
+                <h6>{this.state.address}</h6>
+              </div>
+
+              {this.props.type === 'Deposit' && (
+                <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
+                  <i id="copy-address-to-clipboard" className={`${styles.copy} fas fa-copy`} />
+                </CopyToClipboard>
+              )}
             </div>
           </div>
         </div>

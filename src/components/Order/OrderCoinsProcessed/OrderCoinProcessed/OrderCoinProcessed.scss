@@ -52,13 +52,23 @@
   width: calc(100% - 50px);
 
   @media (min-width: $screen-lg-min) {
-    padding-right: 30px;
+    padding-right: 15px;
     width: calc(100% - 70px);
   }
 }
 
 .address {
+  float: left;
   overflow-y: auto;
+  max-width: calc(100% - 30px);
+  margin-right: 10px;
+}
+
+.copy {
+  position: relative;
+  top: -2px;
+  color: $gray;
+  cursor: pointer;
 }
 
 .coin {
