@@ -70,7 +70,7 @@ class CoinsDropdown extends Component {
   renderSearch = () => {
     return (
       <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
-        <i class="fas fa-search" aria-hidden="true" />
+        <i className="fas fa-search" aria-hidden="true" />
         <input
           type="text"
           placeholder="Search"

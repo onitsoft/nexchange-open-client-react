@@ -46,9 +46,9 @@ class CoinInput extends PureComponent {
   };
 
   fetchAmounts = value => {
-    let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
-    let data = {
-      pair: pair,
+    const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+    const data = {
+      pair,
       lastEdited: this.props.type,
     };
 
@@ -88,9 +88,9 @@ class CoinInput extends PureComponent {
               this.nameInput = input;
             }}
           />
-
-          <CoinSelector type={this.props.type} onSelect={this.focus} />
         </form>
+
+        <CoinSelector type={this.props.type} onSelect={this.focus} />
       </div>
     );
   }
