@@ -23,10 +23,6 @@ describe('Home', () => {
     expect(home.find('Connect(RecentOrders)').exists()).toBe(true);
   });
 
-  it('contains a Trustpilot component', () => {
-    expect(home.find('Trustpilot').exists()).toBe(true);
-  });
-
   it('contains a Testimonials component', () => {
     expect(home.find('Testimonials').exists()).toBe(true);
   });
