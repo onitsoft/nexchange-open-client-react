@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Notify from 'notifyjs';
 import i18n from '../i18n';
 import equals from 'deep-equal';
+import styles from './DesktopNotifications.scss';
 
 class DesktopNotifications extends Component {
   constructor(props) {
@@ -41,14 +42,18 @@ class DesktopNotifications extends Component {
     }
 
     return (
+      <I18n ns="translations">
+      {(t) => (
       <div className="row">
         <div className="col-xs-12 text-center">
-          <a href="javascript:void(0)" className="text-warning" onClick={this.onClick}>
-            <h4 style={{ fontWeight: 500, width: '100%' }}>{t('order.kycstatuscheck')}</h4>
+          <a href="javascript:void(0)" className={styles.title} onClick={this.onClick}>
+            <h4>{t('order.kycstatuscheck')}</h4>
           </a>
         </div>
       </div>
-    );
+      )}
+      </I18n>
+);
   }
 }
 
