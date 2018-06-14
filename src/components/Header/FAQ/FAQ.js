@@ -36,7 +36,7 @@ class FAQ extends Component {
                 <div>
                   <p>
                     N.exchange is an automated cryptocurrency exchange service, operated by{' '}
-                    <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank">
+                    <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank" rel="noopener noreferrer">
                       YOA LTD. (registered company No. 10009845)
                     </a>.
                   </p>

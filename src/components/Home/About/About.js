@@ -28,7 +28,7 @@ const About = () => (
           <p>
             To support our mission of making crypto accessible to everyone, we’ve made our{' '}
             <b>
-              <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank">
+              <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank" rel="noopener noreferrer">
                 front end client completely open source <i className="fab fa-github" aria-hidden="true" />
               </a>
             </b>.
