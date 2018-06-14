@@ -135,7 +135,7 @@ export const fetchPairs = () => {
       .then(async response => {
         if (!response.data.length) return;
 
-        const pairs = response.data.filter(pair => !pair.disabled);
+        const pairs = response.data.filter(pair => !pair.disabled && !pair.test_mode);
         const processedPairs = preparePairs(pairs);
         dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
 
