@@ -147,12 +147,20 @@ export const fetchPairs = () => {
       .then(async response => {
         if (!response.data.length) return;
 
-        const pairs = response.data.filter(pair => !pair.disabled && !pair.test_mode);
+        const params = urlParams();
+        const pairs = response.data.filter(pair => {
+          if (params && params.hasOwnProperty('test')) {
+            return !pair.disabled;
+          } else {
+            return !pair.disabled && !pair.test_mode;
+          }
+        });
         const processedPairs = preparePairs(pairs);
+
         dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
 
         let depositCoin, receiveCoin;
-        const coinsFromUrlParams = params => {
+        const coinsFromUrlParams = () => {
           return new Promise((resolve, reject) => {
             axios
               .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
@@ -170,7 +178,6 @@ export const fetchPairs = () => {
         // Picks random deposit and receive coins.
         const pickCoins = async () => {
           // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-          const params = urlParams();
           if (params && params.hasOwnProperty('pair')) {
             try {
               const pair = await coinsFromUrlParams(params);
