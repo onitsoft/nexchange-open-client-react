@@ -40,8 +40,12 @@ const About = () => (
               name="Oleg Belousov"
               country="IL"
               fullCountryName="Israel"
-              description="Multidisciplinary coder. Aspiring innovator with a deep passion
-                for open source and making the world better, step by step, every single day."
+              description={
+                <p>
+                  Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step,
+                  every single day.
+                </p>
+              }
               social={{
                 linkedin: 'https://www.linkedin.com/in/oleg-belousov-b4112145/',
                 twitter: 'https://twitter.com/iooleg',
@@ -55,8 +59,7 @@ const About = () => (
               name="Šarūnas Ažna"
               country="LT"
               fullCountryName="Lithuania"
-              description="Backend developer and physicist. Animation fan, cryptocurrencies
-                enthusiast and plays the saxophone."
+              description={<p>Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.</p>}
               social={{
                 linkedin: 'https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/',
                 github: 'https://github.com/SarunasAzna',
@@ -68,8 +71,7 @@ const About = () => (
               name="Karolis Ramanauskas"
               country="LT"
               fullCountryName="Lithuania"
-              description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products
-                to life through code."
+              description={<p>Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.</p>}
               social={{
                 linkedin: 'https://www.linkedin.com/in/karolisram/',
                 github: 'https://github.com/superkarolis/',
@@ -84,8 +86,11 @@ const About = () => (
               name="Justas Ažna"
               country="LT"
               fullCountryName="Lithuania"
-              description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent
-                for micro-component design and seamless scalability."
+              description={
+                <p>
+                  DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability.
+                </p>
+              }
               social={{
                 linkedin: 'https://www.linkedin.com/in/justasazna/',
                 github: 'https://github.com/reederz',
@@ -97,10 +102,12 @@ const About = () => (
               name="Paulina Bagińska"
               country="PL"
               fullCountryName="Poland"
-              description="Product management magician.
-                Loves to build and improve product usability.
-                Blockchain novice.
-                Women in tech supporter and recreational weight lifter."
+              description={
+                <p>
+                  Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and
+                  recreational weight lifter.
+                </p>
+              }
               social={{
                 linkedin: 'https://www.linkedin.com/in/baginskapaulina/',
                 twitter: 'https://twitter.com/PaulinaBGGC',
@@ -115,8 +122,7 @@ const About = () => (
               description={
                 <p>
                   Cornell University MEng, Computer Science.<br />
-                  Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and distributed
-                  systems.
+                  Passionate about programming, astronomy and decentralised and distributed systems.
                 </p>
               }
               social={{
