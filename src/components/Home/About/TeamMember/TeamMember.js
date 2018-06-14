@@ -43,7 +43,7 @@ const TeamMember = props => {
 
         <div className="social">{social}</div>
 
-        <p>{props.description}</p>
+        {props.description}
       </div>
     </div>
   );
