@@ -22,9 +22,7 @@ class CoinsDropdown extends Component {
     event.stopPropagation();
 
     const coins = this.getCoins();
-    if (coins.length === 1) {
-      this.props.onClick(coins[0].code);
-    }
+    this.props.onClick(coins[0].code);
   };
 
   clear = () => {
