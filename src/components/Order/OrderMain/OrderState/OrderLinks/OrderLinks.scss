@@ -3,7 +3,7 @@
   background-color: #fff;
   border: 1px solid $green;
   padding: 6px 15px;
-  margin: 10px 0 0 0;
+  margin: 10px;
   font-size: 12px;
   width: 100%;
   max-width: 280px;
@@ -11,10 +11,5 @@
 
   &:hover {
     box-shadow: none;
-  }
-
-  @media (min-width: $screen-ms-min) {
-    margin-left: 10px;
-    margin-right: 10px;
   }
 }

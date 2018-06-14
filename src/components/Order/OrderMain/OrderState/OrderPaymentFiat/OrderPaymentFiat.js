@@ -7,6 +7,7 @@ import KYCModalTier0 from '../OrderFiatModals/KYCModalTier0/KYCModalTier0';
 import KYCModalTier1 from '../OrderFiatModals/KYCModalTier1/KYCModalTier1';
 import KYCModalTier2 from '../OrderFiatModals/KYCModalTier2/KYCModalTier2';
 import OrderPaymentTemplate from './OrderPaymentTemplateFiat/OrderPaymentTemplateFiat';
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import styles from '../OrderState.scss';
 
 class OrderPayment extends Component {
@@ -73,17 +74,23 @@ class OrderPayment extends Component {
         buttonText = 'Get verified';
         showInitial = true;
       } else {
-        title = <h2 className={styles.title}>Verification received, awaiting approval</h2>;
+        title = (
+          <div>
+            <OrderStateLoader />
+            <h2 className={styles.title}>Verification received, awaiting approval</h2>
+          </div>
+        );
         inner = (
           <div>
-            <hr style={{ margin: '15px -15px' }} />
-            <h2>Approval status:</h2>
-            <p style={{ margin: 0 }}>
-              <b>Government issued ID:</b> {id_document_status}
-            </p>
-            <p>
-              <b>Proof of residence:</b> {residence_document_status}
-            </p>
+            <h2 className={styles.title}>Approval status:</h2>
+            <div className={styles.status}>
+              <p>
+                <b>Government issued ID:</b> {id_document_status}
+              </p>
+              <p>
+                <b>Proof of residence:</b> {residence_document_status}
+              </p>
+            </div>
           </div>
         );
 
@@ -135,22 +142,30 @@ class OrderPayment extends Component {
         buttonText = 'Get verified';
         showInitial = true;
       } else {
-        title = <h2 className={styles.title}>Verification received, awaiting approval</h2>;
+        title = (
+          <div>
+            <OrderStateLoader />
+            <h2 className={styles.title}>Verification received, awaiting approval</h2>
+          </div>
+        );
         inner = (
           <div>
-            <hr style={{ margin: '15px -15px' }} />
-            <h2>Approval status:</h2>
+            <h2 className={styles.title}>Approval status:</h2>
 
             {tier === 'Tier 1' && (
-              <p>
-                <b>Selfie:</b> {selfie_document_status}
-              </p>
+              <div className={styles.status}>
+                <p>
+                  <b>Selfie:</b> {selfie_document_status}
+                </p>
+              </div>
             )}
 
             {(tier === 'Tier 2' || tier === 'Tier 3') && (
-              <p>
-                <b>Whitelist selfie:</b> {withdrawAddressStatus}
-              </p>
+              <div className={styles.status}>
+                <p>
+                  <b>Whitelist selfie:</b> {withdrawAddressStatus}
+                </p>
+              </div>
             )}
           </div>
         );
@@ -164,7 +179,12 @@ class OrderPayment extends Component {
         notificationsCtaVisible = true;
       }
     } else {
-      title = <h2 className={styles.title}>Payment and verification received</h2>;
+      title = (
+        <div>
+          <OrderStateLoader />
+          <h2 className={styles.title}>Payment and verification received</h2>
+        </div>
+      );
       inner = <h3 className={styles.subtitle}>We will proceed to release your funds shortly</h3>;
     }
 

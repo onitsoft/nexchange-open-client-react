@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Notify from 'notifyjs';
 import equals from 'deep-equal';
+import styles from './DesktopNotifications.scss';
 
 class DesktopNotifications extends Component {
   constructor(props) {
@@ -42,8 +43,8 @@ class DesktopNotifications extends Component {
     return (
       <div className="row">
         <div className="col-xs-12 text-center">
-          <a href="javascript:void(0)" className="text-warning" onClick={this.onClick}>
-            <h4 style={{ fontWeight: 500, width: '100%' }}>Click here to get notified about your KYC status change</h4>
+          <a href="javascript:void(0)" className={styles.title} onClick={this.onClick}>
+            <h4>Click here to get notified about your KYC status change</h4>
           </a>
         </div>
       </div>
