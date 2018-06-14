@@ -65,7 +65,7 @@ class ExchangeWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
-        bindCrispEmail();
+        bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
         window.qp('track', 'Generic');

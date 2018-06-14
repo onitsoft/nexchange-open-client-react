@@ -42,7 +42,7 @@ ReactDOM.render(
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
           <Route component={NotFound} />
         </Switch>
 

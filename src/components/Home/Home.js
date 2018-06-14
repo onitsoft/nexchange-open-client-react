@@ -20,7 +20,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Hero />
+        <Hero {...this.props} />
         <RecentOrders />
         <Testimonials />
         <PriceComparison />

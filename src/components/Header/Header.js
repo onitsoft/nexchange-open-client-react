@@ -91,19 +91,19 @@ class Header extends Component {
               </li>
 
               <li id="social-mobile">
-                <a className="link" href="/twitter" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a href="/twitter" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
 
-                <a className="link" href="/fb" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a href="/fb" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
 
-                <a className="link" href="/slack" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a href="/slack" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
 
-                <a className="link" href="/telegram" target="_blank" className="btn btn-simple btn-just-icon visible-xs">
+                <a href="/telegram" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
               </li>
@@ -112,6 +112,7 @@ class Header extends Component {
                 <a
                   href="/twitter"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-simple btn-just-icon"
                   rel="tooltip"
                   title=""
@@ -126,6 +127,7 @@ class Header extends Component {
                 <a
                   href="/fb"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-simple btn-just-icon"
                   rel="tooltip"
                   title=""
@@ -140,6 +142,7 @@ class Header extends Component {
                 <a
                   href="/slack"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-simple btn-just-icon"
                   rel="tooltip"
                   title=""
@@ -154,6 +157,7 @@ class Header extends Component {
                 <a
                   href="/telegram"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-simple btn-just-icon"
                   rel="tooltip"
                   title=""

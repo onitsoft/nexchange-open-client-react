@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import jsonp from 'jsonp';
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?');
