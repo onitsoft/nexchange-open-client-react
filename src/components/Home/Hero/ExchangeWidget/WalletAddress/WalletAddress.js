@@ -48,7 +48,7 @@ class WalletAddress extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.wallet.address != null && nextProps.wallet.address != this.state.address) {
+    if (nextProps.wallet.address !== null && nextProps.wallet.address !== this.state.address) {
       this.setState({ address: nextProps.wallet.address });
     }
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import jsonp from 'jsonp';
 import { I18n } from 'react-i18next';
 

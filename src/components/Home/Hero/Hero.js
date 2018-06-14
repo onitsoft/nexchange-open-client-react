@@ -32,7 +32,7 @@ class Hero extends Component {
               </div>
             </div>
 
-            <ExchangeWidget />
+            <ExchangeWidget store={this.props.store} />
             <CoinPrices />
           </div>
         </div>

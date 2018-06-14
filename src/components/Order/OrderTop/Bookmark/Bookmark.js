@@ -31,7 +31,7 @@ class Bookmark extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.show != this.props.show) {
+    if (this.state.show !== this.props.show) {
       this.setState({
         show: this.props.show,
       });
