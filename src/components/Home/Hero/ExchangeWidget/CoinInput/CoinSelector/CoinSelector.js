@@ -23,12 +23,12 @@ class CoinSelector extends Component {
     ga('send', 'event', 'Order', 'select coin');
   };
 
-  handleClickOutside = event => {
-    this.setState({ isDropdownVisible: false });
-  };
-
   calculateDepositAmount = coin => {
     return ['EUR', 'GBP', 'USD'].indexOf(coin.name) > -1 ? 100 : parseFloat(coin.minimal_amount) * 100;
+  };
+
+  handleClickOutside = event => {
+    this.setState({ isDropdownVisible: false });
   };
 
   handleClick = code => {
@@ -37,11 +37,17 @@ class CoinSelector extends Component {
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
+    const lastSelected = nextProps.selectedCoin.lastSelected;
+    const currentDepositCoin = this.props.selectedCoin.deposit;
+    const nextReceiveCoin = nextProps.selectedCoin.receive;
+    const nextDepositCoin = nextProps.selectedCoin.deposit;
+    const type = nextProps.type;
+
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
-    if (this.props.selectedCoin.deposit === null && nextProps.selectedCoin.deposit && nextProps.type === 'deposit') {
+    if (currentDepositCoin === null && nextDepositCoin && type === 'deposit') {
       this.props.fetchPrice({
-        pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
+        pair: `${nextReceiveCoin}${nextDepositCoin}`,
         lastEdited: 'deposit',
       });
     }
@@ -49,29 +55,34 @@ class CoinSelector extends Component {
     // This condition means that selected coin has been changed and price
     // needs to be refetched.
     if (
-      this.props.selectedCoin[this.props.type] !== nextProps.selectedCoin[this.props.type] &&
-      ((this.props.type === 'deposit' && nextProps.selectedCoin.lastSelected === 'deposit') ||
-        (this.props.type === 'receive' && nextProps.selectedCoin.lastSelected === 'receive'))
+      currentDepositCoin !== null &&
+      this.props.selectedCoin[type] !== nextProps.selectedCoin[type] &&
+      ((type === 'deposit' && lastSelected === 'deposit') || (type === 'receive' && lastSelected === 'receive'))
     ) {
-      this.props.fetchPrice({
-        pair: `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}`,
-        lastEdited: nextProps.selectedCoin.lastSelected,
-      });
+      const data = {
+        pair: `${nextReceiveCoin}${nextDepositCoin}`,
+        lastEdited: lastSelected,
+        coinSelector: true,
+      };
+
+      if (lastSelected === 'deposit') {
+        data['deposit'] = nextProps.price.deposit;
+      } else if (lastSelected === 'receive') {
+        data['receive'] = nextProps.price.receive;
+      }
+
+      this.props.fetchPrice(data);
     }
 
     // Check if pair is valid. If not, show error.
-    if (
-      nextProps.selectedCoin.deposit &&
-      nextProps.selectedCoin.receive &&
-      !this.props.pairs[nextProps.selectedCoin.deposit][nextProps.selectedCoin.receive]
-    ) {
-      const validPairs = Object.keys(this.props.pairs[nextProps.selectedCoin.deposit])
+    if (nextDepositCoin && nextReceiveCoin && !this.props.pairs[nextDepositCoin][nextReceiveCoin]) {
+      const validPairs = Object.keys(this.props.pairs[nextDepositCoin])
         .map(coin => coin)
-        .filter(coin => this.props.pairs[nextProps.selectedCoin.deposit][coin] === true)
+        .filter(coin => this.props.pairs[nextDepositCoin][coin] === true)
         .join(', ');
 
       this.props.errorAlert({
-        message: `You cannot buy ${nextProps.selectedCoin.receive} with ${nextProps.selectedCoin.deposit}. Try ${validPairs}.`,
+        message: `You cannot buy ${nextReceiveCoin} with ${nextDepositCoin}. Try ${validPairs}.`,
         show: true,
         type: 'INVALID_PAIR',
       });
