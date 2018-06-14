@@ -113,11 +113,12 @@ class OrderCoinProcessed extends Component {
                 <h6>{this.state.address}</h6>
               </div>
 
-              {this.props.type === 'Deposit' && (
-                <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
-                  <i id="copy-address-to-clipboard" className={`${styles.copy} fas fa-copy`} />
-                </CopyToClipboard>
-              )}
+              {this.props.type === 'Deposit' &&
+                !isFiatOrder(this.props.order) && (
+                  <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
+                    <i id="copy-address-to-clipboard" className={`${styles.copy} fas fa-copy`} />
+                  </CopyToClipboard>
+                )}
             </div>
           </div>
         </div>
