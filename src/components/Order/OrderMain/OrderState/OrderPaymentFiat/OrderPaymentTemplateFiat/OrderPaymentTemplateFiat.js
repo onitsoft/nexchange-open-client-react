@@ -36,7 +36,7 @@ class OrderPaymentTemplate extends Component {
             onClick={() => this.setState({ showKYCModal: true })}
             style={{ marginTop: 20 }}
           >
-            <i className="fab fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
+            <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
             {this.props.buttonText}
           </button>
         )}

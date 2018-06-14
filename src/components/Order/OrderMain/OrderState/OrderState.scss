@@ -59,3 +59,17 @@
     text-decoration: none;
   }
 }
+
+.status {
+  p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: $blue;
+
+    b {
+      font-weight: 500;
+      color: $blue;
+    }
+  }
+}

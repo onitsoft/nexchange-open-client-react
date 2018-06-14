@@ -227,7 +227,7 @@ This will also allow us to send you updates about your orders, your referrals, a
 
               <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
                 <i
-                  className="fab fa-file"
+                  className="far fa-file"
                   aria-hidden="true"
                   style={{
                     position: 'relative',
