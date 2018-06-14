@@ -73,7 +73,7 @@ class CoinsDropdown extends Component {
     <I18n ns="translations">
      {(t) => (
       <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
-        <i class="fas fa-search" aria-hidden="true" />
+        <i className="fas fa-search" aria-hidden="true" />
         <input
           type="text"
           placeholder={t('generalterms.search')}
