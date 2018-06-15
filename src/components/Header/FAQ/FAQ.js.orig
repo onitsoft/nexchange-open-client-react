@@ -39,7 +39,11 @@ class FAQ extends Component {
                 <Trans i18nKey="faq.ans1">
                 <div>
                   <p>
+<<<<<<< HEAD
                     N.exchange is an automated cryptocurrency exchange service, operated by
+=======
+                    N.exchange is an automated cryptocurrency exchange service, operated by{' '}
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
                     <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank" rel="noopener noreferrer">
                       YOA LTD. (registered company No. 10009845)
                     </a>.

@@ -28,7 +28,11 @@ const About = () => (
           <p>
             To support our mission of making crypto accessible to everyone, we’ve made our{' '}
             <b>
+<<<<<<< HEAD
+              <a href="https://github.com/onitsoft/nexchange-open-client-react" rel="noopener noreferrer" target="_blank">
+=======
               <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank" rel="noopener noreferrer">
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
                 front end client completely open source <i className="fab fa-github" aria-hidden="true" />
               </a>
             </b>.
@@ -40,8 +44,18 @@ const About = () => (
               id="oleg"
               name="Oleg Belousov"
               country="IL"
+<<<<<<< HEAD
               fullCountryName={t('about.israel')}
               description={t('about.oleg')}
+=======
+              fullCountryName="Israel"
+              description={
+                <p>
+                  Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step,
+                  every single day.
+                </p>
+              }
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
               social={{
                 linkedin: 'https://www.linkedin.com/in/oleg-belousov-b4112145/',
                 twitter: 'https://twitter.com/iooleg',
@@ -54,8 +68,13 @@ const About = () => (
               id="sarunas"
               name="Šarūnas Ažna"
               country="LT"
+<<<<<<< HEAD
               fullCountryName={t('about.lithuania')}
               description={t('about.sarunas')}
+=======
+              fullCountryName="Lithuania"
+              description={<p>Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.</p>}
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
               social={{
                 linkedin: 'https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/',
                 github: 'https://github.com/SarunasAzna',
@@ -66,8 +85,13 @@ const About = () => (
               id="karolis"
               name="Karolis Ramanauskas"
               country="LT"
+<<<<<<< HEAD
               fullCountryName={t('about.lithuania')}
               description={t('about.karolis')}
+=======
+              fullCountryName="Lithuania"
+              description={<p>Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.</p>}
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
               social={{
                 linkedin: 'https://www.linkedin.com/in/karolisram/',
                 github: 'https://github.com/superkarolis/',
@@ -81,8 +105,17 @@ const About = () => (
               id="justas"
               name="Justas Ažna"
               country="LT"
+<<<<<<< HEAD
               fullCountryName={t('about.lithuania')}
               description={t('about.justas')}
+=======
+              fullCountryName="Lithuania"
+              description={
+                <p>
+                  DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability.
+                </p>
+              }
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
               social={{
                 linkedin: 'https://www.linkedin.com/in/justasazna/',
                 github: 'https://github.com/reederz',
@@ -93,8 +126,18 @@ const About = () => (
               id="paulina"
               name="Paulina Bagińska"
               country="PL"
+<<<<<<< HEAD
               fullCountryName={t('about.poland')}
               description={t('about.paulina')}
+=======
+              fullCountryName="Poland"
+              description={
+                <p>
+                  Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and
+                  recreational weight lifter.
+                </p>
+              }
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
               social={{
                 linkedin: 'https://www.linkedin.com/in/baginskapaulina/',
                 twitter: 'https://twitter.com/PaulinaBGGC',
@@ -108,7 +151,12 @@ const About = () => (
               fullCountryName={t('about.US')}
               description={
                 <p>
+<<<<<<< HEAD
                   {t('about.cyrus')}
+=======
+                  Cornell University MEng, Computer Science.<br />
+                  Passionate about programming, astronomy and decentralised and distributed systems.
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
                 </p>
               }
               social={{

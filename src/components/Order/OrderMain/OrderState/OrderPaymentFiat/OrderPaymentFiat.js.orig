@@ -7,9 +7,12 @@ import KYCModalTier0 from '../OrderFiatModals/KYCModalTier0/KYCModalTier0';
 import KYCModalTier1 from '../OrderFiatModals/KYCModalTier1/KYCModalTier1';
 import KYCModalTier2 from '../OrderFiatModals/KYCModalTier2/KYCModalTier2';
 import OrderPaymentTemplate from './OrderPaymentTemplateFiat/OrderPaymentTemplateFiat';
-import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
+<<<<<<< HEAD
 import i18n from '../../../../../i18n';
 import { I18n } from 'react-i18next';
+=======
+import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
 import styles from '../OrderState.scss';
 
 class OrderPayment extends Component {
@@ -78,10 +81,23 @@ class OrderPayment extends Component {
         buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
       } else {
+<<<<<<< HEAD
+        title = <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>;
+        inner = (
+          <div>
+            <hr style={{ margin: '15px -15px' }} />
+            <h2>Approval status:</h2>
+            <p style={{ margin: 0 }}>
+              <b>{i18n.t('order.fiat.kyc.1')}:</b> {id_document_status}
+            </p>
+            <p>
+              <b>{i18n.t('order.fiat.kyc.2')}:</b> {residence_document_status}
+            </p>
+=======
         title = (
           <div>
             <OrderStateLoader />
-            <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>
+            <h2 className={styles.title}>Verification received, awaiting approval</h2>
           </div>
         );
         inner = (
@@ -89,12 +105,13 @@ class OrderPayment extends Component {
             <h2 className={styles.title}>Approval status:</h2>
             <div className={styles.status}>
               <p>
-                <b>{i18n.t('order.fiat.kyc.1')}:</b> {id_document_status}
+                <b>Government issued ID:</b> {id_document_status}
               </p>
               <p>
-                <b>{i18n.t('order.fiat.kyc.2')}:</b> {residence_document_status}
+                <b>Proof of residence:</b> {residence_document_status}
               </p>
             </div>
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
           </div>
         );
 
@@ -145,20 +162,38 @@ class OrderPayment extends Component {
         buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
       } else {
+<<<<<<< HEAD
+        title = <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>;
+        inner = (
+          <div>
+            <hr style={{ margin: '15px -15px' }} />
+            <h2>{i18n.t('order.fiat.status.5')}</h2>
+
+            {tier === 'Tier 1' && (
+              <p>
+                <b>{i18n.t('order.fiat.tier.selfie')}:</b> {selfie_document_status}
+              </p>
+            )}
+
+            {(tier === 'Tier 2' || tier === 'Tier 3') && (
+              <p>
+                <b>{i18n.t('order.fiat.tier.w_selfie')}:</b> {withdrawAddressStatus}
+              </p>
+=======
         title = (
           <div>
             <OrderStateLoader />
-            <h2 className={styles.title}>{i18n.t('order.fiat.status.3')}</h2>
+            <h2 className={styles.title}>Verification received, awaiting approval</h2>
           </div>
         );
         inner = (
           <div>
-            <h2 className={styles.title}>{i18n.t('order.fiat.status.5')}:</h2>
+            <h2 className={styles.title}>Approval status:</h2>
 
             {tier === 'Tier 1' && (
               <div className={styles.status}>
                 <p>
-                  <b>{i18n.t('order.fiat.tier.selfie')}:</b> {selfie_document_status}
+                  <b>Selfie:</b> {selfie_document_status}
                 </p>
               </div>
             )}
@@ -166,9 +201,10 @@ class OrderPayment extends Component {
             {(tier === 'Tier 2' || tier === 'Tier 3') && (
               <div className={styles.status}>
                 <p>
-                  <b>{i18n.t('order.fiat.tier.w_selfie')}:</b> {withdrawAddressStatus}
+                  <b>Whitelist selfie:</b> {withdrawAddressStatus}
                 </p>
               </div>
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
             )}
           </div>
         );
@@ -182,13 +218,18 @@ class OrderPayment extends Component {
         notificationsCtaVisible = true;
       }
     } else {
+<<<<<<< HEAD
+      title = <h2 className={styles.title}>{i18n.t('order.fiat.status.paid')}</h2>;
+      inner = <h3 className={styles.subtitle}>{i18n.t('order.fiat.status.success')}</h3>;
+=======
       title = (
         <div>
           <OrderStateLoader />
-          <h2 className={styles.title}>{i18n.t('order.fiat.status.paid')}</h2>
+          <h2 className={styles.title}>Payment and verification received</h2>
         </div>
       );
-      inner = <h3 className={styles.subtitle}>{i18n.t('order.fiat.status.success')}</h3>;
+      inner = <h3 className={styles.subtitle}>We will proceed to release your funds shortly</h3>;
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
     }
 
     return (

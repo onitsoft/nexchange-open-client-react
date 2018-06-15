@@ -83,8 +83,12 @@ class CoinSelector extends Component {
         .join(', ');
 
       this.props.errorAlert({
+<<<<<<< HEAD
         message: `${i18n.t('error.invalidpair')} 
-        ${nextReceiveCoin} ${i18n.t('error.with')} ${nextDepositCoin}. ${i18n.t('error.try')} ${validPairs}.`,
+        ${nextProps.selectedCoin.receive} ${i18n.t('error.with')} ${nextProps.selectedCoin.deposit}. ${i18n.t('error.try')} ${validPairs}.`,
+=======
+        message: `You cannot buy ${nextReceiveCoin} with ${nextDepositCoin}. Try ${validPairs}.`,
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
         show: true,
         type: 'INVALID_PAIR',
       });

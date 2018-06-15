@@ -39,8 +39,8 @@
   },
   "testimonials": {
     "title": "Referenzen",
-    "1": "Testen Sie @N.EXCHANGE.io mit einer Einfachen, Sicheren und Transparenten  Börse, die Sie ohne Registrierung nutzen können.",
-    "2": "N.EXCHANGE.io ist die nächste große Börse… übersichtliche Benutzeroberfläche, für mobile Geräte optimiert, reibungslose Transaktionen und transparente Plattform. Ich habe verschiedene Börsen ausprobiert, aber diese Plattform hat geliefert, was ich brauchte…",
+    "1": "Testen Sie @N.EXCHANGE mit einer Einfachen, Sicheren und Transparenten  Börse, die Sie ohne Registrierung nutzen können.",
+    "2": "N.EXCHANGE ist die nächste große Börse… übersichtliche Benutzeroberfläche, für mobile Geräte optimiert, reibungslose Transaktionen und transparente Plattform. Ich habe verschiedene Börsen ausprobiert, aber diese Plattform hat geliefert, was ich brauchte…",
     "3": "Bester Schnell-Umtausch Service! Schnell, einfach, niedrige Gebühren...",
     "4": "Gestern habe ich BTC in LTC im Wert von $24,000 umgetauscht, großartige, vertrauenswürde Börse. Hatte ein paar Anlaufschwierigkeiten, aber Alles wurde geregelt. Würde ich wieder verwenden. 😊"
   },
@@ -158,6 +158,7 @@
     "complete": "Abgeschlossen",
     "rates": "Kurs bei Erstellung des Auftrages",
     "fee": "Auszahlungsgebühr",
+    "feeinfo": "Der angegebene Preis ist endgültig, alle Gebühren sind inbegriffen.",
     "refund": "Ihr Auftrag wurde storniert und rueckerstatet. Sollten Sie Fragen haben kontaktieren Sie unseren Support im Livechat oder unter der E-Mail ",
     "fiat": {
         "cardsaccepted": "Kreditkarten werden akzeptiert",

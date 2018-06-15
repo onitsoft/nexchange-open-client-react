@@ -191,6 +191,7 @@
     "complete": "Complete",
     "rates": "Rates at order creation",
     "fee": "Withdrawal fee",
+    "feeinfo": "The indicated price is final, all fees are included.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
         "cardsaccepted": "Credit cards accepted",

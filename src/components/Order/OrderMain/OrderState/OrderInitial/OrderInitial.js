@@ -19,7 +19,9 @@ class OrderInitial extends Component {
   }
 
   calculateRemainingTime() {
-    const now = moment().subtract(this.props.order.payment_window, 'minutes');
+    const now = moment()
+      .utc()
+      .subtract(this.props.order.payment_window, 'minutes');
     const createdOn = moment(this.props.order.created_on);
     let time = createdOn.diff(now);
 

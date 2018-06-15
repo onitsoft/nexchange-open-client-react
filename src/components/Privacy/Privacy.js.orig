@@ -394,8 +394,13 @@ const Privacy = props => {
           <h2>Contact us</h2>
           <p>
             If you have any questions or concerns regarding this Privacy Policy,
+<<<<<<< HEAD
             please contact us at
+            <a href="mailto:support@nexchange.io">support@nexchange.io</a>.
+=======
+            please contact us at{' '}
             <a href="mailto:support@n.exchange">support@n.exchange</a>.
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
           </p>
           </Trans>
         </div>

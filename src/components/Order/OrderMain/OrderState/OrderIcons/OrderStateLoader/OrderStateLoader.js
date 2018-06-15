@@ -13,7 +13,7 @@ const OrderStateLoader = () => {
         width="40px"
         height="40px"
         viewBox="0 0 50 50"
-        style={{ 'enable-background': 'new 0 0 50 50' }}
+        style={{ enableBackground: 'new 0 0 50 50' }}
       >
         <path
           fill="#000"

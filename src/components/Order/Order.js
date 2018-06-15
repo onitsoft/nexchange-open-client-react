@@ -81,8 +81,6 @@ class Order extends Component {
 
               <OrderMain order={this.state.order} />
               <OrderCta order={this.state.order} />
-
-              {!isFiatOrder(this.state.order) && <OrderRefundAddress order={this.state.order} />}
             </div>
           </div>
         </div>

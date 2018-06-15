@@ -3,14 +3,12 @@ import _ from 'lodash';
 import Fuse from 'fuse.js';
 import cx from 'classnames';
 import urlParams from 'Utils/urlParams';
+import debounce from 'Utils/debounce';
 import styles from './CoinsDropdown.css';
 import { I18n } from 'react-i18next';
 
 class CoinsDropdown extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-  }
+  state = { value: '' };
 
   componentDidMount = () => {
     this.searchInput.focus();
@@ -25,14 +23,21 @@ class CoinsDropdown extends Component {
     event.stopPropagation();
 
     const coins = this.getCoins();
-    if (coins.length === 1) {
-      this.props.onClick(coins[0].code);
-    }
+    this.props.onClick(coins[0].code);
   };
 
   clear = () => {
     this.setState({ value: '' });
   };
+
+  trackEvent = debounce(coinSearched => {
+    window.ga('send', {
+      hitType: 'event',
+      eventCategory: 'Coins dropdown search',
+      eventAction: this.props.type,
+      eventValue: coinSearched,
+    });
+  }, 300);
 
   searchCoins = coins => {
     if (!this.state.value) return coins;
@@ -42,6 +47,8 @@ class CoinsDropdown extends Component {
       threshold: 0.2,
       keys: ['code', 'name'],
     });
+
+    this.trackEvent(this.state.value);
 
     return fuse.search(this.state.value);
   };
@@ -66,7 +73,7 @@ class CoinsDropdown extends Component {
     <I18n ns="translations">
      {(t) => (
       <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
-        <i class="fas fa-search" aria-hidden="true" />
+        <i className="fas fa-search" aria-hidden="true" />
         <input
           type="text"
           placeholder={t('generalterms.search')}

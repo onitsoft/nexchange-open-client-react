@@ -18,8 +18,13 @@ const RefundCancellation = props => {
             {t('refund.3')}
           </p>
           <p>
-            {t('refund.4')}{' '}
-            <a href="mailto:support@n.exchange">support@n.exchange</a>
+<<<<<<< HEAD
+            {t('refund.4')} <a href="mailto:support@nexchange.io">support@nexchange.io</a>
+=======
+            Get in touch at{' '}
+            <a href="mailto:support@n.exchange">support@n.exchange</a> for
+            more information.
+>>>>>>> a44815730a31900c676649a9e0f6facd1e7cfedf
           </p>
         </div>
 	  )}

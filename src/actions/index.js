@@ -59,38 +59,28 @@ export const fetchCoinDetails = payload => dispatch => {
 };
 
 export const fetchPrice = payload => dispatch => {
-  let url = `${config.API_BASE_URL}/get_price/${payload.pair}/?`;
+  return new Promise(async (resolve, reject) => {
+    const pair = payload.pair;
 
-  if (payload.deposit) {
-    url += `amount_quote=${payload.deposit}`;
-  } else if (payload.receive) {
-    url += `amount_base=${payload.receive}`;
-  }
+    const makeRequest = url => {
+      return axios
+        .get(url)
+        .then(res => {
+          return res.data;
+        })
+        .catch(err => {
+          throw err;
+        });
+    };
 
-  const request = axios.get(url);
+    const setValidValues = amounts => {
+      const data = { pair };
 
-  return request
-    .then(response => {
-      let data = {
-        pair: payload.pair,
-      };
-
-      if ('receive' in payload) {
-        data['deposit'] = response.data.amount_quote;
-        data['receive'] = payload.receive;
-        data['lastEdited'] = 'receive';
-      } else if ('deposit' in payload) {
-        data['deposit'] = payload.deposit;
-        data['receive'] = response.data.amount_base;
-        data['lastEdited'] = 'deposit';
-      } else {
-        data['deposit'] = response.data.amount_quote;
-        data['receive'] = response.data.amount_base;
-        data['lastEdited'] = payload.lastEdited;
-      }
+      data['deposit'] = amounts.amount_quote;
+      data['receive'] = amounts.amount_base;
+      data['lastEdited'] = payload.lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
-
       dispatch({
         type: types.ERROR_ALERT,
         payload: {
@@ -98,9 +88,12 @@ export const fetchPrice = payload => dispatch => {
           type: types.INVALID_AMOUNT,
         },
       });
-    })
-    .catch(error => {
-      let data = { pair: payload.pair };
+
+      resolve();
+    };
+
+    const setFaultyValues = err => {
+      let data = { pair };
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -114,16 +107,35 @@ export const fetchPrice = payload => dispatch => {
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
 
-      if (error.response && error.response.data) {
+      if (err.response && err.response.data) {
         dispatch(
           errorAlert({
-            message: error.response.data.detail,
+            message: err.response.data.detail,
             show: true,
             type: types.INVALID_AMOUNT,
           })
         );
       }
-    });
+
+      reject();
+    };
+
+    try {
+      let url = `${config.API_BASE_URL}/get_price/${pair}/?`;
+      url += payload.deposit ? `amount_quote=${payload.deposit}` : `amount_base=${payload.receive}`;
+
+      const amounts = await makeRequest(url);
+      setValidValues(amounts);
+    } catch (err) {
+      if (payload.coinSelector) {
+        let url = `${config.API_BASE_URL}/get_price/${pair}/`;
+        const amounts = await makeRequest(url);
+        setValidValues(amounts);
+      } else {
+        setFaultyValues(err);
+      }
+    }
+  });
 };
 
 export const fetchPairs = () => {
@@ -135,12 +147,20 @@ export const fetchPairs = () => {
       .then(async response => {
         if (!response.data.length) return;
 
-        const pairs = response.data.filter(pair => !pair.disabled);
+        const params = urlParams();
+        const pairs = response.data.filter(pair => {
+          if (params && params.hasOwnProperty('test')) {
+            return !pair.disabled;
+          } else {
+            return !pair.disabled && !pair.test_mode;
+          }
+        });
         const processedPairs = preparePairs(pairs);
+
         dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
 
         let depositCoin, receiveCoin;
-        const coinsFromUrlParams = params => {
+        const coinsFromUrlParams = () => {
           return new Promise((resolve, reject) => {
             axios
               .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
@@ -158,7 +178,6 @@ export const fetchPairs = () => {
         // Picks random deposit and receive coins.
         const pickCoins = async () => {
           // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-          const params = urlParams();
           if (params && params.hasOwnProperty('pair')) {
             try {
               const pair = await coinsFromUrlParams(params);
