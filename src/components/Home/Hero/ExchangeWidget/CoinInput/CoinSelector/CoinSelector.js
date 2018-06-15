@@ -25,7 +25,7 @@ class CoinSelector extends Component {
   };
 
   calculateDepositAmount = coin => {
-    return ['EUR', 'GBP', 'USD'].indexOf(coin.name) > -1 ? 100 : parseFloat(coin.minimal_amount) * 100;
+    return ['EUR', 'GBP', 'USD', 'JPY'].indexOf(coin.name) > -1 ? 100 : parseFloat(coin.minimal_amount) * 100;
   };
 
   handleClickOutside = event => {
