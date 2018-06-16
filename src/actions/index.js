@@ -58,9 +58,10 @@ export const fetchCoinDetails = payload => dispatch => {
 };
 
 export const fetchPrice = payload => dispatch => {
-  return new Promise(async (resolve, reject) => {
-    const pair = payload.pair;
+  const pair = payload.pair;
+  const lastEdited = payload.lastEdited;
 
+  return new Promise(async (resolve, reject) => {
     const makeRequest = url => {
       return axios
         .get(url)
@@ -77,7 +78,7 @@ export const fetchPrice = payload => dispatch => {
 
       data['deposit'] = amounts.amount_quote;
       data['receive'] = amounts.amount_base;
-      data['lastEdited'] = payload.lastEdited;
+      data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
       dispatch({
