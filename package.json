@@ -83,8 +83,10 @@
     "@storybook/react": "^3.4.5",
     "axios-mock-adapter": "^1.15.0",
     "cypress": "^2.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest-mock-axios": "^2.1.11",
-    "redux-mock-store": "^1.5.1",
+    "react-test-renderer": "^16.4.1",
+    "redux-mock-store": "^1.5.3",
     "sinon": "^5.0.7",
     "start-server-and-test": "^1.4.1"
   },
@@ -125,7 +127,8 @@
       "^Components(.*)$": "<rootDir>/src/components$1",
       "^Config$": "<rootDir>/src/config.js",
       "^Actions(.*)$": "<rootDir>/src/actions$1",
-      "^StatusCodes": "<rootDir>/src/statusCodes.js"
+      "^StatusCodes": "<rootDir>/src/statusCodes.js",
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",

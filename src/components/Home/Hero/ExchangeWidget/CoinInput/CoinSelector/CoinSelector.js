@@ -53,7 +53,11 @@ class CoinSelector extends Component {
     }
 
     // Check if pair is valid. If not, show error.
-    if (nextDepositCoin && nextReceiveCoin && this.props.pairs[nextDepositCoin] && !this.props.pairs[nextDepositCoin][nextReceiveCoin]) {
+    if (
+      nextDepositCoin &&
+      nextReceiveCoin &&
+      (this.props.pairs && (!this.props.pairs[nextDepositCoin] || !this.props.pairs[nextDepositCoin][nextReceiveCoin]))
+    ) {
       const validPairs = Object.keys(this.props.pairs[nextDepositCoin])
         .map(coin => coin)
         .filter(coin => this.props.pairs[nextDepositCoin][coin] === true)
