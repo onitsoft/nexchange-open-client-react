@@ -16,26 +16,6 @@ export const setWallet = payload => ({
   payload,
 });
 
-/*
-export default (state = initialState, action) => {
-  let payload = Object.assign({}, action.payload);
-
-  if (action.type === COIN_SELECTED) {
-    if (payload.deposit === payload.receive) {
-      payload.deposit = payload.prev.receive;
-      payload.receive = payload.prev.deposit;
-    }
-
-    payload.prev.deposit = payload.deposit;
-    payload.prev.receive = payload.receive;
-
-    return payload;
-  }
-
-  return state;
-};
-*/
-
 export const selectCoin = selectedCoins => (dispatch, getState) => {
   dispatch({
     type: types.COIN_SELECTED,
@@ -44,14 +24,6 @@ export const selectCoin = selectedCoins => (dispatch, getState) => {
       pairs: getState().pairs,
     },
   });
-
-  dispatch(
-    setWallet({
-      address: '',
-      valid: false,
-      show: false,
-    })
-  );
 };
 
 export const fetchCoinDetails = payload => dispatch => {
