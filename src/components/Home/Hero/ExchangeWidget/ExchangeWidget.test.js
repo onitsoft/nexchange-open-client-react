@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import ExchangeWidget from './ExchangeWidget.js';
 
@@ -12,25 +12,35 @@ describe('ExchangeWidget', () => {
     error: { show: false, type: 'INVALID_AMOUNT' },
   };
   const mockStore = configureStore();
-  let store, wrap;
+  let store, wrap, wrapShallow;
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrap = shallow(<ExchangeWidget store={store} />).dive();
+    wrap = mount(
+      <Provider store={store}>
+        <ExchangeWidget />
+      </Provider>
+    );
+    wrapShallow = shallow(<ExchangeWidget store={store} />).dive();
   });
 
   it('renders correctly', () => {
-    expect(wrap).toMatchSnapshot();
-  });
-
-  it('button changes on wallet shown', () => {
-    expect(wrap.find('button').text()).toEqual('Get Started !');
-    wrap.setProps({ wallet: { address: '', valid: false, show: true } });
-    expect(wrap.find('button').text()).toEqual('Confirm & Place Order');
+    expect(wrapShallow).toMatchSnapshot();
   });
 
   it('contains CoinInput, WalletAddress', () => {
-    expect(wrap.find('Connect(CoinInput)').exists()).toBe(true);
-    expect(wrap.find('Connect(WalletAddress)').exists()).toBe(true);
+    expect(wrapShallow.find('Connect(CoinInput)').length).toBe(2);
+    expect(wrapShallow.find('Connect(WalletAddress)').length).toBe(1);
+  });
+
+  it('submit button changes on wallet shown', () => {
+    expect(wrapShallow.find('button').text()).toEqual('Get Started !');
+
+    wrapShallow.find('button.proceed').simulate('click');
+    wrapShallow.setProps({ wallet: { address: '', valid: false, show: true } });
+
+    wrapShallow = wrapShallow.update();
+
+    expect(wrapShallow.find('button').text()).toEqual('Confirm & Place Order');
   });
 });
