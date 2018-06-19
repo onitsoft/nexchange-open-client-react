@@ -24,14 +24,6 @@ describe('creates an action to select coin', () => {
           pairs: undefined,
         },
       },
-      {
-        type: types.SET_WALLET,
-        payload: {
-          address: '',
-          valid: false,
-          show: false,
-        },
-      },
     ];
     const store = mockStore();
 
