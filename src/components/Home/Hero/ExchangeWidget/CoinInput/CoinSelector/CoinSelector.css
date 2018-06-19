@@ -1,7 +1,8 @@
 .selected-coin {
   position: absolute;
   bottom: 21px;
-  right: 25px;
+  right: 0;
+  padding: 11px 25px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 700;
