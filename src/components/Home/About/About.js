@@ -82,7 +82,7 @@ const About = () => (
             />
 
             <TeamMember
-              id="justas"
+              id="justasv"
               name="Justas Vitėnas"
               country="LT"
               fullCountryName="Lithuania"
