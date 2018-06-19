@@ -83,6 +83,22 @@ const About = () => (
 
             <TeamMember
               id="justas"
+              name="Justas Vitėnas"
+              country="LT"
+              fullCountryName="Lithuania"
+              description={
+                <p>
+                  User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the block-chain,
+                  crypto, startup, e-commerce industries.
+                </p>
+              }
+              social={{
+                linkedin: 'https://www.linkedin.com/in/justas-vitenas-77383ab6/',
+              }}
+            />
+
+            <TeamMember
+              id="justas"
               name="Justas Ažna"
               country="LT"
               fullCountryName="Lithuania"
