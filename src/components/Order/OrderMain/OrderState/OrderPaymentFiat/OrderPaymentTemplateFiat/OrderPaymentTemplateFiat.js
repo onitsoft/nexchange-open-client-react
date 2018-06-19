@@ -24,7 +24,7 @@ class OrderPaymentTemplate extends Component {
         {this.props.children}
         {user_visible_comment &&
           (!is_verified || out_of_limit) && (
-            <h3 className={styles.subtitle}>
+            <h3 className={styles.subtitle} style={{ marginBottom: 5 }}>
               <b>Reason for rejection:</b> {user_visible_comment}
             </h3>
           )}
