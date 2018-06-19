@@ -12,13 +12,16 @@ describe('creates an action to select coin', () => {
       {
         type: types.COIN_SELECTED,
         payload: {
-          deposit: 'BTC',
-          receive: 'XVG',
-          prev: {
+          selectedCoins: {
             deposit: 'BTC',
-            receive: 'ETH',
+            receive: 'XVG',
+            prev: {
+              deposit: 'BTC',
+              receive: 'ETH',
+            },
+            lastSelected: 'deposit',
           },
-          lastSelected: 'deposit',
+          pairs: undefined,
         },
       },
       {
