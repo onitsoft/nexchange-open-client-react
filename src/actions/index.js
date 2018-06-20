@@ -126,6 +126,11 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
+      window.ga('send', 'event', {
+        eventCategory: 'Amount input/coin selector',
+        eventAction: 'Fetch default amounts',
+      });
+
       if (payload.coinSelector) {
         let url = `${config.API_BASE_URL}/get_price/${pair}/`;
         const amounts = await makeRequest(url);
