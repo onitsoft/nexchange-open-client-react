@@ -34,8 +34,7 @@ class CoinsDropdown extends Component {
   };
 
   trackEvent = debounce(coinSearched => {
-    window.ga('send', {
-      hitType: 'event',
+    window.ga('send', 'event', {
       eventCategory: 'Coins dropdown search',
       eventAction: this.props.type,
       eventValue: coinSearched,
