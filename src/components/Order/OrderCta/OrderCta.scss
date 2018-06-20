@@ -26,6 +26,15 @@
 .form-group {
   position: relative;
 
+  &:hover {
+    .btn.btn.btn {
+      border: 1px solid $green;
+      background: $green;
+      color: #fff;
+      box-shadow: 0 14px 26px -12px rgba(29, 182, 173, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(29, 182, 173, 0.2);
+    }
+  }
+
   input {
     width: 100%;
     height: 60px;
@@ -40,8 +49,9 @@
   }
 }
 
-.referral-input {
+.referral-input.referral-input {
   color: $green;
+  cursor: pointer;
 }
 
 .btn.btn.btn {
