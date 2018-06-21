@@ -6,6 +6,8 @@ import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker'
 
+import styles from './Header.scss';
+
 let scrollToElement;
 
 class Header extends Component {
