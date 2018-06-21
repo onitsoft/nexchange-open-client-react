@@ -11,6 +11,8 @@ import { bindCrispEmail } from 'Utils/crispEmailBinding';
 import CoinInput from './CoinInput/CoinInput';
 import WalletAddress from './WalletAddress/WalletAddress';
 
+import styles from './ExchangeWidget.scss';
+
 class ExchangeWidget extends Component {
   constructor(props) {
     super();
@@ -101,7 +103,7 @@ class ExchangeWidget extends Component {
 
     return (
       <div className="col-xs-12">
-        <div id="exchange-widget">
+        <div className={styles.container}>
           <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
           <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 

@@ -26,9 +26,10 @@ class Hero extends Component {
             </div>
 
             <ExchangeWidget store={this.props.store} />
-            <CoinPrices />
           </div>
         </div>
+
+        <CoinPrices />
       </div>
     );
   }

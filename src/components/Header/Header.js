@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
 
+import styles from './Header.scss';
+
 let scrollToElement;
 
 class Header extends Component {
