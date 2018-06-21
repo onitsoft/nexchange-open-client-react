@@ -32,7 +32,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div id="header">
+      <div className={styles.header}>
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -43,8 +43,8 @@ class Header extends Component {
             </button>
 
             <Link to="/">
-              <div className="logo-container">
-                <img src="/img/logo.svg" alt="Logo" />
+              <div className={styles['logo-container']}>
+                <img src="/img/logo-white.svg" alt="Logo" />
               </div>
             </Link>
           </div>
@@ -52,22 +52,23 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navigation-index">
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a className="link" href="/#about" onClick={() => scrollToElement('#about')}>
+                <a className={styles.link} href="/#about" onClick={() => scrollToElement('#about')}>
                   About
                 </a>
               </li>
 
               <li>
-                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
+                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
                   FAQ
                 </a>
               </li>
 
               <li>
                 <a
-                  className="link hidden-sm"
+                  className={`${styles.link} hidden-sm`}
                   href="http://docs.nexchange2.apiary.io/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => ga('send', 'event', 'General', 'api docs click')}
                 >
                   API Docs
@@ -75,19 +76,19 @@ class Header extends Component {
               </li>
 
               <li>
-                <a className="link" href="/#compare" onClick={() => scrollToElement('#compare')}>
+                <a className={styles.link} href="/#compare" onClick={() => scrollToElement('#compare')}>
                   Rates
                 </a>
               </li>
 
               <li>
-                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
+                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
                   Support
                 </a>
               </li>
 
-              <li id="ico-link">
-                <a href="https://n.exchange/ico" className="btn btn-block btn-primary">
+              <li className={styles['ico-link']}>
+                <a href="https://n.exchange/ico" className={`${styles.btn} btn btn-block btn-primary`}>
                   ICO
                 </a>
               </li>

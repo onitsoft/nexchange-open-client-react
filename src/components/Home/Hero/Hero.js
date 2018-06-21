@@ -17,7 +17,7 @@ class Hero extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <div className="brand">
+              <div className={styles.brand}>
                 <h1>Exchange Cryptocurrencies</h1>
                 <h2>
                   Simple. <span className="text-green">Secure</span>. Transparent.
