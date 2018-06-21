@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+<<<<<<< HEAD:src/components/Order/OrderTop/OrderTop.js
+import Bookmark from './Bookmark/Bookmark';
+import styles from './OrderTop.scss';
+=======
+import Bookmark from '../Bookmark';
+import { I18n } from 'react-i18next';
+>>>>>>> Translated further components:src/containers/order/OrderTop.js
+
+class OrderTop extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showBookmarkModal: false,
+    };
+  }
+
+  render() {
+    return (
+<<<<<<< HEAD:src/components/Order/OrderTop/OrderTop.js
+      <div>
+        <div className="col-xs-12">
+          <h3 className={styles.ref}>
+            Order Reference: <b>{this.props.order.unique_reference}</b>
+=======
+     <I18n ns="translations">
+     {(t) => (
+      <div className="row">
+        <div id="order-header" className="col-xs-12">
+          <h3 id="order-ref">
+            {t('order.reference')}: <b>{this.props.order.unique_reference}</b>
+>>>>>>> Translated further components:src/containers/order/OrderTop.js
+          </h3>
+
+          <button
+            type="button"
+            className={`${styles.bookmark} btn btn-default btn-simple`}
+            onClick={() => this.setState({ showBookmarkModal: true })}
+          >
+            {t('bookmark.0')}
+          </button>
+        </div>
+
+        <Bookmark show={this.state.showBookmarkModal} onClose={() => this.setState({ showBookmarkModal: false })} />
+      </div>
+      )}</I18n>
+    );
+  }
+}
+
+export default OrderTop;

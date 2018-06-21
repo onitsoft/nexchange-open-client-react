@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+
+@import 'bootstrap';
+@import 'material-kit';
+
+@import 'fonts';
+
+@import 'cryptocoins';
+@import 'cryptocoins-custom';
+
+@import 'general';
+@import 'header';
+<<<<<<< HEAD
+@import 'language-picker';
+@import 'hero';
+=======
+>>>>>>> Hero initial setup
+@import 'testimonials';
+@import 'exchange-widget';
+@import 'wallet-address';
+@import 'faq';
+@import 'recent-orders';
+@import 'about';
+@import 'support';
+@import 'coin-prices';
+@import 'subscription-form';
+@import 'price-comparison';
+@import 'notifications';
+@import 'terms';
+@import 'footer';
