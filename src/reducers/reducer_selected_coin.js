@@ -11,18 +11,26 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  let payload = Object.assign({}, action.payload);
-
   if (action.type === COIN_SELECTED) {
-    if (payload.deposit === payload.receive) {
-      payload.deposit = payload.prev.receive;
-      payload.receive = payload.prev.deposit;
+    const { selectedCoins, pairs } = action.payload;
+
+    if (selectedCoins.deposit === selectedCoins.receive) {
+      const prevReceive = selectedCoins.prev.receive;
+      const prevDeposit = selectedCoins.prev.deposit;
+
+      if (!pairs[prevReceive] || !pairs[prevReceive][prevDeposit]) {
+        selectedCoins.deposit = prevDeposit;
+        selectedCoins.receive = prevReceive;
+      } else {
+        selectedCoins.deposit = prevReceive;
+        selectedCoins.receive = prevDeposit;
+      }
     }
 
-    payload.prev.deposit = payload.deposit;
-    payload.prev.receive = payload.receive;
+    selectedCoins.prev.deposit = selectedCoins.deposit;
+    selectedCoins.prev.receive = selectedCoins.receive;
 
-    return payload;
+    return selectedCoins;
   }
 
   return state;

@@ -23,7 +23,10 @@ class CoinsDropdown extends Component {
     event.stopPropagation();
 
     const coins = this.getCoins();
-    this.props.onClick(coins[0].code);
+
+    if (coins[0]) {
+      this.props.onClick(coins[0].code);
+    }
   };
 
   clear = () => {
@@ -31,8 +34,7 @@ class CoinsDropdown extends Component {
   };
 
   trackEvent = debounce(coinSearched => {
-    window.ga('send', {
-      hitType: 'event',
+    window.ga('send', 'event', {
       eventCategory: 'Coins dropdown search',
       eventAction: this.props.type,
       eventValue: coinSearched,

@@ -25,7 +25,7 @@ class CoinSelector extends Component {
   };
 
   calculateDepositAmount = coin => {
-    return ['EUR', 'GBP', 'USD'].indexOf(coin.name) > -1 ? 100 : parseFloat(coin.minimal_amount) * 100;
+    return ['EUR', 'GBP', 'USD', 'JPY'].indexOf(coin.name) > -1 ? 100 : parseFloat(coin.minimal_amount) * 100;
   };
 
   handleClickOutside = event => {
@@ -39,6 +39,7 @@ class CoinSelector extends Component {
 
   UNSAFE_componentWillReceiveProps = nextProps => {
     const lastSelected = nextProps.selectedCoin.lastSelected;
+    const lastEditedPrice = nextProps.price.lastEdited;
     const currentDepositCoin = this.props.selectedCoin.deposit;
     const nextReceiveCoin = nextProps.selectedCoin.receive;
     const nextDepositCoin = nextProps.selectedCoin.deposit;
@@ -53,30 +54,12 @@ class CoinSelector extends Component {
       });
     }
 
-    // This condition means that selected coin has been changed and price
-    // needs to be refetched.
-    if (
-      currentDepositCoin !== null &&
-      this.props.selectedCoin[type] !== nextProps.selectedCoin[type] &&
-      ((type === 'deposit' && lastSelected === 'deposit') || (type === 'receive' && lastSelected === 'receive'))
-    ) {
-      const data = {
-        pair: `${nextReceiveCoin}${nextDepositCoin}`,
-        lastEdited: lastSelected,
-        coinSelector: true,
-      };
-
-      if (lastSelected === 'deposit') {
-        data['deposit'] = nextProps.price.deposit;
-      } else if (lastSelected === 'receive') {
-        data['receive'] = nextProps.price.receive;
-      }
-
-      this.props.fetchPrice(data);
-    }
-
     // Check if pair is valid. If not, show error.
-    if (nextDepositCoin && nextReceiveCoin && !this.props.pairs[nextDepositCoin][nextReceiveCoin]) {
+    if (
+      nextDepositCoin &&
+      nextReceiveCoin &&
+      (this.props.pairs && (!this.props.pairs[nextDepositCoin] || !this.props.pairs[nextDepositCoin][nextReceiveCoin]))
+    ) {
       const validPairs = Object.keys(this.props.pairs[nextDepositCoin])
         .map(coin => coin)
         .filter(coin => this.props.pairs[nextDepositCoin][coin] === true)
@@ -88,6 +71,26 @@ class CoinSelector extends Component {
         show: true,
         type: 'INVALID_PAIR',
       });
+      // This condition means that selected coin has been changed and price
+      // needs to be refetched.
+    } else if (
+      currentDepositCoin !== null &&
+      this.props.selectedCoin[type] !== nextProps.selectedCoin[type] &&
+      ((type === 'deposit' && lastSelected === 'deposit') || (type === 'receive' && lastSelected === 'receive'))
+    ) {
+      const data = {
+        pair: `${nextReceiveCoin}${nextDepositCoin}`,
+        lastEdited: lastEditedPrice,
+        coinSelector: true,
+      };
+
+      if (lastEditedPrice === 'deposit') {
+        data['deposit'] = nextProps.price.deposit;
+      } else if (lastEditedPrice === 'receive') {
+        data['receive'] = nextProps.price.receive;
+      }
+
+      this.props.fetchPrice(data);
     }
   };
 

@@ -26,12 +26,6 @@ class ExchangeWidget extends Component {
     this.showWalletAddress = this.showWalletAddress.bind(this);
   }
 
-  componentDidMount() {
-    $(function() {
-      $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
-    });
-  }
-
   componentWillUnmount() {
     clearTimeout(this.timeout);
   }
@@ -99,13 +93,6 @@ class ExchangeWidget extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if ($('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby')) {
-      let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby');
-      $(`#${tooltipId} .tooltip-inner`).html(
-          `${i18n.t('exchangewidget.fees')} ${nextProps.amounts.deposit * 0.005} ${nextProps.selectedCoin.deposit}.`
-      );
-    }
-
     if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
       this.props.setWallet({ address: '', valid: false, show: false });
     }
@@ -165,8 +152,8 @@ const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
   wallet,
 });
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
     {
       setWallet: setWallet,
       setOrder: setOrder,
@@ -174,7 +161,6 @@ function mapDispatchToProps(dispatch) {
     },
     dispatch
   );
-}
 
 export default connect(
   mapStateToProps,

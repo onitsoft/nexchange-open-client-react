@@ -14,7 +14,7 @@ class CoinInput extends PureComponent {
       value: '...',
     };
 
-    this.fetchAmounts = debounce(450, this.fetchAmounts);
+    this.fetchAmounts = debounce(600, this.fetchAmounts);
   }
 
   onChange = event => {
@@ -54,7 +54,10 @@ class CoinInput extends PureComponent {
     };
 
     data[this.props.type] = value;
-    this.props.fetchPrice(data);
+
+    if (value.length) {
+      this.props.fetchPrice(data);
+    }
   };
 
   focus = () => {
