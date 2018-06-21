@@ -1,11 +1,17 @@
-#hero {
+.hero {
   position: relative;
-  background-color: #082f4d;
   padding: 0 0 75px 0;
-  background-image: url(../img/landscape.jpg);
-  background-position: top left;
-  background-size: cover;
+  height: 100vh;
+  background-color: #01031e;
+  background-image: url('../../../img/ellipse.svg');
+  background-position: -50% 50%;
+  background-size: auto 200%;
+  background-repeat: no-repeat;
+  text-align: center;
   color: #fff;
+}
+
+#hero {
   h2 {
     margin-top: 0;
     font-weight: 400;

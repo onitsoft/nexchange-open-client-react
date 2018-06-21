@@ -3,17 +3,15 @@ import React, { Component } from 'react';
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
+import Header from 'Components/Header/Header';
 
-let scrollToElement;
+import styles from './Hero.scss';
 
 class Hero extends Component {
-  componentDidMount() {
-    scrollToElement = require('scroll-to-element');
-  }
-
   render() {
     return (
-      <div id="hero">
+      <div className={styles.hero}>
+        <Header />
         <ErrorAlert />
 
         <div className="container">
@@ -30,12 +28,6 @@ class Hero extends Component {
             <ExchangeWidget store={this.props.store} />
             <CoinPrices />
           </div>
-        </div>
-
-        <div id="mouse-scroll" onClick={() => scrollToElement('#about')}>
-          <span className="arrow-1" aria-hidden="true" />
-          <span className="arrow-2" aria-hidden="true" />
-          <span className="arrow-3" aria-hidden="true" />
         </div>
       </div>
     );
