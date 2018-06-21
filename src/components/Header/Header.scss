@@ -1,49 +1,25 @@
-#header {
+.container {
   min-height: 80px;
+  color: #fff;
 
   .btn-just-icon {
     text-align: left;
   }
+
   .navbar-toggle {
     top: 14px;
   }
-  .logo-container {
-    margin: 21px 0 15px 15px;
-    overflow: hidden;
 
-    img {
-      width: 195px;
-    }
-
-    @media (min-width: $screen-sm-min) {
-      margin-left: 0;
-    }
-  }
   .icon-bar {
     background: #000;
   }
+
   .navbar-nav {
     margin: 0;
     li a.link:hover {
       text-decoration: underline;
       background: none;
     }
-  }
-  a.link {
-    color: $blue;
-    font-size: 16px;
-
-    &:hover,
-    &:visited,
-    &:focus,
-    &:active {
-      text-decoration: none;
-      background: none;
-      outline: none;
-    }
-  }
-  ul li a.link {
-    padding-left: 0;
   }
   .fa {
     position: relative;
@@ -81,7 +57,35 @@
   }
 }
 
-#ico-link {
+.link.link.link.link {
+  font-size: 16px;
+  color: #fff;
+  padding-left: 0;
+
+  &:hover,
+  &:visited,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background: none;
+    outline: none;
+  }
+}
+
+.logo-container {
+  margin: 21px 0 15px 15px;
+  overflow: hidden;
+
+  img {
+    width: 195px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    margin-left: 0;
+  }
+}
+
+.ico-link {
   @media (min-width: $screen-sm-min) {
     padding-right: 15px;
     padding-left: 10px;
