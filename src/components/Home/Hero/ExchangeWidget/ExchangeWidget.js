@@ -102,23 +102,29 @@ class ExchangeWidget extends Component {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     return (
-      <div className="col-xs-12">
-        <div className={styles.container}>
-          <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-          <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-          <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
+      <div className={styles.container}>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className={styles.widget}>
+                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
-          <div className="col-xs-12">
-            <button
-              className="btn btn-block btn-primary proceed"
-              onClick={this.placeOrder}
-              disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
-            >
-              Confirm & Place Order
-              {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-            </button>
+                <div className={styles.submit}>
+                  <p className={styles.info}>The indicated price is final, all fees are included.</p>
 
-            <p id="fee-info">The indicated price is final, all fees are included.</p>
+                  <button
+                    className={`${styles.btn} btn btn-block btn-primary`}
+                    onClick={this.placeOrder}
+                    disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
+                  >
+                    Confirm & Place Order
+                    {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
-import Header from 'Components/Header/Header';
 
 import styles from './Hero.scss';
 
@@ -11,7 +10,6 @@ class Hero extends Component {
   render() {
     return (
       <div className={styles.hero}>
-        <Header />
         <ErrorAlert />
 
         <div className="container">

@@ -1,17 +1,20 @@
 .container {
   display: inline-block;
   width: 100%;
-  position: absolute;
-  bottom: 84px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 30px;
   text-align: center;
   overflow: hidden;
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    position: absolute;
+    bottom: 84px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .row {
   display: inline-block;
-  padding: 0 15px;
 }
 
 .coin-price {
@@ -57,7 +60,7 @@
   }
 
   @media (min-width: $screen-md-min) {
-    width: 120px;
+    width: 11.1%;
   }
 }
 

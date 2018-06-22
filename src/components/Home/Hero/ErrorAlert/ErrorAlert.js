@@ -1,27 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Sticky from 'react-stickynode';
+import styles from './ErrorAlert.scss';
 
 const ErrorAlert = props => {
   return (
     <Sticky enabled={true} top={0} bottomBoundary={1200}>
-      <div
-        className={
-          props.error.show
-            ? 'alert alert-warning'
-            : 'alert alert-warning hidden'
-        }
-      >
+      <div className={props.error.show ? `${styles.alert} alert alert-warning` : `${styles.alert} alert alert-warning hidden`}>
         <div className="container">
           <div className="alert-icon">
             <i className="material-icons">error_outline</i>
           </div>
-          <button
-            type="button"
-            className="close"
-            data-dismiss="alert"
-            aria-label="Close"
-          >
+          <button type="button" className="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">
               <i className="material-icons">clear</i>
             </span>

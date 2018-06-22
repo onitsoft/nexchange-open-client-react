@@ -94,19 +94,39 @@ class Header extends Component {
               </li>
 
               <li id="social-mobile">
-                <a href="/twitter" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
 
-                <a href="/fb" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/fb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
 
-                <a href="/slack" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/slack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
 
-                <a href="/telegram" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/telegram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
               </li>
@@ -116,7 +136,7 @@ class Header extends Component {
                   href="/twitter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -131,7 +151,7 @@ class Header extends Component {
                   href="/fb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -146,7 +166,7 @@ class Header extends Component {
                   href="/slack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -161,7 +181,7 @@ class Header extends Component {
                   href="/telegram"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
