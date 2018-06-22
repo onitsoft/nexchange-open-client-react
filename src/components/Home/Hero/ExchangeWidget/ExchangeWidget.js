@@ -106,34 +106,17 @@ class ExchangeWidget extends Component {
         <div className={styles.container}>
           <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
           <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-
           <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
-        <I18n ns="translations">
-         {(t) => (
-          <div className="col-xs-12 text-center">
-            {!this.props.wallet.show ? (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.showWalletAddress}
-                disabled={
-                  this.props.error.show && (this.props.error.type === 'INVALID_AMOUNT' || this.props.error.type === 'INVALID_PAIR')
-                    ? 'disabled'
-                    : null
-                }
-              >
-                {t('exchangewidget.1')}
-              </button>
-            ) : (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.placeOrder}
-                disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
-              >
-                {t('exchangewidget.2')}
-                {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-              </button>
-            )}
+          <div className="col-xs-12">
+            <button
+              className="btn btn-block btn-primary proceed"
+              onClick={this.placeOrder}
+              disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
+            >
+              {t('exchangewidget.1')}
+              {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+            </button>
 
             <p id="fee-info">The indicated price is final, all fees are included.</p>
           </div>

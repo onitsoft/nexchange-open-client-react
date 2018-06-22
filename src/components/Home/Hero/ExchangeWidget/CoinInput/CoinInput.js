@@ -5,6 +5,7 @@ import { I18n } from 'react-i18next';
 import { debounce } from 'throttle-debounce';
 import { fetchPrice } from 'Actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
+import styles from './CoinInput.scss';
 
 class CoinInput extends PureComponent {
   constructor(props) {
@@ -77,13 +78,13 @@ class CoinInput extends PureComponent {
 	<I18n ns="translations">
 	{(t) => (
       <div className="col-xs-12 col-sm-6">
-        <form className="form-group label-floating" onSubmit={this.handleSubmit}>
-          <label htmlFor={this.props.type} className="control-label text-green">
+        <form className="form-group" onSubmit={this.handleSubmit}>
+          <label htmlFor={this.props.type} className={styles.label}>
             {t('order.'+this.props.type)}
           </label>
           <input
             type="text"
-            className="form-control coin amount-input"
+            className={`form-control ${styles.input}`}
             id={`coin-input-${this.props.type}`}
             name={this.props.type}
             onChange={this.onChange}

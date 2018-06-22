@@ -3,41 +3,12 @@
   display: inline-block;
   width: 100%;
   color: #000;
-  padding: 5px 5px 10px 5px;
-
   padding: 36px 75px 30px;
-
-  border-radius: 4px;
+  border-radius: 6px;
+  text-align: left;
 }
 
 #exchange-widget {
-  .down-arrow {
-    width: 40px;
-    height: 40px;
-    background-size: contain;
-    display: block;
-    float: right;
-    border: 1px solid red;
-  }
-
-  .form-group label.control-label {
-    top: -30px;
-    font-size: 16px;
-    text-transform: capitalize;
-  }
-
-  .amount-input,
-  .form-control {
-    font-size: 18px;
-    font-weight: 400;
-    background-image: linear-gradient(0deg, #fff 2px, rgba(156, 39, 176, 0) 0), linear-gradient(0deg, #fff 1px, hsla(0, 0%, 82%, 0) 0);
-    color: #fff;
-
-    &.is-focused {
-      background-image: linear-gradient(#337ab7, #337ab7), linear-gradient(#d2d2d2, #d2d2d2) !important;
-    }
-  }
-
   button.proceed {
     display: inline-block;
     width: 100%;

@@ -1,6 +1,3 @@
-.form-group {
-}
-
 .checkbox {
   label {
     cursor: pointer;
@@ -10,7 +7,7 @@
   }
 
   // Hide native checkbox
-  input[type=checkbox] {
+  input[type='checkbox'] {
     opacity: 0;
     position: absolute;
     margin: 0;
@@ -30,19 +27,19 @@
     display: inline-block;
 
     &:before {
-        display: block;
-        position: absolute;
-        left: 0;
-        content: "";
-        background-color: rgba(0,0,0,.84);
-        height: $mdb-checkbox-size;
-        width: $mdb-checkbox-size;
-        border-radius: 100%;
-        z-index: 1;
-        opacity: 0;
-        margin: 0;
-        top: 0;
-        @include transform-scale3d(unquote('2.3,2.3,1'));
+      display: block;
+      position: absolute;
+      left: 0;
+      content: '';
+      background-color: rgba(0, 0, 0, 0.84);
+      height: $mdb-checkbox-size;
+      width: $mdb-checkbox-size;
+      border-radius: 100%;
+      z-index: 1;
+      opacity: 0;
+      margin: 0;
+      top: 0;
+      @include transform-scale3d(unquote('2.3,2.3,1'));
     }
 
     .check {
@@ -57,7 +54,7 @@
     }
     .check:before {
       position: absolute;
-      content: "";
+      content: '';
       transform: rotate(45deg);
       display: block;
       margin-top: -3px;
@@ -65,38 +62,24 @@
       width: 0;
       height: 0;
       background: red;
-      box-shadow:
-        0 0 0 0,
-        0 0 0 0,
-        0 0 0 0,
-        0 0 0 0,
-        0 0 0 0,
-        0 0 0 0,
-        0 0 0 0 inset;
+      box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
       @include animation(checkbox-off $mdb-checkbox-animation-check forwards);
     }
   }
 
-  input[type=checkbox] {
-
+  input[type='checkbox'] {
     &:focus + .checkbox-material .check:after {
       opacity: 0.2;
     }
 
     &:checked {
-
       & + .checkbox-material .check {
         background: $mdb-checkbox-checked-color;
       }
 
       & + .checkbox-material .check:before {
-        color: #FFFFFF;
-        box-shadow: 0 0 0 10px,
-          10px -10px 0 10px,
-        32px 0 0 20px,
-        0px 32px 0 20px,
-        -5px 5px 0 10px,
-          20px -12px 0 11px;
+        color: #ffffff;
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
         @include animation(checkbox-on $mdb-checkbox-animation-check forwards);
       }
 
@@ -117,25 +100,24 @@
 
       & + .checkbox-material .check:after {
         @include animation(rippleOff $mdb-checkbox-animation-ripple); // Ripple effect on uncheck
-
       }
     }
   }
 
   // Style for disabled inputs
   fieldset[disabled] &,
-  fieldset[disabled] & input[type=checkbox],
-  input[type=checkbox][disabled] ~ .checkbox-material .check,
-  input[type=checkbox][disabled] + .circle {
+  fieldset[disabled] & input[type='checkbox'],
+  input[type='checkbox'][disabled] ~ .checkbox-material .check,
+  input[type='checkbox'][disabled] + .circle {
     opacity: 0.5;
   }
 
-  input[type=checkbox][disabled] ~ .checkbox-material .check{
-      border-color: #000000;
-      opacity: .26;
+  input[type='checkbox'][disabled] ~ .checkbox-material .check {
+    border-color: #000000;
+    opacity: 0.26;
   }
 
-  input[type=checkbox][disabled] + .checkbox-material .check:after {
+  input[type='checkbox'][disabled] + .checkbox-material .check:after {
     background-color: $mdb-text-color-primary;
     transform: rotate(-45deg);
   }
@@ -143,31 +125,13 @@
 
 @keyframes checkbox-on {
   0% {
-    box-shadow:
-      0 0 0 10px,
-      10px -10px 0 10px,
-      32px 0 0 20px,
-      0px 32px 0 20px,
-      -5px 5px 0 10px,
-      15px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
   }
   50% {
-    box-shadow:
-      0 0 0 10px,
-      10px -10px 0 10px,
-      32px 0 0 20px,
-      0px 32px 0 20px,
-      -5px 5px 0 10px,
-      20px 2px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
   }
   100% {
-    box-shadow:
-      0 0 0 10px,
-      10px -10px 0 10px,
-      32px 0 0 20px,
-      0px 32px 0 20px,
-      -5px 5px 0 10px,
-      20px -12px 0 11px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
   }
 }
 
