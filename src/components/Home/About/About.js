@@ -84,7 +84,7 @@ const About = () => (
               fullCountryName="Lithuania"
               description={
                 <p>
-                  User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the block-chain,
+                  User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain,
                   crypto, startup, e-commerce industries.
                 </p>
               }
