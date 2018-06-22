@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import i18n from '../i18n';
+import i18n from '../../../../i18n';
 import axios from 'axios';
 import config from 'Config';
 
@@ -25,7 +25,7 @@ class ExchangeWidget extends Component {
     };
 
     this.placeOrder = this.placeOrder.bind(this);
-    this.showWalletAddress = this.showWalletAddress.bind(this);
+    this.focusWalletAddress = this.focusWalletAddress.bind(this);
   }
 
   componentWillUnmount() {
@@ -33,6 +33,23 @@ class ExchangeWidget extends Component {
   }
 
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        window.ga('send', 'event', {
+          eventCategory: 'Order',
+          eventAction: 'Place order with empty wallet address',
+        });
+
+        this.props.errorAlert({
+          show: true,
+          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+        });
+      }
+
+      this.walletInputEl.focus();
+      return;
+    }
+
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -66,7 +83,6 @@ class ExchangeWidget extends Component {
         bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
-        window.qp('track', 'Generic');
       })
       .catch(error => {
         console.log('Error:', error);
@@ -75,6 +91,7 @@ class ExchangeWidget extends Component {
           error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
             ? error.response.data.non_field_errors[0]
             : `${i18n.t('subscription.5')}`;
+
         this.props.errorAlert({
           message: message,
           show: true,
@@ -85,65 +102,51 @@ class ExchangeWidget extends Component {
       });
   }
 
-  showWalletAddress() {
-    this.props.setWallet({ address: '', valid: false, show: true });
-
-    setTimeout(() => {
-      this.walletInputEl.focus();
-    }, 300);
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
-      this.props.setWallet({ address: '', valid: false, show: false });
-    }
+  focusWalletAddress() {
+    this.walletInputEl.focus();
   }
 
   render() {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
+
     return (
-      <div className="col-xs-12">
-        <div className={styles.container}>
-          <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-          <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-          <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
+      <div className={styles.container}>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className={styles.widget}>
+                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
-          <div className="col-xs-12">
-            <button
-              className="btn btn-block btn-primary proceed"
-              onClick={this.placeOrder}
-              disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
-            >
-              {t('exchangewidget.1')}
-              {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-            </button>
+				<I18n ns="translations">
+				 {(t) => (
+                <div className={styles.submit}>
+                  <p className={styles.info}>{t('order.feeinfo')}</p>
 
-            <p id="fee-info">The indicated price is final, all fees are included.</p>
+                  <button
+                    className={`${styles.btn} ${
+                      this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                    } btn btn-block btn-primary proceed `}
+                    onClick={this.placeOrder}
+                  >
+                    {t('exchangewidget.2')}
+                    {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                  </button>
+                </div>
+				)}
+			  </I18n>
+              </div>
+            </div>
           </div>
-			)}
-		  </I18n>
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
-  selectedCoin,
-  price,
-  error,
-  wallet,
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      setWallet: setWallet,
-      setOrder: setOrder,
-      errorAlert: errorAlert,
-    },
-    dispatch
-  );
+const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,
