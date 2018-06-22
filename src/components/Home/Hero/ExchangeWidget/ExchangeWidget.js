@@ -106,32 +106,17 @@ class ExchangeWidget extends Component {
         <div className={styles.container}>
           <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
           <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-
           <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
-          <div className="col-xs-12 text-center">
-            {!this.props.wallet.show ? (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.showWalletAddress}
-                disabled={
-                  this.props.error.show && (this.props.error.type === 'INVALID_AMOUNT' || this.props.error.type === 'INVALID_PAIR')
-                    ? 'disabled'
-                    : null
-                }
-              >
-                Get Started !
-              </button>
-            ) : (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.placeOrder}
-                disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
-              >
-                Confirm & Place Order
-                {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-              </button>
-            )}
+          <div className="col-xs-12">
+            <button
+              className="btn btn-block btn-primary proceed"
+              onClick={this.placeOrder}
+              disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
+            >
+              Confirm & Place Order
+              {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+            </button>
 
             <p id="fee-info">The indicated price is final, all fees are included.</p>
           </div>

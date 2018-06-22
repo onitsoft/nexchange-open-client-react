@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, setWallet, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
-import styles from './CoinSelector.css';
+import styles from './CoinSelector.scss';
 
 class CoinSelector extends Component {
   state = {
@@ -101,12 +101,12 @@ class CoinSelector extends Component {
     return (
       <div>
         <div
-          className={`selected-coin selectedCoin-${type} ${styles['selected-coin']}`}
+          className={`selectedCoin-${type} ${styles['selected-coin']}`}
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
-          <span className={styles.span}>{selectedCoin}</span>
           <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
-          <i className={`fas fa-angle-down ${styles['arrow-down']}`} />
+          <span className={styles.span}>{selectedCoin}</span>
+          <div className={styles.carret} />
         </div>
 
         {this.state.isDropdownVisible && <CoinsDropdown type={type} onClick={this.handleClick} coinsInfo={this.props.coinsInfo} />}

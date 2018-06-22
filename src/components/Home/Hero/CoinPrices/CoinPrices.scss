@@ -11,6 +11,7 @@
 
 .row {
   display: inline-block;
+  padding: 0 15px;
 }
 
 .coin-price {
@@ -19,7 +20,7 @@
   text-align: left;
 
   h5 {
-    margin: 0;
+    margin: 30px 0 0 0;
     font-size: 12px;
   }
 
@@ -49,6 +50,10 @@
     h6 {
       color: #e25656;
     }
+  }
+
+  @media (min-width: $screen-ms-min) {
+    width: 25%;
   }
 
   @media (min-width: $screen-md-min) {
