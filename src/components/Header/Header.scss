@@ -47,6 +47,10 @@
     }
   }
 
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    padding: 30px 15px;
+  }
+
   .link.link.link.link {
     @media (min-width: $screen-sm-min) {
       color: #fff;
