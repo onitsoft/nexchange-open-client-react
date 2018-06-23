@@ -1,5 +1,5 @@
 .container {
-  padding: 50px 0;
+  padding: 40px 0 35px;
   background: $blue;
   background-color: #01031e;
   background-image: url('../../../img/ellipse.svg');
@@ -8,30 +8,77 @@
   background-repeat: no-repeat;
   color: #fff;
 
+  @media (min-width: $screen-sm-min) {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 60px;
+  }
+
   h2 {
     margin: 0 0 6px 0;
-    font-size: 36px;
+    font-size: 25px;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 36px;
+    }
   }
 
   h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 14px;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 18px;
+    }
+  }
+}
+
+.input.input.input.input {
+  margin-top: 60px;
+  padding: 0 0 15px 0;
+  font-size: 12px;
+  color: #fff;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 75px;
   }
 
-  input::-webkit-input-placeholder {
-    font-size: 18px;
+  &::-webkit-input-placeholder {
     color: #fff;
+    font-size: 12px;
   }
-  input::-moz-placeholder {
-    font-size: 18px;
+
+  &::-moz-placeholder {
     color: #fff;
+    font-size: 12px;
   } /* firefox 19+ */
-  input:-ms-input-placeholder {
-    font-size: 18px;
+
+  &:-ms-input-placeholder {
     color: #fff;
+    font-size: 12px;
   } /* ie */
-  input:-moz-placeholder {
-    font-size: 18px;
+
+  &:-moz-placeholder {
     color: #fff;
+    font-size: 12px;
+  }
+}
+
+.btn.btn.btn {
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+    bottom: 29px;
+    right: 0;
+    margin: 0;
+    padding: 7px 15px;
+  }
+}
+
+.message {
+  p {
+    font-size: 14px;
+    margin: 0;
   }
 }
