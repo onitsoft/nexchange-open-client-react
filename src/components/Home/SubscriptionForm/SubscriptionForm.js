@@ -1,7 +1,7 @@
 import React from 'react';
 import jsonp from 'jsonp';
-import { I18n } from 'react-i18next';
 import styles from './SubscriptionForm.scss';
+import { I18n } from 'react-i18next';
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?');
 const subscribeUrl = 'https://nexchange.us16.list-manage.com/subscribe/post?u=918b60ce5b05d82384c293db0&amp;id=b2af978303';
@@ -63,48 +63,44 @@ class SubscriptionForm extends React.Component {
     const { status } = this.state;
 
     return (
-	<I18n ns="translations">
-		{
-		(t) => (
+     <I18n ns="translations">
+	 {(t, { i18n }) => (
       <div className={styles.container}>
         <div className="container text-center">
           <h2>{t('subscription.1')}</h2>
-		  <h3>{t('subscription.6')}</h3>
+          <h3><h2>{t('subscription.6')}</h2></h3>
 
           <form action={action} method="post" noValidate>
-            <div id="subscription-form-inner">
-              <div className="col-xs-12 col-sm-9">
-                <div className="form-group is-empty has-success">
+            <div className="col-xs-12 col-ms-8 col-ms-push-2">
+              <div className="row">
+                <div className={`${styles.group} form-group is-empty has-success`}>
                   <input
                     ref={node => (this.input = node)}
                     type="email"
-                    name="EMAIL"
+                    name="email"
                     placeholder={t('subscription.2')}
-                    className="form-control"
+                    className={`${styles.input} form-control`}
                     required
                   />
-                  <span className="material-input" />
+
+                  <button
+                    disabled={this.state.status === 'sending' || this.state.status === 'success'}
+                    type="submit"
+                    className={`${styles.btn} btn btn-primary`}
+                    onClick={this.onSubmit}
+                  >
+                    {t('subscription.3')}
+                  </button>
                 </div>
               </div>
 
-              <div className="col-xs-12 col-sm-3">
-                <button
-                  disabled={this.state.status === 'sending' || this.state.status === 'success'}
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={this.onSubmit}
-                >
-                  Subscribe
-                </button>
-              </div>
-
-              <div className="col-xs-12 message">
+              <div className={`${styles.message} col-xs-12`}>
                 {status === 'success' && (
                   <p className="success">
                     {t('subscription.4')}
                   </p>
                 )}
-                {status === 'error' && <p className="failure">{t('subscription.5')}</p>}
+                {status === 'error' && <p className="error">{t('subscription.5')}</p>}
               </div>
             </div>
           </form>

@@ -59,11 +59,11 @@ a {
 }
 
 .error {
-  color: #f44336 !important;
+  color: $red !important;
 }
 
 .success {
-  color: #4caf50 !important;
+  color: $green !important;
 }
 
 .header-text {
@@ -129,6 +129,7 @@ input[type='number']:hover::-webkit-outer-spin-button {
 }
 
 .form-group {
+  position: relative;
   margin: 0;
 }
 
