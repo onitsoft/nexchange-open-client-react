@@ -1,0 +1,37 @@
+.container {
+  padding: 50px 0;
+  background: $blue;
+  background-color: #01031e;
+  background-image: url('../../../img/ellipse.svg');
+  background-position: 50% 50%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  h2 {
+    margin: 0 0 6px 0;
+    font-size: 36px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  input::-webkit-input-placeholder {
+    font-size: 18px;
+    color: #fff;
+  }
+  input::-moz-placeholder {
+    font-size: 18px;
+    color: #fff;
+  } /* firefox 19+ */
+  input:-ms-input-placeholder {
+    font-size: 18px;
+    color: #fff;
+  } /* ie */
+  input:-moz-placeholder {
+    font-size: 18px;
+    color: #fff;
+  }
+}

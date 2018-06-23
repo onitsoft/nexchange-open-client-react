@@ -1,12 +1,62 @@
 .header {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  height: 70px;
+  color: #fff;
+  z-index: 3;
+  background: #fff;
+
+  :global .navbar-toggle {
+    border: 1px solid $gray;
+    margin-top: 2px;
+
+    :global .icon-bar {
+      background: $gray;
+    }
+  }
+
+  :global .navbar-nav {
+    margin-top: 0;
+    padding: 0 15px;
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -6px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: #fff;
+    z-index: 9999;
+
+    @media (min-width: $screen-sm-min) {
+      background: transparent;
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
+
+.header.home {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 30px 15px;
-  height: 100px;
-  color: #fff;
-  z-index: 3;
+  background: transparent;
+
+  :global .navbar-toggle {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2px;
+
+    :global .icon-bar {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .link.link.link.link {
+    @media (min-width: $screen-sm-min) {
+      color: #fff;
+    }
+  }
+
+  .social.social.social.social {
+    @media (min-width: $screen-sm-min) {
+      color: #fff;
+    }
+  }
 }
 
 .icon-bar {
@@ -53,8 +103,7 @@
   }
 
   @media (min-width: $screen-sm-min) {
-    padding: 8px 10px;
-    color: #fff;
+    padding: 10px;
   }
 
   @media (min-width: $screen-md-min) {
@@ -64,8 +113,7 @@
 
 .ico-link {
   @media (min-width: $screen-sm-min) {
-    padding-right: 15px;
-    padding-left: 10px;
+    padding: 0 10px;
   }
 
   .btn {
@@ -81,23 +129,21 @@
 }
 
 .social.social.social.social {
-  padding: 0 5px;
-  color: #fff;
+  padding: 10px 5px;
+  float: left;
+  color: #044264;
 
   @media (min-width: $screen-sm-min) {
     padding: 0 5px;
+    float: none;
   }
 }
 
 .logo-container {
-  margin: 0;
+  margin: 2px 0 0 0;
   overflow: hidden;
 
   img {
     width: 195px;
-  }
-
-  @media (min-width: $screen-sm-min) {
-    margin-left: 0;
   }
 }

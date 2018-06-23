@@ -1,7 +1,10 @@
 import React from 'react';
 import jsonp from 'jsonp';
+<<<<<<< HEAD
 import { I18n } from 'react-i18next';
+=======
 import styles from './SubscriptionForm.scss';
+>>>>>>> Header completely done.
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?');
 const subscribeUrl = 'https://nexchange.us16.list-manage.com/subscribe/post?u=918b60ce5b05d82384c293db0&amp;id=b2af978303';
@@ -63,13 +66,19 @@ class SubscriptionForm extends React.Component {
     const { status } = this.state;
 
     return (
+<<<<<<< HEAD
 	<I18n ns="translations">
 		{
 		(t) => (
-      <div className={styles.container}>
+      <div id="subscription-form">
         <div className="container text-center">
           <h2>{t('subscription.1')}</h2>
-		  <h3>{t('subscription.6')}</h3>
+=======
+      <div className={styles.container}>
+        <div className="container text-center">
+          <h2>Do you have any questions?</h2>
+          <h3>Don't hesitate and get in touch with us</h3>
+>>>>>>> Header completely done.
 
           <form action={action} method="post" noValidate>
             <div id="subscription-form-inner">
