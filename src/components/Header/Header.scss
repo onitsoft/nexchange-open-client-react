@@ -10,6 +10,7 @@
   :global .navbar-toggle {
     border: 1px solid $gray;
     margin-top: 2px;
+    margin-right: 0;
 
     :global .icon-bar {
       background: $gray;
