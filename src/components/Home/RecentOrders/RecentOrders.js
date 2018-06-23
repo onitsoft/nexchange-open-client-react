@@ -12,17 +12,11 @@ import config from 'Config';
 import LoadingComponent from './LoadingComponent/LoadingComponent';
 
 class RecentOrders extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    orders: [],
+  };
 
-    this.state = {
-      orders: [],
-    };
-
-    this.fetchRecentOrders = this.fetchRecentOrders.bind(this);
-  }
-
-  fetchRecentOrders(coinsInfo = this.props.coinsInfo) {
+  fetchRecentOrders = (coinsInfo = this.props.coinsInfo) => {
     let params = urlParams(),
       depositCurrencies = coinsInfo.filter(coin => coin.is_quote_of_enabled_pair),
       receiveCurrencies = coinsInfo.filter(coin => coin.is_base_of_enabled_pair);
@@ -53,7 +47,7 @@ class RecentOrders extends Component {
     this.timeout = setTimeout(() => {
       this.fetchRecentOrders();
     }, config.RECENT_ORDERS_INTERVAL);
-  }
+  };
 
   componentWillUnmount() {
     clearTimeout(this.timeout);
@@ -117,10 +111,6 @@ class RecentOrders extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    coinsInfo: state.coinsInfo,
-  };
-}
+const mapStateToProps = ({ coinsInfo }) => ({ coinsInfo });
 
 export default connect(mapStateToProps)(RecentOrders);
