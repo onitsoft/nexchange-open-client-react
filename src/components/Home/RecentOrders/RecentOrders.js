@@ -10,6 +10,7 @@ import urlParams from 'Utils/urlParams';
 import config from 'Config';
 
 import LoadingComponent from './LoadingComponent/LoadingComponent';
+import styles from './RecentOrders.scss';
 
 class RecentOrders extends Component {
   state = {
@@ -64,28 +65,47 @@ class RecentOrders extends Component {
       return (
 	  <I18n ns="translations">
 		{(t, { i18n }) => (
-        <div key={order.unique_reference} className="recent-order">
-          <a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className="overlay">
-            {t('recentorders.2')}
-          </a>
-
-          <div className="col-xs-4 coins-container">
-            <div className="coins">
-              <i className={`coin-icon cc ${order.pair.quote.code}`} />
-              <i className="fas fa-arrow-right" aria-hidden="true" />
-              <i className={`coin-icon cc ${order.pair.base.code}`} />
+        <div key={order.unique_reference} className={styles.row}>
+          <div className={`${styles.col} col col-xs-2 col-ms-3`}>
+            <div className={styles.middle}>
+              <p className={styles.ago}>{new moment(order.created_on).locale(`${i18n.language}`).fromNow()}</p>
             </div>
           </div>
 
-          <div className="col-xs-4 recent-order-amount">
-            <p>
-              {Math.round(parseFloat(order.amount_quote) * 1000) / 1000} <b className="hidden-xs">{order.pair.quote.code}</b> to{' '}
-              {Math.round(parseFloat(order.amount_base) * 1000) / 1000} <b className="hidden-xs">{order.pair.base.code}</b>
-            </p>
+          <div className={`${styles.col} col col-xs-7 col-ms-7`}>
+            <div className={`${styles.col} col-xs-4 col-ms-5 col-lg-4`}>
+              <div className={styles.middle}>
+                <div className={styles.coin}>
+                  <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
+                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
+                  <span className={styles.amount}>{Math.round(parseFloat(order.amount_quote) * 1000) / 1000}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.col} col-xs-3 col-ms-2`}>
+              <div className={styles.middle}>
+                <img src={arrow} className={styles.arrow} alt="Arrow" />
+              </div>
+            </div>
+
+            <div className={`${styles.col} col-xs-4 col-ms-5 col-lg-6`}>
+              <div className={styles.middle}>
+                <div className={styles.coin}>
+                  <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
+                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
+                  <span className={styles.amount}>{Math.round(parseFloat(order.amount_base) * 1000) / 1000}</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="col-xs-4 created-on">
-            <p>{new moment(order.created_on).locale(`${i18n.language}`).fromNow()}</p>
+          <div className={`${styles.col} col col-xs-3 col-ms-2`}>
+            <div className={styles.middle}>
+              <a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className={styles.btn}>
+                {t('recentorders.3')}
+              </a>
+            </div>
           </div>
         </div>
 		)}</I18n>
@@ -95,11 +115,11 @@ class RecentOrders extends Component {
     return (
 	<I18n ns="translations">
 	{(t) => (
-      <div id="recent-orders">
+      <div className={styles.container}>
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <h2>{t('recentorders.1')}</h2>
+              <h2 className="title">{t('recentorders.1')}</h2>
 
               <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
             </div>
