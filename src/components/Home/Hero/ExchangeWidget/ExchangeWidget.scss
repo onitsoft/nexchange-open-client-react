@@ -6,7 +6,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-top: 110px;
+    padding-top: 100px;
   }
 }
 
@@ -20,7 +20,7 @@
   text-align: left;
 
   @media (min-width: $screen-md-min) {
-    padding: 36px 75px 30px;
+    padding: 36px 75px 35px;
   }
 }
 

@@ -82,3 +82,13 @@
     margin: 0;
   }
 }
+
+.group {
+  @media (min-width: $screen-lg-min) {
+    padding: 0 100px;
+
+    .btn.btn.btn {
+      right: 100px;
+    }
+  }
+}
