@@ -28,7 +28,7 @@ a {
 
 p,
 li {
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.5em;
 }
 
@@ -142,13 +142,12 @@ input[type='number']:hover::-webkit-outer-spin-button {
 }
 
 .title {
-  margin-bottom: 60px;
+  margin: 60px 0;
   font-size: 25px;
   color: $black;
 
   @media (min-width: $screen-sm-min) {
     font-size: 36px;
-    margin-bottom: 70px;
   }
 }
 
