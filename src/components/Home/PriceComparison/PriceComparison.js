@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import axios from 'axios';
 import config from 'Config';
+import styles from './PriceComparison.scss';
 
 class PriceComparison extends Component {
   state = {
@@ -19,11 +20,11 @@ class PriceComparison extends Component {
 
     if (isNaN(diff)) return '...';
 
-    if (diff > 0) return <span className="text-danger">(-{Math.abs(diff)}%)</span>;
+    if (diff > 0) return <span className="error">(-{Math.abs(diff)}%)</span>;
     else if (diff === 0) {
       return <span>({Math.abs(diff)}%)</span>;
     } else {
-      return <span className="text-success">(+{Math.abs(diff)}%)</span>;
+      return <span className="success">(+{Math.abs(diff)}%)</span>;
     }
   };
 
@@ -150,17 +151,16 @@ class PriceComparison extends Component {
 
   render() {
     return (
-      <div id="compare">
+      <div className={styles.compare}>
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-		       <I18n ns="translations">
-		        {(t) => (
-		        <div>
-		          <h2>{t('pricecomparison.1')}</h2>
-		        </div>
-		        )}</I18n>
-              <div className="comparison-table">
+		      <I18n ns="translations">
+		      {(t) => (
+              <h2 className="title">{t('pricecomparison.1')}</h2>
+			  )}</I18n>
+
+              <div className={styles['comparison-table']}>
                 <table className="table">
                   <thead>
                     <tr>
