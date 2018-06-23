@@ -141,6 +141,17 @@ input[type='number']:hover::-webkit-outer-spin-button {
   z-index: 9999;
 }
 
+.title {
+  margin-bottom: 60px;
+  font-size: 25px;
+  color: $black;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 36px;
+    margin-bottom: 70px;
+  }
+}
+
 @media (min-width: $screen-xs-min) {
 }
 @media (min-width: $screen-ms-min) {
