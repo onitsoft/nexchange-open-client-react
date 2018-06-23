@@ -34,9 +34,44 @@
     border-radius: 100px;
     color: #9c9c9c;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 7px;
     margin: 0 5px;
     font-size: 20px;
+
+    &:hover {
+      &.wikipedia-w {
+        background: #494f57;
+      }
+      &.twitter {
+        background: #1da1f2;
+      }
+      &.medium {
+        background: #3cb371;
+      }
+      &.linkedin {
+        background: #0077b5;
+      }
+      &.github {
+        background: #222222;
+      }
+      &.rss {
+        background: #f26522;
+      }
+      &.stack-overflow {
+        background: #f48024;
+      }
+      &.facebook {
+        background: #3b5998;
+      }
+      &.slack {
+        background: #e01563;
+      }
+      &.telegram {
+        background: #0088cc;
+      }
+
+      color: #fff;
+    }
   }
 }
 
