@@ -2,11 +2,9 @@ $recent-orders-row-height: 55px;
 
 #recent-orders {
   padding: 15px 0 65px;
-  background: #f8f7f8;
+  background: #f0f0f0;
   h2 {
     margin-bottom: 35px;
-  }
-  .recent-orders-container {
   }
   .recent-order {
     height: $recent-orders-row-height;
