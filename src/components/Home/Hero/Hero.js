@@ -4,22 +4,18 @@ import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 
-let scrollToElement;
+import styles from './Hero.scss';
 
 class Hero extends Component {
-  componentDidMount() {
-    scrollToElement = require('scroll-to-element');
-  }
-
   render() {
     return (
-      <div id="hero">
+      <div className={styles.hero}>
         <ErrorAlert />
 
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <div className="brand">
+              <div className={styles.brand}>
                 <h1>Exchange Cryptocurrencies</h1>
                 <h2>
                   Simple. <span className="text-green">Secure</span>. Transparent.
@@ -28,15 +24,10 @@ class Hero extends Component {
             </div>
 
             <ExchangeWidget store={this.props.store} />
-            <CoinPrices />
           </div>
         </div>
 
-        <div id="mouse-scroll" onClick={() => scrollToElement('#about')}>
-          <span className="arrow-1" aria-hidden="true" />
-          <span className="arrow-2" aria-hidden="true" />
-          <span className="arrow-3" aria-hidden="true" />
-        </div>
+        <CoinPrices />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 body,
 html {
   height: 100%;
-  background: #f8f7f8;
+  background: #fafafa;
 }
 
 #root {
@@ -28,7 +28,7 @@ a {
 
 p,
 li {
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.5em;
 }
 
@@ -54,12 +54,16 @@ a {
   }
 }
 
+.btn {
+  font-family: 'Clan Offc Pro Medium';
+}
+
 .error {
-  color: #f44336 !important;
+  color: $red !important;
 }
 
 .success {
-  color: #4caf50 !important;
+  color: $green !important;
 }
 
 .header-text {
@@ -124,12 +128,27 @@ input[type='number']:hover::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.form-group {
+  position: relative;
+  margin: 0;
+}
+
 .tooltip-inner {
   white-space: pre-wrap;
 }
 
 .sticky-inner-wrapper {
   z-index: 9999;
+}
+
+.title {
+  margin: 60px 0;
+  font-size: 25px;
+  color: $black;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 36px;
+  }
 }
 
 @media (min-width: $screen-xs-min) {

@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@font-face {
+  font-family: 'Clan Offc Pro Bold';
+  src: url('../fonts/ClanOffcPro-Bold.woff2') format('woff2'), url('../fonts/ClanOffcPro-Bold.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clan Offc Pro Medium';
+  src: url('../fonts/ClanOffcPro-Medium.woff2') format('woff2'), url('../fonts/ClanOffcPro-Medium.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clan Offc Pro Book';
+  src: url('../fonts/ClanOffcPro-Book.woff2') format('woff2'), url('../fonts/ClanOffcPro-Book.woff') format('woff');
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Material Icons';

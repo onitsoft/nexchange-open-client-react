@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from 'Config';
+import styles from './PriceComparison.scss';
 
 class PriceComparison extends Component {
   state = {
@@ -18,11 +19,11 @@ class PriceComparison extends Component {
 
     if (isNaN(diff)) return '...';
 
-    if (diff > 0) return <span className="text-danger">(-{Math.abs(diff)}%)</span>;
+    if (diff > 0) return <span className="error">(-{Math.abs(diff)}%)</span>;
     else if (diff === 0) {
       return <span>({Math.abs(diff)}%)</span>;
     } else {
-      return <span className="text-success">(+{Math.abs(diff)}%)</span>;
+      return <span className="success">(+{Math.abs(diff)}%)</span>;
     }
   };
 
@@ -149,13 +150,13 @@ class PriceComparison extends Component {
 
   render() {
     return (
-      <div id="compare">
+      <div className={styles.compare}>
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Real Time Rates</h2>
+              <h2 className="title">Real Time Rates</h2>
 
-              <div className="comparison-table">
+              <div className={styles['comparison-table']}>
                 <table className="table">
                   <thead>
                     <tr>
@@ -169,7 +170,7 @@ class PriceComparison extends Component {
                       <th>
                         <img src="/img/prices/changelly.png" alt="Changelly" />
                       </th>
-                      <th>Best rate</th>
+                      <th />
                     </tr>
                   </thead>
                   <tbody>

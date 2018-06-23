@@ -1,0 +1,27 @@
+.selected-coin {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  padding: 11px 25px 13px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: $black;
+}
+
+.carret {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  left: 8px;
+  width: 8px;
+  height: 5px;
+  background-image: url('../../../../../../img/carret-down.svg');
+}
+
+.coin-icon.coin-icon {
+  position: relative;
+  top: 1px;
+  margin-right: 12px;
+  font-size: 24px;
+}

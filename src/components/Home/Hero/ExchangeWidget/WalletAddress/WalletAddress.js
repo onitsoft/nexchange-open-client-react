@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
+import styles from './WalletAddress.scss';
 
 class WalletAddress extends Component {
   constructor(props) {
@@ -52,19 +53,16 @@ class WalletAddress extends Component {
 
   render() {
     return (
-      <div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
-        <form className="form-group label-floating has-warning" onSubmit={this.handleSubmit}>
-          <label htmlFor="withdraw-addr" className="control-label text-green">
-            Your {this.props.selectedCoin.receive} Address
-          </label>
-
+      <div className={`${styles.container} col-xs-12 active`}>
+        <form className="form-group" onSubmit={this.handleSubmit}>
           <input
             type="text"
             ref={this.props.inputRef}
-            className="form-control addr"
+            className={`form-control ${styles.input}`}
             id="withdraw-addr"
             onChange={this.handleChange}
             value={this.state.address}
+            placeholder="Enter your wallet address"
           />
         </form>
       </div>
