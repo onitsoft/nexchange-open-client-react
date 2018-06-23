@@ -9,14 +9,10 @@ import styles from './Header.scss';
 let scrollToElement;
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showFaqModal: false,
-      showSupportModal: false,
-    };
-  }
+  state = {
+    showFaqModal: false,
+    showSupportModal: false,
+  };
 
   componentDidMount() {
     scrollToElement = require('scroll-to-element');
@@ -32,7 +28,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className={styles.header}>
+      <div className={`${styles.header} ${window.location.pathname === '/' ? styles.home : ''}`}>
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -44,7 +40,7 @@ class Header extends Component {
 
             <Link to="/">
               <div className={styles['logo-container']}>
-                <img src="/img/logo-white.svg" alt="Logo" />
+                {window.location.pathname === '/' ? <img src="/img/logo-white.svg" alt="Logo" /> : <img src="/img/logo.svg" alt="Logo" />}
               </div>
             </Link>
           </div>

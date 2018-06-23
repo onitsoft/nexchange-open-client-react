@@ -1,5 +1,6 @@
 import React from 'react';
 import jsonp from 'jsonp';
+import styles from './SubscriptionForm.scss';
 
 const getAjaxUrl = url => url.replace('/post?', '/post-json?');
 const subscribeUrl = 'https://nexchange.us16.list-manage.com/subscribe/post?u=918b60ce5b05d82384c293db0&amp;id=b2af978303';
@@ -61,9 +62,10 @@ class SubscriptionForm extends React.Component {
     const { status } = this.state;
 
     return (
-      <div id="subscription-form">
+      <div className={styles.container}>
         <div className="container text-center">
-          <h2>Get in touch</h2>
+          <h2>Do you have any questions?</h2>
+          <h3>Don't hesitate and get in touch with us</h3>
 
           <form action={action} method="post" noValidate>
             <div id="subscription-form-inner">
