@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './About.scss';
 
 const About = () => (
-  <div className={styles.about}>
+  <div id="about" className={styles.about}>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
