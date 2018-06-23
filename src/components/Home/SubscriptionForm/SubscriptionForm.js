@@ -71,7 +71,7 @@ class SubscriptionForm extends React.Component {
             <div id="subscription-form-inner">
               <div className="col-xs-12 col-ms-8 col-ms-push-2">
                 <div className="row">
-                  <div className="form-group is-empty has-success">
+                  <div className={`${styles.group} form-group is-empty has-success`}>
                     <input
                       ref={node => (this.input = node)}
                       type="email"
