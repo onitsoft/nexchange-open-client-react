@@ -6,6 +6,7 @@ import { fetchCoinDetails, fetchPairs } from 'Actions';
 
 import Hero from './Hero/Hero';
 import About from './About/About';
+import Team from './Team/Team';
 import Testimonials from './Testimonials/Testimonials';
 import RecentOrders from './RecentOrders/RecentOrders';
 import SubscriptionForm from './SubscriptionForm/SubscriptionForm';
@@ -25,6 +26,7 @@ export class Home extends Component {
         <Testimonials />
         <PriceComparison />
         <About />
+        <Team />
         <SubscriptionForm />
       </div>
     );
