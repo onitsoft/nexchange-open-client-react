@@ -43,7 +43,7 @@ const Privacy = props => {
           </p>
           </Trans>
 
-          <Trans i18nKey="privacy.colletinfo">
+          <Trans i18nKey="privacy.collectinfo">
             <h2>Collection of information</h2>
           </Trans>
 

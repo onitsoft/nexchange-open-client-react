@@ -35,7 +35,16 @@ class OrderReferrals extends Component {
      {(t) => (
       <div>
         <div className={styles['form-group']}>
-          <input className={styles['referral-input']} type="text" value={this.state.link} disabled={true} required />
+          <CopyToClipboard text={this.state.link} onCopy={() => this.triggerCopyTooltip()}>
+            <input
+              className={styles['referral-input']}
+              type="text"
+              value={this.state.link}
+              title="Click to copy!"
+              onFocus={e => e.target.blur()}
+              required
+            />
+          </CopyToClipboard>
 
           <CopyToClipboard text={this.state.link} onCopy={() => this.triggerCopyTooltip()}>
             <button id="copy-to-clipboard-link" type="button" className={`btn btn-primary ${styles.btn}`}>

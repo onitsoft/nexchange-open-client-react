@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
+import styles from './WalletAddress.scss';
 import { I18n, Interpolate } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
@@ -58,8 +59,8 @@ class WalletAddress extends Component {
     return (
 	<I18n ns="translations">
 	{(t) => (
-      <div id="wallet-address" className={this.props.wallet.show ? 'col-xs-12 active' : 'col-xs-12'}>
-        <form className="form-group label-floating has-warning" onSubmit={this.handleSubmit}>
+      <div className={`${styles.container} col-xs-12 active`}>
+        <form className="form-group" onSubmit={this.handleSubmit}>
           <label htmlFor="withdraw-addr" className="control-label text-green">
             <Interpolate i18nKey="generalterms.youraddress" selectedCoin={this.props.selectedCoin.receive} />
             {/* 
@@ -71,10 +72,11 @@ class WalletAddress extends Component {
           <input
             type="text"
             ref={this.props.inputRef}
-            className="form-control addr"
+            className={`form-control ${styles.input}`}
             id="withdraw-addr"
             onChange={this.handleChange}
             value={this.state.address}
+            placeholder={t('order.enteraddress')}
           />
         </form>
       </div>

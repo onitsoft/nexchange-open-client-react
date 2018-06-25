@@ -1,0 +1,26 @@
+.input.input.input {
+  margin-top: 18px;
+  padding: 0 0 15px 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: $black;
+
+  &::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &::-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+  }
+}

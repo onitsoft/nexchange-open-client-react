@@ -11,6 +11,7 @@
   "header": {
     "about": "About",
     "faq": "FAQ",
+    "ico": "ICO PAGE",
     "apidocs": "API Docs",
     "compare": "Compare Rates",
     "support": "Support",
@@ -32,7 +33,8 @@
   },
   "recentorders": {
     "1": "Recent Orders",
-    "2": "Click to view on API"
+    "2": "Click to view on API",
+	"3": "View on API"
   },
   "testimonials": {
     "1": "Testimonials",
@@ -47,6 +49,7 @@
   },
   "about":{
     "title": "About Us",
+    "teamtitle": "The People Who Make it Happen",
     "1": "Nexchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.",
     "2": "We are a group of multi-national, multi-disciplinary cryptocurrency professionals.",
     "3": "Our team came together to make this platform after seeing firsthand the need for a fast and reliable exchange on the crypto market.",
@@ -60,6 +63,10 @@
     "chirag": "Information Technology Generalist, International Trader, Growth Hacker and a newly minted Blockchain Fan!",
     "paulina": "Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter.",
     "cyrus": "Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and distributed systems.",
+    "justasv": "User experience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries.",
+    "alejandro": "Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World.",
+    "vincenzo": "Serial entrepreneur, experienced in creating and building global technology businesses within Broadcasting, Media and Security industries.",
+    "charles": "Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions.",
     "you": "You?",
     "youdesc": "<0><0>We are actively hiring for the N.exchange dream team. We are especially on the lookout for talented developers, marketing personnel, a community manager and content writers.</0><1>Drop us a line at <1>careers@n.exchange</1>.</1></0>",
     "israel": "Israel",
@@ -75,16 +82,23 @@
     "4": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but  everything was sorted out. Would use again. 😊"
   },
   "subscription": {
-    "1": "Get in touch",
+    "1": "Do you have any questions?",
     "2": "Enter your email to receive updates about Nexchange",
     "3": "Subscribe",
     "4": "Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.",
-    "5": "Something went wrong. Please try again later."
+    "5": "Something went wrong. Please try again later.",
+	"6": "Don't hesitate and get in touch with us"
   },
   "footer": {
     "1": "TERMS AND CONDITIONS",
     "2": "PRIVACY POLICY",
     "3": "<0>All rights reserved, YOA LTD 2016-2017, England & Wales <1>registered company No. 10009845</1></0>"
+  },
+  "ico": {
+    "action": "JOIN OUR ICO", 
+    "title": "A WHOLE ECO-SYSTEM",
+    "desc": "Accommodate all of your crypto needs under one roof",
+    "presale": "Pre-sale starts in"
   },
   "faq": {
     "ques1": "Who are you?",
@@ -149,6 +163,7 @@
     "2": "to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order."
   },
   "order": {
+    "enteraddress": "Enter your wallet address",
     "copy": "Wallet adress copied!",
     "reference": "Order Reference",
     "api": "See your order details on our API",

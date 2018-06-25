@@ -6,17 +6,15 @@ import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker'
 
+import styles from './Header.scss';
+
 let scrollToElement;
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showFaqModal: false,
-      showSupportModal: false,
-    };
-  }
+  state = {
+    showFaqModal: false,
+    showSupportModal: false,
+  };
 
   componentDidMount() {
     scrollToElement = require('scroll-to-element');
@@ -34,7 +32,7 @@ class Header extends Component {
     return (
 	<I18n ns="translations">
 	{(t, { i18n }) => (
-      <div id="header">
+      <div className={`${styles.header} ${window.location.pathname === '/' ? styles.home : ''}`}>
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -45,8 +43,8 @@ class Header extends Component {
             </button>
 
             <Link to="/">
-              <div className="logo-container">
-                <img src="/img/logo.svg" alt="Logo" />
+              <div className={styles['logo-container']}>
+                {window.location.pathname === '/' ? <img src="/img/logo-white.svg" alt="Logo" /> : <img src="/img/logo.svg" alt="Logo" />}
               </div>
             </Link>
           </div>
@@ -54,20 +52,20 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navigation-index">
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a className="link" href="/#about" onClick={() => scrollToElement('#about')}>
+                <a className={styles.link} href="/#about" onClick={() => scrollToElement('#about')}>
                   {t('header.about')}
                 </a>
               </li>
 
               <li>
-                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
+                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
                   {t('header.faq')}
                 </a>
               </li>
 
               <li>
                 <a
-                  className="link hidden-sm"
+                  className={`${styles.link} hidden-sm`}
                   href="http://docs.nexchange2.apiary.io/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -78,39 +76,59 @@ class Header extends Component {
               </li>
 
               <li>
-                <a className="link" href="/#compare" onClick={() => scrollToElement('#compare')}>
+                <a className={styles.link} href="/#compare" onClick={() => scrollToElement('#compare')}>
                   {t('header.compare')}
                 </a>
               </li>
 
               <li>
-                <a className="link" href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
+                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
                   {t('header.support')}
                 </a>
               </li>
 
-			  <LanguagePicker screenType="large"/>
-
-              <li id="ico-link">
-                <a href="https://n.exchange/ico" className="btn btn-block btn-primary">
-                  ICO
+              <li className={styles['ico-link']}>
+                <a href="https://n.exchange/ico" className={`${styles.btn} btn btn-block btn-primary`}>
+                  {t('header.ico')}
                 </a>
               </li>
 
+              <LanguagePicker screenType="large" />
+
               <li id="social-mobile">
-                <a href="/twitter" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-twitter" aria-hidden="true" />
                 </a>
 
-                <a href="/fb" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/fb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-facebook-f" aria-hidden="true" />
                 </a>
 
-                <a href="/slack" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/slack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-slack-hash" aria-hidden="true" />
                 </a>
 
-                <a href="/telegram" target="_blank" rel="noopener noreferrer" className="link btn btn-simple btn-just-icon visible-xs">
+                <a
+                  href="/telegram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                >
                   <i className="fab fa-telegram" aria-hidden="true" />
                 </a>
                 <LanguagePicker screenType="small" />
@@ -121,7 +139,7 @@ class Header extends Component {
                   href="/twitter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -136,7 +154,7 @@ class Header extends Component {
                   href="/fb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -151,7 +169,7 @@ class Header extends Component {
                   href="/slack"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"
@@ -166,7 +184,7 @@ class Header extends Component {
                   href="/telegram"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-simple btn-just-icon"
+                  className={`${styles.social} btn btn-simple btn-just-icon`}
                   rel="tooltip"
                   title=""
                   data-placement="bottom"

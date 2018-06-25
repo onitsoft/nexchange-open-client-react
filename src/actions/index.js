@@ -16,16 +16,14 @@ export const setWallet = payload => ({
   payload,
 });
 
-export const selectCoin = payload => dispatch => {
-  dispatch({ type: types.COIN_SELECTED, payload });
-
-  dispatch(
-    setWallet({
-      address: '',
-      valid: false,
-      show: false,
-    })
-  );
+export const selectCoin = selectedCoins => (dispatch, getState) => {
+  dispatch({
+    type: types.COIN_SELECTED,
+    payload: {
+      selectedCoins,
+      pairs: getState().pairs,
+    },
+  });
 };
 
 export const fetchCoinDetails = payload => dispatch => {
@@ -59,9 +57,10 @@ export const fetchCoinDetails = payload => dispatch => {
 };
 
 export const fetchPrice = payload => dispatch => {
-  return new Promise(async (resolve, reject) => {
-    const pair = payload.pair;
+  const pair = payload.pair;
+  const lastEdited = payload.lastEdited;
 
+  return new Promise(async (resolve, reject) => {
     const makeRequest = url => {
       return axios
         .get(url)
@@ -78,7 +77,7 @@ export const fetchPrice = payload => dispatch => {
 
       data['deposit'] = amounts.amount_quote;
       data['receive'] = amounts.amount_base;
-      data['lastEdited'] = payload.lastEdited;
+      data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
       dispatch({
@@ -127,6 +126,11 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
+      window.ga('send', 'event', {
+        eventCategory: 'Amount input/coin selector',
+        eventAction: 'Fetch default amounts',
+      });
+
       if (payload.coinSelector) {
         let url = `${config.API_BASE_URL}/get_price/${pair}/`;
         const amounts = await makeRequest(url);

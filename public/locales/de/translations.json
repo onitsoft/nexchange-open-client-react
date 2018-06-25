@@ -11,6 +11,7 @@
   "header": {
     "about": "Über uns",
     "faq": "FAQ",
+    "ico": "ICO SEITE",
     "apidocs": "API Docs",
     "compare": "Vergleich Kurse",
     "support": "Support",
@@ -35,7 +36,7 @@
   "recentorders": {
     "1": "Letzte Aufträge",
     "2": "Klicken Sie für Ansicht in API",
-    "3": "zu"
+    "3": "In der API anzeigen"
   },
   "testimonials": {
     "title": "Referenzen",
@@ -50,6 +51,7 @@
   },
   "about":{
     "title": "Über Uns",
+    "teamtitle": "Die Leute, die es möglich machen",
     "1": "N.EXCHANGE ist eine schnelle, verlässliche und vollständig transparente Börse für Kryptowährungen, entwickelt von Krypto-Enthusiasten für Krypto-Enthusiasten.",
     "2": "Wir sind ein Team multinationaler, interdisziplinärer Experten für Kryptowährungen.",
     "3": "Unser Team ist zusammengekommen, um diese Plattform zu entwickeln, nachdem wir aus erster Hand den Bedarf an einer schnellen, verlässlichen Börse auf dem Markt für Kryptowährungen gespürt haben.",
@@ -61,8 +63,12 @@
     "karolis": "Full-Stack Entwickler. Unternehmer aus vollem Herzen.  Genießt es, Produkte durch Code zum Leben zu erwecken.",
     "justas": "DevOps Orchestrator. Shuffling Docker, Swarm & Kubernetes. Befürworter von micro-component Design und nahtloser Skalierbarkeit.",
     "chirag": "Informationstechnologie Generalist, Internationaler Händler, Wachstumshacker und frischgebackener Blockchain Fan!",
-    "paulina": "Magierin des Produktmanagements. Liebt es, Produkt Usability zu erschaffen und zu verbessern. Women in tech supporter and recreational weightlifter",
+    "paulina": "Magierin des Produktmanagements. Liebt es, Produkt Usability zu erschaffen und zu verbessern. Freizeit-Gewichtheberin und ist für Frauen im Technologiebereich.",
     "cyrus": "Cornell University MEng, Informatik. Lerne zu lehren, lehre zu lernen. Leidenschaft für Programmierung, Astronomie und kürzlich für dezentralisierte und verteilte Systeme.",
+    "justasv": "User Experience Spezialist mit 7 Jahren Erfahrung. Arbeitete mit vielen erfolgreichen Projekten in den Bereichen Blockchain, Crypto, Startup, E-Commerce.",
+    "alejandro": "Erfahrener globaler Investor, Gründer der Nexus Group, ToN Ventures, 01Labs und 01Ventures. Im Jahr 2013 von Private Equity World zu den 50 einflussreichsten Persönlichkeiten in Lateinamerika ernannt.",
+    "vincenzo": "Serial Entrepreneur, erfahren in der Schaffung und dem Aufbau von globalen Technologieunternehmen in der Rundfunk-, Medien- und Sicherheitsbranche.",
+    "charles": "Senior Software Engineer und IT Architekt mit fast 40 Jahren Branchenerfahrung. Derzeit arbeitet er mit Blockchain-Technologie, um Lösungen mit hoher Kapazitätsrate zu entwickeln.",
     "you": "Du?",
     "youdesc": "<0><0>Wir suchen stets Zuwachs für unser N.exchange Dream-Team. Wir suchen insbesondere talentierte Entwickler, Marketing-Personal, einen Community-Manager und Autoren.</0><1>Schreiben Sie einfach an <1>careers@n.exchange</1>.</1></0>",
     "israel": "Israel",
@@ -75,12 +81,19 @@
     "2": "Geben Sie Ihre E-Mail ein, um Updates über N.EXCHANGE zu erhalten",
     "3": "Abonnieren",
     "4": "Fast geschafft... Wir müssen Ihre E-Mail-Adresse bestätigen. Um das Abonnement abzuschließen, klicken Sie bitte den Link in der E-Mail, die wir Ihnen soeben geschickt haben.",
-    "5": "Etwas ist falsch gelaufen. Bitte versuchen Sie es später erneut."
+    "5": "Etwas ist falsch gelaufen. Bitte versuchen Sie es später erneut.",
+    "6": "Zögern Sie nicht und nehmen Sie Kontakt mit uns auf"
   },
   "footer": {
     "1": "Geschäftsbedingungen",
     "2": "Datenschutzerklärung",
     "3": "<0>Alle Rechte gesichert, YOA LTD 2016-2017, England & Wales <2>Registiernummernr. 10009845</2></0>"
+  },
+  "ico": {
+     "action": "WERDEN SIE TEIL UNSERES ICO",
+     "title": "EIN GANZES ECO-SYSTEM",
+     "desc": "Platzieren Sie alle Ihre Krypto-Bedürfnisse unter einem Dach",
+     "presale": "Vorverkauf beginnt in"
   },
   "support": {
     "1": "Kundendienst",
@@ -117,6 +130,7 @@
     "2": "um diese Seite zu Ihren Lesezeichen hinzu zu fügen. Sie können jederzeit zu dieser Seite zurückkehren, um den Status Ihres Auftrags abzurufen."
   },
   "order": {
+    "enteraddress": "Geben Sie Ihre Wallet-Adresse ein",
 	"copy": "Adresse der Wallet kopiert!",
     "reference": "Auftrag-Referenz",
     "api": "Details Ihres Auftrages in unsere API",

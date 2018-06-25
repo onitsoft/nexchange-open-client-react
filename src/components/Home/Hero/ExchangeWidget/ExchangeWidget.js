@@ -13,6 +13,8 @@ import { bindCrispEmail } from 'Utils/crispEmailBinding';
 import CoinInput from './CoinInput/CoinInput';
 import WalletAddress from './WalletAddress/WalletAddress';
 
+import styles from './ExchangeWidget.scss';
+
 class ExchangeWidget extends Component {
   constructor(props) {
     super();
@@ -24,12 +26,6 @@ class ExchangeWidget extends Component {
 
     this.placeOrder = this.placeOrder.bind(this);
     this.showWalletAddress = this.showWalletAddress.bind(this);
-  }
-
-  componentDidMount() {
-    $(function() {
-      $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
-    });
   }
 
   componentWillUnmount() {
@@ -99,12 +95,6 @@ class ExchangeWidget extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if ($('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby')) {
-      let tooltipId = $('#exchange-widget [data-toggle="tooltip"]').attr('aria-describedby');
-      $(`#${tooltipId} .tooltip-inner`).html(
-          `${i18n.t('exchangewidget.fees')} ${nextProps.amounts.deposit * 0.005} ${nextProps.selectedCoin.deposit}.`
-      );
-    }
 
     if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
       this.props.setWallet({ address: '', valid: false, show: false });
@@ -115,43 +105,34 @@ class ExchangeWidget extends Component {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     return (
-      <div className="col-xs-12">
-        <div id="exchange-widget">
-          <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-          <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+      <div className={styles.container}>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className={styles.widget}>
+                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
-          <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
+				<I18n ns="translations">
+				 {(t) => (
+                <div className={styles.submit}>
+                  <p className={styles.info}>{t('order.feeinfo')}</p>
 
-        <I18n ns="translations">
-         {(t) => (
-          <div className="col-xs-12 text-center">
-            {!this.props.wallet.show ? (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.showWalletAddress}
-                disabled={
-                  this.props.error.show && (this.props.error.type === 'INVALID_AMOUNT' || this.props.error.type === 'INVALID_PAIR')
-                    ? 'disabled'
-                    : null
-                }
-              >
-                {t('exchangewidget.1')}
-              </button>
-            ) : (
-              <button
-                className="btn btn-block btn-primary proceed"
-                onClick={this.placeOrder}
-                disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
-              >
-                {t('exchangewidget.2')}
-                {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-              </button>
-            )}
-
-            <p id="fee-info">{t('order.feeinfo')}</p>
+                  <button
+                    className={`${styles.btn} btn btn-block btn-primary`}
+                    onClick={this.placeOrder}
+                    disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
+                  >
+                    {t('exchangewidget.2')}
+                    {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                  </button>
+                </div>
+				)}
+			  </I18n>
+              </div>
+            </div>
           </div>
-			)}
-		  </I18n>
         </div>
       </div>
     );
@@ -165,8 +146,8 @@ const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
   wallet,
 });
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
     {
       setWallet: setWallet,
       setOrder: setOrder,
@@ -174,7 +155,6 @@ function mapDispatchToProps(dispatch) {
     },
     dispatch
   );
-}
 
 export default connect(
   mapStateToProps,

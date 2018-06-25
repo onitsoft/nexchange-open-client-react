@@ -18,13 +18,16 @@ describe('selected coin reducer', () => {
 
   it('should handle COIN_SELECTED', () => {
     const payload = {
-      deposit: 'BTC',
-      receive: 'XVG',
-      prev: {
+      selectedCoins: {
         deposit: 'BTC',
-        receive: 'ETH',
+        receive: 'XVG',
+        prev: {
+          deposit: 'BTC',
+          receive: 'ETH',
+        },
+        lastSelected: 'deposit',
       },
-      lastSelected: 'deposit',
+      pairs: undefined,
     };
 
     const action = {
@@ -32,6 +35,6 @@ describe('selected coin reducer', () => {
       payload,
     };
 
-    expect(reducer(initialState, action)).toEqual(payload);
+    expect(reducer(initialState, action)).toEqual(payload.selectedCoins);
   });
 });
