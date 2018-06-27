@@ -34,13 +34,6 @@ describe('ExchangeWidget', () => {
   });
 
   it('submit button changes on wallet shown', () => {
-    expect(wrapShallow.find('button').text()).toEqual('Get Started !');
-
-    wrapShallow.find('button.proceed').simulate('click');
-    wrapShallow.setProps({ wallet: { address: '', valid: false, show: true } });
-
-    wrapShallow = wrapShallow.update();
-
     expect(wrapShallow.find('button').text()).toEqual('Confirm & Place Order');
   });
 });
