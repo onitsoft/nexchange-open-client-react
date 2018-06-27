@@ -1,0 +1,17 @@
+.container {
+  position: absolute;
+  border-radius: 100%;
+  background-image: url('Img/ellipse-full.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+
+  img {
+    width: 43%;
+    height: 43%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

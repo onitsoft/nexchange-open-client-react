@@ -1,6 +1,7 @@
 import React from 'react';
 import Countdown from 'react-countdown-now';
 import CountdownItem from './CountdownItem/CountdownItem';
+import Ellipse from './Ellipse/Ellipse';
 import styles from './ICO.scss';
 
 const renderer = ({ days, hours, minutes, seconds }) => (
@@ -27,8 +28,14 @@ const ICO = () => {
           </div>
 
           <div className="col-xs-12 col-sm-push-1 col-sm-6 col-lg-5 col-lg-push-1">
-            <h4>Pre-sale starts in</h4>
-            <Countdown date={Date.now() + (Date.parse('2018-07-01') - Date.now())} renderer={renderer} />
+            <Ellipse coin="coss" style={{ left: -40, bottom: -10, width: 36, height: 36 }} />
+            <Ellipse coin="eos" style={{ left: '70%', top: -20, width: 32, height: 32 }} />
+            <Ellipse coin="btc" style={{ right: -20, top: 20, width: 48, height: 48 }} />
+
+            <div className={styles.countdown}>
+              <h4>Pre-sale starts in</h4>
+              <Countdown date={Date.now() + (Date.parse('2018-07-01') - Date.now())} renderer={renderer} />
+            </div>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ describe('ExchangeWidget', () => {
     error: { show: false, type: 'INVALID_AMOUNT' },
   };
   const mockStore = configureStore();
-  let store, wrap, wrapShallow;
+  let store, wrapShallow;
 
   beforeEach(() => {
     store = mockStore(initialState);
