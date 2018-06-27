@@ -20,6 +20,10 @@
     background-size: 100%;
     background-position: 50% 50%;
     transform: rotate(180deg);
+
+    @media (min-width: $screen-lg-min) {
+      left: 50%;
+    }
   }
 
   @media (min-width: $screen-sm-min) {
