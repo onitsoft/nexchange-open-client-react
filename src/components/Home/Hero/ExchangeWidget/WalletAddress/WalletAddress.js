@@ -53,7 +53,7 @@ class WalletAddress extends Component {
 
   render() {
     return (
-      <div className={`${styles.container} col-xs-12 active`}>
+      <div className="col-xs-12 active">
         <form className="form-group" onSubmit={this.handleSubmit}>
           <input
             type="text"
