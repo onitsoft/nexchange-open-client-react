@@ -73,15 +73,11 @@
 
 .coin {
   position: relative;
-  top: 8px;
+  top: -2px;
   font-size: 30px;
 
-  @media (min-width: $screen-sm-min) {
-    top: 9px;
-  }
-
   @media (min-width: $screen-lg-min) {
-    top: 11px;
+    top: -4px;
     font-size: 40px;
   }
 }
