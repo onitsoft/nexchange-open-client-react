@@ -71,7 +71,7 @@ class RecentOrders extends Component {
           </div>
 
           <div className={`${styles.col} col col-xs-7 col-ms-7`}>
-            <div className={`${styles.col} col-xs-4 col-md-5`}>
+            <div className={`${styles.col} col-xs-4 col-ms-5 col-lg-4`}>
               <div className={styles.middle}>
                 <div className={styles.coin}>
                   <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
@@ -87,7 +87,7 @@ class RecentOrders extends Component {
               </div>
             </div>
 
-            <div className={`${styles.col} col-xs-4 col-ms-5`}>
+            <div className={`${styles.col} col-xs-4 col-ms-5 col-lg-6`}>
               <div className={styles.middle}>
                 <div className={styles.coin}>
                   <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
