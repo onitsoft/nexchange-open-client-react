@@ -117,6 +117,10 @@ textarea.form-control:focus {
   color: $green !important;
 }
 
+input {
+  border: none;
+}
+
 input[type='number'] {
   appearance: textfield;
   -moz-appearance: textfield;
