@@ -62,7 +62,7 @@ class WalletAddress extends Component {
             id="withdraw-addr"
             onChange={this.handleChange}
             value={this.state.address}
-            placeholder="Enter your wallet address"
+            placeholder={`Enter your ${this.props.selectedCoin.receive} wallet address`}
           />
         </form>
       </div>
@@ -70,22 +70,8 @@ class WalletAddress extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    selectedCoin: state.selectedCoin,
-    wallet: state.wallet,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      errorAlert: errorAlert,
-      setWallet: setWallet,
-    },
-    dispatch
-  );
-}
+const mapStateToProps = ({ selectedCoin, wallet }) => ({ selectedCoin, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet }, dispatch);
 
 export default connect(
   mapStateToProps,
