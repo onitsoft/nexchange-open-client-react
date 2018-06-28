@@ -126,13 +126,17 @@
   }
 
   .btn {
-    padding: 10px 20px;
+    padding: 10px 5px;
     margin: 7px 10px 0 0;
     display: inline-block;
     font-size: 12px;
 
     @media (min-width: $screen-sm-min) {
       margin-top: 0px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      padding: 10px 20px;
     }
   }
 }

@@ -34,7 +34,7 @@ const ICO = () => {
 
             <div className={styles.countdown}>
               <h4>Pre-sale starts in</h4>
-              <Countdown date={Date.now() + (Date.parse('2018-07-01') - Date.now())} renderer={renderer} />
+              <Countdown date={Date.now() + (Date.parse('2018-07-15') - Date.now())} renderer={renderer} />
             </div>
           </div>
         </div>
