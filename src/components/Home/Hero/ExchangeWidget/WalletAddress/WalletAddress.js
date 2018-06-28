@@ -62,7 +62,7 @@ class WalletAddress extends Component {
             id="withdraw-addr"
             onChange={this.handleChange}
             value={this.state.address}
-            placeholder={`Enter your ${this.props.selectedCoin.receive} wallet address`}
+            placeholder={`Enter your ${this.props.selectedCoin.receive ? this.props.selectedCoin.receive : '...'} wallet address`}
           />
         </form>
       </div>
