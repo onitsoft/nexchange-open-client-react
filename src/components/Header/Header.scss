@@ -52,6 +52,10 @@
   }
 
   .link.link.link.link {
+    &:hover {
+      text-decoration: underline;
+    }
+
     @media (min-width: $screen-sm-min) {
       color: #fff;
     }
