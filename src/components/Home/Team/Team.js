@@ -145,6 +145,15 @@ const Team = () => (
             linkedin: 'https://www.linkedin.com/in/cicunningham/',
           }}
         />
+
+        <TeamMember
+          id="vit"
+          name="Vít Jedlička"
+          description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+          social={{
+            linkedin: 'https://www.linkedin.com/in/vit-jedlicka-9115aa2/',
+          }}
+        />
       </div>
     </div>
   </div>
