@@ -19,11 +19,11 @@ class PriceComparison extends Component {
 
     if (isNaN(diff)) return '...';
 
-    if (diff > 0) return <span className="error">(-{Math.abs(diff)}%)</span>;
+    if (diff > 0) return <span className="success">(-{Math.abs(diff)}%)</span>;
     else if (diff === 0) {
       return <span>({Math.abs(diff)}%)</span>;
     } else {
-      return <span className="success">(+{Math.abs(diff)}%)</span>;
+      return <span className="error">(+{Math.abs(diff)}%)</span>;
     }
   };
 

@@ -85,7 +85,7 @@ class Header extends Component {
 
               <li className={styles['ico-link']}>
                 <a href="https://n.exchange/ico" className={`${styles.btn} btn btn-block btn-primary`}>
-                  ICO PAGE
+                  JOIN OUR ICO
                 </a>
               </li>
 

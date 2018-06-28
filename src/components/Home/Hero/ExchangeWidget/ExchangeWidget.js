@@ -115,7 +115,7 @@ class ExchangeWidget extends Component {
                   <p className={styles.info}>The indicated price is final, all fees are included.</p>
 
                   <button
-                    className={`${styles.btn} btn btn-block btn-primary`}
+                    className={`${styles.btn} btn btn-block btn-primary proceed`}
                     onClick={this.placeOrder}
                     disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
                   >

@@ -4,7 +4,7 @@ import Fuse from 'fuse.js';
 import cx from 'classnames';
 import urlParams from 'Utils/urlParams';
 import debounce from 'Utils/debounce';
-import styles from './CoinsDropdown.css';
+import styles from './CoinsDropdown.scss';
 
 class CoinsDropdown extends Component {
   state = { value: '' };
@@ -72,7 +72,7 @@ class CoinsDropdown extends Component {
   renderSearch = () => {
     return (
       <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
-        <i className="fas fa-search" aria-hidden="true" />
+        <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
         <input
           type="text"
           placeholder="Search"
@@ -91,14 +91,18 @@ class CoinsDropdown extends Component {
     return (
       <div className={styles['coins-list']}>
         {this.getCoins().map(coin => (
-          <div className={`row ${styles.coin}`} key={coin.code} onClick={() => this.props.onClick(coin.code)}>
+          <div className={`row coin ${styles.coin}`} key={coin.code} onClick={() => this.props.onClick(coin.code)}>
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
             </div>
             <div className="col-xs-3">
-              <b>{coin.code}</b>
+              <p>
+                <b>{coin.code}</b>
+              </p>
             </div>
-            <div className="col-xs-6 text-capitalize">{coin.name}</div>
+            <div className="col-xs-6 text-capitalize">
+              <p>{coin.name}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -7,8 +7,9 @@ html {
 #root {
   position: relative;
   min-height: 100%;
-  @media (min-width: $screen-md-min) {
-    padding-bottom: 105px;
+
+  @media (min-width: $screen-sm-min) {
+    padding-bottom: 114px;
   }
 }
 
@@ -114,6 +115,10 @@ textarea.form-control:focus {
 
 .text-green {
   color: $green !important;
+}
+
+input {
+  border: none;
 }
 
 input[type='number'] {

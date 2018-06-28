@@ -1,22 +1,10 @@
 .box.box {
-  padding: 20px 0 20px 10px;
+  padding: 22px 0 18px 10px;
   overflow: hidden;
 
   @media (min-width: $screen-lg-min) {
     padding-left: 30px;
   }
-}
-
-.box h5 {
-  font-size: 16px;
-
-  @media (min-width: $screen-ms-min) {
-    font-size: 18px;
-  }
-}
-
-.box h6 {
-  font-size: 12px;
 }
 
 .box h5,
@@ -26,8 +14,28 @@
   color: $black;
 }
 
+.box h5 {
+  font-size: 16px;
+
+  @media (min-width: $screen-ms-min) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: 4px;
+  }
+}
+
+.box h6 {
+  font-size: 12px;
+}
+
 :global .order-fiat .box.fiat h5 {
-  margin: 9px 0;
+  margin: 7px 0;
+
+  @media (min-width: $screen-lg-min) {
+    margin: 13px 0;
+  }
 }
 
 .tooltip {
@@ -73,15 +81,11 @@
 
 .coin {
   position: relative;
-  top: 8px;
+  top: -2px;
   font-size: 30px;
 
-  @media (min-width: $screen-sm-min) {
-    top: 9px;
-  }
-
   @media (min-width: $screen-lg-min) {
-    top: 11px;
+    top: -4px;
     font-size: 40px;
   }
 }
