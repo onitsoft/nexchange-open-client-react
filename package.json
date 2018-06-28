@@ -130,6 +130,7 @@
       "^Config$": "<rootDir>/src/config.js",
       "^Actions(.*)$": "<rootDir>/src/actions$1",
       "^StatusCodes": "<rootDir>/src/statusCodes.js",
+      "^Img(.*)$": "<rootDir>/src/img$1",
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [

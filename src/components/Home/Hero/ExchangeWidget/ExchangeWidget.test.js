@@ -16,11 +16,6 @@ describe('ExchangeWidget', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrap = mount(
-      <Provider store={store}>
-        <ExchangeWidget />
-      </Provider>
-    );
     wrapShallow = shallow(<ExchangeWidget store={store} />).dive();
   });
 

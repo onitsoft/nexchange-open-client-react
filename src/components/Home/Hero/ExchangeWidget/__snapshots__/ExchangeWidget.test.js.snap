@@ -117,7 +117,7 @@ ShallowWrapper {
                                                 The indicated price is final, all fees are included.
                                         </p>
                                         <button
-                                                className="btn btn btn-block btn-primary"
+                                                className="btn btn btn-block btn-primary proceed"
                                                 disabled="disabled"
                                                 onClick={[Function]}
                                         >
@@ -166,7 +166,7 @@ ShallowWrapper {
                                                   The indicated price is final, all fees are included.
                                         </p>
                                         <button
-                                                  className="btn btn btn-block btn-primary"
+                                                  className="btn btn btn-block btn-primary proceed"
                                                   disabled="disabled"
                                                   onClick={[Function]}
                                         >
@@ -211,7 +211,7 @@ ShallowWrapper {
                                                 The indicated price is final, all fees are included.
                                     </p>
                                     <button
-                                                className="btn btn btn-block btn-primary"
+                                                className="btn btn btn-block btn-primary proceed"
                                                 disabled="disabled"
                                                 onClick={[Function]}
                                     >
@@ -252,7 +252,7 @@ ShallowWrapper {
                                           The indicated price is final, all fees are included.
                             </p>
                             <button
-                                          className="btn btn btn-block btn-primary"
+                                          className="btn btn btn-block btn-primary proceed"
                                           disabled="disabled"
                                           onClick={[Function]}
                             >
@@ -290,7 +290,7 @@ ShallowWrapper {
                                     The indicated price is final, all fees are included.
                   </p>
                   <button
-                                    className="btn btn btn-block btn-primary"
+                                    className="btn btn btn-block btn-primary proceed"
                                     disabled="disabled"
                                     onClick={[Function]}
                   >
@@ -350,7 +350,7 @@ ShallowWrapper {
                       The indicated price is final, all fees are included.
 </p>,
                     <button
-                      className="btn btn btn-block btn-primary"
+                      className="btn btn btn-block btn-primary proceed"
                       disabled="disabled"
                       onClick={[Function]}
 >
@@ -382,7 +382,7 @@ ShallowWrapper {
                         "Confirm & Place Order",
                         null,
                       ],
-                      "className": "btn btn btn-block btn-primary",
+                      "className": "btn btn btn-block btn-primary proceed",
                       "disabled": "disabled",
                       "onClick": [Function],
                     },
@@ -446,7 +446,7 @@ ShallowWrapper {
                                                             The indicated price is final, all fees are included.
                                                   </p>
                                                   <button
-                                                            className="btn btn btn-block btn-primary"
+                                                            className="btn btn btn-block btn-primary proceed"
                                                             disabled="disabled"
                                                             onClick={[Function]}
                                                   >
@@ -495,7 +495,7 @@ ShallowWrapper {
                                                             The indicated price is final, all fees are included.
                                                 </p>
                                                 <button
-                                                            className="btn btn btn-block btn-primary"
+                                                            className="btn btn btn-block btn-primary proceed"
                                                             disabled="disabled"
                                                             onClick={[Function]}
                                                 >
@@ -540,7 +540,7 @@ ShallowWrapper {
                                                         The indicated price is final, all fees are included.
                                           </p>
                                           <button
-                                                        className="btn btn btn-block btn-primary"
+                                                        className="btn btn btn-block btn-primary proceed"
                                                         disabled="disabled"
                                                         onClick={[Function]}
                                           >
@@ -581,7 +581,7 @@ ShallowWrapper {
                                                 The indicated price is final, all fees are included.
                                 </p>
                                 <button
-                                                className="btn btn btn-block btn-primary"
+                                                className="btn btn btn-block btn-primary proceed"
                                                 disabled="disabled"
                                                 onClick={[Function]}
                                 >
@@ -619,7 +619,7 @@ ShallowWrapper {
                                         The indicated price is final, all fees are included.
                     </p>
                     <button
-                                        className="btn btn btn-block btn-primary"
+                                        className="btn btn btn-block btn-primary proceed"
                                         disabled="disabled"
                                         onClick={[Function]}
                     >
@@ -679,7 +679,7 @@ ShallowWrapper {
                         The indicated price is final, all fees are included.
 </p>,
                       <button
-                        className="btn btn btn-block btn-primary"
+                        className="btn btn btn-block btn-primary proceed"
                         disabled="disabled"
                         onClick={[Function]}
 >
@@ -711,7 +711,7 @@ ShallowWrapper {
                           "Confirm & Place Order",
                           null,
                         ],
-                        "className": "btn btn btn-block btn-primary",
+                        "className": "btn btn btn-block btn-primary proceed",
                         "disabled": "disabled",
                         "onClick": [Function],
                       },
