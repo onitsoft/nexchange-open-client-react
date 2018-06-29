@@ -133,6 +133,10 @@ input[type='number']:hover::-webkit-outer-spin-button {
   margin: 0;
 }
 
+input[type='file'] {
+  margin: 10px 0 15px;
+}
+
 .form-group {
   position: relative;
   margin: 0;
