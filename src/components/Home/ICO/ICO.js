@@ -21,8 +21,18 @@ const ICO = () => {
           <div className="col-xs-12 col-sm-5 col-lg-6">
             <h2>A WHOLE ECO-SYSTEM</h2>
             <h3>Accommodate all of your crypto needs under one roof</h3>
-
-            <a href="https://n.exchange/ico" className={`${styles.btn} btn btn-block btn-primary`}>
+            <a
+              href="https://n.exchange/ico"
+              className={`${styles.btn} btn btn-block btn-primary`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                window.ga('send', 'event', {
+                  eventCategory: 'ICO open',
+                  eventAction: 'Open from widget',
+                });
+              }}
+            >
               JOIN OUR ICO
             </a>
           </div>

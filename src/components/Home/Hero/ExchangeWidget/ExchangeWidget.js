@@ -33,6 +33,11 @@ class ExchangeWidget extends Component {
   placeOrder() {
     if (!this.props.wallet.valid) {
       if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        window.ga('send', 'event', {
+          eventCategory: 'Order',
+          eventAction: 'Place order with empty wallet address',
+        });
+
         this.props.errorAlert({
           show: true,
           message: `Please put valid ${this.props.selectedCoin.receive} address.`,
@@ -76,7 +81,6 @@ class ExchangeWidget extends Component {
         bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
-        window.qp('track', 'Generic');
       })
       .catch(error => {
         console.log('Error:', error);

@@ -59,6 +59,8 @@ export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
+  dispatch({ type: types.FETCHING_PRICE });
+
   return new Promise(async (resolve, reject) => {
     const makeRequest = url => {
       return axios
@@ -79,19 +81,18 @@ export const fetchPrice = payload => dispatch => {
       data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
-      // dispatch({
-      //   type: types.ERROR_ALERT,
-      //   payload: {
-      //     show: false,
-      //     type: types.INVALID_AMOUNT,
-      //   },
-      // });
+      dispatch(errorAlert({ show: false, type: types.INVALID_AMOUNT }));
 
       resolve();
     };
 
     const setFaultyValues = err => {
       let data = { pair };
+
+      window.ga('send', 'event', {
+        eventCategory: 'Amount input',
+        eventAction: 'Amount too high/low error',
+      });
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -113,6 +114,8 @@ export const fetchPrice = payload => dispatch => {
             type: types.INVALID_AMOUNT,
           })
         );
+      } else {
+        dispatch(errorAlert({ show: false, type: types.INVALID_AMOUNT }));
       }
 
       reject();
@@ -126,7 +129,7 @@ export const fetchPrice = payload => dispatch => {
       setValidValues(amounts);
     } catch (err) {
       window.ga('send', 'event', {
-        eventCategory: 'Amount input/coin selector',
+        eventCategory: 'Coin selector',
         eventAction: 'Fetch default amounts',
       });
 
