@@ -3,13 +3,23 @@
   background-color: #fff;
   border: 1px solid $green;
   padding: 6px 10px;
-  margin: 10px;
+  margin: 10px 0;
   font-size: 12px;
   width: 100%;
-  max-width: 280px;
   white-space: normal;
 
   &:hover {
     box-shadow: none;
+  }
+
+  &:focus {
+    color: $green;
+    background-color: #fff;
+    border: 1px solid $green;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    margin: 10px;
+    max-width: 280px;
   }
 }
