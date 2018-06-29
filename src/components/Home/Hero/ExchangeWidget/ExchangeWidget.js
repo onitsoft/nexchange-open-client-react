@@ -31,6 +31,11 @@ class ExchangeWidget extends Component {
   }
 
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      this.walletInputEl.focus();
+      return;
+    }
+
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -105,9 +110,10 @@ class ExchangeWidget extends Component {
                   <p className={styles.info}>The indicated price is final, all fees are included.</p>
 
                   <button
-                    className={`${styles.btn} btn btn-block btn-primary proceed`}
+                    className={`${styles.btn} ${
+                      this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                    } btn btn-block btn-primary proceed `}
                     onClick={this.placeOrder}
-                    disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
                   >
                     Confirm & Place Order
                     {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}

@@ -15,7 +15,7 @@ class WalletAddress extends Component {
   }
 
   validate = (address, receiveCoin) => {
-    if (address === '') {
+    if (address === '' || !receiveCoin) {
       return this.props.errorAlert({ show: false });
     }
 
