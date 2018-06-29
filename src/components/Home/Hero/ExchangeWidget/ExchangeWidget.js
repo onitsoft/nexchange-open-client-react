@@ -85,17 +85,7 @@ class ExchangeWidget extends Component {
   }
 
   showWalletAddress() {
-    this.props.setWallet({ address: '', valid: false, show: true });
-
-    setTimeout(() => {
-      this.walletInputEl.focus();
-    }, 300);
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
-      this.props.setWallet({ address: '', valid: false, show: false });
-    }
+    this.walletInputEl.focus();
   }
 
   render() {
@@ -132,22 +122,8 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
-  selectedCoin,
-  price,
-  error,
-  wallet,
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      setWallet: setWallet,
-      setOrder: setOrder,
-      errorAlert: errorAlert,
-    },
-    dispatch
-  );
+const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,

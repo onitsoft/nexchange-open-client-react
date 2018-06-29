@@ -150,7 +150,7 @@ class PriceComparison extends Component {
 
   render() {
     return (
-      <div className={styles.compare}>
+      <div id="compare" className={styles.compare}>
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
