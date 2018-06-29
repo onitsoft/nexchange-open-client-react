@@ -12,7 +12,9 @@
     box-shadow: none;
   }
 
-  &:focus {
+  &:focus,
+  &:hover,
+  &:active {
     color: $green;
     background-color: #fff;
     border: 1px solid $green;
