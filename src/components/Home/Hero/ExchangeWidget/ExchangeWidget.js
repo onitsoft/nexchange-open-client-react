@@ -32,6 +32,13 @@ class ExchangeWidget extends Component {
 
   placeOrder() {
     if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        this.props.errorAlert({
+          show: true,
+          message: `Please put valid ${this.props.selectedCoin.receive} address.`,
+        });
+      }
+
       this.walletInputEl.focus();
       return;
     }

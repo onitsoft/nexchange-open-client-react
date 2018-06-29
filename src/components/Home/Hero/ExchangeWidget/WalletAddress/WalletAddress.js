@@ -16,6 +16,11 @@ class WalletAddress extends Component {
 
   validate = (address, receiveCoin) => {
     if (address === '' || !receiveCoin) {
+      this.props.setWallet({
+        address,
+        valid: false,
+      });
+
       return this.props.errorAlert({ show: false });
     }
 
