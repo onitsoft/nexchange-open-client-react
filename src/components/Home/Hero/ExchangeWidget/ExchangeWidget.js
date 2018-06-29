@@ -31,6 +31,18 @@ class ExchangeWidget extends Component {
   }
 
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        this.props.errorAlert({
+          show: true,
+          message: `Please put valid ${this.props.selectedCoin.receive} address.`,
+        });
+      }
+
+      this.walletInputEl.focus();
+      return;
+    }
+
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -85,17 +97,7 @@ class ExchangeWidget extends Component {
   }
 
   showWalletAddress() {
-    this.props.setWallet({ address: '', valid: false, show: true });
-
-    setTimeout(() => {
-      this.walletInputEl.focus();
-    }, 300);
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
-      this.props.setWallet({ address: '', valid: false, show: false });
-    }
+    this.walletInputEl.focus();
   }
 
   render() {
@@ -115,9 +117,10 @@ class ExchangeWidget extends Component {
                   <p className={styles.info}>The indicated price is final, all fees are included.</p>
 
                   <button
-                    className={`${styles.btn} btn btn-block btn-primary proceed`}
+                    className={`${styles.btn} ${
+                      this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                    } btn btn-block btn-primary proceed `}
                     onClick={this.placeOrder}
-                    disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
                   >
                     Confirm & Place Order
                     {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
@@ -132,22 +135,8 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
-  selectedCoin,
-  price,
-  error,
-  wallet,
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      setWallet: setWallet,
-      setOrder: setOrder,
-      errorAlert: errorAlert,
-    },
-    dispatch
-  );
+const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,

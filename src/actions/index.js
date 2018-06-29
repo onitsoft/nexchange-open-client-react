@@ -79,13 +79,13 @@ export const fetchPrice = payload => dispatch => {
       data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
-      dispatch({
-        type: types.ERROR_ALERT,
-        payload: {
-          show: false,
-          type: types.INVALID_AMOUNT,
-        },
-      });
+      // dispatch({
+      //   type: types.ERROR_ALERT,
+      //   payload: {
+      //     show: false,
+      //     type: types.INVALID_AMOUNT,
+      //   },
+      // });
 
       resolve();
     };

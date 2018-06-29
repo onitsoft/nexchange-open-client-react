@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
-import { selectCoin, fetchPrice, setWallet, errorAlert } from 'Actions/index.js';
+import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import styles from './CoinSelector.scss';
 
@@ -116,7 +116,7 @@ class CoinSelector extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
-const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, setWallet, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,
