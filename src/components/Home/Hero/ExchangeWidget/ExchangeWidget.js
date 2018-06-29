@@ -8,7 +8,7 @@ import config from 'Config';
 import { setWallet, errorAlert, setOrder } from 'Actions/index.js';
 import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
-import CoinInputs from './CoinInputs/CoinInputs';
+import CoinInput from './CoinInput/CoinInput';
 import WalletAddress from './WalletAddress/WalletAddress';
 
 import styles from './ExchangeWidget.scss';
@@ -113,7 +113,8 @@ class ExchangeWidget extends Component {
           <div className="row">
             <div className="col-xs-12">
               <div className={styles.widget}>
-                <CoinInputs onSubmit={this.focusWalletAddress} />
+                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
                 <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
 
                 <div className={styles.submit}>

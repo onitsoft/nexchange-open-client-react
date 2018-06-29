@@ -1,21 +1,25 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPrice } from 'Actions/index.js';
 import debounce from 'Utils/debounce';
+import { fetchPrice } from 'Actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
 import styles from './CoinInput.scss';
 
 class CoinInput extends PureComponent {
+  state = {
+    value: '...',
+  };
+
   handleFocus = event => {
     if (event.target.value === '...') {
-      this.props.onChange('');
+      this.setState({ value: '' });
     }
   };
 
   handleBlur = event => {
     if (event.target.value === '') {
-      this.props.onChange('...');
+      this.setState({ value: '...' });
     }
   };
 
@@ -25,8 +29,7 @@ class CoinInput extends PureComponent {
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
-    this.props.onChange(value);
-
+    this.setState({ value });
     this.fetchAmounts(value);
 
     ga('send', 'event', 'Order', 'change amount');
@@ -55,6 +58,14 @@ class CoinInput extends PureComponent {
     this.nameInput.focus();
   };
 
+  UNSAFE_componentWillReceiveProps = nextProps => {
+    if (nextProps.type === 'receive') {
+      this.setState({ value: nextProps.price.receive });
+    } else if (nextProps.type === 'deposit') {
+      this.setState({ value: nextProps.price.deposit });
+    }
+  };
+
   render() {
     return (
       <div className="col-xs-12 col-sm-6">
@@ -70,7 +81,7 @@ class CoinInput extends PureComponent {
             onChange={this.handleChange}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
-            value={this.props.value}
+            value={this.state.value}
             ref={input => {
               this.nameInput = input;
             }}
