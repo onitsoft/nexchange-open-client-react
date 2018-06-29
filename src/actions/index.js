@@ -74,18 +74,12 @@ export const fetchPrice = payload => dispatch => {
     const setValidValues = amounts => {
       const data = { pair };
 
-      data['deposit'] = amounts.amount_quote;
-      data['receive'] = amounts.amount_base;
+      data['deposit'] = parseFloat(amounts.amount_quote);
+      data['receive'] = parseFloat(amounts.amount_base);
       data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
-      // dispatch({
-      //   type: types.ERROR_ALERT,
-      //   payload: {
-      //     show: false,
-      //     type: types.INVALID_AMOUNT,
-      //   },
-      // });
+      dispatch(errorAlert({ show: false, type: types.INVALID_AMOUNT }));
 
       resolve();
     };
@@ -93,12 +87,17 @@ export const fetchPrice = payload => dispatch => {
     const setFaultyValues = err => {
       let data = { pair };
 
+      window.ga('send', 'event', {
+        eventCategory: 'Amount input',
+        eventAction: 'Amount too high/low error',
+      });
+
       if ('receive' in payload) {
         data['deposit'] = '...';
-        data['receive'] = payload.receive;
+        data['receive'] = parseFloat(payload.receive);
         data['lastEdited'] = 'receive';
       } else if ('deposit' in payload) {
-        data['deposit'] = payload.deposit;
+        data['deposit'] = parseFloat(payload.deposit);
         data['receive'] = '...';
         data['lastEdited'] = 'deposit';
       }
@@ -113,6 +112,8 @@ export const fetchPrice = payload => dispatch => {
             type: types.INVALID_AMOUNT,
           })
         );
+      } else {
+        dispatch(errorAlert({ show: false, type: types.INVALID_AMOUNT }));
       }
 
       reject();
@@ -126,7 +127,7 @@ export const fetchPrice = payload => dispatch => {
       setValidValues(amounts);
     } catch (err) {
       window.ga('send', 'event', {
-        eventCategory: 'Amount input/coin selector',
+        eventCategory: 'Coin selector',
         eventAction: 'Fetch default amounts',
       });
 

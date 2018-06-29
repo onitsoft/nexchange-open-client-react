@@ -38,7 +38,7 @@ class CoinsDropdown extends Component {
       eventAction: this.props.type,
       eventValue: coinSearched,
     });
-  }, 300);
+  }, 100);
 
   searchCoins = coins => {
     if (!this.state.value) return coins;

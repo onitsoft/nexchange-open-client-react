@@ -9,3 +9,4 @@ export const SET_ORDER = 'SET_ORDER';
 export const SET_KYC = 'SET_KYC';
 export const SET_EMAIL = 'SET_EMAIL';
 export const SET_EMAIL_AND_MESSAGE = 'SET_EMAIL_AND_MESSAGE';
+export const FETCHING_PRICE = 'FETCHING_PRICE';

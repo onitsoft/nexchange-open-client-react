@@ -9,7 +9,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case PRICE_FETCHED:
-      return action.payload;
+      return { ...action.payload };
     default:
       return state;
   }

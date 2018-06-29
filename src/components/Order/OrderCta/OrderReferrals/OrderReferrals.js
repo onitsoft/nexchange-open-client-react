@@ -32,19 +32,57 @@ class OrderReferrals extends Component {
     return (
       <div>
         <div className={styles['form-group']}>
-          <CopyToClipboard text={this.state.link} onCopy={() => this.triggerCopyTooltip()}>
+          <CopyToClipboard
+            text={this.state.link}
+            onCopy={() => {
+              window.ga('send', 'event', {
+                eventCategory: 'Referrals',
+                eventAction: 'Link click body',
+                eventValue: this.props.order.pair.base.name,
+              });
+              this.triggerCopyTooltip();
+            }}
+          >
             <input
               className={styles['referral-input']}
               type="text"
               value={this.state.link}
               title="Click to copy!"
               onFocus={e => e.target.blur()}
+              onMouseEnter={() => {
+                window.ga('send', 'event', {
+                  eventCategory: 'Referrals',
+                  eventAction: 'Link hover body',
+                  eventValue: this.props.order.pair.base.name,
+                });
+              }}
               required
             />
           </CopyToClipboard>
 
-          <CopyToClipboard text={this.state.link} onCopy={() => this.triggerCopyTooltip()}>
-            <button id="copy-to-clipboard-link" type="button" className={`btn btn-primary ${styles.btn}`}>
+          <CopyToClipboard
+            text={this.state.link}
+            onCopy={() => {
+              window.ga('send', 'event', {
+                eventCategory: 'Referrals',
+                eventAction: 'Link click button',
+                eventValue: this.props.order.pair.base.name,
+              });
+              this.triggerCopyTooltip();
+            }}
+          >
+            <button
+              id="copy-to-clipboard-link"
+              type="button"
+              className={`btn btn-primary ${styles.btn}`}
+              onMouseEnter={() => {
+                window.ga('send', 'event', {
+                  eventCategory: 'Referrals',
+                  eventAction: 'Link hover link',
+                  eventValue: this.props.order.pair.base.name,
+                });
+              }}
+            >
               Copy link
             </button>
           </CopyToClipboard>
@@ -52,7 +90,18 @@ class OrderReferrals extends Component {
           <h4 className={styles.share}>
             Or share it on social media
             <div className={styles.links}>
-              <a className={styles.link} href={`https://facebook.com/sharer.php?u=${this.state.link}`} target="_blank">
+              <a
+                className={styles.link}
+                href={`https://facebook.com/sharer.php?u=${this.state.link}`}
+                target="_blank"
+                onClick={() => {
+                  window.ga('send', 'event', {
+                    eventCategory: 'Referrals',
+                    eventAction: 'Social click',
+                    eventValue: 'facebook',
+                  });
+                }}
+              >
                 <i className="fab fa-facebook-f" aria-hidden="true" />
               </a>
               <a
@@ -61,10 +110,28 @@ class OrderReferrals extends Component {
                   this.state.link
                 }&text=I’m%20using%20N.exchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!`}
                 target="_blank"
+                onClick={() => {
+                  window.ga('send', 'event', {
+                    eventCategory: 'Referrals',
+                    eventAction: 'Social click',
+                    eventValue: 'twitter',
+                  });
+                }}
               >
                 <i className="fab fa-twitter" aria-hidden="true" />
               </a>
-              <a className={styles.link} href={`https://www.linkedin.com/shareArticle?mini=true&url=${this.state.link}`} target="_blank">
+              <a
+                className={styles.link}
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${this.state.link}`}
+                target="_blank"
+                onClick={() => {
+                  window.ga('send', 'event', {
+                    eventCategory: 'Referrals',
+                    eventAction: 'Social click',
+                    eventValue: 'linkedin',
+                  });
+                }}
+              >
                 <i className="fab fa-linkedin-in" aria-hidden="true" />
               </a>
             </div>
