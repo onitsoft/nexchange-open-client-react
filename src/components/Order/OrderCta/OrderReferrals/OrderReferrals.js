@@ -85,7 +85,8 @@ class OrderReferrals extends Component {
 
             <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
               <h2 className={styles.title}>
-                By the way, if you want you can share this unique referral link with your friends to earn some coins!
+                Earn free <span>{this.props.order.pair.base.name}</span> directly to your withdrawal address by sharing this unique referral
+                link with your friends!
               </h2>
               {this.renderForm()}
             </div>

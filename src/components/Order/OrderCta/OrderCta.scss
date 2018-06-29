@@ -21,6 +21,10 @@
   @media (min-width: $screen-lg-min) {
     margin-top: 29px;
   }
+
+  span {
+    text-transform: capitalize;
+  }
 }
 
 .form-group {
