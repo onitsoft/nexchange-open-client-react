@@ -81,6 +81,7 @@ class CoinsDropdown extends Component {
           ref={input => (this.searchInput = input)}
           onChange={this.handleChange}
           value={this.state.value}
+          data-test="search"
         />
         <i className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`} onClick={this.clear}>
           clear

@@ -844,6 +844,7 @@ ShallowWrapper {
                     className="search fas fa-search"
           />
           <input
+                    data-test="search"
                     onChange={[Function]}
                     placeholder="Search"
                     type="text"
@@ -1485,6 +1486,7 @@ ShallowWrapper {
               className="search fas fa-search"
 />,
             <input
+              data-test="search"
               onChange={[Function]}
               placeholder="Search"
               type="text"
@@ -1519,6 +1521,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "data-test": "search",
               "onChange": [Function],
               "placeholder": "Search",
               "type": "text",
@@ -4811,6 +4814,7 @@ ShallowWrapper {
                         className="search fas fa-search"
             />
             <input
+                        data-test="search"
                         onChange={[Function]}
                         placeholder="Search"
                         type="text"
@@ -5452,6 +5456,7 @@ ShallowWrapper {
                 className="search fas fa-search"
 />,
               <input
+                data-test="search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
@@ -5486,6 +5491,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "data-test": "search",
                 "onChange": [Function],
                 "placeholder": "Search",
                 "type": "text",
@@ -9617,6 +9623,7 @@ ShallowWrapper {
                     className="search fas fa-search"
           />
           <input
+                    data-test="search"
                     onChange={[Function]}
                     placeholder="Search"
                     type="text"
@@ -10055,6 +10062,7 @@ ShallowWrapper {
               className="search fas fa-search"
 />,
             <input
+              data-test="search"
               onChange={[Function]}
               placeholder="Search"
               type="text"
@@ -10089,6 +10097,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "data-test": "search",
               "onChange": [Function],
               "placeholder": "Search",
               "type": "text",
@@ -12303,6 +12312,7 @@ ShallowWrapper {
                         className="search fas fa-search"
             />
             <input
+                        data-test="search"
                         onChange={[Function]}
                         placeholder="Search"
                         type="text"
@@ -12741,6 +12751,7 @@ ShallowWrapper {
                 className="search fas fa-search"
 />,
               <input
+                data-test="search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
@@ -12775,6 +12786,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "data-test": "search",
                 "onChange": [Function],
                 "placeholder": "Search",
                 "type": "text",

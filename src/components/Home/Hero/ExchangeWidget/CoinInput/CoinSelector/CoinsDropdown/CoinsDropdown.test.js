@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import CoinsDropdown from './CoinsDropdown.js';
 import coinsInfo from 'Mocks/currency.js';
 
 describe('CoinsDropdown', () => {
-  let wrapShallowDeposit, wrapShallowReceive;
+  let wrapShallowDeposit, wrapShallowReceive, wrapMountDeposit;
 
   beforeEach(() => {
     wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
     wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />);
+    wrapMountDeposit = mount(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
   });
 
   it('renders correctly', () => {
@@ -34,5 +35,18 @@ describe('CoinsDropdown', () => {
         expect(wrapShallowReceive.find(`[data-test="${coin.code}"]`).length).toEqual(0);
       }
     }
+  });
+
+  it('search input gets correct value after state change and filters coins', () => {
+    wrapMountDeposit.setState({
+      value: 'bit',
+    });
+
+    const input = wrapMountDeposit.find(`[data-test="search"]`);
+    expect(input.props().value).toEqual('bit');
+
+    expect(wrapMountDeposit.find(`[data-test="BTC"]`).length).toEqual(1);
+    expect(wrapMountDeposit.find(`[data-test="BCH"]`).length).toEqual(1);
+    expect(wrapMountDeposit.find(`.coin`).length).toEqual(2);
   });
 });
