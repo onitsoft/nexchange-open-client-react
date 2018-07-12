@@ -8,5 +8,6 @@ module.exports = {
     Actions: path.resolve(__dirname, '../src/actions/'),
     StatusCodes: path.resolve(__dirname, '../src/statusCodes.js'),
     Img: path.resolve(__dirname, '../src/img/'),
+    Mocks: path.resolve(__dirname, '../src/__mocks__'),
   },
 };
