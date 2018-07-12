@@ -18,6 +18,7 @@ export default (address, coin, errorCb, successCb) => {
     BIX: /^0x[0-9a-fA-F]{40}$/,
     COB: /^0x[0-9a-fA-F]{40}$/,
     COSS: /^0x[0-9a-fA-F]{40}$/,
+    BMH: /^0x[0-9a-fA-F]{40}$/,
     DOGE: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
     XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
     BCH: /^(1|3)[1-9A-Za-z]{25,34}$/,
