@@ -146,7 +146,7 @@ export const fetchPairs = () => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
-  return (dispatch, getState) => {
+  return dispatch => {
     request
       .then(async response => {
         if (!response.data.length) return;
