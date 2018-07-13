@@ -20,7 +20,7 @@ class CoinSelector extends Component {
     });
 
     this.setState({ isDropdownVisible: false });
-    ga('send', 'event', 'Order', 'select coin');
+    if (window.ga) window.ga('send', 'event', 'Order', 'select coin');
   };
 
   calculateDepositAmount = coin => {
@@ -111,6 +111,7 @@ class CoinSelector extends Component {
       <div>
         <div
           className={`selectedCoin-${type} ${styles['selected-coin']}`}
+          data-test="selector"
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
           <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
@@ -131,3 +132,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(onClickOutside(CoinSelector));
+
+export const CoinSelectorTesting = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoinSelector);

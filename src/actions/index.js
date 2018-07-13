@@ -15,17 +15,16 @@ export const setWallet = payload => ({
   payload,
 });
 
-export const selectCoin = selectedCoins => (dispatch, getState) => {
+export const selectCoin = selectedCoins => dispatch => {
   dispatch({
     type: types.COIN_SELECTED,
     payload: {
       selectedCoins,
-      pairs: getState().pairs,
     },
   });
 };
 
-export const fetchCoinDetails = payload => dispatch => {
+export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;
   const request = axios.get(url);
   const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
