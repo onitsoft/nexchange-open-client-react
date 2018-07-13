@@ -1,15 +1,14 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CoinsDropdown from './CoinsDropdown.js';
 import coinsInfo from 'Mocks/currency.js';
 
 describe('CoinsDropdown', () => {
-  let wrapShallowDeposit, wrapShallowReceive, wrapMountDeposit;
+  let wrapShallowDeposit, wrapShallowReceive;
 
   beforeEach(() => {
     wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
     wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />);
-    wrapMountDeposit = mount(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
   });
 
   it('renders correctly', () => {
@@ -17,7 +16,7 @@ describe('CoinsDropdown', () => {
     expect(wrapShallowReceive).toMatchSnapshot();
   });
 
-  it('deposit dropdown contains correct coins', () => {
+  it('dropdown contains correct coins (deposit)', () => {
     for (const coin of coinsInfo) {
       if (coin.is_quote_of_enabled_pair) {
         expect(wrapShallowDeposit.find(`[data-test="${coin.code}"]`).length).toEqual(1);
@@ -27,7 +26,7 @@ describe('CoinsDropdown', () => {
     }
   });
 
-  it('receive dropdown contains correct coins', () => {
+  it('dropdown contains correct coins (receive)', () => {
     for (const coin of coinsInfo) {
       if (coin.is_base_of_enabled_pair) {
         expect(wrapShallowReceive.find(`[data-test="${coin.code}"]`).length).toEqual(1);
@@ -37,16 +36,38 @@ describe('CoinsDropdown', () => {
     }
   });
 
-  it('search input gets correct value after state change and filters coins', () => {
-    wrapMountDeposit.setState({
-      value: 'bit',
+  it('search input gets correct value after typing and filters coins (deposit)', () => {
+    let input = wrapShallowDeposit.find(`[data-test="search"]`);
+
+    input.simulate('change', {
+      target: { value: 'bit' },
     });
 
-    const input = wrapMountDeposit.find(`[data-test="search"]`);
+    input = wrapShallowDeposit.find(`[data-test="search"]`);
+
+    expect(wrapShallowDeposit.state().value).toEqual('bit');
     expect(input.props().value).toEqual('bit');
 
-    expect(wrapMountDeposit.find(`[data-test="BTC"]`).length).toEqual(1);
-    expect(wrapMountDeposit.find(`[data-test="BCH"]`).length).toEqual(1);
-    expect(wrapMountDeposit.find(`.coin`).length).toEqual(2);
+    expect(wrapShallowDeposit.find(`[data-test="BTC"]`).length).toEqual(1);
+    expect(wrapShallowDeposit.find(`[data-test="BCH"]`).length).toEqual(1);
+    expect(wrapShallowDeposit.find(`.coin`).length).toEqual(2);
+  });
+
+  it('search input gets correct value after typing and filters coins (receive)', () => {
+    let input = wrapShallowReceive.find(`[data-test="search"]`);
+
+    input.simulate('change', {
+      target: { value: 'bit' },
+    });
+
+    input = wrapShallowReceive.find(`[data-test="search"]`);
+
+    expect(wrapShallowReceive.state().value).toEqual('bit');
+    expect(input.props().value).toEqual('bit');
+
+    expect(wrapShallowReceive.find(`[data-test="BTC"]`).length).toEqual(1);
+    expect(wrapShallowReceive.find(`[data-test="BCH"]`).length).toEqual(1);
+    expect(wrapShallowReceive.find(`[data-test="BDG"]`).length).toEqual(1);
+    expect(wrapShallowReceive.find(`.coin`).length).toEqual(3);
   });
 });
