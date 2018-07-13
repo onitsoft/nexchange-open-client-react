@@ -65,6 +65,7 @@ describe('CoinSelector', () => {
   it('selecting coin from dropdown causes correct coin to be dispatched (deposit)', () => {
     wrapMountReceive.find('[data-test="selector"]').simulate('click');
     wrapMountReceive.find('[data-test="BTC"]').simulate('click');
+
     const expectedPayload = {
       type: 'COIN_SELECTED',
       payload: { selectedCoins: { deposit: 'OMG', receive: 'BTC', prev: { deposit: 'OMG', receive: 'ETH' }, lastSelected: 'receive' } },
