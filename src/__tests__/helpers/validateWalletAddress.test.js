@@ -112,4 +112,24 @@ describe('Validate coin address', () => {
   it('invalidates invalid XMR address', () => {
     expect(validateWalletAddress('random address', 'XMR')).toEqual(false);
   });
+
+  it('success callback is called', () => {
+    const errorCb = jest.fn();
+    const successCb = jest.fn();
+
+    validateWalletAddress('1Ee8D4v8mXLB73zozR6umsykZ9V5RpHsmo', 'USDT', errorCb, successCb);
+
+    expect(successCb).toHaveBeenCalledTimes(1);
+    expect(errorCb).toHaveBeenCalledTimes(0);
+  });
+
+  it('error callback is called', () => {
+    const errorCb = jest.fn();
+    const successCb = jest.fn();
+
+    validateWalletAddress('random address', 'USDT', errorCb, successCb);
+
+    expect(successCb).toHaveBeenCalledTimes(0);
+    expect(errorCb).toHaveBeenCalledTimes(1);
+  });
 });
