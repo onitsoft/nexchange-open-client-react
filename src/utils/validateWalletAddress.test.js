@@ -75,6 +75,7 @@ describe('Validate coin address', () => {
 
   it('validates valid BCH address', () => {
     expect(validateWalletAddress('1C394PrnPG1bw3r7ERJS1pbauRbtf1Kxcx', 'BCH')).toEqual(true);
+    expect(validateWalletAddress('bitcoincash:qzgge698e7vhdyutsk7qhrh60dth2ewqdqm484uf26', 'BCH')).toEqual(true);
   });
 
   it('invalidates invalid BCH address', () => {
