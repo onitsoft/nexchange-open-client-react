@@ -6,8 +6,6 @@ import Support from './Support/Support';
 
 import styles from './Header.scss';
 
-let scrollToElement;
-
 class Header extends Component {
   state = {
     showFaqModal: false,
@@ -15,8 +13,6 @@ class Header extends Component {
   };
 
   componentDidMount() {
-    scrollToElement = require('scroll-to-element');
-
     let hash = window.location.hash;
     if (hash && hash !== '') {
       hash = hash.replace('#', '');
@@ -48,7 +44,7 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="navigation-index">
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a className={styles.link} href="/#about" onClick={() => scrollToElement('#about')}>
+                <a className={styles.link} href="/#about">
                   About
                 </a>
               </li>

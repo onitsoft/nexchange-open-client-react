@@ -51,7 +51,7 @@ class OrderInitial extends Component {
           </h4>
 
           <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
-            <button id="copy-to-clipboard" type="button" className="btn btn-default">
+            <button id="copy-to-clipboard" type="button" className="btn btn-default" data-test="copy-address">
               Copy address
             </button>
           </CopyToClipboard>
