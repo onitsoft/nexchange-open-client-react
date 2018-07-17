@@ -3,13 +3,12 @@ import { shallow, mount } from 'enzyme';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import { CoinSelectorTesting as CoinSelector } from './CoinSelector.js';
 import coinsInfo from 'Mocks/currency.js';
 import pairs from 'Mocks/processedPairs.js';
 import reducers from 'Reducers';
-
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 
 describe('CoinSelector', () => {
   let store, createStoreWithMiddleware, wrapShallowDeposit, wrapShallowReceive, wrapMountDeposit, wrapMountReceive;
@@ -68,7 +67,7 @@ describe('CoinSelector', () => {
     expect(wrapShallowDeposit.find('CoinsDropdown').length).toEqual(1);
   });
 
-  it('selecting coin from dropdown causes correct action to be dispatched (deposit)', () => {
+  it('selecting coin from dropdown causes correct action to be selected (deposit)', () => {
     mock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=101').reply(200, {
       amount_base: 4176.70201222,
       amount_quote: 59.0,
@@ -92,7 +91,7 @@ describe('CoinSelector', () => {
     expect(wrapShallowReceive.find('CoinsDropdown').length).toEqual(1);
   });
 
-  it('selecting coin from dropdown causes correct coin to be dispatched (deposit)', () => {
+  it('selecting coin from dropdown causes correct coin to be selected (deposit)', () => {
     mock.onGet('https://api.nexchange.io/en/api/v1/get_price/BTCOMG/?amount_quote=101').reply(200, {
       amount_base: 4176.70201222,
       amount_quote: 59.0,
@@ -103,5 +102,20 @@ describe('CoinSelector', () => {
     wrapMountReceive.find('[data-test="selector"]').simulate('click');
     wrapMountReceive.find('[data-test="BTC"]').simulate('click');
     expect(wrapMountReceive.find('[data-test="selected"]').text()).toBe('BTC');
+  });
+
+  it('typing on search field and submitting search form causes correct coin to be selected (deposit)', () => {
+    wrapMountDeposit.find('[data-test="selector"]').simulate('click');
+
+    let input = wrapMountDeposit.find('[data-test="search"]');
+
+    input.simulate('change', {
+      target: { value: 'bit' },
+    });
+
+    let searchForm = wrapMountDeposit.find('[data-test="search-form"]');
+    searchForm.simulate('submit', { preventDefault() {} });
+
+    expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('BCH');
   });
 });

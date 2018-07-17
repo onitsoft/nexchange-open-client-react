@@ -837,6 +837,7 @@ ShallowWrapper {
       "children": Array [
         <form
           className="coins-search"
+          data-test="search-form"
           onSubmit={[Function]}
 >
           <i
@@ -852,6 +853,7 @@ ShallowWrapper {
           />
           <i
                     className="material-icons clear"
+                    data-test="clear"
                     onClick={[Function]}
           >
                     clear
@@ -1494,12 +1496,14 @@ ShallowWrapper {
 />,
             <i
               className="material-icons clear"
+              data-test="clear"
               onClick={[Function]}
 >
               clear
 </i>,
           ],
           "className": "coins-search",
+          "data-test": "search-form",
           "onSubmit": [Function],
         },
         "ref": null,
@@ -1538,6 +1542,7 @@ ShallowWrapper {
             "props": Object {
               "children": "clear",
               "className": "material-icons clear",
+              "data-test": "clear",
               "onClick": [Function],
             },
             "ref": null,
@@ -4807,6 +4812,7 @@ ShallowWrapper {
         "children": Array [
           <form
             className="coins-search"
+            data-test="search-form"
             onSubmit={[Function]}
 >
             <i
@@ -4822,6 +4828,7 @@ ShallowWrapper {
             />
             <i
                         className="material-icons clear"
+                        data-test="clear"
                         onClick={[Function]}
             >
                         clear
@@ -5464,12 +5471,14 @@ ShallowWrapper {
 />,
               <i
                 className="material-icons clear"
+                data-test="clear"
                 onClick={[Function]}
 >
                 clear
 </i>,
             ],
             "className": "coins-search",
+            "data-test": "search-form",
             "onSubmit": [Function],
           },
           "ref": null,
@@ -5508,6 +5517,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "clear",
                 "className": "material-icons clear",
+                "data-test": "clear",
                 "onClick": [Function],
               },
               "ref": null,
@@ -9616,6 +9626,7 @@ ShallowWrapper {
       "children": Array [
         <form
           className="coins-search"
+          data-test="search-form"
           onSubmit={[Function]}
 >
           <i
@@ -9631,6 +9642,7 @@ ShallowWrapper {
           />
           <i
                     className="material-icons clear"
+                    data-test="clear"
                     onClick={[Function]}
           >
                     clear
@@ -10070,12 +10082,14 @@ ShallowWrapper {
 />,
             <i
               className="material-icons clear"
+              data-test="clear"
               onClick={[Function]}
 >
               clear
 </i>,
           ],
           "className": "coins-search",
+          "data-test": "search-form",
           "onSubmit": [Function],
         },
         "ref": null,
@@ -10114,6 +10128,7 @@ ShallowWrapper {
             "props": Object {
               "children": "clear",
               "className": "material-icons clear",
+              "data-test": "clear",
               "onClick": [Function],
             },
             "ref": null,
@@ -12305,6 +12320,7 @@ ShallowWrapper {
         "children": Array [
           <form
             className="coins-search"
+            data-test="search-form"
             onSubmit={[Function]}
 >
             <i
@@ -12320,6 +12336,7 @@ ShallowWrapper {
             />
             <i
                         className="material-icons clear"
+                        data-test="clear"
                         onClick={[Function]}
             >
                         clear
@@ -12759,12 +12776,14 @@ ShallowWrapper {
 />,
               <i
                 className="material-icons clear"
+                data-test="clear"
                 onClick={[Function]}
 >
                 clear
 </i>,
             ],
             "className": "coins-search",
+            "data-test": "search-form",
             "onSubmit": [Function],
           },
           "ref": null,
@@ -12803,6 +12822,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "clear",
                 "className": "material-icons clear",
+                "data-test": "clear",
                 "onClick": [Function],
               },
               "ref": null,

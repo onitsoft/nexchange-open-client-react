@@ -70,4 +70,18 @@ describe('CoinsDropdown', () => {
     expect(wrapShallowReceive.find(`[data-test="BDG"]`).length).toEqual(1);
     expect(wrapShallowReceive.find(`.coin`).length).toEqual(3);
   });
+
+  it('search input gets emptied on clear', () => {
+    let input = wrapShallowReceive.find('[data-test="search"]');
+
+    input.simulate('change', {
+      target: { value: 'bit' },
+    });
+
+    wrapShallowReceive.find('[data-test="clear"]').simulate('click');
+    input = wrapShallowReceive.find('[data-test="search"]');
+
+    expect(wrapShallowReceive.state().value).toEqual('');
+    expect(input.props().value).toEqual('');
+  });
 });

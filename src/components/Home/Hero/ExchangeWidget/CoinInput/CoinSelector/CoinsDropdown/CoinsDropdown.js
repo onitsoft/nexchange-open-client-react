@@ -73,7 +73,7 @@ class CoinsDropdown extends Component {
 
   renderSearch = () => {
     return (
-      <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
+      <form className={styles['coins-search']} onSubmit={this.handleSubmit} data-test="search-form">
         <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
         <input
           type="text"
@@ -83,7 +83,11 @@ class CoinsDropdown extends Component {
           value={this.state.value}
           data-test="search"
         />
-        <i className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`} onClick={this.clear}>
+        <i
+          className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`}
+          onClick={this.clear}
+          data-test="clear"
+        >
           clear
         </i>
       </form>

@@ -22,7 +22,6 @@ import reducers from './reducers';
 import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
-
 require('./js/bootstrap.min.js');
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
