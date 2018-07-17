@@ -8,12 +8,10 @@ class Testimonials extends Component {
   swiper = null;
 
   goNext = () => {
-    console.log(this, this.swiper);
     if (this.swiper) this.swiper.slideNext();
   };
 
   goPrev = () => {
-    console.log(this, this.swiper);
     if (this.swiper) this.swiper.slidePrev();
   };
 
@@ -61,8 +59,8 @@ class Testimonials extends Component {
                   </Swiper>
                 </div>
 
-                <div className={`${styles.prev} ${styles.arrow}`} onClick={this.goPrev} />
-                <div className={`${styles.next} ${styles.arrow}`} onClick={this.goNext} />
+                <div className={`${styles.prev} ${styles.arrow}`} onClick={this.goPrev} data-test="prev" />
+                <div className={`${styles.next} ${styles.arrow}`} onClick={this.goNext} data-test="next" />
               </div>
             </div>
           </div>

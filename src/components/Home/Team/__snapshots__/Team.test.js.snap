@@ -1,0 +1,1497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Team renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Team />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+>
+        <div
+                className="row row"
+        >
+                <div
+                        className="col-xs-12"
+                >
+                        <h2
+                                className="title"
+                        >
+                                The People Who Make it Happen
+                        </h2>
+                </div>
+                <TeamMember
+                        country="IL"
+                        description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+                        fullCountryName="Israel"
+                        id="oleg"
+                        name="Oleg Belousov"
+                        social={
+                                Object {
+                                        "github": "https://github.com/BeOleg",
+                                        "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                        "medium": "https://medium.com/@IoOleg",
+                                        "twitter": "https://twitter.com/iooleg",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="LT"
+                        description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+                        fullCountryName="Lithuania"
+                        id="sarunas"
+                        name="Šarūnas Ažna"
+                        social={
+                                Object {
+                                        "github": "https://github.com/SarunasAzna",
+                                        "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="LT"
+                        description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+                        fullCountryName="Lithuania"
+                        id="karolis"
+                        name="Karolis Ramanauskas"
+                        social={
+                                Object {
+                                        "github": "https://github.com/superkarolis/",
+                                        "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                        "medium": "https://medium.com/@karolisram",
+                                        "rss": "https://www.karolisram.com/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="LT"
+                        description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+                        fullCountryName="Lithuania"
+                        id="justasv"
+                        name="Justas Vitėnas"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="LT"
+                        description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+                        fullCountryName="Lithuania"
+                        id="justas"
+                        name="Justas Ažna"
+                        social={
+                                Object {
+                                        "github": "https://github.com/reederz",
+                                        "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="PL"
+                        description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+                        fullCountryName="Paulina"
+                        id="paulina"
+                        name="Paulina Bagińska"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                        "twitter": "https://twitter.com/PaulinaBGGC",
+                                      }
+                        }
+                />
+                <TeamMember
+                        country="US"
+                        description={
+                                <p>
+                                        Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                        <br />
+                                        distributed systems.
+                                </p>
+                        }
+                        fullCountryName="United States"
+                        id="cyrus"
+                        name="Cyrus Ghazanfar"
+                        social={
+                                Object {
+                                        "github": "https://github.com/cyzanfar",
+                                        "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                        "rss": "https://cyzanfar.github.io/",
+                                        "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                      }
+                        }
+                />
+                <TeamMember
+                        description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+                        id="alejandro"
+                        name="Alejandro Ponce"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                        "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                      }
+                        }
+                />
+                <TeamMember
+                        description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+                        id="vincenzo"
+                        name="Vincenzo Roberti"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+                        id="charles"
+                        name="Charles Cunningham"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                      }
+                        }
+                />
+                <TeamMember
+                        description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+                        id="vit"
+                        name="Vít Jedlička"
+                        social={
+                                Object {
+                                        "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                      }
+                        }
+                />
+        </div>
+</div>,
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row row"
+>
+          <div
+                    className="col-xs-12"
+          >
+                    <h2
+                              className="title"
+                    >
+                              The People Who Make it Happen
+                    </h2>
+          </div>
+          <TeamMember
+                    country="IL"
+                    description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+                    fullCountryName="Israel"
+                    id="oleg"
+                    name="Oleg Belousov"
+                    social={
+                              Object {
+                                        "github": "https://github.com/BeOleg",
+                                        "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                        "medium": "https://medium.com/@IoOleg",
+                                        "twitter": "https://twitter.com/iooleg",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="LT"
+                    description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+                    fullCountryName="Lithuania"
+                    id="sarunas"
+                    name="Šarūnas Ažna"
+                    social={
+                              Object {
+                                        "github": "https://github.com/SarunasAzna",
+                                        "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="LT"
+                    description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+                    fullCountryName="Lithuania"
+                    id="karolis"
+                    name="Karolis Ramanauskas"
+                    social={
+                              Object {
+                                        "github": "https://github.com/superkarolis/",
+                                        "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                        "medium": "https://medium.com/@karolisram",
+                                        "rss": "https://www.karolisram.com/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="LT"
+                    description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+                    fullCountryName="Lithuania"
+                    id="justasv"
+                    name="Justas Vitėnas"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="LT"
+                    description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+                    fullCountryName="Lithuania"
+                    id="justas"
+                    name="Justas Ažna"
+                    social={
+                              Object {
+                                        "github": "https://github.com/reederz",
+                                        "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="PL"
+                    description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+                    fullCountryName="Paulina"
+                    id="paulina"
+                    name="Paulina Bagińska"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                        "twitter": "https://twitter.com/PaulinaBGGC",
+                                      }
+                    }
+          />
+          <TeamMember
+                    country="US"
+                    description={
+                              <p>
+                                        Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                        <br />
+                                        distributed systems.
+                              </p>
+                    }
+                    fullCountryName="United States"
+                    id="cyrus"
+                    name="Cyrus Ghazanfar"
+                    social={
+                              Object {
+                                        "github": "https://github.com/cyzanfar",
+                                        "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                        "rss": "https://cyzanfar.github.io/",
+                                        "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                      }
+                    }
+          />
+          <TeamMember
+                    description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+                    id="alejandro"
+                    name="Alejandro Ponce"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                        "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                      }
+                    }
+          />
+          <TeamMember
+                    description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+                    id="vincenzo"
+                    name="Vincenzo Roberti"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+                    id="charles"
+                    name="Charles Cunningham"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                      }
+                    }
+          />
+          <TeamMember
+                    description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+                    id="vit"
+                    name="Vít Jedlička"
+                    social={
+                              Object {
+                                        "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                      }
+                    }
+          />
+</div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-xs-12"
+>
+              <h2
+                            className="title"
+              >
+                            The People Who Make it Happen
+              </h2>
+</div>,
+            <TeamMember
+              country="IL"
+              description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+              fullCountryName="Israel"
+              id="oleg"
+              name="Oleg Belousov"
+              social={
+                            Object {
+                                          "github": "https://github.com/BeOleg",
+                                          "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                          "medium": "https://medium.com/@IoOleg",
+                                          "twitter": "https://twitter.com/iooleg",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="LT"
+              description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+              fullCountryName="Lithuania"
+              id="sarunas"
+              name="Šarūnas Ažna"
+              social={
+                            Object {
+                                          "github": "https://github.com/SarunasAzna",
+                                          "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="LT"
+              description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+              fullCountryName="Lithuania"
+              id="karolis"
+              name="Karolis Ramanauskas"
+              social={
+                            Object {
+                                          "github": "https://github.com/superkarolis/",
+                                          "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                          "medium": "https://medium.com/@karolisram",
+                                          "rss": "https://www.karolisram.com/",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="LT"
+              description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+              fullCountryName="Lithuania"
+              id="justasv"
+              name="Justas Vitėnas"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="LT"
+              description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+              fullCountryName="Lithuania"
+              id="justas"
+              name="Justas Ažna"
+              social={
+                            Object {
+                                          "github": "https://github.com/reederz",
+                                          "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="PL"
+              description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+              fullCountryName="Paulina"
+              id="paulina"
+              name="Paulina Bagińska"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                          "twitter": "https://twitter.com/PaulinaBGGC",
+                                        }
+              }
+/>,
+            <TeamMember
+              country="US"
+              description={
+                            <p>
+                                          Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                          <br />
+                                          distributed systems.
+                            </p>
+              }
+              fullCountryName="United States"
+              id="cyrus"
+              name="Cyrus Ghazanfar"
+              social={
+                            Object {
+                                          "github": "https://github.com/cyzanfar",
+                                          "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                          "rss": "https://cyzanfar.github.io/",
+                                          "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                        }
+              }
+/>,
+            <TeamMember
+              description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+              id="alejandro"
+              name="Alejandro Ponce"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                          "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                        }
+              }
+/>,
+            <TeamMember
+              description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+              id="vincenzo"
+              name="Vincenzo Roberti"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                        }
+              }
+/>,
+            <TeamMember
+              description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+              id="charles"
+              name="Charles Cunningham"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                        }
+              }
+/>,
+            <TeamMember
+              description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+              id="vit"
+              name="Vít Jedlička"
+              social={
+                            Object {
+                                          "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                        }
+              }
+/>,
+          ],
+          "className": "row row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h2
+                className="title"
+>
+                The People Who Make it Happen
+</h2>,
+              "className": "col-xs-12",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "The People Who Make it Happen",
+                "className": "title",
+              },
+              "ref": null,
+              "rendered": "The People Who Make it Happen",
+              "type": "h2",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "IL",
+              "description": "Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day.",
+              "fullCountryName": "Israel",
+              "id": "oleg",
+              "name": "Oleg Belousov",
+              "social": Object {
+                "github": "https://github.com/BeOleg",
+                "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                "medium": "https://medium.com/@IoOleg",
+                "twitter": "https://twitter.com/iooleg",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "LT",
+              "description": "Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.",
+              "fullCountryName": "Lithuania",
+              "id": "sarunas",
+              "name": "Šarūnas Ažna",
+              "social": Object {
+                "github": "https://github.com/SarunasAzna",
+                "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "LT",
+              "description": "Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.",
+              "fullCountryName": "Lithuania",
+              "id": "karolis",
+              "name": "Karolis Ramanauskas",
+              "social": Object {
+                "github": "https://github.com/superkarolis/",
+                "linkedin": "https://www.linkedin.com/in/karolisram/",
+                "medium": "https://medium.com/@karolisram",
+                "rss": "https://www.karolisram.com/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "LT",
+              "description": "User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries.",
+              "fullCountryName": "Lithuania",
+              "id": "justasv",
+              "name": "Justas Vitėnas",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "LT",
+              "description": "DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability.",
+              "fullCountryName": "Lithuania",
+              "id": "justas",
+              "name": "Justas Ažna",
+              "social": Object {
+                "github": "https://github.com/reederz",
+                "linkedin": "https://www.linkedin.com/in/justasazna/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "PL",
+              "description": "Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter.",
+              "fullCountryName": "Paulina",
+              "id": "paulina",
+              "name": "Paulina Bagińska",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                "twitter": "https://twitter.com/PaulinaBGGC",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "country": "US",
+              "description": <p>
+                Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                <br />
+                distributed systems.
+</p>,
+              "fullCountryName": "United States",
+              "id": "cyrus",
+              "name": "Cyrus Ghazanfar",
+              "social": Object {
+                "github": "https://github.com/cyzanfar",
+                "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                "rss": "https://cyzanfar.github.io/",
+                "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "description": "Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World.",
+              "id": "alejandro",
+              "name": "Alejandro Ponce",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "description": "Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries.",
+              "id": "vincenzo",
+              "name": "Vincenzo Roberti",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "description": "Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions.",
+              "id": "charles",
+              "name": "Charles Cunningham",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/cicunningham/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "description": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+              "id": "vit",
+              "name": "Vít Jedlička",
+              "social": Object {
+                "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+>
+          <div
+                    className="row row"
+          >
+                    <div
+                              className="col-xs-12"
+                    >
+                              <h2
+                                        className="title"
+                              >
+                                        The People Who Make it Happen
+                              </h2>
+                    </div>
+                    <TeamMember
+                              country="IL"
+                              description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+                              fullCountryName="Israel"
+                              id="oleg"
+                              name="Oleg Belousov"
+                              social={
+                                        Object {
+                                                  "github": "https://github.com/BeOleg",
+                                                  "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                                  "medium": "https://medium.com/@IoOleg",
+                                                  "twitter": "https://twitter.com/iooleg",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="LT"
+                              description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+                              fullCountryName="Lithuania"
+                              id="sarunas"
+                              name="Šarūnas Ažna"
+                              social={
+                                        Object {
+                                                  "github": "https://github.com/SarunasAzna",
+                                                  "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="LT"
+                              description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+                              fullCountryName="Lithuania"
+                              id="karolis"
+                              name="Karolis Ramanauskas"
+                              social={
+                                        Object {
+                                                  "github": "https://github.com/superkarolis/",
+                                                  "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                                  "medium": "https://medium.com/@karolisram",
+                                                  "rss": "https://www.karolisram.com/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="LT"
+                              description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+                              fullCountryName="Lithuania"
+                              id="justasv"
+                              name="Justas Vitėnas"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="LT"
+                              description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+                              fullCountryName="Lithuania"
+                              id="justas"
+                              name="Justas Ažna"
+                              social={
+                                        Object {
+                                                  "github": "https://github.com/reederz",
+                                                  "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="PL"
+                              description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+                              fullCountryName="Paulina"
+                              id="paulina"
+                              name="Paulina Bagińska"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                                  "twitter": "https://twitter.com/PaulinaBGGC",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              country="US"
+                              description={
+                                        <p>
+                                                  Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                                  <br />
+                                                  distributed systems.
+                                        </p>
+                              }
+                              fullCountryName="United States"
+                              id="cyrus"
+                              name="Cyrus Ghazanfar"
+                              social={
+                                        Object {
+                                                  "github": "https://github.com/cyzanfar",
+                                                  "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                                  "rss": "https://cyzanfar.github.io/",
+                                                  "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+                              id="alejandro"
+                              name="Alejandro Ponce"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                                  "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+                              id="vincenzo"
+                              name="Vincenzo Roberti"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+                              id="charles"
+                              name="Charles Cunningham"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                                }
+                              }
+                    />
+                    <TeamMember
+                              description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+                              id="vit"
+                              name="Vít Jedlička"
+                              social={
+                                        Object {
+                                                  "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                                }
+                              }
+                    />
+          </div>
+</div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row row"
+>
+            <div
+                        className="col-xs-12"
+            >
+                        <h2
+                                    className="title"
+                        >
+                                    The People Who Make it Happen
+                        </h2>
+            </div>
+            <TeamMember
+                        country="IL"
+                        description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+                        fullCountryName="Israel"
+                        id="oleg"
+                        name="Oleg Belousov"
+                        social={
+                                    Object {
+                                                "github": "https://github.com/BeOleg",
+                                                "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                                "medium": "https://medium.com/@IoOleg",
+                                                "twitter": "https://twitter.com/iooleg",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="LT"
+                        description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+                        fullCountryName="Lithuania"
+                        id="sarunas"
+                        name="Šarūnas Ažna"
+                        social={
+                                    Object {
+                                                "github": "https://github.com/SarunasAzna",
+                                                "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="LT"
+                        description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+                        fullCountryName="Lithuania"
+                        id="karolis"
+                        name="Karolis Ramanauskas"
+                        social={
+                                    Object {
+                                                "github": "https://github.com/superkarolis/",
+                                                "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                                "medium": "https://medium.com/@karolisram",
+                                                "rss": "https://www.karolisram.com/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="LT"
+                        description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+                        fullCountryName="Lithuania"
+                        id="justasv"
+                        name="Justas Vitėnas"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="LT"
+                        description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+                        fullCountryName="Lithuania"
+                        id="justas"
+                        name="Justas Ažna"
+                        social={
+                                    Object {
+                                                "github": "https://github.com/reederz",
+                                                "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="PL"
+                        description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+                        fullCountryName="Paulina"
+                        id="paulina"
+                        name="Paulina Bagińska"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                                "twitter": "https://twitter.com/PaulinaBGGC",
+                                              }
+                        }
+            />
+            <TeamMember
+                        country="US"
+                        description={
+                                    <p>
+                                                Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                                <br />
+                                                distributed systems.
+                                    </p>
+                        }
+                        fullCountryName="United States"
+                        id="cyrus"
+                        name="Cyrus Ghazanfar"
+                        social={
+                                    Object {
+                                                "github": "https://github.com/cyzanfar",
+                                                "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                                "rss": "https://cyzanfar.github.io/",
+                                                "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                              }
+                        }
+            />
+            <TeamMember
+                        description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+                        id="alejandro"
+                        name="Alejandro Ponce"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                                "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                              }
+                        }
+            />
+            <TeamMember
+                        description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+                        id="vincenzo"
+                        name="Vincenzo Roberti"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+                        id="charles"
+                        name="Charles Cunningham"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                              }
+                        }
+            />
+            <TeamMember
+                        description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+                        id="vit"
+                        name="Vít Jedlička"
+                        social={
+                                    Object {
+                                                "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                              }
+                        }
+            />
+</div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-xs-12"
+>
+                <h2
+                                className="title"
+                >
+                                The People Who Make it Happen
+                </h2>
+</div>,
+              <TeamMember
+                country="IL"
+                description="Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day."
+                fullCountryName="Israel"
+                id="oleg"
+                name="Oleg Belousov"
+                social={
+                                Object {
+                                                "github": "https://github.com/BeOleg",
+                                                "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                                                "medium": "https://medium.com/@IoOleg",
+                                                "twitter": "https://twitter.com/iooleg",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="LT"
+                description="Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+                fullCountryName="Lithuania"
+                id="sarunas"
+                name="Šarūnas Ažna"
+                social={
+                                Object {
+                                                "github": "https://github.com/SarunasAzna",
+                                                "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="LT"
+                description="Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code."
+                fullCountryName="Lithuania"
+                id="karolis"
+                name="Karolis Ramanauskas"
+                social={
+                                Object {
+                                                "github": "https://github.com/superkarolis/",
+                                                "linkedin": "https://www.linkedin.com/in/karolisram/",
+                                                "medium": "https://medium.com/@karolisram",
+                                                "rss": "https://www.karolisram.com/",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="LT"
+                description="User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries."
+                fullCountryName="Lithuania"
+                id="justasv"
+                name="Justas Vitėnas"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="LT"
+                description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability."
+                fullCountryName="Lithuania"
+                id="justas"
+                name="Justas Ažna"
+                social={
+                                Object {
+                                                "github": "https://github.com/reederz",
+                                                "linkedin": "https://www.linkedin.com/in/justasazna/",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="PL"
+                description="Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter."
+                fullCountryName="Paulina"
+                id="paulina"
+                name="Paulina Bagińska"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                                                "twitter": "https://twitter.com/PaulinaBGGC",
+                                              }
+                }
+/>,
+              <TeamMember
+                country="US"
+                description={
+                                <p>
+                                                Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                                                <br />
+                                                distributed systems.
+                                </p>
+                }
+                fullCountryName="United States"
+                id="cyrus"
+                name="Cyrus Ghazanfar"
+                social={
+                                Object {
+                                                "github": "https://github.com/cyzanfar",
+                                                "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                                                "rss": "https://cyzanfar.github.io/",
+                                                "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                                              }
+                }
+/>,
+              <TeamMember
+                description="Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World."
+                id="alejandro"
+                name="Alejandro Ponce"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                                                "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                                              }
+                }
+/>,
+              <TeamMember
+                description="Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries."
+                id="vincenzo"
+                name="Vincenzo Roberti"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                                              }
+                }
+/>,
+              <TeamMember
+                description="Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions."
+                id="charles"
+                name="Charles Cunningham"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                                              }
+                }
+/>,
+              <TeamMember
+                description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+                id="vit"
+                name="Vít Jedlička"
+                social={
+                                Object {
+                                                "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                                              }
+                }
+/>,
+            ],
+            "className": "row row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h2
+                  className="title"
+>
+                  The People Who Make it Happen
+</h2>,
+                "className": "col-xs-12",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "The People Who Make it Happen",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "The People Who Make it Happen",
+                "type": "h2",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "IL",
+                "description": "Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day.",
+                "fullCountryName": "Israel",
+                "id": "oleg",
+                "name": "Oleg Belousov",
+                "social": Object {
+                  "github": "https://github.com/BeOleg",
+                  "linkedin": "https://www.linkedin.com/in/oleg-belousov-b4112145/",
+                  "medium": "https://medium.com/@IoOleg",
+                  "twitter": "https://twitter.com/iooleg",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "LT",
+                "description": "Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.",
+                "fullCountryName": "Lithuania",
+                "id": "sarunas",
+                "name": "Šarūnas Ažna",
+                "social": Object {
+                  "github": "https://github.com/SarunasAzna",
+                  "linkedin": "https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "LT",
+                "description": "Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.",
+                "fullCountryName": "Lithuania",
+                "id": "karolis",
+                "name": "Karolis Ramanauskas",
+                "social": Object {
+                  "github": "https://github.com/superkarolis/",
+                  "linkedin": "https://www.linkedin.com/in/karolisram/",
+                  "medium": "https://medium.com/@karolisram",
+                  "rss": "https://www.karolisram.com/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "LT",
+                "description": "User exeperience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries.",
+                "fullCountryName": "Lithuania",
+                "id": "justasv",
+                "name": "Justas Vitėnas",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/justas-vitenas-77383ab6/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "LT",
+                "description": "DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes. Proponent for micro-component design and seamless scalability.",
+                "fullCountryName": "Lithuania",
+                "id": "justas",
+                "name": "Justas Ažna",
+                "social": Object {
+                  "github": "https://github.com/reederz",
+                  "linkedin": "https://www.linkedin.com/in/justasazna/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "PL",
+                "description": "Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter.",
+                "fullCountryName": "Paulina",
+                "id": "paulina",
+                "name": "Paulina Bagińska",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/baginskapaulina/",
+                  "twitter": "https://twitter.com/PaulinaBGGC",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "country": "US",
+                "description": <p>
+                  Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and
+                  <br />
+                  distributed systems.
+</p>,
+                "fullCountryName": "United States",
+                "id": "cyrus",
+                "name": "Cyrus Ghazanfar",
+                "social": Object {
+                  "github": "https://github.com/cyzanfar",
+                  "linkedin": "https://www.linkedin.com/in/cyrus-ghazanfar-a0998a53/",
+                  "rss": "https://cyzanfar.github.io/",
+                  "stack-overflow": "http://stackoverflow.com/users/3307520/cyzanfar",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "description": "Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World.",
+                "id": "alejandro",
+                "name": "Alejandro Ponce",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/alejandro-ponce-8551a312/",
+                  "wikipedia-w": "https://en.wikipedia.org/wiki/Alejandro_Ponce",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "description": "Serial entrepreneur, experienced in creating and building global technology  businesses within Broadcasting, Media and Security industries.",
+                "id": "vincenzo",
+                "name": "Vincenzo Roberti",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/vincenzo-roberti-6595aa6/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "description": "Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions.",
+                "id": "charles",
+                "name": "Charles Cunningham",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/cicunningham/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "description": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+                "id": "vit",
+                "name": "Vít Jedlička",
+                "social": Object {
+                  "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

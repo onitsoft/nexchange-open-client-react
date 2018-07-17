@@ -30,8 +30,8 @@ describe('OrderCoinProcessed', () => {
   });
 
   it('copy trigger is called', () => {
-    const spy = jest.spyOn(OrderCoinProcessed.prototype, 'triggerCopyTooltip');
     const wrapShallow = mount(<OrderCoinProcessed type="Deposit" order={order} />);
+    const spy = jest.spyOn(wrapShallow.instance(), 'triggerCopyTooltip');
 
     expect(spy).not.toHaveBeenCalled();
     wrapShallow.find('[data-test="copy-address"]').simulate('click');

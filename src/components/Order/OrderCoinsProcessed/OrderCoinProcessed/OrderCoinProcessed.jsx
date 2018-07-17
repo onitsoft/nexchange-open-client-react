@@ -18,7 +18,7 @@ class OrderCoinProcessed extends Component {
     });
   }
 
-  triggerCopyTooltip() {
+  triggerCopyTooltip = () => {
     if (process.env.NODE_ENV !== 'test') {
       $('#copy-address-to-clipboard').tooltip({
         trigger: 'click',
@@ -36,7 +36,7 @@ class OrderCoinProcessed extends Component {
 
       copy(this.props.order.deposit_address.address);
     }
-  }
+  };
 
   prepareState = props => {
     if (props.type === 'Deposit') {

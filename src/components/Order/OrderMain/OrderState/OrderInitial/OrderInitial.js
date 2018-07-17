@@ -9,8 +9,6 @@ class OrderInitial extends Component {
   constructor(props) {
     super(props);
     this.state = { time: this.calculateRemainingTime() };
-
-    this.calculateRemainingTime = this.calculateRemainingTime.bind(this);
     this.tick = this.tick.bind(this);
   }
 
@@ -18,7 +16,7 @@ class OrderInitial extends Component {
     this.interval = setInterval(this.tick, 1000);
   }
 
-  calculateRemainingTime() {
+  calculateRemainingTime = () => {
     const now = moment()
       .utc()
       .subtract(this.props.order.payment_window, 'minutes');
@@ -32,11 +30,9 @@ class OrderInitial extends Component {
     }
 
     return time;
-  }
+  };
 
   tick() {
-    if (!this.props.order) return;
-
     const time = this.calculateRemainingTime();
     this.setState({ time });
   }
