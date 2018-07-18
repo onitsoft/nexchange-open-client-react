@@ -13,18 +13,26 @@ class Header extends Component {
   };
 
   componentDidMount() {
-    let hash = window.location.hash;
-    if (hash && hash !== '') {
-      hash = hash.replace('#', '');
+    /* istanbul ignore next */
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-      let el = document.getElementById(hash);
-      if (el) el.scrollIntoView();
+    /* istanbul ignore next */
+    if (window.location.hash && isChrome) {
+      /* istanbul ignore next */
+      setTimeout(function() {
+        const hash = window.location.hash;
+        window.location.hash = '';
+        window.location.hash = hash;
+      }, 2000);
     }
   }
 
+  closeFaqModal = () => this.setState({ showFaqModal: false });
+  closeSupportModal = () => this.setState({ showSupportModal: false });
+
   render() {
     return (
-      <div className={`${styles.header} ${window.location.pathname === '/' ? styles.home : ''}`}>
+      <div className={`${styles.header} ${window.location.pathname === '/' ? styles.home : ''}`} data-test="header">
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -36,7 +44,11 @@ class Header extends Component {
 
             <Link to="/">
               <div className={styles['logo-container']}>
-                {window.location.pathname === '/' ? <img src="/img/logo-white.svg" alt="Logo" /> : <img src="/img/logo.svg" alt="Logo" />}
+                {window.location.pathname === '/' ? (
+                  <img src="/img/logo-white.svg" alt="Logo" data-test="logo" />
+                ) : (
+                  <img src="/img/logo.svg" alt="Logo" data-test="logo" />
+                )}
               </div>
             </Link>
           </div>
@@ -57,6 +69,7 @@ class Header extends Component {
                     window.ga('send', 'event', 'FAQ', 'open');
                     this.setState({ showFaqModal: true });
                   }}
+                  data-test="faq-btn"
                 >
                   FAQ
                 </a>
@@ -69,19 +82,25 @@ class Header extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => ga('send', 'event', 'General', 'api docs click')}
+                  data-test="api-link"
                 >
                   API Docs
                 </a>
               </li>
 
               <li>
-                <a className={styles.link} href="/#compare" onClick={() => scrollToElement('#compare')}>
+                <a className={styles.link} href="/#compare" data-test="compare-link">
                   Rates
                 </a>
               </li>
 
               <li>
-                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showSupportModal: true })}>
+                <a
+                  className={styles.link}
+                  href="javascript:void(0)"
+                  onClick={() => this.setState({ showSupportModal: true })}
+                  data-test="support-btn"
+                >
                   Support
                 </a>
               </li>
@@ -98,6 +117,7 @@ class Header extends Component {
                   }}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-test="ico-link"
                 >
                   JOIN OUR ICO
                 </a>
@@ -203,8 +223,8 @@ class Header extends Component {
             </ul>
           </div>
 
-          <FAQ show={this.state.showFaqModal} onClose={() => this.setState({ showFaqModal: false })} />
-          <Support show={this.state.showSupportModal} onClose={() => this.setState({ showSupportModal: false })} />
+          <FAQ show={this.state.showFaqModal} onClose={this.closeFaqModal} />
+          <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} />
         </div>
       </div>
     );
