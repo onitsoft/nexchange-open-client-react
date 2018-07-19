@@ -22,6 +22,7 @@ import pair from 'Mocks/pair';
 import order from 'Mocks/order';
 import processedPairs from 'Mocks/processedPairs.js';
 import kyc from 'Mocks/kyc.js';
+import preparePairs from '../utils/preparePairs';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -36,6 +37,7 @@ describe('actions', () => {
 
   afterEach(() => {
     axiosMock.reset();
+    localStorage.removeItem('token');
   });
 
   it('errorAlert', () => {
@@ -255,6 +257,9 @@ describe('actions', () => {
   it('fetchPairs (no initial selection)', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
 
+    const pairs = pair.filter(pair => !pair.disabled && !pair.test_mode);
+    const processedPairs = preparePairs(pairs);
+
     const expectedActions = [
       {
         type: types.PAIRS_FETCHED,
@@ -281,6 +286,8 @@ describe('actions', () => {
     });
 
     window.history.pushState('', '', 'localhost/?pair=ETHBTC');
+    const pairs = pair.filter(pair => !pair.disabled && !pair.test_mode);
+    const processedPairs = preparePairs(pairs);
 
     const expectedActions = [
       {
@@ -357,27 +364,85 @@ describe('actions', () => {
     });
   });
 
-  it('fetchUserEmail', () => {
-    window.localStorage.setItem('token', 'some token');
+  it('fetchUserEmail (no token)', () => {
+    const expectedActions = [];
+    return store.dispatch(fetchUserEmail()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 
-    console.log(window.localStorage.getItem('token'));
+  it('fetchUserEmail (with token)', () => {
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/users/me/').reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
+    localStorage.setItem('token', 'some token');
 
-    // axiosMock.onGet('https://api.nexchange.io/en/api/v1/kyc/O3FZNP/').reply(200, kyc);
+    const expectedActions = [
+      {
+        type: types.SET_EMAIL,
+        value: 'email@email.com',
+      },
+    ];
 
-    // const payload = 'O3FZNP';
-    // const expectedActions = [{ type: types.SET_KYC, kyc }];
+    return store.dispatch(fetchUserEmail()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 
-    // return store.dispatch(fetchKyc(payload)).then(() => {
-    //   expect(store.getActions()).toEqual(expectedActions);
-    // });
+  it('setUserEmail (no token)', () => {
+    const payload = 'email@email.com';
+    const expectedActions = [];
+    return store.dispatch(setUserEmail(payload)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('setUserEmail (with token and success)', () => {
+    const payload = 'email@email.com';
+
+    window.$crisp = {};
+    window.$crisp.get = jest.fn();
+    window.$crisp.push = jest.fn();
+
+    axiosMock
+      .onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload })
+      .reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
+    localStorage.setItem('token', 'some token');
+
+    const expectedActions = [
+      {
+        type: types.SET_EMAIL_AND_MESSAGE,
+        value: payload,
+        message: {
+          text: 'Success, you set your email.',
+          error: false,
+        },
+      },
+    ];
+
+    return store.dispatch(setUserEmail(payload)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('setUserEmail (with token and no success)', () => {
+    const payload = 'email@email.com';
+
+    window.$crisp = {};
+    window.$crisp.get = jest.fn();
+    window.$crisp.push = jest.fn();
+
+    axiosMock.onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload }).reply(500);
+    localStorage.setItem('token', 'some token');
+
+    const expectedActions = [
+      {
+        type: types.SET_EMAIL_AND_MESSAGE,
+        value: '',
+        message: { error: true, text: 'Something went wrong. Try again later.' },
+      },
+    ];
+
+    return store.dispatch(setUserEmail(payload)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });
-
-// export const fetchUserEmail = () => async dispatch => {
-//   if (!localStorage.token) return;
-
-//   const url = `${config.API_BASE_URL}/users/me/`;
-//   const request = axios.get(url);
-
-//   return request.then(res => dispatch({ type: types.SET_EMAIL, value: res.data.email }));
-// };

@@ -48,6 +48,7 @@ export const fetchCoinDetails = () => dispatch => {
       dispatch({ type: types.COINS_INFO, payload: coins });
     })
     .catch(error => {
+      /* istanbul ignore next */
       console.log(error);
     });
 };
@@ -189,6 +190,7 @@ export const fetchPairs = () => dispatch => {
             depositCoin = pair.quote;
             receiveCoin = pair.base;
           } catch (err) {
+            /* istanbul ignore next */
             console.log('Error:', err);
           }
         } else {
@@ -210,6 +212,7 @@ export const fetchPairs = () => dispatch => {
       );
     })
     .catch(error => {
+      /* istanbul ignore next */
       console.log(error);
     });
 };
@@ -276,10 +279,6 @@ export const setUserEmail = email => async dispatch => {
     })
     .catch(error => {
       let errorMessage = 'Something went wrong. Try again later.';
-
-      if (error.response && error.response.data && error.response.data.email.length && error.response.data.email[0]) {
-        errorMessage = error.response.data.email[0];
-      }
 
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,
