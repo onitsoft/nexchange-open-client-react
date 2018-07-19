@@ -85,6 +85,7 @@ export const fetchPrice = payload => dispatch => {
     const setFaultyValues = err => {
       let data = { pair };
 
+      /* istanbul ignore next */
       if (window.ga) {
         window.ga('send', 'event', {
           eventCategory: 'Amount input',
@@ -126,6 +127,7 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
+      /* istanbul ignore next */
       if (window.ga) {
         window.ga('send', 'event', {
           eventCategory: 'Coin selector',
@@ -171,7 +173,7 @@ export const fetchPairs = () => dispatch => {
           axios
             .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
             .then(res => resolve(res.data))
-            .catch(err => reject(err));
+            .catch(/* istanbul ignore next */ err => reject(err));
         });
       };
 

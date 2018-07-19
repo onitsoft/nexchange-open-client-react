@@ -20,7 +20,6 @@ import {
 import currency from 'Mocks/currency';
 import pair from 'Mocks/pair';
 import order from 'Mocks/order';
-import processedPairs from 'Mocks/processedPairs.js';
 import kyc from 'Mocks/kyc.js';
 import preparePairs from '../utils/preparePairs';
 
@@ -38,6 +37,7 @@ describe('actions', () => {
   afterEach(() => {
     axiosMock.reset();
     localStorage.removeItem('token');
+    window.history.pushState('', '', 'localhost');
   });
 
   it('errorAlert', () => {
@@ -82,13 +82,61 @@ describe('actions', () => {
     expect(setOrder('payload')).toEqual(expectedAction);
   });
 
-  it('fetchCoinDetails', () => {
+  it('fetchCoinDetails (default)', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
 
     const expectedActions = [
       {
         type: types.COINS_INFO,
         payload: _.filter(currency, { has_enabled_pairs: true }),
+      },
+    ];
+
+    return store.dispatch(fetchCoinDetails()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  // it('fetchCoinDetails (white label)', () => {
+  //   axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+
+  //   jest.mock('Config', () => ({
+  //     NAME: 'N.exchange2',
+  //     DOMAIN: 'https://n.exchange',
+  //     API_BASE_URL: 'https://api.nexchange.io/en/api/v1',
+  //     SUPPORT_EMAIL: 'support@n.exchange',
+  //     PRICE_FETCH_INTERVAL: 60000,
+  //     ORDER_DETAILS_FETCH_INTERVAL: 20000,
+  //     RECENT_ORDERS_INTERVAL: 20000,
+  //     RECENT_ORDERS_COUNT: 11,
+  //     PRICE_COMPARISON_INTERVAL: 60000,
+  //     KYC_DETAILS_FETCH_INTERVAL: 20000,
+  //     REFERRAL_CODE: 'code',
+  //   }));
+
+  //   const expectedActions = [
+  //     {
+  //       type: types.COINS_INFO,
+  //       payload: _.filter(currency, {
+  //         has_enabled_pairs: true,
+  //         is_crypto: true,
+  //       }),
+  //     },
+  //   ];
+
+  //   return store.dispatch(fetchCoinDetails()).then(() => {
+  //     expect(store.getActions()).toEqual(expectedActions);
+  //   });
+  // });
+
+  it('fetchCoinDetails (test)', () => {
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+    window.history.pushState('', '', 'localhost/?test=true');
+
+    const expectedActions = [
+      {
+        type: types.COINS_INFO,
+        payload: _.filter(currency, { has_enabled_pairs_for_test: true }),
       },
     ];
 
@@ -118,7 +166,34 @@ describe('actions', () => {
         payload: { show: false, type: 'INVALID_AMOUNT' },
       },
     ];
-    const store = mockStore();
+
+    return store.dispatch(fetchPrice(payload)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('fetchPrice (initial amounts set and selected coin causes inputs to be incorrect)', () => {
+    const mockPriceData = {
+      amount_base: 28900.73410405,
+      amount_quote: 0.1,
+      timestamp: 1532015334.245364,
+      price: 3.46e-6,
+    };
+
+    const payload = { pair: 'XVGBTC', lastEdited: 'deposit', coinSelector: true, deposit: 520 };
+
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/XVGBTC/').reply(200, mockPriceData);
+    const expectedActions = [
+      {
+        type: types.PRICE_FETCHED,
+        payload: { pair: 'XVGBTC', deposit: 0.1, receive: 28900.73410405, lastEdited: 'deposit' },
+      },
+      {
+        type: types.ERROR_ALERT,
+        payload: { show: false, type: 'INVALID_AMOUNT' },
+      },
+    ];
+
     return store.dispatch(fetchPrice(payload)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
@@ -217,6 +292,35 @@ describe('actions', () => {
       });
   });
 
+  it('fetchPrice (initial quote too high and no error message received)', () => {
+    const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
+
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400);
+
+    const expectedActions = [
+      {
+        type: types.PRICE_FETCHED,
+        payload: {
+          pair: 'ETHBTC',
+          deposit: 100,
+          receive: '...',
+          lastEdited: 'deposit',
+        },
+      },
+      {
+        type: types.ERROR_ALERT,
+        payload: { show: false, type: 'INVALID_AMOUNT' },
+      },
+    ];
+
+    return store
+      .dispatch(fetchPrice(payload))
+      .then(() => {})
+      .catch(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
   it('fetchPrice (initial base too high)', () => {
     const mockPriceData = {
       detail: 'Maximum receive amount is 11.39664626 ETH on this trade.',
@@ -258,6 +362,26 @@ describe('actions', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
 
     const pairs = pair.filter(pair => !pair.disabled && !pair.test_mode);
+    const processedPairs = preparePairs(pairs);
+
+    const expectedActions = [
+      {
+        type: types.PAIRS_FETCHED,
+        payload: processedPairs,
+      },
+    ];
+
+    return store.dispatch(fetchPairs()).then(() => {
+      expect([store.getActions()[0]]).toEqual(expectedActions);
+      expect(store.getActions()[1].type).toEqual(types.COIN_SELECTED);
+    });
+  });
+
+  it('fetchPairs (no initial selection and test)', () => {
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
+    window.history.pushState('', '', 'localhost/?test=true');
+
+    const pairs = pair.filter(pair => !pair.disabled);
     const processedPairs = preparePairs(pairs);
 
     const expectedActions = [
