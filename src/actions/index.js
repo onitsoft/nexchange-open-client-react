@@ -86,10 +86,12 @@ export const fetchPrice = payload => dispatch => {
     const setFaultyValues = err => {
       let data = { pair };
 
-      window.ga('send', 'event', {
-        eventCategory: 'Amount input',
-        eventAction: 'Amount too high/low error',
-      });
+      if (window.ga) {
+        window.ga('send', 'event', {
+          eventCategory: 'Amount input',
+          eventAction: 'Amount too high/low error',
+        });
+      }
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -125,10 +127,12 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
-      window.ga('send', 'event', {
-        eventCategory: 'Coin selector',
-        eventAction: 'Fetch default amounts',
-      });
+      if (window.ga) {
+        window.ga('send', 'event', {
+          eventCategory: 'Coin selector',
+          eventAction: 'Fetch default amounts',
+        });
+      }
 
       if (payload.coinSelector) {
         let url = `${config.API_BASE_URL}/get_price/${pair}/`;

@@ -1165,12 +1165,11 @@ ShallowWrapper {
     }
     store={
         Object {
-            "clearActions": [Function],
             "dispatch": [Function],
-            "getActions": [Function],
             "getState": [Function],
             "replaceReducer": [Function],
             "subscribe": [Function],
+            Symbol(observable): [Function],
           }
     }
     storeSubscription={
@@ -1184,12 +1183,11 @@ ShallowWrapper {
             "onStateChange": [Function],
             "parentSub": undefined,
             "store": Object {
-              "clearActions": [Function],
               "dispatch": [Function],
-              "getActions": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
+              Symbol(observable): [Function],
             },
             "unsubscribe": [Function],
           }
@@ -1219,6 +1217,7 @@ ShallowWrapper {
           />
           <span
                     className="span"
+                    data-test="selected"
           >
                     OMG
           </span>
@@ -1242,6 +1241,7 @@ ShallowWrapper {
 />,
             <span
               className="span"
+              data-test="selected"
 >
               OMG
 </span>,
@@ -1273,6 +1273,7 @@ ShallowWrapper {
             "props": Object {
               "children": "OMG",
               "className": "span",
+              "data-test": "selected",
             },
             "ref": null,
             "rendered": "OMG",
@@ -1313,6 +1314,7 @@ ShallowWrapper {
             />
             <span
                         className="span"
+                        data-test="selected"
             >
                         OMG
             </span>
@@ -1336,6 +1338,7 @@ ShallowWrapper {
 />,
               <span
                 className="span"
+                data-test="selected"
 >
                 OMG
 </span>,
@@ -1367,6 +1370,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "OMG",
                 "className": "span",
+                "data-test": "selected",
               },
               "ref": null,
               "rendered": "OMG",
@@ -2566,12 +2570,11 @@ ShallowWrapper {
     }
     store={
         Object {
-            "clearActions": [Function],
             "dispatch": [Function],
-            "getActions": [Function],
             "getState": [Function],
             "replaceReducer": [Function],
             "subscribe": [Function],
+            Symbol(observable): [Function],
           }
     }
     storeSubscription={
@@ -2585,12 +2588,11 @@ ShallowWrapper {
             "onStateChange": [Function],
             "parentSub": undefined,
             "store": Object {
-              "clearActions": [Function],
               "dispatch": [Function],
-              "getActions": [Function],
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
+              Symbol(observable): [Function],
             },
             "unsubscribe": [Function],
           }
@@ -2620,6 +2622,7 @@ ShallowWrapper {
           />
           <span
                     className="span"
+                    data-test="selected"
           >
                     ETH
           </span>
@@ -2643,6 +2646,7 @@ ShallowWrapper {
 />,
             <span
               className="span"
+              data-test="selected"
 >
               ETH
 </span>,
@@ -2674,6 +2678,7 @@ ShallowWrapper {
             "props": Object {
               "children": "ETH",
               "className": "span",
+              "data-test": "selected",
             },
             "ref": null,
             "rendered": "ETH",
@@ -2714,6 +2719,7 @@ ShallowWrapper {
             />
             <span
                         className="span"
+                        data-test="selected"
             >
                         ETH
             </span>
@@ -2737,6 +2743,7 @@ ShallowWrapper {
 />,
               <span
                 className="span"
+                data-test="selected"
 >
                 ETH
 </span>,
@@ -2768,6 +2775,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "ETH",
                 "className": "span",
+                "data-test": "selected",
               },
               "ref": null,
               "rendered": "ETH",

@@ -131,6 +131,7 @@
       "^StatusCodes": "<rootDir>/src/statusCodes.js",
       "^Img(.*)$": "<rootDir>/src/img$1",
       "^Mocks(.*)$": "<rootDir>/src/__mocks__$1",
+      "^Reducers(.*)$": "<rootDir>/src/reducers$1",
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [

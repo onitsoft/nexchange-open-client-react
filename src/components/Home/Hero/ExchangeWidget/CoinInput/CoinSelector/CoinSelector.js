@@ -115,7 +115,9 @@ class CoinSelector extends Component {
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
           <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
-          <span className={styles.span}>{selectedCoin}</span>
+          <span className={styles.span} data-test="selected">
+            {selectedCoin}
+          </span>
           <div className={styles.carret} />
         </div>
 
