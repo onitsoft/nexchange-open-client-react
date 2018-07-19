@@ -279,7 +279,7 @@ export const setUserEmail = email => async dispatch => {
         },
       });
     })
-    .catch(error => {
+    .catch(() => {
       let errorMessage = 'Something went wrong. Try again later.';
 
       dispatch({
