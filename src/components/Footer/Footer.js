@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.scss';
 
 const Footer = () => (
-  <footer>
+  <footer className={styles.container}>
   <I18n ns="translations">
 	  {(t) => (
 
