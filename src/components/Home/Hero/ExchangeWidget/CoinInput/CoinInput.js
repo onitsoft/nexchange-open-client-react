@@ -2,23 +2,29 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import { debounce } from 'throttle-debounce';
+import debounce from 'Utils/debounce';
 import { fetchPrice } from 'Actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
 import styles from './CoinInput.scss';
 
 class CoinInput extends PureComponent {
-  constructor(props) {
-    super(props);
+  state = {
+    value: '...',
+  };
 
-    this.state = {
-      value: '...',
-    };
+  handleFocus = event => {
+    if (event.target.value === '...') {
+      this.setState({ value: '' });
+    }
+  };
 
-    this.fetchAmounts = debounce(600, this.fetchAmounts);
-  }
+  handleBlur = event => {
+    if (event.target.value === '') {
+      this.setState({ value: '...' });
+    }
+  };
 
-  onChange = event => {
+  handleChange = event => {
     let { value } = event.target;
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
@@ -30,24 +36,12 @@ class CoinInput extends PureComponent {
     ga('send', 'event', 'Order', 'change amount');
   };
 
-  onFocus = event => {
-    if (event.target.value === '...') {
-      this.setState({ value: '' });
-    }
-  };
-
-  onBlur = event => {
-    if (event.target.value === '') {
-      this.setState({ value: '...' });
-    }
-  };
-
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit();
   };
 
-  fetchAmounts = value => {
+  fetchAmounts = debounce(value => {
     const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
     const data = {
       pair,
@@ -59,7 +53,7 @@ class CoinInput extends PureComponent {
     if (value.length) {
       this.props.fetchPrice(data);
     }
-  };
+  }, 600);
 
   focus = () => {
     this.nameInput.focus();
@@ -87,9 +81,9 @@ class CoinInput extends PureComponent {
             className={`form-control ${styles.input}`}
             id={`coin-input-${this.props.type}`}
             name={this.props.type}
-            onChange={this.onChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
+            onChange={this.handleChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
             value={this.state.value}
             ref={input => {
               this.nameInput = input;

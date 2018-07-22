@@ -145,6 +145,15 @@ const Team = () => (
             linkedin: 'https://www.linkedin.com/in/cicunningham/',
           }}
         />
+
+        <TeamMember
+          id="vit"
+          name="Vít Jedlička"
+          description="{t('about.vit')}"
+          social={{
+            linkedin: 'https://www.linkedin.com/in/vit-jedlicka-9115aa2/',
+          }}
+        />
       </div>
     </div>
   </div>

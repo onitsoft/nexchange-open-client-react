@@ -10,6 +10,7 @@ class QuestionAnswer extends Component {
   }
 
   onClick() {
+    window.ga('send', 'event', 'FAQ', 'question open');
     this.setState({ open: !this.state.open });
   }
 

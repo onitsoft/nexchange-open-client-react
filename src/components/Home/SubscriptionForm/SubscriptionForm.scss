@@ -1,7 +1,7 @@
 .container {
   padding: 40px 0 35px;
   background-color: #01031e;
-  background-image: url('../../../img/ellipse.svg');
+  background-image: url('Img/ellipse.svg');
   background-position: 50% 50%;
   background-size: 90%;
   background-repeat: no-repeat;
@@ -52,12 +52,12 @@
   &::-moz-placeholder {
     color: #fff;
     font-size: 12px;
-  } /* firefox 19+ */
+  }
 
   &:-ms-input-placeholder {
     color: #fff;
     font-size: 12px;
-  } /* ie */
+  }
 
   &:-moz-placeholder {
     color: #fff;

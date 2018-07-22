@@ -11,7 +11,7 @@ const OrderAlert = () => {
         x="0px"
         y="0px"
         viewBox="0 0 39.7 35.2"
-        style={{ 'enable-background': 'new 0 0 39.7 35.2' }}
+        style={{ enableBackground: 'new 0 0 39.7 35.2' }}
       >
         <g>
           <g>

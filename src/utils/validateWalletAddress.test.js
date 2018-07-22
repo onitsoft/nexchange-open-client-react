@@ -34,6 +34,7 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BIX')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'COB')).toEqual(true);
     expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'COSS')).toEqual(true);
+    expect(validateWalletAddress('0x5B93162D7A375323964Acdca69705981a7643cBE', 'BMH')).toEqual(true);
   });
 
   it('invalidates invalid ETH and ERC20 tokens address', () => {
@@ -53,6 +54,7 @@ describe('Validate coin address', () => {
     expect(validateWalletAddress('random address', 'BIX')).toEqual(false);
     expect(validateWalletAddress('random address', 'COB')).toEqual(false);
     expect(validateWalletAddress('random address', 'COSS')).toEqual(false);
+    expect(validateWalletAddress('random address', 'BMH')).toEqual(false);
   });
 
   it('validates valid DOGE address', () => {
@@ -73,6 +75,7 @@ describe('Validate coin address', () => {
 
   it('validates valid BCH address', () => {
     expect(validateWalletAddress('1C394PrnPG1bw3r7ERJS1pbauRbtf1Kxcx', 'BCH')).toEqual(true);
+    expect(validateWalletAddress('bitcoincash:qzgge698e7vhdyutsk7qhrh60dth2ewqdqm484uf26', 'BCH')).toEqual(true);
   });
 
   it('invalidates invalid BCH address', () => {

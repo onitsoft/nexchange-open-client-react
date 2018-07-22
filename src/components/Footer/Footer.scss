@@ -1,0 +1,49 @@
+.container {
+  padding: 20px 0 15px 0;
+  width: 100%;
+  min-height: 114px;
+  background: #fff;
+
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+    bottom: 0;
+    height: 114px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .address {
+    @media (min-width: $screen-sm-min) {
+      margin-top: 15px;
+    }
+  }
+
+  .links {
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 12px;
+      float: right;
+    }
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 24px;
+    }
+
+    li {
+      a {
+        padding: 0;
+        color: $gray;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      @media (min-width: $screen-md-min) {
+        padding-left: 30px;
+      }
+    }
+  }
+}

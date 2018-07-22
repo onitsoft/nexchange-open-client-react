@@ -18,23 +18,18 @@ describe('Order creation', function() {
 
     cy.visit('http://localhost:3000?pair=BTCETH');
 
-    cy.get('.selectedCoin-deposit')
-      .find('i.fa-angle-down')
-      .click();
+    cy.get('.selectedCoin-deposit').click();
 
     cy.get('.coin-currency-dropdown')
       .contains('EUR')
       .click();
 
-    cy.get('.selectedCoin-receive')
-      .find('i.fa-angle-down')
-      .click();
+    cy.get('.selectedCoin-receive').click();
 
     cy.get('.coin-currency-dropdown')
       .contains('XVG')
       .click();
 
-    cy.get('.proceed').click();
     cy.get('#withdraw-addr').type('DLCw22a8B8Roetqp2t2q7zop8SYZp9wY5E');
 
     cy.get('.proceed').click();
@@ -56,21 +51,16 @@ describe('Order creation', function() {
 
     cy.visit('http://localhost:3000?pair=BTCETH');
 
-    cy.get('.selectedCoin-deposit')
-      .find('i.fa-angle-down')
-      .click();
+    cy.get('.selectedCoin-deposit').click();
     cy.get('.coin-currency-dropdown')
       .contains('BTC')
       .click();
 
-    cy.get('.selectedCoin-receive')
-      .find('i.fa-angle-down')
-      .click();
+    cy.get('.selectedCoin-receive').click();
     cy.get('.coin-currency-dropdown')
       .contains('XVG')
       .click();
 
-    cy.get('.proceed').click();
     cy.get('#withdraw-addr').type('DLCw22a8B8Roetqp2t2q7zop8SYZp9wY5E');
 
     cy.get('.proceed').click();
