@@ -149,7 +149,7 @@ const Team = () => (
         <TeamMember
           id="vit"
           name="Vít Jedlička"
-          description="{t('about.vit')}"
+          description={t('about.vit')}
           social={{
             linkedin: 'https://www.linkedin.com/in/vit-jedlicka-9115aa2/',
           }}
