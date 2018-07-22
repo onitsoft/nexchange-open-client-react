@@ -42,10 +42,10 @@ const About = () => (
           </p>
           </Trans>
          </div>
+
         </div>
       </div>
     </div>
-  </div>
 )}
 </I18n>
 );

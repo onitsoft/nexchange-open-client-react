@@ -11,6 +11,7 @@ import config from 'Config';
 
 import LoadingComponent from './LoadingComponent/LoadingComponent';
 import styles from './RecentOrders.scss';
+import arrow from 'Img/arrow-right-2.svg';
 
 class RecentOrders extends Component {
   state = {

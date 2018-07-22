@@ -4,7 +4,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import OrderReferralTerms from './OrderReferralTerms/OrderReferralTerms';
 import Man from './images/man.png';
 import styles from '../OrderCta.scss';
-import { I18n } from 'react-i18next';
+import { I18n, Interpolate } from 'react-i18next';
 
 class OrderReferrals extends Component {
   state = {

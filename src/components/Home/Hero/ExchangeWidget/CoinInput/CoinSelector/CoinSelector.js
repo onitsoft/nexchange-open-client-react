@@ -79,6 +79,7 @@ class CoinSelector extends Component {
         show: true,
         type: 'INVALID_PAIR',
       });
+     }
       // This condition means that selected coin has been changed and price
       // needs to be refetched.
     } else if (
