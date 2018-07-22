@@ -4,7 +4,7 @@
     "formfailed": "Es gab ein Problem mit Ihrer Verbindung. Bitte probieren Sie es später erneut oder benutzen Sie Ihr E-Mail Programm, um uns zu kontaktieren.",
     "email": "Email",
     "address": "Adresse",
-    "youraddress": "Ihre {{selectedCoin}} Adresse",
+    "youraddress": "Geben Sie Ihre {{selectedCoin}} Adresse ein",
     "search": "Suchen",
     "submit": "Bestätigen"
   },

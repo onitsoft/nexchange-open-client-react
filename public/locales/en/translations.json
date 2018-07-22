@@ -4,7 +4,7 @@
     "formfailed": "Something went wrong during the form submission, please try again later.",
     "email": "Email",
     "address": "address",
-    "youraddress": "Your {{selectedCoin}} Address",
+    "youraddress": "Enter your {{selectedCoin}} wallet address",
     "search": "Search",
     "submit": "Submit"
   },
