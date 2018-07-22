@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
 import styles from './WalletAddress.scss';
-import i18n from '../i18n';
+import { I18n } from 'react-i18next';
+import i18n from '../../../../../i18n';
 
 class WalletAddress extends Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class WalletAddress extends Component {
             id="withdraw-addr"
             onChange={this.handleChange}
             value={this.state.address}
-            placeholder="Enter your wallet address"
+            placeholder={t('order.enteraddress')}
           />
         </form>
       </div>

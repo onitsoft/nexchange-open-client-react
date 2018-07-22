@@ -291,7 +291,7 @@
     "a": "Share it on social!",
     "copylink": "Copy link",
     "affiliate": "By the way, if you want you can share this unique referral link with your friends to earn some coins!",
-    "affiliate2": "Earn free {{selectedCoin}} directly to your withdrawal address by sharing this unique referral link with your friends!"
+    "affiliate2": "Earn free {{selectedCoin}} directly to your withdrawal address by sharing this unique referral link with your friends!",
     "twitter": "I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!"
   },
   "refund": {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { I18n, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import styles from './Footer.scss';
 
 const Footer = () => (
   <footer>
