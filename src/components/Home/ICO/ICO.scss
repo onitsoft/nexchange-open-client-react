@@ -1,12 +1,30 @@
 .container {
   padding: 45px 0;
   background-color: #01031e;
-  background-image: url('../../../img/ellipse.svg');
   background-position: 50% 50%;
   background-size: 90%;
-  background-repeat: no-repeat;
   text-align: center;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 45%;
+    background-image: url('../../../img/ellipse.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    transform: rotate(180deg);
+
+    @media (min-width: $screen-lg-min) {
+      left: 50%;
+    }
+  }
 
   @media (min-width: $screen-sm-min) {
     text-align: left;
@@ -45,12 +63,16 @@
 
 .btn.btn.btn {
   display: inline-block;
-  max-width: 245px;
-  min-width: 200px;
+  width: 200px;
   height: 48px;
   padding-top: 0;
   padding-bottom: 0;
   line-height: 48px;
+}
+
+.countdown {
+  position: relative;
+  z-index: 2;
 }
 
 .countdown-container {

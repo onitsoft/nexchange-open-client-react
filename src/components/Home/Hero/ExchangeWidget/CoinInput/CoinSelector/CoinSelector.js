@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import onClickOutside from 'react-onclickoutside';
-import { selectCoin, fetchPrice, setWallet, errorAlert } from 'Actions/index.js';
+import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import styles from './CoinSelector.scss';
 import i18n from '../../../../../../i18n';
@@ -58,12 +58,20 @@ class CoinSelector extends Component {
     if (
       nextDepositCoin &&
       nextReceiveCoin &&
-      (this.props.pairs && (!this.props.pairs[nextDepositCoin] || !this.props.pairs[nextDepositCoin][nextReceiveCoin]))
+      this.props.pairs &&
+      (!this.props.pairs[nextDepositCoin] || !this.props.pairs[nextDepositCoin][nextReceiveCoin])
     ) {
-      const validPairs = Object.keys(this.props.pairs[nextDepositCoin])
-        .map(coin => coin)
-        .filter(coin => this.props.pairs[nextDepositCoin][coin] === true)
-        .join(', ');
+      if (!this.props.pairs[nextDepositCoin]) {
+        this.props.errorAlert({
+          message: `${i18n.t('error.nousedeposit')}  ${nextDepositCoin} ${i18n.t('error.nousedeposit2')}`,
+          show: true,
+          type: 'INVALID_PAIR',
+        });
+      } else if (!this.props.pairs[nextDepositCoin][nextReceiveCoin]) {
+        const validPairs = Object.keys(this.props.pairs[nextDepositCoin])
+          .map(coin => coin)
+          .filter(coin => this.props.pairs[nextDepositCoin][coin] === true)
+          .join(', ');
 
       this.props.errorAlert({
         message:  `${i18n.t('error.invalidpair')} 
@@ -118,7 +126,7 @@ class CoinSelector extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
-const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, setWallet, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,

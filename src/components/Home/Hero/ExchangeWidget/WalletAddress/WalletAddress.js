@@ -16,11 +16,19 @@ class WalletAddress extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    let address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
+  validate = (address, receiveCoin) => {
+    if (address === '' || !receiveCoin) {
+      this.props.setWallet({
+        address,
+        valid: false,
+      });
+
+      return this.props.errorAlert({ show: false });
+    }
+
     const valid = validateWalletAddress(
       address,
-      this.props.selectedCoin.receive,
+      receiveCoin,
       () =>
         this.props.errorAlert({
           show: true,
@@ -31,13 +39,16 @@ class WalletAddress extends Component {
       () => this.props.errorAlert({ show: false })
     );
 
-    this.setState({ address });
-
     this.props.setWallet({
-      address: address,
-      valid: valid,
-      show: true,
+      address,
+      valid,
     });
+  };
+
+  handleChange(event) {
+    const address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
+    this.setState({ address });
+    this.validate(address, this.props.selectedCoin.receive);
   }
 
   handleSubmit(event) {
@@ -45,13 +56,9 @@ class WalletAddress extends Component {
     this.props.onSubmit();
   }
 
-  UNSAFE_componentWillMount() {
-    this.props.setWallet({ address: '', valid: false, show: false });
-  }
-
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.wallet.address !== null && nextProps.wallet.address !== this.state.address) {
-      this.setState({ address: nextProps.wallet.address });
+    if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
+      this.validate(this.state.address, nextProps.selectedCoin.receive);
     }
   }
 
@@ -59,16 +66,8 @@ class WalletAddress extends Component {
     return (
 	<I18n ns="translations">
 	{(t) => (
-      <div className={`${styles.container} col-xs-12 active`}>
+      <div className="col-xs-12 active">
         <form className="form-group" onSubmit={this.handleSubmit}>
-          <label htmlFor="withdraw-addr" className="control-label text-green">
-            <Interpolate i18nKey="generalterms.youraddress" selectedCoin={this.props.selectedCoin.receive} />
-            {/* 
-             =>
-               Your selectedCoin Address
-            */}
-          </label>
-
           <input
             type="text"
             ref={this.props.inputRef}
@@ -86,22 +85,8 @@ class WalletAddress extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    selectedCoin: state.selectedCoin,
-    wallet: state.wallet,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      errorAlert: errorAlert,
-      setWallet: setWallet,
-    },
-    dispatch
-  );
-}
+const mapStateToProps = ({ selectedCoin, wallet }) => ({ selectedCoin, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet }, dispatch);
 
 export default connect(
   mapStateToProps,

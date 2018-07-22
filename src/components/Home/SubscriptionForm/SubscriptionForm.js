@@ -71,28 +71,26 @@ class SubscriptionForm extends React.Component {
           <h3><h2>{t('subscription.6')}</h2></h3>
 
           <form action={action} method="post" noValidate>
-            <div id="subscription-form-inner">
-              <div className="col-xs-12 col-ms-8 col-ms-push-2">
-                <div className="row">
-                  <div className={`${styles.group} form-group is-empty has-success`}>
-                    <input
-                      ref={node => (this.input = node)}
-                      type="email"
-                      name="email"
-                      placeholder={t('subscription.2')}
-                      className={`${styles.input} form-control`}
-                      required
-                    />
+            <div className="col-xs-12 col-ms-8 col-ms-push-2">
+              <div className="row">
+                <div className={`${styles.group} form-group is-empty has-success`}>
+                  <input
+                    ref={node => (this.input = node)}
+                    type="email"
+                    name="email"
+                    placeholder={t('subscription.2')}
+                    className={`${styles.input} form-control`}
+                    required
+                  />
 
-                    <button
-                      disabled={this.state.status === 'sending' || this.state.status === 'success'}
-                      type="submit"
-                      className={`${styles.btn} btn btn-primary`}
-                      onClick={this.onSubmit}
-                    >
-                      {t('subscription.3')}
-                    </button>
-                  </div>
+                  <button
+                    disabled={this.state.status === 'sending' || this.state.status === 'success'}
+                    type="submit"
+                    className={`${styles.btn} btn btn-primary`}
+                    onClick={this.onSubmit}
+                  >
+                    {t('subscription.3')}
+                  </button>
                 </div>
               </div>
 

@@ -7,8 +7,9 @@ html {
 #root {
   position: relative;
   min-height: 100%;
-  @media (min-width: $screen-md-min) {
-    padding-bottom: 105px;
+
+  @media (min-width: $screen-sm-min) {
+    padding-bottom: 114px;
   }
 }
 
@@ -116,6 +117,10 @@ textarea.form-control:focus {
   color: $green !important;
 }
 
+input {
+  border: none;
+}
+
 input[type='number'] {
   appearance: textfield;
   -moz-appearance: textfield;
@@ -126,6 +131,10 @@ input[type='number']:hover::-webkit-inner-spin-button,
 input[type='number']:hover::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type='file'] {
+  margin: 10px 0 15px;
 }
 
 .form-group {

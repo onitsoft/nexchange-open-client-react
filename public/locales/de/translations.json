@@ -55,9 +55,10 @@
     "1": "N.EXCHANGE ist eine schnelle, verlässliche und vollständig transparente Börse für Kryptowährungen, entwickelt von Krypto-Enthusiasten für Krypto-Enthusiasten.",
     "2": "Wir sind ein Team multinationaler, interdisziplinärer Experten für Kryptowährungen.",
     "3": "Unser Team ist zusammengekommen, um diese Plattform zu entwickeln, nachdem wir aus erster Hand den Bedarf an einer schnellen, verlässlichen Börse auf dem Markt für Kryptowährungen gespürt haben.",
-    "4": "Wir sind stolz auf unsere umfassende Transparenz: Alles ist durch unsere Programmierschnittstelle einsichtbar, angefangen bei Auftrag-Listen bis hin zu unseren Coin-Reserven.",
-    "5": "N.EXCHANGE fundiert auf mehreren Grundwerten, die unser Team in tagtäglichen Arbeit leiten. Darunter vollständige Transparenz, das Streben, Kryptowährungen so zugänglich wie möglich zu machen und eine Leidenschaft für Open Source.",
-    "6": "<0>Um unsere Mission, Kryptowährungen für jedermann so zugänglich wie möglich zu machen, zu unterstützen, haben wir unseren <2><0>Frontend Client auf Open Source Basis <1></1></0></2> entwickelt.</0>",
+    "4": "Wir sind stolz auf unsere umfassende Transparenz",
+    "5": "Alles ist durch unsere Programmierschnittstelle einsichtbar, angefangen bei Auftrag-Listen bis hin zu unseren Coin-Reserven.",
+    "6": "N.EXCHANGE fundiert auf mehreren Grundwerten, die unser Team in tagtäglichen Arbeit leiten. Darunter vollständige Transparenz, das Streben, Kryptowährungen so zugänglich wie möglich zu machen und eine Leidenschaft für Open Source.",
+    "7": "<0>Um unsere Mission, Kryptowährungen für jedermann so zugänglich wie möglich zu machen, zu unterstützen, haben wir unseren <2><0>Frontend Client auf Open Source Basis <1></1></0></2> entwickelt.</0>",
     "oleg": "Interdisziplinäre Programmierer. Aufstrebender Wegbereiter mit einer starken Leidenschaft für Open Source und die Welt zu verbessern, Schritt für Schritt, jeden Tag.",
     "sarunas": "Backend Entwickler und Physiker. Animationsfan, Begeisterung für Kryptowährungen und spielt Saxofon.",
     "karolis": "Full-Stack Entwickler. Unternehmer aus vollem Herzen.  Genießt es, Produkte durch Code zum Leben zu erwecken.",
@@ -69,6 +70,7 @@
     "alejandro": "Erfahrener globaler Investor, Gründer der Nexus Group, ToN Ventures, 01Labs und 01Ventures. Im Jahr 2013 von Private Equity World zu den 50 einflussreichsten Persönlichkeiten in Lateinamerika ernannt.",
     "vincenzo": "Serial Entrepreneur, erfahren in der Schaffung und dem Aufbau von globalen Technologieunternehmen in der Rundfunk-, Medien- und Sicherheitsbranche.",
     "charles": "Senior Software Engineer und IT Architekt mit fast 40 Jahren Branchenerfahrung. Derzeit arbeitet er mit Blockchain-Technologie, um Lösungen mit hoher Kapazitätsrate zu entwickeln.",
+    "vit": "Präsident der Freien Republik Liberland. Ehemaliger tschechischer Politiker, Publizist und Aktivist.", 
     "you": "Du?",
     "youdesc": "<0><0>Wir suchen stets Zuwachs für unser N.exchange Dream-Team. Wir suchen insbesondere talentierte Entwickler, Marketing-Personal, einen Community-Manager und Autoren.</0><1>Schreiben Sie einfach an <1>careers@n.exchange</1>.</1></0>",
     "israel": "Israel",
@@ -255,7 +257,8 @@
     "a": "Auf Social-Media teilen!",
     "copylink": "Link kopieren",
 	"twitter": "Ich%20benutze%20N.Exchange,%20der%20schnelle%20Kryptoexchange%20mit%20den%20besten%20Kursen!",
-    "affiliate": "Übrigens, wenn Sie möchten, können Sie diesen einzigartigen Empfehlungslink mit Ihren Freunden teilen, um ein paar Coins zu verdienen!"
+    "affiliate": "Übrigens, wenn Sie möchten, können Sie diesen einzigartigen Empfehlungslink mit Ihren Freunden teilen, um ein paar Coins zu verdienen!",
+    "affiliate2": "Verdienen Sie umsonst {{selectedCoin}} auf Ihre Auszahlungsadresse, indem Sie diesen einzigartigen Empfehlungslink an Ihre Freunde teilen!"
   },
   "refund": {
     "title": "Rückerstattungsbedingungen",
@@ -324,10 +327,13 @@
   "error": {
     "warning": "Warnung",
     "loading": "Entschuldigen Sie, beim Laden der Seite trat ein Problem auf :(",
-    "notfound": "Seite nicht gefunden:(",
+    "notfound": "Seite nicht gefunden :(",
 	"invalidpair": "Sie können nicht",
+    "nousedeposit": "Sie können",
+    "nousedeposit2": "nich als deposit coin nutzen. Bitte nehmen Sie einen anderen.",
     "with": "mit",
     "try": "Probieren Sie",
-    "novalid": "ist keine gültige"
+    "novalid": "ist keine gültige",
+    "providevalid": "Bitte benutzen Sie eine gültige"
   }
 }

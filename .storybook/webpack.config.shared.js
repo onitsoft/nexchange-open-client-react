@@ -7,5 +7,6 @@ module.exports = {
     Config: path.resolve(__dirname, '../src/config.js/'),
     Actions: path.resolve(__dirname, '../src/actions/'),
     StatusCodes: path.resolve(__dirname, '../src/statusCodes.js'),
+    Img: path.resolve(__dirname, '../src/img/'),
   },
 };

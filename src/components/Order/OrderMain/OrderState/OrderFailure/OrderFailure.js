@@ -6,7 +6,7 @@ import { I18n } from 'react-i18next';
 const OrderFailure = props => (
   <I18n ns="translations">
   {(t) => (
-  <div id="order-failure" className="col-xs-12 text-center">
+  <div id="order-failure" className="text-center">
     <h2>{t('order.failure1')}</h2>
     <h5>
       {t('order.failure2')} <a href={`mailto:${config.SUPPORT_EMAIL}`}>{config.SUPPORT_EMAIL}.</a>

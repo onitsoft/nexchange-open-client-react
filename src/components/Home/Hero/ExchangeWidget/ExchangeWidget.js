@@ -25,7 +25,7 @@ class ExchangeWidget extends Component {
     };
 
     this.placeOrder = this.placeOrder.bind(this);
-    this.showWalletAddress = this.showWalletAddress.bind(this);
+    this.focusWalletAddress = this.focusWalletAddress.bind(this);
   }
 
   componentWillUnmount() {
@@ -33,6 +33,23 @@ class ExchangeWidget extends Component {
   }
 
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        window.ga('send', 'event', {
+          eventCategory: 'Order',
+          eventAction: 'Place order with empty wallet address',
+        });
+
+        this.props.errorAlert({
+          show: true,
+          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+        });
+      }
+
+      this.walletInputEl.focus();
+      return;
+    }
+
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -66,7 +83,6 @@ class ExchangeWidget extends Component {
         bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
-        window.qp('track', 'Generic');
       })
       .catch(error => {
         console.log('Error:', error);
@@ -86,19 +102,8 @@ class ExchangeWidget extends Component {
       });
   }
 
-  showWalletAddress() {
-    this.props.setWallet({ address: '', valid: false, show: true });
-
-    setTimeout(() => {
-      this.walletInputEl.focus();
-    }, 300);
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-
-    if (this.props.wallet.show && nextProps.error.type === 'INVALID_AMOUNT' && nextProps.error.show !== false) {
-      this.props.setWallet({ address: '', valid: false, show: false });
-    }
+  focusWalletAddress() {
+    this.walletInputEl.focus();
   }
 
   render() {
@@ -120,9 +125,10 @@ class ExchangeWidget extends Component {
                   <p className={styles.info}>{t('order.feeinfo')}</p>
 
                   <button
-                    className={`${styles.btn} btn btn-block btn-primary`}
+                    className={`${styles.btn} ${
+                      this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                    } btn btn-block btn-primary proceed `}
                     onClick={this.placeOrder}
-                    disabled={this.props.wallet.valid && !this.state.loading ? null : 'disabled'}
                   >
                     {t('exchangewidget.2')}
                     {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
@@ -139,22 +145,8 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({
-  selectedCoin,
-  price,
-  error,
-  wallet,
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      setWallet: setWallet,
-      setOrder: setOrder,
-      errorAlert: errorAlert,
-    },
-    dispatch
-  );
+const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,

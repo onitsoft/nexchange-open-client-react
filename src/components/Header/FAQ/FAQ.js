@@ -24,7 +24,7 @@ class FAQ extends Component {
     return (
       <I18n ns="translations">
       {(t, { i18n }) => (
-      <Modal show={this.state.show} onHide={this.props.onClose} >
+      <Modal show={this.state.show} onHide={this.props.onClose}>
         <div id="faq" className="modal-content">
           <div className="modal-header">
             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>

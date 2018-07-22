@@ -58,7 +58,14 @@ class Header extends Component {
               </li>
 
               <li>
-                <a className={styles.link} href="javascript:void(0)" onClick={() => this.setState({ showFaqModal: true })}>
+                <a
+                  className={styles.link}
+                  href="javascript:void(0)"
+                  onClick={() => {
+                    window.ga('send', 'event', 'FAQ', 'open');
+                    this.setState({ showFaqModal: true });
+                  }}
+                >
                   {t('header.faq')}
                 </a>
               </li>
@@ -88,7 +95,18 @@ class Header extends Component {
               </li>
 
               <li className={styles['ico-link']}>
-                <a href="https://n.exchange/ico" className={`${styles.btn} btn btn-block btn-primary`}>
+                <a
+                  href="https://n.exchange/ico"
+                  className={`${styles.btn} btn btn-block btn-primary`}
+                  onClick={() => {
+                    window.ga('send', 'event', {
+                      eventCategory: 'ICO open',
+                      eventAction: 'Open from header',
+                    });
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {t('header.ico')}
                 </a>
               </li>

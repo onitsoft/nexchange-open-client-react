@@ -9,7 +9,8 @@ const About = () => (
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
-          <h2>{t('about.title')}</h2>
+          <h2 className="title">{t('about.title')}</h2>
+        </div>
 
         <div className="col-xs-12 col-sm-6">
           <p>
@@ -20,12 +21,19 @@ const About = () => (
             {t('about.3')}
           </p>
           <p>
-            {t('about.4')}
+            {t('about.4')}:
           </p>
+		 </div>
+
+        <div className="col-xs-12 col-sm-6">
           <p>
             {t('about.5')}
           </p>
-          <Trans i18nKey="about.6">
+
+		  <p>
+            {t('about.6')}
+		  </p>	
+          <Trans i18nKey="about.7">
           <p>
             To support our mission of making crypto accessible to everyone, we’ve made our{' '}
             <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank" rel="noopener noreferrer">

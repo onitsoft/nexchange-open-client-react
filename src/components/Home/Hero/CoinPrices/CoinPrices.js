@@ -51,8 +51,7 @@ class CoinPrices extends Component {
 
     this.timeout = setTimeout(() => {
       this.fetchPrices();
-    }, 5000);
-    // config.PRICE_FETCH_INTERVAL;
+    }, config.PRICE_FETCH_INTERVAL);
   };
 
   fetchPrice = pair => {

@@ -53,9 +53,10 @@
     "1": "Nexchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.",
     "2": "We are a group of multi-national, multi-disciplinary cryptocurrency professionals.",
     "3": "Our team came together to make this platform after seeing firsthand the need for a fast and reliable exchange on the crypto market.",
-    "4": "We pride ourselves on total transparency: Everything is viewable through our API, starting from order lists and ending with our coin reserves.",
-    "5": "Nexchange is built on several core values that guide our team in our day to day operations. Among them are complete transparency, a strive to help make cryptocurrency as accessible as possible and a passion for open source.",
-    "6": "<0>To support our mission of making crypto accessible to everyone, we’ve made our <2><0>front end client completely open source <1></1></0></2>.</0>",
+    "4": "We pride ourselves on total transparency",
+    "5": "Everything is viewable through our API, starting from order lists and ending with our coin reserves.", 
+    "6": "N.exchange is built on several core values that guide our team in our day to day operations. Among them are complete transparency, a strive to help make cryptocurrency as accessible as possible, and a passion for open source.",
+    "7": "<0>To support our mission of making crypto accessible to everyone, we’ve made our <2><0>front end client completely open source <1></1></0></2>.</0>",
     "oleg": "Multidisciplinary coder. Aspiring innovator with a deep passion for open source and making the world better, step by step, every single day.",
     "sarunas": "Backend developer and physicist. Animation fan, cryptocurrencies enthusiast and plays the saxophone.",
     "karolis": "Full-stack developer. Entrepreneur by heart. Enjoys bringing products to life through code.",
@@ -67,6 +68,7 @@
     "alejandro": "Seasoned global investor, founder of Nexus Group, ToN Ventures, 01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people in Latin American private equity by Private Equity World.",
     "vincenzo": "Serial entrepreneur, experienced in creating and building global technology businesses within Broadcasting, Media and Security industries.",
     "charles": "Senior software engineer and IT architect with nearly 40 years of industry experience. Currently working with blockchain technology to develop high capacity rate solutions.",
+    "vit": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.", 
     "you": "You?",
     "youdesc": "<0><0>We are actively hiring for the N.exchange dream team. We are especially on the lookout for talented developers, marketing personnel, a community manager and content writers.</0><1>Drop us a line at <1>careers@n.exchange</1>.</1></0>",
     "israel": "Israel",
@@ -289,6 +291,7 @@
     "a": "Share it on social!",
     "copylink": "Copy link",
     "affiliate": "By the way, if you want you can share this unique referral link with your friends to earn some coins!",
+    "affiliate2": "Earn free {{selectedCoin}} directly to your withdrawal address by sharing this unique referral link with your friends!"
     "twitter": "I’m%20using%20Nexchange,%20the%20easiest%20and%20fastest%20cryptocurrency%20exchange!"
   },
   "refund": {
@@ -329,9 +332,14 @@
   "notfound": "Page not found",
   "error": {
     "warning": "Warning",
+    "loading": "Sorry, there was a problem loading the page :(",
+    "notfound": "Page not found :(",
     "invalidpair": "You cannot buy",
+    "nousedeposit": "You cannot use",
+    "nousedeposit2": "as deposit coin. Please try another one.",
     "with": "with",
     "try": "Try",
-    "novalid": "is no valid"
+    "novalid": "is no valid",
+    "providevalid": "Please put valid"
   }
 }

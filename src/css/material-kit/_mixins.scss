@@ -305,13 +305,6 @@
     color: $white-color;
   }
 
-  &:focus,
-  &:active,
-  &:hover {
-    // remove this line if you want black shadows
-    @include button-shadow-color($btn-color);
-  }
-
   &.disabled,
   &:disabled,
   &[disabled],
