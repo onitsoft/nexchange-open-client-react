@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 
+import styles from './LanguagePicker.scss'
+
 class LanguagePicker extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +40,7 @@ class LanguagePicker extends Component {
   renderLanguageSelections = () => {
     let languages = this.sortedSupportedLanguages();
     return (
-      <ul className="languagepicker">
+       <ul className={`${styles.languagepicker}`}>
         {languages.map(lng => (
           <I18n ns="translations">
               {(t, { i18n }) => (
