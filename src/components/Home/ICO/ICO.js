@@ -41,9 +41,15 @@ const ICO = () => {
             </a>
           </div>
 
-          <div className={styles.countdown}>
-            <h4>{t('ico.presale')}</h4>
-            <Countdown date={Date.now() + (Date.parse('2018-07-15') - Date.now())} renderer={renderer} />
+          <div className="col-xs-12 col-sm-push-1 col-sm-6 col-lg-5 col-lg-push-1">
+            <Ellipse coin="coss" style={{ left: -40, bottom: -10, width: 36, height: 36 }} />
+            <Ellipse coin="eos" style={{ left: '70%', top: -20, width: 32, height: 32 }} />
+            <Ellipse coin="btc" style={{ right: -20, top: 20, width: 48, height: 48 }} />
+
+            <div className={styles.countdown}>
+              <h4>{t('ico.presale')}</h4>
+              <Countdown date={Date.now() + (Date.parse('2018-07-15') - Date.now())} renderer={renderer} />
+            </div>
           </div>
         </div>
       </div>
