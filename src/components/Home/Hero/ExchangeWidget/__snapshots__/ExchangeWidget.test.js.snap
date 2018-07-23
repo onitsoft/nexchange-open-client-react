@@ -108,21 +108,11 @@ ShallowWrapper {
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
                                 />
-                                <div
-                                        className="submit"
+                                <I18n
+                                        ns="translations"
                                 >
-                                        <p
-                                                className="info"
-                                        >
-                                                The indicated price is final, all fees are included.
-                                        </p>
-                                        <button
-                                                className="btn disabled btn btn-block btn-primary proceed "
-                                                onClick={[Function]}
-                                        >
-                                                Confirm & Place Order
-                                        </button>
-                                </div>
+                                        [Function]
+                                </I18n>
                         </div>
                 </div>
         </div>
@@ -156,21 +146,11 @@ ShallowWrapper {
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
                               />
-                              <div
-                                        className="submit"
+                              <I18n
+                                        ns="translations"
                               >
-                                        <p
-                                                  className="info"
-                                        >
-                                                  The indicated price is final, all fees are included.
-                                        </p>
-                                        <button
-                                                  className="btn disabled btn btn-block btn-primary proceed "
-                                                  onClick={[Function]}
-                                        >
-                                                  Confirm & Place Order
-                                        </button>
-                              </div>
+                                        [Function]
+                              </I18n>
                     </div>
           </div>
 </div>,
@@ -200,21 +180,11 @@ ShallowWrapper {
                                     inputRef={[Function]}
                                     onSubmit={[Function]}
                         />
-                        <div
-                                    className="submit"
+                        <I18n
+                                    ns="translations"
                         >
-                                    <p
-                                                className="info"
-                                    >
-                                                The indicated price is final, all fees are included.
-                                    </p>
-                                    <button
-                                                className="btn disabled btn btn-block btn-primary proceed "
-                                                onClick={[Function]}
-                                    >
-                                                Confirm & Place Order
-                                    </button>
-                        </div>
+                                    [Function]
+                        </I18n>
             </div>
 </div>,
           "className": "row",
@@ -240,21 +210,11 @@ ShallowWrapper {
                             inputRef={[Function]}
                             onSubmit={[Function]}
               />
-              <div
-                            className="submit"
+              <I18n
+                            ns="translations"
               >
-                            <p
-                                          className="info"
-                            >
-                                          The indicated price is final, all fees are included.
-                            </p>
-                            <button
-                                          className="btn disabled btn btn-block btn-primary proceed "
-                                          onClick={[Function]}
-                            >
-                                          Confirm & Place Order
-                            </button>
-              </div>
+                            [Function]
+              </I18n>
 </div>,
             "className": "col-xs-12",
           },
@@ -277,21 +237,11 @@ ShallowWrapper {
                   inputRef={[Function]}
                   onSubmit={[Function]}
 />,
-                <div
-                  className="submit"
+                <I18n
+                  ns="translations"
 >
-                  <p
-                                    className="info"
-                  >
-                                    The indicated price is final, all fees are included.
-                  </p>
-                  <button
-                                    className="btn disabled btn btn-block btn-primary proceed "
-                                    onClick={[Function]}
-                  >
-                                    Confirm & Place Order
-                  </button>
-</div>,
+                  [Function]
+</I18n>,
               ],
               "className": "widget",
             },
@@ -336,58 +286,14 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
-                  "children": Array [
-                    <p
-                      className="info"
->
-                      The indicated price is final, all fees are included.
-</p>,
-                    <button
-                      className="btn disabled btn btn-block btn-primary proceed "
-                      onClick={[Function]}
->
-                      Confirm & Place Order
-</button>,
-                  ],
-                  "className": "submit",
+                  "children": [Function],
+                  "ns": "translations",
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "The indicated price is final, all fees are included.",
-                      "className": "info",
-                    },
-                    "ref": null,
-                    "rendered": "The indicated price is final, all fees are included.",
-                    "type": "p",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        "Confirm & Place Order",
-                        null,
-                      ],
-                      "className": "btn disabled btn btn-block btn-primary proceed ",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "Confirm & Place Order",
-                      null,
-                    ],
-                    "type": "button",
-                  },
-                ],
-                "type": "div",
+                "rendered": [Function],
+                "type": [Function],
               },
             ],
             "type": "div",
@@ -430,21 +336,11 @@ ShallowWrapper {
                                                   inputRef={[Function]}
                                                   onSubmit={[Function]}
                                         />
-                                        <div
-                                                  className="submit"
+                                        <I18n
+                                                  ns="translations"
                                         >
-                                                  <p
-                                                            className="info"
-                                                  >
-                                                            The indicated price is final, all fees are included.
-                                                  </p>
-                                                  <button
-                                                            className="btn disabled btn btn-block btn-primary proceed "
-                                                            onClick={[Function]}
-                                                  >
-                                                            Confirm & Place Order
-                                                  </button>
-                                        </div>
+                                                  [Function]
+                                        </I18n>
                               </div>
                     </div>
           </div>
@@ -478,21 +374,11 @@ ShallowWrapper {
                                                 inputRef={[Function]}
                                                 onSubmit={[Function]}
                                     />
-                                    <div
-                                                className="submit"
+                                    <I18n
+                                                ns="translations"
                                     >
-                                                <p
-                                                            className="info"
-                                                >
-                                                            The indicated price is final, all fees are included.
-                                                </p>
-                                                <button
-                                                            className="btn disabled btn btn-block btn-primary proceed "
-                                                            onClick={[Function]}
-                                                >
-                                                            Confirm & Place Order
-                                                </button>
-                                    </div>
+                                                [Function]
+                                    </I18n>
                         </div>
             </div>
 </div>,
@@ -522,21 +408,11 @@ ShallowWrapper {
                                           inputRef={[Function]}
                                           onSubmit={[Function]}
                             />
-                            <div
-                                          className="submit"
+                            <I18n
+                                          ns="translations"
                             >
-                                          <p
-                                                        className="info"
-                                          >
-                                                        The indicated price is final, all fees are included.
-                                          </p>
-                                          <button
-                                                        className="btn disabled btn btn-block btn-primary proceed "
-                                                        onClick={[Function]}
-                                          >
-                                                        Confirm & Place Order
-                                          </button>
-                            </div>
+                                          [Function]
+                            </I18n>
               </div>
 </div>,
             "className": "row",
@@ -562,21 +438,11 @@ ShallowWrapper {
                                 inputRef={[Function]}
                                 onSubmit={[Function]}
                 />
-                <div
-                                className="submit"
+                <I18n
+                                ns="translations"
                 >
-                                <p
-                                                className="info"
-                                >
-                                                The indicated price is final, all fees are included.
-                                </p>
-                                <button
-                                                className="btn disabled btn btn-block btn-primary proceed "
-                                                onClick={[Function]}
-                                >
-                                                Confirm & Place Order
-                                </button>
-                </div>
+                                [Function]
+                </I18n>
 </div>,
               "className": "col-xs-12",
             },
@@ -599,21 +465,11 @@ ShallowWrapper {
                     inputRef={[Function]}
                     onSubmit={[Function]}
 />,
-                  <div
-                    className="submit"
+                  <I18n
+                    ns="translations"
 >
-                    <p
-                                        className="info"
-                    >
-                                        The indicated price is final, all fees are included.
-                    </p>
-                    <button
-                                        className="btn disabled btn btn-block btn-primary proceed "
-                                        onClick={[Function]}
-                    >
-                                        Confirm & Place Order
-                    </button>
-</div>,
+                    [Function]
+</I18n>,
                 ],
                 "className": "widget",
               },
@@ -658,58 +514,14 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "function",
                   "props": Object {
-                    "children": Array [
-                      <p
-                        className="info"
->
-                        The indicated price is final, all fees are included.
-</p>,
-                      <button
-                        className="btn disabled btn btn-block btn-primary proceed "
-                        onClick={[Function]}
->
-                        Confirm & Place Order
-</button>,
-                    ],
-                    "className": "submit",
+                    "children": [Function],
+                    "ns": "translations",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "The indicated price is final, all fees are included.",
-                        "className": "info",
-                      },
-                      "ref": null,
-                      "rendered": "The indicated price is final, all fees are included.",
-                      "type": "p",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          "Confirm & Place Order",
-                          null,
-                        ],
-                        "className": "btn disabled btn btn-block btn-primary proceed ",
-                        "onClick": [Function],
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        "Confirm & Place Order",
-                        null,
-                      ],
-                      "type": "button",
-                    },
-                  ],
-                  "type": "div",
+                  "rendered": [Function],
+                  "type": [Function],
                 },
               ],
               "type": "div",

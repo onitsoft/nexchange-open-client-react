@@ -15,183 +15,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <h2>
-          Order Processing Failed
-</h2>,
-        <h5>
-          There’s been a problem with your order. Please contact support to resolve at
-           
-          <a
-                    href="mailto:support@n.exchange"
-          >
-                    support@n.exchange
-                    .
-          </a>
-</h5>,
-        <OrderLinks />,
-      ],
-      "className": "text-center",
-      "id": "order-failure",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Order Processing Failed",
-        },
-        "ref": null,
-        "rendered": "Order Processing Failed",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "There’s been a problem with your order. Please contact support to resolve at",
-            " ",
-            <a
-              href="mailto:support@n.exchange"
->
-              support@n.exchange
-              .
-</a>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "There’s been a problem with your order. Please contact support to resolve at",
-          " ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "support@n.exchange",
-                ".",
-              ],
-              "href": "mailto:support@n.exchange",
-            },
-            "ref": null,
-            "rendered": Array [
-              "support@n.exchange",
-              ".",
-            ],
-            "type": "a",
-          },
-        ],
-        "type": "h5",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <h2>
-            Order Processing Failed
-</h2>,
-          <h5>
-            There’s been a problem with your order. Please contact support to resolve at
-             
-            <a
-                        href="mailto:support@n.exchange"
-            >
-                        support@n.exchange
-                        .
-            </a>
-</h5>,
-          <OrderLinks />,
-        ],
-        "className": "text-center",
-        "id": "order-failure",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Order Processing Failed",
-          },
-          "ref": null,
-          "rendered": "Order Processing Failed",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "There’s been a problem with your order. Please contact support to resolve at",
-              " ",
-              <a
-                href="mailto:support@n.exchange"
->
-                support@n.exchange
-                .
-</a>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "There’s been a problem with your order. Please contact support to resolve at",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "support@n.exchange",
-                  ".",
-                ],
-                "href": "mailto:support@n.exchange",
-              },
-              "ref": null,
-              "rendered": Array [
-                "support@n.exchange",
-                ".",
-              ],
-              "type": "a",
-            },
-          ],
-          "type": "h5",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

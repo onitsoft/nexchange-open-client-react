@@ -15,119 +15,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <OrderStateLoader />,
-        <h2
-          className="title"
->
-          Payment & verification received
-</h2>,
-        <h3
-          className="subtitle"
->
-          We are now preparing to release your coins
-</h3>,
-      ],
-      "className": "container",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Payment & verification received",
-          "className": "title",
-        },
-        "ref": null,
-        "rendered": "Payment & verification received",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "We are now preparing to release your coins",
-          "className": "subtitle",
-        },
-        "ref": null,
-        "rendered": "We are now preparing to release your coins",
-        "type": "h3",
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <OrderStateLoader />,
-          <h2
-            className="title"
->
-            Payment & verification received
-</h2>,
-          <h3
-            className="subtitle"
->
-            We are now preparing to release your coins
-</h3>,
-        ],
-        "className": "container",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Payment & verification received",
-            "className": "title",
-          },
-          "ref": null,
-          "rendered": "Payment & verification received",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "We are now preparing to release your coins",
-            "className": "subtitle",
-          },
-          "ref": null,
-          "rendered": "We are now preparing to release your coins",
-          "type": "h3",
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

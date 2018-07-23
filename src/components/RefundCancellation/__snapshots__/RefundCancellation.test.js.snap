@@ -20,32 +20,11 @@ ShallowWrapper {
       "children": <div
         className="row"
 >
-        <div
-                className="col-xs-12"
+        <I18n
+                ns="translations"
         >
-                <h2>
-                        Refund Policy
-                </h2>
-                <p>
-                        We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-                </p>
-                <p>
-                        No partial refunds are available.
-                </p>
-                <p>
-                        The maximal refund amount is 100% of the amount quoted at the time of purchase.
-                </p>
-                <p>
-                        Get in touch at
-                         
-                        <a
-                                href="mailto:support@n.exchange"
-                        >
-                                support@n.exchange
-                        </a>
-                         for more information.
-                </p>
-        </div>
+                [Function]
+        </I18n>
 </div>,
       "className": "container",
     },
@@ -55,150 +34,25 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <div
-          className="col-xs-12"
+        "children": <I18n
+          ns="translations"
 >
-          <h2>
-                    Refund Policy
-          </h2>
-          <p>
-                    We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-          </p>
-          <p>
-                    No partial refunds are available.
-          </p>
-          <p>
-                    The maximal refund amount is 100% of the amount quoted at the time of purchase.
-          </p>
-          <p>
-                    Get in touch at
-                     
-                    <a
-                              href="mailto:support@n.exchange"
-                    >
-                              support@n.exchange
-                    </a>
-                     for more information.
-          </p>
-</div>,
+          [Function]
+</I18n>,
         "className": "row",
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <h2>
-              Refund Policy
-</h2>,
-            <p>
-              We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-</p>,
-            <p>
-              No partial refunds are available.
-</p>,
-            <p>
-              The maximal refund amount is 100% of the amount quoted at the time of purchase.
-</p>,
-            <p>
-              Get in touch at
-               
-              <a
-                            href="mailto:support@n.exchange"
-              >
-                            support@n.exchange
-              </a>
-               for more information.
-</p>,
-          ],
-          "className": "col-xs-12",
+          "children": [Function],
+          "ns": "translations",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Refund Policy",
-            },
-            "ref": null,
-            "rendered": "Refund Policy",
-            "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
-            },
-            "ref": null,
-            "rendered": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "No partial refunds are available.",
-            },
-            "ref": null,
-            "rendered": "No partial refunds are available.",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
-            },
-            "ref": null,
-            "rendered": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Get in touch at",
-                " ",
-                <a
-                  href="mailto:support@n.exchange"
->
-                  support@n.exchange
-</a>,
-                " for more information.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Get in touch at",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "support@n.exchange",
-                  "href": "mailto:support@n.exchange",
-                },
-                "ref": null,
-                "rendered": "support@n.exchange",
-                "type": "a",
-              },
-              " for more information.",
-            ],
-            "type": "p",
-          },
-        ],
-        "type": "div",
+        "rendered": [Function],
+        "type": [Function],
       },
       "type": "div",
     },
@@ -213,32 +67,11 @@ ShallowWrapper {
         "children": <div
           className="row"
 >
-          <div
-                    className="col-xs-12"
+          <I18n
+                    ns="translations"
           >
-                    <h2>
-                              Refund Policy
-                    </h2>
-                    <p>
-                              We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-                    </p>
-                    <p>
-                              No partial refunds are available.
-                    </p>
-                    <p>
-                              The maximal refund amount is 100% of the amount quoted at the time of purchase.
-                    </p>
-                    <p>
-                              Get in touch at
-                               
-                              <a
-                                        href="mailto:support@n.exchange"
-                              >
-                                        support@n.exchange
-                              </a>
-                               for more information.
-                    </p>
-          </div>
+                    [Function]
+          </I18n>
 </div>,
         "className": "container",
       },
@@ -248,150 +81,25 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <div
-            className="col-xs-12"
+          "children": <I18n
+            ns="translations"
 >
-            <h2>
-                        Refund Policy
-            </h2>
-            <p>
-                        We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-            </p>
-            <p>
-                        No partial refunds are available.
-            </p>
-            <p>
-                        The maximal refund amount is 100% of the amount quoted at the time of purchase.
-            </p>
-            <p>
-                        Get in touch at
-                         
-                        <a
-                                    href="mailto:support@n.exchange"
-                        >
-                                    support@n.exchange
-                        </a>
-                         for more information.
-            </p>
-</div>,
+            [Function]
+</I18n>,
           "className": "row",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <h2>
-                Refund Policy
-</h2>,
-              <p>
-                We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
-</p>,
-              <p>
-                No partial refunds are available.
-</p>,
-              <p>
-                The maximal refund amount is 100% of the amount quoted at the time of purchase.
-</p>,
-              <p>
-                Get in touch at
-                 
-                <a
-                                href="mailto:support@n.exchange"
-                >
-                                support@n.exchange
-                </a>
-                 for more information.
-</p>,
-            ],
-            "className": "col-xs-12",
+            "children": [Function],
+            "ns": "translations",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Refund Policy",
-              },
-              "ref": null,
-              "rendered": "Refund Policy",
-              "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
-              },
-              "ref": null,
-              "rendered": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "No partial refunds are available.",
-              },
-              "ref": null,
-              "rendered": "No partial refunds are available.",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
-              },
-              "ref": null,
-              "rendered": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "Get in touch at",
-                  " ",
-                  <a
-                    href="mailto:support@n.exchange"
->
-                    support@n.exchange
-</a>,
-                  " for more information.",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                "Get in touch at",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "support@n.exchange",
-                    "href": "mailto:support@n.exchange",
-                  },
-                  "ref": null,
-                  "rendered": "support@n.exchange",
-                  "type": "a",
-                },
-                " for more information.",
-              ],
-              "type": "p",
-            },
-          ],
-          "type": "div",
+          "rendered": [Function],
+          "type": [Function],
         },
         "type": "div",
       },

@@ -132,245 +132,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <div
-          className="col-xs-12"
->
-          <h3
-                    className="ref"
-          >
-                    Order Reference: 
-                    <b>
-                              OV2O6C
-                    </b>
-          </h3>
-          <button
-                    className="bookmark btn btn-default btn-simple"
-                    onClick={[Function]}
-                    type="button"
-          >
-                    BOOKMARK
-          </button>
-</div>,
-        <Bookmark
-          onClose={[Function]}
-          show={false}
-/>,
-      ],
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h3
-              className="ref"
->
-              Order Reference: 
-              <b>
-                            OV2O6C
-              </b>
-</h3>,
-            <button
-              className="bookmark btn btn-default btn-simple"
-              onClick={[Function]}
-              type="button"
->
-              BOOKMARK
-</button>,
-          ],
-          "className": "col-xs-12",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Order Reference: ",
-                <b>
-                  OV2O6C
-</b>,
-              ],
-              "className": "ref",
-            },
-            "ref": null,
-            "rendered": Array [
-              "Order Reference: ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "OV2O6C",
-                },
-                "ref": null,
-                "rendered": "OV2O6C",
-                "type": "b",
-              },
-            ],
-            "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "BOOKMARK",
-              "className": "bookmark btn btn-default btn-simple",
-              "onClick": [Function],
-              "type": "button",
-            },
-            "ref": null,
-            "rendered": "BOOKMARK",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "onClose": [Function],
-          "show": false,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <div
-            className="col-xs-12"
->
-            <h3
-                        className="ref"
-            >
-                        Order Reference: 
-                        <b>
-                                    OV2O6C
-                        </b>
-            </h3>
-            <button
-                        className="bookmark btn btn-default btn-simple"
-                        onClick={[Function]}
-                        type="button"
-            >
-                        BOOKMARK
-            </button>
-</div>,
-          <Bookmark
-            onClose={[Function]}
-            show={false}
-/>,
-        ],
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h3
-                className="ref"
->
-                Order Reference: 
-                <b>
-                                OV2O6C
-                </b>
-</h3>,
-              <button
-                className="bookmark btn btn-default btn-simple"
-                onClick={[Function]}
-                type="button"
->
-                BOOKMARK
-</button>,
-            ],
-            "className": "col-xs-12",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "Order Reference: ",
-                  <b>
-                    OV2O6C
-</b>,
-                ],
-                "className": "ref",
-              },
-              "ref": null,
-              "rendered": Array [
-                "Order Reference: ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "OV2O6C",
-                  },
-                  "ref": null,
-                  "rendered": "OV2O6C",
-                  "type": "b",
-                },
-              ],
-              "type": "h3",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "BOOKMARK",
-                "className": "bookmark btn btn-default btn-simple",
-                "onClick": [Function],
-                "type": "button",
-              },
-              "ref": null,
-              "rendered": "BOOKMARK",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "onClose": [Function],
-            "show": false,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

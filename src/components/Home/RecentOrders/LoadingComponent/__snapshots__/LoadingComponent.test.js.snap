@@ -352,25 +352,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": "Sorry, there was a problem loading the page :(",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": "Sorry, there was a problem loading the page :(",
-    "type": "h2",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": "Sorry, there was a problem loading the page :(",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": "Sorry, there was a problem loading the page :(",
-      "type": "h2",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

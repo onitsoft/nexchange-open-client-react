@@ -134,115 +134,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <a
-          className="btn btn"
-          href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
-          target="_blank"
->
-          See your order details on our API
-</a>,
-        <a
-          className="btn btn"
-          href="https://blockchain.info/tx/123"
-          target="_blank"
->
-          See your order details on blockchain
-</a>,
-      ],
-      "className": "links",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "See your order details on our API",
-          "className": "btn btn",
-          "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
-          "target": "_blank",
-        },
-        "ref": null,
-        "rendered": "See your order details on our API",
-        "type": "a",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "See your order details on blockchain",
-          "className": "btn btn",
-          "href": "https://blockchain.info/tx/123",
-          "target": "_blank",
-        },
-        "ref": null,
-        "rendered": "See your order details on blockchain",
-        "type": "a",
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <a
-            className="btn btn"
-            href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
-            target="_blank"
->
-            See your order details on our API
-</a>,
-          <a
-            className="btn btn"
-            href="https://blockchain.info/tx/123"
-            target="_blank"
->
-            See your order details on blockchain
-</a>,
-        ],
-        "className": "links",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "See your order details on our API",
-            "className": "btn btn",
-            "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
-            "target": "_blank",
-          },
-          "ref": null,
-          "rendered": "See your order details on our API",
-          "type": "a",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "See your order details on blockchain",
-            "className": "btn btn",
-            "href": "https://blockchain.info/tx/123",
-            "target": "_blank",
-          },
-          "ref": null,
-          "rendered": "See your order details on blockchain",
-          "type": "a",
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

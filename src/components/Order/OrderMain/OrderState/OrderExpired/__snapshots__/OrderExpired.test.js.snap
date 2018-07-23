@@ -15,235 +15,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <OrderAlert />,
-        <h2
-          className="title"
->
-          Order Expired
-</h2>,
-        <h3
-          className="subtitle"
->
-          Your order is expired. You can make a
-           
-          <a
-                    className="new-order-link"
-                    href="/"
-          >
-                    new exchange order
-          </a>
-          .
-</h3>,
-        <h4
-          className="warning"
-          data-original-title=" If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively."
-          data-placement="top"
-          data-toggle="tooltip"
->
-          Already sent?
-</h4>,
-      ],
-      "className": "container",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Order Expired",
-          "className": "title",
-        },
-        "ref": null,
-        "rendered": "Order Expired",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Your order is expired. You can make a",
-            " ",
-            <a
-              className="new-order-link"
-              href="/"
->
-              new exchange order
-</a>,
-            ".",
-          ],
-          "className": "subtitle",
-        },
-        "ref": null,
-        "rendered": Array [
-          "Your order is expired. You can make a",
-          " ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "new exchange order",
-              "className": "new-order-link",
-              "href": "/",
-            },
-            "ref": null,
-            "rendered": "new exchange order",
-            "type": "a",
-          },
-          ".",
-        ],
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Already sent?",
-          "className": "warning",
-          "data-original-title": " If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively.",
-          "data-placement": "top",
-          "data-toggle": "tooltip",
-        },
-        "ref": null,
-        "rendered": "Already sent?",
-        "type": "h4",
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <OrderAlert />,
-          <h2
-            className="title"
->
-            Order Expired
-</h2>,
-          <h3
-            className="subtitle"
->
-            Your order is expired. You can make a
-             
-            <a
-                        className="new-order-link"
-                        href="/"
-            >
-                        new exchange order
-            </a>
-            .
-</h3>,
-          <h4
-            className="warning"
-            data-original-title=" If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively."
-            data-placement="top"
-            data-toggle="tooltip"
->
-            Already sent?
-</h4>,
-        ],
-        "className": "container",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Order Expired",
-            "className": "title",
-          },
-          "ref": null,
-          "rendered": "Order Expired",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Your order is expired. You can make a",
-              " ",
-              <a
-                className="new-order-link"
-                href="/"
->
-                new exchange order
-</a>,
-              ".",
-            ],
-            "className": "subtitle",
-          },
-          "ref": null,
-          "rendered": Array [
-            "Your order is expired. You can make a",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "new exchange order",
-                "className": "new-order-link",
-                "href": "/",
-              },
-              "ref": null,
-              "rendered": "new exchange order",
-              "type": "a",
-            },
-            ".",
-          ],
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Already sent?",
-            "className": "warning",
-            "data-original-title": " If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively.",
-            "data-placement": "top",
-            "data-toggle": "tooltip",
-          },
-          "ref": null,
-          "rendered": "Already sent?",
-          "type": "h4",
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
