@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
 import config from 'Config';
-import i18n from '../../i18n';
+import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
 
 class KYCModalTier2 extends Component {

@@ -155,11 +155,12 @@ class PriceComparison extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-		      <I18n ns="translations">
-		      {(t) => (
-              <h2 className="title">{t('pricecomparison.1')}</h2>
-			  )}</I18n>
-
+		       <I18n ns="translations">
+		        {(t) => (
+		        <div>
+		          <h2 className="title">{t('pricecomparison.1')}</h2>
+		        </div>
+		        )}</I18n>
               <div className={styles['comparison-table']}>
                 <table className="table">
                   <thead>
@@ -174,10 +175,7 @@ class PriceComparison extends Component {
                       <th>
                         <img src="/img/prices/changelly.png" alt="Changelly" />
                       </th>
-                   <I18n ns="translations">
-                    {(t) => (
-                      <th>{t('pricecomparison.2')}</th>
-                    )}</I18n>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>

@@ -1,23 +1,24 @@
 import React from 'react';
 import TeamMember from './TeamMember/TeamMember';
+import { I18n } from 'react-i18next';
 import styles from './Team.scss';
 
 const Team = () => (
+  <I18n ns="translations">
+  {(t) => (
   <div className={styles.container}>
     <div className="container">
       <div className={`${styles.row} row`}>
         <div className="col-xs-12">
-          <h2 className="title">The People Who Make it Happen</h2>
+          <h2 className="title">{t('about.teamtitle')}</h2>
         </div>
 
         <TeamMember
           id="oleg"
           name="Oleg Belousov"
           country="IL"
-          fullCountryName="Israel"
-          description="Multidisciplinary coder. Aspiring innovator with
-            a deep passion for open source and making the world better,
-            step by step, every single day."
+          fullCountryName={t('about.israel')}
+          description={t('about.oleg')}
           social={{
             linkedin: 'https://www.linkedin.com/in/oleg-belousov-b4112145/',
             twitter: 'https://twitter.com/iooleg',
@@ -30,9 +31,8 @@ const Team = () => (
           id="sarunas"
           name="Šarūnas Ažna"
           country="LT"
-          fullCountryName="Lithuania"
-          description="Backend developer and physicist.
-            Animation fan, cryptocurrencies enthusiast and plays the saxophone."
+          fullCountryName={t('about.lithuania')}
+          description={t('about.sarunas')}
           social={{
             linkedin: 'https://www.linkedin.com/in/%C5%A1ar%C5%ABnas-a%C5%BEna-102220b2/',
             github: 'https://github.com/SarunasAzna',
@@ -43,9 +43,8 @@ const Team = () => (
           id="karolis"
           name="Karolis Ramanauskas"
           country="LT"
-          fullCountryName="Lithuania"
-          description="Full-stack developer. Entrepreneur by heart.
-            Enjoys bringing products to life through code."
+          fullCountryName={t('about.lithuania')}
+          description={t('about.karolis')}
           social={{
             linkedin: 'https://www.linkedin.com/in/karolisram/',
             github: 'https://github.com/superkarolis/',
@@ -58,10 +57,8 @@ const Team = () => (
           id="justasv"
           name="Justas Vitėnas"
           country="LT"
-          fullCountryName="Lithuania"
-          description="User exeperience specialist with 7 years of experience.
-          Worked with plenty of successful projects in the blockchain, crypto,
-          startup, e-commerce industries."
+          fullCountryName={t('about.lithuania')}
+          description={t('about.justasv')}
           social={{
             linkedin: 'https://www.linkedin.com/in/justas-vitenas-77383ab6/',
           }}
@@ -71,9 +68,8 @@ const Team = () => (
           id="justas"
           name="Justas Ažna"
           country="LT"
-          fullCountryName="Lithuania"
-          description="DevOps orchestrator. Shuffling Docker, Swarm & Kubernetes.
-            Proponent for micro-component design and seamless scalability."
+          fullCountryName={t('about.lithuania')}
+          description={t('about.justas')}
           social={{
             linkedin: 'https://www.linkedin.com/in/justasazna/',
             github: 'https://github.com/reederz',
@@ -84,11 +80,8 @@ const Team = () => (
           id="paulina"
           name="Paulina Bagińska"
           country="PL"
-          fullCountryName="Paulina"
-          description="Product management magician.
-                Loves to build and improve product usability.
-                Blockchain novice.
-                Women in tech supporter and recreational weight lifter."
+          fullCountryName={t('about.poland')}
+          description={t('about.paulina')}
           social={{
             linkedin: 'https://www.linkedin.com/in/baginskapaulina/',
             twitter: 'https://twitter.com/PaulinaBGGC',
@@ -99,11 +92,10 @@ const Team = () => (
           id="cyrus"
           name="Cyrus Ghazanfar"
           country="US"
-          fullCountryName="United States"
+          fullCountryName={t('about.US')}
           description={
             <p>
-              Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and
-              recently decentralised and<br />distributed systems.
+              {t('about.cyrus')}
             </p>
           }
           social={{
@@ -117,9 +109,7 @@ const Team = () => (
         <TeamMember
           id="alejandro"
           name="Alejandro Ponce"
-          description="Seasoned global investor, founder of Nexus Group, ToN Ventures,
-          01Labs and 01Ventures. In 2013 named one of the Top 50 most influential people
-          in Latin American private equity by Private Equity World."
+          description={t('about.alejandro')}
           social={{
             linkedin: 'https://www.linkedin.com/in/alejandro-ponce-8551a312/',
             'wikipedia-w': 'https://en.wikipedia.org/wiki/Alejandro_Ponce',
@@ -129,8 +119,7 @@ const Team = () => (
         <TeamMember
           id="vincenzo"
           name="Vincenzo Roberti"
-          description="Serial entrepreneur, experienced in creating and building global technology 
-          businesses within Broadcasting, Media and Security industries."
+          description={t('about.vincenzo')}
           social={{
             linkedin: 'https://www.linkedin.com/in/vincenzo-roberti-6595aa6/',
           }}
@@ -139,8 +128,7 @@ const Team = () => (
         <TeamMember
           id="charles"
           name="Charles Cunningham"
-          description="Senior software engineer and IT architect with nearly 40 years of industry
-          experience. Currently working with blockchain technology to develop high capacity rate solutions."
+          description={t('about.charles')}
           social={{
             linkedin: 'https://www.linkedin.com/in/cicunningham/',
           }}
@@ -157,6 +145,8 @@ const Team = () => (
       </div>
     </div>
   </div>
+)}
+</I18n>
 );
 
 export default Team;

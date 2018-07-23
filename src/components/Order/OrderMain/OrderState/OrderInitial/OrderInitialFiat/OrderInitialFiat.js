@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../OrderInitial.scss';
 import { I18n } from 'react-i18next';
+import styles from '../OrderInitial.scss';
 
 const OrderInitial = props => {
   return (

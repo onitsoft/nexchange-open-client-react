@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DesktopNotifications from './DesktopNotifications/DesktopNotifications';
-import styles from '../../OrderState.scss';
 import { I18n } from 'react-i18next';
+import styles from '../../OrderState.scss';
 
 class OrderPaymentTemplate extends Component {
   constructor(props) {

@@ -2,10 +2,10 @@ import React from 'react';
 import { I18n } from 'react-i18next';
 import { Modal } from 'react-bootstrap';
 
-const ReferralTerms = props => (
+const OrderReferralTerms = props => (
   <I18n ns="translations">
    {(t) => (
-  <Modal id="ReferralTerms" show={props.show} onHide={props.onClose}>
+  <Modal id="OrderReferralTerms" show={props.show} onHide={props.onClose}>
     <div className="modal-content">
       <div className="modal-header">
         <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={props.onClose}>

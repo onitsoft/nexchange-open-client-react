@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Bookmark from './Bookmark/Bookmark';
-import styles from './OrderTop.scss';
 import { I18n } from 'react-i18next';
+import styles from './OrderTop.scss';
 
 class OrderTop extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class OrderTop extends Component {
       <div>
         <div className="col-xs-12">
           <h3 className={styles.ref}>
-             {t('order.reference')}: <b>{this.props.order.unique_reference}</b>
+            {t('order.reference')}: <b>{this.props.order.unique_reference}</b>
           </h3>
 
           <button

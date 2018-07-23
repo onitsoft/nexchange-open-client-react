@@ -1,4 +1,5 @@
 import React from 'react';
+import { I18n } from 'react-i18next';
 import cx from 'classnames';
 import Deposit from '../../images/deposit.svg';
 import Confirmations from '../../images/confirmations.svg';
@@ -8,6 +9,8 @@ import styles from '../OrderStatus.scss';
 
 const OrderStatusFiat = props => {
   return (
+   <I18n ns="translations">
+    {(t) => (
     <div>
       <div
         className={
@@ -20,10 +23,10 @@ const OrderStatusFiat = props => {
         data-toggle="tooltip"
         data-placement="top"
         title=""
-        data-original-title="In this step we are waiting for your deposit."
+        data-original-title={t('order.status11')}
       >
         <Deposit />
-        <h4>1. Awaiting deposit</h4>
+        <h4>{t('order.status1')}</h4>
       </div>
 
       <div
@@ -37,11 +40,10 @@ const OrderStatusFiat = props => {
         data-toggle="tooltip"
         data-placement="top"
         title=""
-        data-original-title="We have received your funds and are now waiting
-                for proof of residence and government issued ID verification."
+        data-original-title={t('order.fiat.status.14')}
       >
         <Confirmations />
-        <h4>2. Awaiting verification</h4>
+        <h4>{t('order.fiat.status.13')}</h4>
       </div>
 
       <div
@@ -57,12 +59,14 @@ const OrderStatusFiat = props => {
         data-toggle="tooltip"
         data-placement="top"
         title=""
-        data-original-title="We got the funds and now have transferred our funds to you."
+        data-original-title={t('order.status31')}
       >
         <Done />
-        <h4>3. All done</h4>
+        <h4>{t('order.status3')}</h4>
       </div>
     </div>
+    )}
+   </I18n>
   );
 };
 

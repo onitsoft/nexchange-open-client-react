@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { I18n } from 'react-i18next';
-import config from '../../config';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import config from 'Config';
 import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
+import { I18n } from 'react-i18next';
 import styles from '../OrderState.scss';
 
 class OrderPayment extends Component {
@@ -26,22 +25,23 @@ class OrderPayment extends Component {
   render() {
     if (this.txId === '' || this.txId === null) {
       return (
-	  <I18n ns="translations">
-		{(t) => (
+        <I18n ns="translations">
+        {(t) => (
         <div className={styles.container}>
           <OrderStateLoader />
-          <h2 className={styles.title}>{t('order.payment1')}...</h2>
+          <h2 className={styles.title}>{t('order.payment1')}</h2>
           <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
-            <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.details')}</h4>
+            <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.api')}</h4>
           </a>
         </div>
-		)}</I18n>
+        )}
+        </I18n>
       );
     }
 
     return (
-	  <I18n ns="translations">
-		{(t) => (
+    <I18n ns="translations">
+     {(t) => (
       <div className={styles.container}>
         <OrderStateLoader />
         <h2 className={styles.title}>
@@ -51,7 +51,7 @@ class OrderPayment extends Component {
           </span>
         </h2>
         <h3 className={styles.subtitle}>
-          Transaction ID:{' '}
+          {t('order.txid')}:{' '}
           <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
             {this.tx.tx_id}
           </a>
@@ -59,7 +59,8 @@ class OrderPayment extends Component {
 
         <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
       </div>
-	)}</I18n>
+      )}
+	 </I18n>
     );
   }
 }

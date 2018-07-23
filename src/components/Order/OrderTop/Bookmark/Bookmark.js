@@ -55,8 +55,7 @@ class Bookmark extends Component {
 
           <div className="modal-body">
             <p className={styles.text}>
-              {t('bookmark.1')} <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> {t('bookmark.2')}
-            </p>
+                {t('bookmark.1')} <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> {t('bookmark.2')}</p>
 
             <div className="input-group">
               <div className="form-group is-empty">

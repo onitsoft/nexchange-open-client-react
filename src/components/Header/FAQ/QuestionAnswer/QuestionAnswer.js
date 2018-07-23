@@ -20,8 +20,7 @@ class QuestionAnswer extends Component {
 	 {(t) => (
       <div className="question-answer">
         <h3 onClick={this.onClick}>
-          {t(`faq.${this.props.id}`)}{' '} 
-		  <i className={`far fa-${this.state.open ? 'minus' : 'plus'}-square`} aria-hidden="true" />
+          {t(`faq.${this.props.id}`)} <i className={`far fa-${this.state.open ? 'minus' : 'plus'}-square`} aria-hidden="true" />
         </h3>
         <div className={this.state.open ? 'answer active' : 'answer'}>{this.props.answer}</div>
         <hr />

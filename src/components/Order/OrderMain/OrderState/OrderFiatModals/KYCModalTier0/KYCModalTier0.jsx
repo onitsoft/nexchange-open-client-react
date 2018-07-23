@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
 import axios from 'axios';
 import config from 'Config';
-import i18n from '../../i18n';
+import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
 
 class KYCModal extends Component {

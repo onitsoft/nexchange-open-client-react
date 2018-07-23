@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import styles from '../OrderInitial.scss';
-import i18n from '../../i18n';
+import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
+import styles from '../OrderInitial.scss';
 
 class OrderInitial extends Component {
   triggerCopyTooltip() {
