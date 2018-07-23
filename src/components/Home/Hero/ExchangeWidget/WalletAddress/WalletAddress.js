@@ -67,14 +67,6 @@ class WalletAddress extends Component {
         {t => (
           <div className="col-xs-12 active">
             <form className="form-group" onSubmit={this.handleSubmit}>
-              <label htmlFor="withdraw-addr" className="control-label text-green">
-                <Interpolate i18nKey="generalterms.youraddress" selectedCoin={coin} />
-                {/* 
-             =>
-               Your selectedCoin Address
-            */}
-              </label>
-
               <input
                 type="text"
                 ref={this.props.inputRef}
@@ -82,6 +74,7 @@ class WalletAddress extends Component {
                 id="withdraw-addr"
                 onChange={this.handleChange}
                 value={this.state.address}
+                placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
             </form>
           </div>
