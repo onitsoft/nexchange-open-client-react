@@ -15,17 +15,14 @@ export const setWallet = payload => ({
   payload,
 });
 
-export const selectCoin = selectedCoins => (dispatch, getState) => {
-  dispatch({
-    type: types.COIN_SELECTED,
-    payload: {
-      selectedCoins,
-      pairs: getState().pairs,
-    },
-  });
-};
+export const selectCoin = selectedCoins => ({
+  type: types.COIN_SELECTED,
+  payload: {
+    selectedCoins,
+  },
+});
 
-export const fetchCoinDetails = payload => dispatch => {
+export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;
   const request = axios.get(url);
   const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
@@ -51,6 +48,7 @@ export const fetchCoinDetails = payload => dispatch => {
       dispatch({ type: types.COINS_INFO, payload: coins });
     })
     .catch(error => {
+      /* istanbul ignore next */
       console.log(error);
     });
 };
@@ -87,10 +85,13 @@ export const fetchPrice = payload => dispatch => {
     const setFaultyValues = err => {
       let data = { pair };
 
-      window.ga('send', 'event', {
-        eventCategory: 'Amount input',
-        eventAction: 'Amount too high/low error',
-      });
+      /* istanbul ignore next */
+      if (window.ga) {
+        window.ga('send', 'event', {
+          eventCategory: 'Amount input',
+          eventAction: 'Amount too high/low error',
+        });
+      }
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -126,14 +127,18 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
-      window.ga('send', 'event', {
-        eventCategory: 'Coin selector',
-        eventAction: 'Fetch default amounts',
-      });
+      /* istanbul ignore next */
+      if (window.ga) {
+        window.ga('send', 'event', {
+          eventCategory: 'Coin selector',
+          eventAction: 'Fetch default amounts',
+        });
+      }
 
       if (payload.coinSelector) {
-        let url = `${config.API_BASE_URL}/get_price/${pair}/`;
+        const url = `${config.API_BASE_URL}/get_price/${pair}/`;
         const amounts = await makeRequest(url);
+
         setValidValues(amounts);
       } else {
         setFaultyValues(err);
@@ -142,76 +147,76 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = () => {
+export const fetchPairs = () => dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
-  return dispatch => {
-    request
-      .then(async response => {
-        if (!response.data.length) return;
+  return request
+    .then(async response => {
+      if (!response.data.length) return;
 
-        const params = urlParams();
-        const pairs = response.data.filter(pair => {
-          if (params && params.hasOwnProperty('test')) {
-            return !pair.disabled;
-          } else {
-            return !pair.disabled && !pair.test_mode;
-          }
+      const params = urlParams();
+      const pairs = response.data.filter(pair => {
+        if (params && params.hasOwnProperty('test')) {
+          return !pair.disabled;
+        } else {
+          return !pair.disabled && !pair.test_mode;
+        }
+      });
+      const processedPairs = preparePairs(pairs);
+
+      dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
+
+      let depositCoin, receiveCoin;
+      const coinsFromUrlParams = () => {
+        return new Promise((resolve, reject) => {
+          axios
+            .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
+            .then(res => resolve(res.data))
+            .catch(/* istanbul ignore next */ err => reject(err));
         });
-        const processedPairs = preparePairs(pairs);
+      };
 
-        dispatch({ type: types.PAIRS_FETCHED, payload: processedPairs });
+      const pickRandomPair = async () => {
+        const pair = pairs[Math.floor(Math.random() * pairs.length)];
+        depositCoin = pair.quote;
+        receiveCoin = pair.base;
+      };
 
-        let depositCoin, receiveCoin;
-        const coinsFromUrlParams = () => {
-          return new Promise((resolve, reject) => {
-            axios
-              .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
-              .then(res => resolve(res.data))
-              .catch(err => reject(err));
-          });
-        };
-
-        const pickRandomPair = async () => {
-          const pair = pairs[Math.floor(Math.random() * pairs.length)];
-          depositCoin = pair.quote;
-          receiveCoin = pair.base;
-        };
-
-        // Picks random deposit and receive coins.
-        const pickCoins = async () => {
-          // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-          if (params && params.hasOwnProperty('pair')) {
-            try {
-              const pair = await coinsFromUrlParams(params);
-              depositCoin = pair.quote;
-              receiveCoin = pair.base;
-            } catch (err) {
-              console.log('Error:', err);
-            }
-          } else {
-            pickRandomPair();
+      // Picks random deposit and receive coins.
+      const pickCoins = async () => {
+        // Checks if url has params. If yes then update accordingly and if no then pick random coins.
+        if (params && params.hasOwnProperty('pair')) {
+          try {
+            const pair = await coinsFromUrlParams(params);
+            depositCoin = pair.quote;
+            receiveCoin = pair.base;
+          } catch (err) {
+            /* istanbul ignore next */
+            console.log('Error:', err);
           }
-        };
-        await pickCoins();
+        } else {
+          pickRandomPair();
+        }
+      };
+      await pickCoins();
 
-        dispatch(
-          selectCoin({
+      dispatch(
+        selectCoin({
+          deposit: depositCoin,
+          receive: receiveCoin,
+          prev: {
             deposit: depositCoin,
             receive: receiveCoin,
-            prev: {
-              deposit: depositCoin,
-              receive: receiveCoin,
-            },
-            lastSelected: 'deposit',
-          })
-        );
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
+          },
+          lastSelected: 'deposit',
+        })
+      );
+    })
+    .catch(error => {
+      /* istanbul ignore next */
+      console.log(error);
+    });
 };
 
 export const setOrder = order => ({
@@ -274,12 +279,8 @@ export const setUserEmail = email => async dispatch => {
         },
       });
     })
-    .catch(error => {
+    .catch(() => {
       let errorMessage = 'Something went wrong. Try again later.';
-
-      if (error.response && error.response.data && error.response.data.email.length && error.response.data.email[0]) {
-        errorMessage = error.response.data.email[0];
-      }
 
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,

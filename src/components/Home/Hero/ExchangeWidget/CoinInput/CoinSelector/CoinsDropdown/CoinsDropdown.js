@@ -10,7 +10,9 @@ class CoinsDropdown extends Component {
   state = { value: '' };
 
   componentDidMount = () => {
-    this.searchInput.focus();
+    if (this.searchInput) {
+      this.searchInput.focus();
+    }
   };
 
   handleChange = event => {
@@ -71,7 +73,7 @@ class CoinsDropdown extends Component {
 
   renderSearch = () => {
     return (
-      <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
+      <form className={styles['coins-search']} onSubmit={this.handleSubmit} data-test="search-form">
         <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
         <input
           type="text"
@@ -79,8 +81,13 @@ class CoinsDropdown extends Component {
           ref={input => (this.searchInput = input)}
           onChange={this.handleChange}
           value={this.state.value}
+          data-test="search"
         />
-        <i className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`} onClick={this.clear}>
+        <i
+          className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`}
+          onClick={this.clear}
+          data-test="clear"
+        >
           clear
         </i>
       </form>
@@ -91,7 +98,7 @@ class CoinsDropdown extends Component {
     return (
       <div className={styles['coins-list']}>
         {this.getCoins().map(coin => (
-          <div className={`row coin ${styles.coin}`} key={coin.code} onClick={() => this.props.onClick(coin.code)}>
+          <div data-test={coin.code} className={`row coin ${styles.coin}`} key={coin.code} onClick={() => this.props.onClick(coin.code)}>
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
             </div>

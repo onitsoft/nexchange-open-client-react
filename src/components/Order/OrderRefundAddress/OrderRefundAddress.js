@@ -23,10 +23,10 @@ class OrderRefundAddress extends Component {
   componentDidMount() {
     axios
       .get(`${config.API_BASE_URL}/users/me/orders/${this.props.order.unique_reference}`)
-      .then(data => {
+      .then(() => {
         this.setState({ show: true });
       })
-      .catch(error => {
+      .catch(() => {
         this.setState({ show: false });
       });
   }
