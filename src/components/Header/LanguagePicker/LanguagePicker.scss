@@ -1,0 +1,48 @@
+.languagepicker {
+	background-color: #fff;
+	display: inline-block;
+	padding: 0;
+	height: 40px;
+	overflow: hidden;
+	transition: all .3s ease;
+	vertical-align: top;
+	float: left;
+    border-radius: 5px;
+    z-index: 20;
+    min-width: 130px;
+}
+
+.languagepicker:hover {
+	height: 81px;
+    /* you need to set the height manually every time you add a new language!
+     * height = (41 * amountOfLanguages) - 1
+     * 40px is the default height of one language selection element, 1px is the offset for border
+     */
+}
+
+.languagepicker a{
+	color: #000;
+	text-decoration: none;
+    font-size: 16px;
+}
+
+.languagepicker li {
+	display: block;
+	padding: 0px 20px;
+	line-height: 40px;
+	border-top: 1px solid #EEE;
+}
+
+.languagepicker li:hover{
+	background-color: #EEE;
+}
+
+.languagepicker li:first-child  {
+	border: none;
+}
+
+.languagepicker li img {
+	margin: -3px 5px 0px 0px;
+	display: inline-block;
+	width: 20px;
+}

@@ -4,6 +4,7 @@ import _ from 'lodash';
 import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import preparePairs from 'Utils/preparePairs';
+import i18n from '../i18n';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -274,13 +275,13 @@ export const setUserEmail = email => async dispatch => {
         type: types.SET_EMAIL_AND_MESSAGE,
         value: res.data.email,
         message: {
-          text: 'Success, you set your email.',
+          text: i18n.t('notify.successmail'),
           error: false,
         },
       });
     })
     .catch(() => {
-      let errorMessage = 'Something went wrong. Try again later.';
+      let errorMessage = i18n.t('generalterms.formfailed');
 
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,

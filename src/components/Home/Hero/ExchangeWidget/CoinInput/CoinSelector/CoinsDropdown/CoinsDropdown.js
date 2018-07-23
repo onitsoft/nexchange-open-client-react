@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Fuse from 'fuse.js';
 import cx from 'classnames';
+import { I18n } from 'react-i18next';
 import urlParams from 'Utils/urlParams';
 import debounce from 'Utils/debounce';
 import styles from './CoinsDropdown.scss';
@@ -73,24 +74,28 @@ class CoinsDropdown extends Component {
 
   renderSearch = () => {
     return (
-      <form className={styles['coins-search']} onSubmit={this.handleSubmit} data-test="search-form">
-        <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
-        <input
-          type="text"
-          placeholder="Search"
-          ref={input => (this.searchInput = input)}
-          onChange={this.handleChange}
-          value={this.state.value}
-          data-test="search"
-        />
-        <i
-          className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`}
-          onClick={this.clear}
-          data-test="clear"
-        >
-          clear
-        </i>
-      </form>
+      <I18n ns="translations">
+        {t => (
+          <form className={styles['coins-search']} onSubmit={this.handleSubmit}>
+            <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
+            <input
+              type="text"
+              placeholder={t('generalterms.search')}
+              ref={input => (this.searchInput = input)}
+              onChange={this.handleChange}
+              value={this.state.value}
+              data-test="search"
+            />
+            <i
+              className={`material-icons ${this.state.value ? cx(styles.clear, styles.active) : styles.clear}`}
+              onClick={this.clear}
+              data-test="clear"
+            >
+              clear
+            </i>
+          </form>
+        )}
+      </I18n>
     );
   };
 

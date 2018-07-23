@@ -5,6 +5,7 @@ import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import styles from './CoinSelector.scss';
+import i18n from '../../../../../../i18n';
 
 class CoinSelector extends Component {
   state = {
@@ -62,7 +63,7 @@ class CoinSelector extends Component {
     ) {
       if (!this.props.pairs[nextDepositCoin]) {
         this.props.errorAlert({
-          message: `You cannot use ${nextDepositCoin} as deposit coin. Please try another one.`,
+          message: `${i18n.t('error.nousedeposit')}  ${nextDepositCoin} ${i18n.t('error.nousedeposit2')}`,
           show: true,
           type: 'INVALID_PAIR',
         });
@@ -73,7 +74,8 @@ class CoinSelector extends Component {
           .join(', ');
 
         this.props.errorAlert({
-          message: `You cannot buy ${nextReceiveCoin} with ${nextDepositCoin}. Try ${validPairs}.`,
+          message: `${i18n.t('error.invalidpair')} 
+        ${nextReceiveCoin} ${i18n.t('error.with')} ${nextDepositCoin}. ${i18n.t('error.try')} ${validPairs}.`,
           show: true,
           type: 'INVALID_PAIR',
         });

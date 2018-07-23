@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
+import { I18n } from 'react-i18next';
 import platform from 'platform';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styles from './Bookmark.scss';
@@ -39,6 +40,8 @@ class Bookmark extends Component {
 
   render() {
     return (
+     <I18n ns="translations">
+      {(t) => (
       <Modal show={this.state.show} onHide={this.props.onClose}>
         <div id="bookmark" className="modal-content">
           <div className="modal-header">
@@ -46,15 +49,13 @@ class Bookmark extends Component {
               <i className="material-icons">clear</i>
             </button>
             <h4 className="modal-title" data-toggle="tooltip" data-placement="top" data-original-title="Copy">
-              Bookmark Order
+              {t('bookmark.0')}
             </h4>
           </div>
 
           <div className="modal-body">
             <p className={styles.text}>
-              Press <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> to add this page to your bookmarks. You can navigate
-              back to this page at any time to check the status of your order.
-            </p>
+                {t('bookmark.1')} <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> {t('bookmark.2')}</p>
 
             <div className="input-group">
               <div className="form-group is-empty">
@@ -71,6 +72,8 @@ class Bookmark extends Component {
           </div>
         </div>
       </Modal>
+      )}
+     </I18n>
     );
   }
 }

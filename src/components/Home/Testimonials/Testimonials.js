@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import styles from './Testimonials.scss';
 import data from './data.json';
+import { I18n } from 'react-i18next';
 require('react-id-swiper/src/styles/css/swiper.css');
 
 class Testimonials extends Component {
@@ -17,12 +18,14 @@ class Testimonials extends Component {
 
   render() {
     return (
+ <I18n ns="translations">
+  {(t) => (
       <div>
         <div className={styles.header}>
           <div className="container">
             <div className="row">
               <div className="col-xs-12">
-                <h2 className="title">Testimonials</h2>
+                <h2 className="title">{t('testimonials.title')}</h2>
               </div>
             </div>
           </div>
@@ -66,6 +69,8 @@ class Testimonials extends Component {
           </div>
         </div>
       </div>
+ )}
+ </I18n>
     );
   }
 }

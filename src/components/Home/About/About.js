@@ -1,48 +1,53 @@
 import React from 'react';
 import styles from './About.scss';
+import { I18n, Trans } from 'react-i18next';
 
 const About = () => (
+  <I18n ns="translations">
+  {(t) => (
   <div id="about" className={styles.about}>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
-          <h2 className="title">About Us</h2>
+          <h2 className="title">{t('about.title')}</h2>
         </div>
 
         <div className="col-xs-12 col-sm-6">
           <p>
-            N.exchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto
-            enthusiasts.
+            {t('about.1')}
           </p>
-
-          <p>We are a group of multi-national, multi-disciplinary cryptocurrency professionals.</p>
-
+          <p>{t('about.2')}</p>
           <p>
-            Our team came together to make this platform after seeing firsthand the need for a fast and reliable exchange on the crypto
-            market.
+            {t('about.3')}
           </p>
-
-          <p>We pride ourselves on total transparency:</p>
-        </div>
+          <p>
+            {t('about.4')}:
+          </p>
+		 </div>
 
         <div className="col-xs-12 col-sm-6">
-          <p>Everything is viewable through our API, starting from order lists and ending with our coin reserves. </p>
-
           <p>
-            N.exchange is built on several core values that guide our team in our day to day operations. Among them are complete
-            transparency, a strive to help make cryptocurrency as accessible as possible, and a passion for open source.
+            {t('about.5')}
           </p>
 
+		  <p>
+            {t('about.6')}
+		  </p>	
+          <Trans i18nKey="about.7">
           <p>
             To support our mission of making crypto accessible to everyone, we’ve made our{' '}
             <a href="https://github.com/onitsoft/nexchange-open-client-react" target="_blank" rel="noopener noreferrer">
               front end client completely open source
             </a>.
           </p>
+          </Trans>
+         </div>
+
         </div>
       </div>
     </div>
-  </div>
+)}
+</I18n>
 );
 
 export default About;

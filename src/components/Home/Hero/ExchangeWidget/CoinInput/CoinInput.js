@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n } from 'react-i18next';
 import debounce from 'Utils/debounce';
 import { fetchPrice } from 'Actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
@@ -68,28 +69,32 @@ class CoinInput extends PureComponent {
 
   render() {
     return (
-      <div className="col-xs-12 col-sm-6">
-        <form className="form-group" onSubmit={this.handleSubmit}>
-          <label htmlFor={this.props.type} className={styles.label}>
-            {this.props.type}
-          </label>
-          <input
-            type="text"
-            className={`form-control ${styles.input}`}
-            id={`coin-input-${this.props.type}`}
-            name={this.props.type}
-            onChange={this.handleChange}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            value={this.state.value}
-            ref={input => {
-              this.nameInput = input;
-            }}
-          />
-        </form>
+      <I18n ns="translations">
+        {t => (
+          <div className="col-xs-12 col-sm-6">
+            <form className="form-group" onSubmit={this.handleSubmit}>
+              <label htmlFor={this.props.type} className={styles.label}>
+                {t('order.' + this.props.type)}
+              </label>
+              <input
+                type="text"
+                className={`form-control ${styles.input}`}
+                id={`coin-input-${this.props.type}`}
+                name={this.props.type}
+                onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                value={this.state.value}
+                ref={input => {
+                  this.nameInput = input;
+                }}
+              />
+            </form>
 
-        <CoinSelector type={this.props.type} onSelect={this.focus} />
-      </div>
+            <CoinSelector type={this.props.type} onSelect={this.focus} />
+          </div>
+        )}
+      </I18n>
     );
   }
 }
