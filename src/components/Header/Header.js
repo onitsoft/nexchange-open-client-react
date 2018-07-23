@@ -127,7 +127,7 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <LanguagePicker screenType="large" />
+                  <LanguagePicker />
 
                   <li id="social-mobile">
                     <a
@@ -165,10 +165,9 @@ class Header extends Component {
                     >
                       <i className="fab fa-telegram" aria-hidden="true" />
                     </a>
-                    <LanguagePicker screenType="small" />
                   </li>
 
-                  <li className="visible-sm visible-md visible-lg social-desktop">
+                  <li className="visible-md visible-lg social-desktop">
                     <a
                       href="/twitter"
                       target="_blank"
@@ -183,7 +182,7 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li className="visible-sm visible-md visible-lg social-desktop">
+                  <li className="visible-md visible-lg social-desktop">
                     <a
                       href="/fb"
                       target="_blank"
@@ -198,7 +197,7 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li className="visible-sm visible-md visible-lg social-desktop">
+                  <li className="visible-md visible-lg social-desktop">
                     <a
                       href="/slack"
                       target="_blank"
@@ -213,7 +212,7 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li className="visible-sm visible-md visible-lg social-desktop">
+                  <li className="visible-md visible-lg social-desktop">
                     <a
                       href="/telegram"
                       target="_blank"

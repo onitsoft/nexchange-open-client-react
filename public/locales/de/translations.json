@@ -160,7 +160,7 @@
   "order": {
     "enteraddress": "Geben Sie Ihre Wallet-Adresse ein",
     "copy": "Adresse der Wallet kopiert!",
-    "reference": "Auftrag-Referenz",
+    "reference": "Auftrag Referenz",
     "api": "Details Ihres Auftrages in unsere API",
     "blockchain": "Sehen Sie Ihre  Auftragsdetails in der Blockchain ein",
     "processing": "Abhebung wird ausgeführt...",
