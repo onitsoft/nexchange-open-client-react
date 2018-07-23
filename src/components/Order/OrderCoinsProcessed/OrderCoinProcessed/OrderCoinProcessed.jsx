@@ -12,6 +12,10 @@ class OrderCoinProcessed extends Component {
 
   componentDidMount() {
     this.prepareState(this.props);
+
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -29,7 +33,7 @@ class OrderCoinProcessed extends Component {
 
       $('#copy-address-to-clipboard')
         .tooltip('hide')
-        .attr('data-original-title', 'Address copied!')
+        .attr('data-original-title', i18n.t('order.copy'))
         .tooltip('show');
 
       setTimeout(() => {
@@ -60,80 +64,84 @@ class OrderCoinProcessed extends Component {
     }
   };
 
-  render() {
+  renderRates() {
     let rates = ``;
 
     if (this.state.order && this.state.order.price) {
       rates += `${i18n.t('order.rates')}: \n`;
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate).toFixed(8)} ${this.state.oppositeCoin}\n`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate.toFixed(8)} ${this.state.oppositeCoin}\n`;
+      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate).toFixed(6)} ${this.state.oppositeCoin}\n`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate.toFixed(6)} ${this.state.oppositeCoin}\n`;
 
       rates += `1 ${this.state.coin} = `;
 
       if (this.props.type === 'Deposit')
-        rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_usd).toFixed(8)} USD\n`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(8)} USD\n`;
+        rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_usd).toFixed(6)} USD\n`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(6)} USD\n`;
 
       rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_btc).toFixed(8)} BTC`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(8)} BTC`;
+      if (this.props.type === 'Deposit') rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_btc).toFixed(6)} BTC`;
+      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(6)} BTC`;
 
       if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
-        rates += `\n\n${'order.fee'}: \n`;
+        rates += `\n\n${i18n.t('order.fee')}: \n`;
         rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
       } else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
-        rates += `\n\n${'order.fee'}: \n`;
+        rates += `\n\n${i18n.t('order.fee')}: \n`;
         rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
       }
     }
 
+    return rates;
+  }
+
+  render() {
     return (
-    <I18n ns="translations">
-     {(t) => (
-      <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
-        <div className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
-          <div className={`${styles['media-left']}`}>
-            <i className={`${styles.coin} cc ${this.state.coin}`} />
-          </div>
-
-          <div className={`${styles['media-right']}`}>
-            <h5>
-              {t('order.'+this.props.type)}{' '}
-              <b>
-                {this.state.amount} {this.state.coin}
-              </b>
-              <i
-                className="fa fa-question-circle"
-                data-toggle="tooltip"
-                data-placement="top"
-                style={{ marginLeft: 8 }}
-                data-original-title={rates}
-              />
-            </h5>
-
-            <div>
-              <div className={styles.address}>
-                <h6>{this.state.address}</h6>
+      <I18n ns="translations">
+        {t => (
+          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
+            <div className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
+              <div className={`${styles['media-left']}`}>
+                <i className={`${styles.coin} cc ${this.state.coin}`} />
               </div>
 
-              {this.props.type === 'Deposit' &&
-                !isFiatOrder(this.props.order) && (
+              <div className={`${styles['media-right']}`}>
+                <h5>
+                  {t('order.' + this.props.type)}{' '}
+                  <b>
+                    {this.state.amount} {this.state.coin}
+                  </b>
                   <i
-                    id="copy-address-to-clipboard"
-                    className={`${styles.copy} fas fa-copy`}
-                    data-test="copy-address"
-                    onClick={() => this.triggerCopyTooltip()}
+                    className="fa fa-question-circle"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    style={{ marginLeft: 8 }}
+                    data-original-title={this.renderRates()}
                   />
-                )}
+                </h5>
+
+                <div>
+                  <div className={styles.address}>
+                    <h6>{this.state.address}</h6>
+                  </div>
+
+                  {this.props.type === 'Deposit' &&
+                    !isFiatOrder(this.props.order) && (
+                      <i
+                        id="copy-address-to-clipboard"
+                        className={`${styles.copy} fas fa-copy`}
+                        data-test="copy-address"
+                        onClick={() => this.triggerCopyTooltip()}
+                      />
+                    )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      )}
-	 </I18n>
+        )}
+      </I18n>
     );
   }
 }
