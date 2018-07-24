@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import CopyToClipboard from 'react-copy-to-clipboard';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
-import i18n from '../../../../i18n';
+import i18n from 'Src/i18n';
 import { I18n } from 'react-i18next';
 
 import copy from 'clipboard-copy';

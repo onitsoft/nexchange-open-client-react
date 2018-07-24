@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { CoinSelectorTesting as CoinSelector } from './CoinSelector.js';
+import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import coinsInfo from 'Mocks/currency.js';
 import pairs from 'Mocks/processedPairs.js';
 import reducers from 'Reducers';
@@ -31,12 +32,14 @@ describe('CoinSelector', () => {
       </Provider>
     )
       .dive()
+      .dive()
       .dive();
     wrapShallowReceive = shallow(
       <Provider store={store}>
         <CoinSelector type="receive" store={store} />
       </Provider>
     )
+      .dive()
       .dive()
       .dive();
     wrapMountDeposit = mount(
@@ -57,14 +60,15 @@ describe('CoinSelector', () => {
   });
 
   it('initially coins dropdown is hidden (deposit)', () => {
-    expect(wrapShallowDeposit.find('CoinsDropdown').length).toEqual(0);
+    expect(wrapShallowDeposit.find(CoinsDropdown).length).toEqual(0);
     wrapShallowDeposit.find('[data-test="selector"]').simulate('click');
-    expect(wrapShallowDeposit.find('CoinsDropdown').length).toEqual(1);
+    expect(wrapShallowDeposit.find(CoinsDropdown).length).toEqual(1);
   });
 
   it('clicking on arrow causes dropdown to appear (deposit)', () => {
+    expect(wrapShallowDeposit.find(CoinsDropdown).length).toEqual(0);
     wrapShallowDeposit.find('[data-test="selector"]').simulate('click');
-    expect(wrapShallowDeposit.find('CoinsDropdown').length).toEqual(1);
+    expect(wrapShallowDeposit.find(CoinsDropdown).length).toEqual(1);
   });
 
   it('selecting coin from dropdown causes correct action to be selected (deposit)', () => {
@@ -81,14 +85,14 @@ describe('CoinSelector', () => {
   });
 
   it('initially coins dropdown is hidden (receive)', () => {
-    expect(wrapShallowReceive.find('CoinsDropdown').length).toEqual(0);
+    expect(wrapShallowReceive.find(CoinsDropdown).length).toEqual(0);
     wrapShallowReceive.find('[data-test="selector"]').simulate('click');
-    expect(wrapShallowReceive.find('CoinsDropdown').length).toEqual(1);
+    expect(wrapShallowReceive.find(CoinsDropdown).length).toEqual(1);
   });
 
   it('clicking on arrow causes dropdown to appear (receive)', () => {
     wrapShallowReceive.find('[data-test="selector"]').simulate('click');
-    expect(wrapShallowReceive.find('CoinsDropdown').length).toEqual(1);
+    expect(wrapShallowReceive.find(CoinsDropdown).length).toEqual(1);
   });
 
   it('selecting coin from dropdown causes correct coin to be selected (deposit)', () => {

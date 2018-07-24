@@ -4,7 +4,11 @@ exports[`OrderReferralTerms renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderReferralTerms />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,26 +19,544 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "children": [Function],
-      "ns": "translations",
+      "animation": true,
+      "autoFocus": true,
+      "backdrop": true,
+      "bsClass": "modal",
+      "children": <div
+        className="modal-content"
+>
+        <div
+                className="modal-header"
+        >
+                <button
+                        aria-hidden="true"
+                        className="close"
+                        data-dismiss="modal"
+                        onClick={undefined}
+                        type="button"
+                >
+                        <i
+                                className="material-icons"
+                        >
+                                clear
+                        </i>
+                </button>
+                <h4
+                        className="modal-title"
+                >
+                        referral.3
+                </h4>
+        </div>
+        <div
+                className="modal-body"
+        >
+                <div
+                        className="row"
+                >
+                        <div
+                                className="col-xs-12"
+                        >
+                                <p>
+                                         
+                                        referral.4
+                                </p>
+                        </div>
+                </div>
+        </div>
+</div>,
+      "dialogComponentClass": [Function],
+      "enforceFocus": true,
+      "id": "OrderReferralTerms",
+      "keyboard": true,
+      "manager": ModalManager {
+        "add": [Function],
+        "containers": Array [],
+        "data": Array [],
+        "handleContainerOverflow": true,
+        "hideSiblingNodes": true,
+        "isTopModal": [Function],
+        "modals": Array [],
+        "remove": [Function],
+      },
+      "onHide": [Function],
+      "renderBackdrop": [Function],
+      "restoreFocus": true,
+      "show": false,
     },
     "ref": null,
-    "rendered": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="modal-header"
+>
+            <button
+                        aria-hidden="true"
+                        className="close"
+                        data-dismiss="modal"
+                        onClick={undefined}
+                        type="button"
+            >
+                        <i
+                                    className="material-icons"
+                        >
+                                    clear
+                        </i>
+            </button>
+            <h4
+                        className="modal-title"
+            >
+                        referral.3
+            </h4>
+</div>,
+          <div
+            className="modal-body"
+>
+            <div
+                        className="row"
+            >
+                        <div
+                                    className="col-xs-12"
+                        >
+                                    <p>
+                                                 
+                                                referral.4
+                                    </p>
+                        </div>
+            </div>
+</div>,
+        ],
+        "className": "modal-content",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                aria-hidden="true"
+                className="close"
+                data-dismiss="modal"
+                onClick={undefined}
+                type="button"
+>
+                <i
+                                className="material-icons"
+                >
+                                clear
+                </i>
+</button>,
+              <h4
+                className="modal-title"
+>
+                referral.3
+</h4>,
+            ],
+            "className": "modal-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "children": <i
+                  className="material-icons"
+>
+                  clear
+</i>,
+                "className": "close",
+                "data-dismiss": "modal",
+                "onClick": undefined,
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "clear",
+                  "className": "material-icons",
+                },
+                "ref": null,
+                "rendered": "clear",
+                "type": "i",
+              },
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "referral.3",
+                "className": "modal-title",
+              },
+              "ref": null,
+              "rendered": "referral.3",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row"
+>
+              <div
+                            className="col-xs-12"
+              >
+                            <p>
+                                           
+                                          referral.4
+                            </p>
+              </div>
+</div>,
+            "className": "modal-body",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-xs-12"
+>
+                <p>
+                                 
+                                referral.4
+                </p>
+</div>,
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p>
+                   
+                  referral.4
+</p>,
+                "className": "col-xs-12",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    " ",
+                    "referral.4",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  " ",
+                  "referral.4",
+                ],
+                "type": "p",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "children": [Function],
-        "ns": "translations",
+        "animation": true,
+        "autoFocus": true,
+        "backdrop": true,
+        "bsClass": "modal",
+        "children": <div
+          className="modal-content"
+>
+          <div
+                    className="modal-header"
+          >
+                    <button
+                              aria-hidden="true"
+                              className="close"
+                              data-dismiss="modal"
+                              onClick={undefined}
+                              type="button"
+                    >
+                              <i
+                                        className="material-icons"
+                              >
+                                        clear
+                              </i>
+                    </button>
+                    <h4
+                              className="modal-title"
+                    >
+                              referral.3
+                    </h4>
+          </div>
+          <div
+                    className="modal-body"
+          >
+                    <div
+                              className="row"
+                    >
+                              <div
+                                        className="col-xs-12"
+                              >
+                                        <p>
+                                                   
+                                                  referral.4
+                                        </p>
+                              </div>
+                    </div>
+          </div>
+</div>,
+        "dialogComponentClass": [Function],
+        "enforceFocus": true,
+        "id": "OrderReferralTerms",
+        "keyboard": true,
+        "manager": ModalManager {
+          "add": [Function],
+          "containers": Array [],
+          "data": Array [],
+          "handleContainerOverflow": true,
+          "hideSiblingNodes": true,
+          "isTopModal": [Function],
+          "modals": Array [],
+          "remove": [Function],
+        },
+        "onHide": [Function],
+        "renderBackdrop": [Function],
+        "restoreFocus": true,
+        "show": false,
       },
       "ref": null,
-      "rendered": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="modal-header"
+>
+              <button
+                            aria-hidden="true"
+                            className="close"
+                            data-dismiss="modal"
+                            onClick={undefined}
+                            type="button"
+              >
+                            <i
+                                          className="material-icons"
+                            >
+                                          clear
+                            </i>
+              </button>
+              <h4
+                            className="modal-title"
+              >
+                            referral.3
+              </h4>
+</div>,
+            <div
+              className="modal-body"
+>
+              <div
+                            className="row"
+              >
+                            <div
+                                          className="col-xs-12"
+                            >
+                                          <p>
+                                                         
+                                                        referral.4
+                                          </p>
+                            </div>
+              </div>
+</div>,
+          ],
+          "className": "modal-content",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  aria-hidden="true"
+                  className="close"
+                  data-dismiss="modal"
+                  onClick={undefined}
+                  type="button"
+>
+                  <i
+                                    className="material-icons"
+                  >
+                                    clear
+                  </i>
+</button>,
+                <h4
+                  className="modal-title"
+>
+                  referral.3
+</h4>,
+              ],
+              "className": "modal-header",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-hidden": "true",
+                  "children": <i
+                    className="material-icons"
+>
+                    clear
+</i>,
+                  "className": "close",
+                  "data-dismiss": "modal",
+                  "onClick": undefined,
+                  "type": "button",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "clear",
+                    "className": "material-icons",
+                  },
+                  "ref": null,
+                  "rendered": "clear",
+                  "type": "i",
+                },
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "referral.3",
+                  "className": "modal-title",
+                },
+                "ref": null,
+                "rendered": "referral.3",
+                "type": "h4",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="row"
+>
+                <div
+                                className="col-xs-12"
+                >
+                                <p>
+                                                 
+                                                referral.4
+                                </p>
+                </div>
+</div>,
+              "className": "modal-body",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col-xs-12"
+>
+                  <p>
+                                     
+                                    referral.4
+                  </p>
+</div>,
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <p>
+                     
+                    referral.4
+</p>,
+                  "className": "col-xs-12",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      "referral.4",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    "referral.4",
+                  ],
+                  "type": "p",
+                },
+                "type": "div",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
       "type": [Function],
     },
   ],

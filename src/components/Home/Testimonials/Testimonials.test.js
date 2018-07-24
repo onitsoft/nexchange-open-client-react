@@ -6,7 +6,7 @@ describe('Testimonials', () => {
   let wrapShallow, wrapMount;
 
   beforeEach(() => {
-    wrapShallow = shallow(<Testimonials />);
+    wrapShallow = shallow(<Testimonials />).dive();
     wrapMount = mount(<Testimonials />);
   });
 

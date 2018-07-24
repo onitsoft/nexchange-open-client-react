@@ -4,7 +4,11 @@ exports[`NotFound renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <NotFound />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,27 +19,89 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
-      "ns": "translations",
+      "children": Array [
+        <h1>
+          404
+</h1>,
+        <h2>
+          error.notfound
+</h2>,
+      ],
+      "className": "text-center",
+      "id": "not-found",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "404",
+        },
+        "ref": null,
+        "rendered": "404",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "error.notfound",
+        },
+        "ref": null,
+        "rendered": "error.notfound",
+        "type": "h2",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
-        "ns": "translations",
+        "children": Array [
+          <h1>
+            404
+</h1>,
+          <h2>
+            error.notfound
+</h2>,
+        ],
+        "className": "text-center",
+        "id": "not-found",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "404",
+          },
+          "ref": null,
+          "rendered": "404",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "error.notfound",
+          },
+          "ref": null,
+          "rendered": "error.notfound",
+          "type": "h2",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

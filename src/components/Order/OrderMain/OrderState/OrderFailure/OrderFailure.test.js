@@ -4,6 +4,7 @@ import OrderFailure from './OrderFailure';
 
 describe('OrderFailure', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderFailure />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderFailure />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

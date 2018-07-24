@@ -8,11 +8,12 @@ class LanguagePicker extends Component {
 
   array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
-      var k = new_index - arr.length + 1;
+      let k = new_index - arr.length + 1;
       while (k--) {
         arr.push(undefined);
       }
     }
+
     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
     return arr;
   }
@@ -30,9 +31,9 @@ class LanguagePicker extends Component {
     return (
       <ul className={styles.languagepicker}>
         {languages.map(lng => (
-          <I18n ns="translations">
+          <I18n ns="translations" key={lng}>
             {(t, { i18n }) => (
-              <li>
+              <li key={lng}>
                 <a href={`#${lng}`} className="selected" onClick={() => i18n.changeLanguage(`${lng}`)}>
                   <img className="flag" src={`/img/flags/${lng.toUpperCase()}.svg`} alt={t(`header.${lng}`)} />
                   <span className="visible-xs-inline visible-ms-inline visible-lg-inline">{t(`header.${lng}`)}</span>

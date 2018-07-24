@@ -8,9 +8,9 @@ describe('FAQ', () => {
     expect(wrapShallow).toMatchSnapshot();
 
     wrapShallow.setState({ show: true });
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
 
     wrapShallow.setProps({ show: false }).setState({ show: false });
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
   });
 });

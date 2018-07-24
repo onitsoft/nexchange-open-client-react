@@ -2,13 +2,15 @@ import React from 'react';
 import { I18n } from 'react-i18next';
 
 const OrderLoading = () => {
-  return (<div className="text-center">
-      <I18n ns="translations">
-		{(t) => (
+  return (
+    <I18n ns="translations">
+      {t => (
+        <div className="text-center">
           <h2>{t('loading')}...</h2>
-        )}
-      </I18n>
-    </div>);
+        </div>
+      )}
+    </I18n>
+  );
 };
 
 export default OrderLoading;

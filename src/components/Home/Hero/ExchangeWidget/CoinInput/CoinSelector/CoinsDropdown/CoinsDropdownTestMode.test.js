@@ -8,8 +8,8 @@ describe('CoinsDropdown', () => {
 
   beforeEach(() => {
     window.history.pushState('', '', 'http://localhost/?test=true');
-    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
-    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />);
+    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
+    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
   });
 
   afterEach(() => {

@@ -19,33 +19,35 @@ class OrderPaidCrypto extends Component {
   render() {
     if (this.txId === '' || this.txId === null) {
       return (
-		<I18n ns="translations">
-		{(t) => (
-        <div className={styles.container}>
-          <OrderStateLoader />
-          <h2>{t('order.processing')}...</h2>
-          <OrderLinks {...this.props} />
-        </div>
-		)}</I18n>
+        <I18n ns="translations">
+          {t => (
+            <div className={styles.container}>
+              <OrderStateLoader />
+              <h2>{t('order.processing')}...</h2>
+              <OrderLinks {...this.props} />
+            </div>
+          )}
+        </I18n>
       );
     }
 
     return (
-	<I18n ns="translations">
-	{(t) => (
-      <div className={styles.container}>
-        <OrderCheckIcon />
-        <h2 className={styles.title}>{t('order.paid1')}</h2>
-        <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
-        <h3 className={styles.subtitle}>
-          {t('order.txid')}:{' '}
-          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
-            {this.txId}
-          </a>
-        </h3>
-        <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
-      </div>
-	)}</I18n>
+      <I18n ns="translations">
+        {t => (
+          <div className={styles.container}>
+            <OrderCheckIcon />
+            <h2 className={styles.title}>{t('order.paid1')}</h2>
+            <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
+            <h3 className={styles.subtitle}>
+              {t('order.txid')}:{' '}
+              <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
+                {this.txId}
+              </a>
+            </h3>
+            <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
+          </div>
+        )}
+      </I18n>
     );
   }
 }

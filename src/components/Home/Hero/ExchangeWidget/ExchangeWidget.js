@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import i18n from '../../../../i18n';
+import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
 
@@ -110,17 +110,16 @@ class ExchangeWidget extends Component {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     return (
-      <div className={styles.container}>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className={styles.widget}>
-                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-                <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
-
-                <I18n ns="translations">
-                  {t => (
+      <I18n ns="translations">
+        {t => (
+          <div className={styles.container}>
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className={styles.widget}>
+                    <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                    <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                    <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
@@ -134,13 +133,13 @@ class ExchangeWidget extends Component {
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>
                     </div>
-                  )}
-                </I18n>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </I18n>
     );
   }
 }

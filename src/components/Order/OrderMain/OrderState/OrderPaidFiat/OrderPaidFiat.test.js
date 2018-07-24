@@ -4,6 +4,7 @@ import OrderPaidFiat from './OrderPaidFiat';
 
 describe('OrderPaidFiat', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderPaidFiat />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderPaidFiat />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

@@ -21,7 +21,7 @@ const LoadingComponent = ({ isLoading, error }) => {
     );
   } else if (error) {
     // Handle the error state
-    return <I18n ns="translations">{(t) => (<h2>{t('error.loading')}</h2>)}</I18n>;
+    return <I18n ns="translations">{t => <h2>{t('error.loading')}</h2>}</I18n>;
   } else {
     return null;
   }

@@ -25,6 +25,7 @@ ShallowWrapper {
         </div>
     }
     question="What do you do?"
+    t={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -36,27 +37,407 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
-      "ns": "translations",
+      "children": Array [
+        <h3
+          data-test="question-opener"
+          onClick={[Function]}
+>
+          faq.undefined
+           
+          <i
+                    aria-hidden="true"
+                    className="far fa-plus-square"
+          />
+</h3>,
+        <div
+          className="answer"
+>
+          <div>
+                    <p>
+                              We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                    </p>
+                    <p>
+                              We will be adding more currencies very soon, stay tuned!
+                    </p>
+                    <p>
+                              Missing your favorite coin? Let us know here: 
+                              <a
+                                        href="mailto:support@n.exchange"
+                              >
+                                        support@n.exchange
+                              </a>
+                              .
+                    </p>
+          </div>
+</div>,
+        <hr />,
+      ],
+      "className": "question-answer",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "faq.undefined",
+            " ",
+            <i
+              aria-hidden="true"
+              className="far fa-plus-square"
+/>,
+          ],
+          "data-test": "question-opener",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "faq.undefined",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "far fa-plus-square",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+        ],
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            <p>
+                        We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+            </p>
+            <p>
+                        We will be adding more currencies very soon, stay tuned!
+            </p>
+            <p>
+                        Missing your favorite coin? Let us know here: 
+                        <a
+                                    href="mailto:support@n.exchange"
+                        >
+                                    support@n.exchange
+                        </a>
+                        .
+            </p>
+</div>,
+          "className": "answer",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+</p>,
+              <p>
+                We will be adding more currencies very soon, stay tuned!
+</p>,
+              <p>
+                Missing your favorite coin? Let us know here: 
+                <a
+                                href="mailto:support@n.exchange"
+                >
+                                support@n.exchange
+                </a>
+                .
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+              },
+              "ref": null,
+              "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "We will be adding more currencies very soon, stay tuned!",
+              },
+              "ref": null,
+              "rendered": "We will be adding more currencies very soon, stay tuned!",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Missing your favorite coin? Let us know here: ",
+                  <a
+                    href="mailto:support@n.exchange"
+>
+                    support@n.exchange
+</a>,
+                  ".",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Missing your favorite coin? Let us know here: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "support@n.exchange",
+                    "href": "mailto:support@n.exchange",
+                  },
+                  "ref": null,
+                  "rendered": "support@n.exchange",
+                  "type": "a",
+                },
+                ".",
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
-        "ns": "translations",
+        "children": Array [
+          <h3
+            data-test="question-opener"
+            onClick={[Function]}
+>
+            faq.undefined
+             
+            <i
+                        aria-hidden="true"
+                        className="far fa-plus-square"
+            />
+</h3>,
+          <div
+            className="answer"
+>
+            <div>
+                        <p>
+                                    We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                        </p>
+                        <p>
+                                    We will be adding more currencies very soon, stay tuned!
+                        </p>
+                        <p>
+                                    Missing your favorite coin? Let us know here: 
+                                    <a
+                                                href="mailto:support@n.exchange"
+                                    >
+                                                support@n.exchange
+                                    </a>
+                                    .
+                        </p>
+            </div>
+</div>,
+          <hr />,
+        ],
+        "className": "question-answer",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "faq.undefined",
+              " ",
+              <i
+                aria-hidden="true"
+                className="far fa-plus-square"
+/>,
+            ],
+            "data-test": "question-opener",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "faq.undefined",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "far fa-plus-square",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+          ],
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              <p>
+                            We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+              </p>
+              <p>
+                            We will be adding more currencies very soon, stay tuned!
+              </p>
+              <p>
+                            Missing your favorite coin? Let us know here: 
+                            <a
+                                          href="mailto:support@n.exchange"
+                            >
+                                          support@n.exchange
+                            </a>
+                            .
+              </p>
+</div>,
+            "className": "answer",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+</p>,
+                <p>
+                  We will be adding more currencies very soon, stay tuned!
+</p>,
+                <p>
+                  Missing your favorite coin? Let us know here: 
+                  <a
+                                    href="mailto:support@n.exchange"
+                  >
+                                    support@n.exchange
+                  </a>
+                  .
+</p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                },
+                "ref": null,
+                "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "We will be adding more currencies very soon, stay tuned!",
+                },
+                "ref": null,
+                "rendered": "We will be adding more currencies very soon, stay tuned!",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Missing your favorite coin? Let us know here: ",
+                    <a
+                      href="mailto:support@n.exchange"
+>
+                      support@n.exchange
+</a>,
+                    ".",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Missing your favorite coin? Let us know here: ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "support@n.exchange",
+                      "href": "mailto:support@n.exchange",
+                    },
+                    "ref": null,
+                    "rendered": "support@n.exchange",
+                    "type": "a",
+                  },
+                  ".",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

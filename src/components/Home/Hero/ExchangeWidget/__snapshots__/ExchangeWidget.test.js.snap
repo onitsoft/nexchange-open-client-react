@@ -4,74 +4,11 @@ exports[`ExchangeWidget renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExchangeWidget
-    error={
-        Object {
-            "show": false,
-            "type": "INVALID_AMOUNT",
-          }
-    }
-    errorAlert={[Function]}
-    price={
-        Object {
-            "deposit": 101,
-            "lastEdited": "deposit",
-            "pair": "ETHOMG",
-            "receive": 1.76250023,
-          }
-    }
-    selectedCoin={
-        Object {
-            "deposit": "OMG",
-            "lastSelected": "deposit",
-            "prev": Object {
-              "deposit": "OMG",
-              "receive": "ETH",
-            },
-            "receive": "ETH",
-          }
-    }
-    setOrder={[Function]}
-    setWallet={[Function]}
-    store={
-        Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          }
-    }
-    storeSubscription={
-        Subscription {
-            "listeners": Object {
-              "clear": [Function],
-              "get": [Function],
-              "notify": [Function],
-              "subscribe": [Function],
-            },
-            "onStateChange": [Function],
-            "parentSub": undefined,
-            "store": Object {
-              "clearActions": [Function],
-              "dispatch": [Function],
-              "getActions": [Function],
-              "getState": [Function],
-              "replaceReducer": [Function],
-              "subscribe": [Function],
-            },
-            "unsubscribe": [Function],
-          }
-    }
-    wallet={
-        Object {
-            "address": "",
-            "show": false,
-            "valid": false,
-          }
-    }
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -108,11 +45,21 @@ ShallowWrapper {
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
                                 />
-                                <I18n
-                                        ns="translations"
+                                <div
+                                        className="submit"
                                 >
-                                        [Function]
-                                </I18n>
+                                        <p
+                                                className="info"
+                                        >
+                                                order.feeinfo
+                                        </p>
+                                        <button
+                                                className="btn disabled btn btn-block btn-primary proceed "
+                                                onClick={[Function]}
+                                        >
+                                                exchangewidget.2
+                                        </button>
+                                </div>
                         </div>
                 </div>
         </div>
@@ -146,11 +93,21 @@ ShallowWrapper {
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
                               />
-                              <I18n
-                                        ns="translations"
+                              <div
+                                        className="submit"
                               >
-                                        [Function]
-                              </I18n>
+                                        <p
+                                                  className="info"
+                                        >
+                                                  order.feeinfo
+                                        </p>
+                                        <button
+                                                  className="btn disabled btn btn-block btn-primary proceed "
+                                                  onClick={[Function]}
+                                        >
+                                                  exchangewidget.2
+                                        </button>
+                              </div>
                     </div>
           </div>
 </div>,
@@ -180,11 +137,21 @@ ShallowWrapper {
                                     inputRef={[Function]}
                                     onSubmit={[Function]}
                         />
-                        <I18n
-                                    ns="translations"
+                        <div
+                                    className="submit"
                         >
-                                    [Function]
-                        </I18n>
+                                    <p
+                                                className="info"
+                                    >
+                                                order.feeinfo
+                                    </p>
+                                    <button
+                                                className="btn disabled btn btn-block btn-primary proceed "
+                                                onClick={[Function]}
+                                    >
+                                                exchangewidget.2
+                                    </button>
+                        </div>
             </div>
 </div>,
           "className": "row",
@@ -210,11 +177,21 @@ ShallowWrapper {
                             inputRef={[Function]}
                             onSubmit={[Function]}
               />
-              <I18n
-                            ns="translations"
+              <div
+                            className="submit"
               >
-                            [Function]
-              </I18n>
+                            <p
+                                          className="info"
+                            >
+                                          order.feeinfo
+                            </p>
+                            <button
+                                          className="btn disabled btn btn-block btn-primary proceed "
+                                          onClick={[Function]}
+                            >
+                                          exchangewidget.2
+                            </button>
+              </div>
 </div>,
             "className": "col-xs-12",
           },
@@ -237,11 +214,21 @@ ShallowWrapper {
                   inputRef={[Function]}
                   onSubmit={[Function]}
 />,
-                <I18n
-                  ns="translations"
+                <div
+                  className="submit"
 >
-                  [Function]
-</I18n>,
+                  <p
+                                    className="info"
+                  >
+                                    order.feeinfo
+                  </p>
+                  <button
+                                    className="btn disabled btn btn-block btn-primary proceed "
+                                    onClick={[Function]}
+                  >
+                                    exchangewidget.2
+                  </button>
+</div>,
               ],
               "className": "widget",
             },
@@ -286,14 +273,58 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "children": [Function],
-                  "ns": "translations",
+                  "children": Array [
+                    <p
+                      className="info"
+>
+                      order.feeinfo
+</p>,
+                    <button
+                      className="btn disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+>
+                      exchangewidget.2
+</button>,
+                  ],
+                  "className": "submit",
                 },
                 "ref": null,
-                "rendered": [Function],
-                "type": [Function],
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "order.feeinfo",
+                      "className": "info",
+                    },
+                    "ref": null,
+                    "rendered": "order.feeinfo",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "exchangewidget.2",
+                        null,
+                      ],
+                      "className": "btn disabled btn btn-block btn-primary proceed ",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "exchangewidget.2",
+                      null,
+                    ],
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
               },
             ],
             "type": "div",
@@ -336,11 +367,21 @@ ShallowWrapper {
                                                   inputRef={[Function]}
                                                   onSubmit={[Function]}
                                         />
-                                        <I18n
-                                                  ns="translations"
+                                        <div
+                                                  className="submit"
                                         >
-                                                  [Function]
-                                        </I18n>
+                                                  <p
+                                                            className="info"
+                                                  >
+                                                            order.feeinfo
+                                                  </p>
+                                                  <button
+                                                            className="btn disabled btn btn-block btn-primary proceed "
+                                                            onClick={[Function]}
+                                                  >
+                                                            exchangewidget.2
+                                                  </button>
+                                        </div>
                               </div>
                     </div>
           </div>
@@ -374,11 +415,21 @@ ShallowWrapper {
                                                 inputRef={[Function]}
                                                 onSubmit={[Function]}
                                     />
-                                    <I18n
-                                                ns="translations"
+                                    <div
+                                                className="submit"
                                     >
-                                                [Function]
-                                    </I18n>
+                                                <p
+                                                            className="info"
+                                                >
+                                                            order.feeinfo
+                                                </p>
+                                                <button
+                                                            className="btn disabled btn btn-block btn-primary proceed "
+                                                            onClick={[Function]}
+                                                >
+                                                            exchangewidget.2
+                                                </button>
+                                    </div>
                         </div>
             </div>
 </div>,
@@ -408,11 +459,21 @@ ShallowWrapper {
                                           inputRef={[Function]}
                                           onSubmit={[Function]}
                             />
-                            <I18n
-                                          ns="translations"
+                            <div
+                                          className="submit"
                             >
-                                          [Function]
-                            </I18n>
+                                          <p
+                                                        className="info"
+                                          >
+                                                        order.feeinfo
+                                          </p>
+                                          <button
+                                                        className="btn disabled btn btn-block btn-primary proceed "
+                                                        onClick={[Function]}
+                                          >
+                                                        exchangewidget.2
+                                          </button>
+                            </div>
               </div>
 </div>,
             "className": "row",
@@ -438,11 +499,21 @@ ShallowWrapper {
                                 inputRef={[Function]}
                                 onSubmit={[Function]}
                 />
-                <I18n
-                                ns="translations"
+                <div
+                                className="submit"
                 >
-                                [Function]
-                </I18n>
+                                <p
+                                                className="info"
+                                >
+                                                order.feeinfo
+                                </p>
+                                <button
+                                                className="btn disabled btn btn-block btn-primary proceed "
+                                                onClick={[Function]}
+                                >
+                                                exchangewidget.2
+                                </button>
+                </div>
 </div>,
               "className": "col-xs-12",
             },
@@ -465,11 +536,21 @@ ShallowWrapper {
                     inputRef={[Function]}
                     onSubmit={[Function]}
 />,
-                  <I18n
-                    ns="translations"
+                  <div
+                    className="submit"
 >
-                    [Function]
-</I18n>,
+                    <p
+                                        className="info"
+                    >
+                                        order.feeinfo
+                    </p>
+                    <button
+                                        className="btn disabled btn btn-block btn-primary proceed "
+                                        onClick={[Function]}
+                    >
+                                        exchangewidget.2
+                    </button>
+</div>,
                 ],
                 "className": "widget",
               },
@@ -514,14 +595,58 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "children": [Function],
-                    "ns": "translations",
+                    "children": Array [
+                      <p
+                        className="info"
+>
+                        order.feeinfo
+</p>,
+                      <button
+                        className="btn disabled btn btn-block btn-primary proceed "
+                        onClick={[Function]}
+>
+                        exchangewidget.2
+</button>,
+                    ],
+                    "className": "submit",
                   },
                   "ref": null,
-                  "rendered": [Function],
-                  "type": [Function],
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "order.feeinfo",
+                        "className": "info",
+                      },
+                      "ref": null,
+                      "rendered": "order.feeinfo",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "exchangewidget.2",
+                          null,
+                        ],
+                        "className": "btn disabled btn btn-block btn-primary proceed ",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "exchangewidget.2",
+                        null,
+                      ],
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
                 },
               ],
               "type": "div",

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.scss';
 
 const Footer = () => (
-  <footer className={styles.container}>
-    <I18n ns="translations">
-      {t => (
+  <I18n ns="translations">
+    {t => (
+      <footer className={styles.container}>
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-8 col-md-6">
@@ -32,9 +32,9 @@ const Footer = () => (
             </div>
           </div>
         </div>
-      )}
-    </I18n>
-  </footer>
+      </footer>
+    )}
+  </I18n>
 );
 
 export default Footer;

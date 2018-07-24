@@ -64,9 +64,9 @@ class RecentOrders extends Component {
   render() {
     let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
       return (
-        <I18n ns="translations">
+        <I18n ns="translations" key={order.unique_reference}>
           {(t, { i18n }) => (
-            <div key={order.unique_reference} className={styles.row}>
+            <div className={styles.row}>
               <div className={`${styles.col} col col-xs-2 col-ms-3`}>
                 <div className={styles.middle}>
                   <p className={styles.ago}>{new moment(order.created_on).locale(`${i18n.language}`).fromNow()}</p>

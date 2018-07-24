@@ -4,7 +4,11 @@ exports[`OrderPaidFiat renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderPaid />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,27 +19,119 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
-      "ns": "translations",
+      "children": Array [
+        <OrderStateLoader />,
+        <h2
+          className="title"
+>
+          order.fiat.status.paid
+</h2>,
+        <h3
+          className="subtitle"
+>
+          order.paid2
+</h3>,
+      ],
+      "className": "container",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "order.fiat.status.paid",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "order.fiat.status.paid",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "order.paid2",
+          "className": "subtitle",
+        },
+        "ref": null,
+        "rendered": "order.paid2",
+        "type": "h3",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
-        "ns": "translations",
+        "children": Array [
+          <OrderStateLoader />,
+          <h2
+            className="title"
+>
+            order.fiat.status.paid
+</h2>,
+          <h3
+            className="subtitle"
+>
+            order.paid2
+</h3>,
+        ],
+        "className": "container",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "order.fiat.status.paid",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "order.fiat.status.paid",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "order.paid2",
+            "className": "subtitle",
+          },
+          "ref": null,
+          "rendered": "order.paid2",
+          "type": "h3",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

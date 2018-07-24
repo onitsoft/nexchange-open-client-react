@@ -820,6 +820,7 @@ ShallowWrapper {
           ]
     }
     onClick={[Function]}
+    t={[Function]}
     type="deposit"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -835,11 +836,30 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <I18n
-          ns="translations"
+        <form
+          className="coins-search"
+          data-test="search-form"
+          onSubmit={[Function]}
 >
-          [Function]
-</I18n>,
+          <i
+                    aria-hidden="true"
+                    className="search fas fa-search"
+          />
+          <input
+                    data-test="search"
+                    onChange={[Function]}
+                    placeholder="generalterms.search"
+                    type="text"
+                    value=""
+          />
+          <i
+                    className="material-icons clear"
+                    data-test="clear"
+                    onClick={[Function]}
+          >
+                    clear
+          </i>
+</form>,
         <div
           className="coins-list"
 >
@@ -1461,14 +1481,77 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "children": [Function],
-          "ns": "translations",
+          "children": Array [
+            <i
+              aria-hidden="true"
+              className="search fas fa-search"
+/>,
+            <input
+              data-test="search"
+              onChange={[Function]}
+              placeholder="generalterms.search"
+              type="text"
+              value=""
+/>,
+            <i
+              className="material-icons clear"
+              data-test="clear"
+              onClick={[Function]}
+>
+              clear
+</i>,
+          ],
+          "className": "coins-search",
+          "data-test": "search-form",
+          "onSubmit": [Function],
         },
         "ref": null,
-        "rendered": [Function],
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "search fas fa-search",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "data-test": "search",
+              "onChange": [Function],
+              "placeholder": "generalterms.search",
+              "type": "text",
+              "value": "",
+            },
+            "ref": [Function],
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "clear",
+              "className": "material-icons clear",
+              "data-test": "clear",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "clear",
+            "type": "i",
+          },
+        ],
+        "type": "form",
       },
       Object {
         "instance": null,
@@ -4728,11 +4811,30 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <I18n
-            ns="translations"
+          <form
+            className="coins-search"
+            data-test="search-form"
+            onSubmit={[Function]}
 >
-            [Function]
-</I18n>,
+            <i
+                        aria-hidden="true"
+                        className="search fas fa-search"
+            />
+            <input
+                        data-test="search"
+                        onChange={[Function]}
+                        placeholder="generalterms.search"
+                        type="text"
+                        value=""
+            />
+            <i
+                        className="material-icons clear"
+                        data-test="clear"
+                        onClick={[Function]}
+            >
+                        clear
+            </i>
+</form>,
           <div
             className="coins-list"
 >
@@ -5354,14 +5456,77 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "children": [Function],
-            "ns": "translations",
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="search fas fa-search"
+/>,
+              <input
+                data-test="search"
+                onChange={[Function]}
+                placeholder="generalterms.search"
+                type="text"
+                value=""
+/>,
+              <i
+                className="material-icons clear"
+                data-test="clear"
+                onClick={[Function]}
+>
+                clear
+</i>,
+            ],
+            "className": "coins-search",
+            "data-test": "search-form",
+            "onSubmit": [Function],
           },
           "ref": null,
-          "rendered": [Function],
-          "type": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "search fas fa-search",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "data-test": "search",
+                "onChange": [Function],
+                "placeholder": "generalterms.search",
+                "type": "text",
+                "value": "",
+              },
+              "ref": [Function],
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "clear",
+                "className": "material-icons clear",
+                "data-test": "clear",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "clear",
+              "type": "i",
+            },
+          ],
+          "type": "form",
         },
         Object {
           "instance": null,
@@ -9445,6 +9610,7 @@ ShallowWrapper {
           ]
     }
     onClick={[Function]}
+    t={[Function]}
     type="receive"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -9460,11 +9626,30 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <I18n
-          ns="translations"
+        <form
+          className="coins-search"
+          data-test="search-form"
+          onSubmit={[Function]}
 >
-          [Function]
-</I18n>,
+          <i
+                    aria-hidden="true"
+                    className="search fas fa-search"
+          />
+          <input
+                    data-test="search"
+                    onChange={[Function]}
+                    placeholder="generalterms.search"
+                    type="text"
+                    value=""
+          />
+          <i
+                    className="material-icons clear"
+                    data-test="clear"
+                    onClick={[Function]}
+          >
+                    clear
+          </i>
+</form>,
         <div
           className="coins-list"
 >
@@ -9883,14 +10068,77 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "children": [Function],
-          "ns": "translations",
+          "children": Array [
+            <i
+              aria-hidden="true"
+              className="search fas fa-search"
+/>,
+            <input
+              data-test="search"
+              onChange={[Function]}
+              placeholder="generalterms.search"
+              type="text"
+              value=""
+/>,
+            <i
+              className="material-icons clear"
+              data-test="clear"
+              onClick={[Function]}
+>
+              clear
+</i>,
+          ],
+          "className": "coins-search",
+          "data-test": "search-form",
+          "onSubmit": [Function],
         },
         "ref": null,
-        "rendered": [Function],
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "search fas fa-search",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "data-test": "search",
+              "onChange": [Function],
+              "placeholder": "generalterms.search",
+              "type": "text",
+              "value": "",
+            },
+            "ref": [Function],
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "clear",
+              "className": "material-icons clear",
+              "data-test": "clear",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "clear",
+            "type": "i",
+          },
+        ],
+        "type": "form",
       },
       Object {
         "instance": null,
@@ -12072,11 +12320,30 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <I18n
-            ns="translations"
+          <form
+            className="coins-search"
+            data-test="search-form"
+            onSubmit={[Function]}
 >
-            [Function]
-</I18n>,
+            <i
+                        aria-hidden="true"
+                        className="search fas fa-search"
+            />
+            <input
+                        data-test="search"
+                        onChange={[Function]}
+                        placeholder="generalterms.search"
+                        type="text"
+                        value=""
+            />
+            <i
+                        className="material-icons clear"
+                        data-test="clear"
+                        onClick={[Function]}
+            >
+                        clear
+            </i>
+</form>,
           <div
             className="coins-list"
 >
@@ -12495,14 +12762,77 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "children": [Function],
-            "ns": "translations",
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="search fas fa-search"
+/>,
+              <input
+                data-test="search"
+                onChange={[Function]}
+                placeholder="generalterms.search"
+                type="text"
+                value=""
+/>,
+              <i
+                className="material-icons clear"
+                data-test="clear"
+                onClick={[Function]}
+>
+                clear
+</i>,
+            ],
+            "className": "coins-search",
+            "data-test": "search-form",
+            "onSubmit": [Function],
           },
           "ref": null,
-          "rendered": [Function],
-          "type": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "search fas fa-search",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "data-test": "search",
+                "onChange": [Function],
+                "placeholder": "generalterms.search",
+                "type": "text",
+                "value": "",
+              },
+              "ref": [Function],
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "clear",
+                "className": "material-icons clear",
+                "data-test": "clear",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "clear",
+              "type": "i",
+            },
+          ],
+          "type": "form",
         },
         Object {
           "instance": null,

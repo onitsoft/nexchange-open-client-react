@@ -40,40 +40,41 @@ class Bookmark extends Component {
 
   render() {
     return (
-     <I18n ns="translations">
-      {(t) => (
-      <Modal show={this.state.show} onHide={this.props.onClose}>
-        <div id="bookmark" className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
-              <i className="material-icons">clear</i>
-            </button>
-            <h4 className="modal-title" data-toggle="tooltip" data-placement="top" data-original-title="Copy">
-              {t('bookmark.0')}
-            </h4>
-          </div>
-
-          <div className="modal-body">
-            <p className={styles.text}>
-                {t('bookmark.1')} <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> {t('bookmark.2')}</p>
-
-            <div className="input-group">
-              <div className="form-group is-empty">
-                <input type="text" className="form-control" placeholder="With Material Icons" value={window.location.href} disabled />
-                <span className="material-input" />
+      <I18n ns="translations">
+        {t => (
+          <Modal show={this.state.show} onHide={this.props.onClose}>
+            <div id="bookmark" className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.props.onClose}>
+                  <i className="material-icons">clear</i>
+                </button>
+                <h4 className="modal-title" data-toggle="tooltip" data-placement="top" data-original-title="Copy">
+                  {t('bookmark.0')}
+                </h4>
               </div>
 
-              <CopyToClipboard text={window.location.href} onCopy={() => this.triggerCopyTooltip()}>
-                <span className={`${styles['input-group-addon']} input-group-addon`}>
-                  <i className="fas fa-clipboard" aria-hidden="true" />
-                </span>
-              </CopyToClipboard>
+              <div className="modal-body">
+                <p className={styles.text}>
+                  {t('bookmark.1')} <b>{platform.os.family === 'OS X' ? 'Command (⌘)' : 'Ctrl'} + D</b> {t('bookmark.2')}
+                </p>
+
+                <div className="input-group">
+                  <div className="form-group is-empty">
+                    <input type="text" className="form-control" placeholder="With Material Icons" value={window.location.href} disabled />
+                    <span className="material-input" />
+                  </div>
+
+                  <CopyToClipboard text={window.location.href} onCopy={() => this.triggerCopyTooltip()}>
+                    <span className={`${styles['input-group-addon']} input-group-addon`}>
+                      <i className="fas fa-clipboard" aria-hidden="true" />
+                    </span>
+                  </CopyToClipboard>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </Modal>
-      )}
-     </I18n>
+          </Modal>
+        )}
+      </I18n>
     );
   }
 }

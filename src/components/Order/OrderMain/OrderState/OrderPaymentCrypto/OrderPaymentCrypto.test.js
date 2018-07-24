@@ -7,8 +7,9 @@ import orderNoTx from 'Mocks/orderNoTx';
 describe('OrderPaymentCrypto', () => {
   it('renders correctly and handles props update', () => {
     const wrapShallow = shallow(<OrderPaymentCrypto order={orderNoTx} />);
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
+
     wrapShallow.setProps({ order });
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
   });
 });

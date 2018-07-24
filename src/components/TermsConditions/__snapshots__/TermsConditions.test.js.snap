@@ -4,7 +4,11 @@ exports[`TermsConditions renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TermsConditions />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,27 +19,895 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "host",
     "props": Object {
-      "children": [Function],
-      "ns": "translations",
+      "children": <div
+        className="row"
+>
+        <div
+                className="col-xs-12"
+        >
+                <h2>
+                        terms.1
+                </h2>
+                <p>
+                        terms.2
+                </p>
+                <p>
+                        terms.3
+                </p>
+                <p>
+                        terms.4
+                </p>
+                <p>
+                        terms.5
+                </p>
+                <p>
+                        terms.6
+                </p>
+                <p>
+                        terms.7
+                </p>
+                <p>
+                        terms.8
+                </p>
+                <p>
+                        terms.9
+                </p>
+                <p>
+                        terms.10
+                </p>
+                <p>
+                        terms.11
+                </p>
+                <ol>
+                        <li>
+                                terms.13
+                        </li>
+                        <li>
+                                terms.14
+                        </li>
+                        <li>
+                                terms.15
+                        </li>
+                </ol>
+                <p>
+                        terms.12
+                </p>
+                <h3>
+                        refund.title
+                </h3>
+                <p>
+                        refund.11
+                </p>
+                <p>
+                        refund.12
+                </p>
+                <br />
+        </div>
+</div>,
+      "className": "container",
     },
     "ref": null,
-    "rendered": [Function],
-    "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col-xs-12"
+>
+          <h2>
+                    terms.1
+          </h2>
+          <p>
+                    terms.2
+          </p>
+          <p>
+                    terms.3
+          </p>
+          <p>
+                    terms.4
+          </p>
+          <p>
+                    terms.5
+          </p>
+          <p>
+                    terms.6
+          </p>
+          <p>
+                    terms.7
+          </p>
+          <p>
+                    terms.8
+          </p>
+          <p>
+                    terms.9
+          </p>
+          <p>
+                    terms.10
+          </p>
+          <p>
+                    terms.11
+          </p>
+          <ol>
+                    <li>
+                              terms.13
+                    </li>
+                    <li>
+                              terms.14
+                    </li>
+                    <li>
+                              terms.15
+                    </li>
+          </ol>
+          <p>
+                    terms.12
+          </p>
+          <h3>
+                    refund.title
+          </h3>
+          <p>
+                    refund.11
+          </p>
+          <p>
+                    refund.12
+          </p>
+          <br />
+</div>,
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              terms.1
+</h2>,
+            <p>
+              terms.2
+</p>,
+            <p>
+              terms.3
+</p>,
+            <p>
+              terms.4
+</p>,
+            <p>
+              terms.5
+</p>,
+            <p>
+              terms.6
+</p>,
+            <p>
+              terms.7
+</p>,
+            <p>
+              terms.8
+</p>,
+            <p>
+              terms.9
+</p>,
+            <p>
+              terms.10
+</p>,
+            <p>
+              terms.11
+</p>,
+            <ol>
+              <li>
+                            terms.13
+              </li>
+              <li>
+                            terms.14
+              </li>
+              <li>
+                            terms.15
+              </li>
+</ol>,
+            <p>
+              terms.12
+</p>,
+            <h3>
+              refund.title
+</h3>,
+            <p>
+              refund.11
+</p>,
+            <p>
+              refund.12
+</p>,
+            <br />,
+          ],
+          "className": "col-xs-12",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.1",
+            },
+            "ref": null,
+            "rendered": "terms.1",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.2",
+            },
+            "ref": null,
+            "rendered": "terms.2",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.3",
+            },
+            "ref": null,
+            "rendered": "terms.3",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.4",
+            },
+            "ref": null,
+            "rendered": "terms.4",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.5",
+            },
+            "ref": null,
+            "rendered": "terms.5",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.6",
+            },
+            "ref": null,
+            "rendered": "terms.6",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.7",
+            },
+            "ref": null,
+            "rendered": "terms.7",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.8",
+            },
+            "ref": null,
+            "rendered": "terms.8",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.9",
+            },
+            "ref": null,
+            "rendered": "terms.9",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.10",
+            },
+            "ref": null,
+            "rendered": "terms.10",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.11",
+            },
+            "ref": null,
+            "rendered": "terms.11",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li>
+                  terms.13
+</li>,
+                <li>
+                  terms.14
+</li>,
+                <li>
+                  terms.15
+</li>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "terms.13",
+                },
+                "ref": null,
+                "rendered": "terms.13",
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "terms.14",
+                },
+                "ref": null,
+                "rendered": "terms.14",
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "terms.15",
+                },
+                "ref": null,
+                "rendered": "terms.15",
+                "type": "li",
+              },
+            ],
+            "type": "ol",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "terms.12",
+            },
+            "ref": null,
+            "rendered": "terms.12",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "refund.title",
+            },
+            "ref": null,
+            "rendered": "refund.title",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "refund.11",
+            },
+            "ref": null,
+            "rendered": "refund.11",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "refund.12",
+            },
+            "ref": null,
+            "rendered": "refund.12",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "host",
       "props": Object {
-        "children": [Function],
-        "ns": "translations",
+        "children": <div
+          className="row"
+>
+          <div
+                    className="col-xs-12"
+          >
+                    <h2>
+                              terms.1
+                    </h2>
+                    <p>
+                              terms.2
+                    </p>
+                    <p>
+                              terms.3
+                    </p>
+                    <p>
+                              terms.4
+                    </p>
+                    <p>
+                              terms.5
+                    </p>
+                    <p>
+                              terms.6
+                    </p>
+                    <p>
+                              terms.7
+                    </p>
+                    <p>
+                              terms.8
+                    </p>
+                    <p>
+                              terms.9
+                    </p>
+                    <p>
+                              terms.10
+                    </p>
+                    <p>
+                              terms.11
+                    </p>
+                    <ol>
+                              <li>
+                                        terms.13
+                              </li>
+                              <li>
+                                        terms.14
+                              </li>
+                              <li>
+                                        terms.15
+                              </li>
+                    </ol>
+                    <p>
+                              terms.12
+                    </p>
+                    <h3>
+                              refund.title
+                    </h3>
+                    <p>
+                              refund.11
+                    </p>
+                    <p>
+                              refund.12
+                    </p>
+                    <br />
+          </div>
+</div>,
+        "className": "container",
       },
       "ref": null,
-      "rendered": [Function],
-      "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col-xs-12"
+>
+            <h2>
+                        terms.1
+            </h2>
+            <p>
+                        terms.2
+            </p>
+            <p>
+                        terms.3
+            </p>
+            <p>
+                        terms.4
+            </p>
+            <p>
+                        terms.5
+            </p>
+            <p>
+                        terms.6
+            </p>
+            <p>
+                        terms.7
+            </p>
+            <p>
+                        terms.8
+            </p>
+            <p>
+                        terms.9
+            </p>
+            <p>
+                        terms.10
+            </p>
+            <p>
+                        terms.11
+            </p>
+            <ol>
+                        <li>
+                                    terms.13
+                        </li>
+                        <li>
+                                    terms.14
+                        </li>
+                        <li>
+                                    terms.15
+                        </li>
+            </ol>
+            <p>
+                        terms.12
+            </p>
+            <h3>
+                        refund.title
+            </h3>
+            <p>
+                        refund.11
+            </p>
+            <p>
+                        refund.12
+            </p>
+            <br />
+</div>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                terms.1
+</h2>,
+              <p>
+                terms.2
+</p>,
+              <p>
+                terms.3
+</p>,
+              <p>
+                terms.4
+</p>,
+              <p>
+                terms.5
+</p>,
+              <p>
+                terms.6
+</p>,
+              <p>
+                terms.7
+</p>,
+              <p>
+                terms.8
+</p>,
+              <p>
+                terms.9
+</p>,
+              <p>
+                terms.10
+</p>,
+              <p>
+                terms.11
+</p>,
+              <ol>
+                <li>
+                                terms.13
+                </li>
+                <li>
+                                terms.14
+                </li>
+                <li>
+                                terms.15
+                </li>
+</ol>,
+              <p>
+                terms.12
+</p>,
+              <h3>
+                refund.title
+</h3>,
+              <p>
+                refund.11
+</p>,
+              <p>
+                refund.12
+</p>,
+              <br />,
+            ],
+            "className": "col-xs-12",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.1",
+              },
+              "ref": null,
+              "rendered": "terms.1",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.2",
+              },
+              "ref": null,
+              "rendered": "terms.2",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.3",
+              },
+              "ref": null,
+              "rendered": "terms.3",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.4",
+              },
+              "ref": null,
+              "rendered": "terms.4",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.5",
+              },
+              "ref": null,
+              "rendered": "terms.5",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.6",
+              },
+              "ref": null,
+              "rendered": "terms.6",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.7",
+              },
+              "ref": null,
+              "rendered": "terms.7",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.8",
+              },
+              "ref": null,
+              "rendered": "terms.8",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.9",
+              },
+              "ref": null,
+              "rendered": "terms.9",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.10",
+              },
+              "ref": null,
+              "rendered": "terms.10",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.11",
+              },
+              "ref": null,
+              "rendered": "terms.11",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    terms.13
+</li>,
+                  <li>
+                    terms.14
+</li>,
+                  <li>
+                    terms.15
+</li>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "terms.13",
+                  },
+                  "ref": null,
+                  "rendered": "terms.13",
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "terms.14",
+                  },
+                  "ref": null,
+                  "rendered": "terms.14",
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "terms.15",
+                  },
+                  "ref": null,
+                  "rendered": "terms.15",
+                  "type": "li",
+                },
+              ],
+              "type": "ol",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "terms.12",
+              },
+              "ref": null,
+              "rendered": "terms.12",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "refund.title",
+              },
+              "ref": null,
+              "rendered": "refund.title",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "refund.11",
+              },
+              "ref": null,
+              "rendered": "refund.11",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "refund.12",
+              },
+              "ref": null,
+              "rendered": "refund.12",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

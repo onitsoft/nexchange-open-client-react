@@ -26,41 +26,41 @@ class OrderPayment extends Component {
     if (this.txId === '' || this.txId === null) {
       return (
         <I18n ns="translations">
-        {(t) => (
-        <div className={styles.container}>
-          <OrderStateLoader />
-          <h2 className={styles.title}>{t('order.payment1')}</h2>
-          <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
-            <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.api')}</h4>
-          </a>
-        </div>
-        )}
+          {t => (
+            <div className={styles.container}>
+              <OrderStateLoader />
+              <h2 className={styles.title}>{t('order.payment1')}</h2>
+              <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
+                <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.api')}</h4>
+              </a>
+            </div>
+          )}
         </I18n>
       );
     }
 
     return (
-    <I18n ns="translations">
-     {(t) => (
-      <div className={styles.container}>
-        <OrderStateLoader />
-        <h2 className={styles.title}>
-          {t('order.payment2')}{' '}
-          <span>
-            ({this.tx.confirmations}/{this.minConfirmations})
-          </span>
-        </h2>
-        <h3 className={styles.subtitle}>
-          {t('order.txid')}:{' '}
-          <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
-            {this.tx.tx_id}
-          </a>
-        </h3>
+      <I18n ns="translations">
+        {t => (
+          <div className={styles.container}>
+            <OrderStateLoader />
+            <h2 className={styles.title}>
+              {t('order.payment2')}{' '}
+              <span>
+                ({this.tx.confirmations}/{this.minConfirmations})
+              </span>
+            </h2>
+            <h3 className={styles.subtitle}>
+              {t('order.txid')}:{' '}
+              <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
+                {this.tx.tx_id}
+              </a>
+            </h3>
 
-        <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
-      </div>
-      )}
-	 </I18n>
+            <OrderLinks coin={this.coin.code} txId={this.txId} {...this.props} />
+          </div>
+        )}
+      </I18n>
     );
   }
 }

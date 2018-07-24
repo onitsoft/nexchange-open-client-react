@@ -976,6 +976,7 @@ ShallowWrapper {
             "unsubscribe": [Function],
           }
     }
+    t={[Function]}
     type="deposit"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -2165,6 +2166,7 @@ ShallowWrapper {
             "unsubscribe": [Function],
           }
     }
+    t={[Function]}
     type="receive"
 />,
   Symbol(enzyme.__renderer__): Object {

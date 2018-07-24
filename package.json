@@ -135,6 +135,7 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
+      "^Src(.*)$": "<rootDir>/src$1",
       "^Utils(.*)$": "<rootDir>/src/utils$1",
       "^Components(.*)$": "<rootDir>/src/components$1",
       "^Config$": "<rootDir>/src/config.js",

@@ -5,13 +5,13 @@ import styles from '../OrderState.scss';
 
 const OrderPaid = () => (
   <I18n ns="translations">
-  {(t) => (
-  <div className={styles.container}>
-    <OrderStateLoader />
-    <h2 className={styles.title}>{t('order.fiat.status.paid')}</h2>
-    <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
-  </div>
-  )}
+    {t => (
+      <div className={styles.container}>
+        <OrderStateLoader />
+        <h2 className={styles.title}>{t('order.fiat.status.paid')}</h2>
+        <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
+      </div>
+    )}
   </I18n>
 );
 

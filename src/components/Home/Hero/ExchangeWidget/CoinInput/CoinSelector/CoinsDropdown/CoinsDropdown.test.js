@@ -7,8 +7,8 @@ describe('CoinsDropdown', () => {
   let wrapShallowDeposit, wrapShallowReceive;
 
   beforeEach(() => {
-    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />);
-    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />);
+    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
+    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
   });
 
   it('renders correctly', () => {
@@ -37,7 +37,7 @@ describe('CoinsDropdown', () => {
   });
 
   it('search input gets correct value after typing and filters coins (deposit)', () => {
-    let input = wrapShallowDeposit.find(`[data-test="search"]`);
+    let input = wrapShallowDeposit.find('[data-test="search"]');
 
     input.simulate('change', {
       target: { value: 'bit' },

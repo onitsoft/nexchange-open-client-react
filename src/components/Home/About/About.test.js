@@ -4,7 +4,7 @@ import About from './About';
 
 describe('About', () => {
   it('renders correctly', () => {
-    const wrapShallow = shallow(<About />);
+    const wrapShallow = shallow(<About />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 });

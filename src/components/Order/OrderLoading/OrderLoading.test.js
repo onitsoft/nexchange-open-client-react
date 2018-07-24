@@ -4,6 +4,7 @@ import OrderLoading from './OrderLoading';
 
 describe('OrderLoading', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderLoading />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderLoading />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

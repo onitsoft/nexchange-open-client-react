@@ -4,6 +4,7 @@ import OrderCheckIcon from './OrderCheckIcon';
 
 describe('OrderLinks', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderCheckIcon />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderCheckIcon />);
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

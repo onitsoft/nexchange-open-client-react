@@ -4,6 +4,7 @@ import OrderStateLoader from './OrderStateLoader';
 
 describe('OrderStateLoader', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderStateLoader />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderStateLoader />);
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

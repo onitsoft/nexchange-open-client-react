@@ -24,7 +24,7 @@ describe('QuestionAnswer', () => {
           </div>
         }
       />
-    );
+    ).dive();
   });
 
   it('renders correctly', () => {

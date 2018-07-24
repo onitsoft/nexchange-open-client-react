@@ -4,6 +4,7 @@ import OrderAlert from './OrderAlert';
 
 describe('OrderAlert', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderAlert />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderAlert />);
+    expect(wrapShallow).toMatchSnapshot();
   });
 });
