@@ -28,7 +28,7 @@ class Referrals extends Component {
   }
 
   render() {
-    let params = urlParams();
+    const params = urlParams();
     if (params != null && params.hasOwnProperty('ref')) {
       localStorage.setItem('referral', params['ref']);
       return this.redirectRef();

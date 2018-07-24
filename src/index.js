@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 import Referrals from 'Components/Referrals/Referrals';
+import TokenSet from 'Components/TokenSet/TokenSet';
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
 import NotFound from 'Components/NotFound/NotFound';
@@ -35,6 +36,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Referrals />
+        <TokenSet />
         <Header />
 
         <Switch>
