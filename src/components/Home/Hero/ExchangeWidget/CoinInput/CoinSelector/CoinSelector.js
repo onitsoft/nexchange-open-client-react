@@ -149,16 +149,14 @@ class CoinSelector extends Component {
 const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
-export default translate()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(onClickOutside(CoinSelector))
-);
+const translatedComponent = translate()(CoinSelector);
 
-export const CoinSelectorTesting = translate()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(CoinSelector)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(onClickOutside(translatedComponent));
+
+export const CoinSelectorTesting = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(translatedComponent);
