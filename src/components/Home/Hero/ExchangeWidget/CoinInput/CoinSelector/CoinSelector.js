@@ -50,8 +50,6 @@ class CoinSelector extends Component {
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
     if (!this.state.initialPriceFetched && nextDepositCoin && nextReceiveCoin && type === 'deposit') {
-      // console.log('YO');
-
       this.setState({
         initialPriceFetched: true,
       });
@@ -148,13 +146,7 @@ class CoinSelector extends Component {
   }
 }
 
-// const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
-
-const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => {
-  console.log('mapStateToProps');
-  return { selectedCoin, coinsInfo, pairs, price };
-};
-
+const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
 export default translate()(

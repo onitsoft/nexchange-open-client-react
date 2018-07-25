@@ -12,8 +12,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   if (action.type === COIN_SELECTED) {
-    console.log('DISPATCH COIN SELECTED REDUCER');
-
     const { selectedCoins, pairs } = action.payload;
 
     if (selectedCoins.deposit === selectedCoins.receive) {
