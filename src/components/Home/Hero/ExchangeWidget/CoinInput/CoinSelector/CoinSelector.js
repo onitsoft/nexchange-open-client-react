@@ -42,9 +42,9 @@ class CoinSelector extends Component {
     this.props.onSelect();
   };
 
-  static getDerivedStateFromProps(props, state) {
-    console.log(props, state);
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log(props, state);
+  // }
 
   UNSAFE_componentWillReceiveProps = nextProps => {
     const lastSelected = nextProps.selectedCoin.lastSelected;
