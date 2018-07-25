@@ -54,11 +54,13 @@ export const fetchCoinDetails = () => dispatch => {
     });
 };
 
-export const fetchPrice = payload => dispatch => {
+export const fetchPrice = (payload, setLoader) => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
-  dispatch({ type: types.FETCHING_PRICE });
+  if (payload.coinSelector) {
+    dispatch({ type: types.FETCHING_PRICE });
+  }
 
   return new Promise(async (resolve, reject) => {
     const makeRequest = url => {

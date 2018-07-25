@@ -10,7 +10,12 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_PRICE:
-      return { ...state, fetching: true };
+      return {
+        ...state,
+        deposit: '...',
+        receive: '...',
+        fetching: true,
+      };
     case PRICE_FETCHED:
       return { ...action.payload, fetching: false };
     default:
