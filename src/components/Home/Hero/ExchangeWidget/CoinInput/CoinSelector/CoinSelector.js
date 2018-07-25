@@ -42,10 +42,6 @@ class CoinSelector extends Component {
     this.props.onSelect();
   };
 
-  // static getDerivedStateFromProps(props, state) {
-  //   console.log(props, state);
-  // }
-
   UNSAFE_componentWillReceiveProps = nextProps => {
     const lastSelected = nextProps.selectedCoin.lastSelected;
     const lastEditedPrice = nextProps.price.lastEdited;
@@ -146,17 +142,25 @@ class CoinSelector extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
+// const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
+
+const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => {
+  console.log('mapStateToProps');
+  return { selectedCoin, coinsInfo, pairs, price };
+};
+
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
-const translatedComponent = translate()(CoinSelector);
+export default translate()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(onClickOutside(CoinSelector))
+);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(onClickOutside(translatedComponent));
-
-export const CoinSelectorTesting = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(translatedComponent);
+export const CoinSelectorTesting = translate()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(CoinSelector)
+);
