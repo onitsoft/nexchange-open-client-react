@@ -46,20 +46,21 @@ class CoinSelector extends Component {
     const nextDepositCoin = nextProps.selectedCoin.deposit;
     const type = nextProps.type;
 
+    console.log('COIN SELECTOR', !this.state.initialPriceFetched && type === 'deposit', nextDepositCoin, nextReceiveCoin);
+
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
-    if (!this.state.initialPriceFetched && nextDepositCoin && nextReceiveCoin) {
-      this.setState(
-        {
-          initialPriceFetched: true,
-        },
-        () => {
-          this.props.fetchPrice({
-            pair: `${nextReceiveCoin}${nextDepositCoin}`,
-            lastEdited: 'deposit',
-          });
-        }
-      );
+    if (!this.state.initialPriceFetched && nextDepositCoin && nextReceiveCoin && type === 'deposit') {
+      console.log('YO');
+
+      this.setState({
+        initialPriceFetched: true,
+      });
+
+      this.props.fetchPrice({
+        pair: `${nextReceiveCoin}${nextDepositCoin}`,
+        lastEdited: 'deposit',
+      });
     }
 
     // Check if pair is valid. If not, show error.
