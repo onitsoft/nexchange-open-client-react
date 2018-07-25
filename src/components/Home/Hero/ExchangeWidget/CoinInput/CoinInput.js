@@ -61,8 +61,6 @@ class CoinInput extends PureComponent {
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
-    console.log(nextProps.price.fetching);
-
     if (nextProps.price.fetching !== this.state.fetching) {
       this.setState({ fetching: nextProps.price.fetching });
     }
