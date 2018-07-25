@@ -15,7 +15,7 @@ class CoinSelector extends Component {
   };
 
   componentDidMount() {
-    console.log('MOUNTED');
+    this.fetchPriceInitial(this.props);
   }
 
   selectCoin = coin => {
@@ -42,15 +42,10 @@ class CoinSelector extends Component {
     this.props.onSelect();
   };
 
-  UNSAFE_componentWillReceiveProps = nextProps => {
-    const lastSelected = nextProps.selectedCoin.lastSelected;
-    const lastEditedPrice = nextProps.price.lastEdited;
-    const currentDepositCoin = this.props.selectedCoin.deposit;
-    const nextReceiveCoin = nextProps.selectedCoin.receive;
-    const nextDepositCoin = nextProps.selectedCoin.deposit;
-    const type = nextProps.type;
-
-    console.log('COIN SELECTOR', !this.state.initialPriceFetched && type === 'deposit', nextDepositCoin, nextReceiveCoin);
+  fetchPriceInitial = props => {
+    const nextReceiveCoin = props.selectedCoin.receive;
+    const nextDepositCoin = props.selectedCoin.deposit;
+    const type = props.type;
 
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
@@ -66,6 +61,17 @@ class CoinSelector extends Component {
         lastEdited: 'deposit',
       });
     }
+  };
+
+  UNSAFE_componentWillReceiveProps = nextProps => {
+    const lastSelected = nextProps.selectedCoin.lastSelected;
+    const lastEditedPrice = nextProps.price.lastEdited;
+    const currentDepositCoin = this.props.selectedCoin.deposit;
+    const nextReceiveCoin = nextProps.selectedCoin.receive;
+    const nextDepositCoin = nextProps.selectedCoin.deposit;
+    const type = nextProps.type;
+
+    this.fetchPriceInitial(nextProps);
 
     // Check if pair is valid. If not, show error.
     if (
