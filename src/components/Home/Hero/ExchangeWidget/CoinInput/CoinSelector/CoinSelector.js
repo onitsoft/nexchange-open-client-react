@@ -42,6 +42,10 @@ class CoinSelector extends Component {
     this.props.onSelect();
   };
 
+  static getDerivedStateFromProps(props, state) {
+    console.log(props, state);
+  }
+
   UNSAFE_componentWillReceiveProps = nextProps => {
     const lastSelected = nextProps.selectedCoin.lastSelected;
     const lastEditedPrice = nextProps.price.lastEdited;
@@ -55,7 +59,7 @@ class CoinSelector extends Component {
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
     if (!this.state.initialPriceFetched && nextDepositCoin && nextReceiveCoin && type === 'deposit') {
-      console.log('YO');
+      // console.log('YO');
 
       this.setState({
         initialPriceFetched: true,
