@@ -10,6 +10,7 @@ import styles from './CoinInput.scss';
 class CoinInput extends PureComponent {
   state = {
     value: '...',
+    fetching: this.props.price.fetching,
   };
 
   handleFocus = event => {
@@ -60,6 +61,12 @@ class CoinInput extends PureComponent {
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
+    console.log(nextProps.price.fetching);
+
+    if (nextProps.price.fetching !== this.state.fetching) {
+      this.setState({ fetching: nextProps.price.fetching });
+    }
+
     if (nextProps.type === 'receive') {
       this.setState({ value: nextProps.price.receive });
     } else if (nextProps.type === 'deposit') {
@@ -88,6 +95,7 @@ class CoinInput extends PureComponent {
                 ref={input => {
                   this.nameInput = input;
                 }}
+                disabled={this.state.fetching}
               />
             </form>
 

@@ -58,6 +58,8 @@ export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
+  dispatch({ type: types.FETCHING_PRICE });
+
   return new Promise(async (resolve, reject) => {
     const makeRequest = url => {
       return axios
