@@ -11,6 +11,7 @@ class CoinSelector extends Component {
   state = {
     isDropdownVisible: false,
     selectedCoin: null,
+    initialPriceFetched: false,
   };
 
   selectCoin = coin => {
@@ -47,11 +48,18 @@ class CoinSelector extends Component {
 
     // This condition means that we have selected default currency pairs
     // and now need to fetch price.
-    if (currentDepositCoin === null && nextDepositCoin && type === 'deposit') {
-      this.props.fetchPrice({
-        pair: `${nextReceiveCoin}${nextDepositCoin}`,
-        lastEdited: 'deposit',
-      });
+    if (!this.state.initialPriceFetched && nextDepositCoin && nextReceiveCoin) {
+      this.setState(
+        {
+          initialPriceFetched: true,
+        },
+        () => {
+          this.props.fetchPrice({
+            pair: `${nextReceiveCoin}${nextDepositCoin}`,
+            lastEdited: 'deposit',
+          });
+        }
+      );
     }
 
     // Check if pair is valid. If not, show error.
