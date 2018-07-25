@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
 import styles from './WalletAddress.scss';
-import { I18n, Interpolate } from 'react-i18next';
+import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
 class WalletAddress extends Component {

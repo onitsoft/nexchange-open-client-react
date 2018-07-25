@@ -14,6 +14,10 @@ class CoinSelector extends Component {
     initialPriceFetched: false,
   };
 
+  componentDidMount() {
+    console.log('MOUNTED');
+  }
+
   selectCoin = coin => {
     this.props.selectCoin({
       ...this.props.selectedCoin,
