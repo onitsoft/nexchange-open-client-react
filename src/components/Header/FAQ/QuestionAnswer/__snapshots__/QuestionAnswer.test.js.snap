@@ -25,6 +25,7 @@ ShallowWrapper {
         </div>
     }
     question="What do you do?"
+    t={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -43,7 +44,7 @@ ShallowWrapper {
           data-test="question-opener"
           onClick={[Function]}
 >
-          What do you do?
+          faq.undefined
            
           <i
                     aria-hidden="true"
@@ -83,7 +84,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "What do you do?",
+            "faq.undefined",
             " ",
             <i
               aria-hidden="true"
@@ -95,7 +96,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "What do you do?",
+          "faq.undefined",
           " ",
           Object {
             "instance": null,
@@ -246,7 +247,7 @@ ShallowWrapper {
             data-test="question-opener"
             onClick={[Function]}
 >
-            What do you do?
+            faq.undefined
              
             <i
                         aria-hidden="true"
@@ -286,7 +287,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "What do you do?",
+              "faq.undefined",
               " ",
               <i
                 aria-hidden="true"
@@ -298,7 +299,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "What do you do?",
+            "faq.undefined",
             " ",
             Object {
               "instance": null,

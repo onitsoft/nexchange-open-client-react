@@ -4,7 +4,11 @@ exports[`Bookmark renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Bookmark />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -47,7 +51,7 @@ ShallowWrapper {
                         data-placement="top"
                         data-toggle="tooltip"
                 >
-                        Bookmark Order
+                        bookmark.0
                 </h4>
         </div>
         <div
@@ -56,12 +60,14 @@ ShallowWrapper {
                 <p
                         className="text"
                 >
-                        Press 
+                        bookmark.1
+                         
                         <b>
                                 Ctrl
                                  + D
                         </b>
-                         to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                         
+                        bookmark.2
                 </p>
                 <div
                         className="input-group"
@@ -144,7 +150,7 @@ ShallowWrapper {
                         data-placement="top"
                         data-toggle="tooltip"
             >
-                        Bookmark Order
+                        bookmark.0
             </h4>
 </div>,
           <div
@@ -153,12 +159,14 @@ ShallowWrapper {
             <p
                         className="text"
             >
-                        Press 
+                        bookmark.1
+                         
                         <b>
                                     Ctrl
                                      + D
                         </b>
-                         to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                         
+                        bookmark.2
             </p>
             <div
                         className="input-group"
@@ -224,7 +232,7 @@ ShallowWrapper {
                 data-placement="top"
                 data-toggle="tooltip"
 >
-                Bookmark Order
+                bookmark.0
 </h4>,
             ],
             "className": "modal-header",
@@ -267,14 +275,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Bookmark Order",
+                "children": "bookmark.0",
                 "className": "modal-title",
                 "data-original-title": "Copy",
                 "data-placement": "top",
                 "data-toggle": "tooltip",
               },
               "ref": null,
-              "rendered": "Bookmark Order",
+              "rendered": "bookmark.0",
               "type": "h4",
             },
           ],
@@ -289,12 +297,14 @@ ShallowWrapper {
               <p
                 className="text"
 >
-                Press 
+                bookmark.1
+                 
                 <b>
                                 Ctrl
                                  + D
                 </b>
-                 to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                 
+                bookmark.2
 </p>,
               <div
                 className="input-group"
@@ -339,18 +349,21 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Press ",
+                  "bookmark.1",
+                  " ",
                   <b>
                     Ctrl
                      + D
 </b>,
-                  " to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.",
+                  " ",
+                  "bookmark.2",
                 ],
                 "className": "text",
               },
               "ref": null,
               "rendered": Array [
-                "Press ",
+                "bookmark.1",
+                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -368,7 +381,8 @@ ShallowWrapper {
                   ],
                   "type": "b",
                 },
-                " to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.",
+                " ",
+                "bookmark.2",
               ],
               "type": "p",
             },
@@ -554,7 +568,7 @@ ShallowWrapper {
                               data-placement="top"
                               data-toggle="tooltip"
                     >
-                              Bookmark Order
+                              bookmark.0
                     </h4>
           </div>
           <div
@@ -563,12 +577,14 @@ ShallowWrapper {
                     <p
                               className="text"
                     >
-                              Press 
+                              bookmark.1
+                               
                               <b>
                                         Ctrl
                                          + D
                               </b>
-                               to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                               
+                              bookmark.2
                     </p>
                     <div
                               className="input-group"
@@ -651,7 +667,7 @@ ShallowWrapper {
                             data-placement="top"
                             data-toggle="tooltip"
               >
-                            Bookmark Order
+                            bookmark.0
               </h4>
 </div>,
             <div
@@ -660,12 +676,14 @@ ShallowWrapper {
               <p
                             className="text"
               >
-                            Press 
+                            bookmark.1
+                             
                             <b>
                                           Ctrl
                                            + D
                             </b>
-                             to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                             
+                            bookmark.2
               </p>
               <div
                             className="input-group"
@@ -731,7 +749,7 @@ ShallowWrapper {
                   data-placement="top"
                   data-toggle="tooltip"
 >
-                  Bookmark Order
+                  bookmark.0
 </h4>,
               ],
               "className": "modal-header",
@@ -774,14 +792,14 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Bookmark Order",
+                  "children": "bookmark.0",
                   "className": "modal-title",
                   "data-original-title": "Copy",
                   "data-placement": "top",
                   "data-toggle": "tooltip",
                 },
                 "ref": null,
-                "rendered": "Bookmark Order",
+                "rendered": "bookmark.0",
                 "type": "h4",
               },
             ],
@@ -796,12 +814,14 @@ ShallowWrapper {
                 <p
                   className="text"
 >
-                  Press 
+                  bookmark.1
+                   
                   <b>
                                     Ctrl
                                      + D
                   </b>
-                   to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.
+                   
+                  bookmark.2
 </p>,
                 <div
                   className="input-group"
@@ -846,18 +866,21 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Press ",
+                    "bookmark.1",
+                    " ",
                     <b>
                       Ctrl
                        + D
 </b>,
-                    " to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.",
+                    " ",
+                    "bookmark.2",
                   ],
                   "className": "text",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Press ",
+                  "bookmark.1",
+                  " ",
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -875,7 +898,8 @@ ShallowWrapper {
                     ],
                     "type": "b",
                   },
-                  " to add this page to your bookmarks. You can navigate back to this page at any time to check the status of your order.",
+                  " ",
+                  "bookmark.2",
                 ],
                 "type": "p",
               },

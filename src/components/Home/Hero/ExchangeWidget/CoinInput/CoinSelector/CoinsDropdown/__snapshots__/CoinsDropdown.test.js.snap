@@ -820,6 +820,7 @@ ShallowWrapper {
           ]
     }
     onClick={[Function]}
+    t={[Function]}
     type="deposit"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -847,7 +848,7 @@ ShallowWrapper {
           <input
                     data-test="search"
                     onChange={[Function]}
-                    placeholder="Search"
+                    placeholder="generalterms.search"
                     type="text"
                     value=""
           />
@@ -1490,7 +1491,7 @@ ShallowWrapper {
             <input
               data-test="search"
               onChange={[Function]}
-              placeholder="Search"
+              placeholder="generalterms.search"
               type="text"
               value=""
 />,
@@ -1527,7 +1528,7 @@ ShallowWrapper {
             "props": Object {
               "data-test": "search",
               "onChange": [Function],
-              "placeholder": "Search",
+              "placeholder": "generalterms.search",
               "type": "text",
               "value": "",
             },
@@ -4822,7 +4823,7 @@ ShallowWrapper {
             <input
                         data-test="search"
                         onChange={[Function]}
-                        placeholder="Search"
+                        placeholder="generalterms.search"
                         type="text"
                         value=""
             />
@@ -5465,7 +5466,7 @@ ShallowWrapper {
               <input
                 data-test="search"
                 onChange={[Function]}
-                placeholder="Search"
+                placeholder="generalterms.search"
                 type="text"
                 value=""
 />,
@@ -5502,7 +5503,7 @@ ShallowWrapper {
               "props": Object {
                 "data-test": "search",
                 "onChange": [Function],
-                "placeholder": "Search",
+                "placeholder": "generalterms.search",
                 "type": "text",
                 "value": "",
               },
@@ -9609,6 +9610,7 @@ ShallowWrapper {
           ]
     }
     onClick={[Function]}
+    t={[Function]}
     type="receive"
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -9636,7 +9638,7 @@ ShallowWrapper {
           <input
                     data-test="search"
                     onChange={[Function]}
-                    placeholder="Search"
+                    placeholder="generalterms.search"
                     type="text"
                     value=""
           />
@@ -10076,7 +10078,7 @@ ShallowWrapper {
             <input
               data-test="search"
               onChange={[Function]}
-              placeholder="Search"
+              placeholder="generalterms.search"
               type="text"
               value=""
 />,
@@ -10113,7 +10115,7 @@ ShallowWrapper {
             "props": Object {
               "data-test": "search",
               "onChange": [Function],
-              "placeholder": "Search",
+              "placeholder": "generalterms.search",
               "type": "text",
               "value": "",
             },
@@ -12330,7 +12332,7 @@ ShallowWrapper {
             <input
                         data-test="search"
                         onChange={[Function]}
-                        placeholder="Search"
+                        placeholder="generalterms.search"
                         type="text"
                         value=""
             />
@@ -12770,7 +12772,7 @@ ShallowWrapper {
               <input
                 data-test="search"
                 onChange={[Function]}
-                placeholder="Search"
+                placeholder="generalterms.search"
                 type="text"
                 value=""
 />,
@@ -12807,7 +12809,7 @@ ShallowWrapper {
               "props": Object {
                 "data-test": "search",
                 "onChange": [Function],
-                "placeholder": "Search",
+                "placeholder": "generalterms.search",
                 "type": "text",
                 "value": "",
               },

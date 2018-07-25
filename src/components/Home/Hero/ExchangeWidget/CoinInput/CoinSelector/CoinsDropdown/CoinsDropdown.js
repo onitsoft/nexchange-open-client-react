@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Fuse from 'fuse.js';
 import cx from 'classnames';
+import { translate } from 'react-i18next';
 import urlParams from 'Utils/urlParams';
 import debounce from 'Utils/debounce';
 import styles from './CoinsDropdown.scss';
@@ -77,7 +78,7 @@ class CoinsDropdown extends Component {
         <i className={`${styles.search} fas fa-search`} aria-hidden="true" />
         <input
           type="text"
-          placeholder="Search"
+          placeholder={this.props.t('generalterms.search')}
           ref={input => (this.searchInput = input)}
           onChange={this.handleChange}
           value={this.state.value}
@@ -126,4 +127,4 @@ class CoinsDropdown extends Component {
   };
 }
 
-export default CoinsDropdown;
+export default translate()(CoinsDropdown);

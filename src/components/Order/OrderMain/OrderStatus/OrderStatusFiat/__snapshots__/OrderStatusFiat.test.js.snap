@@ -4,9 +4,11 @@ exports[`OrderStatusFiat renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={0}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -22,38 +24,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -68,11 +70,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -93,10 +95,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -110,11 +112,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -135,10 +137,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -152,11 +154,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -177,10 +179,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -198,38 +200,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -244,11 +246,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -269,10 +271,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -286,11 +288,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -311,10 +313,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -328,11 +330,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -353,10 +355,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -380,9 +382,11 @@ exports[`OrderStatusFiat renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={8}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -398,38 +402,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -444,11 +448,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -469,10 +473,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -486,11 +490,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -511,10 +515,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -528,11 +532,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -553,10 +557,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -574,38 +578,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -620,11 +624,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -645,10 +649,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -662,11 +666,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -687,10 +691,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -704,11 +708,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -729,10 +733,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -756,9 +760,11 @@ exports[`OrderStatusFiat renders correctly 3`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={11}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -774,38 +780,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step active"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -820,11 +826,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step active",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -845,10 +851,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -862,11 +868,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -887,10 +893,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -904,11 +910,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -929,10 +935,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -950,38 +956,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step active"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -996,11 +1002,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step active",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1021,10 +1027,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -1038,11 +1044,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1063,10 +1069,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -1080,11 +1086,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1105,10 +1111,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -1132,9 +1138,11 @@ exports[`OrderStatusFiat renders correctly 4`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={12}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -1150,38 +1158,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step done"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step active"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -1196,11 +1204,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1221,10 +1229,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -1238,11 +1246,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step active",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1263,10 +1271,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -1280,11 +1288,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1305,10 +1313,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -1326,38 +1334,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step done"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step active"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -1372,11 +1380,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1397,10 +1405,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -1414,11 +1422,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step active",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1439,10 +1447,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -1456,11 +1464,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1481,10 +1489,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -1508,9 +1516,11 @@ exports[`OrderStatusFiat renders correctly 5`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={13}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -1526,38 +1536,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step done"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step done"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step active"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -1572,11 +1582,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1597,10 +1607,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -1614,11 +1624,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1639,10 +1649,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -1656,11 +1666,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step active",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1681,10 +1691,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -1702,38 +1712,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step done"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step done"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step active"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -1748,11 +1758,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1773,10 +1783,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -1790,11 +1800,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1815,10 +1825,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -1832,11 +1842,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step active",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -1857,10 +1867,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -1884,9 +1894,11 @@ exports[`OrderStatusFiat renders correctly 6`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={14}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -1902,38 +1914,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step done"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step done"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step active"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -1948,11 +1960,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -1973,10 +1985,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -1990,11 +2002,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2015,10 +2027,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -2032,11 +2044,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step active",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2057,10 +2069,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -2078,38 +2090,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step done"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step done"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step active"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -2124,11 +2136,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2149,10 +2161,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -2166,11 +2178,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2191,10 +2203,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -2208,11 +2220,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step active",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2233,10 +2245,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -2260,9 +2272,11 @@ exports[`OrderStatusFiat renders correctly 7`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={15}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -2278,38 +2292,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step done"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step done"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step active"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -2324,11 +2338,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2349,10 +2363,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -2366,11 +2380,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2391,10 +2405,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -2408,11 +2422,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step active",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2433,10 +2447,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -2454,38 +2468,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step done"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step done"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step active"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -2500,11 +2514,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2525,10 +2539,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -2542,11 +2556,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2567,10 +2581,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -2584,11 +2598,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step active",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2609,10 +2623,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],
@@ -2636,9 +2650,11 @@ exports[`OrderStatusFiat renders correctly 8`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderStatusFiat
-    status={16}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -2654,38 +2670,38 @@ ShallowWrapper {
       "children": Array [
         <div
           className="step done"
-          data-original-title="In this step we are waiting for your deposit."
+          data-original-title="order.status11"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <deposit.svg />
           <h4>
-                    1. Awaiting deposit
+                    order.status1
           </h4>
 </div>,
         <div
           className="step done"
-          data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+          data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <confirmations.svg />
           <h4>
-                    2. Awaiting verification
+                    order.fiat.status.13
           </h4>
 </div>,
         <div
           className="step done"
-          data-original-title="We got the funds and now have transferred our funds to you."
+          data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
 >
           <done.svg />
           <h4>
-                    3. All done
+                    order.status3
           </h4>
 </div>,
       ],
@@ -2700,11 +2716,11 @@ ShallowWrapper {
           "children": Array [
             <deposit.svg />,
             <h4>
-              1. Awaiting deposit
+              order.status1
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "In this step we are waiting for your deposit.",
+          "data-original-title": "order.status11",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2725,10 +2741,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "1. Awaiting deposit",
+              "children": "order.status1",
             },
             "ref": null,
-            "rendered": "1. Awaiting deposit",
+            "rendered": "order.status1",
             "type": "h4",
           },
         ],
@@ -2742,11 +2758,11 @@ ShallowWrapper {
           "children": Array [
             <confirmations.svg />,
             <h4>
-              2. Awaiting verification
+              order.fiat.status.13
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+          "data-original-title": "order.fiat.status.14",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2767,10 +2783,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2. Awaiting verification",
+              "children": "order.fiat.status.13",
             },
             "ref": null,
-            "rendered": "2. Awaiting verification",
+            "rendered": "order.fiat.status.13",
             "type": "h4",
           },
         ],
@@ -2784,11 +2800,11 @@ ShallowWrapper {
           "children": Array [
             <done.svg />,
             <h4>
-              3. All done
+              order.status3
 </h4>,
           ],
           "className": "step done",
-          "data-original-title": "We got the funds and now have transferred our funds to you.",
+          "data-original-title": "order.status31",
           "data-placement": "top",
           "data-toggle": "tooltip",
           "title": "",
@@ -2809,10 +2825,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "3. All done",
+              "children": "order.status3",
             },
             "ref": null,
-            "rendered": "3. All done",
+            "rendered": "order.status3",
             "type": "h4",
           },
         ],
@@ -2830,38 +2846,38 @@ ShallowWrapper {
         "children": Array [
           <div
             className="step done"
-            data-original-title="In this step we are waiting for your deposit."
+            data-original-title="order.status11"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <deposit.svg />
             <h4>
-                        1. Awaiting deposit
+                        order.status1
             </h4>
 </div>,
           <div
             className="step done"
-            data-original-title="We have received your funds and are now waiting for proof of residence and government issued ID verification."
+            data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <confirmations.svg />
             <h4>
-                        2. Awaiting verification
+                        order.fiat.status.13
             </h4>
 </div>,
           <div
             className="step done"
-            data-original-title="We got the funds and now have transferred our funds to you."
+            data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
 >
             <done.svg />
             <h4>
-                        3. All done
+                        order.status3
             </h4>
 </div>,
         ],
@@ -2876,11 +2892,11 @@ ShallowWrapper {
             "children": Array [
               <deposit.svg />,
               <h4>
-                1. Awaiting deposit
+                order.status1
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "In this step we are waiting for your deposit.",
+            "data-original-title": "order.status11",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2901,10 +2917,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "1. Awaiting deposit",
+                "children": "order.status1",
               },
               "ref": null,
-              "rendered": "1. Awaiting deposit",
+              "rendered": "order.status1",
               "type": "h4",
             },
           ],
@@ -2918,11 +2934,11 @@ ShallowWrapper {
             "children": Array [
               <confirmations.svg />,
               <h4>
-                2. Awaiting verification
+                order.fiat.status.13
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "We have received your funds and are now waiting for proof of residence and government issued ID verification.",
+            "data-original-title": "order.fiat.status.14",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2943,10 +2959,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2. Awaiting verification",
+                "children": "order.fiat.status.13",
               },
               "ref": null,
-              "rendered": "2. Awaiting verification",
+              "rendered": "order.fiat.status.13",
               "type": "h4",
             },
           ],
@@ -2960,11 +2976,11 @@ ShallowWrapper {
             "children": Array [
               <done.svg />,
               <h4>
-                3. All done
+                order.status3
 </h4>,
             ],
             "className": "step done",
-            "data-original-title": "We got the funds and now have transferred our funds to you.",
+            "data-original-title": "order.status31",
             "data-placement": "top",
             "data-toggle": "tooltip",
             "title": "",
@@ -2985,10 +3001,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "3. All done",
+                "children": "order.status3",
               },
               "ref": null,
-              "rendered": "3. All done",
+              "rendered": "order.status3",
               "type": "h4",
             },
           ],

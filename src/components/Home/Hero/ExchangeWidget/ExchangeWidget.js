@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n } from 'react-i18next';
+import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
 
@@ -40,7 +42,7 @@ class ExchangeWidget extends Component {
 
         this.props.errorAlert({
           show: true,
-          message: `Please put valid ${this.props.selectedCoin.receive} address.`,
+          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
         });
       }
 
@@ -88,7 +90,7 @@ class ExchangeWidget extends Component {
         let message =
           error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
             ? error.response.data.non_field_errors[0]
-            : 'Something went wrong. Please try again later.';
+            : `${i18n.t('subscription.5')}`;
 
         this.props.errorAlert({
           message: message,
@@ -108,33 +110,36 @@ class ExchangeWidget extends Component {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     return (
-      <div className={styles.container}>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className={styles.widget}>
-                <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
-                <CoinInput type="receive" onSubmit={this.showWalletAddress} />
-                <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
+      <I18n ns="translations">
+        {t => (
+          <div className={styles.container}>
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className={styles.widget}>
+                    <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                    <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                    <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
+                    <div className={styles.submit}>
+                      <p className={styles.info}>{t('order.feeinfo')}</p>
 
-                <div className={styles.submit}>
-                  <p className={styles.info}>The indicated price is final, all fees are included.</p>
-
-                  <button
-                    className={`${styles.btn} ${
-                      this.props.wallet.valid && !this.state.loading ? null : 'disabled'
-                    } btn btn-block btn-primary proceed `}
-                    onClick={this.placeOrder}
-                  >
-                    Confirm & Place Order
-                    {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
-                  </button>
+                      <button
+                        className={`${styles.btn} ${
+                          this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                        } btn btn-block btn-primary proceed `}
+                        onClick={this.placeOrder}
+                      >
+                        {t('exchangewidget.2')}
+                        {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </I18n>
     );
   }
 }

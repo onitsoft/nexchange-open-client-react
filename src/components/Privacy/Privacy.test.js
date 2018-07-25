@@ -4,7 +4,7 @@ import Privacy from './Privacy';
 
 describe('Privacy', () => {
   it('renders correctly', () => {
-    const wrapShallow = shallow(<Privacy />);
+    const wrapShallow = shallow(<Privacy />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 });

@@ -15,7 +15,9 @@ describe('ExchangeWidget', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapShallow = shallow(<ExchangeWidget store={store} />).dive();
+    wrapShallow = shallow(<ExchangeWidget store={store} />)
+      .dive()
+      .dive();
   });
 
   it('renders correctly', () => {
@@ -28,6 +30,6 @@ describe('ExchangeWidget', () => {
   });
 
   it('submit button changes on wallet shown', () => {
-    expect(wrapShallow.find('button').text()).toEqual('Confirm & Place Order');
+    expect(wrapShallow.find('button').text()).toEqual('exchangewidget.2');
   });
 });

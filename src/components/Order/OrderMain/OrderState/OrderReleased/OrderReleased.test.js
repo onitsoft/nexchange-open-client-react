@@ -7,8 +7,9 @@ import order from 'Mocks/order';
 describe('OrderReleased', () => {
   it('renders correctly', () => {
     const wrapShallow = shallow(<OrderReleased order={orderNoTx} />);
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
+
     wrapShallow.setProps({ order });
-    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallow.dive()).toMatchSnapshot();
   });
 });

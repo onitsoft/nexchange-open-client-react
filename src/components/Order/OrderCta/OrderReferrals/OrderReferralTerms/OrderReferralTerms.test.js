@@ -4,6 +4,7 @@ import OrderReferralTerms from './OrderReferralTerms';
 
 describe('OrderReferralTerms', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderReferralTerms />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderReferralTerms />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

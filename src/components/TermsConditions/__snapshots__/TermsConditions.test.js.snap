@@ -4,7 +4,11 @@ exports[`TermsConditions renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TermsConditions />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -24,60 +28,60 @@ ShallowWrapper {
                 className="col-xs-12"
         >
                 <h2>
-                        Terms and Conditions
+                        terms.1
                 </h2>
                 <p>
-                        N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+                        terms.2
                 </p>
                 <p>
-                        By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+                        terms.3
                 </p>
                 <p>
-                        We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+                        terms.4
                 </p>
                 <p>
-                        N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+                        terms.5
                 </p>
                 <p>
-                        N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+                        terms.6
                 </p>
                 <p>
-                        All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+                        terms.7
                 </p>
                 <p>
-                        Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+                        terms.8
                 </p>
                 <p>
-                        N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+                        terms.9
                 </p>
                 <p>
-                        By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+                        terms.10
                 </p>
                 <p>
-                        You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+                        terms.11
                 </p>
                 <ol>
                         <li>
-                                New York State
+                                terms.13
                         </li>
                         <li>
-                                Washington State
+                                terms.14
                         </li>
                         <li>
-                                North Korea
+                                terms.15
                         </li>
                 </ol>
                 <p>
-                        Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+                        terms.12
                 </p>
                 <h3>
-                        Refund Policy
+                        refund.title
                 </h3>
                 <p>
-                        We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+                        refund.11
                 </p>
                 <p>
-                        Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+                        refund.12
                 </p>
                 <br />
         </div>
@@ -94,60 +98,60 @@ ShallowWrapper {
           className="col-xs-12"
 >
           <h2>
-                    Terms and Conditions
+                    terms.1
           </h2>
           <p>
-                    N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+                    terms.2
           </p>
           <p>
-                    By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+                    terms.3
           </p>
           <p>
-                    We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+                    terms.4
           </p>
           <p>
-                    N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+                    terms.5
           </p>
           <p>
-                    N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+                    terms.6
           </p>
           <p>
-                    All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+                    terms.7
           </p>
           <p>
-                    Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+                    terms.8
           </p>
           <p>
-                    N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+                    terms.9
           </p>
           <p>
-                    By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+                    terms.10
           </p>
           <p>
-                    You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+                    terms.11
           </p>
           <ol>
                     <li>
-                              New York State
+                              terms.13
                     </li>
                     <li>
-                              Washington State
+                              terms.14
                     </li>
                     <li>
-                              North Korea
+                              terms.15
                     </li>
           </ol>
           <p>
-                    Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+                    terms.12
           </p>
           <h3>
-                    Refund Policy
+                    refund.title
           </h3>
           <p>
-                    We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+                    refund.11
           </p>
           <p>
-                    Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+                    refund.12
           </p>
           <br />
 </div>,
@@ -161,60 +165,60 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h2>
-              Terms and Conditions
+              terms.1
 </h2>,
             <p>
-              N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+              terms.2
 </p>,
             <p>
-              By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+              terms.3
 </p>,
             <p>
-              We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+              terms.4
 </p>,
             <p>
-              N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+              terms.5
 </p>,
             <p>
-              N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+              terms.6
 </p>,
             <p>
-              All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+              terms.7
 </p>,
             <p>
-              Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+              terms.8
 </p>,
             <p>
-              N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+              terms.9
 </p>,
             <p>
-              By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+              terms.10
 </p>,
             <p>
-              You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+              terms.11
 </p>,
             <ol>
               <li>
-                            New York State
+                            terms.13
               </li>
               <li>
-                            Washington State
+                            terms.14
               </li>
               <li>
-                            North Korea
+                            terms.15
               </li>
 </ol>,
             <p>
-              Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+              terms.12
 </p>,
             <h3>
-              Refund Policy
+              refund.title
 </h3>,
             <p>
-              We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+              refund.11
 </p>,
             <p>
-              Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+              refund.12
 </p>,
             <br />,
           ],
@@ -227,10 +231,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Terms and Conditions",
+              "children": "terms.1",
             },
             "ref": null,
-            "rendered": "Terms and Conditions",
+            "rendered": "terms.1",
             "type": "h2",
           },
           Object {
@@ -238,10 +242,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.",
+              "children": "terms.2",
             },
             "ref": null,
-            "rendered": "N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.",
+            "rendered": "terms.2",
             "type": "p",
           },
           Object {
@@ -249,10 +253,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.",
+              "children": "terms.3",
             },
             "ref": null,
-            "rendered": "By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.",
+            "rendered": "terms.3",
             "type": "p",
           },
           Object {
@@ -260,10 +264,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.",
+              "children": "terms.4",
             },
             "ref": null,
-            "rendered": "We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.",
+            "rendered": "terms.4",
             "type": "p",
           },
           Object {
@@ -271,10 +275,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.",
+              "children": "terms.5",
             },
             "ref": null,
-            "rendered": "N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.",
+            "rendered": "terms.5",
             "type": "p",
           },
           Object {
@@ -282,10 +286,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.",
+              "children": "terms.6",
             },
             "ref": null,
-            "rendered": "N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.",
+            "rendered": "terms.6",
             "type": "p",
           },
           Object {
@@ -293,10 +297,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.",
+              "children": "terms.7",
             },
             "ref": null,
-            "rendered": "All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.",
+            "rendered": "terms.7",
             "type": "p",
           },
           Object {
@@ -304,10 +308,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.",
+              "children": "terms.8",
             },
             "ref": null,
-            "rendered": "Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.",
+            "rendered": "terms.8",
             "type": "p",
           },
           Object {
@@ -315,10 +319,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.",
+              "children": "terms.9",
             },
             "ref": null,
-            "rendered": "N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.",
+            "rendered": "terms.9",
             "type": "p",
           },
           Object {
@@ -326,10 +330,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.",
+              "children": "terms.10",
             },
             "ref": null,
-            "rendered": "By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.",
+            "rendered": "terms.10",
             "type": "p",
           },
           Object {
@@ -337,10 +341,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:",
+              "children": "terms.11",
             },
             "ref": null,
-            "rendered": "You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:",
+            "rendered": "terms.11",
             "type": "p",
           },
           Object {
@@ -350,13 +354,13 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <li>
-                  New York State
+                  terms.13
 </li>,
                 <li>
-                  Washington State
+                  terms.14
 </li>,
                 <li>
-                  North Korea
+                  terms.15
 </li>,
               ],
             },
@@ -367,10 +371,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "New York State",
+                  "children": "terms.13",
                 },
                 "ref": null,
-                "rendered": "New York State",
+                "rendered": "terms.13",
                 "type": "li",
               },
               Object {
@@ -378,10 +382,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Washington State",
+                  "children": "terms.14",
                 },
                 "ref": null,
-                "rendered": "Washington State",
+                "rendered": "terms.14",
                 "type": "li",
               },
               Object {
@@ -389,10 +393,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "North Korea",
+                  "children": "terms.15",
                 },
                 "ref": null,
-                "rendered": "North Korea",
+                "rendered": "terms.15",
                 "type": "li",
               },
             ],
@@ -403,10 +407,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.",
+              "children": "terms.12",
             },
             "ref": null,
-            "rendered": "Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.",
+            "rendered": "terms.12",
             "type": "p",
           },
           Object {
@@ -414,10 +418,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Refund Policy",
+              "children": "refund.title",
             },
             "ref": null,
-            "rendered": "Refund Policy",
+            "rendered": "refund.title",
             "type": "h3",
           },
           Object {
@@ -425,10 +429,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+              "children": "refund.11",
             },
             "ref": null,
-            "rendered": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+            "rendered": "refund.11",
             "type": "p",
           },
           Object {
@@ -436,10 +440,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+              "children": "refund.12",
             },
             "ref": null,
-            "rendered": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+            "rendered": "refund.12",
             "type": "p",
           },
           Object {
@@ -471,60 +475,60 @@ ShallowWrapper {
                     className="col-xs-12"
           >
                     <h2>
-                              Terms and Conditions
+                              terms.1
                     </h2>
                     <p>
-                              N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+                              terms.2
                     </p>
                     <p>
-                              By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+                              terms.3
                     </p>
                     <p>
-                              We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+                              terms.4
                     </p>
                     <p>
-                              N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+                              terms.5
                     </p>
                     <p>
-                              N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+                              terms.6
                     </p>
                     <p>
-                              All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+                              terms.7
                     </p>
                     <p>
-                              Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+                              terms.8
                     </p>
                     <p>
-                              N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+                              terms.9
                     </p>
                     <p>
-                              By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+                              terms.10
                     </p>
                     <p>
-                              You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+                              terms.11
                     </p>
                     <ol>
                               <li>
-                                        New York State
+                                        terms.13
                               </li>
                               <li>
-                                        Washington State
+                                        terms.14
                               </li>
                               <li>
-                                        North Korea
+                                        terms.15
                               </li>
                     </ol>
                     <p>
-                              Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+                              terms.12
                     </p>
                     <h3>
-                              Refund Policy
+                              refund.title
                     </h3>
                     <p>
-                              We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+                              refund.11
                     </p>
                     <p>
-                              Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+                              refund.12
                     </p>
                     <br />
           </div>
@@ -541,60 +545,60 @@ ShallowWrapper {
             className="col-xs-12"
 >
             <h2>
-                        Terms and Conditions
+                        terms.1
             </h2>
             <p>
-                        N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+                        terms.2
             </p>
             <p>
-                        By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+                        terms.3
             </p>
             <p>
-                        We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+                        terms.4
             </p>
             <p>
-                        N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+                        terms.5
             </p>
             <p>
-                        N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+                        terms.6
             </p>
             <p>
-                        All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+                        terms.7
             </p>
             <p>
-                        Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+                        terms.8
             </p>
             <p>
-                        N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+                        terms.9
             </p>
             <p>
-                        By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+                        terms.10
             </p>
             <p>
-                        You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+                        terms.11
             </p>
             <ol>
                         <li>
-                                    New York State
+                                    terms.13
                         </li>
                         <li>
-                                    Washington State
+                                    terms.14
                         </li>
                         <li>
-                                    North Korea
+                                    terms.15
                         </li>
             </ol>
             <p>
-                        Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+                        terms.12
             </p>
             <h3>
-                        Refund Policy
+                        refund.title
             </h3>
             <p>
-                        We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+                        refund.11
             </p>
             <p>
-                        Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+                        refund.12
             </p>
             <br />
 </div>,
@@ -608,60 +612,60 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h2>
-                Terms and Conditions
+                terms.1
 </h2>,
               <p>
-                N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.
+                terms.2
 </p>,
               <p>
-                By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.
+                terms.3
 </p>,
               <p>
-                We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.
+                terms.4
 </p>,
               <p>
-                N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.
+                terms.5
 </p>,
               <p>
-                N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.
+                terms.6
 </p>,
               <p>
-                All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.
+                terms.7
 </p>,
               <p>
-                Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.
+                terms.8
 </p>,
               <p>
-                N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.
+                terms.9
 </p>,
               <p>
-                By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.
+                terms.10
 </p>,
               <p>
-                You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:
+                terms.11
 </p>,
               <ol>
                 <li>
-                                New York State
+                                terms.13
                 </li>
                 <li>
-                                Washington State
+                                terms.14
                 </li>
                 <li>
-                                North Korea
+                                terms.15
                 </li>
 </ol>,
               <p>
-                Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.
+                terms.12
 </p>,
               <h3>
-                Refund Policy
+                refund.title
 </h3>,
               <p>
-                We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.
+                refund.11
 </p>,
               <p>
-                Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.
+                refund.12
 </p>,
               <br />,
             ],
@@ -674,10 +678,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Terms and Conditions",
+                "children": "terms.1",
               },
               "ref": null,
-              "rendered": "Terms and Conditions",
+              "rendered": "terms.1",
               "type": "h2",
             },
             Object {
@@ -685,10 +689,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.",
+                "children": "terms.2",
               },
               "ref": null,
-              "rendered": "N.EXCHANGE is an Exchange which allows you to exchange crypto and fiat currencies with the best exchange rate. Terms “We”, “Exchange”, “Exchange operator” refer to N.EXCHANGE.",
+              "rendered": "terms.2",
               "type": "p",
             },
             Object {
@@ -696,10 +700,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.",
+                "children": "terms.3",
               },
               "ref": null,
-              "rendered": "By using N.EXCHANGE, you agree to these conditions. Please read them carefully. If you do not agree with the terms and conditions in this Agreement you may not use the Exchange.",
+              "rendered": "terms.3",
               "type": "p",
             },
             Object {
@@ -707,10 +711,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.",
+                "children": "terms.4",
               },
               "ref": null,
-              "rendered": "We reserve the right to make changes to our site, policies and terms of use at any time. The content of the pages of the website is for your general information and use only. It is subject to change without notice.",
+              "rendered": "terms.4",
               "type": "p",
             },
             Object {
@@ -718,10 +722,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.",
+                "children": "terms.5",
               },
               "ref": null,
-              "rendered": "N.EXCHANGE is not responsible for any loss caused by any reason while working with the Exchange. Any kind of losses caused by the third party activities has to be handled by the user.",
+              "rendered": "terms.5",
               "type": "p",
             },
             Object {
@@ -729,10 +733,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.",
+                "children": "terms.6",
               },
               "ref": null,
-              "rendered": "N.EXCHANGE takes an exchange fee for using the service. The fee is 0.5% of the transaction volume for cryptocurrency to cryptocurrency transitions on cryptocurrency majors (BTC, ETH, LTC and similar), 1% on minors (the rest) and 2% on fiat pairs (such as BTCEUR). In addition to those 2%, a payment processor fee of 5%-7% might be applicable depending on the currency and the payment method chosen by you.",
+              "rendered": "terms.6",
               "type": "p",
             },
             Object {
@@ -740,10 +744,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.",
+                "children": "terms.7",
               },
               "ref": null,
-              "rendered": "All fees are transparent and already included in the calculated order price. The fee can be a subject to reasonable fluctuations due to the mathematical rounding.",
+              "rendered": "terms.7",
               "type": "p",
             },
             Object {
@@ -751,10 +755,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.",
+                "children": "terms.8",
               },
               "ref": null,
-              "rendered": "Transactions cannot be canceled by N.EXCHANGE. Therefore, check your payment details before making transaction. N.EXCHANGE is not responsible for your coins once they have been sent to the wallet.",
+              "rendered": "terms.8",
               "type": "p",
             },
             Object {
@@ -762,10 +766,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.",
+                "children": "terms.9",
               },
               "ref": null,
-              "rendered": "N.EXCHANGE doesn’t guarantee the uptime of the exchange. Maintenance and downtime may be required at times.",
+              "rendered": "terms.9",
               "type": "p",
             },
             Object {
@@ -773,10 +777,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.",
+                "children": "terms.10",
               },
               "ref": null,
-              "rendered": "By uploading or sharing any kind of content, you automatically grant us a worldwide license to use your content. It becomes part of the public domain as long as it remains on our website. It can be used for marketing or any other purposes by N.EXCHANGE.",
+              "rendered": "terms.10",
               "type": "p",
             },
             Object {
@@ -784,10 +788,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:",
+                "children": "terms.11",
               },
               "ref": null,
-              "rendered": "You are prohibited from using or accessing N.EXCHANGE from the following jurisdictions:",
+              "rendered": "terms.11",
               "type": "p",
             },
             Object {
@@ -797,13 +801,13 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <li>
-                    New York State
+                    terms.13
 </li>,
                   <li>
-                    Washington State
+                    terms.14
 </li>,
                   <li>
-                    North Korea
+                    terms.15
 </li>,
                 ],
               },
@@ -814,10 +818,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "New York State",
+                    "children": "terms.13",
                   },
                   "ref": null,
-                  "rendered": "New York State",
+                  "rendered": "terms.13",
                   "type": "li",
                 },
                 Object {
@@ -825,10 +829,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Washington State",
+                    "children": "terms.14",
                   },
                   "ref": null,
-                  "rendered": "Washington State",
+                  "rendered": "terms.14",
                   "type": "li",
                 },
                 Object {
@@ -836,10 +840,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "North Korea",
+                    "children": "terms.15",
                   },
                   "ref": null,
-                  "rendered": "North Korea",
+                  "rendered": "terms.15",
                   "type": "li",
                 },
               ],
@@ -850,10 +854,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.",
+                "children": "terms.12",
               },
               "ref": null,
-              "rendered": "Transactions from users in these jurisdictions are prohibited, and N.EXCHANGE may seize any funds from users in these jurisdictions. By accessing this site or any services therein, you represent and warrant that you are not physically located in these prohibited jurisdictions.",
+              "rendered": "terms.12",
               "type": "p",
             },
             Object {
@@ -861,10 +865,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Refund Policy",
+                "children": "refund.title",
               },
               "ref": null,
-              "rendered": "Refund Policy",
+              "rendered": "refund.title",
               "type": "h3",
             },
             Object {
@@ -872,10 +876,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+                "children": "refund.11",
               },
               "ref": null,
-              "rendered": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+              "rendered": "refund.11",
               "type": "p",
             },
             Object {
@@ -883,10 +887,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+                "children": "refund.12",
               },
               "ref": null,
-              "rendered": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+              "rendered": "refund.12",
               "type": "p",
             },
             Object {

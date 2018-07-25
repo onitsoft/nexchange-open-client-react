@@ -6,6 +6,7 @@ import MockDate from 'mockdate';
 describe('ICO', () => {
   it('renders correctly', () => {
     MockDate.set(1531839850000);
-    expect(shallow(<ICO />)).toMatchSnapshot();
+    const wrapShallow = shallow(<ICO />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

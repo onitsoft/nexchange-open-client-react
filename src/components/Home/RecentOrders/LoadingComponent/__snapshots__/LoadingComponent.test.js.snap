@@ -338,10 +338,11 @@ exports[`LoadingComponent renders correctly 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoadingComponent
-    error="Some error"
-    isLoading={false}
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -354,10 +355,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Sorry, there was a problem loading the page :(",
+      "children": "error.loading",
     },
     "ref": null,
-    "rendered": "Sorry, there was a problem loading the page :(",
+    "rendered": "error.loading",
     "type": "h2",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -366,10 +367,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Sorry, there was a problem loading the page :(",
+        "children": "error.loading",
       },
       "ref": null,
-      "rendered": "Sorry, there was a problem loading the page :(",
+      "rendered": "error.loading",
       "type": "h2",
     },
   ],

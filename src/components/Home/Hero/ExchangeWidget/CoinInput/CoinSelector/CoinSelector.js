@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { translate } from 'react-i18next';
 import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
@@ -62,7 +63,7 @@ class CoinSelector extends Component {
     ) {
       if (!this.props.pairs[nextDepositCoin]) {
         this.props.errorAlert({
-          message: `You cannot use ${nextDepositCoin} as deposit coin. Please try another one.`,
+          message: `${this.props.t('error.nousedeposit')}  ${nextDepositCoin} ${this.props.t('error.nousedeposit2')}`,
           show: true,
           type: 'INVALID_PAIR',
         });
@@ -73,7 +74,8 @@ class CoinSelector extends Component {
           .join(', ');
 
         this.props.errorAlert({
-          message: `You cannot buy ${nextReceiveCoin} with ${nextDepositCoin}. Try ${validPairs}.`,
+          message: `${this.props.t('error.invalidpair')} 
+        ${nextReceiveCoin} ${this.props.t('error.with')} ${nextDepositCoin}. ${this.props.t('error.try')} ${validPairs}.`,
           show: true,
           type: 'INVALID_PAIR',
         });
@@ -130,12 +132,16 @@ class CoinSelector extends Component {
 const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(onClickOutside(CoinSelector));
+export default translate()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(onClickOutside(CoinSelector))
+);
 
-export const CoinSelectorTesting = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CoinSelector);
+export const CoinSelectorTesting = translate()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(CoinSelector)
+);

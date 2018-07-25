@@ -536,7 +536,7 @@ describe('actions', () => {
         type: types.SET_EMAIL_AND_MESSAGE,
         value: payload,
         message: {
-          text: 'Success, you set your email.',
+          text: 'notify.successmail',
           error: false,
         },
       },
@@ -561,7 +561,7 @@ describe('actions', () => {
       {
         type: types.SET_EMAIL_AND_MESSAGE,
         value: '',
-        message: { error: true, text: 'Something went wrong. Try again later.' },
+        message: { error: true, text: 'generalterms.formfailed' },
       },
     ];
 

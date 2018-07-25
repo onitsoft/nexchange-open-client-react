@@ -1,17 +1,21 @@
 import React from 'react';
 import config from 'Config';
 import OrderLinks from '../OrderLinks/OrderLinks';
+import { I18n } from 'react-i18next';
 
 const OrderFailure = props => (
-  <div id="order-failure" className="text-center">
-    <h2>Order Processing Failed</h2>
-    <h5>
-      There’s been a problem with your order. Please contact support to resolve at{' '}
-      <a href={`mailto:${config.SUPPORT_EMAIL}`}>{config.SUPPORT_EMAIL}.</a>
-    </h5>
+  <I18n ns="translations">
+    {t => (
+      <div id="order-failure" className="text-center">
+        <h2>{t('order.failure1')}</h2>
+        <h5>
+          {t('order.failure2')} <a href={`mailto:${config.SUPPORT_EMAIL}`}>{config.SUPPORT_EMAIL}.</a>
+        </h5>
 
-    <OrderLinks {...props} />
-  </div>
+        <OrderLinks {...props} />
+      </div>
+    )}
+  </I18n>
 );
 
 export default OrderFailure;

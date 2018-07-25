@@ -4,7 +4,11 @@ exports[`ICO renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ICO />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -27,10 +31,10 @@ ShallowWrapper {
                         className="col-xs-12 col-sm-5 col-lg-6"
                 >
                         <h2>
-                                A WHOLE ECO-SYSTEM
+                                ico.title
                         </h2>
                         <h3>
-                                Accommodate all of your crypto needs under one roof
+                                ico.desc
                         </h3>
                         <a
                                 className="btn btn btn-block btn-primary"
@@ -39,7 +43,7 @@ ShallowWrapper {
                                 rel="noopener noreferrer"
                                 target="_blank"
                         >
-                                JOIN OUR ICO
+                                ico.action
                         </a>
                 </div>
                 <div
@@ -82,7 +86,7 @@ ShallowWrapper {
                                 className="countdown"
                         >
                                 <h4>
-                                        Pre-sale starts in
+                                        ico.presale
                                 </h4>
                                 <Countdown
                                         controlled={false}
@@ -112,10 +116,10 @@ ShallowWrapper {
                     className="col-xs-12 col-sm-5 col-lg-6"
           >
                     <h2>
-                              A WHOLE ECO-SYSTEM
+                              ico.title
                     </h2>
                     <h3>
-                              Accommodate all of your crypto needs under one roof
+                              ico.desc
                     </h3>
                     <a
                               className="btn btn btn-block btn-primary"
@@ -124,7 +128,7 @@ ShallowWrapper {
                               rel="noopener noreferrer"
                               target="_blank"
                     >
-                              JOIN OUR ICO
+                              ico.action
                     </a>
           </div>
           <div
@@ -167,7 +171,7 @@ ShallowWrapper {
                               className="countdown"
                     >
                               <h4>
-                                        Pre-sale starts in
+                                        ico.presale
                               </h4>
                               <Countdown
                                         controlled={false}
@@ -194,10 +198,10 @@ ShallowWrapper {
               className="col-xs-12 col-sm-5 col-lg-6"
 >
               <h2>
-                            A WHOLE ECO-SYSTEM
+                            ico.title
               </h2>
               <h3>
-                            Accommodate all of your crypto needs under one roof
+                            ico.desc
               </h3>
               <a
                             className="btn btn btn-block btn-primary"
@@ -206,7 +210,7 @@ ShallowWrapper {
                             rel="noopener noreferrer"
                             target="_blank"
               >
-                            JOIN OUR ICO
+                            ico.action
               </a>
 </div>,
             <div
@@ -249,7 +253,7 @@ ShallowWrapper {
                             className="countdown"
               >
                             <h4>
-                                          Pre-sale starts in
+                                          ico.presale
                             </h4>
                             <Countdown
                                           controlled={false}
@@ -274,10 +278,10 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <h2>
-                  A WHOLE ECO-SYSTEM
+                  ico.title
 </h2>,
                 <h3>
-                  Accommodate all of your crypto needs under one roof
+                  ico.desc
 </h3>,
                 <a
                   className="btn btn btn-block btn-primary"
@@ -286,7 +290,7 @@ ShallowWrapper {
                   rel="noopener noreferrer"
                   target="_blank"
 >
-                  JOIN OUR ICO
+                  ico.action
 </a>,
               ],
               "className": "col-xs-12 col-sm-5 col-lg-6",
@@ -298,10 +302,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "A WHOLE ECO-SYSTEM",
+                  "children": "ico.title",
                 },
                 "ref": null,
-                "rendered": "A WHOLE ECO-SYSTEM",
+                "rendered": "ico.title",
                 "type": "h2",
               },
               Object {
@@ -309,10 +313,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Accommodate all of your crypto needs under one roof",
+                  "children": "ico.desc",
                 },
                 "ref": null,
-                "rendered": "Accommodate all of your crypto needs under one roof",
+                "rendered": "ico.desc",
                 "type": "h3",
               },
               Object {
@@ -320,7 +324,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "JOIN OUR ICO",
+                  "children": "ico.action",
                   "className": "btn btn btn-block btn-primary",
                   "href": "https://n.exchange/ico",
                   "onClick": [Function],
@@ -328,7 +332,7 @@ ShallowWrapper {
                   "target": "_blank",
                 },
                 "ref": null,
-                "rendered": "JOIN OUR ICO",
+                "rendered": "ico.action",
                 "type": "a",
               },
             ],
@@ -377,7 +381,7 @@ ShallowWrapper {
                   className="countdown"
 >
                   <h4>
-                                    Pre-sale starts in
+                                    ico.presale
                   </h4>
                   <Countdown
                                     controlled={false}
@@ -452,7 +456,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <h4>
-                      Pre-sale starts in
+                      ico.presale
 </h4>,
                     <Countdown
                       controlled={false}
@@ -473,10 +477,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Pre-sale starts in",
+                      "children": "ico.presale",
                     },
                     "ref": null,
-                    "rendered": "Pre-sale starts in",
+                    "rendered": "ico.presale",
                     "type": "h4",
                   },
                   Object {
@@ -526,10 +530,10 @@ ShallowWrapper {
                               className="col-xs-12 col-sm-5 col-lg-6"
                     >
                               <h2>
-                                        A WHOLE ECO-SYSTEM
+                                        ico.title
                               </h2>
                               <h3>
-                                        Accommodate all of your crypto needs under one roof
+                                        ico.desc
                               </h3>
                               <a
                                         className="btn btn btn-block btn-primary"
@@ -538,7 +542,7 @@ ShallowWrapper {
                                         rel="noopener noreferrer"
                                         target="_blank"
                               >
-                                        JOIN OUR ICO
+                                        ico.action
                               </a>
                     </div>
                     <div
@@ -581,7 +585,7 @@ ShallowWrapper {
                                         className="countdown"
                               >
                                         <h4>
-                                                  Pre-sale starts in
+                                                  ico.presale
                                         </h4>
                                         <Countdown
                                                   controlled={false}
@@ -611,10 +615,10 @@ ShallowWrapper {
                         className="col-xs-12 col-sm-5 col-lg-6"
             >
                         <h2>
-                                    A WHOLE ECO-SYSTEM
+                                    ico.title
                         </h2>
                         <h3>
-                                    Accommodate all of your crypto needs under one roof
+                                    ico.desc
                         </h3>
                         <a
                                     className="btn btn btn-block btn-primary"
@@ -623,7 +627,7 @@ ShallowWrapper {
                                     rel="noopener noreferrer"
                                     target="_blank"
                         >
-                                    JOIN OUR ICO
+                                    ico.action
                         </a>
             </div>
             <div
@@ -666,7 +670,7 @@ ShallowWrapper {
                                     className="countdown"
                         >
                                     <h4>
-                                                Pre-sale starts in
+                                                ico.presale
                                     </h4>
                                     <Countdown
                                                 controlled={false}
@@ -693,10 +697,10 @@ ShallowWrapper {
                 className="col-xs-12 col-sm-5 col-lg-6"
 >
                 <h2>
-                                A WHOLE ECO-SYSTEM
+                                ico.title
                 </h2>
                 <h3>
-                                Accommodate all of your crypto needs under one roof
+                                ico.desc
                 </h3>
                 <a
                                 className="btn btn btn-block btn-primary"
@@ -705,7 +709,7 @@ ShallowWrapper {
                                 rel="noopener noreferrer"
                                 target="_blank"
                 >
-                                JOIN OUR ICO
+                                ico.action
                 </a>
 </div>,
               <div
@@ -748,7 +752,7 @@ ShallowWrapper {
                                 className="countdown"
                 >
                                 <h4>
-                                                Pre-sale starts in
+                                                ico.presale
                                 </h4>
                                 <Countdown
                                                 controlled={false}
@@ -773,10 +777,10 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <h2>
-                    A WHOLE ECO-SYSTEM
+                    ico.title
 </h2>,
                   <h3>
-                    Accommodate all of your crypto needs under one roof
+                    ico.desc
 </h3>,
                   <a
                     className="btn btn btn-block btn-primary"
@@ -785,7 +789,7 @@ ShallowWrapper {
                     rel="noopener noreferrer"
                     target="_blank"
 >
-                    JOIN OUR ICO
+                    ico.action
 </a>,
                 ],
                 "className": "col-xs-12 col-sm-5 col-lg-6",
@@ -797,10 +801,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "A WHOLE ECO-SYSTEM",
+                    "children": "ico.title",
                   },
                   "ref": null,
-                  "rendered": "A WHOLE ECO-SYSTEM",
+                  "rendered": "ico.title",
                   "type": "h2",
                 },
                 Object {
@@ -808,10 +812,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Accommodate all of your crypto needs under one roof",
+                    "children": "ico.desc",
                   },
                   "ref": null,
-                  "rendered": "Accommodate all of your crypto needs under one roof",
+                  "rendered": "ico.desc",
                   "type": "h3",
                 },
                 Object {
@@ -819,7 +823,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "JOIN OUR ICO",
+                    "children": "ico.action",
                     "className": "btn btn btn-block btn-primary",
                     "href": "https://n.exchange/ico",
                     "onClick": [Function],
@@ -827,7 +831,7 @@ ShallowWrapper {
                     "target": "_blank",
                   },
                   "ref": null,
-                  "rendered": "JOIN OUR ICO",
+                  "rendered": "ico.action",
                   "type": "a",
                 },
               ],
@@ -876,7 +880,7 @@ ShallowWrapper {
                     className="countdown"
 >
                     <h4>
-                                        Pre-sale starts in
+                                        ico.presale
                     </h4>
                     <Countdown
                                         controlled={false}
@@ -951,7 +955,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <h4>
-                        Pre-sale starts in
+                        ico.presale
 </h4>,
                       <Countdown
                         controlled={false}
@@ -972,10 +976,10 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "Pre-sale starts in",
+                        "children": "ico.presale",
                       },
                       "ref": null,
-                      "rendered": "Pre-sale starts in",
+                      "rendered": "ico.presale",
                       "type": "h4",
                     },
                     Object {

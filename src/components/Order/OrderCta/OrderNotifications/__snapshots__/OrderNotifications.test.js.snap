@@ -4,15 +4,11 @@ exports[`OrderNotifications renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderNotifications
-    email=""
-    message={
-        Object {
-            "error": false,
-            "text": "Hello",
-          }
-    }
-/>,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -35,7 +31,7 @@ ShallowWrapper {
                         className="col-xs-12 visible-xs text-center"
                 >
                         <img
-                                alt="Get notified"
+                                alt="notify.alt"
                                 className="img"
                                 src="get-notified.png"
                         />
@@ -46,7 +42,7 @@ ShallowWrapper {
                         <h2
                                 className="title"
                         >
-                                If you would like to be notified about your order please enter your e-mail address below.
+                                notify.explanation
                         </h2>
                         <form
                                 onSubmit={undefined}
@@ -58,7 +54,7 @@ ShallowWrapper {
                                                 disabled={undefined}
                                                 name="email"
                                                 onChange={undefined}
-                                                placeholder="Enter your e-mail address"
+                                                placeholder="notify.email"
                                                 required={true}
                                                 type="email"
                                                 value=""
@@ -68,7 +64,7 @@ ShallowWrapper {
                                                 disabled={undefined}
                                                 type="submit"
                                         >
-                                                Submit
+                                                generalterms.submit
                                         </button>
                                         <h4
                                                 className="message"
@@ -82,7 +78,7 @@ ShallowWrapper {
                         className="col-ms-2 col-sm-5 hidden-xs text-center"
                 >
                         <img
-                                alt="Get notified"
+                                alt="notify.alt"
                                 className="img"
                                 src="get-notified.png"
                         />
@@ -104,7 +100,7 @@ ShallowWrapper {
                     className="col-xs-12 visible-xs text-center"
           >
                     <img
-                              alt="Get notified"
+                              alt="notify.alt"
                               className="img"
                               src="get-notified.png"
                     />
@@ -115,7 +111,7 @@ ShallowWrapper {
                     <h2
                               className="title"
                     >
-                              If you would like to be notified about your order please enter your e-mail address below.
+                              notify.explanation
                     </h2>
                     <form
                               onSubmit={undefined}
@@ -127,7 +123,7 @@ ShallowWrapper {
                                                   disabled={undefined}
                                                   name="email"
                                                   onChange={undefined}
-                                                  placeholder="Enter your e-mail address"
+                                                  placeholder="notify.email"
                                                   required={true}
                                                   type="email"
                                                   value=""
@@ -137,7 +133,7 @@ ShallowWrapper {
                                                   disabled={undefined}
                                                   type="submit"
                                         >
-                                                  Submit
+                                                  generalterms.submit
                                         </button>
                                         <h4
                                                   className="message"
@@ -151,7 +147,7 @@ ShallowWrapper {
                     className="col-ms-2 col-sm-5 hidden-xs text-center"
           >
                     <img
-                              alt="Get notified"
+                              alt="notify.alt"
                               className="img"
                               src="get-notified.png"
                     />
@@ -170,7 +166,7 @@ ShallowWrapper {
               className="col-xs-12 visible-xs text-center"
 >
               <img
-                            alt="Get notified"
+                            alt="notify.alt"
                             className="img"
                             src="get-notified.png"
               />
@@ -181,7 +177,7 @@ ShallowWrapper {
               <h2
                             className="title"
               >
-                            If you would like to be notified about your order please enter your e-mail address below.
+                            notify.explanation
               </h2>
               <form
                             onSubmit={undefined}
@@ -193,7 +189,7 @@ ShallowWrapper {
                                                         disabled={undefined}
                                                         name="email"
                                                         onChange={undefined}
-                                                        placeholder="Enter your e-mail address"
+                                                        placeholder="notify.email"
                                                         required={true}
                                                         type="email"
                                                         value=""
@@ -203,7 +199,7 @@ ShallowWrapper {
                                                         disabled={undefined}
                                                         type="submit"
                                           >
-                                                        Submit
+                                                        generalterms.submit
                                           </button>
                                           <h4
                                                         className="message"
@@ -217,7 +213,7 @@ ShallowWrapper {
               className="col-ms-2 col-sm-5 hidden-xs text-center"
 >
               <img
-                            alt="Get notified"
+                            alt="notify.alt"
                             className="img"
                             src="get-notified.png"
               />
@@ -233,7 +229,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <img
-                alt="Get notified"
+                alt="notify.alt"
                 className="img"
                 src="get-notified.png"
 />,
@@ -245,7 +241,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "Get notified",
+                "alt": "notify.alt",
                 "className": "img",
                 "src": "get-notified.png",
               },
@@ -264,7 +260,7 @@ ShallowWrapper {
                 <h2
                   className="title"
 >
-                  If you would like to be notified about your order please enter your e-mail address below.
+                  notify.explanation
 </h2>,
                 <form
                   onSubmit={undefined}
@@ -276,7 +272,7 @@ ShallowWrapper {
                                                       disabled={undefined}
                                                       name="email"
                                                       onChange={undefined}
-                                                      placeholder="Enter your e-mail address"
+                                                      placeholder="notify.email"
                                                       required={true}
                                                       type="email"
                                                       value=""
@@ -286,7 +282,7 @@ ShallowWrapper {
                                                       disabled={undefined}
                                                       type="submit"
                                     >
-                                                      Submit
+                                                      generalterms.submit
                                     </button>
                                     <h4
                                                       className="message"
@@ -305,11 +301,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "If you would like to be notified about your order please enter your e-mail address below.",
+                  "children": "notify.explanation",
                   "className": "title",
                 },
                 "ref": null,
-                "rendered": "If you would like to be notified about your order please enter your e-mail address below.",
+                "rendered": "notify.explanation",
                 "type": "h2",
               },
               Object {
@@ -324,7 +320,7 @@ ShallowWrapper {
                                         disabled={undefined}
                                         name="email"
                                         onChange={undefined}
-                                        placeholder="Enter your e-mail address"
+                                        placeholder="notify.email"
                                         required={true}
                                         type="email"
                                         value=""
@@ -334,7 +330,7 @@ ShallowWrapper {
                                         disabled={undefined}
                                         type="submit"
                     >
-                                        Submit
+                                        generalterms.submit
                     </button>
                     <h4
                                         className="message"
@@ -355,7 +351,7 @@ ShallowWrapper {
                         disabled={undefined}
                         name="email"
                         onChange={undefined}
-                        placeholder="Enter your e-mail address"
+                        placeholder="notify.email"
                         required={true}
                         type="email"
                         value=""
@@ -365,7 +361,7 @@ ShallowWrapper {
                         disabled={undefined}
                         type="submit"
 >
-                        Submit
+                        generalterms.submit
 </button>,
                       <h4
                         className="message"
@@ -385,7 +381,7 @@ ShallowWrapper {
                         "disabled": undefined,
                         "name": "email",
                         "onChange": undefined,
-                        "placeholder": "Enter your e-mail address",
+                        "placeholder": "notify.email",
                         "required": true,
                         "type": "email",
                         "value": "",
@@ -399,13 +395,13 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "Submit",
+                        "children": "generalterms.submit",
                         "className": "btn btn-primary btn",
                         "disabled": undefined,
                         "type": "submit",
                       },
                       "ref": null,
-                      "rendered": "Submit",
+                      "rendered": "generalterms.submit",
                       "type": "button",
                     },
                     Object {
@@ -434,7 +430,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <img
-                alt="Get notified"
+                alt="notify.alt"
                 className="img"
                 src="get-notified.png"
 />,
@@ -446,7 +442,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "alt": "Get notified",
+                "alt": "notify.alt",
                 "className": "img",
                 "src": "get-notified.png",
               },
@@ -479,7 +475,7 @@ ShallowWrapper {
                               className="col-xs-12 visible-xs text-center"
                     >
                               <img
-                                        alt="Get notified"
+                                        alt="notify.alt"
                                         className="img"
                                         src="get-notified.png"
                               />
@@ -490,7 +486,7 @@ ShallowWrapper {
                               <h2
                                         className="title"
                               >
-                                        If you would like to be notified about your order please enter your e-mail address below.
+                                        notify.explanation
                               </h2>
                               <form
                                         onSubmit={undefined}
@@ -502,7 +498,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             name="email"
                                                             onChange={undefined}
-                                                            placeholder="Enter your e-mail address"
+                                                            placeholder="notify.email"
                                                             required={true}
                                                             type="email"
                                                             value=""
@@ -512,7 +508,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             type="submit"
                                                   >
-                                                            Submit
+                                                            generalterms.submit
                                                   </button>
                                                   <h4
                                                             className="message"
@@ -526,7 +522,7 @@ ShallowWrapper {
                               className="col-ms-2 col-sm-5 hidden-xs text-center"
                     >
                               <img
-                                        alt="Get notified"
+                                        alt="notify.alt"
                                         className="img"
                                         src="get-notified.png"
                               />
@@ -548,7 +544,7 @@ ShallowWrapper {
                         className="col-xs-12 visible-xs text-center"
             >
                         <img
-                                    alt="Get notified"
+                                    alt="notify.alt"
                                     className="img"
                                     src="get-notified.png"
                         />
@@ -559,7 +555,7 @@ ShallowWrapper {
                         <h2
                                     className="title"
                         >
-                                    If you would like to be notified about your order please enter your e-mail address below.
+                                    notify.explanation
                         </h2>
                         <form
                                     onSubmit={undefined}
@@ -571,7 +567,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             name="email"
                                                             onChange={undefined}
-                                                            placeholder="Enter your e-mail address"
+                                                            placeholder="notify.email"
                                                             required={true}
                                                             type="email"
                                                             value=""
@@ -581,7 +577,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             type="submit"
                                                 >
-                                                            Submit
+                                                            generalterms.submit
                                                 </button>
                                                 <h4
                                                             className="message"
@@ -595,7 +591,7 @@ ShallowWrapper {
                         className="col-ms-2 col-sm-5 hidden-xs text-center"
             >
                         <img
-                                    alt="Get notified"
+                                    alt="notify.alt"
                                     className="img"
                                     src="get-notified.png"
                         />
@@ -614,7 +610,7 @@ ShallowWrapper {
                 className="col-xs-12 visible-xs text-center"
 >
                 <img
-                                alt="Get notified"
+                                alt="notify.alt"
                                 className="img"
                                 src="get-notified.png"
                 />
@@ -625,7 +621,7 @@ ShallowWrapper {
                 <h2
                                 className="title"
                 >
-                                If you would like to be notified about your order please enter your e-mail address below.
+                                notify.explanation
                 </h2>
                 <form
                                 onSubmit={undefined}
@@ -637,7 +633,7 @@ ShallowWrapper {
                                                                 disabled={undefined}
                                                                 name="email"
                                                                 onChange={undefined}
-                                                                placeholder="Enter your e-mail address"
+                                                                placeholder="notify.email"
                                                                 required={true}
                                                                 type="email"
                                                                 value=""
@@ -647,7 +643,7 @@ ShallowWrapper {
                                                                 disabled={undefined}
                                                                 type="submit"
                                                 >
-                                                                Submit
+                                                                generalterms.submit
                                                 </button>
                                                 <h4
                                                                 className="message"
@@ -661,7 +657,7 @@ ShallowWrapper {
                 className="col-ms-2 col-sm-5 hidden-xs text-center"
 >
                 <img
-                                alt="Get notified"
+                                alt="notify.alt"
                                 className="img"
                                 src="get-notified.png"
                 />
@@ -677,7 +673,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <img
-                  alt="Get notified"
+                  alt="notify.alt"
                   className="img"
                   src="get-notified.png"
 />,
@@ -689,7 +685,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "alt": "Get notified",
+                  "alt": "notify.alt",
                   "className": "img",
                   "src": "get-notified.png",
                 },
@@ -708,7 +704,7 @@ ShallowWrapper {
                   <h2
                     className="title"
 >
-                    If you would like to be notified about your order please enter your e-mail address below.
+                    notify.explanation
 </h2>,
                   <form
                     onSubmit={undefined}
@@ -720,7 +716,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             name="email"
                                                             onChange={undefined}
-                                                            placeholder="Enter your e-mail address"
+                                                            placeholder="notify.email"
                                                             required={true}
                                                             type="email"
                                                             value=""
@@ -730,7 +726,7 @@ ShallowWrapper {
                                                             disabled={undefined}
                                                             type="submit"
                                         >
-                                                            Submit
+                                                            generalterms.submit
                                         </button>
                                         <h4
                                                             className="message"
@@ -749,11 +745,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "If you would like to be notified about your order please enter your e-mail address below.",
+                    "children": "notify.explanation",
                     "className": "title",
                   },
                   "ref": null,
-                  "rendered": "If you would like to be notified about your order please enter your e-mail address below.",
+                  "rendered": "notify.explanation",
                   "type": "h2",
                 },
                 Object {
@@ -768,7 +764,7 @@ ShallowWrapper {
                                             disabled={undefined}
                                             name="email"
                                             onChange={undefined}
-                                            placeholder="Enter your e-mail address"
+                                            placeholder="notify.email"
                                             required={true}
                                             type="email"
                                             value=""
@@ -778,7 +774,7 @@ ShallowWrapper {
                                             disabled={undefined}
                                             type="submit"
                       >
-                                            Submit
+                                            generalterms.submit
                       </button>
                       <h4
                                             className="message"
@@ -799,7 +795,7 @@ ShallowWrapper {
                           disabled={undefined}
                           name="email"
                           onChange={undefined}
-                          placeholder="Enter your e-mail address"
+                          placeholder="notify.email"
                           required={true}
                           type="email"
                           value=""
@@ -809,7 +805,7 @@ ShallowWrapper {
                           disabled={undefined}
                           type="submit"
 >
-                          Submit
+                          generalterms.submit
 </button>,
                         <h4
                           className="message"
@@ -829,7 +825,7 @@ ShallowWrapper {
                           "disabled": undefined,
                           "name": "email",
                           "onChange": undefined,
-                          "placeholder": "Enter your e-mail address",
+                          "placeholder": "notify.email",
                           "required": true,
                           "type": "email",
                           "value": "",
@@ -843,13 +839,13 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "children": "Submit",
+                          "children": "generalterms.submit",
                           "className": "btn btn-primary btn",
                           "disabled": undefined,
                           "type": "submit",
                         },
                         "ref": null,
-                        "rendered": "Submit",
+                        "rendered": "generalterms.submit",
                         "type": "button",
                       },
                       Object {
@@ -878,7 +874,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <img
-                  alt="Get notified"
+                  alt="notify.alt"
                   className="img"
                   src="get-notified.png"
 />,
@@ -890,7 +886,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "alt": "Get notified",
+                  "alt": "notify.alt",
                   "className": "img",
                   "src": "get-notified.png",
                 },

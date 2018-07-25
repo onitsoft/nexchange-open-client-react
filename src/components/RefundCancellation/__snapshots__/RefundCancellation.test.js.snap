@@ -4,7 +4,11 @@ exports[`RefundCancellation renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RefundCancellation />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -24,26 +28,25 @@ ShallowWrapper {
                 className="col-xs-12"
         >
                 <h2>
-                        Refund Policy
+                        refund.title
                 </h2>
                 <p>
-                        We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+                        refund.1
                 </p>
                 <p>
-                        No partial refunds are available.
+                        refund.2
                 </p>
                 <p>
-                        The maximal refund amount is 100% of the amount quoted at the time of purchase.
+                        refund.3
                 </p>
                 <p>
-                        Get in touch at
+                        refund.4
                          
                         <a
                                 href="mailto:support@n.exchange"
                         >
                                 support@n.exchange
                         </a>
-                         for more information.
                 </p>
         </div>
 </div>,
@@ -59,26 +62,25 @@ ShallowWrapper {
           className="col-xs-12"
 >
           <h2>
-                    Refund Policy
+                    refund.title
           </h2>
           <p>
-                    We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+                    refund.1
           </p>
           <p>
-                    No partial refunds are available.
+                    refund.2
           </p>
           <p>
-                    The maximal refund amount is 100% of the amount quoted at the time of purchase.
+                    refund.3
           </p>
           <p>
-                    Get in touch at
+                    refund.4
                      
                     <a
                               href="mailto:support@n.exchange"
                     >
                               support@n.exchange
                     </a>
-                     for more information.
           </p>
 </div>,
         "className": "row",
@@ -91,26 +93,25 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h2>
-              Refund Policy
+              refund.title
 </h2>,
             <p>
-              We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+              refund.1
 </p>,
             <p>
-              No partial refunds are available.
+              refund.2
 </p>,
             <p>
-              The maximal refund amount is 100% of the amount quoted at the time of purchase.
+              refund.3
 </p>,
             <p>
-              Get in touch at
+              refund.4
                
               <a
                             href="mailto:support@n.exchange"
               >
                             support@n.exchange
               </a>
-               for more information.
 </p>,
           ],
           "className": "col-xs-12",
@@ -122,10 +123,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Refund Policy",
+              "children": "refund.title",
             },
             "ref": null,
-            "rendered": "Refund Policy",
+            "rendered": "refund.title",
             "type": "h2",
           },
           Object {
@@ -133,10 +134,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
+              "children": "refund.1",
             },
             "ref": null,
-            "rendered": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
+            "rendered": "refund.1",
             "type": "p",
           },
           Object {
@@ -144,10 +145,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "No partial refunds are available.",
+              "children": "refund.2",
             },
             "ref": null,
-            "rendered": "No partial refunds are available.",
+            "rendered": "refund.2",
             "type": "p",
           },
           Object {
@@ -155,10 +156,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
+              "children": "refund.3",
             },
             "ref": null,
-            "rendered": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
+            "rendered": "refund.3",
             "type": "p",
           },
           Object {
@@ -167,19 +168,18 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Get in touch at",
+                "refund.4",
                 " ",
                 <a
                   href="mailto:support@n.exchange"
 >
                   support@n.exchange
 </a>,
-                " for more information.",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Get in touch at",
+              "refund.4",
               " ",
               Object {
                 "instance": null,
@@ -193,7 +193,6 @@ ShallowWrapper {
                 "rendered": "support@n.exchange",
                 "type": "a",
               },
-              " for more information.",
             ],
             "type": "p",
           },
@@ -217,26 +216,25 @@ ShallowWrapper {
                     className="col-xs-12"
           >
                     <h2>
-                              Refund Policy
+                              refund.title
                     </h2>
                     <p>
-                              We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+                              refund.1
                     </p>
                     <p>
-                              No partial refunds are available.
+                              refund.2
                     </p>
                     <p>
-                              The maximal refund amount is 100% of the amount quoted at the time of purchase.
+                              refund.3
                     </p>
                     <p>
-                              Get in touch at
+                              refund.4
                                
                               <a
                                         href="mailto:support@n.exchange"
                               >
                                         support@n.exchange
                               </a>
-                               for more information.
                     </p>
           </div>
 </div>,
@@ -252,26 +250,25 @@ ShallowWrapper {
             className="col-xs-12"
 >
             <h2>
-                        Refund Policy
+                        refund.title
             </h2>
             <p>
-                        We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+                        refund.1
             </p>
             <p>
-                        No partial refunds are available.
+                        refund.2
             </p>
             <p>
-                        The maximal refund amount is 100% of the amount quoted at the time of purchase.
+                        refund.3
             </p>
             <p>
-                        Get in touch at
+                        refund.4
                          
                         <a
                                     href="mailto:support@n.exchange"
                         >
                                     support@n.exchange
                         </a>
-                         for more information.
             </p>
 </div>,
           "className": "row",
@@ -284,26 +281,25 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h2>
-                Refund Policy
+                refund.title
 </h2>,
               <p>
-                We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.
+                refund.1
 </p>,
               <p>
-                No partial refunds are available.
+                refund.2
 </p>,
               <p>
-                The maximal refund amount is 100% of the amount quoted at the time of purchase.
+                refund.3
 </p>,
               <p>
-                Get in touch at
+                refund.4
                  
                 <a
                                 href="mailto:support@n.exchange"
                 >
                                 support@n.exchange
                 </a>
-                 for more information.
 </p>,
             ],
             "className": "col-xs-12",
@@ -315,10 +311,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Refund Policy",
+                "children": "refund.title",
               },
               "ref": null,
-              "rendered": "Refund Policy",
+              "rendered": "refund.title",
               "type": "h2",
             },
             Object {
@@ -326,10 +322,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
+                "children": "refund.1",
               },
               "ref": null,
-              "rendered": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
+              "rendered": "refund.1",
               "type": "p",
             },
             Object {
@@ -337,10 +333,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "No partial refunds are available.",
+                "children": "refund.2",
               },
               "ref": null,
-              "rendered": "No partial refunds are available.",
+              "rendered": "refund.2",
               "type": "p",
             },
             Object {
@@ -348,10 +344,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
+                "children": "refund.3",
               },
               "ref": null,
-              "rendered": "The maximal refund amount is 100% of the amount quoted at the time of purchase.",
+              "rendered": "refund.3",
               "type": "p",
             },
             Object {
@@ -360,19 +356,18 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Get in touch at",
+                  "refund.4",
                   " ",
                   <a
                     href="mailto:support@n.exchange"
 >
                     support@n.exchange
 </a>,
-                  " for more information.",
                 ],
               },
               "ref": null,
               "rendered": Array [
-                "Get in touch at",
+                "refund.4",
                 " ",
                 Object {
                   "instance": null,
@@ -386,7 +381,6 @@ ShallowWrapper {
                   "rendered": "support@n.exchange",
                   "type": "a",
                 },
-                " for more information.",
               ],
               "type": "p",
             },

@@ -6,6 +6,7 @@ require('Js/bootstrap.min.js');
 
 describe('OrderExpired', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderExpired />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderExpired />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

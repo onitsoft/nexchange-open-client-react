@@ -4,7 +4,11 @@ exports[`NotFound renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <NotFound />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -22,10 +26,11 @@ ShallowWrapper {
           404
 </h1>,
         <h2>
-          Page not found :(
+          error.notfound
 </h2>,
       ],
       "className": "text-center",
+      "id": "not-found",
     },
     "ref": null,
     "rendered": Array [
@@ -45,10 +50,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Page not found :(",
+          "children": "error.notfound",
         },
         "ref": null,
-        "rendered": "Page not found :(",
+        "rendered": "error.notfound",
         "type": "h2",
       },
     ],
@@ -65,10 +70,11 @@ ShallowWrapper {
             404
 </h1>,
           <h2>
-            Page not found :(
+            error.notfound
 </h2>,
         ],
         "className": "text-center",
+        "id": "not-found",
       },
       "ref": null,
       "rendered": Array [
@@ -88,10 +94,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Page not found :(",
+            "children": "error.notfound",
           },
           "ref": null,
-          "rendered": "Page not found :(",
+          "rendered": "error.notfound",
           "type": "h2",
         },
       ],

@@ -4,7 +4,11 @@ exports[`Footer renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Footer />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -26,21 +30,25 @@ ShallowWrapper {
                 <div
                         className="col-xs-12 col-sm-8 col-md-6"
                 >
-                        <p
-                                className="address"
+                        <Trans
+                                i18nKey="footer.3"
                         >
-                                All rights reserved, YOA LTD 2016-2017,
-                                <br />
-                                England & Wales
-                                 
-                                <a
-                                        href="https://beta.companieshouse.gov.uk/company/10009845"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
+                                <p
+                                        className="address"
                                 >
-                                        registered company No. 10009845
-                                </a>
-                        </p>
+                                        All rights reserved, YOA LTD 2016-2017,
+                                        <br />
+                                        England & Wales
+                                         
+                                        <a
+                                                href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                        >
+                                                registered company No. 10009845
+                                        </a>
+                                </p>
+                        </Trans>
                 </div>
                 <div
                         className="col-xs-12 col-sm-4 col-md-6"
@@ -53,7 +61,7 @@ ShallowWrapper {
                                                 replace={false}
                                                 to="/terms-and-conditions"
                                         >
-                                                Terms and Conditions
+                                                footer.1
                                         </Link>
                                 </li>
                                 <li>
@@ -61,7 +69,7 @@ ShallowWrapper {
                                                 replace={false}
                                                 to="/privacy"
                                         >
-                                                Privacy Policy
+                                                footer.2
                                         </Link>
                                 </li>
                         </ul>
@@ -82,21 +90,25 @@ ShallowWrapper {
           <div
                     className="col-xs-12 col-sm-8 col-md-6"
           >
-                    <p
-                              className="address"
+                    <Trans
+                              i18nKey="footer.3"
                     >
-                              All rights reserved, YOA LTD 2016-2017,
-                              <br />
-                              England & Wales
-                               
-                              <a
-                                        href="https://beta.companieshouse.gov.uk/company/10009845"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
+                              <p
+                                        className="address"
                               >
-                                        registered company No. 10009845
-                              </a>
-                    </p>
+                                        All rights reserved, YOA LTD 2016-2017,
+                                        <br />
+                                        England & Wales
+                                         
+                                        <a
+                                                  href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                  rel="noopener noreferrer"
+                                                  target="_blank"
+                                        >
+                                                  registered company No. 10009845
+                                        </a>
+                              </p>
+                    </Trans>
           </div>
           <div
                     className="col-xs-12 col-sm-4 col-md-6"
@@ -109,7 +121,7 @@ ShallowWrapper {
                                                   replace={false}
                                                   to="/terms-and-conditions"
                                         >
-                                                  Terms and Conditions
+                                                  footer.1
                                         </Link>
                               </li>
                               <li>
@@ -117,7 +129,7 @@ ShallowWrapper {
                                                   replace={false}
                                                   to="/privacy"
                                         >
-                                                  Privacy Policy
+                                                  footer.2
                                         </Link>
                               </li>
                     </ul>
@@ -135,21 +147,25 @@ ShallowWrapper {
             <div
               className="col-xs-12 col-sm-8 col-md-6"
 >
-              <p
-                            className="address"
+              <Trans
+                            i18nKey="footer.3"
               >
-                            All rights reserved, YOA LTD 2016-2017,
-                            <br />
-                            England & Wales
-                             
-                            <a
-                                          href="https://beta.companieshouse.gov.uk/company/10009845"
-                                          rel="noopener noreferrer"
-                                          target="_blank"
+                            <p
+                                          className="address"
                             >
-                                          registered company No. 10009845
-                            </a>
-              </p>
+                                          All rights reserved, YOA LTD 2016-2017,
+                                          <br />
+                                          England & Wales
+                                           
+                                          <a
+                                                        href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                        rel="noopener noreferrer"
+                                                        target="_blank"
+                                          >
+                                                        registered company No. 10009845
+                                          </a>
+                            </p>
+              </Trans>
 </div>,
             <div
               className="col-xs-12 col-sm-4 col-md-6"
@@ -162,7 +178,7 @@ ShallowWrapper {
                                                         replace={false}
                                                         to="/terms-and-conditions"
                                           >
-                                                        Terms and Conditions
+                                                        footer.1
                                           </Link>
                             </li>
                             <li>
@@ -170,7 +186,7 @@ ShallowWrapper {
                                                         replace={false}
                                                         to="/privacy"
                                           >
-                                                        Privacy Policy
+                                                        footer.2
                                           </Link>
                             </li>
               </ul>
@@ -185,323 +201,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <p
-                className="address"
->
-                All rights reserved, YOA LTD 2016-2017,
-                <br />
-                England & Wales
-                 
-                <a
-                                href="https://beta.companieshouse.gov.uk/company/10009845"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                >
-                                registered company No. 10009845
-                </a>
-</p>,
-              "className": "col-xs-12 col-sm-8 col-md-6",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "All rights reserved, YOA LTD 2016-2017,",
-                  <br />,
-                  "England & Wales",
-                  " ",
-                  <a
-                    href="https://beta.companieshouse.gov.uk/company/10009845"
-                    rel="noopener noreferrer"
-                    target="_blank"
->
-                    registered company No. 10009845
-</a>,
-                ],
-                "className": "address",
-              },
-              "ref": null,
-              "rendered": Array [
-                "All rights reserved, YOA LTD 2016-2017,",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {},
-                  "ref": null,
-                  "rendered": null,
-                  "type": "br",
-                },
-                "England & Wales",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "registered company No. 10009845",
-                    "href": "https://beta.companieshouse.gov.uk/company/10009845",
-                    "rel": "noopener noreferrer",
-                    "target": "_blank",
-                  },
-                  "ref": null,
-                  "rendered": "registered company No. 10009845",
-                  "type": "a",
-                },
-              ],
-              "type": "p",
-            },
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <ul
-                className="links"
->
-                <li>
-                                <Link
-                                                replace={false}
-                                                to="/terms-and-conditions"
-                                >
-                                                Terms and Conditions
-                                </Link>
-                </li>
-                <li>
-                                <Link
-                                                replace={false}
-                                                to="/privacy"
-                                >
-                                                Privacy Policy
-                                </Link>
-                </li>
-</ul>,
-              "className": "col-xs-12 col-sm-4 col-md-6",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <li>
-                    <Link
-                                        replace={false}
-                                        to="/terms-and-conditions"
-                    >
-                                        Terms and Conditions
-                    </Link>
-</li>,
-                  <li>
-                    <Link
-                                        replace={false}
-                                        to="/privacy"
-                    >
-                                        Privacy Policy
-                    </Link>
-</li>,
-                ],
-                "className": "links",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Link
-                      replace={false}
-                      to="/terms-and-conditions"
->
-                      Terms and Conditions
-</Link>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Terms and Conditions",
-                      "replace": false,
-                      "to": "/terms-and-conditions",
-                    },
-                    "ref": null,
-                    "rendered": "Terms and Conditions",
-                    "type": [Function],
-                  },
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <Link
-                      replace={false}
-                      to="/privacy"
->
-                      Privacy Policy
-</Link>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Privacy Policy",
-                      "replace": false,
-                      "to": "/privacy",
-                    },
-                    "ref": null,
-                    "rendered": "Privacy Policy",
-                    "type": [Function],
-                  },
-                  "type": "li",
-                },
-              ],
-              "type": "ul",
-            },
-            "type": "div",
-          },
-        ],
-        "type": "div",
-      },
-      "type": "div",
-    },
-    "type": "footer",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="container"
->
-          <div
-                    className="row"
-          >
-                    <div
-                              className="col-xs-12 col-sm-8 col-md-6"
-                    >
-                              <p
-                                        className="address"
-                              >
-                                        All rights reserved, YOA LTD 2016-2017,
-                                        <br />
-                                        England & Wales
-                                         
-                                        <a
-                                                  href="https://beta.companieshouse.gov.uk/company/10009845"
-                                                  rel="noopener noreferrer"
-                                                  target="_blank"
-                                        >
-                                                  registered company No. 10009845
-                                        </a>
-                              </p>
-                    </div>
-                    <div
-                              className="col-xs-12 col-sm-4 col-md-6"
-                    >
-                              <ul
-                                        className="links"
-                              >
-                                        <li>
-                                                  <Link
-                                                            replace={false}
-                                                            to="/terms-and-conditions"
-                                                  >
-                                                            Terms and Conditions
-                                                  </Link>
-                                        </li>
-                                        <li>
-                                                  <Link
-                                                            replace={false}
-                                                            to="/privacy"
-                                                  >
-                                                            Privacy Policy
-                                                  </Link>
-                                        </li>
-                              </ul>
-                    </div>
-          </div>
-</div>,
-        "className": "container",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="row"
->
-            <div
-                        className="col-xs-12 col-sm-8 col-md-6"
-            >
-                        <p
-                                    className="address"
-                        >
-                                    All rights reserved, YOA LTD 2016-2017,
-                                    <br />
-                                    England & Wales
-                                     
-                                    <a
-                                                href="https://beta.companieshouse.gov.uk/company/10009845"
-                                                rel="noopener noreferrer"
-                                                target="_blank"
-                                    >
-                                                registered company No. 10009845
-                                    </a>
-                        </p>
-            </div>
-            <div
-                        className="col-xs-12 col-sm-4 col-md-6"
-            >
-                        <ul
-                                    className="links"
-                        >
-                                    <li>
-                                                <Link
-                                                            replace={false}
-                                                            to="/terms-and-conditions"
-                                                >
-                                                            Terms and Conditions
-                                                </Link>
-                                    </li>
-                                    <li>
-                                                <Link
-                                                            replace={false}
-                                                            to="/privacy"
-                                                >
-                                                            Privacy Policy
-                                                </Link>
-                                    </li>
-                        </ul>
-            </div>
-</div>,
-          "className": "container",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <div
-                className="col-xs-12 col-sm-8 col-md-6"
+              "children": <Trans
+                i18nKey="footer.3"
 >
                 <p
                                 className="address"
@@ -518,40 +219,14 @@ ShallowWrapper {
                                                 registered company No. 10009845
                                 </a>
                 </p>
-</div>,
-              <div
-                className="col-xs-12 col-sm-4 col-md-6"
->
-                <ul
-                                className="links"
-                >
-                                <li>
-                                                <Link
-                                                                replace={false}
-                                                                to="/terms-and-conditions"
-                                                >
-                                                                Terms and Conditions
-                                                </Link>
-                                </li>
-                                <li>
-                                                <Link
-                                                                replace={false}
-                                                                to="/privacy"
-                                                >
-                                                                Privacy Policy
-                                                </Link>
-                                </li>
-                </ul>
-</div>,
-            ],
-            "className": "row",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
+</Trans>,
+              "className": "col-xs-12 col-sm-8 col-md-6",
+            },
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
                 "children": <p
                   className="address"
@@ -568,7 +243,7 @@ ShallowWrapper {
                                     registered company No. 10009845
                   </a>
 </p>,
-                "className": "col-xs-12 col-sm-8 col-md-6",
+                "i18nKey": "footer.3",
               },
               "ref": null,
               "rendered": Object {
@@ -622,6 +297,417 @@ ShallowWrapper {
                 ],
                 "type": "p",
               },
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="links"
+>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/terms-and-conditions"
+                                >
+                                                footer.1
+                                </Link>
+                </li>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/privacy"
+                                >
+                                                footer.2
+                                </Link>
+                </li>
+</ul>,
+              "className": "col-xs-12 col-sm-4 col-md-6",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/terms-and-conditions"
+                    >
+                                        footer.1
+                    </Link>
+</li>,
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/privacy"
+                    >
+                                        footer.2
+                    </Link>
+</li>,
+                ],
+                "className": "links",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/terms-and-conditions"
+>
+                      footer.1
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "footer.1",
+                      "replace": false,
+                      "to": "/terms-and-conditions",
+                    },
+                    "ref": null,
+                    "rendered": "footer.1",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/privacy"
+>
+                      footer.2
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "footer.2",
+                      "replace": false,
+                      "to": "/privacy",
+                    },
+                    "ref": null,
+                    "rendered": "footer.2",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "footer",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+>
+          <div
+                    className="row"
+          >
+                    <div
+                              className="col-xs-12 col-sm-8 col-md-6"
+                    >
+                              <Trans
+                                        i18nKey="footer.3"
+                              >
+                                        <p
+                                                  className="address"
+                                        >
+                                                  All rights reserved, YOA LTD 2016-2017,
+                                                  <br />
+                                                  England & Wales
+                                                   
+                                                  <a
+                                                            href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                            rel="noopener noreferrer"
+                                                            target="_blank"
+                                                  >
+                                                            registered company No. 10009845
+                                                  </a>
+                                        </p>
+                              </Trans>
+                    </div>
+                    <div
+                              className="col-xs-12 col-sm-4 col-md-6"
+                    >
+                              <ul
+                                        className="links"
+                              >
+                                        <li>
+                                                  <Link
+                                                            replace={false}
+                                                            to="/terms-and-conditions"
+                                                  >
+                                                            footer.1
+                                                  </Link>
+                                        </li>
+                                        <li>
+                                                  <Link
+                                                            replace={false}
+                                                            to="/privacy"
+                                                  >
+                                                            footer.2
+                                                  </Link>
+                                        </li>
+                              </ul>
+                    </div>
+          </div>
+</div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row"
+>
+            <div
+                        className="col-xs-12 col-sm-8 col-md-6"
+            >
+                        <Trans
+                                    i18nKey="footer.3"
+                        >
+                                    <p
+                                                className="address"
+                                    >
+                                                All rights reserved, YOA LTD 2016-2017,
+                                                <br />
+                                                England & Wales
+                                                 
+                                                <a
+                                                            href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                            rel="noopener noreferrer"
+                                                            target="_blank"
+                                                >
+                                                            registered company No. 10009845
+                                                </a>
+                                    </p>
+                        </Trans>
+            </div>
+            <div
+                        className="col-xs-12 col-sm-4 col-md-6"
+            >
+                        <ul
+                                    className="links"
+                        >
+                                    <li>
+                                                <Link
+                                                            replace={false}
+                                                            to="/terms-and-conditions"
+                                                >
+                                                            footer.1
+                                                </Link>
+                                    </li>
+                                    <li>
+                                                <Link
+                                                            replace={false}
+                                                            to="/privacy"
+                                                >
+                                                            footer.2
+                                                </Link>
+                                    </li>
+                        </ul>
+            </div>
+</div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-xs-12 col-sm-8 col-md-6"
+>
+                <Trans
+                                i18nKey="footer.3"
+                >
+                                <p
+                                                className="address"
+                                >
+                                                All rights reserved, YOA LTD 2016-2017,
+                                                <br />
+                                                England & Wales
+                                                 
+                                                <a
+                                                                href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                                rel="noopener noreferrer"
+                                                                target="_blank"
+                                                >
+                                                                registered company No. 10009845
+                                                </a>
+                                </p>
+                </Trans>
+</div>,
+              <div
+                className="col-xs-12 col-sm-4 col-md-6"
+>
+                <ul
+                                className="links"
+                >
+                                <li>
+                                                <Link
+                                                                replace={false}
+                                                                to="/terms-and-conditions"
+                                                >
+                                                                footer.1
+                                                </Link>
+                                </li>
+                                <li>
+                                                <Link
+                                                                replace={false}
+                                                                to="/privacy"
+                                                >
+                                                                footer.2
+                                                </Link>
+                                </li>
+                </ul>
+</div>,
+            ],
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Trans
+                  i18nKey="footer.3"
+>
+                  <p
+                                    className="address"
+                  >
+                                    All rights reserved, YOA LTD 2016-2017,
+                                    <br />
+                                    England & Wales
+                                     
+                                    <a
+                                                      href="https://beta.companieshouse.gov.uk/company/10009845"
+                                                      rel="noopener noreferrer"
+                                                      target="_blank"
+                                    >
+                                                      registered company No. 10009845
+                                    </a>
+                  </p>
+</Trans>,
+                "className": "col-xs-12 col-sm-8 col-md-6",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <p
+                    className="address"
+>
+                    All rights reserved, YOA LTD 2016-2017,
+                    <br />
+                    England & Wales
+                     
+                    <a
+                                        href="https://beta.companieshouse.gov.uk/company/10009845"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                    >
+                                        registered company No. 10009845
+                    </a>
+</p>,
+                  "i18nKey": "footer.3",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "All rights reserved, YOA LTD 2016-2017,",
+                      <br />,
+                      "England & Wales",
+                      " ",
+                      <a
+                        href="https://beta.companieshouse.gov.uk/company/10009845"
+                        rel="noopener noreferrer"
+                        target="_blank"
+>
+                        registered company No. 10009845
+</a>,
+                    ],
+                    "className": "address",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "All rights reserved, YOA LTD 2016-2017,",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "br",
+                    },
+                    "England & Wales",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "registered company No. 10009845",
+                        "href": "https://beta.companieshouse.gov.uk/company/10009845",
+                        "rel": "noopener noreferrer",
+                        "target": "_blank",
+                      },
+                      "ref": null,
+                      "rendered": "registered company No. 10009845",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "p",
+                },
+                "type": [Function],
+              },
               "type": "div",
             },
             Object {
@@ -637,7 +723,7 @@ ShallowWrapper {
                                                       replace={false}
                                                       to="/terms-and-conditions"
                                     >
-                                                      Terms and Conditions
+                                                      footer.1
                                     </Link>
                   </li>
                   <li>
@@ -645,7 +731,7 @@ ShallowWrapper {
                                                       replace={false}
                                                       to="/privacy"
                                     >
-                                                      Privacy Policy
+                                                      footer.2
                                     </Link>
                   </li>
 </ul>,
@@ -663,7 +749,7 @@ ShallowWrapper {
                                             replace={false}
                                             to="/terms-and-conditions"
                       >
-                                            Terms and Conditions
+                                            footer.1
                       </Link>
 </li>,
                     <li>
@@ -671,7 +757,7 @@ ShallowWrapper {
                                             replace={false}
                                             to="/privacy"
                       >
-                                            Privacy Policy
+                                            footer.2
                       </Link>
 </li>,
                   ],
@@ -688,7 +774,7 @@ ShallowWrapper {
                         replace={false}
                         to="/terms-and-conditions"
 >
-                        Terms and Conditions
+                        footer.1
 </Link>,
                     },
                     "ref": null,
@@ -697,12 +783,12 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "Terms and Conditions",
+                        "children": "footer.1",
                         "replace": false,
                         "to": "/terms-and-conditions",
                       },
                       "ref": null,
-                      "rendered": "Terms and Conditions",
+                      "rendered": "footer.1",
                       "type": [Function],
                     },
                     "type": "li",
@@ -716,7 +802,7 @@ ShallowWrapper {
                         replace={false}
                         to="/privacy"
 >
-                        Privacy Policy
+                        footer.2
 </Link>,
                     },
                     "ref": null,
@@ -725,12 +811,12 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "Privacy Policy",
+                        "children": "footer.2",
                         "replace": false,
                         "to": "/privacy",
                       },
                       "ref": null,
-                      "rendered": "Privacy Policy",
+                      "rendered": "footer.2",
                       "type": [Function],
                     },
                     "type": "li",

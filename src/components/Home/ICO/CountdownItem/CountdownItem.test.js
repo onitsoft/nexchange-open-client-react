@@ -4,6 +4,7 @@ import CountdownItem from './CountdownItem';
 
 describe('CountdownItem', () => {
   it('renders correctly', () => {
-    expect(shallow(<CountdownItem period="days" count="1" />)).toMatchSnapshot();
+    const wrapShallow = shallow(<CountdownItem period="days" count="1" />);
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

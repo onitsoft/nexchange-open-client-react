@@ -1,0 +1,73 @@
+.languagepicker {
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 15px 0 0 0;
+  height: 40px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  vertical-align: top;
+  float: left;
+  border-radius: 5px;
+  z-index: 20;
+  background: #e7e7e7;
+
+  @media (min-width: $screen-sm-min) {
+    width: auto;
+    background: #fff;
+    margin: 0 5px 0 0;
+  }
+}
+
+.languagepicker:hover {
+  height: 81px;
+  /* you need to set the height manually every time you add a new language!
+	* height = (41 * amountOfLanguages) - 1
+	* 40px is the default height of one language selection element, 1px is the offset for border
+	*/
+}
+
+.languagepicker a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+  display: inline-block;
+}
+
+.languagepicker li {
+  display: block;
+  padding: 0px 20px;
+  line-height: 40px;
+  border-top: 1px solid #eee;
+}
+
+.languagepicker li:hover {
+  background-color: #eee;
+}
+
+.languagepicker li:first-child {
+  border: none;
+}
+
+.languagepicker li img {
+  margin: -3px 15px 0px 0px;
+  display: inline-block;
+  width: 20px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-lg-min) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+}
+@media (min-width: $screen-ms-min) {
+}
+@media (min-width: $screen-sm-min) {
+}
+@media (min-width: $screen-md-min) {
+}
+@media (min-width: $screen-lg-min) {
+}

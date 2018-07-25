@@ -4,7 +4,7 @@ import TermsConditions from './TermsConditions';
 
 describe('TermsConditions', () => {
   it('renders correctly', () => {
-    const wrapShallow = shallow(<TermsConditions />);
+    const wrapShallow = shallow(<TermsConditions />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 });

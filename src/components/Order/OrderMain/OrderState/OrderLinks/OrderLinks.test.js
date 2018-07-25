@@ -5,6 +5,7 @@ import order from 'Mocks/order';
 
 describe('OrderLinks', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderLinks txId="123" coin="BTC" order={order} />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderLinks txId="123" coin="BTC" order={order} />).dive();
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

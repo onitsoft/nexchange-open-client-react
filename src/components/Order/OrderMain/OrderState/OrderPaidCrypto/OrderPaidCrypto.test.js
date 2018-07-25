@@ -6,7 +6,10 @@ import orderNoTx from 'Mocks/orderNoTx';
 
 describe('OrderPaidCrypto', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderPaidCrypto order={order} />)).toMatchSnapshot();
-    expect(shallow(<OrderPaidCrypto order={orderNoTx} />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderPaidCrypto order={order} />).dive();
+    const wrapShallowNoTx = shallow(<OrderPaidCrypto order={orderNoTx} />).dive();
+
+    expect(wrapShallow).toMatchSnapshot();
+    expect(wrapShallowNoTx).toMatchSnapshot();
   });
 });

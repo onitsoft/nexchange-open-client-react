@@ -4,7 +4,11 @@ exports[`Header renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -71,7 +75,7 @@ ShallowWrapper {
                                         className="link"
                                         href="/#about"
                                 >
-                                        About
+                                        header.about
                                 </a>
                         </li>
                         <li>
@@ -81,7 +85,7 @@ ShallowWrapper {
                                         href="javascript:void(0)"
                                         onClick={[Function]}
                                 >
-                                        FAQ
+                                        header.faq
                                 </a>
                         </li>
                         <li>
@@ -93,7 +97,7 @@ ShallowWrapper {
                                         rel="noopener noreferrer"
                                         target="_blank"
                                 >
-                                        API Docs
+                                        header.apidocs
                                 </a>
                         </li>
                         <li>
@@ -102,7 +106,7 @@ ShallowWrapper {
                                         data-test="compare-link"
                                         href="/#compare"
                                 >
-                                        Rates
+                                        header.compare
                                 </a>
                         </li>
                         <li>
@@ -112,7 +116,7 @@ ShallowWrapper {
                                         href="javascript:void(0)"
                                         onClick={[Function]}
                                 >
-                                        Support
+                                        header.support
                                 </a>
                         </li>
                         <li
@@ -126,9 +130,10 @@ ShallowWrapper {
                                         rel="noopener noreferrer"
                                         target="_blank"
                                 >
-                                        JOIN OUR ICO
+                                        header.ico
                                 </a>
                         </li>
+                        <LanguagePicker />
                         <li
                                 id="social-mobile"
                         >
@@ -178,11 +183,11 @@ ShallowWrapper {
                                 </a>
                         </li>
                         <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                         >
                                 <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Follow us on Twitter"
+                                        data-original-title="header.twitter"
                                         data-placement="bottom"
                                         href="/twitter"
                                         rel="tooltip"
@@ -196,11 +201,11 @@ ShallowWrapper {
                                 </a>
                         </li>
                         <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                         >
                                 <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Like us on Facebook"
+                                        data-original-title="header.facebook"
                                         data-placement="bottom"
                                         href="/fb"
                                         rel="tooltip"
@@ -214,11 +219,11 @@ ShallowWrapper {
                                 </a>
                         </li>
                         <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                         >
                                 <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Join us on Slack"
+                                        data-original-title="header.slack"
                                         data-placement="bottom"
                                         href="/slack"
                                         rel="tooltip"
@@ -232,11 +237,11 @@ ShallowWrapper {
                                 </a>
                         </li>
                         <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                         >
                                 <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Join us on Telegram"
+                                        data-original-title="header.telegram"
                                         data-placement="bottom"
                                         href="/telegram"
                                         rel="tooltip"
@@ -321,7 +326,7 @@ ShallowWrapper {
                                                 className="link"
                                                 href="/#about"
                                     >
-                                                About
+                                                header.about
                                     </a>
                         </li>
                         <li>
@@ -331,7 +336,7 @@ ShallowWrapper {
                                                 href="javascript:void(0)"
                                                 onClick={[Function]}
                                     >
-                                                FAQ
+                                                header.faq
                                     </a>
                         </li>
                         <li>
@@ -343,7 +348,7 @@ ShallowWrapper {
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                     >
-                                                API Docs
+                                                header.apidocs
                                     </a>
                         </li>
                         <li>
@@ -352,7 +357,7 @@ ShallowWrapper {
                                                 data-test="compare-link"
                                                 href="/#compare"
                                     >
-                                                Rates
+                                                header.compare
                                     </a>
                         </li>
                         <li>
@@ -362,7 +367,7 @@ ShallowWrapper {
                                                 href="javascript:void(0)"
                                                 onClick={[Function]}
                                     >
-                                                Support
+                                                header.support
                                     </a>
                         </li>
                         <li
@@ -376,9 +381,10 @@ ShallowWrapper {
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                     >
-                                                JOIN OUR ICO
+                                                header.ico
                                     </a>
                         </li>
+                        <LanguagePicker />
                         <li
                                     id="social-mobile"
                         >
@@ -428,11 +434,11 @@ ShallowWrapper {
                                     </a>
                         </li>
                         <li
-                                    className="visible-sm visible-md visible-lg social-desktop"
+                                    className="visible-md visible-lg social-desktop"
                         >
                                     <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Follow us on Twitter"
+                                                data-original-title="header.twitter"
                                                 data-placement="bottom"
                                                 href="/twitter"
                                                 rel="tooltip"
@@ -446,11 +452,11 @@ ShallowWrapper {
                                     </a>
                         </li>
                         <li
-                                    className="visible-sm visible-md visible-lg social-desktop"
+                                    className="visible-md visible-lg social-desktop"
                         >
                                     <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Like us on Facebook"
+                                                data-original-title="header.facebook"
                                                 data-placement="bottom"
                                                 href="/fb"
                                                 rel="tooltip"
@@ -464,11 +470,11 @@ ShallowWrapper {
                                     </a>
                         </li>
                         <li
-                                    className="visible-sm visible-md visible-lg social-desktop"
+                                    className="visible-md visible-lg social-desktop"
                         >
                                     <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Join us on Slack"
+                                                data-original-title="header.slack"
                                                 data-placement="bottom"
                                                 href="/slack"
                                                 rel="tooltip"
@@ -482,11 +488,11 @@ ShallowWrapper {
                                     </a>
                         </li>
                         <li
-                                    className="visible-sm visible-md visible-lg social-desktop"
+                                    className="visible-md visible-lg social-desktop"
                         >
                                     <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Join us on Telegram"
+                                                data-original-title="header.telegram"
                                                 data-placement="bottom"
                                                 href="/telegram"
                                                 rel="tooltip"
@@ -700,7 +706,7 @@ ShallowWrapper {
                                           className="link"
                                           href="/#about"
                             >
-                                          About
+                                          header.about
                             </a>
               </li>
               <li>
@@ -710,7 +716,7 @@ ShallowWrapper {
                                           href="javascript:void(0)"
                                           onClick={[Function]}
                             >
-                                          FAQ
+                                          header.faq
                             </a>
               </li>
               <li>
@@ -722,7 +728,7 @@ ShallowWrapper {
                                           rel="noopener noreferrer"
                                           target="_blank"
                             >
-                                          API Docs
+                                          header.apidocs
                             </a>
               </li>
               <li>
@@ -731,7 +737,7 @@ ShallowWrapper {
                                           data-test="compare-link"
                                           href="/#compare"
                             >
-                                          Rates
+                                          header.compare
                             </a>
               </li>
               <li>
@@ -741,7 +747,7 @@ ShallowWrapper {
                                           href="javascript:void(0)"
                                           onClick={[Function]}
                             >
-                                          Support
+                                          header.support
                             </a>
               </li>
               <li
@@ -755,9 +761,10 @@ ShallowWrapper {
                                           rel="noopener noreferrer"
                                           target="_blank"
                             >
-                                          JOIN OUR ICO
+                                          header.ico
                             </a>
               </li>
+              <LanguagePicker />
               <li
                             id="social-mobile"
               >
@@ -807,11 +814,11 @@ ShallowWrapper {
                             </a>
               </li>
               <li
-                            className="visible-sm visible-md visible-lg social-desktop"
+                            className="visible-md visible-lg social-desktop"
               >
                             <a
                                           className="social btn btn-simple btn-just-icon"
-                                          data-original-title="Follow us on Twitter"
+                                          data-original-title="header.twitter"
                                           data-placement="bottom"
                                           href="/twitter"
                                           rel="tooltip"
@@ -825,11 +832,11 @@ ShallowWrapper {
                             </a>
               </li>
               <li
-                            className="visible-sm visible-md visible-lg social-desktop"
+                            className="visible-md visible-lg social-desktop"
               >
                             <a
                                           className="social btn btn-simple btn-just-icon"
-                                          data-original-title="Like us on Facebook"
+                                          data-original-title="header.facebook"
                                           data-placement="bottom"
                                           href="/fb"
                                           rel="tooltip"
@@ -843,11 +850,11 @@ ShallowWrapper {
                             </a>
               </li>
               <li
-                            className="visible-sm visible-md visible-lg social-desktop"
+                            className="visible-md visible-lg social-desktop"
               >
                             <a
                                           className="social btn btn-simple btn-just-icon"
-                                          data-original-title="Join us on Slack"
+                                          data-original-title="header.slack"
                                           data-placement="bottom"
                                           href="/slack"
                                           rel="tooltip"
@@ -861,11 +868,11 @@ ShallowWrapper {
                             </a>
               </li>
               <li
-                            className="visible-sm visible-md visible-lg social-desktop"
+                            className="visible-md visible-lg social-desktop"
               >
                             <a
                                           className="social btn btn-simple btn-just-icon"
-                                          data-original-title="Join us on Telegram"
+                                          data-original-title="header.telegram"
                                           data-placement="bottom"
                                           href="/telegram"
                                           rel="tooltip"
@@ -894,7 +901,7 @@ ShallowWrapper {
                                     className="link"
                                     href="/#about"
                   >
-                                    About
+                                    header.about
                   </a>
 </li>,
                 <li>
@@ -904,7 +911,7 @@ ShallowWrapper {
                                     href="javascript:void(0)"
                                     onClick={[Function]}
                   >
-                                    FAQ
+                                    header.faq
                   </a>
 </li>,
                 <li>
@@ -916,7 +923,7 @@ ShallowWrapper {
                                     rel="noopener noreferrer"
                                     target="_blank"
                   >
-                                    API Docs
+                                    header.apidocs
                   </a>
 </li>,
                 <li>
@@ -925,7 +932,7 @@ ShallowWrapper {
                                     data-test="compare-link"
                                     href="/#compare"
                   >
-                                    Rates
+                                    header.compare
                   </a>
 </li>,
                 <li>
@@ -935,7 +942,7 @@ ShallowWrapper {
                                     href="javascript:void(0)"
                                     onClick={[Function]}
                   >
-                                    Support
+                                    header.support
                   </a>
 </li>,
                 <li
@@ -949,9 +956,10 @@ ShallowWrapper {
                                     rel="noopener noreferrer"
                                     target="_blank"
                   >
-                                    JOIN OUR ICO
+                                    header.ico
                   </a>
 </li>,
+                <LanguagePicker />,
                 <li
                   id="social-mobile"
 >
@@ -1001,11 +1009,11 @@ ShallowWrapper {
                   </a>
 </li>,
                 <li
-                  className="visible-sm visible-md visible-lg social-desktop"
+                  className="visible-md visible-lg social-desktop"
 >
                   <a
                                     className="social btn btn-simple btn-just-icon"
-                                    data-original-title="Follow us on Twitter"
+                                    data-original-title="header.twitter"
                                     data-placement="bottom"
                                     href="/twitter"
                                     rel="tooltip"
@@ -1019,11 +1027,11 @@ ShallowWrapper {
                   </a>
 </li>,
                 <li
-                  className="visible-sm visible-md visible-lg social-desktop"
+                  className="visible-md visible-lg social-desktop"
 >
                   <a
                                     className="social btn btn-simple btn-just-icon"
-                                    data-original-title="Like us on Facebook"
+                                    data-original-title="header.facebook"
                                     data-placement="bottom"
                                     href="/fb"
                                     rel="tooltip"
@@ -1037,11 +1045,11 @@ ShallowWrapper {
                   </a>
 </li>,
                 <li
-                  className="visible-sm visible-md visible-lg social-desktop"
+                  className="visible-md visible-lg social-desktop"
 >
                   <a
                                     className="social btn btn-simple btn-just-icon"
-                                    data-original-title="Join us on Slack"
+                                    data-original-title="header.slack"
                                     data-placement="bottom"
                                     href="/slack"
                                     rel="tooltip"
@@ -1055,11 +1063,11 @@ ShallowWrapper {
                   </a>
 </li>,
                 <li
-                  className="visible-sm visible-md visible-lg social-desktop"
+                  className="visible-md visible-lg social-desktop"
 >
                   <a
                                     className="social btn btn-simple btn-just-icon"
-                                    data-original-title="Join us on Telegram"
+                                    data-original-title="header.telegram"
                                     data-placement="bottom"
                                     href="/telegram"
                                     rel="tooltip"
@@ -1086,7 +1094,7 @@ ShallowWrapper {
                     className="link"
                     href="/#about"
 >
-                    About
+                    header.about
 </a>,
                 },
                 "ref": null,
@@ -1095,12 +1103,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "About",
+                    "children": "header.about",
                     "className": "link",
                     "href": "/#about",
                   },
                   "ref": null,
-                  "rendered": "About",
+                  "rendered": "header.about",
                   "type": "a",
                 },
                 "type": "li",
@@ -1116,7 +1124,7 @@ ShallowWrapper {
                     href="javascript:void(0)"
                     onClick={[Function]}
 >
-                    FAQ
+                    header.faq
 </a>,
                 },
                 "ref": null,
@@ -1125,14 +1133,14 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "FAQ",
+                    "children": "header.faq",
                     "className": "link",
                     "data-test": "faq-btn",
                     "href": "javascript:void(0)",
                     "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "FAQ",
+                  "rendered": "header.faq",
                   "type": "a",
                 },
                 "type": "li",
@@ -1150,7 +1158,7 @@ ShallowWrapper {
                     rel="noopener noreferrer"
                     target="_blank"
 >
-                    API Docs
+                    header.apidocs
 </a>,
                 },
                 "ref": null,
@@ -1159,7 +1167,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "API Docs",
+                    "children": "header.apidocs",
                     "className": "link hidden-sm",
                     "data-test": "api-link",
                     "href": "http://docs.nexchange2.apiary.io/",
@@ -1168,7 +1176,7 @@ ShallowWrapper {
                     "target": "_blank",
                   },
                   "ref": null,
-                  "rendered": "API Docs",
+                  "rendered": "header.apidocs",
                   "type": "a",
                 },
                 "type": "li",
@@ -1183,7 +1191,7 @@ ShallowWrapper {
                     data-test="compare-link"
                     href="/#compare"
 >
-                    Rates
+                    header.compare
 </a>,
                 },
                 "ref": null,
@@ -1192,13 +1200,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Rates",
+                    "children": "header.compare",
                     "className": "link",
                     "data-test": "compare-link",
                     "href": "/#compare",
                   },
                   "ref": null,
-                  "rendered": "Rates",
+                  "rendered": "header.compare",
                   "type": "a",
                 },
                 "type": "li",
@@ -1214,7 +1222,7 @@ ShallowWrapper {
                     href="javascript:void(0)"
                     onClick={[Function]}
 >
-                    Support
+                    header.support
 </a>,
                 },
                 "ref": null,
@@ -1223,14 +1231,14 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Support",
+                    "children": "header.support",
                     "className": "link",
                     "data-test": "support-btn",
                     "href": "javascript:void(0)",
                     "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "Support",
+                  "rendered": "header.support",
                   "type": "a",
                 },
                 "type": "li",
@@ -1248,7 +1256,7 @@ ShallowWrapper {
                     rel="noopener noreferrer"
                     target="_blank"
 >
-                    JOIN OUR ICO
+                    header.ico
 </a>,
                   "className": "ico-link",
                 },
@@ -1258,7 +1266,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "JOIN OUR ICO",
+                    "children": "header.ico",
                     "className": "btn btn btn-block btn-primary",
                     "data-test": "ico-link",
                     "href": "https://n.exchange/ico",
@@ -1267,10 +1275,19 @@ ShallowWrapper {
                     "target": "_blank",
                   },
                   "ref": null,
-                  "rendered": "JOIN OUR ICO",
+                  "rendered": "header.ico",
                   "type": "a",
                 },
                 "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -1453,7 +1470,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="Follow us on Twitter"
+                    data-original-title="header.twitter"
                     data-placement="bottom"
                     href="/twitter"
                     rel="tooltip"
@@ -1465,7 +1482,7 @@ ShallowWrapper {
                                         className="fab fa-twitter"
                     />
 </a>,
-                  "className": "visible-sm visible-md visible-lg social-desktop",
+                  "className": "visible-md visible-lg social-desktop",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -1478,7 +1495,7 @@ ShallowWrapper {
                       className="fab fa-twitter"
 />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "Follow us on Twitter",
+                    "data-original-title": "header.twitter",
                     "data-placement": "bottom",
                     "href": "/twitter",
                     "rel": "tooltip",
@@ -1509,7 +1526,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="Like us on Facebook"
+                    data-original-title="header.facebook"
                     data-placement="bottom"
                     href="/fb"
                     rel="tooltip"
@@ -1521,7 +1538,7 @@ ShallowWrapper {
                                         className="fab fa-facebook-f"
                     />
 </a>,
-                  "className": "visible-sm visible-md visible-lg social-desktop",
+                  "className": "visible-md visible-lg social-desktop",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -1534,7 +1551,7 @@ ShallowWrapper {
                       className="fab fa-facebook-f"
 />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "Like us on Facebook",
+                    "data-original-title": "header.facebook",
                     "data-placement": "bottom",
                     "href": "/fb",
                     "rel": "tooltip",
@@ -1565,7 +1582,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="Join us on Slack"
+                    data-original-title="header.slack"
                     data-placement="bottom"
                     href="/slack"
                     rel="tooltip"
@@ -1577,7 +1594,7 @@ ShallowWrapper {
                                         className="fab fa-slack-hash"
                     />
 </a>,
-                  "className": "visible-sm visible-md visible-lg social-desktop",
+                  "className": "visible-md visible-lg social-desktop",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -1590,7 +1607,7 @@ ShallowWrapper {
                       className="fab fa-slack-hash"
 />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "Join us on Slack",
+                    "data-original-title": "header.slack",
                     "data-placement": "bottom",
                     "href": "/slack",
                     "rel": "tooltip",
@@ -1621,7 +1638,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="Join us on Telegram"
+                    data-original-title="header.telegram"
                     data-placement="bottom"
                     href="/telegram"
                     rel="tooltip"
@@ -1633,7 +1650,7 @@ ShallowWrapper {
                                         className="fab fa-telegram"
                     />
 </a>,
-                  "className": "visible-sm visible-md visible-lg social-desktop",
+                  "className": "visible-md visible-lg social-desktop",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -1646,7 +1663,7 @@ ShallowWrapper {
                       className="fab fa-telegram"
 />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "Join us on Telegram",
+                    "data-original-title": "header.telegram",
                     "data-placement": "bottom",
                     "href": "/telegram",
                     "rel": "tooltip",
@@ -1764,7 +1781,7 @@ ShallowWrapper {
                                                   className="link"
                                                   href="/#about"
                                         >
-                                                  About
+                                                  header.about
                                         </a>
                               </li>
                               <li>
@@ -1774,7 +1791,7 @@ ShallowWrapper {
                                                   href="javascript:void(0)"
                                                   onClick={[Function]}
                                         >
-                                                  FAQ
+                                                  header.faq
                                         </a>
                               </li>
                               <li>
@@ -1786,7 +1803,7 @@ ShallowWrapper {
                                                   rel="noopener noreferrer"
                                                   target="_blank"
                                         >
-                                                  API Docs
+                                                  header.apidocs
                                         </a>
                               </li>
                               <li>
@@ -1795,7 +1812,7 @@ ShallowWrapper {
                                                   data-test="compare-link"
                                                   href="/#compare"
                                         >
-                                                  Rates
+                                                  header.compare
                                         </a>
                               </li>
                               <li>
@@ -1805,7 +1822,7 @@ ShallowWrapper {
                                                   href="javascript:void(0)"
                                                   onClick={[Function]}
                                         >
-                                                  Support
+                                                  header.support
                                         </a>
                               </li>
                               <li
@@ -1819,9 +1836,10 @@ ShallowWrapper {
                                                   rel="noopener noreferrer"
                                                   target="_blank"
                                         >
-                                                  JOIN OUR ICO
+                                                  header.ico
                                         </a>
                               </li>
+                              <LanguagePicker />
                               <li
                                         id="social-mobile"
                               >
@@ -1871,11 +1889,11 @@ ShallowWrapper {
                                         </a>
                               </li>
                               <li
-                                        className="visible-sm visible-md visible-lg social-desktop"
+                                        className="visible-md visible-lg social-desktop"
                               >
                                         <a
                                                   className="social btn btn-simple btn-just-icon"
-                                                  data-original-title="Follow us on Twitter"
+                                                  data-original-title="header.twitter"
                                                   data-placement="bottom"
                                                   href="/twitter"
                                                   rel="tooltip"
@@ -1889,11 +1907,11 @@ ShallowWrapper {
                                         </a>
                               </li>
                               <li
-                                        className="visible-sm visible-md visible-lg social-desktop"
+                                        className="visible-md visible-lg social-desktop"
                               >
                                         <a
                                                   className="social btn btn-simple btn-just-icon"
-                                                  data-original-title="Like us on Facebook"
+                                                  data-original-title="header.facebook"
                                                   data-placement="bottom"
                                                   href="/fb"
                                                   rel="tooltip"
@@ -1907,11 +1925,11 @@ ShallowWrapper {
                                         </a>
                               </li>
                               <li
-                                        className="visible-sm visible-md visible-lg social-desktop"
+                                        className="visible-md visible-lg social-desktop"
                               >
                                         <a
                                                   className="social btn btn-simple btn-just-icon"
-                                                  data-original-title="Join us on Slack"
+                                                  data-original-title="header.slack"
                                                   data-placement="bottom"
                                                   href="/slack"
                                                   rel="tooltip"
@@ -1925,11 +1943,11 @@ ShallowWrapper {
                                         </a>
                               </li>
                               <li
-                                        className="visible-sm visible-md visible-lg social-desktop"
+                                        className="visible-md visible-lg social-desktop"
                               >
                                         <a
                                                   className="social btn btn-simple btn-just-icon"
-                                                  data-original-title="Join us on Telegram"
+                                                  data-original-title="header.telegram"
                                                   data-placement="bottom"
                                                   href="/telegram"
                                                   rel="tooltip"
@@ -2014,7 +2032,7 @@ ShallowWrapper {
                                                         className="link"
                                                         href="/#about"
                                           >
-                                                        About
+                                                        header.about
                                           </a>
                             </li>
                             <li>
@@ -2024,7 +2042,7 @@ ShallowWrapper {
                                                         href="javascript:void(0)"
                                                         onClick={[Function]}
                                           >
-                                                        FAQ
+                                                        header.faq
                                           </a>
                             </li>
                             <li>
@@ -2036,7 +2054,7 @@ ShallowWrapper {
                                                         rel="noopener noreferrer"
                                                         target="_blank"
                                           >
-                                                        API Docs
+                                                        header.apidocs
                                           </a>
                             </li>
                             <li>
@@ -2045,7 +2063,7 @@ ShallowWrapper {
                                                         data-test="compare-link"
                                                         href="/#compare"
                                           >
-                                                        Rates
+                                                        header.compare
                                           </a>
                             </li>
                             <li>
@@ -2055,7 +2073,7 @@ ShallowWrapper {
                                                         href="javascript:void(0)"
                                                         onClick={[Function]}
                                           >
-                                                        Support
+                                                        header.support
                                           </a>
                             </li>
                             <li
@@ -2069,9 +2087,10 @@ ShallowWrapper {
                                                         rel="noopener noreferrer"
                                                         target="_blank"
                                           >
-                                                        JOIN OUR ICO
+                                                        header.ico
                                           </a>
                             </li>
+                            <LanguagePicker />
                             <li
                                           id="social-mobile"
                             >
@@ -2121,11 +2140,11 @@ ShallowWrapper {
                                           </a>
                             </li>
                             <li
-                                          className="visible-sm visible-md visible-lg social-desktop"
+                                          className="visible-md visible-lg social-desktop"
                             >
                                           <a
                                                         className="social btn btn-simple btn-just-icon"
-                                                        data-original-title="Follow us on Twitter"
+                                                        data-original-title="header.twitter"
                                                         data-placement="bottom"
                                                         href="/twitter"
                                                         rel="tooltip"
@@ -2139,11 +2158,11 @@ ShallowWrapper {
                                           </a>
                             </li>
                             <li
-                                          className="visible-sm visible-md visible-lg social-desktop"
+                                          className="visible-md visible-lg social-desktop"
                             >
                                           <a
                                                         className="social btn btn-simple btn-just-icon"
-                                                        data-original-title="Like us on Facebook"
+                                                        data-original-title="header.facebook"
                                                         data-placement="bottom"
                                                         href="/fb"
                                                         rel="tooltip"
@@ -2157,11 +2176,11 @@ ShallowWrapper {
                                           </a>
                             </li>
                             <li
-                                          className="visible-sm visible-md visible-lg social-desktop"
+                                          className="visible-md visible-lg social-desktop"
                             >
                                           <a
                                                         className="social btn btn-simple btn-just-icon"
-                                                        data-original-title="Join us on Slack"
+                                                        data-original-title="header.slack"
                                                         data-placement="bottom"
                                                         href="/slack"
                                                         rel="tooltip"
@@ -2175,11 +2194,11 @@ ShallowWrapper {
                                           </a>
                             </li>
                             <li
-                                          className="visible-sm visible-md visible-lg social-desktop"
+                                          className="visible-md visible-lg social-desktop"
                             >
                                           <a
                                                         className="social btn btn-simple btn-just-icon"
-                                                        data-original-title="Join us on Telegram"
+                                                        data-original-title="header.telegram"
                                                         data-placement="bottom"
                                                         href="/telegram"
                                                         rel="tooltip"
@@ -2393,7 +2412,7 @@ ShallowWrapper {
                                                 className="link"
                                                 href="/#about"
                                 >
-                                                About
+                                                header.about
                                 </a>
                 </li>
                 <li>
@@ -2403,7 +2422,7 @@ ShallowWrapper {
                                                 href="javascript:void(0)"
                                                 onClick={[Function]}
                                 >
-                                                FAQ
+                                                header.faq
                                 </a>
                 </li>
                 <li>
@@ -2415,7 +2434,7 @@ ShallowWrapper {
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                 >
-                                                API Docs
+                                                header.apidocs
                                 </a>
                 </li>
                 <li>
@@ -2424,7 +2443,7 @@ ShallowWrapper {
                                                 data-test="compare-link"
                                                 href="/#compare"
                                 >
-                                                Rates
+                                                header.compare
                                 </a>
                 </li>
                 <li>
@@ -2434,7 +2453,7 @@ ShallowWrapper {
                                                 href="javascript:void(0)"
                                                 onClick={[Function]}
                                 >
-                                                Support
+                                                header.support
                                 </a>
                 </li>
                 <li
@@ -2448,9 +2467,10 @@ ShallowWrapper {
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                 >
-                                                JOIN OUR ICO
+                                                header.ico
                                 </a>
                 </li>
+                <LanguagePicker />
                 <li
                                 id="social-mobile"
                 >
@@ -2500,11 +2520,11 @@ ShallowWrapper {
                                 </a>
                 </li>
                 <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                 >
                                 <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Follow us on Twitter"
+                                                data-original-title="header.twitter"
                                                 data-placement="bottom"
                                                 href="/twitter"
                                                 rel="tooltip"
@@ -2518,11 +2538,11 @@ ShallowWrapper {
                                 </a>
                 </li>
                 <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                 >
                                 <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Like us on Facebook"
+                                                data-original-title="header.facebook"
                                                 data-placement="bottom"
                                                 href="/fb"
                                                 rel="tooltip"
@@ -2536,11 +2556,11 @@ ShallowWrapper {
                                 </a>
                 </li>
                 <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                 >
                                 <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Join us on Slack"
+                                                data-original-title="header.slack"
                                                 data-placement="bottom"
                                                 href="/slack"
                                                 rel="tooltip"
@@ -2554,11 +2574,11 @@ ShallowWrapper {
                                 </a>
                 </li>
                 <li
-                                className="visible-sm visible-md visible-lg social-desktop"
+                                className="visible-md visible-lg social-desktop"
                 >
                                 <a
                                                 className="social btn btn-simple btn-just-icon"
-                                                data-original-title="Join us on Telegram"
+                                                data-original-title="header.telegram"
                                                 data-placement="bottom"
                                                 href="/telegram"
                                                 rel="tooltip"
@@ -2587,7 +2607,7 @@ ShallowWrapper {
                                         className="link"
                                         href="/#about"
                     >
-                                        About
+                                        header.about
                     </a>
 </li>,
                   <li>
@@ -2597,7 +2617,7 @@ ShallowWrapper {
                                         href="javascript:void(0)"
                                         onClick={[Function]}
                     >
-                                        FAQ
+                                        header.faq
                     </a>
 </li>,
                   <li>
@@ -2609,7 +2629,7 @@ ShallowWrapper {
                                         rel="noopener noreferrer"
                                         target="_blank"
                     >
-                                        API Docs
+                                        header.apidocs
                     </a>
 </li>,
                   <li>
@@ -2618,7 +2638,7 @@ ShallowWrapper {
                                         data-test="compare-link"
                                         href="/#compare"
                     >
-                                        Rates
+                                        header.compare
                     </a>
 </li>,
                   <li>
@@ -2628,7 +2648,7 @@ ShallowWrapper {
                                         href="javascript:void(0)"
                                         onClick={[Function]}
                     >
-                                        Support
+                                        header.support
                     </a>
 </li>,
                   <li
@@ -2642,9 +2662,10 @@ ShallowWrapper {
                                         rel="noopener noreferrer"
                                         target="_blank"
                     >
-                                        JOIN OUR ICO
+                                        header.ico
                     </a>
 </li>,
+                  <LanguagePicker />,
                   <li
                     id="social-mobile"
 >
@@ -2694,11 +2715,11 @@ ShallowWrapper {
                     </a>
 </li>,
                   <li
-                    className="visible-sm visible-md visible-lg social-desktop"
+                    className="visible-md visible-lg social-desktop"
 >
                     <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Follow us on Twitter"
+                                        data-original-title="header.twitter"
                                         data-placement="bottom"
                                         href="/twitter"
                                         rel="tooltip"
@@ -2712,11 +2733,11 @@ ShallowWrapper {
                     </a>
 </li>,
                   <li
-                    className="visible-sm visible-md visible-lg social-desktop"
+                    className="visible-md visible-lg social-desktop"
 >
                     <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Like us on Facebook"
+                                        data-original-title="header.facebook"
                                         data-placement="bottom"
                                         href="/fb"
                                         rel="tooltip"
@@ -2730,11 +2751,11 @@ ShallowWrapper {
                     </a>
 </li>,
                   <li
-                    className="visible-sm visible-md visible-lg social-desktop"
+                    className="visible-md visible-lg social-desktop"
 >
                     <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Join us on Slack"
+                                        data-original-title="header.slack"
                                         data-placement="bottom"
                                         href="/slack"
                                         rel="tooltip"
@@ -2748,11 +2769,11 @@ ShallowWrapper {
                     </a>
 </li>,
                   <li
-                    className="visible-sm visible-md visible-lg social-desktop"
+                    className="visible-md visible-lg social-desktop"
 >
                     <a
                                         className="social btn btn-simple btn-just-icon"
-                                        data-original-title="Join us on Telegram"
+                                        data-original-title="header.telegram"
                                         data-placement="bottom"
                                         href="/telegram"
                                         rel="tooltip"
@@ -2779,7 +2800,7 @@ ShallowWrapper {
                       className="link"
                       href="/#about"
 >
-                      About
+                      header.about
 </a>,
                   },
                   "ref": null,
@@ -2788,12 +2809,12 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "About",
+                      "children": "header.about",
                       "className": "link",
                       "href": "/#about",
                     },
                     "ref": null,
-                    "rendered": "About",
+                    "rendered": "header.about",
                     "type": "a",
                   },
                   "type": "li",
@@ -2809,7 +2830,7 @@ ShallowWrapper {
                       href="javascript:void(0)"
                       onClick={[Function]}
 >
-                      FAQ
+                      header.faq
 </a>,
                   },
                   "ref": null,
@@ -2818,14 +2839,14 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "FAQ",
+                      "children": "header.faq",
                       "className": "link",
                       "data-test": "faq-btn",
                       "href": "javascript:void(0)",
                       "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "FAQ",
+                    "rendered": "header.faq",
                     "type": "a",
                   },
                   "type": "li",
@@ -2843,7 +2864,7 @@ ShallowWrapper {
                       rel="noopener noreferrer"
                       target="_blank"
 >
-                      API Docs
+                      header.apidocs
 </a>,
                   },
                   "ref": null,
@@ -2852,7 +2873,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "API Docs",
+                      "children": "header.apidocs",
                       "className": "link hidden-sm",
                       "data-test": "api-link",
                       "href": "http://docs.nexchange2.apiary.io/",
@@ -2861,7 +2882,7 @@ ShallowWrapper {
                       "target": "_blank",
                     },
                     "ref": null,
-                    "rendered": "API Docs",
+                    "rendered": "header.apidocs",
                     "type": "a",
                   },
                   "type": "li",
@@ -2876,7 +2897,7 @@ ShallowWrapper {
                       data-test="compare-link"
                       href="/#compare"
 >
-                      Rates
+                      header.compare
 </a>,
                   },
                   "ref": null,
@@ -2885,13 +2906,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Rates",
+                      "children": "header.compare",
                       "className": "link",
                       "data-test": "compare-link",
                       "href": "/#compare",
                     },
                     "ref": null,
-                    "rendered": "Rates",
+                    "rendered": "header.compare",
                     "type": "a",
                   },
                   "type": "li",
@@ -2907,7 +2928,7 @@ ShallowWrapper {
                       href="javascript:void(0)"
                       onClick={[Function]}
 >
-                      Support
+                      header.support
 </a>,
                   },
                   "ref": null,
@@ -2916,14 +2937,14 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Support",
+                      "children": "header.support",
                       "className": "link",
                       "data-test": "support-btn",
                       "href": "javascript:void(0)",
                       "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "Support",
+                    "rendered": "header.support",
                     "type": "a",
                   },
                   "type": "li",
@@ -2941,7 +2962,7 @@ ShallowWrapper {
                       rel="noopener noreferrer"
                       target="_blank"
 >
-                      JOIN OUR ICO
+                      header.ico
 </a>,
                     "className": "ico-link",
                   },
@@ -2951,7 +2972,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "JOIN OUR ICO",
+                      "children": "header.ico",
                       "className": "btn btn btn-block btn-primary",
                       "data-test": "ico-link",
                       "href": "https://n.exchange/ico",
@@ -2960,10 +2981,19 @@ ShallowWrapper {
                       "target": "_blank",
                     },
                     "ref": null,
-                    "rendered": "JOIN OUR ICO",
+                    "rendered": "header.ico",
                     "type": "a",
                   },
                   "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
                 Object {
                   "instance": null,
@@ -3146,7 +3176,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="Follow us on Twitter"
+                      data-original-title="header.twitter"
                       data-placement="bottom"
                       href="/twitter"
                       rel="tooltip"
@@ -3158,7 +3188,7 @@ ShallowWrapper {
                                             className="fab fa-twitter"
                       />
 </a>,
-                    "className": "visible-sm visible-md visible-lg social-desktop",
+                    "className": "visible-md visible-lg social-desktop",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -3171,7 +3201,7 @@ ShallowWrapper {
                         className="fab fa-twitter"
 />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "Follow us on Twitter",
+                      "data-original-title": "header.twitter",
                       "data-placement": "bottom",
                       "href": "/twitter",
                       "rel": "tooltip",
@@ -3202,7 +3232,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="Like us on Facebook"
+                      data-original-title="header.facebook"
                       data-placement="bottom"
                       href="/fb"
                       rel="tooltip"
@@ -3214,7 +3244,7 @@ ShallowWrapper {
                                             className="fab fa-facebook-f"
                       />
 </a>,
-                    "className": "visible-sm visible-md visible-lg social-desktop",
+                    "className": "visible-md visible-lg social-desktop",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -3227,7 +3257,7 @@ ShallowWrapper {
                         className="fab fa-facebook-f"
 />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "Like us on Facebook",
+                      "data-original-title": "header.facebook",
                       "data-placement": "bottom",
                       "href": "/fb",
                       "rel": "tooltip",
@@ -3258,7 +3288,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="Join us on Slack"
+                      data-original-title="header.slack"
                       data-placement="bottom"
                       href="/slack"
                       rel="tooltip"
@@ -3270,7 +3300,7 @@ ShallowWrapper {
                                             className="fab fa-slack-hash"
                       />
 </a>,
-                    "className": "visible-sm visible-md visible-lg social-desktop",
+                    "className": "visible-md visible-lg social-desktop",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -3283,7 +3313,7 @@ ShallowWrapper {
                         className="fab fa-slack-hash"
 />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "Join us on Slack",
+                      "data-original-title": "header.slack",
                       "data-placement": "bottom",
                       "href": "/slack",
                       "rel": "tooltip",
@@ -3314,7 +3344,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="Join us on Telegram"
+                      data-original-title="header.telegram"
                       data-placement="bottom"
                       href="/telegram"
                       rel="tooltip"
@@ -3326,7 +3356,7 @@ ShallowWrapper {
                                             className="fab fa-telegram"
                       />
 </a>,
-                    "className": "visible-sm visible-md visible-lg social-desktop",
+                    "className": "visible-md visible-lg social-desktop",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -3339,7 +3369,7 @@ ShallowWrapper {
                         className="fab fa-telegram"
 />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "Join us on Telegram",
+                      "data-original-title": "header.telegram",
                       "data-placement": "bottom",
                       "href": "/telegram",
                       "rel": "tooltip",

@@ -115,7 +115,7 @@
     padding: 10px;
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-lg-min) {
     padding: 10px 21px;
   }
 }
@@ -136,6 +136,10 @@
     }
 
     @media (min-width: $screen-md-min) {
+      padding: 10px 15px;
+    }
+
+    @media (min-width: $screen-lg-min) {
       padding: 10px 20px;
     }
   }

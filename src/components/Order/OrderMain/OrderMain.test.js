@@ -5,6 +5,7 @@ import order from 'Mocks/order';
 
 describe('OrderMain', () => {
   it('renders correctly', () => {
-    expect(shallow(<OrderMain order={order} />)).toMatchSnapshot();
+    const wrapShallow = shallow(<OrderMain order={order} />);
+    expect(wrapShallow).toMatchSnapshot();
   });
 });

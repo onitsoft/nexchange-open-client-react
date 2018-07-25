@@ -4,7 +4,11 @@ exports[`Testimonials renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Testimonials />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -33,7 +37,7 @@ ShallowWrapper {
                                         <h2
                                                   className="title"
                                         >
-                                                  Testimonials
+                                                  testimonials.title
                                         </h2>
                               </div>
                     </div>
@@ -213,7 +217,7 @@ ShallowWrapper {
                                     <h2
                                                 className="title"
                                     >
-                                                Testimonials
+                                                testimonials.title
                                     </h2>
                         </div>
             </div>
@@ -235,7 +239,7 @@ ShallowWrapper {
                             <h2
                                           className="title"
                             >
-                                          Testimonials
+                                          testimonials.title
                             </h2>
               </div>
 </div>,
@@ -253,7 +257,7 @@ ShallowWrapper {
                 <h2
                                 className="title"
                 >
-                                Testimonials
+                                testimonials.title
                 </h2>
 </div>,
               "className": "row",
@@ -267,7 +271,7 @@ ShallowWrapper {
                 "children": <h2
                   className="title"
 >
-                  Testimonials
+                  testimonials.title
 </h2>,
                 "className": "col-xs-12",
               },
@@ -277,11 +281,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Testimonials",
+                  "children": "testimonials.title",
                   "className": "title",
                 },
                 "ref": null,
-                "rendered": "Testimonials",
+                "rendered": "testimonials.title",
                 "type": "h2",
               },
               "type": "div",
@@ -1760,7 +1764,7 @@ ShallowWrapper {
                                                 <h2
                                                             className="title"
                                                 >
-                                                            Testimonials
+                                                            testimonials.title
                                                 </h2>
                                     </div>
                         </div>
@@ -1940,7 +1944,7 @@ ShallowWrapper {
                                           <h2
                                                         className="title"
                                           >
-                                                        Testimonials
+                                                        testimonials.title
                                           </h2>
                             </div>
               </div>
@@ -1962,7 +1966,7 @@ ShallowWrapper {
                                 <h2
                                                 className="title"
                                 >
-                                                Testimonials
+                                                testimonials.title
                                 </h2>
                 </div>
 </div>,
@@ -1980,7 +1984,7 @@ ShallowWrapper {
                   <h2
                                     className="title"
                   >
-                                    Testimonials
+                                    testimonials.title
                   </h2>
 </div>,
                 "className": "row",
@@ -1994,7 +1998,7 @@ ShallowWrapper {
                   "children": <h2
                     className="title"
 >
-                    Testimonials
+                    testimonials.title
 </h2>,
                   "className": "col-xs-12",
                 },
@@ -2004,11 +2008,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Testimonials",
+                    "children": "testimonials.title",
                     "className": "title",
                   },
                   "ref": null,
-                  "rendered": "Testimonials",
+                  "rendered": "testimonials.title",
                   "type": "h2",
                 },
                 "type": "div",

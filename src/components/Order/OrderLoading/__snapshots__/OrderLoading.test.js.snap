@@ -4,7 +4,11 @@ exports[`OrderLoading renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderLoading />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,7 +22,8 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <h2>
-        Loading...
+        loading
+        ...
 </h2>,
       "className": "text-center",
     },
@@ -28,10 +33,16 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Loading...",
+        "children": Array [
+          "loading",
+          "...",
+        ],
       },
       "ref": null,
-      "rendered": "Loading...",
+      "rendered": Array [
+        "loading",
+        "...",
+      ],
       "type": "h2",
     },
     "type": "div",
@@ -43,7 +54,8 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <h2>
-          Loading...
+          loading
+          ...
 </h2>,
         "className": "text-center",
       },
@@ -53,10 +65,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Loading...",
+          "children": Array [
+            "loading",
+            "...",
+          ],
         },
         "ref": null,
-        "rendered": "Loading...",
+        "rendered": Array [
+          "loading",
+          "...",
+        ],
         "type": "h2",
       },
       "type": "div",

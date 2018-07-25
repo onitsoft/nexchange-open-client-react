@@ -4,7 +4,7 @@ import RefundCancellation from './RefundCancellation';
 
 describe('RefundCancellation', () => {
   it('renders correctly', () => {
-    const wrapShallow = shallow(<RefundCancellation />);
+    const wrapShallow = shallow(<RefundCancellation />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 });

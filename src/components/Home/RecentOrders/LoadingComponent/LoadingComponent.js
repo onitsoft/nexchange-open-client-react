@@ -1,4 +1,5 @@
 import React from 'react';
+import { I18n } from 'react-i18next';
 import styles from './LoadingComponent.scss';
 
 const LoadingComponent = ({ isLoading, error }) => {
@@ -20,7 +21,7 @@ const LoadingComponent = ({ isLoading, error }) => {
     );
   } else if (error) {
     // Handle the error state
-    return <h2>Sorry, there was a problem loading the page :(</h2>;
+    return <I18n ns="translations">{t => <h2>{t('error.loading')}</h2>}</I18n>;
   } else {
     return null;
   }

@@ -4,7 +4,11 @@ exports[`OrderFailure renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OrderFailure />,
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,10 +23,10 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h2>
-          Order Processing Failed
+          order.failure1
 </h2>,
         <h5>
-          There’s been a problem with your order. Please contact support to resolve at
+          order.failure2
            
           <a
                     href="mailto:support@n.exchange"
@@ -43,10 +47,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Order Processing Failed",
+          "children": "order.failure1",
         },
         "ref": null,
-        "rendered": "Order Processing Failed",
+        "rendered": "order.failure1",
         "type": "h2",
       },
       Object {
@@ -55,7 +59,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "There’s been a problem with your order. Please contact support to resolve at",
+            "order.failure2",
             " ",
             <a
               href="mailto:support@n.exchange"
@@ -67,7 +71,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "There’s been a problem with your order. Please contact support to resolve at",
+          "order.failure2",
           " ",
           Object {
             "instance": null,
@@ -110,10 +114,10 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h2>
-            Order Processing Failed
+            order.failure1
 </h2>,
           <h5>
-            There’s been a problem with your order. Please contact support to resolve at
+            order.failure2
              
             <a
                         href="mailto:support@n.exchange"
@@ -134,10 +138,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Order Processing Failed",
+            "children": "order.failure1",
           },
           "ref": null,
-          "rendered": "Order Processing Failed",
+          "rendered": "order.failure1",
           "type": "h2",
         },
         Object {
@@ -146,7 +150,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "There’s been a problem with your order. Please contact support to resolve at",
+              "order.failure2",
               " ",
               <a
                 href="mailto:support@n.exchange"
@@ -158,7 +162,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "There’s been a problem with your order. Please contact support to resolve at",
+            "order.failure2",
             " ",
             Object {
               "instance": null,
