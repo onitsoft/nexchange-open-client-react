@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import thunk from 'redux-thunk';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
@@ -25,8 +25,12 @@ import './css/index.scss';
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+// const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+// const store = createStoreWithMiddleware(reducers);
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancer = composeEnhancers(applyMiddleware(thunk));
+const store = createStore(reducers, enhancer);
 
 setAuthToken();
 crispEmailBinding(store);
