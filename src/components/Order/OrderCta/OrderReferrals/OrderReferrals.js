@@ -157,7 +157,7 @@ class OrderReferrals extends Component {
 
                 <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
                   <h2 className={styles.title}>
-                    <Interpolate i18nKey="generalterms.youraddress" selectedCoin={this.props.order.pair.base.name} />
+                    <Interpolate i18nKey="referral.affiliate2" selectedCoin={this.props.order.pair.base.name} />
                     {/* 
                 =>
                   Earn free <span>selectedCoin</span> directly to your withdrawal address by sharing this unique referral
