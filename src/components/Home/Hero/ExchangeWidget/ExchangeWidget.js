@@ -119,6 +119,12 @@ class ExchangeWidget extends Component {
                   <div className={styles.widget}>
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+
+                    <div className={`col-xs-12 ${styles.minmax}`}>
+                      <p>Min amount: {this.props.price.min}</p>
+                      <p>Max amount: {this.props.price.max}</p>
+                    </div>
+
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
