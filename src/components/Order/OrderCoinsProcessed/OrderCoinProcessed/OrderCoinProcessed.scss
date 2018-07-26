@@ -1,9 +1,17 @@
 .box.box {
-  padding: 22px 0 18px 10px;
+  padding: 25px 0 26px 10px;
   overflow: hidden;
+
+  &.crypto {
+    padding: 14px 0 15px 10px;
+  }
 
   @media (min-width: $screen-lg-min) {
     padding-left: 30px;
+
+    &.crypto {
+      padding-left: 30px;
+    }
   }
 }
 
@@ -87,6 +95,23 @@
   @media (min-width: $screen-lg-min) {
     top: -4px;
     font-size: 40px;
+  }
+}
+
+.box.crypto .coin {
+  top: 10px;
+
+  @media (min-width: $screen-lg-min) {
+    top: 6px;
+  }
+}
+
+.minmax {
+  p {
+    font-size: 11px;
+    color: #9c9c9c;
+    float: left;
+    margin: 6px 30px 0 0;
   }
 }
 

@@ -100,8 +100,12 @@ class OrderCoinProcessed extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
-            <div className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
+          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : ''}`}>
+            <div
+              className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''} ${
+                this.props.type === 'Deposit' && !isFiatOrder(this.props.order) ? styles['crypto'] : ''
+              }`}
+            >
               <div className={`${styles['media-left']}`}>
                 <i className={`${styles.coin} cc ${this.state.coin}`} />
               </div>
@@ -136,6 +140,14 @@ class OrderCoinProcessed extends Component {
                       />
                     )}
                 </div>
+
+                {this.props.type === 'Deposit' &&
+                  !isFiatOrder(this.props.order) && (
+                    <div className={styles.minmax}>
+                      <p>Min amount: 0.084755</p>
+                      <p>Max amount: 20.45587</p>
+                    </div>
+                  )}
               </div>
             </div>
           </div>
