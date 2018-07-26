@@ -112,6 +112,14 @@
     color: #9c9c9c;
     float: left;
     margin: 6px 30px 0 0;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+      margin-right: 15px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
