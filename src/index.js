@@ -34,6 +34,7 @@ const store = createStore(reducers, enhancer);
 
 setAuthToken();
 crispEmailBinding(store);
+require('Utils/bindGa');
 
 ReactDOM.render(
   <Provider store={store}>
