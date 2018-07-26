@@ -166,8 +166,12 @@ class OrderCoinProcessed extends Component {
                 {this.props.type === 'Deposit' &&
                   !isFiatOrder(this.props.order) && (
                     <div className={styles.minmax}>
-                      <p>Min amount: {this.state.min}</p>
-                      <p>Max amount: {this.state.max}</p>
+                      <p>
+                        {t('exchangewidget.min')}: {this.state.min}
+                      </p>
+                      <p>
+                        {t('exchangewidget.max')}: {this.state.max}
+                      </p>
                     </div>
                   )}
               </div>

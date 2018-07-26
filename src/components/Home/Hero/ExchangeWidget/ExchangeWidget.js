@@ -121,8 +121,12 @@ class ExchangeWidget extends Component {
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
                     <div className={`col-xs-12 ${styles.minmax}`}>
-                      <p>Min amount: {this.props.price.min}</p>
-                      <p>Max amount: {this.props.price.max}</p>
+                      <p>
+                        {t('exchangewidget.min')}: {this.props.price.min}
+                      </p>
+                      <p>
+                        {t('exchangewidget.max')}: {this.props.price.max}
+                      </p>
                     </div>
 
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />

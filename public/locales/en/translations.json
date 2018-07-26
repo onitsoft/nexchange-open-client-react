@@ -29,7 +29,9 @@
   "exchangewidget": {
     "1": "GET STARTED",
     "2": "Confirm & Place Order",
-    "3": "Current fee is 0.5%"
+    "3": "Current fee is 0.5%",
+    "min": "Min amount",
+    "max": "Max amount"
   },
   "recentorders": {
     "1": "Recent Orders",
