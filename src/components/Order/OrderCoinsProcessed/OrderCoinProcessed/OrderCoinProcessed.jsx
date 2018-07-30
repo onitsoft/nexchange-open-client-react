@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
+import copy from 'clipboard-copy';
+import axios from 'axios';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
 import i18n from 'Src/i18n';
-import { I18n } from 'react-i18next';
-
-import copy from 'clipboard-copy';
+import config from 'Config';
 
 class OrderCoinProcessed extends Component {
-  state = { order: this.props.order };
+  state = { order: this.props.order, min: '...', max: '...' };
 
   componentDidMount() {
     this.prepareState(this.props);
+
+    if (this.props.type === 'Deposit') {
+      this.fetchMinMax();
+    }
 
     $(function() {
       $('[data-toggle="tooltip"]').tooltip();
@@ -21,6 +26,23 @@ class OrderCoinProcessed extends Component {
     this.setState({ order: nextProps.order }, () => {
       this.prepareState(nextProps);
     });
+  }
+
+  fetchMinMax() {
+    const pair = `${this.props.order.pair.base.code}${this.props.order.pair.quote.code}`;
+    const url = `${config.API_BASE_URL}/get_price/${pair}/?`;
+
+    axios
+      .get(url)
+      .then(res => {
+        this.setState({
+          min: res.data.min_amount_quote,
+          max: res.data.max_amount_quote,
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   triggerCopyTooltip = () => {
@@ -100,8 +122,12 @@ class OrderCoinProcessed extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : null}`}>
-            <div className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''}`}>
+          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : ''}`}>
+            <div
+              className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''} ${
+                this.props.type === 'Deposit' && !isFiatOrder(this.props.order) ? styles['crypto'] : ''
+              }`}
+            >
               <div className={`${styles['media-left']}`}>
                 <i className={`${styles.coin} cc ${this.state.coin}`} />
               </div>
@@ -136,6 +162,18 @@ class OrderCoinProcessed extends Component {
                       />
                     )}
                 </div>
+
+                {this.props.type === 'Deposit' &&
+                  !isFiatOrder(this.props.order) && (
+                    <div className={styles.minmax}>
+                      <p>
+                        {t('exchangewidget.min')}: {this.state.min}
+                      </p>
+                      <p>
+                        {t('exchangewidget.max')}: {this.state.max}
+                      </p>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

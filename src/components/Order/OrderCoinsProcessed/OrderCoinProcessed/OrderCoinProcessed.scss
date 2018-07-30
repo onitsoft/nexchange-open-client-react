@@ -2,8 +2,16 @@
   padding: 22px 0 18px 10px;
   overflow: hidden;
 
+  &.crypto {
+    padding: 8px 0 13px 10px;
+  }
+
   @media (min-width: $screen-lg-min) {
     padding-left: 30px;
+
+    &.crypto {
+      padding-left: 30px;
+    }
   }
 }
 
@@ -87,6 +95,31 @@
   @media (min-width: $screen-lg-min) {
     top: -4px;
     font-size: 40px;
+  }
+}
+
+.box.crypto .coin {
+  top: 10px;
+
+  @media (min-width: $screen-lg-min) {
+    top: 6px;
+  }
+}
+
+.minmax {
+  p {
+    font-size: 11px;
+    color: #9c9c9c;
+    float: left;
+    margin: 3px 30px 0 0;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+      margin-right: 15px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
