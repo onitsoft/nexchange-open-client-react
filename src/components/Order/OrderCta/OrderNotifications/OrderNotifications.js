@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-import GetNotified from './images/get-notified.png';
+import GetNotified from './images/get-notified.svg';
 import styles from '../OrderCta.scss';
 
 class OrderNotifications extends Component {

@@ -288,7 +288,8 @@
     "action": "Benachrichtigungen zum Vorgang erhalten",
     "kycupdate": "KYC Status wurde aktualisiert für den Auftrag",
     "email": "Geben Sie Ihre E-Mail ein",
-    "explanation": "Wenn Sie über Ihre Bestellung benachrichtigt werden möchten, geben Sie bitte Ihre E-Mail-Adresse unten ein."
+    "explanation":
+      "Geben Sie Ihre E-Mail Adresse an, um unseren Empfehlungsprogramm beizutreten & um Benachrichtigungen über den Status Ihrer Transaktion zu erhalten."
   },
   "referral": {
     "1": "Teilen Sie diesen einmaligen Verweis-Link mit Ihren Freunden, um einige Coins dazu zu verdienen!",

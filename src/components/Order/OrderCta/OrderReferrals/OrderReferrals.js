@@ -10,7 +10,7 @@ class OrderReferrals extends Component {
   state = {
     showTermsModal: false,
     tooltipOpen: false,
-    link: `${config.DOMAIN}?ref=${this.props.order.referral_code[0].code}`,
+    link: `${config.DOMAIN}/?ref=${this.props.order.referral_code[0].code}`,
   };
 
   triggerCopyTooltip = () => {
@@ -158,11 +158,6 @@ class OrderReferrals extends Component {
                 <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
                   <h2 className={styles.title}>
                     <Interpolate i18nKey="referral.affiliate2" selectedCoin={this.props.order.pair.base.name} />
-                    {/* 
-                =>
-                  Earn free <span>selectedCoin</span> directly to your withdrawal address by sharing this unique referral
-                    link with your friends!
-                */}
                   </h2>
                   {this.renderForm()}
                 </div>
