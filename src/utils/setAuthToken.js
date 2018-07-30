@@ -12,9 +12,9 @@ export default () => {
           requestConfig.headers['Authorization'] = `Bearer ${token}`;
         }
 
-        if (!requestConfig.url.endsWith('/')) {
-          requestConfig.url += '/';
-        }
+        // if (!requestConfig.url.endsWith('/')) {
+        //   requestConfig.url += '/';
+        // }
 
         return requestConfig;
       }
