@@ -41,18 +41,6 @@ ShallowWrapper {
                                         onSubmit={undefined}
                                         type="receive"
                                 />
-                                <div
-                                        className="col-xs-12 minmax"
-                                >
-                                        <p>
-                                                exchangewidget.min
-                                                : 
-                                        </p>
-                                        <p>
-                                                exchangewidget.max
-                                                : 
-                                        </p>
-                                </div>
                                 <Connect(WalletAddress)
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
@@ -101,18 +89,6 @@ ShallowWrapper {
                                         onSubmit={undefined}
                                         type="receive"
                               />
-                              <div
-                                        className="col-xs-12 minmax"
-                              >
-                                        <p>
-                                                  exchangewidget.min
-                                                  : 
-                                        </p>
-                                        <p>
-                                                  exchangewidget.max
-                                                  : 
-                                        </p>
-                              </div>
                               <Connect(WalletAddress)
                                         inputRef={[Function]}
                                         onSubmit={[Function]}
@@ -157,18 +133,6 @@ ShallowWrapper {
                                     onSubmit={undefined}
                                     type="receive"
                         />
-                        <div
-                                    className="col-xs-12 minmax"
-                        >
-                                    <p>
-                                                exchangewidget.min
-                                                : 
-                                    </p>
-                                    <p>
-                                                exchangewidget.max
-                                                : 
-                                    </p>
-                        </div>
                         <Connect(WalletAddress)
                                     inputRef={[Function]}
                                     onSubmit={[Function]}
@@ -209,18 +173,6 @@ ShallowWrapper {
                             onSubmit={undefined}
                             type="receive"
               />
-              <div
-                            className="col-xs-12 minmax"
-              >
-                            <p>
-                                          exchangewidget.min
-                                          : 
-                            </p>
-                            <p>
-                                          exchangewidget.max
-                                          : 
-                            </p>
-              </div>
               <Connect(WalletAddress)
                             inputRef={[Function]}
                             onSubmit={[Function]}
@@ -258,18 +210,6 @@ ShallowWrapper {
                   onSubmit={undefined}
                   type="receive"
 />,
-                <div
-                  className="col-xs-12 minmax"
->
-                  <p>
-                                    exchangewidget.min
-                                    : 
-                  </p>
-                  <p>
-                                    exchangewidget.max
-                                    : 
-                  </p>
-</div>,
                 <Connect(WalletAddress)
                   inputRef={[Function]}
                   onSubmit={[Function]}
@@ -317,66 +257,6 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <p>
-                      exchangewidget.min
-                      : 
-</p>,
-                    <p>
-                      exchangewidget.max
-                      : 
-</p>,
-                  ],
-                  "className": "col-xs-12 minmax",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        "exchangewidget.min",
-                        ": ",
-                        undefined,
-                      ],
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "exchangewidget.min",
-                      ": ",
-                      undefined,
-                    ],
-                    "type": "p",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": Array [
-                        "exchangewidget.max",
-                        ": ",
-                        undefined,
-                      ],
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "exchangewidget.max",
-                      ": ",
-                      undefined,
-                    ],
-                    "type": "p",
-                  },
-                ],
-                "type": "div",
               },
               Object {
                 "instance": null,
@@ -483,18 +363,6 @@ ShallowWrapper {
                                                   onSubmit={undefined}
                                                   type="receive"
                                         />
-                                        <div
-                                                  className="col-xs-12 minmax"
-                                        >
-                                                  <p>
-                                                            exchangewidget.min
-                                                            : 
-                                                  </p>
-                                                  <p>
-                                                            exchangewidget.max
-                                                            : 
-                                                  </p>
-                                        </div>
                                         <Connect(WalletAddress)
                                                   inputRef={[Function]}
                                                   onSubmit={[Function]}
@@ -543,18 +411,6 @@ ShallowWrapper {
                                                 onSubmit={undefined}
                                                 type="receive"
                                     />
-                                    <div
-                                                className="col-xs-12 minmax"
-                                    >
-                                                <p>
-                                                            exchangewidget.min
-                                                            : 
-                                                </p>
-                                                <p>
-                                                            exchangewidget.max
-                                                            : 
-                                                </p>
-                                    </div>
                                     <Connect(WalletAddress)
                                                 inputRef={[Function]}
                                                 onSubmit={[Function]}
@@ -599,18 +455,6 @@ ShallowWrapper {
                                           onSubmit={undefined}
                                           type="receive"
                             />
-                            <div
-                                          className="col-xs-12 minmax"
-                            >
-                                          <p>
-                                                        exchangewidget.min
-                                                        : 
-                                          </p>
-                                          <p>
-                                                        exchangewidget.max
-                                                        : 
-                                          </p>
-                            </div>
                             <Connect(WalletAddress)
                                           inputRef={[Function]}
                                           onSubmit={[Function]}
@@ -651,18 +495,6 @@ ShallowWrapper {
                                 onSubmit={undefined}
                                 type="receive"
                 />
-                <div
-                                className="col-xs-12 minmax"
-                >
-                                <p>
-                                                exchangewidget.min
-                                                : 
-                                </p>
-                                <p>
-                                                exchangewidget.max
-                                                : 
-                                </p>
-                </div>
                 <Connect(WalletAddress)
                                 inputRef={[Function]}
                                 onSubmit={[Function]}
@@ -700,18 +532,6 @@ ShallowWrapper {
                     onSubmit={undefined}
                     type="receive"
 />,
-                  <div
-                    className="col-xs-12 minmax"
->
-                    <p>
-                                        exchangewidget.min
-                                        : 
-                    </p>
-                    <p>
-                                        exchangewidget.max
-                                        : 
-                    </p>
-</div>,
                   <Connect(WalletAddress)
                     inputRef={[Function]}
                     onSubmit={[Function]}
@@ -759,66 +579,6 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <p>
-                        exchangewidget.min
-                        : 
-</p>,
-                      <p>
-                        exchangewidget.max
-                        : 
-</p>,
-                    ],
-                    "className": "col-xs-12 minmax",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          "exchangewidget.min",
-                          ": ",
-                          undefined,
-                        ],
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        "exchangewidget.min",
-                        ": ",
-                        undefined,
-                      ],
-                      "type": "p",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          "exchangewidget.max",
-                          ": ",
-                          undefined,
-                        ],
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        "exchangewidget.max",
-                        ": ",
-                        undefined,
-                      ],
-                      "type": "p",
-                    },
-                  ],
-                  "type": "div",
                 },
                 Object {
                   "instance": null,
