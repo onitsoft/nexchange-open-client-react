@@ -4,6 +4,7 @@ import copy from 'clipboard-copy';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
 import i18n from 'Src/i18n';
+import MinMax from 'Components/MinMax/MinMax';
 
 class OrderCoinProcessed extends Component {
   state = { order: this.props.order };
@@ -102,7 +103,7 @@ class OrderCoinProcessed extends Component {
           <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : ''}`}>
             <div
               className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''} ${
-                !isFiatOrder(this.props.order) ? styles['crypto'] : ''
+                !isFiatOrder(this.props.order) || this.props.type === 'Receive' ? styles['crypto'] : ''
               }`}
             >
               <div className={`${styles['media-left']}`}>
@@ -140,16 +141,7 @@ class OrderCoinProcessed extends Component {
                     )}
                 </div>
 
-                {!isFiatOrder(this.props.order) && (
-                  <div className={styles.minmax}>
-                    <p>
-                      {t('exchangewidget.min')}: {this.props.min}
-                    </p>
-                    <p>
-                      {t('exchangewidget.max')}: {this.props.max}
-                    </p>
-                  </div>
-                )}
+                <MinMax {...this.props} />
               </div>
             </div>
           </div>

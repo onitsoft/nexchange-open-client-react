@@ -3,14 +3,14 @@
   overflow: hidden;
 
   &.crypto {
-    padding: 8px 0 10px 10px;
+    padding: 10px 0 7px 10px;
   }
 
   @media (min-width: $screen-lg-min) {
     padding: 18px 0 11px 30px;
 
     &.crypto {
-      padding-left: 30px;
+      padding: 9px 0 8px 30px;
     }
   }
 }
@@ -103,26 +103,6 @@
 
   @media (min-width: $screen-lg-min) {
     top: 6px;
-  }
-}
-
-.minmax {
-  display: inline-block;
-  width: 100%;
-
-  p {
-    font-size: 11px;
-    color: #9c9c9c;
-    float: left;
-    margin: 3px 30px 0 0;
-
-    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
-      margin-right: 15px;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }
 
