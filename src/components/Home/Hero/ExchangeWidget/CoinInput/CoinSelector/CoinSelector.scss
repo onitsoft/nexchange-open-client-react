@@ -1,12 +1,16 @@
 .selected-coin {
   position: absolute;
-  bottom: 10px;
+  top: 13px;
   left: 0;
   padding: 11px 25px 13px 15px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 700;
   color: $black;
+
+  @media (min-width: $screen-md-min) {
+    top: 35px;
+  }
 }
 
 .carret {

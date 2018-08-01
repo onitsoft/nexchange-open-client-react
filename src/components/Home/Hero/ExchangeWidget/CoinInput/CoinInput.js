@@ -98,6 +98,17 @@ class CoinInput extends PureComponent {
             </form>
 
             <CoinSelector type={this.props.type} onSelect={this.focus} />
+
+            <div className={styles.minmax}>
+              <p>
+                {t('exchangewidget.min')}:{' '}
+                {this.props.type === 'deposit' ? this.props.price.min_amount_quote : this.props.price.min_amount_base}
+              </p>
+              <p>
+                {t('exchangewidget.max')}:{' '}
+                {this.props.type === 'deposit' ? this.props.price.max_amount_quote : this.props.price.max_amount_base}
+              </p>
+            </div>
           </div>
         )}
       </I18n>
