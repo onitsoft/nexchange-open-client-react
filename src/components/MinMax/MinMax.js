@@ -6,8 +6,6 @@ import styles from './MinMax.scss';
 const MinMax = props => {
   if (props.order && isFiatOrder(props.order) && props.type === 'Deposit') return null;
 
-  console.log(props.min, props.max, props.amount);
-
   return (
     <I18n ns="translations">
       {t => (
