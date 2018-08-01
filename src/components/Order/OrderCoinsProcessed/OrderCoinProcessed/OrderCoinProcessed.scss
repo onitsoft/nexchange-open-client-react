@@ -3,7 +3,7 @@
   overflow: hidden;
 
   &.crypto {
-    padding: 8px 0 13px 10px;
+    padding: 8px 0 10px 10px;
   }
 
   @media (min-width: $screen-lg-min) {
@@ -107,6 +107,9 @@
 }
 
 .minmax {
+  display: inline-block;
+  width: 100%;
+
   p {
     font-size: 11px;
     color: #9c9c9c;

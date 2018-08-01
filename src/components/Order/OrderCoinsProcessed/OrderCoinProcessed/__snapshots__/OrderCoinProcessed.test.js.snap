@@ -1372,12 +1372,10 @@ ShallowWrapper {
                         <p>
                                 exchangewidget.min
                                 : 
-                                ...
                         </p>
                         <p>
                                 exchangewidget.max
                                 : 
-                                ...
                         </p>
                 </div>
         </div>
@@ -1445,12 +1443,10 @@ ShallowWrapper {
                         <p>
                                     exchangewidget.min
                                     : 
-                                    ...
                         </p>
                         <p>
                                     exchangewidget.max
                                     : 
-                                    ...
                         </p>
             </div>
 </div>,
@@ -1533,12 +1529,10 @@ ShallowWrapper {
                 <p>
                                 exchangewidget.min
                                 : 
-                                ...
                 </p>
                 <p>
                                 exchangewidget.max
                                 : 
-                                ...
                 </p>
 </div>,
             ],
@@ -1694,12 +1688,10 @@ ShallowWrapper {
                   <p>
                     exchangewidget.min
                     : 
-                    ...
 </p>,
                   <p>
                     exchangewidget.max
                     : 
-                    ...
 </p>,
                 ],
                 "className": "minmax",
@@ -1714,14 +1706,14 @@ ShallowWrapper {
                     "children": Array [
                       "exchangewidget.min",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                   },
                   "ref": null,
                   "rendered": Array [
                     "exchangewidget.min",
                     ": ",
-                    "...",
+                    undefined,
                   ],
                   "type": "p",
                 },
@@ -1733,14 +1725,14 @@ ShallowWrapper {
                     "children": Array [
                       "exchangewidget.max",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                   },
                   "ref": null,
                   "rendered": Array [
                     "exchangewidget.max",
                     ": ",
-                    "...",
+                    undefined,
                   ],
                   "type": "p",
                 },
@@ -1818,12 +1810,10 @@ ShallowWrapper {
                               <p>
                                         exchangewidget.min
                                         : 
-                                        ...
                               </p>
                               <p>
                                         exchangewidget.max
                                         : 
-                                        ...
                               </p>
                     </div>
           </div>
@@ -1891,12 +1881,10 @@ ShallowWrapper {
                             <p>
                                           exchangewidget.min
                                           : 
-                                          ...
                             </p>
                             <p>
                                           exchangewidget.max
                                           : 
-                                          ...
                             </p>
               </div>
 </div>,
@@ -1979,12 +1967,10 @@ ShallowWrapper {
                   <p>
                                     exchangewidget.min
                                     : 
-                                    ...
                   </p>
                   <p>
                                     exchangewidget.max
                                     : 
-                                    ...
                   </p>
 </div>,
               ],
@@ -2140,12 +2126,10 @@ ShallowWrapper {
                     <p>
                       exchangewidget.min
                       : 
-                      ...
 </p>,
                     <p>
                       exchangewidget.max
                       : 
-                      ...
 </p>,
                   ],
                   "className": "minmax",
@@ -2160,14 +2144,14 @@ ShallowWrapper {
                       "children": Array [
                         "exchangewidget.min",
                         ": ",
-                        "...",
+                        undefined,
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
                       "exchangewidget.min",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                     "type": "p",
                   },
@@ -2179,14 +2163,14 @@ ShallowWrapper {
                       "children": Array [
                         "exchangewidget.max",
                         ": ",
-                        "...",
+                        undefined,
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
                       "exchangewidget.max",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                     "type": "p",
                   },
@@ -2406,12 +2390,10 @@ ShallowWrapper {
                         <p>
                                 exchangewidget.min
                                 : 
-                                ...
                         </p>
                         <p>
                                 exchangewidget.max
                                 : 
-                                ...
                         </p>
                 </div>
         </div>
@@ -2479,12 +2461,10 @@ ShallowWrapper {
                         <p>
                                     exchangewidget.min
                                     : 
-                                    ...
                         </p>
                         <p>
                                     exchangewidget.max
                                     : 
-                                    ...
                         </p>
             </div>
 </div>,
@@ -2567,12 +2547,10 @@ ShallowWrapper {
                 <p>
                                 exchangewidget.min
                                 : 
-                                ...
                 </p>
                 <p>
                                 exchangewidget.max
                                 : 
-                                ...
                 </p>
 </div>,
             ],
@@ -2728,12 +2706,10 @@ ShallowWrapper {
                   <p>
                     exchangewidget.min
                     : 
-                    ...
 </p>,
                   <p>
                     exchangewidget.max
                     : 
-                    ...
 </p>,
                 ],
                 "className": "minmax",
@@ -2748,14 +2724,14 @@ ShallowWrapper {
                     "children": Array [
                       "exchangewidget.min",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                   },
                   "ref": null,
                   "rendered": Array [
                     "exchangewidget.min",
                     ": ",
-                    "...",
+                    undefined,
                   ],
                   "type": "p",
                 },
@@ -2767,14 +2743,14 @@ ShallowWrapper {
                     "children": Array [
                       "exchangewidget.max",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                   },
                   "ref": null,
                   "rendered": Array [
                     "exchangewidget.max",
                     ": ",
-                    "...",
+                    undefined,
                   ],
                   "type": "p",
                 },
@@ -2852,12 +2828,10 @@ ShallowWrapper {
                               <p>
                                         exchangewidget.min
                                         : 
-                                        ...
                               </p>
                               <p>
                                         exchangewidget.max
                                         : 
-                                        ...
                               </p>
                     </div>
           </div>
@@ -2925,12 +2899,10 @@ ShallowWrapper {
                             <p>
                                           exchangewidget.min
                                           : 
-                                          ...
                             </p>
                             <p>
                                           exchangewidget.max
                                           : 
-                                          ...
                             </p>
               </div>
 </div>,
@@ -3013,12 +2985,10 @@ ShallowWrapper {
                   <p>
                                     exchangewidget.min
                                     : 
-                                    ...
                   </p>
                   <p>
                                     exchangewidget.max
                                     : 
-                                    ...
                   </p>
 </div>,
               ],
@@ -3174,12 +3144,10 @@ ShallowWrapper {
                     <p>
                       exchangewidget.min
                       : 
-                      ...
 </p>,
                     <p>
                       exchangewidget.max
                       : 
-                      ...
 </p>,
                   ],
                   "className": "minmax",
@@ -3194,14 +3162,14 @@ ShallowWrapper {
                       "children": Array [
                         "exchangewidget.min",
                         ": ",
-                        "...",
+                        undefined,
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
                       "exchangewidget.min",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                     "type": "p",
                   },
@@ -3213,14 +3181,14 @@ ShallowWrapper {
                       "children": Array [
                         "exchangewidget.max",
                         ": ",
-                        "...",
+                        undefined,
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
                       "exchangewidget.max",
                       ": ",
-                      "...",
+                      undefined,
                     ],
                     "type": "p",
                   },
@@ -3268,7 +3236,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="box box  "
+        className="box box  crypto"
 >
         <div
                 className="media-left"
@@ -3314,6 +3282,18 @@ ShallowWrapper {
                                         0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E
                                 </h6>
                         </div>
+                </div>
+                <div
+                        className="minmax"
+                >
+                        <p>
+                                exchangewidget.min
+                                : 
+                        </p>
+                        <p>
+                                exchangewidget.max
+                                : 
+                        </p>
                 </div>
         </div>
 </div>,
@@ -3371,9 +3351,21 @@ ShallowWrapper {
                                     </h6>
                         </div>
             </div>
+            <div
+                        className="minmax"
+            >
+                        <p>
+                                    exchangewidget.min
+                                    : 
+                        </p>
+                        <p>
+                                    exchangewidget.max
+                                    : 
+                        </p>
+            </div>
 </div>,
         ],
-        "className": "box box  ",
+        "className": "box box  crypto",
       },
       "ref": null,
       "rendered": Array [
@@ -3442,7 +3434,18 @@ ShallowWrapper {
                                 </h6>
                 </div>
 </div>,
-              false,
+              <div
+                className="minmax"
+>
+                <p>
+                                exchangewidget.min
+                                : 
+                </p>
+                <p>
+                                exchangewidget.max
+                                : 
+                </p>
+</div>,
             ],
             "className": "media-right",
           },
@@ -3575,7 +3578,66 @@ order.fee:
               ],
               "type": "div",
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    exchangewidget.min
+                    : 
+</p>,
+                  <p>
+                    exchangewidget.max
+                    : 
+</p>,
+                ],
+                "className": "minmax",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "exchangewidget.min",
+                      ": ",
+                      undefined,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "exchangewidget.min",
+                    ": ",
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "exchangewidget.max",
+                      ": ",
+                      undefined,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "exchangewidget.max",
+                    ": ",
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
           ],
           "type": "div",
         },
@@ -3591,7 +3653,7 @@ order.fee:
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="box box  "
+          className="box box  crypto"
 >
           <div
                     className="media-left"
@@ -3637,6 +3699,18 @@ order.fee:
                                                   0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E
                                         </h6>
                               </div>
+                    </div>
+                    <div
+                              className="minmax"
+                    >
+                              <p>
+                                        exchangewidget.min
+                                        : 
+                              </p>
+                              <p>
+                                        exchangewidget.max
+                                        : 
+                              </p>
                     </div>
           </div>
 </div>,
@@ -3694,9 +3768,21 @@ order.fee:
                                           </h6>
                             </div>
               </div>
+              <div
+                            className="minmax"
+              >
+                            <p>
+                                          exchangewidget.min
+                                          : 
+                            </p>
+                            <p>
+                                          exchangewidget.max
+                                          : 
+                            </p>
+              </div>
 </div>,
           ],
-          "className": "box box  ",
+          "className": "box box  crypto",
         },
         "ref": null,
         "rendered": Array [
@@ -3765,7 +3851,18 @@ order.fee:
                                     </h6>
                   </div>
 </div>,
-                false,
+                <div
+                  className="minmax"
+>
+                  <p>
+                                    exchangewidget.min
+                                    : 
+                  </p>
+                  <p>
+                                    exchangewidget.max
+                                    : 
+                  </p>
+</div>,
               ],
               "className": "media-right",
             },
@@ -3898,7 +3995,66 @@ order.fee:
                 ],
                 "type": "div",
               },
-              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p>
+                      exchangewidget.min
+                      : 
+</p>,
+                    <p>
+                      exchangewidget.max
+                      : 
+</p>,
+                  ],
+                  "className": "minmax",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "exchangewidget.min",
+                        ": ",
+                        undefined,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "exchangewidget.min",
+                      ": ",
+                      undefined,
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "exchangewidget.max",
+                        ": ",
+                        undefined,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "exchangewidget.max",
+                      ": ",
+                      undefined,
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
             ],
             "type": "div",
           },
@@ -4056,7 +4212,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="box box  "
+        className="box box  crypto"
 >
         <div
                 className="media-left"
@@ -4102,6 +4258,18 @@ ShallowWrapper {
                                         0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E
                                 </h6>
                         </div>
+                </div>
+                <div
+                        className="minmax"
+                >
+                        <p>
+                                exchangewidget.min
+                                : 
+                        </p>
+                        <p>
+                                exchangewidget.max
+                                : 
+                        </p>
                 </div>
         </div>
 </div>,
@@ -4159,9 +4327,21 @@ ShallowWrapper {
                                     </h6>
                         </div>
             </div>
+            <div
+                        className="minmax"
+            >
+                        <p>
+                                    exchangewidget.min
+                                    : 
+                        </p>
+                        <p>
+                                    exchangewidget.max
+                                    : 
+                        </p>
+            </div>
 </div>,
         ],
-        "className": "box box  ",
+        "className": "box box  crypto",
       },
       "ref": null,
       "rendered": Array [
@@ -4230,7 +4410,18 @@ ShallowWrapper {
                                 </h6>
                 </div>
 </div>,
-              false,
+              <div
+                className="minmax"
+>
+                <p>
+                                exchangewidget.min
+                                : 
+                </p>
+                <p>
+                                exchangewidget.max
+                                : 
+                </p>
+</div>,
             ],
             "className": "media-right",
           },
@@ -4363,7 +4554,66 @@ order.fee:
               ],
               "type": "div",
             },
-            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    exchangewidget.min
+                    : 
+</p>,
+                  <p>
+                    exchangewidget.max
+                    : 
+</p>,
+                ],
+                "className": "minmax",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "exchangewidget.min",
+                      ": ",
+                      undefined,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "exchangewidget.min",
+                    ": ",
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "exchangewidget.max",
+                      ": ",
+                      undefined,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "exchangewidget.max",
+                    ": ",
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
           ],
           "type": "div",
         },
@@ -4379,7 +4629,7 @@ order.fee:
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="box box  "
+          className="box box  crypto"
 >
           <div
                     className="media-left"
@@ -4425,6 +4675,18 @@ order.fee:
                                                   0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E
                                         </h6>
                               </div>
+                    </div>
+                    <div
+                              className="minmax"
+                    >
+                              <p>
+                                        exchangewidget.min
+                                        : 
+                              </p>
+                              <p>
+                                        exchangewidget.max
+                                        : 
+                              </p>
                     </div>
           </div>
 </div>,
@@ -4482,9 +4744,21 @@ order.fee:
                                           </h6>
                             </div>
               </div>
+              <div
+                            className="minmax"
+              >
+                            <p>
+                                          exchangewidget.min
+                                          : 
+                            </p>
+                            <p>
+                                          exchangewidget.max
+                                          : 
+                            </p>
+              </div>
 </div>,
           ],
-          "className": "box box  ",
+          "className": "box box  crypto",
         },
         "ref": null,
         "rendered": Array [
@@ -4553,7 +4827,18 @@ order.fee:
                                     </h6>
                   </div>
 </div>,
-                false,
+                <div
+                  className="minmax"
+>
+                  <p>
+                                    exchangewidget.min
+                                    : 
+                  </p>
+                  <p>
+                                    exchangewidget.max
+                                    : 
+                  </p>
+</div>,
               ],
               "className": "media-right",
             },
@@ -4686,7 +4971,66 @@ order.fee:
                 ],
                 "type": "div",
               },
-              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p>
+                      exchangewidget.min
+                      : 
+</p>,
+                    <p>
+                      exchangewidget.max
+                      : 
+</p>,
+                  ],
+                  "className": "minmax",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "exchangewidget.min",
+                        ": ",
+                        undefined,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "exchangewidget.min",
+                      ": ",
+                      undefined,
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "exchangewidget.max",
+                        ": ",
+                        undefined,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "exchangewidget.max",
+                      ": ",
+                      undefined,
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
             ],
             "type": "div",
           },

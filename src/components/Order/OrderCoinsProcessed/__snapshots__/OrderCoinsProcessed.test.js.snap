@@ -136,6 +136,8 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <OrderCoinProcessed
+          max="..."
+          min="..."
           order={
                     Object {
                               "amount_base": "2552.16055313",
@@ -262,6 +264,8 @@ ShallowWrapper {
           />
 </div>,
         <OrderCoinProcessed
+          max="..."
+          min="..."
           order={
                     Object {
                               "amount_base": "2552.16055313",
@@ -389,6 +393,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "max": "...",
+          "min": "...",
           "order": Object {
             "amount_base": "2552.16055313",
             "amount_btc": 0.0073735615,
@@ -538,6 +544,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "max": "...",
+          "min": "...",
           "order": Object {
             "amount_base": "2552.16055313",
             "amount_btc": 0.0073735615,
@@ -669,6 +677,8 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <OrderCoinProcessed
+            max="..."
+            min="..."
             order={
                         Object {
                                     "amount_base": "2552.16055313",
@@ -795,6 +805,8 @@ ShallowWrapper {
             />
 </div>,
           <OrderCoinProcessed
+            max="..."
+            min="..."
             order={
                         Object {
                                     "amount_base": "2552.16055313",
@@ -922,6 +934,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "max": "...",
+            "min": "...",
             "order": Object {
               "amount_base": "2552.16055313",
               "amount_btc": 0.0073735615,
@@ -1071,6 +1085,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "max": "...",
+            "min": "...",
             "order": Object {
               "amount_base": "2552.16055313",
               "amount_btc": 0.0073735615,
