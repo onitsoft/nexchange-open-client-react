@@ -79,10 +79,10 @@ export const fetchPrice = payload => dispatch => {
 
       data['deposit'] = parseFloat(amounts.amount_quote);
       data['receive'] = parseFloat(amounts.amount_base);
-      data['min_amount_quote'] = amounts.min_amount_quote;
-      data['max_amount_quote'] = amounts.max_amount_quote;
-      data['min_amount_base'] = amounts.min_amount_base;
-      data['max_amount_base'] = amounts.max_amount_base;
+      data['min_amount_quote'] = parseFloat(amounts.min_amount_quote);
+      data['max_amount_quote'] = parseFloat(amounts.max_amount_quote);
+      data['min_amount_base'] = parseFloat(amounts.min_amount_base);
+      data['max_amount_base'] = parseFloat(amounts.max_amount_base);
       data['lastEdited'] = lastEdited;
 
       dispatch({ type: types.PRICE_FETCHED, payload: data });
@@ -95,10 +95,10 @@ export const fetchPrice = payload => dispatch => {
       let data = { pair };
 
       if (err.response.data) {
-        data['min_amount_quote'] = err.response.data.min_amount_quote;
-        data['max_amount_quote'] = err.response.data.max_amount_quote;
-        data['min_amount_base'] = err.response.data.min_amount_base;
-        data['max_amount_base'] = err.response.data.max_amount_base;
+        data['min_amount_quote'] = parseFloat(err.response.data.min_amount_quote);
+        data['max_amount_quote'] = parseFloat(err.response.data.max_amount_quote);
+        data['min_amount_base'] = parseFloat(err.response.data.min_amount_base);
+        data['max_amount_base'] = parseFloat(err.response.data.max_amount_base);
       }
 
       /* istanbul ignore next */

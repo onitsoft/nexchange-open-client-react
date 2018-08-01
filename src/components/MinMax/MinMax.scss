@@ -4,6 +4,10 @@
 
   &.home {
     margin: -2px 0 30px 0;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 20px;
+    }
   }
 
   p {
