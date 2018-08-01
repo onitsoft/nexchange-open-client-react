@@ -45,7 +45,7 @@ ShallowWrapper {
                               >
                                         <Interpolate
                                                   className=""
-                                                  i18nKey="generalterms.youraddress"
+                                                  i18nKey="referral.affiliate2"
                                                   selectedCoin="BitDegree"
                                         />
                               </h2>
@@ -100,7 +100,7 @@ ShallowWrapper {
                         >
                                     <Interpolate
                                                 className=""
-                                                i18nKey="generalterms.youraddress"
+                                                i18nKey="referral.affiliate2"
                                                 selectedCoin="BitDegree"
                                     />
                         </h2>
@@ -146,7 +146,7 @@ ShallowWrapper {
                 >
                                 <Interpolate
                                                 className=""
-                                                i18nKey="generalterms.youraddress"
+                                                i18nKey="referral.affiliate2"
                                                 selectedCoin="BitDegree"
                                 />
                 </h2>
@@ -209,7 +209,7 @@ ShallowWrapper {
 >
                     <Interpolate
                                         className=""
-                                        i18nKey="generalterms.youraddress"
+                                        i18nKey="referral.affiliate2"
                                         selectedCoin="BitDegree"
                     />
 </h2>,
@@ -230,7 +230,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <Interpolate
                       className=""
-                      i18nKey="generalterms.youraddress"
+                      i18nKey="referral.affiliate2"
                       selectedCoin="BitDegree"
 />,
                     "className": "title",
@@ -242,7 +242,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "className": "",
-                      "i18nKey": "generalterms.youraddress",
+                      "i18nKey": "referral.affiliate2",
                       "selectedCoin": "BitDegree",
                     },
                     "ref": null,
@@ -344,7 +344,7 @@ ShallowWrapper {
                                     >
                                                 <Interpolate
                                                             className=""
-                                                            i18nKey="generalterms.youraddress"
+                                                            i18nKey="referral.affiliate2"
                                                             selectedCoin="BitDegree"
                                                 />
                                     </h2>
@@ -399,7 +399,7 @@ ShallowWrapper {
                             >
                                           <Interpolate
                                                         className=""
-                                                        i18nKey="generalterms.youraddress"
+                                                        i18nKey="referral.affiliate2"
                                                         selectedCoin="BitDegree"
                                           />
                             </h2>
@@ -445,7 +445,7 @@ ShallowWrapper {
                   >
                                     <Interpolate
                                                       className=""
-                                                      i18nKey="generalterms.youraddress"
+                                                      i18nKey="referral.affiliate2"
                                                       selectedCoin="BitDegree"
                                     />
                   </h2>
@@ -508,7 +508,7 @@ ShallowWrapper {
 >
                       <Interpolate
                                             className=""
-                                            i18nKey="generalterms.youraddress"
+                                            i18nKey="referral.affiliate2"
                                             selectedCoin="BitDegree"
                       />
 </h2>,
@@ -529,7 +529,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": <Interpolate
                         className=""
-                        i18nKey="generalterms.youraddress"
+                        i18nKey="referral.affiliate2"
                         selectedCoin="BitDegree"
 />,
                       "className": "title",
@@ -541,7 +541,7 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "className": "",
-                        "i18nKey": "generalterms.youraddress",
+                        "i18nKey": "referral.affiliate2",
                         "selectedCoin": "BitDegree",
                       },
                       "ref": null,

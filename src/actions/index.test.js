@@ -146,20 +146,35 @@ describe('actions', () => {
   });
 
   it('fetchPrice (no initial amount)', () => {
-    const mockPriceData = {
-      amount_base: 1.53405088,
+    const mockData = {
+      amount_base: 1.776119,
       amount_quote: 0.1,
-      timestamp: 1532007244.247225,
-      price: 0.06518689,
+      timestamp: 1533111419.578647,
+      price: 0.05630253,
+      pair: {
+        base: 'ETH',
+        quote: 'BTC',
+      },
+      max_amount_base: 6.785239,
+      max_amount_quote: 0.38123443,
+      min_amount_base: 0.01,
+      min_amount_quote: 0.00084218,
     };
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=undefined').reply(200, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=undefined').reply(200, mockData);
     const expectedActions = [
       {
         type: types.PRICE_FETCHED,
-        payload: { pair: 'ETHBTC', deposit: 0.1, receive: 1.53405088, lastEdited: 'deposit' },
+        payload: {
+          pair: 'ETHBTC',
+          deposit: mockData.amount_quote,
+          receive: mockData.amount_base,
+          min: mockData.min_amount_quote,
+          max: mockData.max_amount_quote,
+          lastEdited: 'deposit',
+        },
       },
       {
         type: types.ERROR_ALERT,
@@ -173,20 +188,38 @@ describe('actions', () => {
   });
 
   it('fetchPrice (initial amounts set and selected coin causes inputs to be incorrect)', () => {
-    const mockPriceData = {
-      amount_base: 28900.73410405,
+    const mockData = {
+      amount_base: 32785.8852459,
       amount_quote: 0.1,
-      timestamp: 1532015334.245364,
-      price: 3.46e-6,
+      timestamp: 1533111892.372815,
+      price: 3.05e-6,
+      pair: {
+        base: 'XVG',
+        quote: 'BTC',
+      },
+      max_amount_base: 1615892.8530833,
+      max_amount_quote: 5.0,
+      min_amount_base: 100.0,
+      min_amount_quote: 0.00030806,
     };
 
     const payload = { pair: 'XVGBTC', lastEdited: 'deposit', coinSelector: true, deposit: 520 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/XVGBTC/').reply(200, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/XVGBTC/').reply(200, mockData);
     const expectedActions = [
       {
+        type: types.FETCHING_PRICE,
+      },
+      {
         type: types.PRICE_FETCHED,
-        payload: { pair: 'XVGBTC', deposit: 0.1, receive: 28900.73410405, lastEdited: 'deposit' },
+        payload: {
+          pair: 'XVGBTC',
+          deposit: mockData.amount_quote,
+          receive: mockData.amount_base,
+          min: mockData.min_amount_quote,
+          max: mockData.max_amount_quote,
+          lastEdited: 'deposit',
+        },
       },
       {
         type: types.ERROR_ALERT,
@@ -200,21 +233,36 @@ describe('actions', () => {
   });
 
   it('fetchPrice (initial quote set)', () => {
-    const mockPriceData = {
-      amount_base: 0.76613726,
+    const mockData = {
+      amount_base: 0.88500515,
       amount_quote: 0.05,
-      timestamp: 1532007707.730327,
-      price: 0.06526246,
+      timestamp: 1533112010.658954,
+      price: 0.05649685,
+      pair: {
+        base: 'ETH',
+        quote: 'BTC',
+      },
+      max_amount_base: 6.785239,
+      max_amount_quote: 0.38147188,
+      min_amount_base: 0.01,
+      min_amount_quote: 0.0008427,
     };
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: '0.05' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockData);
 
     const expectedActions = [
       {
         type: types.PRICE_FETCHED,
-        payload: { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 0.05, receive: 0.76613726 },
+        payload: {
+          pair: 'ETHBTC',
+          deposit: mockData.amount_quote,
+          receive: mockData.amount_base,
+          min: mockData.min_amount_quote,
+          max: mockData.max_amount_quote,
+          lastEdited: 'deposit',
+        },
       },
       {
         type: types.ERROR_ALERT,
@@ -228,21 +276,36 @@ describe('actions', () => {
   });
 
   it('fetchPrice (initial base set)', () => {
-    const mockPriceData = {
+    const mockData = {
       amount_base: 0.7,
-      amount_quote: 0.04559358,
-      timestamp: 1532007954.45631,
-      price: 0.06513369,
+      amount_quote: 0.03960651,
+      timestamp: 1533112030.53049,
+      price: 0.05658073,
+      pair: {
+        base: 'ETH',
+        quote: 'BTC',
+      },
+      max_amount_base: 6.785239,
+      max_amount_quote: 0.38147188,
+      min_amount_base: 0.01,
+      min_amount_quote: 0.0008427,
     };
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 0.7 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=0.7').reply(200, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=0.7').reply(200, mockData);
 
     const expectedActions = [
       {
         type: types.PRICE_FETCHED,
-        payload: { pair: 'ETHBTC', lastEdited: 'receive', deposit: 0.04559358, receive: 0.7 },
+        payload: {
+          pair: 'ETHBTC',
+          deposit: mockData.amount_quote,
+          receive: mockData.amount_base,
+          min: mockData.min_amount_quote,
+          max: mockData.max_amount_quote,
+          lastEdited: 'receive',
+        },
       },
       {
         type: types.ERROR_ALERT,
@@ -256,13 +319,21 @@ describe('actions', () => {
   });
 
   it('fetchPrice (initial quote too high)', () => {
-    const mockPriceData = {
-      detail: 'Maximum deposit amount is 0.73607201 BTC on this trade.',
+    const mockData = {
+      detail: 'Maximum deposit amount is 0.38140391 BTC on this trade.',
+      pair: {
+        base: 'ETH',
+        quote: 'BTC',
+      },
+      max_amount_base: '6.78523900',
+      max_amount_quote: '0.38140391',
+      min_amount_base: '0.01000000',
+      min_amount_quote: '0.00084255',
     };
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -271,13 +342,15 @@ describe('actions', () => {
           pair: 'ETHBTC',
           deposit: 100,
           receive: '...',
+          min: mockData.min_amount_quote,
+          max: mockData.max_amount_quote,
           lastEdited: 'deposit',
         },
       },
       {
         type: types.ERROR_ALERT,
         payload: {
-          message: 'Maximum deposit amount is 0.73607201 BTC on this trade.',
+          message: mockData.detail,
           show: true,
           type: 'INVALID_AMOUNT',
         },
@@ -322,13 +395,13 @@ describe('actions', () => {
   });
 
   it('fetchPrice (initial base too high)', () => {
-    const mockPriceData = {
+    const mockData = {
       detail: 'Maximum receive amount is 11.39664626 ETH on this trade.',
     };
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=100').reply(400, mockPriceData);
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -399,7 +472,7 @@ describe('actions', () => {
 
   it('fetchPairs (url param set)', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/ETHBTC').reply(200, {
+    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/ETHBTC/').reply(200, {
       name: 'ETHBTC',
       base: 'ETH',
       quote: 'BTC',

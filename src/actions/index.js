@@ -54,7 +54,7 @@ export const fetchCoinDetails = () => dispatch => {
     });
 };
 
-export const fetchPrice = (payload, setLoader) => dispatch => {
+export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
@@ -92,8 +92,10 @@ export const fetchPrice = (payload, setLoader) => dispatch => {
     const setFaultyValues = err => {
       let data = { pair };
 
-      data['min'] = parseFloat(err.response.data.min_amount_quote);
-      data['max'] = parseFloat(err.response.data.max_amount_quote);
+      if (err.response.data) {
+        data['min'] = err.response.data.min_amount_quote;
+        data['max'] = err.response.data.max_amount_quote;
+      }
 
       /* istanbul ignore next */
       if (window.ga) {
@@ -181,7 +183,7 @@ export const fetchPairs = () => dispatch => {
       const coinsFromUrlParams = () => {
         return new Promise((resolve, reject) => {
           axios
-            .get(`${config.API_BASE_URL}/pair/${params['pair']}`)
+            .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
             .then(res => resolve(res.data))
             .catch(/* istanbul ignore next */ err => reject(err));
         });

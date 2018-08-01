@@ -30,7 +30,7 @@ class OrderCoinProcessed extends Component {
 
   fetchMinMax() {
     const pair = `${this.props.order.pair.base.code}${this.props.order.pair.quote.code}`;
-    const url = `${config.API_BASE_URL}/get_price/${pair}/?`;
+    const url = `${config.API_BASE_URL}/get_price/${pair}/`;
 
     axios
       .get(url)

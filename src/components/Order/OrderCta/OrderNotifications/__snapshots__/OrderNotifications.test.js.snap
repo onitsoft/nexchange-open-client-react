@@ -33,7 +33,7 @@ ShallowWrapper {
                         <img
                                 alt="notify.alt"
                                 className="img"
-                                src="get-notified.png"
+                                src="get-notified.svg"
                         />
                 </div>
                 <div
@@ -80,7 +80,7 @@ ShallowWrapper {
                         <img
                                 alt="notify.alt"
                                 className="img"
-                                src="get-notified.png"
+                                src="get-notified.svg"
                         />
                 </div>
         </div>
@@ -102,7 +102,7 @@ ShallowWrapper {
                     <img
                               alt="notify.alt"
                               className="img"
-                              src="get-notified.png"
+                              src="get-notified.svg"
                     />
           </div>
           <div
@@ -149,7 +149,7 @@ ShallowWrapper {
                     <img
                               alt="notify.alt"
                               className="img"
-                              src="get-notified.png"
+                              src="get-notified.svg"
                     />
           </div>
 </div>,
@@ -168,7 +168,7 @@ ShallowWrapper {
               <img
                             alt="notify.alt"
                             className="img"
-                            src="get-notified.png"
+                            src="get-notified.svg"
               />
 </div>,
             <div
@@ -215,7 +215,7 @@ ShallowWrapper {
               <img
                             alt="notify.alt"
                             className="img"
-                            src="get-notified.png"
+                            src="get-notified.svg"
               />
 </div>,
           ],
@@ -231,7 +231,7 @@ ShallowWrapper {
               "children": <img
                 alt="notify.alt"
                 className="img"
-                src="get-notified.png"
+                src="get-notified.svg"
 />,
               "className": "col-xs-12 visible-xs text-center",
             },
@@ -243,7 +243,7 @@ ShallowWrapper {
               "props": Object {
                 "alt": "notify.alt",
                 "className": "img",
-                "src": "get-notified.png",
+                "src": "get-notified.svg",
               },
               "ref": null,
               "rendered": null,
@@ -432,7 +432,7 @@ ShallowWrapper {
               "children": <img
                 alt="notify.alt"
                 className="img"
-                src="get-notified.png"
+                src="get-notified.svg"
 />,
               "className": "col-ms-2 col-sm-5 hidden-xs text-center",
             },
@@ -444,7 +444,7 @@ ShallowWrapper {
               "props": Object {
                 "alt": "notify.alt",
                 "className": "img",
-                "src": "get-notified.png",
+                "src": "get-notified.svg",
               },
               "ref": null,
               "rendered": null,
@@ -477,7 +477,7 @@ ShallowWrapper {
                               <img
                                         alt="notify.alt"
                                         className="img"
-                                        src="get-notified.png"
+                                        src="get-notified.svg"
                               />
                     </div>
                     <div
@@ -524,7 +524,7 @@ ShallowWrapper {
                               <img
                                         alt="notify.alt"
                                         className="img"
-                                        src="get-notified.png"
+                                        src="get-notified.svg"
                               />
                     </div>
           </div>
@@ -546,7 +546,7 @@ ShallowWrapper {
                         <img
                                     alt="notify.alt"
                                     className="img"
-                                    src="get-notified.png"
+                                    src="get-notified.svg"
                         />
             </div>
             <div
@@ -593,7 +593,7 @@ ShallowWrapper {
                         <img
                                     alt="notify.alt"
                                     className="img"
-                                    src="get-notified.png"
+                                    src="get-notified.svg"
                         />
             </div>
 </div>,
@@ -612,7 +612,7 @@ ShallowWrapper {
                 <img
                                 alt="notify.alt"
                                 className="img"
-                                src="get-notified.png"
+                                src="get-notified.svg"
                 />
 </div>,
               <div
@@ -659,7 +659,7 @@ ShallowWrapper {
                 <img
                                 alt="notify.alt"
                                 className="img"
-                                src="get-notified.png"
+                                src="get-notified.svg"
                 />
 </div>,
             ],
@@ -675,7 +675,7 @@ ShallowWrapper {
                 "children": <img
                   alt="notify.alt"
                   className="img"
-                  src="get-notified.png"
+                  src="get-notified.svg"
 />,
                 "className": "col-xs-12 visible-xs text-center",
               },
@@ -687,7 +687,7 @@ ShallowWrapper {
                 "props": Object {
                   "alt": "notify.alt",
                   "className": "img",
-                  "src": "get-notified.png",
+                  "src": "get-notified.svg",
                 },
                 "ref": null,
                 "rendered": null,
@@ -876,7 +876,7 @@ ShallowWrapper {
                 "children": <img
                   alt="notify.alt"
                   className="img"
-                  src="get-notified.png"
+                  src="get-notified.svg"
 />,
                 "className": "col-ms-2 col-sm-5 hidden-xs text-center",
               },
@@ -888,7 +888,7 @@ ShallowWrapper {
                 "props": Object {
                   "alt": "notify.alt",
                   "className": "img",
-                  "src": "get-notified.png",
+                  "src": "get-notified.svg",
                 },
                 "ref": null,
                 "rendered": null,
