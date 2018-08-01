@@ -1,0 +1,1641 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MinMax renders correctly correct amounts 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly correct amounts 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly correct amounts 3`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly correct amounts 4`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too high amounts 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className="error"
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className="error"
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too high amounts 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className="error"
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className="error"
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too high amounts 3`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=""
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className="error"
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=""
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className="error"
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too low amounts 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="error"
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="error"
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too low amounts 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="error"
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="error"
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`MinMax renders correctly too low amounts 3`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="error"
+>
+          exchangewidget.min
+          : 
+          1
+</p>,
+        <p
+          className=""
+>
+          exchangewidget.max
+          : 
+          2
+</p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "error",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="error"
+>
+            exchangewidget.min
+            : 
+            1
+</p>,
+          <p
+            className=""
+>
+            exchangewidget.max
+            : 
+            2
+</p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "error",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

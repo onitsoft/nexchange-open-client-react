@@ -1,0 +1,31 @@
+.minmax {
+  display: inline-block;
+  width: 100%;
+
+  &.home {
+    margin: -2px 0 30px 0;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    font-size: 11px;
+    color: #9c9c9c;
+    float: left;
+    margin: 3px 15px 0 0;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+      margin-right: 15px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

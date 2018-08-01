@@ -3,8 +3,10 @@ import { PRICE_FETCHED, FETCHING_PRICE } from 'Actions/types';
 const initialState = {
   deposit: '...',
   receive: '...',
-  min: '...',
-  max: '...',
+  min_amount_quote: '...',
+  max_amount_quote: '...',
+  min_amount_base: '...',
+  max_amount_base: '...',
   fetching: true,
   lastEdited: 'deposit',
 };

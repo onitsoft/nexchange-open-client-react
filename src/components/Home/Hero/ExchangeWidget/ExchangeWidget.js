@@ -87,10 +87,8 @@ class ExchangeWidget extends Component {
       .catch(error => {
         console.log('Error:', error);
 
-        let message =
-          error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
-            ? error.response.data.non_field_errors[0]
-            : `${i18n.t('subscription.5')}`;
+        /* eslint max-len: ["error", { "code": 200 }] */
+        let message = error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
 
         this.props.errorAlert({
           message: message,
@@ -120,25 +118,12 @@ class ExchangeWidget extends Component {
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
-                    <div className={`col-xs-12 ${styles.minmax}`}>
-                      <p>
-                        {t('exchangewidget.min')}: {this.props.price.min}
-                      </p>
-                      <p>
-                        {t('exchangewidget.max')}: {this.props.price.max}
-                      </p>
-                    </div>
-
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
-                      <button
-                        className={`${styles.btn} ${
-                          this.props.wallet.valid && !this.state.loading ? null : 'disabled'
-                        } btn btn-block btn-primary proceed `}
-                        onClick={this.placeOrder}
-                      >
+                      {/* eslint max-len: ["error", { "code": 200 }] */}
+                      <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `} onClick={this.placeOrder}>
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>
