@@ -6,6 +6,9 @@ describe('price reducer', () => {
   const initialState = {
     deposit: '...',
     receive: '...',
+    min: '...',
+    max: '...',
+    fetching: true,
     lastEdited: 'deposit',
   };
 
