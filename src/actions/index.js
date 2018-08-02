@@ -16,12 +16,35 @@ export const setWallet = payload => ({
   payload,
 });
 
-export const selectCoin = selectedCoins => ({
+export const selectCoin = (selectedCoins, pairs) => ({
   type: types.COIN_SELECTED,
   payload: {
     selectedCoins,
+    pairs,
   },
 });
+
+export const switchPairs = () => (dispatch, getState) => {
+  const {
+    selectedCoin: { deposit, receive },
+    pairs,
+  } = getState();
+
+  dispatch(
+    selectCoin(
+      {
+        deposit,
+        receive: deposit,
+        prev: {
+          deposit,
+          receive,
+        },
+        lastSelected: 'deposit',
+      },
+      pairs
+    )
+  );
+};
 
 export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;
