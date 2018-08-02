@@ -34,6 +34,16 @@
     "min": "Min amount",
     "max": "Max amount"
   },
+  "usps": {
+    "1": "Setting the standard in cryptocurrency exchange",
+    "2": "Instant Exchange",
+    "3": "Exchange funds directly between your wallets, leveraging our guaranteed, competative rates.",
+    "4": "Security first",
+    "5": "Be your own bank. Stay in control of your funds.",
+    "6": "API",
+    "7":
+      "Use the full variety of our services programatically. Whether you are running a crypto business or hacking-around, we are here to provide you with on-demand crypto liquidity."
+  },
   "recentorders": {
     "1": "Recent Orders",
     "2": "Click to view on API",
