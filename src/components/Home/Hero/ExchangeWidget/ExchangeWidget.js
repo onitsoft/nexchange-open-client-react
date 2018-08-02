@@ -12,6 +12,7 @@ import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';
 import WalletAddress from './WalletAddress/WalletAddress';
+import Flip from './Flip/Flip';
 
 import styles from './ExchangeWidget.scss';
 
@@ -88,7 +89,10 @@ class ExchangeWidget extends Component {
         console.log('Error:', error);
 
         /* eslint max-len: ["error", { "code": 200 }] */
-        let message = error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
+        let message =
+          error.response && error.response.data.non_field_errors && error.response.data.non_field_errors.length
+            ? error.response.data.non_field_errors[0]
+            : `${i18n.t('subscription.5')}`;
 
         this.props.errorAlert({
           message: message,
@@ -116,6 +120,7 @@ class ExchangeWidget extends Component {
                 <div className="col-xs-12">
                   <div className={styles.widget}>
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                    <Flip />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
@@ -123,7 +128,12 @@ class ExchangeWidget extends Component {
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
                       {/* eslint max-len: ["error", { "code": 200 }] */}
-                      <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `} onClick={this.placeOrder}>
+                      <button
+                        className={`${styles.btn} ${
+                          this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                        } btn btn-block btn-primary proceed `}
+                        onClick={this.placeOrder}
+                      >
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>

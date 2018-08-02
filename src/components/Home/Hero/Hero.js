@@ -4,6 +4,7 @@ import { I18n, Trans } from 'react-i18next';
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
+import BuyWithCreditCard from './BuyWithCreditCard/BuyWithCreditCard';
 
 import styles from './Hero.scss';
 
@@ -28,7 +29,9 @@ class Hero extends Component {
                   </div>
                 </div>
 
+                <BuyWithCreditCard className="visible-sm visible-md visible-lg" />
                 <ExchangeWidget store={this.props.store} />
+                <BuyWithCreditCard className="visible-xs" />
               </div>
             </div>
 
