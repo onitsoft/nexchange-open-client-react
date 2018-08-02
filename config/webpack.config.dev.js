@@ -234,7 +234,7 @@ module.exports = {
 
           {
             test: /\.svg$/,
-            exclude: [/font-awesome/, /ellipse/, /price-up/, /price-down/, /carret-down/, /arrow-right-2/, /get-notified/, /flip/],
+            include: [/arrow-right/, /done/, /confirmations/, /deposit/],
             use: [
               {
                 loader: 'babel-loader',
