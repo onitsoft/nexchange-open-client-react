@@ -29,7 +29,9 @@
   "exchangewidget": {
     "1": "GET STARTED",
     "2": "Confirm & Place Order",
-    "3": "Current fee is 0.5%"
+    "3": "Current fee is 0.5%",
+    "min": "Min amount",
+    "max": "Max amount"
   },
   "recentorders": {
     "1": "Recent Orders",
@@ -297,8 +299,8 @@
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
-          "A high-resolution photo/scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a fiscal, residence address (no PO boxes!).",
-        "22": "Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.",
+          "A high-resolution photo/scan of a  <1>physical</1> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a fiscal, residence address (no PO boxes!).",
+        "22": " Letters from the bank or credit card company  delivered to a <1>fiscal address (not a P.O. BOX)</1> are also accepted.",
         "3": "Get verified",
         "4": "Upload file(s)",
         "5": "Uploaded",
@@ -330,7 +332,7 @@
     "alt": "Get notified",
     "kycupdate": "KYC status updated for order",
     "email": "Enter your e-mail address",
-    "explanation": "If you would like to be notified about your order please enter your e-mail address below."
+    "explanation": "Add your email to join our referral program & get notified about the status of your transactions"
   },
   "referral": {
     "1": "Share this unique referral link with your friends to earn some coins!",

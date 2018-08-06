@@ -63,10 +63,6 @@ class OrderPayment extends Component {
         inner = (
           <div>
             <h3 className={styles.subtitle}>
-              {i18n.t('order.fiat.status.2')}
-            </h3>
-
-            <h3 className={styles.subtitle}>
               <b>
                 {i18n.t('order.fiat.status.7')}
               </b>

@@ -6,7 +6,7 @@ import { setUserEmail } from 'Actions';
 import axios from 'axios';
 import config from 'Config';
 import i18n from '../../../../../../i18n';
-import { I18n } from 'react-i18next';
+import { I18n, Trans } from 'react-i18next';
 
 class KYCModal extends Component {
   constructor(props) {
@@ -182,10 +182,16 @@ class KYCModal extends Component {
                 <div>
                   <h2>{t('order.fiat.kyc.2')}</h2>
                   <small>
-                    {t('order.fiat.kyc.21')}
+                    <Trans i18nKey="order.fiat.kyc.21">
+                      A high-resolution photo/scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs
+                      generated on the internet) utility bill from a known service provider, not older than 3 months old.
+                      Delivery address must be a fiscal, residence address (no PO boxes!).
+                    </Trans>
                   </small>
                   <small>
-                    {t('order.fiat.kyc.22')}
+                    <Trans i18nKey="order.fiat.kyc.22">
+                      Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.
+                    </Trans>
                   </small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>

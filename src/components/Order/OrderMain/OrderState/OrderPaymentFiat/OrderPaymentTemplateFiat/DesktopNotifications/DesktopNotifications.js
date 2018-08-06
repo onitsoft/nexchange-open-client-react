@@ -64,7 +64,7 @@ class DesktopNotifications extends Component {
       <div className="row">
         <div className="col-xs-12 text-center">
           <a href="javascript:void(0)" className={styles.title} onClick={this.onClick}>
-            <h4>{t('order.kycstatuscheck')}</h4>
+            <h4>{t('order.fiat.kyc.statuscheck')}</h4>
           </a>
         </div>
       </div>
