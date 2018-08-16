@@ -6,7 +6,7 @@ describe('QuestionAnswer', () => {
   let wrapShallow;
 
   beforeEach(() => {
-    window.ga = jest.fn();
+    window.gtag = jest.fn();
 
     wrapShallow = shallow(
       <QuestionAnswer
