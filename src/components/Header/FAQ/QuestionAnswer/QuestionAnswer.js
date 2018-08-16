@@ -6,7 +6,7 @@ class QuestionAnswer extends Component {
 
   onClick = () => {
     this.setState({ open: !this.state.open });
-    window.ga('send', 'event', 'FAQ', 'question open');
+    window.gtag('event', 'question open', { 'event_category' : 'FAQ' });
   };
 
   render() {

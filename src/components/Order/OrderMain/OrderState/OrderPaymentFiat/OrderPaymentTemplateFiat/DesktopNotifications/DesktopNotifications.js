@@ -48,7 +48,10 @@ class DesktopNotifications extends Component {
   onClick() {
     if (Notify.isSupported()) {
       Notify.requestPermission(() => {
-        window.ga('send', 'event', 'Order', 'track', this.props.order.unique_reference);
+        window.gtag('event', 'track', {
+          'event_category' : 'Order',
+          'event_label': this.props.order.unique_reference
+        });
       });
     }
   }

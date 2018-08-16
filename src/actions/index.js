@@ -102,10 +102,9 @@ export const fetchPrice = payload => dispatch => {
       }
 
       /* istanbul ignore next */
-      if (window.ga) {
-        window.ga('send', 'event', {
-          eventCategory: 'Amount input',
-          eventAction: 'Amount too high/low error',
+      if (window.gtag) {
+        window.gtag('event', 'Amount too high/low error', {
+          event_category: 'Amount input'
         });
       }
 
@@ -144,10 +143,9 @@ export const fetchPrice = payload => dispatch => {
       setValidValues(amounts);
     } catch (err) {
       /* istanbul ignore next */
-      if (window.ga) {
-        window.ga('send', 'event', {
-          eventCategory: 'Coin selector',
-          eventAction: 'Fetch default amounts',
+      if (window.gtag) {
+        window.gtag('event', 'Fetch default amounts', {
+          event_category: 'Coin selector'
         });
       }
 

@@ -101,7 +101,7 @@ class Support extends Component {
                 <div className="row">
                   <div className="col-xs-12 col-sm-6">
                     <h3>{t('support.2')}</h3>
-                    <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
+                    <p onClick={() => { window.gtag('event', 'click support number', { 'event_category' : 'General' }); } }>
                       +442081442192<br />
                       +16464612858 (US)
                     </p>
