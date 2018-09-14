@@ -20,7 +20,7 @@ const Team = () => (
               fullCountryName={t('about.israel')}
               description={t('about.oleg')}
               social={{
-                linkedin: 'https://www.linkedin.com/in/oleg-belousov-b4112145/',
+                linkedin: 'https://www.linkedin.com/in/oleg-belousov-%E5%A5%A5%E5%88%97%E6%A0%BC-b4112145/',
                 twitter: 'https://twitter.com/iooleg',
                 medium: 'https://medium.com/@IoOleg',
                 github: 'https://github.com/BeOleg',
