@@ -16,6 +16,21 @@ export const setWallet = payload => ({
   payload,
 });
 
+export const setDestinationTag = payload => ({
+  type: types.SET_DESTINATION_TAG,
+  payload,
+});
+
+export const setPaymentId = payload => ({
+  type: types.SET_PAYMENT_ID,
+  payload,
+});
+
+export const setMemo = payload => ({
+  type: types.SET_MEMO,
+  payload,
+});
+
 export const selectCoin = selectedCoins => ({
   type: types.COIN_SELECTED,
   payload: {

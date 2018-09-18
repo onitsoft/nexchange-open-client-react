@@ -5,6 +5,9 @@
     "email": "Email",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Search",
     "submit": "Submit"
   },
