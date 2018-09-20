@@ -26,6 +26,8 @@ export default (address, coin, errorCb, successCb) => {
     ZEC: /^t[1-9A-Za-z]{34}$/,
     USDT: /^1[1-9A-Za-z]{33}$/,
     XMR: /^[4|8][0-9a-zA-Z]{94}$/,
+    XRP: /^r[1-9A-Za-z][^lO0I]{25,34}$/,
+    XLM: /^G[1-9A-Z]{55}$/,
   };
 
   const coinRules = rules[coin];

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setPaymentId } from 'Actions/index.js';
-//import validateWalletAddress from 'Utils/validateWalletAddress';
 import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
@@ -16,48 +15,15 @@ class PaymentId extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  validate = (paymentId, receiveCoin) => {
-    if (paymentId === '' || !receiveCoin) {
-      this.props.setPaymentId({
-        paymentId,
-        valid: false,
-      });
-
-      return this.props.errorAlert({ show: false });
-    }
-
-    const valid = validatePaymentId(
-      paymentId,
-      receiveCoin,
-      () =>
-        this.props.errorAlert({
-          show: true,
-          message: `${paymentId} ${i18n.t('error.novalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.paymentId')}.`,
-        }),
-      () => this.props.errorAlert({ show: false })
-    );
-
-    this.props.setPaymentId({
-      paymentId,
-      valid,
-    });
-  };
-
   handleChange(event) {
     const paymentId = event.target.value.replace(new RegExp(/ /g, 'g'), '');
     this.setState({ paymentId });
-    this.validate(paymentId, this.props.selectedCoin.receive);
+    this.props.setPaymentId({ paymentId, valid: true })
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.props.onSubmit();
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
-      this.validate(this.state.paymentId, nextProps.selectedCoin.receive);
-    }
   }
 
   render() {
@@ -74,7 +40,7 @@ class PaymentId extends Component {
                 id="withdraw-addr"
                 onChange={this.handleChange}
                 value={this.state.paymentId}
-                placeholder={t('generalterms.paymentid', { selectedCoin: coin })}
+                placeholder={t('generalterms.paymentid')}
               />
             </form>
           </div>
@@ -84,7 +50,7 @@ class PaymentId extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, wallet }) => ({ selectedCoin, wallet });
+const mapStateToProps = ({ selectedCoin, paymentId }) => ({ selectedCoin, paymentId });
 const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setPaymentId }, dispatch);
 
 export default connect(

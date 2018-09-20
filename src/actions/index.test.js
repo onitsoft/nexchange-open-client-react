@@ -7,6 +7,9 @@ import * as types from './types';
 import {
   errorAlert,
   setWallet,
+  setDestinationTag,
+  setPaymentId,
+  setMemo,
   selectCoin,
   fetchCoinDetails,
   fetchPrice,
@@ -58,6 +61,36 @@ describe('actions', () => {
     };
 
     expect(setWallet('payload')).toEqual(expectedAction);
+  });
+
+  it('setDestinationTag', () => {
+    const payload = 'payload';
+    const expectedAction = {
+      type: types.SET_DESTINATION_TAG,
+      payload,
+    };
+
+    expect(setDestinationTag('payload')).toEqual(expectedAction);
+  });
+
+  it('setPaymentId', () => {
+    const payload = 'payload';
+    const expectedAction = {
+      type: types.SET_PAYMENT_ID,
+      payload,
+    };
+
+    expect(setPaymentId('payload')).toEqual(expectedAction);
+  });
+
+  it('setMemo', () => {
+    const payload = 'payload';
+    const expectedAction = {
+          type: types.SET_MEMO,
+      payload,
+    };
+
+    expect(setPaymentId('payload')).toEqual(expectedAction);
   });
 
   it('selectCoin', () => {

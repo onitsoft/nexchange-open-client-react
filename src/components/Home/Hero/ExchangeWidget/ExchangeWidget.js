@@ -69,12 +69,8 @@ class ExchangeWidget extends Component {
       withdraw_address: {
         address: this.props.wallet.address,
         name: '',
-//        destination_tag: this.props.wallet.destinationTag,
-        destination_tag: this.props.wallet.destinationTag,
-        payment_id: this.props.wallet.paymentId,
-        payment_id1: this.props.paymentId,
-        payment_id2: this.paymentId,
-        /* memo: this.props.wallet.memo, */
+        payment_id: this.props.paymentId.paymentId,
+        destinationTag: this.props.destinationTag.destinationTag,
       },
     };
 
@@ -146,9 +142,9 @@ class ExchangeWidget extends Component {
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} />
 
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} />
-                    <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />
-                    <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} />
-                    <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} />
+                    { this.props.selectedCoin.receive === 'XRP' ? <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />  : null }
+                    { this.props.selectedCoin.receive === 'XMR' ? <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} /> : null }
+                    { this.props.selectedCoin.receive === 'XLM' ? <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} /> : null }
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
@@ -169,7 +165,7 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapStateToProps = ({ selectedCoin, price, error, wallet, destinationTag, paymentId, memo }) => ({ selectedCoin, price, error, wallet, destinationTag, paymentId, memo });
 const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert, setDestinationTag, setPaymentId, setMemo }, dispatch);
 
 export default connect(
