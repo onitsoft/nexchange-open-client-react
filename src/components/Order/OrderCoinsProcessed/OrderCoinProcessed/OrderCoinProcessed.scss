@@ -73,11 +73,21 @@
   }
 }
 
+.clickable-text {
+  display: block;
+  float: left;
+}
+
 .address {
   float: left;
-  overflow-y: auto;
+  word-wrap: break-word;
   max-width: calc(100% - 30px);
   margin-right: 10px;
+}
+
+.address h6 {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .copy {

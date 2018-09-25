@@ -26,6 +26,25 @@ class OrderInitial extends Component {
 			${this.props.order.deposit_address.address}`;
   }
 
+  getAddressIdType(){
+    return this.props.order.deposit_address.payment_id ? 'Payment Id'
+      : this.props.order.deposit_address.destination_tag ? 'Destination Tag'
+        : this.props.order.deposit_address.memo ? 'Memo': null
+  }
+
+  showAddressId(){
+    return (
+      <div>
+        <br />
+        {this.getAddressIdType()}
+        <br />
+        <b className={styles.address} style={{ wordWrap: 'break-word' }}>
+        {this.props.order.deposit_address.payment_id}
+        </b>
+      </div>
+    )
+  }
+
   render() {
     return (
       <I18n ns="translations">
@@ -53,6 +72,7 @@ class OrderInitial extends Component {
                 <b className={styles.address} style={{ wordWrap: 'break-word' }}>
                   {this.props.order.deposit_address.address}
                 </b>
+                {this.getAddressIdType() ? this.showAddressId() : null}
               </h4>
 
               <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
