@@ -23,23 +23,23 @@ class OrderCoinProcessed extends Component {
     });
   }
 
-  triggerCopyTooltip = () => {
+  triggerCopyAddressElementTooltip = (addressElement) => {
     if (process.env.NODE_ENV !== 'test') {
-      $('#copy-address-to-clipboard').tooltip({
+      $('#copy-address-element-to-clipboard').tooltip({
         trigger: 'click',
         placement: 'top',
       });
 
-      $('#copy-address-to-clipboard')
+      $('#copy-address-element-to-clipboard')
         .tooltip('hide')
-        .attr('data-original-title', i18n.t('order.copy'))
+        .attr('data-original-title', i18n.t('order.copyaddresselement'))
         .tooltip('show');
 
       setTimeout(() => {
-        $('#copy-address-to-clipboard').tooltip('destroy');
+        $('#copy-address-element-to-clipboard').tooltip('destroy');
       }, 1000);
 
-      copy(this.props.order.deposit_address.address);
+      copy(addressElement);
     }
   };
 
@@ -108,13 +108,6 @@ class OrderCoinProcessed extends Component {
     });
   }
 
-  collapseAddress() {
-    console.log('COLLAPSE', this.state.address);
-    this.setState({
-      address: this.state.address.substring(0, 44) + '...'
-    });
-  }
-
   hasAddressId() {
     return (
       (this.state.paymentId != null && this.state.paymentId !== 'undefined') ||
@@ -125,7 +118,7 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length > 44 || this.hasAddressId())
+      this.state.address != null && (this.state.address.length > 44)
       );
   }
 
@@ -154,18 +147,86 @@ class OrderCoinProcessed extends Component {
     } else {
       addressId = null;
     }
-
-    if (this.addressIsTooLong() && this.state.hiddenAddress){
+    /*
+    if (!this.addressIsTooLong() && !this.hasAddressId() && this.state.hiddenAddress) {
       renderedAddress =
         <div className={styles.address}>
-          <h6>{this.addressIsTooLong() ? this.state.address.substring(0, 44) + '...' : this.state.address}</h6>
-        </div>;
+          <div className={styles.row}>
+            <div className={`${styles['address-left']} ${styles['normal']}`}>
+              <h6>{this.state.address}</h6>
+            </div>
+            <div className={styles.copybuttonright}>
+              {this.props.type === 'Deposit' &&
+              !isFiatOrder(this.props.order) && (
+                <i
+                  id="copy-address-element-to-clipboard"
+                  className={`${styles.copy} fas fa-copy`}
+                  data-test="copy-address"
+                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+    } */
+    if (this.state.hiddenAddress) {
+      renderedAddress =
+        <div className={styles.address}>
+          <div className={styles.row}>
+            <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ?
+            styles['deposit'] : ''} ${styles['address-hidden']}`}>
+              <h6>{this.state.address}</h6>
+            </div>
+            <div className={styles.copybuttonright}>
+              {this.props.type === 'Deposit' &&
+              !isFiatOrder(this.props.order) && (
+                <i
+                  id="copy-address-element-to-clipboard"
+                  className={`${styles.copy} fas fa-copy`}
+                  data-test="copy-address"
+                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
+                />
+              )}
+            </div>
+          </div>
+        </div>
     } else {
       renderedAddress =
-        <div className={styles.address}>
-          <h6>{this.state.address}</h6>
-          <h6>{addressId}</h6>
-        </div>;
+      <div className={styles.address}>
+        <div className={styles.row}>
+          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+            <h6>{this.state.address}</h6>
+          </div>
+          <div className={styles.copybuttonright}>
+            {this.props.type === 'Deposit' &&
+            !isFiatOrder(this.props.order) && (
+              <i
+                id="copy-address-element-to-clipboard"
+                className={`${styles.copy} fas fa-copy`}
+                data-test="copy-address"
+                onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
+              />)}
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+            <h6>{addressId}</h6>
+          </div>
+          <div className={styles.copybuttonright}>
+            {this.props.type === 'Deposit' &&
+            !isFiatOrder(this.props.order) && (
+              addressId != null ?
+              <i
+                id="copy-address-element-to-clipboard"
+                className={`${styles.copy} fas fa-copy`}
+                data-test="copy-address"
+                onClick={() => this.triggerCopyAddressElementTooltip(addressId)}
+              /> :
+              null
+            )}
+          </div>
+        </div>
+     </div>
     }
     return renderedAddress;
   }
@@ -199,15 +260,6 @@ class OrderCoinProcessed extends Component {
                   />
                 </h5>
                 {this.renderAddress()}
-                {this.props.type === 'Deposit' &&
-                  !isFiatOrder(this.props.order) && (
-                    <i
-                      id="copy-address-to-clipboard"
-                      className={`${styles.copy} fas fa-copy`}
-                      data-test="copy-address"
-                      onClick={() => this.triggerCopyTooltip()}
-                    />
-                  )}
                 {this.renderExpandButton()}
                 <MinMax {...this.props} />
               </div>
