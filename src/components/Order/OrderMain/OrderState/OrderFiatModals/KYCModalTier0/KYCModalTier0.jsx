@@ -172,7 +172,7 @@ class KYCModal extends Component {
             {this.props.kyc.identity_token && (
                 <div>
                     <h2>{t('order.fiat.kyc.1')}</h2>
-                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera"></iframe>
+                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameborder="0"></iframe>
                 </div>
             )}
 
