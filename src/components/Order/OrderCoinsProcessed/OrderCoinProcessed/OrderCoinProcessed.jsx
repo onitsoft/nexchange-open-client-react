@@ -11,7 +11,6 @@ class OrderCoinProcessed extends Component {
 
   componentDidMount() {
     this.prepareState(this.props);
-
     $(function() {
       $('[data-toggle="tooltip"]').tooltip();
     });
@@ -127,7 +126,13 @@ class OrderCoinProcessed extends Component {
     renderedExandButton = null;
     if (this.addressIsTooLong()) {
       renderedExandButton =
-        <a className={`${styles['clickable-text']}`} onClick={this.toggle.bind(this)}>
+        <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
+          {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
+        </a>;
+    } else {
+      renderedExandButton =
+        <a className={`${styles['expansion-button']} ${styles['expansion-button-mobile']}`} 
+        onClick={this.toggle.bind(this)}>
           {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
         </a>;
     }
@@ -147,31 +152,9 @@ class OrderCoinProcessed extends Component {
     } else {
       addressId = null;
     }
-    /*
-    if (!this.addressIsTooLong() && !this.hasAddressId() && this.state.hiddenAddress) {
-      renderedAddress =
-        <div className={styles.address}>
-          <div className={styles.row}>
-            <div className={`${styles['address-left']} ${styles['normal']}`}>
-              <h6>{this.state.address}</h6>
-            </div>
-            <div className={styles.copybuttonright}>
-              {this.props.type === 'Deposit' &&
-              !isFiatOrder(this.props.order) && (
-                <i
-                  id="copy-address-element-to-clipboard"
-                  className={`${styles.copy} fas fa-copy`}
-                  data-test="copy-address"
-                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-    } */
     if (this.state.hiddenAddress) {
       renderedAddress =
-        <div className={styles.address}>
+        <div id='addressField' className={styles.address}>
           <div className={styles.row}>
             <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ?
             styles['deposit'] : ''} ${styles['address-hidden']}`}>
@@ -192,7 +175,7 @@ class OrderCoinProcessed extends Component {
         </div>
     } else {
       renderedAddress =
-      <div className={styles.address}>
+      <div id='addressField' className={styles.address}>
         <div className={styles.row}>
           <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
             <h6>{this.state.address}</h6>
@@ -245,7 +228,7 @@ class OrderCoinProcessed extends Component {
                 <i className={`${styles.coin} cc ${this.state.coin}`} />
               </div>
 
-              <div className={`${styles['media-right']}`}>
+              <div id='mediaRightField' className={`${styles['media-right']}`}>
                 <h5>
                   {t('order.' + this.props.type)}{' '}
                   <b>

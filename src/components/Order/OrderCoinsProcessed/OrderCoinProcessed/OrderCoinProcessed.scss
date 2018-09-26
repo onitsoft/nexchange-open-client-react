@@ -73,17 +73,24 @@
   }
 }
 
-.clickable-text {
+.expansion-button {
   display: block;
   float: left;
   width: 100%;
   cursor: pointer;
 }
 
+.expansion-button.expansion-button-mobile {
+  display: none;
+
+  @media (max-width: 407px) {
+    display: block;
+  }
+}
+
 .address {
   float: left;
   max-width: calc(100% - 30px);
-  margin-right: 10px;
 }
 
 .address h6 {
@@ -115,13 +122,13 @@
 .copybuttonright {
   width: 5%;
   float: right;
-  left: 5px;
 }
 
 .copy {
   position: relative;
   color: $gray;
   cursor: pointer;
+  right: -5px;
 }
 
 .coin {
