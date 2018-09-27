@@ -125,7 +125,7 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length > 30)
+      this.state.address != null && (this.state.address.length > 40)
       );
   }
 
