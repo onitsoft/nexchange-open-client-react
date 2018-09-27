@@ -164,7 +164,8 @@
   },
   "order": {
     "enteraddress": "Geben Sie Ihre Wallet-Adresse ein",
-    "copy": "Adresse der Wallet kopiert!",
+    "copyaddress": "Adresse der Wallet kopiert!",
+    "copyaddressid": "{{addressIdType}} kopiert!",
     "reference": "Auftrag Referenz",
     "api": "Details Ihres Auftrages in unsere API",
     "blockchain": "Sehen Sie Ihre  Auftragsdetails in der Blockchain ein",

@@ -22,20 +22,28 @@ class OrderCoinProcessed extends Component {
     });
   }
 
-  triggerCopyAddressElementTooltip = (addressElement) => {
+  triggerCopyAddressElementTooltip = (addressElement, addressType, addressIdType) => {
     if (process.env.NODE_ENV !== 'test') {
-      $('#copy-address-element-to-clipboard').tooltip({
+      let elementId = '';
+      let copyMessage = '';
+      if (addressType === 'addressId') {
+        elementId = '#copy-address-element-to-clipboard';
+        copyMessage = 'order.copyaddressid';
+      } else {
+        elementId = '#copy-address-to-clipboard';
+        copyMessage = 'order.copyaddress';
+      }
+      $(`${elementId}`).tooltip({
         trigger: 'click',
         placement: 'top',
       });
-
-      $('#copy-address-element-to-clipboard')
+      $(`${elementId}`)
         .tooltip('hide')
-        .attr('data-original-title', i18n.t('order.copyaddresselement'))
+        .attr('data-original-title', i18n.t(copyMessage, { addressIdType: addressIdType }))
         .tooltip('show');
 
       setTimeout(() => {
-        $('#copy-address-element-to-clipboard').tooltip('destroy');
+        $(`${elementId}`).tooltip('destroy');
       }, 1000);
 
       copy(addressElement);
@@ -117,7 +125,7 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length > 44)
+      this.state.address != null && (this.state.address.length > 30)
       );
   }
 
@@ -142,13 +150,17 @@ class OrderCoinProcessed extends Component {
   renderAddress() {
     let renderedAddress;
     let addressId;
+    let addressIdType;
 
     if (this.state.paymentId) {
       addressId = this.state.paymentId;
+      addressIdType = 'Payment id';
     } else if (this.state.destinationTag) {
       addressId = this.state.destinationTag;
+      addressIdType = 'Destination tag';
     } else if (this.state.memo) {
       address = this.state.memo;
+      addressIdType = 'Memo';
     } else {
       addressId = null;
     }
@@ -164,10 +176,10 @@ class OrderCoinProcessed extends Component {
               {this.props.type === 'Deposit' &&
               !isFiatOrder(this.props.order) && (
                 <i
-                  id="copy-address-element-to-clipboard"
+                  id="copy-address-to-clipboard"
                   className={`${styles.copy} fas fa-copy`}
                   data-test="copy-address"
-                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
+                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
                 />
               )}
             </div>
@@ -184,10 +196,10 @@ class OrderCoinProcessed extends Component {
             {this.props.type === 'Deposit' &&
             !isFiatOrder(this.props.order) && (
               <i
-                id="copy-address-element-to-clipboard"
+                id="copy-address-to-clipboard"
                 className={`${styles.copy} fas fa-copy`}
                 data-test="copy-address"
-                onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address)}
+                onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
               />)}
           </div>
         </div>
@@ -203,7 +215,7 @@ class OrderCoinProcessed extends Component {
                 id="copy-address-element-to-clipboard"
                 className={`${styles.copy} fas fa-copy`}
                 data-test="copy-address"
-                onClick={() => this.triggerCopyAddressElementTooltip(addressId)}
+                onClick={() => this.triggerCopyAddressElementTooltip(addressId, 'addressId', addressIdType)}
               /> :
               null
             )}
