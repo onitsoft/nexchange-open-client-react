@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { errorAlert, setMemo } from 'Actions/index.js';
 import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
-import i18n from '../../../../../i18n';
 
 class Memo extends Component {
   constructor(props) {
@@ -27,7 +26,6 @@ class Memo extends Component {
   }
 
   render() {
-    let coin = this.props.selectedCoin.receive ? this.props.selectedCoin.receive : '...';
     return (
       <I18n ns="translations">
         {t => (
