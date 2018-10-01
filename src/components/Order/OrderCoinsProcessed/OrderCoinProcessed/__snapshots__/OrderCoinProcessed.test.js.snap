@@ -3306,6 +3306,3301 @@ ShallowWrapper {
 }
 `;
 
+exports[`OrderCoinProcessed renders correctly and passes payment id to order initial 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="box box  crypto"
+>
+        <div
+                className="media-left"
+        >
+                <i
+                        className="coin cc BTC"
+                />
+        </div>
+        <div
+                className="media-right"
+        >
+                <h5>
+                        order.Deposit
+                         
+                        <b>
+                                0.05
+                                 
+                                BTC
+                        </b>
+                        <i
+                                className="fa fa-question-circle"
+                                data-original-title=""
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                style={
+                                        Object {
+                                                "marginLeft": 8,
+                                              }
+                                }
+                        />
+                </h5>
+                <div
+                        className="address"
+                >
+                        <div
+                                className="row"
+                        >
+                                <div
+                                        className="address-left deposit address-hidden"
+                                >
+                                        <h6>
+                                                BTC_0_HACUB8
+                                        </h6>
+                                </div>
+                                <div
+                                        className="copybuttonright"
+                                >
+                                        <i
+                                                className="copy fas fa-copy"
+                                                data-test="copy-address"
+                                                id="copy-address-to-clipboard"
+                                                onClick={[Function]}
+                                        />
+                                </div>
+                        </div>
+                </div>
+                <a
+                        className="expansion-button expansion-button-mobile"
+                        onClick={[Function]}
+                >
+                        Expand
+                </a>
+                <MinMax
+                        order={
+                                Object {
+                                        "amount_base": "2.79715421",
+                                        "amount_quote": "0.05000000",
+                                        "created_on": "2018-10-01T07:51:39.480190Z",
+                                        "deposit_address": Object {
+                                          "address": "BTC_0_HACUB8",
+                                          "currency_code": "BTC",
+                                          "destination_tag": null,
+                                          "name": "",
+                                          "payment_id": null,
+                                          "type": "D",
+                                        },
+                                        "from_default_rule": false,
+                                        "is_default_rule": false,
+                                        "kyc_deadline": null,
+                                        "pair": Object {
+                                          "base": Object {
+                                            "code": "XMR",
+                                            "has_enabled_pairs": true,
+                                            "has_enabled_pairs_for_test": true,
+                                            "is_base_of_enabled_pair": true,
+                                            "is_base_of_enabled_pair_for_test": true,
+                                            "is_crypto": true,
+                                            "is_quote_of_enabled_pair": true,
+                                            "is_quote_of_enabled_pair_for_test": true,
+                                            "maximal_amount": "15.00000000",
+                                            "min_confirmations": 10,
+                                            "minimal_amount": "0.10000000",
+                                            "name": "monero",
+                                            "withdrawal_fee": "0.01100000",
+                                          },
+                                          "fee_ask": 0.01,
+                                          "fee_bid": 0.01,
+                                          "name": "XMRBTC",
+                                          "quote": Object {
+                                            "code": "BTC",
+                                            "has_enabled_pairs": true,
+                                            "has_enabled_pairs_for_test": true,
+                                            "is_base_of_enabled_pair": true,
+                                            "is_base_of_enabled_pair_for_test": true,
+                                            "is_crypto": true,
+                                            "is_quote_of_enabled_pair": true,
+                                            "is_quote_of_enabled_pair_for_test": true,
+                                            "maximal_amount": "5.00000000",
+                                            "min_confirmations": 2,
+                                            "minimal_amount": "0.00100000",
+                                            "name": "bitcoin",
+                                            "withdrawal_fee": "0.00050000",
+                                          },
+                                        },
+                                        "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                        "payment_url": null,
+                                        "payment_window": 15,
+                                        "referral_code": Array [
+                                          Object {
+                                            "code": "REZCI9KXJK5",
+                                            "created_on": "2018-10-01T07:51:39.003237Z",
+                                            "modified_on": "2018-10-01T07:51:39.003288Z",
+                                          },
+                                        ],
+                                        "status_name": Array [
+                                          Array [
+                                            11,
+                                            "INITIAL",
+                                          ],
+                                        ],
+                                        "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                        "transactions": Array [],
+                                        "unique_reference": "OB9UVL",
+                                        "user_provided_amount": 1,
+                                        "withdraw_address": Object {
+                                          "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                          "currency_code": "XMR",
+                                          "destination_tag": null,
+                                          "name": "",
+                                          "payment_id": "420fa29b2d9a49f5",
+                                          "type": "W",
+                                        },
+                                        "withdrawal_fee": 0.011,
+                                        "withdrawal_fee_quote": 0.00019585819,
+                                      }
+                        }
+                        type="Deposit"
+                />
+        </div>
+</div>,
+      "className": "col-xs-12 col-sm-6 col-sm-6 ",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="media-left"
+>
+            <i
+                        className="coin cc BTC"
+            />
+</div>,
+          <div
+            className="media-right"
+>
+            <h5>
+                        order.Deposit
+                         
+                        <b>
+                                    0.05
+                                     
+                                    BTC
+                        </b>
+                        <i
+                                    className="fa fa-question-circle"
+                                    data-original-title=""
+                                    data-placement="top"
+                                    data-toggle="tooltip"
+                                    style={
+                                                Object {
+                                                            "marginLeft": 8,
+                                                          }
+                                    }
+                        />
+            </h5>
+            <div
+                        className="address"
+            >
+                        <div
+                                    className="row"
+                        >
+                                    <div
+                                                className="address-left deposit address-hidden"
+                                    >
+                                                <h6>
+                                                            BTC_0_HACUB8
+                                                </h6>
+                                    </div>
+                                    <div
+                                                className="copybuttonright"
+                                    >
+                                                <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                                />
+                                    </div>
+                        </div>
+            </div>
+            <a
+                        className="expansion-button expansion-button-mobile"
+                        onClick={[Function]}
+            >
+                        Expand
+            </a>
+            <MinMax
+                        order={
+                                    Object {
+                                                "amount_base": "2.79715421",
+                                                "amount_quote": "0.05000000",
+                                                "created_on": "2018-10-01T07:51:39.480190Z",
+                                                "deposit_address": Object {
+                                                  "address": "BTC_0_HACUB8",
+                                                  "currency_code": "BTC",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": null,
+                                                  "type": "D",
+                                                },
+                                                "from_default_rule": false,
+                                                "is_default_rule": false,
+                                                "kyc_deadline": null,
+                                                "pair": Object {
+                                                  "base": Object {
+                                                    "code": "XMR",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "15.00000000",
+                                                    "min_confirmations": 10,
+                                                    "minimal_amount": "0.10000000",
+                                                    "name": "monero",
+                                                    "withdrawal_fee": "0.01100000",
+                                                  },
+                                                  "fee_ask": 0.01,
+                                                  "fee_bid": 0.01,
+                                                  "name": "XMRBTC",
+                                                  "quote": Object {
+                                                    "code": "BTC",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "5.00000000",
+                                                    "min_confirmations": 2,
+                                                    "minimal_amount": "0.00100000",
+                                                    "name": "bitcoin",
+                                                    "withdrawal_fee": "0.00050000",
+                                                  },
+                                                },
+                                                "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                "payment_url": null,
+                                                "payment_window": 15,
+                                                "referral_code": Array [
+                                                  Object {
+                                                    "code": "REZCI9KXJK5",
+                                                    "created_on": "2018-10-01T07:51:39.003237Z",
+                                                    "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                  },
+                                                ],
+                                                "status_name": Array [
+                                                  Array [
+                                                    11,
+                                                    "INITIAL",
+                                                  ],
+                                                ],
+                                                "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                "transactions": Array [],
+                                                "unique_reference": "OB9UVL",
+                                                "user_provided_amount": 1,
+                                                "withdraw_address": Object {
+                                                  "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                  "currency_code": "XMR",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": "420fa29b2d9a49f5",
+                                                  "type": "W",
+                                                },
+                                                "withdrawal_fee": 0.011,
+                                                "withdrawal_fee_quote": 0.00019585819,
+                                              }
+                        }
+                        type="Deposit"
+            />
+</div>,
+        ],
+        "className": "box box  crypto",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <i
+              className="coin cc BTC"
+/>,
+            "className": "media-left",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "coin cc BTC",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h5>
+                order.Deposit
+                 
+                <b>
+                                0.05
+                                 
+                                BTC
+                </b>
+                <i
+                                className="fa fa-question-circle"
+                                data-original-title=""
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                style={
+                                                Object {
+                                                                "marginLeft": 8,
+                                                              }
+                                }
+                />
+</h5>,
+              <div
+                className="address"
+>
+                <div
+                                className="row"
+                >
+                                <div
+                                                className="address-left deposit address-hidden"
+                                >
+                                                <h6>
+                                                                BTC_0_HACUB8
+                                                </h6>
+                                </div>
+                                <div
+                                                className="copybuttonright"
+                                >
+                                                <i
+                                                                className="copy fas fa-copy"
+                                                                data-test="copy-address"
+                                                                id="copy-address-to-clipboard"
+                                                                onClick={[Function]}
+                                                />
+                                </div>
+                </div>
+</div>,
+              <a
+                className="expansion-button expansion-button-mobile"
+                onClick={[Function]}
+>
+                Expand
+</a>,
+              <MinMax
+                order={
+                                Object {
+                                                "amount_base": "2.79715421",
+                                                "amount_quote": "0.05000000",
+                                                "created_on": "2018-10-01T07:51:39.480190Z",
+                                                "deposit_address": Object {
+                                                  "address": "BTC_0_HACUB8",
+                                                  "currency_code": "BTC",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": null,
+                                                  "type": "D",
+                                                },
+                                                "from_default_rule": false,
+                                                "is_default_rule": false,
+                                                "kyc_deadline": null,
+                                                "pair": Object {
+                                                  "base": Object {
+                                                    "code": "XMR",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "15.00000000",
+                                                    "min_confirmations": 10,
+                                                    "minimal_amount": "0.10000000",
+                                                    "name": "monero",
+                                                    "withdrawal_fee": "0.01100000",
+                                                  },
+                                                  "fee_ask": 0.01,
+                                                  "fee_bid": 0.01,
+                                                  "name": "XMRBTC",
+                                                  "quote": Object {
+                                                    "code": "BTC",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "5.00000000",
+                                                    "min_confirmations": 2,
+                                                    "minimal_amount": "0.00100000",
+                                                    "name": "bitcoin",
+                                                    "withdrawal_fee": "0.00050000",
+                                                  },
+                                                },
+                                                "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                "payment_url": null,
+                                                "payment_window": 15,
+                                                "referral_code": Array [
+                                                  Object {
+                                                    "code": "REZCI9KXJK5",
+                                                    "created_on": "2018-10-01T07:51:39.003237Z",
+                                                    "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                  },
+                                                ],
+                                                "status_name": Array [
+                                                  Array [
+                                                    11,
+                                                    "INITIAL",
+                                                  ],
+                                                ],
+                                                "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                "transactions": Array [],
+                                                "unique_reference": "OB9UVL",
+                                                "user_provided_amount": 1,
+                                                "withdraw_address": Object {
+                                                  "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                  "currency_code": "XMR",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": "420fa29b2d9a49f5",
+                                                  "type": "W",
+                                                },
+                                                "withdrawal_fee": 0.011,
+                                                "withdrawal_fee_quote": 0.00019585819,
+                                              }
+                }
+                type="Deposit"
+/>,
+            ],
+            "className": "media-right",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "order.Deposit",
+                  " ",
+                  <b>
+                    0.05
+                     
+                    BTC
+</b>,
+                  <i
+                    className="fa fa-question-circle"
+                    data-original-title=""
+                    data-placement="top"
+                    data-toggle="tooltip"
+                    style={
+                                        Object {
+                                                            "marginLeft": 8,
+                                                          }
+                    }
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "order.Deposit",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      0.05,
+                      " ",
+                      "BTC",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    0.05,
+                    " ",
+                    "BTC",
+                  ],
+                  "type": "b",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fa fa-question-circle",
+                    "data-original-title": "",
+                    "data-placement": "top",
+                    "data-toggle": "tooltip",
+                    "style": Object {
+                      "marginLeft": 8,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+              ],
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="row"
+>
+                  <div
+                                    className="address-left deposit address-hidden"
+                  >
+                                    <h6>
+                                                      BTC_0_HACUB8
+                                    </h6>
+                  </div>
+                  <div
+                                    className="copybuttonright"
+                  >
+                                    <i
+                                                      className="copy fas fa-copy"
+                                                      data-test="copy-address"
+                                                      id="copy-address-to-clipboard"
+                                                      onClick={[Function]}
+                                    />
+                  </div>
+</div>,
+                "className": "address",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="address-left deposit address-hidden"
+>
+                      <h6>
+                                            BTC_0_HACUB8
+                      </h6>
+</div>,
+                    <div
+                      className="copybuttonright"
+>
+                      <i
+                                            className="copy fas fa-copy"
+                                            data-test="copy-address"
+                                            id="copy-address-to-clipboard"
+                                            onClick={[Function]}
+                      />
+</div>,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <h6>
+                        BTC_0_HACUB8
+</h6>,
+                      "className": "address-left deposit address-hidden",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "BTC_0_HACUB8",
+                      },
+                      "ref": null,
+                      "rendered": "BTC_0_HACUB8",
+                      "type": "h6",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="copy fas fa-copy"
+                        data-test="copy-address"
+                        id="copy-address-to-clipboard"
+                        onClick={[Function]}
+/>,
+                      "className": "copybuttonright",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "copy fas fa-copy",
+                        "data-test": "copy-address",
+                        "id": "copy-address-to-clipboard",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Expand",
+                "className": "expansion-button expansion-button-mobile",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Expand",
+              "type": "a",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "order": Object {
+                  "amount_base": "2.79715421",
+                  "amount_quote": "0.05000000",
+                  "created_on": "2018-10-01T07:51:39.480190Z",
+                  "deposit_address": Object {
+                    "address": "BTC_0_HACUB8",
+                    "currency_code": "BTC",
+                    "destination_tag": null,
+                    "name": "",
+                    "payment_id": null,
+                    "type": "D",
+                  },
+                  "from_default_rule": false,
+                  "is_default_rule": false,
+                  "kyc_deadline": null,
+                  "pair": Object {
+                    "base": Object {
+                      "code": "XMR",
+                      "has_enabled_pairs": true,
+                      "has_enabled_pairs_for_test": true,
+                      "is_base_of_enabled_pair": true,
+                      "is_base_of_enabled_pair_for_test": true,
+                      "is_crypto": true,
+                      "is_quote_of_enabled_pair": true,
+                      "is_quote_of_enabled_pair_for_test": true,
+                      "maximal_amount": "15.00000000",
+                      "min_confirmations": 10,
+                      "minimal_amount": "0.10000000",
+                      "name": "monero",
+                      "withdrawal_fee": "0.01100000",
+                    },
+                    "fee_ask": 0.01,
+                    "fee_bid": 0.01,
+                    "name": "XMRBTC",
+                    "quote": Object {
+                      "code": "BTC",
+                      "has_enabled_pairs": true,
+                      "has_enabled_pairs_for_test": true,
+                      "is_base_of_enabled_pair": true,
+                      "is_base_of_enabled_pair_for_test": true,
+                      "is_crypto": true,
+                      "is_quote_of_enabled_pair": true,
+                      "is_quote_of_enabled_pair_for_test": true,
+                      "maximal_amount": "5.00000000",
+                      "min_confirmations": 2,
+                      "minimal_amount": "0.00100000",
+                      "name": "bitcoin",
+                      "withdrawal_fee": "0.00050000",
+                    },
+                  },
+                  "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                  "payment_url": null,
+                  "payment_window": 15,
+                  "referral_code": Array [
+                    Object {
+                      "code": "REZCI9KXJK5",
+                      "created_on": "2018-10-01T07:51:39.003237Z",
+                      "modified_on": "2018-10-01T07:51:39.003288Z",
+                    },
+                  ],
+                  "status_name": Array [
+                    Array [
+                      11,
+                      "INITIAL",
+                    ],
+                  ],
+                  "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                  "transactions": Array [],
+                  "unique_reference": "OB9UVL",
+                  "user_provided_amount": 1,
+                  "withdraw_address": Object {
+                    "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                    "currency_code": "XMR",
+                    "destination_tag": null,
+                    "name": "",
+                    "payment_id": "420fa29b2d9a49f5",
+                    "type": "W",
+                  },
+                  "withdrawal_fee": 0.011,
+                  "withdrawal_fee_quote": 0.00019585819,
+                },
+                "type": "Deposit",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="box box  crypto"
+>
+          <div
+                    className="media-left"
+          >
+                    <i
+                              className="coin cc BTC"
+                    />
+          </div>
+          <div
+                    className="media-right"
+          >
+                    <h5>
+                              order.Deposit
+                               
+                              <b>
+                                        0.05
+                                         
+                                        BTC
+                              </b>
+                              <i
+                                        className="fa fa-question-circle"
+                                        data-original-title=""
+                                        data-placement="top"
+                                        data-toggle="tooltip"
+                                        style={
+                                                  Object {
+                                                            "marginLeft": 8,
+                                                          }
+                                        }
+                              />
+                    </h5>
+                    <div
+                              className="address"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="address-left deposit address-hidden"
+                                        >
+                                                  <h6>
+                                                            BTC_0_HACUB8
+                                                  </h6>
+                                        </div>
+                                        <div
+                                                  className="copybuttonright"
+                                        >
+                                                  <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                                  />
+                                        </div>
+                              </div>
+                    </div>
+                    <a
+                              className="expansion-button expansion-button-mobile"
+                              onClick={[Function]}
+                    >
+                              Expand
+                    </a>
+                    <MinMax
+                              order={
+                                        Object {
+                                                  "amount_base": "2.79715421",
+                                                  "amount_quote": "0.05000000",
+                                                  "created_on": "2018-10-01T07:51:39.480190Z",
+                                                  "deposit_address": Object {
+                                                    "address": "BTC_0_HACUB8",
+                                                    "currency_code": "BTC",
+                                                    "destination_tag": null,
+                                                    "name": "",
+                                                    "payment_id": null,
+                                                    "type": "D",
+                                                  },
+                                                  "from_default_rule": false,
+                                                  "is_default_rule": false,
+                                                  "kyc_deadline": null,
+                                                  "pair": Object {
+                                                    "base": Object {
+                                                      "code": "XMR",
+                                                      "has_enabled_pairs": true,
+                                                      "has_enabled_pairs_for_test": true,
+                                                      "is_base_of_enabled_pair": true,
+                                                      "is_base_of_enabled_pair_for_test": true,
+                                                      "is_crypto": true,
+                                                      "is_quote_of_enabled_pair": true,
+                                                      "is_quote_of_enabled_pair_for_test": true,
+                                                      "maximal_amount": "15.00000000",
+                                                      "min_confirmations": 10,
+                                                      "minimal_amount": "0.10000000",
+                                                      "name": "monero",
+                                                      "withdrawal_fee": "0.01100000",
+                                                    },
+                                                    "fee_ask": 0.01,
+                                                    "fee_bid": 0.01,
+                                                    "name": "XMRBTC",
+                                                    "quote": Object {
+                                                      "code": "BTC",
+                                                      "has_enabled_pairs": true,
+                                                      "has_enabled_pairs_for_test": true,
+                                                      "is_base_of_enabled_pair": true,
+                                                      "is_base_of_enabled_pair_for_test": true,
+                                                      "is_crypto": true,
+                                                      "is_quote_of_enabled_pair": true,
+                                                      "is_quote_of_enabled_pair_for_test": true,
+                                                      "maximal_amount": "5.00000000",
+                                                      "min_confirmations": 2,
+                                                      "minimal_amount": "0.00100000",
+                                                      "name": "bitcoin",
+                                                      "withdrawal_fee": "0.00050000",
+                                                    },
+                                                  },
+                                                  "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                  "payment_url": null,
+                                                  "payment_window": 15,
+                                                  "referral_code": Array [
+                                                    Object {
+                                                      "code": "REZCI9KXJK5",
+                                                      "created_on": "2018-10-01T07:51:39.003237Z",
+                                                      "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                    },
+                                                  ],
+                                                  "status_name": Array [
+                                                    Array [
+                                                      11,
+                                                      "INITIAL",
+                                                    ],
+                                                  ],
+                                                  "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                  "transactions": Array [],
+                                                  "unique_reference": "OB9UVL",
+                                                  "user_provided_amount": 1,
+                                                  "withdraw_address": Object {
+                                                    "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                    "currency_code": "XMR",
+                                                    "destination_tag": null,
+                                                    "name": "",
+                                                    "payment_id": "420fa29b2d9a49f5",
+                                                    "type": "W",
+                                                  },
+                                                  "withdrawal_fee": 0.011,
+                                                  "withdrawal_fee_quote": 0.00019585819,
+                                                }
+                              }
+                              type="Deposit"
+                    />
+          </div>
+</div>,
+        "className": "col-xs-12 col-sm-6 col-sm-6 ",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="media-left"
+>
+              <i
+                            className="coin cc BTC"
+              />
+</div>,
+            <div
+              className="media-right"
+>
+              <h5>
+                            order.Deposit
+                             
+                            <b>
+                                          0.05
+                                           
+                                          BTC
+                            </b>
+                            <i
+                                          className="fa fa-question-circle"
+                                          data-original-title=""
+                                          data-placement="top"
+                                          data-toggle="tooltip"
+                                          style={
+                                                        Object {
+                                                                      "marginLeft": 8,
+                                                                    }
+                                          }
+                            />
+              </h5>
+              <div
+                            className="address"
+              >
+                            <div
+                                          className="row"
+                            >
+                                          <div
+                                                        className="address-left deposit address-hidden"
+                                          >
+                                                        <h6>
+                                                                      BTC_0_HACUB8
+                                                        </h6>
+                                          </div>
+                                          <div
+                                                        className="copybuttonright"
+                                          >
+                                                        <i
+                                                                      className="copy fas fa-copy"
+                                                                      data-test="copy-address"
+                                                                      id="copy-address-to-clipboard"
+                                                                      onClick={[Function]}
+                                                        />
+                                          </div>
+                            </div>
+              </div>
+              <a
+                            className="expansion-button expansion-button-mobile"
+                            onClick={[Function]}
+              >
+                            Expand
+              </a>
+              <MinMax
+                            order={
+                                          Object {
+                                                        "amount_base": "2.79715421",
+                                                        "amount_quote": "0.05000000",
+                                                        "created_on": "2018-10-01T07:51:39.480190Z",
+                                                        "deposit_address": Object {
+                                                          "address": "BTC_0_HACUB8",
+                                                          "currency_code": "BTC",
+                                                          "destination_tag": null,
+                                                          "name": "",
+                                                          "payment_id": null,
+                                                          "type": "D",
+                                                        },
+                                                        "from_default_rule": false,
+                                                        "is_default_rule": false,
+                                                        "kyc_deadline": null,
+                                                        "pair": Object {
+                                                          "base": Object {
+                                                            "code": "XMR",
+                                                            "has_enabled_pairs": true,
+                                                            "has_enabled_pairs_for_test": true,
+                                                            "is_base_of_enabled_pair": true,
+                                                            "is_base_of_enabled_pair_for_test": true,
+                                                            "is_crypto": true,
+                                                            "is_quote_of_enabled_pair": true,
+                                                            "is_quote_of_enabled_pair_for_test": true,
+                                                            "maximal_amount": "15.00000000",
+                                                            "min_confirmations": 10,
+                                                            "minimal_amount": "0.10000000",
+                                                            "name": "monero",
+                                                            "withdrawal_fee": "0.01100000",
+                                                          },
+                                                          "fee_ask": 0.01,
+                                                          "fee_bid": 0.01,
+                                                          "name": "XMRBTC",
+                                                          "quote": Object {
+                                                            "code": "BTC",
+                                                            "has_enabled_pairs": true,
+                                                            "has_enabled_pairs_for_test": true,
+                                                            "is_base_of_enabled_pair": true,
+                                                            "is_base_of_enabled_pair_for_test": true,
+                                                            "is_crypto": true,
+                                                            "is_quote_of_enabled_pair": true,
+                                                            "is_quote_of_enabled_pair_for_test": true,
+                                                            "maximal_amount": "5.00000000",
+                                                            "min_confirmations": 2,
+                                                            "minimal_amount": "0.00100000",
+                                                            "name": "bitcoin",
+                                                            "withdrawal_fee": "0.00050000",
+                                                          },
+                                                        },
+                                                        "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                        "payment_url": null,
+                                                        "payment_window": 15,
+                                                        "referral_code": Array [
+                                                          Object {
+                                                            "code": "REZCI9KXJK5",
+                                                            "created_on": "2018-10-01T07:51:39.003237Z",
+                                                            "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                          },
+                                                        ],
+                                                        "status_name": Array [
+                                                          Array [
+                                                            11,
+                                                            "INITIAL",
+                                                          ],
+                                                        ],
+                                                        "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                        "transactions": Array [],
+                                                        "unique_reference": "OB9UVL",
+                                                        "user_provided_amount": 1,
+                                                        "withdraw_address": Object {
+                                                          "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                          "currency_code": "XMR",
+                                                          "destination_tag": null,
+                                                          "name": "",
+                                                          "payment_id": "420fa29b2d9a49f5",
+                                                          "type": "W",
+                                                        },
+                                                        "withdrawal_fee": 0.011,
+                                                        "withdrawal_fee_quote": 0.00019585819,
+                                                      }
+                            }
+                            type="Deposit"
+              />
+</div>,
+          ],
+          "className": "box box  crypto",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <i
+                className="coin cc BTC"
+/>,
+              "className": "media-left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "coin cc BTC",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  order.Deposit
+                   
+                  <b>
+                                    0.05
+                                     
+                                    BTC
+                  </b>
+                  <i
+                                    className="fa fa-question-circle"
+                                    data-original-title=""
+                                    data-placement="top"
+                                    data-toggle="tooltip"
+                                    style={
+                                                      Object {
+                                                                        "marginLeft": 8,
+                                                                      }
+                                    }
+                  />
+</h5>,
+                <div
+                  className="address"
+>
+                  <div
+                                    className="row"
+                  >
+                                    <div
+                                                      className="address-left deposit address-hidden"
+                                    >
+                                                      <h6>
+                                                                        BTC_0_HACUB8
+                                                      </h6>
+                                    </div>
+                                    <div
+                                                      className="copybuttonright"
+                                    >
+                                                      <i
+                                                                        className="copy fas fa-copy"
+                                                                        data-test="copy-address"
+                                                                        id="copy-address-to-clipboard"
+                                                                        onClick={[Function]}
+                                                      />
+                                    </div>
+                  </div>
+</div>,
+                <a
+                  className="expansion-button expansion-button-mobile"
+                  onClick={[Function]}
+>
+                  Expand
+</a>,
+                <MinMax
+                  order={
+                                    Object {
+                                                      "amount_base": "2.79715421",
+                                                      "amount_quote": "0.05000000",
+                                                      "created_on": "2018-10-01T07:51:39.480190Z",
+                                                      "deposit_address": Object {
+                                                        "address": "BTC_0_HACUB8",
+                                                        "currency_code": "BTC",
+                                                        "destination_tag": null,
+                                                        "name": "",
+                                                        "payment_id": null,
+                                                        "type": "D",
+                                                      },
+                                                      "from_default_rule": false,
+                                                      "is_default_rule": false,
+                                                      "kyc_deadline": null,
+                                                      "pair": Object {
+                                                        "base": Object {
+                                                          "code": "XMR",
+                                                          "has_enabled_pairs": true,
+                                                          "has_enabled_pairs_for_test": true,
+                                                          "is_base_of_enabled_pair": true,
+                                                          "is_base_of_enabled_pair_for_test": true,
+                                                          "is_crypto": true,
+                                                          "is_quote_of_enabled_pair": true,
+                                                          "is_quote_of_enabled_pair_for_test": true,
+                                                          "maximal_amount": "15.00000000",
+                                                          "min_confirmations": 10,
+                                                          "minimal_amount": "0.10000000",
+                                                          "name": "monero",
+                                                          "withdrawal_fee": "0.01100000",
+                                                        },
+                                                        "fee_ask": 0.01,
+                                                        "fee_bid": 0.01,
+                                                        "name": "XMRBTC",
+                                                        "quote": Object {
+                                                          "code": "BTC",
+                                                          "has_enabled_pairs": true,
+                                                          "has_enabled_pairs_for_test": true,
+                                                          "is_base_of_enabled_pair": true,
+                                                          "is_base_of_enabled_pair_for_test": true,
+                                                          "is_crypto": true,
+                                                          "is_quote_of_enabled_pair": true,
+                                                          "is_quote_of_enabled_pair_for_test": true,
+                                                          "maximal_amount": "5.00000000",
+                                                          "min_confirmations": 2,
+                                                          "minimal_amount": "0.00100000",
+                                                          "name": "bitcoin",
+                                                          "withdrawal_fee": "0.00050000",
+                                                        },
+                                                      },
+                                                      "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                      "payment_url": null,
+                                                      "payment_window": 15,
+                                                      "referral_code": Array [
+                                                        Object {
+                                                          "code": "REZCI9KXJK5",
+                                                          "created_on": "2018-10-01T07:51:39.003237Z",
+                                                          "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                        },
+                                                      ],
+                                                      "status_name": Array [
+                                                        Array [
+                                                          11,
+                                                          "INITIAL",
+                                                        ],
+                                                      ],
+                                                      "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                      "transactions": Array [],
+                                                      "unique_reference": "OB9UVL",
+                                                      "user_provided_amount": 1,
+                                                      "withdraw_address": Object {
+                                                        "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                        "currency_code": "XMR",
+                                                        "destination_tag": null,
+                                                        "name": "",
+                                                        "payment_id": "420fa29b2d9a49f5",
+                                                        "type": "W",
+                                                      },
+                                                      "withdrawal_fee": 0.011,
+                                                      "withdrawal_fee_quote": 0.00019585819,
+                                                    }
+                  }
+                  type="Deposit"
+/>,
+              ],
+              "className": "media-right",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "order.Deposit",
+                    " ",
+                    <b>
+                      0.05
+                       
+                      BTC
+</b>,
+                    <i
+                      className="fa fa-question-circle"
+                      data-original-title=""
+                      data-placement="top"
+                      data-toggle="tooltip"
+                      style={
+                                            Object {
+                                                                  "marginLeft": 8,
+                                                                }
+                      }
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "order.Deposit",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        0.05,
+                        " ",
+                        "BTC",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      0.05,
+                      " ",
+                      "BTC",
+                    ],
+                    "type": "b",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "fa fa-question-circle",
+                      "data-original-title": "",
+                      "data-placement": "top",
+                      "data-toggle": "tooltip",
+                      "style": Object {
+                        "marginLeft": 8,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                ],
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="row"
+>
+                    <div
+                                        className="address-left deposit address-hidden"
+                    >
+                                        <h6>
+                                                            BTC_0_HACUB8
+                                        </h6>
+                    </div>
+                    <div
+                                        className="copybuttonright"
+                    >
+                                        <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                        />
+                    </div>
+</div>,
+                  "className": "address",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="address-left deposit address-hidden"
+>
+                        <h6>
+                                                BTC_0_HACUB8
+                        </h6>
+</div>,
+                      <div
+                        className="copybuttonright"
+>
+                        <i
+                                                className="copy fas fa-copy"
+                                                data-test="copy-address"
+                                                id="copy-address-to-clipboard"
+                                                onClick={[Function]}
+                        />
+</div>,
+                    ],
+                    "className": "row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <h6>
+                          BTC_0_HACUB8
+</h6>,
+                        "className": "address-left deposit address-hidden",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "BTC_0_HACUB8",
+                        },
+                        "ref": null,
+                        "rendered": "BTC_0_HACUB8",
+                        "type": "h6",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="copy fas fa-copy"
+                          data-test="copy-address"
+                          id="copy-address-to-clipboard"
+                          onClick={[Function]}
+/>,
+                        "className": "copybuttonright",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "copy fas fa-copy",
+                          "data-test": "copy-address",
+                          "id": "copy-address-to-clipboard",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Expand",
+                  "className": "expansion-button expansion-button-mobile",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Expand",
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "order": Object {
+                    "amount_base": "2.79715421",
+                    "amount_quote": "0.05000000",
+                    "created_on": "2018-10-01T07:51:39.480190Z",
+                    "deposit_address": Object {
+                      "address": "BTC_0_HACUB8",
+                      "currency_code": "BTC",
+                      "destination_tag": null,
+                      "name": "",
+                      "payment_id": null,
+                      "type": "D",
+                    },
+                    "from_default_rule": false,
+                    "is_default_rule": false,
+                    "kyc_deadline": null,
+                    "pair": Object {
+                      "base": Object {
+                        "code": "XMR",
+                        "has_enabled_pairs": true,
+                        "has_enabled_pairs_for_test": true,
+                        "is_base_of_enabled_pair": true,
+                        "is_base_of_enabled_pair_for_test": true,
+                        "is_crypto": true,
+                        "is_quote_of_enabled_pair": true,
+                        "is_quote_of_enabled_pair_for_test": true,
+                        "maximal_amount": "15.00000000",
+                        "min_confirmations": 10,
+                        "minimal_amount": "0.10000000",
+                        "name": "monero",
+                        "withdrawal_fee": "0.01100000",
+                      },
+                      "fee_ask": 0.01,
+                      "fee_bid": 0.01,
+                      "name": "XMRBTC",
+                      "quote": Object {
+                        "code": "BTC",
+                        "has_enabled_pairs": true,
+                        "has_enabled_pairs_for_test": true,
+                        "is_base_of_enabled_pair": true,
+                        "is_base_of_enabled_pair_for_test": true,
+                        "is_crypto": true,
+                        "is_quote_of_enabled_pair": true,
+                        "is_quote_of_enabled_pair_for_test": true,
+                        "maximal_amount": "5.00000000",
+                        "min_confirmations": 2,
+                        "minimal_amount": "0.00100000",
+                        "name": "bitcoin",
+                        "withdrawal_fee": "0.00050000",
+                      },
+                    },
+                    "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                    "payment_url": null,
+                    "payment_window": 15,
+                    "referral_code": Array [
+                      Object {
+                        "code": "REZCI9KXJK5",
+                        "created_on": "2018-10-01T07:51:39.003237Z",
+                        "modified_on": "2018-10-01T07:51:39.003288Z",
+                      },
+                    ],
+                    "status_name": Array [
+                      Array [
+                        11,
+                        "INITIAL",
+                      ],
+                    ],
+                    "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                    "transactions": Array [],
+                    "unique_reference": "OB9UVL",
+                    "user_provided_amount": 1,
+                    "withdraw_address": Object {
+                      "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                      "currency_code": "XMR",
+                      "destination_tag": null,
+                      "name": "",
+                      "payment_id": "420fa29b2d9a49f5",
+                      "type": "W",
+                    },
+                    "withdrawal_fee": 0.011,
+                    "withdrawal_fee_quote": 0.00019585819,
+                  },
+                  "type": "Deposit",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`OrderCoinProcessed renders correctly and passes payment id to order initial 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+    order={
+        Object {
+            "amount_base": "2.79715421",
+            "amount_quote": "0.05000000",
+            "created_on": "2018-10-01T07:51:39.480190Z",
+            "deposit_address": Object {
+              "address": "BTC_0_HACUB8",
+              "currency_code": "BTC",
+              "destination_tag": null,
+              "name": "",
+              "payment_id": null,
+              "type": "D",
+            },
+            "from_default_rule": false,
+            "is_default_rule": false,
+            "kyc_deadline": null,
+            "pair": Object {
+              "base": Object {
+                "code": "XMR",
+                "has_enabled_pairs": true,
+                "has_enabled_pairs_for_test": true,
+                "is_base_of_enabled_pair": true,
+                "is_base_of_enabled_pair_for_test": true,
+                "is_crypto": true,
+                "is_quote_of_enabled_pair": true,
+                "is_quote_of_enabled_pair_for_test": true,
+                "maximal_amount": "15.00000000",
+                "min_confirmations": 10,
+                "minimal_amount": "0.10000000",
+                "name": "monero",
+                "withdrawal_fee": "0.01100000",
+              },
+              "fee_ask": 0.01,
+              "fee_bid": 0.01,
+              "name": "XMRBTC",
+              "quote": Object {
+                "code": "BTC",
+                "has_enabled_pairs": true,
+                "has_enabled_pairs_for_test": true,
+                "is_base_of_enabled_pair": true,
+                "is_base_of_enabled_pair_for_test": true,
+                "is_crypto": true,
+                "is_quote_of_enabled_pair": true,
+                "is_quote_of_enabled_pair_for_test": true,
+                "maximal_amount": "5.00000000",
+                "min_confirmations": 2,
+                "minimal_amount": "0.00100000",
+                "name": "bitcoin",
+                "withdrawal_fee": "0.00050000",
+              },
+            },
+            "payment_deadline": "2018-10-01T08:06:39.480190Z",
+            "payment_url": null,
+            "payment_window": 15,
+            "referral_code": Array [
+              Object {
+                "code": "REZCI9KXJK5",
+                "created_on": "2018-10-01T07:51:39.003237Z",
+                "modified_on": "2018-10-01T07:51:39.003288Z",
+              },
+            ],
+            "status_name": Array [
+              Array [
+                11,
+                "INITIAL",
+              ],
+            ],
+            "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+            "transactions": Array [],
+            "unique_reference": "OB9UVL",
+            "user_provided_amount": 1,
+            "withdraw_address": Object {
+              "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+              "currency_code": "XMR",
+              "destination_tag": null,
+              "name": "",
+              "payment_id": "420fa29b2d9a49f5",
+              "type": "W",
+            },
+            "withdrawal_fee": 0.011,
+            "withdrawal_fee_quote": 0.00019585819,
+          }
+    }
+>
+    [Function]
+</I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="box box  crypto"
+>
+        <div
+                className="media-left"
+        >
+                <i
+                        className="coin cc BTC"
+                />
+        </div>
+        <div
+                className="media-right"
+        >
+                <h5>
+                        order.Deposit
+                         
+                        <b>
+                                0.05
+                                 
+                                BTC
+                        </b>
+                        <i
+                                className="fa fa-question-circle"
+                                data-original-title=""
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                style={
+                                        Object {
+                                                "marginLeft": 8,
+                                              }
+                                }
+                        />
+                </h5>
+                <div
+                        className="address"
+                >
+                        <div
+                                className="row"
+                        >
+                                <div
+                                        className="address-left deposit address-hidden"
+                                >
+                                        <h6>
+                                                BTC_0_HACUB8
+                                        </h6>
+                                </div>
+                                <div
+                                        className="copybuttonright"
+                                >
+                                        <i
+                                                className="copy fas fa-copy"
+                                                data-test="copy-address"
+                                                id="copy-address-to-clipboard"
+                                                onClick={[Function]}
+                                        />
+                                </div>
+                        </div>
+                </div>
+                <a
+                        className="expansion-button expansion-button-mobile"
+                        onClick={[Function]}
+                >
+                        Expand
+                </a>
+                <MinMax
+                        order={
+                                Object {
+                                        "amount_base": "2.79715421",
+                                        "amount_quote": "0.05000000",
+                                        "created_on": "2018-10-01T07:51:39.480190Z",
+                                        "deposit_address": Object {
+                                          "address": "BTC_0_HACUB8",
+                                          "currency_code": "BTC",
+                                          "destination_tag": null,
+                                          "name": "",
+                                          "payment_id": null,
+                                          "type": "D",
+                                        },
+                                        "from_default_rule": false,
+                                        "is_default_rule": false,
+                                        "kyc_deadline": null,
+                                        "pair": Object {
+                                          "base": Object {
+                                            "code": "XMR",
+                                            "has_enabled_pairs": true,
+                                            "has_enabled_pairs_for_test": true,
+                                            "is_base_of_enabled_pair": true,
+                                            "is_base_of_enabled_pair_for_test": true,
+                                            "is_crypto": true,
+                                            "is_quote_of_enabled_pair": true,
+                                            "is_quote_of_enabled_pair_for_test": true,
+                                            "maximal_amount": "15.00000000",
+                                            "min_confirmations": 10,
+                                            "minimal_amount": "0.10000000",
+                                            "name": "monero",
+                                            "withdrawal_fee": "0.01100000",
+                                          },
+                                          "fee_ask": 0.01,
+                                          "fee_bid": 0.01,
+                                          "name": "XMRBTC",
+                                          "quote": Object {
+                                            "code": "BTC",
+                                            "has_enabled_pairs": true,
+                                            "has_enabled_pairs_for_test": true,
+                                            "is_base_of_enabled_pair": true,
+                                            "is_base_of_enabled_pair_for_test": true,
+                                            "is_crypto": true,
+                                            "is_quote_of_enabled_pair": true,
+                                            "is_quote_of_enabled_pair_for_test": true,
+                                            "maximal_amount": "5.00000000",
+                                            "min_confirmations": 2,
+                                            "minimal_amount": "0.00100000",
+                                            "name": "bitcoin",
+                                            "withdrawal_fee": "0.00050000",
+                                          },
+                                        },
+                                        "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                        "payment_url": null,
+                                        "payment_window": 15,
+                                        "referral_code": Array [
+                                          Object {
+                                            "code": "REZCI9KXJK5",
+                                            "created_on": "2018-10-01T07:51:39.003237Z",
+                                            "modified_on": "2018-10-01T07:51:39.003288Z",
+                                          },
+                                        ],
+                                        "status_name": Array [
+                                          Array [
+                                            11,
+                                            "INITIAL",
+                                          ],
+                                        ],
+                                        "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                        "transactions": Array [],
+                                        "unique_reference": "OB9UVL",
+                                        "user_provided_amount": 1,
+                                        "withdraw_address": Object {
+                                          "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                          "currency_code": "XMR",
+                                          "destination_tag": null,
+                                          "name": "",
+                                          "payment_id": "420fa29b2d9a49f5",
+                                          "type": "W",
+                                        },
+                                        "withdrawal_fee": 0.011,
+                                        "withdrawal_fee_quote": 0.00019585819,
+                                      }
+                        }
+                        type="Deposit"
+                />
+        </div>
+</div>,
+      "className": "col-xs-12 col-sm-6 col-sm-6 ",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="media-left"
+>
+            <i
+                        className="coin cc BTC"
+            />
+</div>,
+          <div
+            className="media-right"
+>
+            <h5>
+                        order.Deposit
+                         
+                        <b>
+                                    0.05
+                                     
+                                    BTC
+                        </b>
+                        <i
+                                    className="fa fa-question-circle"
+                                    data-original-title=""
+                                    data-placement="top"
+                                    data-toggle="tooltip"
+                                    style={
+                                                Object {
+                                                            "marginLeft": 8,
+                                                          }
+                                    }
+                        />
+            </h5>
+            <div
+                        className="address"
+            >
+                        <div
+                                    className="row"
+                        >
+                                    <div
+                                                className="address-left deposit address-hidden"
+                                    >
+                                                <h6>
+                                                            BTC_0_HACUB8
+                                                </h6>
+                                    </div>
+                                    <div
+                                                className="copybuttonright"
+                                    >
+                                                <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                                />
+                                    </div>
+                        </div>
+            </div>
+            <a
+                        className="expansion-button expansion-button-mobile"
+                        onClick={[Function]}
+            >
+                        Expand
+            </a>
+            <MinMax
+                        order={
+                                    Object {
+                                                "amount_base": "2.79715421",
+                                                "amount_quote": "0.05000000",
+                                                "created_on": "2018-10-01T07:51:39.480190Z",
+                                                "deposit_address": Object {
+                                                  "address": "BTC_0_HACUB8",
+                                                  "currency_code": "BTC",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": null,
+                                                  "type": "D",
+                                                },
+                                                "from_default_rule": false,
+                                                "is_default_rule": false,
+                                                "kyc_deadline": null,
+                                                "pair": Object {
+                                                  "base": Object {
+                                                    "code": "XMR",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "15.00000000",
+                                                    "min_confirmations": 10,
+                                                    "minimal_amount": "0.10000000",
+                                                    "name": "monero",
+                                                    "withdrawal_fee": "0.01100000",
+                                                  },
+                                                  "fee_ask": 0.01,
+                                                  "fee_bid": 0.01,
+                                                  "name": "XMRBTC",
+                                                  "quote": Object {
+                                                    "code": "BTC",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "5.00000000",
+                                                    "min_confirmations": 2,
+                                                    "minimal_amount": "0.00100000",
+                                                    "name": "bitcoin",
+                                                    "withdrawal_fee": "0.00050000",
+                                                  },
+                                                },
+                                                "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                "payment_url": null,
+                                                "payment_window": 15,
+                                                "referral_code": Array [
+                                                  Object {
+                                                    "code": "REZCI9KXJK5",
+                                                    "created_on": "2018-10-01T07:51:39.003237Z",
+                                                    "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                  },
+                                                ],
+                                                "status_name": Array [
+                                                  Array [
+                                                    11,
+                                                    "INITIAL",
+                                                  ],
+                                                ],
+                                                "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                "transactions": Array [],
+                                                "unique_reference": "OB9UVL",
+                                                "user_provided_amount": 1,
+                                                "withdraw_address": Object {
+                                                  "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                  "currency_code": "XMR",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": "420fa29b2d9a49f5",
+                                                  "type": "W",
+                                                },
+                                                "withdrawal_fee": 0.011,
+                                                "withdrawal_fee_quote": 0.00019585819,
+                                              }
+                        }
+                        type="Deposit"
+            />
+</div>,
+        ],
+        "className": "box box  crypto",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <i
+              className="coin cc BTC"
+/>,
+            "className": "media-left",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "coin cc BTC",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h5>
+                order.Deposit
+                 
+                <b>
+                                0.05
+                                 
+                                BTC
+                </b>
+                <i
+                                className="fa fa-question-circle"
+                                data-original-title=""
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                style={
+                                                Object {
+                                                                "marginLeft": 8,
+                                                              }
+                                }
+                />
+</h5>,
+              <div
+                className="address"
+>
+                <div
+                                className="row"
+                >
+                                <div
+                                                className="address-left deposit address-hidden"
+                                >
+                                                <h6>
+                                                                BTC_0_HACUB8
+                                                </h6>
+                                </div>
+                                <div
+                                                className="copybuttonright"
+                                >
+                                                <i
+                                                                className="copy fas fa-copy"
+                                                                data-test="copy-address"
+                                                                id="copy-address-to-clipboard"
+                                                                onClick={[Function]}
+                                                />
+                                </div>
+                </div>
+</div>,
+              <a
+                className="expansion-button expansion-button-mobile"
+                onClick={[Function]}
+>
+                Expand
+</a>,
+              <MinMax
+                order={
+                                Object {
+                                                "amount_base": "2.79715421",
+                                                "amount_quote": "0.05000000",
+                                                "created_on": "2018-10-01T07:51:39.480190Z",
+                                                "deposit_address": Object {
+                                                  "address": "BTC_0_HACUB8",
+                                                  "currency_code": "BTC",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": null,
+                                                  "type": "D",
+                                                },
+                                                "from_default_rule": false,
+                                                "is_default_rule": false,
+                                                "kyc_deadline": null,
+                                                "pair": Object {
+                                                  "base": Object {
+                                                    "code": "XMR",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "15.00000000",
+                                                    "min_confirmations": 10,
+                                                    "minimal_amount": "0.10000000",
+                                                    "name": "monero",
+                                                    "withdrawal_fee": "0.01100000",
+                                                  },
+                                                  "fee_ask": 0.01,
+                                                  "fee_bid": 0.01,
+                                                  "name": "XMRBTC",
+                                                  "quote": Object {
+                                                    "code": "BTC",
+                                                    "has_enabled_pairs": true,
+                                                    "has_enabled_pairs_for_test": true,
+                                                    "is_base_of_enabled_pair": true,
+                                                    "is_base_of_enabled_pair_for_test": true,
+                                                    "is_crypto": true,
+                                                    "is_quote_of_enabled_pair": true,
+                                                    "is_quote_of_enabled_pair_for_test": true,
+                                                    "maximal_amount": "5.00000000",
+                                                    "min_confirmations": 2,
+                                                    "minimal_amount": "0.00100000",
+                                                    "name": "bitcoin",
+                                                    "withdrawal_fee": "0.00050000",
+                                                  },
+                                                },
+                                                "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                "payment_url": null,
+                                                "payment_window": 15,
+                                                "referral_code": Array [
+                                                  Object {
+                                                    "code": "REZCI9KXJK5",
+                                                    "created_on": "2018-10-01T07:51:39.003237Z",
+                                                    "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                  },
+                                                ],
+                                                "status_name": Array [
+                                                  Array [
+                                                    11,
+                                                    "INITIAL",
+                                                  ],
+                                                ],
+                                                "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                "transactions": Array [],
+                                                "unique_reference": "OB9UVL",
+                                                "user_provided_amount": 1,
+                                                "withdraw_address": Object {
+                                                  "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                  "currency_code": "XMR",
+                                                  "destination_tag": null,
+                                                  "name": "",
+                                                  "payment_id": "420fa29b2d9a49f5",
+                                                  "type": "W",
+                                                },
+                                                "withdrawal_fee": 0.011,
+                                                "withdrawal_fee_quote": 0.00019585819,
+                                              }
+                }
+                type="Deposit"
+/>,
+            ],
+            "className": "media-right",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "order.Deposit",
+                  " ",
+                  <b>
+                    0.05
+                     
+                    BTC
+</b>,
+                  <i
+                    className="fa fa-question-circle"
+                    data-original-title=""
+                    data-placement="top"
+                    data-toggle="tooltip"
+                    style={
+                                        Object {
+                                                            "marginLeft": 8,
+                                                          }
+                    }
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "order.Deposit",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      0.05,
+                      " ",
+                      "BTC",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    0.05,
+                    " ",
+                    "BTC",
+                  ],
+                  "type": "b",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fa fa-question-circle",
+                    "data-original-title": "",
+                    "data-placement": "top",
+                    "data-toggle": "tooltip",
+                    "style": Object {
+                      "marginLeft": 8,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+              ],
+              "type": "h5",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="row"
+>
+                  <div
+                                    className="address-left deposit address-hidden"
+                  >
+                                    <h6>
+                                                      BTC_0_HACUB8
+                                    </h6>
+                  </div>
+                  <div
+                                    className="copybuttonright"
+                  >
+                                    <i
+                                                      className="copy fas fa-copy"
+                                                      data-test="copy-address"
+                                                      id="copy-address-to-clipboard"
+                                                      onClick={[Function]}
+                                    />
+                  </div>
+</div>,
+                "className": "address",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="address-left deposit address-hidden"
+>
+                      <h6>
+                                            BTC_0_HACUB8
+                      </h6>
+</div>,
+                    <div
+                      className="copybuttonright"
+>
+                      <i
+                                            className="copy fas fa-copy"
+                                            data-test="copy-address"
+                                            id="copy-address-to-clipboard"
+                                            onClick={[Function]}
+                      />
+</div>,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <h6>
+                        BTC_0_HACUB8
+</h6>,
+                      "className": "address-left deposit address-hidden",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "BTC_0_HACUB8",
+                      },
+                      "ref": null,
+                      "rendered": "BTC_0_HACUB8",
+                      "type": "h6",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="copy fas fa-copy"
+                        data-test="copy-address"
+                        id="copy-address-to-clipboard"
+                        onClick={[Function]}
+/>,
+                      "className": "copybuttonright",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "copy fas fa-copy",
+                        "data-test": "copy-address",
+                        "id": "copy-address-to-clipboard",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Expand",
+                "className": "expansion-button expansion-button-mobile",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Expand",
+              "type": "a",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "order": Object {
+                  "amount_base": "2.79715421",
+                  "amount_quote": "0.05000000",
+                  "created_on": "2018-10-01T07:51:39.480190Z",
+                  "deposit_address": Object {
+                    "address": "BTC_0_HACUB8",
+                    "currency_code": "BTC",
+                    "destination_tag": null,
+                    "name": "",
+                    "payment_id": null,
+                    "type": "D",
+                  },
+                  "from_default_rule": false,
+                  "is_default_rule": false,
+                  "kyc_deadline": null,
+                  "pair": Object {
+                    "base": Object {
+                      "code": "XMR",
+                      "has_enabled_pairs": true,
+                      "has_enabled_pairs_for_test": true,
+                      "is_base_of_enabled_pair": true,
+                      "is_base_of_enabled_pair_for_test": true,
+                      "is_crypto": true,
+                      "is_quote_of_enabled_pair": true,
+                      "is_quote_of_enabled_pair_for_test": true,
+                      "maximal_amount": "15.00000000",
+                      "min_confirmations": 10,
+                      "minimal_amount": "0.10000000",
+                      "name": "monero",
+                      "withdrawal_fee": "0.01100000",
+                    },
+                    "fee_ask": 0.01,
+                    "fee_bid": 0.01,
+                    "name": "XMRBTC",
+                    "quote": Object {
+                      "code": "BTC",
+                      "has_enabled_pairs": true,
+                      "has_enabled_pairs_for_test": true,
+                      "is_base_of_enabled_pair": true,
+                      "is_base_of_enabled_pair_for_test": true,
+                      "is_crypto": true,
+                      "is_quote_of_enabled_pair": true,
+                      "is_quote_of_enabled_pair_for_test": true,
+                      "maximal_amount": "5.00000000",
+                      "min_confirmations": 2,
+                      "minimal_amount": "0.00100000",
+                      "name": "bitcoin",
+                      "withdrawal_fee": "0.00050000",
+                    },
+                  },
+                  "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                  "payment_url": null,
+                  "payment_window": 15,
+                  "referral_code": Array [
+                    Object {
+                      "code": "REZCI9KXJK5",
+                      "created_on": "2018-10-01T07:51:39.003237Z",
+                      "modified_on": "2018-10-01T07:51:39.003288Z",
+                    },
+                  ],
+                  "status_name": Array [
+                    Array [
+                      11,
+                      "INITIAL",
+                    ],
+                  ],
+                  "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                  "transactions": Array [],
+                  "unique_reference": "OB9UVL",
+                  "user_provided_amount": 1,
+                  "withdraw_address": Object {
+                    "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                    "currency_code": "XMR",
+                    "destination_tag": null,
+                    "name": "",
+                    "payment_id": "420fa29b2d9a49f5",
+                    "type": "W",
+                  },
+                  "withdrawal_fee": 0.011,
+                  "withdrawal_fee_quote": 0.00019585819,
+                },
+                "type": "Deposit",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="box box  crypto"
+>
+          <div
+                    className="media-left"
+          >
+                    <i
+                              className="coin cc BTC"
+                    />
+          </div>
+          <div
+                    className="media-right"
+          >
+                    <h5>
+                              order.Deposit
+                               
+                              <b>
+                                        0.05
+                                         
+                                        BTC
+                              </b>
+                              <i
+                                        className="fa fa-question-circle"
+                                        data-original-title=""
+                                        data-placement="top"
+                                        data-toggle="tooltip"
+                                        style={
+                                                  Object {
+                                                            "marginLeft": 8,
+                                                          }
+                                        }
+                              />
+                    </h5>
+                    <div
+                              className="address"
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <div
+                                                  className="address-left deposit address-hidden"
+                                        >
+                                                  <h6>
+                                                            BTC_0_HACUB8
+                                                  </h6>
+                                        </div>
+                                        <div
+                                                  className="copybuttonright"
+                                        >
+                                                  <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                                  />
+                                        </div>
+                              </div>
+                    </div>
+                    <a
+                              className="expansion-button expansion-button-mobile"
+                              onClick={[Function]}
+                    >
+                              Expand
+                    </a>
+                    <MinMax
+                              order={
+                                        Object {
+                                                  "amount_base": "2.79715421",
+                                                  "amount_quote": "0.05000000",
+                                                  "created_on": "2018-10-01T07:51:39.480190Z",
+                                                  "deposit_address": Object {
+                                                    "address": "BTC_0_HACUB8",
+                                                    "currency_code": "BTC",
+                                                    "destination_tag": null,
+                                                    "name": "",
+                                                    "payment_id": null,
+                                                    "type": "D",
+                                                  },
+                                                  "from_default_rule": false,
+                                                  "is_default_rule": false,
+                                                  "kyc_deadline": null,
+                                                  "pair": Object {
+                                                    "base": Object {
+                                                      "code": "XMR",
+                                                      "has_enabled_pairs": true,
+                                                      "has_enabled_pairs_for_test": true,
+                                                      "is_base_of_enabled_pair": true,
+                                                      "is_base_of_enabled_pair_for_test": true,
+                                                      "is_crypto": true,
+                                                      "is_quote_of_enabled_pair": true,
+                                                      "is_quote_of_enabled_pair_for_test": true,
+                                                      "maximal_amount": "15.00000000",
+                                                      "min_confirmations": 10,
+                                                      "minimal_amount": "0.10000000",
+                                                      "name": "monero",
+                                                      "withdrawal_fee": "0.01100000",
+                                                    },
+                                                    "fee_ask": 0.01,
+                                                    "fee_bid": 0.01,
+                                                    "name": "XMRBTC",
+                                                    "quote": Object {
+                                                      "code": "BTC",
+                                                      "has_enabled_pairs": true,
+                                                      "has_enabled_pairs_for_test": true,
+                                                      "is_base_of_enabled_pair": true,
+                                                      "is_base_of_enabled_pair_for_test": true,
+                                                      "is_crypto": true,
+                                                      "is_quote_of_enabled_pair": true,
+                                                      "is_quote_of_enabled_pair_for_test": true,
+                                                      "maximal_amount": "5.00000000",
+                                                      "min_confirmations": 2,
+                                                      "minimal_amount": "0.00100000",
+                                                      "name": "bitcoin",
+                                                      "withdrawal_fee": "0.00050000",
+                                                    },
+                                                  },
+                                                  "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                  "payment_url": null,
+                                                  "payment_window": 15,
+                                                  "referral_code": Array [
+                                                    Object {
+                                                      "code": "REZCI9KXJK5",
+                                                      "created_on": "2018-10-01T07:51:39.003237Z",
+                                                      "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                    },
+                                                  ],
+                                                  "status_name": Array [
+                                                    Array [
+                                                      11,
+                                                      "INITIAL",
+                                                    ],
+                                                  ],
+                                                  "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                  "transactions": Array [],
+                                                  "unique_reference": "OB9UVL",
+                                                  "user_provided_amount": 1,
+                                                  "withdraw_address": Object {
+                                                    "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                    "currency_code": "XMR",
+                                                    "destination_tag": null,
+                                                    "name": "",
+                                                    "payment_id": "420fa29b2d9a49f5",
+                                                    "type": "W",
+                                                  },
+                                                  "withdrawal_fee": 0.011,
+                                                  "withdrawal_fee_quote": 0.00019585819,
+                                                }
+                              }
+                              type="Deposit"
+                    />
+          </div>
+</div>,
+        "className": "col-xs-12 col-sm-6 col-sm-6 ",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="media-left"
+>
+              <i
+                            className="coin cc BTC"
+              />
+</div>,
+            <div
+              className="media-right"
+>
+              <h5>
+                            order.Deposit
+                             
+                            <b>
+                                          0.05
+                                           
+                                          BTC
+                            </b>
+                            <i
+                                          className="fa fa-question-circle"
+                                          data-original-title=""
+                                          data-placement="top"
+                                          data-toggle="tooltip"
+                                          style={
+                                                        Object {
+                                                                      "marginLeft": 8,
+                                                                    }
+                                          }
+                            />
+              </h5>
+              <div
+                            className="address"
+              >
+                            <div
+                                          className="row"
+                            >
+                                          <div
+                                                        className="address-left deposit address-hidden"
+                                          >
+                                                        <h6>
+                                                                      BTC_0_HACUB8
+                                                        </h6>
+                                          </div>
+                                          <div
+                                                        className="copybuttonright"
+                                          >
+                                                        <i
+                                                                      className="copy fas fa-copy"
+                                                                      data-test="copy-address"
+                                                                      id="copy-address-to-clipboard"
+                                                                      onClick={[Function]}
+                                                        />
+                                          </div>
+                            </div>
+              </div>
+              <a
+                            className="expansion-button expansion-button-mobile"
+                            onClick={[Function]}
+              >
+                            Expand
+              </a>
+              <MinMax
+                            order={
+                                          Object {
+                                                        "amount_base": "2.79715421",
+                                                        "amount_quote": "0.05000000",
+                                                        "created_on": "2018-10-01T07:51:39.480190Z",
+                                                        "deposit_address": Object {
+                                                          "address": "BTC_0_HACUB8",
+                                                          "currency_code": "BTC",
+                                                          "destination_tag": null,
+                                                          "name": "",
+                                                          "payment_id": null,
+                                                          "type": "D",
+                                                        },
+                                                        "from_default_rule": false,
+                                                        "is_default_rule": false,
+                                                        "kyc_deadline": null,
+                                                        "pair": Object {
+                                                          "base": Object {
+                                                            "code": "XMR",
+                                                            "has_enabled_pairs": true,
+                                                            "has_enabled_pairs_for_test": true,
+                                                            "is_base_of_enabled_pair": true,
+                                                            "is_base_of_enabled_pair_for_test": true,
+                                                            "is_crypto": true,
+                                                            "is_quote_of_enabled_pair": true,
+                                                            "is_quote_of_enabled_pair_for_test": true,
+                                                            "maximal_amount": "15.00000000",
+                                                            "min_confirmations": 10,
+                                                            "minimal_amount": "0.10000000",
+                                                            "name": "monero",
+                                                            "withdrawal_fee": "0.01100000",
+                                                          },
+                                                          "fee_ask": 0.01,
+                                                          "fee_bid": 0.01,
+                                                          "name": "XMRBTC",
+                                                          "quote": Object {
+                                                            "code": "BTC",
+                                                            "has_enabled_pairs": true,
+                                                            "has_enabled_pairs_for_test": true,
+                                                            "is_base_of_enabled_pair": true,
+                                                            "is_base_of_enabled_pair_for_test": true,
+                                                            "is_crypto": true,
+                                                            "is_quote_of_enabled_pair": true,
+                                                            "is_quote_of_enabled_pair_for_test": true,
+                                                            "maximal_amount": "5.00000000",
+                                                            "min_confirmations": 2,
+                                                            "minimal_amount": "0.00100000",
+                                                            "name": "bitcoin",
+                                                            "withdrawal_fee": "0.00050000",
+                                                          },
+                                                        },
+                                                        "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                        "payment_url": null,
+                                                        "payment_window": 15,
+                                                        "referral_code": Array [
+                                                          Object {
+                                                            "code": "REZCI9KXJK5",
+                                                            "created_on": "2018-10-01T07:51:39.003237Z",
+                                                            "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                          },
+                                                        ],
+                                                        "status_name": Array [
+                                                          Array [
+                                                            11,
+                                                            "INITIAL",
+                                                          ],
+                                                        ],
+                                                        "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                        "transactions": Array [],
+                                                        "unique_reference": "OB9UVL",
+                                                        "user_provided_amount": 1,
+                                                        "withdraw_address": Object {
+                                                          "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                          "currency_code": "XMR",
+                                                          "destination_tag": null,
+                                                          "name": "",
+                                                          "payment_id": "420fa29b2d9a49f5",
+                                                          "type": "W",
+                                                        },
+                                                        "withdrawal_fee": 0.011,
+                                                        "withdrawal_fee_quote": 0.00019585819,
+                                                      }
+                            }
+                            type="Deposit"
+              />
+</div>,
+          ],
+          "className": "box box  crypto",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <i
+                className="coin cc BTC"
+/>,
+              "className": "media-left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "coin cc BTC",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5>
+                  order.Deposit
+                   
+                  <b>
+                                    0.05
+                                     
+                                    BTC
+                  </b>
+                  <i
+                                    className="fa fa-question-circle"
+                                    data-original-title=""
+                                    data-placement="top"
+                                    data-toggle="tooltip"
+                                    style={
+                                                      Object {
+                                                                        "marginLeft": 8,
+                                                                      }
+                                    }
+                  />
+</h5>,
+                <div
+                  className="address"
+>
+                  <div
+                                    className="row"
+                  >
+                                    <div
+                                                      className="address-left deposit address-hidden"
+                                    >
+                                                      <h6>
+                                                                        BTC_0_HACUB8
+                                                      </h6>
+                                    </div>
+                                    <div
+                                                      className="copybuttonright"
+                                    >
+                                                      <i
+                                                                        className="copy fas fa-copy"
+                                                                        data-test="copy-address"
+                                                                        id="copy-address-to-clipboard"
+                                                                        onClick={[Function]}
+                                                      />
+                                    </div>
+                  </div>
+</div>,
+                <a
+                  className="expansion-button expansion-button-mobile"
+                  onClick={[Function]}
+>
+                  Expand
+</a>,
+                <MinMax
+                  order={
+                                    Object {
+                                                      "amount_base": "2.79715421",
+                                                      "amount_quote": "0.05000000",
+                                                      "created_on": "2018-10-01T07:51:39.480190Z",
+                                                      "deposit_address": Object {
+                                                        "address": "BTC_0_HACUB8",
+                                                        "currency_code": "BTC",
+                                                        "destination_tag": null,
+                                                        "name": "",
+                                                        "payment_id": null,
+                                                        "type": "D",
+                                                      },
+                                                      "from_default_rule": false,
+                                                      "is_default_rule": false,
+                                                      "kyc_deadline": null,
+                                                      "pair": Object {
+                                                        "base": Object {
+                                                          "code": "XMR",
+                                                          "has_enabled_pairs": true,
+                                                          "has_enabled_pairs_for_test": true,
+                                                          "is_base_of_enabled_pair": true,
+                                                          "is_base_of_enabled_pair_for_test": true,
+                                                          "is_crypto": true,
+                                                          "is_quote_of_enabled_pair": true,
+                                                          "is_quote_of_enabled_pair_for_test": true,
+                                                          "maximal_amount": "15.00000000",
+                                                          "min_confirmations": 10,
+                                                          "minimal_amount": "0.10000000",
+                                                          "name": "monero",
+                                                          "withdrawal_fee": "0.01100000",
+                                                        },
+                                                        "fee_ask": 0.01,
+                                                        "fee_bid": 0.01,
+                                                        "name": "XMRBTC",
+                                                        "quote": Object {
+                                                          "code": "BTC",
+                                                          "has_enabled_pairs": true,
+                                                          "has_enabled_pairs_for_test": true,
+                                                          "is_base_of_enabled_pair": true,
+                                                          "is_base_of_enabled_pair_for_test": true,
+                                                          "is_crypto": true,
+                                                          "is_quote_of_enabled_pair": true,
+                                                          "is_quote_of_enabled_pair_for_test": true,
+                                                          "maximal_amount": "5.00000000",
+                                                          "min_confirmations": 2,
+                                                          "minimal_amount": "0.00100000",
+                                                          "name": "bitcoin",
+                                                          "withdrawal_fee": "0.00050000",
+                                                        },
+                                                      },
+                                                      "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                                                      "payment_url": null,
+                                                      "payment_window": 15,
+                                                      "referral_code": Array [
+                                                        Object {
+                                                          "code": "REZCI9KXJK5",
+                                                          "created_on": "2018-10-01T07:51:39.003237Z",
+                                                          "modified_on": "2018-10-01T07:51:39.003288Z",
+                                                        },
+                                                      ],
+                                                      "status_name": Array [
+                                                        Array [
+                                                          11,
+                                                          "INITIAL",
+                                                        ],
+                                                      ],
+                                                      "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                                                      "transactions": Array [],
+                                                      "unique_reference": "OB9UVL",
+                                                      "user_provided_amount": 1,
+                                                      "withdraw_address": Object {
+                                                        "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                                                        "currency_code": "XMR",
+                                                        "destination_tag": null,
+                                                        "name": "",
+                                                        "payment_id": "420fa29b2d9a49f5",
+                                                        "type": "W",
+                                                      },
+                                                      "withdrawal_fee": 0.011,
+                                                      "withdrawal_fee_quote": 0.00019585819,
+                                                    }
+                  }
+                  type="Deposit"
+/>,
+              ],
+              "className": "media-right",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "order.Deposit",
+                    " ",
+                    <b>
+                      0.05
+                       
+                      BTC
+</b>,
+                    <i
+                      className="fa fa-question-circle"
+                      data-original-title=""
+                      data-placement="top"
+                      data-toggle="tooltip"
+                      style={
+                                            Object {
+                                                                  "marginLeft": 8,
+                                                                }
+                      }
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "order.Deposit",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        0.05,
+                        " ",
+                        "BTC",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      0.05,
+                      " ",
+                      "BTC",
+                    ],
+                    "type": "b",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "fa fa-question-circle",
+                      "data-original-title": "",
+                      "data-placement": "top",
+                      "data-toggle": "tooltip",
+                      "style": Object {
+                        "marginLeft": 8,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                ],
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="row"
+>
+                    <div
+                                        className="address-left deposit address-hidden"
+                    >
+                                        <h6>
+                                                            BTC_0_HACUB8
+                                        </h6>
+                    </div>
+                    <div
+                                        className="copybuttonright"
+                    >
+                                        <i
+                                                            className="copy fas fa-copy"
+                                                            data-test="copy-address"
+                                                            id="copy-address-to-clipboard"
+                                                            onClick={[Function]}
+                                        />
+                    </div>
+</div>,
+                  "className": "address",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="address-left deposit address-hidden"
+>
+                        <h6>
+                                                BTC_0_HACUB8
+                        </h6>
+</div>,
+                      <div
+                        className="copybuttonright"
+>
+                        <i
+                                                className="copy fas fa-copy"
+                                                data-test="copy-address"
+                                                id="copy-address-to-clipboard"
+                                                onClick={[Function]}
+                        />
+</div>,
+                    ],
+                    "className": "row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <h6>
+                          BTC_0_HACUB8
+</h6>,
+                        "className": "address-left deposit address-hidden",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "BTC_0_HACUB8",
+                        },
+                        "ref": null,
+                        "rendered": "BTC_0_HACUB8",
+                        "type": "h6",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="copy fas fa-copy"
+                          data-test="copy-address"
+                          id="copy-address-to-clipboard"
+                          onClick={[Function]}
+/>,
+                        "className": "copybuttonright",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "copy fas fa-copy",
+                          "data-test": "copy-address",
+                          "id": "copy-address-to-clipboard",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Expand",
+                  "className": "expansion-button expansion-button-mobile",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Expand",
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "order": Object {
+                    "amount_base": "2.79715421",
+                    "amount_quote": "0.05000000",
+                    "created_on": "2018-10-01T07:51:39.480190Z",
+                    "deposit_address": Object {
+                      "address": "BTC_0_HACUB8",
+                      "currency_code": "BTC",
+                      "destination_tag": null,
+                      "name": "",
+                      "payment_id": null,
+                      "type": "D",
+                    },
+                    "from_default_rule": false,
+                    "is_default_rule": false,
+                    "kyc_deadline": null,
+                    "pair": Object {
+                      "base": Object {
+                        "code": "XMR",
+                        "has_enabled_pairs": true,
+                        "has_enabled_pairs_for_test": true,
+                        "is_base_of_enabled_pair": true,
+                        "is_base_of_enabled_pair_for_test": true,
+                        "is_crypto": true,
+                        "is_quote_of_enabled_pair": true,
+                        "is_quote_of_enabled_pair_for_test": true,
+                        "maximal_amount": "15.00000000",
+                        "min_confirmations": 10,
+                        "minimal_amount": "0.10000000",
+                        "name": "monero",
+                        "withdrawal_fee": "0.01100000",
+                      },
+                      "fee_ask": 0.01,
+                      "fee_bid": 0.01,
+                      "name": "XMRBTC",
+                      "quote": Object {
+                        "code": "BTC",
+                        "has_enabled_pairs": true,
+                        "has_enabled_pairs_for_test": true,
+                        "is_base_of_enabled_pair": true,
+                        "is_base_of_enabled_pair_for_test": true,
+                        "is_crypto": true,
+                        "is_quote_of_enabled_pair": true,
+                        "is_quote_of_enabled_pair_for_test": true,
+                        "maximal_amount": "5.00000000",
+                        "min_confirmations": 2,
+                        "minimal_amount": "0.00100000",
+                        "name": "bitcoin",
+                        "withdrawal_fee": "0.00050000",
+                      },
+                    },
+                    "payment_deadline": "2018-10-01T08:06:39.480190Z",
+                    "payment_url": null,
+                    "payment_window": 15,
+                    "referral_code": Array [
+                      Object {
+                        "code": "REZCI9KXJK5",
+                        "created_on": "2018-10-01T07:51:39.003237Z",
+                        "modified_on": "2018-10-01T07:51:39.003288Z",
+                      },
+                    ],
+                    "status_name": Array [
+                      Array [
+                        11,
+                        "INITIAL",
+                      ],
+                    ],
+                    "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi",
+                    "transactions": Array [],
+                    "unique_reference": "OB9UVL",
+                    "user_provided_amount": 1,
+                    "withdraw_address": Object {
+                      "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
+                      "currency_code": "XMR",
+                      "destination_tag": null,
+                      "name": "",
+                      "payment_id": "420fa29b2d9a49f5",
+                      "type": "W",
+                    },
+                    "withdrawal_fee": 0.011,
+                    "withdrawal_fee_quote": 0.00019585819,
+                  },
+                  "type": "Deposit",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`OrderCoinProcessed renders correctly and updates props (deposit and crypto) 1`] = `
 ShallowWrapper {
   "length": 1,
