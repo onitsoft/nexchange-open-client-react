@@ -27,7 +27,7 @@ class OrderCoinProcessed extends Component {
       let elementId = '';
       let copyMessage = '';
       if (addressType === 'addressId') {
-        elementId = '#copy-address-element-to-clipboard';
+        elementId = '#copy-address-id-to-clipboard';
         copyMessage = 'order.copyaddressid';
       } else {
         elementId = '#copy-address-to-clipboard';
@@ -166,7 +166,7 @@ class OrderCoinProcessed extends Component {
     }
     if (this.state.hiddenAddress) {
       renderedAddress =
-        <div id='addressField' className={styles.address}>
+        <div className={styles.address}>
           <div className={styles.row}>
             <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ?
             styles['deposit'] : ''} ${styles['address-hidden']}`}>
@@ -187,7 +187,7 @@ class OrderCoinProcessed extends Component {
         </div>
     } else {
       renderedAddress =
-      <div id='addressField' className={styles.address}>
+      <div className={styles.address}>
         <div className={styles.row}>
           <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
             <h6>{this.state.address}</h6>
@@ -212,7 +212,7 @@ class OrderCoinProcessed extends Component {
             !isFiatOrder(this.props.order) && (
               addressId != null ?
               <i
-                id="copy-address-element-to-clipboard"
+                id="copy-address-id-to-clipboard"
                 className={`${styles.copy} fas fa-copy`}
                 data-test="copy-address"
                 onClick={() => this.triggerCopyAddressElementTooltip(addressId, 'addressId', addressIdType)}
@@ -240,7 +240,7 @@ class OrderCoinProcessed extends Component {
                 <i className={`${styles.coin} cc ${this.state.coin}`} />
               </div>
 
-              <div id='mediaRightField' className={`${styles['media-right']}`}>
+              <div className={`${styles['media-right']}`}>
                 <h5>
                   {t('order.' + this.props.type)}{' '}
                   <b>

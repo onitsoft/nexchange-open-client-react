@@ -72,7 +72,7 @@ describe('OrderCoinProcessed', () => {
 
   it('copy trigger is called', () => {
     const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" order={order} />);
-    const spy = jest.spyOn(wrapShallow.instance(), 'triggerCopyTooltip');
+    const spy = jest.spyOn(wrapShallow.instance(), 'triggerCopyAddressElementTooltip');
 
     expect(spy).not.toHaveBeenCalled();
     wrapShallow

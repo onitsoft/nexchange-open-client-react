@@ -86,11 +86,11 @@ describe('actions', () => {
   it('setMemo', () => {
     const payload = 'payload';
     const expectedAction = {
-          type: types.SET_MEMO,
+      type: types.SET_MEMO,
       payload,
     };
 
-    expect(setPaymentId('payload')).toEqual(expectedAction);
+    expect(setMemo('payload')).toEqual(expectedAction);
   });
 
   it('selectCoin', () => {
