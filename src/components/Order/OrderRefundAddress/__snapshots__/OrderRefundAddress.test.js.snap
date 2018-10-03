@@ -18,9 +18,12 @@ ShallowWrapper {
             "deposit_address": Object {
               "address": "0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
               "currency_code": "ETH",
+              "destination_tag": null,
               "name": "",
+              "payment_id": null,
               "type": "D",
             },
+            "display_refund_address": false,
             "from_default_rule": false,
             "is_default_rule": true,
             "kyc_deadline": null,
@@ -60,7 +63,6 @@ ShallowWrapper {
               },
             },
             "payment_deadline": "2028-05-28T07:13:57.591639Z",
-            "payment_id": null,
             "payment_url": "",
             "payment_window": 15,
             "price": Object {
@@ -115,7 +117,9 @@ ShallowWrapper {
             "withdraw_address": Object {
               "address": "0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E",
               "currency_code": "BDG",
+              "destination_tag": null,
               "name": "",
+              "payment_id": null,
               "type": "W",
             },
             "withdrawal_fee": 75,
