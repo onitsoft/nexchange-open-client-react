@@ -13,6 +13,7 @@ class KYCModal extends Component {
     super(props);
 
     this.state = {
+      showManualId: false,
       show: false,
       filesReady: false,
       governmentID: '',
@@ -35,8 +36,17 @@ class KYCModal extends Component {
         email: this.props.email.value,
       });
     }
-  }
+    window.addEventListener("message", this.handleFrameTasks);
 
+  }
+  componentWillUnmount() {
+    window.removeEventListener("message", this.handleFrameTasks);
+  }
+  handleFrameTasks = (e) => {
+    if (e.data.status == "failed") {
+        this.setState({ showManualId: true });
+    }
+  }
   componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
@@ -169,23 +179,21 @@ class KYCModal extends Component {
           </div>
 
             <div className="modal-body">
-            {this.props.kyc.identity_token && (
+            { this.props.kyc.identity_token && this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
                     <h2>{t('order.fiat.kyc.1')}</h2>
-                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameborder="0"></iframe>
+                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
                 </div>
             )}
 
             <form onSubmit={this.handleSubmit}>
-                {/*
-              {this.props.kyc.id_document_status !== 'APPROVED' && (
+              { (!this.props.kyc.identity_token || this.state.showManualId) && this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
                   <h2>{t('order.fiat.kyc.1')}</h2>
                   <small>{t('order.fiat.kyc.11')}</small>
                   <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
-                */}
 
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
                 <div>
