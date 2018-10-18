@@ -20,10 +20,21 @@ const OrderInitial = props => {
             {parseFloat(props.order.amount_quote)} {props.order.pair.quote.code}
           </b>
         </h4>
-        <a href={props.order.payment_url} target="_blank" className="btn btn-default btn-lg">
+
+          <input type="checkbox" name="checkboxTC" value="check"/>
+          <strong dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
+
+
+        <button className="btn btn-default btn-lg"
+                onClick={function () {
+                    var _box = document.getElementsByName("checkboxTC")[0];
+                    if (_box.checked) {
+                      window.open(props.order.payment_url, "_blank");
+                    }
+                }} name="checkoutButton">
           <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
           {t('order.fiat.status.pay')}
-        </a>
+        </button>
       </div>
 
       <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
