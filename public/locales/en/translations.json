@@ -28,7 +28,7 @@
   },
   "exchangewidget": {
     "1": "GET STARTED",
-    "2": "Confirm & Place Order",
+    "2": "*Confirm & Place Order",
     "3": "Current fee is 0.5%",
     "min": "Min amount",
     "max": "Max amount"
@@ -250,6 +250,8 @@
     "rates": "Rates at order creation",
     "fee": "Withdrawal fee",
     "feeinfo": "The indicated price is final, all fees are included.",
+    "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/terms-and-conditions'>T&C</a>)",
+    "iAgreedTC": "I have read and agree to the <a href='/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/privacy' target='_blank'>Privacy Policy</a>.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
       "cardsaccepted": "Credit cards accepted",

@@ -42,6 +42,18 @@
   }
 }
 
+.infotc.infotc.infotc {
+  color: $gray;
+  font-size: 12px;
+  width: 100%;
+  margin-top: 15px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 13px;
+    float: left;
+  }
+}
+
 .btn.btn.btn {
   width: 100%;
   height: 48px;
