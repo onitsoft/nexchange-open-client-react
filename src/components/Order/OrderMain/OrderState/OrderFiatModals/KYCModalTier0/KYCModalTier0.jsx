@@ -13,6 +13,8 @@ class KYCModal extends Component {
     super(props);
 
     this.state = {
+      showManualId: false,
+      idApproved: false,
       show: false,
       filesReady: false,
       governmentID: '',
@@ -35,8 +37,21 @@ class KYCModal extends Component {
         email: this.props.email.value,
       });
     }
-  }
+    window.addEventListener("message", this.handleFrameTasks);
 
+  }
+  componentWillUnmount() {
+    window.removeEventListener("message", this.handleFrameTasks);
+  }
+  handleFrameTasks = (e) => {
+    if (e.data.status == "failed") {
+      this.setState({ showManualId: true });
+    } else if (e.data.status == 'approved') {
+      setTimeout(function () {
+        this.setState({idApproved: true});
+      }.bind(this), 3000)
+    }
+  }
   componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
@@ -168,9 +183,17 @@ class KYCModal extends Component {
             </h5>
           </div>
 
-          <div className="modal-body">
+            <div className="modal-body">
+            { ! this.state.idApproved && this.props.kyc.identity_token && this.props.kyc.id_document_status !== 'APPROVED' && (
+                <div>
+                    <h2>{t('order.fiat.kyc.1')}</h2>
+                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
+                </div>
+            )}
+
             <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.id_document_status !== 'APPROVED' && (
+              { !this.state.idApproved &&
+              (!this.props.kyc.identity_token || this.state.showManualId) && this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
                   <h2>{t('order.fiat.kyc.1')}</h2>
                   <small>{t('order.fiat.kyc.11')}</small>
@@ -182,10 +205,10 @@ class KYCModal extends Component {
                 <div>
                   <h2>{t('order.fiat.kyc.2')}</h2>
                   <small>
-                    {t('order.fiat.kyc.21')}
+                      <div dangerouslySetInnerHTML={{__html: t('order.fiat.kyc.21')}} />
                   </small>
                   <small>
-                    {t('order.fiat.kyc.22')}
+                      <div dangerouslySetInnerHTML={{__html: t('order.fiat.kyc.22')}} />
                   </small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>
