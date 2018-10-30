@@ -53,6 +53,9 @@ class KYCModal extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+      if (this.state.showManualId === false && this.props.kyc.id_document_status === "REJECTED" ) {
+          this.setState({showManualId: true});
+      }
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function() {
