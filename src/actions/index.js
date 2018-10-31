@@ -276,9 +276,11 @@ export const fetchUserEmail = () => async dispatch => {
 
 export const setUserEmail = email => async dispatch => {
   if (!localStorage.token) return;
+  let isObject = typeof(email) === 'object';
+  let payload = (isObject ? email : { email });
 
   const url = `${config.API_BASE_URL}/users/me/`;
-  const request = axios.put(url, { email });
+  const request = axios.put(url, payload);
 
   return request
     .then(res => {

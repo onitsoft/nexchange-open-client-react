@@ -24,6 +24,7 @@ class KYCModal extends Component {
       titleClass: '',
       email: '',
       message: '',
+      phone: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -100,7 +101,7 @@ class KYCModal extends Component {
     const residenceProof = document.querySelector('#residenceProof');
 
     formData.append('order_reference', this.props.order.unique_reference);
-    formData.append('user_provided_comment', this.state.message.slice(0, 255));
+    formData.append('user_input_comment', this.state.message.slice(0, 255));
 
     if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
@@ -137,7 +138,9 @@ class KYCModal extends Component {
       });
 
     if (this.state.email) {
-      this.props.setUserEmail(this.state.email);
+      this.props.setUserEmail(
+        {email: this.state.email, phone: this.state.phone}
+      );
     }
   }
 
@@ -238,6 +241,18 @@ class KYCModal extends Component {
                     zIndex: 99999999,
                   }}
                   data-original-title={t('order.fiat.kyc.6')}
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  name="phone"
+                  className="form-control"
+                  placeholder={t('order.fiat.kyc.phone')}
+                  rows="2"
+                  onChange={this.handleInputChange}
+                  value={this.state.phone}
+                  maxLength="255"
                 />
               </div>
 
