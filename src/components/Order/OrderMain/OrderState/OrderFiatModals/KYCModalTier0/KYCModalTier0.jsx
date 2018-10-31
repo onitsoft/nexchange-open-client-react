@@ -45,9 +45,9 @@ class KYCModal extends Component {
     window.removeEventListener("message", this.handleFrameTasks);
   }
   handleFrameTasks = (e) => {
-    if (e.data.status == "failed") {
+    if (e.data.status === "failed") {
       this.setState({ showManualId: true });
-    } else if (e.data.status == 'approved') {
+    } else if (e.data.status === 'approved') {
       setTimeout(function () {
         this.setState({idApproved: true});
       }.bind(this), 3000)
