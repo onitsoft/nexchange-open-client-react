@@ -21,20 +21,28 @@ const OrderInitial = props => {
           </b>
         </h4>
 
-          <input type="checkbox" name="checkboxTC" value="check"/>
-          <strong dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
+        <input type="checkbox" name="checkboxTC" value="check"
+        onClick={function () {
+            var _checkoutButton = document.getElementsByName("checkoutButton")[0];
+            var _box = document.getElementsByName("checkboxTC")[0];
+            var _paymentUrl = props.order.payment_url;
+            if (_box.checked) {
+                _checkoutButton.href = _paymentUrl;
+                _checkoutButton.classList.remove("disabled")
+
+            } else {
+                _checkoutButton.removeAttribute("href");
+                _checkoutButton.classList.add("disabled")
+
+            }
+        }}/>
+        <strong dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
 
 
-        <button className="btn btn-default btn-lg"
-                onClick={function () {
-                    var _box = document.getElementsByName("checkboxTC")[0];
-                    if (_box.checked) {
-                      window.open(props.order.payment_url, "_blank");
-                    }
-                }} name="checkoutButton">
+        <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton">
           <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
           {t('order.fiat.status.pay')}
-        </button>
+        </a>
       </div>
 
       <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
