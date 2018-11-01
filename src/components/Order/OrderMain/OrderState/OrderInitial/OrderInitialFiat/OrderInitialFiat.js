@@ -23,23 +23,24 @@ const OrderInitial = props => {
 
         <input type="checkbox" name="checkboxTC" value="check"
         onClick={function () {
-            var _checkoutButton = document.getElementsByName("checkoutButton")[0];
-            var _box = document.getElementsByName("checkboxTC")[0];
-            var _paymentUrl = props.order.payment_url;
+            let _checkoutButton = document.getElementsByName("checkoutButton")[0];
+            let _box = document.getElementsByName("checkboxTC")[0];
+            let _paymentUrl = props.order.payment_url;
             if (_box.checked) {
                 _checkoutButton.href = _paymentUrl;
-                _checkoutButton.classList.remove("disabled")
-
+                _checkoutButton.classList.remove("disabled");
+                _checkoutButton.style.pointerEvents = 'none';
             } else {
                 _checkoutButton.removeAttribute("href");
-                _checkoutButton.classList.add("disabled")
-
+                _checkoutButton.classList.add("disabled");
+                _checkoutButton.style.pointerEvents = 'auto';
             }
         }}/>
         <strong dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
 
 
-        <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton">
+        <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
+           title={t('order.tooltipTC')} style={{ pointerEvents: 'auto'}}>
           <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
           {t('order.fiat.status.pay')}
         </a>
