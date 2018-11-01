@@ -29,11 +29,9 @@ const OrderInitial = props => {
             if (_box.checked) {
                 _checkoutButton.href = _paymentUrl;
                 _checkoutButton.classList.remove("disabled");
-                _checkoutButton.style.pointerEvents = 'none';
             } else {
                 _checkoutButton.removeAttribute("href");
                 _checkoutButton.classList.add("disabled");
-                _checkoutButton.style.pointerEvents = 'auto';
             }
         }}/>
         <strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
