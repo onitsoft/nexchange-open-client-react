@@ -22,7 +22,7 @@ const OrderInitial = props => {
         </h4>
 
         <input type="checkbox" name="checkboxTC" id="checkboxTC" value="check" style={{ width: '20px', height: '20px', }}
-        onClick={function togglePaymentButton() {
+        onClick={function togglePayNowButton() {
             let _checkoutButton = document.getElementsByName("checkoutButton")[0];
             let _box = document.getElementsByName("checkboxTC")[0];
             let _paymentUrl = props.order.payment_url;
