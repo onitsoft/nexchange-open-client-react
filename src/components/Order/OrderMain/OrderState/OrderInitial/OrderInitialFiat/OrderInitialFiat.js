@@ -34,7 +34,7 @@ const OrderInitial = props => {
                 _checkoutButton.classList.add("disabled");
             }
         }}/>
-        <label for="checkboxTC"><strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/></label>
+        <label htmlFor="checkboxTC"><strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/></label>
 
 
         <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
