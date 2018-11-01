@@ -21,7 +21,7 @@ const OrderInitial = props => {
           </b>
         </h4>
 
-        <input type="checkbox" name="checkboxTC" value="check"
+        <input type="checkbox" name="checkboxTC" value="check" style={{ width: '20px', height: '20px', }}
         onClick={function () {
             let _checkoutButton = document.getElementsByName("checkoutButton")[0];
             let _box = document.getElementsByName("checkboxTC")[0];
@@ -36,7 +36,7 @@ const OrderInitial = props => {
                 _checkoutButton.style.pointerEvents = 'auto';
             }
         }}/>
-        <strong dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
+        <strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
 
 
         <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
