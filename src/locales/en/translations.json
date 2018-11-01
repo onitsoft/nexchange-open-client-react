@@ -250,6 +250,7 @@
     "feeinfo": "The indicated price is final, all fees are included.",
     "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/terms-and-conditions'>T&C</a>)",
     "iAgreedTC": "I have read and agree to the <a href='/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/privacy' target='_blank'>Privacy Policy</a>.",
+    "tooltipTC": "You must agree with T&C and Privacy Policy.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
       "cardsaccepted": "Credit cards accepted",
