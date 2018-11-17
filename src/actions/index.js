@@ -200,7 +200,7 @@ export const fetchPairs = () => dispatch => {
       };
 
       // Picks random deposit and receive coins.
-      export const pickCoins = async () => {
+      const pickCoins = async () => {
         // Checks if url has params. If yes then update accordingly and if no then pick random coins.
         if (params && params.hasOwnProperty('pair')) {
           try {
