@@ -92,7 +92,7 @@ class CoinPrices extends Component {
       <div className={styles.container}>
         <div className={styles.row}>
           <div className="container">
-            <Link to={{ pathname: "/", search: "?pair=ETHBTC" }}>
+            <Link to={{ pathname: "/", search: "?pair=ETHBTC" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ethbtc']}`}
                 ref={el => {
@@ -106,7 +106,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
             
-            <Link to={{ pathname: "/", search: "?pair=BDGBTC" }}>
+            <Link to={{ pathname: "/", search: "?pair=BDGBTC" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['bdgbtc']}`}
                 ref={el => {
@@ -120,7 +120,7 @@ class CoinPrices extends Component {
               </div>
              </Link>
 
-            <Link to={{ pathname: "/", search: "?pair=LTCBTC" }}>
+            <Link to={{ pathname: "/", search: "?pair=LTCBTC" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcbtc']}`}
                 ref={el => {
@@ -134,7 +134,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
             
-            <Link to={{ pathname: "/", search: "?pair=BTCDOGE" }}>
+            <Link to={{ pathname: "/", search: "?pair=BTCDOGE" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['btcdoge']}`}
                 ref={el => {
@@ -148,7 +148,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
             
-            <Link to={{ pathname: "/", search: "?pair=BTCDOGE" }}>
+            <Link to={{ pathname: "/", search: "?pair=BTCDOGE" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltceth']}`}
                 ref={el => {
@@ -162,7 +162,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
             
-            <Link to={{ pathname: "/", search: "?pair=LTCDOGE" }}>
+            <Link to={{ pathname: "/", search: "?pair=LTCDOGE" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcdoge']}`}
                 ref={el => {
@@ -176,7 +176,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
             
-            <Link to={{ pathname: "/", search: "?pair=BTCUSD" }}>
+            <Link to={{ pathname: "/", search: "?pair=BTCUSD" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['btcusd']}`}
                 ref={el => {
@@ -190,7 +190,7 @@ class CoinPrices extends Component {
               </div>
             </Link>            
             
-            <Link to={{ pathname: "/", search: "?pair=LTCUSD" }}>
+            <Link to={{ pathname: "/", search: "?pair=LTCUSD" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcusd']}`}
                 ref={el => {
@@ -204,7 +204,7 @@ class CoinPrices extends Component {
               </div>
             </Link>            
             
-            <Link to={{ pathname: "/", search: "?pair=ETHUSD" }}>
+            <Link to={{ pathname: "/", search: "?pair=ETHUSD" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ethusd']}`}
                 ref={el => {
