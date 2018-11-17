@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCoinDetails, fetchPairs, pickCoins } from 'Actions';
+import { fetchCoinDetails, fetchPairs } from 'Actions';
 
 import Hero from './Hero/Hero';
 import About from './About/About';
@@ -19,7 +19,8 @@ export class Home extends Component {
     this.props.fetchPairs();
   }
   componentDidUpdate(prevProps, prevState) {
-    this.props.pickCoins();
+    this.props.fetchCoinDetails();
+    this.props.fetchPairs();
   }
 
   render() {
@@ -39,7 +40,7 @@ export class Home extends Component {
 }
 
 const mapStateToProps = ({ coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs, pickCoins}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs}, dispatch);
 
 export default connect(
   mapStateToProps,
