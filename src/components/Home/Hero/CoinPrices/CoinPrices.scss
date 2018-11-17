@@ -22,7 +22,11 @@
   float: left;
   width: 33.33%;
   text-align: left;
-
+  
+  a {
+    color: inherit;
+  }
+  
   h5 {
     margin: 30px 0 0 0;
     font-size: 12px;
