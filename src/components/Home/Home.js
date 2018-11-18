@@ -18,13 +18,13 @@ export class Home extends Component {
     this.props.fetchCoinDetails();
     this.props.fetchPairs();
   }
-  componentDidUpdate(prevProps, prevState) {
-    if(prevProps.selectedCoin.deposit !== this.props.selectedCoin.deposit
-       || prevProps.selectedCoin.receive !== this.props.selectedCoin.deposit ) {
-        this.props.fetchCoinDetails();
-        this.props.fetchPairs();
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(prevProps.selectedCoin.deposit !== this.props.selectedCoin.deposit
+  //      || prevProps.selectedCoin.receive !== this.props.selectedCoin.deposit ) {
+  //       this.props.fetchCoinDetails();
+  //       this.props.fetchPairs();
+  //   }
+  // }
 
   render() {
     return (
