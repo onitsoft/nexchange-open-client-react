@@ -296,7 +296,8 @@
         "14": "We have received your funds and are now waiting for proof of residence and government issued ID verification."
       },
       "kyc": {
-        "1": "Government issued ID",
+        "1": "Selfie with government issued ID",
+        "govSelfieDesc": "you have to make a selfie of yourself, ID (identity card, passport or drivers license), plus a paper with today's date and 'N.EXCHANGE'.",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
