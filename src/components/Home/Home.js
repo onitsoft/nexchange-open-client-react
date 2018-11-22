@@ -18,6 +18,13 @@ export class Home extends Component {
     this.props.fetchCoinDetails();
     this.props.fetchPairs();
   }
+  componentDidUpdate(prevProps, prevState) {
+    // Detect coin change by link
+    if(this.props.location.search !== prevProps.location.search) {
+        this.props.fetchCoinDetails();
+        this.props.fetchPairs();
+    }
+  }
 
   render() {
     return (
@@ -36,7 +43,7 @@ export class Home extends Component {
 }
 
 const mapStateToProps = ({ coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs}, dispatch);
 
 export default connect(
   mapStateToProps,
