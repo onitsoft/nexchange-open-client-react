@@ -21,22 +21,25 @@ const OrderInitial = props => {
           </b>
         </h4>
 
-        <input type="checkbox" name="checkboxTC" id="checkboxTC" value="check" style={{ width: '20px', height: '20px', }}
-        onClick={function togglePayNowButton() {
-            let _checkoutButton = document.getElementsByName("checkoutButton")[0];
-            let _box = document.getElementsByName("checkboxTC")[0];
-            let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-            let _paymentUrl = props.order.payment_url;
-            if (_box.checked && _box_kyc.checked) {
-                _checkoutButton.href = _paymentUrl;
-                _checkoutButton.classList.remove("disabled");
-            } else {
-                _checkoutButton.removeAttribute("href");
-                _checkoutButton.classList.add("disabled");
-            }
-        }}/>
-        <label htmlFor="checkboxTC"><strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/></label>
+        <label>
+          <input type="checkbox" name="checkboxTC" id="checkboxTC" value="check" style={{ width: '20px', height: '20px', }}
+          onClick={function togglePayNowButton() {
+              let _checkoutButton = document.getElementsByName("checkoutButton")[0];
+              let _box = document.getElementsByName("checkboxTC")[0];
+              let _box_kyc = document.getElementsByName("checkboxKYC")[0];
+              let _paymentUrl = props.order.payment_url;
+              if (_box.checked && _box_kyc.checked) {
+                  _checkoutButton.href = _paymentUrl;
+                  _checkoutButton.classList.remove("disabled");
+              } else {
+                  _checkoutButton.removeAttribute("href");
+                  _checkoutButton.classList.add("disabled");
+              }
+          }}/>
+          <strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
+        </label>
 
+        <label>
         <input type="checkbox" name="checkboxKYC" id="checkboxKYC" value="check" style={{ width: '20px', height: '20px', }}
         onClick={function togglePayNowButton() {
             let _checkoutButton = document.getElementsByName("checkoutButton")[0];
@@ -51,8 +54,8 @@ const OrderInitial = props => {
                 _checkoutButton.classList.add("disabled");
             }
         }}/>
-        <label htmlFor="checkboxKYC">
-          <strong style={{paddingLeft: "7px"}} dangerouslySetInnerHTML={{__html: t('order.iAcknowledgeKYC')}}/></label>
+            <strong style={{paddingLeft: "7px"}}>{t('order.iAcknowledgeKYC')}</strong>
+        </label>
 
 
         <a target="_blank" className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
