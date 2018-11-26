@@ -91,9 +91,11 @@ class OrderPayment extends Component {
               <p>
                 <b>{i18n.t('order.fiat.kyc.1')}:</b> {id_document_status}
               </p>
+              {/*
               <p>
                 <b>{i18n.t('order.fiat.kyc.2')}:</b> {residence_document_status}
               </p>
+              */}
             </div>
           </div>
         );
