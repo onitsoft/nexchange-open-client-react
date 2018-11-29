@@ -54,9 +54,6 @@ class KYCModal extends Component {
     }
   }
   componentDidUpdate(prevProps) {
-      if (this.state.showManualId === false && this.props.kyc.id_document_status === "REJECTED" ) {
-          this.setState({showManualId: true});
-      }
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function() {
@@ -190,15 +187,17 @@ class KYCModal extends Component {
           </div>
 
             <div className="modal-body">
-            { ! this.state.idApproved && this.props.kyc.identity_token && this.props.kyc.id_document_status !== 'APPROVED' && (
+            { ! this.state.idApproved && this.props.kyc.identity_token && !this.state.showManualId &&
+            this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div hidden={! this.props.kyc.identity_token && this.state.idApproved}>
                     <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
                 </div>
             )}
 
-            <form onSubmit={this.handleSubmit} hidden={this.props.kyc.identity_token && ! this.state.idApproved}>
+            <form onSubmit={this.handleSubmit}
+                  hidden={(this.props.kyc.identity_token && !this.state.showManualId) && ! this.state.idApproved}>
               { !this.state.idApproved &&
-              (!this.props.kyc.identity_token || this.state.showManualId) && this.props.kyc.id_document_status !== 'APPROVED' && (
+              this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
                   <h2>{t('order.fiat.kyc.1')}</h2>
                   <small>{t('order.fiat.kyc.govSelfieDesc')}</small>
