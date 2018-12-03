@@ -37,7 +37,7 @@ class RecentOrders extends Component {
         let orders = response.data.results.filter(order => {
           return params && params.hasOwnProperty('test')
             ? true
-            : _.contains(receiveCurrencies, order.pair.base.code) && _.contains(depositCurrencies, order.pair.quote.code);
+            : _.includes(receiveCurrencies, order.pair.base.code) && _.includes(depositCurrencies, order.pair.quote.code);
         });
 
         this.setState({ orders: orders });
