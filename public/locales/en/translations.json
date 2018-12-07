@@ -272,7 +272,7 @@
           "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
         "w_selfie": "Whitelist selfie",
         "w_selfieexplanation":
-          "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card."
+          "i.e. you have to make a selfie of yourself with a paper with today's date, 'N.EXCHANGE' and 'My BTC withdraw address is 18v8BJKqTMHc2eLBpHuwDrrZkQYKvdtUUB' for the currency you use for the purchase."
       },
       "status": {
         "success": "We will proceed to release your funds shortly",
