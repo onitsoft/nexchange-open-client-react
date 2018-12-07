@@ -20,9 +20,18 @@ class Referrals extends Component {
     );
   }
 
+  checkNotRef (queryParam) {
+    return ! queryParam.includes('ref=');
+  }
+
   redirectRef() {
-    let urlWithoutRef = window.location.pathname + window.location.search + window.location.hash;
-    urlWithoutRef = urlWithoutRef.substring(0, urlWithoutRef.indexOf('?'));
+    let url = window.location.pathname + window.location.search + window.location.hash;
+    let baseUrl = url.split("?")[0];
+    let queryParams = url.split("?")[1].split("&");
+    queryParams = queryParams.filter(this.checkNotRef);
+    queryParams = '?'.concat(queryParams, '&');
+    let urlWithoutRef = baseUrl.concat(queryParams);
+    urlWithoutRef = urlWithoutRef.substring(0, urlWithoutRef.length - 1);
 
     return <Redirect to={urlWithoutRef} />;
   }
