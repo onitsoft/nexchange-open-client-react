@@ -109,7 +109,7 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li className={styles['ico-link']} style="visibility:hidden;">
+                  <li className={styles['ico-link']}>
                     <a
                       href="https://n.exchange/ico"
                       className={`${styles.btn} btn btn-block btn-primary`}
