@@ -12,6 +12,7 @@ import Testimonials from './Testimonials/Testimonials';
 import RecentOrders from './RecentOrders/RecentOrders';
 import SubscriptionForm from './SubscriptionForm/SubscriptionForm';
 import PriceComparison from './PriceComparison/PriceComparison';
+import USPS from './USPS/USPS';
 
 export class Home extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ export class Home extends Component {
     return (
       <div>
         <Hero {...this.props} />
+        <USPS />
         <RecentOrders />
         <ICO />
         <Testimonials />

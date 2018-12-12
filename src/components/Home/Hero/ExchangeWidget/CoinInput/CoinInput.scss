@@ -5,13 +5,14 @@
   color: $gray;
 
   @media (min-width: $screen-md-min) {
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 }
 
 .input.input.input {
-  padding: 0 0 15px 120px;
+  padding: 0 0 16px 120px;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 0;
+  height: 45px;
 }

@@ -1,0 +1,82 @@
+.container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #676979;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 30px;
+
+  @media (min-width: $screen-sm-min) {
+    border: none;
+    background: $green;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    width: auto;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 0 30px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 14px;
+    width: 65%;
+    float: left;
+
+    @media (min-width: $screen-sm-min) {
+      width: auto;
+      line-height: 48px;
+      font-size: 16px;
+    }
+  }
+}
+
+.cards {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  width: 35%;
+  text-align: right;
+
+  @media (min-width: $screen-sm-min) {
+    position: static;
+    transform: none;
+    float: right;
+    height: 48px;
+    margin-top: 0;
+    margin-left: 15px;
+    border-top: none;
+    border-left: 1px solid #61d4ce;
+    width: auto;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin-left: 45px;
+  }
+
+  img {
+    width: 33px;
+
+    @media (min-width: $screen-ms-min) {
+      width: auto;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+
+    &:last-child {
+      margin-left: 10px;
+
+      @media (min-width: $screen-ms-min) {
+        margin-left: 15px;
+      }
+    }
+  }
+}

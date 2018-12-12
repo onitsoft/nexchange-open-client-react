@@ -1,0 +1,23 @@
+.container {
+  margin: 0 0 14px 0;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 25px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 38px;
+  }
+}
+
+.flip {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: transform 0.5s;
+
+  @media (min-width: $screen-sm-min) {
+    width: 48px;
+    height: 48px;
+  }
+}

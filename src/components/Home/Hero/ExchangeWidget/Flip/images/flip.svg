@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2b2b2b;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Group_243" data-name="Group 243" transform="translate(-138 -258)">
+    <g id="Group_242" data-name="Group 242">
+      <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="18" cy="18" r="18" transform="translate(174 258) rotate(90)"/>
+    </g>
+    <g id="transfer_1_" data-name="transfer (1)" transform="translate(161.559 267) rotate(90)">
+      <g id="Group_191" data-name="Group 191">
+        <g id="Group_190" data-name="Group 190">
+          <path id="Path_135" data-name="Path 135" class="cls-2" d="M18.451,2.372A.585.585,0,0,0,18.293,2L16.49.188a.634.634,0,0,0-.9,0,.644.644,0,0,0,0,.907l.849.855H5.74a.642.642,0,0,0,0,1.283H16.4l-.809.815a.644.644,0,0,0,0,.907.634.634,0,0,0,.9,0l1.8-1.814a.584.584,0,0,0,.156-.32.64.64,0,0,0,.046-.229.632.632,0,0,0-.044-.22Zm-5.7,5.955H2.1l.81-.814a.644.644,0,0,0,0-.907.634.634,0,0,0-.9,0L.2,8.419a.58.58,0,0,0-.156.32A.613.613,0,0,0,0,8.968a.632.632,0,0,0,.044.22A.59.59,0,0,0,.2,9.557l1.8,1.814a.634.634,0,0,0,.9,0,.644.644,0,0,0,0-.907l-.849-.855h10.7a.642.642,0,0,0,0-1.283Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

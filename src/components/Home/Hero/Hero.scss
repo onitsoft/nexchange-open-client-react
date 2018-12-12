@@ -44,7 +44,7 @@
   }
 
   @media (min-height: $screen-xl-height) and (min-width: $screen-md-min) {
-    margin-top: 170px;
+    margin-top: 140px;
   }
 
   h1 {
@@ -59,7 +59,7 @@
 
   h2 {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     font-weight: 400;
     font-size: 16px;
     font-family: 'Clan Offc Pro Book';
@@ -68,9 +68,9 @@
       font-size: 24px;
     }
 
-    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
-      margin-bottom: 0;
-    }
+    // @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    //   margin-bottom: 0;
+    // }
 
     span {
       font-family: 'Clan Offc Pro Medium';
