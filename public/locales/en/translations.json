@@ -20,7 +20,8 @@
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
     "en": "English",
-    "de": "German"
+    "de": "German",
+    "ru": "Russian"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
