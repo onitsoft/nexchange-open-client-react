@@ -2,7 +2,7 @@
   "generalterms": {
     "formsucess": "Your form has been successfully submitted. We'll get back to you shortly!",
     "formfailed": "Something went wrong during the form submission, please try again later.",
-    "email": "Email",
+    "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
     "search": "Search",
