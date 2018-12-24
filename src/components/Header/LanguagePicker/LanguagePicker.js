@@ -4,7 +4,7 @@ import { I18n } from 'react-i18next';
 import styles from './LanguagePicker.scss';
 
 class LanguagePicker extends Component {
-  supportedLanguages = ['de', 'en'];
+  supportedLanguages = ['de', 'en', 'ru'];
 
   array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
