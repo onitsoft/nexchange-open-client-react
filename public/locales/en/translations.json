@@ -265,9 +265,9 @@
       "tier": {
         "limit": "Tier limits reached, additional verification needed",
         "explanation":
-          "This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification tier limits are reached.",
+          "This is a one-time process. Once you are verified you will be able to complete future purchases instantly until current verification tier limits are reached.",
         "explanation2":
-          "This is a one-time process, once verified you’ll be able to complete future purchases for this withdrawal address instantly.",
+          "This is a one-time process. Once you are verified you will be able to complete future withdrawals to the whitelisted address instantly.",
         "selfie": "Selfie",
         "selfieexplanation":
           "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
@@ -301,7 +301,7 @@
       },
       "kyc": {
         "1": "Selfie with government issued ID",
-        "govSelfieDesc": "you have to make a selfie of yourself, ID (identity card, passport or drivers license), plus a paper with today's date and 'N.EXCHANGE'.",
+        "govSelfieDesc": "Please upload a picture of yourself, a picture of your ID in English (the ID can be an identity card, passport or drivers license), and a note that contains today’s date and ‘n.exchange’ written next to it. This is required according to KYC AML/AFT regulations. This also helps us to fight fraud and to protect our customers.",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
