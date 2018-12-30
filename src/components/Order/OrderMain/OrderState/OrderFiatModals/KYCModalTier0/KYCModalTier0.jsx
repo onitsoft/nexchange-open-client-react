@@ -203,9 +203,10 @@ class KYCModal extends Component {
                   <h2>{t('order.fiat.kyc.1')}</h2>
                     <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
 
-                    <div style={{'text-align': 'center'}}>
-                      <div style={{'display': 'inline-block'}}>
-                    <img style={{ 'text-align': 'center', margin: 'auto', 'width': '400px' }} src ="/img/order/selfie.jpg"
+                    <div style={{'text-align': 'center', 'max-width': '100%'}}>
+                      <div style={{'display': 'inline-block', 'max-width': '100%'}}>
+                    <img style={{'text-align': 'center',
+                        margin: 'auto', 'width': '400px', 'max-width': '100%'}} src ="/img/order/selfie.jpg"
                              alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
                     <input type="file" name="governmentID" id="governmentID"
                          onChange={this.handleInputChange} accept="image/*" style={{'margin': '0 25% 20px 25%'}} />
