@@ -104,7 +104,7 @@ class Support extends Component {
                     <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
                       <div className="hidden-xs hidden-sm">
                         {/*desktop link structure*/}
-                        <a href="callto:+442030971920">+442030971920</a>
+                        <a href="tel:+442030971920">+442030971920</a>
                       </div>
                       <div className="hidden-md hidden-lg">
                         {/*mobile link structure*/}
