@@ -40,31 +40,6 @@ const Team = () => (
             />
 
             <TeamMember
-              id="karolis"
-              name="Karolis Ramanauskas"
-              country="LT"
-              fullCountryName={t('about.lithuania')}
-              description={t('about.karolis')}
-              social={{
-                linkedin: 'https://www.linkedin.com/in/karolisram/',
-                github: 'https://github.com/superkarolis/',
-                medium: 'https://medium.com/@karolisram',
-                rss: 'https://www.karolisram.com/',
-              }}
-            />
-
-            <TeamMember
-              id="justasv"
-              name="Justas Vitėnas"
-              country="LT"
-              fullCountryName={t('about.lithuania')}
-              description={t('about.justasv')}
-              social={{
-                linkedin: 'https://www.linkedin.com/in/justas-vitenas-77383ab6/',
-              }}
-            />
-
-            <TeamMember
               id="justas"
               name="Justas Ažna"
               country="LT"

@@ -2,7 +2,7 @@
   "generalterms": {
     "formsucess": "Your form has been successfully submitted. We'll get back to you shortly!",
     "formfailed": "Something went wrong during the form submission, please try again later.",
-    "email": "Email",
+    "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
     "destinationtag": "Destination tag",
@@ -23,7 +23,8 @@
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
     "en": "English",
-    "de": "German"
+    "de": "German",
+    "ru": "Russian"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
@@ -31,7 +32,7 @@
   },
   "exchangewidget": {
     "1": "GET STARTED",
-    "2": "Confirm & Place Order",
+    "2": "*Confirm & Place Order",
     "3": "Current fee is 0.5%",
     "min": "Min amount",
     "max": "Max amount"
@@ -254,6 +255,10 @@
     "rates": "Rates at order creation",
     "fee": "Withdrawal fee",
     "feeinfo": "The indicated price is final, all fees are included.",
+    "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/terms-and-conditions'>T&C</a>)",
+    "iAgreedTC": "I have read and agree to the <a href='/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/privacy' target='_blank'>Privacy Policy</a>.",
+    "iAcknowledgeKYC": "I acknowledge that I have to upload my Identity Document after the payment.",
+    "tooltipTC": "You must agree with T&C and Privacy Policy.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
       "cardsaccepted": "Credit cards accepted",
@@ -264,15 +269,15 @@
       "tier": {
         "limit": "Tier limits reached, additional verification needed",
         "explanation":
-          "This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification tier limits are reached.",
+          "This is a one-time process. Once you are verified you will be able to complete future purchases instantly until current verification tier limits are reached.",
         "explanation2":
-          "This is a one-time process, once verified you’ll be able to complete future purchases for this withdrawal address instantly.",
+          "This is a one-time process. Once you are verified you will be able to complete future withdrawals to the whitelisted address instantly.",
         "selfie": "Selfie",
         "selfieexplanation":
           "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
         "w_selfie": "Whitelist selfie",
         "w_selfieexplanation":
-          "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card."
+          "i.e. you have to make a selfie of yourself with a paper with today's date, 'N.EXCHANGE' and 'My BTC withdraw address is 18v8BJKqTMHc2eLBpHuwDrrZkQYKvdtUUB' for the currency you use for the purchase."
       },
       "status": {
         "success": "We will proceed to release your funds shortly",
@@ -299,7 +304,8 @@
         "14": "We have received your funds and are now waiting for proof of residence and government issued ID verification."
       },
       "kyc": {
-        "1": "Government issued ID",
+        "1": "Selfie with government issued ID",
+        "govSelfieDesc": "Please upload a picture of yourself, a picture of your ID in English (the ID can be an identity card, passport or drivers license), and a note that contains today’s date and ‘n.exchange’ written next to it. This is required according to KYC AML/AFT regulations. This also helps us to fight fraud and to protect our customers.",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
@@ -310,6 +316,7 @@
         "5": "Uploaded",
         "uploading": "Uploading...",
         "msg": "Message (optional)",
+        "phone": "Mobile phone (optional)",
         "6":
           "Help us reach you in case we need any further information from you.\nThis will also allow us to send you updates about your orders, your referrals, and occasional info about our product.",
         "retry": "Retry verification",

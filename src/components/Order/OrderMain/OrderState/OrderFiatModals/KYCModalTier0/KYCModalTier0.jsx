@@ -13,6 +13,8 @@ class KYCModal extends Component {
     super(props);
 
     this.state = {
+      showManualId: false,
+      idApproved: false,
       show: false,
       filesReady: false,
       governmentID: '',
@@ -22,6 +24,7 @@ class KYCModal extends Component {
       titleClass: '',
       email: '',
       message: '',
+      phone: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,8 +38,21 @@ class KYCModal extends Component {
         email: this.props.email.value,
       });
     }
-  }
+    window.addEventListener("message", this.handleFrameTasks);
 
+  }
+  componentWillUnmount() {
+    window.removeEventListener("message", this.handleFrameTasks);
+  }
+  handleFrameTasks = (e) => {
+    if (e.data.status === "failed") {
+      this.setState({ showManualId: true });
+    } else if (e.data.status === 'approved') {
+      setTimeout(function () {
+        this.setState({idApproved: true});
+      }.bind(this), 3000)
+    }
+  }
   componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
@@ -82,7 +98,7 @@ class KYCModal extends Component {
     const residenceProof = document.querySelector('#residenceProof');
 
     formData.append('order_reference', this.props.order.unique_reference);
-    formData.append('user_provided_comment', this.state.message.slice(0, 255));
+    formData.append('user_input_comment', this.state.message.slice(0, 255));
 
     if (governmentID) {
       formData.append('identity_document', governmentID.files[0]);
@@ -119,7 +135,9 @@ class KYCModal extends Component {
       });
 
     if (this.state.email) {
-      this.props.setUserEmail(this.state.email);
+      this.props.setUserEmail(
+        {email: this.state.email, phone: this.state.phone}
+      );
     }
   }
 
@@ -168,29 +186,49 @@ class KYCModal extends Component {
             </h5>
           </div>
 
-          <div className="modal-body">
-            <form onSubmit={this.handleSubmit}>
-              {this.props.kyc.id_document_status !== 'APPROVED' && (
+            <div className="modal-body">
+            { ! this.state.idApproved && this.props.kyc.identity_token && !this.state.showManualId &&
+            this.props.kyc.id_document_status !== 'APPROVED' && (
+                <div hidden={! this.props.kyc.identity_token && this.state.idApproved}>
+                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
+                </div>
+            )}
+
+            <form onSubmit={this.handleSubmit}
+                  hidden={(this.props.kyc.identity_token && !this.state.showManualId) && ! this.state.idApproved}>
+              { !this.state.idApproved &&
+              this.props.kyc.id_document_status !== 'APPROVED' && (
                 <div>
+                  <label htmlFor="governmentID" style={{'cursor': 'pointer'}}>
                   <h2>{t('order.fiat.kyc.1')}</h2>
-                  <small>{t('order.fiat.kyc.11')}</small>
-                  <input type="file" name="governmentID" id="governmentID" onChange={this.handleInputChange} accept="image/*" />
+                    <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
+
+                    <div style={{'text-align': 'center', 'max-width': '100%'}}>
+                      <div style={{'display': 'inline-block', 'max-width': '100%'}}>
+                    <img style={{'text-align': 'center',
+                        margin: 'auto', 'width': '400px', 'max-width': '100%'}} src ="/img/order/selfie.jpg"
+                             alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
+                    <input type="file" name="governmentID" id="governmentID"
+                         onChange={this.handleInputChange} accept="image/*" style={{'margin': '0 25% 20px 25%'}} />
+                    </div></div>
+                  </label>
                 </div>
               )}
 
+              {/*
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
                 <div>
                   <h2>{t('order.fiat.kyc.2')}</h2>
                   <small>
-                    {t('order.fiat.kyc.21')}
+                      <div dangerouslySetInnerHTML={{__html: t('order.fiat.kyc.21')}} />
                   </small>
                   <small>
-                    {t('order.fiat.kyc.22')}
+                      <div dangerouslySetInnerHTML={{__html: t('order.fiat.kyc.22')}} />
                   </small>
                   <input type="file" name="residenceProof" id="residenceProof" onChange={this.handleInputChange} accept="image/*" />
                 </div>
               )}
-
+              */}
               <div className="form-group">
                 <input
                   type="email"
@@ -212,6 +250,18 @@ class KYCModal extends Component {
                     zIndex: 99999999,
                   }}
                   data-original-title={t('order.fiat.kyc.6')}
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  name="phone"
+                  className="form-control"
+                  placeholder={t('order.fiat.kyc.phone')}
+                  rows="2"
+                  onChange={this.handleInputChange}
+                  value={this.state.phone}
+                  maxLength="255"
                 />
               </div>
 

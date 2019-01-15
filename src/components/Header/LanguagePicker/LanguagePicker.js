@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import styles from './LanguagePicker.scss';
 
 class LanguagePicker extends Component {
-  supportedLanguages = ['de', 'en'];
+  supportedLanguages = ['de', 'en', 'ru'];
 
   array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
@@ -34,10 +35,12 @@ class LanguagePicker extends Component {
           <I18n ns="translations" key={lng}>
             {(t, { i18n }) => (
               <li key={lng}>
-                <a href={`#${lng}`} className="selected" onClick={() => i18n.changeLanguage(`${lng}`)}>
+              <Link to={`/?lang=${lng.toUpperCase()}`}  replace={false}>
+                <span href={`?lang=${lng}`} className="selected" onClick={() => i18n.changeLanguage(`${lng}`)}>
                   <img className="flag" src={`/img/flags/${lng.toUpperCase()}.svg`} alt={t(`header.${lng}`)} />
                   <span className="visible-xs-inline visible-ms-inline visible-lg-inline">{t(`header.${lng}`)}</span>
-                </a>
+                </span>
+              </Link>
               </li>
             )}
           </I18n>

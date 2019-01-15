@@ -62,7 +62,7 @@ class KYCModal extends Component {
     const selfie = document.querySelector('#selfie');
 
     formData.append('order_reference', this.props.order.unique_reference);
-    formData.append('user_provided_comment', this.state.message.slice(0, 255));
+    formData.append('user_input_comment', this.state.message.slice(0, 255));
 
     if (selfie) {
       formData.append('selfie', selfie.files[0]);

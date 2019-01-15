@@ -62,7 +62,7 @@ class KYCModalTier2 extends Component {
     const whitelist_selfie = document.querySelector('#whitelist_selfie');
 
     formData.append('order_reference', this.props.order.unique_reference);
-    formData.append('user_provided_comment', this.state.message.slice(0, 255));
+    formData.append('user_input_comment', this.state.message.slice(0, 255));
 
     if (whitelist_selfie) {
       formData.append('whitelist_selfie', whitelist_selfie.files[0]);

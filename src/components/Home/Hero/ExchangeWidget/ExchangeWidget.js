@@ -153,6 +153,7 @@ class ExchangeWidget extends Component {
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>
+                        <p className={styles.infotc} dangerouslySetInnerHTML={{__html: t('order.byclickTC', {'buttonName':t('exchangewidget.2')})}}/>
                     </div>
                   </div>
                 </div>

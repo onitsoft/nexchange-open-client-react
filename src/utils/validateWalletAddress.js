@@ -1,7 +1,7 @@
 export default (address, coin, errorCb, successCb) => {
   let rules = {
     BTC: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/,
-    LTC: /^L[1-9A-Za-z]{25,34}$/,
+    LTC: /^[LM][1-9A-Za-z]{25,34}$/,
     ETH: /^0x[0-9a-fA-F]{40}$/,
     EOS: /^0x[0-9a-fA-F]{40}$/,
     BDG: /^0x[0-9a-fA-F]{40}$/,

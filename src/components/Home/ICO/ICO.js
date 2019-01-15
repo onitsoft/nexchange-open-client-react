@@ -18,7 +18,7 @@ const ICO = () => {
   return (
     <I18n ns="translations">
       {t => (
-        <div className={styles.container}>
+        <div className={styles.container} style={{'display': 'none'}}>
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-sm-5 col-lg-6">

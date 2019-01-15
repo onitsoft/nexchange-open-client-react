@@ -28,7 +28,7 @@
   },
   "exchangewidget": {
     "1": "GET STARTED",
-    "2": "Confirm & Place Order",
+    "2": "*Confirm & Place Order",
     "3": "Current fee is 0.5%"
   },
   "recentorders": {
@@ -248,6 +248,10 @@
     "rates": "Rates at order creation",
     "fee": "Withdrawal fee",
     "feeinfo": "The indicated price is final, all fees are included.",
+    "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/terms-and-conditions'>T&C</a>)",
+    "iAgreedTC": "I have read and agree to the <a href='/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/privacy' target='_blank'>Privacy Policy</a>.",
+    "iAcknowledgeKYC": "I acknowledge that I have to upload my Identity Document after the payment.",
+    "tooltipTC": "You must agree with T&C and Privacy Policy.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
       "cardsaccepted": "Credit cards accepted",
@@ -266,7 +270,7 @@
           "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
         "w_selfie": "Whitelist selfie",
         "w_selfieexplanation":
-          "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card."
+          "i.e. you have to make a selfie of yourself with a paper with today's date, 'N.EXCHANGE' and 'My BTC withdraw address is 18v8BJKqTMHc2eLBpHuwDrrZkQYKvdtUUB' for the currency you use for the purchase."
       },
       "status": {
         "success": "We will proceed to release your funds shortly",
@@ -293,7 +297,8 @@
         "14": "We have received your funds and are now waiting for proof of residence and government issued ID verification."
       },
       "kyc": {
-        "1": "Government issued ID",
+        "1": "Selfie with government issued ID",
+        "govSelfieDesc": "Please make a selfie (self portrait) with an ID in English (identity card, passport or drivers license) with a note that contains today's date and 'n.exchange' written beside it. This is required according to KYC AML/AFT regulations. This also helps us defeat fraud and protect our customers. ",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
@@ -304,6 +309,7 @@
         "5": "Uploaded",
         "uploading": "Uploading...",
         "msg": "Message (optional)",
+        "phone": "Mobile phone (optional)",
         "6":
           "Help us reach you in case we need any further information from you.\nThis will also allow us to send you updates about your orders, your referrals, and occasional info about our product.",
         "retry": "Retry verification",

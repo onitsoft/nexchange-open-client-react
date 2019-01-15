@@ -102,8 +102,16 @@ class Support extends Component {
                   <div className="col-xs-12 col-sm-6">
                     <h3>{t('support.2')}</h3>
                     <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
-                      +442081442192<br />
-                      +16464612858 (US)
+                      <div className="hidden-xs hidden-sm">
+                        {/*desktop link structure*/}
+                        <a href="tel:+442030971920">+442030971920</a>
+                      </div>
+                      <div className="hidden-md hidden-lg">
+                        {/*mobile link structure*/}
+                        <a href="tel:+442030971920">+442030971920</a>
+                      </div>
+                      <br />
+                      {/*+16464612858 (US)*/}
                     </p>
                   </div>
 
