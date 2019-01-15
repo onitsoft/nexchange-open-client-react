@@ -159,7 +159,7 @@ class OrderCoinProcessed extends Component {
       addressId = this.state.destinationTag;
       addressIdType = 'Destination tag';
     } else if (this.state.memo) {
-      address = this.state.memo;
+      addressId = this.state.memo;
       addressIdType = 'Memo';
     } else {
       addressId = null;
