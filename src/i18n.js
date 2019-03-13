@@ -9,7 +9,6 @@ i18n
   .use(reactI18nextModule)
   .init(
     {
-      lng: 'en',
       fallbackLng: 'en',
 
       ns: ['translations'],
