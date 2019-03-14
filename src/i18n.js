@@ -21,7 +21,7 @@ i18n
       },
       detection: {
         lookupQuerystring: "lang",
-      }
+      },
       saveMissing: true,
 
       react: {
