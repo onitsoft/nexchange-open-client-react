@@ -19,7 +19,9 @@ i18n
       interpolation: {
         escapeValue: false,
       },
-
+      detection: {
+        lookupQuerystring: "lang",
+      }
       saveMissing: true,
 
       react: {
