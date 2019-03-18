@@ -38,7 +38,7 @@ class CoinInput extends PureComponent {
     ga('send', 'event', 'Order', 'change amount');
   };
 
-  assignMinMaxValue = value => {
+  setValue = value => {
     const simulatedEvent ={target: {value: value.toString()}};
     this.handleChange(simulatedEvent);
   };
@@ -109,7 +109,7 @@ class CoinInput extends PureComponent {
               min={this.props.type === 'deposit' ? this.props.price.min_amount_quote : this.props.price.min_amount_base}
               max={this.props.type === 'deposit' ? this.props.price.max_amount_quote : this.props.price.max_amount_base}
               amount={this.props.type === 'deposit' ? this.props.price.deposit : this.props.price.receive}
-              assignMinMaxValue={this.assignMinMaxValue}
+              setValue={this.setValue}
             />
           </div>
         )}
