@@ -82,7 +82,7 @@ class CoinInput extends PureComponent {
     return (
       <I18n ns="translations">
         {t => (
-          <div className="col-xs-12 col-sm-6">
+          <div className="col-xs-12 col-sm-5">
             <form className="form-group" onSubmit={this.handleSubmit}>
               <label htmlFor={this.props.type} className={styles.label}>
                 {t('order.' + this.props.type)}
