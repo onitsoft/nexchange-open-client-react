@@ -14,8 +14,6 @@ class CoinSwitch extends Component {
   switchCoins = () => {
     const deposit = this.props.selectedCoin.receive;
     const receive = this.props.selectedCoin.deposit;
-    const depositValue = this.props.price.receive;
-    const receiveValue = this.props.price.deposit;
 
     const pair = `${receive}${deposit}`;
     const data = {
