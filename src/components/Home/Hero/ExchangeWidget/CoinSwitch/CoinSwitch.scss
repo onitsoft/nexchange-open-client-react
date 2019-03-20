@@ -1,0 +1,16 @@
+.icon {
+  color: $gray;
+  @media (max-width: $screen-sm-min) {
+    display: flex;
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  @media (min-width: $screen-md-min) {
+    margin-top: 50px;
+  }
+}
