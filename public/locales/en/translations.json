@@ -209,6 +209,7 @@
     "copy": "Wallet adress copied!",
     "reference": "Order Reference",
     "api": "See your order details on our API",
+    "repeat": "Repeat order",
     "blockchain": "See your order details on blockchain",
     "processing": "Processing withdrawal...",
     "released": "Funds released, awaiting confirmations",
