@@ -69,6 +69,14 @@ export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
+  //Set deposit value using amount_quote param in url.
+  if (payload && !payload.deposit) {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('amount_quote')) {
+      payload.deposit = parseFloat(params['amount_quote']);
+    }
+  }
+
   if (payload.coinSelector) {
     dispatch({
       type: types.FETCHING_PRICE
