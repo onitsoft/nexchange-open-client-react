@@ -69,6 +69,11 @@ export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
+  dispatch(errorAlert({
+    show: false,
+    type: types.INVALID_AMOUNT
+  }));
+
   //Set deposit value using amount_quote param in url.
   if (payload && !payload.deposit) {
     const params = urlParams();
@@ -112,10 +117,6 @@ export const fetchPrice = payload => dispatch => {
         type: types.PRICE_FETCHED,
         payload: data
       });
-      dispatch(errorAlert({
-        show: false,
-        type: types.INVALID_AMOUNT
-      }));
 
       resolve();
     };
