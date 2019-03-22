@@ -10,7 +10,7 @@
 .container {
   display: flex;
   justify-content: center;
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-sm-min) {
     margin-top: 50px;
   }
 }
