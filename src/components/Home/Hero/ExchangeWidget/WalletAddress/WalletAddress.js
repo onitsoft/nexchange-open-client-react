@@ -14,7 +14,7 @@ class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: '' };
+    this.state = { address: '', firstLoad: true };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -66,10 +66,12 @@ class WalletAddress extends Component {
   componentDidUpdate(){
     //Check if withdraw_address url param exists. If exists, prefill address field with that value
     const params = urlParams();
-    if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address) {
-      const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
-      this.handleChange(simulatedEvent);
-    }
+    if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address
+      && this.props.selectedCoin.receive && this.state.firstLoad) {
+        const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
+        this.handleChange(simulatedEvent);
+        this.setState({firstLoad: false});
+      }
   }
 
   render() {
