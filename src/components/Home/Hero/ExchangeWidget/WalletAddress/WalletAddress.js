@@ -61,10 +61,12 @@ class WalletAddress extends Component {
     if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
       this.validate(this.state.address, nextProps.selectedCoin.receive);
     }
+  }
 
+  componentDidUpdate(){
     //Check if withdraw_address url param exists. If exists, prefill address field with that value
     const params = urlParams();
-    if (params && params.hasOwnProperty('withdraw_address') && !nextProps.wallet.address) {
+    if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address) {
       const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
       this.handleChange(simulatedEvent);
     }
