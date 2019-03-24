@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import onClickOutside from 'react-onclickoutside';
 import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import styles from './CoinSwitch.scss';
 
@@ -57,10 +56,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CoinSwitch);
-
-// export const CoinSelectorTesting = translate()(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-//   )(CoinSelector)
-// );
