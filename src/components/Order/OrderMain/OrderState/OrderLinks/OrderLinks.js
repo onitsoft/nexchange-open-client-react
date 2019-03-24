@@ -10,7 +10,6 @@ const OrderLinks = props => (
   <I18n ns="translations">
     {t => (
       <div className={styles.links}>
-      {console.log(props)}
         {props.order && STATUS_CODES[props.order.status_name[0][0]] === "COMPLETED" && (
           <a href={`/?pair=${props.order.pair.name}&amount_quote=${props.order.amount_quote}`+
           `&withdraw_address=${props.order.withdraw_address.address}`}
