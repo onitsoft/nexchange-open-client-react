@@ -58,7 +58,8 @@ class WalletAddress extends Component {
 
   handleFocus(event) {
     const receiveCoin = this.props.selectedCoin.receive;
-    const addressHistory = localStorage[`${receiveCoin}addressHistory`] ? localStorage[`${receiveCoin}addressHistory`].split(",") : [];
+    const addressHistory = localStorage[`${receiveCoin}addressHistory`] ?
+                           localStorage[`${receiveCoin}addressHistory`].split(",").reverse().slice(0, 5) : [];
     this.setState({
       addressHistory
     });
@@ -95,6 +96,7 @@ class WalletAddress extends Component {
   setAddress(address) {
     const simulatedEvent ={target: {value: address}};
     this.handleChange(simulatedEvent);
+    this.props.button.focus();
   }
 
   render() {
@@ -113,6 +115,7 @@ class WalletAddress extends Component {
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 value={this.state.address}
+                autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
               <AddressHistory history={this.state.addressHistory} setAddress={this.setAddress} />
