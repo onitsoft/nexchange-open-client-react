@@ -15,6 +15,7 @@ class AddressHistory extends Component {
             <div className={`${styles.entry}`} key={index + address} onMouseDown={() => this.handleClick(address)}>{address}</div>
           ))
         }
+        <div className={`${styles.separator}`}></div>
       </div>
     );
   }
