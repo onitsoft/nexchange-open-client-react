@@ -11,8 +11,13 @@ class AddressHistory extends Component {
     return (
       <div className={`${styles.container}`}>
         {this.props.history &&
-          this.props.history.map((address, index) => (
-            <div className={`${styles.entry}`} key={index + address} onMouseDown={() => this.handleClick(address)}>{address}</div>
+          this.props.history.map((order, index) => (
+            <div
+            className={`${styles.entry}`} key={index + order.withdraw_address}
+            onMouseDown={() => this.handleClick(order.withdraw_address)}>
+              {order.withdraw_address}
+              <div className={`${styles.details}`}>{`(${order.quote}) Last user X days ago`}</div>
+            </div>
           ))
         }
         <div className={`${styles.separator}`}></div>

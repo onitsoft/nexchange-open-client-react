@@ -15,7 +15,7 @@ class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: '', firstLoad: true , addressHistory: []};
+    this.state = { address: '', firstLoad: true , orderHistory: []};
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
@@ -57,18 +57,21 @@ class WalletAddress extends Component {
   }
 
   handleFocus(event) {
-    const receiveCoin = this.props.selectedCoin.receive;
-    const addressHistory = localStorage[`${receiveCoin}addressHistory`] ?
-                           localStorage[`${receiveCoin}addressHistory`].split(",").reverse().slice(0, 5) : [];
+    let orderHistory = localStorage['orderHistory'];
+    try {
+      orderHistory = orderHistory ? JSON.parse(orderHistory).reverse() : [];
+    } catch (e) {
+      orderHistory = [];
+    }
     this.setState({
-      addressHistory
+      orderHistory: orderHistory
     });
   }
 
   handleBlur(event) {
-    this.setState({
-      addressHistory: []
-    });
+    // this.setState({
+    //   orderHistory: []
+    // });
   }
 
   handleSubmit(event) {
@@ -118,7 +121,7 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              <AddressHistory history={this.state.addressHistory} setAddress={this.setAddress} />
+              <AddressHistory history={this.state.orderHistory} setAddress={this.setAddress} />
             </form>
           </div>
         )}
