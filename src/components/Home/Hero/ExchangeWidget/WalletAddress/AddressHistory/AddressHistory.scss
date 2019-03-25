@@ -4,15 +4,18 @@
   border-radius: 4px;
   background-color: #fff;
   z-index: 1;
-  -webkit-box-shadow: 0 15px 30px 0 rgba(0,0,0,0.16);
-  -moz-box-shadow: 0 15px 30px 0 rgba(0,0,0,0.16);
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.16);
+  -webkit-box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.16);
 
   .entry {
-    margin: 10px 0;
-    padding: 5px 10px;
+    padding: 15px 10px;
     font-size: 12px;
     cursor: pointer;
+
+    &:hover {
+      background-color: rgba(1,1,1,0.1);
+    }
   }
 
   .separator {
@@ -22,8 +25,8 @@
     height: 1px;
     background-color: $grey;
     border-radius: 4px;
-    -webkit-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.75);
-    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
   }
 }
