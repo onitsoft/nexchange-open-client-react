@@ -15,19 +15,21 @@ class AddressHistory extends Component {
       <I18n ns="translations">
         {t => (
           <div className={`${styles.container}`}>
-            {this.props.history &&
-              this.props.history.map((order, index) => (
-                <div
-                className={`${styles.entry}`} key={index + order.withdraw_address}
-                onMouseDown={() => this.handleClick(order.withdraw_address)}>
-                  {order.withdraw_address}
-                  <div className={`${styles.details}`}>
-                    {`(${order.quote}) ${t('order.history.used')}: ${getDaysAgo(order.created_at) > 0 ?
-                      `${getDaysAgo(order.created_at)} ${t('order.history.daysago')}` : `${t('order.history.today')}`} `}
+            <div className={`${styles.entryContainer}`}>
+              {this.props.history &&
+                this.props.history.map((order, index) => (
+                  <div
+                  className={`${styles.entry}`} key={index + order.withdraw_address}
+                  onMouseDown={() => this.handleClick(order.withdraw_address)}>
+                    {order.withdraw_address}
+                    <div className={`${styles.details}`}>
+                      {`(${order.quote}) ${t('order.history.used')}: ${getDaysAgo(order.created_at) > 0 ?
+                        `${getDaysAgo(order.created_at)} ${t('order.history.daysago')}` : `${t('order.history.today')}`} `}
+                    </div>
                   </div>
-                </div>
-              ))
-            }
+                ))
+              }
+              </div>
             <div className={`${styles.separator}`}></div>
           </div>
         )}

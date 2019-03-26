@@ -7,18 +7,23 @@
   -moz-box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
   box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
 
-  .entry {
-    padding: 10px 10px;
-    font-size: 12px;
-    cursor: pointer;
+  .entryContainer {
+    max-height: 210px;
+    overflow: auto;
 
-    &:hover {
-      background-color: rgba(1,1,1,0.1);
-    }
+    .entry {
+      padding: 10px;
+      font-size: 12px;
+      cursor: pointer;
 
-    .details {
-      color: $grey;
-      font-size: 11px;
+      &:hover {
+        background-color: rgba(1,1,1,0.1);
+      }
+
+      .details {
+        color: $grey;
+        font-size: 11px;
+      }
     }
   }
 
