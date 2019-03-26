@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import onClickOutside from 'react-onclickoutside';
+import moment from 'moment';
+import getDaysAgo from 'Utils/getDaysAgo';
 import styles from './AddressHistory.scss';
+
 
 class AddressHistory extends Component {
   handleClick(address) {
@@ -16,7 +18,7 @@ class AddressHistory extends Component {
             className={`${styles.entry}`} key={index + order.withdraw_address}
             onMouseDown={() => this.handleClick(order.withdraw_address)}>
               {order.withdraw_address}
-              <div className={`${styles.details}`}>{`(${order.quote}) Last user X days ago`}</div>
+              <div className={`${styles.details}`}>{`(${order.quote}) ${getDaysAgo(order.created_at)} days ago`}</div>
             </div>
           ))
         }

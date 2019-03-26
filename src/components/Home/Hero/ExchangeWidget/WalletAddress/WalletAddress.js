@@ -69,9 +69,9 @@ class WalletAddress extends Component {
   }
 
   handleBlur(event) {
-    // this.setState({
-    //   orderHistory: []
-    // });
+    this.setState({
+      orderHistory: []
+    });
   }
 
   handleSubmit(event) {
