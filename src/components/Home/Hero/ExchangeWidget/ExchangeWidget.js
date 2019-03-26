@@ -84,6 +84,23 @@ class ExchangeWidget extends Component {
         bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
+
+        //Store order history in local storage
+        let newOrder = {
+            base: this.props.selectedCoin.deposit,
+            quote: this.props.selectedCoin.receive,
+            withdraw_address: this.props.wallet.address,
+            created_at: new Date()
+        }
+        let orderHistory = localStorage['orderHistory'];
+        if(!orderHistory){
+          orderHistory = [newOrder];
+        }
+        else {
+          orderHistory = JSON.parse(orderHistory);
+          orderHistory.push(newOrder);
+        }
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
       })
       .catch(error => {
         console.log('Error:', error);
@@ -99,19 +116,6 @@ class ExchangeWidget extends Component {
 
         this.setState({ orderPlaced: false, loading: false });
       });
-
-      //Store address in local storage
-      let addressHitory = localStorage[`${this.props.selectedCoin.receive}addressHistory`];
-      if(!addressHitory){
-        addressHitory = this.props.wallet.address;
-      }
-      else {
-        let addressHitoryArray = addressHitory.split(',');
-        if(addressHitoryArray.indexOf(this.props.wallet.address) === -1){
-          addressHitory = addressHitoryArray.concat([this.props.wallet.address]).join(',');
-        }
-      }
-      localStorage.setItem(`${this.props.selectedCoin.receive}addressHistory`, addressHitory);
   }
 
   focusWalletAddress() {
