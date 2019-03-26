@@ -278,6 +278,11 @@
         "status8": "Ein Fehler ist aufgetreten. Bitte laden Sie Ihre Dokumente erneut hoch.",
         "statuscheck": "Klicken Sie hier, um Neuigkeiten über Ihren KYC-Prozess zu erhalten"
       }
+    },
+    "history": {
+      "used": "Benutzt",
+      "daysago": "vor tagen",
+      "today": "heute"
     }
   },
   "notify": {
