@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { errorAlert, setWallet } from 'Actions/index.js';
+import { errorAlert, setWallet, selectCoin } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
 import AddressHistory from './AddressHistory/AddressHistory';
 import styles from './WalletAddress.scss';
@@ -21,6 +21,7 @@ class WalletAddress extends Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setAddress = this.setAddress.bind(this);
+    this.setCoin = this.setCoin.bind(this);
   }
 
   validate = (address, receiveCoin) => {
@@ -102,6 +103,13 @@ class WalletAddress extends Component {
     this.props.button.focus();
   }
 
+  setCoin(coin) {
+    this.props.selectCoin({
+      ...this.props.selectedCoin,
+      ['receive']: coin,
+    }, this.props.pairs);
+  }
+
   render() {
     let coin = this.props.selectedCoin.receive ? this.props.selectedCoin.receive : '...';
     return (
@@ -121,7 +129,7 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              <AddressHistory history={this.state.orderHistory} setAddress={this.setAddress} />
+              <AddressHistory history={this.state.orderHistory} setAddress={this.setAddress} setCoin={this.setCoin} />
             </form>
           </div>
         )}
@@ -130,8 +138,8 @@ class WalletAddress extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, wallet }) => ({ selectedCoin, wallet });
-const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet }, dispatch);
+const mapStateToProps = ({ selectedCoin, wallet, pairs }) => ({ selectedCoin, wallet, pairs });
+const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet, selectCoin}, dispatch);
 
 export default connect(
   mapStateToProps,
