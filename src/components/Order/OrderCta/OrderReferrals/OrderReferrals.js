@@ -38,6 +38,7 @@ class OrderReferrals extends Component {
               <CopyToClipboard
                 text={this.state.link}
                 onCopy={() => {
+                  /* eslint max-len: ["error", { "code": 200 }] */
                   window.gtag('event', 'Link click body', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
                   this.triggerCopyTooltip();
                 }}
@@ -49,6 +50,7 @@ class OrderReferrals extends Component {
                   title="Click to copy!"
                   onFocus={e => e.target.blur()}
                   onMouseEnter={() => {
+                    /* eslint max-len: ["error", { "code": 200 }] */
                     window.gtag('event', 'Link hover body', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
                   }}
                   required
@@ -58,6 +60,7 @@ class OrderReferrals extends Component {
               <CopyToClipboard
                 text={this.state.link}
                 onCopy={() => {
+                  /* eslint max-len: ["error", { "code": 200 }] */
                   window.gtag('event', 'Link click button', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
                   this.triggerCopyTooltip();
                 }}
