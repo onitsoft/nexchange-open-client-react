@@ -25,7 +25,7 @@ class CoinSwitch extends Component {
       receive,
     });
 
-    if (window.ga) window.ga('send', 'event', 'Order', 'switched coins');
+    window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
   };
 
   handleClick = () => {
