@@ -218,7 +218,10 @@ export const fetchPairs = () => dispatch => {
           axios
             .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
             .then(res => resolve(res.data))
-            .catch( /* istanbul ignore next */ err => reject(err));
+            .catch( /* istanbul ignore next */ err => console.log(err))
+            .then(function(){
+              resolve(pickRandomPair());
+              });;
         });
       };
 
@@ -234,8 +237,10 @@ export const fetchPairs = () => dispatch => {
         if (params && params.hasOwnProperty('pair')) {
           try {
             const pair = await coinsFromUrlParams(params);
-            depositCoin = pair.quote;
-            receiveCoin = pair.base;
+            if(pair){
+              depositCoin = pair.quote;
+              receiveCoin = pair.base;
+            }
           } catch (err) {
             /* istanbul ignore next */
             console.log('Error:', err);
