@@ -67,10 +67,9 @@ class CoinsDropdown extends Component {
 
 
     if(_.isEmpty(filteredCoins)){
-      /* eslint max-len: ["error", { "code": 200 }] */ 
+      /* eslint max-len: ["error", { "code": 200 }] */
       window.gtag('event', 'Coins dropdown search - Not Found', {event_category: 'Order', event_label: `${this.props.type} - ${this.state.value}`});
     }
-    console.log(filteredCoins);
 
     return filteredCoins;
   };
