@@ -142,8 +142,8 @@ class ExchangeWidget extends Component {
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
                       {/* eslint max-len: ["error", { "code": 200 }] */}
-                      <button ref={ref => {this.button = ref}}
-                        className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `} onClick={this.placeOrder}>
+                      <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                      onClick={this.placeOrder} ref={(el) => { this.button = el; }} >
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-import moment from 'moment';
-import getDaysAgo from 'Utils/getDaysAgo';
+import moment from 'moment/min/moment-with-locales.min.js';
+import 'moment/locale/en-gb';
 import styles from './AddressHistory.scss';
 
 
@@ -14,18 +14,17 @@ class AddressHistory extends Component {
   render() {
     return (
       <I18n ns="translations">
-        {t => (
+        {(t, { i18n }) => (
           <div className={`${styles.container}`}>
             <div className={`${styles.entryContainer}`}>
               {this.props.history &&
                 this.props.history.map((order, index) => (
                   <div
                   className={`${styles.entry}`} key={index + order.withdraw_address}
-                  onMouseDown={() => this.handleClick(order.quote,order.withdraw_address)}>
+                  onMouseDown={() => this.handleClick(order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`(${order.quote}) ${t('order.history.used')}: ${getDaysAgo(order.created_at) > 0 ?
-                        `${getDaysAgo(order.created_at)} ${t('order.history.daysago')}` : `${t('order.history.today')}`} `}
+                      {`(${order.quote}) ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
                     </div>
                   </div>
                 ))
