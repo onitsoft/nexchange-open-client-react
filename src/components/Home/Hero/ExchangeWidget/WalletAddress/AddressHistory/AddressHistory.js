@@ -24,7 +24,7 @@ class AddressHistory extends Component {
                   onMouseDown={() => this.handleClick(order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
+                      {`(${order.quote}) ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
                     </div>
                   </div>
                 ))

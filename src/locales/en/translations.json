@@ -327,11 +327,6 @@
         "status8": "Something went wrong, please try resubmitting",
         "statuscheck": "Click here to get notified about your KYC status change"
       }
-    },
-    "history": {
-      "used": "Used",
-      "daysago": "days ago",
-      "today": "today"
     }
   },
   "notify": {
