@@ -9,6 +9,8 @@ class AddressHistory extends Component {
   handleClick(coin, address) {
     this.props.setCoin(coin);
     this.props.setAddress(address);
+
+    window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${coin} - ${address}`});
   }
 
   render() {

@@ -36,11 +36,7 @@ class CoinsDropdown extends Component {
   };
 
   trackEvent = debounce(coinSearched => {
-    window.ga('send', 'event', {
-      eventCategory: 'Coins dropdown search',
-      eventAction: this.props.type,
-      eventValue: coinSearched,
-    });
+    window.gtag('event', 'Coins dropdown search', {event_category: 'Order', event_label: `${this.props.type} - ${coinSearched}`});
   }, 100);
 
   searchCoins = coins => {
@@ -68,6 +64,12 @@ class CoinsDropdown extends Component {
     });
     filteredCoins = _.sortBy(filteredCoins, 'is_crypto');
     filteredCoins = this.searchCoins(filteredCoins);
+
+
+    if(_.isEmpty(filteredCoins)){
+      /* eslint max-len: ["error", { "code": 200 }] */
+      window.gtag('event', 'Coins dropdown search - Not Found', {event_category: 'Order', event_label: `${this.props.type} - ${this.state.value}`});
+    }
 
     return filteredCoins;
   };
