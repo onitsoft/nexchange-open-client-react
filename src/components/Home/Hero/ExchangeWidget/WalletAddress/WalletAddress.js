@@ -94,6 +94,7 @@ class WalletAddress extends Component {
         const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
         this.handleChange(simulatedEvent);
         this.setState({firstLoad: false});
+        this.props.button.focus();
       }
   }
 
