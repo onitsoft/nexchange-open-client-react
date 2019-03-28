@@ -1,0 +1,42 @@
+.container {
+  position: absolute;
+  border-radius: 4px;
+  background-color: #fff;
+  z-index: 1;
+  -webkit-box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+
+  .entryContainer {
+    max-height: 210px;
+    overflow: auto;
+
+    .entry {
+      padding: 10px;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(1,1,1,0.1);
+      }
+
+      .details {
+        color: $grey;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .separator {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: $grey;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+  }
+}
