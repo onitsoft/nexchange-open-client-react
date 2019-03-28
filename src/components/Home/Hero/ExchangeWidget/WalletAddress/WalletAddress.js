@@ -60,7 +60,8 @@ class WalletAddress extends Component {
   handleFocus(event) {
     let orderHistory = localStorage['orderHistory'];
     try {
-      orderHistory = orderHistory ? JSON.parse(orderHistory).reverse() : [];
+      //Most recent order for each address
+      orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
     } catch (e) {
       orderHistory = [];
     }
