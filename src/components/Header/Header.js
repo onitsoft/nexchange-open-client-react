@@ -104,7 +104,7 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a className={styles.link}  href="#" onClick={() => { this.scrollTo("#compare"); }} data-test="compare-link">
+                    <a className={styles.link} href="/#compare" data-test="compare-link">
                       {t('header.compare')}
                     </a>
                   </li>
