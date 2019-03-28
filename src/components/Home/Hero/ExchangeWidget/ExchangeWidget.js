@@ -84,23 +84,6 @@ class ExchangeWidget extends Component {
         bindCrispEmail(this.props.store);
 
         window.ga('send', 'event', 'Order', 'place order', response.data.unique_reference);
-
-        //Store order history in local storage
-        let newOrder = {
-            base: this.props.selectedCoin.deposit,
-            quote: this.props.selectedCoin.receive,
-            withdraw_address: this.props.wallet.address,
-            created_at: new Date()
-        }
-        let orderHistory = localStorage['orderHistory'];
-        if(!orderHistory){
-          orderHistory = [newOrder];
-        }
-        else {
-          orderHistory = JSON.parse(orderHistory);
-          orderHistory.push(newOrder);
-        }
-        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
       })
       .catch(error => {
         console.log('Error:', error);
@@ -142,8 +125,8 @@ class ExchangeWidget extends Component {
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
                       {/* eslint max-len: ["error", { "code": 200 }] */}
-                      <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
-                      onClick={this.placeOrder} ref={(el) => { this.button = el; }} >
+                      <button ref={ref => {this.button = ref}}
+                        className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `} onClick={this.placeOrder}>
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>
