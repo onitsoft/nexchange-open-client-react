@@ -65,14 +65,15 @@ class FAQ extends Component {
 
     const fuse = new Fuse(this.faqs, {
       shouldSort: true,
-      threshold: 0.2,
+      threshold: 0.4,
+      minMatchCharLength: 2,
       keys: ['question', 'answer'],
     });
 
     this.trackEvent(searchText);
     const searchResult = fuse.search(searchText);
     if(_.isEmpty(searchResult)){
-      window.gtag('event', 'FAQ not found', {event_category: 'FAQ', event_label: `${faqSearched}`});
+      window.gtag('event', 'FAQ not found', {event_category: 'FAQ', event_label: `${searchText}`});
     }
 
     const filteredQuestionsIds = _.sortBy(_.map(searchResult, 'id'));
@@ -112,7 +113,7 @@ class FAQ extends Component {
                     // onBlur={this.handleBlur}
                     // value={this.state.address}
                     // autoComplete="off"
-                    // placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
+                    placeholder={t('faq.inputplaceholder')}
                   />
                 </form>
                 {this.showQuestion(1) ?
