@@ -104,18 +104,17 @@ class FAQ extends Component {
 
               <div className="modal-body">
                 <form className="form-group" onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    className={`form-control ${styles.input}`}
-                    id="faq-search"
-                    value={this.state.searchText}
-                    onChange={event => this.handleChange(event)}
-                    // onFocus={this.handleFocus}
-                    // onBlur={this.handleBlur}
-                    // value={this.state.address}
-                    // autoComplete="off"
-                    placeholder={t('faq.inputplaceholder')}
-                  />
+                  <div className={`${styles.input}`}>
+                    <i className={`fas fa-search`}></i>
+                    <input
+                      type="text"
+                      className={`form-control`}
+                      id="faq-search"
+                      value={this.state.searchText}
+                      onChange={event => this.handleChange(event)}
+                      placeholder={t('faq.inputplaceholder')}
+                    />
+                  </div>
                 </form>
                 {this.showQuestion(1) ?
                   <QuestionAnswer
