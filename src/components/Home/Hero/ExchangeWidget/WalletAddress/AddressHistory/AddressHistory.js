@@ -11,6 +11,13 @@ class AddressHistory extends Component {
     this.props.setAddress(address);
   }
 
+  orderClick(event, orderId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    window.open(`/order/${orderId}`, '_blank')
+  }
+
   render() {
     return (
       <I18n ns="translations">
@@ -24,7 +31,8 @@ class AddressHistory extends Component {
                   onMouseDown={() => this.handleClick(order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`(${order.quote}) ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
+                      (<a onMouseDown={(event) => this.orderClick(event, order.id)}>{`${order.id}`}</a>)
+                      {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
                     </div>
                   </div>
                 ))

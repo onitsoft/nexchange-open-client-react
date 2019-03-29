@@ -87,6 +87,7 @@ class ExchangeWidget extends Component {
 
         //Store order history in local storage
         let newOrder = {
+            id: response.data.unique_reference,
             base: this.props.selectedCoin.deposit,
             quote: this.props.selectedCoin.receive,
             withdraw_address: this.props.wallet.address,
