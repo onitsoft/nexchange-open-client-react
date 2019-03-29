@@ -6,6 +6,7 @@ import debounce from 'Utils/debounce';
 import i18n from 'Src/i18n';
 
 import QuestionAnswer from './QuestionAnswer/QuestionAnswer';
+import styles from './FAQ.scss';
 
 const FAQ_COUNT = 14;
 
@@ -105,7 +106,7 @@ class FAQ extends Component {
                 <form className="form-group" onSubmit={this.handleSubmit}>
                   <input
                     type="text"
-                    className={`form-control`}
+                    className={`form-control ${styles.input}`}
                     id="faq-search"
                     value={this.state.searchText}
                     onChange={event => this.handleChange(event)}
