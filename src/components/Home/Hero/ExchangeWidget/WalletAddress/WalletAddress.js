@@ -15,7 +15,7 @@ class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: '', firstLoad: true , orderHistory: []};
+    this.state = { address: '', firstLoad: true , showHistory: false};
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
@@ -58,21 +58,14 @@ class WalletAddress extends Component {
   }
 
   handleFocus(event) {
-    let orderHistory = localStorage['orderHistory'];
-    try {
-      //Most recent order for each address
-      orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-    } catch (e) {
-      orderHistory = [];
-    }
     this.setState({
-      orderHistory: orderHistory
+      showHistory: true
     });
   }
 
   handleBlur(event) {
     this.setState({
-      orderHistory: []
+      showHistory: false
     });
   }
 
@@ -84,6 +77,14 @@ class WalletAddress extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
       this.validate(this.state.address, nextProps.selectedCoin.receive);
+    }
+
+    let orderHistory = localStorage['orderHistory'];
+    try {
+      //Most recent order for each address
+      this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
+    } catch (e) {
+      this.orderHistory = [];
     }
   }
 
@@ -142,7 +143,9 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              <AddressHistory history={this.state.orderHistory} setAddress={this.setAddress} setCoin={this.setCoin} />
+              {this.state.showHistory ?
+                <AddressHistory history={this.orderHistory} setAddress={this.setAddress} setCoin={this.setCoin} />
+                :  null}
             </form>
           </div>
         )}

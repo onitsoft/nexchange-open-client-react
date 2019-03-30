@@ -131,9 +131,9 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
-                    <CoinInput type="deposit" onSubmit={this.showWalletAddress} />
+                    <CoinInput type="deposit" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
                     <CoinSwitch />
-                    <CoinInput type="receive" onSubmit={this.showWalletAddress} />
+                    <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
                     <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
                     <div className={styles.submit}>
