@@ -63,7 +63,11 @@ class CoinInput extends PureComponent {
   }, 600);
 
   focus = () => {
-    this.nameInput.focus();
+    if (this.props.type === 'receive') {
+      this.props.walletInput.focus();
+    } else {
+      this.nameInput.focus();
+    }
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
