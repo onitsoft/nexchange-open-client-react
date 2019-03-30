@@ -3,12 +3,28 @@
 
   i {
     position: absolute;
-    top: 10px;
-    width: 10%;
+    font-size: 26px;
   }
 
   input {
+    font-size: 26px !important;
     margin-bottom: 20px !important;
-    padding-left: 20px !important;
+    padding-left: 40px !important;
+  }
+
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: 26px !important;
+  }
+
+  input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 26px !important;
+  }
+
+  input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 26px !important;
+  }
+
+  input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size: 26px !important;
   }
 }
