@@ -1,5 +1,10 @@
 .container {
-  position: absolute;
+  @media (max-width: $screen-md-min) {
+    position: relative;
+  }
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+  }
   border-radius: 4px;
   background-color: #fff;
   z-index: 1;
