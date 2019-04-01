@@ -6,8 +6,8 @@ import styles from './AddressHistory.scss';
 
 
 class AddressHistory extends Component {
-  handleClick(coin, address) {
-    this.props.setCoin(coin);
+  handleClick(depositCoin, receiveCoin, address) {
+    this.props.setCoin(depositCoin, receiveCoin);
     this.props.setAddress(address);
   }
 
@@ -28,7 +28,7 @@ class AddressHistory extends Component {
                 this.props.history.map((order, index) => (
                   <div
                   className={`${styles.entry}`} key={index + order.withdraw_address}
-                  onMouseDown={() => this.handleClick(order.quote, order.withdraw_address)}>
+                  onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
                       {`${order.base} to ${order.quote}`}
