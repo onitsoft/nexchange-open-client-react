@@ -5,7 +5,16 @@ import 'moment/locale/en-gb';
 import styles from './AddressHistory.scss';
 
 
+const DEFAULT_SHOW_COUNT = 5;
+
 class AddressHistory extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { showCount: DEFAULT_SHOW_COUNT };
+  }
+
+
   handleClick(depositCoin, receiveCoin, address) {
     this.props.setCoin(depositCoin, receiveCoin);
     this.props.setAddress(address);
@@ -18,6 +27,14 @@ class AddressHistory extends Component {
     window.open(`/order/${orderId}`, '_blank')
   }
 
+  showMore(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    const showCount = this.state.showCount + DEFAULT_SHOW_COUNT;
+    this.setState({showCount});
+  }
+
   render() {
     return (
       <I18n ns="translations">
@@ -25,7 +42,7 @@ class AddressHistory extends Component {
           <div className={`${styles.container}`}>
             <div className={`${styles.entryContainer}`}>
               {this.props.history &&
-                this.props.history.map((order, index) => (
+                this.props.history.slice(0,this.state.showCount).map((order, index) => (
                   <div
                   className={`${styles.entry}`} key={index + order.withdraw_address}
                   onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
@@ -33,13 +50,21 @@ class AddressHistory extends Component {
                     <div className={`${styles.details}`}>
                       {`${order.base} to ${order.quote}`}
                       {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()} `}
-                      (<a onMouseDown={(event) => this.orderClick(event, order.id)}>{`${order.id}`}</a>)
+                      (<a
+                        onMouseDown={(event) => this.orderClick(event, order.id)}
+                        title={`${order.amount_base}${order.base} to ${order.amount_quote}${order.quote}`} >
+                        {`${order.id}`}
+                      </a>)
                     </div>
                   </div>
                 ))
               }
               </div>
             <div className={`${styles.separator}`}></div>
+            { this.props.history && this.props.history.length > this.state.showCount ?
+            <div className={`${styles.showMore}`}>
+              <a onMouseDown={(event) => this.showMore(event)}>show more</a>
+            </div> : null }
           </div>
         )}
        </I18n>
