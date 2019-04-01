@@ -90,7 +90,9 @@ class ExchangeWidget extends Component {
         let newOrder = {
             id: response.data.unique_reference,
             base: this.props.selectedCoin.deposit,
+            amount_base: parseFloat(this.props.price.deposit),
             quote: this.props.selectedCoin.receive,
+            amount_quote: parseFloat(this.props.price.receive),
             withdraw_address: this.props.wallet.address,
             created_at: new Date()
         }
