@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { I18n, Trans } from 'react-i18next';
 
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
+import OrderBookWidget from './OrderBookWidget/OrderBookWidget';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 
@@ -28,7 +29,9 @@ class Hero extends Component {
                   </div>
                 </div>
 
-                <ExchangeWidget store={this.props.store} />
+                { this.props.orderBook && this.props.orderBook.active
+                  ? <div><a>Go Basic</a><OrderBookWidget store={this.props.store} /></div>
+                  : <div><a>Go Pro</a><ExchangeWidget store={this.props.store} /></div> }
               </div>
             </div>
 

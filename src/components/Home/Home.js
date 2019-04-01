@@ -42,7 +42,7 @@ export class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin });
+const mapStateToProps = ({ orderBook, coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin, orderBook });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs}, dispatch);
 
 export default connect(
