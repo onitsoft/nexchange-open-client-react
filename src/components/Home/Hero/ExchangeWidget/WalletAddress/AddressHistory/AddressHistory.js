@@ -6,8 +6,8 @@ import styles from './AddressHistory.scss';
 
 
 class AddressHistory extends Component {
-  handleClick(coin, address) {
-    this.props.setCoin(coin);
+  handleClick(depositCoin, receiveCoin, address) {
+    this.props.setCoin(depositCoin, receiveCoin);
     this.props.setAddress(address);
 
     window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${coin} - ${address}`});
@@ -30,11 +30,12 @@ class AddressHistory extends Component {
                 this.props.history.map((order, index) => (
                   <div
                   className={`${styles.entry}`} key={index + order.withdraw_address}
-                  onMouseDown={() => this.handleClick(order.quote, order.withdraw_address)}>
+                  onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`${order.quote} `} (<a onMouseDown={(event) => this.orderClick(event, order.id)}>{`${order.id}`}</a>)
-                      {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}
+                      {`${order.base} to ${order.quote}`}
+                      {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()} `}
+                      (<a onMouseDown={(event) => this.orderClick(event, order.id)}>{`${order.id}`}</a>)
                     </div>
                   </div>
                 ))
