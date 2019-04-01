@@ -21,7 +21,8 @@
     "telegram": "Begleiten Sie uns auf Telegram",
     "slack": "Treten Sie uns auf Slack bei",
     "en": "Englisch",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "ru": "Russisch"
   },
   "hero": {
     "1": "Umtausch von Kryptowährungen",
@@ -32,7 +33,9 @@
     "2": "*Bestätigen & Auftrag erteilen",
     "3": "Ihre",
     "4": "Adresse",
-    "fees": "Die Gebühren liegen bei"
+    "fees": "Die Gebühren liegen bei",
+    "min": "Min menge",
+    "max": "Max menge"
   },
   "recentorders": {
     "1": "Letzte Aufträge",
@@ -187,7 +190,7 @@
     "status1": "1. Warte auf Einzahlung",
     "status11": "In diesem Schritt warten wir auf Ihre Einzahlung.",
     "status2": "2. Warte auf Bestätigungen",
-    "status21":,
+    "status21":
       "Ihr Auftrag befindet sich in der Blockchain, wir warten nun auf die notwendige Anzahl von Bestätigungen, bevor Sie Ihre Gelder erhalten können.",
     "status3": "3. Abgeschlossen",
     "status31": "Wir haben die Gelder erhalten und sie nun an Sie überwiesen.",
@@ -288,7 +291,8 @@
     "action": "Benachrichtigungen zum Vorgang erhalten",
     "kycupdate": "KYC Status wurde aktualisiert für den Auftrag",
     "email": "Geben Sie Ihre E-Mail ein",
-    "explanation": "Wenn Sie über Ihre Bestellung benachrichtigt werden möchten, geben Sie bitte Ihre E-Mail-Adresse unten ein."
+    "explanation":
+      "Geben Sie Ihre E-Mail Adresse an, um unseren Empfehlungsprogramm beizutreten & um Benachrichtigungen über den Status Ihrer Transaktion zu erhalten."
   },
   "referral": {
     "1": "Teilen Sie diesen einmaligen Verweis-Link mit Ihren Freunden, um einige Coins dazu zu verdienen!",
@@ -409,5 +413,7 @@
     "try": "Probieren Sie",
     "novalid": "ist keine gültige",
     "providevalid": "Bitte benutzen Sie eine gültige"
-  }
+  },
+  "viewmore": "mehr sehen",
+  "to": "zu"
 }
