@@ -48,7 +48,7 @@ class AddressHistory extends Component {
                   onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`${order.base} to ${order.quote}`}
+                      {`${order.base} ${t('to')} ${order.quote}`}
                       {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()} `}
                       (<a
                         onMouseDown={(event) => this.orderClick(event, order.id)}
@@ -63,7 +63,7 @@ class AddressHistory extends Component {
             <div className={`${styles.separator}`}></div>
             { this.props.history && this.props.history.length > this.state.showCount ?
             <div className={`${styles.showMore}`}>
-              <a onMouseDown={(event) => this.showMore(event)}>show more</a>
+              <a onMouseDown={(event) => this.showMore(event)}>${t('showmore')}</a>
             </div> : null }
           </div>
         )}
