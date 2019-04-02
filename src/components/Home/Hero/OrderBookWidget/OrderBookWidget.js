@@ -27,9 +27,13 @@ class OrderBookWidget extends Component {
   }
 
 
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState) {
+    // Detect coin change by link
+    if(this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
+      this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
+        this.props.fetchOrderBook(this.props.selectedCoin);
+    }
   }
-
 
   placeOrder() {
   }
@@ -47,8 +51,8 @@ class OrderBookWidget extends Component {
                       <CoinInput type="deposit"/>
                       <CoinInput type="receive"/>
                       <div className="col-xs-12">
-                        <OrderDepth type={`ask`} orders={this.props.orderBook.orderBook.asks} />
-                        <OrderDepth type={`bid`} orders={this.props.orderBook.orderBook.bids} />
+                        <OrderDepth side={`ask`} depth={this.props.orderBook.orderBook.asks} />
+                        <OrderDepth side={`bid`} depth={this.props.orderBook.orderBook.bids} />
                       </div>
                     </div>
                   </div>

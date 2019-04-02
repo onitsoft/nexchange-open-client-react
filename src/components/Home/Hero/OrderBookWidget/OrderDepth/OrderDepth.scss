@@ -1,0 +1,16 @@
+.container {
+    height: 250px;
+    width: 200px;
+   
+    .title {
+        
+    }
+   
+    .header {
+        display: flex;
+        font-weight: bold;
+        span{
+            flex: 1;
+        }
+    }
+}

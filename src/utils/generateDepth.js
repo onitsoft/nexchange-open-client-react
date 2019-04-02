@@ -1,0 +1,26 @@
+export default (data, type) => {
+    const parsedData = [];
+    data.forEach((d) => {
+        parsedData.push({
+            size: parseFloat(d.amount_quote),
+            rate: (parseFloat(d.amount_quote)/parseFloat(d.rate)),
+        });
+    })
+
+    const amount_field = type === 'ask' ? 'amount_quote': 'amount_base';
+    let depth = _(parsedData)
+    .groupBy('rate')
+    .map((order, rate) => ({
+      rate: parseFloat(rate),
+      size: _.sumBy(order, 'size'),
+    }))
+    .value()
+
+    depth = _.sortBy(depth, 'rate');
+    if(type === 'ask'){
+        depth = depth.reverse();
+    }
+
+    return depth;
+};
+  

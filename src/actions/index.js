@@ -5,6 +5,7 @@ import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
+import generateDepth from '../utils/generateDepth';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -362,32 +363,76 @@ export const toogleOrderBook = payload => ({
 
 
 export const fetchOrderBook = selectedCoins => dispatch => {
+  const orderBook = {
+    asks: [],
+    bids: []
+  }
+
+  if(!selectedCoins || !selectedCoins.receive || ! selectedCoins.deposit){
+    dispatch({
+      type: types.ORDER_BOOK_FETCHED,
+      orderBook
+    });
+    return;
+  }
+
   const pair = `${selectedCoins.receive}${selectedCoins.deposit}`;
   const urlAsks = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;
   const requestAsks = axios.get(urlAsks);
   const urlBids = `${config.API_BASE_URL}/limit_order/?order_type=BUY&pair=${pair}&book_status=OPEN`;
   const requestBids = axios.get(urlBids);
 
-  const orderBook = {
-    asks: [],
-    bids: []
-  }
-
-  return requestAsks
-    .then(asksRes => {
-        orderBook.asks = asksRes.data.results;
-        return;
+  
+  let asks = [];
+  const getAsks = () => new Promise((resolve, reject) => {
+    requestAsks
+    .then(asksRes => { 
+      asks = asks.concat(asksRes.data.results) 
+      if (asksRes.data.next != null) {
+        resolve(getAsks());
+      } else {
+        resolve(asks);
+      }
     })
-    .then(() => {return requestBids})
+    .catch(error => {
+      console.log(error);
+      resolve([]);
+    });
+  });
+
+  let bids = [];
+  const getBids = () => new Promise((resolve, reject) => {
+    requestBids
+    .then(bidsRes => { 
+      bids = bids.concat(bidsRes.data.results) 
+      if (bidsRes.data.next != null) {
+        resolve(getBids());
+      } else {
+        resolve(bids);
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      resolve([]);
+    });
+  });
+
+  return getAsks()
+    .then(asksRes => {
+      orderBook.asks = generateDepth(asksRes, 'ask');
+      return;
+    })    
+    .then(() => {return getBids()})
     .then(bidsRes => {
-        orderBook.bids = bidsRes.data.results;
-        return;
+      orderBook.bids = generateDepth(bidsRes, 'bid');
+      return;
     })
     .then(() => {
       dispatch({
         type: types.ORDER_BOOK_FETCHED,
         orderBook
       });
+      return;
     })
     .catch(error => {
       console.log(error);
