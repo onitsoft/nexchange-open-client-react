@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 100px;
+    z-index: 3;
+  }
+}
+
+.widget {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  color: #000;
+  padding: 10px 0px 15px 0;
+  border-radius: 6px;
+  text-align: left;
+
+  @media (min-width: $screen-md-min) {
+    padding: 36px 75px 35px;
+  }
+}

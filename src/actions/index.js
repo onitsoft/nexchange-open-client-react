@@ -352,3 +352,38 @@ export const setUserEmail = formData => async dispatch => {
       });
     });
 };
+
+
+//ORDER BOOK
+export const fetchOrderBook = selectedCoins => dispatch => {
+  const pair = `${selectedCoins.receive}${selectedCoins.deposit}`;
+  const urlAsks = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;
+  const requestAsks = axios.get(urlAsks);
+  const urlBids = `${config.API_BASE_URL}/limit_order/?order_type=BUY&pair=${pair}&book_status=OPEN`;
+  const requestBids = axios.get(urlBids);
+
+  const orderBook = {
+    asks: [],
+    bids: []
+  }
+
+  return requestAsks
+    .then(asksRes => {
+        orderBook.asks = asksRes.data.results;
+        return;
+    })
+    .then(() => {return requestBids})
+    .then(bidsRes => {
+        orderBook.bids = bidsRes.data.results;
+        return;
+    })
+    .then(() => {
+      dispatch({
+        type: types.ORDER_BOOK_FETCHED,
+        orderBook
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
