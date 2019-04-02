@@ -26,15 +26,10 @@ class OrderBookWidget extends Component {
     this.placeOrder = this.placeOrder.bind(this);
   }
 
-  componentWillUpdate(prevProps, prevState) {
-    if(this.props.selectedCoin && this.props.selectedCoin.receive && this.props.selectedCoin.deposit) {
-      this.props.fetchOrderBook(this.props.selectedCoin);
-    }
-  }
 
   componentDidMount() {
-
   }
+
 
   placeOrder() {
   }
@@ -52,7 +47,8 @@ class OrderBookWidget extends Component {
                       <CoinInput type="deposit"/>
                       <CoinInput type="receive"/>
                       <div className="col-xs-12">
-                        <OrderDepth />
+                        <OrderDepth type={`ask`} orders={this.props.orderBook.orderBook.asks} />
+                        <OrderDepth type={`bid`} orders={this.props.orderBook.orderBook.bids} />
                       </div>
                     </div>
                   </div>
@@ -65,7 +61,7 @@ class OrderBookWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
+const mapStateToProps = ({ selectedCoin, price, error, wallet, orderBook }) => ({ selectedCoin, price, error, wallet, orderBook });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrderBook, errorAlert }, dispatch);
 
 export default connect(

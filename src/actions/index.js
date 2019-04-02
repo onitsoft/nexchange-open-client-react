@@ -355,6 +355,12 @@ export const setUserEmail = formData => async dispatch => {
 
 
 //ORDER BOOK
+export const toogleOrderBook = payload => ({
+  type: types.ORDER_BOOK_TOGGLE,
+  payload,
+});
+
+
 export const fetchOrderBook = selectedCoins => dispatch => {
   const pair = `${selectedCoins.receive}${selectedCoins.deposit}`;
   const urlAsks = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;

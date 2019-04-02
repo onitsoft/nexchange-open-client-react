@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchCoinDetails, fetchPairs } from 'Actions';
+import { fetchCoinDetails, fetchPairs, toogleOrderBook } from 'Actions';
 
 import Hero from './Hero/Hero';
 import About from './About/About';
@@ -43,7 +43,7 @@ export class Home extends Component {
 }
 
 const mapStateToProps = ({ orderBook, coinsInfo, selectedCoin }) => ({ coinsInfo, selectedCoin, orderBook });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs, toogleOrderBook }, dispatch);
 
 export default connect(
   mapStateToProps,
