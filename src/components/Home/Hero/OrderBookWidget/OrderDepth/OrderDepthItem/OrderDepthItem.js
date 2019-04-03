@@ -8,7 +8,6 @@ import styles from './OrderDepthItem.scss';
 class OrderDepthItem extends PureComponent {
   render() {
       const item = this.props.item;
-      console.log(item);
       
       return (
       <I18n ns="translations">

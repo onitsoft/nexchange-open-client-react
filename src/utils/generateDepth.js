@@ -3,11 +3,11 @@ export default (data, type) => {
     data.forEach((d) => {
         parsedData.push({
             size: parseFloat(d.amount_quote),
-            rate: (parseFloat(d.amount_quote)/parseFloat(d.rate)),
+            rate: (parseFloat(d.amount_base)/parseFloat(d.rate)),
         });
     })
 
-    const amount_field = type === 'ask' ? 'amount_quote': 'amount_base';
+    // const amount_field = type === 'sell' ? 'amount_quote': 'amount_base';
     let depth = _(parsedData)
     .groupBy('rate')
     .map((order, rate) => ({
@@ -17,7 +17,7 @@ export default (data, type) => {
     .value()
 
     depth = _.sortBy(depth, 'rate');
-    if(type === 'ask'){
+    if(type === 'sell'){
         depth = depth.reverse();
     }
 

@@ -364,8 +364,8 @@ export const toogleOrderBook = payload => ({
 
 export const fetchOrderBook = selectedCoins => dispatch => {
   const orderBook = {
-    asks: [],
-    bids: []
+    sellOrders: [],
+    buyOrders: []
   }
 
   if(!selectedCoins || !selectedCoins.receive || ! selectedCoins.deposit){
@@ -377,21 +377,21 @@ export const fetchOrderBook = selectedCoins => dispatch => {
   }
 
   const pair = `${selectedCoins.receive}${selectedCoins.deposit}`;
-  const urlAsks = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;
-  const requestAsks = axios.get(urlAsks);
-  const urlBids = `${config.API_BASE_URL}/limit_order/?order_type=BUY&pair=${pair}&book_status=OPEN`;
-  const requestBids = axios.get(urlBids);
+  const urlSellOrders = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;
+  const requestSellOrders = axios.get(urlSellOrders);
+  const urlBuyOrders = `${config.API_BASE_URL}/limit_order/?order_type=BUY&pair=${pair}&book_status=OPEN`;
+  const requestBuyOrders = axios.get(urlBuyOrders);
 
   
-  let asks = [];
-  const getAsks = () => new Promise((resolve, reject) => {
-    requestAsks
-    .then(asksRes => { 
-      asks = asks.concat(asksRes.data.results) 
-      if (asksRes.data.next != null) {
-        resolve(getAsks());
+  let sellOrders = [];
+  const getSellOrders = () => new Promise((resolve, reject) => {
+    requestSellOrders
+    .then(sellOrdersRes => { 
+      sellOrders = sellOrders.concat(sellOrdersRes.data.results) 
+      if (sellOrdersRes.data.next != null) {
+        resolve(getSellOrders());
       } else {
-        resolve(asks);
+        resolve(sellOrders);
       }
     })
     .catch(error => {
@@ -400,15 +400,15 @@ export const fetchOrderBook = selectedCoins => dispatch => {
     });
   });
 
-  let bids = [];
-  const getBids = () => new Promise((resolve, reject) => {
-    requestBids
-    .then(bidsRes => { 
-      bids = bids.concat(bidsRes.data.results) 
-      if (bidsRes.data.next != null) {
-        resolve(getBids());
+  let buyOrders = [];
+  const getBuyOrders = () => new Promise((resolve, reject) => {
+    requestBuyOrders
+    .then(buyOrdersRes => { 
+      buyOrders = buyOrders.concat(buyOrdersRes.data.results) 
+      if (buyOrdersRes.data.next != null) {
+        resolve(getBuyOrders());
       } else {
-        resolve(bids);
+        resolve(buyOrders);
       }
     })
     .catch(error => {
@@ -417,14 +417,14 @@ export const fetchOrderBook = selectedCoins => dispatch => {
     });
   });
 
-  return getAsks()
-    .then(asksRes => {
-      orderBook.asks = generateDepth(asksRes, 'ask');
+  return getSellOrders()
+    .then(sellOrdersRes => {
+      orderBook.sellOrders = generateDepth(sellOrdersRes, 'sell');
       return;
     })    
-    .then(() => {return getBids()})
-    .then(bidsRes => {
-      orderBook.bids = generateDepth(bidsRes, 'bid');
+    .then(() => {return getBuyOrders()})
+    .then(buyOrdersRes => {
+      orderBook.buyOrders = generateDepth(buyOrdersRes, 'buy');
       return;
     })
     .then(() => {

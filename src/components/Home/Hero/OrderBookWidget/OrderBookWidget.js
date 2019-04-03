@@ -13,7 +13,7 @@ import OrderDepth from './OrderDepth/OrderDepth';
 
 import styles from './OrderBookWidget.scss';
 
-import CoinInput from '../ExchangeWidget/CoinInput/CoinInput';
+import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 
 class OrderBookWidget extends Component {
   constructor(props) {
@@ -48,11 +48,19 @@ class OrderBookWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
-                      <CoinInput type="deposit"/>
-                      <CoinInput type="receive"/>
-                      <div className="col-xs-12">
-                        <OrderDepth side={`ask`} depth={this.props.orderBook.orderBook.asks} />
-                        <OrderDepth side={`bid`} depth={this.props.orderBook.orderBook.bids} />
+                      <div className={styles['pair-selection']}>
+                        <CoinSelector type="deposit" orderBook={true}/>
+                        <CoinSelector type="receive" orderBook={true}/>
+                      </div>
+                      <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                        <OrderDepth 
+                          side={`sell`} 
+                          selectedCoins={this.props.selectedCoin}
+                          depth={this.props.orderBook.orderBook.sellOrders} />
+                        <OrderDepth 
+                          side={`buy`} 
+                          selectedCoins={this.props.selectedCoin}
+                          depth={this.props.orderBook.orderBook.buyOrders} />
                       </div>
                     </div>
                   </div>

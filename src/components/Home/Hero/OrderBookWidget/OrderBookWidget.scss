@@ -23,4 +23,8 @@
   @media (min-width: $screen-md-min) {
     padding: 36px 75px 35px;
   }
+
+  .pair-selection {
+    display: flex;
+  }
 }

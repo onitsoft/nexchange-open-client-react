@@ -3,8 +3,8 @@ import { ORDER_BOOK_TOGGLE, ORDER_BOOK_FETCHED } from 'Actions/types';
 const initialState = {
   active: true,
   orderBook: {
-    asks: [],
-    bids: []
+    sellOrders: [],
+    buyOrders: []
   }
 };
 

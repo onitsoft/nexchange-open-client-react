@@ -25,8 +25,8 @@ class OrderDepth extends PureComponent {
           <div className={`${styles.container}`}>
           <h4 className={`${styles.title}`}>{`ORDER DEPTH - ${this.props.side}`}</h4>
           <div className={`${styles.header}`}>
-            <span className={``}>Market Size</span>
-            <span className={``}>Price</span>
+            <span className={``}>{`Market Size (${this.props.selectedCoins.deposit})`}</span>
+            <span className={``}>{`Price (${this.props.selectedCoins.receive})`}</span>
           </div>
           <div className={``}>
             {items}
