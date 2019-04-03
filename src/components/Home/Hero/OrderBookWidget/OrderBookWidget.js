@@ -28,11 +28,20 @@ class OrderBookWidget extends Component {
 
 
   componentDidUpdate(prevProps, prevState) {
-    // Detect coin change by link
     if(this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
       this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
-        this.props.fetchOrderBook(this.props.selectedCoin);
+        this.fetchOrderBook();
     }
+  }
+
+  fetchOrderBook = () => {
+    this.timeout = setInterval(() => {
+      this.props.fetchOrderBook(this.props.selectedCoin);
+    }, config.ORDER_BOOK_FETCH_INTERVAL);
+  };
+
+  componentWillUnmount() {
+    clearInterval(this.timeout);
   }
 
   placeOrder() {

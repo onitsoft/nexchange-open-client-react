@@ -15,7 +15,7 @@ class OrderDepth extends PureComponent {
     let items = [];
     if(!_.isEmpty(this.props.depth)){
       items = this.props.depth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.market)} item={depthItem} side={this.props.side} />;
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side={this.props.side} />;
       });
     }
 
