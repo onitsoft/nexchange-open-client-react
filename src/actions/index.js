@@ -356,85 +356,64 @@ export const setUserEmail = formData => async dispatch => {
 
 
 //ORDER BOOK
-export const toogleOrderBook = payload => ({
-  type: types.ORDER_BOOK_TOGGLE,
-  payload,
-});
+export const fetchOrderBook = payload => dispatch => {
+  const orderBook = payload.orderBook;
 
-
-export const fetchOrderBook = selectedCoins => dispatch => {
-  const orderBook = {
-    sellOrders: [],
-    buyOrders: []
-  }
-
-  if(!selectedCoins || !selectedCoins.receive || ! selectedCoins.deposit){
+  if(!payload.pair){
     dispatch({
-      type: types.ORDER_BOOK_FETCHED,
+      type: types.ORDER_BOOK_DATA_FETCHED,
       orderBook
     });
     return;
   }
-
-  const pair = `${selectedCoins.receive}${selectedCoins.deposit}`;
-  const urlSellOrders = `${config.API_BASE_URL}/limit_order/?order_type=SELL&pair=${pair}&book_status=OPEN`;
-  const requestSellOrders = axios.get(urlSellOrders);
-  const urlBuyOrders = `${config.API_BASE_URL}/limit_order/?order_type=BUY&pair=${pair}&book_status=OPEN`;
-  const requestBuyOrders = axios.get(urlBuyOrders);
-
   
-  let sellOrders = [];
-  const getSellOrders = () => new Promise((resolve, reject) => {
-    requestSellOrders
-    .then(sellOrdersRes => { 
-      sellOrders = sellOrders.concat(sellOrdersRes.data.results) 
-      if (sellOrdersRes.data.next != null) {
-        resolve(getSellOrders());
+  let url = `${config.API_BASE_URL}/limit_order/?`
+  url += `pair=${payload.pair}`;
+  if(payload.status){url += `&book_status=${payload.status}`;}
+  if(payload.type){url += `&order_type=${payload.type}`;}
+  
+  const request = axios.get(url);
+  let data = [];
+  const getData = () => new Promise((resolve, reject) => {
+    request
+    .then(result => { 
+      data = data.concat(result.data.results) 
+      if (result.data.next != null) {
+        resolve(request());
       } else {
-        resolve(sellOrders);
+        resolve(data);
       }
     })
     .catch(error => {
+      /* istanbul ignore next */
       console.log(error);
       resolve([]);
     });
   });
 
-  let buyOrders = [];
-  const getBuyOrders = () => new Promise((resolve, reject) => {
-    requestBuyOrders
-    .then(buyOrdersRes => { 
-      buyOrders = buyOrders.concat(buyOrdersRes.data.results) 
-      if (buyOrdersRes.data.next != null) {
-        resolve(getBuyOrders());
-      } else {
-        resolve(buyOrders);
-      }
-    })
-    .catch(error => {
-      console.log(error);
-      resolve([]);
+
+  getData()
+  .then(result => {
+    if(payload.status === 'OPEN' && payload.type === "SELL"){
+      orderBook.sellDepth = generateDepth(result, payload.type);
+    }
+    if(payload.status === 'OPEN' && payload.type === "BUY"){
+      orderBook.buyDepth = generateDepth(result, payload.type);
+    }
+    if(payload.status === 'CLOSED'){
+      orderBook.history = result;
+    }
+
+    dispatch({
+      type: types.ORDER_BOOK_DATA_FETCHED,
+      orderBook
     });
+    return;
+  })    
+  .catch(error => {
+    /* istanbul ignore next */
+    console.log(error);
   });
 
-  return getSellOrders()
-    .then(sellOrdersRes => {
-      orderBook.sellOrders = generateDepth(sellOrdersRes, 'sell');
-      return;
-    })    
-    .then(() => {return getBuyOrders()})
-    .then(buyOrdersRes => {
-      orderBook.buyOrders = generateDepth(buyOrdersRes, 'buy');
-      return;
-    })
-    .then(() => {
-      dispatch({
-        type: types.ORDER_BOOK_FETCHED,
-        orderBook
-      });
-      return;
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  return;
 }

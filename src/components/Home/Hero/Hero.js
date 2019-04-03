@@ -11,12 +11,14 @@ import styles from './Hero.scss';
 class Hero extends Component {
   constructor(props){
     super();
-
-    this.toggleMode = this.toggleMode.bind(this);
+    
+    this.state = {
+      orderBookActive: true,
+    };
   }
 
   toggleMode() {
-    this.props.toogleOrderBook({...this.props.orderBook, active: !this.props.orderBook.active});
+    this.setState({orderBookActive: !this.state.orderBookActive});
   }
 
   render() {
@@ -40,8 +42,8 @@ class Hero extends Component {
                 </div>
 
                 <div>
-                  <a className={`clickable`} onClick={this.toggleMode}>Change Mode</a>
-                  { this.props.orderBook && this.props.orderBook.active
+                  <a className={`clickable`} onClick={() => this.toggleMode()}>Change Mode</a>
+                  { this.state.orderBookActive
                     ? <OrderBookWidget store={this.props.store} />
                     : <ExchangeWidget store={this.props.store} /> }
                 </div>

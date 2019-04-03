@@ -28,20 +28,42 @@ class OrderBookWidget extends Component {
 
 
   componentDidUpdate(prevProps, prevState) {
-    if(this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
+    if(this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
       this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
         this.fetchOrderBook();
     }
   }
 
   fetchOrderBook = () => {
-    this.timeout = setInterval(() => {
-      this.props.fetchOrderBook(this.props.selectedCoin);
+    const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+    const orderBook = this.props.orderBook;
+    const fetch = () => {
+      const payloads = [{
+        orderBook,
+        pair,
+        type: "SELL",
+        status: "OPEN"
+      },{
+        orderBook,
+        pair,
+        type: "BUY",
+        status: "OPEN"
+      },{
+        orderBook,
+        pair,
+        status: "CLOSED"
+      }]
+      payloads.forEach((payload) => this.props.fetchOrderBook(payload));
+    }
+
+    fetch();
+    this.interval = setInterval(() => {
+      fetch();
     }, config.ORDER_BOOK_FETCH_INTERVAL);
   };
 
   componentWillUnmount() {
-    clearInterval(this.timeout);
+    clearInterval(this.interval);
   }
 
   placeOrder() {
@@ -66,11 +88,11 @@ class OrderBookWidget extends Component {
                         <OrderDepth 
                           side={`sell`} 
                           selectedCoins={this.props.selectedCoin}
-                          depth={this.props.orderBook.orderBook.sellOrders} />
+                          depth={this.props.orderBook.sellDepth} />
                         <OrderDepth 
                           side={`buy`} 
                           selectedCoins={this.props.selectedCoin}
-                          depth={this.props.orderBook.orderBook.buyOrders} />
+                          depth={this.props.orderBook.buyDepth} />
                       </div>
                     </div>
                   </div>

@@ -7,7 +7,6 @@ export default (data, type) => {
         });
     })
 
-    // const amount_field = type === 'sell' ? 'amount_quote': 'amount_base';
     let depth = _(parsedData)
     .groupBy('rate')
     .map((order, rate) => ({
@@ -17,7 +16,7 @@ export default (data, type) => {
     .value()
 
     depth = _.sortBy(depth, 'rate');
-    if(type === 'buy'){
+    if(type === 'BUY'){
         depth = depth.reverse();
     }
 
