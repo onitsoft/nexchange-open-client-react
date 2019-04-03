@@ -3,19 +3,20 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 
-import styles from './OrderDepthItem.scss';
 
-class OrderDepthItem extends PureComponent {
+class LimitOrderForm extends PureComponent {
+  state = {
+  };
+
   render() {
-      const item = this.props.item;
-      
-      return (
+    return (
       <I18n ns="translations">
         {t => (
-          <div className={`${styles.container}`}>
-            <span className={``}>{item.size.toFixed(9)}</span>
-            <span className={``}>{(1/item.rate).toFixed(9)}</span>
-          </div>
+          <div className={``}>
+       
+          <button>BUY</button>
+          <button>SELL</button>
+        </div>
         )}
       </I18n>
     );
@@ -28,4 +29,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(OrderDepthItem);
+)(LimitOrderForm);
