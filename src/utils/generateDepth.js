@@ -3,7 +3,7 @@ export default (data, type) => {
     data.forEach((d) => {
         parsedData.push({
             size: parseFloat(d.amount_quote),
-            rate: (parseFloat(d.amount_base)/parseFloat(d.rate)),
+            rate: (parseFloat(d.amount_base)/parseFloat(d.limit_rate)),
         });
     })
 
@@ -17,7 +17,7 @@ export default (data, type) => {
     .value()
 
     depth = _.sortBy(depth, 'rate');
-    if(type === 'sell'){
+    if(type === 'buy'){
         depth = depth.reverse();
     }
 

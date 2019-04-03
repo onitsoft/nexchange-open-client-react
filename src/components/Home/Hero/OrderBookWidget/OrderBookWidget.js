@@ -6,14 +6,14 @@ import { I18n } from 'react-i18next';
 import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
-
 import { fetchOrderBook, errorAlert } from 'Actions/index.js';
 
+import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 import OrderDepth from './OrderDepth/OrderDepth';
+import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 
 import styles from './OrderBookWidget.scss';
 
-import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 
 class OrderBookWidget extends Component {
   constructor(props) {
@@ -52,6 +52,7 @@ class OrderBookWidget extends Component {
                         <CoinSelector type="deposit" orderBook={true}/>
                         <CoinSelector type="receive" orderBook={true}/>
                       </div>
+                      <LimitOrderForm />
                       <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                         <OrderDepth 
                           side={`sell`} 
