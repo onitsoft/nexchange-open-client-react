@@ -34,7 +34,7 @@ class ExchangeWidget extends Component {
   }
 
   componentDidMount() {
-    this.walletInputEl.focus();
+    this.focusWalletAddress();
   }
 
   placeOrder() {
@@ -51,7 +51,7 @@ class ExchangeWidget extends Component {
         });
       }
 
-      this.walletInputEl.focus();
+      this.focusWalletAddress();
       return;
     }
 
@@ -126,7 +126,9 @@ class ExchangeWidget extends Component {
   }
 
   focusWalletAddress() {
-    this.walletInputEl.focus();
+    if(this.walletInputEl) {
+      this.walletInputEl.focus();
+    }
   }
 
   render() {
