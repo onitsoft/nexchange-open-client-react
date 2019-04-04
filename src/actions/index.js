@@ -356,6 +356,11 @@ export const setUserEmail = formData => async dispatch => {
 
 
 //ORDER BOOK
+export const changeOrderMode = mode => ({
+  type: types.ORDER_MODE_CHANGE,
+  mode: mode,
+});
+
 export const fetchOrderBook = payload => dispatch => {
   const orderBook = payload.orderBook;
 

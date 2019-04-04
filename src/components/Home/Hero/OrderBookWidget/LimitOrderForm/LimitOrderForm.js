@@ -20,7 +20,7 @@ class LimitOrderForm extends PureComponent {
                 value={this.props.amount_base}
                 onChange={event => this.props.handleAmountBaseChange(event)}
                 autoComplete="off"
-                placeholder={`Amount Base`}              
+                placeholder={`Quantity`}              
               />
               <input
                 type="text"

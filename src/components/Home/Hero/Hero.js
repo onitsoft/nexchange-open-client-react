@@ -17,11 +17,17 @@ class Hero extends Component {
     };
   }
 
-  toggleMode() {
-    this.setState({orderBookActive: !this.state.orderBookActive});
+  changeOrderMode() {
+    if(this.props.orderMode === 'BASIC'){
+      this.props.changeOrderMode('ORDER_BOOK');
+    } else if(this.props.orderMode === 'ORDER_BOOK'){
+      this.props.changeOrderMode('BASIC');
+    } else {
+      this.props.changeOrderMode('BASIC');
+    }
   }
 
-  render() {
+  render() { 
     return (
       <I18n ns="translations">
         {t => (
@@ -42,8 +48,9 @@ class Hero extends Component {
                 </div>
 
                 <div>
-                  <a className={`clickable`} onClick={() => this.toggleMode()}>Change Mode</a>
-                  { this.state.orderBookActive
+                  <a className={`clickable`} onClick={() => this.changeOrderMode()}>Change Mode</a>
+                  {console.log(this.props.orderMode)}
+                  { this.props.orderMode === 'ORDER_BOOK'
                     ? <OrderBookWidget store={this.props.store} />
                     : <ExchangeWidget store={this.props.store} /> }
                 </div>

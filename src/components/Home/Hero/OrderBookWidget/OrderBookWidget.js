@@ -29,6 +29,11 @@ class OrderBookWidget extends Component {
     this.placeOrder = this.placeOrder.bind(this);
   }
 
+  componentDidMount(){
+    if(this.props.selectedCoin){
+      this.fetchOrderBook();
+    }
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if(this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
