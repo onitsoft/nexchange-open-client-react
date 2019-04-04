@@ -14,7 +14,7 @@ class OrderDepthItem extends PureComponent {
         {t => (
           <div className={`${styles.container}`}>
             <span className={``}>{item.size.toFixed(9)}</span>
-            <span className={``}>{(1/item.rate).toFixed(9)}</span>
+            <span className={``}>{(item.rate).toFixed(9)}</span>
           </div>
         )}
       </I18n>

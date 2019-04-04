@@ -9,6 +9,7 @@ import config from 'Config';
 import { fetchOrderBook, errorAlert } from 'Actions/index.js';
 
 import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
+import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
 import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 
@@ -21,6 +22,8 @@ class OrderBookWidget extends Component {
 
     this.state = {
       loading: false,
+      amount_base: '',
+      limit_rate: '',
     };
 
     this.placeOrder = this.placeOrder.bind(this);
@@ -33,6 +36,7 @@ class OrderBookWidget extends Component {
         this.fetchOrderBook();
     }
   }
+
 
   fetchOrderBook = () => {
     const fetch = () => {
@@ -66,7 +70,123 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
+  handleLimitRateChange = event => {
+    let { value } = event.target;
+    const re = /^[0-9.,\b]+$/;
+    if (!re.test(value) && value !== '') return;
+
+    value = value.replace(/,/g, '.');
+    this.setState({ limit_rate: value });
+
+    window.gtag('event', 'Change limit rate', {event_category: 'Order Book', event_label: ``});
+  };
+
+
+  handleAmountBaseChange = event => {
+    let { value } = event.target;
+    const re = /^[0-9.,\b]+$/;
+    if (!re.test(value) && value !== '') return;
+
+    value = value.replace(/,/g, '.');
+    this.setState({ amount_base: value });
+
+    window.gtag('event', 'Change amount', {event_category: 'Order Book', event_label: ``});
+  };
+
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        window.gtag('event', 'Place order with empty wallet address', {event_category: 'Order Book', event_label: ``});
+
+        this.props.errorAlert({
+          show: true,
+          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+        });
+      }
+
+      this.walletInputEl.focus();
+      return;
+    }
+
+    console.log(this.state.amount_base);
+    let data = {
+      pair: {
+        name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
+      },
+      order_type: "SELL",
+      amount_base: parseFloat(this.state.amount_base),
+      amount_quote: parseFloat(this.state.amount_base) * parseFloat(this.state.limit_rate),
+      limit_rate: parseFloat(this.state.limit_rate),
+      withdraw_address: {
+          name: "",
+          address: this.props.wallet.address
+      },
+      refund_address: {
+          name: "REFUND ADDRESS",
+          address: "0x7d04d2edc058a1afc761d9c99ae4fc5c85d4c8a6"
+      }
+    };
+
+    // if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
+    // else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
+
+    console.log(data);
+
+    axios
+      .post(`${config.API_BASE_URL}/limit_order/`, data)
+      .then(response => {
+        console.log(response);
+        
+        // this.props.setOrder(response.data);
+        // this.setState({
+        //   orderRef: response.data.unique_reference,
+        //   orderPlaced: true,
+        //   loading: false,
+        // });
+
+        // if (response.data.token) {
+        //   localStorage.setItem('token', response.data.token);
+        // }
+
+        // bindCrispEmail(this.props.store);
+
+        // window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
+
+        // //Store order history in local storage
+        // let newOrder = {
+        //     id: response.data.unique_reference,
+        //     base: this.props.selectedCoin.deposit,
+        //     amount_base: parseFloat(this.props.price.deposit),
+        //     quote: this.props.selectedCoin.receive,
+        //     amount_quote: parseFloat(this.props.price.receive),
+        //     withdraw_address: this.props.wallet.address,
+        //     created_at: new Date()
+        // }
+        // let orderHistory = localStorage['orderHistory'];
+        // if(!orderHistory){
+        //   orderHistory = [newOrder];
+        // }
+        // else {
+        //   orderHistory = JSON.parse(orderHistory);
+        //   orderHistory.push(newOrder);
+        // }
+        // localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+      })
+      .catch(error => {
+        console.log('Error:', error);
+
+        /* eslint max-len: ["error", { "code": 200 }] */
+        let message = error.response && error.response.data.non_field_errors && 
+        error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
+
+        this.props.errorAlert({
+          message: message,
+          show: true,
+          type: 'PLACE_ORDER',
+        });
+
+        this.setState({ orderPlaced: false, loading: false });
+      });
   }
 
 
@@ -83,8 +203,18 @@ class OrderBookWidget extends Component {
                         <CoinSelector type="deposit" orderBook={true}/>
                         <CoinSelector type="receive" orderBook={true}/>
                       </div>
-                      <LimitOrderForm />
-                      <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                      <LimitOrderForm 
+                        amount_base={this.state.amount_base}
+                        handleAmountBaseChange={this.handleAmountBaseChange} 
+                        limit_rate={this.state.limit_rate}
+                        handleLimitRateChange={this.handleLimitRateChange} />
+                      <WalletAddress />
+                      <div className="col-xs-12">
+                        <button onClick={() => this.placeOrder()}>
+                          {`Sell ${this.props.selectedCoin.deposit} for ${this.props.selectedCoin.receive}`}
+                        </button>
+                      </div>                  
+                      <div className={`col-xs-12 col-sm-12 col-md-5 col-lg-4`}>
                         <OrderDepth 
                           side={`sell`} 
                           selectedCoins={this.props.selectedCoin}

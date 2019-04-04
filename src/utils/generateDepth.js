@@ -16,7 +16,7 @@ export default (data, type) => {
     .value()
 
     depth = _.sortBy(depth, 'rate');
-    if(type === 'BUY'){
+    if(type === 'SELL'){
         depth = depth.reverse();
     }
 
