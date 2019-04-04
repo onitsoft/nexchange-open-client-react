@@ -35,9 +35,9 @@ class OrderBookWidget extends Component {
   }
 
   fetchOrderBook = () => {
-    const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
-    const orderBook = this.props.orderBook;
     const fetch = () => {
+      const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+      const orderBook = this.props.orderBook;
       const payloads = [{
         orderBook,
         pair,
