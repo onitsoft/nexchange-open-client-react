@@ -230,16 +230,14 @@ class OrderBookWidget extends Component {
                           }
                         </button>
                       </div>                  
-                      <div className={`col-xs-12 col-sm-12 col-md-5 col-lg-4`}>
-                        <OrderDepth 
-                          side={`Selling`} 
-                          selectedCoins={this.props.selectedCoin}
-                          depth={this.props.orderBook.sellDepth} />
-                        <OrderDepth 
-                          side={`Buying`} 
-                          selectedCoins={this.props.selectedCoin}
-                          depth={this.props.orderBook.buyDepth} />
-                      </div>
+                      <OrderDepth 
+                        side={`Selling`} 
+                        selectedCoins={this.props.selectedCoin}
+                        depth={this.props.orderBook.sellDepth} />
+                      <OrderDepth 
+                        side={`Buying`} 
+                        selectedCoins={this.props.selectedCoin}
+                        depth={this.props.orderBook.buyDepth} />
                     </div>
                   </div>
               </div>

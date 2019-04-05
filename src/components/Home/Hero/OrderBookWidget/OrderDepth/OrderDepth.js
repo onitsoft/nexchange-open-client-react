@@ -22,11 +22,12 @@ class OrderDepth extends PureComponent {
     return (
       <I18n ns="translations">
         {t => (
-          <div className={`${styles.container}`}>
+         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 ${styles.container}`}>
           <h4 className={`${styles.title}`}>{`ORDER DEPTH - ${this.props.side}`}</h4>
           <div className={`${styles.header}`}>
             <span className={``}>{`Market Size (${this.props.selectedCoins.deposit})`}</span>
             <span className={``}>{`Price (1/${this.props.selectedCoins.receive})`}</span>
+            <span className={``}>{`Price (${this.props.selectedCoins.receive})`}</span>
           </div>
           <div className={``}>
             {items}
