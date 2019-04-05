@@ -361,8 +361,8 @@ export const changeOrderMode = mode => ({
   mode: mode,
 });
 
-export const changeOrderBookOrderType = orderBook => ({
-  type: types.ORDER_BOOK_ORDER_TYPE_CHANGE,
+export const changeOrderBookValue = orderBook => ({
+  type: types.ORDER_BOOK_VALUE_CHANGE,
   orderBook: orderBook,
 });
 

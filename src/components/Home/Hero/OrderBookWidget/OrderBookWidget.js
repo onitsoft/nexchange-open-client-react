@@ -6,7 +6,7 @@ import { I18n } from 'react-i18next';
 import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
-import { fetchOrderBook, errorAlert, changeOrderBookOrderType } from 'Actions/index.js';
+import { fetchOrderBook, errorAlert, changeOrderBookValue } from 'Actions/index.js';
 
 import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
@@ -21,9 +21,7 @@ class OrderBookWidget extends Component {
     super();
 
     this.state = {
-      loading: false,
-      quantity: '',
-      limit_rate: '',
+      loading: false
     };
 
     this.placeOrder = this.placeOrder.bind(this);
@@ -38,6 +36,7 @@ class OrderBookWidget extends Component {
   componentDidUpdate(prevProps, prevState) {
     if(this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
       this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
+        clearInterval(this.interval);
         this.fetchOrderBook();
     }
   }
@@ -82,31 +81,8 @@ class OrderBookWidget extends Component {
     } else {
       orderBook.order_type = 'BUY';
     }
-    this.props.changeOrderBookOrderType(orderBook);
+    this.props.changeOrderBookValue(orderBook);
   }
-
-  handleLimitRateChange = event => {
-    let { value } = event.target;
-    const re = /^[0-9.,\b]+$/;
-    if (!re.test(value) && value !== '') return;
-
-    value = value.replace(/,/g, '.');
-    this.setState({ limit_rate: value });
-
-    // window.gtag('event', 'Change limit rate', {event_category: 'Order Book', event_label: ``});
-  };
-
-
-  handleQuantityChange = event => {
-    let { value } = event.target;
-    const re = /^[0-9.,\b]+$/;
-    if (!re.test(value) && value !== '') return;
-
-    value = value.replace(/,/g, '.');
-    this.setState({ quantity: value });
-
-    // window.gtag('event', 'Change quantity', {event_category: 'Order Book', event_label: ``});
-  };
 
   placeOrder() {
     if (!this.props.wallet.valid) {
@@ -256,11 +232,11 @@ class OrderBookWidget extends Component {
                       </div>                  
                       <div className={`col-xs-12 col-sm-12 col-md-5 col-lg-4`}>
                         <OrderDepth 
-                          side={`sell`} 
+                          side={`Selling`} 
                           selectedCoins={this.props.selectedCoin}
                           depth={this.props.orderBook.sellDepth} />
                         <OrderDepth 
-                          side={`buy`} 
+                          side={`Buying`} 
                           selectedCoins={this.props.selectedCoin}
                           depth={this.props.orderBook.buyDepth} />
                       </div>
@@ -276,7 +252,7 @@ class OrderBookWidget extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, price, error, wallet, orderBook }) => ({ selectedCoin, price, error, wallet, orderBook });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrderBook, changeOrderBookOrderType, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrderBook, changeOrderBookValue, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,

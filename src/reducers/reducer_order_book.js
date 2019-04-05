@@ -1,15 +1,18 @@
-import { ORDER_BOOK_DATA_FETCHED, ORDER_BOOK_ORDER_TYPE_CHANGE } from 'Actions/types';
+import { ORDER_BOOK_DATA_FETCHED, ORDER_BOOK_VALUE_CHANGE } from 'Actions/types';
 
 const initialState = {
     order_type: 'BUY',
+    quantity: '',
+    limit_rate: '',
     sellDepth: [],
     buyDepth: [],
     history: []
 };
 
 export default (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
-    case ORDER_BOOK_ORDER_TYPE_CHANGE:
+    case ORDER_BOOK_VALUE_CHANGE:
       return { ...action.orderBook };
     case ORDER_BOOK_DATA_FETCHED:
       return { ...action.orderBook };
