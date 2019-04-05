@@ -119,9 +119,9 @@ class OrderBookWidget extends Component {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
       },
       order_type,
-      amount_base: parseFloat(this.state.quantity),
-      amount_quote: parseFloat(this.state.quantity) * parseFloat(this.state.limit_rate),
-      limit_rate: parseFloat(this.state.limit_rate),
+      amount_base: parseFloat(this.props.orderBook.quantity),
+      amount_quote: parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate),
+      limit_rate: parseFloat(this.props.orderBook.limit_rate),
       withdraw_address: {
           name: '',
           address: this.props.wallet.address
