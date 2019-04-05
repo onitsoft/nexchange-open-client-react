@@ -361,6 +361,11 @@ export const changeOrderMode = mode => ({
   mode: mode,
 });
 
+export const changeOrderBookOrderType = orderBook => ({
+  type: types.ORDER_BOOK_ORDER_TYPE_CHANGE,
+  orderBook: orderBook,
+});
+
 export const fetchOrderBook = payload => dispatch => {
   const orderBook = payload.orderBook;
 

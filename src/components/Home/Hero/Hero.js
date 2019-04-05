@@ -49,7 +49,6 @@ class Hero extends Component {
 
                 <div>
                   <a className={`clickable`} onClick={() => this.changeOrderMode()}>Change Mode</a>
-                  {console.log(this.props.orderMode)}
                   { this.props.orderMode === 'ORDER_BOOK'
                     ? <OrderBookWidget store={this.props.store} />
                     : <ExchangeWidget store={this.props.store} /> }

@@ -6,7 +6,7 @@ import { I18n } from 'react-i18next';
 import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
-import { fetchOrderBook, errorAlert } from 'Actions/index.js';
+import { fetchOrderBook, errorAlert, changeOrderBookOrderType } from 'Actions/index.js';
 
 import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
@@ -50,17 +50,17 @@ class OrderBookWidget extends Component {
       const payloads = [{
         orderBook,
         pair,
-        type: "SELL",
-        status: "OPEN"
+        type: 'SELL',
+        status: 'OPEN'
       },{
         orderBook,
         pair,
-        type: "BUY",
-        status: "OPEN"
+        type: 'BUY',
+        status: 'OPEN'
       },{
         orderBook,
         pair,
-        status: "CLOSED"
+        status: 'CLOSED'
       }]
       payloads.forEach((payload) => this.props.fetchOrderBook(payload));
     }
@@ -73,6 +73,16 @@ class OrderBookWidget extends Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
+  }
+
+  handleOrderBookOrderTypeChange() {
+    const orderBook = this.props.orderBook;
+    if(orderBook.order_type === 'BUY') {
+      orderBook.order_type = 'SELL';
+    } else {
+      orderBook.order_type = 'BUY';
+    }
+    this.props.changeOrderBookOrderType(orderBook);
   }
 
   handleLimitRateChange = event => {
@@ -118,24 +128,24 @@ class OrderBookWidget extends Component {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
       },
-      order_type: "SELL",
+      order_type: 'SELL',
       amount_base: parseFloat(this.state.amount_base),
       amount_quote: parseFloat(this.state.amount_base) * parseFloat(this.state.limit_rate),
       limit_rate: parseFloat(this.state.limit_rate),
       withdraw_address: {
-          name: "",
-          address: this.props.wallet.address
+          name: '',
+          address: '0x7d04d2edc058a1afc761d9c99ae4fc5c85d4c8a6'
       },
       refund_address: {
-          name: "REFUND ADDRESS",
-          address: "0x7d04d2edc058a1afc761d9c99ae4fc5c85d4c8a6"
+          name: 'REFUND ADDRESS',
+          address: this.props.wallet.address
       }
     };
 
     // if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
     // else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
-    console.log(data);
+    console.log(JSON.stringify(data));
 
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
@@ -180,7 +190,7 @@ class OrderBookWidget extends Component {
       .catch(error => {
         console.log('Error:', error);
 
-        /* eslint max-len: ["error", { "code": 200 }] */
+        /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
         error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
 
@@ -196,27 +206,36 @@ class OrderBookWidget extends Component {
 
 
   render() {
+    const order_type = this.props.orderBook.order_type;
     return (
-      <I18n ns="translations">
+      <I18n ns='translations'>
         {t => (
           <div className={styles.container}>
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-12">
+            <div className='container'>
+              <div className='row'>
+                <div className='col-xs-12'>
                   <div className={styles.widget}>
                       <div className={styles['pair-selection']}>
-                        <CoinSelector type="deposit" orderBook={true}/>
-                        <CoinSelector type="receive" orderBook={true}/>
+                        <CoinSelector type='deposit' orderBook={true}/>
+                        <CoinSelector type='receive' orderBook={true}/>
                       </div>
+                      <ul className='nav nav-tabs'>
+                        <li className={`${order_type == 'BUY' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Buy</a></li>
+                        <li className={`${order_type == 'SELL' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Sell</a></li>
+                      </ul>
                       <LimitOrderForm 
                         amount_base={this.state.amount_base}
                         handleAmountBaseChange={this.handleAmountBaseChange} 
                         limit_rate={this.state.limit_rate}
                         handleLimitRateChange={this.handleLimitRateChange} />
-                      <WalletAddress />
-                      <div className="col-xs-12">
-                        <button onClick={() => this.placeOrder()}>
-                          {`Sell ${this.props.selectedCoin.deposit} for ${this.props.selectedCoin.receive}`}
+                      <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'deposit' : 'receive'}`} />
+                      <div className='col-xs-12'>
+                        <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                        onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
+                          {order_type == 'BUY' 
+                          ? `Buy ${this.props.selectedCoin.deposit} with ${this.props.selectedCoin.receive}`
+                          : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
+                          }
                         </button>
                       </div>                  
                       <div className={`col-xs-12 col-sm-12 col-md-5 col-lg-4`}>
@@ -241,7 +260,7 @@ class OrderBookWidget extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, price, error, wallet, orderBook }) => ({ selectedCoin, price, error, wallet, orderBook });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrderBook, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrderBook, changeOrderBookOrderType, errorAlert }, dispatch);
 
 export default connect(
   mapStateToProps,
