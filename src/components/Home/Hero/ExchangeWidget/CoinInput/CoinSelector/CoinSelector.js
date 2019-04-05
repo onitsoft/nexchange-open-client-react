@@ -129,7 +129,8 @@ class CoinSelector extends Component {
     return (
       <div>
         <div
-          className={`selectedCoin-${type} ${styles['selected-coin']}`}
+          className={`selectedCoin-${type} ${styles['selected-coin']} 
+            ${this.props.orderBook ? styles[`order-book`] : ``}`}
           data-test="selector"
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >

@@ -143,7 +143,7 @@ class ExchangeWidget extends Component {
                     <CoinSwitch />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
-                    <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                    <WalletAddress withdraw_coin="receive" onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
