@@ -22,7 +22,7 @@ class OrderBookWidget extends Component {
 
     this.state = {
       loading: false,
-      amount_base: '',
+      quantity: '',
       limit_rate: '',
     };
 
@@ -93,19 +93,19 @@ class OrderBookWidget extends Component {
     value = value.replace(/,/g, '.');
     this.setState({ limit_rate: value });
 
-    window.gtag('event', 'Change limit rate', {event_category: 'Order Book', event_label: ``});
+    // window.gtag('event', 'Change limit rate', {event_category: 'Order Book', event_label: ``});
   };
 
 
-  handleAmountBaseChange = event => {
+  handleQuantityChange = event => {
     let { value } = event.target;
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
-    this.setState({ amount_base: value });
+    this.setState({ quantity: value });
 
-    window.gtag('event', 'Change amount', {event_category: 'Order Book', event_label: ``});
+    // window.gtag('event', 'Change quantity', {event_category: 'Order Book', event_label: ``});
   };
 
   placeOrder() {
@@ -123,22 +123,36 @@ class OrderBookWidget extends Component {
       return;
     }
 
-    console.log(this.state.amount_base);
+
+    //TO DELETE - HARDCODED
+    let order_type = null;
+    let refund_address = null;
+    if(this.props.orderBook.order_type === 'BUY'){
+      order_type = 1;
+      refund_address = 'DHKM6NDUUv9kaHAGi1QU7MRBNKfQiAdP3F';
+    }
+    if(this.props.orderBook.order_type === 'SELL'){
+      order_type = 0;
+      refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
+    }
+      
+
+    console.log(this.state.quantity);
     let data = {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
       },
-      order_type: 'SELL',
-      amount_base: parseFloat(this.state.amount_base),
-      amount_quote: parseFloat(this.state.amount_base) * parseFloat(this.state.limit_rate),
+      order_type,
+      amount_base: parseFloat(this.state.quantity),
+      amount_quote: parseFloat(this.state.quantity) * parseFloat(this.state.limit_rate),
       limit_rate: parseFloat(this.state.limit_rate),
       withdraw_address: {
           name: '',
-          address: '0x7d04d2edc058a1afc761d9c99ae4fc5c85d4c8a6'
+          address: this.props.wallet.address
       },
       refund_address: {
           name: 'REFUND ADDRESS',
-          address: this.props.wallet.address
+          address: refund_address
       }
     };
 
@@ -189,6 +203,8 @@ class OrderBookWidget extends Component {
       })
       .catch(error => {
         console.log('Error:', error);
+        console.log("error.response",error.response);
+        
 
         /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
@@ -224,17 +240,17 @@ class OrderBookWidget extends Component {
                         <li className={`${order_type == 'SELL' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Sell</a></li>
                       </ul>
                       <LimitOrderForm 
-                        amount_base={this.state.amount_base}
-                        handleAmountBaseChange={this.handleAmountBaseChange} 
+                        quantity={this.state.quantity}
+                        handleQuantityChange={this.handleQuantityChange} 
                         limit_rate={this.state.limit_rate}
                         handleLimitRateChange={this.handleLimitRateChange} />
-                      <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'deposit' : 'receive'}`} />
+                      <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
                       <div className='col-xs-12'>
                         <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
                         onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
                           {order_type == 'BUY' 
-                          ? `Buy ${this.props.selectedCoin.deposit} with ${this.props.selectedCoin.receive}`
-                          : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
+                          ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
+                          : `Sell ${this.props.selectedCoin.deposit} for ${this.props.selectedCoin.receive}`
                           }
                         </button>
                       </div>                  

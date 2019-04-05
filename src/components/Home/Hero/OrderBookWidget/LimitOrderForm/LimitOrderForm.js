@@ -18,9 +18,9 @@ class LimitOrderForm extends PureComponent {
                 className={`form-control ${styles.input}`}
                 id="amount-base"
                 value={this.props.amount_base}
-                onChange={event => this.props.handleAmountBaseChange(event)}
+                onChange={event => this.props.handleQuantityChange(event)}
                 autoComplete="off"
-                placeholder={`Quantity`}              
+                placeholder={`Quantity (${this.props.selectedCoin.deposit})`}              
               />
               <input
                 type="text"
@@ -29,7 +29,7 @@ class LimitOrderForm extends PureComponent {
                 value={this.props.limit_rate}
                 onChange={event => this.props.handleLimitRateChange(event)}
                 autoComplete="off"
-                placeholder={`Limit Rate`}              
+                placeholder={`Limit Rate (${this.props.selectedCoin.receive})`}              
               />
             </form>    
           </div>
@@ -39,7 +39,7 @@ class LimitOrderForm extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ }) => ({ });
+const mapStateToProps = ({ selectedCoin }) => ({ selectedCoin });
 const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
 
 export default connect(
