@@ -7,11 +7,14 @@ import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
+import urlParams from 'Utils/urlParams';
+
+
 class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: '' };
+    this.state = { address: '', firstLoad: true };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -58,6 +61,18 @@ class WalletAddress extends Component {
     if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
       this.validate(this.state.address, nextProps.selectedCoin.receive);
     }
+  }
+
+  componentDidUpdate(){
+    //Check if withdraw_address url param exists. If exists, prefill address field with that value
+    const params = urlParams();
+    if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address
+      && this.props.selectedCoin.receive && this.state.firstLoad) {
+        const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
+        this.handleChange(simulatedEvent);
+        this.setState({firstLoad: false});
+        this.props.button.focus();
+      }
   }
 
   render() {

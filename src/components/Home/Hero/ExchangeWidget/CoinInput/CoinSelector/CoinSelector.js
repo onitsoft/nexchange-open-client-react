@@ -23,7 +23,7 @@ class CoinSelector extends Component {
       ...this.props.selectedCoin,
       [this.props.type]: coin,
       lastSelected: this.props.type,
-    });
+    }, this.props.pairs);
 
     this.setState({ isDropdownVisible: false });
     if (window.ga) window.ga('send', 'event', 'Order', 'select coin');
@@ -91,7 +91,7 @@ class CoinSelector extends Component {
           .join(', ');
 
         this.props.errorAlert({
-          message: `${this.props.t('error.invalidpair')} 
+          message: `${this.props.t('error.invalidpair')}
         ${nextReceiveCoin} ${this.props.t('error.with')} ${nextDepositCoin}. ${this.props.t('error.try')} ${validPairs}.`,
           show: true,
           type: 'INVALID_PAIR',

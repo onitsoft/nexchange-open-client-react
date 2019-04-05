@@ -38,6 +38,11 @@ class CoinInput extends PureComponent {
     ga('send', 'event', 'Order', 'change amount');
   };
 
+  setValue = value => {
+    const simulatedEvent ={target: {value: value.toString()}};
+    this.handleChange(simulatedEvent);
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit();
@@ -77,7 +82,7 @@ class CoinInput extends PureComponent {
     return (
       <I18n ns="translations">
         {t => (
-          <div className="col-xs-12 col-sm-6">
+          <div className="col-xs-12 col-sm-5">
             <form className="form-group" onSubmit={this.handleSubmit}>
               <label htmlFor={this.props.type} className={styles.label}>
                 {t('order.' + this.props.type)}
@@ -104,6 +109,7 @@ class CoinInput extends PureComponent {
               min={this.props.type === 'deposit' ? this.props.price.min_amount_quote : this.props.price.min_amount_base}
               max={this.props.type === 'deposit' ? this.props.price.max_amount_quote : this.props.price.max_amount_base}
               amount={this.props.type === 'deposit' ? this.props.price.deposit : this.props.price.receive}
+              setValue={this.setValue}
             />
           </div>
         )}

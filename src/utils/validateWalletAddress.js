@@ -21,7 +21,7 @@ export default (address, coin, errorCb, successCb) => {
     BMH: /^0x[0-9a-fA-F]{40}$/,
     DOGE: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
     XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
-    BCH: [/^(1|3)[1-9A-Za-z]{25,34}$/, /^bitcoincash:q[0-9a-z]{41}$/],
+    BCH: [/^([13][a-km-zA-HJ-NP-Z1-9]{25,34})$/, /^((bitcoincash:)?(q|p)[a-z0-9]{41})$/],
     NANO: /^xrb\_[1|3][a-zA-Z\d]{59}$/,
     ZEC: /^t[1-9A-Za-z]{34}$/,
     USDT: /^1[1-9A-Za-z]{33}$/,
