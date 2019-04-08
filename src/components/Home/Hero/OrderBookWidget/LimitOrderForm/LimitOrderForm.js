@@ -73,7 +73,7 @@ class LimitOrderForm extends PureComponent {
                 type="text"
                 className={`form-control ${styles.input}`}
                 id="quantity"
-                value={this.state.amount_base}
+                value={this.state.quantity}
                 onChange={event => this.handleQuantityChange(event)}
                 autoComplete="off"
                 placeholder={`Quantity (${this.props.selectedCoin.deposit})`}              
