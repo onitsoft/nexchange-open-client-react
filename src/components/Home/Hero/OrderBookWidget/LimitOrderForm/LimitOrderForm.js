@@ -33,7 +33,7 @@ class LimitOrderForm extends PureComponent {
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
 
-    value = parseFloat(value.replace(/,/g, '.'));
+    value = value.replace(/,/g, '.');
     this.setState({ quantity: value });
 
     const setOrderBookQuantity = debounce(value => {
@@ -51,7 +51,7 @@ class LimitOrderForm extends PureComponent {
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
 
-    value = parseFloat(value.replace(/,/g, '.'));
+    value = value.replace(/,/g, '.');
     this.setState({ limit_rate: value });
 
     const setOrderBookLimitRate = debounce(value => {
