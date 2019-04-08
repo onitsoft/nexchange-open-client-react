@@ -103,17 +103,17 @@ class OrderBookWidget extends Component {
     //TO DELETE - HARDCODED
     let order_type = null;
     let refund_address = null;
+    
     if(this.props.orderBook.order_type === 'BUY'){
       order_type = 1;
-      refund_address = 'DHKM6NDUUv9kaHAGi1QU7MRBNKfQiAdP3F';
+      refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
     }
     if(this.props.orderBook.order_type === 'SELL'){
       order_type = 0;
-      refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
+      refund_address = 'DBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD';
     }
-      
 
-    console.log(this.state.quantity);
+    console.log(data);
     let data = {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`

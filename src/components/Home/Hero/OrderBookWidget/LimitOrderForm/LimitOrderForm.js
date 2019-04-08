@@ -19,14 +19,6 @@ class LimitOrderForm extends PureComponent {
 
   }
 
-  UNSAFE_componentWillReceiveProps = nextProps => {
-    if (nextProps.orderBook.quantity !== this.state.quantity) {
-      this.setState({ quantity: nextProps.orderBook.quantity });
-    }
-    if (nextProps.orderBook.limit_rate !== this.state.limit_rate) {
-      this.setState({ quantity: nextProps.orderBook.limit_rate });
-    }
-  };
 
   handleQuantityChange = event => {
     let { value } = event.target;
@@ -40,7 +32,7 @@ class LimitOrderForm extends PureComponent {
       const orderBook = this.props.orderBook;
       orderBook.quantity = value;
       this.props.changeOrderBookValue(orderBook);
-    }, 600);
+    }, 200);
     setOrderBookQuantity(value);
     // window.gtag('event', 'Change quantity', {event_category: 'Order Book', event_label: ``});
   };
