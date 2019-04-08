@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
@@ -13,6 +12,7 @@ import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
 import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import DepositModal from './DepositModal/DepositModal';
+import MyOrders from './MyOrders/MyOrders';
 
 import styles from './OrderBookWidget.scss';
 
@@ -76,7 +76,6 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
-  openDepositModal = () => this.setState({ showDepositModal: true });
   closeDepositModal = () => this.setState({ showDepositModal: false });
 
   handleOrderBookOrderTypeChange() {
@@ -108,14 +107,18 @@ class OrderBookWidget extends Component {
     //TO DELETE - HARDCODED
     let order_type = null;
     let refund_address = null;
-    
+    let amount_base, amount_quote = 0;
     if(this.props.orderBook.order_type === 'BUY'){
       order_type = 1;
       refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
+      amount_base = parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate);
+      amount_quote = parseFloat(this.props.orderBook.quantity);
     }
     if(this.props.orderBook.order_type === 'SELL'){
       order_type = 0;
       refund_address = 'DBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD';
+      amount_base =  parseFloat(this.props.orderBook.quantity);
+      amount_quote = parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate);
     }
 
 
@@ -124,8 +127,8 @@ class OrderBookWidget extends Component {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
       },
       order_type,
-      amount_base: parseFloat(this.props.orderBook.quantity),
-      amount_quote: parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate),
+      amount_base: amount_base,
+      amount_quote: amount_quote,
       limit_rate: parseFloat(this.props.orderBook.limit_rate),
       withdraw_address: {
           name: '',
@@ -137,17 +140,14 @@ class OrderBookWidget extends Component {
       }
     };
 
+
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
       .then(response => {
         console.log(response);
         
         this.props.setOrder(response.data);
-        // this.setState({
-        //   orderRef: response.data.unique_reference,
-        //   orderPlaced: true,
-        //   loading: false,
-        // });
+
 
         if (response.data.token) {
           localStorage.setItem('token', response.data.token);
@@ -157,25 +157,15 @@ class OrderBookWidget extends Component {
 
         window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
 
-        //Store order history in local storage
-        let newOrder = {
-            id: response.data.unique_reference,
-            base: this.props.selectedCoin.deposit,
-            amount_base: parseFloat(this.props.price.deposit),
-            quote: this.props.selectedCoin.receive,
-            amount_quote: parseFloat(this.props.price.receive),
-            withdraw_address: this.props.wallet.address,
-            created_at: new Date()
-        }
-        let orderHistory = localStorage['orderHistory'];
-        if(!orderHistory){
-          orderHistory = [newOrder];
+        //Store limit order history in local storage
+        let limitOrderHistory = localStorage['limitOrderHistory'];
+        if(!limitOrderHistory){
+          limitOrderHistory = response.data.unique_reference;
         }
         else {
-          orderHistory = JSON.parse(orderHistory);
-          orderHistory.push(newOrder);
+          limitOrderHistory += `,${response.data.unique_reference}`;
         }
-        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+        localStorage.setItem('limitOrderHistory', limitOrderHistory);
 
         this.setState({ showDepositModal: true })
       })
@@ -209,12 +199,9 @@ class OrderBookWidget extends Component {
               <div className='row'>
                 <div className='col-xs-12'>
                   <div className={styles.widget}>
-                      <div className={`col-xs-8 ${styles['pair-selection']}`}>
+                      <div className={`col-xs-12 ${styles['pair-selection']}`}>
                         <CoinSelector type='deposit' orderBook={true}/>
                         <CoinSelector type='receive' orderBook={true}/>
-                      </div>
-                      <div className={`col-xs-4`}>
-                        {this.props.order ? <a className={`clickable`} onClick={() => this.openDepositModal()}>Active Order <span className="badge">1</span></a> : null }
                       </div>
                       <ul className='col-xs-12 nav nav-tabs'>
                         <li className={`${order_type == 'BUY' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Buy</a></li>
@@ -243,6 +230,7 @@ class OrderBookWidget extends Component {
                         side={`Buying`} 
                         selectedCoins={this.props.selectedCoin}
                         depth={this.props.orderBook.buyDepth} />
+                      <MyOrders />
                     </div>
                   </div>
               </div>

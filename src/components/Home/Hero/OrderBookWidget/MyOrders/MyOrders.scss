@@ -1,0 +1,15 @@
+.container {
+    p, span {
+        font-size: 12px;
+    }
+
+    .list {
+        max-height: 500px;
+        overflow: auto;
+        .list-item {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid grey;
+        }
+    }
+}

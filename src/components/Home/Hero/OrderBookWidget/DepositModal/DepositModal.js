@@ -32,27 +32,9 @@ class DepositModal extends PureComponent {
     if (this.state.show !== nextProps.show) {
       this.setState({ order: nextProps.order, show: nextProps.show });
     }
-
-    this.timeout = setTimeout(() => {
-      this.props.fetchOrder(this.props.order.unique_reference);
-    }, config.ORDER_DETAILS_FETCH_INTERVAL);
-
-    if (nextProps.order !== 429) {
-      this.setState({ order: nextProps.order });
-
-      if (
-        this.props.order &&
-        this.props.order.status_name.length > 0 &&
-        this.props.order.status_name[0][0] === 11 &&
-        nextProps.order.status_name[0][0] === 12
-      ) {
-        window.gtag('event', 'Order paid', {event_category: 'Order Book', event_label: `${nextProps.order.unique_reference}`});
-      }
-    }
   }
 
   render() {
-    console.log(this)
     if(this.props.order)  {
       return (
         <I18n ns="translations">
@@ -66,12 +48,15 @@ class DepositModal extends PureComponent {
                 </div>
                 <div className="modal-body">
                   <p>{`Unique Reference: ${this.props.order.unique_reference}`}</p>
-                  <p>{`Status: ${this.props.order.status_name[0][1]}`}</p>
+                  {this.props.order.withdraw_address ?
                   <p>{`Withdraw Address: ${this.props.order.withdraw_address.address} 
                   (${this.props.order.withdraw_address.currency_code})`}</p>
+                  : null}
+                  {this.props.order.deposit_address ?
                   <p>{`Deposit Address: ${this.props.order.deposit_address.address} 
                   (${this.props.order.deposit_address.currency_code})`}</p>
-                  {this.props.order.status_name[0][1] === 'INITIAL' ? 
+                  : null}
+                  {this.props.order.status_name && this.props.order.status_name[0][1] === 'INITIAL' ? 
                   <span>{`In order to complete your order, send ${this.props.order.amount_base} 
                   ${this.props.order.deposit_address.currency_code}
                   to the deposit address`}</span>
@@ -88,7 +73,7 @@ class DepositModal extends PureComponent {
 }
 
 const mapStateToProps = ({ order }) => ({ order });
-const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder }, dispatch);
 
 export default connect(
   mapStateToProps,

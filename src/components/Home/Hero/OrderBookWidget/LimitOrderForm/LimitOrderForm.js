@@ -68,7 +68,7 @@ class LimitOrderForm extends PureComponent {
                 value={this.state.quantity}
                 onChange={event => this.handleQuantityChange(event)}
                 autoComplete="off"
-                placeholder={`Quantity (${this.props.selectedCoin.deposit})`}              
+                placeholder={`Quantity (${this.props.selectedCoin.receive})`}              
               />
               <input
                 type="text"
@@ -77,7 +77,7 @@ class LimitOrderForm extends PureComponent {
                 value={this.state.limit_rate}
                 onChange={event => this.handleLimitRateChange(event)}
                 autoComplete="off"
-                placeholder={`Limit Rate (${this.props.selectedCoin.receive})`}              
+                placeholder={`Limit Rate (${this.props.selectedCoin.deposit})`}              
               />
             </form>    
           </div>
