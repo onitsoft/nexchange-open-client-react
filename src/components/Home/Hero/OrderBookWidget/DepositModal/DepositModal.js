@@ -69,11 +69,11 @@ class DepositModal extends PureComponent {
                   <p>{`Status: ${this.props.order.status_name[0][1]}`}</p>
                   <p>{`Withdraw Address: ${this.props.order.withdraw_address.address} 
                   (${this.props.order.withdraw_address.currency_code})`}</p>
-                  <p>{`Deposit Address: ${this.props.order.withdraw_address.address} 
+                  <p>{`Deposit Address: ${this.props.order.deposit_address.address} 
                   (${this.props.order.deposit_address.currency_code})`}</p>
                   {this.props.order.status_name[0][1] === 'INITIAL' ? 
-                  <span>{`Please send ${parseFloat(this.props.order.amount_base)}${this.props.order.deposit_address.currency_code}
-                  to your deposit address`}</span>
+                  <span>{`In order to complete your order, send ${this.props.order.amount_base} ${this.props.order.deposit_address.currency_code}
+                  to the deposit address`}</span>
                   : null}
                 </div>
               </div>

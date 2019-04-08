@@ -176,6 +176,8 @@ class OrderBookWidget extends Component {
           orderHistory.push(newOrder);
         }
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+        this.setState({ showDepositModal: true })
       })
       .catch(error => {
         console.log('Error:', error);
