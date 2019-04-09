@@ -65,6 +65,7 @@ class LimitOrderForm extends PureComponent {
             <form>
             <input
                 type="text"
+                ref={this.props.inputRef}
                 className={`form-control ${styles.input}`}
                 id="quantity"
                 value={this.state.quantity}

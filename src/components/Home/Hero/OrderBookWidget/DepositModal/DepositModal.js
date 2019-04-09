@@ -35,7 +35,8 @@ class DepositModal extends PureComponent {
   }
 
   render() {
-    if(this.props.order)  {
+    const order = this.props.order;
+    if(order)  {
       return (
         <I18n ns="translations">
           {t => (
@@ -47,18 +48,19 @@ class DepositModal extends PureComponent {
                   </button>
                 </div>
                 <div className="modal-body">
-                  <p>{`Unique Reference: ${this.props.order.unique_reference}`}</p>
-                  {this.props.order.withdraw_address ?
-                  <p>{`Withdraw Address: ${this.props.order.withdraw_address.address} 
-                  (${this.props.order.withdraw_address.currency_code})`}</p>
+                  <p>{`Unique Reference: ${order.unique_reference}`}</p>
+                  {order.withdraw_address ?
+                  <p>{`Withdraw Address: ${order.withdraw_address.address} 
+                  (${order.withdraw_address.currency_code})`}</p>
                   : null}
-                  {this.props.order.deposit_address ?
-                  <p>{`Deposit Address: ${this.props.order.deposit_address.address} 
-                  (${this.props.order.deposit_address.currency_code})`}</p>
+                  {order.deposit_address ?
+                  <p>{`Deposit Address: ${order.deposit_address.address} 
+                  (${order.deposit_address.currency_code})`}</p>
                   : null}
-                  {this.props.order.status_name && this.props.order.status_name[0][1] === 'INITIAL' ? 
-                  <span>{`In order to complete your order, send ${this.props.order.amount_base} 
-                  ${this.props.order.deposit_address.currency_code}
+                  {order.status_name && order.status_name[0][1] === 'INITIAL' ? 
+                  <span>{`In order to complete your order, send 
+                  ${order.order_type === 'BUY' || order.order_type === 1 ? order.amount_quote : order.amount_base} 
+                  ${order.deposit_address.currency_code}
                   to the deposit address`}</span>
                   : null}
                 </div>

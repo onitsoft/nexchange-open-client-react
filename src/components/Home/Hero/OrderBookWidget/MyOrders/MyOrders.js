@@ -42,7 +42,9 @@ class MyOrders extends PureComponent {
             request
             .then(res => {
                 orders.push(res.data);
-                orders = _.sortBy(orders, 'created_at').reverse();
+                orders = _.sortBy(orders, function(order) {
+                  return new Date(order.created_on);
+                }).reverse();
                 if(orders.length === limitOrderHistory.length){
                     this.setState({orders, loading: false});
                 }

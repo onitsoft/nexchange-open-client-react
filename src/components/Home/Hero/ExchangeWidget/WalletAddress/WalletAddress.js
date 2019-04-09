@@ -79,12 +79,14 @@ class WalletAddress extends Component {
       this.validate(this.state.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
-    let orderHistory = localStorage['orderHistory'];
-    try {
-      //Most recent order for each address
-      this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-    } catch (e) {
-      this.orderHistory = [];
+    if(!this.props.orderMode === 'ORDER_BOOK') {
+      let orderHistory = localStorage['orderHistory'];
+      try {
+        //Most recent order for each address
+        this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
+      } catch (e) {
+        this.orderHistory = [];
+      }
     }
   }
 
@@ -138,12 +140,12 @@ class WalletAddress extends Component {
                 ref={this.props.inputRef}
                 className={`form-control ${styles.input}`}
                 id="withdraw-addr"
-                autoFocus="true"
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 value={this.state.address}
                 autoComplete="off"
+                autoFocus={this.props.orderMode === 'ORDER_BOOK' ? 'false' : 'true'}
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
               {this.state.showHistory ?
@@ -157,7 +159,7 @@ class WalletAddress extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, wallet, pairs }) => ({ selectedCoin, wallet, pairs });
+const mapStateToProps = ({ orderMode, selectedCoin, wallet, pairs }) => ({ orderMode, selectedCoin, wallet, pairs });
 const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet, selectCoin, fetchPrice }, dispatch);
 
 export default connect(

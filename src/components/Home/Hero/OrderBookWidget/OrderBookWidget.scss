@@ -29,8 +29,32 @@
     padding: 0;
   }
 
+  .nav-buy {
+    font-size: 20px;
+    color: $green;
+  }
+  .nav-sell {
+    font-size: 20px;
+    color: $red;
+  }
+
   .btn {
     width: 200px;
     float: right;
+
+    &.btn-buy {
+      background-color: $green;
+      &:hover {
+        background-color: lighten( $green, 10% );
+      }
+    }
+
+    &.btn-sell {
+      background-color: $red;
+      &:hover {
+        background-color: lighten( $red, 10% );
+      }
+    }
   }
 }
+
