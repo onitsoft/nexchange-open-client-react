@@ -101,7 +101,7 @@ class Support extends Component {
                 <div className="row">
                   <div className="col-xs-12 col-sm-6">
                     <h3>{t('support.2')}</h3>
-                    <p onClick={() => ga('send', 'event', 'General', 'click support number')}>
+                    <p onClick={() => window.gtag('event', 'Support number click', {event_category: 'Support', event_label: ``})}>
                       <div className="hidden-xs hidden-sm">
                         {/*desktop link structure*/}
                         <a href="tel:+442030971920">+442030971920</a>

@@ -5,6 +5,7 @@ import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
+import generateDepth from '../utils/generateDepth';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -133,13 +134,7 @@ export const fetchPrice = payload => dispatch => {
         data['max_amount_base'] = parseFloat(err.response.data.max_amount_base);
       }
 
-      /* istanbul ignore next */
-      if (window.ga) {
-        window.ga('send', 'event', {
-          eventCategory: 'Amount input',
-          eventAction: 'Amount too high/low error',
-        });
-      }
+      window.gtag('event', 'Change amount', {event_category: 'Amount Input', event_label: `Amount too high/low error`});
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -181,13 +176,7 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
-      /* istanbul ignore next */
-      if (window.ga) {
-        window.ga('send', 'event', {
-          eventCategory: 'Coin selector',
-          eventAction: 'Fetch default amounts',
-        });
-      }
+      window.gtag('event', 'Fetch default amounts', {event_category: 'Coin Selector', event_label: ``});
 
       if (payload.coinSelector) {
         const url = `${config.API_BASE_URL}/get_price/${pair}/`;
@@ -230,7 +219,10 @@ export const fetchPairs = () => dispatch => {
           axios
             .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
             .then(res => resolve(res.data))
-            .catch( /* istanbul ignore next */ err => reject(err));
+            .catch( /* istanbul ignore next */ err => console.log(err))
+            .then(function(){
+              resolve(pickRandomPair());
+              });;
         });
       };
 
@@ -246,8 +238,10 @@ export const fetchPairs = () => dispatch => {
         if (params && params.hasOwnProperty('pair')) {
           try {
             const pair = await coinsFromUrlParams(params);
-            depositCoin = pair.quote;
-            receiveCoin = pair.base;
+            if(pair){
+              depositCoin = pair.quote;
+              receiveCoin = pair.base;
+            }
           } catch (err) {
             /* istanbul ignore next */
             console.log('Error:', err);
@@ -359,3 +353,77 @@ export const setUserEmail = formData => async dispatch => {
       });
     });
 };
+
+
+//ORDER BOOK
+export const changeOrderMode = mode => ({
+  type: types.ORDER_MODE_CHANGE,
+  mode: mode,
+});
+
+export const changeOrderBookValue = orderBook => ({
+  type: types.ORDER_BOOK_VALUE_CHANGE,
+  orderBook: orderBook,
+});
+
+export const fetchOrderBook = payload => dispatch => {
+  const orderBook = payload.orderBook;
+
+  if(!payload.pair){
+    dispatch({
+      type: types.ORDER_BOOK_DATA_FETCHED,
+      orderBook
+    });
+    return;
+  }
+  
+  let url = `${config.API_BASE_URL}/limit_order/?`
+  url += `pair=${payload.pair}`;
+  if(payload.status){url += `&book_status=${payload.status}`;}
+  if(payload.type){url += `&order_type=${payload.type}`;}
+  
+  const request = axios.get(url);
+  let data = [];
+  const getData = () => new Promise((resolve, reject) => {
+    request
+    .then(result => { 
+      data = data.concat(result.data.results) 
+      if (result.data.next != null) {
+        resolve(request());
+      } else {
+        resolve(data);
+      }
+    })
+    .catch(error => {
+      /* istanbul ignore next */
+      console.log(error);
+      resolve([]);
+    });
+  });
+
+
+  getData()
+  .then(result => {
+    if(payload.status === 'OPEN' && payload.type === "SELL"){
+      orderBook.sellDepth = generateDepth(result, payload.type);
+    }
+    if(payload.status === 'OPEN' && payload.type === "BUY"){
+      orderBook.buyDepth = generateDepth(result, payload.type);
+    }
+    if(payload.status === 'CLOSED'){
+      orderBook.history = result;
+    }
+
+    dispatch({
+      type: types.ORDER_BOOK_DATA_FETCHED,
+      orderBook
+    });
+    return;
+  })    
+  .catch(error => {
+    /* istanbul ignore next */
+    console.log(error);
+  });
+
+  return;
+}

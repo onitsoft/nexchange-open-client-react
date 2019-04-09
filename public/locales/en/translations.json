@@ -122,6 +122,7 @@
     "presale": "Pre-sale starts in"
   },
   "faq": {
+    "inputplaceholder": "Search by keyword",
     "ques1": "Who are you?",
     "ques2": "What do you do?",
     "ques3": "What is your fee?",

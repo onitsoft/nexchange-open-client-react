@@ -40,7 +40,7 @@ class WalletAddress extends Component {
       () =>
         this.props.errorAlert({
           show: true,
-          message: `${address} ${i18n.t('error.novalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+          message: `${address} ${i18n.t('error.novalid')} ${receiveCoin} ${i18n.t('generalterms.address')}.`,
         }),
       () => this.props.errorAlert({ show: false })
     );
@@ -56,7 +56,7 @@ class WalletAddress extends Component {
     let showHistory = false;
     if(!address) { showHistory = true; }
     this.setState({ address, showHistory });
-    this.validate(address, this.props.selectedCoin.receive);
+    this.validate(address, this.props.selectedCoin[this.props.withdraw_coin]);
   }
 
   handleFocus(event) {
@@ -77,8 +77,8 @@ class WalletAddress extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive) {
-      this.validate(this.state.address, nextProps.selectedCoin.receive);
+    if (nextProps.selectedCoin[this.props.withdraw_coin] !== this.props.selectedCoin[this.props.withdraw_coin]) {
+      this.validate(this.state.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
     let orderHistory = localStorage['orderHistory'];
@@ -94,7 +94,7 @@ class WalletAddress extends Component {
     //Check if withdraw_address url param exists. If exists, prefill address field with that value
     const params = urlParams();
     if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address
-      && this.props.selectedCoin.receive && this.state.firstLoad) {
+      && this.props.selectedCoin[this.props.withdraw_coin] && this.state.firstLoad) {
         const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
         this.handleChange(simulatedEvent);
         this.setState({firstLoad: false});
@@ -129,7 +129,7 @@ class WalletAddress extends Component {
   }
 
   render() {
-    let coin = this.props.selectedCoin.receive ? this.props.selectedCoin.receive : '...';
+    let coin = this.props.selectedCoin[this.props.withdraw_coin] ? this.props.selectedCoin[this.props.withdraw_coin] : '...';
     return (
       <I18n ns="translations">
         {t => (
