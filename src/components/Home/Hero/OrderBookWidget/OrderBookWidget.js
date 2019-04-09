@@ -78,13 +78,11 @@ class OrderBookWidget extends Component {
 
   closeDepositModal = () => this.setState({ showDepositModal: false });
 
-  handleOrderBookOrderTypeChange() {
+  handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
-    if(orderBook.order_type === 'BUY') {
-      orderBook.order_type = 'SELL';
-    } else {
-      orderBook.order_type = 'BUY';
-    }
+    orderBook.order_type = type;
+    orderBook.quantity = '';
+    orderBook.limit_rate = '';
     this.props.changeOrderBookValue(orderBook);
   }
 
@@ -105,6 +103,14 @@ class OrderBookWidget extends Component {
 
 
     //TO DELETE - HARDCODED
+    let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+    if(pair !== 'DOGEETH'){
+      this.props.errorAlert({
+        show: true,
+        message: `Invalid pair. The only avaialable pair for limit order testing is DOGEETH`,
+      });
+      return;
+    }
     let order_type = null;
     let refund_address = null;
     let amount_base, amount_quote = 0;
@@ -124,7 +130,7 @@ class OrderBookWidget extends Component {
 
     let data = {
       pair: {
-        name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
+        name: pair
       },
       order_type,
       amount_base: amount_base,
@@ -140,7 +146,7 @@ class OrderBookWidget extends Component {
       }
     };
 
-
+    console.log(data);
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
       .then(response => {
@@ -203,17 +209,17 @@ class OrderBookWidget extends Component {
                         <CoinSelector type='deposit' orderBook={true}/>
                         <CoinSelector type='receive' orderBook={true}/>
                       </div>
-                      <ul className='col-xs-12 nav nav-tabs'>
-                        <li className={`${order_type == 'BUY' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Buy</a></li>
-                        <li className={`${order_type == 'SELL' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Sell</a></li>
-                      </ul>
-                      <LimitOrderForm 
-                        quantity={this.state.quantity}
-                        handleQuantityChange={this.handleQuantityChange} 
-                        limit_rate={this.state.limit_rate}
-                        handleLimitRateChange={this.handleLimitRateChange} />
-                      <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
-                      <div className='col-xs-12'>
+                      <div className='col-xs-12 col-sm-12 col-md-12 col-lg-6'>
+                        <ul className='nav nav-tabs'>
+                          <li className={`clickable ${order_type == 'BUY' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a></li>
+                          <li className={`clickable ${order_type == 'SELL' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a></li>
+                        </ul>
+                        <LimitOrderForm 
+                          quantity={this.state.quantity}
+                          handleQuantityChange={this.handleQuantityChange} 
+                          limit_rate={this.state.limit_rate}
+                          handleLimitRateChange={this.handleLimitRateChange} />
+                        <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
                         <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
                         onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
                           {order_type == 'BUY' 
@@ -221,15 +227,12 @@ class OrderBookWidget extends Component {
                           : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
                           }
                         </button>
-                      </div>                  
+                      </div>
                       <OrderDepth 
-                        side={`Selling`} 
                         selectedCoins={this.props.selectedCoin}
-                        depth={this.props.orderBook.sellDepth} />
-                      <OrderDepth 
-                        side={`Buying`} 
-                        selectedCoins={this.props.selectedCoin}
-                        depth={this.props.orderBook.buyDepth} />
+                        sellDepth={this.props.orderBook.sellDepth}
+                        buyDepth={this.props.orderBook.buyDepth}
+                        />
                       <MyOrders />
                     </div>
                   </div>

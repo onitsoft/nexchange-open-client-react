@@ -35,19 +35,16 @@ class MyOrders extends PureComponent {
   fetchMyOrders = () => {
     if(localStorage.limitOrderHistory){
         const limitOrderHistory = localStorage.limitOrderHistory.split(",");
+        let orders = [];
         limitOrderHistory.forEach((orderId) => {
             const url = `${config.API_BASE_URL}/limit_order/${orderId.replace(/"/g,"")}/`;
             const request = axios.get(url);
-          
             request
             .then(res => {
-                let orders = this.state.orders;
                 orders.push(res.data);
                 orders = _.sortBy(orders, 'created_at').reverse();
                 if(orders.length === limitOrderHistory.length){
                     this.setState({orders, loading: false});
-                } else {
-                    this.setState({orders});
                 }
             })
             .catch(error => {

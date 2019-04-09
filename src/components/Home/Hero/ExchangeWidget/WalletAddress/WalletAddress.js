@@ -138,6 +138,7 @@ class WalletAddress extends Component {
                 ref={this.props.inputRef}
                 className={`form-control ${styles.input}`}
                 id="withdraw-addr"
+                autoFocus="true"
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
