@@ -80,27 +80,7 @@ class MyOrders extends PureComponent {
                 { 
                 <div className={`${styles.list}`}> 
                  {this.state.orders.map((order) => {
-<<<<<<< HEAD:src/components/Home/Hero/OrderBookWidget/DepositModal/MyOrders/MyOrders.js
-                  if(this.state.expandedOrders.indexOf(order.unique_reference) != -1){
-                    return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
-                            <p>{`Unique Reference: ${order.unique_reference}`}</p>
-                            {order.book_status_name ?
-                            <p>{`Status: ${order.book_status_name[0][1]}`}</p>
-                            : null}
-                            <p>{`Created: ${new moment(order.created_on).locale(`${i18n.language}`).fromNow()} `}</p>
-                            <p>{`Withdraw Address: ${order.withdraw_address.address} 
-                            (${order.withdraw_address.currency_code})`}</p>
-                            <p>{`Deposit Address: ${order.deposit_address.address} 
-                            (${order.deposit_address.currency_code})`}</p>
-                            {order.status_name[0][1] === 'INITIAL' ? 
-                            <span>{`In order to complete your order, send ${order.amount_base} 
-                            ${order.deposit_address.currency_code}
-                            to the deposit address`}</span> : null}
-                            </div>);
-                  } else {
-=======
->>>>>>> 32c2c02... UI/UX work + Tweaks + Fixes:src/components/Home/Hero/OrderBookWidget/MyOrders/MyOrders.js
-                    return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
+                       return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
                               <div className={`${styles['heading']}`}>
                                 <div className={`col-xs-8 col-sm-8 col-md-6 col-lg-8`}>
                                   <h5>{`(${order.book_status_name[0][1]}) ${order.order_type == 1 ? 'Buy' : 'Sell'} 
