@@ -139,6 +139,8 @@ class WalletAddress extends Component {
                 className={`form-control ${styles.input}`}
                 id="withdraw-addr"
                 onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
                 value={this.state.address}
                 autoComplete="off"
                 autoFocus={this.props.orderMode === 'ORDER_BOOK' ? 'false' : 'true'}
