@@ -1,5 +1,5 @@
 .container {
-    height: 400px;
+    max-height: 400px;
 
     .header {
         display: flex;
@@ -7,6 +7,7 @@
         display: flex;
         align-items: center;
         font-weight: bold;
+        font-size: 16px;
         span{
             flex: 1;
         }
