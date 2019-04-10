@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+
+    a {
+       flex: 1; 
+    }
+}
+
+.SELL {
+    a {
+        color: $red;
+    }
+}
+
+.BUY {
+    a {
+        color: $green;
+    }
+}

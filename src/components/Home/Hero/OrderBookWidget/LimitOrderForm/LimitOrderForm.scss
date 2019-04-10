@@ -1,0 +1,17 @@
+.input {
+    margin-top: 5px;
+    padding: 0 0 15px 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.values-preview {
+    display: flex;
+    flex-direction: column;
+    span {
+        flex: 1;
+        color: $grey;
+        font-size: 12px;
+    }
+}

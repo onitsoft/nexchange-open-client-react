@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 100px;
+    z-index: 3;
+  }
+}
+
+.widget {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  color: #000;
+  padding: 10px 0px 15px 0;
+  border-radius: 6px;
+  text-align: left;
+
+  @media (min-width: $screen-md-min) {
+    padding: 25px 25px;
+  }
+
+  .pair-selection {
+    display: flex;
+    padding: 0;
+  }
+
+  .my-orders {
+    float: right;
+    a {
+      font-size: 16px;
+      padding: 10px 14px;
+      border: 1px solid $gray;
+      color: $black;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;  
+      
+      &:hover {
+        background-color: darken( white, 2% );
+      }
+    }
+  }
+
+  .nav-buy {
+    font-size: 20px;
+    color: $green;
+  }
+  .nav-sell {
+    font-size: 20px;
+    color: $red;
+  }
+
+  .btn {
+    width: 200px;
+    float: right;
+
+    &.btn-buy {
+      background-color: $green;
+      &:hover {
+        background-color: lighten( $green, 10% );
+      }
+    }
+
+    &.btn-sell {
+      background-color: $red;
+      &:hover {
+        background-color: lighten( $red, 10% );
+      }
+    }
+  }
+}
+

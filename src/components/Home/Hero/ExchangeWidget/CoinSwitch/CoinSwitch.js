@@ -25,7 +25,7 @@ class CoinSwitch extends Component {
       receive,
     });
 
-    if (window.ga) window.ga('send', 'event', 'Order', 'switched coins');
+    window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
   };
 
   handleClick = () => {
@@ -43,7 +43,8 @@ class CoinSwitch extends Component {
 
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
-        { showSwitchButton ? <i className={`fas fa-exchange-alt fa-2x clickable ${styles.icon}`} onClick={this.handleClick}></i> : null }
+        { showSwitchButton ? <span className={`clickable ${styles.icon}`} onClick={this.handleClick}></span>
+        : null }
       </div>
     );
   }

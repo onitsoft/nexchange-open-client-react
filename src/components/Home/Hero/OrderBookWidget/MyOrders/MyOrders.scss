@@ -1,0 +1,62 @@
+.container {
+
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .list {
+        max-height: 420px;
+        overflow: auto;
+
+        .list-item {
+            padding: 5px 0px;
+
+            .heading{
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    h5 {
+                        margin: 0;
+                        font-size: 14px;
+                    }
+
+                    span {
+                        color: $grey;
+                        font-size: 12px;
+                    }
+                }
+
+                a {
+                    font-size: 12px;
+                    cursor: pointer;
+                }
+            }
+
+            .details {
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid lighten( $gray, 10%);
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 5px 0px;
+                    font-size: 12px;
+
+                    .label {
+                        font-weight: bold;    
+                    }
+
+                }
+
+                .obs {
+                    color: $gray;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
