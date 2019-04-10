@@ -33,7 +33,7 @@ class OrderBookWidget extends Component {
     if(this.props.selectedCoin){
       this.setState({loading: false});
       this.fetchOrderBook();
-      this.quantityInputEl.focus();
+      if(this.quantityInputEl) { this.quantityInputEl.focus(); }
     }
   }
 

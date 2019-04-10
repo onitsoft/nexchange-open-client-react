@@ -33,9 +33,9 @@ class OrderDepth extends PureComponent {
             <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
             <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
           </div>
-            {sellDepth}
+            {_.isEmpty(sellDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : sellDepth}
             <div className={styles.separator}></div>
-            {buyDepth}
+            {_.isEmpty(buyDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : buyDepth}
         </div>
         )}
       </I18n>
