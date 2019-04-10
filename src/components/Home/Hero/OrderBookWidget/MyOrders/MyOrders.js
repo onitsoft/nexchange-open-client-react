@@ -5,6 +5,7 @@ import { I18n } from 'react-i18next';
 import axios from 'axios';
 import config from 'Config';
 import moment from 'moment';
+import { changeOrderBookValue } from 'Actions/index.js';
 
 import styles from './MyOrders.scss';
 
@@ -14,7 +15,6 @@ class MyOrders extends PureComponent {
     super();
 
     this.state = {
-        orders: [],
         expandedOrder: '',
         loading: true
     };
@@ -58,7 +58,10 @@ class MyOrders extends PureComponent {
                   return new Date(order.created_on);
                 }).reverse();
                 if(orders.length === limitOrderHistory.length){
-                    this.setState({orders, loading: false});
+                    const orderBook = this.props.orderBook;
+                    orderBook.myOrders = orders;
+                    this.props.changeOrderBookValue(orderBook)
+                    this.setState({ loading: false });
                 }
             })
             .catch(error => {
@@ -77,9 +80,9 @@ class MyOrders extends PureComponent {
           {(t, i18n) => (
             <div className={`col-xs-12 col-sm-12 col-md-14 col-lg-4 ${styles.container}`}>
                 <h4 className={styles.title}>{`My Orders`}</h4>
-                { 
+                {_.isEmpty(this.props.orderBook.myOrders) ? <span>No order history...</span> :
                 <div className={`${styles.list}`}> 
-                 {this.state.orders.map((order) => {
+                 {this.props.orderBook.myOrders.map((order) => {
                        return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
                               <div className={`${styles['heading']}`}>
                                 <div className={`col-xs-8 col-sm-8 col-md-6 col-lg-8`}>
@@ -137,8 +140,8 @@ class MyOrders extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ }) => ({ });
-const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
+const mapStateToProps = ({ orderBook }) => ({ orderBook });
+const mapDispatchToProps = dispatch => bindActionCreators({ changeOrderBookValue }, dispatch);
 
 export default connect(
   mapStateToProps,

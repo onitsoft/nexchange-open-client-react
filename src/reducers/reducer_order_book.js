@@ -6,7 +6,8 @@ const initialState = {
     limit_rate: '',
     sellDepth: [],
     buyDepth: [],
-    history: []
+    history: [],
+    myOrders: [],
 };
 
 export default (state = initialState, action) => {

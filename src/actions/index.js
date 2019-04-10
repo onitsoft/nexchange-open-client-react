@@ -62,7 +62,6 @@ export const fetchCoinDetails = () => dispatch => {
     .catch(error => {
       /* istanbul ignore next */
       console.log(error);
-      pair
     });
 };
 
