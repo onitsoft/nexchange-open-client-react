@@ -5,6 +5,9 @@
     "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Search",
     "submit": "Submit"
   },
@@ -207,7 +210,8 @@
   },
   "order": {
     "enteraddress": "Enter your wallet address",
-    "copy": "Wallet adress copied!",
+    "copyaddress": "Wallet address copied!",
+    "copyaddressid": "{{addressIdType}} copied!",
     "reference": "Order Reference",
     "api": "See your order details on our API",
     "repeat": "Repeat order",

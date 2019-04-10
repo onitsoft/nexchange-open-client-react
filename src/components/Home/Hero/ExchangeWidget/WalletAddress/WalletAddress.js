@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet, selectCoin, fetchPrice } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
-import AddressHistory from './AddressHistory/AddressHistory';
 import styles from './WalletAddress.scss';
+import AddressHistory from './AddressHistory/AddressHistory';
 import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
