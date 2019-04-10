@@ -39,7 +39,9 @@ class CoinSelector extends Component {
 
   handleClick = code => {
     this.selectCoin(code);
-    this.props.onSelect();
+    if(this.props.onSelect) {
+      this.props.onSelect();
+    }
   };
 
   fetchPriceInitial = props => {
