@@ -53,7 +53,9 @@ class WalletAddress extends Component {
 
   handleChange(event) {
     const address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
-    this.setState({ address });
+    let showHistory = false;
+    if(!address) { showHistory = true; }
+    this.setState({ address, showHistory });
     this.validate(address, this.props.selectedCoin[this.props.withdraw_coin]);
   }
 
