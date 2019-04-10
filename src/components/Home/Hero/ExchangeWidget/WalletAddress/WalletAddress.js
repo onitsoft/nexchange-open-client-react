@@ -17,7 +17,11 @@ class WalletAddress extends Component {
 
     this.state = { address: '', firstLoad: true , showHistory: false};
     this.handleChange = this.handleChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setAddress = this.setAddress.bind(this);
+    this.setCoin = this.setCoin.bind(this);
   }
 
   validate = (address, receiveCoin) => {
