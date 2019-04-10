@@ -9,7 +9,6 @@ import config from 'Config';
 
 import styles from './DepositModal.scss';
 
-import MyOrders from './MyOrders/MyOrders';
 
 
 class DepositModal extends PureComponent {
@@ -95,13 +94,13 @@ class DepositModal extends PureComponent {
                       : null}
                       {order.status_name && order.status_name[0][1] === 'INITIAL' ? 
                       <span>{`In order to complete your order, send 
-                      ${order.order_type === 'BUY' || order.order_type === 1 ? order.amount_quote : order.amount_base} 
+                      ${order.order_type === 'BUY' || order.order_type === 1 ? 
+                      parseFloat(order.amount_quote) : parseFloat(order.amount_base)} 
                       ${order.deposit_address.currency_code}
                       to the deposit address`}</span>
                       : null}
                     </div> 
                   : null}
-                <MyOrders />
               </div>
             </div>
           </Modal>

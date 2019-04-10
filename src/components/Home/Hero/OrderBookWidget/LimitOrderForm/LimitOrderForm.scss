@@ -8,6 +8,7 @@
 
 .values-preview {
     display: flex;
+    flex-direction: column;
     span {
         flex: 1;
         color: $grey;

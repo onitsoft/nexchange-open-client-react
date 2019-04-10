@@ -34,7 +34,6 @@ class OrderDepthItem extends PureComponent {
         {t => (
           <div className={`${styles.container} ${styles[this.props.side]}`}>
             <span onClick={() => this.setOrderBookQuantity(item.size)} className={`clickable`}>{item.size.toFixed(9)}</span>
-            <span onClick={() => this.setOrderBookLimitRate(item.rate)} className={`clickable`}>{(1/item.rate).toFixed(9)}</span>
             <span onClick={() => this.setOrderBookLimitRate(item.rate)} className={`clickable`}>{(item.rate).toFixed(9)}</span>
           </div>
         )}
