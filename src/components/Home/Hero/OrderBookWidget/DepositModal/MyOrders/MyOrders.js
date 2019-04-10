@@ -89,7 +89,6 @@ class MyOrders extends PureComponent {
                 <div className={`${styles.list}`}> 
                  {this.state.orders.map((order) => {
                   if(this.state.expandedOrders.indexOf(order.unique_reference) != -1){
-                    console.log("HEREEEEE");
                     return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
                             <p>{`Unique Reference: ${order.unique_reference}`}</p>
                             {order.book_status_name ?
