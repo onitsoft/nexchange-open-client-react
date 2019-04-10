@@ -91,7 +91,7 @@ class LimitOrderForm extends PureComponent {
                   : `${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}`}
                 </span>
                 <span>
-                  {`Receive (Min): `}
+                  {`Receive: `}
                   {this.props.orderBook.order_type == 'BUY' 
                   ?`${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}` 
                   : `${parseFloat((this.state.quantity*this.state.limit_rate))} ${this.props.selectedCoin.deposit}`}

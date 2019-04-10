@@ -49,15 +49,15 @@ class OrderDepthItem extends PureComponent {
       <I18n ns="translations">
         {t => (
           <div className={`${styles.container} ${styles[this.props.side]}`}>
-            <a onClick={() => this.setOrderBookQuantity(item.size)} to
+            <a onClick={() => this.setOrderBookQuantity(item.size)}
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
-            title={`My size: ${myOrderSize ? `${myOrderSize} ${this.props.selectedCoin.receive}` : null}`}
+            title={myOrderSize ? `My size: ${myOrderSize} ${this.props.selectedCoin.receive}` : null}
             >
               {`${item.size.toFixed(9)}`}
             </a>
             <a onClick={() => this.setOrderBookLimitRate(item.rate)} 
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
-            title={`My size: ${myOrderSize ? `${myOrderSize} ${this.props.selectedCoin.receive}` : null}`}
+            title={myOrderSize ? `My size: ${myOrderSize} ${this.props.selectedCoin.receive}` : null}
             >
               {(item.rate).toFixed(9)}
             </a>
