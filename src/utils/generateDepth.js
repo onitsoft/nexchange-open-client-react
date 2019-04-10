@@ -2,7 +2,7 @@ export default (data, type) => {
     const parsedData = [];
     data.forEach((d) => {
         parsedData.push({
-            size: type === 'SELL' ? parseFloat(d.amount_base) : parseFloat(d.amount_quote),
+            size: parseFloat(d.amount_base),
             rate: parseFloat(d.limit_rate),
         });
     })

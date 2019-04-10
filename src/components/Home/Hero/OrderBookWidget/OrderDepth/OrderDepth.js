@@ -12,10 +12,16 @@ class OrderDepth extends PureComponent {
   };
 
   render() {
-    let items = [];
-    if(!_.isEmpty(this.props.depth)){
-      items = this.props.depth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side={this.props.side} />;
+    let sellDepth = [];
+    if(!_.isEmpty(this.props.sellDepth)){
+      sellDepth = this.props.sellDepth.map((depthItem) => {
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL'/>;
+      });
+    }
+    let buyDepth = [];
+    if(!_.isEmpty(this.props.buyDepth)){
+      buyDepth = this.props.buyDepth.map((depthItem) => {
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY'/>;
       });
     }
 
@@ -23,15 +29,14 @@ class OrderDepth extends PureComponent {
       <I18n ns="translations">
         {t => (
          <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 ${styles.container}`}>
-          <h4 className={`${styles.title}`}>{`ORDER DEPTH - ${this.props.side}`}</h4>
           <div className={`${styles.header}`}>
             <span className={``}>{`Market Size (${this.props.selectedCoins.receive})`}</span>
             <span className={``}>{`Price (1/${this.props.selectedCoins.deposit})`}</span>
             <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
           </div>
-          <div className={``}>
-            {items}
-          </div>
+            {sellDepth}
+            <div className={styles.separator}></div>
+            {buyDepth}
         </div>
         )}
       </I18n>

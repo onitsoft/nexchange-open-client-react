@@ -34,7 +34,9 @@ class ExchangeWidget extends Component {
   }
 
   componentDidMount() {
-    this.focusWalletAddress();
+    if(this.walletInputEl) {
+      this.walletInputEl.focus();
+    }
   }
 
   placeOrder() {

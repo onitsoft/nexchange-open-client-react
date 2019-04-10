@@ -15,13 +15,21 @@ class MyOrders extends PureComponent {
 
     this.state = {
         orders: [],
+        expandedOrders: [],
         loading: true
     };
 
     this.fetchMyOrders = this.fetchMyOrders.bind(this);
+    this.toggleOrder = this.toggleOrder.bind(this);
   }
 
   componentWillMount() {
+    if(this.props.order){
+      const expandedOrders = this.state.expandedOrders;
+      expandedOrders.push(this.props.order.unique_reference);
+      this.setState({expandedOrders});
+    }
+
     this.fetchMyOrders();
     this.interval = setInterval(() => {
         this.fetchMyOrders();
@@ -32,22 +40,33 @@ class MyOrders extends PureComponent {
       clearInterval(this.interval);
   }
 
+  toggleOrder(orderId) {
+    let expandedOrders = this.state.expandedOrders;
+    if(expandedOrders.indexOf(orderId) != -1){
+      expandedOrders = _.remove(expandedOrders, function(n) {
+        return n === orderId;
+      });
+    } else {
+      expandedOrders.push(orderId);
+    }
+    this.setState({expandedOrders});
+  }
+
   fetchMyOrders = () => {
     if(localStorage.limitOrderHistory){
         const limitOrderHistory = localStorage.limitOrderHistory.split(",");
+        let orders = [];
         limitOrderHistory.forEach((orderId) => {
             const url = `${config.API_BASE_URL}/limit_order/${orderId.replace(/"/g,"")}/`;
             const request = axios.get(url);
-          
             request
             .then(res => {
-                let orders = this.state.orders;
                 orders.push(res.data);
-                orders = _.sortBy(orders, 'created_at').reverse();
+                orders = _.sortBy(orders, function(order) {
+                  return new Date(order.created_on);
+                }).reverse();
                 if(orders.length === limitOrderHistory.length){
                     this.setState({orders, loading: false});
-                } else {
-                    this.setState({orders});
                 }
             })
             .catch(error => {
@@ -65,8 +84,12 @@ class MyOrders extends PureComponent {
         <I18n ns="translations">
           {(t, i18n) => (
             <div className={`col-xs-12 ${styles.container}`}>
-                <h4 className={``}>{`My Orders`}</h4>
-                { <div className={`${styles.list}`}> {this.state.orders.map((order) => {
+                <h4 className={styles.title}>{`My Orders`}</h4>
+                { 
+                <div className={`${styles.list}`}> 
+                 {this.state.orders.map((order) => {
+                  if(this.state.expandedOrders.indexOf(order.unique_reference) != -1){
+                    console.log("HEREEEEE");
                     return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
                             <p>{`Unique Reference: ${order.unique_reference}`}</p>
                             {order.book_status_name ?
@@ -81,8 +104,25 @@ class MyOrders extends PureComponent {
                             <span>{`In order to complete your order, send ${order.amount_base} 
                             ${order.deposit_address.currency_code}
                             to the deposit address`}</span> : null}
-                            </div>);})}</div>}
-                    </div>
+                            </div>);
+                  } else {
+                    return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
+                              <div className={`${styles['heading']}`}>
+                                <div className={`col-xs-9 col-sm-9 col-md-6 col-lg-4`}>
+                                  <h5>{`(${order.book_status_name[0][1]}) ${order.order_type == 1 ? 'Buy' : 'Sell'} 
+                                  ${order.pair.base.code} - ${order.pair.quote.code}`}</h5>
+                                  <span>{new moment(order.created_on).locale(`${i18n.language}`).fromNow()}</span>
+                                </div>
+                                <div className={`col-xs-3 col-sm-3 col-md-6 col-lg-8`}>
+                                  <a onClick={() => this.toggleOrder(order.unique_reference)}>View details</a>
+                                </div>
+                              </div>
+                            </div>)
+                  }
+                 })}
+                </div>
+                }
+           </div>
           )}
         </I18n>
     );     

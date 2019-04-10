@@ -26,14 +26,10 @@ class LimitOrderForm extends PureComponent {
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
-    this.setState({ quantity: value });
 
-    const setOrderBookQuantity = debounce(value => {
-      const orderBook = this.props.orderBook;
-      orderBook.quantity = value;
-      this.props.changeOrderBookValue(orderBook);
-    }, 200);
-    setOrderBookQuantity(value);
+    const orderBook = this.props.orderBook;
+    orderBook.quantity = value;
+    this.props.changeOrderBookValue(orderBook);
     // window.gtag('event', 'Change quantity', {event_category: 'Order Book', event_label: ``});
   };
 
@@ -44,15 +40,21 @@ class LimitOrderForm extends PureComponent {
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
-    this.setState({ limit_rate: value });
 
-    const setOrderBookLimitRate = debounce(value => {
-      const orderBook = this.props.orderBook;
-      orderBook.limit_rate = value;
-      this.props.changeOrderBookValue(orderBook);
-    }, 600);
-    setOrderBookLimitRate(value);
+    const orderBook = this.props.orderBook;
+    orderBook.limit_rate = value;
+    this.props.changeOrderBookValue(orderBook);
     // window.gtag('event', 'Change limit rate', {event_category: 'Order Book', event_label: ``});
+  };
+
+
+  UNSAFE_componentWillReceiveProps = nextProps => {
+    if (nextProps.orderBook.quantity !== this.state.quantity) {
+      this.setState({ quantity: nextProps.orderBook.quantity });
+    }
+    if (nextProps.orderBook.limit_rate !== this.state.limit_rate) {
+      this.setState({ limit_rate: nextProps.orderBook.limit_rate });
+    }
   };
 
   render() {
@@ -63,6 +65,7 @@ class LimitOrderForm extends PureComponent {
             <form>
             <input
                 type="text"
+                ref={this.props.inputRef}
                 className={`form-control ${styles.input}`}
                 id="quantity"
                 value={this.state.quantity}
@@ -79,6 +82,22 @@ class LimitOrderForm extends PureComponent {
                 autoComplete="off"
                 placeholder={`Limit Rate (${this.props.selectedCoin.deposit})`}              
               />
+              {this.state.quantity && this.state.limit_rate ?
+              <div className={styles['values-preview']}>
+                <span>
+                  {`Deposit: `}
+                  {this.props.orderBook.order_type == 'BUY' 
+                  ?`${(parseFloat((this.state.quantity)*parseFloat(this.state.limit_rate)))} ${this.props.selectedCoin.deposit}` 
+                  : `${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}`}
+                </span>
+                <span>
+                  {`Receive (Min): `}
+                  {this.props.orderBook.order_type == 'BUY' 
+                  ?`${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}` 
+                  : `${parseFloat((this.state.quantity*this.state.limit_rate))} ${this.props.selectedCoin.deposit}`}
+                </span>
+              </div>
+              : null}
             </form>    
           </div>
         )}

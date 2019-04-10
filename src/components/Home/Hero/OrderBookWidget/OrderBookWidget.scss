@@ -28,4 +28,50 @@
     display: flex;
     padding: 0;
   }
+
+  .my-orders {
+    float: right;
+    a {
+      font-size: 16px;
+      padding: 10px 14px;
+      border: 1px solid $gray;
+      color: $black;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;  
+      
+      &:hover {
+        background-color: darken( white, 2% );
+      }
+    }
+  }
+
+  .nav-buy {
+    font-size: 20px;
+    color: $green;
+  }
+  .nav-sell {
+    font-size: 20px;
+    color: $red;
+  }
+
+  .btn {
+    width: 200px;
+    float: right;
+
+    &.btn-buy {
+      background-color: $green;
+      &:hover {
+        background-color: lighten( $green, 10% );
+      }
+    }
+
+    &.btn-sell {
+      background-color: $red;
+      &:hover {
+        background-color: lighten( $red, 10% );
+      }
+    }
+  }
 }
+
