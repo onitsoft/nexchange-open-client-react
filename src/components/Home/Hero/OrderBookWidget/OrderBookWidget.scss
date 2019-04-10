@@ -29,6 +29,23 @@
     padding: 0;
   }
 
+  .my-orders {
+    float: right;
+    a {
+      font-size: 16px;
+      padding: 10px 14px;
+      border: 1px solid $gray;
+      color: $black;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;  
+      
+      &:hover {
+        background-color: darken( white, 2% );
+      }
+    }
+  }
+
   .nav-buy {
     font-size: 20px;
     color: $green;

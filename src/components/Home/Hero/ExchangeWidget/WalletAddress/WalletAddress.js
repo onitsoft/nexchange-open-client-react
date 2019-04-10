@@ -79,8 +79,8 @@ class WalletAddress extends Component {
       this.validate(this.state.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
-    if(!this.props.orderMode === 'ORDER_BOOK') {
-      let orderHistory = localStorage['orderHistory'];
+    if(this.props.orderMode != 'ORDER_BOOK') {
+      let orderHistory = localStorage['orderHistory']; 
       try {
         //Most recent order for each address
         this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
@@ -148,7 +148,7 @@ class WalletAddress extends Component {
                 autoFocus={this.props.orderMode === 'ORDER_BOOK' ? 'false' : 'true'}
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {this.state.showHistory ?
+              {this.state.showHistory && this.props.orderMode != 'ORDER_BOOK' ?
                 <AddressHistory history={this.orderHistory} setAddress={this.setAddress} setCoin={this.setCoin} />
                 :  null}
             </form>

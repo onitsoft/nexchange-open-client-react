@@ -12,7 +12,6 @@ import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
 import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import DepositModal from './DepositModal/DepositModal';
-import MyOrders from './MyOrders/MyOrders';
 
 import styles from './OrderBookWidget.scss';
 
@@ -78,6 +77,7 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
+  openDepositModal = () => this.setState({ showDepositModal: true });
   closeDepositModal = () => this.setState({ showDepositModal: false });
 
   handleOrderBookOrderTypeChange(type) {
@@ -202,9 +202,14 @@ class OrderBookWidget extends Component {
               <div className='row'>
                 <div className='col-xs-12'>
                   <div className={styles.widget}>
-                      <div className={`col-xs-12 ${styles['pair-selection']}`}>
+                      <div className={`col-xs-8 ${styles['pair-selection']}`}>
                         <CoinSelector type='deposit' orderBook={true}/>
                         <CoinSelector type='receive' orderBook={true}/>
+                      </div>
+                      <div className={`col-xs-4`}>
+                        <div className={styles['my-orders']}>
+                          <a onClick={() => this.openDepositModal()}>My Orders</a>
+                        </div>
                       </div>
                       <div className='col-xs-12 col-sm-12 col-md-12 col-lg-6'>
                         <ul className='nav nav-tabs'>
@@ -235,7 +240,6 @@ class OrderBookWidget extends Component {
                         sellDepth={this.props.orderBook.sellDepth}
                         buyDepth={this.props.orderBook.buyDepth}
                         />
-                      <MyOrders />
                     </div>
                   </div>
               </div>

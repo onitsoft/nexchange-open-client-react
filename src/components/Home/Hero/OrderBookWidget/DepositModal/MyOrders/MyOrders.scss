@@ -1,0 +1,40 @@
+.container {
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .list {
+        max-height: 420px;
+        overflow: auto;
+
+        .list-item {
+            padding: 5px 0px;
+
+            .heading{
+                display: flex;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    h5 {
+                        margin: 0;
+                        font-size: 16px;
+                    }
+
+                    span {
+                        color: $grey;
+                        font-size: 12px;
+                    }
+                }
+
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
