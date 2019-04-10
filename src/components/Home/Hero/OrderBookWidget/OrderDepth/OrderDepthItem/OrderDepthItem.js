@@ -12,6 +12,7 @@ class OrderDepthItem extends PureComponent {
 
     this.setOrderBookQuantity = this.setOrderBookQuantity.bind(this);
     this.setOrderBookLimitRate = this.setOrderBookLimitRate.bind(this);
+    this.getMyOrderSize = this.getMyOrderSize.bind(this);
   }
 
   setOrderBookQuantity(quantity) {
@@ -26,15 +27,40 @@ class OrderDepthItem extends PureComponent {
     this.props.changeOrderBookValue(orderBook);
   }
 
-  render() {
+
+  getMyOrderSize(limit_rate) {
+    const myOrders = this.props.orderBook.myOrders;
+    const order_type = this.props.side === "SELL" ? 0 : 1;
+    const myMatchingOrders = _.filter(myOrders, order => 
+        order.book_status_name[0][1] === 'OPEN'
+        && order.order_type === order_type 
+        && parseFloat(order.limit_rate) === parseFloat(limit_rate));
+
+    if(_.isEmpty(myMatchingOrders)){return;}
+    
+    const size =  _.sumBy(myMatchingOrders, order => parseFloat(order.amount_base));
+    return size;
+  }
+
+  render() {  
       const item = this.props.item;
-      
+      const myOrderSize = this.getMyOrderSize(item.rate);
       return (
       <I18n ns="translations">
         {t => (
           <div className={`${styles.container} ${styles[this.props.side]}`}>
-            <span onClick={() => this.setOrderBookQuantity(item.size)} className={`clickable`}>{item.size.toFixed(9)}</span>
-            <span onClick={() => this.setOrderBookLimitRate(item.rate)} className={`clickable`}>{(item.rate).toFixed(9)}</span>
+            <a onClick={() => this.setOrderBookQuantity(item.size)} to
+            className={`clickable ${myOrderSize ? 'bold' : '' }`}
+            title={`My size: ${myOrderSize ? `${myOrderSize} ${this.props.selectedCoin.receive}` : null}`}
+            >
+              {`${item.size.toFixed(9)}`}
+            </a>
+            <a onClick={() => this.setOrderBookLimitRate(item.rate)} 
+            className={`clickable ${myOrderSize ? 'bold' : '' }`}
+            title={`My size: ${myOrderSize ? `${myOrderSize} ${this.props.selectedCoin.receive}` : null}`}
+            >
+              {(item.rate).toFixed(9)}
+            </a>
           </div>
         )}
       </I18n>
@@ -42,7 +68,7 @@ class OrderDepthItem extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ orderBook }) => ({ orderBook });
+const mapStateToProps = ({ orderBook, selectedCoin }) => ({ orderBook, selectedCoin });
 const mapDispatchToProps = dispatch => bindActionCreators({ changeOrderBookValue }, dispatch);
 
 export default connect(

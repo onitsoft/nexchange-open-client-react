@@ -19,43 +19,13 @@ class DepositModal extends PureComponent {
       show: false,
       order: null
     };
-
-    this.fetchMyOrders = this.fetchMyOrders.bind(this);
   }
 
   componentWillMount() {
-    this.fetchMyOrders();
-    this.interval = setInterval(() => {
-        this.fetchMyOrders();
-    }, config.ORDER_BOOK_FETCH_INTERVAL)
+
   }
 
   componentWillUnmount() {
-      clearInterval(this.interval);
-  }
-
-  fetchMyOrders = () => {
-    if(localStorage.limitOrderHistory){
-        const limitOrderHistory = localStorage.limitOrderHistory.split(",");
-        let orders = [];
-        limitOrderHistory.forEach((orderId) => {
-            const url = `${config.API_BASE_URL}/limit_order/${orderId.replace(/"/g,"")}/`;
-            const request = axios.get(url);
-            request
-            .then(res => {
-                orders.push(res.data);
-                orders = _.sortBy(orders, function(order) {
-                  return new Date(order.created_on);
-                }).reverse();
-                if(orders.length === limitOrderHistory.length){
-                    this.setState({orders, loading: false});
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        });
-      }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {

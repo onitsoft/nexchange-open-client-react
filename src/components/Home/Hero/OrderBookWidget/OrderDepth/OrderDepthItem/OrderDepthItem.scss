@@ -1,19 +1,19 @@
 .container {
     display: flex;
 
-    span {
+    a {
        flex: 1; 
     }
 }
 
 .SELL {
-    span {
+    a {
         color: $red;
     }
 }
 
 .BUY {
-    span {
+    a {
         color: $green;
     }
 }
