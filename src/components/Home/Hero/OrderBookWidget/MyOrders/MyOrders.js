@@ -113,9 +113,7 @@ class MyOrders extends PureComponent {
                                   </div>
                                   <div className={styles['field']}>
                                     <span className={styles['label']}>{`Deposit Address (${order.deposit_address.currency_code})`}</span>
-                                    <span className={styles['value']}>{
-                                      `${order.deposit_address.address}`}
-                                    </span>
+                                    <span className={styles['value']}>{`${order.deposit_address.address}`}</span>
                                   </div>
                                   <div className={styles['field']}>
                                     <span className={styles['label']}>{`Withdraw Address (${order.withdraw_address.currency_code})`}</span>
