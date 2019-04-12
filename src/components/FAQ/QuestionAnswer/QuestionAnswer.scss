@@ -1,0 +1,40 @@
+.container {
+    text-align: left;
+    .question {
+        display: flex;
+        align-items: center;
+
+        i {
+            margin-top: 8px;
+            cursor: pointer;
+        }
+        h3 {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
+
+    hr {
+        margin: 0 0 20px 0;
+      }
+    .answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        &.active {
+            max-height: 1000px;
+            transition: max-height 0.33s ease-in;
+        }
+    }
+  
+    @media (min-width: $screen-sm-min) {
+      h3 {
+        font-size: 30px;
+      }
+      .answer.active {
+        max-height: 500px;
+        transition: max-height 0.33s ease-in;
+      }
+    }
+}
+

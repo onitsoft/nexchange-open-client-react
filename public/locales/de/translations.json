@@ -331,7 +331,9 @@
       "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
   },
   "faq": {
-    "inputplaceholder": "Über Schlüsselwort suchen",
+    "heading1": "Häufig gestellte Fragen",
+    "heading2": "Hast du etwas im Sinn?",
+    "inputplaceholder": "Wonach suchen Sie?",
     "ques1": "Wer sind Sie?",
     "ques2": "Was machen Sie?",
     "ques3": "Wie hoch ist Ihre Gebühr?",
