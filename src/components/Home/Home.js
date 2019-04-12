@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchCoinDetails, fetchPairs, changeOrderMode } from 'Actions';
 
 import Hero from './Hero/Hero';
+import FAQ from 'Components/FAQ/FAQ';
 import About from './About/About';
 import Team from './Team/Team';
 import ICO from './ICO/ICO';
@@ -27,9 +28,18 @@ export class Home extends Component {
   }
 
   render() {
+    let content = null;
+    switch (window.location.pathname.split('/')[1]) {
+      case 'faqs':
+        content = <FAQ />
+        break;
+      default:
+        content = <Hero {...this.props} />;
+        break;
+    }
     return (
       <div>
-        <Hero {...this.props} />
+        {content}
         <RecentOrders />
         <ICO />
         <Testimonials />

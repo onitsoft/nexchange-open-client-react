@@ -13,7 +13,6 @@ import NotFound from 'Components/NotFound/NotFound';
 
 import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
-import FAQ from 'Components/FAQ/FAQ';
 import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
 
@@ -48,8 +47,7 @@ ReactDOM.render(
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/faqs/:faqId?" component={FAQ} />
-          <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
+          <Route exact path="/(|faqs)/:id?" render={props => <Home {...props} store={store} />} /> />
           <Route component={NotFound} />
         </Switch>
 
