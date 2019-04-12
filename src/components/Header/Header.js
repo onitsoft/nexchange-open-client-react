@@ -82,13 +82,15 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a
-                      className={styles.link}
-                      href="/faqs"
-                      data-test="faq-btn"
-                    >
-                      {t('header.faq')}
-                    </a>
+                   <Link to="/faqs" className={styles.link}>
+                      <a
+                        className={styles.link}
+                        href="#"
+                        data-test="faq-btn"
+                      >
+                        {t('header.faq')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
