@@ -13,7 +13,14 @@ class QuestionAnswer extends Component {
     const questionPath = this.props.t(`faq.${this.props.id}`).replace(/ /g, '-').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase().trim();
     if(browserPath === questionPath) {
       this.setState({open: true});
-      document.getElementById(`faq.${this.props.id}`).scrollIntoView();;
+      this.shouldScrollToElement = true;
+    }
+  }
+
+  componentDidUpdate() {
+    if(this.shouldScrollToElement && !this.scrolledToElement) {
+        this.scrolledToElement = true;
+        document.getElementById(`faq.${this.props.id}`).scrollIntoView();;
     }
   }
 
