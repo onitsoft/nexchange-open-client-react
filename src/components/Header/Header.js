@@ -76,7 +76,7 @@ class Header extends Component {
               <div className="collapse navbar-collapse" id="navigation-index">
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a className={styles.link} href="#" onClick={() => { this.scrollTo("#about"); }} >
+                    <a className={styles.link} href="/#about" onClick={() => { this.scrollTo("#about"); }} >
                       {t('header.about')}
                     </a>
                   </li>
