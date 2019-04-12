@@ -144,11 +144,9 @@ class OrderBookWidget extends Component {
       }
     };
 
-    console.log(data);
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
       .then(response => {
-        console.log(response);
         
         this.props.setOrder(response.data);
 
