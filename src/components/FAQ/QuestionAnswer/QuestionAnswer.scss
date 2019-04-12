@@ -25,6 +25,53 @@
             max-height: 1000px;
             transition: max-height 0.33s ease-in;
         }
+
+        .feedback {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 20px;
+
+          .buttons {
+            display: inline-flex;
+
+            button {
+              display: flex;
+              align-items: center;
+              padding: 10px 25px;
+              background-color: transparent;
+              border-radius: 6px;
+
+              i {
+                margin-right: 15px;
+                font-size: 16px;
+              }
+              span {
+
+              }
+            }
+            .positive {
+              color: $green;
+              border: solid 2px $green;
+              @media (min-width: $screen-md-min) {
+                margin-left: 20px;
+              }
+              &.active {
+                background-color: $green !important;
+                color: white !important;
+              }
+            }
+            .negative {
+              color: $red;
+              border: solid 2px $red;
+              margin-left: 20px;
+              &.active {
+                background-color: $red;
+                color: white;
+              }
+            }
+          }
+      }
     }
   
     @media (min-width: $screen-sm-min) {

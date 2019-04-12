@@ -5,7 +5,14 @@ import ScrollToElement from 'scroll-to-element';
 import styles from './QuestionAnswer.scss';
 
 class QuestionAnswer extends Component {
-  state = { open: false };
+  constructor(props){
+    super(props)
+
+    this.state = { open: false, positiveFeedback: false, negativeFeedback: false };
+    
+    this.setPositiveFeedback = this.setPositiveFeedback.bind(this);
+    this.setNegativeFeedback = this.setNegativeFeedback.bind(this);
+  }
 
   componentDidMount() {
     const browserPath = window.location.pathname.split('/')[2] ? window.location.pathname.split('/')[2].toLowerCase().trim() : null;
@@ -26,8 +33,22 @@ class QuestionAnswer extends Component {
 
   onClick = () => {
     this.setState({ open: !this.state.open });
-    window.gtag('event', 'Question open', {event_category: 'FAQ', event_label: `${this.props.answer}`});
+    window.gtag('event', 'Question open', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
   };
+
+  setPositiveFeedback = () => {
+    if(!this.state.positiveFeedback) {
+      window.gtag('event', 'Positive Feedback', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
+      this.setState({positiveFeedback: true, negativeFeedback: false});
+    }
+  }
+  
+  setNegativeFeedback = () => {
+    if(!this.state.negativeFeedback) {
+      window.gtag('event', 'Negative Feedback', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
+      this.setState({positiveFeedback: false, negativeFeedback: true});
+    }
+  }
 
   render() {
     return (
@@ -38,7 +59,24 @@ class QuestionAnswer extends Component {
             {this.props.t(`faq.${this.props.id}`)}
           </h3>
         </div>
-        <div className={`${this.state.open ? `${styles.answer} ${styles.active}` : `${styles.answer}`}`}>{this.props.answer}</div>
+        <div className={`${this.state.open ? `${styles.answer} ${styles.active}` : `${styles.answer}`}`}>
+          {this.props.answer}
+          <div className={styles.feedback}>
+            <div>
+              <span>Whas this helpful?</span>
+            </div>
+            <div className={styles.buttons}>
+              <button className={`btn ${styles.positive} ${this.state.positiveFeedback ? styles.active : ''}`}
+              onClick={() => {this.setPositiveFeedback()}}>
+                <i className="fas fa-thumbs-up"></i><span>YES</span>
+              </button>
+              <button className={`btn ${styles.negative} ${this.state.negativeFeedback ? styles.active : ''}`}
+              onClick={() => {this.setNegativeFeedback()}}>
+                <i className="fas fa-thumbs-down"></i><span>NO</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <hr />
       </div>
     );
