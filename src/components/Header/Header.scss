@@ -103,7 +103,7 @@
   }
 }
 
-.link.link.link.link {
+.link {
   padding: 8px 0;
   font-size: 12px;
   text-transform: uppercase;
@@ -114,9 +114,9 @@
   &:visited,
   &:focus,
   &:active {
-    text-decoration: none;
-    background: none;
-    outline: none;
+    text-decoration: none !important;
+    background: none !important;
+    outline: none !important;
   }
 
   @media (min-width: $screen-sm-min) {
@@ -125,7 +125,6 @@
 
   @media (min-width: $screen-lg-min) {
     padding: 10px 21px;
-    color: #fff;
   }
 }
 
