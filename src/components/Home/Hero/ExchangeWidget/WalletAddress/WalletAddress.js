@@ -110,24 +110,27 @@ class WalletAddress extends Component {
     this.props.button.focus();
   }
 
-  setCoin(depositCoin, receiveCoin) {
-    //Select coin
-    this.props.selectCoin({
-      ...this.props.selectedCoin,
-      deposit: depositCoin,
-      receive: receiveCoin,
-    }, this.props.pairs);
+  setCoin(depositCoin, receiveCoin) {   
+    if(!this.props.selectedCoin.selectedByUser) {
+      //Select coin
+      this.props.selectCoin({
+        ...this.props.selectedCoin,
+        deposit: depositCoin,
+        receive: receiveCoin,
+        selectedByUser: true
+      }, this.props.pairs);
 
-    //Update quote value
-    const pair = `${receiveCoin}${depositCoin}`;
-    const data = {
-      pair,
-      lastEdited: 'receive',
-    };
+      //Update quote value
+      const pair = `${receiveCoin}${depositCoin}`;
+      const data = {
+        pair,
+        lastEdited: 'receive',
+      };
 
-    data['deposit'] = receiveCoin;
-    data['receive'] = depositCoin;
-    this.props.fetchPrice(data);
+      data['deposit'] = receiveCoin;
+      data['receive'] = depositCoin;
+      this.props.fetchPrice(data);
+    }
   }
 
   render() {
