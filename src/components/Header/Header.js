@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
-
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
 
