@@ -40,6 +40,16 @@ class Header extends Component {
     });
   }
 
+  componentDidUpdate(){
+    if(window.location.hash) {
+      ScrollToElement(`${window.location.hash}`,{
+        offset: 0,
+        ease: 'linear',
+        duration: 1000
+      });
+   }
+  }
+
   isHomeHeader = () => {
     if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') != -1) {
       return true;
@@ -76,9 +86,11 @@ class Header extends Component {
               <div className="collapse navbar-collapse" id="navigation-index">
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a className={styles.link} href="/#about" onClick={() => { this.scrollTo("#about"); }} >
-                      {t('header.about')}
-                    </a>
+                    <Link to="/#about" className={styles.link}>
+                      <a className={styles.link} >
+                        {t('header.about')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
@@ -107,9 +119,11 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a className={styles.link} href="/#compare" data-test="compare-link">
-                      {t('header.compare')}
-                    </a>
+                    <Link to="/#compare" className={styles.link}>
+                      <a className={styles.link} data-test="compare-link">
+                        {t('header.compare')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
