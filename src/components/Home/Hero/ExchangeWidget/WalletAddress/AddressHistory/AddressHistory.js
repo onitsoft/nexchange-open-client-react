@@ -37,6 +37,7 @@ class AddressHistory extends Component {
     this.setState({showCount});
   }
 
+
   render() {
     if(_.isEmpty(this.props.history)) {
       return null;

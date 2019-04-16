@@ -47,8 +47,14 @@ class Hero extends Component {
                   </div>
                 </div>
 
-                <div>
-                  <a className={`clickable`} onClick={() => this.changeOrderMode()}>Change Mode</a>
+                <div className={styles.widget}>
+                  <div className={styles['btn-container']}>
+                    <div className={styles.btn}>
+                      <a onClick={() => this.changeOrderMode()}>
+                      { this.props.orderMode === 'ORDER_BOOK' ? `Go Simple` : `Go Pro` }
+                      </a>
+                    </div>
+                  </div>
                   { this.props.orderMode === 'ORDER_BOOK'
                     ? <OrderBookWidget store={this.props.store} />
                     : <ExchangeWidget store={this.props.store} /> }

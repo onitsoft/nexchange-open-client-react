@@ -22,7 +22,7 @@ class OrderBookWidget extends Component {
     super();
 
     this.state = {
-      loading: false,
+      loading: true,
       showDepositModal: false
     };
 
@@ -31,13 +31,15 @@ class OrderBookWidget extends Component {
 
   componentDidMount(){
     if(this.props.selectedCoin){
+      this.setState({loading: false});
       this.fetchOrderBook();
+      if(this.quantityInputEl) { this.quantityInputEl.focus(); }
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
-      this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
+    if((this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive) || 
+      (this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit)) {
         clearInterval(this.interval);
         this.fetchOrderBook();
     }
@@ -76,15 +78,14 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
+  openDepositModal = () => this.setState({ showDepositModal: true });
   closeDepositModal = () => this.setState({ showDepositModal: false });
 
-  handleOrderBookOrderTypeChange() {
+  handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
-    if(orderBook.order_type === 'BUY') {
-      orderBook.order_type = 'SELL';
-    } else {
-      orderBook.order_type = 'BUY';
-    }
+    orderBook.order_type = type;
+    orderBook.quantity = '';
+    orderBook.limit_rate = '';
     this.props.changeOrderBookValue(orderBook);
   }
 
@@ -105,30 +106,33 @@ class OrderBookWidget extends Component {
 
 
     //TO DELETE - HARDCODED
+    let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
+    if(pair !== 'DOGEETH'){
+      this.props.errorAlert({
+        show: true,
+        message: `Invalid pair. The only avaialable pair for limit order testing is DOGEETH`,
+      });
+      return;
+    }
     let order_type = null;
     let refund_address = null;
-    let amount_base, amount_quote = 0;
     if(this.props.orderBook.order_type === 'BUY'){
       order_type = 1;
       refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
-      amount_base = parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate);
-      amount_quote = parseFloat(this.props.orderBook.quantity);
     }
     if(this.props.orderBook.order_type === 'SELL'){
       order_type = 0;
       refund_address = 'DBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD';
-      amount_base =  parseFloat(this.props.orderBook.quantity);
-      amount_quote = parseFloat(this.props.orderBook.quantity) * parseFloat(this.props.orderBook.limit_rate);
     }
 
 
     let data = {
       pair: {
-        name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`
+        name: pair
       },
       order_type,
-      amount_base: amount_base,
-      amount_quote: amount_quote,
+      amount_base: parseFloat(this.props.orderBook.quantity),
+      amount_quote: 0,
       limit_rate: parseFloat(this.props.orderBook.limit_rate),
       withdraw_address: {
           name: '',
@@ -140,11 +144,9 @@ class OrderBookWidget extends Component {
       }
     };
 
-
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
       .then(response => {
-        console.log(response);
         
         this.props.setOrder(response.data);
 
@@ -200,36 +202,38 @@ class OrderBookWidget extends Component {
                 <div className='col-xs-12'>
                   <div className={styles.widget}>
                       <div className={`col-xs-12 ${styles['pair-selection']}`}>
-                        <CoinSelector type='deposit' orderBook={true}/>
                         <CoinSelector type='receive' orderBook={true}/>
+                        <CoinSelector type='deposit' orderBook={true}/>
                       </div>
-                      <ul className='col-xs-12 nav nav-tabs'>
-                        <li className={`${order_type == 'BUY' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Buy</a></li>
-                        <li className={`${order_type == 'SELL' ? 'active' : ''}`}><a onClick={() => this.handleOrderBookOrderTypeChange()}>Sell</a></li>
-                      </ul>
-                      <LimitOrderForm 
-                        quantity={this.state.quantity}
-                        handleQuantityChange={this.handleQuantityChange} 
-                        limit_rate={this.state.limit_rate}
-                        handleLimitRateChange={this.handleLimitRateChange} />
-                      <WalletAddress withdraw_coin={`${order_type == 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
-                      <div className='col-xs-12'>
-                        <button className={`${styles.btn} ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                      <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
+                        <ul className='nav nav-tabs'>
+                          <li className={`clickable ${order_type === 'BUY' ? 'active' : ''}`}>
+                            <a className={`${styles['nav-buy']}`} onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                          </li>
+                          <li className={`clickable ${order_type === 'SELL' ? 'active' : ''}`}>
+                            <a className={`${styles['nav-sell']}`} onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                          </li>
+                        </ul>
+                        <LimitOrderForm 
+                          inputRef={el => (this.quantityInputEl = el)}
+                          quantity={this.state.quantity}
+                          limit_rate={this.state.limit_rate}
+                         />
+                        <WalletAddress withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                        <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
+                        ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
                         onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
-                          {order_type == 'BUY' 
+                          {order_type === 'BUY' 
                           ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
                           : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
                           }
                         </button>
-                      </div>                  
+                      </div>
                       <OrderDepth 
-                        side={`Selling`} 
                         selectedCoins={this.props.selectedCoin}
-                        depth={this.props.orderBook.sellDepth} />
-                      <OrderDepth 
-                        side={`Buying`} 
-                        selectedCoins={this.props.selectedCoin}
-                        depth={this.props.orderBook.buyDepth} />
+                        sellDepth={this.props.orderBook.sellDepth}
+                        buyDepth={this.props.orderBook.buyDepth}
+                        />
                       <MyOrders />
                     </div>
                   </div>

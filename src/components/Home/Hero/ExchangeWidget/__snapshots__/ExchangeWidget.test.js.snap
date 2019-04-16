@@ -214,6 +214,9 @@ ShallowWrapper {
                   inputRef={[Function]}
                   onSubmit={[Function]}
 />,
+                null,
+                null,
+                null,
                 <div
                   className="submit"
 >
@@ -270,6 +273,9 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
+              null,
+              null,
+              null,
               Object {
                 "instance": null,
                 "key": undefined,
@@ -536,6 +542,9 @@ ShallowWrapper {
                     inputRef={[Function]}
                     onSubmit={[Function]}
 />,
+                  null,
+                  null,
+                  null,
                   <div
                     className="submit"
 >
@@ -592,6 +601,9 @@ ShallowWrapper {
                   "rendered": null,
                   "type": [Function],
                 },
+                null,
+                null,
+                null,
                 Object {
                   "instance": null,
                   "key": undefined,

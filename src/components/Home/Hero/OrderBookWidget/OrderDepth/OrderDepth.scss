@@ -1,15 +1,21 @@
 .container {
-    height: 250px;
-   
-    .title {
-        
-    }
-   
+    max-height: 400px;
+
     .header {
         display: flex;
+        height: 40px;
+        display: flex;
+        align-items: center;
         font-weight: bold;
+        font-size: 16px;
         span{
             flex: 1;
         }
+    }
+
+    .separator {
+        height: 1px;
+        margin: 5px 0px;
+        background-color: $gray;
     }
 }
