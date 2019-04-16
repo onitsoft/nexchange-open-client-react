@@ -109,7 +109,7 @@ class FAQ extends Component {
                   <h2>{t('faq.heading2')}</h2>
                 </div>
               </div>   
-              <div className={`col-xs-10 ${styles.faqs}`}>
+              <div className={`col-xs-11 ${styles.faqs}`}>
                 <form className="form-group" onSubmit={this.handleSubmit}>
                   <div className={`${styles.input}`}>
                     <i className={`fas fa-search`}></i>
