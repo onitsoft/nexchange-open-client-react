@@ -46,7 +46,7 @@ class QuestionAnswer extends Component {
     if(!this.state.negativeFeedback) {
       window.gtag('event', 'Negative Feedback', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
       this.setState({positiveFeedback: false, negativeFeedback: true});
-      this.props.openSupportModal()
+      this.props.openSupportModal(this.props.t(`faq.${this.props.id}`));
     }
   }
 

@@ -86,7 +86,7 @@ class Header extends Component {
                 <ul className="nav navbar-nav navbar-right">
                   <li>
                     <Link to="/#about" className={styles.link}>
-                      <a className={styles.link} >
+                      <a>
                         {t('header.about')}
                       </a>
                     </Link>
@@ -95,7 +95,6 @@ class Header extends Component {
                   <li>
                    <Link to="/faqs" className={styles.link}>
                       <a
-                        className={styles.link}
                         href="#"
                         data-test="faq-btn"
                       >
@@ -119,7 +118,7 @@ class Header extends Component {
 
                   <li>
                     <Link to="/#compare" className={styles.link}>
-                      <a className={styles.link} data-test="compare-link">
+                      <a data-test="compare-link">
                         {t('header.compare')}
                       </a>
                     </Link>

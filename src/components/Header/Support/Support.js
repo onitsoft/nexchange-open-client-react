@@ -9,11 +9,15 @@ import { setUserEmail } from 'Actions';
 import config from 'Config';
 
 class Support extends Component {
-  state = {
-    loading: false,
-    success: null,
-    showForm: true,
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {
+      loading: false,
+      success: null,
+      showForm: true,
+    };
+  }
 
   componentDidMount() {
     if (this.props.email.value) {
@@ -28,6 +32,7 @@ class Support extends Component {
     if (this.state.show !== this.props.show) {
       this.setState({
         show: this.props.show,
+        subject: this.props.subject ? this.props.subject : ''
       });
     }
 
@@ -170,7 +175,7 @@ class Support extends Component {
                           type="text"
                           name="subject"
                           className="form-control"
-                          placeholder={t('support.7')}
+                          placeholder={t('support.6')}
                           onChange={this.handleInputChange}
                           value={this.state.subject}
                         />
@@ -179,7 +184,7 @@ class Support extends Component {
                       <textarea
                         name="message"
                         className="form-control"
-                        placeholder={t('support.4')}
+                        placeholder={t('support.7')}
                         rows="2"
                         onChange={this.handleInputChange}
                         value={this.state.message}

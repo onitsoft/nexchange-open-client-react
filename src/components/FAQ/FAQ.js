@@ -20,7 +20,8 @@ class FAQ extends Component {
       loading: true,
       searchText: '',
       filteredQuestionsIds: Array(FAQ_COUNT).fill().map((e,i)=>i+1),
-      showSupportModal: false
+      showSupportModal: false,
+      subject: '',
     };
 
   }
@@ -34,8 +35,8 @@ class FAQ extends Component {
   }
 
   closeSupportModal = () => this.setState({ showSupportModal: false });
-  openSupportModal = () => {
-    this.setState({ showSupportModal: true });
+  openSupportModal = (subject) => {
+    this.setState({ showSupportModal: true, subject });
   }
   
   componentDidUpdate() {
@@ -416,7 +417,7 @@ class FAQ extends Component {
                 /> : null}
                 </div>
                 </div>
-                <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} />
+                <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
               </div>
         )}
       </I18n>
