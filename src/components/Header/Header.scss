@@ -53,8 +53,16 @@
   }
 
   .link {
+    @media (min-width: $screen-sm-min) {
+      color: #fff;
+    }
     a {
-      color: #000;
+      @media (min-width: $screen-sm-min) {
+        color: #fff;
+      }
+      @media (max-width: $screen-sm-min) {
+        color: #000;
+      }
     }
     &:hover {
       text-decoration: underline;

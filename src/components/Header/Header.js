@@ -127,14 +127,17 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a
+                    <Link 
+                      onClick={() => { this.closeNavbar();this.setState({ showSupportModal: true });}} 
                       className={styles.link}
-                      href="javascript:void(0)"
-                      onClick={() => this.setState({ showSupportModal: true })}
-                      data-test="support-btn"
-                    >
-                      {t('header.support')}
-                    </a>
+                      to='#'>
+                      <a
+                        href="javascript:void(0)"
+                        data-test="support-btn"
+                      >
+                        {t('header.support')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li className={styles['ico-link']}>
