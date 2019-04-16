@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
+import { selectCoin } from 'Actions/index.js';
 import styles from './CoinSwitch.scss';
 
 class CoinSwitch extends Component {
@@ -13,11 +13,6 @@ class CoinSwitch extends Component {
   switchCoins = () => {
     const deposit = this.props.selectedCoin.receive;
     const receive = this.props.selectedCoin.deposit;
-
-    const pair = `${receive}${deposit}`;
-    const data = {
-      pair
-    };
 
     this.props.selectCoin({
       ...this.props.selectedCoin,

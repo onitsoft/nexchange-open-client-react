@@ -38,8 +38,8 @@ class OrderBookWidget extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive || 
-      this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit) {
+    if((this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive) || 
+      (this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit)) {
         clearInterval(this.interval);
         this.fetchOrderBook();
     }
