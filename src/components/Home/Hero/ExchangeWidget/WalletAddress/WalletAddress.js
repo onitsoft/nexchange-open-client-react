@@ -117,7 +117,7 @@ class WalletAddress extends Component {
         ...this.props.selectedCoin,
         deposit: depositCoin,
         receive: receiveCoin,
-        selectedByUser: true
+        selectedByUser: false
       }, this.props.pairs);
 
       //Update quote value
