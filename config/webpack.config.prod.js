@@ -374,18 +374,20 @@ module.exports = {
     minimizer: [
       // we specify a custom UglifyJsPlugin here to get source maps in production
       new UglifyJsPlugin({
-        warnings: false,
-        comparisons: false,
-        cache: true,
-        parallel: true,
-        compress: false,
-        ecma: 6,
-        mangle: true,
-        output: {
-          comments: false,
-          // Turned on because emoji and regex is not minified properly using default
-          // https://github.com/facebookincubator/create-react-app/issues/2488
-          ascii_only: true,
+        uglifyOptions: {
+          warnings: false,
+          comparisons: false,
+          cache: true,
+          parallel: true,
+          compress: false,
+          ecma: 6,
+          mangle: true,
+          output: {
+            comments: false,
+            // Turned on because emoji and regex is not minified properly using default
+            // https://github.com/facebookincubator/create-react-app/issues/2488
+            ascii_only: true,
+          },
         },
         sourceMap: shouldUseSourceMap
       })
