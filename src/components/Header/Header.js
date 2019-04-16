@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
-
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
 
@@ -38,6 +37,16 @@ class Header extends Component {
       ease: 'linear',
       duration: 1000
     });
+  }
+
+  componentDidUpdate(){
+    if(window.location.hash) {
+      ScrollToElement(`${window.location.hash}`,{
+        offset: 0,
+        ease: 'linear',
+        duration: 1000
+      });
+   }
   }
 
   isHomeHeader = () => {
@@ -76,15 +85,16 @@ class Header extends Component {
               <div className="collapse navbar-collapse" id="navigation-index">
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a className={styles.link} href="/#about" onClick={() => { this.scrollTo("#about"); }} >
-                      {t('header.about')}
-                    </a>
+                    <Link to="/#about" className={styles.link}>
+                      <a>
+                        {t('header.about')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
                    <Link to="/faqs" className={styles.link}>
                       <a
-                        className={styles.link}
                         href="#"
                         data-test="faq-btn"
                       >
@@ -107,9 +117,11 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a className={styles.link} href="/#compare" data-test="compare-link">
-                      {t('header.compare')}
-                    </a>
+                    <Link to="/#compare" className={styles.link}>
+                      <a data-test="compare-link">
+                        {t('header.compare')}
+                      </a>
+                    </Link>
                   </li>
 
                   <li>

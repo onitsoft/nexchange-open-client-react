@@ -52,13 +52,12 @@
     padding: 30px 15px;
   }
 
-  .link.link.link.link {
+  .link {
+    a {
+      color: #000;
+    }
     &:hover {
       text-decoration: underline;
-    }
-
-    @media (min-width: $screen-sm-min) {
-      color: #fff;
     }
   }
 
@@ -118,6 +117,7 @@
 
   @media (min-width: $screen-lg-min) {
     padding: 10px 21px;
+    color: #fff;
   }
 }
 
