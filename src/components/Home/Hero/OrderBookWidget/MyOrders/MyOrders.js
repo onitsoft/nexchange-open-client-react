@@ -24,7 +24,7 @@ class MyOrders extends PureComponent {
     this.hideDetails = this.hideDetails.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.fetchMyOrders();
     this.interval = setInterval(() => {
         this.fetchMyOrders();
@@ -71,9 +71,6 @@ class MyOrders extends PureComponent {
       }
   }
 
-  componentWillUnmount() {
-  }
-
   render() {
     return (
         <I18n ns="translations">
@@ -86,7 +83,7 @@ class MyOrders extends PureComponent {
                        return (<div className={`${styles['list-item']}`} key={order.unique_reference}>
                               <div className={`${styles['heading']}`}>
                                 <div className={`col-xs-8 col-sm-8 col-md-6 col-lg-8`}>
-                                  <h5>{`(${order.book_status_name[0][1]}) ${order.order_type == 1 ? 'Buy' : 'Sell'} 
+                                  <h5>{`(${order.book_status_name[0][1]}) ${order.order_type === 1 ? 'Buy' : 'Sell'} 
                                   ${order.pair.base.code} - ${order.pair.quote.code}`}</h5>
                                   <span>{new moment(order.created_on).locale(`${i18n.language}`).fromNow()}</span>
                                 </div>
@@ -119,7 +116,7 @@ class MyOrders extends PureComponent {
                                     <span className={styles['label']}>{`Withdraw Address (${order.withdraw_address.currency_code})`}</span>
                                     <span className={styles['value']}>{`${order.withdraw_address.address}`}</span>
                                   </div>
-                                  {order.book_status_name[0][0] == 0 
+                                  {order.book_status_name[0][0] === 0 
                                   ? <span className={styles['obs']}>
                                     {`To open your limit order please send 
                                     ${order.order_type === 1 ? parseFloat(order.amount_quote) : parseFloat(order.amount_base)} 

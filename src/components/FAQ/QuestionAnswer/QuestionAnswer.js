@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import ScrollToElement from 'scroll-to-element';
 
 import styles from './QuestionAnswer.scss';
 
@@ -17,7 +16,7 @@ class QuestionAnswer extends Component {
   componentDidMount() {
     const browserPath = window.location.pathname.split('/')[2] ? window.location.pathname.split('/')[2].toLowerCase().trim() : null;
     /* eslint max-len: ["error", { "code": 200 }] */ 
-    const questionPath = this.props.t(`faq.${this.props.id}`).replace(/ /g, '-').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase().trim();
+    const questionPath = this.props.t(`faq.${this.props.id}`).replace(/ /g, '-').replace(/[&/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase().trim();
     if(browserPath === questionPath) {
       this.setState({open: true});
       this.shouldScrollToElement = true;

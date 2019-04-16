@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import debounce from 'Utils/debounce';
 import styles from './LimitOrderForm.scss';
 
 import { changeOrderBookValue } from 'Actions/index.js';
@@ -86,13 +85,13 @@ class LimitOrderForm extends PureComponent {
               <div className={styles['values-preview']}>
                 <span>
                   {`Deposit: `}
-                  {this.props.orderBook.order_type == 'BUY' 
+                  {this.props.orderBook.order_type === 'BUY' 
                   ?`${(parseFloat((this.state.quantity)*parseFloat(this.state.limit_rate)))} ${this.props.selectedCoin.deposit}` 
                   : `${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}`}
                 </span>
                 <span>
                   {`Receive: `}
-                  {this.props.orderBook.order_type == 'BUY' 
+                  {this.props.orderBook.order_type === 'BUY' 
                   ?`${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}` 
                   : `${parseFloat((this.state.quantity*this.state.limit_rate))} ${this.props.selectedCoin.deposit}`}
                 </span>
