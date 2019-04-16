@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { I18n, Trans } from 'react-i18next';
-import { Modal } from 'react-bootstrap';
 import Fuse from 'fuse.js';
 import debounce from 'Utils/debounce';
 import i18n from 'Src/i18n';
@@ -23,12 +22,12 @@ class FAQ extends Component {
 
   }
   
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     window.gtag('event', 'FAQs open', {event_category: 'FAQ', event_label: ``});
   }
 
   showQuestion(id) {
-    return this.state.filteredQuestionsIds.indexOf(id) != -1;
+    return this.state.filteredQuestionsIds.indexOf(id) !== -1;
   }
 
   componentDidUpdate() {
