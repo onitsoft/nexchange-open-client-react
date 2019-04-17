@@ -70,7 +70,7 @@ class AddressHistory extends Component {
             <div className={`${styles.separator}`}></div>
             { this.props.history && this.props.history.length > this.state.showCount ?
             <div className={`${styles.showMore}`}>
-              <a onMouseDown={(event) => this.showMore(event)}>${t('showmore')}</a>
+              <a onMouseDown={(event) => this.showMore(event)}>{t('viewmore')}</a>
             </div> : null }
           </div>
         )}
