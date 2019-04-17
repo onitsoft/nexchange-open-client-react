@@ -13,6 +13,7 @@ import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import DepositModal from './DepositModal/DepositModal';
 import MyOrders from './MyOrders/MyOrders';
+import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
 import styles from './OrderBookWidget.scss';
 
@@ -201,6 +202,7 @@ class OrderBookWidget extends Component {
               <div className='row'>
                 <div className='col-xs-12'>
                   <div className={styles.widget}>
+                      <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                       <div className={`col-xs-12 ${styles['pair-selection']}`}>
                         <CoinSelector type='receive' orderBook={true}/>
                         <CoinSelector type='deposit' orderBook={true}/>

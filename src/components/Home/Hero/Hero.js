@@ -48,16 +48,9 @@ class Hero extends Component {
                 </div>
 
                 <div className={styles.widget}>
-                  <div className={styles['btn-container']}>
-                    <div className={styles.btn}>
-                      <a onClick={() => this.changeOrderMode()}>
-                      { this.props.orderMode === 'ORDER_BOOK' ? `Go Simple` : `Go Pro` }
-                      </a>
-                    </div>
-                  </div>
                   { this.props.orderMode === 'ORDER_BOOK'
-                    ? <OrderBookWidget store={this.props.store} />
-                    : <ExchangeWidget store={this.props.store} /> }
+                    ? <OrderBookWidget {...this.props}  store={this.props.store} />
+                    : <ExchangeWidget {...this.props}  store={this.props.store} /> }
                 </div>
               </div>
             </div>
