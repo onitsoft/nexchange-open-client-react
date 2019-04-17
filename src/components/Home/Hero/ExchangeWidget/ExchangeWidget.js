@@ -13,6 +13,7 @@ import { bindCrispEmail } from 'Utils/crispEmailBinding';
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
 import WalletAddress from './WalletAddress/WalletAddress';
+import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 import DestinationTag from './WalletAddress/DestinationTag';
 import PaymentId from './WalletAddress/PaymentId';
 import Memo from './WalletAddress/Memo';
@@ -162,6 +163,7 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
+                    <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
                     <CoinSwitch />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />

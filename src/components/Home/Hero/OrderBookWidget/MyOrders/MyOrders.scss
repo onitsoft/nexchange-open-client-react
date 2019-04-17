@@ -6,9 +6,12 @@
     }
 
     .list {
-        display: grid;
-        max-height: 270px;
-        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        max-height: 220px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        overflow-wrap: break-word;
 
         .list-item {
             padding: 5px 0px;
