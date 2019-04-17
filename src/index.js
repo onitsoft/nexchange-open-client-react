@@ -10,6 +10,7 @@ import Referrals from 'Components/Referrals/Referrals';
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
 import NotFound from 'Components/NotFound/NotFound';
+import FAQ from 'Components/FAQ/FAQ';
 
 import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
@@ -48,6 +49,7 @@ ReactDOM.render(
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
+          <Route exact path="/faqs/:id?" component={FAQ} />
           <Route component={NotFound} />
         </Switch>
 

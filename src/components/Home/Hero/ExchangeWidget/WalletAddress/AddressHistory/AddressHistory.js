@@ -19,7 +19,7 @@ class AddressHistory extends Component {
     this.props.setCoin(depositCoin, receiveCoin);
     this.props.setAddress(address);
 
-    window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${coin} - ${address}`});
+    window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${receiveCoin} - ${address}`});
   }
 
   orderClick(event, orderId) {
@@ -70,7 +70,7 @@ class AddressHistory extends Component {
             <div className={`${styles.separator}`}></div>
             { this.props.history && this.props.history.length > this.state.showCount ?
             <div className={`${styles.showMore}`}>
-              <a onMouseDown={(event) => this.showMore(event)}>${t('showmore')}</a>
+              <a onMouseDown={(event) => this.showMore(event)}>{t('viewmore')}</a>
             </div> : null }
           </div>
         )}

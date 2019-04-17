@@ -73,18 +73,62 @@
   }
 }
 
+.expansion-button {
+  display: block;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.expansion-button.expansion-button-mobile {
+  display: none;
+
+  @media (max-width: 407px) {
+    display: block;
+  }
+}
+
 .address {
   float: left;
-  overflow-y: auto;
   max-width: calc(100% - 30px);
-  margin-right: 10px;
+}
+
+.address h6 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.row {
+  width: 100%;
+}
+
+.address-left {
+  width: 100%;
+  float: left;
+  word-wrap: break-word;
+}
+
+.address-left.deposit {
+  max-width: 96%;
+}
+
+.address-left.address-hidden {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.copybuttonright {
+  width: 4%;
+  float: right;
 }
 
 .copy {
   position: relative;
-  top: -2px;
   color: $gray;
   cursor: pointer;
+  right: -5px;
 }
 
 .coin {
