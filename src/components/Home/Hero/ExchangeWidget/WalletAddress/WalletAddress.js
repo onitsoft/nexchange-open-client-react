@@ -53,9 +53,7 @@ class WalletAddress extends Component {
 
   handleChange(event) {
     const address = event.target.value.replace(new RegExp(/ /g, 'g'), '');
-    let showHistory = false;
-    if(!address) { showHistory = true; }
-    this.setState({ address, showHistory });
+    this.setState({ address });
     this.validate(address, this.props.selectedCoin[this.props.withdraw_coin]);
   }
 
@@ -82,10 +80,15 @@ class WalletAddress extends Component {
     }
 
     if(this.props.orderMode !== 'ORDER_BOOK') {
-      let orderHistory = localStorage['orderHistory']; 
       try {
+        let orderHistory = localStorage['orderHistory']; 
         //Most recent order for each address
         this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
+        if(!_.isEmpty(nextProps.wallet.address)){
+          this.orderHistory = _.filter(this.orderHistory, function(order) {
+            return order.withdraw_address.startsWith(nextProps.wallet.address); 
+          });
+        }
       } catch (e) {
         this.orderHistory = [];
       }
