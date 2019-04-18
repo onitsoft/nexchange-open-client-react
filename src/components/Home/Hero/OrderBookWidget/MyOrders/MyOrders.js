@@ -45,29 +45,35 @@ class MyOrders extends PureComponent {
   }
 
   fetchMyOrders = () => {
-    if(localStorage.limitOrderHistory){
-        const limitOrderHistory = localStorage.limitOrderHistory.split(",");
-        let orders = [];
-        limitOrderHistory.forEach((orderId) => {
-            const url = `${config.API_BASE_URL}/limit_order/${orderId.replace(/"/g,"")}/`;
-            const request = axios.get(url);
-            request
-            .then(res => {
-                orders.push(res.data);
-                orders = _.sortBy(orders, function(order) {
-                  return new Date(order.created_on);
-                }).reverse();
-                if(orders.length === limitOrderHistory.length){
-                    const orderBook = this.props.orderBook;
-                    orderBook.myOrders = orders;
-                    this.props.changeOrderBookValue(orderBook)
-                    this.setState({ loading: false });
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        });
+    if(localStorage.orderHistory){
+        try {
+          let orderHistory = localStorage['orderHistory'];
+          orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];          
+          const limitOrderHistory = _.filter(orderHistory, { 'mode': 'LIMIT' });
+          let orders = [];
+          limitOrderHistory.forEach((order) => {
+              const url = `${config.API_BASE_URL}/limit_order/${order.id.replace(/"/g,"")}/`;
+              const request = axios.get(url);
+              request
+              .then(res => {
+                  orders.push(res.data);
+                  orders = _.sortBy(orders, function(order) {
+                    return new Date(order.created_on);
+                  }).reverse();
+                  if(orders.length === limitOrderHistory.length){
+                      const orderBook = this.props.orderBook;
+                      orderBook.myOrders = orders;
+                      this.props.changeOrderBookValue(orderBook)
+                      this.setState({ loading: false });
+                  }
+              })
+              .catch(error => {
+                  console.log(error);
+              });
+          });
+        } catch (e) {
+          this.orderHistory = [];
+        }
       }
   }
 

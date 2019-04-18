@@ -160,15 +160,30 @@ class OrderBookWidget extends Component {
 
         window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
 
-        //Store limit order history in local storage
-        let limitOrderHistory = localStorage['limitOrderHistory'];
-        if(!limitOrderHistory){
-          limitOrderHistory = response.data.unique_reference;
+        //Store order history in local storage
+        let newOrder = {
+          id: response.data.unique_reference,
+          mode: 'LIMIT',
+          order_type: this.props.orderBook.order_type,
+          base: this.props.selectedCoin.deposit,
+          amount_base: parseFloat(response.data.amount_base),
+          quote: this.props.selectedCoin.receive,
+          amount_quote: parseFloat(response.data.amount_quote),
+          limit_rate: parseFloat(response.data.limit_rate),
+          deposit_address: response.data.deposit_address ? response.data.deposit_address.address : '',
+          withdraw_address: response.data.withdraw_address ? response.data.withdraw_address.address : '',
+          created_at: new Date()
+        }
+
+        let orderHistory = localStorage['orderHistory'];
+        if(!orderHistory){
+          orderHistory = [newOrder];
         }
         else {
-          limitOrderHistory += `,${response.data.unique_reference}`;
+          orderHistory = JSON.parse(orderHistory);
+          orderHistory.push(newOrder);
         }
-        localStorage.setItem('limitOrderHistory', limitOrderHistory);
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
         this.setState({ showDepositModal: true })
       })
@@ -204,8 +219,8 @@ class OrderBookWidget extends Component {
                   <div className={styles.widget}>
                       <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                       <div className={`col-xs-12 ${styles['pair-selection']}`}>
-                        <CoinSelector type='receive' orderBook={true}/>
                         <CoinSelector type='deposit' orderBook={true}/>
+                        <CoinSelector type='receive' orderBook={true}/>
                       </div>
                       <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
                         <ul className='nav nav-tabs'>

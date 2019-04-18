@@ -8,9 +8,9 @@
     .list {
         display: flex;
         flex-direction: column;
-        max-height: 220px;
+        max-height: 230px;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-wrap: break-word;
 
         .list-item {
