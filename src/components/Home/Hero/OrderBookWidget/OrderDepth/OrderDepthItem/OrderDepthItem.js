@@ -53,7 +53,7 @@ class OrderDepthItem extends PureComponent {
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
             /* eslint max-len: ["error", { "code": 200 }] */ 
             title={myOrderSize ? `${this.props.side} ${myOrderSize} ${this.props.selectedCoin.receive} @ ${item.rate} ${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}` : null}>
-              {`${item.size.toFixed(9)}`}
+              {`${parseFloat(item.size)}`}
             </a>
             <a onClick={() => this.setOrderBookLimitRate(item.rate)} 
             className={`clickable ${myOrderSize ? 'bold' : '' }`}

@@ -204,8 +204,8 @@ class OrderBookWidget extends Component {
                   <div className={styles.widget}>
                       <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                       <div className={`col-xs-12 ${styles['pair-selection']}`}>
-                        <CoinSelector type='receive' orderBook={true}/>
                         <CoinSelector type='deposit' orderBook={true}/>
+                        <CoinSelector type='receive' orderBook={true}/>
                       </div>
                       <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
                         <ul className='nav nav-tabs'>
