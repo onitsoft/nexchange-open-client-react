@@ -1,40 +1,41 @@
 .container {
     display: flex;
+    padding: 0 !important;
 
     div {
         flex: 1;
         margin-bottom: 20px;
+        border-style: solid;
+        border-width: 0px 2px 2px 0px;
+        border-radius: 0px 0px 6px 4px;
+        text-align: center;
         cursor: pointer;
 
         h3 {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: bold;
             margin: 0;
-            color: $light-gray;
+            color: lighten( $grey, 30% );
         }
 
-        border-bottom: 2px solid $light-gray;
+        border-color: lighten( $grey, 30% );
         &.active {
             cursor: auto;
             box-shadow: 0px 10px 10px -14px;
-            border-bottom: 2px solid #000;
+            border-color: $grey;
             h3 {
-                color: #000;
+                color: $grey;
             }
         }
     }
 
     .basic {
-        margin-right: 20px;
-        text-align: right;
         @media (max-width: $screen-md-min) {
             margin-left: 10px
         }
     }
 
     .pro {
-        margin-left: 20px;
-        text-align: left;
         @media (max-width: $screen-md-min) {
             margin-right: 10px
         }
