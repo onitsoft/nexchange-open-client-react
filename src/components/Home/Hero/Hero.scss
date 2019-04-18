@@ -78,34 +78,6 @@
   }
 }
 
-.widget{
-  display: inline-block;
-
-  .btn-container {
-    margin-bottom: 10px;
-    width: 100%;
-    
-    .btn{
-      display: inline-grid;
-      width: 140px;
-      a {
-        font-size: 16px;
-        font-weight: bold;
-        padding: 10px 14px;
-        background-color: white;
-        color: $black;
-        border-radius: 5px;
-        text-decoration: none;
-        cursor: pointer;  
-        
-        &:hover {
-          background-color: $light-gray;
-        }
-      }
-    }
-  }
-}
-
 @media (min-width: $screen-xs-min) {
 }
 @media (min-width: $screen-ms-min) {

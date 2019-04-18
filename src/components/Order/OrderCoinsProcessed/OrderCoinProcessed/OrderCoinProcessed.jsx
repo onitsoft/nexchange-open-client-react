@@ -125,13 +125,14 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length > 40)
+      this.state.address != null && (this.state.address.length >= 40)
       );
   }
 
   renderExpandButton() {
     let renderedExandButton;
     renderedExandButton = null;
+
     if (this.addressIsTooLong() || this.hasAddressId()) {
       renderedExandButton =
         <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
