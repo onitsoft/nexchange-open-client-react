@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet, selectCoin, fetchPrice } from 'Actions/index.js';
 import validateWalletAddress from 'Utils/validateWalletAddress';
-import AddressHistory from './AddressHistory/AddressHistory';
 import styles from './WalletAddress.scss';
+import AddressHistory from './AddressHistory/AddressHistory';
 import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
@@ -108,24 +108,27 @@ class WalletAddress extends Component {
     this.props.button.focus();
   }
 
-  setCoin(depositCoin, receiveCoin) {
-    //Select coin
-    this.props.selectCoin({
-      ...this.props.selectedCoin,
-      ['deposit']: depositCoin,
-      ['receive']: receiveCoin,
-    }, this.props.pairs);
+  setCoin(depositCoin, receiveCoin) {   
+    if(!this.props.selectedCoin.selectedByUser) {
+      //Select coin
+      this.props.selectCoin({
+        ...this.props.selectedCoin,
+        deposit: depositCoin,
+        receive: receiveCoin,
+        selectedByUser: false
+      }, this.props.pairs);
 
-    //Update quote value
-    const pair = `${receiveCoin}${depositCoin}`;
-    const data = {
-      pair,
-      lastEdited: 'receive',
-    };
+      //Update quote value
+      const pair = `${receiveCoin}${depositCoin}`;
+      const data = {
+        pair,
+        lastEdited: 'receive',
+      };
 
-    data['deposit'] = receiveCoin;
-    data['receive'] = depositCoin;
-    this.props.fetchPrice(data);
+      data['deposit'] = receiveCoin;
+      data['receive'] = depositCoin;
+      this.props.fetchPrice(data);
+    }
   }
 
   render() {
@@ -145,7 +148,7 @@ class WalletAddress extends Component {
                 onBlur={this.handleBlur}
                 value={this.state.address}
                 autoComplete="off"
-                autoFocus={this.props.orderMode === 'ORDER_BOOK' ? 'false' : 'true'}
+                autoFocus={this.props.orderMode === 'ORDER_BOOK' ? false : true}
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
               {this.state.showHistory ?

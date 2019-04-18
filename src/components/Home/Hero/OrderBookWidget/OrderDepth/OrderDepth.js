@@ -1,6 +1,4 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 
 import OrderDepthItem from './OrderDepthItem/OrderDepthItem';
@@ -43,10 +41,4 @@ class OrderDepth extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ }) => ({ });
-const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(OrderDepth);
+export default OrderDepth;

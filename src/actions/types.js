@@ -1,5 +1,8 @@
 export const ERROR_ALERT = 'ERROR_ALERT';
 export const SET_WALLET = 'SET_WALLET';
+export const SET_DESTINATION_TAG = 'SET_DESTINATION_TAG';
+export const SET_PAYMENT_ID = 'SET_PAYMENT_ID';
+export const SET_MEMO = 'SET_MEMO';
 export const COIN_SELECTED = 'COIN_SELECTED';
 export const COINS_INFO = 'COINS_INFO';
 export const PRICE_FETCHED = 'PRICE_FETCHED';

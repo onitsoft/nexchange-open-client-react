@@ -26,6 +26,21 @@ export const selectCoin = (selectedCoins, pairs) => dispatch => {
     },
   });
 };
+export const setDestinationTag = payload => ({
+  type: types.SET_DESTINATION_TAG,
+  payload,
+});
+
+export const setPaymentId = payload => ({
+  type: types.SET_PAYMENT_ID,
+  payload,
+});
+
+export const setMemo = payload => ({
+  type: types.SET_MEMO,
+  payload,
+});
+
 
 export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;
@@ -260,6 +275,7 @@ export const fetchPairs = () => dispatch => {
             receive: receiveCoin,
           },
           lastSelected: 'deposit',
+          selectedByUser: false
         })
       );
     })
