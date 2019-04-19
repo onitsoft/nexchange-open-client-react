@@ -27,11 +27,12 @@ class DepositModal extends PureComponent {
   }
 
   render() {
-    if(this.state.loading) {
+    const order = this.props.order;
+
+    if(this.state.loading || !order || !order.deposit_address) {
       return (<div></div>);
     }
     
-    const order = this.props.order;
     return (
       <I18n ns="translations">
         {t => (

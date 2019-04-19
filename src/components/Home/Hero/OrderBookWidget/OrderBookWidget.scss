@@ -59,8 +59,11 @@
   }
 
   .btn {
-    width: 200px;
-    float: right;
+    width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      width: 200px;
+    }
 
     &.btn-buy {
       background-color: $green;
