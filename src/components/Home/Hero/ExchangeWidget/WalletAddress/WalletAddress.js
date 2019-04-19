@@ -112,7 +112,9 @@ class WalletAddress extends Component {
   }
 
   setCoin(depositCoin, receiveCoin) {   
-    if(!this.props.selectedCoin.selectedByUser) {
+    if(!this.props.selectedCoin.selectedByUser &&
+      depositCoin != this.props.selectedCoin.deposit &&
+      receiveCoin != this.props.selectedCoin.receive) {
       //Select coin
       this.props.selectCoin({
         ...this.props.selectedCoin,
