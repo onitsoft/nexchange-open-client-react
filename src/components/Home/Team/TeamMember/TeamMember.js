@@ -22,7 +22,7 @@ const TeamMember = props => {
     <div className="col-xs-12 col-ms-6 col-sm-4">
       <div className={styles.member}>
         <div className={styles.profile}>
-          <img src={require(`Img/team/${props.id}.jpg`)} alt={`${props.name} profile`} />
+          <img src={`Img/team/${props.id}.jpg`} alt={`${props.name} profile`} />
         </div>
 
         <h3 className={styles.name}>{props.name}</h3>
