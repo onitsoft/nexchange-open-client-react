@@ -96,15 +96,16 @@ describe('actions', () => {
   it('selectCoin', () => {
     const payload = 'payload';
     const pairs = 'pairs';
-    const expectedAction = {
+    const expectedActions = [{
       type: types.COIN_SELECTED,
       payload: {
         selectedCoins: payload,
         pairs: pairs
       },
-    };
+    }];
 
-    expect(selectCoin('payload','pairs')).toEqual(expectedAction);
+    store.dispatch(selectCoin('payload','pairs'));
+    expect(store.getActions()).toEqual(expectedActions);
   });
 
   it('setOrder', () => {
@@ -380,12 +381,8 @@ describe('actions', () => {
 
     const expectedActions = [
       {
+        payload: { show: false, type: 'INVALID_AMOUNT' },
         type: types.ERROR_ALERT,
-        payload: {
-          message: mockData.detail,
-          show: true,
-          type: 'INVALID_AMOUNT',
-        },
       },
       {
         type: types.PRICE_FETCHED,
@@ -398,6 +395,14 @@ describe('actions', () => {
           min_amount_base: mockData.min_amount_base,
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'deposit',
+        },
+      },
+      {
+        type: types.ERROR_ALERT,
+        payload: {
+          message: mockData.detail,
+          show: true,
+          type: 'INVALID_AMOUNT',
         },
       },
     ];
@@ -416,6 +421,10 @@ describe('actions', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400);
 
     const expectedActions = [
+      {
+        type: types.ERROR_ALERT,
+        payload: { show: false, type: 'INVALID_AMOUNT' },
+      },
       {
         type: types.PRICE_FETCHED,
         payload: {
