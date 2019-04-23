@@ -228,7 +228,7 @@ export const fetchPairs = () => dispatch => {
       });
 
       let depositCoin, receiveCoin;
-      const coinsFromUrlParams = () => {
+      const coinsFromUrlParams = () => {        
         return new Promise((resolve, reject) => {
           axios
             .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
@@ -343,7 +343,7 @@ export const setUserEmail = formData => async dispatch => {
   return request
     .then(res => {
       if (!window.$crisp.get('user:email')) {
-        window.$crisp.push(['set', 'user:email', [email]]);
+        window.$crisp.push(['set', 'user:email', [payload.email]]);
       }
 
       dispatch({
@@ -355,7 +355,7 @@ export const setUserEmail = formData => async dispatch => {
         },
       });
     })
-    .catch(() => {
+    .catch((e) => {
       let errorMessage = i18n.t('generalterms.formfailed');
 
       dispatch({

@@ -95,14 +95,16 @@ describe('actions', () => {
 
   it('selectCoin', () => {
     const payload = 'payload';
+    const pairs = 'pairs';
     const expectedAction = {
       type: types.COIN_SELECTED,
       payload: {
         selectedCoins: payload,
+        pairs: pairs
       },
     };
 
-    expect(selectCoin('payload')).toEqual(expectedAction);
+    expect(selectCoin('payload','pairs')).toEqual(expectedAction);
   });
 
   it('setOrder', () => {
@@ -378,6 +380,14 @@ describe('actions', () => {
 
     const expectedActions = [
       {
+        type: types.ERROR_ALERT,
+        payload: {
+          message: mockData.detail,
+          show: true,
+          type: 'INVALID_AMOUNT',
+        },
+      },
+      {
         type: types.PRICE_FETCHED,
         payload: {
           pair: 'ETHBTC',
@@ -388,14 +398,6 @@ describe('actions', () => {
           min_amount_base: mockData.min_amount_base,
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'deposit',
-        },
-      },
-      {
-        type: types.ERROR_ALERT,
-        payload: {
-          message: mockData.detail,
-          show: true,
-          type: 'INVALID_AMOUNT',
         },
       },
     ];
@@ -466,6 +468,14 @@ describe('actions', () => {
           min_amount_base: mockData.min_amount_base,
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'receive',
+        },
+      },
+      {
+        type: types.ERROR_ALERT,
+        payload: {
+          message: mockData.detail,
+          show: true,
+          type: 'INVALID_AMOUNT',
         },
       },
     ];
