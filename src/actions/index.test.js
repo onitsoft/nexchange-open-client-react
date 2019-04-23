@@ -467,6 +467,13 @@ describe('actions', () => {
 
     const expectedActions = [
       {
+        type: types.ERROR_ALERT,
+        payload: {
+          show: false,
+          type: 'INVALID_AMOUNT',
+        },
+      },
+      {
         type: types.PRICE_FETCHED,
         payload: {
           pair: 'ETHBTC',
