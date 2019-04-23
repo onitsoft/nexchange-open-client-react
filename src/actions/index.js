@@ -228,15 +228,12 @@ export const fetchPairs = () => dispatch => {
       });
 
       let depositCoin, receiveCoin;
-      const coinsFromUrlParams = () => {        
+      const coinsFromUrlParams = () => { 
         return new Promise((resolve, reject) => {
           axios
             .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
             .then(res => resolve(res.data))
-            .catch( /* istanbul ignore next */ err => console.log(err))
-            .then(function(){
-              resolve(pickRandomPair());
-              });;
+            .catch((err) => {resolve(pickRandomPair());});
         });
       };
 
@@ -265,7 +262,6 @@ export const fetchPairs = () => dispatch => {
         }
       };
       await pickCoins();
-
       dispatch(
         selectCoin({
           deposit: depositCoin,

@@ -550,10 +550,10 @@ describe('actions', () => {
       },
       {
         type: types.COIN_SELECTED,
-        payload: { selectedCoins: { deposit: 'BTC', lastSelected: 'deposit', prev: { deposit: 'BTC', receive: 'ETH' }, receive: 'ETH' } },
+        payload: { selectedCoins: { deposit: 'BTC', receive: 'ETH', lastSelected: 'deposit', prev: { deposit: 'BTC', receive: 'ETH' }, selectedByUser: false } },
       },
     ];
-
+    
     return store.dispatch(fetchPairs()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
