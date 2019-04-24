@@ -40,12 +40,6 @@ class ExchangeWidget extends Component {
     clearTimeout(this.timeout);
   }
 
-  componentDidMount() {
-    if(this.walletInputEl) {
-      this.walletInputEl.focus();
-    }
-  }
-
   placeOrder() {
     if (!this.props.wallet.valid) {
       if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
