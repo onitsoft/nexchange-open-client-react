@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
@@ -148,8 +149,12 @@ class OrderBookWidget extends Component {
     axios
       .post(`${config.API_BASE_URL}/limit_order/`, data)
       .then(response => {
-        
         this.props.setOrder(response.data);
+        this.setState({
+          orderRef: response.data.unique_reference,
+          orderPlaced: true,
+          loading: false,
+        });
 
 
         if (response.data.token) {
@@ -202,12 +207,14 @@ class OrderBookWidget extends Component {
           type: 'PLACE_ORDER',
         });
 
-        this.setState({ loading: false });
+        this.setState({ orderPlaced: false, loading: false });
       });
   }
 
 
   render() {
+    if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
+
     const order_type = this.props.orderBook.order_type;
     return (
       <I18n ns='translations'>

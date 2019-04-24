@@ -81,22 +81,24 @@ class LimitOrderForm extends PureComponent {
                 autoComplete="off"
                 placeholder={`Limit Rate (${this.props.selectedCoin.deposit})`}              
               />
+              <div className={styles['values-preview-container']}>
               {this.state.quantity && this.state.limit_rate ?
-              <div className={styles['values-preview']}>
-                <span>
-                  {`Deposit: `}
-                  {this.props.orderBook.order_type === 'BUY' 
-                  ?`${(parseFloat((this.state.quantity)*parseFloat(this.state.limit_rate)))} ${this.props.selectedCoin.deposit}` 
-                  : `${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}`}
-                </span>
-                <span>
-                  {`Receive: `}
-                  {this.props.orderBook.order_type === 'BUY' 
-                  ?`${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}` 
-                  : `${parseFloat((this.state.quantity*this.state.limit_rate))} ${this.props.selectedCoin.deposit}`}
-                </span>
-              </div>
+                <div className={styles['values-preview']}>
+                  <span>
+                    {`Deposit: `}
+                    {this.props.orderBook.order_type === 'BUY' 
+                    ?`${(parseFloat((this.state.quantity)*parseFloat(this.state.limit_rate)))} ${this.props.selectedCoin.deposit}` 
+                    : `${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}`}
+                  </span>
+                  <span>
+                    {`Receive: `}
+                    {this.props.orderBook.order_type === 'BUY' 
+                    ?`${parseFloat(this.state.quantity)} ${this.props.selectedCoin.receive}` 
+                    : `${parseFloat((this.state.quantity*this.state.limit_rate))} ${this.props.selectedCoin.deposit}`}
+                  </span>
+                </div>
               : null}
+              </div>
             </form>    
           </div>
         )}

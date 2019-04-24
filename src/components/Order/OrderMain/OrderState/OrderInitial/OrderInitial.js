@@ -42,7 +42,7 @@ class OrderInitial extends Component {
   }
 
   render() {
-    if (this.state.time < 0) {
+  if (!this.props.isLimitOrder && this.state.time < 0) {
       return <OrderExpired {...this.props} />;
     } else if (isFiatOrder(this.props.order)) {
       return <OrderInitialFiat time={this.state.time} {...this.props} />;

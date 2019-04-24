@@ -299,7 +299,23 @@ export const fetchOrder = orderId => async dispatch => {
       if (error.response && error.response.status === 429) {
         dispatch(setOrder(429));
       } else if (error.response) {
-        dispatch(setOrder(404));
+        //If order ref not found in /orders, search in /limit_order
+        const urlLimitOrder = `${config.API_BASE_URL}/limit_order/${orderId}/`;
+        const requestLimitOrder = axios.get(urlLimitOrder);
+      
+        return requestLimitOrder
+        .then(res => {
+          const order = res.data;
+          order.isLimitOrder = true;
+          dispatch(setOrder(order));
+        })
+        .catch(error => {
+          if (error.response && error.response.status === 429) {
+            dispatch(setOrder(429));
+          } else if (error.response) {
+            dispatch(setOrder(404));
+          }
+        });
       }
     });
 };
