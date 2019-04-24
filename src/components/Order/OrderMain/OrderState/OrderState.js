@@ -13,7 +13,7 @@ import OrderPaidFiat from './OrderPaidFiat/OrderPaidFiat';
 import OrderPaymentCrypto from './OrderPaymentCrypto/OrderPaymentCrypto';
 import OrderPaidCrypto from './OrderPaidCrypto/OrderPaidCrypto';
 
-import STATUS_CODES from 'StatusCodes';
+import { STATUS_CODES } from 'StatusCodes';
 
 const OrderState = props => {
   switch (STATUS_CODES[props.order.status_name[0][0]]) {
