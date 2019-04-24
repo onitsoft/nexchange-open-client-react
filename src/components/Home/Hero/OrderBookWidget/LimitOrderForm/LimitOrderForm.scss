@@ -4,10 +4,12 @@
     font-size: 12px;
     font-weight: 400;
     color: #000000;
+    box-shadow: 0px 0px;
+    outline: none;
 }
 
 .values-preview-container {
-    height: 35px;
+    height: 22px;
     .values-preview {
         display: flex;
         flex-direction: column;

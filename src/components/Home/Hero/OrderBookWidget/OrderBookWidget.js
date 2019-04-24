@@ -230,12 +230,18 @@ class OrderBookWidget extends Component {
                         <CoinSelector type='receive' orderBook={true}/>
                       </div>
                       <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
-                        <ul className='nav nav-tabs'>
-                          <li className={`clickable ${order_type === 'BUY' ? 'active' : ''}`}>
-                            <a className={`${styles['nav-buy']}`} onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                        <ul className={`nav nav-tabs ${styles['tabs']}`} >
+                          <li>
+                            <a 
+                              className={`clickable ${order_type === 'BUY' ? `${styles['active']}` : ''}`} 
+                              onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                              {order_type === 'BUY' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
-                          <li className={`clickable ${order_type === 'SELL' ? 'active' : ''}`}>
-                            <a className={`${styles['nav-sell']}`} onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                          <li>
+                            <a 
+                              className={`clickable ${order_type === 'SELL' ? `${styles['active']}` : ''}`}
+                              onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                              {order_type === 'SELL' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
                         </ul>
                         <LimitOrderForm 
