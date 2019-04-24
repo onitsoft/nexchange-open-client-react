@@ -12,12 +12,12 @@ import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector'
 import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
 import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
-import DepositModal from './DepositModal/DepositModal';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
 import styles from './OrderBookWidget.scss';
 
+// import DepositModal from './DepositModal/DepositModal';
 
 class OrderBookWidget extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class OrderBookWidget extends Component {
 
     this.state = {
       loading: true,
-      showDepositModal: false
+      // showDepositModal: false
     };
 
     this.placeOrder = this.placeOrder.bind(this);
@@ -80,8 +80,8 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
-  openDepositModal = () => this.setState({ showDepositModal: true });
-  closeDepositModal = () => this.setState({ showDepositModal: false });
+  // openDepositModal = () => this.setState({ showDepositModal: true });
+  // closeDepositModal = () => this.setState({ showDepositModal: false });
 
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
@@ -190,7 +190,7 @@ class OrderBookWidget extends Component {
         }
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-        this.setState({ showDepositModal: true })
+        // this.setState({ showDepositModal: true })
       })
       .catch(error => {
         console.log('Error:', error);
@@ -262,7 +262,7 @@ class OrderBookWidget extends Component {
                     </div>
                   </div>
               </div>
-              <DepositModal show={this.state.showDepositModal} onClose={this.closeDepositModal} />
+              {/* <DepositModal show={this.state.showDepositModal} onClose={this.closeDepositModal} /> */}
             </div>
           </div>
         )}
