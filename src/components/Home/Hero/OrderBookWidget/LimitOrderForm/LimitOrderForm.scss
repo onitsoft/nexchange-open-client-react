@@ -4,8 +4,11 @@
     font-size: 12px;
     font-weight: 400;
     color: #000000;
-    box-shadow: 0px 0px;
-    outline: none;
+    box-shadow: 0px 0px !important;
+    -webkit-box-shadow: 0px 0px !important;
+    outline: 0;
+    border-color: transparent;
+    background-image: none;
 }
 
 .values-preview-container {

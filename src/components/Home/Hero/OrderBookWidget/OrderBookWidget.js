@@ -250,14 +250,16 @@ class OrderBookWidget extends Component {
                           limit_rate={this.state.limit_rate}
                          />
                         <WalletAddress withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
-                        <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
-                        ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
-                        onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
-                          {order_type === 'BUY' 
-                          ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
-                          : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
-                          }
-                        </button>
+                        <div className='col-xs-12'>
+                          <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
+                          ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                          onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
+                            {order_type === 'BUY' 
+                            ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
+                            : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
+                            }
+                          </button>
+                        </div>
                       </div>
                       <OrderDepth 
                         selectedCoins={this.props.selectedCoin}
