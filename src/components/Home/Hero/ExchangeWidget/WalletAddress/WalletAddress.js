@@ -162,7 +162,6 @@ class WalletAddress extends Component {
                 onBlur={this.handleBlur}
                 value={this.state.address}
                 autoComplete="off"
-                autoFocus={this.props.orderMode === 'ORDER_BOOK' ? false : true}
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
               {this.state.showHistory ?
