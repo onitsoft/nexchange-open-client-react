@@ -249,7 +249,7 @@
     "bookstatus1": "1. Awaiting deposit",
     "bookstatus11": "In this step we are waiting for your deposit.",
     "bookstatus2": "2. Awaiting to be filled",
-    "bookstatus21": "We received your funds and your order is on open the orderbook wating to be filled",
+    "bookstatus21": "We received your funds and your order is on open and wating to be filled",
     "bookstatus3": "3. Order filled",
     "bookstatus31": "Your order was filled and the funds have been transfered to you",
     "success1": "Order success",

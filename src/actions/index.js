@@ -303,7 +303,7 @@ export const fetchOrder = orderId => async dispatch => {
       if (error.response && error.response.status === 429) {
         dispatch(setOrder(429));
       } else if (error.response) {
-        //If order not found, try to find limit order
+        //If order ref not found in /orders, search in /limit_order
         const urlLimitOrder = `${config.API_BASE_URL}/limit_order/${orderId}/`;
         const requestLimitOrder = axios.get(urlLimitOrder);
       

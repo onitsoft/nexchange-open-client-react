@@ -6,12 +6,15 @@
     color: #000000;
 }
 
-.values-preview {
-    display: flex;
-    flex-direction: column;
-    span {
-        flex: 1;
-        color: $grey;
-        font-size: 12px;
+.values-preview-container {
+    height: 35px;
+    .values-preview {
+        display: flex;
+        flex-direction: column;
+        span {
+            flex: 1;
+            color: $grey;
+            font-size: 12px;
+        }
     }
 }

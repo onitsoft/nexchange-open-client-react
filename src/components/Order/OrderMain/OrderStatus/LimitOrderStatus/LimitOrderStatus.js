@@ -8,8 +8,6 @@ import styles from '../OrderStatus.scss';
 import { I18n } from 'react-i18next';
 
 const LimitOrderStatus = props => {  
-  console.log("hereeeeeeeeeee");
-  
   return (
     <I18n ns="translations">
       {t => (

@@ -59,12 +59,13 @@ class OrderInitial extends Component {
             </div>
 
             <div className={styles.details}>
+              { !this.props.isLimitOrder ?
               <h3>
                 {t('order.initial1')}:{' '}
                 <span className={styles.time}>
                   <b>{this.props.time}</b>
                 </span>
-              </h3>
+              </h3> : null }
 
               <h4>
                 {t('order.initial2')}{' '}
