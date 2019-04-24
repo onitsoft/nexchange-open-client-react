@@ -381,7 +381,7 @@ export const fetchOrderBook = payload => dispatch => {
   const orderBook = payload.orderBook;
 
   if(!payload.pair){
-    return dispatch({
+    dispatch({
       type: types.ORDER_BOOK_DATA_FETCHED,
       orderBook
     });
@@ -395,7 +395,7 @@ export const fetchOrderBook = payload => dispatch => {
   const request = axios.get(url);
   let data = [];
   const getData = () => new Promise((resolve, reject) => {
-    request
+   return request
     .then(result => { 
       data = data.concat(result.data.results) 
       if (result.data.next != null) {
