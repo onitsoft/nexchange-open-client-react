@@ -1,5 +1,19 @@
 .container {
+    margin-top: 15px;
     max-height: 400px;
+    border: 1px solid $gray;
+    padding: 0 !important;
+
+    .heading {
+        text-align: center;
+        padding: 8px 0px;
+        background-color: lighten( $gray, 30);
+        h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
 
     .header {
         display: flex;

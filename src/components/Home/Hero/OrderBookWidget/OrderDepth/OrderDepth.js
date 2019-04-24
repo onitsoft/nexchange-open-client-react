@@ -27,13 +27,16 @@ class OrderDepth extends PureComponent {
       <I18n ns="translations">
         {t => (
          <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.container}`}>
-          <div className={`${styles.header}`}>
-            <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
-            <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
+          <div className={`${styles.heading}`}><h4>Order Book</h4></div>
+          <div className={`${styles.content}`}>
+            <div className={`${styles.header}`}>
+              <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
+              <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
+            </div>
+              {_.isEmpty(sellDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : sellDepth}
+              <div className={styles.separator}></div>
+              {_.isEmpty(buyDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : buyDepth}
           </div>
-            {_.isEmpty(sellDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : sellDepth}
-            <div className={styles.separator}></div>
-            {_.isEmpty(buyDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : buyDepth}
         </div>
         )}
       </I18n>
