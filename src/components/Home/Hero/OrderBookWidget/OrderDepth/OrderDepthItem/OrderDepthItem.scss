@@ -1,8 +1,10 @@
 .container {
     display: flex;
-
+    padding: 4px 0px;
+    margin: 2px 0px;
     a {
        flex: 1; 
+       font-weight: bold;
     }
 }
 

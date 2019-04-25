@@ -15,21 +15,23 @@
         }
     }
 
-    .header {
-        display: flex;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        font-size: 16px;
-        span{
-            flex: 1;
+    .content {
+        padding: 10px;
+        .spread {
+            span {
+                font-weight: bold;
+            }
         }
-    }
-
-    .separator {
-        height: 1px;
-        margin: 5px 0px;
-        background-color: $gray;
+        .header {
+            padding: 5px 0px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: $gray;
+            span{
+                flex: 1;
+            }
+        }
     }
 }
