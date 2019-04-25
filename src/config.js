@@ -11,6 +11,7 @@ const config = {
   PRICE_COMPARISON_INTERVAL: 60000,
   REFERRAL_CODE: null,
   KYC_DETAILS_FETCH_INTERVAL: 20000,
+  ADVANCED_MODE_ENABLED: true
 };
 
 export default config;
