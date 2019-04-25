@@ -1,7 +1,7 @@
 .container {
     margin-top: 15px;
     max-height: 400px;
-    border: 1px solid $gray;
+    border: 1px solid lighten( $gray, 30);
     padding: 0 !important;
 
     .heading {
