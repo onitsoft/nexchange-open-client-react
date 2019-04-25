@@ -12,11 +12,13 @@ class OrderModeSwitch extends Component {
 
                 <div className={`col-xs-12`}>
                   <div className={`col-xs-12 col-sm-12 col-md-4 col-lg-3 ${styles.container}`}>
-                    <div className={`${styles.basic} ${this.props.orderMode === 'BASIC' ? styles.active : ''}`}>
-                        <h3 onClick={() => this.props.changeOrderMode('BASIC')}>Simple</h3>
+                    <div className={`${styles.basic} ${this.props.orderMode === 'BASIC' ? styles.active : ''}`}
+                      onClick={() => this.props.changeOrderMode('BASIC')}>
+                        <h3>Simple</h3>
                     </div>
-                    <div className={`${styles.pro} ${this.props.orderMode === 'ORDER_BOOK' ? styles.active : ''}`}>
-                        <h3 onClick={() => this.props.changeOrderMode('ORDER_BOOK')}>Advanced</h3>
+                    <div className={`${styles.pro} ${this.props.orderMode === 'ORDER_BOOK' ? styles.active : ''}`}
+                      onClick={() => this.props.changeOrderMode('ORDER_BOOK')}>
+                        <h3>Advanced</h3>
                     </div>
                   </div>
                 </div>
