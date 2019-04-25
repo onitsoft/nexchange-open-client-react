@@ -7,16 +7,25 @@ import styles from './OrderDepth.scss';
 
 class OrderDepth extends PureComponent {
   render() {
+    const depth = this.props.sellDepth.concat(this.props.buyDepth)
+    let maxSize;
+    if(!_.isEmpty(depth)) {
+      maxSize = _.maxBy(depth, function(depthItem) {
+        return depthItem.size;
+      }).size;
+    }
+
+
     let sellDepth = [];
     if(!_.isEmpty(this.props.sellDepth)){
       sellDepth = this.props.sellDepth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL'/>;
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL' maxSize={maxSize}/>;
       });
     }
     let buyDepth = [];
     if(!_.isEmpty(this.props.buyDepth)){
       buyDepth = this.props.buyDepth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY'/>;
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY' maxSize={maxSize}/>;
       });
     }
 
@@ -31,7 +40,8 @@ class OrderDepth extends PureComponent {
     return (
       <I18n ns="translations">
         {t => (
-         <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.container}`}>
+        <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.wrapper}`}>
+         <div className={`${styles.container}`}>
           <div className={`${styles.heading}`}><h4>Order Book</h4></div>
           <div className={`${styles.content}`}>
             <div className={`${styles.spread}`}><span>{`Spread ${spreadValue}%`}</span></div>
@@ -43,6 +53,7 @@ class OrderDepth extends PureComponent {
               {_.isEmpty(buyDepth) ? <span>{'Currently there are no buy orders for this market..'}</span> : buyDepth}
           </div>
         </div>
+      </div>
         )}
       </I18n>
     );
