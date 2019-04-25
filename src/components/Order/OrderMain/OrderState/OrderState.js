@@ -13,9 +13,6 @@ import OrderPaidFiat from './OrderPaidFiat/OrderPaidFiat';
 import OrderPaymentCrypto from './OrderPaymentCrypto/OrderPaymentCrypto';
 import OrderPaidCrypto from './OrderPaidCrypto/OrderPaidCrypto';
 
-// import LimitOrderPayment from './LimitOrderPayment/LimitOrderPayment';
-// import LimitOrderPaid from './LimitOrderPaid/LimitOrderPaid';
-
 import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
 
 const OrderState = props => {

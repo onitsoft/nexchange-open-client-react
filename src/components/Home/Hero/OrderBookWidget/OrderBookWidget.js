@@ -12,7 +12,6 @@ import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector'
 import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';
 import OrderDepth from './OrderDepth/OrderDepth';
 import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
-import DepositModal from './DepositModal/DepositModal';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
@@ -25,7 +24,6 @@ class OrderBookWidget extends Component {
 
     this.state = {
       loading: true,
-      showDepositModal: false
     };
 
     this.placeOrder = this.placeOrder.bind(this);
@@ -80,8 +78,6 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
-  openDepositModal = () => this.setState({ showDepositModal: true });
-  closeDepositModal = () => this.setState({ showDepositModal: false });
 
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
@@ -190,7 +186,7 @@ class OrderBookWidget extends Component {
         }
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-        this.setState({ showDepositModal: true })
+        // this.setState({ showDepositModal: true })
       })
       .catch(error => {
         console.log('Error:', error);
@@ -225,17 +221,23 @@ class OrderBookWidget extends Component {
                 <div className='col-xs-12'>
                   <div className={styles.widget}>
                       <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
-                      <div className={`col-xs-12 ${styles['pair-selection']}`}>
-                        <CoinSelector type='deposit' orderBook={true}/>
-                        <CoinSelector type='receive' orderBook={true}/>
-                      </div>
                       <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
-                        <ul className='nav nav-tabs'>
-                          <li className={`clickable ${order_type === 'BUY' ? 'active' : ''}`}>
-                            <a className={`${styles['nav-buy']}`} onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                        <div className={`col-xs-12 ${styles['pair-selection']}`}>
+                          <CoinSelector type='deposit' orderBook={true}/>
+                          <CoinSelector type='receive' orderBook={true}/>
+                        </div>
+                        <ul className={`nav nav-tabs ${styles['tabs']}`} >
+                          <li>
+                            <a 
+                              className={`clickable ${order_type === 'BUY' ? `${styles['active']}` : ''}`} 
+                              onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                              {order_type === 'BUY' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
-                          <li className={`clickable ${order_type === 'SELL' ? 'active' : ''}`}>
-                            <a className={`${styles['nav-sell']}`} onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                          <li>
+                            <a 
+                              className={`clickable ${order_type === 'SELL' ? `${styles['active']}` : ''}`}
+                              onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                              {order_type === 'SELL' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
                         </ul>
                         <LimitOrderForm 
@@ -244,14 +246,16 @@ class OrderBookWidget extends Component {
                           limit_rate={this.state.limit_rate}
                          />
                         <WalletAddress withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
-                        <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
-                        ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
-                        onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
-                          {order_type === 'BUY' 
-                          ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
-                          : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
-                          }
-                        </button>
+                        <div className='col-xs-12'>
+                          <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
+                          ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                          onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
+                            {order_type === 'BUY' 
+                            ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
+                            : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
+                            }
+                          </button>
+                        </div>
                       </div>
                       <OrderDepth 
                         selectedCoins={this.props.selectedCoin}
@@ -262,7 +266,6 @@ class OrderBookWidget extends Component {
                     </div>
                   </div>
               </div>
-              <DepositModal show={this.state.showDepositModal} onClose={this.closeDepositModal} />
             </div>
           </div>
         )}
