@@ -6,6 +6,9 @@
     "email": "Email",
     "address": "Adresse",
     "youraddress": "Geben Sie Ihre {{selectedCoin}} Adresse ein",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Suchen",
     "submit": "Bestätigen"
   },
@@ -162,7 +165,8 @@
   },
   "order": {
     "enteraddress": "Geben Sie Ihre Wallet-Adresse ein",
-    "copy": "Adresse der Wallet kopiert!",
+    "copyaddress": "Adresse der Wallet kopiert!",
+    "copyaddressid": "{{addressIdType}} kopiert!",
     "reference": "Auftrag Referenz",
     "api": "Details Ihres Auftrages in unsere API",
     "repeat": "Bestellung wiederholen",
@@ -327,6 +331,11 @@
       "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
   },
   "faq": {
+    "heading1": "Häufig gestellte Fragen",
+    "heading2": "Hast du etwas im Sinn?",
+    "inputplaceholder": "Wonach suchen Sie?",
+    "notfound": "Wir haben nicht das gefunden, wonach Sie gesucht haben",
+    "openticket": "Supportticket öffnen",
     "ques1": "Wer sind Sie?",
     "ques2": "Was machen Sie?",
     "ques3": "Wie hoch ist Ihre Gebühr?",
@@ -413,5 +422,7 @@
     "try": "Probieren Sie",
     "novalid": "ist keine gültige",
     "providevalid": "Bitte benutzen Sie eine gültige"
-  }
+  },
+  "viewmore": "mehr sehen",
+  "to": "zu"
 }

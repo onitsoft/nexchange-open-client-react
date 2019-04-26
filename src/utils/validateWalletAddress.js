@@ -1,7 +1,7 @@
 export default (address, coin, errorCb, successCb) => {
   let rules = {
     BTC: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/,
-    LTC: /^[LM][1-9A-Za-z]{25,34}$/,
+    LTC: /^[LM3][a-km-zA-HJ-NP-Z1-9]{26,33}$/,
     ETH: /^0x[0-9a-fA-F]{40}$/,
     EOS: /^0x[0-9a-fA-F]{40}$/,
     BDG: /^0x[0-9a-fA-F]{40}$/,
@@ -22,10 +22,14 @@ export default (address, coin, errorCb, successCb) => {
     DOGE: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
     XVG: /^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$/,
     BCH: [/^([13][a-km-zA-HJ-NP-Z1-9]{25,34})$/, /^((bitcoincash:)?(q|p)[a-z0-9]{41})$/],
-    NANO: /^xrb\_[1|3][a-zA-Z\d]{59}$/,
+    NANO: /^xrb_[1|3][a-zA-Z\d]{59}$/,
     ZEC: /^t[1-9A-Za-z]{34}$/,
     USDT: /^1[1-9A-Za-z]{33}$/,
     XMR: /^[4|8][0-9a-zA-Z]{94}$/,
+    XRP: /^r[1-9A-Za-z][^lO0I]{25,34}$/,
+    XLM: /^G[1-9A-Z]{55}$/,
+    DASH: /^X[1-9A-HJ-NP-Za-km-z]{33}/,
+    NEO: /A[0-9a-zA-Z]{33}/,
   };
 
   const coinRules = rules[coin];

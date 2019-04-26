@@ -21,33 +21,5 @@
   ol {
     margin-bottom: 20px;
   }
-  .question-answer {
-    i {
-      font-size: 22px;
-      position: relative;
-      top: -2px;
-    }
-    hr {
-      margin: 0 0 20px 0;
-    }
-    .answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease-out;
-      &.active {
-        max-height: 1000px;
-        transition: max-height 0.33s ease-in;
-      }
-    }
-  }
-
-  @media (min-width: $screen-sm-min) {
-    h3 {
-      font-size: 30px;
-    }
-    .answer.active {
-      max-height: 500px;
-      transition: max-height 0.33s ease-in;
-    }
-  }
+ 
 }
