@@ -35,7 +35,7 @@ class Ellipse extends Component {
             transform: `translate(${this.state.top}px, ${this.state.left}px)`,
           }}
         >
-          <img src={require(`Img/ellipses/${this.props.coin}.svg`)} alt="LTC" />
+          <img src={`Img/ellipses/${this.props.coin}.svg`} alt="LTC" />
         </div>
       </div>
     );

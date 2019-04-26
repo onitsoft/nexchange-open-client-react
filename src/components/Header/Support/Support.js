@@ -106,7 +106,7 @@ class Support extends Component {
                 <div className="row">
                   <div className="col-xs-12 col-sm-6">
                     <h3>{t('support.2')}</h3>
-                    <p onClick={() => window.gtag('event', 'Support number click', {event_category: 'Support', event_label: ``})}>
+                    <div onClick={() => window.gtag('event', 'Support number click', {event_category: 'Support', event_label: ``})}>
                       <div className="hidden-xs hidden-sm">
                         {/*desktop link structure*/}
                         <a href="tel:+442030971920">+442030971920</a>
@@ -117,7 +117,7 @@ class Support extends Component {
                       </div>
                       <br />
                       {/*+16464612858 (US)*/}
-                    </p>
+                    </div>
                   </div>
 
                   <div className="col-xs-12 col-sm-6">

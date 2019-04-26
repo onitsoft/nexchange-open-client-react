@@ -88,20 +88,13 @@ class Header extends Component {
                 <ul className="nav navbar-nav navbar-right">
                   <li>
                     <Link onClick={() => this.closeNavbar()} to="/#about" className={styles.link}>
-                      <a>
                         {t('header.about')}
-                      </a>
                     </Link>
                   </li>
 
                   <li>
-                   <Link onClick={() => this.closeNavbar()} to="/faqs" className={styles.link}>
-                      <a
-                        href="#"
-                        data-test="faq-btn"
-                      >
+                   <Link onClick={() => this.closeNavbar()} to="/faqs" className={styles.link} data-test="faq-btn">
                         {t('header.faq')}
-                      </a>
                     </Link>
                   </li>
 
@@ -119,10 +112,8 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={styles.link}>
-                      <a data-test="compare-link">
+                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={styles.link} data-test="compare-link">
                         {t('header.compare')}
-                      </a>
                     </Link>
                   </li>
 
@@ -130,13 +121,9 @@ class Header extends Component {
                     <Link 
                       onClick={() => { this.closeNavbar();this.setState({ showSupportModal: true });}} 
                       className={styles.link}
-                      to='#'>
-                      <a
-                        href="javascript:void(0)"
-                        data-test="support-btn"
-                      >
+                      to='#'
+                      data-test="support-btn">
                         {t('header.support')}
-                      </a>
                     </Link>
                   </li>
 

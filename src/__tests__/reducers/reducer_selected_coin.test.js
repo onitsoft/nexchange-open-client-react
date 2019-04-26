@@ -10,6 +10,7 @@ describe('selected coin reducer', () => {
       receive: null,
     },
     lastSelected: 'deposit',
+    selectedByUser: false
   };
 
   it('should return the initial state', () => {
