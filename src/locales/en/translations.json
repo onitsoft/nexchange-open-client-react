@@ -2,7 +2,7 @@
   "generalterms": {
     "formsucess": "Your form has been successfully submitted. We'll get back to you shortly!",
     "formfailed": "Something went wrong during the form submission, please try again later.",
-    "email": "Email",
+    "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
     "search": "Search",
@@ -20,7 +20,8 @@
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
     "en": "English",
-    "de": "German"
+    "de": "German",
+    "ru": "Russian"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
@@ -29,7 +30,9 @@
   "exchangewidget": {
     "1": "GET STARTED",
     "2": "*Confirm & Place Order",
-    "3": "Current fee is 0.5%"
+    "3": "Current fee is 0.5%",
+    "min": "Min amount",
+    "max": "Max amount"
   },
   "recentorders": {
     "1": "Recent Orders",
@@ -119,6 +122,7 @@
     "presale": "Pre-sale starts in"
   },
   "faq": {
+    "inputplaceholder": "Search by keyword",
     "ques1": "Who are you?",
     "ques2": "What do you do?",
     "ques3": "What is your fee?",
@@ -263,9 +267,9 @@
       "tier": {
         "limit": "Tier limits reached, additional verification needed",
         "explanation":
-          "This is a one-time process, once verified you’ll be able to complete future purchases instantly until current verification tier limits are reached.",
+          "This is a one-time process. Once you are verified you will be able to complete future purchases instantly until current verification tier limits are reached.",
         "explanation2":
-          "This is a one-time process, once verified you’ll be able to complete future purchases for this withdrawal address instantly.",
+          "This is a one-time process. Once you are verified you will be able to complete future withdrawals to the whitelisted address instantly.",
         "selfie": "Selfie",
         "selfieexplanation":
           "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
@@ -299,7 +303,7 @@
       },
       "kyc": {
         "1": "Selfie with government issued ID",
-        "govSelfieDesc": "Please make a selfie (self portrait) with an ID in English (identity card, passport or drivers license) with a note that contains today's date and 'n.exchange' written beside it. This is required according to KYC AML/AFT regulations. This also helps us defeat fraud and protect our customers. ",
+        "govSelfieDesc": "Please upload a picture of yourself, a picture of your ID in English (the ID can be an identity card, passport or drivers license), and a note that contains today’s date and ‘n.exchange’ written next to it. This is required according to KYC AML/AFT regulations. This also helps us to fight fraud and to protect our customers.",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
         "21":
@@ -337,7 +341,7 @@
     "alt": "Get notified",
     "kycupdate": "KYC status updated for order",
     "email": "Enter your e-mail address",
-    "explanation": "If you would like to be notified about your order please enter your e-mail address below."
+    "explanation": "Add your email to join our referral program & get notified about the status of your transactions"
   },
   "referral": {
     "1": "Share this unique referral link with your friends to earn some coins!",
@@ -415,5 +419,7 @@
     "try": "Try",
     "novalid": "is no valid",
     "providevalid": "Please put valid"
-  }
+  },
+  "viewmore": "view more",
+  "to": "to"
 }
