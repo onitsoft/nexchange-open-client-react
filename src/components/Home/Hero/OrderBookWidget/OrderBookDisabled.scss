@@ -28,8 +28,6 @@
     }    
 
     .subscription {
-      margin-bottom: 230px;
-      margin-top: 140px;
       .heading {
         margin-top: 75px;
         text-align: center;
@@ -39,7 +37,7 @@
           font-size: 20px;
     
           @media (min-width: $screen-md-min) {
-            font-size: 36px;
+            font-size: 26px;
           }
         }
         h3 {

@@ -71,8 +71,10 @@ class OrderBookDisabled extends React.Component {
                         <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                         <div className={styles.subscription}>
                         <div className={styles.heading}>
-                            <h2>Advanced Mode is coming soon</h2>
-                            <h3>Be the first to know when it goes live</h3>
+                            <h2>n.exchange will soon feature the first multi-chain non custodial order book!</h2>
+                            {/* eslint max-len: ["error", { "code": 300 }] */}
+                            <h3>This unique technology will allow you to leverage limit orders and other advanced trading instruments while keeping the safety and simplicity you are familiar with.</h3>
+                            <h3>- Stay tuned</h3>
                         </div>
                         <form method="post" noValidate>
                             <div className="col-xs-12 col-ms-8 col-ms-push-2">
