@@ -38,8 +38,6 @@ class OrderBookDisabled extends React.Component {
             param: 'c',
           },
           (err, data) => {
-              console.log("err",err);
-              console.log("data",data);
             if (err) {
               this.setState({
                 status: 'error',
@@ -71,9 +69,10 @@ class OrderBookDisabled extends React.Component {
                     <div className='col-xs-12'>
                         <div className={styles.widget}>
                         <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
+                        <div className={styles.subscription}>
                         <div className={styles.heading}>
                             <h2>Advanced Mode is coming soon</h2>
-                            <h4>Be the first to know when it goes live</h4>
+                            <h3>Be the first to know when it goes live</h3>
                         </div>
                         <form method="post" noValidate>
                             <div className="col-xs-12 col-ms-8 col-ms-push-2">
@@ -103,6 +102,7 @@ class OrderBookDisabled extends React.Component {
                             </div>
                             </div>
                         </form>
+                        </div>
                          </div>
                         </div>
                     </div>
