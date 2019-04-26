@@ -25,4 +25,109 @@
         height: 450px;
         padding: 25px 55px;
     }    
+
+    .heading {
+      margin-top: 75px;
+      text-align: center;
+      h2 {
+        color: $blue;
+        font-weight: bold;
+        font-size: 25px;
+  
+        @media (min-width: $screen-md-min) {
+          font-size: 36px;
+        }
+      }
+      h3 {
+        font-weight: bold;
+        font-size: 14px;
+  
+        @media (min-width: $screen-md-min) {
+          font-size: 18px;
+        }
+      }
+    }
   }
+
+
+  .container {  
+    h2 {
+      margin: 0 0 6px 0;
+      font-size: 25px;
+  
+      @media (min-width: $screen-md-min) {
+        font-size: 36px;
+      }
+    }
+  
+    h3 {
+      margin: 0;
+      font-size: 14px;
+  
+      @media (min-width: $screen-md-min) {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .input.input.input.input {
+    margin-top: 40px;
+    padding: 0 0 15px 0;
+    font-size: 12px;
+  
+    @media (min-width: $screen-sm-min) {
+      margin-top: 55px;
+    }
+  
+    &::-webkit-input-placeholder {
+      font-size: 12px;
+    }
+  
+    &::-moz-placeholder {
+      font-size: 12px;
+    }
+  
+    &:-ms-input-placeholder {
+      font-size: 12px;
+    }
+  
+    &:-moz-placeholder {
+      font-size: 12px;
+    }
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  .btn.btn.btn {
+    @media (min-width: $screen-sm-min) {
+      position: absolute;
+      bottom: 22px;
+      right: 0;
+      margin: 0;
+      padding: 7px 15px;
+    }
+  }
+  
+  .message {
+    text-align: center;
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+  
+  .group {
+    @media (min-width: $screen-lg-min) {
+      padding: 0 100px;
+  
+      .btn.btn.btn {
+        right: 100px;
+      }
+    }
+  }
+  
