@@ -73,13 +73,13 @@ class MyOrders extends PureComponent {
                                   <div className={styles.coin}>
                                       <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
                                       <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
-                                      <span className={styles.amount}>{Math.round(parseFloat(order.amount_base) * 1000) / 1000}</span>
+                                      <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
                                     </div>
                                     <img src={arrow} className={styles.arrow} alt="Arrow" />
                                     <div className={styles.coin}>
                                       <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
                                       <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
-                                      <span className={styles.amount}>{Math.round(parseFloat(order.amount_quote) * 1000) / 1000}</span>
+                                      <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
                                     </div>
                                 </div>);
                             })}
