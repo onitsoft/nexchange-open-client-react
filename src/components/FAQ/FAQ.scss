@@ -30,7 +30,7 @@
   @media (min-width: $screen-md-min) {
     background-color: #01031e;
     background-image: url('../../img/ellipse.svg');
-    background-position: 130% 110%;
+    background-position: -135vh -83vh;
     background-size: 150%;
     background-repeat: no-repeat;
   }
@@ -52,9 +52,14 @@
     padding: 40px !important;
   }
 
-  .list {
-    height: 1000px;
-    overflow: auto;
+  .notfound {
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      cursor: pointer;
+    }
   }
   
   form {

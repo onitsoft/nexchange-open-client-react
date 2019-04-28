@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import moment from 'moment/min/moment-with-locales.min.js';
 import 'moment/locale/en-gb';
+import cx from 'classnames';
+
 import styles from './AddressHistory.scss';
 
 
@@ -11,7 +13,7 @@ class AddressHistory extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { showCount: DEFAULT_SHOW_COUNT };
+    this.state = { searchValue: '', showCount: DEFAULT_SHOW_COUNT };
   }
 
 
@@ -19,7 +21,7 @@ class AddressHistory extends Component {
     this.props.setCoin(depositCoin, receiveCoin);
     this.props.setAddress(address);
 
-    window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${coin} - ${address}`});
+    window.gtag('event', 'Set Address', {event_category: 'Order History', event_label: `${receiveCoin} - ${address}`});
   }
 
   orderClick(event, orderId) {
@@ -37,19 +39,64 @@ class AddressHistory extends Component {
     this.setState({showCount});
   }
 
+  handleChange(event) {
+    const searchValue = event.target.value;
+    this.setState({
+      searchValue
+    });
+  }
+
+  clear(){
+    this.setState({
+      searchValue: ''
+    }); 
+  }
+
+  filter(history) {
+    const searchValue = this.state.searchValue.toLowerCase();
+   
+    if(_.isEmpty(searchValue)) {
+      return history;
+    }
+    return _.filter(history, (order) => {
+      return (
+      order.id.toLowerCase().indexOf(searchValue) != -1 ||
+      order.withdraw_address.toLowerCase().indexOf(searchValue) != -1 ||
+      order.quote.toLowerCase().indexOf(searchValue) != -1 
+      );
+    })
+  }
 
   render() {
     if(_.isEmpty(this.props.history)) {
       return null;
     }
 
+    const history = this.filter(this.props.history);
     return (
       <I18n ns="translations">
         {(t, { i18n }) => (
           <div className={`${styles.container}`}>
-            <div className={`${styles.entryContainer}`}>
-              {this.props.history &&
-                this.props.history.slice(0,this.state.showCount).map((order, index) => (
+            <div className={`${styles['list-container']}`}>
+            <div className={styles['faq-search']} onSubmit={this.handleSubmit}>
+                <i className={`fas fa-search`} aria-hidden="true" />
+                <input
+                  type="text"
+                  placeholder={t('generalterms.search')}
+                  onChange={(e) => this.handleChange(e)}
+                  onMouseDown={() => this.props.dontFireOnBlur()}
+                  onBlur={() => this.props.fireBlur()}
+                  value={this.state.searchValue}
+                />
+                <i
+                  className={`material-icons ${this.state.searchValue ? cx(styles.clear, styles.active) : styles.clear}`}
+                  onClick={() => this.clear()}
+                >
+                  clear
+                </i>
+              </div>
+              {history &&
+                history.slice(0,this.state.showCount).map((order, index) => (
                   <div
                   className={`${styles.entry}`} key={index + order.withdraw_address}
                   onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
@@ -68,9 +115,9 @@ class AddressHistory extends Component {
               }
               </div>
             <div className={`${styles.separator}`}></div>
-            { this.props.history && this.props.history.length > this.state.showCount ?
+            { history && history.length > this.state.showCount ?
             <div className={`${styles.showMore}`}>
-              <a onMouseDown={(event) => this.showMore(event)}>${t('showmore')}</a>
+              <a onMouseDown={(event) => this.showMore(event)}>{t('viewmore')}</a>
             </div> : null }
           </div>
         )}

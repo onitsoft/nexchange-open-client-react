@@ -1626,3 +1626,4 @@ ShallowWrapper {
   },
 }
 `;
+exports[`OrderBookWidget renders correctly 1`] = `ShallowWrapper {}`;
