@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderInitialFiat renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <OrderInitial
+    order={
+      Object {
+        "amount_base": "2552.16055313",
+        "amount_btc": 0.0073735615,
+        "amount_eur": 45.850550783,
+        "amount_quote": "0.10000000",
+        "amount_quote_fee": 0,
+        "amount_usd": 53.536621369,
+        "created_on": "2028-05-28T06:58:57.591639Z",
+        "deposit_address": Object {
+          "address": "0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
+          "currency_code": "ETH",
+          "destination_tag": null,
+          "name": "",
+          "payment_id": null,
+          "type": "D",
+        },
+        "display_refund_address": false,
+        "from_default_rule": false,
+        "is_default_rule": true,
+        "kyc_deadline": null,
+        "pair": Object {
+          "base": Object {
+            "code": "BDG",
+            "has_enabled_pairs": true,
+            "has_enabled_pairs_for_test": true,
+            "is_base_of_enabled_pair": true,
+            "is_base_of_enabled_pair_for_test": true,
+            "is_crypto": true,
+            "is_quote_of_enabled_pair": false,
+            "is_quote_of_enabled_pair_for_test": true,
+            "maximal_amount": "20000.00000000",
+            "min_confirmations": 12,
+            "minimal_amount": "150.00000000",
+            "name": "BitDegree",
+            "withdrawal_fee": "75.00000000",
+          },
+          "fee_ask": 0.01,
+          "fee_bid": 0.02,
+          "name": "BDGETH",
+          "quote": Object {
+            "code": "ETH",
+            "has_enabled_pairs": true,
+            "has_enabled_pairs_for_test": true,
+            "is_base_of_enabled_pair": true,
+            "is_base_of_enabled_pair_for_test": true,
+            "is_crypto": true,
+            "is_quote_of_enabled_pair": true,
+            "is_quote_of_enabled_pair_for_test": true,
+            "maximal_amount": "100.00000000",
+            "min_confirmations": 12,
+            "minimal_amount": "0.01000000",
+            "name": "ethereum",
+            "withdrawal_fee": "0.00500000",
+          },
+        },
+        "payment_deadline": "2028-05-28T07:13:57.591639Z",
+        "payment_url": "",
+        "payment_window": 15,
+        "price": Object {
+          "rate": 0.0000380639089152,
+          "rate_btc": 0.00000303,
+          "rate_eur": 0.018793755,
+          "rate_usd": 0.02194424,
+        },
+        "referral_code": Array [
+          Object {
+            "code": "RP4NPIF82J9",
+            "created_on": "2028-04-13T09:43:24.645332Z",
+            "modified_on": "2028-04-13T09:43:24.645358Z",
+          },
+        ],
+        "status_name": Array [
+          Array [
+            11,
+            "INITIAL",
+          ],
+        ],
+        "transactions": Array [
+          Object {
+            "address_to": 10002,
+            "amount": "2552.16055313",
+            "confirmations": 14,
+            "created_on": "2028-05-28T07:03:56.147491Z",
+            "currency": "BDG",
+            "is_completed": true,
+            "is_verified": true,
+            "modified_on": "2028-05-28T07:06:54.960996Z",
+            "time": "2028-05-28T07:03:56.147342Z",
+            "tx_id": "0x9cc066410f55d62e826aff67c317b36b39d23e4d6d92b8f0606e95eea57c9402",
+            "type": "W",
+          },
+          Object {
+            "address_to": 15377,
+            "amount": "0.10000000",
+            "confirmations": 12,
+            "created_on": "2028-05-28T07:01:23.953715Z",
+            "currency": "ETH",
+            "is_completed": true,
+            "is_verified": true,
+            "modified_on": "2028-05-28T07:03:54.914540Z",
+            "time": "2028-05-28T07:01:23.953548Z",
+            "tx_id": "0xebb9bec93e1f1e9268193c468483f59a668f3cbc25d9aea3fcd38472c670d4da",
+            "type": "D",
+          },
+        ],
+        "unique_reference": "OV2O6C",
+        "user_provided_amount": 1,
+        "withdraw_address": Object {
+          "address": "0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E",
+          "currency_code": "BDG",
+          "destination_tag": null,
+          "name": "",
+          "payment_id": null,
+          "type": "W",
+        },
+        "withdrawal_fee": 75,
+        "withdrawal_fee_quote": 0.002841,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <I18n
+        ns="translations"
+      >
+        [Function]
+      </I18n>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": [Function],
+        "ns": "translations",
+      },
+      "ref": null,
+      "rendered": [Function],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <I18n
+          ns="translations"
+        >
+          [Function]
+        </I18n>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": [Function],
+          "ns": "translations",
+        },
+        "ref": null,
+        "rendered": [Function],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
