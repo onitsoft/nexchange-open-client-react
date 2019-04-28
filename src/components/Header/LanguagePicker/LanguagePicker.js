@@ -35,8 +35,8 @@ class LanguagePicker extends Component {
           <I18n ns="translations" key={lng}>
             {(t, { i18n }) => (
               <li key={lng}>
-               <Link to={`?lang=${lng.toLowerCase()}`}  replace={false}>
-                <span href={`?lang=${lng}`} className="selected" onClick={() => i18n.changeLanguage(`${lng}`)}>
+               <Link to={`?lang=${lng.toLowerCase()}`} onClick={() => i18n.changeLanguage(`${lng}`)}  replace={false}>
+                <span className="selected">
                   <img className="flag" src={`/img/flags/${lng.toUpperCase()}.svg`} alt={t(`header.${lng}`)} />
                   <span className="visible-xs-inline visible-ms-inline visible-lg-inline">{t(`header.${lng}`)}</span>
                 </span>

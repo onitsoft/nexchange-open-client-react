@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { fetchCoinDetails, fetchPairs, changeOrderMode } from 'Actions';
-
 import Hero from './Hero/Hero';
-import FAQ from 'Components/FAQ/FAQ';
 import About from './About/About';
 import Team from './Team/Team';
 import ICO from './ICO/ICO';
@@ -21,25 +19,20 @@ export class Home extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     // Detect coin change by link
-    if(this.props.location.search !== prevProps.location.search) {
+    const oldUrlParams = new URLSearchParams(prevProps.location.search);
+    const oldPairParam = oldUrlParams.get('pair');
+    const newUrlParams = new URLSearchParams(this.props.location.search);
+    const newPairParam = newUrlParams.get('pair');
+    if(newPairParam && newPairParam !== oldPairParam) {
         this.props.fetchCoinDetails();
         this.props.fetchPairs();
     }
   }
 
   render() {
-    let content = null;
-    switch (window.location.pathname.split('/')[1]) {
-      case 'faqs':
-        content = <FAQ />
-        break;
-      default:
-        content = <Hero {...this.props} />;
-        break;
-    }
     return (
       <div>
-        {content}
+        <Hero {...this.props} />
         <RecentOrders />
         <ICO />
         <Testimonials />

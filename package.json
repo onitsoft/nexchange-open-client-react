@@ -60,7 +60,7 @@
     "react-dom": "^16.8.6",
     "react-fa": "^5.0.0",
     "react-i18next": "^7.7.0",
-    "react-id-swiper": "^1.6.6",
+    "react-id-swiper": "^1.6.8",
     "react-loadable": "^5.4.0",
     "react-onclickoutside": "^6.7.1",
     "react-redux": "^5.0.7",
@@ -128,7 +128,7 @@
     "testMatch": [
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
