@@ -6,12 +6,15 @@ import isFiatOrder from 'Utils/isFiatOrder';
 
 const OrderMain = props => {
   const isFiat = isFiatOrder(props.order);
-
+  const isLimitOrder = props.order.isLimitOrder;
   return (
     <div className="col-xs-12">
       <div className="box">
-        <OrderStatus isFiat={isFiat} status={props.order.status_name[0][0]} />
-        <OrderState isFiat={isFiat} {...props} />
+        <OrderStatus
+          isLimitOrder={isLimitOrder} 
+          isFiat={isFiat}
+          status={!isLimitOrder ? props.order.status_name[0][0] : props.order.book_status_name[0][0]} />
+        <OrderState isLimitOrder={isLimitOrder} isFiat={isFiat} {...props} />
       </div>
     </div>
   );

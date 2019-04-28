@@ -13,7 +13,7 @@ import OrderMain from '../components/Order/OrderMain/OrderMain';
 import '../css/index.scss';
 
 
-import STATUS_CODES from '../statusCodes';
+import { STATUS_CODES } from '../statusCodes';
 
 window.$ = window.jQuery = require('jquery');
 require('../js/bootstrap.min.js');
