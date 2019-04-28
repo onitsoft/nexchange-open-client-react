@@ -44,13 +44,15 @@ class OrderDepth extends PureComponent {
          <div className={`${styles.container}`}>
           <div className={`${styles.heading}`}><h4>Order Book</h4></div>
           <div className={`${styles.content}`}>
-            <div className={`${styles.spread}`}><span>{`Spread ${spreadValue}%`}</span></div>
+            <div className={`${styles.spread}`}><span>{!_.isEmpty(spreadValue) ? `Spread ${spreadValue}%` : ''}</span></div>
             <div className={`${styles.header}`}>
               <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
               <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
             </div>
-              {_.isEmpty(sellDepth) ? <p>{'Currently there are no buy orders for this market..'}</p> : sellDepth}
+            <div className={`${styles.data}`}>
+              {_.isEmpty(sellDepth) ? <p>{'Currently there are no sell orders for this market..'}</p> : sellDepth}
               {_.isEmpty(buyDepth) ? <p>{'Currently there are no buy orders for this market..'}</p> : buyDepth}
+            </div>
           </div>
         </div>
       </div>
