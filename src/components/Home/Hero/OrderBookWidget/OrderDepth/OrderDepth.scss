@@ -36,6 +36,10 @@
                     flex: 1;
                 }
             }
+            .data {
+                max-height: 235px;
+                overflow: auto;
+            }
         }
     }
 }

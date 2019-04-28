@@ -22,7 +22,7 @@
   text-align: left;
   
 
-  @media (min-width: $screen-md-min) {
+  @media (min-width: $screen-md-max) {
     height: 450px;
     padding: 25px 55px;
   }

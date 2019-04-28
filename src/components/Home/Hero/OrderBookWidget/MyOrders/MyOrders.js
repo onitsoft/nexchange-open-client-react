@@ -67,22 +67,24 @@ class MyOrders extends PureComponent {
 
   render() {
     const myOrdersList = <div className={styles.list}>
-                            {this.props.orderBook.myOrders.map((order) => {
-                              return (
-                                <div key={order.unique_reference} className={styles.listItem}>
-                                  <div className={styles.coin}>
-                                      <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
-                                      <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
-                                      <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
-                                    </div>
-                                    <img src={arrow} className={styles.arrow} alt="Arrow" />
+                            <div className={styles.orders}>
+                              {this.props.orderBook.myOrders.map((order) => {
+                                return (
+                                  <div key={order.unique_reference} className={styles.order}>
                                     <div className={styles.coin}>
-                                      <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
-                                      <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
-                                      <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
-                                    </div>
-                                </div>);
-                            })}
+                                        <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
+                                        <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
+                                        <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
+                                      </div>
+                                      <img src={arrow} className={styles.arrow} alt="Arrow" />
+                                      <div className={styles.coin}>
+                                        <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
+                                        <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
+                                        <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
+                                      </div>
+                                  </div>);
+                              })}
+                            </div>
                             <div className={`${styles.viewAll}`}>
                               <a>View All My Orders</a>
                             </div>

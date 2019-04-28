@@ -18,41 +18,48 @@
         }
 
         .content {
+            p {
+                padding: 10px 10px 0px 10px;
+            }
             .list {
                 padding-top: 15px;
                 padding: 10px 10px 0px 10px;
 
-                .listItem {
-                    display: flex;
-                    align-items: center;
-                    padding: 8px 0px;
-                    border-bottom: 1px solid lighten( $gray, 30);
-
-                    .coin {
+                .orders {
+                    max-height: 235px;
+                    overflow: auto;
+                    .order {
                         display: flex;
                         align-items: center;
-                        flex: 1;
+                        padding: 8px 0px;
+                        border-bottom: 1px solid lighten( $gray, 30);
 
-                        .icon {
+                        .coin {
+                            display: flex;
+                            align-items: center;
                             flex: 1;
-                            font-size: 20px;  
+
+                            .icon {
+                                flex: 1;
+                                font-size: 20px;  
+                            }
+                            .code {
+                                flex: 1;
+                                font-size: 14px;  
+                                font-weight: bold;
+                                margin-left: 5px;
+                            }
+                            .amount {
+                                flex: 4;
+                                font-size: 14px;  
+                                margin-left: 5px;
+                            }
                         }
-                        .code {
-                            flex: 1;
-                            font-size: 14px;  
-                            font-weight: bold;
-                            margin-left: 5px;
+                        .arrow {
+                            margin-right: 10px;
+                            margin-left: 10px;
+                            width: 16px;
                         }
-                        .amount {
-                            flex: 4;
-                            font-size: 14px;  
-                            margin-left: 5px;
-                        }
-                    }
-                    .arrow {
-                        margin-right: 10px;
-                        margin-left: 10px;
-                        width: 16px;
                     }
                 }
 
