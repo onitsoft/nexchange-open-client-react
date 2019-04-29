@@ -19,12 +19,14 @@ class OrderDepth extends PureComponent {
     let sellDepth = [];
     if(!_.isEmpty(this.props.sellDepth)){
       sellDepth = this.props.sellDepth.map((depthItem) => {
+        /* eslint max-len: ["error", { "code": 200 }] */ 
         return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL' maxSize={maxSize} data-test='sell-depth-item'/>;
       });
     }
     let buyDepth = [];
     if(!_.isEmpty(this.props.buyDepth)){
       buyDepth = this.props.buyDepth.map((depthItem) => {
+        /* eslint max-len: ["error", { "code": 200 }] */ 
         return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY' maxSize={maxSize} data-test='buy-depth-item'/>;
       });
     }

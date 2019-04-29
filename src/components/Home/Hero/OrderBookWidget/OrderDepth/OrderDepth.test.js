@@ -40,7 +40,6 @@ describe('OrderDepth', () => {
 
     spreadValue = (bestAsk.rate - bestBid.rate) / ((bestAsk.rate + bestBid.rate)/2) * 100;
     spreadValue = parseFloat(Math.round(spreadValue * 100) / 100).toFixed(2);
-    console.log(wrapShallow.find('[data-test="spread"]').render().text());
 
     expect(wrapShallow.find('[data-test="spread"]').text()).toEqual(`Spread ${spreadValue}%`);
   });

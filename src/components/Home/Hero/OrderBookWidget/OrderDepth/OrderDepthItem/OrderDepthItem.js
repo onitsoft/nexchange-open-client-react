@@ -54,7 +54,8 @@ class OrderDepthItem extends PureComponent {
       return (
       <I18n ns="translations">
         {t => (
-          <div className={`${styles.container} ${styles[this.props.side]}`} style={{background:sizeBackground}} >
+            /* eslint max-len: ["error", { "code": 200 }] */ 
+          <div className={`${styles.container} ${styles[this.props.side]}`} style={{background:sizeBackground}} data-test={`${this.props.side}`} >
             <a onClick={() => this.setOrderBookQuantity(item.size)}
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
             /* eslint max-len: ["error", { "code": 200 }] */ 
