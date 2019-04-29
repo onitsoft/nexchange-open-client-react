@@ -1,17 +1,1487 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MinMax renders correctly correct amounts 1`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly correct amounts 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly correct amounts 2`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly correct amounts 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly correct amounts 3`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly correct amounts 3`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MinMax
+    amount={1.5}
+    max={2}
+    min={1}
+    order={
+      Object {
+        "amount_base": "19.85661318",
+        "amount_btc": 0.01376142748939,
+        "amount_eur": 85.88036048245088,
+        "amount_quote": "100.00000000",
+        "amount_quote_fee": 9,
+        "amount_usd": 100,
+        "created_on": "2028-05-26T18:27:22.310989Z",
+        "deposit_address": null,
+        "display_refund_address": false,
+        "from_default_rule": false,
+        "is_default_rule": true,
+        "kyc_deadline": "2028-05-26T19:27:52.086814Z",
+        "pair": Object {
+          "base": Object {
+            "code": "NANO",
+            "has_enabled_pairs": true,
+            "has_enabled_pairs_for_test": true,
+            "is_base_of_enabled_pair": true,
+            "is_base_of_enabled_pair_for_test": true,
+            "is_crypto": true,
+            "is_quote_of_enabled_pair": false,
+            "is_quote_of_enabled_pair_for_test": true,
+            "maximal_amount": "300.00000000",
+            "min_confirmations": 1,
+            "minimal_amount": "0.01000000",
+            "name": "nano",
+            "withdrawal_fee": "0.10000000",
+          },
+          "fee_ask": 0.04,
+          "fee_bid": 0.04,
+          "name": "NANOUSD",
+          "quote": Object {
+            "code": "USD",
+            "has_enabled_pairs": true,
+            "has_enabled_pairs_for_test": true,
+            "is_base_of_enabled_pair": false,
+            "is_base_of_enabled_pair_for_test": false,
+            "is_crypto": false,
+            "is_quote_of_enabled_pair": true,
+            "is_quote_of_enabled_pair_for_test": true,
+            "maximal_amount": "1000.00000000",
+            "min_confirmations": null,
+            "minimal_amount": "50.00000000",
+            "name": "USD",
+            "withdrawal_fee": "0.00000000",
+          },
+        },
+        "payment_deadline": "2028-05-26T18:42:22.310989Z",
+        "payment_url": "",
+        "payment_window": 15,
+        "price": Object {
+          "rate": 4.55989196,
+          "rate_btc": 0.000503655,
+          "rate_eur": 3.12975487,
+          "rate_usd": 3.64443412,
+        },
+        "referral_code": Array [
+          Object {
+            "code": "RB1EZWMKQLH",
+            "created_on": "2028-05-11T13:09:46.202181Z",
+            "modified_on": "2028-05-11T13:09:46.202198Z",
+          },
+        ],
+        "status_name": Array [
+          Array [
+            11,
+            "INITIAL",
+          ],
+        ],
+        "transactions": Array [
+          Object {
+            "address_to": 12215,
+            "amount": "19.85661318",
+            "confirmations": 1,
+            "created_on": "2028-05-26T18:28:58.010666Z",
+            "currency": "NANO",
+            "is_completed": true,
+            "is_verified": true,
+            "modified_on": "2028-05-26T18:31:27.333333Z",
+            "time": "2028-05-26T18:28:58.010506Z",
+            "tx_id": "21A6F4E385B0374C023D2F2BAA846BBAA65C7C3093B8324DD4A13A06F4652E7F",
+            "type": "W",
+          },
+        ],
+        "unique_reference": "OCFP7W",
+        "user_provided_amount": 0,
+        "withdraw_address": Object {
+          "address": "xrb_1fqajjogym4dwr8uoi9rt34cpx4qyswh35tib6g11i4k18kosha4z5xr1yz6",
+          "currency_code": "NANO",
+          "destination_tag": null,
+          "name": "",
+          "payment_id": null,
+          "type": "W",
+        },
+        "withdrawal_fee": 0.1,
+        "withdrawal_fee_quote": 0.455989196,
+      }
+    }
+    type="Deposit"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): null,
+  Symbol(enzyme.__nodes__): Array [
+    null,
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
 
-exports[`MinMax renders correctly correct amounts 4`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly correct amounts 4`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly too high amounts 1`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly too high amounts 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className="error "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "error ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className="error "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "error ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly too high amounts 2`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly too high amounts 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className="error "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": "error ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className="error "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": "error ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly too low amounts 1`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly too low amounts 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="error "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "error ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="error "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "error ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`MinMax renders correctly too low amounts 2`] = `ShallowWrapper {}`;
+exports[`MinMax renders correctly too low amounts 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="error "
+          onClick={[Function]}
+        >
+          exchangewidget.min
+          : 
+          1
+        </p>,
+        <p
+          className=" "
+          onClick={[Function]}
+        >
+          exchangewidget.max
+          : 
+          2
+        </p>,
+      ],
+      "className": "minmax ",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "className": "error ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.min",
+          ": ",
+          1,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "className": " ",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "exchangewidget.max",
+          ": ",
+          2,
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="error "
+            onClick={[Function]}
+          >
+            exchangewidget.min
+            : 
+            1
+          </p>,
+          <p
+            className=" "
+            onClick={[Function]}
+          >
+            exchangewidget.max
+            : 
+            2
+          </p>,
+        ],
+        "className": "minmax ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.min",
+              ": ",
+              1,
+            ],
+            "className": "error ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.min",
+            ": ",
+            1,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "exchangewidget.max",
+              ": ",
+              2,
+            ],
+            "className": " ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "exchangewidget.max",
+            ": ",
+            2,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

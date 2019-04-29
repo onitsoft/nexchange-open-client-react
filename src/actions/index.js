@@ -438,7 +438,7 @@ export const fetchOrderBook = payload => dispatch => {
     }
     if(payload.status === 'CLOSED'){
       orderBook.history = result;
-    }
+    }    
 
     dispatch({
       type: types.ORDER_BOOK_DATA_FETCHED,

@@ -1,13 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrderLoading renders correctly 1`] = `
+exports[`OrderDepth renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <I18n
-    ns="translations"
-  >
-    [Function]
-  </I18n>,
+  Symbol(enzyme.__unrendered__): <OrderDepth
+    buyDepth={
+      Array [
+        Object {
+          "rate": 0.000015,
+          "size": 2400,
+        },
+        Object {
+          "rate": 0.00001705,
+          "size": 1175.00293255,
+        },
+        Object {
+          "rate": 55666,
+          "size": 4e-7,
+        },
+      ]
+    }
+    selectedCoins={
+      Object {
+        "deposit": "ETH",
+        "receive": "DOGE",
+      }
+    }
+    sellDepth={
+      Array [
+        Object {
+          "rate": 0.0000195,
+          "size": 100,
+        },
+        Object {
+          "rate": 0.0000194,
+          "size": 100,
+        },
+        Object {
+          "rate": 0.00001751,
+          "size": 573,
+        },
+      ]
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -20,65 +55,27 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": <h2>
-        loading
-        ...
-      </h2>,
-      "className": "text-center",
+      "children": [Function],
+      "ns": "translations",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          "loading",
-          "...",
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        "loading",
-        "...",
-      ],
-      "type": "h2",
-    },
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": <h2>
-          loading
-          ...
-        </h2>,
-        "className": "text-center",
+        "children": [Function],
+        "ns": "translations",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "loading",
-            "...",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "loading",
-          "...",
-        ],
-        "type": "h2",
-      },
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -104,7 +101,7 @@ ShallowWrapper {
         },
       },
     },
-    "context": Object {},
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

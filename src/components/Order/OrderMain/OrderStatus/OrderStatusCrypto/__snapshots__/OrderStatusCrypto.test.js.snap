@@ -1,17 +1,1192 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrderStatusCrypto renders correctly 1`] = `ShallowWrapper {}`;
+exports[`OrderStatusCrypto renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="step"
+          data-original-title="order.status11"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <deposit.svg />
+          <h4>
+            order.status1
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status21"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <confirmations.svg />
+          <h4>
+            order.status2
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status31"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <done.svg />
+          <h4>
+            order.status3
+          </h4>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <deposit.svg />,
+            <h4>
+              order.status1
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status11",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "deposit.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status1",
+            },
+            "ref": null,
+            "rendered": "order.status1",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <confirmations.svg />,
+            <h4>
+              order.status2
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status21",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "confirmations.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status2",
+            },
+            "ref": null,
+            "rendered": "order.status2",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <done.svg />,
+            <h4>
+              order.status3
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status31",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "done.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status3",
+            },
+            "ref": null,
+            "rendered": "order.status3",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="step"
+            data-original-title="order.status11"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <deposit.svg />
+            <h4>
+              order.status1
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status21"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <confirmations.svg />
+            <h4>
+              order.status2
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status31"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <done.svg />
+            <h4>
+              order.status3
+            </h4>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <deposit.svg />,
+              <h4>
+                order.status1
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status11",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "deposit.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status1",
+              },
+              "ref": null,
+              "rendered": "order.status1",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <confirmations.svg />,
+              <h4>
+                order.status2
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status21",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "confirmations.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status2",
+              },
+              "ref": null,
+              "rendered": "order.status2",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <done.svg />,
+              <h4>
+                order.status3
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status31",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "done.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status3",
+              },
+              "ref": null,
+              "rendered": "order.status3",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`OrderStatusCrypto renders correctly 2`] = `ShallowWrapper {}`;
+exports[`OrderStatusCrypto renders correctly 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="step active"
+          data-original-title="order.status11"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <deposit.svg />
+          <h4>
+            order.status1
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status21"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <confirmations.svg />
+          <h4>
+            order.status2
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status31"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <done.svg />
+          <h4>
+            order.status3
+          </h4>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <deposit.svg />,
+            <h4>
+              order.status1
+            </h4>,
+          ],
+          "className": "step active",
+          "data-original-title": "order.status11",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "deposit.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status1",
+            },
+            "ref": null,
+            "rendered": "order.status1",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <confirmations.svg />,
+            <h4>
+              order.status2
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status21",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "confirmations.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status2",
+            },
+            "ref": null,
+            "rendered": "order.status2",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <done.svg />,
+            <h4>
+              order.status3
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status31",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "done.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status3",
+            },
+            "ref": null,
+            "rendered": "order.status3",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="step active"
+            data-original-title="order.status11"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <deposit.svg />
+            <h4>
+              order.status1
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status21"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <confirmations.svg />
+            <h4>
+              order.status2
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status31"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <done.svg />
+            <h4>
+              order.status3
+            </h4>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <deposit.svg />,
+              <h4>
+                order.status1
+              </h4>,
+            ],
+            "className": "step active",
+            "data-original-title": "order.status11",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "deposit.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status1",
+              },
+              "ref": null,
+              "rendered": "order.status1",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <confirmations.svg />,
+              <h4>
+                order.status2
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status21",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "confirmations.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status2",
+              },
+              "ref": null,
+              "rendered": "order.status2",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <done.svg />,
+              <h4>
+                order.status3
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status31",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "done.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status3",
+              },
+              "ref": null,
+              "rendered": "order.status3",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
 
-exports[`OrderStatusCrypto renders correctly 3`] = `ShallowWrapper {}`;
-
-exports[`OrderStatusCrypto renders correctly 4`] = `ShallowWrapper {}`;
-
-exports[`OrderStatusCrypto renders correctly 5`] = `ShallowWrapper {}`;
-
-exports[`OrderStatusCrypto renders correctly 6`] = `ShallowWrapper {}`;
-
-exports[`OrderStatusCrypto renders correctly 7`] = `ShallowWrapper {}`;
-
-exports[`OrderStatusCrypto renders correctly 8`] = `ShallowWrapper {}`;
+exports[`OrderStatusCrypto renders correctly 3`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="step active"
+          data-original-title="order.status11"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <deposit.svg />
+          <h4>
+            order.status1
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status21"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <confirmations.svg />
+          <h4>
+            order.status2
+          </h4>
+        </div>,
+        <div
+          className="step"
+          data-original-title="order.status31"
+          data-placement="top"
+          data-toggle="tooltip"
+          title=""
+        >
+          <done.svg />
+          <h4>
+            order.status3
+          </h4>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <deposit.svg />,
+            <h4>
+              order.status1
+            </h4>,
+          ],
+          "className": "step active",
+          "data-original-title": "order.status11",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "deposit.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status1",
+            },
+            "ref": null,
+            "rendered": "order.status1",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <confirmations.svg />,
+            <h4>
+              order.status2
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status21",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "confirmations.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status2",
+            },
+            "ref": null,
+            "rendered": "order.status2",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <done.svg />,
+            <h4>
+              order.status3
+            </h4>,
+          ],
+          "className": "step",
+          "data-original-title": "order.status31",
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          "title": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "done.svg",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "order.status3",
+            },
+            "ref": null,
+            "rendered": "order.status3",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="step active"
+            data-original-title="order.status11"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <deposit.svg />
+            <h4>
+              order.status1
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status21"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <confirmations.svg />
+            <h4>
+              order.status2
+            </h4>
+          </div>,
+          <div
+            className="step"
+            data-original-title="order.status31"
+            data-placement="top"
+            data-toggle="tooltip"
+            title=""
+          >
+            <done.svg />
+            <h4>
+              order.status3
+            </h4>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <deposit.svg />,
+              <h4>
+                order.status1
+              </h4>,
+            ],
+            "className": "step active",
+            "data-original-title": "order.status11",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "deposit.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status1",
+              },
+              "ref": null,
+              "rendered": "order.status1",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <confirmations.svg />,
+              <h4>
+                order.status2
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status21",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "confirmations.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status2",
+              },
+              "ref": null,
+              "rendered": "order.status2",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <done.svg />,
+              <h4>
+                order.status3
+              </h4>,
+            ],
+            "className": "step",
+            "data-original-title": "order.status31",
+            "data-placement": "top",
+            "data-toggle": "tooltip",
+            "title": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "done.svg",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "order.status3",
+              },
+              "ref": null,
+              "rendered": "order.status3",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

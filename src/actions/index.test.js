@@ -19,7 +19,8 @@ import {
   fetchKyc,
   fetchUserEmail,
   setUserEmail,
-  changeOrderMode
+  changeOrderMode,
+  changeOrderBookValue
 } from './index.js';
 import currency from 'Mocks/currency';
 import pair from 'Mocks/pair';
@@ -685,6 +686,8 @@ describe('actions', () => {
     });
   });
 
+
+  //Order Book
   it('changeOrderMode', () => {
     const payload = 'ORDER_BOOK';
     const expectedAction = 
@@ -694,5 +697,24 @@ describe('actions', () => {
       };
 
     return expect(changeOrderMode(payload)).toEqual(expectedAction);
+  });
+
+  it('changeOrderBookValue (order_type)', () => {
+    const payload = {    
+      order_type: 'SELL',
+      quantity: '',
+      limit_rate: '',
+      sellDepth: [],
+      buyDepth: [],
+      history: [],
+      myOrders: [],
+    };
+    const expectedAction = 
+      {
+        type: types.ORDER_BOOK_VALUE_CHANGE,
+        orderBook: payload,
+      };
+
+    return expect(changeOrderBookValue(payload)).toEqual(expectedAction);
   });
 });
