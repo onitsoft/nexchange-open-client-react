@@ -19,13 +19,15 @@ class OrderDepth extends PureComponent {
     let sellDepth = [];
     if(!_.isEmpty(this.props.sellDepth)){
       sellDepth = this.props.sellDepth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL' maxSize={maxSize}/>;
+        /* eslint max-len: ["error", { "code": 200 }] */ 
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL' maxSize={maxSize} data-test='sell-depth-item'/>;
       });
     }
     let buyDepth = [];
     if(!_.isEmpty(this.props.buyDepth)){
       buyDepth = this.props.buyDepth.map((depthItem) => {
-        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY' maxSize={maxSize}/>;
+        /* eslint max-len: ["error", { "code": 200 }] */ 
+        return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY' maxSize={maxSize} data-test='buy-depth-item'/>;
       });
     }
 
@@ -44,7 +46,7 @@ class OrderDepth extends PureComponent {
          <div className={`${styles.container}`}>
           <div className={`${styles.heading}`}><h4>Order Book</h4></div>
           <div className={`${styles.content}`}>
-            <div className={`${styles.spread}`}><span>{!_.isEmpty(spreadValue) ? `Spread ${spreadValue}%` : ''}</span></div>
+            <div className={`${styles.spread}`}><span data-test='spread'>{!_.isEmpty(spreadValue) ? `Spread ${spreadValue}%` : ''}</span></div>
             <div className={`${styles.header}`}>
               <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
               <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>

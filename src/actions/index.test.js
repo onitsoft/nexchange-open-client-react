@@ -19,6 +19,8 @@ import {
   fetchKyc,
   fetchUserEmail,
   setUserEmail,
+  changeOrderMode,
+  changeOrderBookValue
 } from './index.js';
 import currency from 'Mocks/currency';
 import pair from 'Mocks/pair';
@@ -132,38 +134,6 @@ describe('actions', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
-
-  // it('fetchCoinDetails (white label)', () => {
-  //   axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
-
-  //   jest.mock('Config', () => ({
-  //     NAME: 'N.exchange2',
-  //     DOMAIN: 'https://n.exchange',
-  //     API_BASE_URL: 'https://api.nexchange.io/en/api/v1',
-  //     SUPPORT_EMAIL: 'support@n.exchange',
-  //     PRICE_FETCH_INTERVAL: 60000,
-  //     ORDER_DETAILS_FETCH_INTERVAL: 20000,
-  //     RECENT_ORDERS_INTERVAL: 20000,
-  //     RECENT_ORDERS_COUNT: 11,
-  //     PRICE_COMPARISON_INTERVAL: 60000,
-  //     KYC_DETAILS_FETCH_INTERVAL: 20000,
-  //     REFERRAL_CODE: 'code',
-  //   }));
-
-  //   const expectedActions = [
-  //     {
-  //       type: types.COINS_INFO,
-  //       payload: _.filter(currency, {
-  //         has_enabled_pairs: true,
-  //         is_crypto: true,
-  //       }),
-  //     },
-  //   ];
-
-  //   return store.dispatch(fetchCoinDetails()).then(() => {
-  //     expect(store.getActions()).toEqual(expectedActions);
-  //   });
-  // });
 
   it('fetchCoinDetails (test)', () => {
     axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
@@ -714,5 +684,37 @@ describe('actions', () => {
     return store.dispatch(setUserEmail(payload)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
+  });
+
+
+  //Order Book
+  it('changeOrderMode', () => {
+    const payload = 'ORDER_BOOK';
+    const expectedAction = 
+      {
+        type: types.ORDER_MODE_CHANGE,
+        mode: 'ORDER_BOOK',
+      };
+
+    return expect(changeOrderMode(payload)).toEqual(expectedAction);
+  });
+
+  it('changeOrderBookValue (order_type)', () => {
+    const payload = {    
+      order_type: 'SELL',
+      quantity: '',
+      limit_rate: '',
+      sellDepth: [],
+      buyDepth: [],
+      history: [],
+      myOrders: [],
+    };
+    const expectedAction = 
+      {
+        type: types.ORDER_BOOK_VALUE_CHANGE,
+        orderBook: payload,
+      };
+
+    return expect(changeOrderBookValue(payload)).toEqual(expectedAction);
   });
 });

@@ -23,7 +23,7 @@ ShallowWrapper {
         </p>
       </div>
     }
-    id="ques1"
+    question="What do you do?"
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -51,7 +51,7 @@ ShallowWrapper {
             className="far fa-plus-square fa-2x"
           />
           <h3>
-            faq.ques1
+            faq.undefined
           </h3>
         </div>,
         <div
@@ -113,7 +113,7 @@ ShallowWrapper {
         <hr />,
       ],
       "className": "question-answer container",
-      "id": "faq.ques1",
+      "id": "faq.undefined",
     },
     "ref": null,
     "rendered": Array [
@@ -128,7 +128,7 @@ ShallowWrapper {
               className="far fa-plus-square fa-2x"
             />,
             <h3>
-              faq.ques1
+              faq.undefined
             </h3>,
           ],
           "className": "question",
@@ -154,10 +154,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "faq.ques1",
+              "children": "faq.undefined",
             },
             "ref": null,
-            "rendered": "faq.ques1",
+            "rendered": "faq.undefined",
             "type": "h3",
           },
         ],
@@ -532,7 +532,7 @@ ShallowWrapper {
               className="far fa-plus-square fa-2x"
             />
             <h3>
-              faq.ques1
+              faq.undefined
             </h3>
           </div>,
           <div
@@ -594,7 +594,7 @@ ShallowWrapper {
           <hr />,
         ],
         "className": "question-answer container",
-        "id": "faq.ques1",
+        "id": "faq.undefined",
       },
       "ref": null,
       "rendered": Array [
@@ -609,7 +609,7 @@ ShallowWrapper {
                 className="far fa-plus-square fa-2x"
               />,
               <h3>
-                faq.ques1
+                faq.undefined
               </h3>,
             ],
             "className": "question",
@@ -635,10 +635,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "faq.ques1",
+                "children": "faq.undefined",
               },
               "ref": null,
-              "rendered": "faq.ques1",
+              "rendered": "faq.undefined",
               "type": "h3",
             },
           ],
