@@ -84,6 +84,9 @@ ShallowWrapper {
           <p>
             refund.12
           </p>
+          <p>
+            refund.13
+          </p>
           <br />
         </div>
       </div>,
@@ -154,6 +157,9 @@ ShallowWrapper {
           <p>
             refund.12
           </p>
+          <p>
+            refund.13
+          </p>
           <br />
         </div>,
         "className": "row",
@@ -220,6 +226,9 @@ ShallowWrapper {
             </p>,
             <p>
               refund.12
+            </p>,
+            <p>
+              refund.13
             </p>,
             <br />,
           ],
@@ -451,6 +460,17 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
+            "props": Object {
+              "children": "refund.13",
+            },
+            "ref": null,
+            "rendered": "refund.13",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
             "props": Object {},
             "ref": null,
             "rendered": null,
@@ -531,6 +551,9 @@ ShallowWrapper {
             <p>
               refund.12
             </p>
+            <p>
+              refund.13
+            </p>
             <br />
           </div>
         </div>,
@@ -601,6 +624,9 @@ ShallowWrapper {
             <p>
               refund.12
             </p>
+            <p>
+              refund.13
+            </p>
             <br />
           </div>,
           "className": "row",
@@ -667,6 +693,9 @@ ShallowWrapper {
               </p>,
               <p>
                 refund.12
+              </p>,
+              <p>
+                refund.13
               </p>,
               <br />,
             ],
@@ -892,6 +921,17 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "refund.12",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "refund.13",
+              },
+              "ref": null,
+              "rendered": "refund.13",
               "type": "p",
             },
             Object {

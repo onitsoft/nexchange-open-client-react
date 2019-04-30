@@ -17,7 +17,6 @@ describe('MyOrders', () => {
 
   beforeEach(() => {
     store = mockStore(initialState);
-    localStorage.setItem('orderHistory', orderHistory);
     wrapShallow = shallow(<MyOrders store={store} />).dive();
   });
 
