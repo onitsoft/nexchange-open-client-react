@@ -169,7 +169,7 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {!_.isEmpty(this.orderHistory) 
+              {this.props.showPreviousAddressButton && !_.isEmpty(this.orderHistory) 
                ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
                     {t('generalterms.usepreviousaddress')}
                   </button>
