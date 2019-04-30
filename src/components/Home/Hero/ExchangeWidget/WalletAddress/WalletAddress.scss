@@ -28,3 +28,17 @@
     color: $black;
   }
 }
+
+.previousAddress {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 6px 12px;
+  background-color: #fff;
+  border: 2px solid $green;
+  border-radius: 6px;
+  color: $green;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
