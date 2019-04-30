@@ -2,17 +2,18 @@
 
 exports[`NotFound renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -24,10 +25,10 @@ ShallowWrapper {
       "children": Array [
         <h1>
           404
-</h1>,
+        </h1>,
         <h2>
           error.notfound
-</h2>,
+        </h2>,
       ],
       "className": "text-center",
       "id": "not-found",
@@ -68,10 +69,10 @@ ShallowWrapper {
         "children": Array [
           <h1>
             404
-</h1>,
+          </h1>,
           <h2>
             error.notfound
-</h2>,
+          </h2>,
         ],
         "className": "text-center",
         "id": "not-found",
@@ -108,8 +109,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

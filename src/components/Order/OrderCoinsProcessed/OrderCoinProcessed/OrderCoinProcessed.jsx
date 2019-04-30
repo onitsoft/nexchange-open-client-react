@@ -117,10 +117,9 @@ class OrderCoinProcessed extends Component {
 
   hasAddressId() {
     return (
-      (this.state.paymentId != null && this.state.paymentId !== 'undefined') ||
-      (this.state.destinationTag != null && this.state.destinationTag !== 'undefined') ||
-      (this.state.memo != null && this.state.memo !== 'undefined')
-    );
+      !_.isEmpty(this.state.paymentId) ||
+      !_.isEmpty(this.state.destinationTag) ||
+      !_.isEmpty(this.state.memo));
   }
 
   addressIsTooLong() {
@@ -257,7 +256,7 @@ class OrderCoinProcessed extends Component {
                 </h5>
                 {this.renderAddress()}
                 {this.renderExpandButton()}
-                <MinMax {...this.props} />
+                {!this.props.order.isLimitOrder ? <MinMax {...this.props} /> : null}
               </div>
             </div>
           </div>

@@ -2,17 +2,18 @@
 
 exports[`OrderExpired renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -25,34 +26,18 @@ ShallowWrapper {
         <OrderAlert />,
         <h2
           className="title"
->
+        >
           order.expired1
-</h2>,
-        <Trans
-          i18nKey="order.expired2"
->
-          <h3
-                    className="subtitle"
-          >
-                    Your order is expired. You can make a
-                     
-                    <a
-                              className="new-order-link"
-                              href="/"
-                    >
-                              new exchange order
-                    </a>
-                    .
-          </h3>
-</Trans>,
+        </h2>,
         <h4
           className="warning"
           data-original-title="order.expired3"
           data-placement="top"
           data-toggle="tooltip"
->
+        >
           order.expired4
-</h4>,
+        </h4>,
+        undefined,
       ],
       "className": "container",
     },
@@ -82,68 +67,6 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": <h3
-            className="subtitle"
->
-            Your order is expired. You can make a
-             
-            <a
-                        className="new-order-link"
-                        href="/"
-            >
-                        new exchange order
-            </a>
-            .
-</h3>,
-          "i18nKey": "order.expired2",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Your order is expired. You can make a",
-              " ",
-              <a
-                className="new-order-link"
-                href="/"
->
-                new exchange order
-</a>,
-              ".",
-            ],
-            "className": "subtitle",
-          },
-          "ref": null,
-          "rendered": Array [
-            "Your order is expired. You can make a",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "new exchange order",
-                "className": "new-order-link",
-                "href": "/",
-              },
-              "ref": null,
-              "rendered": "new exchange order",
-              "type": "a",
-            },
-            ".",
-          ],
-          "type": "h3",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": "order.expired4",
@@ -156,6 +79,7 @@ ShallowWrapper {
         "rendered": "order.expired4",
         "type": "h4",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -169,34 +93,18 @@ ShallowWrapper {
           <OrderAlert />,
           <h2
             className="title"
->
+          >
             order.expired1
-</h2>,
-          <Trans
-            i18nKey="order.expired2"
->
-            <h3
-                        className="subtitle"
-            >
-                        Your order is expired. You can make a
-                         
-                        <a
-                                    className="new-order-link"
-                                    href="/"
-                        >
-                                    new exchange order
-                        </a>
-                        .
-            </h3>
-</Trans>,
+          </h2>,
           <h4
             className="warning"
             data-original-title="order.expired3"
             data-placement="top"
             data-toggle="tooltip"
->
+          >
             order.expired4
-</h4>,
+          </h4>,
+          undefined,
         ],
         "className": "container",
       },
@@ -226,68 +134,6 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <h3
-              className="subtitle"
->
-              Your order is expired. You can make a
-               
-              <a
-                            className="new-order-link"
-                            href="/"
-              >
-                            new exchange order
-              </a>
-              .
-</h3>,
-            "i18nKey": "order.expired2",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Your order is expired. You can make a",
-                " ",
-                <a
-                  className="new-order-link"
-                  href="/"
->
-                  new exchange order
-</a>,
-                ".",
-              ],
-              "className": "subtitle",
-            },
-            "ref": null,
-            "rendered": Array [
-              "Your order is expired. You can make a",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "new exchange order",
-                  "className": "new-order-link",
-                  "href": "/",
-                },
-                "ref": null,
-                "rendered": "new exchange order",
-                "type": "a",
-              },
-              ".",
-            ],
-            "type": "h3",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": "order.expired4",
@@ -300,6 +146,7 @@ ShallowWrapper {
           "rendered": "order.expired4",
           "type": "h4",
         },
+        undefined,
       ],
       "type": "div",
     },
@@ -308,8 +155,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

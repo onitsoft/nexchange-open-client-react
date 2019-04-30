@@ -2,17 +2,18 @@
 
 exports[`OrderReferralTerms renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -27,46 +28,45 @@ ShallowWrapper {
       "bsClass": "modal",
       "children": <div
         className="modal-content"
->
+      >
         <div
-                className="modal-header"
+          className="modal-header"
         >
-                <button
-                        aria-hidden="true"
-                        className="close"
-                        data-dismiss="modal"
-                        onClick={undefined}
-                        type="button"
-                >
-                        <i
-                                className="material-icons"
-                        >
-                                clear
-                        </i>
-                </button>
-                <h4
-                        className="modal-title"
-                >
-                        referral.3
-                </h4>
+          <button
+            aria-hidden="true"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i
+              className="material-icons"
+            >
+              clear
+            </i>
+          </button>
+          <h4
+            className="modal-title"
+          >
+            referral.3
+          </h4>
         </div>
         <div
-                className="modal-body"
+          className="modal-body"
         >
-                <div
-                        className="row"
-                >
-                        <div
-                                className="col-xs-12"
-                        >
-                                <p>
-                                         
-                                        referral.4
-                                </p>
-                        </div>
-                </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <p>
+                 
+                referral.4
+              </p>
+            </div>
+          </div>
         </div>
-</div>,
+      </div>,
       "dialogComponentClass": [Function],
       "enforceFocus": true,
       "id": "OrderReferralTerms",
@@ -95,42 +95,41 @@ ShallowWrapper {
         "children": Array [
           <div
             className="modal-header"
->
+          >
             <button
-                        aria-hidden="true"
-                        className="close"
-                        data-dismiss="modal"
-                        onClick={undefined}
-                        type="button"
+              aria-hidden="true"
+              className="close"
+              data-dismiss="modal"
+              type="button"
             >
-                        <i
-                                    className="material-icons"
-                        >
-                                    clear
-                        </i>
+              <i
+                className="material-icons"
+              >
+                clear
+              </i>
             </button>
             <h4
-                        className="modal-title"
+              className="modal-title"
             >
-                        referral.3
+              referral.3
             </h4>
-</div>,
+          </div>,
           <div
             className="modal-body"
->
+          >
             <div
-                        className="row"
+              className="row"
             >
-                        <div
-                                    className="col-xs-12"
-                        >
-                                    <p>
-                                                 
-                                                referral.4
-                                    </p>
-                        </div>
+              <div
+                className="col-xs-12"
+              >
+                <p>
+                   
+                  referral.4
+                </p>
+              </div>
             </div>
-</div>,
+          </div>,
         ],
         "className": "modal-content",
       },
@@ -146,20 +145,19 @@ ShallowWrapper {
                 aria-hidden="true"
                 className="close"
                 data-dismiss="modal"
-                onClick={undefined}
                 type="button"
->
+              >
                 <i
-                                className="material-icons"
+                  className="material-icons"
                 >
-                                clear
+                  clear
                 </i>
-</button>,
+              </button>,
               <h4
                 className="modal-title"
->
+              >
                 referral.3
-</h4>,
+              </h4>,
             ],
             "className": "modal-header",
           },
@@ -173,9 +171,9 @@ ShallowWrapper {
                 "aria-hidden": "true",
                 "children": <i
                   className="material-icons"
->
+                >
                   clear
-</i>,
+                </i>,
                 "className": "close",
                 "data-dismiss": "modal",
                 "onClick": undefined,
@@ -218,16 +216,16 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="row"
->
+            >
               <div
-                            className="col-xs-12"
+                className="col-xs-12"
               >
-                            <p>
-                                           
-                                          referral.4
-                            </p>
+                <p>
+                   
+                  referral.4
+                </p>
               </div>
-</div>,
+            </div>,
             "className": "modal-body",
           },
           "ref": null,
@@ -238,12 +236,12 @@ ShallowWrapper {
             "props": Object {
               "children": <div
                 className="col-xs-12"
->
+              >
                 <p>
-                                 
-                                referral.4
+                   
+                  referral.4
                 </p>
-</div>,
+              </div>,
               "className": "row",
             },
             "ref": null,
@@ -255,7 +253,7 @@ ShallowWrapper {
                 "children": <p>
                    
                   referral.4
-</p>,
+                </p>,
                 "className": "col-xs-12",
               },
               "ref": null,
@@ -299,46 +297,45 @@ ShallowWrapper {
         "bsClass": "modal",
         "children": <div
           className="modal-content"
->
+        >
           <div
-                    className="modal-header"
+            className="modal-header"
           >
-                    <button
-                              aria-hidden="true"
-                              className="close"
-                              data-dismiss="modal"
-                              onClick={undefined}
-                              type="button"
-                    >
-                              <i
-                                        className="material-icons"
-                              >
-                                        clear
-                              </i>
-                    </button>
-                    <h4
-                              className="modal-title"
-                    >
-                              referral.3
-                    </h4>
+            <button
+              aria-hidden="true"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <i
+                className="material-icons"
+              >
+                clear
+              </i>
+            </button>
+            <h4
+              className="modal-title"
+            >
+              referral.3
+            </h4>
           </div>
           <div
-                    className="modal-body"
+            className="modal-body"
           >
-                    <div
-                              className="row"
-                    >
-                              <div
-                                        className="col-xs-12"
-                              >
-                                        <p>
-                                                   
-                                                  referral.4
-                                        </p>
-                              </div>
-                    </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <p>
+                   
+                  referral.4
+                </p>
+              </div>
+            </div>
           </div>
-</div>,
+        </div>,
         "dialogComponentClass": [Function],
         "enforceFocus": true,
         "id": "OrderReferralTerms",
@@ -367,42 +364,41 @@ ShallowWrapper {
           "children": Array [
             <div
               className="modal-header"
->
+            >
               <button
-                            aria-hidden="true"
-                            className="close"
-                            data-dismiss="modal"
-                            onClick={undefined}
-                            type="button"
+                aria-hidden="true"
+                className="close"
+                data-dismiss="modal"
+                type="button"
               >
-                            <i
-                                          className="material-icons"
-                            >
-                                          clear
-                            </i>
+                <i
+                  className="material-icons"
+                >
+                  clear
+                </i>
               </button>
               <h4
-                            className="modal-title"
+                className="modal-title"
               >
-                            referral.3
+                referral.3
               </h4>
-</div>,
+            </div>,
             <div
               className="modal-body"
->
+            >
               <div
-                            className="row"
+                className="row"
               >
-                            <div
-                                          className="col-xs-12"
-                            >
-                                          <p>
-                                                         
-                                                        referral.4
-                                          </p>
-                            </div>
+                <div
+                  className="col-xs-12"
+                >
+                  <p>
+                     
+                    referral.4
+                  </p>
+                </div>
               </div>
-</div>,
+            </div>,
           ],
           "className": "modal-content",
         },
@@ -418,20 +414,19 @@ ShallowWrapper {
                   aria-hidden="true"
                   className="close"
                   data-dismiss="modal"
-                  onClick={undefined}
                   type="button"
->
+                >
                   <i
-                                    className="material-icons"
+                    className="material-icons"
                   >
-                                    clear
+                    clear
                   </i>
-</button>,
+                </button>,
                 <h4
                   className="modal-title"
->
+                >
                   referral.3
-</h4>,
+                </h4>,
               ],
               "className": "modal-header",
             },
@@ -445,9 +440,9 @@ ShallowWrapper {
                   "aria-hidden": "true",
                   "children": <i
                     className="material-icons"
->
+                  >
                     clear
-</i>,
+                  </i>,
                   "className": "close",
                   "data-dismiss": "modal",
                   "onClick": undefined,
@@ -490,16 +485,16 @@ ShallowWrapper {
             "props": Object {
               "children": <div
                 className="row"
->
+              >
                 <div
-                                className="col-xs-12"
+                  className="col-xs-12"
                 >
-                                <p>
-                                                 
-                                                referral.4
-                                </p>
+                  <p>
+                     
+                    referral.4
+                  </p>
                 </div>
-</div>,
+              </div>,
               "className": "modal-body",
             },
             "ref": null,
@@ -510,12 +505,12 @@ ShallowWrapper {
               "props": Object {
                 "children": <div
                   className="col-xs-12"
->
+                >
                   <p>
-                                     
-                                    referral.4
+                     
+                    referral.4
                   </p>
-</div>,
+                </div>,
                 "className": "row",
               },
               "ref": null,
@@ -527,7 +522,7 @@ ShallowWrapper {
                   "children": <p>
                      
                     referral.4
-</p>,
+                  </p>,
                   "className": "col-xs-12",
                 },
                 "ref": null,
@@ -564,8 +559,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

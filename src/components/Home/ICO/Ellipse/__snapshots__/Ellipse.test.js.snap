@@ -2,23 +2,24 @@
 
 exports[`Ellipse renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Ellipse
     coin="btc"
     style={
-        Object {
-            "height": 48,
-            "left": 20,
-            "right": -20,
-            "width": 48,
-          }
+      Object {
+        "height": 48,
+        "left": 20,
+        "right": -20,
+        "width": 48,
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -30,18 +31,18 @@ ShallowWrapper {
       "children": <div
         className="ellipse"
         style={
-                Object {
-                        "height": 48,
-                        "transform": "translate(0px, 0px)",
-                        "width": 48,
-                      }
+          Object {
+            "height": 48,
+            "transform": "translate(0px, 0px)",
+            "width": 48,
+          }
         }
->
+      >
         <img
-                alt="LTC"
-                src="btc.svg"
+          alt="LTC"
+          src="Img/ellipses/btc.svg"
         />
-</div>,
+      </div>,
       "className": "container hidden-xs",
       "style": Object {
         "height": 48,
@@ -58,8 +59,8 @@ ShallowWrapper {
       "props": Object {
         "children": <img
           alt="LTC"
-          src="btc.svg"
-/>,
+          src="Img/ellipses/btc.svg"
+        />,
         "className": "ellipse",
         "style": Object {
           "height": 48,
@@ -74,7 +75,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "LTC",
-          "src": "btc.svg",
+          "src": "Img/ellipses/btc.svg",
         },
         "ref": null,
         "rendered": null,
@@ -93,18 +94,18 @@ ShallowWrapper {
         "children": <div
           className="ellipse"
           style={
-                    Object {
-                              "height": 48,
-                              "transform": "translate(0px, 0px)",
-                              "width": 48,
-                            }
+            Object {
+              "height": 48,
+              "transform": "translate(0px, 0px)",
+              "width": 48,
+            }
           }
->
+        >
           <img
-                    alt="LTC"
-                    src="btc.svg"
+            alt="LTC"
+            src="Img/ellipses/btc.svg"
           />
-</div>,
+        </div>,
         "className": "container hidden-xs",
         "style": Object {
           "height": 48,
@@ -121,8 +122,8 @@ ShallowWrapper {
         "props": Object {
           "children": <img
             alt="LTC"
-            src="btc.svg"
-/>,
+            src="Img/ellipses/btc.svg"
+          />,
           "className": "ellipse",
           "style": Object {
             "height": 48,
@@ -137,7 +138,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "LTC",
-            "src": "btc.svg",
+            "src": "Img/ellipses/btc.svg",
           },
           "ref": null,
           "rendered": null,
@@ -152,8 +153,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

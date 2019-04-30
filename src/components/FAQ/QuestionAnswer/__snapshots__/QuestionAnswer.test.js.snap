@@ -2,35 +2,36 @@
 
 exports[`QuestionAnswer renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <QuestionAnswer
     answer={
-        <div>
-            <p>
-                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-            </p>
-            <p>
-                We will be adding more currencies very soon, stay tuned!
-            </p>
-            <p>
-                Missing your favorite coin? Let us know here: 
-                <a
-                    href="mailto:support@n.exchange"
-                >
-                    support@n.exchange
-                </a>
-                .
-            </p>
-        </div>
+      <div>
+        <p>
+          We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+        </p>
+        <p>
+          We will be adding more currencies very soon, stay tuned!
+        </p>
+        <p>
+          Missing your favorite coin? Let us know here: 
+          <a
+            href="mailto:support@n.exchange"
+          >
+            support@n.exchange
+          </a>
+          .
+        </p>
+      </div>
     }
     question="What do you do?"
     t={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -40,41 +41,79 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3
+        <div
+          className="question"
           data-test="question-opener"
           onClick={[Function]}
->
-          faq.undefined
-           
+        >
           <i
-                    aria-hidden="true"
-                    className="far fa-plus-square"
+            aria-hidden="true"
+            className="far fa-plus-square fa-2x"
           />
-</h3>,
+          <h3>
+            faq.undefined
+          </h3>
+        </div>,
         <div
           className="answer"
->
+        >
           <div>
-                    <p>
-                              We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-                    </p>
-                    <p>
-                              We will be adding more currencies very soon, stay tuned!
-                    </p>
-                    <p>
-                              Missing your favorite coin? Let us know here: 
-                              <a
-                                        href="mailto:support@n.exchange"
-                              >
-                                        support@n.exchange
-                              </a>
-                              .
-                    </p>
+            <p>
+              We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+            </p>
+            <p>
+              We will be adding more currencies very soon, stay tuned!
+            </p>
+            <p>
+              Missing your favorite coin? Let us know here: 
+              <a
+                href="mailto:support@n.exchange"
+              >
+                support@n.exchange
+              </a>
+              .
+            </p>
           </div>
-</div>,
+          <div
+            className="feedback"
+          >
+            <div>
+              <span>
+                Whas this helpful?
+              </span>
+            </div>
+            <div
+              className="buttons"
+            >
+              <button
+                className="btn positive "
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-thumbs-up"
+                />
+                <span>
+                  YES
+                </span>
+              </button>
+              <button
+                className="btn negative "
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-thumbs-down"
+                />
+                <span>
+                  NO
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>,
         <hr />,
       ],
-      "className": "question-answer",
+      "className": "question-answer container",
+      "id": "faq.undefined",
     },
     "ref": null,
     "rendered": Array [
@@ -84,264 +123,110 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "faq.undefined",
-            " ",
             <i
               aria-hidden="true"
-              className="far fa-plus-square"
-/>,
+              className="far fa-plus-square fa-2x"
+            />,
+            <h3>
+              faq.undefined
+            </h3>,
           ],
+          "className": "question",
           "data-test": "question-opener",
           "onClick": [Function],
         },
         "ref": null,
         "rendered": Array [
-          "faq.undefined",
-          " ",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "aria-hidden": "true",
-              "className": "far fa-plus-square",
+              "className": "far fa-plus-square fa-2x",
             },
             "ref": null,
             "rendered": null,
             "type": "i",
           },
-        ],
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div>
-            <p>
-                        We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-            </p>
-            <p>
-                        We will be adding more currencies very soon, stay tuned!
-            </p>
-            <p>
-                        Missing your favorite coin? Let us know here: 
-                        <a
-                                    href="mailto:support@n.exchange"
-                        >
-                                    support@n.exchange
-                        </a>
-                        .
-            </p>
-</div>,
-          "className": "answer",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-</p>,
-              <p>
-                We will be adding more currencies very soon, stay tuned!
-</p>,
-              <p>
-                Missing your favorite coin? Let us know here: 
-                <a
-                                href="mailto:support@n.exchange"
-                >
-                                support@n.exchange
-                </a>
-                .
-</p>,
-            ],
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "faq.undefined",
+            },
+            "ref": null,
+            "rendered": "faq.undefined",
+            "type": "h3",
           },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
-              },
-              "ref": null,
-              "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "We will be adding more currencies very soon, stay tuned!",
-              },
-              "ref": null,
-              "rendered": "We will be adding more currencies very soon, stay tuned!",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "Missing your favorite coin? Let us know here: ",
-                  <a
-                    href="mailto:support@n.exchange"
->
-                    support@n.exchange
-</a>,
-                  ".",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                "Missing your favorite coin? Let us know here: ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "support@n.exchange",
-                    "href": "mailto:support@n.exchange",
-                  },
-                  "ref": null,
-                  "rendered": "support@n.exchange",
-                  "type": "a",
-                },
-                ".",
-              ],
-              "type": "p",
-            },
-          ],
-          "type": "div",
-        },
+        ],
         "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "hr",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h3
-            data-test="question-opener"
-            onClick={[Function]}
->
-            faq.undefined
-             
-            <i
-                        aria-hidden="true"
-                        className="far fa-plus-square"
-            />
-</h3>,
-          <div
-            className="answer"
->
+        "props": Object {
+          "children": Array [
             <div>
-                        <p>
-                                    We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-                        </p>
-                        <p>
-                                    We will be adding more currencies very soon, stay tuned!
-                        </p>
-                        <p>
-                                    Missing your favorite coin? Let us know here: 
-                                    <a
-                                                href="mailto:support@n.exchange"
-                                    >
-                                                support@n.exchange
-                                    </a>
-                                    .
-                        </p>
-            </div>
-</div>,
-          <hr />,
-        ],
-        "className": "question-answer",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "faq.undefined",
-              " ",
-              <i
-                aria-hidden="true"
-                className="far fa-plus-square"
-/>,
-            ],
-            "data-test": "question-opener",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": Array [
-            "faq.undefined",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "aria-hidden": "true",
-                "className": "far fa-plus-square",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "i",
-            },
+              <p>
+                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+              </p>
+              <p>
+                We will be adding more currencies very soon, stay tuned!
+              </p>
+              <p>
+                Missing your favorite coin? Let us know here: 
+                <a
+                  href="mailto:support@n.exchange"
+                >
+                  support@n.exchange
+                </a>
+                .
+              </p>
+            </div>,
+            <div
+              className="feedback"
+            >
+              <div>
+                <span>
+                  Whas this helpful?
+                </span>
+              </div>
+              <div
+                className="buttons"
+              >
+                <button
+                  className="btn positive "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-up"
+                  />
+                  <span>
+                    YES
+                  </span>
+                </button>
+                <button
+                  className="btn negative "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-down"
+                  />
+                  <span>
+                    NO
+                  </span>
+                </button>
+              </div>
+            </div>,
           ],
-          "type": "h3",
+          "className": "answer",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div>
-              <p>
-                            We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-              </p>
-              <p>
-                            We will be adding more currencies very soon, stay tuned!
-              </p>
-              <p>
-                            Missing your favorite coin? Let us know here: 
-                            <a
-                                          href="mailto:support@n.exchange"
-                            >
-                                          support@n.exchange
-                            </a>
-                            .
-              </p>
-</div>,
-            "className": "answer",
-          },
-          "ref": null,
-          "rendered": Object {
+        "ref": null,
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -349,19 +234,19 @@ ShallowWrapper {
               "children": Array [
                 <p>
                   We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
-</p>,
+                </p>,
                 <p>
                   We will be adding more currencies very soon, stay tuned!
-</p>,
+                </p>,
                 <p>
                   Missing your favorite coin? Let us know here: 
                   <a
-                                    href="mailto:support@n.exchange"
+                    href="mailto:support@n.exchange"
                   >
-                                    support@n.exchange
+                    support@n.exchange
                   </a>
                   .
-</p>,
+                </p>,
               ],
             },
             "ref": null,
@@ -397,9 +282,9 @@ ShallowWrapper {
                     "Missing your favorite coin? Let us know here: ",
                     <a
                       href="mailto:support@n.exchange"
->
+                    >
                       support@n.exchange
-</a>,
+                    </a>,
                     ".",
                   ],
                 },
@@ -425,6 +310,678 @@ ShallowWrapper {
             ],
             "type": "div",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  <span>
+                    Whas this helpful?
+                  </span>
+                </div>,
+                <div
+                  className="buttons"
+                >
+                  <button
+                    className="btn positive "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-up"
+                    />
+                    <span>
+                      YES
+                    </span>
+                  </button>
+                  <button
+                    className="btn negative "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-down"
+                    />
+                    <span>
+                      NO
+                    </span>
+                  </button>
+                </div>,
+              ],
+              "className": "feedback",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Whas this helpful?
+                  </span>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Whas this helpful?",
+                  },
+                  "ref": null,
+                  "rendered": "Whas this helpful?",
+                  "type": "span",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <button
+                      className="btn positive "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-up"
+                      />
+                      <span>
+                        YES
+                      </span>
+                    </button>,
+                    <button
+                      className="btn negative "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-down"
+                      />
+                      <span>
+                        NO
+                      </span>
+                    </button>,
+                  ],
+                  "className": "buttons",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="fas fa-thumbs-up"
+                        />,
+                        <span>
+                          YES
+                        </span>,
+                      ],
+                      "className": "btn positive ",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-thumbs-up",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "YES",
+                        },
+                        "ref": null,
+                        "rendered": "YES",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="fas fa-thumbs-down"
+                        />,
+                        <span>
+                          NO
+                        </span>,
+                      ],
+                      "className": "btn negative ",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-thumbs-down",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "NO",
+                        },
+                        "ref": null,
+                        "rendered": "NO",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="question"
+            data-test="question-opener"
+            onClick={[Function]}
+          >
+            <i
+              aria-hidden="true"
+              className="far fa-plus-square fa-2x"
+            />
+            <h3>
+              faq.undefined
+            </h3>
+          </div>,
+          <div
+            className="answer"
+          >
+            <div>
+              <p>
+                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+              </p>
+              <p>
+                We will be adding more currencies very soon, stay tuned!
+              </p>
+              <p>
+                Missing your favorite coin? Let us know here: 
+                <a
+                  href="mailto:support@n.exchange"
+                >
+                  support@n.exchange
+                </a>
+                .
+              </p>
+            </div>
+            <div
+              className="feedback"
+            >
+              <div>
+                <span>
+                  Whas this helpful?
+                </span>
+              </div>
+              <div
+                className="buttons"
+              >
+                <button
+                  className="btn positive "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-up"
+                  />
+                  <span>
+                    YES
+                  </span>
+                </button>
+                <button
+                  className="btn negative "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-down"
+                  />
+                  <span>
+                    NO
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>,
+          <hr />,
+        ],
+        "className": "question-answer container",
+        "id": "faq.undefined",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="far fa-plus-square fa-2x"
+              />,
+              <h3>
+                faq.undefined
+              </h3>,
+            ],
+            "className": "question",
+            "data-test": "question-opener",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "far fa-plus-square fa-2x",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "faq.undefined",
+              },
+              "ref": null,
+              "rendered": "faq.undefined",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <p>
+                  We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                </p>
+                <p>
+                  We will be adding more currencies very soon, stay tuned!
+                </p>
+                <p>
+                  Missing your favorite coin? Let us know here: 
+                  <a
+                    href="mailto:support@n.exchange"
+                  >
+                    support@n.exchange
+                  </a>
+                  .
+                </p>
+              </div>,
+              <div
+                className="feedback"
+              >
+                <div>
+                  <span>
+                    Whas this helpful?
+                  </span>
+                </div>
+                <div
+                  className="buttons"
+                >
+                  <button
+                    className="btn positive "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-up"
+                    />
+                    <span>
+                      YES
+                    </span>
+                  </button>
+                  <button
+                    className="btn negative "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-down"
+                    />
+                    <span>
+                      NO
+                    </span>
+                  </button>
+                </div>
+              </div>,
+            ],
+            "className": "answer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                  </p>,
+                  <p>
+                    We will be adding more currencies very soon, stay tuned!
+                  </p>,
+                  <p>
+                    Missing your favorite coin? Let us know here: 
+                    <a
+                      href="mailto:support@n.exchange"
+                    >
+                      support@n.exchange
+                    </a>
+                    .
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                  },
+                  "ref": null,
+                  "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "We will be adding more currencies very soon, stay tuned!",
+                  },
+                  "ref": null,
+                  "rendered": "We will be adding more currencies very soon, stay tuned!",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Missing your favorite coin? Let us know here: ",
+                      <a
+                        href="mailto:support@n.exchange"
+                      >
+                        support@n.exchange
+                      </a>,
+                      ".",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Missing your favorite coin? Let us know here: ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "support@n.exchange",
+                        "href": "mailto:support@n.exchange",
+                      },
+                      "ref": null,
+                      "rendered": "support@n.exchange",
+                      "type": "a",
+                    },
+                    ".",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    <span>
+                      Whas this helpful?
+                    </span>
+                  </div>,
+                  <div
+                    className="buttons"
+                  >
+                    <button
+                      className="btn positive "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-up"
+                      />
+                      <span>
+                        YES
+                      </span>
+                    </button>
+                    <button
+                      className="btn negative "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-down"
+                      />
+                      <span>
+                        NO
+                      </span>
+                    </button>
+                  </div>,
+                ],
+                "className": "feedback",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Whas this helpful?
+                    </span>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Whas this helpful?",
+                    },
+                    "ref": null,
+                    "rendered": "Whas this helpful?",
+                    "type": "span",
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <button
+                        className="btn positive "
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-thumbs-up"
+                        />
+                        <span>
+                          YES
+                        </span>
+                      </button>,
+                      <button
+                        className="btn negative "
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-thumbs-down"
+                        />
+                        <span>
+                          NO
+                        </span>
+                      </button>,
+                    ],
+                    "className": "buttons",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <i
+                            className="fas fa-thumbs-up"
+                          />,
+                          <span>
+                            YES
+                          </span>,
+                        ],
+                        "className": "btn positive ",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "fas fa-thumbs-up",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "i",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "YES",
+                          },
+                          "ref": null,
+                          "rendered": "YES",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <i
+                            className="fas fa-thumbs-down"
+                          />,
+                          <span>
+                            NO
+                          </span>,
+                        ],
+                        "className": "btn negative ",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "fas fa-thumbs-down",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "i",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "NO",
+                          },
+                          "ref": null,
+                          "rendered": "NO",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
         Object {
@@ -444,8 +1001,27 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

@@ -2,17 +2,18 @@
 
 exports[`Hero renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -25,39 +26,41 @@ ShallowWrapper {
         <Connect(ErrorAlert) />,
         <div
           className="container"
->
+        >
           <div
-                    className="row"
+            className="row"
           >
-                    <div
-                              className="col-xs-12"
+            <div
+              className="col-xs-12"
+            >
+              <div
+                className="brand"
+              >
+                <h1>
+                  hero.1
+                </h1>
+                <Trans
+                  i18nKey="hero.2"
+                >
+                  <h2>
+                    Simple. 
+                    <span
+                      className="text-green"
                     >
-                              <div
-                                        className="brand"
-                              >
-                                        <h1>
-                                                  hero.1
-                                        </h1>
-                                        <Trans
-                                                  i18nKey="hero.2"
-                                        >
-                                                  <h2>
-                                                            Simple. 
-                                                            <span
-                                                                      className="text-green"
-                                                            >
-                                                                      Secure
-                                                            </span>
-                                                            . Transparent.
-                                                  </h2>
-                                        </Trans>
-                              </div>
-                    </div>
-                    <Connect(ExchangeWidget)
-                              store={undefined}
-                    />
+                      Secure
+                    </span>
+                    . Transparent.
+                  </h2>
+                </Trans>
+              </div>
+            </div>
+            <div
+              className="widget"
+            >
+              <Connect(OrderBookWidget) />
+            </div>
           </div>
-</div>,
+        </div>,
         <Connect(CoinPrices) />,
       ],
       "className": "hero",
@@ -80,35 +83,37 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="row"
->
+          >
             <div
-                        className="col-xs-12"
+              className="col-xs-12"
             >
-                        <div
-                                    className="brand"
-                        >
-                                    <h1>
-                                                hero.1
-                                    </h1>
-                                    <Trans
-                                                i18nKey="hero.2"
-                                    >
-                                                <h2>
-                                                            Simple. 
-                                                            <span
-                                                                        className="text-green"
-                                                            >
-                                                                        Secure
-                                                            </span>
-                                                            . Transparent.
-                                                </h2>
-                                    </Trans>
-                        </div>
+              <div
+                className="brand"
+              >
+                <h1>
+                  hero.1
+                </h1>
+                <Trans
+                  i18nKey="hero.2"
+                >
+                  <h2>
+                    Simple. 
+                    <span
+                      className="text-green"
+                    >
+                      Secure
+                    </span>
+                    . Transparent.
+                  </h2>
+                </Trans>
+              </div>
             </div>
-            <Connect(ExchangeWidget)
-                        store={undefined}
-            />
-</div>,
+            <div
+              className="widget"
+            >
+              <Connect(OrderBookWidget) />
+            </div>
+          </div>,
           "className": "container",
         },
         "ref": null,
@@ -120,31 +125,33 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="col-xs-12"
->
+              >
                 <div
-                                className="brand"
+                  className="brand"
                 >
-                                <h1>
-                                                hero.1
-                                </h1>
-                                <Trans
-                                                i18nKey="hero.2"
-                                >
-                                                <h2>
-                                                                Simple. 
-                                                                <span
-                                                                                className="text-green"
-                                                                >
-                                                                                Secure
-                                                                </span>
-                                                                . Transparent.
-                                                </h2>
-                                </Trans>
+                  <h1>
+                    hero.1
+                  </h1>
+                  <Trans
+                    i18nKey="hero.2"
+                  >
+                    <h2>
+                      Simple. 
+                      <span
+                        className="text-green"
+                      >
+                        Secure
+                      </span>
+                      . Transparent.
+                    </h2>
+                  </Trans>
                 </div>
-</div>,
-              <Connect(ExchangeWidget)
-                store={undefined}
-/>,
+              </div>,
+              <div
+                className="widget"
+              >
+                <Connect(OrderBookWidget) />
+              </div>,
             ],
             "className": "row",
           },
@@ -157,24 +164,24 @@ ShallowWrapper {
               "props": Object {
                 "children": <div
                   className="brand"
->
+                >
                   <h1>
-                                    hero.1
+                    hero.1
                   </h1>
                   <Trans
-                                    i18nKey="hero.2"
+                    i18nKey="hero.2"
                   >
-                                    <h2>
-                                                      Simple. 
-                                                      <span
-                                                                        className="text-green"
-                                                      >
-                                                                        Secure
-                                                      </span>
-                                                      . Transparent.
-                                    </h2>
+                    <h2>
+                      Simple. 
+                      <span
+                        className="text-green"
+                      >
+                        Secure
+                      </span>
+                      . Transparent.
+                    </h2>
                   </Trans>
-</div>,
+                </div>,
                 "className": "col-xs-12",
               },
               "ref": null,
@@ -186,20 +193,20 @@ ShallowWrapper {
                   "children": Array [
                     <h1>
                       hero.1
-</h1>,
+                    </h1>,
                     <Trans
                       i18nKey="hero.2"
->
+                    >
                       <h2>
-                                            Simple. 
-                                            <span
-                                                                  className="text-green"
-                                            >
-                                                                  Secure
-                                            </span>
-                                            . Transparent.
+                        Simple. 
+                        <span
+                          className="text-green"
+                        >
+                          Secure
+                        </span>
+                        . Transparent.
                       </h2>
-</Trans>,
+                    </Trans>,
                   ],
                   "className": "brand",
                 },
@@ -224,12 +231,12 @@ ShallowWrapper {
                       "children": <h2>
                         Simple. 
                         <span
-                                                className="text-green"
+                          className="text-green"
                         >
-                                                Secure
+                          Secure
                         </span>
                         . Transparent.
-</h2>,
+                      </h2>,
                       "i18nKey": "hero.2",
                     },
                     "ref": null,
@@ -242,9 +249,9 @@ ShallowWrapper {
                           "Simple. ",
                           <span
                             className="text-green"
->
+                          >
                             Secure
-</span>,
+                          </span>,
                           ". Transparent.",
                         ],
                       },
@@ -277,13 +284,24 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "host",
               "props": Object {
-                "store": undefined,
+                "children": <Connect(OrderBookWidget) />,
+                "className": "widget",
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "store": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
             },
           ],
           "type": "div",
@@ -312,39 +330,41 @@ ShallowWrapper {
           <Connect(ErrorAlert) />,
           <div
             className="container"
->
+          >
             <div
-                        className="row"
+              className="row"
             >
-                        <div
-                                    className="col-xs-12"
-                        >
-                                    <div
-                                                className="brand"
-                                    >
-                                                <h1>
-                                                            hero.1
-                                                </h1>
-                                                <Trans
-                                                            i18nKey="hero.2"
-                                                >
-                                                            <h2>
-                                                                        Simple. 
-                                                                        <span
-                                                                                    className="text-green"
-                                                                        >
-                                                                                    Secure
-                                                                        </span>
-                                                                        . Transparent.
-                                                            </h2>
-                                                </Trans>
-                                    </div>
-                        </div>
-                        <Connect(ExchangeWidget)
-                                    store={undefined}
-                        />
+              <div
+                className="col-xs-12"
+              >
+                <div
+                  className="brand"
+                >
+                  <h1>
+                    hero.1
+                  </h1>
+                  <Trans
+                    i18nKey="hero.2"
+                  >
+                    <h2>
+                      Simple. 
+                      <span
+                        className="text-green"
+                      >
+                        Secure
+                      </span>
+                      . Transparent.
+                    </h2>
+                  </Trans>
+                </div>
+              </div>
+              <div
+                className="widget"
+              >
+                <Connect(OrderBookWidget) />
+              </div>
             </div>
-</div>,
+          </div>,
           <Connect(CoinPrices) />,
         ],
         "className": "hero",
@@ -367,35 +387,37 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="row"
->
+            >
               <div
-                            className="col-xs-12"
+                className="col-xs-12"
               >
-                            <div
-                                          className="brand"
-                            >
-                                          <h1>
-                                                        hero.1
-                                          </h1>
-                                          <Trans
-                                                        i18nKey="hero.2"
-                                          >
-                                                        <h2>
-                                                                      Simple. 
-                                                                      <span
-                                                                                    className="text-green"
-                                                                      >
-                                                                                    Secure
-                                                                      </span>
-                                                                      . Transparent.
-                                                        </h2>
-                                          </Trans>
-                            </div>
+                <div
+                  className="brand"
+                >
+                  <h1>
+                    hero.1
+                  </h1>
+                  <Trans
+                    i18nKey="hero.2"
+                  >
+                    <h2>
+                      Simple. 
+                      <span
+                        className="text-green"
+                      >
+                        Secure
+                      </span>
+                      . Transparent.
+                    </h2>
+                  </Trans>
+                </div>
               </div>
-              <Connect(ExchangeWidget)
-                            store={undefined}
-              />
-</div>,
+              <div
+                className="widget"
+              >
+                <Connect(OrderBookWidget) />
+              </div>
+            </div>,
             "className": "container",
           },
           "ref": null,
@@ -407,31 +429,33 @@ ShallowWrapper {
               "children": Array [
                 <div
                   className="col-xs-12"
->
+                >
                   <div
-                                    className="brand"
+                    className="brand"
                   >
-                                    <h1>
-                                                      hero.1
-                                    </h1>
-                                    <Trans
-                                                      i18nKey="hero.2"
-                                    >
-                                                      <h2>
-                                                                        Simple. 
-                                                                        <span
-                                                                                          className="text-green"
-                                                                        >
-                                                                                          Secure
-                                                                        </span>
-                                                                        . Transparent.
-                                                      </h2>
-                                    </Trans>
+                    <h1>
+                      hero.1
+                    </h1>
+                    <Trans
+                      i18nKey="hero.2"
+                    >
+                      <h2>
+                        Simple. 
+                        <span
+                          className="text-green"
+                        >
+                          Secure
+                        </span>
+                        . Transparent.
+                      </h2>
+                    </Trans>
                   </div>
-</div>,
-                <Connect(ExchangeWidget)
-                  store={undefined}
-/>,
+                </div>,
+                <div
+                  className="widget"
+                >
+                  <Connect(OrderBookWidget) />
+                </div>,
               ],
               "className": "row",
             },
@@ -444,24 +468,24 @@ ShallowWrapper {
                 "props": Object {
                   "children": <div
                     className="brand"
->
+                  >
                     <h1>
-                                        hero.1
+                      hero.1
                     </h1>
                     <Trans
-                                        i18nKey="hero.2"
+                      i18nKey="hero.2"
                     >
-                                        <h2>
-                                                            Simple. 
-                                                            <span
-                                                                                className="text-green"
-                                                            >
-                                                                                Secure
-                                                            </span>
-                                                            . Transparent.
-                                        </h2>
+                      <h2>
+                        Simple. 
+                        <span
+                          className="text-green"
+                        >
+                          Secure
+                        </span>
+                        . Transparent.
+                      </h2>
                     </Trans>
-</div>,
+                  </div>,
                   "className": "col-xs-12",
                 },
                 "ref": null,
@@ -473,20 +497,20 @@ ShallowWrapper {
                     "children": Array [
                       <h1>
                         hero.1
-</h1>,
+                      </h1>,
                       <Trans
                         i18nKey="hero.2"
->
+                      >
                         <h2>
-                                                Simple. 
-                                                <span
-                                                                        className="text-green"
-                                                >
-                                                                        Secure
-                                                </span>
-                                                . Transparent.
+                          Simple. 
+                          <span
+                            className="text-green"
+                          >
+                            Secure
+                          </span>
+                          . Transparent.
                         </h2>
-</Trans>,
+                      </Trans>,
                     ],
                     "className": "brand",
                   },
@@ -511,12 +535,12 @@ ShallowWrapper {
                         "children": <h2>
                           Simple. 
                           <span
-                                                    className="text-green"
+                            className="text-green"
                           >
-                                                    Secure
+                            Secure
                           </span>
                           . Transparent.
-</h2>,
+                        </h2>,
                         "i18nKey": "hero.2",
                       },
                       "ref": null,
@@ -529,9 +553,9 @@ ShallowWrapper {
                             "Simple. ",
                             <span
                               className="text-green"
->
+                            >
                               Secure
-</span>,
+                            </span>,
                             ". Transparent.",
                           ],
                         },
@@ -564,13 +588,24 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "host",
                 "props": Object {
-                  "store": undefined,
+                  "children": <Connect(OrderBookWidget) />,
+                  "className": "widget",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "store": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
               },
             ],
             "type": "div",
@@ -594,8 +629,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

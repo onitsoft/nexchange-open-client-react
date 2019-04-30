@@ -1,4 +1,6 @@
 'use strict';
+import $ from 'jquery';
+import _ from 'lodash';
 
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
@@ -20,3 +22,9 @@ Object.assign = require('object-assign');
 if (process.env.NODE_ENV === 'test') {
   require('raf').polyfill(global);
 }
+
+global.$ = global.jQuery = $;
+global._ = _;
+window.gtag = function(){return true;}
+
+

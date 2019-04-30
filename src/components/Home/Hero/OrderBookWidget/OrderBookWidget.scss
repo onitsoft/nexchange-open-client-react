@@ -22,9 +22,9 @@
   text-align: left;
   
 
-  @media (min-width: $screen-md-min) {
-    height: 410px;
-    padding: 25px 75px;
+  @media (min-width: $screen-md-max) {
+    height: 450px;
+    padding: 25px 55px;
   }
 
   .pair-selection {
@@ -49,18 +49,48 @@
     }
   }
 
-  .nav-buy {
-    font-size: 20px;
-    color: $green;
-  }
-  .nav-sell {
-    font-size: 20px;
-    color: $red;
-  }
+  .tabs {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    li {
+      margin: 0px 5px;
+      a {
+        border: 1px solid !important;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        border-color: $gray;
+        color: $gray;
+        
+        &.active {
+          background-color: $blue;
+          border-color: $blue;
+          color: #fff;
+        }
+      }
 
+      .arrow-down {
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        bottom: -3px;
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid $blue;
+      }        
+    }
+  }
   .btn {
-    width: 200px;
-    float: right;
+    width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      width: 200px;
+    }
 
     &.btn-buy {
       background-color: $green;

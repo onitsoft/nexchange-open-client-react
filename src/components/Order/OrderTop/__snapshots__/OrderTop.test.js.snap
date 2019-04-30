@@ -2,17 +2,18 @@
 
 exports[`OrderTop renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -24,28 +25,28 @@ ShallowWrapper {
       "children": Array [
         <div
           className="col-xs-12"
->
+        >
           <h3
-                    className="ref"
+            className="ref"
           >
-                    order.reference
-                    : 
-                    <b>
-                              OV2O6C
-                    </b>
+            order.reference
+            : 
+            <b>
+              OV2O6C
+            </b>
           </h3>
           <button
-                    className="bookmark btn btn-default btn-simple"
-                    onClick={[Function]}
-                    type="button"
+            className="bookmark btn btn-default btn-simple"
+            onClick={[Function]}
+            type="button"
           >
-                    bookmark.0
+            bookmark.0
           </button>
-</div>,
+        </div>,
         <Bookmark
           onClose={[Function]}
           show={false}
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -58,20 +59,20 @@ ShallowWrapper {
           "children": Array [
             <h3
               className="ref"
->
+            >
               order.reference
               : 
               <b>
-                            OV2O6C
+                OV2O6C
               </b>
-</h3>,
+            </h3>,
             <button
               className="bookmark btn btn-default btn-simple"
               onClick={[Function]}
               type="button"
->
+            >
               bookmark.0
-</button>,
+            </button>,
           ],
           "className": "col-xs-12",
         },
@@ -87,7 +88,7 @@ ShallowWrapper {
                 ": ",
                 <b>
                   OV2O6C
-</b>,
+                </b>,
               ],
               "className": "ref",
             },
@@ -150,28 +151,28 @@ ShallowWrapper {
         "children": Array [
           <div
             className="col-xs-12"
->
+          >
             <h3
-                        className="ref"
+              className="ref"
             >
-                        order.reference
-                        : 
-                        <b>
-                                    OV2O6C
-                        </b>
+              order.reference
+              : 
+              <b>
+                OV2O6C
+              </b>
             </h3>
             <button
-                        className="bookmark btn btn-default btn-simple"
-                        onClick={[Function]}
-                        type="button"
+              className="bookmark btn btn-default btn-simple"
+              onClick={[Function]}
+              type="button"
             >
-                        bookmark.0
+              bookmark.0
             </button>
-</div>,
+          </div>,
           <Bookmark
             onClose={[Function]}
             show={false}
-/>,
+          />,
         ],
       },
       "ref": null,
@@ -184,20 +185,20 @@ ShallowWrapper {
             "children": Array [
               <h3
                 className="ref"
->
+              >
                 order.reference
                 : 
                 <b>
-                                OV2O6C
+                  OV2O6C
                 </b>
-</h3>,
+              </h3>,
               <button
                 className="bookmark btn btn-default btn-simple"
                 onClick={[Function]}
                 type="button"
->
+              >
                 bookmark.0
-</button>,
+              </button>,
             ],
             "className": "col-xs-12",
           },
@@ -213,7 +214,7 @@ ShallowWrapper {
                   ": ",
                   <b>
                     OV2O6C
-</b>,
+                  </b>,
                 ],
                 "className": "ref",
               },
@@ -272,8 +273,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

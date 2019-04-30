@@ -45,15 +45,22 @@ class OrderDepthItem extends PureComponent {
   render() {  
       const item = this.props.item;
       const myOrderSize = this.getMyOrderSize(item.rate);
+
+      const color = this.props.side === 'SELL' ? '#e25656' : '#2cc5bd';
+      const percentage = (item.size * 100)/this.props.maxSize;
+      const sizeBackground =
+      `-webkit-linear-gradient(left, ${color} ${percentage}%, #fff ${percentage}%)`     
+      
       return (
       <I18n ns="translations">
         {t => (
-          <div className={`${styles.container} ${styles[this.props.side]}`}>
+            /* eslint max-len: ["error", { "code": 200 }] */ 
+          <div className={`${styles.container} ${styles[this.props.side]}`} style={{background:sizeBackground}} data-test={`${this.props.side}`} >
             <a onClick={() => this.setOrderBookQuantity(item.size)}
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
             /* eslint max-len: ["error", { "code": 200 }] */ 
             title={myOrderSize ? `${this.props.side} ${myOrderSize} ${this.props.selectedCoin.receive} @ ${item.rate} ${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}` : null}>
-              {`${item.size.toFixed(9)}`}
+              {`${(item.size).toFixed(9)}`}
             </a>
             <a onClick={() => this.setOrderBookLimitRate(item.rate)} 
             className={`clickable ${myOrderSize ? 'bold' : '' }`}
