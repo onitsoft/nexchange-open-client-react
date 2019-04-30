@@ -391,7 +391,9 @@
     "11":
       "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
     "12":
-      "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE."
+      "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+    "13":
+      "On any case of a refund after more than a day after the purchase had been made, an administrative fee of 5% will be retained by n.exchange."
   },
   "loading": "Loading",
   "privacy": {
