@@ -6,6 +6,7 @@
     "email": "Email",
     "address": "Adresse",
     "youraddress": "Geben Sie Ihre {{selectedCoin}} Adresse ein",
+    "usepreviousaddress": "Vorherige Adresse verwenden",
     "destinationtag": "Destination tag",
     "paymentid": "Payment id",
     "memo": "Memo",

@@ -5,6 +5,7 @@
 		"email": "Email",
 		"address": "Адрес",
 		"youraddress": "Введите адрес Вашего {{selectedCoin}} кошелька",
+		"usepreviousaddress": "Использовать предыдущий адрес",
 		"search": "Поиск",
 		"submit": "Отправить"
 	},
