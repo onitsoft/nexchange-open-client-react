@@ -57,7 +57,7 @@ ShallowWrapper {
             <div
               className="widget"
             >
-              <OrderBookDisabled />
+              <Connect(OrderBookWidget) />
             </div>
           </div>
         </div>,
@@ -111,7 +111,7 @@ ShallowWrapper {
             <div
               className="widget"
             >
-              <OrderBookDisabled />
+              <Connect(OrderBookWidget) />
             </div>
           </div>,
           "className": "container",
@@ -150,7 +150,7 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderBookDisabled />
+                <Connect(OrderBookWidget) />
               </div>,
             ],
             "className": "row",
@@ -286,7 +286,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <OrderBookDisabled />,
+                "children": <Connect(OrderBookWidget) />,
                 "className": "widget",
               },
               "ref": null,
@@ -294,7 +294,9 @@ ShallowWrapper {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
-                "props": Object {},
+                "props": Object {
+                  "store": undefined,
+                },
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
@@ -359,7 +361,7 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderBookDisabled />
+                <Connect(OrderBookWidget) />
               </div>
             </div>
           </div>,
@@ -413,7 +415,7 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderBookDisabled />
+                <Connect(OrderBookWidget) />
               </div>
             </div>,
             "className": "container",
@@ -452,7 +454,7 @@ ShallowWrapper {
                 <div
                   className="widget"
                 >
-                  <OrderBookDisabled />
+                  <Connect(OrderBookWidget) />
                 </div>,
               ],
               "className": "row",
@@ -588,7 +590,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <OrderBookDisabled />,
+                  "children": <Connect(OrderBookWidget) />,
                   "className": "widget",
                 },
                 "ref": null,
@@ -596,7 +598,9 @@ ShallowWrapper {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "class",
-                  "props": Object {},
+                  "props": Object {
+                    "store": undefined,
+                  },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
