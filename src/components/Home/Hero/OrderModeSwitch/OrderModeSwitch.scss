@@ -12,6 +12,10 @@
         text-align: center;
         cursor: pointer;
 
+        &:hover {
+            text-decoration: none;
+        }
+
         h3 {
             font-size: 16px;
             font-weight: bold;

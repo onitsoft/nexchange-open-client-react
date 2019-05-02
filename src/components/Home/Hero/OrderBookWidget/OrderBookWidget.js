@@ -24,10 +24,13 @@ class OrderBookWidget extends Component {
 
     this.state = {
       loading: true,
+      myOrdersExpanded: false
     };
 
     this.placeOrder = this.placeOrder.bind(this);
     this.focusWalletAddress = this.focusWalletAddress.bind(this);
+    this.expandMyOrders = this.expandMyOrders.bind(this);
+    this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
 
   componentDidMount(){
@@ -43,6 +46,9 @@ class OrderBookWidget extends Component {
       (this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit)) {
         clearInterval(this.interval);
         this.fetchOrderBook();
+    }
+    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
+      document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
     }
   }
 
@@ -79,6 +85,13 @@ class OrderBookWidget extends Component {
     clearInterval(this.interval);
   }
 
+  expandMyOrders() {
+    this.setState({myOrdersExpanded: true});
+  }
+
+  collapseMyOrders() {
+    this.setState({myOrdersExpanded: false});
+  }
 
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
@@ -219,14 +232,15 @@ class OrderBookWidget extends Component {
     if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
 
     const order_type = this.props.orderBook.order_type;
+    const myOrdersExpanded = this.state.myOrdersExpanded;
     return (
       <I18n ns='translations'>
         {t => (
-          <div className={styles.container}>
-            <div className='container'>
+          <div className={`container ${styles.container}`}>
               <div className='row'>
                 <div className='col-xs-12'>
-                  <div className={styles.widget}>
+                    {!myOrdersExpanded ? 
+                      <div className={styles.widget}>
                       <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                       <div className='col-xs-12 col-sm-12 col-md-6 col-lg-4'>
                         <div className={`col-xs-12 ${styles['pair-selection']}`}>
@@ -272,12 +286,10 @@ class OrderBookWidget extends Component {
                         selectedCoins={this.props.selectedCoin}
                         sellDepth={this.props.orderBook.sellDepth}
                         buyDepth={this.props.orderBook.buyDepth}
-                        />
-                      <MyOrders />
-                    </div>
+                        /> <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
+                      : <div className={styles.widget}><MyOrders expanded={true} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> }
                   </div>
               </div>
-            </div>
           </div>
         )}
       </I18n>

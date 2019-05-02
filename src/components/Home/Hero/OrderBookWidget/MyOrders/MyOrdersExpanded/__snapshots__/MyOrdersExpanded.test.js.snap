@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyOrdersExpanded renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          aria-hidden="true"
+          className="collapse"
+          data-dismiss="modal"
+          onClick={[Function]}
+          type="button"
+        >
+          <i
+            className="material-icons"
+          >
+            clear
+          </i>
+        </button>,
+        <div
+          className="col-xs-12 heading"
+        >
+          <h2>
+            My Orders
+          </h2>
+        </div>,
+        <p>
+          No order history...
+        </p>,
+      ],
+      "className": "container",
+      "id": "myOrders",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "aria-hidden": "true",
+          "children": <i
+            className="material-icons"
+          >
+            clear
+          </i>,
+          "className": "collapse",
+          "data-dismiss": "modal",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "clear",
+            "className": "material-icons",
+          },
+          "ref": null,
+          "rendered": "clear",
+          "type": "i",
+        },
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h2>
+            My Orders
+          </h2>,
+          "className": "col-xs-12 heading",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "My Orders",
+          },
+          "ref": null,
+          "rendered": "My Orders",
+          "type": "h2",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "No order history...",
+        },
+        "ref": null,
+        "rendered": "No order history...",
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            aria-hidden="true"
+            className="collapse"
+            data-dismiss="modal"
+            onClick={[Function]}
+            type="button"
+          >
+            <i
+              className="material-icons"
+            >
+              clear
+            </i>
+          </button>,
+          <div
+            className="col-xs-12 heading"
+          >
+            <h2>
+              My Orders
+            </h2>
+          </div>,
+          <p>
+            No order history...
+          </p>,
+        ],
+        "className": "container",
+        "id": "myOrders",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "aria-hidden": "true",
+            "children": <i
+              className="material-icons"
+            >
+              clear
+            </i>,
+            "className": "collapse",
+            "data-dismiss": "modal",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "clear",
+              "className": "material-icons",
+            },
+            "ref": null,
+            "rendered": "clear",
+            "type": "i",
+          },
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h2>
+              My Orders
+            </h2>,
+            "className": "col-xs-12 heading",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "My Orders",
+            },
+            "ref": null,
+            "rendered": "My Orders",
+            "type": "h2",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "No order history...",
+          },
+          "ref": null,
+          "rendered": "No order history...",
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;
