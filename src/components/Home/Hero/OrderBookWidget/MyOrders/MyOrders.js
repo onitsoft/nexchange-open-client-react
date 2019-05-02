@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { I18n } from 'react-i18next';
 import axios from 'axios';
 import config from 'Config';
-import arrow from 'Img/arrow-right-2.svg';
 import { changeOrderBookValue } from 'Actions/index.js';
 
+import MyOrdersCollapsed from './MyOrdersCollapsed/MyOrdersCollapsed';
 import styles from './MyOrders.scss';
+import MyOrdersExpanded from './MyOrdersExpanded/MyOrdersExpanded';
 
 
 class MyOrders extends PureComponent {
@@ -21,7 +21,7 @@ class MyOrders extends PureComponent {
     this.fetchMyOrders = this.fetchMyOrders.bind(this);
   }
 
-  UNSAFE_componentWillMount() {
+  UNSAFE_componentWillMount() {5
     this.fetchMyOrders();
     this.interval = setInterval(() => {
         this.fetchMyOrders();
@@ -36,7 +36,7 @@ class MyOrders extends PureComponent {
     if(localStorage.orderHistory){
         try {
           let orderHistory = localStorage['orderHistory'];
-          orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];          
+          orderHistory = orderHistory ? JSON.parse(orderHistory).reverse() : [];          
           const limitOrderHistory = _.filter(orderHistory, { 'mode': 'LIMIT' });
           let orders = [];
           limitOrderHistory.forEach((order) => {
@@ -66,45 +66,19 @@ class MyOrders extends PureComponent {
   }
 
   render() {
-    const myOrdersList = <div className={styles.list}>
-                            <div className={styles.orders}>
-                              {this.props.orderBook.myOrders.map((order) => {
-                                return (
-                                  <div key={order.unique_reference} className={styles.order}>
-                                    <div className={styles.coin}>
-                                        <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
-                                        <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
-                                        <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
-                                      </div>
-                                      <img src={arrow} className={styles.arrow} alt="Arrow" />
-                                      <div className={styles.coin}>
-                                        <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
-                                        <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
-                                        <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
-                                      </div>
-                                  </div>);
-                              })}
-                            </div>
-                            <div className={`${styles.viewAll}`}>
-                              <a>View All My Orders</a>
-                            </div>
-                          </div>;
-    return (
-        <I18n ns="translations">
-          {(t, i18n) => (
-         <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.wrapper}`}>
-          <div className={`${styles.container}`}>
-            <div className={`${styles.heading}`}><h4>My Orders</h4></div>
-            <div className={`${styles.content}`}>
-            {_.isEmpty(this.props.orderBook.myOrders) 
-              ? <p>No order history...</p>
-              : myOrdersList}
-            </div>
+      if(this.props.expanded) {
+        return (
+          <div className={`col-xs-12 ${styles.wrapper}`}> 
+            <MyOrdersExpanded myOrders={this.props.orderBook.myOrders} collapseMyOrders={this.props.collapseMyOrders}/>
           </div>
-         </div>
-          )}
-        </I18n>
-    );     
+        );
+      } else {
+        return (
+          <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.wrapper}`}> 
+            <MyOrdersCollapsed myOrders={this.props.orderBook.myOrders} expandMyOrders={this.props.expandMyOrders}/>
+          </div>
+        );
+      }   
   }
 }
 
