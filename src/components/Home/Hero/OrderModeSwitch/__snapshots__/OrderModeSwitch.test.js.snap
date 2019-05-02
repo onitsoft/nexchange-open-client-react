@@ -27,7 +27,7 @@ ShallowWrapper {
       >
         <a
           className="basic "
-          data-test="BASIC"
+          data-test="INSTANT"
           onClick={[Function]}
         >
           <h3>
@@ -55,7 +55,7 @@ ShallowWrapper {
         "children": Array [
           <a
             className="basic "
-            data-test="BASIC"
+            data-test="INSTANT"
             onClick={[Function]}
           >
             <h3>
@@ -85,7 +85,7 @@ ShallowWrapper {
               Simple
             </h3>,
             "className": "basic ",
-            "data-test": "BASIC",
+            "data-test": "INSTANT",
             "onClick": [Function],
           },
           "ref": null,
@@ -144,7 +144,7 @@ ShallowWrapper {
         >
           <a
             className="basic "
-            data-test="BASIC"
+            data-test="INSTANT"
             onClick={[Function]}
           >
             <h3>
@@ -172,7 +172,7 @@ ShallowWrapper {
           "children": Array [
             <a
               className="basic "
-              data-test="BASIC"
+              data-test="INSTANT"
               onClick={[Function]}
             >
               <h3>
@@ -202,7 +202,7 @@ ShallowWrapper {
                 Simple
               </h3>,
               "className": "basic ",
-              "data-test": "BASIC",
+              "data-test": "INSTANT",
               "onClick": [Function],
             },
             "ref": null,
