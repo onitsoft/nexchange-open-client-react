@@ -23,18 +23,292 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="container"
+        className="row"
       >
         <div
-          className="row"
+          className="col-xs-12"
         >
           <div
-            className="col-xs-12"
+            className="widget"
           >
+            <OrderModeSwitch />
             <div
-              className="widget"
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
             >
-              <OrderModeSwitch />
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    Buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    Sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+              />
+              <Connect(WalletAddress)
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  Buy ETH with OMG
+                </button>
+              </div>
+            </div>
+            <OrderDepth
+              buyDepth={Array []}
+              selectedCoins={
+                Object {
+                  "deposit": "OMG",
+                  "lastSelected": "deposit",
+                  "prev": Object {
+                    "deposit": "OMG",
+                    "receive": "ETH",
+                  },
+                  "receive": "ETH",
+                }
+              }
+              sellDepth={Array []}
+            />
+             
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>
+        </div>
+      </div>,
+      "className": "container container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col-xs-12"
+        >
+          <div
+            className="widget"
+          >
+            <OrderModeSwitch />
+            <div
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            >
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    Buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    Sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+              />
+              <Connect(WalletAddress)
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  Buy ETH with OMG
+                </button>
+              </div>
+            </div>
+            <OrderDepth
+              buyDepth={Array []}
+              selectedCoins={
+                Object {
+                  "deposit": "OMG",
+                  "lastSelected": "deposit",
+                  "prev": Object {
+                    "deposit": "OMG",
+                    "receive": "ETH",
+                  },
+                  "receive": "ETH",
+                }
+              }
+              sellDepth={Array []}
+            />
+             
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>
+        </div>,
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="widget"
+          >
+            <OrderModeSwitch />
+            <div
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            >
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    Buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    Sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+              />
+              <Connect(WalletAddress)
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  Buy ETH with OMG
+                </button>
+              </div>
+            </div>
+            <OrderDepth
+              buyDepth={Array []}
+              selectedCoins={
+                Object {
+                  "deposit": "OMG",
+                  "lastSelected": "deposit",
+                  "prev": Object {
+                    "deposit": "OMG",
+                    "receive": "ETH",
+                  },
+                  "receive": "ETH",
+                }
+              }
+              sellDepth={Array []}
+            />
+             
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>,
+          "className": "col-xs-12",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <OrderModeSwitch />,
               <div
                 className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
               >
@@ -91,7 +365,7 @@ ShallowWrapper {
                     Buy ETH with OMG
                   </button>
                 </div>
-              </div>
+              </div>,
               <OrderDepth
                 buyDepth={Array []}
                 selectedCoins={
@@ -106,16 +380,359 @@ ShallowWrapper {
                   }
                 }
                 sellDepth={Array []}
-              />
-              <Connect(MyOrders) />
-            </div>
-          </div>
-        </div>
-      </div>,
-      "className": "container",
+              />,
+              " ",
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />,
+            ],
+            "className": "widget",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "changeOrderMode": undefined,
+                "orderMode": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-xs-12 pair-selection"
+                  >
+                    <Unknown
+                      orderBook={true}
+                      type="deposit"
+                    />
+                    <Unknown
+                      orderBook={true}
+                      type="receive"
+                    />
+                  </div>,
+                  <ul
+                    className="nav nav-tabs tabs"
+                  >
+                    <li>
+                      <a
+                        className="clickable active"
+                        onClick={[Function]}
+                      >
+                        Buy
+                      </a>
+                      <div
+                        className="arrow-down"
+                      />
+                    </li>
+                    <li>
+                      <a
+                        className="clickable "
+                        onClick={[Function]}
+                      >
+                        Sell
+                      </a>
+                    </li>
+                  </ul>,
+                  <Connect(LimitOrderForm)
+                    inputRef={[Function]}
+                  />,
+                  <Connect(WalletAddress)
+                    inputRef={[Function]}
+                    withdraw_coin="receive"
+                  />,
+                  <div
+                    className="col-xs-12"
+                  >
+                    <button
+                      className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+                    >
+                      Buy ETH with OMG
+                    </button>
+                  </div>,
+                ],
+                "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <Unknown
+                        orderBook={true}
+                        type="deposit"
+                      />,
+                      <Unknown
+                        orderBook={true}
+                        type="receive"
+                      />,
+                    ],
+                    "className": "col-xs-12 pair-selection",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "orderBook": true,
+                        "type": "deposit",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "orderBook": true,
+                        "type": "receive",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <li>
+                        <a
+                          className="clickable active"
+                          onClick={[Function]}
+                        >
+                          Buy
+                        </a>
+                        <div
+                          className="arrow-down"
+                        />
+                      </li>,
+                      <li>
+                        <a
+                          className="clickable "
+                          onClick={[Function]}
+                        >
+                          Sell
+                        </a>
+                      </li>,
+                    ],
+                    "className": "nav nav-tabs tabs",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <a
+                            className="clickable active"
+                            onClick={[Function]}
+                          >
+                            Buy
+                          </a>,
+                          <div
+                            className="arrow-down"
+                          />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Buy",
+                            "className": "clickable active",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "Buy",
+                          "type": "a",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "arrow-down",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "div",
+                        },
+                      ],
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <a
+                            className="clickable "
+                            onClick={[Function]}
+                          >
+                            Sell
+                          </a>,
+                          null,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Sell",
+                            "className": "clickable ",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "Sell",
+                          "type": "a",
+                        },
+                        null,
+                      ],
+                      "type": "li",
+                    },
+                  ],
+                  "type": "ul",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "inputRef": [Function],
+                    "limit_rate": undefined,
+                    "quantity": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "button": undefined,
+                    "inputRef": [Function],
+                    "withdraw_coin": "receive",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+                    >
+                      Buy ETH with OMG
+                    </button>,
+                    "className": "col-xs-12",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Buy ETH with OMG",
+                      "className": "btn btn-buy 
+                          disabled btn btn-block btn-primary proceed ",
+                      "onClick": [Function],
+                    },
+                    "ref": [Function],
+                    "rendered": "Buy ETH with OMG",
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buyDepth": Array [],
+                "selectedCoins": Object {
+                  "deposit": "OMG",
+                  "lastSelected": "deposit",
+                  "prev": Object {
+                    "deposit": "OMG",
+                    "receive": "ETH",
+                  },
+                  "receive": "ETH",
+                },
+                "sellDepth": Array [],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "collapseMyOrders": [Function],
+                "expandMyOrders": [Function],
+                "expanded": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
     },
-    "ref": null,
-    "rendered": Object {
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -202,11 +819,16 @@ ShallowWrapper {
                 }
                 sellDepth={Array []}
               />
-              <Connect(MyOrders) />
+               
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
             </div>
           </div>
         </div>,
-        "className": "container",
+        "className": "container container",
       },
       "ref": null,
       "rendered": Object {
@@ -293,7 +915,12 @@ ShallowWrapper {
                 }
                 sellDepth={Array []}
               />
-              <Connect(MyOrders) />
+               
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
             </div>
           </div>,
           "className": "row",
@@ -380,7 +1007,12 @@ ShallowWrapper {
                 }
                 sellDepth={Array []}
               />
-              <Connect(MyOrders) />
+               
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
             </div>,
             "className": "col-xs-12",
           },
@@ -464,7 +1096,12 @@ ShallowWrapper {
                   }
                   sellDepth={Array []}
                 />,
-                <Connect(MyOrders) />,
+                " ",
+                <Connect(MyOrders)
+                  collapseMyOrders={[Function]}
+                  expandMyOrders={[Function]}
+                  expanded={false}
+                />,
               ],
               "className": "widget",
             },
@@ -786,808 +1423,21 @@ ShallowWrapper {
                 "rendered": null,
                 "type": [Function],
               },
+              " ",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
-                "props": Object {},
+                "props": Object {
+                  "collapseMyOrders": [Function],
+                  "expandMyOrders": [Function],
+                  "expanded": false,
+                },
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
               },
             ],
-            "type": "div",
-          },
-          "type": "div",
-        },
-        "type": "div",
-      },
-      "type": "div",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="container"
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="col-xs-12"
-            >
-              <div
-                className="widget"
-              >
-                <OrderModeSwitch />
-                <div
-                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
-                >
-                  <div
-                    className="col-xs-12 pair-selection"
-                  >
-                    <Unknown
-                      orderBook={true}
-                      type="deposit"
-                    />
-                    <Unknown
-                      orderBook={true}
-                      type="receive"
-                    />
-                  </div>
-                  <ul
-                    className="nav nav-tabs tabs"
-                  >
-                    <li>
-                      <a
-                        className="clickable active"
-                        onClick={[Function]}
-                      >
-                        Buy
-                      </a>
-                      <div
-                        className="arrow-down"
-                      />
-                    </li>
-                    <li>
-                      <a
-                        className="clickable "
-                        onClick={[Function]}
-                      >
-                        Sell
-                      </a>
-                    </li>
-                  </ul>
-                  <Connect(LimitOrderForm)
-                    inputRef={[Function]}
-                  />
-                  <Connect(WalletAddress)
-                    inputRef={[Function]}
-                    withdraw_coin="receive"
-                  />
-                  <div
-                    className="col-xs-12"
-                  >
-                    <button
-                      className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                      onClick={[Function]}
-                    >
-                      Buy ETH with OMG
-                    </button>
-                  </div>
-                </div>
-                <OrderDepth
-                  buyDepth={Array []}
-                  selectedCoins={
-                    Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    }
-                  }
-                  sellDepth={Array []}
-                />
-                <Connect(MyOrders) />
-              </div>
-            </div>
-          </div>
-        </div>,
-        "className": "container",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="row"
-          >
-            <div
-              className="col-xs-12"
-            >
-              <div
-                className="widget"
-              >
-                <OrderModeSwitch />
-                <div
-                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
-                >
-                  <div
-                    className="col-xs-12 pair-selection"
-                  >
-                    <Unknown
-                      orderBook={true}
-                      type="deposit"
-                    />
-                    <Unknown
-                      orderBook={true}
-                      type="receive"
-                    />
-                  </div>
-                  <ul
-                    className="nav nav-tabs tabs"
-                  >
-                    <li>
-                      <a
-                        className="clickable active"
-                        onClick={[Function]}
-                      >
-                        Buy
-                      </a>
-                      <div
-                        className="arrow-down"
-                      />
-                    </li>
-                    <li>
-                      <a
-                        className="clickable "
-                        onClick={[Function]}
-                      >
-                        Sell
-                      </a>
-                    </li>
-                  </ul>
-                  <Connect(LimitOrderForm)
-                    inputRef={[Function]}
-                  />
-                  <Connect(WalletAddress)
-                    inputRef={[Function]}
-                    withdraw_coin="receive"
-                  />
-                  <div
-                    className="col-xs-12"
-                  >
-                    <button
-                      className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                      onClick={[Function]}
-                    >
-                      Buy ETH with OMG
-                    </button>
-                  </div>
-                </div>
-                <OrderDepth
-                  buyDepth={Array []}
-                  selectedCoins={
-                    Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    }
-                  }
-                  sellDepth={Array []}
-                />
-                <Connect(MyOrders) />
-              </div>
-            </div>
-          </div>,
-          "className": "container",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="col-xs-12"
-            >
-              <div
-                className="widget"
-              >
-                <OrderModeSwitch />
-                <div
-                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
-                >
-                  <div
-                    className="col-xs-12 pair-selection"
-                  >
-                    <Unknown
-                      orderBook={true}
-                      type="deposit"
-                    />
-                    <Unknown
-                      orderBook={true}
-                      type="receive"
-                    />
-                  </div>
-                  <ul
-                    className="nav nav-tabs tabs"
-                  >
-                    <li>
-                      <a
-                        className="clickable active"
-                        onClick={[Function]}
-                      >
-                        Buy
-                      </a>
-                      <div
-                        className="arrow-down"
-                      />
-                    </li>
-                    <li>
-                      <a
-                        className="clickable "
-                        onClick={[Function]}
-                      >
-                        Sell
-                      </a>
-                    </li>
-                  </ul>
-                  <Connect(LimitOrderForm)
-                    inputRef={[Function]}
-                  />
-                  <Connect(WalletAddress)
-                    inputRef={[Function]}
-                    withdraw_coin="receive"
-                  />
-                  <div
-                    className="col-xs-12"
-                  >
-                    <button
-                      className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                      onClick={[Function]}
-                    >
-                      Buy ETH with OMG
-                    </button>
-                  </div>
-                </div>
-                <OrderDepth
-                  buyDepth={Array []}
-                  selectedCoins={
-                    Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    }
-                  }
-                  sellDepth={Array []}
-                />
-                <Connect(MyOrders) />
-              </div>
-            </div>,
-            "className": "row",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="widget"
-              >
-                <OrderModeSwitch />
-                <div
-                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
-                >
-                  <div
-                    className="col-xs-12 pair-selection"
-                  >
-                    <Unknown
-                      orderBook={true}
-                      type="deposit"
-                    />
-                    <Unknown
-                      orderBook={true}
-                      type="receive"
-                    />
-                  </div>
-                  <ul
-                    className="nav nav-tabs tabs"
-                  >
-                    <li>
-                      <a
-                        className="clickable active"
-                        onClick={[Function]}
-                      >
-                        Buy
-                      </a>
-                      <div
-                        className="arrow-down"
-                      />
-                    </li>
-                    <li>
-                      <a
-                        className="clickable "
-                        onClick={[Function]}
-                      >
-                        Sell
-                      </a>
-                    </li>
-                  </ul>
-                  <Connect(LimitOrderForm)
-                    inputRef={[Function]}
-                  />
-                  <Connect(WalletAddress)
-                    inputRef={[Function]}
-                    withdraw_coin="receive"
-                  />
-                  <div
-                    className="col-xs-12"
-                  >
-                    <button
-                      className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                      onClick={[Function]}
-                    >
-                      Buy ETH with OMG
-                    </button>
-                  </div>
-                </div>
-                <OrderDepth
-                  buyDepth={Array []}
-                  selectedCoins={
-                    Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    }
-                  }
-                  sellDepth={Array []}
-                />
-                <Connect(MyOrders) />
-              </div>,
-              "className": "col-xs-12",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <OrderModeSwitch />,
-                  <div
-                    className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
-                  >
-                    <div
-                      className="col-xs-12 pair-selection"
-                    >
-                      <Unknown
-                        orderBook={true}
-                        type="deposit"
-                      />
-                      <Unknown
-                        orderBook={true}
-                        type="receive"
-                      />
-                    </div>
-                    <ul
-                      className="nav nav-tabs tabs"
-                    >
-                      <li>
-                        <a
-                          className="clickable active"
-                          onClick={[Function]}
-                        >
-                          Buy
-                        </a>
-                        <div
-                          className="arrow-down"
-                        />
-                      </li>
-                      <li>
-                        <a
-                          className="clickable "
-                          onClick={[Function]}
-                        >
-                          Sell
-                        </a>
-                      </li>
-                    </ul>
-                    <Connect(LimitOrderForm)
-                      inputRef={[Function]}
-                    />
-                    <Connect(WalletAddress)
-                      inputRef={[Function]}
-                      withdraw_coin="receive"
-                    />
-                    <div
-                      className="col-xs-12"
-                    >
-                      <button
-                        className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                        onClick={[Function]}
-                      >
-                        Buy ETH with OMG
-                      </button>
-                    </div>
-                  </div>,
-                  <OrderDepth
-                    buyDepth={Array []}
-                    selectedCoins={
-                      Object {
-                        "deposit": "OMG",
-                        "lastSelected": "deposit",
-                        "prev": Object {
-                          "deposit": "OMG",
-                          "receive": "ETH",
-                        },
-                        "receive": "ETH",
-                      }
-                    }
-                    sellDepth={Array []}
-                  />,
-                  <Connect(MyOrders) />,
-                ],
-                "className": "widget",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "changeOrderMode": undefined,
-                    "orderMode": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <div
-                        className="col-xs-12 pair-selection"
-                      >
-                        <Unknown
-                          orderBook={true}
-                          type="deposit"
-                        />
-                        <Unknown
-                          orderBook={true}
-                          type="receive"
-                        />
-                      </div>,
-                      <ul
-                        className="nav nav-tabs tabs"
-                      >
-                        <li>
-                          <a
-                            className="clickable active"
-                            onClick={[Function]}
-                          >
-                            Buy
-                          </a>
-                          <div
-                            className="arrow-down"
-                          />
-                        </li>
-                        <li>
-                          <a
-                            className="clickable "
-                            onClick={[Function]}
-                          >
-                            Sell
-                          </a>
-                        </li>
-                      </ul>,
-                      <Connect(LimitOrderForm)
-                        inputRef={[Function]}
-                      />,
-                      <Connect(WalletAddress)
-                        inputRef={[Function]}
-                        withdraw_coin="receive"
-                      />,
-                      <div
-                        className="col-xs-12"
-                      >
-                        <button
-                          className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                          onClick={[Function]}
-                        >
-                          Buy ETH with OMG
-                        </button>
-                      </div>,
-                    ],
-                    "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <Unknown
-                            orderBook={true}
-                            type="deposit"
-                          />,
-                          <Unknown
-                            orderBook={true}
-                            type="receive"
-                          />,
-                        ],
-                        "className": "col-xs-12 pair-selection",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "orderBook": true,
-                            "type": "deposit",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "function",
-                          "props": Object {
-                            "orderBook": true,
-                            "type": "receive",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": [Function],
-                        },
-                      ],
-                      "type": "div",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <li>
-                            <a
-                              className="clickable active"
-                              onClick={[Function]}
-                            >
-                              Buy
-                            </a>
-                            <div
-                              className="arrow-down"
-                            />
-                          </li>,
-                          <li>
-                            <a
-                              className="clickable "
-                              onClick={[Function]}
-                            >
-                              Sell
-                            </a>
-                          </li>,
-                        ],
-                        "className": "nav nav-tabs tabs",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <a
-                                className="clickable active"
-                                onClick={[Function]}
-                              >
-                                Buy
-                              </a>,
-                              <div
-                                className="arrow-down"
-                              />,
-                            ],
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Buy",
-                                "className": "clickable active",
-                                "onClick": [Function],
-                              },
-                              "ref": null,
-                              "rendered": "Buy",
-                              "type": "a",
-                            },
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "className": "arrow-down",
-                              },
-                              "ref": null,
-                              "rendered": null,
-                              "type": "div",
-                            },
-                          ],
-                          "type": "li",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": Array [
-                              <a
-                                className="clickable "
-                                onClick={[Function]}
-                              >
-                                Sell
-                              </a>,
-                              null,
-                            ],
-                          },
-                          "ref": null,
-                          "rendered": Array [
-                            Object {
-                              "instance": null,
-                              "key": undefined,
-                              "nodeType": "host",
-                              "props": Object {
-                                "children": "Sell",
-                                "className": "clickable ",
-                                "onClick": [Function],
-                              },
-                              "ref": null,
-                              "rendered": "Sell",
-                              "type": "a",
-                            },
-                            null,
-                          ],
-                          "type": "li",
-                        },
-                      ],
-                      "type": "ul",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "inputRef": [Function],
-                        "limit_rate": undefined,
-                        "quantity": undefined,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "button": undefined,
-                        "inputRef": [Function],
-                        "withdraw_coin": "receive",
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": <button
-                          className="btn btn-buy 
-                          disabled btn btn-block btn-primary proceed "
-                          onClick={[Function]}
-                        >
-                          Buy ETH with OMG
-                        </button>,
-                        "className": "col-xs-12",
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "Buy ETH with OMG",
-                          "className": "btn btn-buy 
-                          disabled btn btn-block btn-primary proceed ",
-                          "onClick": [Function],
-                        },
-                        "ref": [Function],
-                        "rendered": "Buy ETH with OMG",
-                        "type": "button",
-                      },
-                      "type": "div",
-                    },
-                  ],
-                  "type": "div",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "buyDepth": Array [],
-                    "selectedCoins": Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    },
-                    "sellDepth": Array [],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": "div",
-            },
             "type": "div",
           },
           "type": "div",
