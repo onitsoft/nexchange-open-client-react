@@ -20,6 +20,7 @@ class WalletAddress extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setAddress = this.setAddress.bind(this);
     this.setCoin = this.setCoin.bind(this);
@@ -81,6 +82,14 @@ class WalletAddress extends Component {
       });
     }
     this.fireOnBlur = true;
+  }
+
+  onKeyDown(event) {
+    if(event.keyCode === 9) {
+      event.preventDefault();;
+      this.fireOnBlur = false;
+      this.addressSearchInput.focus();
+    }
   }
 
   handleSubmit(event) {
@@ -165,13 +174,17 @@ class WalletAddress extends Component {
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onKeyDown={this.onKeyDown}
                 value={this.state.address}
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {this.props.showPreviousAddressButton && !_.isEmpty(this.orderHistory) 
+              {!_.isEmpty(this.orderHistory) 
                ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
-                    {t('generalterms.usepreviousaddress')}
+                    <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
+                    <div className="visible-md visible-lg">
+                      {this.props.orderMode === 'BASIC' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                    </div>
                   </button>
                :  null}
               {this.state.showHistory ?
@@ -181,6 +194,7 @@ class WalletAddress extends Component {
                   setCoin={this.setCoin} 
                   dontFireOnBlur={this.dontFireOnBlur}
                   fireBlur={this.handleBlur}
+                  addressSearchInput={el => (this.addressSearchInput = el)}
                   />
                 :  null}
             </form>
