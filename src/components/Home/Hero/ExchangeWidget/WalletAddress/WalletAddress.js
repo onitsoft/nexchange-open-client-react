@@ -171,7 +171,8 @@ class WalletAddress extends Component {
               />
               {this.props.showPreviousAddressButton && !_.isEmpty(this.orderHistory) 
                ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
-                    {t('generalterms.usepreviousaddress')}
+                    <div className="visible-xs visible-sm"><i class="fas fa-history"></i></div>
+                    <div className="visible-md visible-lg">{t('generalterms.usepreviousaddress')}</div>
                   </button>
                :  null}
               {this.state.showHistory ?
