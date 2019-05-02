@@ -168,8 +168,7 @@ class ExchangeWidget extends Component {
                       onSubmit={this.placeOrder} 
                       inputRef={el => (this.walletInputEl = el)} 
                       button={this.button} 
-                      focusWalletAddress={this.focusWalletAddress}
-                      showPreviousAddressButton={true}/>
+                      focusWalletAddress={this.focusWalletAddress}/>
                     { this.props.selectedCoin.receive === 'XRP' ? <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />  : null }
                     { this.props.selectedCoin.receive === 'XMR' ? <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} /> : null }
                     { this.props.selectedCoin.receive === 'XLM' ? <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} /> : null }
