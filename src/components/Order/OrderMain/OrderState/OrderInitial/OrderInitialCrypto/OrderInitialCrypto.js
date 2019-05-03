@@ -27,22 +27,29 @@ class OrderInitial extends Component {
   }
 
   getAddressIdType(){
-    return this.props.order.deposit_address.payment_id ? 'Payment Id'
-      : this.props.order.deposit_address.destination_tag ? 'Destination Tag'
-        : this.props.order.deposit_address.memo ? 'Memo': null
+    if(this.props.order.deposit_address) {
+      return this.props.order.deposit_address.payment_id ? {label: 'Payment Id', key: 'payment_id'}
+        : this.props.order.deposit_address.destination_tag ? {label: 'Destination Tag', key: 'destination_tag'}
+          : this.props.order.deposit_address.memo ? {label: 'Memo', key: 'memo'} : null;
+    }
   }
 
   showAddressId(){
-    return (
-      <div>
-        <br />
-        {this.getAddressIdType()}
-        <br />
-        <b className={styles.address} style={{ wordWrap: 'break-word' }}>
-        {this.props.order.deposit_address.payment_id}
-        </b>
-      </div>
-    )
+    const addressType = this.getAddressIdType();
+    if(addressType){
+      return (
+        <div>
+          <br />
+          {addressType.label}
+          <br />
+          <b className={styles.address} style={{ wordWrap: 'break-word' }}>
+          {this.props.order.deposit_address[addressType.key]}
+          </b>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
