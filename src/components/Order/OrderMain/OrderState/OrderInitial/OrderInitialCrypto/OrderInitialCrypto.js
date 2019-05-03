@@ -13,7 +13,7 @@ class OrderInitial extends Component {
 
     $('#copy-to-clipboard')
       .tooltip('hide')
-      .attr('data-original-title', i18n.t('order.copy'))
+      .attr('data-original-title', i18n.t('order.copyaddress'))
       .tooltip('show');
 
     setTimeout(() => {
