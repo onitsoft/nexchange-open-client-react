@@ -128,7 +128,7 @@ class WalletAddress extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectedCoin[this.props.withdraw_coin] !== this.props.selectedCoin[this.props.withdraw_coin]) {
-      this.validate(this.props.wallet.address, nextProps.selectedCoin[this.props.withdraw_coin]);
+      this.validate(nextProps.wallet.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
     try {
