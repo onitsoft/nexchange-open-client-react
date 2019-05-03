@@ -10,7 +10,7 @@ const mockStore = configureMockStore(middlewares);
 
 describe('OrderModeSwitch', () => {
   const initialState = {
-   orderMode: 'BASIC'
+   orderMode: 'INSTANT'
   };
   let store, wrapShallow;
   const onClick = jest.fn();

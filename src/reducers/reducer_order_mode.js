@@ -1,6 +1,6 @@
 import { ORDER_MODE_CHANGE } from 'Actions/types';
 
-const initialState = 'BASIC';
+const initialState = 'INSTANT';
 
 export default (state = initialState, action) => {
   switch (action.type) {
