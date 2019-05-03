@@ -90,9 +90,10 @@ class WalletAddress extends Component {
     if (!this.props.selectedCoin.selectedByUser) {
       event.preventDefault();
       const address = event.clipboardData.getData('Text').trim();
+      const simulatedEvent = { target: { value: address } };
+      this.handleChange(simulatedEvent);
       //Get coins that match the pasted address
       const matchingCoins = getMatchingCoins(address);
-      console.log(matchingCoins);
       if (!_.isEmpty(matchingCoins)) {
         //Check if matching coins are in the order history
         let orderHistory = localStorage['orderHistory'];
@@ -107,8 +108,7 @@ class WalletAddress extends Component {
         }
       }
 
-      const simulatedEvent = { target: { value: address } };
-      this.handleChange(simulatedEvent);
+
     }
   }
 
@@ -128,7 +128,7 @@ class WalletAddress extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectedCoin[this.props.withdraw_coin] !== this.props.selectedCoin[this.props.withdraw_coin]) {
-      this.validate(this.state.address, nextProps.selectedCoin[this.props.withdraw_coin]);
+      this.validate(this.props.wallet.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
     try {
