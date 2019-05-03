@@ -209,14 +209,14 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {!_.isEmpty(this.orderHistory)
-                ? <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
-                  <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
-                  <div className="visible-md visible-lg">
-                    {this.props.orderMode === 'BASIC' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
-                  </div>
-                </button>
-                : null}
+              {!_.isEmpty(this.orderHistory) 
+               ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
+                    <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
+                    <div className="visible-md visible-lg">
+                      {this.props.orderMode != 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                    </div>
+                  </button>
+               :  null}
               {this.state.showHistory ?
                 <AddressHistory
                   history={this.orderHistory}
