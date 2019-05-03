@@ -2,16 +2,17 @@
 
 exports[`CountdownItem renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CountdownItem
     count="1"
     period="days"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -23,14 +24,14 @@ ShallowWrapper {
       "children": Array [
         <div
           className="count"
->
+        >
           1
-</div>,
+        </div>,
         <div
           className="period"
->
+        >
           days
-</div>,
+        </div>,
       ],
       "className": "item",
     },
@@ -72,14 +73,14 @@ ShallowWrapper {
         "children": Array [
           <div
             className="count"
->
+          >
             1
-</div>,
+          </div>,
           <div
             className="period"
->
+          >
             days
-</div>,
+          </div>,
         ],
         "className": "item",
       },
@@ -117,6 +118,23 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },

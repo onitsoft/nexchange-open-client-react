@@ -13,6 +13,7 @@ import { bindCrispEmail } from 'Utils/crispEmailBinding';
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
 import WalletAddress from './WalletAddress/WalletAddress';
+import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 import DestinationTag from './WalletAddress/DestinationTag';
 import PaymentId from './WalletAddress/PaymentId';
 import Memo from './WalletAddress/Memo';
@@ -37,12 +38,6 @@ class ExchangeWidget extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.timeout);
-  }
-
-  componentDidMount() {
-    if(this.walletInputEl) {
-      this.walletInputEl.focus();
-    }
   }
 
   placeOrder() {
@@ -100,6 +95,7 @@ class ExchangeWidget extends Component {
         //Store order history in local storage
         let newOrder = {
             id: response.data.unique_reference,
+            mode: 'INSTANT',
             base: this.props.selectedCoin.deposit,
             amount_base: parseFloat(this.props.price.deposit),
             quote: this.props.selectedCoin.receive,
@@ -162,11 +158,17 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
+                    <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
                     <CoinSwitch />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
-                    <WalletAddress withdraw_coin="receive" onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                    <WalletAddress 
+                      withdraw_coin="receive" 
+                      onSubmit={this.placeOrder} 
+                      inputRef={el => (this.walletInputEl = el)} 
+                      button={this.button} 
+                      focusWalletAddress={this.focusWalletAddress}/>
                     { this.props.selectedCoin.receive === 'XRP' ? <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />  : null }
                     { this.props.selectedCoin.receive === 'XMR' ? <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} /> : null }
                     { this.props.selectedCoin.receive === 'XLM' ? <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} /> : null }

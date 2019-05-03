@@ -8,6 +8,7 @@ const initialState = {
     receive: null,
   },
   lastSelected: 'deposit',
+  selectedByUser: false
 };
 
 export default (state = initialState, action) => {

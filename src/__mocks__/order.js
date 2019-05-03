@@ -2,7 +2,6 @@ export default {
   amount_base: '2552.16055313',
   is_default_rule: true,
   unique_reference: 'OV2O6C',
-  payment_id: null,
   amount_quote: '0.10000000',
   pair: {
     name: 'BDGETH',
@@ -44,12 +43,16 @@ export default {
     name: '',
     address: '0x7ED3cB7Fc967CB3058Bf311C444Bf486A686663E',
     currency_code: 'BDG',
+    destination_tag: null,
+    payment_id: null,
   },
   deposit_address: {
     type: 'D',
     name: '',
     address: '0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7',
     currency_code: 'ETH',
+    destination_tag: null,
+    payment_id: null,
   },
   created_on: '2028-05-28T06:58:57.591639Z',
   from_default_rule: false,
@@ -106,4 +109,5 @@ export default {
   },
   amount_quote_fee: 0.0,
   payment_url: '',
+  display_refund_address: false,
 };

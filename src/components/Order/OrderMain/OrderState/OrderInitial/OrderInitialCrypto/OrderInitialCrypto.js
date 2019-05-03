@@ -22,8 +22,10 @@ class OrderInitial extends Component {
   }
 
   getDepositAddressQr() {
-    return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-			${this.props.order.deposit_address.address}`;
+    if(this.props.order.deposit_address && this.props.order.deposit_address.address) {
+      return `https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
+      ${this.props.order.deposit_address.address}`;
+    }
   }
 
   getAddressIdType(){
@@ -62,12 +64,13 @@ class OrderInitial extends Component {
             </div>
 
             <div className={styles.details}>
+              { !this.props.isLimitOrder ?
               <h3>
                 {t('order.initial1')}:{' '}
                 <span className={styles.time}>
                   <b>{this.props.time}</b>
                 </span>
-              </h3>
+              </h3> : null }
 
               <h4>
                 {t('order.initial2')}{' '}
@@ -81,12 +84,13 @@ class OrderInitial extends Component {
                 </b>
                 {this.getAddressIdType() ? this.showAddressId() : null}
               </h4>
-
-              <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
-                <button id="copy-to-clipboard" type="button" className="btn btn-default" data-test="copy-address">
-                  {t('order.initial4')}
-                </button>
-              </CopyToClipboard>
+              { this.props.order.deposit_address
+                ? <CopyToClipboard text={this.props.order.deposit_address.address} onCopy={() => this.triggerCopyTooltip()}>
+                    <button id="copy-to-clipboard" type="button" className="btn btn-default" data-test="copy-address">
+                      {t('order.initial4')}
+                    </button>
+                  </CopyToClipboard>
+                : null }
             </div>
           </div>
         )}

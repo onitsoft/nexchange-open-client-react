@@ -4,14 +4,22 @@
     font-size: 12px;
     font-weight: 400;
     color: #000000;
+    box-shadow: 0px 0px !important;
+    -webkit-box-shadow: 0px 0px !important;
+    outline: 0;
+    border-color: transparent;
+    background-image: none;
 }
 
-.values-preview {
-    display: flex;
-    flex-direction: column;
-    span {
-        flex: 1;
-        color: $grey;
-        font-size: 12px;
+.values-preview-container {
+    height: 25px;
+    .values-preview {
+        display: flex;
+        flex-direction: column;
+        span {
+            flex: 1;
+            color: $grey;
+            font-size: 12px;
+        }
     }
 }

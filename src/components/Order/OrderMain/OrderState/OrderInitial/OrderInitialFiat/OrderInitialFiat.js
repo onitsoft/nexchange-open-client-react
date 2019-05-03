@@ -13,6 +13,14 @@ class OrderInitial extends Component {
     
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(this.state.showPaymentIFrame) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   tooglePaymentIFrame(){
     this.setState({
       showPaymentIFrame: !this.state.showPaymentIFrame
@@ -24,7 +32,7 @@ class OrderInitial extends Component {
     return (
       <div>
       {this.state.showPaymentIFrame ? 
-      <iframe src={props.order.payment_url} height={500} width={"100%"} /> :
+      <iframe title={'SafeCharge Payment'} src={props.order.payment_url} height={500} width={"100%"} /> :
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>
@@ -48,7 +56,6 @@ class OrderInitial extends Component {
                   let _checkoutButton = document.getElementsByName("checkoutButton")[0];
                   let _box = document.getElementsByName("checkboxTC")[0];
                   let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                  let _paymentUrl = props.order.payment_url;
                   if (_box.checked && _box_kyc.checked) {
                       this.setState({enablePayment: true});
                       _checkoutButton.classList.remove("disabled");
@@ -66,7 +73,6 @@ class OrderInitial extends Component {
                 let _checkoutButton = document.getElementsByName("checkoutButton")[0];
                 let _box = document.getElementsByName("checkboxTC")[0];
                 let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                let _paymentUrl = props.order.payment_url;
                 if (_box.checked && _box_kyc.checked) {
                     this.setState({enablePayment: true});
                     _checkoutButton.classList.remove("disabled");

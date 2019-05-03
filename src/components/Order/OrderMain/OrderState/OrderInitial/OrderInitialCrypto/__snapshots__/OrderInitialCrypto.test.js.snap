@@ -2,17 +2,18 @@
 
 exports[`OrderInitialCrypto renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -24,64 +25,63 @@ ShallowWrapper {
       "children": Array [
         <div
           className="qr-container"
->
+        >
           <img
-                    alt="order.qr"
-                    className="qr"
-                    src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-          			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+            alt="order.qr"
+            className="qr"
+            src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
           />
-</div>,
+        </div>,
         <div
           className="details"
->
+        >
           <h3>
-                    order.initial1
-                    :
-                     
-                    <span
-                              className="time"
-                    >
-                              <b />
-                    </span>
+            order.initial1
+            :
+             
+            <span
+              className="time"
+            >
+              <b />
+            </span>
           </h3>
           <h4>
-                    order.initial2
-                     
-                    <b>
-                              0.10000000
-                               
-                              ETH
-                    </b>
-                     
-                    order.initial3
-                    <br />
-                    <b
-                              className="address"
-                              style={
-                                        Object {
-                                                  "wordWrap": "break-word",
-                                                }
-                              }
-                    >
-                              0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
-                    </b>
+            order.initial2
+             
+            <b>
+              0.10000000
+               
+              ETH
+            </b>
+             
+            order.initial3
+            <br />
+            <b
+              className="address"
+              style={
+                Object {
+                  "wordWrap": "break-word",
+                }
+              }
+            >
+              0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
+            </b>
           </h4>
           <CopyToClipboard
-                    onCopy={[Function]}
-                    options={undefined}
-                    text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+            onCopy={[Function]}
+            text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
           >
-                    <button
-                              className="btn btn-default"
-                              data-test="copy-address"
-                              id="copy-to-clipboard"
-                              type="button"
-                    >
-                              order.initial4
-                    </button>
+            <button
+              className="btn btn-default"
+              data-test="copy-address"
+              id="copy-to-clipboard"
+              type="button"
+            >
+              order.initial4
+            </button>
           </CopyToClipboard>
-</div>,
+        </div>,
       ],
       "className": "container",
     },
@@ -96,8 +96,8 @@ ShallowWrapper {
             alt="order.qr"
             className="qr"
             src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
-/>,
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+          />,
           "className": "qr-container",
         },
         "ref": null,
@@ -109,7 +109,7 @@ ShallowWrapper {
             "alt": "order.qr",
             "className": "qr",
             "src": "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
           },
           "ref": null,
           "rendered": null,
@@ -128,47 +128,46 @@ ShallowWrapper {
               :
                
               <span
-                            className="time"
+                className="time"
               >
-                            <b />
+                <b />
               </span>
-</h3>,
+            </h3>,
             <h4>
               order.initial2
                
               <b>
-                            0.10000000
-                             
-                            ETH
+                0.10000000
+                 
+                ETH
               </b>
                
               order.initial3
               <br />
               <b
-                            className="address"
-                            style={
-                                          Object {
-                                                        "wordWrap": "break-word",
-                                                      }
-                            }
+                className="address"
+                style={
+                  Object {
+                    "wordWrap": "break-word",
+                  }
+                }
               >
-                            0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
+                0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
               </b>
-</h4>,
+            </h4>,
             <CopyToClipboard
               onCopy={[Function]}
-              options={undefined}
               text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
->
+            >
               <button
-                            className="btn btn-default"
-                            data-test="copy-address"
-                            id="copy-to-clipboard"
-                            type="button"
+                className="btn btn-default"
+                data-test="copy-address"
+                id="copy-to-clipboard"
+                type="button"
               >
-                            order.initial4
+                order.initial4
               </button>
-</CopyToClipboard>,
+            </CopyToClipboard>,
           ],
           "className": "details",
         },
@@ -185,9 +184,9 @@ ShallowWrapper {
                 " ",
                 <span
                   className="time"
->
+                >
                   <b />
-</span>,
+                </span>,
               ],
             },
             "ref": null,
@@ -232,20 +231,20 @@ ShallowWrapper {
                   0.10000000
                    
                   ETH
-</b>,
+                </b>,
                 " ",
                 "order.initial3",
                 <br />,
                 <b
                   className="address"
                   style={
-                                    Object {
-                                                      "wordWrap": "break-word",
-                                                    }
+                    Object {
+                      "wordWrap": "break-word",
+                    }
                   }
->
+                >
                   0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
-</b>,
+                </b>,
                 null,
               ],
             },
@@ -312,9 +311,9 @@ ShallowWrapper {
                 data-test="copy-address"
                 id="copy-to-clipboard"
                 type="button"
->
+              >
                 order.initial4
-</button>,
+              </button>,
               "onCopy": [Function],
               "options": undefined,
               "text": "0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
@@ -352,64 +351,63 @@ ShallowWrapper {
         "children": Array [
           <div
             className="qr-container"
->
+          >
             <img
-                        alt="order.qr"
-                        className="qr"
-                        src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-            			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+              alt="order.qr"
+              className="qr"
+              src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
             />
-</div>,
+          </div>,
           <div
             className="details"
->
+          >
             <h3>
-                        order.initial1
-                        :
-                         
-                        <span
-                                    className="time"
-                        >
-                                    <b />
-                        </span>
+              order.initial1
+              :
+               
+              <span
+                className="time"
+              >
+                <b />
+              </span>
             </h3>
             <h4>
-                        order.initial2
-                         
-                        <b>
-                                    0.10000000
-                                     
-                                    ETH
-                        </b>
-                         
-                        order.initial3
-                        <br />
-                        <b
-                                    className="address"
-                                    style={
-                                                Object {
-                                                            "wordWrap": "break-word",
-                                                          }
-                                    }
-                        >
-                                    0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
-                        </b>
+              order.initial2
+               
+              <b>
+                0.10000000
+                 
+                ETH
+              </b>
+               
+              order.initial3
+              <br />
+              <b
+                className="address"
+                style={
+                  Object {
+                    "wordWrap": "break-word",
+                  }
+                }
+              >
+                0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
+              </b>
             </h4>
             <CopyToClipboard
-                        onCopy={[Function]}
-                        options={undefined}
-                        text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+              onCopy={[Function]}
+              text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
             >
-                        <button
-                                    className="btn btn-default"
-                                    data-test="copy-address"
-                                    id="copy-to-clipboard"
-                                    type="button"
-                        >
-                                    order.initial4
-                        </button>
+              <button
+                className="btn btn-default"
+                data-test="copy-address"
+                id="copy-to-clipboard"
+                type="button"
+              >
+                order.initial4
+              </button>
             </CopyToClipboard>
-</div>,
+          </div>,
         ],
         "className": "container",
       },
@@ -424,8 +422,8 @@ ShallowWrapper {
               alt="order.qr"
               className="qr"
               src="https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
-/>,
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
+            />,
             "className": "qr-container",
           },
           "ref": null,
@@ -437,7 +435,7 @@ ShallowWrapper {
               "alt": "order.qr",
               "className": "qr",
               "src": "https://chart.googleapis.com/chart?chs=250x250&chld=L|2&cht=qr&chl=
-			0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
+      0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
             },
             "ref": null,
             "rendered": null,
@@ -456,47 +454,46 @@ ShallowWrapper {
                 :
                  
                 <span
-                                className="time"
+                  className="time"
                 >
-                                <b />
+                  <b />
                 </span>
-</h3>,
+              </h3>,
               <h4>
                 order.initial2
                  
                 <b>
-                                0.10000000
-                                 
-                                ETH
+                  0.10000000
+                   
+                  ETH
                 </b>
                  
                 order.initial3
                 <br />
                 <b
-                                className="address"
-                                style={
-                                                Object {
-                                                                "wordWrap": "break-word",
-                                                              }
-                                }
+                  className="address"
+                  style={
+                    Object {
+                      "wordWrap": "break-word",
+                    }
+                  }
                 >
-                                0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
+                  0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
                 </b>
-</h4>,
+              </h4>,
               <CopyToClipboard
                 onCopy={[Function]}
-                options={undefined}
                 text="0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7"
->
+              >
                 <button
-                                className="btn btn-default"
-                                data-test="copy-address"
-                                id="copy-to-clipboard"
-                                type="button"
+                  className="btn btn-default"
+                  data-test="copy-address"
+                  id="copy-to-clipboard"
+                  type="button"
                 >
-                                order.initial4
+                  order.initial4
                 </button>
-</CopyToClipboard>,
+              </CopyToClipboard>,
             ],
             "className": "details",
           },
@@ -513,9 +510,9 @@ ShallowWrapper {
                   " ",
                   <span
                     className="time"
->
+                  >
                     <b />
-</span>,
+                  </span>,
                 ],
               },
               "ref": null,
@@ -560,20 +557,20 @@ ShallowWrapper {
                     0.10000000
                      
                     ETH
-</b>,
+                  </b>,
                   " ",
                   "order.initial3",
                   <br />,
                   <b
                     className="address"
                     style={
-                                        Object {
-                                                            "wordWrap": "break-word",
-                                                          }
+                      Object {
+                        "wordWrap": "break-word",
+                      }
                     }
->
+                  >
                     0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7
-</b>,
+                  </b>,
                   null,
                 ],
               },
@@ -640,9 +637,9 @@ ShallowWrapper {
                   data-test="copy-address"
                   id="copy-to-clipboard"
                   type="button"
->
+                >
                   order.initial4
-</button>,
+                </button>,
                 "onCopy": [Function],
                 "options": undefined,
                 "text": "0x6ce146d0431079fe70dffee5fb15ba687d7f9ae7",
@@ -676,8 +673,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

@@ -2,15 +2,16 @@
 
 exports[`LoadingComponent renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoadingComponent
     isLoading={true}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -22,34 +23,34 @@ ShallowWrapper {
       "children": Array [
         <div
           className="rect1"
-/>,
+        />,
         <div
           className="rect2"
-/>,
+        />,
         <div
           className="rect3"
-/>,
+        />,
         <div
           className="rect4"
-/>,
+        />,
         <div
           className="rect5"
-/>,
+        />,
         <div
           className="rect6"
-/>,
+        />,
         <div
           className="rect7"
-/>,
+        />,
         <div
           className="rect8"
-/>,
+        />,
         <div
           className="rect9"
-/>,
+        />,
         <div
           className="rect10"
-/>,
+        />,
       ],
       "className": "spinner",
     },
@@ -177,34 +178,34 @@ ShallowWrapper {
         "children": Array [
           <div
             className="rect1"
-/>,
+          />,
           <div
             className="rect2"
-/>,
+          />,
           <div
             className="rect3"
-/>,
+          />,
           <div
             className="rect4"
-/>,
+          />,
           <div
             className="rect5"
-/>,
+          />,
           <div
             className="rect6"
-/>,
+          />,
           <div
             className="rect7"
-/>,
+          />,
           <div
             className="rect8"
-/>,
+          />,
           <div
             className="rect9"
-/>,
+          />,
           <div
             className="rect10"
-/>,
+          />,
         ],
         "className": "spinner",
       },
@@ -328,6 +329,23 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
@@ -336,17 +354,18 @@ ShallowWrapper {
 
 exports[`LoadingComponent renders correctly 2`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -378,21 +397,40 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`LoadingComponent renders correctly 3`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoadingComponent />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -404,6 +442,23 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },

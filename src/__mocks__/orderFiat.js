@@ -2,7 +2,6 @@ export default {
   amount_base: '19.85661318',
   is_default_rule: true,
   unique_reference: 'OCFP7W',
-  payment_id: null,
   amount_quote: '100.00000000',
   pair: {
     name: 'NANOUSD',
@@ -44,6 +43,8 @@ export default {
     name: '',
     address: 'xrb_1fqajjogym4dwr8uoi9rt34cpx4qyswh35tib6g11i4k18kosha4z5xr1yz6',
     currency_code: 'NANO',
+    destination_tag: null,
+    payment_id: null,
   },
   deposit_address: null,
   created_on: '2028-05-26T18:27:22.310989Z',
@@ -88,4 +89,5 @@ export default {
   },
   amount_quote_fee: 9.0,
   payment_url: '',
+  display_refund_address: false,
 };

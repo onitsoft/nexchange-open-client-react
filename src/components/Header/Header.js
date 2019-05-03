@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
-
-import FAQ from './FAQ/FAQ';
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
 
@@ -12,10 +10,15 @@ import LanguagePicker from './LanguagePicker/LanguagePicker';
 import styles from './Header.scss';
 
 class Header extends Component {
-  state = {
-    showFaqModal: false,
-    showSupportModal: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showSupportModal: false,
+    };
+  
+    this.closeNavbar = this.closeNavbar.bind(this);
+  }
 
   componentDidMount() {
     /* istanbul ignore next */
@@ -32,22 +35,35 @@ class Header extends Component {
     }
   }
 
-  closeFaqModal = () => this.setState({ showFaqModal: false });
   closeSupportModal = () => this.setState({ showSupportModal: false });
 
-  scrollTo = (element) => {
-    ScrollToElement(element,{
-      offset: 0,
-      ease: 'linear',
-      duration: 1000
-    });
+  closeNavbar = () => {
+      $('.navbar-collapse').collapse('hide');
+  }
+
+  componentDidUpdate(){
+    if(window.location.hash) {
+      ScrollToElement(`${window.location.hash}`,{
+        offset: 0,
+        ease: 'linear',
+        duration: 1000
+      });
+   }
+  }
+
+  isHomeHeader = () => {
+    if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') != -1) {
+      return true;
+    }
+    return false;
   }
 
   render() {
+    const isHomeHeader = this.isHomeHeader();
     return (
       <I18n ns="translations">
         {(t, { i18n }) => (
-          <div className={`${styles.header} ${window.location.pathname === '/' ? styles.home : ''}`} data-test="header">
+          <div className={`${styles.header} ${ isHomeHeader ? styles.home : ''}`} data-test="header">
             <div className="container">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -59,7 +75,7 @@ class Header extends Component {
 
                 <Link to="/">
                   <div className={styles['logo-container']}>
-                    {window.location.pathname === '/' ? (
+                    {isHomeHeader ? (
                       <img src="/img/logo-white.svg" alt="Logo" data-test="logo" />
                     ) : (
                       <img src="/img/logo.svg" alt="Logo" data-test="logo" />
@@ -71,23 +87,15 @@ class Header extends Component {
               <div className="collapse navbar-collapse" id="navigation-index">
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a className={styles.link} href="#" onClick={() => { this.scrollTo("#about"); }} >
-                      {t('header.about')}
-                    </a>
+                    <Link onClick={() => this.closeNavbar()} to="/#about" className={styles.link}>
+                        {t('header.about')}
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      className={styles.link}
-                      href="javascript:void(0)"
-                      onClick={() => {
-                        window.gtag('event', 'FAQs open', {event_category: 'FAQ', event_label: ``});
-                        this.setState({ showFaqModal: true });
-                      }}
-                      data-test="faq-btn"
-                    >
-                      {t('header.faq')}
-                    </a>
+                   <Link onClick={() => this.closeNavbar()} to="/faqs" className={styles.link} data-test="faq-btn">
+                        {t('header.faq')}
+                    </Link>
                   </li>
 
                   <li>
@@ -104,20 +112,19 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a className={styles.link} href="/#compare" data-test="compare-link">
-                      {t('header.compare')}
-                    </a>
+                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={styles.link} data-test="compare-link">
+                        {t('header.compare')}
+                    </Link>
                   </li>
 
                   <li>
-                    <a
+                    <Link 
+                      onClick={() => { this.closeNavbar();this.setState({ showSupportModal: true });}} 
                       className={styles.link}
-                      href="javascript:void(0)"
-                      onClick={() => this.setState({ showSupportModal: true })}
-                      data-test="support-btn"
-                    >
-                      {t('header.support')}
-                    </a>
+                      to='#'
+                      data-test="support-btn">
+                        {t('header.support')}
+                    </Link>
                   </li>
 
                   <li className={styles['ico-link']}>
@@ -238,7 +245,6 @@ class Header extends Component {
                 </ul>
               </div>
 
-              <FAQ show={this.state.showFaqModal} onClose={this.closeFaqModal} />
               <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} />
             </div>
           </div>
