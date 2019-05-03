@@ -14,7 +14,7 @@ class OrderInitial extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if(this.state.showPaymentIFrame) {
+    if(this.state.showPaymentIFrame && this.props.order.payment_url === nextProps.order.payment_url) {
       return false;
     } else {
       return true;
