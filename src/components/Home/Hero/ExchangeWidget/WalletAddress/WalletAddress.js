@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet, selectCoin, fetchPrice } from 'Actions/index.js';
-import validateWalletAddress from 'Utils/validateWalletAddress';
+import { validateWalletAddress, getMatchingCoins } from 'Utils/walletAddress';
 import styles from './WalletAddress.scss';
 import AddressHistory from './AddressHistory/AddressHistory';
 import { I18n } from 'react-i18next';
@@ -15,11 +15,12 @@ class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: '', firstLoad: true , showHistory: false};
+    this.state = { address: props.wallet.address, firstLoad: true, showHistory: false };
     this.fireOnBlur = true;
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handlePaste = this.handlePaste.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setAddress = this.setAddress.bind(this);
@@ -76,7 +77,7 @@ class WalletAddress extends Component {
   }
 
   handleBlur(event) {
-    if(this.fireOnBlur) {
+    if (this.fireOnBlur) {
       this.setState({
         showHistory: false
       });
@@ -84,8 +85,36 @@ class WalletAddress extends Component {
     this.fireOnBlur = true;
   }
 
+  handlePaste(event) {
+    //If user had no interaction with coin selector
+    if (!this.props.selectedCoin.selectedByUser) {
+      event.preventDefault();
+      const address = event.clipboardData.getData('Text').trim();
+      //Get coins that match the pasted address
+      const matchingCoins = getMatchingCoins(address);
+      console.log(matchingCoins);
+      if (!_.isEmpty(matchingCoins)) {
+        //Check if matching coins are in the order history
+        let orderHistory = localStorage['orderHistory'];
+        orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
+        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) != -1; });
+        if (mostRecentMatchingOrder) {
+          //Set most recent matching coin
+          this.setCoin('EUR', mostRecentMatchingOrder.quote);
+        } else {
+          //Set first matching coin
+          this.setCoin('EUR', matchingCoins[0]);
+        }
+      }
+
+      const simulatedEvent = { target: { value: address } };
+      this.handleChange(simulatedEvent);
+    }
+  }
+
+
   onKeyDown(event) {
-    if(event.keyCode === 9) {
+    if (event.keyCode === 9) {
       event.preventDefault();;
       this.fireOnBlur = false;
       this.addressSearchInput.focus();
@@ -103,12 +132,12 @@ class WalletAddress extends Component {
     }
 
     try {
-      let orderHistory = localStorage['orderHistory']; 
+      let orderHistory = localStorage['orderHistory'];
       //Most recent order for each address
       this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-      if(!_.isEmpty(nextProps.wallet.address)){
-        this.orderHistory = _.filter(this.orderHistory, function(order) {
-          return order.withdraw_address.startsWith(nextProps.wallet.address); 
+      if (!_.isEmpty(nextProps.wallet.address)) {
+        this.orderHistory = _.filter(this.orderHistory, function (order) {
+          return order.withdraw_address.startsWith(nextProps.wallet.address);
         });
       }
     } catch (e) {
@@ -116,26 +145,26 @@ class WalletAddress extends Component {
     }
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     //Check if withdraw_address url param exists. If exists, prefill address field with that value
     const params = urlParams();
     if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address
       && this.props.selectedCoin[this.props.withdraw_coin] && this.state.firstLoad) {
-        const simulatedEvent ={target: {value: params['withdraw_address'].toString()}};
-        this.handleChange(simulatedEvent);
-        this.setState({firstLoad: false});
-        this.props.button.focus();
-      }
+      const simulatedEvent = { target: { value: params['withdraw_address'].toString() } };
+      this.handleChange(simulatedEvent);
+      this.setState({ firstLoad: false });
+      this.props.button.focus();
+    }
   }
 
   setAddress(address) {
-    const simulatedEvent ={target: {value: address}};
+    const simulatedEvent = { target: { value: address } };
     this.handleChange(simulatedEvent);
     this.props.button.focus();
   }
 
-  setCoin(depositCoin, receiveCoin) {   
-    if(!this.props.selectedCoin.selectedByUser &&
+  setCoin(depositCoin, receiveCoin) {
+    if (!this.props.selectedCoin.selectedByUser &&
       depositCoin != this.props.selectedCoin.deposit &&
       receiveCoin != this.props.selectedCoin.receive) {
       //Select coin
@@ -174,6 +203,7 @@ class WalletAddress extends Component {
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onPaste={this.handlePaste}
                 onKeyDown={this.onKeyDown}
                 value={this.state.address}
                 autoComplete="off"
@@ -188,15 +218,15 @@ class WalletAddress extends Component {
                   </button>
                :  null}
               {this.state.showHistory ?
-                <AddressHistory 
-                  history={this.orderHistory} 
-                  setAddress={this.setAddress} 
-                  setCoin={this.setCoin} 
+                <AddressHistory
+                  history={this.orderHistory}
+                  setAddress={this.setAddress}
+                  setCoin={this.setCoin}
                   dontFireOnBlur={this.dontFireOnBlur}
                   fireBlur={this.handleBlur}
                   addressSearchInput={el => (this.addressSearchInput = el)}
-                  />
-                :  null}
+                />
+                : null}
             </form>
           </div>
         )}
