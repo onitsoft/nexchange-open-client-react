@@ -44,6 +44,11 @@
     "min": "Min menge",
     "max": "Max menge"
   },
+  "orderbookwidget": {
+    "disabledmessage1": "n.exchange wird in Kürze das erste nicht-eichpflichtige Orderbuch mit mehreren Ketten enthalten!",
+    "disabledmessage2": "Diese einzigartige Technologie ermöglicht es Ihnen, Limit-Orders und andere fortgeschrittene Handelsinstrumente zu nutzen, während Sie die Sicherheit und Einfachheit, die Sie kennen, beibehalten.",
+    "disabledmessage3": "- Bleib dran"
+  },
   "recentorders": {
     "1": "Letzte Aufträge",
     "2": "Klicken Sie für Ansicht in API",
