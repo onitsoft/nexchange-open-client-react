@@ -31,6 +31,10 @@
     "1": "Exchange Cryptocurrencies",
     "2": "<0>Simple. <1>Secure</1>. Transparent.</0>"
   },
+  "ordermodeswitch": {
+    "simple": "Simple",
+    "advanced": "Advanced"
+  },
   "exchangewidget": {
     "1": "GET STARTED",
     "2": "*Confirm & Place Order",
