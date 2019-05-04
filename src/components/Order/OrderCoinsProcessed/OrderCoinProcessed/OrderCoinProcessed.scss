@@ -76,8 +76,8 @@
 .expansion-button {
   display: block;
   float: left;
-  width: 100%;
   cursor: pointer;
+  width: 100%;
 }
 
 .expansion-button.expansion-button-mobile {
@@ -91,11 +91,6 @@
 .address {
   float: left;
   max-width: calc(100% - 30px);
-}
-
-.address h6 {
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 .row {
