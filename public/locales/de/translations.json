@@ -31,6 +31,10 @@
     "1": "Umtausch von Kryptowährungen",
     "2": "<0>Einfach. <1>Sicher</1>. Transparent.</0>"
   },
+  "ordermodeswitch": {
+    "simple": "Einfach",
+    "advanced": "Fortgeschritten"
+  },
   "exchangewidget": {
     "1": "Legen Sie los!",
     "2": "*Bestätigen & Auftrag erteilen",
