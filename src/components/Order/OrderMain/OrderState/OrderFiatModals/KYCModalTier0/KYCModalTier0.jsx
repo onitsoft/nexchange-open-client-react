@@ -126,7 +126,7 @@ class KYCModal extends Component {
           this.props.onClose();
         }, 2000);
       })
-      .catch(error => {c
+      .catch(error => {
         console.log(error);
         this.setState({
           title: i18n.t('order.fiat.kyc.status8'),
