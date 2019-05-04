@@ -123,7 +123,7 @@ const removeUnnecessaryURLParams = (url) => {
 } 
 
 const removeURLParam = (url, parameter) => {
-  if(!_.isEmpty(url) && !_.isEmpty(param)) {
+  if(!_.isEmpty(url) && !_.isEmpty(parameter)) {
     //prefer to use l.search if you have a location/link object
     var urlparts = url.split('?');   
     if (urlparts.length >= 2) {
