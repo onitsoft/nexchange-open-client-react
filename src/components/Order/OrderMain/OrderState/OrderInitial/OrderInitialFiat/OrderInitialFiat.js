@@ -14,7 +14,6 @@ class OrderInitial extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("nextProps",nextProps);
     const currentPaymentURL = removeUnnecessaryURLParams(this.props.order.payment_url);
     const nextPaymentURL = removeUnnecessaryURLParams(nextProps.order.payment_url);
     if(this.state.showPaymentIFrame && currentPaymentURL === nextPaymentURL) {
