@@ -8,7 +8,7 @@ class OrderInitial extends Component {
 
     this.state = {
       enablePayment: false,
-      showPaymentIFrame: false,
+      showPaymentIFrame: false
     }
     
   }
@@ -29,8 +29,22 @@ class OrderInitial extends Component {
     });
   }
 
+  componentWillMount() {
+    const safechargeStatus = getUrlPram('ppp_status');
+    console.log(this); 
+    if(this.props.order && this.props.order.payment_url && !_.isEmpty(safechargeStatus)) {
+      if(safechargeStatus === 'CANCEL' || safechargeStatus === 'FAIL'){
+        $('html').replaceWith(`<iframe title='SafeCharge Payment' src=${this.props.order.payment_url} height=500 width='100%' />`);
+      } 
+      if(safechargeStatus === 'SUCCESS'){
+        $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
+      }
+    }
+  }
+
   render(){
     const props = this.props;
+
     return (
       <div>
       {this.state.showPaymentIFrame ? 
@@ -146,5 +160,13 @@ const removeURLParam = (url, parameter) => {
   }
   return url;
 }
+
+const getUrlPram = (parameter) => {
+  const url_string = window.location.href;
+  const url = new URL(url_string);
+  const value = url.searchParams.get(parameter);
+  return value;
+}
+
 
 export default OrderInitial;
