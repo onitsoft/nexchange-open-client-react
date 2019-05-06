@@ -8,7 +8,7 @@ class OrderInitial extends Component {
 
     this.state = {
       enablePayment: false,
-      showPaymentIFrame: false,
+      showPaymentIFrame: false
     }
     
   }
@@ -29,12 +29,27 @@ class OrderInitial extends Component {
     });
   }
 
+  componentWillUpdate() {
+    const safechargeStatus = getUrlPram('ppp_status');
+    if(!_.isEmpty(safechargeStatus)){
+      $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
+      if(this.props.order && this.props.order.payment_url) {
+        if(safechargeStatus === 'OK'){
+          $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
+        } else {
+          $('html').replaceWith(`<iframe title='SafeCharge Payment' src=${this.props.order.payment_url} height=500 width='100%' />`);
+        } 
+      }
+    }
+  }
+
   render(){
     const props = this.props;
+
     return (
       <div>
       {this.state.showPaymentIFrame ? 
-      <iframe title={'SafeCharge Payment'} src={props.order.payment_url} height={500} width={"100%"} /> :
+      <iframe src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>
@@ -144,5 +159,13 @@ const removeURLParam = (url, parameter) => {
   }
   return url;
 }
+
+const getUrlPram = (parameter) => {
+  const url_string = window.location.href;
+  const url = new URL(url_string);
+  const value = url.searchParams.get(parameter);
+  return value;
+}
+
 
 export default OrderInitial;
