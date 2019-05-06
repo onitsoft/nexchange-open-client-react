@@ -92,7 +92,6 @@ class WalletAddress extends Component {
       const address = event.clipboardData.getData('Text').trim();
       //Get coins that match the pasted address
       const matchingCoins = getMatchingCoins(address);
-      console.log(matchingCoins);
       if (!_.isEmpty(matchingCoins)) {
         //Check if matching coins are in the order history
         let orderHistory = localStorage['orderHistory'];
