@@ -32,7 +32,6 @@ class OrderInitial extends Component {
   componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
     if(!_.isEmpty(safechargeStatus)){
-      $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
       if(this.props.order && this.props.order.payment_url) {
         if(safechargeStatus === 'OK'){
           $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
