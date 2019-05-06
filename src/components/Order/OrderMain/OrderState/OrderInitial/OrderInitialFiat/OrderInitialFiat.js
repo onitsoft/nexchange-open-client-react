@@ -33,7 +33,7 @@ class OrderInitial extends Component {
     const safechargeStatus = getUrlPram('ppp_status');
     console.log(this); 
     if(this.props.order && this.props.order.payment_url && !_.isEmpty(safechargeStatus)) {
-      if(safechargeStatus === 'SUCCESS'){
+      if(safechargeStatus === 'OK'){
         $('body').replaceWith(`<div class="loader-container"><div class="loader"></div></div>`);
       } else {
         $('html').replaceWith(`<iframe title='SafeCharge Payment' src=${this.props.order.payment_url} height=500 width='100%' />`);
