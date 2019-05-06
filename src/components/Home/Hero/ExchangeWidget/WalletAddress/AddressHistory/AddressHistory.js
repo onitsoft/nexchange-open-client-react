@@ -71,7 +71,7 @@ class AddressHistory extends Component {
     if(_.isEmpty(this.props.history)) {
       return null;
     }
-
+    console.log(this);
     const history = this.filter(this.props.history);
     return (
       <I18n ns="translations">

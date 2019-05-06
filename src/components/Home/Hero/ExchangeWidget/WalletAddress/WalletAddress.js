@@ -87,7 +87,7 @@ class WalletAddress extends Component {
 
   handlePaste(event) {
     //If user had no interaction with coin selector
-    if (!this.props.selectedCoin.selectedByUser) {
+    if (!this.props.selectedCoin.selectedByUser['receive']) {
       event.preventDefault();
       const address = event.clipboardData.getData('Text').trim();
       //Get coins that match the pasted address
@@ -140,6 +140,11 @@ class WalletAddress extends Component {
           return order.withdraw_address.startsWith(nextProps.wallet.address);
         });
       }
+      if(nextProps.selectedCoin.selectedByUser.receive) {
+        this.orderHistory = _.filter(this.orderHistory, function (order) {
+          return order.quote === nextProps.selectedCoin.receive;
+        });
+      }
     } catch (e) {
       this.orderHistory = [];
     }
@@ -164,7 +169,8 @@ class WalletAddress extends Component {
   }
 
   setCoin(depositCoin, receiveCoin) {
-    if (!this.props.selectedCoin.selectedByUser &&
+    const selectedByUser = this.props.selectedCoin.selectedByUser;
+    if (!this.props.selectedCoin.selectedByUser.receive &&
       depositCoin != this.props.selectedCoin.deposit &&
       receiveCoin != this.props.selectedCoin.receive) {
       //Select coin
@@ -172,7 +178,7 @@ class WalletAddress extends Component {
         ...this.props.selectedCoin,
         deposit: depositCoin,
         receive: receiveCoin,
-        selectedByUser: false
+        selectedByUser
       }, this.props.pairs);
 
       //Update quote value

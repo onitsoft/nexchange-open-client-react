@@ -19,11 +19,15 @@ class CoinSelector extends Component {
   }
 
   selectCoin = coin => {
+    const selectedByUser = this.props.selectedCoin.selectedByUser;
+    if(!_.isEmpty(selectedByUser) && !_.isEmpty(this.props.type)) {
+      selectedByUser[this.props.type] = true;
+    }
     this.props.selectCoin({
       ...this.props.selectedCoin,
       [this.props.type]: coin,
       lastSelected: this.props.type,
-      selectedByUser: true,
+      selectedByUser,
     }, this.props.pairs);
 
     this.setState({ isDropdownVisible: false });
