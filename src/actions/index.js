@@ -271,7 +271,10 @@ export const fetchPairs = () => dispatch => {
             receive: receiveCoin,
           },
           lastSelected: 'deposit',
-          selectedByUser: false
+          selectedByUser: {
+            deposit: false,
+            receive: false,
+          },
         })
       );
     })

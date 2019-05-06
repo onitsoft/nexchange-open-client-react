@@ -536,7 +536,10 @@ describe('actions', () => {
       },
       {
         type: types.COIN_SELECTED,
-        payload: { selectedCoins: { deposit: 'BTC', receive: 'ETH', lastSelected: 'deposit', prev: { deposit: 'BTC', receive: 'ETH' }, selectedByUser: false } },
+        payload: { selectedCoins: { deposit: 'BTC', receive: 'ETH', lastSelected: 'deposit', prev: { deposit: 'BTC', receive: 'ETH' }, selectedByUser: {
+          deposit: false,
+          receive: false,
+        } } },
       },
     ];
     
