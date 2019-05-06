@@ -6,6 +6,10 @@
     "email": "Email",
     "address": "Adresse",
     "youraddress": "Geben Sie Ihre {{selectedCoin}} Adresse ein",
+    "usepreviousaddress": "Vorherige Adresse verwenden",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Suchen",
     "submit": "Bestätigen"
   },
@@ -28,6 +32,10 @@
     "1": "Umtausch von Kryptowährungen",
     "2": "<0>Einfach. <1>Sicher</1>. Transparent.</0>"
   },
+  "ordermodeswitch": {
+    "simple": "Einfach",
+    "advanced": "Fortgeschritten"
+  },
   "exchangewidget": {
     "1": "Legen Sie los!",
     "2": "*Bestätigen & Auftrag erteilen",
@@ -36,6 +44,11 @@
     "fees": "Die Gebühren liegen bei",
     "min": "Min menge",
     "max": "Max menge"
+  },
+  "orderbookwidget": {
+    "disabledmessage1": "n.exchange wird in Kürze das erste nicht-eichpflichtige Orderbuch mit mehreren Ketten enthalten!",
+    "disabledmessage2": "Diese einzigartige Technologie ermöglicht es Ihnen, Limit-Orders und andere fortgeschrittene Handelsinstrumente zu nutzen, während Sie die Sicherheit und Einfachheit, die Sie kennen, beibehalten.",
+    "disabledmessage3": "- Bleib dran"
   },
   "recentorders": {
     "1": "Letzte Aufträge",
@@ -162,7 +175,8 @@
   },
   "order": {
     "enteraddress": "Geben Sie Ihre Wallet-Adresse ein",
-    "copy": "Adresse der Wallet kopiert!",
+    "copyaddress": "Adresse der Wallet kopiert!",
+    "copyaddressid": "{{addressIdType}} kopiert!",
     "reference": "Auftrag Referenz",
     "api": "Details Ihres Auftrages in unsere API",
     "repeat": "Bestellung wiederholen",
@@ -324,10 +338,15 @@
     "11":
       "Wir werden jeden Auftrag auf Verlangen des Kunden gemäß dem aktuellen Marktpreis rückgängig machen, vorausgesetzt, die entgegengesetzte Auftragsrichtung wird zum Zeitpunkt der Rückerstattung unterstützt.",
     "12":
-      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
+      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten.",
+    "13": "Bei Erstattung nach mehr als einem Tag nach dem Kauf wird eine Verwaltungsgebühr von 5% von n.exchange einbehalten."
   },
   "faq": {
-    "inputplaceholder": "Über Schlüsselwort suchen",
+    "heading1": "Häufig gestellte Fragen",
+    "heading2": "Hast du etwas im Sinn?",
+    "inputplaceholder": "Wonach suchen Sie?",
+    "notfound": "Wir haben nicht das gefunden, wonach Sie gesucht haben",
+    "openticket": "Supportticket öffnen",
     "ques1": "Wer sind Sie?",
     "ques2": "Was machen Sie?",
     "ques3": "Wie hoch ist Ihre Gebühr?",

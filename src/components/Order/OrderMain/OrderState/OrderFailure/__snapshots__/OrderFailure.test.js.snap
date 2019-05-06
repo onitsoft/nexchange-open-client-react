@@ -2,17 +2,18 @@
 
 exports[`OrderFailure renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -24,17 +25,17 @@ ShallowWrapper {
       "children": Array [
         <h2>
           order.failure1
-</h2>,
+        </h2>,
         <h5>
           order.failure2
            
           <a
-                    href="mailto:support@n.exchange"
+            href="mailto:support@n.exchange"
           >
-                    support@n.exchange
-                    .
+            support@n.exchange
+            .
           </a>
-</h5>,
+        </h5>,
         <OrderLinks />,
       ],
       "className": "text-center",
@@ -63,10 +64,10 @@ ShallowWrapper {
             " ",
             <a
               href="mailto:support@n.exchange"
->
+            >
               support@n.exchange
               .
-</a>,
+            </a>,
           ],
         },
         "ref": null,
@@ -115,17 +116,17 @@ ShallowWrapper {
         "children": Array [
           <h2>
             order.failure1
-</h2>,
+          </h2>,
           <h5>
             order.failure2
              
             <a
-                        href="mailto:support@n.exchange"
+              href="mailto:support@n.exchange"
             >
-                        support@n.exchange
-                        .
+              support@n.exchange
+              .
             </a>
-</h5>,
+          </h5>,
           <OrderLinks />,
         ],
         "className": "text-center",
@@ -154,10 +155,10 @@ ShallowWrapper {
               " ",
               <a
                 href="mailto:support@n.exchange"
->
+              >
                 support@n.exchange
                 .
-</a>,
+              </a>,
             ],
           },
           "ref": null,
@@ -202,8 +203,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

@@ -74,7 +74,6 @@ class OrderInitial extends Component {
                   let _checkoutButton = document.getElementsByName("checkoutButton")[0];
                   let _box = document.getElementsByName("checkboxTC")[0];
                   let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                  let _paymentUrl = props.order.payment_url;
                   if (_box.checked && _box_kyc.checked) {
                       this.setState({enablePayment: true});
                       _checkoutButton.classList.remove("disabled");
@@ -93,7 +92,6 @@ class OrderInitial extends Component {
                 let _checkoutButton = document.getElementsByName("checkoutButton")[0];
                 let _box = document.getElementsByName("checkboxTC")[0];
                 let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                let _paymentUrl = props.order.payment_url;
                 if (_box.checked && _box_kyc.checked) {
                     this.setState({enablePayment: true});
                     _checkoutButton.classList.remove("disabled");

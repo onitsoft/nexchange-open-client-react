@@ -2,17 +2,18 @@
 
 exports[`OrderPaidFiat renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -25,14 +26,14 @@ ShallowWrapper {
         <OrderStateLoader />,
         <h2
           className="title"
->
+        >
           order.fiat.status.paid
-</h2>,
+        </h2>,
         <h3
           className="subtitle"
->
+        >
           order.paid2
-</h3>,
+        </h3>,
       ],
       "className": "container",
     },
@@ -84,14 +85,14 @@ ShallowWrapper {
           <OrderStateLoader />,
           <h2
             className="title"
->
+          >
             order.fiat.status.paid
-</h2>,
+          </h2>,
           <h3
             className="subtitle"
->
+          >
             order.paid2
-</h3>,
+          </h3>,
         ],
         "className": "container",
       },
@@ -138,8 +139,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

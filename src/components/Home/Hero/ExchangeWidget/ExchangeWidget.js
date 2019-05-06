@@ -7,12 +7,16 @@ import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
 
-import { setWallet, errorAlert, setOrder } from 'Actions/index.js';
+import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from 'Actions/index.js';
 import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
 import WalletAddress from './WalletAddress/WalletAddress';
+import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
+import DestinationTag from './WalletAddress/DestinationTag';
+import PaymentId from './WalletAddress/PaymentId';
+import Memo from './WalletAddress/Memo';
 
 import styles from './ExchangeWidget.scss';
 
@@ -27,14 +31,13 @@ class ExchangeWidget extends Component {
 
     this.placeOrder = this.placeOrder.bind(this);
     this.focusWalletAddress = this.focusWalletAddress.bind(this);
+    this.focusDestinationTag = this.focusDestinationTag.bind(this);
+    this.focusPaymentId = this.focusPaymentId.bind(this);
+    this.focusMemo = this.focusMemo.bind(this);
   }
 
   componentWillUnmount() {
     clearTimeout(this.timeout);
-  }
-
-  componentDidMount() {
-    this.walletInputEl.focus();
   }
 
   placeOrder() {
@@ -48,7 +51,7 @@ class ExchangeWidget extends Component {
         });
       }
 
-      this.walletInputEl.focus();
+      this.focusWalletAddress();
       return;
     }
 
@@ -62,6 +65,9 @@ class ExchangeWidget extends Component {
       withdraw_address: {
         address: this.props.wallet.address,
         name: '',
+        payment_id: this.props.paymentId.paymentId,
+        destinationTag: this.props.destinationTag.destinationTag,
+        memo: this.props.memo.memo,
       },
     };
 
@@ -89,6 +95,7 @@ class ExchangeWidget extends Component {
         //Store order history in local storage
         let newOrder = {
             id: response.data.unique_reference,
+            mode: 'INSTANT',
             base: this.props.selectedCoin.deposit,
             amount_base: parseFloat(this.props.price.deposit),
             quote: this.props.selectedCoin.receive,
@@ -123,7 +130,21 @@ class ExchangeWidget extends Component {
   }
 
   focusWalletAddress() {
-    this.walletInputEl.focus();
+    if(this.walletInputEl) {
+      this.walletInputEl.focus();
+    }
+  }
+
+  focusDestinationTag() {
+    this.destinationTagInputEl.focus();
+  }
+
+  focusPaymentId() {
+    this.paymentIdInputEl.focus();
+  }
+
+  focusMemo() {
+    this.memoInputEl.focus();
   }
 
   render() {
@@ -137,11 +158,20 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
+                    <OrderModeSwitch orderMode={this.props.orderMode} changeOrderMode={this.props.changeOrderMode}/>
                     <CoinInput type="deposit" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
                     <CoinSwitch />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
-                    <WalletAddress onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                    <WalletAddress 
+                      withdraw_coin="receive" 
+                      onSubmit={this.placeOrder} 
+                      inputRef={el => (this.walletInputEl = el)} 
+                      button={this.button} 
+                      focusWalletAddress={this.focusWalletAddress}/>
+                    { this.props.selectedCoin.receive === 'XRP' ? <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />  : null }
+                    { this.props.selectedCoin.receive === 'XMR' ? <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} /> : null }
+                    { this.props.selectedCoin.receive === 'XLM' ? <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} /> : null }
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
@@ -164,8 +194,8 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error, wallet }) => ({ selectedCoin, price, error, wallet });
-const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert }, dispatch);
+const mapStateToProps = ({ selectedCoin, price, error, wallet, destinationTag, paymentId, memo }) => ({ selectedCoin, price, error, wallet, destinationTag, paymentId, memo });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, setOrder, errorAlert, setDestinationTag, setPaymentId, setMemo }, dispatch);
 
 export default connect(
   mapStateToProps,

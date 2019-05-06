@@ -2,17 +2,18 @@
 
 exports[`OrderStatusFiat renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -28,36 +29,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -71,7 +72,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status11",
@@ -113,7 +114,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.fiat.status.14",
@@ -155,7 +156,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status31",
@@ -204,36 +205,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -247,7 +248,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status11",
@@ -289,7 +290,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.fiat.status.14",
@@ -331,7 +332,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status31",
@@ -372,25 +373,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 2`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -406,36 +426,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -449,7 +469,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status11",
@@ -491,7 +511,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.fiat.status.14",
@@ -533,7 +553,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status31",
@@ -582,36 +602,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -625,7 +645,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status11",
@@ -667,7 +687,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.fiat.status.14",
@@ -709,7 +729,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status31",
@@ -750,25 +770,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 3`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -784,36 +823,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -827,7 +866,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step active",
           "data-original-title": "order.status11",
@@ -869,7 +908,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.fiat.status.14",
@@ -911,7 +950,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status31",
@@ -960,36 +999,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -1003,7 +1042,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step active",
             "data-original-title": "order.status11",
@@ -1045,7 +1084,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.fiat.status.14",
@@ -1087,7 +1126,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status31",
@@ -1128,25 +1167,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 4`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1162,36 +1220,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step active"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -1205,7 +1263,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status11",
@@ -1247,7 +1305,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step active",
           "data-original-title": "order.fiat.status.14",
@@ -1289,7 +1347,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step",
           "data-original-title": "order.status31",
@@ -1338,36 +1396,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step active"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -1381,7 +1439,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status11",
@@ -1423,7 +1481,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step active",
             "data-original-title": "order.fiat.status.14",
@@ -1465,7 +1523,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step",
             "data-original-title": "order.status31",
@@ -1506,25 +1564,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 5`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1540,36 +1617,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step done"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step active"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -1583,7 +1660,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status11",
@@ -1625,7 +1702,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.fiat.status.14",
@@ -1667,7 +1744,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step active",
           "data-original-title": "order.status31",
@@ -1716,36 +1793,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step done"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step active"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -1759,7 +1836,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status11",
@@ -1801,7 +1878,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.fiat.status.14",
@@ -1843,7 +1920,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step active",
             "data-original-title": "order.status31",
@@ -1884,25 +1961,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 6`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1918,36 +2014,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step done"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step active"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -1961,7 +2057,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status11",
@@ -2003,7 +2099,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.fiat.status.14",
@@ -2045,7 +2141,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step active",
           "data-original-title": "order.status31",
@@ -2094,36 +2190,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step done"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step active"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -2137,7 +2233,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status11",
@@ -2179,7 +2275,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.fiat.status.14",
@@ -2221,7 +2317,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step active",
             "data-original-title": "order.status31",
@@ -2262,25 +2358,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 7`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -2296,36 +2411,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step done"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step active"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -2339,7 +2454,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status11",
@@ -2381,7 +2496,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.fiat.status.14",
@@ -2423,7 +2538,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step active",
           "data-original-title": "order.status31",
@@ -2472,36 +2587,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step done"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step active"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -2515,7 +2630,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status11",
@@ -2557,7 +2672,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.fiat.status.14",
@@ -2599,7 +2714,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step active",
             "data-original-title": "order.status31",
@@ -2640,25 +2755,44 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
 
 exports[`OrderStatusFiat renders correctly 8`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -2674,36 +2808,36 @@ ShallowWrapper {
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <deposit.svg />
           <h4>
-                    order.status1
+            order.status1
           </h4>
-</div>,
+        </div>,
         <div
           className="step done"
           data-original-title="order.fiat.status.14"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <confirmations.svg />
           <h4>
-                    order.fiat.status.13
+            order.fiat.status.13
           </h4>
-</div>,
+        </div>,
         <div
           className="step done"
           data-original-title="order.status31"
           data-placement="top"
           data-toggle="tooltip"
           title=""
->
+        >
           <done.svg />
           <h4>
-                    order.status3
+            order.status3
           </h4>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -2717,7 +2851,7 @@ ShallowWrapper {
             <deposit.svg />,
             <h4>
               order.status1
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status11",
@@ -2759,7 +2893,7 @@ ShallowWrapper {
             <confirmations.svg />,
             <h4>
               order.fiat.status.13
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.fiat.status.14",
@@ -2801,7 +2935,7 @@ ShallowWrapper {
             <done.svg />,
             <h4>
               order.status3
-</h4>,
+            </h4>,
           ],
           "className": "step done",
           "data-original-title": "order.status31",
@@ -2850,36 +2984,36 @@ ShallowWrapper {
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <deposit.svg />
             <h4>
-                        order.status1
+              order.status1
             </h4>
-</div>,
+          </div>,
           <div
             className="step done"
             data-original-title="order.fiat.status.14"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <confirmations.svg />
             <h4>
-                        order.fiat.status.13
+              order.fiat.status.13
             </h4>
-</div>,
+          </div>,
           <div
             className="step done"
             data-original-title="order.status31"
             data-placement="top"
             data-toggle="tooltip"
             title=""
->
+          >
             <done.svg />
             <h4>
-                        order.status3
+              order.status3
             </h4>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -2893,7 +3027,7 @@ ShallowWrapper {
               <deposit.svg />,
               <h4>
                 order.status1
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status11",
@@ -2935,7 +3069,7 @@ ShallowWrapper {
               <confirmations.svg />,
               <h4>
                 order.fiat.status.13
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.fiat.status.14",
@@ -2977,7 +3111,7 @@ ShallowWrapper {
               <done.svg />,
               <h4>
                 order.status3
-</h4>,
+              </h4>,
             ],
             "className": "step done",
             "data-original-title": "order.status31",
@@ -3018,8 +3152,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

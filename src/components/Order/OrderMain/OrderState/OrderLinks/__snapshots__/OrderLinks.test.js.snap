@@ -2,17 +2,18 @@
 
 exports[`OrderLinks renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -21,55 +22,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <a
-          className="btn btn"
-          href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
-          target="_blank"
->
-          order.api
-</a>,
-        <a
-          className="btn btn"
-          href="https://blockchain.info/tx/123"
-          target="_blank"
->
-          order.blockchain
-</a>,
-      ],
+      "children": false,
       "className": "links",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "order.api",
-          "className": "btn btn",
-          "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
-          "target": "_blank",
-        },
-        "ref": null,
-        "rendered": "order.api",
-        "type": "a",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "order.blockchain",
-          "className": "btn btn",
-          "href": "https://blockchain.info/tx/123",
-          "target": "_blank",
-        },
-        "ref": null,
-        "rendered": "order.blockchain",
-        "type": "a",
-      },
-    ],
+    "rendered": false,
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -78,55 +35,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <a
-            className="btn btn"
-            href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
-            target="_blank"
->
-            order.api
-</a>,
-          <a
-            className="btn btn"
-            href="https://blockchain.info/tx/123"
-            target="_blank"
->
-            order.blockchain
-</a>,
-        ],
+        "children": false,
         "className": "links",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "order.api",
-            "className": "btn btn",
-            "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
-            "target": "_blank",
-          },
-          "ref": null,
-          "rendered": "order.api",
-          "type": "a",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "order.blockchain",
-            "className": "btn btn",
-            "href": "https://blockchain.info/tx/123",
-            "target": "_blank",
-          },
-          "ref": null,
-          "rendered": "order.blockchain",
-          "type": "a",
-        },
-      ],
+      "rendered": false,
       "type": "div",
     },
   ],
@@ -134,8 +47,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
