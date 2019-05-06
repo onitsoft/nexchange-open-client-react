@@ -29,6 +29,13 @@ class OrderInitial extends Component {
     });
   }
 
+  componentDidMount(){
+    const safechargeStatus = getUrlPram('ppp_status');
+    if(!_.isEmpty(safechargeStatus)) {
+      $('body').hide();
+    }
+  }
+
   componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
     if(!_.isEmpty(safechargeStatus)){
@@ -107,7 +114,7 @@ class OrderInitial extends Component {
 
             <a className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
               title={t('order.tooltipTC')} style={{ pointerEvents: 'auto'}} 
-              onClick={() => {this.state.enablePayment && this.tooglePaymentIFrame()}}>
+              onClick={() => {props.order.payment_url && this.state.enablePayment && this.tooglePaymentIFrame()}}>
               <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
               {t('order.fiat.status.pay')}
             </a>
