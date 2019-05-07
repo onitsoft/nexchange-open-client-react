@@ -7,7 +7,7 @@ const MinMax = props => {
   if (props.order && isFiatOrder(props.order) && props.type === 'Deposit') return null;
 
   let clickable = false;
-  if(props.assignMinMaxValue){
+  if(props.setValue){
     clickable = true;
   }
 
@@ -16,12 +16,12 @@ const MinMax = props => {
       {t => (
         <div className={`${styles.minmax} ${props.home ? styles.home : ''}`}>
           <p className={`${props.min > props.amount && props.amount !== '...' ? 'error' : ''} ${clickable ? 'clickable' : ''}`}
-            onClick={() => {props.assignMinMaxValue(props.min);}}>
+            onClick={() => {props.setValue(props.min);}}>
             {t('exchangewidget.min')}: {props.min}
           </p>
 
           <p className={`${props.max < props.amount && props.amount !== '...' ? 'error' : ''} ${clickable ? 'clickable' : ''}`}
-            onClick={() => {props.assignMinMaxValue(props.max);}}>
+            onClick={() => {props.setValue(props.max);}}>
             {t('exchangewidget.max')}: {props.max}
           </p>
         </div>

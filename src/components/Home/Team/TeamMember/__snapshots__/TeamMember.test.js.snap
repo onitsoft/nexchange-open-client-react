@@ -2,24 +2,25 @@
 
 exports[`TeamMember renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TeamMember
     description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
     id="vit"
     name="Vít Jedlička"
     social={
-        Object {
-            "blog": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
-            "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
-            "rss": "http://www.google.com",
-          }
+      Object {
+        "blog": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+        "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+        "rss": "http://www.google.com",
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -30,57 +31,57 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="member"
->
+      >
         <div
-                className="profile"
+          className="profile"
         >
-                <img
-                        alt="Vít Jedlička profile"
-                        src="vit.jpg"
-                />
+          <img
+            alt="Vít Jedlička profile"
+            src="/img/team/vit.jpg"
+          />
         </div>
         <h3
-                className="name"
+          className="name"
         >
-                Vít Jedlička
+          Vít Jedlička
         </h3>
         <div
-                className="social"
+          className="social"
         >
-                <a
-                        className="linkedin"
-                        href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                        target="_blank"
-                >
-                        <i
-                                className="fab fa-linkedin-in"
-                        />
-                </a>
-                <a
-                        className="rss"
-                        href="http://www.google.com"
-                        target="_blank"
-                >
-                        <i
-                                className="fas fa-rss"
-                        />
-                </a>
-                <a
-                        className="blog"
-                        href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                        target="_blank"
-                >
-                        <i
-                                className="fab fa-blog"
-                        />
-                </a>
+          <a
+            className="linkedin"
+            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+            target="_blank"
+          >
+            <i
+              className="fab fa-linkedin-in"
+            />
+          </a>
+          <a
+            className="rss"
+            href="http://www.google.com"
+            target="_blank"
+          >
+            <i
+              className="fas fa-rss"
+            />
+          </a>
+          <a
+            className="blog"
+            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+            target="_blank"
+          >
+            <i
+              className="fab fa-blog"
+            />
+          </a>
         </div>
         <div
-                className="description"
+          className="description"
         >
-                President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+          President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
         </div>
-</div>,
+      </div>,
       "className": "col-xs-12 col-ms-6 col-sm-4",
     },
     "ref": null,
@@ -92,53 +93,53 @@ ShallowWrapper {
         "children": Array [
           <div
             className="profile"
->
+          >
             <img
-                        alt="Vít Jedlička profile"
-                        src="vit.jpg"
+              alt="Vít Jedlička profile"
+              src="/img/team/vit.jpg"
             />
-</div>,
+          </div>,
           <h3
             className="name"
->
+          >
             Vít Jedlička
-</h3>,
+          </h3>,
           <div
             className="social"
->
+          >
             <a
-                        className="linkedin"
-                        href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                        target="_blank"
+              className="linkedin"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
             >
-                        <i
-                                    className="fab fa-linkedin-in"
-                        />
+              <i
+                className="fab fa-linkedin-in"
+              />
             </a>
             <a
-                        className="rss"
-                        href="http://www.google.com"
-                        target="_blank"
+              className="rss"
+              href="http://www.google.com"
+              target="_blank"
             >
-                        <i
-                                    className="fas fa-rss"
-                        />
+              <i
+                className="fas fa-rss"
+              />
             </a>
             <a
-                        className="blog"
-                        href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                        target="_blank"
+              className="blog"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
             >
-                        <i
-                                    className="fab fa-blog"
-                        />
+              <i
+                className="fab fa-blog"
+              />
             </a>
-</div>,
+          </div>,
           <div
             className="description"
->
+          >
             President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
-</div>,
+          </div>,
         ],
         "className": "member",
       },
@@ -151,8 +152,8 @@ ShallowWrapper {
           "props": Object {
             "children": <img
               alt="Vít Jedlička profile"
-              src="vit.jpg"
-/>,
+              src="/img/team/vit.jpg"
+            />,
             "className": "profile",
           },
           "ref": null,
@@ -162,7 +163,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "Vít Jedlička profile",
-              "src": "vit.jpg",
+              "src": "/img/team/vit.jpg",
             },
             "ref": null,
             "rendered": null,
@@ -192,29 +193,29 @@ ShallowWrapper {
                 className="linkedin"
                 href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
                 target="_blank"
->
+              >
                 <i
-                                className="fab fa-linkedin-in"
+                  className="fab fa-linkedin-in"
                 />
-</a>,
+              </a>,
               <a
                 className="rss"
                 href="http://www.google.com"
                 target="_blank"
->
+              >
                 <i
-                                className="fas fa-rss"
+                  className="fas fa-rss"
                 />
-</a>,
+              </a>,
               <a
                 className="blog"
                 href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
                 target="_blank"
->
+              >
                 <i
-                                className="fab fa-blog"
+                  className="fab fa-blog"
                 />
-</a>,
+              </a>,
             ],
             "className": "social",
           },
@@ -227,7 +228,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <i
                   className="fab fa-linkedin-in"
-/>,
+                />,
                 "className": "linkedin",
                 "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
                 "target": "_blank",
@@ -253,7 +254,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <i
                   className="fas fa-rss"
-/>,
+                />,
                 "className": "rss",
                 "href": "http://www.google.com",
                 "target": "_blank",
@@ -279,7 +280,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <i
                   className="fab fa-blog"
-/>,
+                />,
                 "className": "blog",
                 "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
                 "target": "_blank",
@@ -326,57 +327,57 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="member"
->
+        >
           <div
-                    className="profile"
+            className="profile"
           >
-                    <img
-                              alt="Vít Jedlička profile"
-                              src="vit.jpg"
-                    />
+            <img
+              alt="Vít Jedlička profile"
+              src="/img/team/vit.jpg"
+            />
           </div>
           <h3
-                    className="name"
+            className="name"
           >
-                    Vít Jedlička
+            Vít Jedlička
           </h3>
           <div
-                    className="social"
+            className="social"
           >
-                    <a
-                              className="linkedin"
-                              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                              target="_blank"
-                    >
-                              <i
-                                        className="fab fa-linkedin-in"
-                              />
-                    </a>
-                    <a
-                              className="rss"
-                              href="http://www.google.com"
-                              target="_blank"
-                    >
-                              <i
-                                        className="fas fa-rss"
-                              />
-                    </a>
-                    <a
-                              className="blog"
-                              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                              target="_blank"
-                    >
-                              <i
-                                        className="fab fa-blog"
-                              />
-                    </a>
+            <a
+              className="linkedin"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-linkedin-in"
+              />
+            </a>
+            <a
+              className="rss"
+              href="http://www.google.com"
+              target="_blank"
+            >
+              <i
+                className="fas fa-rss"
+              />
+            </a>
+            <a
+              className="blog"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-blog"
+              />
+            </a>
           </div>
           <div
-                    className="description"
+            className="description"
           >
-                    President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+            President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
           </div>
-</div>,
+        </div>,
         "className": "col-xs-12 col-ms-6 col-sm-4",
       },
       "ref": null,
@@ -388,53 +389,53 @@ ShallowWrapper {
           "children": Array [
             <div
               className="profile"
->
+            >
               <img
-                            alt="Vít Jedlička profile"
-                            src="vit.jpg"
+                alt="Vít Jedlička profile"
+                src="/img/team/vit.jpg"
               />
-</div>,
+            </div>,
             <h3
               className="name"
->
+            >
               Vít Jedlička
-</h3>,
+            </h3>,
             <div
               className="social"
->
+            >
               <a
-                            className="linkedin"
-                            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                            target="_blank"
+                className="linkedin"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
               >
-                            <i
-                                          className="fab fa-linkedin-in"
-                            />
+                <i
+                  className="fab fa-linkedin-in"
+                />
               </a>
               <a
-                            className="rss"
-                            href="http://www.google.com"
-                            target="_blank"
+                className="rss"
+                href="http://www.google.com"
+                target="_blank"
               >
-                            <i
-                                          className="fas fa-rss"
-                            />
+                <i
+                  className="fas fa-rss"
+                />
               </a>
               <a
-                            className="blog"
-                            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
-                            target="_blank"
+                className="blog"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
               >
-                            <i
-                                          className="fab fa-blog"
-                            />
+                <i
+                  className="fab fa-blog"
+                />
               </a>
-</div>,
+            </div>,
             <div
               className="description"
->
+            >
               President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
-</div>,
+            </div>,
           ],
           "className": "member",
         },
@@ -447,8 +448,8 @@ ShallowWrapper {
             "props": Object {
               "children": <img
                 alt="Vít Jedlička profile"
-                src="vit.jpg"
-/>,
+                src="/img/team/vit.jpg"
+              />,
               "className": "profile",
             },
             "ref": null,
@@ -458,7 +459,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "Vít Jedlička profile",
-                "src": "vit.jpg",
+                "src": "/img/team/vit.jpg",
               },
               "ref": null,
               "rendered": null,
@@ -488,29 +489,29 @@ ShallowWrapper {
                   className="linkedin"
                   href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
                   target="_blank"
->
+                >
                   <i
-                                    className="fab fa-linkedin-in"
+                    className="fab fa-linkedin-in"
                   />
-</a>,
+                </a>,
                 <a
                   className="rss"
                   href="http://www.google.com"
                   target="_blank"
->
+                >
                   <i
-                                    className="fas fa-rss"
+                    className="fas fa-rss"
                   />
-</a>,
+                </a>,
                 <a
                   className="blog"
                   href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
                   target="_blank"
->
+                >
                   <i
-                                    className="fab fa-blog"
+                    className="fab fa-blog"
                   />
-</a>,
+                </a>,
               ],
               "className": "social",
             },
@@ -523,7 +524,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <i
                     className="fab fa-linkedin-in"
-/>,
+                  />,
                   "className": "linkedin",
                   "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
                   "target": "_blank",
@@ -549,7 +550,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <i
                     className="fas fa-rss"
-/>,
+                  />,
                   "className": "rss",
                   "href": "http://www.google.com",
                   "target": "_blank",
@@ -575,7 +576,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <i
                     className="fab fa-blog"
-/>,
+                  />,
                   "className": "blog",
                   "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
                   "target": "_blank",
@@ -619,6 +620,23 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },

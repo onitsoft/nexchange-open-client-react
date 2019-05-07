@@ -3,7 +3,7 @@ import cx from 'classnames';
 import Deposit from '../../images/deposit.svg';
 import Confirmations from '../../images/confirmations.svg';
 import Done from '../../images/done.svg';
-import STATUS_CODES from 'StatusCodes';
+import { STATUS_CODES } from 'StatusCodes';
 import styles from '../OrderStatus.scss';
 import { I18n } from 'react-i18next';
 

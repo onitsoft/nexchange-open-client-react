@@ -1,0 +1,93 @@
+.container {
+  @media (max-width: $screen-md-min) {
+    position: relative;
+  }
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+  }
+  padding: 5px 10px 5px 10px;
+  border-radius: 8px;
+  background-color: #031d41;
+  z-index: 1;
+  -webkit-box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.16);
+
+  .list-container {
+    max-height: 210px;
+    overflow: auto;
+
+
+    .faq-search {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px 5px 10px;
+      background-color: #031d41;
+
+      i {
+        color: $gray;
+
+        &.clear {
+          cursor: pointer;
+          display: none;
+        }
+        &.active {
+          display: inline;
+          color: #fff;
+        }
+      }
+
+      input {
+        width: 90%;
+        margin-left: 10px;
+        font-size: 18px;
+        background-color: #031d41;
+        color: #fff;
+      }
+    }
+
+    .entry {
+      padding: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      background-color: #031d41;
+      border-top: 1px solid $gray;
+      color: #fff;
+
+      &:hover {
+        background-color: rgba(1,1,1,0.1);
+      }
+
+      .details {
+        color: #fff;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .separator {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+    background-color: $gray;
+    background-color: #031d41;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0 5px 5px -2px rgba(0,0,0,0.75);
+  }
+
+  .showMore {
+    display: flex;
+    justify-content: center;
+
+    a{
+      cursor: pointer;
+      font-size: 12px;
+    }
+  }
+}
+
+

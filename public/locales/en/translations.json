@@ -5,6 +5,10 @@
     "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
+    "usepreviousaddress": "Use previous address",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Search",
     "submit": "Submit"
   },
@@ -27,12 +31,21 @@
     "1": "Exchange Cryptocurrencies",
     "2": "<0>Simple. <1>Secure</1>. Transparent.</0>"
   },
+  "ordermodeswitch": {
+    "simple": "Simple",
+    "advanced": "Advanced"
+  },
   "exchangewidget": {
     "1": "GET STARTED",
     "2": "*Confirm & Place Order",
     "3": "Current fee is 0.5%",
     "min": "Min amount",
     "max": "Max amount"
+  },
+  "orderbookwidget": {
+    "disabledmessage1": "n.exchange will soon feature the first multi-chain non custodial order book!",
+    "disabledmessage2": "This unique technology will allow you to leverage limit orders and other advanced trading instruments while keeping the safety and simplicity you are familiar with.",
+    "disabledmessage3": "- Stay tuned"
   },
   "recentorders": {
     "1": "Recent Orders",
@@ -122,6 +135,11 @@
     "presale": "Pre-sale starts in"
   },
   "faq": {
+    "heading1": "Frequently Asked Questions",
+    "heading2": "Do you have something in mind?",
+    "inputplaceholder": "What are you looking for?",
+    "notfound": "We did not find what you were looking for",
+    "openticket": "Open support ticket",
     "ques1": "Who are you?",
     "ques2": "What do you do?",
     "ques3": "What is your fee?",
@@ -206,9 +224,11 @@
   },
   "order": {
     "enteraddress": "Enter your wallet address",
-    "copy": "Wallet adress copied!",
+    "copyaddress": "Wallet address copied!",
+    "copyaddressid": "{{addressIdType}} copied!",
     "reference": "Order Reference",
     "api": "See your order details on our API",
+    "repeat": "Repeat order",
     "blockchain": "See your order details on blockchain",
     "processing": "Processing withdrawal...",
     "released": "Funds released, awaiting confirmations",
@@ -238,8 +258,14 @@
       "Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.",
     "status3": "3. All done",
     "status31": "We got the funds and now have transferred our funds to you.",
+    "bookstatus1": "1. Awaiting deposit",
+    "bookstatus11": "In this step we are waiting for your deposit.",
+    "bookstatus2": "2. Awaiting to be filled",
+    "bookstatus21": "We received your funds and your order is on open and wating to be filled",
+    "bookstatus3": "3. Order filled",
+    "bookstatus31": "Your order was filled and the funds have been transfered to you",
     "success1": "Order success",
-    "success2": "Make another order!",
+    "success2": "Order again!",
     "pay": "Pay",
     "deposit": "Deposit",
     "receive": "Receive",
@@ -357,8 +383,7 @@
     "title": "Refund Policy",
     "1": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
     "2": "Otherwise, no refunds are possible",
-    "3":
-      "and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+    "3": "and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
     "4": "Get in touch with us by chatting us or writing us an email at ",
     "5": "Success, you set a refund address.",
     "6": "Set refund address",
@@ -366,10 +391,9 @@
     "8": "Enter your refund address",
     "9": "Order Refunded",
     "10": "<0>Your order has been refunded. Please contact support at <1>support@n.exchange</1></0>",
-    "11":
-      "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
-    "12":
-      "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE."
+    "11": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+    "12": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+    "13": "On any case of a refund after more than a day after the purchase had been made, an administrative fee of 5% will be retained by n.exchange."
   },
   "loading": "Loading",
   "privacy": {
@@ -417,5 +441,7 @@
     "try": "Try",
     "novalid": "is no valid",
     "providevalid": "Please put valid"
-  }
+  },
+  "viewmore": "view more",
+  "to": "to"
 }

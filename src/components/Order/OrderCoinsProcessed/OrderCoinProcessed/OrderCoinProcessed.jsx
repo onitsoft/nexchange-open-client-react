@@ -7,11 +7,10 @@ import i18n from 'Src/i18n';
 import MinMax from 'Components/MinMax/MinMax';
 
 class OrderCoinProcessed extends Component {
-  state = { order: this.props.order };
+  state = { order: this.props.order, hiddenAddress: true };
 
   componentDidMount() {
     this.prepareState(this.props);
-
     $(function() {
       $('[data-toggle="tooltip"]').tooltip();
     });
@@ -23,23 +22,31 @@ class OrderCoinProcessed extends Component {
     });
   }
 
-  triggerCopyTooltip = () => {
+  triggerCopyAddressElementTooltip = (addressElement, addressType, addressIdType) => {
     if (process.env.NODE_ENV !== 'test') {
-      $('#copy-address-to-clipboard').tooltip({
+      let elementId = '';
+      let copyMessage = '';
+      if (addressType === 'addressId') {
+        elementId = '#copy-address-id-to-clipboard';
+        copyMessage = 'order.copyaddressid';
+      } else {
+        elementId = '#copy-address-to-clipboard';
+        copyMessage = 'order.copyaddress';
+      }
+      $(`${elementId}`).tooltip({
         trigger: 'click',
         placement: 'top',
       });
-
-      $('#copy-address-to-clipboard')
+      $(`${elementId}`)
         .tooltip('hide')
-        .attr('data-original-title', i18n.t('order.copy'))
+        .attr('data-original-title', i18n.t(copyMessage, { addressIdType: addressIdType }))
         .tooltip('show');
 
       setTimeout(() => {
-        $('#copy-address-to-clipboard').tooltip('destroy');
+        $(`${elementId}`).tooltip('destroy');
       }, 1000);
 
-      copy(this.props.order.deposit_address.address);
+      copy(addressElement);
     }
   };
 
@@ -50,6 +57,9 @@ class OrderCoinProcessed extends Component {
         oppositeCoin: props.order.pair.base.code,
         amount: parseFloat(props.order.amount_quote),
         address: props.order.deposit_address ? props.order.deposit_address.address : '',
+        paymentId: props.order.deposit_address ? props.order.deposit_address.payment_id : '',
+        destinationTag: props.order.deposit_address ? props.order.deposit_address.destination_tag : '',
+        memo: props.order.deposit_address ? props.order.deposit_address.memo : '',
         order: props.order,
       });
     } else if (props.type === 'Receive') {
@@ -58,6 +68,9 @@ class OrderCoinProcessed extends Component {
         oppositeCoin: props.order.pair.quote.code,
         amount: parseFloat(props.order.amount_base),
         address: props.order.withdraw_address ? props.order.withdraw_address.address : '',
+        paymentId: props.order.withdraw_address ? props.order.withdraw_address.payment_id : '',
+        destinationTag: props.order.withdraw_address ? props.order.withdraw_address.destination_tag : '',
+        memo: props.order.withdraw_address ? props.order.withdraw_address.memo : '',
         order: props.order,
       });
     }
@@ -96,6 +109,123 @@ class OrderCoinProcessed extends Component {
     return rates;
   }
 
+  toggle() {
+    this.setState({
+      hiddenAddress: !this.state.hiddenAddress
+    });
+  }
+
+  hasAddressId() {
+    return (
+      !_.isEmpty(this.state.paymentId) ||
+      !_.isEmpty(this.state.destinationTag) ||
+      !_.isEmpty(this.state.memo));
+  }
+
+  addressIsTooLong() {
+    return (
+      this.state.address != null && (this.state.address.length >= 42)
+      );
+  }
+
+  renderExpandButton() {
+    let renderedExandButton;
+    renderedExandButton = null;
+
+    if (this.addressIsTooLong() || this.hasAddressId()) {
+      renderedExandButton =
+        <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
+          {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
+        </a>;
+    } else {
+      renderedExandButton =
+        <a className={`${styles['expansion-button']} ${styles['expansion-button-mobile']}`} 
+        onClick={this.toggle.bind(this)}>
+          {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
+        </a>;
+    }
+    return renderedExandButton;
+  }
+
+  renderAddress() {
+    let renderedAddress;
+    let addressId;
+    let addressIdType;
+
+    if (this.state.paymentId) {
+      addressId = this.state.paymentId;
+      addressIdType = 'Payment id';
+    } else if (this.state.destinationTag) {
+      addressId = this.state.destinationTag;
+      addressIdType = 'Destination tag';
+    } else if (this.state.memo) {
+      addressId = this.state.memo;
+      addressIdType = 'Memo';
+    } else {
+      addressId = null;
+    }
+    if (this.state.hiddenAddress) {
+      renderedAddress =
+        <div className={styles.address}>
+          <div className={styles.row}>
+            <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ?
+            styles['deposit'] : ''} ${styles['address-hidden']}`}>
+              <h6>{this.state.address}</h6>
+            </div>
+            <div className={styles.copybuttonright}>
+              {this.props.type === 'Deposit' &&
+              !isFiatOrder(this.props.order) && (
+                <i
+                  id="copy-address-to-clipboard"
+                  className={`${styles.copy} fas fa-copy`}
+                  data-test="copy-address"
+                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+    } else {
+      renderedAddress =
+      <div className={styles.address}>
+        <div className={styles.row}>
+          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+            <h6>{this.state.address}</h6>
+          </div>
+          <div className={styles.copybuttonright}>
+            {this.props.type === 'Deposit' &&
+            !isFiatOrder(this.props.order) && (
+              <i
+                id="copy-address-to-clipboard"
+                className={`${styles.copy} fas fa-copy`}
+                data-test="copy-address"
+                onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
+              />)}
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+            <h6>{addressId}</h6>
+          </div>
+          <div className={styles.copybuttonright}>
+            {this.props.type === 'Deposit' &&
+            !isFiatOrder(this.props.order) && (
+              addressId != null ?
+              <i
+                id="copy-address-id-to-clipboard"
+                className={`${styles.copy} fas fa-copy`}
+                data-test="copy-address"
+                onClick={() => this.triggerCopyAddressElementTooltip(addressId, 'addressId', addressIdType)}
+              /> :
+              null
+            )}
+          </div>
+        </div>
+     </div>
+    }
+    return renderedAddress;
+  }
+
   render() {
     return (
       <I18n ns="translations">
@@ -124,24 +254,9 @@ class OrderCoinProcessed extends Component {
                     data-original-title={this.renderRates()}
                   />
                 </h5>
-
-                <div>
-                  <div className={styles.address}>
-                    <h6>{this.state.address}</h6>
-                  </div>
-
-                  {this.props.type === 'Deposit' &&
-                    !isFiatOrder(this.props.order) && (
-                      <i
-                        id="copy-address-to-clipboard"
-                        className={`${styles.copy} fas fa-copy`}
-                        data-test="copy-address"
-                        onClick={() => this.triggerCopyTooltip()}
-                      />
-                    )}
-                </div>
-
-                <MinMax {...this.props} />
+                {this.renderAddress()}
+                {this.renderExpandButton()}
+                {!this.props.order.isLimitOrder ? <MinMax {...this.props} /> : null}
               </div>
             </div>
           </div>

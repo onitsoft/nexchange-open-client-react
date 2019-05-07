@@ -2,17 +2,18 @@
 
 exports[`Bookmark renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -28,81 +29,79 @@ ShallowWrapper {
       "children": <div
         className="modal-content"
         id="bookmark"
->
+      >
         <div
-                className="modal-header"
+          className="modal-header"
         >
-                <button
-                        aria-hidden="true"
-                        className="close"
-                        data-dismiss="modal"
-                        onClick={undefined}
-                        type="button"
-                >
-                        <i
-                                className="material-icons"
-                        >
-                                clear
-                        </i>
-                </button>
-                <h4
-                        className="modal-title"
-                        data-original-title="Copy"
-                        data-placement="top"
-                        data-toggle="tooltip"
-                >
-                        bookmark.0
-                </h4>
+          <button
+            aria-hidden="true"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+          >
+            <i
+              className="material-icons"
+            >
+              clear
+            </i>
+          </button>
+          <h4
+            className="modal-title"
+            data-original-title="Copy"
+            data-placement="top"
+            data-toggle="tooltip"
+          >
+            bookmark.0
+          </h4>
         </div>
         <div
-                className="modal-body"
+          className="modal-body"
         >
-                <p
-                        className="text"
-                >
-                        bookmark.1
-                         
-                        <b>
-                                Ctrl
-                                 + D
-                        </b>
-                         
-                        bookmark.2
-                </p>
-                <div
-                        className="input-group"
-                >
-                        <div
-                                className="form-group is-empty"
-                        >
-                                <input
-                                        className="form-control"
-                                        disabled={true}
-                                        placeholder="With Material Icons"
-                                        type="text"
-                                        value="http://localhost/"
-                                />
-                                <span
-                                        className="material-input"
-                                />
-                        </div>
-                        <CopyToClipboard
-                                onCopy={[Function]}
-                                options={undefined}
-                                text="http://localhost/"
-                        >
-                                <span
-                                        className="input-group-addon input-group-addon"
-                                >
-                                        <i
-                                                aria-hidden="true"
-                                                className="fas fa-clipboard"
-                                        />
-                                </span>
-                        </CopyToClipboard>
-                </div>
+          <p
+            className="text"
+          >
+            bookmark.1
+             
+            <b>
+              Ctrl
+               + D
+            </b>
+             
+            bookmark.2
+          </p>
+          <div
+            className="input-group"
+          >
+            <div
+              className="form-group is-empty"
+            >
+              <input
+                className="form-control"
+                disabled={true}
+                placeholder="With Material Icons"
+                type="text"
+                value="http://localhost/"
+              />
+              <span
+                className="material-input"
+              />
+            </div>
+            <CopyToClipboard
+              onCopy={[Function]}
+              text="http://localhost/"
+            >
+              <span
+                className="input-group-addon input-group-addon"
+              >
+                <i
+                  aria-hidden="true"
+                  className="fas fa-clipboard"
+                />
+              </span>
+            </CopyToClipboard>
+          </div>
         </div>
-</div>,
+      </div>,
       "dialogComponentClass": [Function],
       "enforceFocus": true,
       "keyboard": true,
@@ -130,77 +129,75 @@ ShallowWrapper {
         "children": Array [
           <div
             className="modal-header"
->
+          >
             <button
-                        aria-hidden="true"
-                        className="close"
-                        data-dismiss="modal"
-                        onClick={undefined}
-                        type="button"
+              aria-hidden="true"
+              className="close"
+              data-dismiss="modal"
+              type="button"
             >
-                        <i
-                                    className="material-icons"
-                        >
-                                    clear
-                        </i>
+              <i
+                className="material-icons"
+              >
+                clear
+              </i>
             </button>
             <h4
-                        className="modal-title"
-                        data-original-title="Copy"
-                        data-placement="top"
-                        data-toggle="tooltip"
+              className="modal-title"
+              data-original-title="Copy"
+              data-placement="top"
+              data-toggle="tooltip"
             >
-                        bookmark.0
+              bookmark.0
             </h4>
-</div>,
+          </div>,
           <div
             className="modal-body"
->
+          >
             <p
-                        className="text"
+              className="text"
             >
-                        bookmark.1
-                         
-                        <b>
-                                    Ctrl
-                                     + D
-                        </b>
-                         
-                        bookmark.2
+              bookmark.1
+               
+              <b>
+                Ctrl
+                 + D
+              </b>
+               
+              bookmark.2
             </p>
             <div
-                        className="input-group"
+              className="input-group"
             >
-                        <div
-                                    className="form-group is-empty"
-                        >
-                                    <input
-                                                className="form-control"
-                                                disabled={true}
-                                                placeholder="With Material Icons"
-                                                type="text"
-                                                value="http://localhost/"
-                                    />
-                                    <span
-                                                className="material-input"
-                                    />
-                        </div>
-                        <CopyToClipboard
-                                    onCopy={[Function]}
-                                    options={undefined}
-                                    text="http://localhost/"
-                        >
-                                    <span
-                                                className="input-group-addon input-group-addon"
-                                    >
-                                                <i
-                                                            aria-hidden="true"
-                                                            className="fas fa-clipboard"
-                                                />
-                                    </span>
-                        </CopyToClipboard>
+              <div
+                className="form-group is-empty"
+              >
+                <input
+                  className="form-control"
+                  disabled={true}
+                  placeholder="With Material Icons"
+                  type="text"
+                  value="http://localhost/"
+                />
+                <span
+                  className="material-input"
+                />
+              </div>
+              <CopyToClipboard
+                onCopy={[Function]}
+                text="http://localhost/"
+              >
+                <span
+                  className="input-group-addon input-group-addon"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fas fa-clipboard"
+                  />
+                </span>
+              </CopyToClipboard>
             </div>
-</div>,
+          </div>,
         ],
         "className": "modal-content",
         "id": "bookmark",
@@ -217,23 +214,22 @@ ShallowWrapper {
                 aria-hidden="true"
                 className="close"
                 data-dismiss="modal"
-                onClick={undefined}
                 type="button"
->
+              >
                 <i
-                                className="material-icons"
+                  className="material-icons"
                 >
-                                clear
+                  clear
                 </i>
-</button>,
+              </button>,
               <h4
                 className="modal-title"
                 data-original-title="Copy"
                 data-placement="top"
                 data-toggle="tooltip"
->
+              >
                 bookmark.0
-</h4>,
+              </h4>,
             ],
             "className": "modal-header",
           },
@@ -247,9 +243,9 @@ ShallowWrapper {
                 "aria-hidden": "true",
                 "children": <i
                   className="material-icons"
->
+                >
                   clear
-</i>,
+                </i>,
                 "className": "close",
                 "data-dismiss": "modal",
                 "onClick": undefined,
@@ -296,48 +292,47 @@ ShallowWrapper {
             "children": Array [
               <p
                 className="text"
->
+              >
                 bookmark.1
                  
                 <b>
-                                Ctrl
-                                 + D
+                  Ctrl
+                   + D
                 </b>
                  
                 bookmark.2
-</p>,
+              </p>,
               <div
                 className="input-group"
->
+              >
                 <div
-                                className="form-group is-empty"
+                  className="form-group is-empty"
                 >
-                                <input
-                                                className="form-control"
-                                                disabled={true}
-                                                placeholder="With Material Icons"
-                                                type="text"
-                                                value="http://localhost/"
-                                />
-                                <span
-                                                className="material-input"
-                                />
+                  <input
+                    className="form-control"
+                    disabled={true}
+                    placeholder="With Material Icons"
+                    type="text"
+                    value="http://localhost/"
+                  />
+                  <span
+                    className="material-input"
+                  />
                 </div>
                 <CopyToClipboard
-                                onCopy={[Function]}
-                                options={undefined}
-                                text="http://localhost/"
+                  onCopy={[Function]}
+                  text="http://localhost/"
                 >
-                                <span
-                                                className="input-group-addon input-group-addon"
-                                >
-                                                <i
-                                                                aria-hidden="true"
-                                                                className="fas fa-clipboard"
-                                                />
-                                </span>
+                  <span
+                    className="input-group-addon input-group-addon"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fas fa-clipboard"
+                    />
+                  </span>
                 </CopyToClipboard>
-</div>,
+              </div>,
             ],
             "className": "modal-body",
           },
@@ -354,7 +349,7 @@ ShallowWrapper {
                   <b>
                     Ctrl
                      + D
-</b>,
+                  </b>,
                   " ",
                   "bookmark.2",
                 ],
@@ -394,32 +389,31 @@ ShallowWrapper {
                 "children": Array [
                   <div
                     className="form-group is-empty"
->
+                  >
                     <input
-                                        className="form-control"
-                                        disabled={true}
-                                        placeholder="With Material Icons"
-                                        type="text"
-                                        value="http://localhost/"
+                      className="form-control"
+                      disabled={true}
+                      placeholder="With Material Icons"
+                      type="text"
+                      value="http://localhost/"
                     />
                     <span
-                                        className="material-input"
+                      className="material-input"
                     />
-</div>,
+                  </div>,
                   <CopyToClipboard
                     onCopy={[Function]}
-                    options={undefined}
                     text="http://localhost/"
->
+                  >
                     <span
-                                        className="input-group-addon input-group-addon"
+                      className="input-group-addon input-group-addon"
                     >
-                                        <i
-                                                            aria-hidden="true"
-                                                            className="fas fa-clipboard"
-                                        />
+                      <i
+                        aria-hidden="true"
+                        className="fas fa-clipboard"
+                      />
                     </span>
-</CopyToClipboard>,
+                  </CopyToClipboard>,
                 ],
                 "className": "input-group",
               },
@@ -437,10 +431,10 @@ ShallowWrapper {
                         placeholder="With Material Icons"
                         type="text"
                         value="http://localhost/"
-/>,
+                      />,
                       <span
                         className="material-input"
-/>,
+                      />,
                     ],
                     "className": "form-group is-empty",
                   },
@@ -482,12 +476,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <span
                       className="input-group-addon input-group-addon"
->
+                    >
                       <i
-                                            aria-hidden="true"
-                                            className="fas fa-clipboard"
+                        aria-hidden="true"
+                        className="fas fa-clipboard"
                       />
-</span>,
+                    </span>,
                     "onCopy": [Function],
                     "options": undefined,
                     "text": "http://localhost/",
@@ -501,7 +495,7 @@ ShallowWrapper {
                       "children": <i
                         aria-hidden="true"
                         className="fas fa-clipboard"
-/>,
+                      />,
                       "className": "input-group-addon input-group-addon",
                     },
                     "ref": null,
@@ -545,81 +539,79 @@ ShallowWrapper {
         "children": <div
           className="modal-content"
           id="bookmark"
->
+        >
           <div
-                    className="modal-header"
+            className="modal-header"
           >
-                    <button
-                              aria-hidden="true"
-                              className="close"
-                              data-dismiss="modal"
-                              onClick={undefined}
-                              type="button"
-                    >
-                              <i
-                                        className="material-icons"
-                              >
-                                        clear
-                              </i>
-                    </button>
-                    <h4
-                              className="modal-title"
-                              data-original-title="Copy"
-                              data-placement="top"
-                              data-toggle="tooltip"
-                    >
-                              bookmark.0
-                    </h4>
+            <button
+              aria-hidden="true"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <i
+                className="material-icons"
+              >
+                clear
+              </i>
+            </button>
+            <h4
+              className="modal-title"
+              data-original-title="Copy"
+              data-placement="top"
+              data-toggle="tooltip"
+            >
+              bookmark.0
+            </h4>
           </div>
           <div
-                    className="modal-body"
+            className="modal-body"
           >
-                    <p
-                              className="text"
-                    >
-                              bookmark.1
-                               
-                              <b>
-                                        Ctrl
-                                         + D
-                              </b>
-                               
-                              bookmark.2
-                    </p>
-                    <div
-                              className="input-group"
-                    >
-                              <div
-                                        className="form-group is-empty"
-                              >
-                                        <input
-                                                  className="form-control"
-                                                  disabled={true}
-                                                  placeholder="With Material Icons"
-                                                  type="text"
-                                                  value="http://localhost/"
-                                        />
-                                        <span
-                                                  className="material-input"
-                                        />
-                              </div>
-                              <CopyToClipboard
-                                        onCopy={[Function]}
-                                        options={undefined}
-                                        text="http://localhost/"
-                              >
-                                        <span
-                                                  className="input-group-addon input-group-addon"
-                                        >
-                                                  <i
-                                                            aria-hidden="true"
-                                                            className="fas fa-clipboard"
-                                                  />
-                                        </span>
-                              </CopyToClipboard>
-                    </div>
+            <p
+              className="text"
+            >
+              bookmark.1
+               
+              <b>
+                Ctrl
+                 + D
+              </b>
+               
+              bookmark.2
+            </p>
+            <div
+              className="input-group"
+            >
+              <div
+                className="form-group is-empty"
+              >
+                <input
+                  className="form-control"
+                  disabled={true}
+                  placeholder="With Material Icons"
+                  type="text"
+                  value="http://localhost/"
+                />
+                <span
+                  className="material-input"
+                />
+              </div>
+              <CopyToClipboard
+                onCopy={[Function]}
+                text="http://localhost/"
+              >
+                <span
+                  className="input-group-addon input-group-addon"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fas fa-clipboard"
+                  />
+                </span>
+              </CopyToClipboard>
+            </div>
           </div>
-</div>,
+        </div>,
         "dialogComponentClass": [Function],
         "enforceFocus": true,
         "keyboard": true,
@@ -647,77 +639,75 @@ ShallowWrapper {
           "children": Array [
             <div
               className="modal-header"
->
+            >
               <button
-                            aria-hidden="true"
-                            className="close"
-                            data-dismiss="modal"
-                            onClick={undefined}
-                            type="button"
+                aria-hidden="true"
+                className="close"
+                data-dismiss="modal"
+                type="button"
               >
-                            <i
-                                          className="material-icons"
-                            >
-                                          clear
-                            </i>
+                <i
+                  className="material-icons"
+                >
+                  clear
+                </i>
               </button>
               <h4
-                            className="modal-title"
-                            data-original-title="Copy"
-                            data-placement="top"
-                            data-toggle="tooltip"
+                className="modal-title"
+                data-original-title="Copy"
+                data-placement="top"
+                data-toggle="tooltip"
               >
-                            bookmark.0
+                bookmark.0
               </h4>
-</div>,
+            </div>,
             <div
               className="modal-body"
->
+            >
               <p
-                            className="text"
+                className="text"
               >
-                            bookmark.1
-                             
-                            <b>
-                                          Ctrl
-                                           + D
-                            </b>
-                             
-                            bookmark.2
+                bookmark.1
+                 
+                <b>
+                  Ctrl
+                   + D
+                </b>
+                 
+                bookmark.2
               </p>
               <div
-                            className="input-group"
+                className="input-group"
               >
-                            <div
-                                          className="form-group is-empty"
-                            >
-                                          <input
-                                                        className="form-control"
-                                                        disabled={true}
-                                                        placeholder="With Material Icons"
-                                                        type="text"
-                                                        value="http://localhost/"
-                                          />
-                                          <span
-                                                        className="material-input"
-                                          />
-                            </div>
-                            <CopyToClipboard
-                                          onCopy={[Function]}
-                                          options={undefined}
-                                          text="http://localhost/"
-                            >
-                                          <span
-                                                        className="input-group-addon input-group-addon"
-                                          >
-                                                        <i
-                                                                      aria-hidden="true"
-                                                                      className="fas fa-clipboard"
-                                                        />
-                                          </span>
-                            </CopyToClipboard>
+                <div
+                  className="form-group is-empty"
+                >
+                  <input
+                    className="form-control"
+                    disabled={true}
+                    placeholder="With Material Icons"
+                    type="text"
+                    value="http://localhost/"
+                  />
+                  <span
+                    className="material-input"
+                  />
+                </div>
+                <CopyToClipboard
+                  onCopy={[Function]}
+                  text="http://localhost/"
+                >
+                  <span
+                    className="input-group-addon input-group-addon"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fas fa-clipboard"
+                    />
+                  </span>
+                </CopyToClipboard>
               </div>
-</div>,
+            </div>,
           ],
           "className": "modal-content",
           "id": "bookmark",
@@ -734,23 +724,22 @@ ShallowWrapper {
                   aria-hidden="true"
                   className="close"
                   data-dismiss="modal"
-                  onClick={undefined}
                   type="button"
->
+                >
                   <i
-                                    className="material-icons"
+                    className="material-icons"
                   >
-                                    clear
+                    clear
                   </i>
-</button>,
+                </button>,
                 <h4
                   className="modal-title"
                   data-original-title="Copy"
                   data-placement="top"
                   data-toggle="tooltip"
->
+                >
                   bookmark.0
-</h4>,
+                </h4>,
               ],
               "className": "modal-header",
             },
@@ -764,9 +753,9 @@ ShallowWrapper {
                   "aria-hidden": "true",
                   "children": <i
                     className="material-icons"
->
+                  >
                     clear
-</i>,
+                  </i>,
                   "className": "close",
                   "data-dismiss": "modal",
                   "onClick": undefined,
@@ -813,48 +802,47 @@ ShallowWrapper {
               "children": Array [
                 <p
                   className="text"
->
+                >
                   bookmark.1
                    
                   <b>
-                                    Ctrl
-                                     + D
+                    Ctrl
+                     + D
                   </b>
                    
                   bookmark.2
-</p>,
+                </p>,
                 <div
                   className="input-group"
->
+                >
                   <div
-                                    className="form-group is-empty"
+                    className="form-group is-empty"
                   >
-                                    <input
-                                                      className="form-control"
-                                                      disabled={true}
-                                                      placeholder="With Material Icons"
-                                                      type="text"
-                                                      value="http://localhost/"
-                                    />
-                                    <span
-                                                      className="material-input"
-                                    />
+                    <input
+                      className="form-control"
+                      disabled={true}
+                      placeholder="With Material Icons"
+                      type="text"
+                      value="http://localhost/"
+                    />
+                    <span
+                      className="material-input"
+                    />
                   </div>
                   <CopyToClipboard
-                                    onCopy={[Function]}
-                                    options={undefined}
-                                    text="http://localhost/"
+                    onCopy={[Function]}
+                    text="http://localhost/"
                   >
-                                    <span
-                                                      className="input-group-addon input-group-addon"
-                                    >
-                                                      <i
-                                                                        aria-hidden="true"
-                                                                        className="fas fa-clipboard"
-                                                      />
-                                    </span>
+                    <span
+                      className="input-group-addon input-group-addon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fas fa-clipboard"
+                      />
+                    </span>
                   </CopyToClipboard>
-</div>,
+                </div>,
               ],
               "className": "modal-body",
             },
@@ -871,7 +859,7 @@ ShallowWrapper {
                     <b>
                       Ctrl
                        + D
-</b>,
+                    </b>,
                     " ",
                     "bookmark.2",
                   ],
@@ -911,32 +899,31 @@ ShallowWrapper {
                   "children": Array [
                     <div
                       className="form-group is-empty"
->
+                    >
                       <input
-                                            className="form-control"
-                                            disabled={true}
-                                            placeholder="With Material Icons"
-                                            type="text"
-                                            value="http://localhost/"
+                        className="form-control"
+                        disabled={true}
+                        placeholder="With Material Icons"
+                        type="text"
+                        value="http://localhost/"
                       />
                       <span
-                                            className="material-input"
+                        className="material-input"
                       />
-</div>,
+                    </div>,
                     <CopyToClipboard
                       onCopy={[Function]}
-                      options={undefined}
                       text="http://localhost/"
->
+                    >
                       <span
-                                            className="input-group-addon input-group-addon"
+                        className="input-group-addon input-group-addon"
                       >
-                                            <i
-                                                                  aria-hidden="true"
-                                                                  className="fas fa-clipboard"
-                                            />
+                        <i
+                          aria-hidden="true"
+                          className="fas fa-clipboard"
+                        />
                       </span>
-</CopyToClipboard>,
+                    </CopyToClipboard>,
                   ],
                   "className": "input-group",
                 },
@@ -954,10 +941,10 @@ ShallowWrapper {
                           placeholder="With Material Icons"
                           type="text"
                           value="http://localhost/"
-/>,
+                        />,
                         <span
                           className="material-input"
-/>,
+                        />,
                       ],
                       "className": "form-group is-empty",
                     },
@@ -999,12 +986,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": <span
                         className="input-group-addon input-group-addon"
->
+                      >
                         <i
-                                                aria-hidden="true"
-                                                className="fas fa-clipboard"
+                          aria-hidden="true"
+                          className="fas fa-clipboard"
                         />
-</span>,
+                      </span>,
                       "onCopy": [Function],
                       "options": undefined,
                       "text": "http://localhost/",
@@ -1018,7 +1005,7 @@ ShallowWrapper {
                         "children": <i
                           aria-hidden="true"
                           className="fas fa-clipboard"
-/>,
+                        />,
                         "className": "input-group-addon input-group-addon",
                       },
                       "ref": null,
@@ -1054,8 +1041,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

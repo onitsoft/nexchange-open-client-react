@@ -8,9 +8,7 @@ import orderExpired from '../__mocks__/orderExpired';
 import OrderMain from '../components/Order/OrderMain/OrderMain';
 
 import '../css/index.scss';
-import '../css/order.scss';
-import '../css/order-crypto.scss';
-import '../css/order-fiat.scss';
+
 
 window.$ = window.jQuery = require('jquery');
 require('../js/bootstrap.min.js');

@@ -2,17 +2,18 @@
 
 exports[`About renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -23,64 +24,64 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="container"
->
+      >
         <div
-                className="row"
+          className="row"
         >
-                <div
-                        className="col-xs-12"
+          <div
+            className="col-xs-12"
+          >
+            <h2
+              className="title"
+            >
+              about.title
+            </h2>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.1
+            </p>
+            <p>
+              about.2
+            </p>
+            <p>
+              about.3
+            </p>
+            <p>
+              about.4
+              :
+            </p>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.5
+            </p>
+            <p>
+              about.6
+            </p>
+            <Trans
+              i18nKey="about.7"
+            >
+              <p>
+                To support our mission of making crypto accessible to everyone, we’ve made our
+                 
+                <a
+                  href="https://github.com/onitsoft/nexchange-open-client-react"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                        <h2
-                                className="title"
-                        >
-                                about.title
-                        </h2>
-                </div>
-                <div
-                        className="col-xs-12 col-sm-6"
-                >
-                        <p>
-                                about.1
-                        </p>
-                        <p>
-                                about.2
-                        </p>
-                        <p>
-                                about.3
-                        </p>
-                        <p>
-                                about.4
-                                :
-                        </p>
-                </div>
-                <div
-                        className="col-xs-12 col-sm-6"
-                >
-                        <p>
-                                about.5
-                        </p>
-                        <p>
-                                about.6
-                        </p>
-                        <Trans
-                                i18nKey="about.7"
-                        >
-                                <p>
-                                        To support our mission of making crypto accessible to everyone, we’ve made our
-                                         
-                                        <a
-                                                href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                rel="noopener noreferrer"
-                                                target="_blank"
-                                        >
-                                                front end client completely open source
-                                        </a>
-                                        .
-                                </p>
-                        </Trans>
-                </div>
+                  front end client completely open source
+                </a>
+                .
+              </p>
+            </Trans>
+          </div>
         </div>
-</div>,
+      </div>,
       "className": "about",
       "id": "about",
     },
@@ -92,60 +93,60 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="row"
->
+        >
           <div
-                    className="col-xs-12"
+            className="col-xs-12"
           >
-                    <h2
-                              className="title"
-                    >
-                              about.title
-                    </h2>
+            <h2
+              className="title"
+            >
+              about.title
+            </h2>
           </div>
           <div
-                    className="col-xs-12 col-sm-6"
+            className="col-xs-12 col-sm-6"
           >
-                    <p>
-                              about.1
-                    </p>
-                    <p>
-                              about.2
-                    </p>
-                    <p>
-                              about.3
-                    </p>
-                    <p>
-                              about.4
-                              :
-                    </p>
+            <p>
+              about.1
+            </p>
+            <p>
+              about.2
+            </p>
+            <p>
+              about.3
+            </p>
+            <p>
+              about.4
+              :
+            </p>
           </div>
           <div
-                    className="col-xs-12 col-sm-6"
+            className="col-xs-12 col-sm-6"
           >
-                    <p>
-                              about.5
-                    </p>
-                    <p>
-                              about.6
-                    </p>
-                    <Trans
-                              i18nKey="about.7"
-                    >
-                              <p>
-                                        To support our mission of making crypto accessible to everyone, we’ve made our
-                                         
-                                        <a
-                                                  href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                  rel="noopener noreferrer"
-                                                  target="_blank"
-                                        >
-                                                  front end client completely open source
-                                        </a>
-                                        .
-                              </p>
-                    </Trans>
+            <p>
+              about.5
+            </p>
+            <p>
+              about.6
+            </p>
+            <Trans
+              i18nKey="about.7"
+            >
+              <p>
+                To support our mission of making crypto accessible to everyone, we’ve made our
+                 
+                <a
+                  href="https://github.com/onitsoft/nexchange-open-client-react"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  front end client completely open source
+                </a>
+                .
+              </p>
+            </Trans>
           </div>
-</div>,
+        </div>,
         "className": "container",
       },
       "ref": null,
@@ -157,56 +158,56 @@ ShallowWrapper {
           "children": Array [
             <div
               className="col-xs-12"
->
+            >
               <h2
-                            className="title"
+                className="title"
               >
-                            about.title
+                about.title
               </h2>
-</div>,
+            </div>,
             <div
               className="col-xs-12 col-sm-6"
->
+            >
               <p>
-                            about.1
+                about.1
               </p>
               <p>
-                            about.2
+                about.2
               </p>
               <p>
-                            about.3
+                about.3
               </p>
               <p>
-                            about.4
-                            :
+                about.4
+                :
               </p>
-</div>,
+            </div>,
             <div
               className="col-xs-12 col-sm-6"
->
+            >
               <p>
-                            about.5
+                about.5
               </p>
               <p>
-                            about.6
+                about.6
               </p>
               <Trans
-                            i18nKey="about.7"
+                i18nKey="about.7"
               >
-                            <p>
-                                          To support our mission of making crypto accessible to everyone, we’ve made our
-                                           
-                                          <a
-                                                        href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                        rel="noopener noreferrer"
-                                                        target="_blank"
-                                          >
-                                                        front end client completely open source
-                                          </a>
-                                          .
-                            </p>
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
               </Trans>
-</div>,
+            </div>,
           ],
           "className": "row",
         },
@@ -219,9 +220,9 @@ ShallowWrapper {
             "props": Object {
               "children": <h2
                 className="title"
->
+              >
                 about.title
-</h2>,
+              </h2>,
               "className": "col-xs-12",
             },
             "ref": null,
@@ -247,17 +248,17 @@ ShallowWrapper {
               "children": Array [
                 <p>
                   about.1
-</p>,
+                </p>,
                 <p>
                   about.2
-</p>,
+                </p>,
                 <p>
                   about.3
-</p>,
+                </p>,
                 <p>
                   about.4
                   :
-</p>,
+                </p>,
               ],
               "className": "col-xs-12 col-sm-6",
             },
@@ -324,26 +325,26 @@ ShallowWrapper {
               "children": Array [
                 <p>
                   about.5
-</p>,
+                </p>,
                 <p>
                   about.6
-</p>,
+                </p>,
                 <Trans
                   i18nKey="about.7"
->
+                >
                   <p>
-                                    To support our mission of making crypto accessible to everyone, we’ve made our
-                                     
-                                    <a
-                                                      href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                      rel="noopener noreferrer"
-                                                      target="_blank"
-                                    >
-                                                      front end client completely open source
-                                    </a>
-                                    .
+                    To support our mission of making crypto accessible to everyone, we’ve made our
+                     
+                    <a
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      front end client completely open source
+                    </a>
+                    .
                   </p>
-</Trans>,
+                </Trans>,
               ],
               "className": "col-xs-12 col-sm-6",
             },
@@ -380,14 +381,14 @@ ShallowWrapper {
                     To support our mission of making crypto accessible to everyone, we’ve made our
                      
                     <a
-                                        href="https://github.com/onitsoft/nexchange-open-client-react"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
-                                        front end client completely open source
+                      front end client completely open source
                     </a>
                     .
-</p>,
+                  </p>,
                   "i18nKey": "about.7",
                 },
                 "ref": null,
@@ -403,9 +404,9 @@ ShallowWrapper {
                         href="https://github.com/onitsoft/nexchange-open-client-react"
                         rel="noopener noreferrer"
                         target="_blank"
->
+                      >
                         front end client completely open source
-</a>,
+                      </a>,
                       ".",
                     ],
                   },
@@ -451,64 +452,64 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="container"
->
+        >
           <div
-                    className="row"
+            className="row"
           >
-                    <div
-                              className="col-xs-12"
-                    >
-                              <h2
-                                        className="title"
-                              >
-                                        about.title
-                              </h2>
-                    </div>
-                    <div
-                              className="col-xs-12 col-sm-6"
-                    >
-                              <p>
-                                        about.1
-                              </p>
-                              <p>
-                                        about.2
-                              </p>
-                              <p>
-                                        about.3
-                              </p>
-                              <p>
-                                        about.4
-                                        :
-                              </p>
-                    </div>
-                    <div
-                              className="col-xs-12 col-sm-6"
-                    >
-                              <p>
-                                        about.5
-                              </p>
-                              <p>
-                                        about.6
-                              </p>
-                              <Trans
-                                        i18nKey="about.7"
-                              >
-                                        <p>
-                                                  To support our mission of making crypto accessible to everyone, we’ve made our
-                                                   
-                                                  <a
-                                                            href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                            rel="noopener noreferrer"
-                                                            target="_blank"
-                                                  >
-                                                            front end client completely open source
-                                                  </a>
-                                                  .
-                                        </p>
-                              </Trans>
-                    </div>
+            <div
+              className="col-xs-12"
+            >
+              <h2
+                className="title"
+              >
+                about.title
+              </h2>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.1
+              </p>
+              <p>
+                about.2
+              </p>
+              <p>
+                about.3
+              </p>
+              <p>
+                about.4
+                :
+              </p>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.5
+              </p>
+              <p>
+                about.6
+              </p>
+              <Trans
+                i18nKey="about.7"
+              >
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
+              </Trans>
+            </div>
           </div>
-</div>,
+        </div>,
         "className": "about",
         "id": "about",
       },
@@ -520,60 +521,60 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="row"
->
+          >
             <div
-                        className="col-xs-12"
+              className="col-xs-12"
             >
-                        <h2
-                                    className="title"
-                        >
-                                    about.title
-                        </h2>
+              <h2
+                className="title"
+              >
+                about.title
+              </h2>
             </div>
             <div
-                        className="col-xs-12 col-sm-6"
+              className="col-xs-12 col-sm-6"
             >
-                        <p>
-                                    about.1
-                        </p>
-                        <p>
-                                    about.2
-                        </p>
-                        <p>
-                                    about.3
-                        </p>
-                        <p>
-                                    about.4
-                                    :
-                        </p>
+              <p>
+                about.1
+              </p>
+              <p>
+                about.2
+              </p>
+              <p>
+                about.3
+              </p>
+              <p>
+                about.4
+                :
+              </p>
             </div>
             <div
-                        className="col-xs-12 col-sm-6"
+              className="col-xs-12 col-sm-6"
             >
-                        <p>
-                                    about.5
-                        </p>
-                        <p>
-                                    about.6
-                        </p>
-                        <Trans
-                                    i18nKey="about.7"
-                        >
-                                    <p>
-                                                To support our mission of making crypto accessible to everyone, we’ve made our
-                                                 
-                                                <a
-                                                            href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                            rel="noopener noreferrer"
-                                                            target="_blank"
-                                                >
-                                                            front end client completely open source
-                                                </a>
-                                                .
-                                    </p>
-                        </Trans>
+              <p>
+                about.5
+              </p>
+              <p>
+                about.6
+              </p>
+              <Trans
+                i18nKey="about.7"
+              >
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
+              </Trans>
             </div>
-</div>,
+          </div>,
           "className": "container",
         },
         "ref": null,
@@ -585,56 +586,56 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="col-xs-12"
->
+              >
                 <h2
-                                className="title"
+                  className="title"
                 >
-                                about.title
+                  about.title
                 </h2>
-</div>,
+              </div>,
               <div
                 className="col-xs-12 col-sm-6"
->
+              >
                 <p>
-                                about.1
+                  about.1
                 </p>
                 <p>
-                                about.2
+                  about.2
                 </p>
                 <p>
-                                about.3
+                  about.3
                 </p>
                 <p>
-                                about.4
-                                :
+                  about.4
+                  :
                 </p>
-</div>,
+              </div>,
               <div
                 className="col-xs-12 col-sm-6"
->
+              >
                 <p>
-                                about.5
+                  about.5
                 </p>
                 <p>
-                                about.6
+                  about.6
                 </p>
                 <Trans
-                                i18nKey="about.7"
+                  i18nKey="about.7"
                 >
-                                <p>
-                                                To support our mission of making crypto accessible to everyone, we’ve made our
-                                                 
-                                                <a
-                                                                href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                                rel="noopener noreferrer"
-                                                                target="_blank"
-                                                >
-                                                                front end client completely open source
-                                                </a>
-                                                .
-                                </p>
+                  <p>
+                    To support our mission of making crypto accessible to everyone, we’ve made our
+                     
+                    <a
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      front end client completely open source
+                    </a>
+                    .
+                  </p>
                 </Trans>
-</div>,
+              </div>,
             ],
             "className": "row",
           },
@@ -647,9 +648,9 @@ ShallowWrapper {
               "props": Object {
                 "children": <h2
                   className="title"
->
+                >
                   about.title
-</h2>,
+                </h2>,
                 "className": "col-xs-12",
               },
               "ref": null,
@@ -675,17 +676,17 @@ ShallowWrapper {
                 "children": Array [
                   <p>
                     about.1
-</p>,
+                  </p>,
                   <p>
                     about.2
-</p>,
+                  </p>,
                   <p>
                     about.3
-</p>,
+                  </p>,
                   <p>
                     about.4
                     :
-</p>,
+                  </p>,
                 ],
                 "className": "col-xs-12 col-sm-6",
               },
@@ -752,26 +753,26 @@ ShallowWrapper {
                 "children": Array [
                   <p>
                     about.5
-</p>,
+                  </p>,
                   <p>
                     about.6
-</p>,
+                  </p>,
                   <Trans
                     i18nKey="about.7"
->
+                  >
                     <p>
-                                        To support our mission of making crypto accessible to everyone, we’ve made our
-                                         
-                                        <a
-                                                            href="https://github.com/onitsoft/nexchange-open-client-react"
-                                                            rel="noopener noreferrer"
-                                                            target="_blank"
-                                        >
-                                                            front end client completely open source
-                                        </a>
-                                        .
+                      To support our mission of making crypto accessible to everyone, we’ve made our
+                       
+                      <a
+                        href="https://github.com/onitsoft/nexchange-open-client-react"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        front end client completely open source
+                      </a>
+                      .
                     </p>
-</Trans>,
+                  </Trans>,
                 ],
                 "className": "col-xs-12 col-sm-6",
               },
@@ -808,14 +809,14 @@ ShallowWrapper {
                       To support our mission of making crypto accessible to everyone, we’ve made our
                        
                       <a
-                                            href="https://github.com/onitsoft/nexchange-open-client-react"
-                                            rel="noopener noreferrer"
-                                            target="_blank"
+                        href="https://github.com/onitsoft/nexchange-open-client-react"
+                        rel="noopener noreferrer"
+                        target="_blank"
                       >
-                                            front end client completely open source
+                        front end client completely open source
                       </a>
                       .
-</p>,
+                    </p>,
                     "i18nKey": "about.7",
                   },
                   "ref": null,
@@ -831,9 +832,9 @@ ShallowWrapper {
                           href="https://github.com/onitsoft/nexchange-open-client-react"
                           rel="noopener noreferrer"
                           target="_blank"
->
+                        >
                           front end client completely open source
-</a>,
+                        </a>,
                         ".",
                       ],
                     },
@@ -876,8 +877,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
