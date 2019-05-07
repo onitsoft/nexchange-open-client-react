@@ -71,9 +71,7 @@ class ExchangeWidget extends Component {
       },
     };
 
-    console.log(data);
-  
-
+    
     if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
     else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
