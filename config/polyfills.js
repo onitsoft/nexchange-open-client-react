@@ -25,6 +25,5 @@ if (process.env.NODE_ENV === 'test') {
 
 global.$ = global.jQuery = $;
 global._ = _;
-window.gtag = function(){return true;}
 
 
