@@ -10,9 +10,7 @@ import orderExpired from '../__mocks__/orderExpired';
 import Order from '../components/Order/Order';
 
 import '../css/index.scss';
-import '../css/order.scss';
-import '../css/order-crypto.scss';
-import '../css/order-fiat.scss';
+
 
 window.$ = window.jQuery = require('jquery');
 require('../js/bootstrap.min.js');

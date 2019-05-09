@@ -5,7 +5,7 @@ import order from 'Mocks/order';
 
 describe('OrderInitialFiat', () => {
   it('renders correctly', () => {
-    const wrapShallow = shallow(<OrderInitialFiat order={order} />).dive();
+    const wrapShallow = shallow(<OrderInitialFiat order={order} />);
     expect(wrapShallow).toMatchSnapshot();
   });
 });

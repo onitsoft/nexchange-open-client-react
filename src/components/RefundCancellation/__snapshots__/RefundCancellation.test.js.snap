@@ -2,17 +2,18 @@
 
 exports[`RefundCancellation renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -23,33 +24,33 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="row"
->
+      >
         <div
-                className="col-xs-12"
+          className="col-xs-12"
         >
-                <h2>
-                        refund.title
-                </h2>
-                <p>
-                        refund.1
-                </p>
-                <p>
-                        refund.2
-                </p>
-                <p>
-                        refund.3
-                </p>
-                <p>
-                        refund.4
-                         
-                        <a
-                                href="mailto:support@n.exchange"
-                        >
-                                support@n.exchange
-                        </a>
-                </p>
+          <h2>
+            refund.title
+          </h2>
+          <p>
+            refund.1
+          </p>
+          <p>
+            refund.2
+          </p>
+          <p>
+            refund.3
+          </p>
+          <p>
+            refund.4
+             
+            <a
+              href="mailto:support@n.exchange"
+            >
+              support@n.exchange
+            </a>
+          </p>
         </div>
-</div>,
+      </div>,
       "className": "container",
     },
     "ref": null,
@@ -60,29 +61,29 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="col-xs-12"
->
+        >
           <h2>
-                    refund.title
+            refund.title
           </h2>
           <p>
-                    refund.1
+            refund.1
           </p>
           <p>
-                    refund.2
+            refund.2
           </p>
           <p>
-                    refund.3
+            refund.3
           </p>
           <p>
-                    refund.4
-                     
-                    <a
-                              href="mailto:support@n.exchange"
-                    >
-                              support@n.exchange
-                    </a>
+            refund.4
+             
+            <a
+              href="mailto:support@n.exchange"
+            >
+              support@n.exchange
+            </a>
           </p>
-</div>,
+        </div>,
         "className": "row",
       },
       "ref": null,
@@ -94,25 +95,25 @@ ShallowWrapper {
           "children": Array [
             <h2>
               refund.title
-</h2>,
+            </h2>,
             <p>
               refund.1
-</p>,
+            </p>,
             <p>
               refund.2
-</p>,
+            </p>,
             <p>
               refund.3
-</p>,
+            </p>,
             <p>
               refund.4
                
               <a
-                            href="mailto:support@n.exchange"
+                href="mailto:support@n.exchange"
               >
-                            support@n.exchange
+                support@n.exchange
               </a>
-</p>,
+            </p>,
           ],
           "className": "col-xs-12",
         },
@@ -172,9 +173,9 @@ ShallowWrapper {
                 " ",
                 <a
                   href="mailto:support@n.exchange"
->
+                >
                   support@n.exchange
-</a>,
+                </a>,
               ],
             },
             "ref": null,
@@ -211,33 +212,33 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="row"
->
+        >
           <div
-                    className="col-xs-12"
+            className="col-xs-12"
           >
-                    <h2>
-                              refund.title
-                    </h2>
-                    <p>
-                              refund.1
-                    </p>
-                    <p>
-                              refund.2
-                    </p>
-                    <p>
-                              refund.3
-                    </p>
-                    <p>
-                              refund.4
-                               
-                              <a
-                                        href="mailto:support@n.exchange"
-                              >
-                                        support@n.exchange
-                              </a>
-                    </p>
+            <h2>
+              refund.title
+            </h2>
+            <p>
+              refund.1
+            </p>
+            <p>
+              refund.2
+            </p>
+            <p>
+              refund.3
+            </p>
+            <p>
+              refund.4
+               
+              <a
+                href="mailto:support@n.exchange"
+              >
+                support@n.exchange
+              </a>
+            </p>
           </div>
-</div>,
+        </div>,
         "className": "container",
       },
       "ref": null,
@@ -248,29 +249,29 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="col-xs-12"
->
+          >
             <h2>
-                        refund.title
+              refund.title
             </h2>
             <p>
-                        refund.1
+              refund.1
             </p>
             <p>
-                        refund.2
+              refund.2
             </p>
             <p>
-                        refund.3
+              refund.3
             </p>
             <p>
-                        refund.4
-                         
-                        <a
-                                    href="mailto:support@n.exchange"
-                        >
-                                    support@n.exchange
-                        </a>
+              refund.4
+               
+              <a
+                href="mailto:support@n.exchange"
+              >
+                support@n.exchange
+              </a>
             </p>
-</div>,
+          </div>,
           "className": "row",
         },
         "ref": null,
@@ -282,25 +283,25 @@ ShallowWrapper {
             "children": Array [
               <h2>
                 refund.title
-</h2>,
+              </h2>,
               <p>
                 refund.1
-</p>,
+              </p>,
               <p>
                 refund.2
-</p>,
+              </p>,
               <p>
                 refund.3
-</p>,
+              </p>,
               <p>
                 refund.4
                  
                 <a
-                                href="mailto:support@n.exchange"
+                  href="mailto:support@n.exchange"
                 >
-                                support@n.exchange
+                  support@n.exchange
                 </a>
-</p>,
+              </p>,
             ],
             "className": "col-xs-12",
           },
@@ -360,9 +361,9 @@ ShallowWrapper {
                   " ",
                   <a
                     href="mailto:support@n.exchange"
->
+                  >
                     support@n.exchange
-</a>,
+                  </a>,
                 ],
               },
               "ref": null,
@@ -396,8 +397,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

@@ -35,7 +35,7 @@ class CoinInput extends PureComponent {
     this.setState({ value });
     this.fetchAmounts(value);
 
-    ga('send', 'event', 'Order', 'change amount');
+    window.gtag('event', 'Change amount', {event_category: 'Order', event_label: ``});
   };
 
   setValue = value => {
@@ -63,7 +63,11 @@ class CoinInput extends PureComponent {
   }, 600);
 
   focus = () => {
-    this.nameInput.focus();
+    if (this.props.type === 'receive') {
+      this.props.walletInput.focus();
+    } else {
+      this.nameInput.focus();
+    }
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
@@ -82,7 +86,7 @@ class CoinInput extends PureComponent {
     return (
       <I18n ns="translations">
         {t => (
-          <div className="col-xs-12 col-sm-6">
+          <div className="col-xs-12 col-sm-5">
             <form className="form-group" onSubmit={this.handleSubmit}>
               <label htmlFor={this.props.type} className={styles.label}>
                 {t('order.' + this.props.type)}

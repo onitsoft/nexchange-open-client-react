@@ -2,17 +2,18 @@
 
 exports[`TermsConditions renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -23,69 +24,72 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="row"
->
+      >
         <div
-                className="col-xs-12"
+          className="col-xs-12"
         >
-                <h2>
-                        terms.1
-                </h2>
-                <p>
-                        terms.2
-                </p>
-                <p>
-                        terms.3
-                </p>
-                <p>
-                        terms.4
-                </p>
-                <p>
-                        terms.5
-                </p>
-                <p>
-                        terms.6
-                </p>
-                <p>
-                        terms.7
-                </p>
-                <p>
-                        terms.8
-                </p>
-                <p>
-                        terms.9
-                </p>
-                <p>
-                        terms.10
-                </p>
-                <p>
-                        terms.11
-                </p>
-                <ol>
-                        <li>
-                                terms.13
-                        </li>
-                        <li>
-                                terms.14
-                        </li>
-                        <li>
-                                terms.15
-                        </li>
-                </ol>
-                <p>
-                        terms.12
-                </p>
-                <h3>
-                        refund.title
-                </h3>
-                <p>
-                        refund.11
-                </p>
-                <p>
-                        refund.12
-                </p>
-                <br />
+          <h2>
+            terms.1
+          </h2>
+          <p>
+            terms.2
+          </p>
+          <p>
+            terms.3
+          </p>
+          <p>
+            terms.4
+          </p>
+          <p>
+            terms.5
+          </p>
+          <p>
+            terms.6
+          </p>
+          <p>
+            terms.7
+          </p>
+          <p>
+            terms.8
+          </p>
+          <p>
+            terms.9
+          </p>
+          <p>
+            terms.10
+          </p>
+          <p>
+            terms.11
+          </p>
+          <ol>
+            <li>
+              terms.13
+            </li>
+            <li>
+              terms.14
+            </li>
+            <li>
+              terms.15
+            </li>
+          </ol>
+          <p>
+            terms.12
+          </p>
+          <h3>
+            refund.title
+          </h3>
+          <p>
+            refund.11
+          </p>
+          <p>
+            refund.12
+          </p>
+          <p>
+            refund.13
+          </p>
+          <br />
         </div>
-</div>,
+      </div>,
       "className": "container",
     },
     "ref": null,
@@ -96,65 +100,68 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="col-xs-12"
->
+        >
           <h2>
-                    terms.1
+            terms.1
           </h2>
           <p>
-                    terms.2
+            terms.2
           </p>
           <p>
-                    terms.3
+            terms.3
           </p>
           <p>
-                    terms.4
+            terms.4
           </p>
           <p>
-                    terms.5
+            terms.5
           </p>
           <p>
-                    terms.6
+            terms.6
           </p>
           <p>
-                    terms.7
+            terms.7
           </p>
           <p>
-                    terms.8
+            terms.8
           </p>
           <p>
-                    terms.9
+            terms.9
           </p>
           <p>
-                    terms.10
+            terms.10
           </p>
           <p>
-                    terms.11
+            terms.11
           </p>
           <ol>
-                    <li>
-                              terms.13
-                    </li>
-                    <li>
-                              terms.14
-                    </li>
-                    <li>
-                              terms.15
-                    </li>
+            <li>
+              terms.13
+            </li>
+            <li>
+              terms.14
+            </li>
+            <li>
+              terms.15
+            </li>
           </ol>
           <p>
-                    terms.12
+            terms.12
           </p>
           <h3>
-                    refund.title
+            refund.title
           </h3>
           <p>
-                    refund.11
+            refund.11
           </p>
           <p>
-                    refund.12
+            refund.12
+          </p>
+          <p>
+            refund.13
           </p>
           <br />
-</div>,
+        </div>,
         "className": "row",
       },
       "ref": null,
@@ -166,60 +173,63 @@ ShallowWrapper {
           "children": Array [
             <h2>
               terms.1
-</h2>,
+            </h2>,
             <p>
               terms.2
-</p>,
+            </p>,
             <p>
               terms.3
-</p>,
+            </p>,
             <p>
               terms.4
-</p>,
+            </p>,
             <p>
               terms.5
-</p>,
+            </p>,
             <p>
               terms.6
-</p>,
+            </p>,
             <p>
               terms.7
-</p>,
+            </p>,
             <p>
               terms.8
-</p>,
+            </p>,
             <p>
               terms.9
-</p>,
+            </p>,
             <p>
               terms.10
-</p>,
+            </p>,
             <p>
               terms.11
-</p>,
+            </p>,
             <ol>
               <li>
-                            terms.13
+                terms.13
               </li>
               <li>
-                            terms.14
+                terms.14
               </li>
               <li>
-                            terms.15
+                terms.15
               </li>
-</ol>,
+            </ol>,
             <p>
               terms.12
-</p>,
+            </p>,
             <h3>
               refund.title
-</h3>,
+            </h3>,
             <p>
               refund.11
-</p>,
+            </p>,
             <p>
               refund.12
-</p>,
+            </p>,
+            <p>
+              refund.13
+            </p>,
             <br />,
           ],
           "className": "col-xs-12",
@@ -355,13 +365,13 @@ ShallowWrapper {
               "children": Array [
                 <li>
                   terms.13
-</li>,
+                </li>,
                 <li>
                   terms.14
-</li>,
+                </li>,
                 <li>
                   terms.15
-</li>,
+                </li>,
               ],
             },
             "ref": null,
@@ -450,6 +460,17 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
+            "props": Object {
+              "children": "refund.13",
+            },
+            "ref": null,
+            "rendered": "refund.13",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
             "props": Object {},
             "ref": null,
             "rendered": null,
@@ -470,69 +491,72 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="row"
->
+        >
           <div
-                    className="col-xs-12"
+            className="col-xs-12"
           >
-                    <h2>
-                              terms.1
-                    </h2>
-                    <p>
-                              terms.2
-                    </p>
-                    <p>
-                              terms.3
-                    </p>
-                    <p>
-                              terms.4
-                    </p>
-                    <p>
-                              terms.5
-                    </p>
-                    <p>
-                              terms.6
-                    </p>
-                    <p>
-                              terms.7
-                    </p>
-                    <p>
-                              terms.8
-                    </p>
-                    <p>
-                              terms.9
-                    </p>
-                    <p>
-                              terms.10
-                    </p>
-                    <p>
-                              terms.11
-                    </p>
-                    <ol>
-                              <li>
-                                        terms.13
-                              </li>
-                              <li>
-                                        terms.14
-                              </li>
-                              <li>
-                                        terms.15
-                              </li>
-                    </ol>
-                    <p>
-                              terms.12
-                    </p>
-                    <h3>
-                              refund.title
-                    </h3>
-                    <p>
-                              refund.11
-                    </p>
-                    <p>
-                              refund.12
-                    </p>
-                    <br />
+            <h2>
+              terms.1
+            </h2>
+            <p>
+              terms.2
+            </p>
+            <p>
+              terms.3
+            </p>
+            <p>
+              terms.4
+            </p>
+            <p>
+              terms.5
+            </p>
+            <p>
+              terms.6
+            </p>
+            <p>
+              terms.7
+            </p>
+            <p>
+              terms.8
+            </p>
+            <p>
+              terms.9
+            </p>
+            <p>
+              terms.10
+            </p>
+            <p>
+              terms.11
+            </p>
+            <ol>
+              <li>
+                terms.13
+              </li>
+              <li>
+                terms.14
+              </li>
+              <li>
+                terms.15
+              </li>
+            </ol>
+            <p>
+              terms.12
+            </p>
+            <h3>
+              refund.title
+            </h3>
+            <p>
+              refund.11
+            </p>
+            <p>
+              refund.12
+            </p>
+            <p>
+              refund.13
+            </p>
+            <br />
           </div>
-</div>,
+        </div>,
         "className": "container",
       },
       "ref": null,
@@ -543,65 +567,68 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="col-xs-12"
->
+          >
             <h2>
-                        terms.1
+              terms.1
             </h2>
             <p>
-                        terms.2
+              terms.2
             </p>
             <p>
-                        terms.3
+              terms.3
             </p>
             <p>
-                        terms.4
+              terms.4
             </p>
             <p>
-                        terms.5
+              terms.5
             </p>
             <p>
-                        terms.6
+              terms.6
             </p>
             <p>
-                        terms.7
+              terms.7
             </p>
             <p>
-                        terms.8
+              terms.8
             </p>
             <p>
-                        terms.9
+              terms.9
             </p>
             <p>
-                        terms.10
+              terms.10
             </p>
             <p>
-                        terms.11
+              terms.11
             </p>
             <ol>
-                        <li>
-                                    terms.13
-                        </li>
-                        <li>
-                                    terms.14
-                        </li>
-                        <li>
-                                    terms.15
-                        </li>
+              <li>
+                terms.13
+              </li>
+              <li>
+                terms.14
+              </li>
+              <li>
+                terms.15
+              </li>
             </ol>
             <p>
-                        terms.12
+              terms.12
             </p>
             <h3>
-                        refund.title
+              refund.title
             </h3>
             <p>
-                        refund.11
+              refund.11
             </p>
             <p>
-                        refund.12
+              refund.12
+            </p>
+            <p>
+              refund.13
             </p>
             <br />
-</div>,
+          </div>,
           "className": "row",
         },
         "ref": null,
@@ -613,60 +640,63 @@ ShallowWrapper {
             "children": Array [
               <h2>
                 terms.1
-</h2>,
+              </h2>,
               <p>
                 terms.2
-</p>,
+              </p>,
               <p>
                 terms.3
-</p>,
+              </p>,
               <p>
                 terms.4
-</p>,
+              </p>,
               <p>
                 terms.5
-</p>,
+              </p>,
               <p>
                 terms.6
-</p>,
+              </p>,
               <p>
                 terms.7
-</p>,
+              </p>,
               <p>
                 terms.8
-</p>,
+              </p>,
               <p>
                 terms.9
-</p>,
+              </p>,
               <p>
                 terms.10
-</p>,
+              </p>,
               <p>
                 terms.11
-</p>,
+              </p>,
               <ol>
                 <li>
-                                terms.13
+                  terms.13
                 </li>
                 <li>
-                                terms.14
+                  terms.14
                 </li>
                 <li>
-                                terms.15
+                  terms.15
                 </li>
-</ol>,
+              </ol>,
               <p>
                 terms.12
-</p>,
+              </p>,
               <h3>
                 refund.title
-</h3>,
+              </h3>,
               <p>
                 refund.11
-</p>,
+              </p>,
               <p>
                 refund.12
-</p>,
+              </p>,
+              <p>
+                refund.13
+              </p>,
               <br />,
             ],
             "className": "col-xs-12",
@@ -802,13 +832,13 @@ ShallowWrapper {
                 "children": Array [
                   <li>
                     terms.13
-</li>,
+                  </li>,
                   <li>
                     terms.14
-</li>,
+                  </li>,
                   <li>
                     terms.15
-</li>,
+                  </li>,
                 ],
               },
               "ref": null,
@@ -897,6 +927,17 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
+              "props": Object {
+                "children": "refund.13",
+              },
+              "ref": null,
+              "rendered": "refund.13",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
               "props": Object {},
               "ref": null,
               "rendered": null,
@@ -914,8 +955,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

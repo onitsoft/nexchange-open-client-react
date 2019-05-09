@@ -21,7 +21,8 @@
     "telegram": "Begleiten Sie uns auf Telegram",
     "slack": "Treten Sie uns auf Slack bei",
     "en": "Englisch",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "ru": "Russisch"
   },
   "hero": {
     "1": "Umtausch von Kryptowährungen",
@@ -32,7 +33,9 @@
     "2": "*Bestätigen & Auftrag erteilen",
     "3": "Ihre",
     "4": "Adresse",
-    "fees": "Die Gebühren liegen bei"
+    "fees": "Die Gebühren liegen bei",
+    "min": "Min menge",
+    "max": "Max menge"
   },
   "recentorders": {
     "1": "Letzte Aufträge",
@@ -162,6 +165,7 @@
     "copy": "Adresse der Wallet kopiert!",
     "reference": "Auftrag Referenz",
     "api": "Details Ihres Auftrages in unsere API",
+    "repeat": "Bestellung wiederholen",
     "blockchain": "Sehen Sie Ihre  Auftragsdetails in der Blockchain ein",
     "processing": "Abhebung wird ausgeführt...",
     "released": "Gelder freigegeben, erwarte Bestätigungen",
@@ -191,7 +195,7 @@
     "status3": "3. Abgeschlossen",
     "status31": "Wir haben die Gelder erhalten und sie nun an Sie überwiesen.",
     "success1": "Auftrag erfolgreich",
-    "success2": "Geben Sie einen weiteren Auftrag auf!",
+    "success2": "Auftrag erteilen!",
     "pay": "Zu zahlen",
     "deposit": "Einzahlung",
     "receive": "Erhalten",
@@ -287,7 +291,8 @@
     "action": "Benachrichtigungen zum Vorgang erhalten",
     "kycupdate": "KYC Status wurde aktualisiert für den Auftrag",
     "email": "Geben Sie Ihre E-Mail ein",
-    "explanation": "Wenn Sie über Ihre Bestellung benachrichtigt werden möchten, geben Sie bitte Ihre E-Mail-Adresse unten ein."
+    "explanation":
+      "Geben Sie Ihre E-Mail Adresse an, um unseren Empfehlungsprogramm beizutreten & um Benachrichtigungen über den Status Ihrer Transaktion zu erhalten."
   },
   "referral": {
     "1": "Teilen Sie diesen einmaligen Verweis-Link mit Ihren Freunden, um einige Coins dazu zu verdienen!",
@@ -322,6 +327,7 @@
       "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
   },
   "faq": {
+    "inputplaceholder": "Über Schlüsselwort suchen",
     "ques1": "Wer sind Sie?",
     "ques2": "Was machen Sie?",
     "ques3": "Wie hoch ist Ihre Gebühr?",
@@ -408,5 +414,7 @@
     "try": "Probieren Sie",
     "novalid": "ist keine gültige",
     "providevalid": "Bitte benutzen Sie eine gültige"
-  }
+  },
+  "viewmore": "mehr sehen",
+  "to": "zu"
 }

@@ -2,17 +2,18 @@
 
 exports[`OrderReferrals renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -24,52 +25,52 @@ ShallowWrapper {
       "children": Array [
         <div
           className="box container"
->
+        >
           <div
-                    className="row"
+            className="row"
           >
-                    <div
-                              className="col-xs-12 visible-xs text-center"
-                    >
-                              <img
-                                        alt="notify.alt"
-                                        className="img"
-                                        src="man.png"
-                              />
-                    </div>
-                    <div
-                              className="col-xs-12 col-sm-7 text"
-                    >
-                              <h2
-                                        className="title"
-                              >
-                                        <Interpolate
-                                                  className=""
-                                                  i18nKey="referral.affiliate2"
-                                                  selectedCoin="BitDegree"
-                                        />
-                              </h2>
-                              <I18n
-                                        ns="translations"
-                              >
-                                        [Function]
-                              </I18n>
-                    </div>
-                    <div
-                              className="col-ms-2 col-sm-5 hidden-xs text-center"
-                    >
-                              <img
-                                        alt="notify.alt"
-                                        className="img"
-                                        src="man.png"
-                              />
-                    </div>
+            <div
+              className="col-xs-12 visible-xs text-center"
+            >
+              <img
+                alt="notify.alt"
+                className="img"
+                src="man.png"
+              />
+            </div>
+            <div
+              className="col-xs-12 col-sm-7 text"
+            >
+              <h2
+                className="title"
+              >
+                <Interpolate
+                  className=""
+                  i18nKey="referral.affiliate2"
+                  selectedCoin="BitDegree"
+                />
+              </h2>
+              <I18n
+                ns="translations"
+              >
+                [Function]
+              </I18n>
+            </div>
+            <div
+              className="col-ms-2 col-sm-5 hidden-xs text-center"
+            >
+              <img
+                alt="notify.alt"
+                className="img"
+                src="man.png"
+              />
+            </div>
           </div>
-</div>,
+        </div>,
         <OrderReferralTerms
           onClose={[Function]}
           show={false}
-/>,
+        />,
       ],
       "className": "col-xs-12",
     },
@@ -82,44 +83,44 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="row"
->
+          >
             <div
-                        className="col-xs-12 visible-xs text-center"
+              className="col-xs-12 visible-xs text-center"
             >
-                        <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="man.png"
-                        />
+              <img
+                alt="notify.alt"
+                className="img"
+                src="man.png"
+              />
             </div>
             <div
-                        className="col-xs-12 col-sm-7 text"
+              className="col-xs-12 col-sm-7 text"
             >
-                        <h2
-                                    className="title"
-                        >
-                                    <Interpolate
-                                                className=""
-                                                i18nKey="referral.affiliate2"
-                                                selectedCoin="BitDegree"
-                                    />
-                        </h2>
-                        <I18n
-                                    ns="translations"
-                        >
-                                    [Function]
-                        </I18n>
+              <h2
+                className="title"
+              >
+                <Interpolate
+                  className=""
+                  i18nKey="referral.affiliate2"
+                  selectedCoin="BitDegree"
+                />
+              </h2>
+              <I18n
+                ns="translations"
+              >
+                [Function]
+              </I18n>
             </div>
             <div
-                        className="col-ms-2 col-sm-5 hidden-xs text-center"
+              className="col-ms-2 col-sm-5 hidden-xs text-center"
             >
-                        <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="man.png"
-                        />
+              <img
+                alt="notify.alt"
+                className="img"
+                src="man.png"
+              />
             </div>
-</div>,
+          </div>,
           "className": "box container",
         },
         "ref": null,
@@ -131,40 +132,40 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="col-xs-12 visible-xs text-center"
->
+              >
                 <img
-                                alt="notify.alt"
-                                className="img"
-                                src="man.png"
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
                 />
-</div>,
+              </div>,
               <div
                 className="col-xs-12 col-sm-7 text"
->
+              >
                 <h2
-                                className="title"
+                  className="title"
                 >
-                                <Interpolate
-                                                className=""
-                                                i18nKey="referral.affiliate2"
-                                                selectedCoin="BitDegree"
-                                />
+                  <Interpolate
+                    className=""
+                    i18nKey="referral.affiliate2"
+                    selectedCoin="BitDegree"
+                  />
                 </h2>
                 <I18n
-                                ns="translations"
+                  ns="translations"
                 >
-                                [Function]
+                  [Function]
                 </I18n>
-</div>,
+              </div>,
               <div
                 className="col-ms-2 col-sm-5 hidden-xs text-center"
->
+              >
                 <img
-                                alt="notify.alt"
-                                className="img"
-                                src="man.png"
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
                 />
-</div>,
+              </div>,
             ],
             "className": "row",
           },
@@ -179,7 +180,7 @@ ShallowWrapper {
                   alt="notify.alt"
                   className="img"
                   src="man.png"
-/>,
+                />,
                 "className": "col-xs-12 visible-xs text-center",
               },
               "ref": null,
@@ -206,18 +207,18 @@ ShallowWrapper {
                 "children": Array [
                   <h2
                     className="title"
->
+                  >
                     <Interpolate
-                                        className=""
-                                        i18nKey="referral.affiliate2"
-                                        selectedCoin="BitDegree"
+                      className=""
+                      i18nKey="referral.affiliate2"
+                      selectedCoin="BitDegree"
                     />
-</h2>,
+                  </h2>,
                   <I18n
                     ns="translations"
->
+                  >
                     [Function]
-</I18n>,
+                  </I18n>,
                 ],
                 "className": "col-xs-12 col-sm-7 text",
               },
@@ -232,7 +233,7 @@ ShallowWrapper {
                       className=""
                       i18nKey="referral.affiliate2"
                       selectedCoin="BitDegree"
-/>,
+                    />,
                     "className": "title",
                   },
                   "ref": null,
@@ -275,7 +276,7 @@ ShallowWrapper {
                   alt="notify.alt"
                   className="img"
                   src="man.png"
-/>,
+                />,
                 "className": "col-ms-2 col-sm-5 hidden-xs text-center",
               },
               "ref": null,
@@ -323,52 +324,52 @@ ShallowWrapper {
         "children": Array [
           <div
             className="box container"
->
+          >
             <div
-                        className="row"
+              className="row"
             >
-                        <div
-                                    className="col-xs-12 visible-xs text-center"
-                        >
-                                    <img
-                                                alt="notify.alt"
-                                                className="img"
-                                                src="man.png"
-                                    />
-                        </div>
-                        <div
-                                    className="col-xs-12 col-sm-7 text"
-                        >
-                                    <h2
-                                                className="title"
-                                    >
-                                                <Interpolate
-                                                            className=""
-                                                            i18nKey="referral.affiliate2"
-                                                            selectedCoin="BitDegree"
-                                                />
-                                    </h2>
-                                    <I18n
-                                                ns="translations"
-                                    >
-                                                [Function]
-                                    </I18n>
-                        </div>
-                        <div
-                                    className="col-ms-2 col-sm-5 hidden-xs text-center"
-                        >
-                                    <img
-                                                alt="notify.alt"
-                                                className="img"
-                                                src="man.png"
-                                    />
-                        </div>
+              <div
+                className="col-xs-12 visible-xs text-center"
+              >
+                <img
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
+                />
+              </div>
+              <div
+                className="col-xs-12 col-sm-7 text"
+              >
+                <h2
+                  className="title"
+                >
+                  <Interpolate
+                    className=""
+                    i18nKey="referral.affiliate2"
+                    selectedCoin="BitDegree"
+                  />
+                </h2>
+                <I18n
+                  ns="translations"
+                >
+                  [Function]
+                </I18n>
+              </div>
+              <div
+                className="col-ms-2 col-sm-5 hidden-xs text-center"
+              >
+                <img
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
+                />
+              </div>
             </div>
-</div>,
+          </div>,
           <OrderReferralTerms
             onClose={[Function]}
             show={false}
-/>,
+          />,
         ],
         "className": "col-xs-12",
       },
@@ -381,44 +382,44 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="row"
->
+            >
               <div
-                            className="col-xs-12 visible-xs text-center"
+                className="col-xs-12 visible-xs text-center"
               >
-                            <img
-                                          alt="notify.alt"
-                                          className="img"
-                                          src="man.png"
-                            />
+                <img
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
+                />
               </div>
               <div
-                            className="col-xs-12 col-sm-7 text"
+                className="col-xs-12 col-sm-7 text"
               >
-                            <h2
-                                          className="title"
-                            >
-                                          <Interpolate
-                                                        className=""
-                                                        i18nKey="referral.affiliate2"
-                                                        selectedCoin="BitDegree"
-                                          />
-                            </h2>
-                            <I18n
-                                          ns="translations"
-                            >
-                                          [Function]
-                            </I18n>
+                <h2
+                  className="title"
+                >
+                  <Interpolate
+                    className=""
+                    i18nKey="referral.affiliate2"
+                    selectedCoin="BitDegree"
+                  />
+                </h2>
+                <I18n
+                  ns="translations"
+                >
+                  [Function]
+                </I18n>
               </div>
               <div
-                            className="col-ms-2 col-sm-5 hidden-xs text-center"
+                className="col-ms-2 col-sm-5 hidden-xs text-center"
               >
-                            <img
-                                          alt="notify.alt"
-                                          className="img"
-                                          src="man.png"
-                            />
+                <img
+                  alt="notify.alt"
+                  className="img"
+                  src="man.png"
+                />
               </div>
-</div>,
+            </div>,
             "className": "box container",
           },
           "ref": null,
@@ -430,40 +431,40 @@ ShallowWrapper {
               "children": Array [
                 <div
                   className="col-xs-12 visible-xs text-center"
->
+                >
                   <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="man.png"
+                    alt="notify.alt"
+                    className="img"
+                    src="man.png"
                   />
-</div>,
+                </div>,
                 <div
                   className="col-xs-12 col-sm-7 text"
->
+                >
                   <h2
-                                    className="title"
+                    className="title"
                   >
-                                    <Interpolate
-                                                      className=""
-                                                      i18nKey="referral.affiliate2"
-                                                      selectedCoin="BitDegree"
-                                    />
+                    <Interpolate
+                      className=""
+                      i18nKey="referral.affiliate2"
+                      selectedCoin="BitDegree"
+                    />
                   </h2>
                   <I18n
-                                    ns="translations"
+                    ns="translations"
                   >
-                                    [Function]
+                    [Function]
                   </I18n>
-</div>,
+                </div>,
                 <div
                   className="col-ms-2 col-sm-5 hidden-xs text-center"
->
+                >
                   <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="man.png"
+                    alt="notify.alt"
+                    className="img"
+                    src="man.png"
                   />
-</div>,
+                </div>,
               ],
               "className": "row",
             },
@@ -478,7 +479,7 @@ ShallowWrapper {
                     alt="notify.alt"
                     className="img"
                     src="man.png"
-/>,
+                  />,
                   "className": "col-xs-12 visible-xs text-center",
                 },
                 "ref": null,
@@ -505,18 +506,18 @@ ShallowWrapper {
                   "children": Array [
                     <h2
                       className="title"
->
+                    >
                       <Interpolate
-                                            className=""
-                                            i18nKey="referral.affiliate2"
-                                            selectedCoin="BitDegree"
+                        className=""
+                        i18nKey="referral.affiliate2"
+                        selectedCoin="BitDegree"
                       />
-</h2>,
+                    </h2>,
                     <I18n
                       ns="translations"
->
+                    >
                       [Function]
-</I18n>,
+                    </I18n>,
                   ],
                   "className": "col-xs-12 col-sm-7 text",
                 },
@@ -531,7 +532,7 @@ ShallowWrapper {
                         className=""
                         i18nKey="referral.affiliate2"
                         selectedCoin="BitDegree"
-/>,
+                      />,
                       "className": "title",
                     },
                     "ref": null,
@@ -574,7 +575,7 @@ ShallowWrapper {
                     alt="notify.alt"
                     className="img"
                     src="man.png"
-/>,
+                  />,
                   "className": "col-ms-2 col-sm-5 hidden-xs text-center",
                 },
                 "ref": null,
@@ -618,8 +619,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;

@@ -32,7 +32,7 @@ const TermsConditions = () => {
 
               <p>{t('refund.11')}</p>
               <p>{t('refund.12')}</p>
-
+              <p>{t('refund.13')}</p>
               <br />
             </div>
           </div>

@@ -2,17 +2,18 @@
 
 exports[`OrderNotifications renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <I18n
     ns="translations"
->
+  >
     [Function]
-</I18n>,
+  </I18n>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -23,68 +24,63 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="box container"
->
+      >
         <div
-                className="row"
+          className="row"
         >
-                <div
-                        className="col-xs-12 visible-xs text-center"
+          <div
+            className="col-xs-12 visible-xs text-center"
+          >
+            <img
+              alt="notify.alt"
+              className="img"
+              src="get-notified.svg"
+            />
+          </div>
+          <div
+            className="col-xs-12 col-sm-7 text"
+          >
+            <h2
+              className="title"
+            >
+              notify.explanation
+            </h2>
+            <form>
+              <div
+                className="form-group"
+              >
+                <input
+                  name="email"
+                  placeholder="notify.email"
+                  required={true}
+                  type="email"
+                  value=""
+                />
+                <button
+                  className="btn btn-primary btn"
+                  type="submit"
                 >
-                        <img
-                                alt="notify.alt"
-                                className="img"
-                                src="get-notified.svg"
-                        />
-                </div>
-                <div
-                        className="col-xs-12 col-sm-7 text"
+                  generalterms.submit
+                </button>
+                <h4
+                  className="message"
                 >
-                        <h2
-                                className="title"
-                        >
-                                notify.explanation
-                        </h2>
-                        <form
-                                onSubmit={undefined}
-                        >
-                                <div
-                                        className="form-group"
-                                >
-                                        <input
-                                                disabled={undefined}
-                                                name="email"
-                                                onChange={undefined}
-                                                placeholder="notify.email"
-                                                required={true}
-                                                type="email"
-                                                value=""
-                                        />
-                                        <button
-                                                className="btn btn-primary btn"
-                                                disabled={undefined}
-                                                type="submit"
-                                        >
-                                                generalterms.submit
-                                        </button>
-                                        <h4
-                                                className="message"
-                                        >
-                                                Hello
-                                        </h4>
-                                </div>
-                        </form>
-                </div>
-                <div
-                        className="col-ms-2 col-sm-5 hidden-xs text-center"
-                >
-                        <img
-                                alt="notify.alt"
-                                className="img"
-                                src="get-notified.svg"
-                        />
-                </div>
+                  Hello
+                </h4>
+              </div>
+            </form>
+          </div>
+          <div
+            className="col-ms-2 col-sm-5 hidden-xs text-center"
+          >
+            <img
+              alt="notify.alt"
+              className="img"
+              src="get-notified.svg"
+            />
+          </div>
         </div>
-</div>,
+      </div>,
       "className": "col-xs-12",
     },
     "ref": null,
@@ -95,64 +91,59 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="row"
->
+        >
           <div
-                    className="col-xs-12 visible-xs text-center"
+            className="col-xs-12 visible-xs text-center"
           >
-                    <img
-                              alt="notify.alt"
-                              className="img"
-                              src="get-notified.svg"
-                    />
+            <img
+              alt="notify.alt"
+              className="img"
+              src="get-notified.svg"
+            />
           </div>
           <div
-                    className="col-xs-12 col-sm-7 text"
+            className="col-xs-12 col-sm-7 text"
           >
-                    <h2
-                              className="title"
-                    >
-                              notify.explanation
-                    </h2>
-                    <form
-                              onSubmit={undefined}
-                    >
-                              <div
-                                        className="form-group"
-                              >
-                                        <input
-                                                  disabled={undefined}
-                                                  name="email"
-                                                  onChange={undefined}
-                                                  placeholder="notify.email"
-                                                  required={true}
-                                                  type="email"
-                                                  value=""
-                                        />
-                                        <button
-                                                  className="btn btn-primary btn"
-                                                  disabled={undefined}
-                                                  type="submit"
-                                        >
-                                                  generalterms.submit
-                                        </button>
-                                        <h4
-                                                  className="message"
-                                        >
-                                                  Hello
-                                        </h4>
-                              </div>
-                    </form>
+            <h2
+              className="title"
+            >
+              notify.explanation
+            </h2>
+            <form>
+              <div
+                className="form-group"
+              >
+                <input
+                  name="email"
+                  placeholder="notify.email"
+                  required={true}
+                  type="email"
+                  value=""
+                />
+                <button
+                  className="btn btn-primary btn"
+                  type="submit"
+                >
+                  generalterms.submit
+                </button>
+                <h4
+                  className="message"
+                >
+                  Hello
+                </h4>
+              </div>
+            </form>
           </div>
           <div
-                    className="col-ms-2 col-sm-5 hidden-xs text-center"
+            className="col-ms-2 col-sm-5 hidden-xs text-center"
           >
-                    <img
-                              alt="notify.alt"
-                              className="img"
-                              src="get-notified.svg"
-                    />
+            <img
+              alt="notify.alt"
+              className="img"
+              src="get-notified.svg"
+            />
           </div>
-</div>,
+        </div>,
         "className": "box container",
       },
       "ref": null,
@@ -164,60 +155,55 @@ ShallowWrapper {
           "children": Array [
             <div
               className="col-xs-12 visible-xs text-center"
->
+            >
               <img
-                            alt="notify.alt"
-                            className="img"
-                            src="get-notified.svg"
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
               />
-</div>,
+            </div>,
             <div
               className="col-xs-12 col-sm-7 text"
->
+            >
               <h2
-                            className="title"
+                className="title"
               >
-                            notify.explanation
+                notify.explanation
               </h2>
-              <form
-                            onSubmit={undefined}
-              >
-                            <div
-                                          className="form-group"
-                            >
-                                          <input
-                                                        disabled={undefined}
-                                                        name="email"
-                                                        onChange={undefined}
-                                                        placeholder="notify.email"
-                                                        required={true}
-                                                        type="email"
-                                                        value=""
-                                          />
-                                          <button
-                                                        className="btn btn-primary btn"
-                                                        disabled={undefined}
-                                                        type="submit"
-                                          >
-                                                        generalterms.submit
-                                          </button>
-                                          <h4
-                                                        className="message"
-                                          >
-                                                        Hello
-                                          </h4>
-                            </div>
+              <form>
+                <div
+                  className="form-group"
+                >
+                  <input
+                    name="email"
+                    placeholder="notify.email"
+                    required={true}
+                    type="email"
+                    value=""
+                  />
+                  <button
+                    className="btn btn-primary btn"
+                    type="submit"
+                  >
+                    generalterms.submit
+                  </button>
+                  <h4
+                    className="message"
+                  >
+                    Hello
+                  </h4>
+                </div>
               </form>
-</div>,
+            </div>,
             <div
               className="col-ms-2 col-sm-5 hidden-xs text-center"
->
+            >
               <img
-                            alt="notify.alt"
-                            className="img"
-                            src="get-notified.svg"
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
               />
-</div>,
+            </div>,
           ],
           "className": "row",
         },
@@ -232,7 +218,7 @@ ShallowWrapper {
                 alt="notify.alt"
                 className="img"
                 src="get-notified.svg"
-/>,
+              />,
               "className": "col-xs-12 visible-xs text-center",
             },
             "ref": null,
@@ -259,38 +245,33 @@ ShallowWrapper {
               "children": Array [
                 <h2
                   className="title"
->
+                >
                   notify.explanation
-</h2>,
-                <form
-                  onSubmit={undefined}
->
+                </h2>,
+                <form>
                   <div
-                                    className="form-group"
+                    className="form-group"
                   >
-                                    <input
-                                                      disabled={undefined}
-                                                      name="email"
-                                                      onChange={undefined}
-                                                      placeholder="notify.email"
-                                                      required={true}
-                                                      type="email"
-                                                      value=""
-                                    />
-                                    <button
-                                                      className="btn btn-primary btn"
-                                                      disabled={undefined}
-                                                      type="submit"
-                                    >
-                                                      generalterms.submit
-                                    </button>
-                                    <h4
-                                                      className="message"
-                                    >
-                                                      Hello
-                                    </h4>
+                    <input
+                      name="email"
+                      placeholder="notify.email"
+                      required={true}
+                      type="email"
+                      value=""
+                    />
+                    <button
+                      className="btn btn-primary btn"
+                      type="submit"
+                    >
+                      generalterms.submit
+                    </button>
+                    <h4
+                      className="message"
+                    >
+                      Hello
+                    </h4>
                   </div>
-</form>,
+                </form>,
               ],
               "className": "col-xs-12 col-sm-7 text",
             },
@@ -315,29 +296,26 @@ ShallowWrapper {
                 "props": Object {
                   "children": <div
                     className="form-group"
->
+                  >
                     <input
-                                        disabled={undefined}
-                                        name="email"
-                                        onChange={undefined}
-                                        placeholder="notify.email"
-                                        required={true}
-                                        type="email"
-                                        value=""
+                      name="email"
+                      placeholder="notify.email"
+                      required={true}
+                      type="email"
+                      value=""
                     />
                     <button
-                                        className="btn btn-primary btn"
-                                        disabled={undefined}
-                                        type="submit"
+                      className="btn btn-primary btn"
+                      type="submit"
                     >
-                                        generalterms.submit
+                      generalterms.submit
                     </button>
                     <h4
-                                        className="message"
+                      className="message"
                     >
-                                        Hello
+                      Hello
                     </h4>
-</div>,
+                  </div>,
                   "onSubmit": undefined,
                 },
                 "ref": null,
@@ -348,26 +326,23 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <input
-                        disabled={undefined}
                         name="email"
-                        onChange={undefined}
                         placeholder="notify.email"
                         required={true}
                         type="email"
                         value=""
-/>,
+                      />,
                       <button
                         className="btn btn-primary btn"
-                        disabled={undefined}
                         type="submit"
->
+                      >
                         generalterms.submit
-</button>,
+                      </button>,
                       <h4
                         className="message"
->
+                      >
                         Hello
-</h4>,
+                      </h4>,
                     ],
                     "className": "form-group",
                   },
@@ -433,7 +408,7 @@ ShallowWrapper {
                 alt="notify.alt"
                 className="img"
                 src="get-notified.svg"
-/>,
+              />,
               "className": "col-ms-2 col-sm-5 hidden-xs text-center",
             },
             "ref": null,
@@ -467,68 +442,63 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="box container"
->
+        >
           <div
-                    className="row"
+            className="row"
           >
-                    <div
-                              className="col-xs-12 visible-xs text-center"
-                    >
-                              <img
-                                        alt="notify.alt"
-                                        className="img"
-                                        src="get-notified.svg"
-                              />
-                    </div>
-                    <div
-                              className="col-xs-12 col-sm-7 text"
-                    >
-                              <h2
-                                        className="title"
-                              >
-                                        notify.explanation
-                              </h2>
-                              <form
-                                        onSubmit={undefined}
-                              >
-                                        <div
-                                                  className="form-group"
-                                        >
-                                                  <input
-                                                            disabled={undefined}
-                                                            name="email"
-                                                            onChange={undefined}
-                                                            placeholder="notify.email"
-                                                            required={true}
-                                                            type="email"
-                                                            value=""
-                                                  />
-                                                  <button
-                                                            className="btn btn-primary btn"
-                                                            disabled={undefined}
-                                                            type="submit"
-                                                  >
-                                                            generalterms.submit
-                                                  </button>
-                                                  <h4
-                                                            className="message"
-                                                  >
-                                                            Hello
-                                                  </h4>
-                                        </div>
-                              </form>
-                    </div>
-                    <div
-                              className="col-ms-2 col-sm-5 hidden-xs text-center"
-                    >
-                              <img
-                                        alt="notify.alt"
-                                        className="img"
-                                        src="get-notified.svg"
-                              />
-                    </div>
+            <div
+              className="col-xs-12 visible-xs text-center"
+            >
+              <img
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
+              />
+            </div>
+            <div
+              className="col-xs-12 col-sm-7 text"
+            >
+              <h2
+                className="title"
+              >
+                notify.explanation
+              </h2>
+              <form>
+                <div
+                  className="form-group"
+                >
+                  <input
+                    name="email"
+                    placeholder="notify.email"
+                    required={true}
+                    type="email"
+                    value=""
+                  />
+                  <button
+                    className="btn btn-primary btn"
+                    type="submit"
+                  >
+                    generalterms.submit
+                  </button>
+                  <h4
+                    className="message"
+                  >
+                    Hello
+                  </h4>
+                </div>
+              </form>
+            </div>
+            <div
+              className="col-ms-2 col-sm-5 hidden-xs text-center"
+            >
+              <img
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
+              />
+            </div>
           </div>
-</div>,
+        </div>,
         "className": "col-xs-12",
       },
       "ref": null,
@@ -539,64 +509,59 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="row"
->
+          >
             <div
-                        className="col-xs-12 visible-xs text-center"
+              className="col-xs-12 visible-xs text-center"
             >
-                        <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="get-notified.svg"
-                        />
+              <img
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
+              />
             </div>
             <div
-                        className="col-xs-12 col-sm-7 text"
+              className="col-xs-12 col-sm-7 text"
             >
-                        <h2
-                                    className="title"
-                        >
-                                    notify.explanation
-                        </h2>
-                        <form
-                                    onSubmit={undefined}
-                        >
-                                    <div
-                                                className="form-group"
-                                    >
-                                                <input
-                                                            disabled={undefined}
-                                                            name="email"
-                                                            onChange={undefined}
-                                                            placeholder="notify.email"
-                                                            required={true}
-                                                            type="email"
-                                                            value=""
-                                                />
-                                                <button
-                                                            className="btn btn-primary btn"
-                                                            disabled={undefined}
-                                                            type="submit"
-                                                >
-                                                            generalterms.submit
-                                                </button>
-                                                <h4
-                                                            className="message"
-                                                >
-                                                            Hello
-                                                </h4>
-                                    </div>
-                        </form>
+              <h2
+                className="title"
+              >
+                notify.explanation
+              </h2>
+              <form>
+                <div
+                  className="form-group"
+                >
+                  <input
+                    name="email"
+                    placeholder="notify.email"
+                    required={true}
+                    type="email"
+                    value=""
+                  />
+                  <button
+                    className="btn btn-primary btn"
+                    type="submit"
+                  >
+                    generalterms.submit
+                  </button>
+                  <h4
+                    className="message"
+                  >
+                    Hello
+                  </h4>
+                </div>
+              </form>
             </div>
             <div
-                        className="col-ms-2 col-sm-5 hidden-xs text-center"
+              className="col-ms-2 col-sm-5 hidden-xs text-center"
             >
-                        <img
-                                    alt="notify.alt"
-                                    className="img"
-                                    src="get-notified.svg"
-                        />
+              <img
+                alt="notify.alt"
+                className="img"
+                src="get-notified.svg"
+              />
             </div>
-</div>,
+          </div>,
           "className": "box container",
         },
         "ref": null,
@@ -608,60 +573,55 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="col-xs-12 visible-xs text-center"
->
+              >
                 <img
-                                alt="notify.alt"
-                                className="img"
-                                src="get-notified.svg"
+                  alt="notify.alt"
+                  className="img"
+                  src="get-notified.svg"
                 />
-</div>,
+              </div>,
               <div
                 className="col-xs-12 col-sm-7 text"
->
+              >
                 <h2
-                                className="title"
+                  className="title"
                 >
-                                notify.explanation
+                  notify.explanation
                 </h2>
-                <form
-                                onSubmit={undefined}
-                >
-                                <div
-                                                className="form-group"
-                                >
-                                                <input
-                                                                disabled={undefined}
-                                                                name="email"
-                                                                onChange={undefined}
-                                                                placeholder="notify.email"
-                                                                required={true}
-                                                                type="email"
-                                                                value=""
-                                                />
-                                                <button
-                                                                className="btn btn-primary btn"
-                                                                disabled={undefined}
-                                                                type="submit"
-                                                >
-                                                                generalterms.submit
-                                                </button>
-                                                <h4
-                                                                className="message"
-                                                >
-                                                                Hello
-                                                </h4>
-                                </div>
+                <form>
+                  <div
+                    className="form-group"
+                  >
+                    <input
+                      name="email"
+                      placeholder="notify.email"
+                      required={true}
+                      type="email"
+                      value=""
+                    />
+                    <button
+                      className="btn btn-primary btn"
+                      type="submit"
+                    >
+                      generalterms.submit
+                    </button>
+                    <h4
+                      className="message"
+                    >
+                      Hello
+                    </h4>
+                  </div>
                 </form>
-</div>,
+              </div>,
               <div
                 className="col-ms-2 col-sm-5 hidden-xs text-center"
->
+              >
                 <img
-                                alt="notify.alt"
-                                className="img"
-                                src="get-notified.svg"
+                  alt="notify.alt"
+                  className="img"
+                  src="get-notified.svg"
                 />
-</div>,
+              </div>,
             ],
             "className": "row",
           },
@@ -676,7 +636,7 @@ ShallowWrapper {
                   alt="notify.alt"
                   className="img"
                   src="get-notified.svg"
-/>,
+                />,
                 "className": "col-xs-12 visible-xs text-center",
               },
               "ref": null,
@@ -703,38 +663,33 @@ ShallowWrapper {
                 "children": Array [
                   <h2
                     className="title"
->
+                  >
                     notify.explanation
-</h2>,
-                  <form
-                    onSubmit={undefined}
->
+                  </h2>,
+                  <form>
                     <div
-                                        className="form-group"
+                      className="form-group"
                     >
-                                        <input
-                                                            disabled={undefined}
-                                                            name="email"
-                                                            onChange={undefined}
-                                                            placeholder="notify.email"
-                                                            required={true}
-                                                            type="email"
-                                                            value=""
-                                        />
-                                        <button
-                                                            className="btn btn-primary btn"
-                                                            disabled={undefined}
-                                                            type="submit"
-                                        >
-                                                            generalterms.submit
-                                        </button>
-                                        <h4
-                                                            className="message"
-                                        >
-                                                            Hello
-                                        </h4>
+                      <input
+                        name="email"
+                        placeholder="notify.email"
+                        required={true}
+                        type="email"
+                        value=""
+                      />
+                      <button
+                        className="btn btn-primary btn"
+                        type="submit"
+                      >
+                        generalterms.submit
+                      </button>
+                      <h4
+                        className="message"
+                      >
+                        Hello
+                      </h4>
                     </div>
-</form>,
+                  </form>,
                 ],
                 "className": "col-xs-12 col-sm-7 text",
               },
@@ -759,29 +714,26 @@ ShallowWrapper {
                   "props": Object {
                     "children": <div
                       className="form-group"
->
+                    >
                       <input
-                                            disabled={undefined}
-                                            name="email"
-                                            onChange={undefined}
-                                            placeholder="notify.email"
-                                            required={true}
-                                            type="email"
-                                            value=""
+                        name="email"
+                        placeholder="notify.email"
+                        required={true}
+                        type="email"
+                        value=""
                       />
                       <button
-                                            className="btn btn-primary btn"
-                                            disabled={undefined}
-                                            type="submit"
+                        className="btn btn-primary btn"
+                        type="submit"
                       >
-                                            generalterms.submit
+                        generalterms.submit
                       </button>
                       <h4
-                                            className="message"
+                        className="message"
                       >
-                                            Hello
+                        Hello
                       </h4>
-</div>,
+                    </div>,
                     "onSubmit": undefined,
                   },
                   "ref": null,
@@ -792,26 +744,23 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <input
-                          disabled={undefined}
                           name="email"
-                          onChange={undefined}
                           placeholder="notify.email"
                           required={true}
                           type="email"
                           value=""
-/>,
+                        />,
                         <button
                           className="btn btn-primary btn"
-                          disabled={undefined}
                           type="submit"
->
+                        >
                           generalterms.submit
-</button>,
+                        </button>,
                         <h4
                           className="message"
->
+                        >
                           Hello
-</h4>,
+                        </h4>,
                       ],
                       "className": "form-group",
                     },
@@ -877,7 +826,7 @@ ShallowWrapper {
                   alt="notify.alt"
                   className="img"
                   src="get-notified.svg"
-/>,
+                />,
                 "className": "col-ms-2 col-sm-5 hidden-xs text-center",
               },
               "ref": null,
@@ -908,8 +857,26 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "context": Object {},
   },
 }
 `;
