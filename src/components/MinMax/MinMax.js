@@ -15,14 +15,18 @@ const MinMax = props => {
     <I18n ns="translations">
       {t => (
         <div className={`${styles.minmax} ${props.home ? styles.home : ''}`}>
-          <p className={`${props.min > props.amount && props.amount !== '...' ? 'error' : ''} ${clickable ? 'clickable' : ''}`}
-            onClick={() => {props.setValue(props.min);}}>
-            {t('exchangewidget.min')}: {props.min}
+          <p className={`${props.min > props.amount && props.amount !== '...' ? 'error' : ''}`}>
+            {`${t('exchangewidget.min')}: `} 
+            <span className={`bold ${clickable ? 'clickable' : ''}`} onClick={() => {props.setValue(props.min);}}>
+              {props.min}
+            </span>
           </p>
 
-          <p className={`${props.max < props.amount && props.amount !== '...' ? 'error' : ''} ${clickable ? 'clickable' : ''}`}
-            onClick={() => {props.setValue(props.max);}}>
-            {t('exchangewidget.max')}: {props.max}
+          <p className={`${props.max < props.amount && props.amount !== '...' ? 'error' : ''}`}>
+            {`${t('exchangewidget.max')}: `} 
+            <span className={`bold ${clickable ? 'clickable' : ''}`} onClick={() => {props.setValue(props.max);}}>
+              {props.max}
+            </span>          
           </p>
         </div>
       )}
