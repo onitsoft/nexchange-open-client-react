@@ -218,7 +218,9 @@ class WalletAddress extends Component {
                ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
                     <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
                     <div className="visible-md visible-lg">
-                      {this.props.orderMode != 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                      <span>
+                        {this.props.orderMode != 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                      </span>
                     </div>
                   </button>
                :  null}
