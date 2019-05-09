@@ -15,6 +15,7 @@ class OrderInitial extends Component {
     this.tick = this.tick.bind(this);
     this.shouldRepeatOrder = false;
     this.alreadyRepeatedOrder = false;
+    this.updatingRates = false;
   }
 
   componentWillMount() {  
@@ -22,6 +23,7 @@ class OrderInitial extends Component {
       this.interval = setInterval(this.tick, 1000);
       this.shouldRepeatOrder = true;
       this.alreadyRepeatedOrder = false;
+      this.updatingRates = false;
     }
   }
 
@@ -31,16 +33,18 @@ class OrderInitial extends Component {
       const time = this.calculateRemainingTime(nextProps.order);   
       this.setState({time, repeatOrder: false});
     }
-    //Rates are updated 
-    if (!this.alreadyRepeatedOrder && !isNaN(parseFloat(nextProps.price.receive)) && nextProps.price.receive != this.props.receive) {
+
+    //Rates are updated, enable repeat order
+    if (!this.state.repeatOrder && !this.alreadyRepeatedOrder && this.updatingRates) {
       this.alreadyRepeatedOrder = true;
+      this.updatingRates = false;
       this.setState({repeatOrder: true});
+      }
     }
-  }
 
   UNSAFE_componentWillUpdate(nextProps, nextState) {
     //Fetch updated rates for the expired order
-    if (nextState.time < 0 && this.shouldRepeatOrder) {    
+    if (nextState.time < 0 && this.shouldRepeatOrder) { 
       const order = this.props.order;
 
       const data = {
@@ -49,8 +53,9 @@ class OrderInitial extends Component {
       };
 
       data['deposit'] = order.amount_quote;
-      this.props.fetchPrice(data);
       this.shouldRepeatOrder = false;
+      this.props.fetchPrice(data);
+      this.updatingRates = true;
       clearInterval(this.interval);
     } else if (!(nextState.time < 0) && !this.shouldRepeatOrder) {
       this.shouldRepeatOrder = true;
@@ -58,6 +63,7 @@ class OrderInitial extends Component {
       this.interval = setInterval(this.tick, 1000);
     }
 
+    //Repeat the order at updated rates
     if(nextState.repeatOrder) {
       this.setState({repeatOrder: false});
       const order = nextProps.order;
@@ -119,8 +125,6 @@ class OrderInitial extends Component {
   }
 
   render() {
-    console.log('render',this.state.time);
-    
     if (!this.props.isLimitOrder && this.state.time < 0) {
       return <OrderExpired {...this.props} />;
     } else if (isFiatOrder(this.props.order)) {
