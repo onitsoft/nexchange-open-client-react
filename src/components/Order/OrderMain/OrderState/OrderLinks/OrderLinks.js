@@ -3,7 +3,7 @@ import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import styles from './OrderLinks.scss';
 import { I18n } from 'react-i18next';
 
-import STATUS_CODES from 'StatusCodes';
+import { STATUS_CODES } from 'StatusCodes';
 
 const OrderLinks = props => (
   <I18n ns="translations">

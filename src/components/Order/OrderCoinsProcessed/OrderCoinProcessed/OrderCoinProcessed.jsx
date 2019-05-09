@@ -124,7 +124,7 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length >= 40)
+      this.state.address != null && (this.state.address.length >= 42)
       );
   }
 
@@ -256,7 +256,7 @@ class OrderCoinProcessed extends Component {
                 </h5>
                 {this.renderAddress()}
                 {this.renderExpandButton()}
-                <MinMax {...this.props} />
+                {!this.props.order.isLimitOrder ? <MinMax {...this.props} /> : null}
               </div>
             </div>
           </div>
