@@ -41,12 +41,29 @@ class OrderBookWidget extends Component {
     }
   }
 
+  componentWillUpdate(nextProps) {
+      //auto fill form values 
+      const nullQuantityAndLimitPrice = !(this.props.orderBook.quantity > 0) && !(this.props.orderBook.limit_rate > 0);
+      const pairChange = (nextProps.selectedCoin.deposit != this.props.selectedCoin.deposit) || (nextProps.selectedCoin.receive != this.props.selectedCoin.receive);
+      const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
+      const orderBook = nextProps.orderBook;
+      if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
+        orderBook.quantity = 1;
+        orderBook.limit_rate = parseFloat((nextProps.price.deposit / nextProps.price.receive).toFixed(9));
+      } else if (pairChange && ! pricesFetched) {
+        orderBook.quantity = 0;
+        orderBook.limit_rate = 0;
+      }
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if((this.props.selectedCoin && this.props.selectedCoin.receive !== prevProps.selectedCoin.receive) || 
       (this.props.selectedCoin.deposit !== prevProps.selectedCoin.deposit)) {
         clearInterval(this.interval);
         this.fetchOrderBook();
     }
+
+    //Auto scroll
     if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
       document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
     }
@@ -96,8 +113,6 @@ class OrderBookWidget extends Component {
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
     orderBook.order_type = type;
-    orderBook.quantity = '';
-    orderBook.limit_rate = '';
     this.props.changeOrderBookValue(orderBook);
   }
 
@@ -242,8 +257,8 @@ class OrderBookWidget extends Component {
                         </ul>
                         <LimitOrderForm 
                           inputRef={el => (this.quantityInputEl = el)}
-                          quantity={this.state.quantity}
-                          limit_rate={this.state.limit_rate}
+                          quantity={this.props.orderBook.quantity}
+                          limit_rate={this.props.orderBook.limit_rate}
                          />
                         <WalletAddress withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
                         <div className='col-xs-12'>
