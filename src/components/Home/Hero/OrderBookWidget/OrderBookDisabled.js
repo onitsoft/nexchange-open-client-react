@@ -16,6 +16,10 @@ class OrderBookDisabled extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.gtag('event', 'Advanced Mode Disabled open', {event_category: 'Order Book', event_label: ``});
+  }
+
   onSubmit = e => {
     e.preventDefault();
     if (!this.input.value || this.input.value.length < 5 || this.input.value.indexOf('@') === -1) {

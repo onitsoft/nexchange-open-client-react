@@ -33,6 +33,7 @@ class OrderBookWidget extends Component {
   }
 
   componentDidMount(){
+    window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
     if(this.props.selectedCoin){
       this.setState({loading: false});
       this.fetchOrderBook();
