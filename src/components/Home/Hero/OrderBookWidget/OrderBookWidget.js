@@ -34,11 +34,27 @@ class OrderBookWidget extends Component {
   }
 
   componentDidMount(){
+    window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
     if(this.props.selectedCoin){
       this.setState({loading: false});
       this.fetchOrderBook();
       if(this.quantityInputEl) { this.quantityInputEl.focus(); }
     }
+  }
+
+  componentWillUpdate(nextProps) {
+      //auto fill form values 
+      const nullQuantityAndLimitPrice = !(this.props.orderBook.quantity > 0) && !(this.props.orderBook.limit_rate > 0);
+      const pairChange = (nextProps.selectedCoin.deposit != this.props.selectedCoin.deposit) || (nextProps.selectedCoin.receive != this.props.selectedCoin.receive);
+      const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
+      const orderBook = nextProps.orderBook;
+      if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
+        orderBook.quantity = 1;
+        orderBook.limit_rate = parseFloat((nextProps.price.deposit / nextProps.price.receive).toFixed(9));
+      } else if (pairChange && ! pricesFetched) {
+        orderBook.quantity = 0;
+        orderBook.limit_rate = 0;
+      }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -47,6 +63,8 @@ class OrderBookWidget extends Component {
         clearInterval(this.interval);
         this.fetchOrderBook();
     }
+
+    //Auto scroll
     if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
       document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
     }
@@ -96,8 +114,6 @@ class OrderBookWidget extends Component {
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
     orderBook.order_type = type;
-    orderBook.quantity = '';
-    orderBook.limit_rate = '';
     this.props.changeOrderBookValue(orderBook);
   }
 
@@ -196,13 +212,11 @@ class OrderBookWidget extends Component {
       })
       .catch(error => {
         console.log('Error:', error);
-        console.log("error.response",error.response);
         
-
         /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
         error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
-
+        window.gtag('event', 'Error placing order', {event_category: 'Order Book', event_label: `${message}`});
         this.props.errorAlert({
           message: message,
           show: true,
@@ -249,8 +263,8 @@ class OrderBookWidget extends Component {
                         </ul>
                         <LimitOrderForm 
                           inputRef={el => (this.quantityInputEl = el)}
-                          quantity={this.state.quantity}
-                          limit_rate={this.state.limit_rate}
+                          quantity={this.props.orderBook.quantity}
+                          limit_rate={this.props.orderBook.limit_rate}
                          />
                         <WalletAddress 
                           withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} 

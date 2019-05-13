@@ -1,6 +1,6 @@
 .input {
     margin-top: 5px;
-    padding: 0 0 15px 0;
+    padding: 0 43px 0 0 !important;
     font-size: 12px;
     font-weight: 400;
     color: #000000;
@@ -9,6 +9,14 @@
     outline: 0;
     border-color: transparent;
     background-image: none;
+}
+
+.input-label {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .values-preview-container {
