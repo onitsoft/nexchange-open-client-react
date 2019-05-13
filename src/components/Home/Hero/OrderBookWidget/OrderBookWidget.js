@@ -204,13 +204,11 @@ class OrderBookWidget extends Component {
       })
       .catch(error => {
         console.log('Error:', error);
-        console.log("error.response",error.response);
         
-
         /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
         error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
-
+        window.gtag('event', 'Error placing order', {event_category: 'Order Book', event_label: `${message}`});
         this.props.errorAlert({
           message: message,
           show: true,
