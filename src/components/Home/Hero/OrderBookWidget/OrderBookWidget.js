@@ -28,6 +28,7 @@ class OrderBookWidget extends Component {
     };
 
     this.placeOrder = this.placeOrder.bind(this);
+    this.focusWalletAddress = this.focusWalletAddress.bind(this);
     this.expandMyOrders = this.expandMyOrders.bind(this);
     this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
@@ -114,6 +115,13 @@ class OrderBookWidget extends Component {
     const orderBook = this.props.orderBook;
     orderBook.order_type = type;
     this.props.changeOrderBookValue(orderBook);
+  }
+
+
+  focusWalletAddress() {
+    if(this.walletInputEl) {
+      this.walletInputEl.focus();
+    }
   }
 
   placeOrder() {
@@ -258,7 +266,11 @@ class OrderBookWidget extends Component {
                           quantity={this.props.orderBook.quantity}
                           limit_rate={this.props.orderBook.limit_rate}
                          />
-                        <WalletAddress withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                        <WalletAddress 
+                          withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} 
+                          inputRef={el => (this.walletInputEl = el)} 
+                          focusWalletAddress={this.focusWalletAddress}
+                          button={this.button} />
                         <div className='col-xs-12'>
                           <button className={`${styles.btn} ${order_type === 'BUY' ? styles['btn-buy'] : styles['btn-sell']} 
                           ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}

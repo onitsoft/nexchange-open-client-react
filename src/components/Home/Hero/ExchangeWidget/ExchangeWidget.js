@@ -66,11 +66,12 @@ class ExchangeWidget extends Component {
         address: this.props.wallet.address,
         name: '',
         payment_id: this.props.paymentId.paymentId,
-        destinationTag: this.props.destinationTag.destinationTag,
+        destination_tag: this.props.destinationTag.destinationTag,
         memo: this.props.memo.memo,
       },
     };
 
+    
     if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
     else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
@@ -163,7 +164,12 @@ class ExchangeWidget extends Component {
                     <CoinSwitch />
                     <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
-                    <WalletAddress withdraw_coin="receive" onSubmit={this.placeOrder} inputRef={el => (this.walletInputEl = el)} button={this.button} />
+                    <WalletAddress 
+                      withdraw_coin="receive" 
+                      onSubmit={this.placeOrder} 
+                      inputRef={el => (this.walletInputEl = el)} 
+                      button={this.button} 
+                      focusWalletAddress={this.focusWalletAddress}/>
                     { this.props.selectedCoin.receive === 'XRP' ? <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />  : null }
                     { this.props.selectedCoin.receive === 'XMR' ? <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} /> : null }
                     { this.props.selectedCoin.receive === 'XLM' ? <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} /> : null }

@@ -6,6 +6,7 @@
     "email": "Email",
     "address": "Adresse",
     "youraddress": "Geben Sie Ihre {{selectedCoin}} Adresse ein",
+    "usepreviousaddress": "Vorherige Adresse verwenden",
     "destinationtag": "Destination tag",
     "paymentid": "Payment id",
     "memo": "Memo",
@@ -337,7 +338,8 @@
     "11":
       "Wir werden jeden Auftrag auf Verlangen des Kunden gemäß dem aktuellen Marktpreis rückgängig machen, vorausgesetzt, die entgegengesetzte Auftragsrichtung wird zum Zeitpunkt der Rückerstattung unterstützt.",
     "12":
-      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
+      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten.",
+    "13": "Bei Erstattung nach mehr als einem Tag nach dem Kauf wird eine Verwaltungsgebühr von 5% von n.exchange einbehalten."
   },
   "faq": {
     "heading1": "Häufig gestellte Fragen",

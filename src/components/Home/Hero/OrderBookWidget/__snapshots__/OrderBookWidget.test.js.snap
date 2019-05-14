@@ -74,6 +74,7 @@ ShallowWrapper {
                 inputRef={[Function]}
               />
               <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
                 inputRef={[Function]}
                 withdraw_coin="receive"
               />
@@ -170,6 +171,7 @@ ShallowWrapper {
                 inputRef={[Function]}
               />
               <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
                 inputRef={[Function]}
                 withdraw_coin="receive"
               />
@@ -262,6 +264,7 @@ ShallowWrapper {
                 inputRef={[Function]}
               />
               <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
                 inputRef={[Function]}
                 withdraw_coin="receive"
               />
@@ -351,6 +354,7 @@ ShallowWrapper {
                   inputRef={[Function]}
                 />
                 <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
                   inputRef={[Function]}
                   withdraw_coin="receive"
                 />
@@ -449,6 +453,7 @@ ShallowWrapper {
                     inputRef={[Function]}
                   />,
                   <Connect(WalletAddress)
+                    focusWalletAddress={[Function]}
                     inputRef={[Function]}
                     withdraw_coin="receive"
                   />,
@@ -646,6 +651,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "button": undefined,
+                    "focusWalletAddress": [Function],
                     "inputRef": [Function],
                     "withdraw_coin": "receive",
                   },
@@ -789,6 +795,7 @@ ShallowWrapper {
                   inputRef={[Function]}
                 />
                 <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
                   inputRef={[Function]}
                   withdraw_coin="receive"
                 />
@@ -885,6 +892,7 @@ ShallowWrapper {
                   inputRef={[Function]}
                 />
                 <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
                   inputRef={[Function]}
                   withdraw_coin="receive"
                 />
@@ -977,6 +985,7 @@ ShallowWrapper {
                   inputRef={[Function]}
                 />
                 <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
                   inputRef={[Function]}
                   withdraw_coin="receive"
                 />
@@ -1066,6 +1075,7 @@ ShallowWrapper {
                     inputRef={[Function]}
                   />
                   <Connect(WalletAddress)
+                    focusWalletAddress={[Function]}
                     inputRef={[Function]}
                     withdraw_coin="receive"
                   />
@@ -1164,6 +1174,7 @@ ShallowWrapper {
                       inputRef={[Function]}
                     />,
                     <Connect(WalletAddress)
+                      focusWalletAddress={[Function]}
                       inputRef={[Function]}
                       withdraw_coin="receive"
                     />,
@@ -1361,6 +1372,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "button": undefined,
+                      "focusWalletAddress": [Function],
                       "inputRef": [Function],
                       "withdraw_coin": "receive",
                     },
