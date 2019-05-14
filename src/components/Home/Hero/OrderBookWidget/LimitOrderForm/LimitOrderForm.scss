@@ -21,6 +21,9 @@
 
 .values-preview-container {
     height: 25px;
+    @media (max-width: $screen-md-min) {
+        margin-bottom: 15px;
+    }
     .values-preview {
         display: flex;
         flex-direction: column;

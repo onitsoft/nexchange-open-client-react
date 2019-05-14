@@ -180,7 +180,7 @@ class OrderBookWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
-        bindCrispEmail(this.props.store);
+        // bindCrispEmail(this.props.store);
 
         window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
 
@@ -200,13 +200,17 @@ class OrderBookWidget extends Component {
         }
 
         let orderHistory = localStorage['orderHistory'];
+        console.log(newOrder, newOrder);
+        console.log(orderHistory);
         if(!orderHistory){
           orderHistory = [newOrder];
         }
         else {
           orderHistory = JSON.parse(orderHistory);
+          console.log("push");
           orderHistory.push(newOrder);
         }
+        console.log(orderHistory);
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
       })

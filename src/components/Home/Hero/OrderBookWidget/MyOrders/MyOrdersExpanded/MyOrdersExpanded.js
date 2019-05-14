@@ -3,6 +3,7 @@ import { I18n } from 'react-i18next';
 import arrow from 'Img/arrow-right-2.svg';
 import moment from 'moment/min/moment-with-locales.min.js';
 import 'moment/locale/en-gb';
+import { Link } from 'react-router-dom';
 
 import styles from './MyOrdersExpanded.scss';
 
@@ -11,8 +12,10 @@ const MyOrdersExpanded = props => {
     const myOrdersList = (i18n) => <div className={`col-xs-12 ${styles.list}`}>
     <div className={styles.orders}>
       {props.myOrders.map((order) => {
+        const status = order.book_status_name[0][1];
         return (
-          <div key={order.unique_reference} className={styles.order}>
+          <Link to={`/order/${order.unique_reference}`} key={order.unique_reference} className={styles.order}>
+            <div className={`${styles.status} ${styles[status]}`}><span>{status}</span></div>
             <span className={styles.timeAgo}>{`${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}</span>
             <div className={styles.coin}>
                 <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
@@ -25,7 +28,7 @@ const MyOrdersExpanded = props => {
                 <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
                 <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
               </div>
-          </div>);
+          </Link>);
       })}
     </div>
   </div>;
