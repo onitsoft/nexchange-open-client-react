@@ -49,8 +49,8 @@ class OrderBookWidget extends Component {
       const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
       const orderBook = nextProps.orderBook;
       if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
-        orderBook.quantity = 1;
-        orderBook.limit_rate = parseFloat((nextProps.price.deposit / nextProps.price.receive).toFixed(9));
+        orderBook.quantity = nextProps.price.min_amount_base;
+        orderBook.limit_rate =  ((nextProps.price.deposit / nextProps.price.receive)).toFixed(9);
       } else if (pairChange && ! pricesFetched) {
         orderBook.quantity = 0;
         orderBook.limit_rate = 0;
