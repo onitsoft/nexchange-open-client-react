@@ -75,7 +75,6 @@ class OrderOpen extends Component {
 
     render() {
         const order = this.props.order;
-        console.log(order);
         return <div className={`${styles.container}`}>
                     <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles['order-data']}`}>
                         <p className={styles[order.order_type_name[0][1]]}><span>Side: </span>{order.order_type_name[0][1]}</p>

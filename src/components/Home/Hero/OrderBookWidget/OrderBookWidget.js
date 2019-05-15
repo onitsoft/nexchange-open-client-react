@@ -211,17 +211,13 @@ class OrderBookWidget extends Component {
         }
 
         let orderHistory = localStorage['orderHistory'];
-        console.log(newOrder, newOrder);
-        console.log(orderHistory);
         if(!orderHistory){
           orderHistory = [newOrder];
         }
         else {
           orderHistory = JSON.parse(orderHistory);
-          console.log("push");
           orderHistory.push(newOrder);
         }
-        console.log(orderHistory);
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
       })

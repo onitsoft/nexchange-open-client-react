@@ -20,11 +20,13 @@ class Hero extends Component {
     };
   }
 
-  componentWillMount() {
+  componentWillUpdate(nextProps) {
     const params = urlParams();
-    if (params && params.hasOwnProperty('advanced')) {
+    if (params && params.hasOwnProperty('advanced') && this.props.orderMode === 'INSTANT') {
       this.props.changeOrderMode('ORDER_BOOK');
       window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
+    } if(this.props.location.search.indexOf('advanced') != -1 && nextProps.location.search.indexOf('advanced') === -1) {
+      this.props.changeOrderMode('INSTANT');
     }
   }
 
