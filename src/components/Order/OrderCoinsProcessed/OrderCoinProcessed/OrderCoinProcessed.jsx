@@ -227,10 +227,14 @@ class OrderCoinProcessed extends Component {
   }
 
   render() {
+    const order = this.props.order;
+    /* eslint max-len: ['error', { 'code': 200 }] */
+    const pullRight = (!order.isLimitOrder && this.props.type === 'Receive') || (order.isLimitOrder && order.order_type === 0 && this.props.type === 'Deposit');
+    const pullLeft = order.isLimitOrder && order.order_type === 0 && this.props.type === 'Receive';    
     return (
       <I18n ns="translations">
         {t => (
-          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${this.props.type === 'Receive' ? styles['pull-right-md'] : ''}`}>
+          <div className={`col-xs-12 col-sm-6 ${styles['col-sm-6']} ${pullRight ? styles['pull-right-md'] : ''} ${pullLeft ? styles['pull-left-md'] : ''}`}>
             <div
               className={`${styles.box} box ${this.props.type === 'Deposit' && isFiatOrder(this.props.order) ? 'fiat' : ''} ${
                 !isFiatOrder(this.props.order) || this.props.type === 'Receive' ? styles['crypto'] : ''

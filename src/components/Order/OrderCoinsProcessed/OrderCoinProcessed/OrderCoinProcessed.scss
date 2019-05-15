@@ -156,3 +156,9 @@
     float: right;
   }
 }
+
+.pull-left-md.pull-left-md {
+  @media (min-width: $screen-md-min) {
+    float: left;
+  }
+}
