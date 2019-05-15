@@ -3,7 +3,9 @@
     max-height: 370px;
 
     .no-history {
-
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;  
     }
 
     .collapse {
