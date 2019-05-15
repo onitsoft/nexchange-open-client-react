@@ -15,6 +15,7 @@ import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
+import urlParams from 'Utils/urlParams';
 import styles from './OrderBookWidget.scss';
 
 
@@ -33,6 +34,15 @@ class OrderBookWidget extends Component {
     this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
 
+  componentWillMount() {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('myorders')) {
+      this.setState({myOrdersExpanded: true});
+      window.gtag('event', 'Entered my orders via URL', {event_category: 'Order Book', event_label: ``});
+    }
+  }
+
+
   componentDidMount(){
     window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
     if(this.props.selectedCoin){
@@ -49,8 +59,8 @@ class OrderBookWidget extends Component {
       const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
       const orderBook = nextProps.orderBook;
       if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
-        orderBook.quantity = 1;
-        orderBook.limit_rate = parseFloat((nextProps.price.deposit / nextProps.price.receive).toFixed(9));
+        orderBook.quantity = nextProps.price.min_amount_base;
+        orderBook.limit_rate =  ((nextProps.price.deposit / nextProps.price.receive)).toFixed(9);
       } else if (pairChange && ! pricesFetched) {
         orderBook.quantity = 0;
         orderBook.limit_rate = 0;
@@ -65,8 +75,9 @@ class OrderBookWidget extends Component {
     }
 
     //Auto scroll
-    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
-      document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
+    const myOrdersElement = document.getElementById(`myOrders`);
+    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded && !_.isEmpty(myOrdersElement)) {
+      myOrdersElement.scrollIntoView({block: "start", behavior: "instant"});;
     }
   }
 
@@ -180,7 +191,7 @@ class OrderBookWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
-        bindCrispEmail(this.props.store);
+        // bindCrispEmail(this.props.store);
 
         window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
 
@@ -200,13 +211,17 @@ class OrderBookWidget extends Component {
         }
 
         let orderHistory = localStorage['orderHistory'];
+        console.log(newOrder, newOrder);
+        console.log(orderHistory);
         if(!orderHistory){
           orderHistory = [newOrder];
         }
         else {
           orderHistory = JSON.parse(orderHistory);
+          console.log("push");
           orderHistory.push(newOrder);
         }
+        console.log(orderHistory);
         localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
       })
@@ -282,11 +297,8 @@ class OrderBookWidget extends Component {
                           </button>
                         </div>
                       </div>
-                      <OrderDepth 
-                        selectedCoins={this.props.selectedCoin}
-                        sellDepth={this.props.orderBook.sellDepth}
-                        buyDepth={this.props.orderBook.buyDepth}
-                        /> <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
+                      <OrderDepth /> 
+                      <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
                       : <div className={styles.widget}><MyOrders expanded={true} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> }
                   </div>
               </div>

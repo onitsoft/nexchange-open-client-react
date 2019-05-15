@@ -1,13 +1,15 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import OrderDepthItem from './OrderDepthItem/OrderDepthItem';
 import styles from './OrderDepth.scss';
 
 
-class OrderDepth extends PureComponent {
+class OrderDepth extends Component {
   render() {
-    const depth = this.props.sellDepth.concat(this.props.buyDepth)
+    const depth = this.props.orderBook.sellDepth.concat(this.props.orderBook.buyDepth)
     let maxSize;
     if(!_.isEmpty(depth)) {
       maxSize = _.maxBy(depth, function(depthItem) {
@@ -17,23 +19,23 @@ class OrderDepth extends PureComponent {
 
 
     let sellDepth = [];
-    if(!_.isEmpty(this.props.sellDepth)){
-      sellDepth = this.props.sellDepth.map((depthItem) => {
+    if(!_.isEmpty(this.props.orderBook.sellDepth)){
+      sellDepth = this.props.orderBook.sellDepth.map((depthItem) => {
         /* eslint max-len: ["error", { "code": 200 }] */ 
         return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='SELL' maxSize={maxSize} data-test='sell-depth-item'/>;
       });
     }
     let buyDepth = [];
-    if(!_.isEmpty(this.props.buyDepth)){
-      buyDepth = this.props.buyDepth.map((depthItem) => {
+    if(!_.isEmpty(this.props.orderBook.buyDepth)){
+      buyDepth = this.props.orderBook.buyDepth.map((depthItem) => {
         /* eslint max-len: ["error", { "code": 200 }] */ 
         return <OrderDepthItem key={String(depthItem.rate)} item={depthItem} side='BUY' maxSize={maxSize} data-test='buy-depth-item'/>;
       });
     }
 
     let spreadValue;
-    const bestBid = this.props.sellDepth[this.props.sellDepth.length -1];
-    const bestAsk = this.props.buyDepth[0];
+    const bestBid = this.props.orderBook.sellDepth[this.props.orderBook.sellDepth.length -1];
+    const bestAsk = this.props.orderBook.buyDepth[0];
 
     if(bestBid && bestAsk) {
       spreadValue = (bestAsk.rate - bestBid.rate) / ((bestAsk.rate + bestBid.rate)/2) * 100;
@@ -48,8 +50,8 @@ class OrderDepth extends PureComponent {
           <div className={`${styles.content}`}>
             <div className={`${styles.spread}`}><span data-test='spread'>{!_.isEmpty(spreadValue) ? `Spread ${spreadValue}%` : ''}</span></div>
             <div className={`${styles.header}`}>
-              <span className={``}>{`Size (${this.props.selectedCoins.receive})`}</span>
-              <span className={``}>{`Price (${this.props.selectedCoins.deposit})`}</span>
+              <span className={``}>{`Size (${this.props.selectedCoin.receive})`}</span>
+              <span className={``}>{`Price (${this.props.selectedCoin.deposit})`}</span>
             </div>
             <div className={`${styles.data}`}>
               {_.isEmpty(sellDepth) ? <p>{'Currently there are no sell orders for this market..'}</p> : sellDepth}
@@ -64,4 +66,10 @@ class OrderDepth extends PureComponent {
   }
 }
 
-export default OrderDepth;
+const mapStateToProps = ({ selectedCoin, orderBook }) => ({ selectedCoin, orderBook });
+const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(OrderDepth);
