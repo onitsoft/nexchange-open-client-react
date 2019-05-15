@@ -2,6 +2,10 @@
 .container {
     max-height: 370px;
 
+    .no-history {
+
+    }
+
     .collapse {
         padding: 0;
         cursor: pointer;
@@ -13,7 +17,7 @@
             font-size: 30px;
             color: $gray;
 
-            @media (max-width: $screen-md-min) {
+            @media (min-width: $screen-md-min) {
                 margin-right: 10px;
             }
 

@@ -75,8 +75,9 @@ class OrderBookWidget extends Component {
     }
 
     //Auto scroll
-    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
-      document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
+    const myOrdersElement = document.getElementById(`myOrders`);
+    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded && !_.isEmpty(myOrdersElement)) {
+      myOrdersElement.scrollIntoView({block: "start", behavior: "instant"});;
     }
   }
 
