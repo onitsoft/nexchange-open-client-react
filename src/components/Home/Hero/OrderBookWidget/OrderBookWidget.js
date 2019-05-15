@@ -15,6 +15,7 @@ import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
+import urlParams from 'Utils/urlParams';
 import styles from './OrderBookWidget.scss';
 
 
@@ -32,6 +33,15 @@ class OrderBookWidget extends Component {
     this.expandMyOrders = this.expandMyOrders.bind(this);
     this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
+
+  componentWillMount() {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('myorders')) {
+      this.setState({myOrdersExpanded: true});
+      window.gtag('event', 'Entered my orders via URL', {event_category: 'Order Book', event_label: ``});
+    }
+  }
+
 
   componentDidMount(){
     window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
@@ -286,11 +296,8 @@ class OrderBookWidget extends Component {
                           </button>
                         </div>
                       </div>
-                      <OrderDepth 
-                        selectedCoins={this.props.selectedCoin}
-                        sellDepth={this.props.orderBook.sellDepth}
-                        buyDepth={this.props.orderBook.buyDepth}
-                        /> <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
+                      <OrderDepth /> 
+                      <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
                       : <div className={styles.widget}><MyOrders expanded={true} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> }
                   </div>
               </div>

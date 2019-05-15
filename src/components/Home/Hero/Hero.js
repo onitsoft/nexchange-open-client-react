@@ -8,6 +8,7 @@ import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 import Config from 'Config'; 
 
+import urlParams from 'Utils/urlParams';
 import styles from './Hero.scss';
 
 class Hero extends Component {
@@ -17,6 +18,14 @@ class Hero extends Component {
     this.state = {
       orderBookActive: true,
     };
+  }
+
+  componentWillMount() {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('advanced')) {
+      this.props.changeOrderMode('ORDER_BOOK');
+      window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
+    }
   }
 
   changeOrderMode() {

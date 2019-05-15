@@ -26,7 +26,8 @@ const MyOrdersCollapsed = props => {
           </Link>);
       })}
     </div>
-    <div className={`${styles.viewAll}`} onClick={() => props.expandMyOrders()}>
+    <div className={`${styles.viewAll}`} 
+         onClick={() => props.shouldRedirect ? props.goToMyOrders() : props.expandMyOrders()}>
       <a>View All My Orders</a>
     </div>
   </div>;

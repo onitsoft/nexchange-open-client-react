@@ -13,6 +13,8 @@ import OrderPaidFiat from './OrderPaidFiat/OrderPaidFiat';
 import OrderPaymentCrypto from './OrderPaymentCrypto/OrderPaymentCrypto';
 import OrderPaidCrypto from './OrderPaidCrypto/OrderPaidCrypto';
 
+import OrderOpen from './OrderOpen/OrderOpen';
+
 import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
 
 const OrderState = props => {
@@ -53,7 +55,7 @@ const OrderState = props => {
             return <OrderInitial {...props} />;
         }
       case 'OPEN':
-        return null;
+        return <OrderOpen {...props} />;
       case 'CLOSED':
         return <OrderSuccess {...props} />;
       default:
