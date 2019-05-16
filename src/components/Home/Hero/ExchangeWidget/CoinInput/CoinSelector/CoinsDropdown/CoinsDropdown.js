@@ -65,7 +65,6 @@ class CoinsDropdown extends Component {
     //Non cryptos first, then alphabetical
     filteredCoins = _.sortBy(filteredCoins, (coin) => {return coin.is_crypto + coin.code});
     filteredCoins = this.searchCoins(filteredCoins);
-    console.log(filteredCoins);
 
 
     if(_.isEmpty(filteredCoins)){
