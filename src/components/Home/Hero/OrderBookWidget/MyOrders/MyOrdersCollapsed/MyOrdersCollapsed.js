@@ -10,18 +10,21 @@ const MyOrdersCollapsed = props => {
     const myOrdersList = <div className={styles.list}>
     <div className={styles.orders}>
       {props.myOrders.slice(0, 5).map((order) => {
+        const isReverse = order.order_type === 0;
+        const base = !isReverse ? 'base' : 'quote';
+        const quote = !isReverse ? 'quote' : 'base';
         return (
           <Link to={`/order/${order.unique_reference}`} key={order.unique_reference} className={styles.order}>
             <div className={styles.coin}>
-                <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
-                <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
-                <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
+                <i className={`${styles.icon} coin-icon cc ${order.pair[base].code}`} />
+                <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair[base].code}</span>
+                <span className={styles.amount}>{parseFloat(order[`amount_${base}`]).toString().substring(0,9)}</span>
               </div>
               <img src={arrow} className={styles.arrow} alt="Arrow" />
               <div className={styles.coin}>
-                <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
-                <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
-                <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
+                <i className={`${styles.icon} coin-icon cc ${order.pair[quote].code}`} />
+                <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair[quote].code}</span>
+                <span className={styles.amount}>{parseFloat(order[`amount_${quote}`]).toString().substring(0,9)}</span>
               </div>
           </Link>);
       })}
