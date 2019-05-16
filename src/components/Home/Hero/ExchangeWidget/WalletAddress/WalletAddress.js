@@ -63,7 +63,9 @@ class WalletAddress extends Component {
 
   setFocus(event) {
     event.preventDefault();
+    this.fireOnBlur = false;
     this.props.focusWalletAddress();
+    this.fireOnBlur = true;
   }
 
   handleFocus(event) {
@@ -215,7 +217,7 @@ class WalletAddress extends Component {
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
               {!_.isEmpty(this.orderHistory) 
-               ?  <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
+               ?  <button onMouseDown={(e) => this.setFocus(e)} className={styles.previousAddress}>
                     <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
                     <div className="visible-md visible-lg">
                       <span>
