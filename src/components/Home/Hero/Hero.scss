@@ -39,10 +39,6 @@
 .brand {
   margin-top: 110px;
 
-  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
-    margin-top: 130px;
-  }
-
   @media (min-height: $screen-xl-height) and (min-width: $screen-md-min) {
     margin-top: 170px;
   }
