@@ -172,6 +172,10 @@ input[type='file'] {
   }
 }
 
+.crisp-client {
+  z-index: 99999999;
+}
+
 @media (min-width: $screen-xs-min) {
 }
 @media (min-width: $screen-ms-min) {
