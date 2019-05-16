@@ -89,7 +89,7 @@ class WalletAddress extends Component {
 
   handlePaste(event) {
     //If user had no interaction with coin selector
-    if (!this.props.selectedCoin.selectedByUser['receive']) {
+    if (!this.props.selectedCoin.selectedByUser['receive'] && this.props.orderMode != 'ORDER_BOOK') {
       event.preventDefault();
       const address = event.clipboardData.getData('Text').trim();
       const simulatedEvent = { target: { value: address } };
