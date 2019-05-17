@@ -11,7 +11,6 @@ import styles from './MyOrdersExpanded.scss';
 const MyOrdersExpanded = props => {
     const myOrdersList = (i18n) => 
     <div className={`col-xs-12 ${styles.list}`}>
-      <div className={`${styles.heading}`}><h2>My Orders</h2></div>
       <div className={styles.orders}>
         {props.myOrders.map((order) => {
           const status = order.book_status_name[0][1];
@@ -49,6 +48,7 @@ const MyOrdersExpanded = props => {
                         onClick={() => props.collapseMyOrders()}>
                           <i className="material-icons">clear</i>
                         </button>
+                      <div className={`${styles.heading}`}><h2>{t('orderbookwidget.myorders')}</h2></div>
                       {_.isEmpty(props.myOrders) 
                           ? <div className={styles['no-history']}><p>No order history...</p></div>
                           : myOrdersList(i18n)}

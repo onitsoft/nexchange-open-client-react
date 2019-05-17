@@ -7,7 +7,7 @@ import styles from './MyOrdersCollapsed.scss';
 
 
 const MyOrdersCollapsed = props => {
-    const myOrdersList = <div className={styles.list}>
+    const myOrdersList = (t) => <div className={styles.list}>
     <div className={styles.orders}>
       {props.myOrders.slice(0, 5).map((order) => {
         const isReverse = order.order_type === 0;
@@ -31,18 +31,18 @@ const MyOrdersCollapsed = props => {
     </div>
     <div className={`${styles.viewAll}`} 
          onClick={() => props.shouldRedirect ? props.goToMyOrders() : props.expandMyOrders()}>
-      <a>View All My Orders</a>
+      <a>{t('orderbookwidget.viewallmyorders')}</a>
     </div>
   </div>;
   return (
         <I18n ns="translations">
             {(t, i18n) => (
                     <div id='myOrders' className={`${styles.container}`}>
-                        <div className={`${styles.heading}`}><h4>My Orders</h4></div>
+                        <div className={`${styles.heading}`}><h4>{t('orderbookwidget.myorders')}</h4></div>
                         <div className={`${styles.content}`}>
                         {_.isEmpty(props.myOrders) 
-                            ? <p>No order history...</p>
-                            : myOrdersList}
+                            ? <p>{t('orderbookwidget.nomyorders')}</p>
+                            : myOrdersList(t)}
                         </div>
                     </div>
             )}

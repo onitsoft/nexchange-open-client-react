@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n } from 'react-i18next';
 import { fetchPairs, selectCoin, fetchOrderBook} from 'Actions';
 import config from 'Config';
 
@@ -75,15 +76,27 @@ class OrderOpen extends Component {
 
     render() {
         const order = this.props.order;
-        return <div className={`${styles.container}`}>
-                    <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles['order-data']}`}>
-                        <p className={styles[order.order_type_name[0][1]]}><span>Side: </span>{order.order_type_name[0][1]}</p>
-                        <p><span>Amount: </span>{order.amount_base} {order.pair.base.code}</p>
-                        <p><span>Limit Rate: </span>{order.limit_rate} {order.pair.quote.code}</p>
-                    </div>
-                    <OrderDepth />
-                    <MyOrders shouldRedirect={true}/>
-                </div>;
+        return (
+                <I18n ns="translations">
+                   {t => (<div className={`${styles.container}`}>
+                      <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles['order-data']}`}>
+                        <p className={styles[order.order_type_name[0][1]]}>
+                          <span>{`${t('orderbookwidget.side')}: `}</span>
+                          {order.order_type_name[0][1]}
+                        </p>
+                        <p>
+                        <span>{`${t('orderbookwidget.quantity')}: `}</span>
+                          {order.amount_base} {order.pair.base.code}
+                        </p>
+                        <p>
+                          <span>{`${t('orderbookwidget.limitprice')}: `}</span>
+                          {order.limit_rate} {order.pair.quote.code}
+                        </p>
+                        </div>
+                        <OrderDepth />
+                        <MyOrders shouldRedirect={true}/>
+                       </div>
+                )}</I18n>)
     }
 }
 
