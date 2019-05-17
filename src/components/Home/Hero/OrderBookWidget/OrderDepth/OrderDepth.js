@@ -46,16 +46,16 @@ class OrderDepth extends Component {
         {t => (
         <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-4 ${styles.wrapper}`}>
          <div className={`${styles.container}`}>
-          <div className={`${styles.heading}`}><h4>Order Book</h4></div>
+          <div className={`${styles.heading}`}><h4>{t('orderbookwidget.orderbook')}</h4></div>
           <div className={`${styles.content}`}>
             <div className={`${styles.spread}`}><span data-test='spread'>{!_.isEmpty(spreadValue) ? `Spread ${spreadValue}%` : ''}</span></div>
             <div className={`${styles.header}`}>
-              <span className={``}>{`Size (${this.props.selectedCoin.receive})`}</span>
-              <span className={``}>{`Price (${this.props.selectedCoin.deposit})`}</span>
+              <span className={``}>{t('orderbookwidget.size', {coin: this.props.selectedCoin.receive})}</span>
+              <span className={``}>{t('orderbookwidget.price', {coin: this.props.selectedCoin.deposit})}</span>
             </div>
             <div className={`${styles.data}`}>
-              {_.isEmpty(sellDepth) ? <p>{'Currently there are no sell orders for this market..'}</p> : sellDepth}
-              {_.isEmpty(buyDepth) ? <p>{'Currently there are no buy orders for this market..'}</p> : buyDepth}
+              {_.isEmpty(sellDepth) ? <p>{t('orderbookwidget.nosellorders')}</p> : sellDepth}
+              {_.isEmpty(buyDepth) ? <p>{t('orderbookwidget.nobuyorders')}</p> : buyDepth}
             </div>
           </div>
         </div>
