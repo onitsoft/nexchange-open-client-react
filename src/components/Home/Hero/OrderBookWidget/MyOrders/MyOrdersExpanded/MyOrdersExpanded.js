@@ -15,20 +15,23 @@ const MyOrdersExpanded = props => {
       <div className={styles.orders}>
         {props.myOrders.map((order) => {
           const status = order.book_status_name[0][1];
+          const isReverse = order.order_type === 0;
+          const base = !isReverse ? 'base' : 'quote';
+          const quote = !isReverse ? 'quote' : 'base';
           return (
             <Link to={`/order/${order.unique_reference}`} key={order.unique_reference} className={styles.order}>
               <div className={`${styles.status} ${styles[status]}`}><span>{status}</span></div>
-              <span className={styles.timeAgo}>{`${new moment(order.created_at).locale(`${i18n.language}`).fromNow()}`}</span>
+              <span className={styles.timeAgo}>{`${new moment(order.created_on).locale(`${i18n.language}`).fromNow()}`}</span>
               <div className={styles.coin}>
-                  <i className={`${styles.icon} coin-icon cc ${order.pair.base.code}`} />
-                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.base.code}</span>
-                  <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(5)}</span>
+                  <i className={`${styles.icon} coin-icon cc ${order.pair[base].code}`} />
+                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair[base].code}</span>
+                  <span className={styles.amount}>{parseFloat(order[`amount_${base}`]).toString().substring(0,9)}</span>
                 </div>
                 <div className={styles.arrow}><img src={arrow} alt="Arrow" /></div>
                 <div className={styles.coin}>
-                  <i className={`${styles.icon} coin-icon cc ${order.pair.quote.code}`} />
-                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair.quote.code}</span>
-                  <span className={styles.amount}>{parseFloat(order.amount_quote).toFixed(5)}</span>
+                  <i className={`${styles.icon} coin-icon cc ${order.pair[quote].code}`} />
+                  <span className={`${styles.code} hidden-xs hidden-ms hidden-sm`}>{order.pair[quote].code}</span>
+                  <span className={styles.amount}>{parseFloat(order[`amount_${quote}`]).toString().substring(0,9)}</span>
                 </div>
             </Link>);
         })}
