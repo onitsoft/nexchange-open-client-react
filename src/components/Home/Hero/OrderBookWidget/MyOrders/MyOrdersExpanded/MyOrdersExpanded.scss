@@ -19,7 +19,7 @@
             font-size: 30px;
             color: $gray;
 
-            @media (min-width: $screen-md-min) {
+            @media (max-width: $screen-md-max) {
                 margin-right: 10px;
             }
 
