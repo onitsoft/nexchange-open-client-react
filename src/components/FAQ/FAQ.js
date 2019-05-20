@@ -103,13 +103,14 @@ class FAQ extends Component {
       <I18n ns="translations">
         {t => (
           <div className={styles.container}>
+            <div className="container"> 
               <div className="col-xs-12">
                 <div className={styles.brand}>
                   <h1>{t('faq.heading1')}</h1>
                   <h2>{t('faq.heading2')}</h2>
                 </div>
               </div>   
-              <div className={`col-xs-11 ${styles.faqs}`}>
+              <div className={`col-xs-12 ${styles.faqs}`}>
                 <form className="form-group" onSubmit={this.handleSubmit}>
                   <div className={`${styles.input}`}>
                     <i className={`fas fa-search`}></i>
@@ -425,6 +426,7 @@ class FAQ extends Component {
                 </div>
                 <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
               </div>
+          </div>
         )}
       </I18n>
     );
