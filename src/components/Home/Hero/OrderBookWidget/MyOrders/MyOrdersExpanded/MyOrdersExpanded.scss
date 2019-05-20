@@ -19,7 +19,7 @@
             font-size: 30px;
             color: $gray;
 
-            @media (min-width: $screen-md-min) {
+            @media (max-width: $screen-md-max) {
                 margin-right: 10px;
             }
 
@@ -48,13 +48,15 @@
                 text-decoration: none;
 
                 .status {
+                    width: 90px;
                     border-width: 2px;
                     border-style: solid;
                     border-radius: 6px;
                     padding: 4px 12px;
                     font-size: 16px;
                     font-weight: bold;
-                    margin-left: 20px;
+                    text-align: center;
+                    margin-left: 10px;
                     &.NEW {
                         border-color: $red;
                         color: $red;

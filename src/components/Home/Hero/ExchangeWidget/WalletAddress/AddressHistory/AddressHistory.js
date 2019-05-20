@@ -47,6 +47,7 @@ class AddressHistory extends Component {
   }
 
   clear(){
+    this.props.dontFireOnBlur();
     this.setState({
       searchValue: ''
     }); 
@@ -91,7 +92,7 @@ class AddressHistory extends Component {
                 />
                 <i
                   className={`material-icons ${this.state.searchValue ? cx(styles.clear, styles.active) : styles.clear}`}
-                  onClick={() => this.clear()}
+                  onMouseDown={() => this.clear()}
                 >
                   clear
                 </i>
@@ -103,7 +104,9 @@ class AddressHistory extends Component {
                   onMouseDown={() => this.handleClick(order.base, order.quote, order.withdraw_address)}>
                     {order.withdraw_address}
                     <div className={`${styles.details}`}>
-                      {`${order.base} ${t('to')} ${order.quote}`}
+                      {order.mode === 'LIMIT' && order.order_type === 'SELL'
+                      ? `${order.quote} ${t('to')} ${order.base}`
+                      : `${order.base} ${t('to')} ${order.quote}`}
                       {` ${new moment(order.created_at).locale(`${i18n.language}`).fromNow()} `}
                       (<a
                         onMouseDown={(event) => this.orderClick(event, order.id)}
