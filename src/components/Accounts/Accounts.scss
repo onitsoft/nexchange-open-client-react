@@ -1,0 +1,88 @@
+.left,.right {
+    height: 100vh;
+}
+
+.left {
+    background-color: darkcyan;
+    .logo-container {
+        margin: 20px 30px;
+        overflow: hidden;
+      
+        img {
+          width: 195px;
+        }
+      }      
+}
+
+.right {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    form {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        .input-container {
+            width: 100%;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            background-color: lighten($gray, 30);
+            padding: 0px 20px;
+            margin-bottom: 10px;
+            input {
+                width: 100%;
+                margin: 0;
+                outline: none;
+                border: none;
+                background-color: transparent;
+                background: no-repeat;
+            }
+        }
+    }
+
+    .not-registered {
+        width: 100%;
+        text-align: center;
+        color: #000;
+        &:hover {
+            text-decoration: none;
+        }
+    }   
+
+    .separator {
+        height: 1px;
+        width: 100%;
+        margin: 40px 0px;
+        background-color: $gray;
+    }
+
+    .button {
+        background-color: transparent;
+        border-radius: 4px;
+        width: 100%;
+        padding: 8px 0px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        &.main {
+            background-color: $green;
+            color: #fff;
+            border-color: transparent;
+        }
+
+        &.secondary {
+            background-color: #fff;
+            color: $green;
+            border-color: $green;
+        }
+
+        &.facebook {
+            background-color: #fff;
+            color: #3C5A99;
+            border-color: #3C5A99;
+        }
+    }
+}

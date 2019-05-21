@@ -16,6 +16,8 @@ import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
 import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
+import SignIn from 'Components/Accounts/SignIn/SignIn';
+import SignUp from 'Components/Accounts/SignUp/SignUp';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -48,7 +50,9 @@ ReactDOM.render(
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
+          <Route exact path="/" render={props => <Home {...props} store={store} />} />
+          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
           <Route component={NotFound} />
         </Switch>

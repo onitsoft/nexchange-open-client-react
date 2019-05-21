@@ -58,7 +58,16 @@ class Header extends Component {
     return false;
   }
 
+  hideHeader = () => {
+    if (window.location.pathname === '/signin' || window.location.pathname === '/signup') {
+      return true;
+    }
+    return false;
+  }
+
   render() {
+    const hideHeader = this.hideHeader();
+    if(hideHeader) return null;
     const isHomeHeader = this.isHomeHeader();
     return (
       <I18n ns="translations">
