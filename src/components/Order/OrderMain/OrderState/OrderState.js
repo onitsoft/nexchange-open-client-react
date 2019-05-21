@@ -13,6 +13,8 @@ import OrderPaidFiat from './OrderPaidFiat/OrderPaidFiat';
 import OrderPaymentCrypto from './OrderPaymentCrypto/OrderPaymentCrypto';
 import OrderPaidCrypto from './OrderPaidCrypto/OrderPaidCrypto';
 
+import OrderOpen from './OrderOpen/OrderOpen';
+
 import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
 
 const OrderState = props => {
@@ -44,9 +46,16 @@ const OrderState = props => {
   } else {
     switch (BOOK_STATUS_CODES[props.order.book_status_name[0][0]]) {
       case 'NEW':
-        return <OrderInitial {...props} />;
+        switch (STATUS_CODES[props.order.status_name[0][0]]) {
+          case 'PAID_UNCONFIRMED':
+            return props.isFiat ? <OrderPaymentFiat {...props} /> : <OrderPaymentCrypto {...props} />;
+          case 'PAID':
+            return props.isFiat ? <OrderPaidFiat {...props} /> : <OrderPaidCrypto {...props} />;
+          default:
+            return <OrderInitial {...props} />;
+        }
       case 'OPEN':
-        return null;
+        return <OrderOpen {...props} />;
       case 'CLOSED':
         return <OrderSuccess {...props} />;
       default:

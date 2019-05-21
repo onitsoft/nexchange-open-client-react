@@ -17,7 +17,7 @@ class QuestionAnswer extends Component {
     const browserPath = window.location.pathname.split('/')[2] ? window.location.pathname.split('/')[2].toLowerCase().trim() : null;
     /* eslint max-len: ["error", { "code": 200 }] */ 
     const questionPath = this.props.t(`faq.${this.props.id}`).replace(/ /g, '-').replace(/[&/\\#,+()$~%.'":*?<>{}]/g, '').toLowerCase().trim();
-    if(browserPath === questionPath) {
+    if(browserPath === questionPath || decodeURIComponent(browserPath).toLowerCase() === questionPath) {
       this.setState({open: true});
       this.shouldScrollToElement = true;
     }

@@ -44,13 +44,12 @@ class ExchangeWidget extends Component {
     if (!this.props.wallet.valid) {
       if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
         window.gtag('event', 'Place order with empty wallet address', {event_category: 'Order', event_label: ``});
-
-        this.props.errorAlert({
-          show: true,
-          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
-        });
       }
 
+      this.props.errorAlert({
+        show: true,
+        message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+      });
       this.focusWalletAddress();
       return;
     }

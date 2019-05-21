@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding-top: 20px;
+
+    .order-data {
+        @media (min-width: $screen-sm-min) {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+        p {
+            font-size: 16px;
+            color: #000;
+            &.BUY {
+                color: $green;
+            }
+            &.SELL {
+                color: $red;
+            }
+            span {
+                color: #000;
+                font-weight: bold;
+            }
+        }
+    }
+}

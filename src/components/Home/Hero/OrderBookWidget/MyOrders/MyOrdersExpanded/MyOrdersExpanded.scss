@@ -2,6 +2,12 @@
 .container {
     max-height: 370px;
 
+    .no-history {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;  
+    }
+
     .collapse {
         padding: 0;
         cursor: pointer;
@@ -13,7 +19,7 @@
             font-size: 30px;
             color: $gray;
 
-            @media (max-width: $screen-md-min) {
+            @media (max-width: $screen-md-max) {
                 margin-right: 10px;
             }
 
@@ -30,7 +36,6 @@
     .list {
         overflow: auto;
         max-height: 300px;
-        background-color: lighten( $gray, 30);
         padding: 0;
     
         .orders {
@@ -40,6 +45,31 @@
                 margin: 10px; 
                 padding: 8px 0px;
                 background-color: #fff;
+                text-decoration: none;
+
+                .status {
+                    width: 90px;
+                    border-width: 2px;
+                    border-style: solid;
+                    border-radius: 6px;
+                    padding: 4px 12px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-left: 10px;
+                    &.NEW {
+                        border-color: $red;
+                        color: $red;
+                    }
+                    &.OPEN {
+                        border-color: $yellow-700;
+                        color: $yellow-700;
+                    }
+                    &.CLOSED {
+                        border-color: $green;
+                        color: $green;
+                    }
+                }
 
                 .timeAgo {
                     flex: 2;
@@ -71,6 +101,7 @@
                         font-size: 18px;  
                         font-weight: bold;
                         margin-left: 5px;
+                        color: #000;
                         @media (max-width: $screen-md-min) {
                             font-size: 12px;
                         }
@@ -79,6 +110,7 @@
                         flex: 4;
                         font-size: 18px;  
                         margin-left: 5px;
+                        color: #000;
                         @media (max-width: $screen-md-min) {
                             font-size: 12px;
                         }

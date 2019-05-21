@@ -250,7 +250,7 @@ class KYCModal extends Component {
                         position: 'absolute',
                         top: 12,
                         right: 7,
-                        zIndex: 99999999,
+                        zIndex: 88888888,
                       }}
                       data-original-title={t('order.fiat.kyc.6')}
                     />
