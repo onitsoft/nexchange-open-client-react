@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
@@ -28,6 +28,7 @@ import './css/index.scss';
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
 
+
 // const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
 
@@ -38,6 +39,8 @@ const store = createStore(reducers, enhancer);
 setAuthToken();
 crispEmailBinding(store);
 require('Utils/bindGa');
+
+const NotFoundRedirect = () => <Redirect to='/not-found' />
 
 ReactDOM.render(
   <Provider store={store}>
@@ -54,7 +57,8 @@ ReactDOM.render(
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route component={NotFound} />
+          <Route exact path="/not-found" component={NotFound} />
+          <Route component={NotFoundRedirect} />
         </Switch>
 
         <Footer />
