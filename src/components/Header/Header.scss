@@ -67,6 +67,19 @@
     &:hover {
       text-decoration: underline;
     }
+    &.main {
+        background-color: $green;
+        border-radius: 6px;
+        &:hover {
+          background-color: $green !important;
+        }
+        @media (max-width: $screen-sm-min) {
+          color: #fff;
+        }
+        @media (min-width: $screen-sm-min) {
+          margin-right: 10px;
+        }
+    }
   }
 
   .social.social.social.social {
@@ -120,7 +133,7 @@
   }
 
   @media (min-width: $screen-sm-min) {
-    padding: 10px;
+    padding: 10px 15px !important;
   }
 
   @media (min-width: $screen-lg-min) {
@@ -146,7 +159,7 @@
     }
 
     @media (min-width: $screen-md-min) {
-      padding: 10px 15px;
+      padding: 10px 10px;
     }
 
     @media (min-width: $screen-lg-min) {

@@ -64,6 +64,10 @@
     "nomyorders": "No order history...",
     "viewallmyorders": "View all my orders"
   },
+  "accounts": {
+    "signup": "Sign Up",
+    "signin": "Sign In"
+  },
   "recentorders": {
     "1": "Recent Orders",
     "2": "Click to view on API",

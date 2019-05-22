@@ -14,7 +14,6 @@ class Footer extends Component {
   render() {
     const hideFooter = this.hideFooter();
     if(hideFooter) return (<div></div>);
-    console.log('gegegee');
     
     return (
     <I18n ns="translations">

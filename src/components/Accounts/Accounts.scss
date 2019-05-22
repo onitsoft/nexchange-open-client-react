@@ -1,17 +1,23 @@
 .left,.right {
     height: 100vh;
-}
-
-.left {
-    background-color: darkcyan;
     .logo-container {
         margin: 20px 30px;
         overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
       
         img {
           width: 195px;
         }
-      }      
+    }
+}
+
+.left {
+    background-color: darkcyan;
+    @media (max-width: $screen-sm-max) {
+        display: none;
+    } 
 }
 
 .right {

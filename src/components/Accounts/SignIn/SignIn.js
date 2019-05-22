@@ -31,6 +31,11 @@ class SignIn extends Component {
               </Link>
             </div>
             <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-5 ${styles.right}`}>
+            <Link to="/">
+                <div className={`${styles['logo-container']} hidden-md hidden-lg hidden-xl`}>
+                  <img className={styles.logo} src="/img/logo.svg" alt="Logo" data-test="logo" />
+                </div>
+              </Link>
               <div className={`col-xs-8 col-offset-xs-2`}>
                 <form className="form-group">
                       <div className={styles['input-container']}>

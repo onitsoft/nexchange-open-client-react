@@ -121,7 +121,7 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={styles.link} data-test="compare-link">
+                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={`${styles.link} hidden-sm`} data-test="compare-link">
                         {t('header.compare')}
                     </Link>
                   </li>
