@@ -448,7 +448,10 @@
   "error": {
     "warning": "Warnung",
     "loading": "Entschuldigen Sie, beim Laden der Seite trat ein Problem auf :(",
-    "notfound": "Seite nicht gefunden :(",
+    "notfound1": "Oops! Etwas ist schief gelaufen...",
+    "notfound21": "Die von Ihnen gesuchte Seite ist nicht verfügbar. Versuchen Sie es erneut, oder verwenden Sie die",
+    "notfound22": "Geh zurück",
+    "notfound23": "Knopf unten.",
     "invalidpair": "Sie können nicht",
     "nousedeposit": "Sie können",
     "nousedeposit2": "nich als deposit coin nutzen. Bitte nehmen Sie einen anderen.",

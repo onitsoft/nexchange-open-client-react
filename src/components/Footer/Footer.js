@@ -5,7 +5,9 @@ import styles from './Footer.scss';
 
 class Footer extends Component {
   hideFooter = () => {
-    if (window.location.pathname === '/signin' || window.location.pathname === '/signup') {
+    if (window.location.pathname === '/signin' 
+    || window.location.pathname === '/signup'
+    || window.location.pathname === '/not-found') {
       return true;
     }
     return false;
