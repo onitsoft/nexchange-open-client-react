@@ -27,14 +27,14 @@ ShallowWrapper {
           className="heading"
         >
           <h4>
-            My Orders
+            orderbookwidget.myorders
           </h4>
         </div>,
         <div
           className="content"
         >
           <p>
-            No order history...
+            orderbookwidget.nomyorders
           </p>
         </div>,
       ],
@@ -49,7 +49,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <h4>
-            My Orders
+            orderbookwidget.myorders
           </h4>,
           "className": "heading",
         },
@@ -59,10 +59,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "My Orders",
+            "children": "orderbookwidget.myorders",
           },
           "ref": null,
-          "rendered": "My Orders",
+          "rendered": "orderbookwidget.myorders",
           "type": "h4",
         },
         "type": "div",
@@ -73,7 +73,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <p>
-            No order history...
+            orderbookwidget.nomyorders
           </p>,
           "className": "content",
         },
@@ -83,10 +83,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "No order history...",
+            "children": "orderbookwidget.nomyorders",
           },
           "ref": null,
-          "rendered": "No order history...",
+          "rendered": "orderbookwidget.nomyorders",
           "type": "p",
         },
         "type": "div",
@@ -105,14 +105,14 @@ ShallowWrapper {
             className="heading"
           >
             <h4>
-              My Orders
+              orderbookwidget.myorders
             </h4>
           </div>,
           <div
             className="content"
           >
             <p>
-              No order history...
+              orderbookwidget.nomyorders
             </p>
           </div>,
         ],
@@ -127,7 +127,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <h4>
-              My Orders
+              orderbookwidget.myorders
             </h4>,
             "className": "heading",
           },
@@ -137,10 +137,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "My Orders",
+              "children": "orderbookwidget.myorders",
             },
             "ref": null,
-            "rendered": "My Orders",
+            "rendered": "orderbookwidget.myorders",
             "type": "h4",
           },
           "type": "div",
@@ -151,7 +151,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <p>
-              No order history...
+              orderbookwidget.nomyorders
             </p>,
             "className": "content",
           },
@@ -161,10 +161,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "No order history...",
+              "children": "orderbookwidget.nomyorders",
             },
             "ref": null,
-            "rendered": "No order history...",
+            "rendered": "orderbookwidget.nomyorders",
             "type": "p",
           },
           "type": "div",
