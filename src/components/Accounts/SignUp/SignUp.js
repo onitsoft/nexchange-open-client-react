@@ -32,6 +32,7 @@ class SignUp extends Component {
                   <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
                 </div>
               </Link>
+              <h1 className={styles.heading}>{t('accounts.signupheader')}</h1>
             </div>
             <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-5 ${styles.right}`}>
               <Link to="/">

@@ -69,7 +69,9 @@
   },
   "accounts": {
     "signup": "Anmelden",
+    "signupheader": "White Labeling und B2B-Lösungen",
     "signin": "Einloggen",
+    "signinheader": "Ihr vertrauensvoller Partner für den Krypto-Austausch",
     "signinwithfacebook": "Mit Facebook anmelden",
     "signupwithfacebook": "Anmelden mit Facebook",
     "username": "Nutzername",

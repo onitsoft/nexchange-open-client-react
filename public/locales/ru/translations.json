@@ -62,8 +62,10 @@
     "viewallmyorders": "Посмотреть все мои заказы"
 	},
 	"accounts": {
-    "signup": "Подписаться",
+		"signup": "Подписаться",
+		"signupheader": "Белая маркировка и B2B решения",
 		"signin": "Войти в систему",
+		"signinheader": "Ваш надежный партнер для крипто-обмена",
 		"signinwithfacebook": "Авторизоваться с помощью Фэйсбука",
     "signupwithfacebook": "Зарегистрироваться через Facebook",
     "username": "имя пользователя",

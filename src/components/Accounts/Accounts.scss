@@ -15,10 +15,22 @@
 }
 
 .left {
-    background-color: darkcyan;
     @media (max-width: $screen-sm-max) {
         display: none;
     } 
+
+    background-color: #01031e;
+    background-image: url('../../img/Login\ img-min.png');
+    background-position: 40% 0%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    .heading {
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 80vh;
+    }
 }
 
 .right {
