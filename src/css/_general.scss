@@ -75,6 +75,10 @@ a {
   font-weight: bold;
 }
 
+.relative {
+  position: relative;
+}
+
 .header-text {
   font-size: 36px;
 }
@@ -166,6 +170,10 @@ input[type='file'] {
   @media (min-width: $screen-sm-min) {
     font-size: 36px;
   }
+}
+
+.crisp-client {
+  z-index: 99999999;
 }
 
 @media (min-width: $screen-xs-min) {
