@@ -1,9 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import thunk from 'redux-thunk';
 import OrderDepth from './OrderDepth.js';
 
-describe('OrderDepth', () => {
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
+describe('OrderDepth', () => {
   let wrapShallow;
   const selectedCoins = {receive: 'DOGE', deposit: 'ETH'};
   const sellDepth = [
@@ -18,7 +21,9 @@ describe('OrderDepth', () => {
     ];
 
   beforeEach(() => {
+    store = mockStore(initialState);
     wrapShallow = shallow(<OrderDepth 
+                            store={store}
                             selectedCoins={selectedCoins} 
                             sellDepth={sellDepth}
                             buyDepth={buyDepth} />).dive();

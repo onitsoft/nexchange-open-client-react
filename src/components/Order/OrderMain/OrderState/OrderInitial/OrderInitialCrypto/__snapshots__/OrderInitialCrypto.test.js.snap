@@ -50,9 +50,7 @@ ShallowWrapper {
             order.initial2
              
             <b>
-              0.10000000
-               
-              ETH
+              0.10000000 ETH
             </b>
              
             order.initial3
@@ -137,9 +135,7 @@ ShallowWrapper {
               order.initial2
                
               <b>
-                0.10000000
-                 
-                ETH
+                0.10000000 ETH
               </b>
                
               order.initial3
@@ -228,9 +224,7 @@ ShallowWrapper {
                 "order.initial2",
                 " ",
                 <b>
-                  0.10000000
-                   
-                  ETH
+                  0.10000000 ETH
                 </b>,
                 " ",
                 "order.initial3",
@@ -257,18 +251,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "0.10000000",
-                    " ",
-                    "ETH",
-                  ],
+                  "children": "0.10000000 ETH",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "0.10000000",
-                  " ",
-                  "ETH",
-                ],
+                "rendered": "0.10000000 ETH",
                 "type": "b",
               },
               " ",
@@ -376,9 +362,7 @@ ShallowWrapper {
               order.initial2
                
               <b>
-                0.10000000
-                 
-                ETH
+                0.10000000 ETH
               </b>
                
               order.initial3
@@ -463,9 +447,7 @@ ShallowWrapper {
                 order.initial2
                  
                 <b>
-                  0.10000000
-                   
-                  ETH
+                  0.10000000 ETH
                 </b>
                  
                 order.initial3
@@ -554,9 +536,7 @@ ShallowWrapper {
                   "order.initial2",
                   " ",
                   <b>
-                    0.10000000
-                     
-                    ETH
+                    0.10000000 ETH
                   </b>,
                   " ",
                   "order.initial3",
@@ -583,18 +563,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      "0.10000000",
-                      " ",
-                      "ETH",
-                    ],
+                    "children": "0.10000000 ETH",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    "0.10000000",
-                    " ",
-                    "ETH",
-                  ],
+                  "rendered": "0.10000000 ETH",
                   "type": "b",
                 },
                 " ",
