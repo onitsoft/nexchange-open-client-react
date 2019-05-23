@@ -62,7 +62,8 @@ class Header extends Component {
 
   hideHeader = () => {
     if (window.location.pathname === '/signin' 
-        || window.location.pathname === '/signup') {
+        || window.location.pathname === '/signup'
+        || window.location.pathname === '/forgot-password') {
       return true;
     }
     return false;
@@ -123,11 +124,11 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <Link onClick={() => this.closeNavbar()} to="/#compare" className={`${styles.link} hidden-sm`} data-test="compare-link">
                         {t('header.compare')}
                     </Link>
-                  </li>
+                  </li> */}
 
                   <li>
                     <Link 

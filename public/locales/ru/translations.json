@@ -60,7 +60,20 @@
     "myorders": "мои заказы",
     "nomyorders": "Нет истории заказов...",
     "viewallmyorders": "Посмотреть все мои заказы"
-	  },
+	},
+	"accounts": {
+    "signup": "Подписаться",
+		"signin": "Войти в систему",
+		"signinwithfacebook": "Авторизоваться с помощью Фэйсбука",
+    "signupwithfacebook": "Зарегистрироваться через Facebook",
+    "username": "имя пользователя",
+    "email": "Эл. адрес",
+    "password": "пароль",
+    "repeatpassword": "Повторите пароль",
+    "forgotpassword1": "Забыли пароль?",
+    "forgotpassword2": "Если вы хотите сбросить пароль, введите свой адрес электронной почты",
+    "resetpassword": "Сброс пароля"
+  },	
 	"recentorders": {
 		"1": "Последние Заказы",
 		"2": "Нажмите, чтобы посмотреть в API",

@@ -45,7 +45,7 @@ class SignIn extends Component {
                           id="email"
                           value={this.state.email}
                           onChange={event => this.setState({email: event.target.value})}
-                          placeholder={'Email'}
+                          placeholder={t('accounts.email')}
                         />
                       </div>
                       <div className={styles['input-container']}>
@@ -55,19 +55,19 @@ class SignIn extends Component {
                         id="password"
                         value={this.state.password}
                         onChange={event => this.setState({password: event.target.value})}
-                        placeholder={'Password'}
+                        placeholder={t('accounts.password')}
                         />
                       </div>
                       <button className={`${styles.button} ${styles.main}`}>Sign in</button>
                   </form>
-                <Link to="/forgotpassword" className={styles['not-registered']}>
-                  <div>Forgot your password?</div>
+                <Link to="/forgot-password" className={styles['not-registered']}>
+                  <div>{t('accounts.forgotpassword1')}</div>
                 </Link>
                 <div className={styles.separator}></div>
                 <Link to="/signup" className={styles['not-registered']}>
-                  <button className={`${styles.button} ${styles.secondary}`}>Sign up</button>
+                  <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signup')}</button>
                 </Link>
-                <button className={`${styles.button} ${styles.facebook}`}>Sign in with facebook</button>
+                <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signinwithfacebook')}</button>
               </div>
             </div>
           </div>

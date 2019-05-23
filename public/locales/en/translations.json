@@ -66,7 +66,16 @@
   },
   "accounts": {
     "signup": "Sign Up",
-    "signin": "Sign In"
+    "signin": "Sign In",
+    "signinwithfacebook": "Sign In With Facebook",
+    "signupwithfacebook": "Sign Up With Facebook",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "repeatpassword": "Repeat Password",
+    "forgotpassword1": "Forgot your password?",
+    "forgotpassword2": "If you want to reset your password, please enter your email address",
+    "resetpassword": "Reset Password"
   },
   "recentorders": {
     "1": "Recent Orders",

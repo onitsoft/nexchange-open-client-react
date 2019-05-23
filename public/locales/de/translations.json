@@ -67,6 +67,19 @@
     "nomyorders": "Keine Bestellhistorie ...",
     "viewallmyorders": "Alle meine Bestellungen anzeigen"
   },
+  "accounts": {
+    "signup": "Anmelden",
+    "signin": "Einloggen",
+    "signinwithfacebook": "Mit Facebook anmelden",
+    "signupwithfacebook": "Anmelden mit Facebook",
+    "username": "Nutzername",
+    "email": "Email",
+    "password": "Passwort",
+    "repeatpassword": "Wiederholen Sie das Passwort",
+    "forgotpassword1": "Haben Sie Ihr Passwort vergessen?",
+    "forgotpassword2": "Wenn Sie Ihr Passwort zurücksetzen möchten, geben Sie bitte Ihre E-Mail-Adresse ein",
+    "resetpassword": "Passwort zurücksetzen"
+  },
   "recentorders": {
     "1": "Letzte Aufträge",
     "2": "Klicken Sie für Ansicht in API",

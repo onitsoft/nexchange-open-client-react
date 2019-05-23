@@ -48,7 +48,7 @@ class SignUp extends Component {
                           id="username"
                           value={this.state.username}
                           onChange={event => this.setState({username: event.target.value})}
-                          placeholder={'Username'}
+                          placeholder={t('accounts.username')}
                         />
                       </div>
                       <div className={styles['input-container']}>
@@ -58,7 +58,7 @@ class SignUp extends Component {
                           id="email"
                           value={this.state.email}
                           onChange={event => this.setState({email: event.target.value})}
-                          placeholder={'Email'}
+                          placeholder={t('accounts.email')}
                         />
                       </div>
                       <div className={styles['input-container']}>
@@ -68,7 +68,7 @@ class SignUp extends Component {
                         id="password"
                         value={this.state.password}
                         onChange={event => this.setState({password: event.target.value})}
-                        placeholder={'Password'}
+                        placeholder={t('accounts.password')}
                         />
                       </div>
                       <div className={styles['input-container']}>
@@ -78,13 +78,13 @@ class SignUp extends Component {
                         id="repeatPassword"
                         value={this.state.repeatPassword}
                         onChange={event => this.setState({repeatPassword: event.target.value})}
-                        placeholder={'Repeat Password'}
+                        placeholder={t('accounts.repeatpassword')}
                         />
                       </div>
-                      <button className={`${styles.button} ${styles.main}`}>Sign up</button>
+                      <button className={`${styles.button} ${styles.main}`}>{t('accounts.signup')}</button>
                   </form>
                 <div className={styles.separator}></div>
-                <button className={`${styles.button} ${styles.facebook}`}>Sign Up with facebook</button>
+                <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
               </div>
             </div>
           </div>
