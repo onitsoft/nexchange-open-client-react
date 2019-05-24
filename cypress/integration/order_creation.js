@@ -18,6 +18,8 @@ describe('Order creation', function() {
 
     cy.visit('http://localhost:3000?pair=BTCETH');
 
+    cy.wait(3000)
+
     cy.get('.selectedCoin-deposit').click();
 
     cy.get('.coin-currency-dropdown')
