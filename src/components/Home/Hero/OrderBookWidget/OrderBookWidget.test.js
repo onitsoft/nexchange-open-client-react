@@ -31,13 +31,13 @@ describe('OrderBookWidget', () => {
     expect(wrapShallow.find(CoinSelector).length).toBe(2);
     expect(wrapShallow.find('Connect(WalletAddress)').length).toBe(1);
     expect(wrapShallow.find('Connect(LimitOrderForm)').length).toBe(1);
-    expect(wrapShallow.find('OrderDepth').length).toBe(1);
+    expect(wrapShallow.find('Connect(OrderDepth)').length).toBe(1);
     expect(wrapShallow.find('Connect(MyOrders)').length).toBe(1);
     expect(wrapShallow.find('button').length).toBe(1);
   });
 
   it('submit button changes on wallet shown', () => {
-    expect(wrapShallow.find('button').text()).toEqual('Buy ETH with OMG');
+    expect(wrapShallow.find('button').text()).toEqual('orderbookwidget.buy ETH orderbookwidget.with OMG');
   });
 });
 

@@ -29,7 +29,7 @@ ShallowWrapper {
           className="heading"
         >
           <h4>
-            Order Book
+            orderbookwidget.orderbook
           </h4>
         </div>
         <div
@@ -50,12 +50,12 @@ ShallowWrapper {
             <span
               className=""
             >
-              Size (DOGE)
+              orderbookwidget.size
             </span>
             <span
               className=""
             >
-              Price (ETH)
+              orderbookwidget.price
             </span>
           </div>
           <div
@@ -143,7 +143,7 @@ ShallowWrapper {
             className="heading"
           >
             <h4>
-              Order Book
+              orderbookwidget.orderbook
             </h4>
           </div>,
           <div
@@ -164,12 +164,12 @@ ShallowWrapper {
               <span
                 className=""
               >
-                Size (DOGE)
+                orderbookwidget.size
               </span>
               <span
                 className=""
               >
-                Price (ETH)
+                orderbookwidget.price
               </span>
             </div>
             <div
@@ -254,7 +254,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <h4>
-              Order Book
+              orderbookwidget.orderbook
             </h4>,
             "className": "heading",
           },
@@ -264,10 +264,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Order Book",
+              "children": "orderbookwidget.orderbook",
             },
             "ref": null,
-            "rendered": "Order Book",
+            "rendered": "orderbookwidget.orderbook",
             "type": "h4",
           },
           "type": "div",
@@ -293,12 +293,12 @@ ShallowWrapper {
                 <span
                   className=""
                 >
-                  Size (DOGE)
+                  orderbookwidget.size
                 </span>
                 <span
                   className=""
                 >
-                  Price (ETH)
+                  orderbookwidget.price
                 </span>
               </div>,
               <div
@@ -412,12 +412,12 @@ ShallowWrapper {
                   <span
                     className=""
                   >
-                    Size (DOGE)
+                    orderbookwidget.size
                   </span>,
                   <span
                     className=""
                   >
-                    Price (ETH)
+                    orderbookwidget.price
                   </span>,
                 ],
                 "className": "header",
@@ -429,11 +429,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Size (DOGE)",
+                    "children": "orderbookwidget.size",
                     "className": "",
                   },
                   "ref": null,
-                  "rendered": "Size (DOGE)",
+                  "rendered": "orderbookwidget.size",
                   "type": "span",
                 },
                 Object {
@@ -441,11 +441,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Price (ETH)",
+                    "children": "orderbookwidget.price",
                     "className": "",
                   },
                   "ref": null,
-                  "rendered": "Price (ETH)",
+                  "rendered": "orderbookwidget.price",
                   "type": "span",
                 },
               ],
@@ -658,7 +658,7 @@ ShallowWrapper {
             className="heading"
           >
             <h4>
-              Order Book
+              orderbookwidget.orderbook
             </h4>
           </div>
           <div
@@ -679,12 +679,12 @@ ShallowWrapper {
               <span
                 className=""
               >
-                Size (DOGE)
+                orderbookwidget.size
               </span>
               <span
                 className=""
               >
-                Price (ETH)
+                orderbookwidget.price
               </span>
             </div>
             <div
@@ -772,7 +772,7 @@ ShallowWrapper {
               className="heading"
             >
               <h4>
-                Order Book
+                orderbookwidget.orderbook
               </h4>
             </div>,
             <div
@@ -793,12 +793,12 @@ ShallowWrapper {
                 <span
                   className=""
                 >
-                  Size (DOGE)
+                  orderbookwidget.size
                 </span>
                 <span
                   className=""
                 >
-                  Price (ETH)
+                  orderbookwidget.price
                 </span>
               </div>
               <div
@@ -883,7 +883,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <h4>
-                Order Book
+                orderbookwidget.orderbook
               </h4>,
               "className": "heading",
             },
@@ -893,10 +893,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Order Book",
+                "children": "orderbookwidget.orderbook",
               },
               "ref": null,
-              "rendered": "Order Book",
+              "rendered": "orderbookwidget.orderbook",
               "type": "h4",
             },
             "type": "div",
@@ -922,12 +922,12 @@ ShallowWrapper {
                   <span
                     className=""
                   >
-                    Size (DOGE)
+                    orderbookwidget.size
                   </span>
                   <span
                     className=""
                   >
-                    Price (ETH)
+                    orderbookwidget.price
                   </span>
                 </div>,
                 <div
@@ -1041,12 +1041,12 @@ ShallowWrapper {
                     <span
                       className=""
                     >
-                      Size (DOGE)
+                      orderbookwidget.size
                     </span>,
                     <span
                       className=""
                     >
-                      Price (ETH)
+                      orderbookwidget.price
                     </span>,
                   ],
                   "className": "header",
@@ -1058,11 +1058,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Size (DOGE)",
+                      "children": "orderbookwidget.size",
                       "className": "",
                     },
                     "ref": null,
-                    "rendered": "Size (DOGE)",
+                    "rendered": "orderbookwidget.size",
                     "type": "span",
                   },
                   Object {
@@ -1070,11 +1070,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Price (ETH)",
+                      "children": "orderbookwidget.price",
                       "className": "",
                     },
                     "ref": null,
-                    "rendered": "Price (ETH)",
+                    "rendered": "orderbookwidget.price",
                     "type": "span",
                   },
                 ],
@@ -1298,7 +1298,9 @@ ShallowWrapper {
         },
       },
     },
-    "context": Object {},
+    "context": Object {
+      "storeSubscription": undefined,
+    },
   },
 }
 `;
