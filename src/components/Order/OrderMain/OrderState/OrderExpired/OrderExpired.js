@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OrderAlert from '../OrderIcons/OrderAlert/OrderAlert';
-import { I18n, Trans } from 'react-i18next';
+import { I18n } from 'react-i18next';
 import styles from '../OrderState.scss';
 
 
@@ -35,7 +35,7 @@ class OrderExpired extends Component {
             {props.order && (
               <a href={`/?pair=${props.order.pair.name}&amount_quote=${props.order.amount_quote}`+
               `&withdraw_address=${props.order.withdraw_address.address}`}
-              className={`btn ${styles.btn}`} target="_blank">
+              className={`btn ${styles.btn}`} target="_blank" rel="noopener noreferrer">
                 {t('order.repeat')}
               </a>)
             }

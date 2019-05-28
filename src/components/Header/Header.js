@@ -52,7 +52,7 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') != -1) {
+    if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') !== -1) {
       return true;
     }
     return false;
@@ -189,10 +189,9 @@ class Header extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${styles.social} btn btn-simple btn-just-icon`}
-                      rel="tooltip"
-                      title=""
+                      title={t('header.twitter')}
+                      data-toggle="tooltip" 
                       data-placement="bottom"
-                      data-original-title={t('header.twitter')}
                     >
                       <i className="fab fa-twitter" aria-hidden="true" />
                     </a>
@@ -204,10 +203,9 @@ class Header extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${styles.social} btn btn-simple btn-just-icon`}
-                      rel="tooltip"
-                      title=""
+                      title={t('header.facebook')}
+                      data-toggle="tooltip" 
                       data-placement="bottom"
-                      data-original-title={t('header.facebook')}
                     >
                       <i className="fab fa-facebook-f" aria-hidden="true" />
                     </a>
@@ -219,10 +217,9 @@ class Header extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${styles.social} btn btn-simple btn-just-icon`}
-                      rel="tooltip"
-                      title=""
+                      title={t('header.slack')}
+                      data-toggle="tooltip" 
                       data-placement="bottom"
-                      data-original-title={t('header.slack')}
                     >
                       <i className="fab fa-slack-hash" aria-hidden="true" />
                     </a>
@@ -234,10 +231,9 @@ class Header extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${styles.social} btn btn-simple btn-just-icon`}
-                      rel="tooltip"
-                      title=""
+                      title={t('header.telegram')}
+                      data-toggle="tooltip" 
                       data-placement="bottom"
-                      data-original-title={t('header.telegram')}
                     >
                       <i className="fab fa-telegram" aria-hidden="true" />
                     </a>

@@ -36,7 +36,7 @@ class OrderInitial extends Component {
     }
   }
 
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
     if(!_.isEmpty(safechargeStatus)){
       if(this.props.order && this.props.order.payment_url) {
@@ -55,7 +55,7 @@ class OrderInitial extends Component {
     return (
       <div>
       {this.state.showPaymentIFrame ? 
-      <iframe src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
+      <iframe title="SafeCharge" src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>

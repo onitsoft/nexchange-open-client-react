@@ -89,7 +89,7 @@ class WalletAddress extends Component {
 
   handlePaste(event) {
     //If user had no interaction with coin selector
-    if (!this.props.selectedCoin.selectedByUser['receive'] && this.props.orderMode != 'ORDER_BOOK') {
+    if (!this.props.selectedCoin.selectedByUser['receive'] && this.props.orderMode !== 'ORDER_BOOK') {
       event.preventDefault();
       const address = event.clipboardData.getData('Text').trim();
       const simulatedEvent = { target: { value: address } };
@@ -100,7 +100,7 @@ class WalletAddress extends Component {
         //Check if matching coins are in the order history
         let orderHistory = localStorage['orderHistory'];
         orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) != -1; });
+        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) !== -1; });
         if (mostRecentMatchingOrder) {
           //Set most recent matching coin
           this.setCoin('EUR', mostRecentMatchingOrder.quote);
@@ -174,8 +174,8 @@ class WalletAddress extends Component {
   setCoin(depositCoin, receiveCoin) {
     const selectedByUser = this.props.selectedCoin.selectedByUser;
     if (!this.props.selectedCoin.selectedByUser.receive &&
-      depositCoin != this.props.selectedCoin.deposit &&
-      receiveCoin != this.props.selectedCoin.receive) {
+      depositCoin !== this.props.selectedCoin.deposit &&
+      receiveCoin !== this.props.selectedCoin.receive) {
       //Select coin
       this.props.selectCoin({
         ...this.props.selectedCoin,
@@ -223,7 +223,7 @@ class WalletAddress extends Component {
                     <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
                     <div className="visible-md visible-lg">
                       <span>
-                        {this.props.orderMode != 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                        {this.props.orderMode !== 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
                       </span>
                     </div>
                   </button>

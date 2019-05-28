@@ -40,7 +40,11 @@ class OrderPaidCrypto extends Component {
             <h3 className={styles.subtitle}>{t('order.paid2')}</h3>
             <h3 className={styles.subtitle}>
               {t('order.txid')}:{' '}
-              <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" className="text-green">
+              <a 
+                href={getBlockchainUrl(this.coin.code, this.txId)} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-green">
                 {this.txId}
               </a>
             </h3>
