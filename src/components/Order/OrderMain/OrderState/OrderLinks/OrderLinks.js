@@ -1,5 +1,5 @@
 import React from 'react';
-import getBlockchainUrl from 'Utils/getBlockchainUrl';
+// import getBlockchainUrl from 'Utils/getBlockchainUrl';
 import styles from './OrderLinks.scss';
 import { I18n } from 'react-i18next';
 
@@ -12,7 +12,7 @@ const OrderLinks = props => (
         {props.order && STATUS_CODES[props.order.status_name[0][0]] === "COMPLETED" && (
           <a href={`/?pair=${props.order.pair.name}&amount_quote=${props.order.amount_quote}`+
           `&withdraw_address=${props.order.withdraw_address.address}`}
-          className={`btn ${styles.btn}`} target="_blank">
+          className={`btn ${styles.btn}`} target="_blank" rel="noopener noreferrer">
             {t('order.repeat')}
           </a>)
         }

@@ -31,7 +31,6 @@ class Referrals extends Component {
     queryParams = queryParams.filter(this.checkNotRef);
     queryParams = '?'.concat(queryParams.join('&'));
     let urlWithoutRef = baseUrl.concat(queryParams);
-    urlWithoutRef = urlWithoutRef;
 
     return <Redirect to={urlWithoutRef} />;
   }

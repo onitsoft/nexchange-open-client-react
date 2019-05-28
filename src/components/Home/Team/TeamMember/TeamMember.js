@@ -12,7 +12,7 @@ const TeamMember = props => {
     }
 
     social.push(
-      <a href={props.social[key]} className={styles[key]} key={key} target="_blank">
+      <a href={props.social[key]} className={styles[key]} key={key} target="_blank" rel="noopener noreferrer">
         <i className={className} />
       </a>
     );

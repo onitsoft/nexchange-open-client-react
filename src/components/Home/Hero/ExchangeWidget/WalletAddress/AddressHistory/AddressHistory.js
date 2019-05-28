@@ -61,9 +61,9 @@ class AddressHistory extends Component {
     }
     return _.filter(history, (order) => {
       return (
-      order.id.toLowerCase().indexOf(searchValue) != -1 ||
-      order.withdraw_address.toLowerCase().indexOf(searchValue) != -1 ||
-      order.quote.toLowerCase().indexOf(searchValue) != -1 
+      order.id.toLowerCase().indexOf(searchValue) !== -1 ||
+      order.withdraw_address.toLowerCase().indexOf(searchValue) !== -1 ||
+      order.quote.toLowerCase().indexOf(searchValue) !== -1 
       );
     })
   }

@@ -34,7 +34,7 @@ class OrderBookWidget extends Component {
     this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const params = urlParams();
     if (params && params.hasOwnProperty('myorders')) {
       this.setState({myOrdersExpanded: true});
@@ -52,10 +52,10 @@ class OrderBookWidget extends Component {
     }
   }
 
-  componentWillUpdate(nextProps) {
+  UNSAFE_componentWillUpdate(nextProps) {
       //auto fill form values 
       const nullQuantityAndLimitPrice = !(this.props.orderBook.quantity > 0) && !(this.props.orderBook.limit_rate > 0);
-      const pairChange = (nextProps.selectedCoin.deposit != this.props.selectedCoin.deposit) || (nextProps.selectedCoin.receive != this.props.selectedCoin.receive);
+      const pairChange = (nextProps.selectedCoin.deposit !== this.props.selectedCoin.deposit) || (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive);
       const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
       const orderBook = nextProps.orderBook;
       if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
@@ -76,7 +76,7 @@ class OrderBookWidget extends Component {
 
     //Auto scroll
     const myOrdersElement = document.getElementById(`myOrders`);
-    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded && !_.isEmpty(myOrdersElement)) {
+    if(this.state.myOrdersExpanded !== prevState.myOrdersExpanded && !_.isEmpty(myOrdersElement)) {
       myOrdersElement.scrollIntoView({block: "start", behavior: "instant"});;
     }
   }
@@ -153,7 +153,6 @@ class OrderBookWidget extends Component {
 
     let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
     let order_type = null;
-    let refund_address = null;
     if(this.props.orderBook.order_type === 'BUY'){
       order_type = 1;
     }
