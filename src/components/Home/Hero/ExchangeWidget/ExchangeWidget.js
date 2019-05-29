@@ -17,6 +17,7 @@ import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 import DestinationTag from './WalletAddress/DestinationTag';
 import PaymentId from './WalletAddress/PaymentId';
 import Memo from './WalletAddress/Memo';
+import Integrations from '../Integrations/Integrations';
 
 import styles from './ExchangeWidget.scss';
 
@@ -183,6 +184,7 @@ class ExchangeWidget extends Component {
                       </button>
                         <p className={styles.infotc} dangerouslySetInnerHTML={{__html: t('order.byclickTC', {'buttonName':t('exchangewidget.2')})}}/>
                     </div>
+                    <Integrations/>
                   </div>
                 </div>
               </div>
