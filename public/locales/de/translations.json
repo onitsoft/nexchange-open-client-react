@@ -67,6 +67,11 @@
     "nomyorders": "Keine Bestellhistorie ...",
     "viewallmyorders": "Alle meine Bestellungen anzeigen"
   },
+  "integrations": {
+    "error" : {
+      "metamask": "Auf die Metamask-Erweiterung konnte nicht zugegriffen werden. Bitte stellen Sie sicher, dass es aktiviert und nicht gesperrt ist" 
+    }
+  },
   "recentorders": {
     "1": "Letzte Aufträge",
     "2": "Klicken Sie für Ansicht in API",
