@@ -103,7 +103,11 @@ class RecentOrders extends Component {
 
               <div className={`${styles.col} col col-xs-3 col-ms-2`}>
                 <div className={styles.middle}>
-                  <a href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} target="_blank" className={styles.btn}>
+                  <a 
+                    href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.btn}>
                     {t('recentorders.3')}
                   </a>
                 </div>

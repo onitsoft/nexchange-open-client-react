@@ -22,7 +22,7 @@
   text-align: left;
 
   @media (min-width: $screen-md-min) {
-    height: 450px;
+    height: 480px;
     padding: 25px 55px;
   }
 }
@@ -39,7 +39,7 @@
   font-size: 12px;
 
   @media (min-width: $screen-md-min) {
-    margin-top: 13px;
+    margin-top: 0;
     float: left;
   }
 }
@@ -51,7 +51,7 @@
   margin-top: 15px;
 
   @media (min-width: $screen-md-min) {
-    margin-top: 13px;
+    margin-top: 0;
     float: left;
   }
 }

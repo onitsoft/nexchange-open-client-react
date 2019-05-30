@@ -18,7 +18,7 @@ class OrderInitial extends Component {
     this.updatingRates = false;
   }
 
-  componentWillMount() {  
+  UNSAFE_componentWillMount() {  
     if(!(this.state.time < 0)) {
       this.interval = setInterval(this.tick, 1000);
       this.shouldRepeatOrder = true;
@@ -29,7 +29,7 @@ class OrderInitial extends Component {
 
   UNSAFE_componentWillReceiveProps = nextProps => {
     //New Order
-    if(this.props.order.unique_reference != nextProps.order.unique_reference) {
+    if(this.props.order.unique_reference !== nextProps.order.unique_reference) {
       const time = this.calculateRemainingTime(nextProps.order);   
       this.setState({time, repeatOrder: false});
     }

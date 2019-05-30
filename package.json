@@ -4,6 +4,7 @@
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime-corejs2": "^7.0.0",
+    "@colony/purser-metamask": "^2.2.0",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -42,7 +43,7 @@
     "js-yaml": "^3.13.1",
     "jsonp": "^0.2.1",
     "lodash": ">=4.17.5",
-    "moment": "^2.22.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "notifyjs": "^3.0.0",
     "object-assign": "4.1.1",
