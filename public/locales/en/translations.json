@@ -72,7 +72,8 @@
   "recentorders": {
     "1": "Recent Orders",
     "2": "Click to view on API",
-    "3": "View on API"
+    "3": "View on API",
+    "4": "Trusted by millions of people"
   },
   "testimonials": {
     "1": "Testimonials",
@@ -134,7 +135,22 @@
       "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
     "3": "Best new instant exchange service! Fast, easy, low fees...",
     "4":
-      "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but  everything was sorted out. Would use again. 😊"
+      "I trade{ $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but  everything was sorted out. Would use again. 😊"
+  },
+  "features": {
+    "heading": "Setting the standart in cryptocurrency exchange",
+    "feature11": "Instant Exchange",
+    "feature12": "The transaction is finalized instantly.",
+    "feature21": "Security First",
+    "feature22": "You are in charge of you private wallet.",
+    "feature31": "Simple",
+    "feature32": "Client & Engaging User Interface & Experience.",
+    "feature41": "Anonymous",
+    "feature42": "Your private information is not collected or recorded.",
+    "feature51": "Transparent",
+    "feature52": "Open-source. Api based.",
+    "feature61": "Dragon",
+    "feature62": "Dragons prottect the treasure."
   },
   "subscription": {
     "1": "Do you have any questions?",

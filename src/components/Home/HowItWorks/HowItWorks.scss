@@ -1,0 +1,52 @@
+.arrow-container {
+    height: 50px;
+    .arrow-label {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 45px;
+        margin-left: 8px;
+        background-color: #fff;
+        border: 1px solid $green;
+        border-radius: 20px;
+        z-index: 1;
+
+        span {
+            font-weight: bold;
+            color: $green;
+        }
+    }
+
+    .arrow { 
+        position: absolute;
+        top: 12px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 20px;
+        padding: 2px;
+        .line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 20px;
+            background: repeating-linear-gradient(to right, #2cc5bd 0, #2cc5bd 2px, transparent 4px, transparent 10px) center;            background-size: 100% 3px;
+            background-repeat: no-repeat;
+        }
+        .point {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 5px; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid $green;
+            float:right;
+        }
+    }
+}

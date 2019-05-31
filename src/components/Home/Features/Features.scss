@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .features {
+        .feature {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            .icon {
+
+            }
+            .name {
+                font-weight: bold;
+            }
+            .description {
+
+            }
+        }
+    }
+}

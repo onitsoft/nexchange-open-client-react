@@ -125,7 +125,8 @@ class RecentOrders extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h2 className="title">{t('recentorders.1')}</h2>
+                  <h2 className={`title ${styles.title}`}>{t('recentorders.1')}</h2>
+                  <h5 className={styles.subtitle}>{t('recentorders.4')}</h5>
                   <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
                 </div>
               </div>
