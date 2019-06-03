@@ -63,7 +63,9 @@ class WalletAddress extends Component {
 
   setFocus(event) {
     event.preventDefault();
+    this.fireOnBlur = false;
     this.props.focusWalletAddress();
+    this.fireOnBlur = true;
   }
 
   handleFocus(event) {
@@ -87,17 +89,18 @@ class WalletAddress extends Component {
 
   handlePaste(event) {
     //If user had no interaction with coin selector
-    if (!this.props.selectedCoin.selectedByUser) {
+    if (!this.props.selectedCoin.selectedByUser['receive'] && this.props.orderMode !== 'ORDER_BOOK') {
       event.preventDefault();
       const address = event.clipboardData.getData('Text').trim();
+      const simulatedEvent = { target: { value: address } };
+      this.handleChange(simulatedEvent);
       //Get coins that match the pasted address
       const matchingCoins = getMatchingCoins(address);
-      console.log(matchingCoins);
       if (!_.isEmpty(matchingCoins)) {
         //Check if matching coins are in the order history
         let orderHistory = localStorage['orderHistory'];
         orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) != -1; });
+        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) !== -1; });
         if (mostRecentMatchingOrder) {
           //Set most recent matching coin
           this.setCoin('EUR', mostRecentMatchingOrder.quote);
@@ -107,8 +110,7 @@ class WalletAddress extends Component {
         }
       }
 
-      const simulatedEvent = { target: { value: address } };
-      this.handleChange(simulatedEvent);
+
     }
   }
 
@@ -128,16 +130,27 @@ class WalletAddress extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectedCoin[this.props.withdraw_coin] !== this.props.selectedCoin[this.props.withdraw_coin]) {
-      this.validate(this.state.address, nextProps.selectedCoin[this.props.withdraw_coin]);
+      this.validate(nextProps.wallet.address, nextProps.selectedCoin[this.props.withdraw_coin]);
+    }
+
+    if (!this.props.wallet.valid && nextProps.wallet.valid) {
+      this.setState({
+        showHistory: false
+      });
+    }
+
+    if(nextProps.wallet.address !== this.props.wallet.address) {
+      const simulatedEvent = { target: { value: nextProps.wallet.address } };
+      this.handleChange(simulatedEvent);
     }
 
     try {
       let orderHistory = localStorage['orderHistory'];
       //Most recent order for each address
       this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-      if (!_.isEmpty(nextProps.wallet.address)) {
+      if(nextProps.selectedCoin.selectedByUser.receive) {
         this.orderHistory = _.filter(this.orderHistory, function (order) {
-          return order.withdraw_address.startsWith(nextProps.wallet.address);
+          return order.quote === nextProps.selectedCoin.receive;
         });
       }
     } catch (e) {
@@ -164,15 +177,16 @@ class WalletAddress extends Component {
   }
 
   setCoin(depositCoin, receiveCoin) {
-    if (!this.props.selectedCoin.selectedByUser &&
-      depositCoin != this.props.selectedCoin.deposit &&
-      receiveCoin != this.props.selectedCoin.receive) {
+    const selectedByUser = this.props.selectedCoin.selectedByUser;
+    if (!this.props.selectedCoin.selectedByUser.receive &&
+      depositCoin !== this.props.selectedCoin.deposit &&
+      receiveCoin !== this.props.selectedCoin.receive) {
       //Select coin
       this.props.selectCoin({
         ...this.props.selectedCoin,
         deposit: depositCoin,
         receive: receiveCoin,
-        selectedByUser: false
+        selectedByUser
       }, this.props.pairs);
 
       //Update quote value
@@ -209,14 +223,16 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {!_.isEmpty(this.orderHistory)
-                ? <button onClick={(e) => this.setFocus(e)} className={styles.previousAddress}>
-                  <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
-                  <div className="visible-md visible-lg">
-                    {this.props.orderMode === 'BASIC' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
-                  </div>
-                </button>
-                : null}
+              {!_.isEmpty(this.orderHistory) 
+               ?  <button onMouseDown={(e) => this.setFocus(e)} className={styles.previousAddress}>
+                    <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
+                    <div className="visible-md visible-lg">
+                      <span>
+                        {this.props.orderMode !== 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                      </span>
+                    </div>
+                  </button>
+               :  null}
               {this.state.showHistory ?
                 <AddressHistory
                   history={this.orderHistory}

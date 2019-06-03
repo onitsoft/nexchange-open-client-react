@@ -24,7 +24,7 @@
   
 
   @media (min-width: $screen-md-max) {
-    height: 450px;
+    height: 480px;
     padding: 25px 55px;
   }
 
@@ -95,14 +95,14 @@
 
     &.btn-buy {
       background-color: $green;
-      &:hover {
+      &:hover,&:focus {
         background-color: lighten( $green, 10% );
       }
     }
 
     &.btn-sell {
       background-color: $red;
-      &:hover {
+      &:hover,&:focus {
         background-color: lighten( $red, 10% );
       }
     }

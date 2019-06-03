@@ -51,23 +51,26 @@ class OrderCoinProcessed extends Component {
   };
 
   prepareState = props => {
-    if (props.type === 'Deposit') {
+    const isReverse = props.order.isLimitOrder && props.order.order_type === 0;
+    if ((!isReverse && props.type === 'Deposit') || (isReverse && props.type === 'Receive')) {
+      const addressField = !isReverse ? 'deposit_address' : 'withdraw_address';
       this.setState({
         coin: props.order.pair.quote.code,
         oppositeCoin: props.order.pair.base.code,
         amount: parseFloat(props.order.amount_quote),
-        address: props.order.deposit_address ? props.order.deposit_address.address : '',
+        address: props.order[addressField] ? props.order[addressField].address : '',
         paymentId: props.order.deposit_address ? props.order.deposit_address.payment_id : '',
         destinationTag: props.order.deposit_address ? props.order.deposit_address.destination_tag : '',
         memo: props.order.deposit_address ? props.order.deposit_address.memo : '',
         order: props.order,
       });
-    } else if (props.type === 'Receive') {
+    } else if ((!isReverse && props.type === 'Receive') || (isReverse && props.type === 'Deposit')) {
+      const addressField = !isReverse ? 'withdraw_address' : 'deposit_address';
       this.setState({
         coin: props.order.pair.base.code,
         oppositeCoin: props.order.pair.quote.code,
         amount: parseFloat(props.order.amount_base),
-        address: props.order.withdraw_address ? props.order.withdraw_address.address : '',
+        address: props.order[addressField] ? props.order[addressField].address : '',
         paymentId: props.order.withdraw_address ? props.order.withdraw_address.payment_id : '',
         destinationTag: props.order.withdraw_address ? props.order.withdraw_address.destination_tag : '',
         memo: props.order.withdraw_address ? props.order.withdraw_address.memo : '',
@@ -124,7 +127,7 @@ class OrderCoinProcessed extends Component {
 
   addressIsTooLong() {
     return (
-      this.state.address != null && (this.state.address.length >= 40)
+      this.state.address != null && (this.state.address.length >= 42)
       );
   }
 
@@ -246,13 +249,16 @@ class OrderCoinProcessed extends Component {
                   <b>
                     {this.state.amount} {this.state.coin}
                   </b>
-                  <i
+                  {!this.props.order.isLimitOrder
+                  ?<i
                     className="fa fa-question-circle"
                     data-toggle="tooltip"
                     data-placement="top"
                     style={{ marginLeft: 8 }}
                     data-original-title={this.renderRates()}
-                  />
+                    />
+                  : null
+                  }
                 </h5>
                 {this.renderAddress()}
                 {this.renderExpandButton()}

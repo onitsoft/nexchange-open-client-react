@@ -49,14 +49,14 @@ class KYCModal extends Component {
       this.setState({ showManualId: true });
     } else if (e.data.status === 'approved') {
       setTimeout(function () {
-        this.setState({idApproved: true});
+        this.setState({ idApproved: true });
       }.bind(this), 3000)
     }
   }
   componentDidUpdate(prevProps) {
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
-        $(function() {
+        $(function () {
           $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
         });
       });
@@ -127,6 +127,7 @@ class KYCModal extends Component {
         }, 2000);
       })
       .catch(error => {
+        console.log(error);
         this.setState({
           title: i18n.t('order.fiat.kyc.status8'),
           titleClass: 'danger',
@@ -136,7 +137,7 @@ class KYCModal extends Component {
 
     if (this.state.email) {
       this.props.setUserEmail(
-        {email: this.state.email, phone: this.state.phone}
+        { email: this.state.email, phone: this.state.phone }
       );
     }
   }
@@ -170,52 +171,54 @@ class KYCModal extends Component {
 
   render() {
     return (
-    <I18n ns="translations">
-    {(t) => (
-      <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
-        <div className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
-              <i className="material-icons">clear</i>
-            </button>
-            <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
-            <h5 style={{ marginBottom: 0 }}>
-              <b>
-                {t('order.fiat.tier.explanation')}
-              </b>
-            </h5>
-          </div>
+      <I18n ns="translations">
+        {(t) => (
+          <Modal id="kyc-modal" show={this.state.show} onHide={this.close}>
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.close}>
+                  <i className="material-icons">clear</i>
+                </button>
+                <h4 className={`modal-title text-${this.state.titleClass}`}>{this.state.title}</h4>
+                <h5 style={{ marginBottom: 0 }}>
+                  <b>
+                    {t('order.fiat.tier.explanation')}
+                  </b>
+                </h5>
+              </div>
 
-            <div className="modal-body">
-            { ! this.state.idApproved && this.props.kyc.identity_token && !this.state.showManualId &&
-            this.props.kyc.id_document_status !== 'APPROVED' && (
-                <div hidden={! this.props.kyc.identity_token && this.state.idApproved}>
-                    <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
-                </div>
-            )}
+              <div className="modal-body">
+                {!this.state.idApproved && this.props.kyc.identity_token && !this.state.showManualId &&
+                  this.props.kyc.id_document_status !== 'APPROVED' && (
+                    <div hidden={!this.props.kyc.identity_token && this.state.idApproved}>
+                      <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
+                    </div>
+                  )}
 
-            <form onSubmit={this.handleSubmit}
-                  hidden={(this.props.kyc.identity_token && !this.state.showManualId) && ! this.state.idApproved}>
-              { !this.state.idApproved &&
-              this.props.kyc.id_document_status !== 'APPROVED' && (
-                <div>
-                  <label htmlFor="governmentID" style={{'cursor': 'pointer'}}>
-                  <h2>{t('order.fiat.kyc.1')}</h2>
-                    <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
+                <form onSubmit={this.handleSubmit}
+                  hidden={(this.props.kyc.identity_token && !this.state.showManualId) && !this.state.idApproved}>
+                  {!this.state.idApproved &&
+                    this.props.kyc.id_document_status !== 'APPROVED' && (
+                      <div>
+                        <label htmlFor="governmentID" style={{ 'cursor': 'pointer' }}>
+                          <h2>{t('order.fiat.kyc.1')}</h2>
+                          <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
 
-                    <div style={{'text-align': 'center', 'max-width': '100%'}}>
-                      <div style={{'display': 'inline-block', 'max-width': '100%'}}>
-                    <img style={{'text-align': 'center',
-                        margin: 'auto', 'width': '400px', 'max-width': '100%'}} src ="/img/order/selfie.jpg"
-                             alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
-                    <input type="file" name="governmentID" id="governmentID"
-                         onChange={this.handleInputChange} accept="image/*" style={{'margin': '0 25% 20px 25%'}} />
-                    </div></div>
-                  </label>
-                </div>
-              )}
+                          <div style={{ 'textAlign': 'center', 'maxWidth': '100%' }}>
+                            <div style={{ 'display': 'inline-block', 'maxWidth': '100%' }}>
+                              <img style={{
+                                'textAlign': 'center',
+                                margin: 'auto', 'width': '400px', 'maxWidth': '100%'
+                              }} src="/img/order/selfie.jpg"
+                                alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
+                              <input type="file" name="governmentID" id="governmentID"
+                                onChange={this.handleInputChange} accept="image/*" style={{ 'margin': '0 25% 20px 25%' }} />
+                            </div></div>
+                        </label>
+                      </div>
+                    )}
 
-              {/*
+                  {/*
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
                 <div>
                   <h2>{t('order.fiat.kyc.2')}</h2>
@@ -229,70 +232,70 @@ class KYCModal extends Component {
                 </div>
               )}
               */}
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder={t('generalterms.email')}
-                  className="form-control"
-                  onChange={this.handleInputChange}
-                  value={this.state.email}
-                />
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder={t('generalterms.email')}
+                      className="form-control"
+                      onChange={this.handleInputChange}
+                      value={this.state.email}
+                    />
 
-                <i
-                  className="fa fa-question-circle"
-                  data-toggle="tooltip"
-                  data-placement="left"
-                  style={{
-                    position: 'absolute',
-                    top: 12,
-                    right: 7,
-                    zIndex: 99999999,
-                  }}
-                  data-original-title={t('order.fiat.kyc.6')}
-                />
+                    <i
+                      className="fa fa-question-circle"
+                      data-toggle="tooltip"
+                      data-placement="left"
+                      style={{
+                        position: 'absolute',
+                        top: 12,
+                        right: 7,
+                        zIndex: 88888888,
+                      }}
+                      data-original-title={t('order.fiat.kyc.6')}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <input
+                      name="phone"
+                      className="form-control"
+                      placeholder={t('order.fiat.kyc.phone')}
+                      rows="2"
+                      onChange={this.handleInputChange}
+                      value={this.state.phone}
+                      maxLength="255"
+                    />
+                  </div>
+
+                  <textarea
+                    name="message"
+                    className="form-control"
+                    placeholder={t('order.fiat.kyc.msg')}
+                    rows="2"
+                    onChange={this.handleInputChange}
+                    value={this.state.message}
+                    maxLength="255"
+                  />
+
+                  <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
+                    <i
+                      className="far fa-file"
+                      aria-hidden="true"
+                      style={{
+                        position: 'relative',
+                        left: -8,
+                        top: 0,
+                        fontSize: '14px',
+                      }}
+                    />
+                    {this.state.buttonText}
+                  </button>
+                </form>
               </div>
-
-              <div className="form-group">
-                <input
-                  name="phone"
-                  className="form-control"
-                  placeholder={t('order.fiat.kyc.phone')}
-                  rows="2"
-                  onChange={this.handleInputChange}
-                  value={this.state.phone}
-                  maxLength="255"
-                />
-              </div>
-
-              <textarea
-                name="message"
-                className="form-control"
-                placeholder={t('order.fiat.kyc.msg')}
-                rows="2"
-                onChange={this.handleInputChange}
-                value={this.state.message}
-                maxLength="255"
-              />
-
-              <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
-                <i
-                  className="far fa-file"
-                  aria-hidden="true"
-                  style={{
-                    position: 'relative',
-                    left: -8,
-                    top: 0,
-                    fontSize: '14px',
-                  }}
-                />
-                {this.state.buttonText}
-              </button>
-            </form>
-          </div>
-        </div>
-      </Modal>
-      )}
+            </div>
+          </Modal>
+        )}
       </I18n>
     );
   }

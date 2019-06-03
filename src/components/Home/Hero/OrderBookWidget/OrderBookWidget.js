@@ -15,6 +15,7 @@ import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
+import urlParams from 'Utils/urlParams';
 import styles from './OrderBookWidget.scss';
 
 
@@ -33,12 +34,37 @@ class OrderBookWidget extends Component {
     this.collapseMyOrders = this.collapseMyOrders.bind(this);
   }
 
+  UNSAFE_componentWillMount() {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('myorders')) {
+      this.setState({myOrdersExpanded: true});
+      window.gtag('event', 'Entered my orders via URL', {event_category: 'Order Book', event_label: ``});
+    }
+  }
+
+
   componentDidMount(){
+    window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
     if(this.props.selectedCoin){
       this.setState({loading: false});
       this.fetchOrderBook();
       if(this.quantityInputEl) { this.quantityInputEl.focus(); }
     }
+  }
+
+  UNSAFE_componentWillUpdate(nextProps) {
+      //auto fill form values 
+      const nullQuantityAndLimitPrice = !(this.props.orderBook.quantity > 0) && !(this.props.orderBook.limit_rate > 0);
+      const pairChange = (nextProps.selectedCoin.deposit !== this.props.selectedCoin.deposit) || (nextProps.selectedCoin.receive !== this.props.selectedCoin.receive);
+      const pricesFetched = nextProps.price.pair === `${nextProps.selectedCoin.receive}${nextProps.selectedCoin.deposit}` && (nextProps.price.receive > 0 && nextProps.price.deposit > 0);
+      const orderBook = nextProps.orderBook;
+      if((nullQuantityAndLimitPrice || pairChange) && pricesFetched) {
+        orderBook.quantity = nextProps.price.min_amount_base;
+        orderBook.limit_rate =  ((nextProps.price.deposit / nextProps.price.receive)).toFixed(9);
+      } else if (pairChange && ! pricesFetched) {
+        orderBook.quantity = 0;
+        orderBook.limit_rate = 0;
+      }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -47,8 +73,11 @@ class OrderBookWidget extends Component {
         clearInterval(this.interval);
         this.fetchOrderBook();
     }
-    if(this.state.myOrdersExpanded != prevState.myOrdersExpanded) {
-      document.getElementById(`myOrders`).scrollIntoView({block: "start", behavior: "instant"});;
+
+    //Auto scroll
+    const myOrdersElement = document.getElementById(`myOrders`);
+    if(this.state.myOrdersExpanded !== prevState.myOrdersExpanded && !_.isEmpty(myOrdersElement)) {
+      myOrdersElement.scrollIntoView({block: "start", behavior: "instant"});;
     }
   }
 
@@ -96,8 +125,6 @@ class OrderBookWidget extends Component {
   handleOrderBookOrderTypeChange(type) {
     const orderBook = this.props.orderBook;
     orderBook.order_type = type;
-    orderBook.quantity = '';
-    orderBook.limit_rate = '';
     this.props.changeOrderBookValue(orderBook);
   }
 
@@ -112,36 +139,25 @@ class OrderBookWidget extends Component {
     if (!this.props.wallet.valid) {
       if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
         window.gtag('event', 'Place order with empty wallet address', {event_category: 'Order Book', event_label: ``});
-
-        this.props.errorAlert({
-          show: true,
-          message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
-        });
       }
+
+      this.props.errorAlert({
+        show: true,
+        message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+      });
 
       this.walletInputEl.focus();
       return;
     }
 
 
-    //TO DELETE - HARDCODED
     let pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
-    if(pair !== 'DOGEETH'){
-      this.props.errorAlert({
-        show: true,
-        message: `Invalid pair. The only avaialable pair for limit order testing is DOGEETH`,
-      });
-      return;
-    }
     let order_type = null;
-    let refund_address = null;
     if(this.props.orderBook.order_type === 'BUY'){
       order_type = 1;
-      refund_address = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
     }
     if(this.props.orderBook.order_type === 'SELL'){
       order_type = 0;
-      refund_address = 'DBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD';
     }
 
 
@@ -157,10 +173,6 @@ class OrderBookWidget extends Component {
           name: '',
           address: this.props.wallet.address
       },
-      refund_address: {
-          name: 'REFUND ADDRESS',
-          address: refund_address
-      }
     };
 
     axios
@@ -210,13 +222,11 @@ class OrderBookWidget extends Component {
       })
       .catch(error => {
         console.log('Error:', error);
-        console.log("error.response",error.response);
         
-
         /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
         error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
-
+        window.gtag('event', 'Error placing order', {event_category: 'Order Book', event_label: `${message}`});
         this.props.errorAlert({
           message: message,
           show: true,
@@ -251,20 +261,20 @@ class OrderBookWidget extends Component {
                           <li>
                             <a 
                               className={`clickable ${order_type === 'BUY' ? `${styles['active']}` : ''}`} 
-                              onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>Buy</a>
+                              onClick={() => this.handleOrderBookOrderTypeChange('BUY')}>{t('orderbookwidget.buy')}</a>
                               {order_type === 'BUY' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
                           <li>
                             <a 
                               className={`clickable ${order_type === 'SELL' ? `${styles['active']}` : ''}`}
-                              onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>Sell</a>
+                              onClick={() => this.handleOrderBookOrderTypeChange('SELL')}>{t('orderbookwidget.sell')}</a>
                               {order_type === 'SELL' ? <div className={`${styles['arrow-down']}`}></div> : null}
                           </li>
                         </ul>
                         <LimitOrderForm 
                           inputRef={el => (this.quantityInputEl = el)}
-                          quantity={this.state.quantity}
-                          limit_rate={this.state.limit_rate}
+                          quantity={this.props.orderBook.quantity}
+                          limit_rate={this.props.orderBook.limit_rate}
                          />
                         <WalletAddress 
                           withdraw_coin={`${order_type === 'BUY' ? 'receive' : 'deposit'}`} 
@@ -276,17 +286,14 @@ class OrderBookWidget extends Component {
                           ${this.props.wallet.valid && !this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
                           onClick={() => this.placeOrder()} ref={(el) => { this.button = el; }} >
                             {order_type === 'BUY' 
-                            ? `Buy ${this.props.selectedCoin.receive} with ${this.props.selectedCoin.deposit}`
-                            : `Sell ${this.props.selectedCoin.receive} for ${this.props.selectedCoin.deposit}`
+                            ? `${t('orderbookwidget.buy')} ${this.props.selectedCoin.receive} ${t('orderbookwidget.with')} ${this.props.selectedCoin.deposit}`
+                            : `${t('orderbookwidget.sell')} ${this.props.selectedCoin.receive} ${t('orderbookwidget.for')} ${this.props.selectedCoin.deposit}`
                             }
                           </button>
                         </div>
                       </div>
-                      <OrderDepth 
-                        selectedCoins={this.props.selectedCoin}
-                        sellDepth={this.props.orderBook.sellDepth}
-                        buyDepth={this.props.orderBook.buyDepth}
-                        /> <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
+                      <OrderDepth /> 
+                      <MyOrders expanded={false} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> 
                       : <div className={styles.widget}><MyOrders expanded={true} expandMyOrders={this.expandMyOrders} collapseMyOrders={this.collapseMyOrders}/></div> }
                   </div>
               </div>

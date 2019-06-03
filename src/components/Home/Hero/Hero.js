@@ -8,6 +8,7 @@ import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 import Config from 'Config'; 
 
+import urlParams from 'Utils/urlParams';
 import styles from './Hero.scss';
 
 class Hero extends Component {
@@ -19,14 +20,24 @@ class Hero extends Component {
     };
   }
 
+  UNSAFE_componentWillUpdate(nextProps) {
+    const params = urlParams();
+    if (params && params.hasOwnProperty('advanced') && this.props.orderMode === 'INSTANT') {
+      this.props.changeOrderMode('ORDER_BOOK');
+      window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
+    } if(this.props.location.search.indexOf('advanced') !== -1 && nextProps.location.search.indexOf('advanced') === -1) {
+      this.props.changeOrderMode('INSTANT');
+    }
+  }
+
   changeOrderMode() {
-    if(this.props.orderMode === 'BASIC'){
+    if(this.props.orderMode === 'INSTANT'){
       this.props.changeOrderMode('ORDER_BOOK');
       window.gtag('event', 'Order Mode Switch', {event_category: 'Order Book', event_label: ``});
     } else if(this.props.orderMode === 'ORDER_BOOK'){
-      this.props.changeOrderMode('BASIC');
+      this.props.changeOrderMode('INSTANT');
     } else {
-      this.props.changeOrderMode('BASIC');
+      this.props.changeOrderMode('INSTANT');
     }
   }
 
@@ -51,7 +62,7 @@ class Hero extends Component {
                 </div>
 
                 <div className={styles.widget}>
-                  { this.props.orderMode === 'BASIC'
+                  { this.props.orderMode === 'INSTANT'
                     ? <ExchangeWidget {...this.props}  store={this.props.store} />
                     : Config.ADVANCED_MODE_ENABLED ?
                       <OrderBookWidget {...this.props}  store={this.props.store} />

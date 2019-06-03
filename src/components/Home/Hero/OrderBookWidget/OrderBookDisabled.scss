@@ -23,7 +23,7 @@
 
     @media (min-width: $screen-md-min) {
         margin: 0;
-        height: 450px;
+        height: 480px;
         padding: 25px 55px;
     }    
 
@@ -109,14 +109,3 @@
       margin: 0;
     }
   }
-  
-  .group {
-    @media (min-width: $screen-lg-min) {
-      padding: 0 100px;
-  
-      .btn.btn.btn {
-        right: 100px;
-      }
-    }
-  }
-  

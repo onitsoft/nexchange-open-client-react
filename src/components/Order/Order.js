@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchOrder } from 'Actions';
+import { bindActionCreators } from 'redux';
+import { fetchOrder, fetchPrice, setOrder } from 'Actions';
 
 import isFiatOrder from 'Utils/isFiatOrder';
 import config from 'Config';
@@ -78,7 +79,7 @@ class Order extends Component {
               <OrderTop order={this.state.order} />
               <OrderCoinsProcessed order={this.state.order} />
 
-              <OrderMain order={this.state.order} />
+              <OrderMain {...this.props} />
               <OrderCta order={this.state.order} />
             </div>
           </div>
@@ -88,9 +89,10 @@ class Order extends Component {
   }
 }
 
-const mapStateToProps = ({ order }) => ({ order });
+const mapStateToProps = ({ order, price }) => ({ order, price });
+const mapDistachToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder }, dispatch);
 
 export default connect(
   mapStateToProps,
-  { fetchOrder }
+  mapDistachToProps
 )(Order);

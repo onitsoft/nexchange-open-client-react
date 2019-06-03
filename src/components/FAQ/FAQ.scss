@@ -30,9 +30,36 @@
   @media (min-width: $screen-md-min) {
     background-color: #01031e;
     background-image: url('../../img/ellipse.svg');
-    background-position: -135vh -83vh;
+    background-position: -135vh -93vh;
     background-size: 150%;
     background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-bottom: 10px !important;
+    margin-top: 15px;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 15px !important;
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Clan Offc Pro Book';
+
+    @media (min-width: $screen-md-min) {
+      font-size: 24px;
+    }
+
+    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+      margin-bottom: 0;
+    }
   }
 }
 

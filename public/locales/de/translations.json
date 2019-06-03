@@ -32,6 +32,10 @@
     "1": "Umtausch von Kryptowährungen",
     "2": "<0>Einfach. <1>Sicher</1>. Transparent.</0>"
   },
+  "ordermodeswitch": {
+    "simple": "Einfach",
+    "advanced": "Fortgeschritten"
+  },
   "exchangewidget": {
     "1": "Legen Sie los!",
     "2": "*Bestätigen & Auftrag erteilen",
@@ -40,6 +44,33 @@
     "fees": "Die Gebühren liegen bei",
     "min": "Min menge",
     "max": "Max menge"
+  },
+  "orderbookwidget": {
+    "disabledmessage1": "n.exchange wird in Kürze das erste nicht-eichpflichtige Orderbuch mit mehreren Ketten enthalten!",
+    "disabledmessage2": "Diese einzigartige Technologie ermöglicht es Ihnen, Limit-Orders und andere fortgeschrittene Handelsinstrumente zu nutzen, während Sie die Sicherheit und Einfachheit, die Sie kennen, beibehalten.",
+    "disabledmessage3": "- Bleib dran",
+    "buy": "Kaufen",
+    "sell": "Verkaufen",
+    "side": "Seite",
+    "size": "Größe ({{coin}})",
+    "price": "Preis ({{coin}})",
+    "quantity": "Menge",
+    "quantitycoin": "Menge ({{coin}})",
+    "limitprice": "Limit Preis",
+    "limitpricecoin": "Limit Preis ({{coin}})",
+    "with": "mit",
+    "for": "zum",
+    "orderbook": "Auftragsbuch",
+    "nosellorders": "Derzeit gibt es keine Verkaufsaufträge für diesen Markt...",
+    "nobuyorders": "Derzeit gibt es keine Kaufaufträge für diesen Markt ...",
+    "myorders": "meine Bestellungen",
+    "nomyorders": "Keine Bestellhistorie ...",
+    "viewallmyorders": "Alle meine Bestellungen anzeigen"
+  },
+  "integrations": {
+    "error" : {
+      "metamask": "Auf die Metamask-Erweiterung konnte nicht zugegriffen werden. Bitte stellen Sie sicher, dass es aktiviert und nicht gesperrt ist" 
+    }
   },
   "recentorders": {
     "1": "Letzte Aufträge",
@@ -199,6 +230,12 @@
       "Ihr Auftrag befindet sich in der Blockchain, wir warten nun auf die notwendige Anzahl von Bestätigungen, bevor Sie Ihre Gelder erhalten können.",
     "status3": "3. Abgeschlossen",
     "status31": "Wir haben die Gelder erhalten und sie nun an Sie überwiesen.",
+    "bookstatus1": "1. Warten auf Kaution",
+    "bookstatus11": "In diesem Schritt warten wir auf Ihre Einzahlung.",
+    "bookstatus2": "2. Warten darauf gefüllt zu werden",
+    "bookstatus21": "Wir haben Ihr Geld erhalten und Ihre Bestellung ist offen und wartet darauf, ausgeführt zu werden",
+    "bookstatus3": "3. Auftrag erfüllt",
+    "bookstatus31": "Ihre Bestellung wurde ausgeführt und das Geld wurde an Sie überwiesen",
     "success1": "Auftrag erfolgreich",
     "success2": "Auftrag erteilen!",
     "pay": "Zu zahlen",
@@ -329,7 +366,8 @@
     "11":
       "Wir werden jeden Auftrag auf Verlangen des Kunden gemäß dem aktuellen Marktpreis rückgängig machen, vorausgesetzt, die entgegengesetzte Auftragsrichtung wird zum Zeitpunkt der Rückerstattung unterstützt.",
     "12":
-      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten."
+      "Andernfalls sind keine Rückerstattungen möglich und es liegt in der alleinigen Verantwortung des Benutzers sicherzustellen, dass er die Wallet kontrolliert, deren Adresse er verwendet, um Mittel von N.EXCHANGE zu erhalten.",
+    "13": "Bei Erstattung nach mehr als einem Tag nach dem Kauf wird eine Verwaltungsgebühr von 5% von n.exchange einbehalten."
   },
   "faq": {
     "heading1": "Häufig gestellte Fragen",

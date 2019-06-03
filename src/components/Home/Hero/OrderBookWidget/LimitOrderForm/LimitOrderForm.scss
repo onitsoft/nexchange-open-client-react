@@ -1,6 +1,6 @@
 .input {
     margin-top: 5px;
-    padding: 0 0 15px 0;
+    padding: 0 43px 0 0 !important;
     font-size: 12px;
     font-weight: 400;
     color: #000000;
@@ -11,8 +11,19 @@
     background-image: none;
 }
 
+.input-label {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .values-preview-container {
     height: 25px;
+    @media (max-width: $screen-md-min) {
+        margin-bottom: 15px;
+    }
     .values-preview {
         display: flex;
         flex-direction: column;

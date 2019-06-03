@@ -27,11 +27,11 @@ ShallowWrapper {
       >
         <a
           className="basic "
-          data-test="BASIC"
+          data-test="INSTANT"
           onClick={[Function]}
         >
           <h3>
-            Simple
+            ordermodeswitch.simple
           </h3>
         </a>
         <a
@@ -40,7 +40,7 @@ ShallowWrapper {
           onClick={[Function]}
         >
           <h3>
-            Advanced
+            ordermodeswitch.advanced
           </h3>
         </a>
       </div>,
@@ -55,11 +55,11 @@ ShallowWrapper {
         "children": Array [
           <a
             className="basic "
-            data-test="BASIC"
+            data-test="INSTANT"
             onClick={[Function]}
           >
             <h3>
-              Simple
+              ordermodeswitch.simple
             </h3>
           </a>,
           <a
@@ -68,7 +68,7 @@ ShallowWrapper {
             onClick={[Function]}
           >
             <h3>
-              Advanced
+              ordermodeswitch.advanced
             </h3>
           </a>,
         ],
@@ -82,10 +82,10 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <h3>
-              Simple
+              ordermodeswitch.simple
             </h3>,
             "className": "basic ",
-            "data-test": "BASIC",
+            "data-test": "INSTANT",
             "onClick": [Function],
           },
           "ref": null,
@@ -94,10 +94,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Simple",
+              "children": "ordermodeswitch.simple",
             },
             "ref": null,
-            "rendered": "Simple",
+            "rendered": "ordermodeswitch.simple",
             "type": "h3",
           },
           "type": "a",
@@ -108,7 +108,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <h3>
-              Advanced
+              ordermodeswitch.advanced
             </h3>,
             "className": "pro ",
             "data-test": "ORDER_BOOK",
@@ -120,10 +120,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Advanced",
+              "children": "ordermodeswitch.advanced",
             },
             "ref": null,
-            "rendered": "Advanced",
+            "rendered": "ordermodeswitch.advanced",
             "type": "h3",
           },
           "type": "a",
@@ -144,11 +144,11 @@ ShallowWrapper {
         >
           <a
             className="basic "
-            data-test="BASIC"
+            data-test="INSTANT"
             onClick={[Function]}
           >
             <h3>
-              Simple
+              ordermodeswitch.simple
             </h3>
           </a>
           <a
@@ -157,7 +157,7 @@ ShallowWrapper {
             onClick={[Function]}
           >
             <h3>
-              Advanced
+              ordermodeswitch.advanced
             </h3>
           </a>
         </div>,
@@ -172,11 +172,11 @@ ShallowWrapper {
           "children": Array [
             <a
               className="basic "
-              data-test="BASIC"
+              data-test="INSTANT"
               onClick={[Function]}
             >
               <h3>
-                Simple
+                ordermodeswitch.simple
               </h3>
             </a>,
             <a
@@ -185,7 +185,7 @@ ShallowWrapper {
               onClick={[Function]}
             >
               <h3>
-                Advanced
+                ordermodeswitch.advanced
               </h3>
             </a>,
           ],
@@ -199,10 +199,10 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <h3>
-                Simple
+                ordermodeswitch.simple
               </h3>,
               "className": "basic ",
-              "data-test": "BASIC",
+              "data-test": "INSTANT",
               "onClick": [Function],
             },
             "ref": null,
@@ -211,10 +211,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Simple",
+                "children": "ordermodeswitch.simple",
               },
               "ref": null,
-              "rendered": "Simple",
+              "rendered": "ordermodeswitch.simple",
               "type": "h3",
             },
             "type": "a",
@@ -225,7 +225,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <h3>
-                Advanced
+                ordermodeswitch.advanced
               </h3>,
               "className": "pro ",
               "data-test": "ORDER_BOOK",
@@ -237,10 +237,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Advanced",
+                "children": "ordermodeswitch.advanced",
               },
               "ref": null,
-              "rendered": "Advanced",
+              "rendered": "ordermodeswitch.advanced",
               "type": "h3",
             },
             "type": "a",
