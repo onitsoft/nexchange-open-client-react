@@ -28,6 +28,7 @@ class CoinSelector extends Component {
       [this.props.type]: coin,
       lastSelected: this.props.type,
       selectedByUser,
+      orderByAddress: false,
     }, this.props.pairs);
 
     this.setState({ isDropdownVisible: false });
@@ -148,13 +149,19 @@ class CoinSelector extends Component {
           <div className={styles.carret} />
         </div>
 
-        {this.state.isDropdownVisible && <CoinsDropdown type={type} onClick={this.handleClick} coinsInfo={this.props.coinsInfo} />}
+        {this.state.isDropdownVisible && 
+          <CoinsDropdown 
+            type={type} 
+            onClick={this.handleClick} 
+            coinsInfo={this.props.coinsInfo} 
+            selectedCoin={this.props.selectedCoin}
+            wallet={this.props.wallet} />}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price }) => ({ selectedCoin, coinsInfo, pairs, price });
+const mapStateToProps = ({ selectedCoin, coinsInfo, pairs, price, wallet }) => ({ selectedCoin, coinsInfo, pairs, price, wallet });
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, fetchPrice, errorAlert }, dispatch);
 
 export default translate()(
