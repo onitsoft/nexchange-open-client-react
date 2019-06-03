@@ -22,6 +22,7 @@ class CoinSwitch extends Component {
         deposit: true,
         receive: true
       },
+      orderByAddress: false,
     });
 
     window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
