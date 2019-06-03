@@ -17,13 +17,13 @@ class Metamask extends Component {
             valid: true,
             });
 
-            console.log(this);
             const depositCoin = this.props.selectedCoin.deposit;
             const receiveCoin = 'ETH';
 
             this.props.selectCoin({
               ...this.props.selectedCoin,
-              receive: receiveCoin
+              receive: receiveCoin,
+              orderByAddress: true,
             }, this.props.pairs);
       
             const pair = `${receiveCoin}${depositCoin}`;
