@@ -45,19 +45,19 @@ class Testimonials extends Component {
                         loop={true}
                         pagination={{ el: '.swiper-pagination', clickable: true }}
                       >
-                        {data.map(testimonial => (
+                        {data.map((testimonial, index) => (
                           <a 
                           className={styles.link} 
                           href={testimonial.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          key={testimonial.name}>
+                          key={testimonial.name+index}>
                             <div className={styles.slide}>
                               <div className={styles.text}>{testimonial.text}</div>
                               <div className={styles.info}>
                                 <div className={styles.date}>{testimonial.date}</div>
                                 <div className={styles.profile}>
-                                  <img src={require(`../../../img/testimonials/${testimonial.image}`)} alt={testimonial.name} />
+                                  <img src={`../../../img/testimonials/${testimonial.image}`} alt={testimonial.name} />
                                   <h3>{testimonial.name}</h3>
                                 </div>
                               </div>

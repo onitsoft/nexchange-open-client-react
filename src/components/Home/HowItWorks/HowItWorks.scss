@@ -1,52 +1,268 @@
-.arrow-container {
-    height: 50px;
-    .arrow-label {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 45px;
-        width: 45px;
-        margin-left: 8px;
-        background-color: #fff;
-        border: 1px solid $green;
-        border-radius: 20px;
-        z-index: 1;
+.container {
+    padding-bottom: 60px;
+
+    .heading {
+        text-align: center;
+        h2 {
+            margin-bottom: 30px;
+        }
 
         span {
+            display: block;
+            margin-top: 5px;
+            font-size: 16px;
             font-weight: bold;
-            color: $green;
         }
     }
 
-    .arrow { 
-        position: absolute;
-        top: 12px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 20px;
-        padding: 2px;
-        .line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            height: 20px;
-            background: repeating-linear-gradient(to right, #2cc5bd 0, #2cc5bd 2px, transparent 4px, transparent 10px) center;            background-size: 100% 3px;
-            background-repeat: no-repeat;
+    @media (min-width: $screen-md-min) {
+        width: 100%;
+      }
+    @media (min-width: $screen-lg-min) {
+        width: 1250px;
+    }
+
+    .howitworks {
+        .row {
+            display: flex;
+            align-items: center;
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .label {
+                    background-color: #dedce8;
+                    padding: 8px;
+                    border-radius: 20px;
+                    margin-top: 10px;
+                }
+
+                .margintop {
+                    margin-top: 10px;
+                }
+            }
         }
-        .point {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 5px; 
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid $green;
-            float:right;
+
+        .row-mid {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
+
+        .arrow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            .arrow-label {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                width: 45px;
+                background-color: #fff;
+                border: 1px solid $green;
+                border-radius: 20px;
+                z-index: 1;
+
+                span {
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: $green;
+                }
+            }
+        }
+
+        .arrow-down {
+            transform: rotate(90deg);
+            height: 160px;
+
+            .arrow {
+                top: 60%;
+            }
+
+            .arrow-label {
+                top: 0;
+            }
+        }
+
+        .arrow-left {
+            transform: rotate(180deg);
+
+            .arrow-label {
+                span {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .arrow-green {
+            .arrow-label {
+                border-color: $green;
+                span {
+                    color: $green;
+                }
+            }
+
+            .arrow { 
+                position: absolute;
+                top: 12px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 20px;
+                padding: 2px;
+                .line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 20px;
+                    background: repeating-linear-gradient(to right, #2cc5bd 0, #2cc5bd 2px, transparent 4px, transparent 10px) center;            
+                    background-size: 100% 3px;
+                    background-repeat: no-repeat;
+                }
+                .point {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 5px; 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid $green;
+                    float:right;
+                }
+            }
+        }
+
+        .arrow-purple {
+            .arrow-label {
+                border-color: #342784;
+                span {
+                    color: #342784;
+                }
+            }
+
+            .arrow { 
+                position: absolute;
+                top: 12px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 20px;
+                padding: 2px;
+                .line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 20px;
+                    background: repeating-linear-gradient(to right, #342784 0, #342784 2px, transparent 4px, transparent 10px) center;            
+                    background-size: 100% 3px;
+                    background-repeat: no-repeat;
+                }
+                .point {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 5px; 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #342784;
+                    float:right;
+                }
+            }
+        }
+
+        .arrow-red {
+            .arrow-label {
+                border-color: #FF406C;
+                span {
+                    color: #FF406C;
+                }
+            }
+
+            .arrow { 
+                position: absolute;
+                top: 12px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 20px;
+                padding: 2px;
+                .line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 20px;
+                    background: repeating-linear-gradient(to right, #FF406C 0, #FF406C 2px, transparent 4px, transparent 10px) center;            
+                    background-size: 100% 3px;
+                    background-repeat: no-repeat;
+                }
+                .point {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 5px; 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #FF406C;
+                    float:right;
+                }
+            }
+        }
+
+        .arrow-orange {
+            .arrow-label {
+                border-color: #DA694B;
+                span {
+                    color: #DA694B;
+                }
+            }
+
+            .arrow { 
+                position: absolute;
+                top: 12px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 20px;
+                padding: 2px;
+                .line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 20px;
+                    background: repeating-linear-gradient(to right, #DA694B 0, #DA694B 2px, transparent 4px, transparent 10px) center;            
+                    background-size: 100% 3px;
+                    background-repeat: no-repeat;
+                }
+                .point {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 5px; 
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #DA694B;
+                    float:right;
+                }
+            }
+        }
+
+        
     }
 }

@@ -10,6 +10,7 @@ import RecentOrders from './RecentOrders/RecentOrders';
 import SubscriptionForm from './SubscriptionForm/SubscriptionForm';
 import Features from './Features/Features';
 import HowItWorks from './HowItWorks/HowItWorks';
+import AllowedCurrencies from './AllowedCurrencies/AllowedCurrencies';
 
 export class Home extends Component {
   componentDidMount() {
@@ -35,6 +36,7 @@ export class Home extends Component {
         <Features />
         <RecentOrders />
         <HowItWorks />
+        <AllowedCurrencies />
         <Testimonials />
         <About />
         <SubscriptionForm />

@@ -12,10 +12,7 @@ const Footer = () => (
             <div className="col-xs-12 col-sm-8 col-md-6">
               <Trans i18nKey="footer.3">
                 <p className={styles.address}>
-                  All rights reserved, YOA LTD 2016-2017,<br />England & Wales{' '}
-                  <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
-                    registered company No. 10009845
-                  </a>
+                  All rights reserved, DRAGONDEX 2019<br />Australia{' '}
                 </p>
               </Trans>
             </div>

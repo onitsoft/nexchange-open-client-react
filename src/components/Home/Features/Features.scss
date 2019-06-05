@@ -1,8 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
+    
+    .subtitle {
+        margin-top: 0px;
+        font-size: 16px;
+        color: $gray;
+    }
 
     .features {
+        margin-top: 20px;
         .feature {
             display: flex;
             flex-direction: column;
@@ -19,3 +26,9 @@
         }
     }
 }
+
+.nomargin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+

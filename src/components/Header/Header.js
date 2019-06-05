@@ -4,7 +4,7 @@ import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
 import Support from './Support/Support';
-import LanguagePicker from './LanguagePicker/LanguagePicker';
+// import LanguagePicker from './LanguagePicker/LanguagePicker';
 
 
 import styles from './Header.scss';
@@ -52,7 +52,9 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') !== -1) {
+    if (window.location.pathname === '/' 
+      || window.location.pathname.indexOf('/faqs') !== -1 
+      || window.location.pathname.indexOf('/transitioning') !== -1) {
       return true;
     }
     return false;
@@ -76,9 +78,9 @@ class Header extends Component {
                 <Link to="/">
                   <div className={styles['logo-container']}>
                     {isHomeHeader ? (
-                      <img src="/img/logo-white.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/Logo.svg" alt="Logo" data-test="logo" />
                     ) : (
-                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/Logo.svg" alt="Logo" data-test="logo" />
                     )}
                   </div>
                 </Link>
@@ -108,7 +110,7 @@ class Header extends Component {
                     </Link>
                   </li>
 
-                  <LanguagePicker />
+                  {/* <LanguagePicker /> */}
                 </ul>
               </div>
 

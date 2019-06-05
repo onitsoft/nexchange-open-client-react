@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110.252" height="103.727" viewBox="0 0 110.252 103.727">
+  <defs>
+    <filter id="Ellipse_149" x="0" y="0" width="77.626" height="77.626" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-color="#6a9dbc" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_150" x="32.626" y="8.7" width="77.626" height="77.626" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-2"/>
+      <feFlood flood-color="#6a9dbc" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_151" x="10.875" y="26.101" width="77.626" height="77.626" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-3"/>
+      <feFlood flood-color="#6a9dbc" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_944" data-name="Group 944" transform="translate(-672.248 -4247.673)">
+    <g id="Group_882" data-name="Group 882" transform="translate(-4.252 -3.827)">
+      <g transform="matrix(1, 0, 0, 1, 676.5, 4251.5)" filter="url(#Ellipse_149)">
+        <circle id="Ellipse_149-2" data-name="Ellipse 149" cx="16.313" cy="16.313" r="16.313" transform="translate(22.5 15.5)" fill="#fff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 676.5, 4251.5)" filter="url(#Ellipse_150)">
+        <circle id="Ellipse_150-2" data-name="Ellipse 150" cx="16.313" cy="16.313" r="16.313" transform="translate(55.13 24.2)" fill="#fff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 676.5, 4251.5)" filter="url(#Ellipse_151)">
+        <circle id="Ellipse_151-2" data-name="Ellipse 151" cx="16.313" cy="16.313" r="16.313" transform="translate(33.38 41.6)" fill="#fff"/>
+      </g>
+    </g>
+    <text id="AUD" transform="translate(700 4283)" fill="#35cbb7" font-size="10" font-family="ClanOffcPro-Bold, Clan Offc Pro" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">AUD</tspan></text>
+    <text id="USD" transform="translate(733 4292)" fill="#35cbb7" font-size="10" font-family="ClanOffcPro-Bold, Clan Offc Pro" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">USD</tspan></text>
+    <text id="EUR" transform="translate(712 4310)" fill="#35cbb7" font-size="10" font-family="ClanOffcPro-Bold, Clan Offc Pro" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">EUR</tspan></text>
+  </g>
+</svg>
