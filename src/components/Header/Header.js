@@ -78,9 +78,9 @@ class Header extends Component {
                 <Link to="/">
                   <div className={styles['logo-container']}>
                     {isHomeHeader ? (
-                      <img src="/img/Logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
                     ) : (
-                      <img src="/img/Logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
                     )}
                   </div>
                 </Link>
