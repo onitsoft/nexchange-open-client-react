@@ -24,7 +24,7 @@ const AllowedCurrencies = () => {
                                 </img>
                             </div>
                             <div className={styles['card-section']}>
-                                <img src='/img/dragon.svg' alt='Crypto to Crypto'></img>
+                                <img src='/img/cryptotocrypto.svg' alt='Crypto to Crypto'></img>
                                 <div className={styles.label}>
                                     <span className='bold'>{t('allowedcurrencies.text12')}</span>
                                 </div>                            
