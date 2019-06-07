@@ -41,7 +41,7 @@
     "max": "Max amount"
   },
   "orderbookwidget": {
-    "disabledmessage1": "n.exchange will soon feature the first multi-chain non custodial order book!",
+    "disabledmessage1": "DRAGONDEX will soon feature the first multi-chain non custodial order book!",
     "disabledmessage2": "This unique technology will allow you to leverage limit orders and other advanced trading instruments while keeping the safety and simplicity you are familiar with.",
     "disabledmessage3": "- Stay tuned",
     "buy": "Buy",
@@ -90,7 +90,7 @@
     "text12": "Instant cryptocurrency to cryptocurrency swaps",
     "text211": "DRAGONDEX powered by N.EXCHANGE",
     "text212": "N.exchange",
-    "text22": "Instante AUD, USD, EUR to Cryptocurrency"
+    "text22": "Instant AUD, USD, EUR to Cryptocurrency"
   },
   "testimonials": {
     "1": "Testimonials",
@@ -112,21 +112,21 @@
     "3": "A decentralised exchange is an exchange market that does not rely on a third-party service to hold the individual's funds. Instead, trades occur directly between users (peer-to-peer) through an automated process."
   },
   "features": {
-    "heading11": "Setting the standard in",
-    "heading12": "Decentralised Cryptocurrency Exchanges",
-    "heading2": "The future is a decentralised one",
+    "heading11": "Fresh UI/UX",
+    "heading12": "Decentralised Exchange",
+    "heading13": "DRAGONDEX",
     "feature11": "Instant Exchange",
     "feature12": "The transaction is finalized instantly",
-    "feature21": "Security First",
-    "feature22": "You are in charge of you private wallet",
+    "feature21": "Safe and Secure",
+    "feature22": "Your funds are stored on a blockchain address with a private key only you control",
     "feature31": "Simple",
-    "feature32": "Client & Engaging User Interface & Experience",
+    "feature32": "Clean and engaging user interface and experience",
     "feature41": "Anonymous",
     "feature42": "Your private information is not collected or recorded",
     "feature51": "Transparent",
     "feature52": "Open-source. Api based.",
     "feature61": "Dragon",
-    "feature62": "Dragons prottect the treasure"
+    "feature62": "Dragons protect treasure"
   },
   "subscription": {
     "1": "Do you have any questions?",

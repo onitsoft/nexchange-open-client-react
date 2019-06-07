@@ -12,10 +12,14 @@ const About = () => (
               <h2 className="title">{t('about.title')}</h2>
             </div>
 
-            <div className="col-xs-12 col-sm-8">
-              <p>{t('about.1')}</p>
-              <span>{t('about.2')}</span>
-              <p>{t('about.3')}</p>
+            <div className="col-xs-12">
+              <div className="col-xs-12 co-sm-12 col-md-6 col-lg-6">
+                <p>{t('about.1')}</p>
+              </div>
+              <div className="col-xs-12 co-sm-12 col-md-6 col-lg-6">
+                <span>{t('about.2')}</span>
+                <p>{t('about.3')}</p>
+              </div>
             </div>
           </div>
         </div>

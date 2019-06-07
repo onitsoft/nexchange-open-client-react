@@ -55,7 +55,7 @@ class Hero extends Component {
                     <h1>{t('hero.1')}</h1>
                     <Trans i18nKey="hero.2">
                       <h2>
-                        Simple. <span className="bold">Secure</span>. Transparent.
+                        Simple. Secure. Transparent.
                       </h2>
                     </Trans>
                   </div>

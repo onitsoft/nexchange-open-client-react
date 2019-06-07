@@ -12,7 +12,7 @@ const Features = () => {
                         <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <h2 className={`title ${styles.nomargin}`}>{t('features.heading11')}</h2>
                             <h2 className={`title ${styles.nomargin}`}>{t('features.heading12')}</h2>
-                            <span className={styles.subtitle}>{t('features.heading12')}</span>
+                            <h2 className={`title ${styles.nomargin}`}>{t('features.heading13')}</h2>
                         </div>
                         <div className={styles.features}>
                             <div className={`col-xs-12 col-sm-12 col-md-4 col-lg-4 ${styles.feature}`}>
