@@ -46,11 +46,8 @@ class Testimonials extends Component {
                         pagination={{ el: '.swiper-pagination', clickable: true }}
                       >
                         {data.map((testimonial, index) => (
-                          <a 
+                          <div 
                           className={styles.link} 
-                          href={testimonial.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
                           key={testimonial.name+index}>
                             <div className={styles.slide}>
                               <div className={styles.text}>{testimonial.text}</div>
@@ -62,7 +59,7 @@ class Testimonials extends Component {
                                 </div>
                               </div>
                             </div>
-                          </a>
+                          </div>
                         ))}
                       </Swiper>
                     </div>

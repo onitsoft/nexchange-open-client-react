@@ -7,9 +7,9 @@
   z-index: 3;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#94e8ef+3,b8fce8+51 */
   background: #94e8ef; /* Old browsers */
-  background: -moz-linear-gradient(left,  #94e8ef 3%, #b8fce8 51%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #94e8ef 3%,#b8fce8 51%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #94e8ef 3%,#b8fce8 51%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left,  #fff 3%, #fff 51%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #fff 3%,#fff 51%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #fff 3%,#fff 51%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94e8ef', endColorstr='#b8fce8',GradientType=1 ); /* IE6-9 */
 
   :global .navbar-toggle {
@@ -113,7 +113,7 @@
   font-size: 12px;
   text-transform: uppercase;
   font-family: 'Clan Offc Pro Medium';
-  color: $black;
+  color: #000;
 
   &:hover,
   &:visited,

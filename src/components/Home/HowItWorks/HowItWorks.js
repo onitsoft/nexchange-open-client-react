@@ -57,9 +57,6 @@ const HowItWorks = () => {
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <div className={`${styles['arrow-container']} 
                                     ${styles['arrow-down']} ${styles['arrow-purple']}`}>
-                                    <div className={styles['arrow-label']}>
-                                        <span>ETH</span>
-                                    </div>
                                     <div className={styles.arrow}>
                                         <div className={styles.line}></div>
                                         <div className={styles.point}></div>

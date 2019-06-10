@@ -80,7 +80,7 @@ class Header extends Component {
                     {isHomeHeader ? (
                       <img src="/img/logo.svg" alt="Logo" data-test="logo" />
                     ) : (
-                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo-dragondex.png" alt="Logo" data-test="logo" />
                     )}
                   </div>
                 </Link>

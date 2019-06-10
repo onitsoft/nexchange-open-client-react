@@ -1,7 +1,6 @@
 export default data => {
   let pairs = {};
   for (let pair of data) {
-    console.log(pair);
     if (!pair.disabled) {
       if (!pairs[pair.quote]) pairs[pair.quote] = {};
       pairs[pair.quote][pair.base] = {};

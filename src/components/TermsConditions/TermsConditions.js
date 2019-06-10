@@ -2,6 +2,7 @@ import React from 'react';
 import { I18n } from 'react-i18next';
 
 const TermsConditions = () => {
+  window.scrollTo(0,0);
   return (
     <I18n ns="translations">
       {t => (
