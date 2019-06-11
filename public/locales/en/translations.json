@@ -74,7 +74,7 @@
     "4": "Instantly recorded on the blockchain"
   },
   "howitworks": {
-    "heading": "Our internal process",
+    "heading": "Our Internal Process",
     "subtitle": "Cogs and Gears",
     "text1": "Private wallet - ETHER",
     "text2": "Access reserves",
@@ -84,9 +84,9 @@
     "text6": "Private wallet - DOGE"
   },
   "allowedcurrencies": {
-    "heading": "Allowable currencies and tokens",
+    "heading": "Allowable Currencies and Tokens",
     "text111": "DRAGONDEX",
-    "text112": "Dragondex.com.au",
+    "text112": "dragondex.com.au",
     "text12": "Instant cryptocurrency to cryptocurrency swaps",
     "text211": "DRAGONDEX powered by N.EXCHANGE",
     "text212": "N.exchange",
@@ -147,7 +147,7 @@
   },
   "faq": {
     "heading1": "Frequently Asked Questions",
-    "heading2": "Do you have something in mind?",
+    "heading2": "Here be dragons",
     "inputplaceholder": "What are you looking for?",
     "notfound": "We did not find what you were looking for",
     "openticket": "Open support ticket",
@@ -155,6 +155,8 @@
     "ques2": "Transfer time",
     "ques3": "Wallet",
     "ques4": "Decentralised Exchange",
+    "ques5": "Order page deposit",
+    "ques6": "Order page all done",
     "ans1":
       "<0>DRAGONDEX is located in Melbourne, Australia.</0>",
     "ans2":

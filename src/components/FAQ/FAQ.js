@@ -9,7 +9,7 @@ import Support from '../Header/Support/Support';
 import styles from './FAQ.scss';
 
 
-const FAQ_COUNT = 14;
+const FAQ_COUNT = 6;
 
 class FAQ extends Component {
   constructor(props) {
@@ -180,11 +180,35 @@ class FAQ extends Component {
                   answer={
                     <Trans i18nKey="faq.ans4">
                       <p>
-                         decentralised exchange is an exchange market that does not rely 
+                        A decentralised exchange is an exchange market that does not rely 
                          on a third-party service to hold the individuals's funds. 
                          Instead, trades occur directly between users (peer-to-peer) through an automated process. 
                       </p>
                     </Trans>
+                  }
+                /> : null}
+
+                {this.showQuestion(5) ?
+                  <QuestionAnswer
+                  id="ques5"
+                  openSupportModal={this.openSupportModal}
+                  answer={
+                    <div>
+                      <p>Example</p>
+                      <img src="/img/Orders_page_1 – 1.png" alt="faqimage"></img>
+                    </div>
+                  }
+                /> : null}
+
+                {this.showQuestion(6) ?
+                  <QuestionAnswer
+                  id="ques6"
+                  openSupportModal={this.openSupportModal}
+                  answer={
+                    <div>
+                      <p>Example</p>
+                      <img src="/img/Orders_page_1 – 2.png" alt="faqimage"></img>
+                    </div>
                   }
                 /> : null}
 

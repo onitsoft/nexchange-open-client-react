@@ -1,0 +1,81 @@
+.container {
+  padding: 45px 0;
+  background-color: #01031e;
+  background-position: 50% 50%;
+  background-size: 90%;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 45%;
+    background-image: url('../../../img/ellipse.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    transform: rotate(180deg);
+
+    @media (min-width: $screen-lg-min) {
+      left: 50%;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 25px;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 36px;
+    }
+  }
+
+  h3 {
+    margin: 0 0 30px 0;
+    font-size: 14px;
+    font-family: 'Clan Offc Pro Book';
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 18px;
+    }
+  }
+
+  h4 {
+    margin-top: 38px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-family: 'Clan Offc Pro Book';
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 5px;
+    }
+  }
+}
+
+.btn.btn.btn {
+  display: inline-block;
+  width: auto;
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 48px;
+}
+
+.countdown {
+  position: relative;
+  z-index: 2;
+}
+
+.countdown-container {
+  display: inline-block;
+  margin-left: -10px;
+}

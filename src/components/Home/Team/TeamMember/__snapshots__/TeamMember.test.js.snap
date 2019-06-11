@@ -1,0 +1,644 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamMember renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TeamMember
+    description="President of the Free Republic of Liberland. Former Czech politician, publicist and activist."
+    id="vit"
+    name="Vít Jedlička"
+    social={
+      Object {
+        "blog": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+        "linkedin": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+        "rss": "http://www.google.com",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="member"
+      >
+        <div
+          className="profile"
+        >
+          <img
+            alt="Vít Jedlička profile"
+            src="/img/team/vit.jpg"
+          />
+        </div>
+        <h3
+          className="name"
+        >
+          Vít Jedlička
+        </h3>
+        <div
+          className="social"
+        >
+          <a
+            className="linkedin"
+            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+            target="_blank"
+          >
+            <i
+              className="fab fa-linkedin-in"
+            />
+          </a>
+          <a
+            className="rss"
+            href="http://www.google.com"
+            target="_blank"
+          >
+            <i
+              className="fas fa-rss"
+            />
+          </a>
+          <a
+            className="blog"
+            href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+            target="_blank"
+          >
+            <i
+              className="fab fa-blog"
+            />
+          </a>
+        </div>
+        <div
+          className="description"
+        >
+          President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+        </div>
+      </div>,
+      "className": "col-xs-12 col-ms-6 col-sm-4",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="profile"
+          >
+            <img
+              alt="Vít Jedlička profile"
+              src="/img/team/vit.jpg"
+            />
+          </div>,
+          <h3
+            className="name"
+          >
+            Vít Jedlička
+          </h3>,
+          <div
+            className="social"
+          >
+            <a
+              className="linkedin"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-linkedin-in"
+              />
+            </a>
+            <a
+              className="rss"
+              href="http://www.google.com"
+              target="_blank"
+            >
+              <i
+                className="fas fa-rss"
+              />
+            </a>
+            <a
+              className="blog"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-blog"
+              />
+            </a>
+          </div>,
+          <div
+            className="description"
+          >
+            President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+          </div>,
+        ],
+        "className": "member",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="Vít Jedlička profile"
+              src="/img/team/vit.jpg"
+            />,
+            "className": "profile",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "Vít Jedlička profile",
+              "src": "/img/team/vit.jpg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Vít Jedlička",
+            "className": "name",
+          },
+          "ref": null,
+          "rendered": "Vít Jedlička",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <a
+                className="linkedin"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-linkedin-in"
+                />
+              </a>,
+              <a
+                className="rss"
+                href="http://www.google.com"
+                target="_blank"
+              >
+                <i
+                  className="fas fa-rss"
+                />
+              </a>,
+              <a
+                className="blog"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-blog"
+                />
+              </a>,
+            ],
+            "className": "social",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "linkedin",
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  className="fab fa-linkedin-in"
+                />,
+                "className": "linkedin",
+                "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                "target": "_blank",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fab fa-linkedin-in",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "a",
+            },
+            Object {
+              "instance": null,
+              "key": "rss",
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  className="fas fa-rss"
+                />,
+                "className": "rss",
+                "href": "http://www.google.com",
+                "target": "_blank",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fas fa-rss",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "a",
+            },
+            Object {
+              "instance": null,
+              "key": "blog",
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  className="fab fa-blog"
+                />,
+                "className": "blog",
+                "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                "target": "_blank",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fab fa-blog",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "a",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+            "className": "description",
+          },
+          "ref": null,
+          "rendered": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="member"
+        >
+          <div
+            className="profile"
+          >
+            <img
+              alt="Vít Jedlička profile"
+              src="/img/team/vit.jpg"
+            />
+          </div>
+          <h3
+            className="name"
+          >
+            Vít Jedlička
+          </h3>
+          <div
+            className="social"
+          >
+            <a
+              className="linkedin"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-linkedin-in"
+              />
+            </a>
+            <a
+              className="rss"
+              href="http://www.google.com"
+              target="_blank"
+            >
+              <i
+                className="fas fa-rss"
+              />
+            </a>
+            <a
+              className="blog"
+              href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+              target="_blank"
+            >
+              <i
+                className="fab fa-blog"
+              />
+            </a>
+          </div>
+          <div
+            className="description"
+          >
+            President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+          </div>
+        </div>,
+        "className": "col-xs-12 col-ms-6 col-sm-4",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="profile"
+            >
+              <img
+                alt="Vít Jedlička profile"
+                src="/img/team/vit.jpg"
+              />
+            </div>,
+            <h3
+              className="name"
+            >
+              Vít Jedlička
+            </h3>,
+            <div
+              className="social"
+            >
+              <a
+                className="linkedin"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-linkedin-in"
+                />
+              </a>
+              <a
+                className="rss"
+                href="http://www.google.com"
+                target="_blank"
+              >
+                <i
+                  className="fas fa-rss"
+                />
+              </a>
+              <a
+                className="blog"
+                href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                target="_blank"
+              >
+                <i
+                  className="fab fa-blog"
+                />
+              </a>
+            </div>,
+            <div
+              className="description"
+            >
+              President of the Free Republic of Liberland. Former Czech politician, publicist and activist.
+            </div>,
+          ],
+          "className": "member",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt="Vít Jedlička profile"
+                src="/img/team/vit.jpg"
+              />,
+              "className": "profile",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Vít Jedlička profile",
+                "src": "/img/team/vit.jpg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Vít Jedlička",
+              "className": "name",
+            },
+            "ref": null,
+            "rendered": "Vít Jedlička",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <a
+                  className="linkedin"
+                  href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                  target="_blank"
+                >
+                  <i
+                    className="fab fa-linkedin-in"
+                  />
+                </a>,
+                <a
+                  className="rss"
+                  href="http://www.google.com"
+                  target="_blank"
+                >
+                  <i
+                    className="fas fa-rss"
+                  />
+                </a>,
+                <a
+                  className="blog"
+                  href="https://www.linkedin.com/in/vit-jedlicka-9115aa2/"
+                  target="_blank"
+                >
+                  <i
+                    className="fab fa-blog"
+                  />
+                </a>,
+              ],
+              "className": "social",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "linkedin",
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="fab fa-linkedin-in"
+                  />,
+                  "className": "linkedin",
+                  "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fab fa-linkedin-in",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": "rss",
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="fas fa-rss"
+                  />,
+                  "className": "rss",
+                  "href": "http://www.google.com",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fas fa-rss",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "a",
+              },
+              Object {
+                "instance": null,
+                "key": "blog",
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="fab fa-blog"
+                  />,
+                  "className": "blog",
+                  "href": "https://www.linkedin.com/in/vit-jedlicka-9115aa2/",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fab fa-blog",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "a",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+              "className": "description",
+            },
+            "ref": null,
+            "rendered": "President of the Free Republic of Liberland. Former Czech politician, publicist and activist.",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1200" viewBox="0 0 1920 1200">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.053" y1="1" x2="1.413" y2="-2.664" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#d4e2ee"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.779" y1="0.792" x2="0.879" y2="-0.133" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#d4e2ee"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y1="0.694" x2="1" y2="0.391" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2cc5bd"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <clipPath id="clip-Privacy_policy_1">
+      <rect width="1920" height="1200"/>
+    </clipPath>
+  </defs>
+  <g id="Privacy_policy_1" data-name="Privacy policy – 1" clip-path="url(#clip-Privacy_policy_1)">
+    <rect width="1920" height="1200" fill="#fff"/>
+    <g id="Group_946" data-name="Group 946" transform="translate(-134.326 -4146.825)">
+      <path id="Path_437" data-name="Path 437" d="M-1.333,141.988,2021.071-30V997.837L-1.333,1169.825Z" transform="translate(130.094 4177)" fill="url(#linear-gradient)"/>
+      <path id="Path_434" data-name="Path 434" d="M-1.333,123.446,1803.03-30V398.962L-1.333,552.408Z" transform="translate(348.135 4421.9)" fill="url(#linear-gradient-2)"/>
+      <path id="Path_439" data-name="Path 439" d="M-1.333,34.787,794.379-30V151.113L-1.333,215.9Z" transform="translate(1615.297 5098.109)" fill="url(#linear-gradient-3)"/>
+      <g id="Path_440" data-name="Path 440" transform="translate(-220.667 5087.049)" fill="none">
+        <path d="M-1.333,34.787,794.379-30V151.113L-1.333,215.9Z" stroke="none"/>
+        <path d="M 793.378662109375 -28.91526794433594 L -0.3333740234375 35.70849609375 L -0.3333740234375 214.8146667480469 L 793.378662109375 150.1909027099609 L 793.378662109375 -28.91526794433594 M 794.378662109375 -30 L 794.378662109375 151.11279296875 L -1.3333740234375 215.8993988037109 L -1.3333740234375 34.78660583496094 L 794.378662109375 -30 Z" stroke="none" fill="rgba(23,210,173,0.66)"/>
+      </g>
+    </g>
+  </g>
+</svg>

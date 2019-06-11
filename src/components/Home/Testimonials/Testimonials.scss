@@ -1,6 +1,12 @@
+.container {
+  padding: 20px 0px 40px 0px;
+  background-image: url('/img/background_testimonials.svg');
+  background-position-y: 100%;
+  background-size: 100%;
+}
+
 .header {
   position: relative;
-  background: $green;
   padding-bottom: 235px;
   overflow: hidden;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 79%, 0 100%, 0% 25%);
@@ -13,6 +19,7 @@
 }
 
 h2 {
+  color: #000 !important;
   font-size: 32px !important;
 }
 

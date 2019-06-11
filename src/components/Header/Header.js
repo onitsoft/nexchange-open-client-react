@@ -78,7 +78,7 @@ class Header extends Component {
                 <Link to="/">
                   <div className={styles['logo-container']}>
                     {isHomeHeader ? (
-                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo_dragondex.svg" alt="Logo" data-test="logo" />
                     ) : (
                       <img src="/img/logo-dragondex.png" alt="Logo" data-test="logo" />
                     )}

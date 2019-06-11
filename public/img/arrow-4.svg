@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 169.9 64" style="enable-background:new 0 0 169.9 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#453C9E;stroke-width:2;stroke-linecap:round;stroke-dasharray:1,5;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#453C9E;stroke-width:2;}
+	.st3{fill:#453C9E;}
+	.st4{font-family:'ClanOffcPro-Bold';}
+	.st5{font-size:18px;}
+</style>
+<g id="Group_270" transform="translate(-772.5 -1790)">
+	<line id="Line_59" class="st0" x1="773.5" y1="1822.5" x2="933.5" y2="1822.5"/>
+	<g id="Ellipse_127" transform="translate(822 1790)">
+		<circle class="st1" cx="32" cy="32" r="32"/>
+		<circle class="st2" cx="32" cy="32" r="31"/>
+	</g>
+	<text transform="matrix(1 0 0 1 836 1829)" class="st3 st4 st5">ETH</text>
+	<path id="Path_407" class="st2" d="M935,1816l6,6l-6,6"/>
+</g>
+</svg>

@@ -10,9 +10,9 @@ const HowItWorks = () => {
                 <div className="container hidden-sm  hidden-xs">
                     <div className={`row ${styles.container}`}>
                         <div className={`col-sm-12 ${styles.heading}`}>
-                            <h2 className="title">{t('howitworks.heading')}</h2>
                             <img src="/img/cogsandgears.svg" alt="Cogs and Gears"></img>
                             <span className={styles.subtitle}>{t('howitworks.subtitle')}</span>
+                            <h2 className="title">{t('howitworks.heading')}</h2>
                         </div>
                         <div className={styles.howitworks}>
                             <div className={`col-xs-12 ${styles.row}`}>
