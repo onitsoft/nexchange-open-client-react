@@ -93,57 +93,6 @@
             }
         }
 
-        .arrow-left {
-            transform: rotate(180deg);
-
-            .arrow-label {
-                span {
-                    transform: rotate(180deg);
-                }
-            }
-        }
-
-        .arrow-green {
-            .arrow-label {
-                border-color: $green;
-                span {
-                    color: $green;
-                }
-            }
-
-            .arrow { 
-                position: absolute;
-                top: 12px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 20px;
-                padding: 2px;
-                .line {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    height: 20px;
-                    background: repeating-linear-gradient(to right, #2cc5bd 0, #2cc5bd 2px, transparent 4px, transparent 10px) center;            
-                    background-size: 100% 3px;
-                    background-repeat: no-repeat;
-                }
-                .point {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 5px;
-                    height: 5px; 
-                    border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent;
-                    border-left: 10px solid $green;
-                    float:right;
-                }
-            }
-        }
-
         .arrow-purple {
             .arrow-label {
                 border-color: #342784;
@@ -167,106 +116,20 @@
                     bottom: 0;
                     right: 0;
                     height: 20px;
-                    background: repeating-linear-gradient(to right, #342784 0, #342784 2px, transparent 4px, transparent 10px) center;            
+                    background: repeating-linear-gradient(to right, #342784 0, #342784 2px, transparent 3px, transparent 8px) center;            
                     background-size: 100% 3px;
                     background-repeat: no-repeat;
                 }
                 .point {
+                    font-size: 30px;
+                    transform: rotate(270deg);
+                    color: #342784;
                     position: absolute;
-                    top: 0;
-                    right: -1px;
-                    width: 5px;
-                    height: 5px; 
-                    border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent;
-                    border-left: 10px solid #342784;
-                    float:right;
+                    top: -2px;
+                    right: -3px;
+                    width: 0px;
                 }
             }
         }
-
-        .arrow-red {
-            .arrow-label {
-                border-color: #FF406C;
-                span {
-                    color: #FF406C;
-                }
-            }
-
-            .arrow { 
-                position: absolute;
-                top: 12px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 20px;
-                padding: 2px;
-                .line {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    height: 20px;
-                    background: repeating-linear-gradient(to right, #FF406C 0, #FF406C 2px, transparent 4px, transparent 10px) center;            
-                    background-size: 100% 3px;
-                    background-repeat: no-repeat;
-                }
-                .point {
-                    position: absolute;
-                    top: 0;
-                    right: -1px;
-                    width: 5px;
-                    height: 5px; 
-                    border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent;
-                    border-left: 10px solid #FF406C;
-                    float:right;
-                }
-            }
-        }
-
-        .arrow-orange {
-            .arrow-label {
-                border-color: #DA694B;
-                span {
-                    color: #DA694B;
-                }
-            }
-
-            .arrow { 
-                position: absolute;
-                top: 12px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 20px;
-                padding: 2px;
-                .line {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    height: 20px;
-                    background: repeating-linear-gradient(to right, #DA694B 0, #DA694B 2px, transparent 4px, transparent 10px) center;            
-                    background-size: 100% 3px;
-                    background-repeat: no-repeat;
-                }
-                .point {
-                    position: absolute;
-                    top: 0;
-                    right: -1px;
-                    width: 5px;
-                    height: 5px; 
-                    border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent;
-                    border-left: 10px solid #DA694B;
-                    float:right;
-                }
-            }
-        }
-
-        
     }
 }

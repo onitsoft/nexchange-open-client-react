@@ -24,13 +24,7 @@ const HowItWorks = () => {
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
                                                 ${styles['arrow-green']}`}>
-                                    <div className={styles['arrow-label']}>
-                                        <span>ETH</span>
-                                    </div>
-                                    <div className={styles.arrow}>
-                                        <div className={styles.line}></div>
-                                        <div className={styles.point}></div>
-                                    </div>
+                                    <img src="/img/arrow-1.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <div className={styles.section}>
@@ -40,13 +34,7 @@ const HowItWorks = () => {
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
                                                 ${styles['arrow-purple']}`}>
-                                    <div className={styles['arrow-label']}>
-                                        <span>ETH</span>
-                                    </div>
-                                    <div className={styles.arrow}>
-                                        <div className={styles.line}></div>
-                                        <div className={styles.point}></div>
-                                    </div>
+                                    <img src="/img/arrow-4.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-3 col-lg-3 ${styles.section}`}>
                                     <img src="/img/howitworks2.svg" alt="How it works"></img>
@@ -59,7 +47,7 @@ const HowItWorks = () => {
                                     ${styles['arrow-down']} ${styles['arrow-purple']}`}>
                                     <div className={styles.arrow}>
                                         <div className={styles.line}></div>
-                                        <div className={styles.point}></div>
+                                        <div className={styles.point}>⌵</div>
                                     </div>
                                     </div>
                                 </div>
@@ -73,13 +61,7 @@ const HowItWorks = () => {
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}  
                                                 ${styles['arrow-left']} ${styles['arrow-orange']}`}>
-                                    <div className={styles['arrow-label']}>
-                                        <span>DOGE</span>
-                                    </div>
-                                    <div className={styles.arrow}>
-                                        <div className={styles.line}></div>
-                                        <div className={styles.point}></div>
-                                    </div>
+                                    <img src="/img/arrow-2.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <div className={styles.section}>
@@ -89,13 +71,7 @@ const HowItWorks = () => {
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
                                                  ${styles['arrow-left']} ${styles['arrow-red']}`}>
-                                    <div className={styles['arrow-label']}>
-                                        <span>DOGE</span>
-                                    </div>
-                                    <div className={styles.arrow}>
-                                        <div className={styles.line}></div>
-                                        <div className={styles.point}></div>
-                                    </div>
+                                    <img src="/img/arrow-3.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-3 col-lg-3 ${styles.section}`}>
                                     <img src="/img/howitworks3.svg" alt="How it works"></img>
