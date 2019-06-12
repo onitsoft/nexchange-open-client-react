@@ -165,11 +165,10 @@ class FAQ extends Component {
                   id="ques3"
                   openSupportModal={this.openSupportModal}
                   answer={
-                    <Trans i18nKey="faq.ans3">
-                      <p>
-                        In order to use DRAGONDEX you need to have your own wallet. MetaMask functionality has been provided.
-                      </p>
-                    </Trans>
+                    <div>
+                      <p>In order to use DRAGONDEX you need to have your own wallet.</p>
+                      <p>MetaMask functionality has been provided.</p>
+                    </div>
                   }
                 /> : null}
 

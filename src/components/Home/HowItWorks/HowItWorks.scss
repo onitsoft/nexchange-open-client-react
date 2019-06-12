@@ -59,7 +59,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50px;
+            max-width: 61px;
+            margin-left: 42%;
             .arrow-label {
                 position: absolute;
                 display: flex;
@@ -82,7 +83,7 @@
 
         .arrow-down {
             transform: rotate(90deg);
-            height: 160px;
+            height: 100px;
 
             .arrow {
                 top: 60%;

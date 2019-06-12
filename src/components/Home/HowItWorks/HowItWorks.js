@@ -22,7 +22,7 @@ const HowItWorks = () => {
                                         <span className='bold'>{t('howitworks.text1')}</span>
                                     </div>
                                 </div>
-                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
+                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2}
                                                 ${styles['arrow-green']}`}>
                                     <img src="/img/arrow-1.svg" alt="arrow"></img>
                                 </div>
@@ -32,8 +32,7 @@ const HowItWorks = () => {
                                         <span>{t('howitworks.text2')}</span>
                                     </div>
                                 </div>
-                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
-                                                ${styles['arrow-purple']}`}>
+                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <img src="/img/arrow-4.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-3 col-lg-3 ${styles.section}`}>
@@ -59,8 +58,7 @@ const HowItWorks = () => {
                                         <span className='bold'>{t('howitworks.text6')}</span>
                                     </div>
                                 </div>
-                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}  
-                                                ${styles['arrow-left']} ${styles['arrow-orange']}`}>
+                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <img src="/img/arrow-2.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
@@ -69,8 +67,7 @@ const HowItWorks = () => {
                                         <span>{t('howitworks.text5')}</span>
                                     </div>
                                 </div>
-                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2 ${styles['arrow-container']}
-                                                 ${styles['arrow-left']} ${styles['arrow-red']}`}>
+                                <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                                     <img src="/img/arrow-3.svg" alt="arrow"></img>
                                 </div>
                                 <div className={`col-xs-12 col-sm-12 col-md-3 col-lg-3 ${styles.section}`}>
