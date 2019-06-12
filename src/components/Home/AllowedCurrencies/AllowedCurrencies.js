@@ -12,7 +12,7 @@ const AllowedCurrencies = () => {
           <div className={`row ${styles.container}`}>
             <div className={`col-xs-12 col-sm-12 col-md-5 col-lg-5 ${styles.card}`}>
               <div className={styles['card-section']}>
-                <img src="/img/dragon.svg" alt="Dragondex" />
+                <img src="/img/dragon2.svg" alt="Dragondex" />
                 <div className={styles.label}>
                   <span className="bold">{t('allowedcurrencies.text111')}</span>
                   <span className={styles.gray}>{t('allowedcurrencies.text112')}</span>

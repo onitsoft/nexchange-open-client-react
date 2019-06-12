@@ -135,13 +135,12 @@ class FAQ extends Component {
                   id="ques1"
                   openSupportModal={this.openSupportModal}
                   answer={
-                    <Trans i18nKey="faq.ans1">
+                    <div>
                       <div>
-                        <p>
-                          DRAGONDEX is located in Melbourne, Australia.
-                        </p>
+                        <p>DRAGONDEX is located in Melbourne, Australia.</p>
+                        <p>The exchange platform is accessible globally.</p>
                       </div>
-                    </Trans>
+                    </div>
                   }
                 /> : null}
 
@@ -151,11 +150,10 @@ class FAQ extends Component {
                   openSupportModal={this.openSupportModal}
                   answer={
                     <div>
-                      <Trans i18nKey="faq.ans2">
-                        <p>
-                          DRAGONDEX transfers are instant.
-                        </p>
-                      </Trans>
+                      <div>
+                        <p>DRAGONDEX transfers are instant.</p>
+                        <p>The transaction time depends on the blockchain.</p>
+                      </div>
                     </div>
                   }
                 /> : null}

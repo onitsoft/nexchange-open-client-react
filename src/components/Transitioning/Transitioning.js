@@ -31,7 +31,7 @@ class Transitioning extends Component {
                   <div className={`col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ${styles.content}`}>
                     <div class={styles.heading}>
                         <div class={styles['heading-section']}>
-                            <img src='/img/dragon.svg' alt='Dragondex'></img>
+                            <img src='/img/dragon2.svg' alt='Dragondex'></img>
                             <span>DRAGONDEX</span>
                         </div>
                         <div className={styles.arrow}></div>
