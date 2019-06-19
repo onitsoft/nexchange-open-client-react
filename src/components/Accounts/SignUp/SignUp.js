@@ -21,6 +21,10 @@ class SignUp extends Component {
     $("#root").css({'padding-bottom': "114px"});
   }
 
+  signUp = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <I18n ns="translations">
@@ -82,10 +86,13 @@ class SignUp extends Component {
                         placeholder={t('accounts.repeatpassword')}
                         />
                       </div>
-                      <button className={`${styles.button} ${styles.main}`}>{t('accounts.signup')}</button>
+                      <button 
+                          onClick={(e) => {this.signUp(e)}} 
+                          className={`${styles.button} ${styles.main}`}>{t('accounts.signup')}</button>
                   </form>
                 <div className={styles.separator}></div>
-                <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
+                <button 
+                  className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
               </div>
             </div>
           </div>
