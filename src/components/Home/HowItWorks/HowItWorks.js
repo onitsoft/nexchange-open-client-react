@@ -36,7 +36,7 @@ const HowItWorks = () => {
                 </div>
                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                   <div className={styles.section}>
-                    <span className="bold">DragonDex</span>
+                    <span className="bold">DRAGONDEX</span>
                     <span>{t('howitworks.text2')}</span>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const HowItWorks = () => {
                 </div>
                 <div className={`col-xs-12 col-sm-12 col-md-2 col-lg-2`}>
                   <div className={styles.section}>
-                    <span className="bold">DragonDex</span>
+                    <span className="bold">DRAGONDEX</span>
                     <span>{t('howitworks.text5')}</span>
                   </div>
                 </div>
