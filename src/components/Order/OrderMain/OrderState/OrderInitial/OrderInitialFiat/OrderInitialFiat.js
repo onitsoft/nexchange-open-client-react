@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+
+import PnlTracking from '../../../PnlTracking/PnlTracking';
 import styles from '../OrderInitial.scss';
 
 class OrderInitial extends Component {
@@ -118,7 +120,7 @@ class OrderInitial extends Component {
             </a>
           </div>
 
-          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
+          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-4 ${styles.cards}`}>
             <h3>{t('order.fiat.cards')}:</h3>
 
             <div className="visible-xs-block visible-sm-block">
@@ -128,6 +130,10 @@ class OrderInitial extends Component {
             <div className="visible-md-block visible-lg-block">
               <img src="/img/order/cards-desktop.png" alt={t('order.fiat.cardsaccepted')} />
             </div>
+          </div>
+
+          <div className={`col-xs-12 col-sm-12 col-md-4 ${styles.cards}`}>
+            <PnlTracking {...props}/>
           </div>
         </div>
       )}
