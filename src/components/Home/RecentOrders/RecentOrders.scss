@@ -1,5 +1,8 @@
 .container {
   padding-bottom: 70px;
+  background-image: url('/img/background_Recentorders.svg');
+  background-position-y: 100%;
+  background-size: 100%;
 }
 
 .row {
@@ -123,4 +126,20 @@
     width: 160px;
     height: 42px;
   }
+}
+
+.title {
+  margin-bottom: 0 !important;
+}
+
+.subtitle {
+  margin-bottom: 60px;
+  margin-top: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  color: $gray;
+}
+
+h2 {
+  font-size: 32px;
 }

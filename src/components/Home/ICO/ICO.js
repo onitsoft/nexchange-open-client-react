@@ -18,7 +18,7 @@ const ICO = () => {
   return (
     <I18n ns="translations">
       {t => (
-        <div className={styles.container} style={{'display': 'none'}}>
+        <div className={styles.container} style={{ display: 'none' }}>
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-sm-5 col-lg-6">
@@ -31,7 +31,7 @@ const ICO = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
-                    window.gtag('event', 'ICO open from widget', {event_category: 'ICO', event_label: ``});
+                    window.gtag('event', 'ICO open from widget', { event_category: 'ICO', event_label: `` });
                   }}
                 >
                   {t('ico.action')}

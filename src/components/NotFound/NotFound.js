@@ -5,9 +5,10 @@ import './NotFound.css';
 const NotFound = () => (
   <I18n ns="translations">
     {t => (
-      <div id="not-found" className="text-center">
-        <h1>404</h1>
-        <h2>{t('error.notfound')}</h2>
+      <div id="not-found" className="row text-center">
+        <div className="col-sm-12">
+          <h2 style={{marginTop: 120}}>{t('error.notfound')}</h2>
+        </div>
       </div>
     )}
   </I18n>

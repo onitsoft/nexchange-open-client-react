@@ -22,7 +22,7 @@ class LanguagePicker extends Component {
   sortedSupportedLanguages() {
     const selectedLanguage = I18n.language || window.localStorage.i18nextLng;
     let selectedLngPosition = this.supportedLanguages.indexOf(selectedLanguage);
-    if(selectedLngPosition < 0) {
+    if (selectedLngPosition < 0) {
       selectedLngPosition = 0;
     }
 
@@ -37,12 +37,12 @@ class LanguagePicker extends Component {
           <I18n ns="translations" key={lng}>
             {(t, { i18n }) => (
               <li key={lng}>
-               <Link to={`?lang=${lng.toLowerCase()}`} onClick={() => i18n.changeLanguage(`${lng}`)}  replace={false}>
-                <span className="selected">
-                  <img className="flag" src={`/img/flags/${lng.toUpperCase()}.svg`} alt={t(`header.${lng}`)} />
-                  <span className="visible-xs-inline visible-ms-inline visible-lg-inline">{t(`header.${lng}`)}</span>
-                </span>
-              </Link>
+                <Link to={`?lang=${lng.toLowerCase()}`} onClick={() => i18n.changeLanguage(`${lng}`)} replace={false}>
+                  <span className="selected">
+                    <img className="flag" src={`/img/flags/${lng.toUpperCase()}.svg`} alt={t(`header.${lng}`)} />
+                    <span className="visible-xs-inline visible-ms-inline visible-lg-inline">{t(`header.${lng}`)}</span>
+                  </span>
+                </Link>
               </li>
             )}
           </I18n>

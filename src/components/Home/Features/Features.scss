@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    h2 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        margin-top: 0px;
+        font-size: 16px;
+        color: $gray;
+    }
+
+    .features {
+        margin-top: 20px;
+        .feature {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            .icon {
+
+            }
+            .name {
+                font-weight: bold;
+            }
+            .description {
+
+            }
+        }
+    }
+}
+
+.nomargin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+

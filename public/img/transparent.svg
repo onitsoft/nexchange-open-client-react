@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="129" height="129" viewBox="0 0 129 129">
+  <defs>
+    <filter id="Ellipse_132" x="0" y="0" width="129" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-color="#6a9dbc" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_939" data-name="Group 939" transform="translate(-455.5 -1319.5)">
+    <g transform="matrix(1, 0, 0, 1, 455.5, 1319.5)" filter="url(#Ellipse_132)">
+      <circle id="Ellipse_132-2" data-name="Ellipse 132" cx="42" cy="42" r="42" transform="translate(22.5 15.5)" fill="#fff"/>
+    </g>
+    <g id="Group_862" data-name="Group 862" transform="translate(-32.23 -241.092)">
+      <path id="Path_451" data-name="Path 451" d="M-4551,3872.757l5.5-5.852,8.715-4.705,9.855,1.252,7.889,6.407,2.955,2.9-5.434,5.634-9.856,4.9-7.966-.4-10.481-7.557Z" transform="translate(5086.179 -2254.758)" fill="#effafa"/>
+      <g id="view" transform="translate(533 1606)">
+        <g id="Group_859" data-name="Group 859" transform="translate(0 0)">
+          <g id="Group_858" data-name="Group 858">
+            <path id="Path_449" data-name="Path 449" d="M37.759,104.1c-.339-.46-8.428-11.268-18.759-11.268S.58,103.642.241,104.1a1.233,1.233,0,0,0,0,1.465c.339.46,8.428,11.268,18.759,11.268s18.419-10.807,18.759-11.267A1.232,1.232,0,0,0,37.759,104.1ZM19,114.352c-7.61,0-14.2-7.173-16.151-9.518C4.8,102.487,11.374,95.318,19,95.318c7.609,0,14.2,7.172,16.151,9.518C33.2,107.183,26.626,114.352,19,114.352Z" transform="translate(0 -92.835)" fill="#39c9c1"/>
+          </g>
+        </g>
+        <g id="Group_861" data-name="Group 861" transform="translate(11.392 4.393)">
+          <g id="Group_860" data-name="Group 860">
+            <path id="Path_450" data-name="Path 450" d="M162.329,154.725a7.607,7.607,0,1,0,7.607,7.607A7.616,7.616,0,0,0,162.329,154.725Zm0,12.679a5.072,5.072,0,1,1,5.072-5.072A5.077,5.077,0,0,1,162.329,167.4Z" transform="translate(-154.722 -154.725)" fill="#39c9c1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -11,9 +11,10 @@ const OrderMain = props => {
     <div className="col-xs-12">
       <div className="box">
         <OrderStatus
-          isLimitOrder={isLimitOrder} 
+          isLimitOrder={isLimitOrder}
           isFiat={isFiat}
-          status={!isLimitOrder ? props.order.status_name[0][0] : props.order.book_status_name[0][0]} />
+          status={!isLimitOrder ? props.order.status_name[0][0] : props.order.book_status_name[0][0]}
+        />
         <OrderState isLimitOrder={isLimitOrder} isFiat={isFiat} {...props} />
       </div>
     </div>

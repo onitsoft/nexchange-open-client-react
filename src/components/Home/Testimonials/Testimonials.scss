@@ -1,6 +1,12 @@
+.container {
+  padding: 20px 0px 40px 0px;
+  background-image: url('/img/background_testimonials.svg');
+  background-position-y: 100%;
+  background-size: 100%;
+}
+
 .header {
   position: relative;
-  background: $green;
   padding-bottom: 235px;
   overflow: hidden;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 79%, 0 100%, 0% 25%);
@@ -10,6 +16,11 @@
     margin: 60px 0 20px 0;
     color: #fff;
   }
+}
+
+h2 {
+  color: #000 !important;
+  font-size: 32px !important;
 }
 
 .swiper {
@@ -47,7 +58,6 @@
 }
 
 .slide {
-  cursor: pointer;
 }
 
 .link {
@@ -63,7 +73,7 @@
   position: relative;
   padding-bottom: 35px;
   margin-bottom: 35px;
-  color: $blue;
+  color: $black;
   border-bottom: 1px solid #efefef;
   font-size: 16px;
 }
@@ -82,15 +92,13 @@
   margin-top: 15px;
 
   img {
-    width: 55px;
+    width: 95px;
     border-radius: 55px;
-    filter: grayscale(100%);
   }
 
   h3 {
     display: inline-block;
-    margin-left: 15px;
-    color: $blue;
+    color: $black;
     font-size: 19px;
     font-weight: 700;
 

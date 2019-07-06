@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  Redirect,
+} from "react-router-dom";
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
@@ -22,9 +25,9 @@ class Order extends Component {
     super(props);
 
     if (this.props.order && this.props.match.params.orderRef === this.props.order.unique_reference) {
-      this.state = { order: this.props.order };
+      this.state = { order: this.props.order, redirect: false };
     } else {
-      this.state = {};
+      this.state = {redirect: false};
     }
   }
 
@@ -48,6 +51,10 @@ class Order extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ order: nextProps.order });
 
+    if(!this.state.redirect && !_.isEmpty(nextProps.order.payment_url)) {
+      this.setState({redirect: true});
+    }
+
     this.timeout = setTimeout(() => {
       this.props.fetchOrder(this.props.match.params.orderRef);
     }, config.ORDER_DETAILS_FETCH_INTERVAL);
@@ -67,6 +74,10 @@ class Order extends Component {
   }
 
   render() {
+    if(this.state.redirect) {
+      return (<Redirect to={`/transitioning/${this.props.order.unique_reference}`} />);
+    }
+
     if (this.state.order == null) {
       return <OrderLoading />;
     } else if (this.state.order === 404) {
@@ -80,7 +91,7 @@ class Order extends Component {
               <OrderCoinsProcessed order={this.state.order} />
 
               <OrderMain {...this.props} />
-              <OrderCta order={this.state.order} />
+              {/* <OrderCta order={this.state.order} /> */}
             </div>
           </div>
         </div>

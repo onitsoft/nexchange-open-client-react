@@ -65,8 +65,8 @@
         color: $gray;
         
         &.active {
-          background-color: $blue;
-          border-color: $blue;
+          background-color: $black;
+          border-color: $black;
           color: #fff;
         }
       }
@@ -82,7 +82,7 @@
         height: 0; 
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
-        border-top: 4px solid $blue;
+        border-top: 4px solid $black;
       }        
     }
   }

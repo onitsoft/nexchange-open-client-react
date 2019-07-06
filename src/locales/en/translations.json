@@ -54,7 +54,6 @@
   },
   "about": {
     "title": "About Us",
-    "teamtitle": "The People Who Make it Happen",
     "1": "Nexchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.",
     "2": "We are a group of multi-national, multi-disciplinary cryptocurrency professionals.",
     "3":
@@ -113,7 +112,7 @@
   "footer": {
     "1": "TERMS AND CONDITIONS",
     "2": "PRIVACY POLICY",
-    "3": "<0>All rights reserved, YOA LTD 2016-2017,<1></1> England & Wales <4>registered company No. 10009845</4></0>"
+    "3": "<0>All rights reserved, DRAGONDEX 2019,<1></1> Australia </0>"
   },
   "ico": {
     "action": "JOIN OUR ICO",

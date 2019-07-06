@@ -1,0 +1,143 @@
+.container {
+    position: relative;
+    padding: 100px 0 75px 0;
+    text-align: center;
+    color: #fff;
+    background: -moz-linear-gradient(45deg,  #fff 0%,#fff 44%, rgba(26, 157, 139, 1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      right top,
+      color-stop(0%, rgba(2, 3, 31, 1)),
+      color-stop(44%, rgba(2, 3, 31, 1)),
+      color-stop(100%, rgba(26, 157, 139, 1))
+    ); /* safari4+,chrome */
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(2, 3, 31, 1) 0%,
+      rgba(2, 3, 31, 1) 44%,
+      rgba(26, 157, 139, 1) 100%
+    ); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg,  #fff 0%,#fff 44%, rgba(26, 157, 139, 1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  #fff 0%,#fff 44%, rgba(26, 157, 139, 1) 100%); /* ie10+ */
+    background: linear-gradient(45deg,  #fff 0%,#fff 44%, rgba(26, 157, 139, 1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
+  
+    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+      min-height: 100vh;
+    }
+  
+    @media (min-width: $screen-md-min) {
+      background-color: #fff;
+      background-image: url('/img/dragondex_background.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  
+    h1 {
+      font-size: 25px;
+      margin-bottom: 10px !important;
+      margin-top: 15px;
+  
+      @media (min-width: $screen-md-min) {
+        margin-bottom: 15px !important;
+        font-size: 48px;
+      }
+    }
+  
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0px;
+      font-weight: 400;
+      font-size: 16px;
+      font-family: 'Clan Offc Pro Book';
+  
+      @media (min-width: $screen-md-min) {
+        font-size: 24px;
+      }
+  
+      @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  
+  .transitioning {
+    float: none !important;
+    display: inline-block;
+    margin-top: 60px;
+    border-radius: 14px;
+    background-color: white;
+    color: $black;
+    box-shadow: 0px 0px 30px -20px;
+  
+    @media (max-width: $screen-md-min) {
+      padding: 20px !important;
+    }
+    @media (min-width: $screen-md-min) {
+      padding: 40px !important;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+
+            .heading-section {
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-weight: bold;
+
+                }
+            }
+
+            .arrow {
+                display: inline-block;
+                margin: 0 5px;
+                vertical-align: middle;
+                width: 0; 
+                height: 0; 
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #D4E2EE;
+            }
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        .nomargin {
+            margin-bottom: 0;
+        }
+
+        .small {
+            font-size: 14px;
+        }
+
+        .smaller {
+            font-size: 12px;
+        }
+
+        .button {
+            background-color: $green;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;        
+        }
+    }
+  }
+  
+  

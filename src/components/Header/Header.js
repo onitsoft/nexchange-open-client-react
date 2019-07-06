@@ -4,7 +4,7 @@ import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
 import Support from './Support/Support';
-import LanguagePicker from './LanguagePicker/LanguagePicker';
+// import LanguagePicker from './LanguagePicker/LanguagePicker';
 
 
 import styles from './Header.scss';
@@ -52,7 +52,9 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    if (window.location.pathname === '/' || window.location.pathname.indexOf('/faqs') !== -1) {
+    if (window.location.pathname === '/' 
+      || window.location.pathname.indexOf('/faqs') !== -1 
+      || window.location.pathname.indexOf('/transitioning') !== -1) {
       return true;
     }
     return false;
@@ -76,9 +78,9 @@ class Header extends Component {
                 <Link to="/">
                   <div className={styles['logo-container']}>
                     {isHomeHeader ? (
-                      <img src="/img/logo-white.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo_dragondex.svg" alt="Logo" data-test="logo" />
                     ) : (
-                      <img src="/img/logo.svg" alt="Logo" data-test="logo" />
+                      <img src="/img/logo-dragondex.png" alt="Logo" data-test="logo" />
                     )}
                   </div>
                 </Link>
@@ -99,25 +101,6 @@ class Header extends Component {
                   </li>
 
                   <li>
-                    <a
-                      className={`${styles.link} hidden-sm`}
-                      href="http://docs.nexchange2.apiary.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => window.gtag('event', 'API open', {event_category: 'API', event_label: ``})}
-                      data-test="api-link"
-                    >
-                      {t('header.apidocs')}
-                    </a>
-                  </li>
-
-                  <li>
-                    <Link onClick={() => this.closeNavbar()} to="/#compare" className={styles.link} data-test="compare-link">
-                        {t('header.compare')}
-                    </Link>
-                  </li>
-
-                  <li>
                     <Link 
                       onClick={() => { this.closeNavbar();this.setState({ showSupportModal: true });}} 
                       className={styles.link}
@@ -127,117 +110,7 @@ class Header extends Component {
                     </Link>
                   </li>
 
-                  <li className={styles['ico-link']}>
-                    <a
-                      href="https://n.exchange/ico"
-                      className={`${styles.btn} btn btn-block btn-primary`}
-                      onClick={() => {
-                        window.gtag('event', 'ICO open', {event_category: 'ICO', event_label: ``});
-
-                      }}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-test="ico-link"
-                    >
-                      {t('header.ico')}
-                    </a>
-                  </li>
-
-                  <LanguagePicker />
-
-                  <li id="social-mobile">
-                    <a
-                      href="/twitter"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                    >
-                      <i className="fab fa-twitter" aria-hidden="true" />
-                    </a>
-
-                    <a
-                      href="/fb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                    >
-                      <i className="fab fa-facebook-f" aria-hidden="true" />
-                    </a>
-
-                    <a
-                      href="/slack"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                    >
-                      <i className="fab fa-slack-hash" aria-hidden="true" />
-                    </a>
-
-                    <a
-                      href="/telegram"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                    >
-                      <i className="fab fa-telegram" aria-hidden="true" />
-                    </a>
-                  </li>
-
-                  <li className="visible-md visible-lg social-desktop">
-                    <a
-                      href="/twitter"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon`}
-                      title={t('header.twitter')}
-                      data-toggle="tooltip" 
-                      data-placement="bottom"
-                    >
-                      <i className="fab fa-twitter" aria-hidden="true" />
-                    </a>
-                  </li>
-
-                  <li className="visible-md visible-lg social-desktop">
-                    <a
-                      href="/fb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon`}
-                      title={t('header.facebook')}
-                      data-toggle="tooltip" 
-                      data-placement="bottom"
-                    >
-                      <i className="fab fa-facebook-f" aria-hidden="true" />
-                    </a>
-                  </li>
-
-                  <li className="visible-md visible-lg social-desktop">
-                    <a
-                      href="/slack"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon`}
-                      title={t('header.slack')}
-                      data-toggle="tooltip" 
-                      data-placement="bottom"
-                    >
-                      <i className="fab fa-slack-hash" aria-hidden="true" />
-                    </a>
-                  </li>
-
-                  <li className="visible-md visible-lg social-desktop">
-                    <a
-                      href="/telegram"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.social} btn btn-simple btn-just-icon`}
-                      title={t('header.telegram')}
-                      data-toggle="tooltip" 
-                      data-placement="bottom"
-                    >
-                      <i className="fab fa-telegram" aria-hidden="true" />
-                    </a>
-                  </li>
+                  {/* <LanguagePicker /> */}
                 </ul>
               </div>
 

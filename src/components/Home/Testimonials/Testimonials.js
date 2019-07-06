@@ -20,7 +20,7 @@ class Testimonials extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div>
+          <div className={styles.container}>
             <div className={styles.header}>
               <div className="container">
                 <div className="row">
@@ -45,24 +45,19 @@ class Testimonials extends Component {
                         loop={true}
                         pagination={{ el: '.swiper-pagination', clickable: true }}
                       >
-                        {data.map(testimonial => (
-                          <a 
-                          className={styles.link} 
-                          href={testimonial.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          key={testimonial.name}>
+                        {data.map((testimonial, index) => (
+                          <div className={styles.link} key={testimonial.name + index}>
                             <div className={styles.slide}>
                               <div className={styles.text}>{testimonial.text}</div>
                               <div className={styles.info}>
                                 <div className={styles.date}>{testimonial.date}</div>
                                 <div className={styles.profile}>
-                                  <img src={require(`../../../img/testimonials/${testimonial.image}`)} alt={testimonial.name} />
+                                  <img src={`../../../img/${testimonial.image}`} alt={testimonial.name} />
                                   <h3>{testimonial.name}</h3>
                                 </div>
                               </div>
                             </div>
-                          </a>
+                          </div>
                         ))}
                       </Swiper>
                     </div>

@@ -10,8 +10,8 @@ describe('QuestionAnswer', () => {
 
     wrapShallow = shallow(
       <QuestionAnswer
-      id="ques1"
-      answer={
+        id="ques1"
+        answer={
           <div>
             <p>
               We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin

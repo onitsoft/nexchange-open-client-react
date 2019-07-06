@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="367.576" viewBox="0 0 1920 367.576">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#d5e3ee"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.779" y1="0.792" x2="0.879" y2="-0.133" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#d4e2ee"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_947" data-name="Group 947" transform="translate(0 -5439)">
+    <rect id="Pitch_deck_background_story" width="1668.432" height="367.576" transform="translate(0 5439)" fill="url(#linear-gradient)"/>
+    <path id="Path_464" data-name="Path 464" d="M-1.333,50.36,1487.22-30V194.65L-1.333,275.01Z" transform="translate(432.78 5531.566)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

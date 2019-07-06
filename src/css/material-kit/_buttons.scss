@@ -20,7 +20,7 @@
 
   &,
   &.btn-default {
-    @include btn-styles($blue);
+    @include btn-styles($black);
   }
   &.btn-primary {
     @include btn-styles($green);

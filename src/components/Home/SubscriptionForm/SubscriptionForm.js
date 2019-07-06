@@ -67,7 +67,6 @@ class SubscriptionForm extends React.Component {
         {(t, { i18n }) => (
           <div className={styles.container}>
             <div className="container text-center">
-              <h2>{t('subscription.1')}</h2>
               <h3>{t('subscription.6')}</h3>
 
               <form action={action} method="post" noValidate>

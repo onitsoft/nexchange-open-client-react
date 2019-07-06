@@ -103,11 +103,12 @@ class RecentOrders extends Component {
 
               <div className={`${styles.col} col col-xs-3 col-ms-2`}>
                 <div className={styles.middle}>
-                  <a 
-                    href={`${config.API_BASE_URL}/orders/${order.unique_reference}`} 
-                    target="_blank" 
+                  <a
+                    href={`${config.API_BASE_URL}/orders/${order.unique_reference}`}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.btn}>
+                    className={styles.btn}
+                  >
                     {t('recentorders.3')}
                   </a>
                 </div>
@@ -125,7 +126,8 @@ class RecentOrders extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h2 className="title">{t('recentorders.1')}</h2>
+                  <h2 className={`title ${styles.title}`}>{t('recentorders.1')}</h2>
+                  <h5 className={styles.subtitle}>{t('recentorders.4')}</h5>
                   <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
                 </div>
               </div>
