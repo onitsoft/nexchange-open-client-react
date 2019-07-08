@@ -52,8 +52,12 @@ class PnlTracking extends Component {
       return null;
     }
     const order = this.props.order;
-    console.log((this.state.creationRate * 100)/this.state.currentRate);
-    const change = Math.round((this.state.creationRate * 100)/this.state.currentRate);
+    let change;
+    if(order.status_name[0][1] === 'INITIAL') {
+      change = 0;
+    } else {
+      change = Math.round((this.state.creationRate * 100)/this.state.currentRate);
+    }
     const className = (change >= 100) ? 'profit' : 'loss';
     return (
       <I18n ns="translations">
