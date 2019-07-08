@@ -23,13 +23,38 @@
         }
 
         .amount {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             flex: 2;
         }
 
+        .changeIconContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 20px;
+
+            .changeIcon {
+                max-width: 15px;
+                max-height: 15px;
+                width: 0; 
+                height: 0; 
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+            }
+        }
+
         .change {
-            font-weight: bold;
+            display: flex;
+            align-items: center;
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
         }
     }
 }
@@ -41,6 +66,14 @@
     .amount,.change {
         color: $green;
     }
+
+    .changeIconContainer {
+        background-color: lighten($green, 40);
+
+        .changeIcon {
+            border-bottom: 7px solid $green;
+        }
+    }
 }
 
 .loss {
@@ -49,5 +82,13 @@
 
     .amount,.change {
         color: $red;
+    }
+
+    .changeIconContainer {
+        background-color: lighten($red, 40);
+
+        .changeIcon {
+            border-top: 7px solid $red;
+        }
     }
 }

@@ -15,17 +15,22 @@ class PnlTracking extends Component {
   }
 
   componentWillMount() {
-    this.interval = setInterval(() => {
-      console.log("here");
+    const fetchRates = () => {
       const order = this.props.order;
-      const request =`https://api.nexchange.io/en/api/v1/get_price/${order.pair.name}`;
+      const request =`https://api.nexchange.io/en/api/v1/price/${order.pair.name}/latest`;
       axios.get(request)
       .then((response) => {
-          if(response && response.data && response.data.price) {
-            this.setState({currentRate: 1/response.data.price});
+          if(response && response.data && response.data[0] && response.data[0].ticker.ask) {
+            this.setState({currentRate: 1/response.data[0].ticker.ask});
           }
+      })
+      .catch((error) => {
       });
-    }, 60000);
+    }
+    fetchRates();
+    this.interval = setInterval(() => {
+      fetchRates();
+    }, 10000);
   }
 
   componentWillUnmount() {
@@ -34,7 +39,7 @@ class PnlTracking extends Component {
 
   componentWillUpdate() {
     const order = this.props.order;
-    if(!this.state.creationRate && order && order.price) {
+    if(!this.state.creationRate && order && order.price) {      
       const creationRate = 1/order.price.rate;
       this.setState({creationRate});
     }
@@ -47,12 +52,14 @@ class PnlTracking extends Component {
       return null;
     }
     const order = this.props.order;
+    console.log((this.state.creationRate * 100)/this.state.currentRate);
     const change = Math.round((this.state.creationRate * 100)/this.state.currentRate);
-    const className = (change > 100) ? 'profit' : 'loss';
+    const className = (change >= 100) ? 'profit' : 'loss';
     return (
       <I18n ns="translations">
         {(t) => (
-        <div className={`${styles.container} ${styles[className]}`}>
+        <div className={`col-sm-12 com-md-4 col-lg-4`}>
+          <div className={`${styles.container} ${styles[className]}`}>
           <div className={styles.top}>
             <span className="bold">{t('pnl.profit')} / {t('pnl.loss')}</span>
             <div className={styles.coin}>
@@ -65,10 +72,14 @@ class PnlTracking extends Component {
             </div>
           </div>
           <div className={styles.bottom}>
-            <span className={styles.amount}>{order.amount_base} {order.pair.base.code}</span>
-            <div>
+            <span className={styles.amount}>{parseFloat(order.amount_base).toFixed(6)} {order.pair.base.code}</span>
+            <div className={styles.change}>
+              <div className={styles.changeIconContainer}>
+                <div className={styles.changeIcon}></div>
+              </div>
               <span className={styles.change}>{change}%</span>
             </div>
+          </div>
           </div>
         </div>
         )}
