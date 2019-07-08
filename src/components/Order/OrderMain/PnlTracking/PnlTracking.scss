@@ -1,0 +1,94 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    .top, .bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 16px;
+        span, div {
+            flex: 1;
+        }
+
+        .coin {
+            font-size: 30px;
+        }
+
+        .coinName {
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        .amount {
+            font-size: 16px;
+            font-weight: bold;
+            flex: 2;
+        }
+
+        .changeIconContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 20px;
+
+            .changeIcon {
+                max-width: 15px;
+                max-height: 15px;
+                width: 0; 
+                height: 0; 
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+            }
+        }
+
+        .change {
+            display: flex;
+            align-items: center;
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.profit {
+    border: 1px solid $green;
+    background-color: lighten($green, 50);
+
+    .amount,.change {
+        color: $green;
+    }
+
+    .changeIconContainer {
+        background-color: lighten($green, 40);
+
+        .changeIcon {
+            border-bottom: 7px solid $green;
+        }
+    }
+}
+
+.loss {
+    border: 1px solid $red;
+    background-color: lighten($red, 50); 
+
+    .amount,.change {
+        color: $red;
+    }
+
+    .changeIconContainer {
+        background-color: lighten($red, 40);
+
+        .changeIcon {
+            border-top: 7px solid $red;
+        }
+    }
+}
