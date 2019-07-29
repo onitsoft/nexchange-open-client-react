@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
@@ -16,6 +16,10 @@ import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
 import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
+import SignIn from 'Components/Accounts/SignIn/SignIn';
+import SignUp from 'Components/Accounts/SignUp/SignUp';
+import ForgotPassword from 'Components/Accounts/ForgotPassword/ForgotPassword';
+
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -25,6 +29,7 @@ import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
+
 
 // const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
@@ -37,6 +42,8 @@ setAuthToken();
 crispEmailBinding(store);
 require('Utils/bindGa');
 
+const NotFoundRedirect = () => <Redirect to='/not-found' />
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -48,9 +55,13 @@ ReactDOM.render(
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
+          <Route exact path="/" render={props => <Home {...props} store={store} />} />
+          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} /> 
+          <Route exact path="/forgot-password" component={ForgotPassword} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route component={NotFound} />
+          <Route exact path="/not-found" component={NotFound} />
+          <Route component={NotFoundRedirect} />
         </Switch>
 
         <Footer />

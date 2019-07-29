@@ -67,6 +67,20 @@
     "nomyorders": "Keine Bestellhistorie ...",
     "viewallmyorders": "Alle meine Bestellungen anzeigen"
   },
+  "accounts": {
+    "signup": "Anmelden",
+    "signupheader": "White Labeling und B2B-Lösungen",
+    "signin": "Einloggen",
+    "signinheader": "Ihr vertrauensvoller Partner für den Krypto-Austausch",
+    "signinwithfacebook": "Mit Facebook anmelden",
+    "signupwithfacebook": "Anmelden mit Facebook",
+    "username": "Nutzername",
+    "email": "Email",
+    "password": "Passwort",
+    "repeatpassword": "Wiederholen Sie das Passwort",
+    "forgotpassword1": "Haben Sie Ihr Passwort vergessen?",
+    "forgotpassword2": "Wenn Sie Ihr Passwort zurücksetzen möchten, geben Sie bitte Ihre E-Mail-Adresse ein",
+    "resetpassword": "Passwort zurücksetzen"
   "integrations": {
     "error" : {
       "metamask": "Auf die Metamask-Erweiterung konnte nicht zugegriffen werden. Bitte stellen Sie sicher, dass es aktiviert und nicht gesperrt ist" 
@@ -453,7 +467,10 @@
   "error": {
     "warning": "Warnung",
     "loading": "Entschuldigen Sie, beim Laden der Seite trat ein Problem auf :(",
-    "notfound": "Seite nicht gefunden :(",
+    "notfound1": "Oops! Etwas ist schief gelaufen...",
+    "notfound21": "Die von Ihnen gesuchte Seite ist nicht verfügbar. Versuchen Sie es erneut, oder verwenden Sie die",
+    "notfound22": "Geh zurück",
+    "notfound23": "Knopf unten.",
     "invalidpair": "Sie können nicht",
     "nousedeposit": "Sie können",
     "nousedeposit2": "nich als deposit coin nutzen. Bitte nehmen Sie einen anderen.",

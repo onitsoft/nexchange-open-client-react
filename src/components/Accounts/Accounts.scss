@@ -1,0 +1,181 @@
+.left,.right {
+    height: 100vh;
+}
+
+.logo-container {
+    margin: 20px 40px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    img {
+      width: 195px;
+    }
+}
+
+.left {
+    @media (max-width: $screen-sm-max) {
+        display: none;
+    } 
+
+    background-color: #01031e;
+    background-image: url('../../img/Login\ img-min.png');
+    background-position: 40% 0%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    .heading {
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 80vh;
+    }
+}
+
+.right {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .not-registered {
+        width: 100%;
+        text-align: center;
+        color: #000;
+        &:hover {
+            text-decoration: none;
+        }
+    }   
+
+    .separator {
+        height: 1px;
+        width: 100%;
+        margin: 40px 0px;
+        background-color: $gray;
+    }
+}
+    
+form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .input-container {
+        width: 100%;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        background-color: lighten($gray, 30);
+        padding: 0px 20px;
+        margin-bottom: 10px;
+        input {
+            width: 100%;
+            margin: 0;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            background: no-repeat;
+            background-image: none !important;
+            margin-bottom: 4px;
+            margin-top: 4px;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #000 !important;
+            -webkit-box-shadow: 0 0 0px 100px lighten($gray, 30) inset!important;
+            color: #000 !important;
+        }
+    }
+}
+
+.button {
+    background-color: transparent;
+    border-radius: 4px;
+    width: 100%;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    &.main {
+        background-color: $green;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    &.secondary {
+        background-color: #fff;
+        color: $green;
+        border-color: $green;
+    }
+
+    &.facebook {
+        background-color: #fff;
+        color: #3C5A99;
+        border-color: #3C5A99;
+    }
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: -moz-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      right top,
+      color-stop(0%, rgba(2, 3, 31, 1)),
+      color-stop(44%, rgba(2, 3, 31, 1)),
+      color-stop(100%, rgba(26, 157, 139, 1))
+    ); /* safari4+,chrome */
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(2, 3, 31, 1) 0%,
+      rgba(2, 3, 31, 1) 44%,
+      rgba(26, 157, 139, 1) 100%
+    ); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
+  
+    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+      min-height: 100vh;
+    }
+  
+    @media (min-width: $screen-md-min) {
+      background-color: #01031e;
+      background-image: url('../../img/ellipse.svg');
+      background-position: 130% 50%;
+      background-size: 150%;
+      background-repeat: no-repeat;
+    }
+
+    .sub-container {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 30px;
+
+        form {
+            margin-top: 30px;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
+.resetPassword {
+    display: flex;
+    justify-content: flex-end;
+    .button {
+        width: auto;
+        padding: 10px 20px;
+    }
+}
