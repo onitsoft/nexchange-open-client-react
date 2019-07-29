@@ -78,6 +78,10 @@
     "forgotpassword1": "Forgot your password?",
     "forgotpassword2": "If you want to reset your password, please enter your email address",
     "resetpassword": "Reset Password"
+ "integrations": {
+    "error" : {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+    }
   },
   "recentorders": {
     "1": "Recent Orders",
@@ -478,5 +482,9 @@
     "providevalid": "Please put valid"
   },
   "viewmore": "view more",
-  "to": "to"
+  "to": "to",
+  "pnl": {
+    "profit": "Profit",
+    "loss": "Loss"
+  }
 }

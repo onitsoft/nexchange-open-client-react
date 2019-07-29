@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import OrderModeSwitch from './OrderModeSwitch.js';
-import { changeOrderMode } from 'Actions/index.js'
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

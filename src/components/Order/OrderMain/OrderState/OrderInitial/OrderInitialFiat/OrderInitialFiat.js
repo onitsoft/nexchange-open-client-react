@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+
 import styles from '../OrderInitial.scss';
 
 class OrderInitial extends Component {
@@ -36,7 +37,7 @@ class OrderInitial extends Component {
     }
   }
 
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
     if(!_.isEmpty(safechargeStatus)){
       if(this.props.order && this.props.order.payment_url) {
@@ -55,11 +56,11 @@ class OrderInitial extends Component {
     return (
       <div>
       {this.state.showPaymentIFrame ? 
-      <iframe src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
+      <iframe title="SafeCharge" src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>
-          <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-4">
+          <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-6">
             <h3>
               {t('order.initial1')}:{' '}
               <span className={styles.time}>
@@ -118,7 +119,7 @@ class OrderInitial extends Component {
             </a>
           </div>
 
-          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
+          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-6 ${styles.cards}`}>
             <h3>{t('order.fiat.cards')}:</h3>
 
             <div className="visible-xs-block visible-sm-block">

@@ -55,7 +55,7 @@ ShallowWrapper {
                     className="clickable active"
                     onClick={[Function]}
                   >
-                    Buy
+                    orderbookwidget.buy
                   </a>
                   <div
                     className="arrow-down"
@@ -66,12 +66,13 @@ ShallowWrapper {
                     className="clickable "
                     onClick={[Function]}
                   >
-                    Sell
+                    orderbookwidget.sell
                   </a>
                 </li>
               </ul>
               <Connect(LimitOrderForm)
                 inputRef={[Function]}
+                limit_rate="57.304957061"
               />
               <Connect(WalletAddress)
                 focusWalletAddress={[Function]}
@@ -86,26 +87,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                   onClick={[Function]}
                 >
-                  Buy ETH with OMG
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
                 </button>
               </div>
             </div>
-            <OrderDepth
-              buyDepth={Array []}
-              selectedCoins={
-                Object {
-                  "deposit": "OMG",
-                  "lastSelected": "deposit",
-                  "prev": Object {
-                    "deposit": "OMG",
-                    "receive": "ETH",
-                  },
-                  "receive": "ETH",
-                }
-              }
-              sellDepth={Array []}
-            />
-             
+            <Connect(OrderDepth) />
             <Connect(MyOrders)
               collapseMyOrders={[Function]}
               expandMyOrders={[Function]}
@@ -152,7 +138,7 @@ ShallowWrapper {
                     className="clickable active"
                     onClick={[Function]}
                   >
-                    Buy
+                    orderbookwidget.buy
                   </a>
                   <div
                     className="arrow-down"
@@ -163,12 +149,13 @@ ShallowWrapper {
                     className="clickable "
                     onClick={[Function]}
                   >
-                    Sell
+                    orderbookwidget.sell
                   </a>
                 </li>
               </ul>
               <Connect(LimitOrderForm)
                 inputRef={[Function]}
+                limit_rate="57.304957061"
               />
               <Connect(WalletAddress)
                 focusWalletAddress={[Function]}
@@ -183,26 +170,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                   onClick={[Function]}
                 >
-                  Buy ETH with OMG
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
                 </button>
               </div>
             </div>
-            <OrderDepth
-              buyDepth={Array []}
-              selectedCoins={
-                Object {
-                  "deposit": "OMG",
-                  "lastSelected": "deposit",
-                  "prev": Object {
-                    "deposit": "OMG",
-                    "receive": "ETH",
-                  },
-                  "receive": "ETH",
-                }
-              }
-              sellDepth={Array []}
-            />
-             
+            <Connect(OrderDepth) />
             <Connect(MyOrders)
               collapseMyOrders={[Function]}
               expandMyOrders={[Function]}
@@ -245,7 +217,7 @@ ShallowWrapper {
                     className="clickable active"
                     onClick={[Function]}
                   >
-                    Buy
+                    orderbookwidget.buy
                   </a>
                   <div
                     className="arrow-down"
@@ -256,12 +228,13 @@ ShallowWrapper {
                     className="clickable "
                     onClick={[Function]}
                   >
-                    Sell
+                    orderbookwidget.sell
                   </a>
                 </li>
               </ul>
               <Connect(LimitOrderForm)
                 inputRef={[Function]}
+                limit_rate="57.304957061"
               />
               <Connect(WalletAddress)
                 focusWalletAddress={[Function]}
@@ -276,26 +249,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                   onClick={[Function]}
                 >
-                  Buy ETH with OMG
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
                 </button>
               </div>
             </div>
-            <OrderDepth
-              buyDepth={Array []}
-              selectedCoins={
-                Object {
-                  "deposit": "OMG",
-                  "lastSelected": "deposit",
-                  "prev": Object {
-                    "deposit": "OMG",
-                    "receive": "ETH",
-                  },
-                  "receive": "ETH",
-                }
-              }
-              sellDepth={Array []}
-            />
-             
+            <Connect(OrderDepth) />
             <Connect(MyOrders)
               collapseMyOrders={[Function]}
               expandMyOrders={[Function]}
@@ -335,7 +293,7 @@ ShallowWrapper {
                       className="clickable active"
                       onClick={[Function]}
                     >
-                      Buy
+                      orderbookwidget.buy
                     </a>
                     <div
                       className="arrow-down"
@@ -346,12 +304,13 @@ ShallowWrapper {
                       className="clickable "
                       onClick={[Function]}
                     >
-                      Sell
+                      orderbookwidget.sell
                     </a>
                   </li>
                 </ul>
                 <Connect(LimitOrderForm)
                   inputRef={[Function]}
+                  limit_rate="57.304957061"
                 />
                 <Connect(WalletAddress)
                   focusWalletAddress={[Function]}
@@ -366,26 +325,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                     onClick={[Function]}
                   >
-                    Buy ETH with OMG
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
                   </button>
                 </div>
               </div>,
-              <OrderDepth
-                buyDepth={Array []}
-                selectedCoins={
-                  Object {
-                    "deposit": "OMG",
-                    "lastSelected": "deposit",
-                    "prev": Object {
-                      "deposit": "OMG",
-                      "receive": "ETH",
-                    },
-                    "receive": "ETH",
-                  }
-                }
-                sellDepth={Array []}
-              />,
-              " ",
+              <Connect(OrderDepth) />,
               <Connect(MyOrders)
                 collapseMyOrders={[Function]}
                 expandMyOrders={[Function]}
@@ -434,7 +378,7 @@ ShallowWrapper {
                         className="clickable active"
                         onClick={[Function]}
                       >
-                        Buy
+                        orderbookwidget.buy
                       </a>
                       <div
                         className="arrow-down"
@@ -445,12 +389,13 @@ ShallowWrapper {
                         className="clickable "
                         onClick={[Function]}
                       >
-                        Sell
+                        orderbookwidget.sell
                       </a>
                     </li>
                   </ul>,
                   <Connect(LimitOrderForm)
                     inputRef={[Function]}
+                    limit_rate="57.304957061"
                   />,
                   <Connect(WalletAddress)
                     focusWalletAddress={[Function]}
@@ -465,7 +410,7 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                       onClick={[Function]}
                     >
-                      Buy ETH with OMG
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
                     </button>
                   </div>,
                 ],
@@ -530,7 +475,7 @@ ShallowWrapper {
                           className="clickable active"
                           onClick={[Function]}
                         >
-                          Buy
+                          orderbookwidget.buy
                         </a>
                         <div
                           className="arrow-down"
@@ -541,7 +486,7 @@ ShallowWrapper {
                           className="clickable "
                           onClick={[Function]}
                         >
-                          Sell
+                          orderbookwidget.sell
                         </a>
                       </li>,
                     ],
@@ -559,7 +504,7 @@ ShallowWrapper {
                             className="clickable active"
                             onClick={[Function]}
                           >
-                            Buy
+                            orderbookwidget.buy
                           </a>,
                           <div
                             className="arrow-down"
@@ -573,12 +518,12 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "children": "Buy",
+                            "children": "orderbookwidget.buy",
                             "className": "clickable active",
                             "onClick": [Function],
                           },
                           "ref": null,
-                          "rendered": "Buy",
+                          "rendered": "orderbookwidget.buy",
                           "type": "a",
                         },
                         Object {
@@ -605,7 +550,7 @@ ShallowWrapper {
                             className="clickable "
                             onClick={[Function]}
                           >
-                            Sell
+                            orderbookwidget.sell
                           </a>,
                           null,
                         ],
@@ -617,12 +562,12 @@ ShallowWrapper {
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "children": "Sell",
+                            "children": "orderbookwidget.sell",
                             "className": "clickable ",
                             "onClick": [Function],
                           },
                           "ref": null,
-                          "rendered": "Sell",
+                          "rendered": "orderbookwidget.sell",
                           "type": "a",
                         },
                         null,
@@ -638,7 +583,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "inputRef": [Function],
-                    "limit_rate": undefined,
+                    "limit_rate": "57.304957061",
                     "quantity": undefined,
                   },
                   "ref": null,
@@ -669,7 +614,7 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                       onClick={[Function]}
                     >
-                      Buy ETH with OMG
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
                     </button>,
                     "className": "col-xs-12",
                   },
@@ -679,13 +624,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Buy ETH with OMG",
+                      "children": "orderbookwidget.buy ETH orderbookwidget.with OMG",
                       "className": "btn btn-buy 
                           disabled btn btn-block btn-primary proceed ",
                       "onClick": [Function],
                     },
                     "ref": [Function],
-                    "rendered": "Buy ETH with OMG",
+                    "rendered": "orderbookwidget.buy ETH orderbookwidget.with OMG",
                     "type": "button",
                   },
                   "type": "div",
@@ -697,24 +642,11 @@ ShallowWrapper {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
-              "props": Object {
-                "buyDepth": Array [],
-                "selectedCoins": Object {
-                  "deposit": "OMG",
-                  "lastSelected": "deposit",
-                  "prev": Object {
-                    "deposit": "OMG",
-                    "receive": "ETH",
-                  },
-                  "receive": "ETH",
-                },
-                "sellDepth": Array [],
-              },
+              "props": Object {},
               "ref": null,
               "rendered": null,
               "type": [Function],
             },
-            " ",
             Object {
               "instance": null,
               "key": undefined,
@@ -776,7 +708,7 @@ ShallowWrapper {
                       className="clickable active"
                       onClick={[Function]}
                     >
-                      Buy
+                      orderbookwidget.buy
                     </a>
                     <div
                       className="arrow-down"
@@ -787,12 +719,13 @@ ShallowWrapper {
                       className="clickable "
                       onClick={[Function]}
                     >
-                      Sell
+                      orderbookwidget.sell
                     </a>
                   </li>
                 </ul>
                 <Connect(LimitOrderForm)
                   inputRef={[Function]}
+                  limit_rate="57.304957061"
                 />
                 <Connect(WalletAddress)
                   focusWalletAddress={[Function]}
@@ -807,26 +740,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                     onClick={[Function]}
                   >
-                    Buy ETH with OMG
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
                   </button>
                 </div>
               </div>
-              <OrderDepth
-                buyDepth={Array []}
-                selectedCoins={
-                  Object {
-                    "deposit": "OMG",
-                    "lastSelected": "deposit",
-                    "prev": Object {
-                      "deposit": "OMG",
-                      "receive": "ETH",
-                    },
-                    "receive": "ETH",
-                  }
-                }
-                sellDepth={Array []}
-              />
-               
+              <Connect(OrderDepth) />
               <Connect(MyOrders)
                 collapseMyOrders={[Function]}
                 expandMyOrders={[Function]}
@@ -873,7 +791,7 @@ ShallowWrapper {
                       className="clickable active"
                       onClick={[Function]}
                     >
-                      Buy
+                      orderbookwidget.buy
                     </a>
                     <div
                       className="arrow-down"
@@ -884,12 +802,13 @@ ShallowWrapper {
                       className="clickable "
                       onClick={[Function]}
                     >
-                      Sell
+                      orderbookwidget.sell
                     </a>
                   </li>
                 </ul>
                 <Connect(LimitOrderForm)
                   inputRef={[Function]}
+                  limit_rate="57.304957061"
                 />
                 <Connect(WalletAddress)
                   focusWalletAddress={[Function]}
@@ -904,26 +823,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                     onClick={[Function]}
                   >
-                    Buy ETH with OMG
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
                   </button>
                 </div>
               </div>
-              <OrderDepth
-                buyDepth={Array []}
-                selectedCoins={
-                  Object {
-                    "deposit": "OMG",
-                    "lastSelected": "deposit",
-                    "prev": Object {
-                      "deposit": "OMG",
-                      "receive": "ETH",
-                    },
-                    "receive": "ETH",
-                  }
-                }
-                sellDepth={Array []}
-              />
-               
+              <Connect(OrderDepth) />
               <Connect(MyOrders)
                 collapseMyOrders={[Function]}
                 expandMyOrders={[Function]}
@@ -966,7 +870,7 @@ ShallowWrapper {
                       className="clickable active"
                       onClick={[Function]}
                     >
-                      Buy
+                      orderbookwidget.buy
                     </a>
                     <div
                       className="arrow-down"
@@ -977,12 +881,13 @@ ShallowWrapper {
                       className="clickable "
                       onClick={[Function]}
                     >
-                      Sell
+                      orderbookwidget.sell
                     </a>
                   </li>
                 </ul>
                 <Connect(LimitOrderForm)
                   inputRef={[Function]}
+                  limit_rate="57.304957061"
                 />
                 <Connect(WalletAddress)
                   focusWalletAddress={[Function]}
@@ -997,26 +902,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                     onClick={[Function]}
                   >
-                    Buy ETH with OMG
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
                   </button>
                 </div>
               </div>
-              <OrderDepth
-                buyDepth={Array []}
-                selectedCoins={
-                  Object {
-                    "deposit": "OMG",
-                    "lastSelected": "deposit",
-                    "prev": Object {
-                      "deposit": "OMG",
-                      "receive": "ETH",
-                    },
-                    "receive": "ETH",
-                  }
-                }
-                sellDepth={Array []}
-              />
-               
+              <Connect(OrderDepth) />
               <Connect(MyOrders)
                 collapseMyOrders={[Function]}
                 expandMyOrders={[Function]}
@@ -1056,7 +946,7 @@ ShallowWrapper {
                         className="clickable active"
                         onClick={[Function]}
                       >
-                        Buy
+                        orderbookwidget.buy
                       </a>
                       <div
                         className="arrow-down"
@@ -1067,12 +957,13 @@ ShallowWrapper {
                         className="clickable "
                         onClick={[Function]}
                       >
-                        Sell
+                        orderbookwidget.sell
                       </a>
                     </li>
                   </ul>
                   <Connect(LimitOrderForm)
                     inputRef={[Function]}
+                    limit_rate="57.304957061"
                   />
                   <Connect(WalletAddress)
                     focusWalletAddress={[Function]}
@@ -1087,26 +978,11 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                       onClick={[Function]}
                     >
-                      Buy ETH with OMG
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
                     </button>
                   </div>
                 </div>,
-                <OrderDepth
-                  buyDepth={Array []}
-                  selectedCoins={
-                    Object {
-                      "deposit": "OMG",
-                      "lastSelected": "deposit",
-                      "prev": Object {
-                        "deposit": "OMG",
-                        "receive": "ETH",
-                      },
-                      "receive": "ETH",
-                    }
-                  }
-                  sellDepth={Array []}
-                />,
-                " ",
+                <Connect(OrderDepth) />,
                 <Connect(MyOrders)
                   collapseMyOrders={[Function]}
                   expandMyOrders={[Function]}
@@ -1155,7 +1031,7 @@ ShallowWrapper {
                           className="clickable active"
                           onClick={[Function]}
                         >
-                          Buy
+                          orderbookwidget.buy
                         </a>
                         <div
                           className="arrow-down"
@@ -1166,12 +1042,13 @@ ShallowWrapper {
                           className="clickable "
                           onClick={[Function]}
                         >
-                          Sell
+                          orderbookwidget.sell
                         </a>
                       </li>
                     </ul>,
                     <Connect(LimitOrderForm)
                       inputRef={[Function]}
+                      limit_rate="57.304957061"
                     />,
                     <Connect(WalletAddress)
                       focusWalletAddress={[Function]}
@@ -1186,7 +1063,7 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                         onClick={[Function]}
                       >
-                        Buy ETH with OMG
+                        orderbookwidget.buy ETH orderbookwidget.with OMG
                       </button>
                     </div>,
                   ],
@@ -1251,7 +1128,7 @@ ShallowWrapper {
                             className="clickable active"
                             onClick={[Function]}
                           >
-                            Buy
+                            orderbookwidget.buy
                           </a>
                           <div
                             className="arrow-down"
@@ -1262,7 +1139,7 @@ ShallowWrapper {
                             className="clickable "
                             onClick={[Function]}
                           >
-                            Sell
+                            orderbookwidget.sell
                           </a>
                         </li>,
                       ],
@@ -1280,7 +1157,7 @@ ShallowWrapper {
                               className="clickable active"
                               onClick={[Function]}
                             >
-                              Buy
+                              orderbookwidget.buy
                             </a>,
                             <div
                               className="arrow-down"
@@ -1294,12 +1171,12 @@ ShallowWrapper {
                             "key": undefined,
                             "nodeType": "host",
                             "props": Object {
-                              "children": "Buy",
+                              "children": "orderbookwidget.buy",
                               "className": "clickable active",
                               "onClick": [Function],
                             },
                             "ref": null,
-                            "rendered": "Buy",
+                            "rendered": "orderbookwidget.buy",
                             "type": "a",
                           },
                           Object {
@@ -1326,7 +1203,7 @@ ShallowWrapper {
                               className="clickable "
                               onClick={[Function]}
                             >
-                              Sell
+                              orderbookwidget.sell
                             </a>,
                             null,
                           ],
@@ -1338,12 +1215,12 @@ ShallowWrapper {
                             "key": undefined,
                             "nodeType": "host",
                             "props": Object {
-                              "children": "Sell",
+                              "children": "orderbookwidget.sell",
                               "className": "clickable ",
                               "onClick": [Function],
                             },
                             "ref": null,
-                            "rendered": "Sell",
+                            "rendered": "orderbookwidget.sell",
                             "type": "a",
                           },
                           null,
@@ -1359,7 +1236,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "inputRef": [Function],
-                      "limit_rate": undefined,
+                      "limit_rate": "57.304957061",
                       "quantity": undefined,
                     },
                     "ref": null,
@@ -1390,7 +1267,7 @@ ShallowWrapper {
                           disabled btn btn-block btn-primary proceed "
                         onClick={[Function]}
                       >
-                        Buy ETH with OMG
+                        orderbookwidget.buy ETH orderbookwidget.with OMG
                       </button>,
                       "className": "col-xs-12",
                     },
@@ -1400,13 +1277,13 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "Buy ETH with OMG",
+                        "children": "orderbookwidget.buy ETH orderbookwidget.with OMG",
                         "className": "btn btn-buy 
                           disabled btn btn-block btn-primary proceed ",
                         "onClick": [Function],
                       },
                       "ref": [Function],
-                      "rendered": "Buy ETH with OMG",
+                      "rendered": "orderbookwidget.buy ETH orderbookwidget.with OMG",
                       "type": "button",
                     },
                     "type": "div",
@@ -1418,24 +1295,11 @@ ShallowWrapper {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
-                "props": Object {
-                  "buyDepth": Array [],
-                  "selectedCoins": Object {
-                    "deposit": "OMG",
-                    "lastSelected": "deposit",
-                    "prev": Object {
-                      "deposit": "OMG",
-                      "receive": "ETH",
-                    },
-                    "receive": "ETH",
-                  },
-                  "sellDepth": Array [],
-                },
+                "props": Object {},
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
               },
-              " ",
               Object {
                 "instance": null,
                 "key": undefined,
