@@ -81,6 +81,7 @@
     "forgotpassword1": "Haben Sie Ihr Passwort vergessen?",
     "forgotpassword2": "Wenn Sie Ihr Passwort zurücksetzen möchten, geben Sie bitte Ihre E-Mail-Adresse ein",
     "resetpassword": "Passwort zurücksetzen"
+  },
   "integrations": {
     "error" : {
       "metamask": "Auf die Metamask-Erweiterung konnte nicht zugegriffen werden. Bitte stellen Sie sicher, dass es aktiviert und nicht gesperrt ist" 
