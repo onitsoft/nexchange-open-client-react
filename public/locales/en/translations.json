@@ -78,6 +78,7 @@
     "forgotpassword1": "Forgot your password?",
     "forgotpassword2": "If you want to reset your password, please enter your email address",
     "resetpassword": "Reset Password"
+  },
  "integrations": {
     "error" : {
       "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
