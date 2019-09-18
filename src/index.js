@@ -11,6 +11,7 @@ import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
 import NotFound from 'Components/NotFound/NotFound';
 import FAQ from 'Components/FAQ/FAQ';
+import Convert from 'Components/Convert/Convert';
 
 import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
@@ -61,6 +62,7 @@ ReactDOM.render(
           <Route exact path="/forgot-password" component={ForgotPassword} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
           <Route exact path="/not-found" component={NotFound} />
+          <Route exact path="/convert/:pair?" component={Convert} />
           <Route component={NotFoundRedirect} />
         </Switch>
 
