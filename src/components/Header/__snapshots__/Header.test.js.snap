@@ -194,12 +194,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.twitter"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/twitter"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.twitter"
               >
                 <i
                   aria-hidden="true"
@@ -212,12 +212,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.facebook"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/fb"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.facebook"
               >
                 <i
                   aria-hidden="true"
@@ -230,12 +230,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.slack"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/slack"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.slack"
               >
                 <i
                   aria-hidden="true"
@@ -248,12 +248,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.telegram"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/telegram"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.telegram"
               >
                 <i
                   aria-hidden="true"
@@ -447,12 +447,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -465,12 +465,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -483,12 +483,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -501,12 +501,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -829,12 +829,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -847,12 +847,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -865,12 +865,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -883,12 +883,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -1030,12 +1030,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -1048,12 +1048,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -1066,12 +1066,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -1084,12 +1084,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -1499,12 +1499,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -1524,12 +1524,12 @@ ShallowWrapper {
                       className="fab fa-twitter"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.twitter",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/twitter",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.twitter",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1555,12 +1555,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -1580,12 +1580,12 @@ ShallowWrapper {
                       className="fab fa-facebook-f"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.facebook",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/fb",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.facebook",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1611,12 +1611,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -1636,12 +1636,12 @@ ShallowWrapper {
                       className="fab fa-slack-hash"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.slack",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/slack",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.slack",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1667,12 +1667,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -1692,12 +1692,12 @@ ShallowWrapper {
                       className="fab fa-telegram"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.telegram",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/telegram",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.telegram",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1916,12 +1916,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -1934,12 +1934,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -1952,12 +1952,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -1970,12 +1970,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -2169,12 +2169,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -2187,12 +2187,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -2205,12 +2205,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -2223,12 +2223,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -2551,12 +2551,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -2569,12 +2569,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -2587,12 +2587,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -2605,12 +2605,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -2752,12 +2752,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.twitter"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/twitter"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.twitter"
                     >
                       <i
                         aria-hidden="true"
@@ -2770,12 +2770,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.facebook"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/fb"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.facebook"
                     >
                       <i
                         aria-hidden="true"
@@ -2788,12 +2788,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.slack"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/slack"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.slack"
                     >
                       <i
                         aria-hidden="true"
@@ -2806,12 +2806,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.telegram"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/telegram"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.telegram"
                     >
                       <i
                         aria-hidden="true"
@@ -3221,12 +3221,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.twitter"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/twitter"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.twitter"
                     >
                       <i
                         aria-hidden="true"
@@ -3246,12 +3246,12 @@ ShallowWrapper {
                         className="fab fa-twitter"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.twitter",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/twitter",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.twitter",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3277,12 +3277,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.facebook"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/fb"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.facebook"
                     >
                       <i
                         aria-hidden="true"
@@ -3302,12 +3302,12 @@ ShallowWrapper {
                         className="fab fa-facebook-f"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.facebook",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/fb",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.facebook",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3333,12 +3333,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.slack"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/slack"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.slack"
                     >
                       <i
                         aria-hidden="true"
@@ -3358,12 +3358,12 @@ ShallowWrapper {
                         className="fab fa-slack-hash"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.slack",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/slack",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.slack",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3389,12 +3389,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.telegram"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/telegram"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.telegram"
                     >
                       <i
                         aria-hidden="true"
@@ -3414,12 +3414,12 @@ ShallowWrapper {
                         className="fab fa-telegram"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.telegram",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/telegram",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.telegram",
                     },
                     "ref": null,
                     "rendered": Object {
