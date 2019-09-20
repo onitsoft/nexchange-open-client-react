@@ -324,7 +324,7 @@ ShallowWrapper {
                   i18nKey="faq.ans8"
                 >
                   <p>
-                    No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                    No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                   </p>
                 </Trans>
               }
@@ -415,7 +415,7 @@ ShallowWrapper {
                         We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                       </li>
                       <li>
-                        We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                        We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                       </li>
                       <li>
                         You will be receiving your funds to the withdraw address specified on this order.
@@ -774,7 +774,7 @@ ShallowWrapper {
                     i18nKey="faq.ans8"
                   >
                     <p>
-                      No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                      No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                     </p>
                   </Trans>
                 }
@@ -865,7 +865,7 @@ ShallowWrapper {
                           We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                         </li>
                         <li>
-                          We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                          We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                         </li>
                         <li>
                           You will be receiving your funds to the withdraw address specified on this order.
@@ -1270,7 +1270,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>
                   }
@@ -1361,7 +1361,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -1753,7 +1753,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>
                     }
@@ -1844,7 +1844,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
@@ -2197,7 +2197,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>,
                     "id": "ques8",
@@ -2306,7 +2306,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -2702,7 +2702,7 @@ ShallowWrapper {
                     i18nKey="faq.ans8"
                   >
                     <p>
-                      No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                      No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                     </p>
                   </Trans>
                 }
@@ -2793,7 +2793,7 @@ ShallowWrapper {
                           We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                         </li>
                         <li>
-                          We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                          We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                         </li>
                         <li>
                           You will be receiving your funds to the withdraw address specified on this order.
@@ -3152,7 +3152,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>
                   }
@@ -3243,7 +3243,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -3648,7 +3648,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>
                     }
@@ -3739,7 +3739,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
@@ -4131,7 +4131,7 @@ ShallowWrapper {
                           i18nKey="faq.ans8"
                         >
                           <p>
-                            No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                            No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                           </p>
                         </Trans>
                       }
@@ -4222,7 +4222,7 @@ ShallowWrapper {
                                 We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                               </li>
                               <li>
-                                We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                                We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                               </li>
                               <li>
                                 You will be receiving your funds to the withdraw address specified on this order.
@@ -4575,7 +4575,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>,
                       "id": "ques8",
@@ -4684,7 +4684,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
@@ -5125,7 +5125,7 @@ ShallowWrapper {
                   i18nKey="faq.ans8"
                 >
                   <p>
-                    No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                    No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                   </p>
                 </Trans>
               }
@@ -5216,7 +5216,7 @@ ShallowWrapper {
                         We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                       </li>
                       <li>
-                        We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                        We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                       </li>
                       <li>
                         You will be receiving your funds to the withdraw address specified on this order.
@@ -5575,7 +5575,7 @@ ShallowWrapper {
                     i18nKey="faq.ans8"
                   >
                     <p>
-                      No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                      No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                     </p>
                   </Trans>
                 }
@@ -5666,7 +5666,7 @@ ShallowWrapper {
                           We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                         </li>
                         <li>
-                          We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                          We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                         </li>
                         <li>
                           You will be receiving your funds to the withdraw address specified on this order.
@@ -6071,7 +6071,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>
                   }
@@ -6162,7 +6162,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -6554,7 +6554,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>
                     }
@@ -6645,7 +6645,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
@@ -6998,7 +6998,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>,
                     "id": "ques8",
@@ -7107,7 +7107,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -7503,7 +7503,7 @@ ShallowWrapper {
                     i18nKey="faq.ans8"
                   >
                     <p>
-                      No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                      No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                     </p>
                   </Trans>
                 }
@@ -7594,7 +7594,7 @@ ShallowWrapper {
                           We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                         </li>
                         <li>
-                          We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                          We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                         </li>
                         <li>
                           You will be receiving your funds to the withdraw address specified on this order.
@@ -7953,7 +7953,7 @@ ShallowWrapper {
                       i18nKey="faq.ans8"
                     >
                       <p>
-                        No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                        No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                       </p>
                     </Trans>
                   }
@@ -8044,7 +8044,7 @@ ShallowWrapper {
                             We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                           </li>
                           <li>
                             You will be receiving your funds to the withdraw address specified on this order.
@@ -8449,7 +8449,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>
                     }
@@ -8540,7 +8540,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
@@ -8932,7 +8932,7 @@ ShallowWrapper {
                           i18nKey="faq.ans8"
                         >
                           <p>
-                            No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                            No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                           </p>
                         </Trans>
                       }
@@ -9023,7 +9023,7 @@ ShallowWrapper {
                                 We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                               </li>
                               <li>
-                                We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                                We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                               </li>
                               <li>
                                 You will be receiving your funds to the withdraw address specified on this order.
@@ -9376,7 +9376,7 @@ ShallowWrapper {
                         i18nKey="faq.ans8"
                       >
                         <p>
-                          No, our solution is completely independant. We use our internal coin reserves to provide liquidity.
+                          No, our solution is completely independent. We use our internal coin reserves to provide liquidity.
                         </p>
                       </Trans>,
                       "id": "ques8",
@@ -9485,7 +9485,7 @@ ShallowWrapper {
                               We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.
                             </li>
                             <li>
-                              We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
+                              We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.
                             </li>
                             <li>
                               You will be receiving your funds to the withdraw address specified on this order.
