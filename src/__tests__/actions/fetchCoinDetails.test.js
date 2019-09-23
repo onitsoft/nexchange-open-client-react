@@ -6,7 +6,7 @@ import * as types from 'Actions/types';
 import * as actions from 'Actions';
 import mockData from '../../__mocks__/currency';
 import _ from 'lodash';
-import config from 'Config';
+import config from '#config';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

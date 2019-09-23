@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 import i18n from '#i18n';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 
 import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from 'Actions/index.js';
 import { bindCrispEmail } from 'Utils/crispEmailBinding';

@@ -6,7 +6,7 @@ import * as types from 'Actions/types';
 import * as actions from 'Actions';
 import mockDataSell from '../../__mocks__/orderbook_sell';
 import mockDataBuy from '../../__mocks__/orderbook_buy';
-import config from 'Config';
+import config from '#config';
 import generateDepth from 'Utils/generateDepth';
 
 const middlewares = [thunk];

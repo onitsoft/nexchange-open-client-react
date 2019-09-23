@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
 

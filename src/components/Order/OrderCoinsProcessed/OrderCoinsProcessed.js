@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import OrderCoinProcessed from './OrderCoinProcessed/OrderCoinProcessed';
 import styles from './OrderCoinsProcessed.scss';
 import ArrowRight from './images/arrow-right.svg';

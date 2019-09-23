@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import getBlockchainUrl from 'Utils/getBlockchainUrl';
-import config from 'Config';
+import config from '#config';
 import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import { I18n } from 'react-i18next';

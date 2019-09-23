@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import { fetchPrice } from 'Actions/index.js';
 import styles from './CoinPrices.scss';
 

@@ -6,7 +6,7 @@ import OrderBookWidget from './OrderBookWidget/OrderBookWidget';
 import OrderBookDisabled from './OrderBookWidget/OrderBookDisabled';
 import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
-import Config from 'Config'; 
+import Config from '#config'; 
 
 import urlParams from 'Utils/urlParams';
 import styles from './Hero.scss';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config from 'Config';
+import config from '#config';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import OrderReferralTerms from './OrderReferralTerms/OrderReferralTerms';
 import Man from './images/man.png';

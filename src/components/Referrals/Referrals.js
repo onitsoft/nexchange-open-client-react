@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import urlParams from 'Utils/urlParams';
-import config from 'Config';
+import config from '#config';
 
 class Referrals extends Component {
   componentDidMount() {

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchOrder, fetchPrice, setOrder } from 'Actions';
 
 import isFiatOrder from 'Utils/isFiatOrder';
-import config from 'Config';
+import config from '#config';
 
 import OrderMain from './OrderMain/OrderMain';
 import OrderTop from './OrderTop/OrderTop';

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { setUserEmail } from 'Actions';
-import config from 'Config';
+import config from '#config';
 
 class Support extends Component {
   constructor(props){

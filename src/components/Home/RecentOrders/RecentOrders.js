@@ -7,7 +7,7 @@ import 'moment/locale/en-gb';
 import _ from 'lodash';
 
 import urlParams from 'Utils/urlParams';
-import config from 'Config';
+import config from '#config';
 
 import LoadingComponent from './LoadingComponent/LoadingComponent';
 import styles from './RecentOrders.scss';

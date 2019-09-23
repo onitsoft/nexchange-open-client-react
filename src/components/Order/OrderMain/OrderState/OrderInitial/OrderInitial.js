@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import isFiatOrder from 'Utils/isFiatOrder';
 import OrderInitialFiat from './OrderInitialFiat/OrderInitialFiat';
 import OrderInitialCrypto from './OrderInitialCrypto/OrderInitialCrypto';

@@ -1,5 +1,5 @@
 import React from 'react';
-import config from 'Config';
+import config from '#config';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import { I18n, Trans } from 'react-i18next';
 

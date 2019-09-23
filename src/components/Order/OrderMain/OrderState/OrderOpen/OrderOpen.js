@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 import { fetchPairs, selectCoin, fetchOrderBook} from 'Actions';
-import config from 'Config';
+import config from '#config';
 
 import styles from './OrderOpen.scss';
 import OrderDepth from '../../../../Home/Hero/OrderBookWidget/OrderDepth/OrderDepth';

@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import { changeOrderBookValue } from 'Actions/index.js';
 
 import MyOrdersCollapsed from './MyOrdersCollapsed/MyOrdersCollapsed';

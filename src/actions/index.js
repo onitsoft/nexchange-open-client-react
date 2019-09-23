@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from './types';
 import _ from 'lodash';
-import config from 'Config';
+import config from '#config';
 import urlParams from 'Utils/urlParams';
 import preparePairs from 'Utils/preparePairs';
 import i18n from '#i18n';

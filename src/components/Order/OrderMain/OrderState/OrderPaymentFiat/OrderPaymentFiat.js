@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchKyc } from 'Actions';
-import config from 'Config';
+import config from '#config';
 import KYCModalTier0 from '../OrderFiatModals/KYCModalTier0/KYCModalTier0';
 import KYCModalTier1 from '../OrderFiatModals/KYCModalTier1/KYCModalTier1';
 import KYCModalTier2 from '../OrderFiatModals/KYCModalTier2/KYCModalTier2';

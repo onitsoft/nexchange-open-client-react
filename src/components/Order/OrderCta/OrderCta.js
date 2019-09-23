@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
 import OrderNotifications from './OrderNotifications/OrderNotifications';
 import OrderReferrals from './OrderReferrals/OrderReferrals';
-import config from 'Config';
+import config from '#config';
 import { I18n } from 'react-i18next';
 
 class OrderCta extends Component {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 
 export default () => {
   axios.interceptors.request.use(

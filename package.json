@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "alias": {
     "#components": "./src/components",
+    "#config": "./src/config.js",
     "#i18n": "./src/i18n",
     "#root": "./src/"
   },

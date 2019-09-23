@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import axios from 'axios';
-import config from 'Config';
+import config from '#config';
 import styles from './PriceComparison.scss';
 
 class PriceComparison extends Component {
