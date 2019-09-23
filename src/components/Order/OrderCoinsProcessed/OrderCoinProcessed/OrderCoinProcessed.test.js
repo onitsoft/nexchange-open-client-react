@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import OrderCoinProcessed from './OrderCoinProcessed';
-import order from 'Mocks/order';
-import orderFiat from 'Mocks/orderFiat';
+import order from '#mocks/order';
+import orderFiat from '#mocks/orderFiat';
 window.$ = window.jQuery = require('jquery');
 
 const axiosMock = new MockAdapter(axios);

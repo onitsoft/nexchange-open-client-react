@@ -7,7 +7,7 @@ import * as actions from '#actions';
 import mockDataSell from '../../__mocks__/orderbook_sell';
 import mockDataBuy from '../../__mocks__/orderbook_buy';
 import config from '#config';
-import generateDepth from 'Utils/generateDepth';
+import generateDepth from '#utils/generateDepth';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

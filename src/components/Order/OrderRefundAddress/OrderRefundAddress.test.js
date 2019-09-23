@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import OrderRefundAddress from './OrderRefundAddress';
-import order from 'Mocks/order';
+import order from '#mocks/order';
 
 describe('OrderRefundAddress', () => {
   it('renders correctly', () => {

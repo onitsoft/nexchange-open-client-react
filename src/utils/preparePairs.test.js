@@ -1,6 +1,6 @@
-import preparePairs from 'Utils/preparePairs';
-import pair from 'Mocks/pair';
-import processedPairs from 'Mocks/processedPairs';
+import preparePairs from '#utils/preparePairs';
+import pair from '#mocks/pair';
+import processedPairs from '#mocks/processedPairs';
 
 describe('Prepare pairs', () => {
   it('pairs are prepared correctly', () => {

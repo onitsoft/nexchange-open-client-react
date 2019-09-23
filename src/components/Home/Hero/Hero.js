@@ -8,7 +8,7 @@ import CoinPrices from './CoinPrices/CoinPrices';
 import ErrorAlert from './ErrorAlert/ErrorAlert';
 import Config from '#config'; 
 
-import urlParams from 'Utils/urlParams';
+import urlParams from '#utils/urlParams';
 import styles from './Hero.scss';
 
 class Hero extends Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CoinsDropdown from './CoinsDropdown.js';
-import coinsInfo from 'Mocks/currency.js';
+import coinsInfo from '#mocks/currency.js';
 
 describe('CoinsDropdown', () => {
   let wrapShallowDeposit, wrapShallowReceive;

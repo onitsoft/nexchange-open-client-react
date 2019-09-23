@@ -7,8 +7,8 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { CoinSelectorTesting as CoinSelector } from './CoinSelector.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
-import coinsInfo from 'Mocks/currency.js';
-import pairs from 'Mocks/processedPairs.js';
+import coinsInfo from '#mocks/currency.js';
+import pairs from '#mocks/processedPairs.js';
 import reducers from 'Reducers';
 
 describe('CoinSelector', () => {

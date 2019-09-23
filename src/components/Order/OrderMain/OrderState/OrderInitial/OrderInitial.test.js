@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import MockDate from 'mockdate';
 import OrderInitial from './OrderInitial';
-import order from 'Mocks/order';
-import orderFiat from 'Mocks/orderFiat';
-import orderExpired from 'Mocks/orderExpired';
+import order from '#mocks/order';
+import orderFiat from '#mocks/orderFiat';
+import orderExpired from '#mocks/orderExpired';
 
 describe('OrderInitial', () => {
   let wrapShallowFiat, wrapShallowCrypto, wrapShallowExpired;

@@ -1,5 +1,5 @@
 import React from 'react';
-// import getBlockchainUrl from 'Utils/getBlockchainUrl';
+// import getBlockchainUrl from '#utils/getBlockchainUrl';
 import styles from './OrderLinks.scss';
 import { I18n } from 'react-i18next';
 

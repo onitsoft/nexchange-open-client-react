@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchOrder, fetchPrice, setOrder } from '#actions';
 
-import isFiatOrder from 'Utils/isFiatOrder';
+import isFiatOrder from '#utils/isFiatOrder';
 import config from '#config';
 
 import OrderMain from './OrderMain/OrderMain';

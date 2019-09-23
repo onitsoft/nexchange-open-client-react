@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import OrderMain from './OrderMain';
-import order from 'Mocks/order';
+import order from '#mocks/order';
 
 describe('OrderMain', () => {
   it('renders correctly', () => {

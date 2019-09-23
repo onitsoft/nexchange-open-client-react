@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import OrderInitialCrypto from './OrderInitialCrypto';
-import order from 'Mocks/order';
+import order from '#mocks/order';
 
 describe('OrderInitialCrypto', () => {
   it('renders correctly', () => {

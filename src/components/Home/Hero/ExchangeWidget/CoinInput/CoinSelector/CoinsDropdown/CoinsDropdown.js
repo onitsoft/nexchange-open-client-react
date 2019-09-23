@@ -3,8 +3,8 @@ import _ from 'lodash';
 import Fuse from 'fuse.js';
 import cx from 'classnames';
 import { translate } from 'react-i18next';
-import urlParams from 'Utils/urlParams';
-import debounce from 'Utils/debounce';
+import urlParams from '#utils/urlParams';
+import debounce from '#utils/debounce';
 import styles from './CoinsDropdown.scss';
 
 class CoinsDropdown extends Component {

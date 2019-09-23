@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { I18n, Trans } from 'react-i18next';
 import Fuse from 'fuse.js';
-import debounce from 'Utils/debounce';
+import debounce from '#utils/debounce';
 import i18n from '#i18n';
 
 import QuestionAnswer from './QuestionAnswer/QuestionAnswer';

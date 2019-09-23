@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import OrderState from './OrderState';
-import order from 'Mocks/order';
-import orderFiat from 'Mocks/orderFiat';
+import order from '#mocks/order';
+import orderFiat from '#mocks/orderFiat';
 
 const STATUS_CODES = {
   0: 'CANCELLED',

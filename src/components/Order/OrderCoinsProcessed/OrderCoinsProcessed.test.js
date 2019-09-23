@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import OrderCoinsProcessed from './OrderCoinsProcessed';
-import order from 'Mocks/order';
+import order from '#mocks/order';
 
 const axiosMock = new MockAdapter(axios);
 

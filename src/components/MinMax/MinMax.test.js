@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import orderFiat from 'Mocks/orderFiat';
-import order from 'Mocks/order';
+import orderFiat from '#mocks/orderFiat';
+import order from '#mocks/order';
 import MinMax from './MinMax';
 
 describe('MinMax', () => {

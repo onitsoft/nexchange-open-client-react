@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { errorAlert, setWallet, selectCoin, fetchPrice } from '#actions/index.js';
-import { validateWalletAddress, getMatchingCoins } from 'Utils/walletAddress';
+import { validateWalletAddress, getMatchingCoins } from '#utils/walletAddress';
 import styles from './WalletAddress.scss';
 import AddressHistory from './AddressHistory/AddressHistory';
 import { I18n } from 'react-i18next';
 import i18n from '../../../../../i18n';
 
-import urlParams from 'Utils/urlParams';
+import urlParams from '#utils/urlParams';
 
 
 class WalletAddress extends Component {

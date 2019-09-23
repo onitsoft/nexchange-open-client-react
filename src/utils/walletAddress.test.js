@@ -1,4 +1,4 @@
-import { validateWalletAddress } from 'Utils/walletAddress';
+import { validateWalletAddress } from '#utils/walletAddress';
 
 describe('Validate coin address', () => {
   it('validates valid BTC address', () => {

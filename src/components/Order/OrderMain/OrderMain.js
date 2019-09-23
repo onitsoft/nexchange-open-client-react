@@ -2,7 +2,7 @@ import React from 'react';
 
 import OrderStatus from './OrderStatus/OrderStatus';
 import OrderState from './OrderState/OrderState';
-import isFiatOrder from 'Utils/isFiatOrder';
+import isFiatOrder from '#utils/isFiatOrder';
 
 const OrderMain = props => {
   const isFiat = isFiatOrder(props.order);

@@ -2,8 +2,8 @@ import axios from 'axios';
 import * as types from './types';
 import _ from 'lodash';
 import config from '#config';
-import urlParams from 'Utils/urlParams';
-import preparePairs from 'Utils/preparePairs';
+import urlParams from '#utils/urlParams';
+import preparePairs from '#utils/preparePairs';
 import i18n from '#i18n';
 import generateDepth from '../utils/generateDepth';
 

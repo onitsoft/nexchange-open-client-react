@@ -17,8 +17,8 @@ import Order from '#components/Order/Order';
 import TermsConditions from '#components/TermsConditions/TermsConditions';
 import Privacy from '#components/Privacy/Privacy';
 
-import setAuthToken from 'Utils/setAuthToken';
-import crispEmailBinding from 'Utils/crispEmailBinding';
+import setAuthToken from '#utils/setAuthToken';
+import crispEmailBinding from '#utils/crispEmailBinding';
 
 import reducers from './reducers';
 import './css/index.scss';
@@ -35,7 +35,7 @@ const store = createStore(reducers, enhancer);
 
 setAuthToken();
 crispEmailBinding(store);
-require('Utils/bindGa');
+require('#utils/bindGa');
 
 ReactDOM.render(
   <Provider store={store}>

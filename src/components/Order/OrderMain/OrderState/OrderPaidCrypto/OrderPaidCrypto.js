@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import getBlockchainUrl from 'Utils/getBlockchainUrl';
+import getBlockchainUrl from '#utils/getBlockchainUrl';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import OrderCheckIcon from '../OrderIcons/OrderCheckIcon/OrderCheckIcon';
 import OrderStateLoader from '../OrderIcons/OrderStateLoader/OrderStateLoader';

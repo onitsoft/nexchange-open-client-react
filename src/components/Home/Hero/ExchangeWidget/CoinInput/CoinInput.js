@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import debounce from 'Utils/debounce';
+import debounce from '#utils/debounce';
 import { fetchPrice } from '#actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
 import MinMax from '#components/MinMax/MinMax';

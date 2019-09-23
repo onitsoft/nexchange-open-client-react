@@ -1,4 +1,4 @@
-import getBlockchainUrl from 'Utils/getBlockchainUrl';
+import getBlockchainUrl from '#utils/getBlockchainUrl';
 
 describe('Prepare pairs', () => {
   it('returns correct ERC20 and ETH blockchain urls', () => {

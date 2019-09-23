@@ -8,7 +8,7 @@ import axios from 'axios';
 import config from '#config';
 
 import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from '#actions/index.js';
-import { bindCrispEmail } from 'Utils/crispEmailBinding';
+import { bindCrispEmail } from '#utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';

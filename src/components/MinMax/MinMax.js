@@ -1,6 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import isFiatOrder from 'Utils/isFiatOrder';
+import isFiatOrder from '#utils/isFiatOrder';
 import styles from './MinMax.scss';
 
 const MinMax = props => {

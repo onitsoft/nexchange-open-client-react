@@ -6,12 +6,12 @@ import moment from 'moment/min/moment-with-locales.min.js';
 import 'moment/locale/en-gb';
 import _ from 'lodash';
 
-import urlParams from 'Utils/urlParams';
+import urlParams from '#utils/urlParams';
 import config from '#config';
 
 import LoadingComponent from './LoadingComponent/LoadingComponent';
 import styles from './RecentOrders.scss';
-import arrow from 'Img/arrow-right-2.svg';
+import arrow from '#img/arrow-right-2.svg';
 
 class RecentOrders extends Component {
   state = {

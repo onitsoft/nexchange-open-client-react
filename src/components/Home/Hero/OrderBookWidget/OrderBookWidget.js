@@ -15,7 +15,7 @@ import LimitOrderForm from './LimitOrderForm/LimitOrderForm';
 import MyOrders from './MyOrders/MyOrders';
 import OrderModeSwitch from '../OrderModeSwitch/OrderModeSwitch';
 
-import urlParams from 'Utils/urlParams';
+import urlParams from '#utils/urlParams';
 import styles from './OrderBookWidget.scss';
 
 

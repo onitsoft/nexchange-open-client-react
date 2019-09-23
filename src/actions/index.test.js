@@ -22,10 +22,10 @@ import {
   changeOrderMode,
   changeOrderBookValue
 } from './index.js';
-import currency from 'Mocks/currency';
-import pair from 'Mocks/pair';
-import order from 'Mocks/order';
-import kyc from 'Mocks/kyc.js';
+import currency from '#mocks/currency';
+import pair from '#mocks/pair';
+import order from '#mocks/order';
+import kyc from '#mocks/kyc.js';
 import preparePairs from '../utils/preparePairs';
 
 const middlewares = [thunk];

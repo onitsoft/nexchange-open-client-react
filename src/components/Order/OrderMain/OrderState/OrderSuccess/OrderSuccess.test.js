@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import OrderSuccess from './OrderSuccess';
-import order from 'Mocks/order';
+import order from '#mocks/order';
 
 describe('OrderSuccess', () => {
   it('renders correctly', () => {
