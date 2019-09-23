@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import i18n from 'Src/i18n';
+import i18n from '#i18n';
 import axios from 'axios';
 import config from 'Config';
 import { setOrder, fetchOrderBook, errorAlert, changeOrderBookValue } from 'Actions/index.js';

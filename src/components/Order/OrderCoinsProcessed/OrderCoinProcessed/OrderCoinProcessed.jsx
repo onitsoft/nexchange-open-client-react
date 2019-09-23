@@ -3,7 +3,7 @@ import { I18n } from 'react-i18next';
 import copy from 'clipboard-copy';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
-import i18n from 'Src/i18n';
+import i18n from '#i18n';
 import MinMax from 'Components/MinMax/MinMax';
 
 class OrderCoinProcessed extends Component {

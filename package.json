@@ -1,6 +1,10 @@
 {
   "name": "nexchange-open-client-react",
   "version": "0.1.0",
+  "alias": {
+    "#i18n": "./src/i18n",
+    "#root": "./src/"
+  },
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime-corejs2": "^7.0.0",

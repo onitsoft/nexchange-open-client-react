@@ -4,7 +4,7 @@ import _ from 'lodash';
 import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import preparePairs from 'Utils/preparePairs';
-import i18n from 'Src/i18n';
+import i18n from '#i18n';
 import generateDepth from '../utils/generateDepth';
 
 export const errorAlert = payload => ({
