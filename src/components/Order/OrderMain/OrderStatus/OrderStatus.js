@@ -2,7 +2,7 @@ import React from 'react';
 import OrderStatusFiat from './OrderStatusFiat/OrderStatusFiat';
 import OrderStatusCrypto from './OrderStatusCrypto/OrderStatusCrypto';
 import LimitOrderStatus from './LimitOrderStatus/LimitOrderStatus';
-import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
+import { STATUS_CODES, BOOK_STATUS_CODES } from '#statuscodes';
 import styles from './OrderStatus.scss';
 
 const OrderStatus = props => {

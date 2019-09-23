@@ -15,7 +15,7 @@ import OrderPaidCrypto from './OrderPaidCrypto/OrderPaidCrypto';
 
 import OrderOpen from './OrderOpen/OrderOpen';
 
-import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
+import { STATUS_CODES, BOOK_STATUS_CODES } from '#statuscodes';
 
 const OrderState = props => {
   if(!props.isLimitOrder){

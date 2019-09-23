@@ -6,7 +6,8 @@
     "#components": "./src/components",
     "#config": "./src/config.js",
     "#i18n": "./src/i18n",
-    "#root": "./src/"
+    "#root": "./src/",
+    "#statuscodes": "./src/statusCodes.js"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",

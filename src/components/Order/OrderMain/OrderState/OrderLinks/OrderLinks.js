@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './OrderLinks.scss';
 import { I18n } from 'react-i18next';
 
-import { STATUS_CODES } from 'StatusCodes';
+import { STATUS_CODES } from '#statuscodes';
 
 const OrderLinks = props => (
   <I18n ns="translations">
