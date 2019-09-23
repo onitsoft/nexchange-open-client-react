@@ -111,7 +111,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "preinstall": "rm -rf node_modules/websocket/.git"
   },
   "jest": {
     "collectCoverageFrom": [
