@@ -10,7 +10,7 @@ import config from 'Config';
 import OrderMain from './OrderMain/OrderMain';
 import OrderTop from './OrderTop/OrderTop';
 
-import NotFound from 'Components/NotFound/NotFound';
+import NotFound from '#components/NotFound/NotFound';
 import OrderLoading from './OrderLoading/OrderLoading';
 import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
 import OrderCta from './OrderCta/OrderCta';

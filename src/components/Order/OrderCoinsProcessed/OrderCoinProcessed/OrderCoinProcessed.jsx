@@ -4,7 +4,7 @@ import copy from 'clipboard-copy';
 import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
 import i18n from '#i18n';
-import MinMax from 'Components/MinMax/MinMax';
+import MinMax from '#components/MinMax/MinMax';
 
 class OrderCoinProcessed extends Component {
   state = { order: this.props.order, hiddenAddress: true };

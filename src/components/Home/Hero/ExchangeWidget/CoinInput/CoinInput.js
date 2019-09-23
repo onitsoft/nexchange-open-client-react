@@ -5,7 +5,7 @@ import { I18n } from 'react-i18next';
 import debounce from 'Utils/debounce';
 import { fetchPrice } from 'Actions/index.js';
 import CoinSelector from './CoinSelector/CoinSelector';
-import MinMax from 'Components/MinMax/MinMax';
+import MinMax from '#components/MinMax/MinMax';
 import styles from './CoinInput.scss';
 
 class CoinInput extends PureComponent {

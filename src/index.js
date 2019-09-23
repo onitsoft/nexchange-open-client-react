@@ -6,16 +6,16 @@ import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './i18n';
 
-import Referrals from 'Components/Referrals/Referrals';
-import Header from 'Components/Header/Header';
-import Footer from 'Components/Footer/Footer';
-import NotFound from 'Components/NotFound/NotFound';
-import FAQ from 'Components/FAQ/FAQ';
+import Referrals from '#components/Referrals/Referrals';
+import Header from '#components/Header/Header';
+import Footer from '#components/Footer/Footer';
+import NotFound from '#components/NotFound/NotFound';
+import FAQ from '#components/FAQ/FAQ';
 
-import Home from 'Components/Home/Home';
-import Order from 'Components/Order/Order';
-import TermsConditions from 'Components/TermsConditions/TermsConditions';
-import Privacy from 'Components/Privacy/Privacy';
+import Home from '#components/Home/Home';
+import Order from '#components/Order/Order';
+import TermsConditions from '#components/TermsConditions/TermsConditions';
+import Privacy from '#components/Privacy/Privacy';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
