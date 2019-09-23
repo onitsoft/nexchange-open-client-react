@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setUserEmail } from 'Actions';
+import { setUserEmail } from '#actions';
 import OrderNotifications from './OrderNotifications/OrderNotifications';
 import OrderReferrals from './OrderReferrals/OrderReferrals';
 import config from '#config';

@@ -1,4 +1,4 @@
-import { ORDER_BOOK_DATA_FETCHED, ORDER_BOOK_VALUE_CHANGE } from 'Actions/types';
+import { ORDER_BOOK_DATA_FETCHED, ORDER_BOOK_VALUE_CHANGE } from '#actions/types';
 
 const initialState = {
     order_type: 'BUY',

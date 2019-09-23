@@ -1,5 +1,5 @@
 import reducer from '../../reducers/reducer_order';
-import * as types from 'Actions/types';
+import * as types from '#actions/types';
 import mockData from '../../__mocks__/order';
 
 describe('order reducer', () => {

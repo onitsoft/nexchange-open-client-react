@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import { changeOrderBookValue } from 'Actions/index.js';
+import { changeOrderBookValue } from '#actions/index.js';
 
 import styles from './OrderDepthItem.scss';
 

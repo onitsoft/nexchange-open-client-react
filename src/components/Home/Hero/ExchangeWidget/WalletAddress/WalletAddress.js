@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { errorAlert, setWallet, selectCoin, fetchPrice } from 'Actions/index.js';
+import { errorAlert, setWallet, selectCoin, fetchPrice } from '#actions/index.js';
 import { validateWalletAddress, getMatchingCoins } from 'Utils/walletAddress';
 import styles from './WalletAddress.scss';
 import AddressHistory from './AddressHistory/AddressHistory';

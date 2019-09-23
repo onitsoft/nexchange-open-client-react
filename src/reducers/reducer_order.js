@@ -1,4 +1,4 @@
-import { SET_ORDER } from 'Actions/types';
+import { SET_ORDER } from '#actions/types';
 
 export default (state = null, action) => {
   switch (action.type) {

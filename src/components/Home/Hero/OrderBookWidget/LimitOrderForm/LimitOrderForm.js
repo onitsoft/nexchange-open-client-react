@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 import styles from './LimitOrderForm.scss';
 
-import { changeOrderBookValue } from 'Actions/index.js';
+import { changeOrderBookValue } from '#actions/index.js';
 
 
 class LimitOrderForm extends PureComponent {

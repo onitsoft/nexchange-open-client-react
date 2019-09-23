@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import config from '#config';
-import { changeOrderBookValue } from 'Actions/index.js';
+import { changeOrderBookValue } from '#actions/index.js';
 
 import MyOrdersCollapsed from './MyOrdersCollapsed/MyOrdersCollapsed';
 import styles from './MyOrders.scss';

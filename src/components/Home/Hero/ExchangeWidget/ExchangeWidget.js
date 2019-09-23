@@ -7,7 +7,7 @@ import i18n from '#i18n';
 import axios from 'axios';
 import config from '#config';
 
-import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from 'Actions/index.js';
+import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from '#actions/index.js';
 import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';

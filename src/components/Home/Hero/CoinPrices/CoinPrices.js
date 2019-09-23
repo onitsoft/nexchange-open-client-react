@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import config from '#config';
-import { fetchPrice } from 'Actions/index.js';
+import { fetchPrice } from '#actions/index.js';
 import styles from './CoinPrices.scss';
 
 class CoinPrices extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { errorAlert, setDestinationTag } from 'Actions/index.js';
+import { errorAlert, setDestinationTag } from '#actions/index.js';
 import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
 

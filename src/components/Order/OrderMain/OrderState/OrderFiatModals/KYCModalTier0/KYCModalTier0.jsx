@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setUserEmail } from 'Actions';
+import { setUserEmail } from '#actions';
 import axios from 'axios';
 import config from '#config';
 import i18n from '../../../../../../i18n';

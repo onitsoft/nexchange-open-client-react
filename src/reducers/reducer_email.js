@@ -1,4 +1,4 @@
-import { SET_EMAIL, SET_EMAIL_AND_MESSAGE } from 'Actions/types';
+import { SET_EMAIL, SET_EMAIL_AND_MESSAGE } from '#actions/types';
 
 const initialState = {
   value: '',

@@ -1,4 +1,4 @@
-import { SET_DESTINATION_TAG } from 'Actions/types';
+import { SET_DESTINATION_TAG } from '#actions/types';
 
 const initialState = {
   destinationTag: '',

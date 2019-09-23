@@ -1,4 +1,4 @@
-import { COIN_SELECTED } from 'Actions/types';
+import { COIN_SELECTED } from '#actions/types';
 
 const initialState = {
   deposit: null,

@@ -1,4 +1,4 @@
-import { COINS_INFO } from 'Actions/types';
+import { COINS_INFO } from '#actions/types';
 
 export default (state = [], action) => {
   switch (action.type) {

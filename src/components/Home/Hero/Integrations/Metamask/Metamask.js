@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { open } from '@colony/purser-metamask'
-import { setWallet, errorAlert } from 'Actions/index.js';
+import { setWallet, errorAlert } from '#actions/index.js';
 import i18n from '#i18n';
 
 import styles from '../Integrations.scss';

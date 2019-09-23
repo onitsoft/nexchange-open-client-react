@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import { fetchPairs, selectCoin, fetchOrderBook} from 'Actions';
+import { fetchPairs, selectCoin, fetchOrderBook} from '#actions';
 import config from '#config';
 
 import styles from './OrderOpen.scss';

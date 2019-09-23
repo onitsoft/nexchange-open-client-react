@@ -1,4 +1,4 @@
-import { SET_PAYMENT_ID } from 'Actions/types';
+import { SET_PAYMENT_ID } from '#actions/types';
 
 const initialState = {
   paymentId: '',

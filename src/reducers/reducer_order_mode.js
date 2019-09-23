@@ -1,4 +1,4 @@
-import { ORDER_MODE_CHANGE } from 'Actions/types';
+import { ORDER_MODE_CHANGE } from '#actions/types';
 
 const initialState = 'INSTANT';
 

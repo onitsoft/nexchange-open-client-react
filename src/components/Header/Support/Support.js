@@ -5,7 +5,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { setUserEmail } from 'Actions';
+import { setUserEmail } from '#actions';
 import config from '#config';
 
 class Support extends Component {

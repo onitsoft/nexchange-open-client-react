@@ -1,5 +1,5 @@
-import * as types from 'Actions/types';
-import * as actions from 'Actions';
+import * as types from '#actions/types';
+import * as actions from '#actions';
 
 it('creates an action to set wallet', () => {
   const payload = {

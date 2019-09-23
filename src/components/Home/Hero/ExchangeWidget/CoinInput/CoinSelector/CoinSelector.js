@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { translate } from 'react-i18next';
 import onClickOutside from 'react-onclickoutside';
-import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
+import { selectCoin, fetchPrice, errorAlert } from '#actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import styles from './CoinSelector.scss';
 

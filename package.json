@@ -2,6 +2,7 @@
   "name": "nexchange-open-client-react",
   "version": "0.1.0",
   "alias": {
+    "#actions": "./src/actions",
     "#components": "./src/components",
     "#config": "./src/config.js",
     "#i18n": "./src/i18n",

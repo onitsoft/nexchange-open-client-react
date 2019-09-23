@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { fetchOrder, fetchPrice, setOrder } from 'Actions';
+import { fetchOrder, fetchPrice, setOrder } from '#actions';
 
 import isFiatOrder from 'Utils/isFiatOrder';
 import config from '#config';

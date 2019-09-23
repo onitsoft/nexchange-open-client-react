@@ -1,4 +1,4 @@
-import { SET_MEMO } from 'Actions/types';
+import { SET_MEMO } from '#actions/types';
 
 const initialState = {
   memo: '',

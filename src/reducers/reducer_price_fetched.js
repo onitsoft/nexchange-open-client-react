@@ -1,4 +1,4 @@
-import { PRICE_FETCHED, FETCHING_PRICE } from 'Actions/types';
+import { PRICE_FETCHED, FETCHING_PRICE } from '#actions/types';
 
 const initialState = {
   deposit: '...',

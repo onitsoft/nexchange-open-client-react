@@ -6,7 +6,7 @@ import { I18n } from 'react-i18next';
 import i18n from '#i18n';
 import axios from 'axios';
 import config from '#config';
-import { setOrder, fetchOrderBook, errorAlert, changeOrderBookValue } from 'Actions/index.js';
+import { setOrder, fetchOrderBook, errorAlert, changeOrderBookValue } from '#actions/index.js';
 
 import CoinSelector from '../ExchangeWidget/CoinInput/CoinSelector/CoinSelector';
 import WalletAddress from '../ExchangeWidget/WalletAddress/WalletAddress';

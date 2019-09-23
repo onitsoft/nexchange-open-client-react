@@ -1,4 +1,4 @@
-import { SET_KYC } from 'Actions/types';
+import { SET_KYC } from '#actions/types';
 
 export default (state = null, action) => {
   switch (action.type) {

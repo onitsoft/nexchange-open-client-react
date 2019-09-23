@@ -1,4 +1,4 @@
-import { fetchUserEmail, setUserEmail } from 'Actions';
+import { fetchUserEmail, setUserEmail } from '#actions';
 
 export const bindCrispEmail = store => {
   store.dispatch(fetchUserEmail()).then(res => {
