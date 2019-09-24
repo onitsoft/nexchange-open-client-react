@@ -1218,7 +1218,9 @@ ShallowWrapper {
       },
       "storeSubscription": null,
     },
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;
@@ -2441,7 +2443,9 @@ ShallowWrapper {
       },
       "storeSubscription": null,
     },
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;
