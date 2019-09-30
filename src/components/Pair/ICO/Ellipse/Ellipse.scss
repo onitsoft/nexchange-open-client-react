@@ -1,0 +1,34 @@
+.container {
+  position: absolute;
+  border-radius: 100%;
+  z-index: 1;
+
+  img {
+    width: 43%;
+    height: 43%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.ellipse {
+  display: inline-block;
+  position: relative;
+  background-image: url('Img/ellipse-full.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  transition: all 10000ms linear;
+}

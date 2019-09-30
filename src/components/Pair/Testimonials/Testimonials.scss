@@ -1,0 +1,132 @@
+.header {
+  position: relative;
+  background: $green;
+  padding-bottom: 235px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 79%, 0 100%, 0% 25%);
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 79%, 0 100%, 0% 25%);
+
+  :global .title {
+    margin: 60px 0 20px 0;
+    color: #fff;
+  }
+}
+
+.swiper {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: -185px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(123, 123, 123, 0.25);
+  -moz-box-shadow: 0px 0px 40px 1px rgba(123, 123, 123, 0.25);
+  box-shadow: 0px 0px 40px 1px rgba(123, 123, 123, 0.25);
+
+  @media (min-width: $screen-md-min) {
+    padding: 75px 140px;
+  }
+}
+
+:global .swiper-pagination.swiper-pagination.swiper-pagination {
+  position: initial;
+  padding: 45px 0 15px 0;
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+:global .swiper-pagination-bullet.swiper-pagination-bullet.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+
+  &-active {
+    background: $green;
+  }
+}
+
+.slide {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  font-family: 'Clan Offc Pro Book';
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text {
+  position: relative;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+  color: $blue;
+  border-bottom: 1px solid #efefef;
+  font-size: 16px;
+}
+
+.date {
+  color: #9c9c9c;
+  font-size: 14px;
+
+  @media (min-width: $screen-md-min) {
+    float: left;
+    margin-top: 15px;
+  }
+}
+
+.profile {
+  margin-top: 15px;
+
+  img {
+    width: 55px;
+    border-radius: 55px;
+    filter: grayscale(100%);
+  }
+
+  h3 {
+    display: inline-block;
+    margin-left: 15px;
+    color: $blue;
+    font-size: 19px;
+    font-weight: 700;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 0;
+    float: right;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: none;
+
+  @media (min-width: $screen-md-min) {
+    display: inline-block;
+  }
+}
+
+.next {
+  right: 60px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQwNy40MzYgNDA3LjQzNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDA3LjQzNiA0MDcuNDM2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTEyLjgxNCwwIDkxLjU2NiwyMS4xNzggMjczLjUxMiwyMDMuNzE4IDkxLjU2NiwzODYuMjU4IDExMi44MTQsNDA3LjQzNiAzMTUuODY5LDIwMy43MTggIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMxNzRFNkMiIGRhdGEtb2xkX2NvbG9yPSIjMTc0ZTZjIj48L3BvbHlnb24+PC9nPiA8L3N2Zz4=);
+}
+
+.prev {
+  left: 60px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDM3MC44MTQgMzcwLjgxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzcwLjgxNCAzNzAuODE0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjI5Mi45MiwyNC44NDggMjY4Ljc4MSwwIDc3Ljg5NSwxODUuNDAxIDI2OC43ODEsMzcwLjgxNCAyOTIuOTIsMzQ1Ljk2MSAxMjcuNjM4LDE4NS40MDEgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzE3NEU2QyIgZGF0YS1vbGRfY29sb3I9IiMxNzRlNmMiPjwvcG9seWdvbj4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+);
+}

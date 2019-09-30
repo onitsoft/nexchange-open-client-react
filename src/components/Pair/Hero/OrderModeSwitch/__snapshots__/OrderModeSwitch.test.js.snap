@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderModeSwitch renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="col-xs-12 col-sm-12 col-md-4 col-lg-3 container"
+      >
+        <a
+          className="basic "
+          data-test="INSTANT"
+          onClick={[Function]}
+        >
+          <h3>
+            ordermodeswitch.simple
+          </h3>
+        </a>
+        <a
+          className="pro "
+          data-test="ORDER_BOOK"
+          onClick={[Function]}
+        >
+          <h3>
+            ordermodeswitch.advanced
+          </h3>
+        </a>
+      </div>,
+      "className": "col-xs-12",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <a
+            className="basic "
+            data-test="INSTANT"
+            onClick={[Function]}
+          >
+            <h3>
+              ordermodeswitch.simple
+            </h3>
+          </a>,
+          <a
+            className="pro "
+            data-test="ORDER_BOOK"
+            onClick={[Function]}
+          >
+            <h3>
+              ordermodeswitch.advanced
+            </h3>
+          </a>,
+        ],
+        "className": "col-xs-12 col-sm-12 col-md-4 col-lg-3 container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h3>
+              ordermodeswitch.simple
+            </h3>,
+            "className": "basic ",
+            "data-test": "INSTANT",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "ordermodeswitch.simple",
+            },
+            "ref": null,
+            "rendered": "ordermodeswitch.simple",
+            "type": "h3",
+          },
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h3>
+              ordermodeswitch.advanced
+            </h3>,
+            "className": "pro ",
+            "data-test": "ORDER_BOOK",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "ordermodeswitch.advanced",
+            },
+            "ref": null,
+            "rendered": "ordermodeswitch.advanced",
+            "type": "h3",
+          },
+          "type": "a",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col-xs-12 col-sm-12 col-md-4 col-lg-3 container"
+        >
+          <a
+            className="basic "
+            data-test="INSTANT"
+            onClick={[Function]}
+          >
+            <h3>
+              ordermodeswitch.simple
+            </h3>
+          </a>
+          <a
+            className="pro "
+            data-test="ORDER_BOOK"
+            onClick={[Function]}
+          >
+            <h3>
+              ordermodeswitch.advanced
+            </h3>
+          </a>
+        </div>,
+        "className": "col-xs-12",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <a
+              className="basic "
+              data-test="INSTANT"
+              onClick={[Function]}
+            >
+              <h3>
+                ordermodeswitch.simple
+              </h3>
+            </a>,
+            <a
+              className="pro "
+              data-test="ORDER_BOOK"
+              onClick={[Function]}
+            >
+              <h3>
+                ordermodeswitch.advanced
+              </h3>
+            </a>,
+          ],
+          "className": "col-xs-12 col-sm-12 col-md-4 col-lg-3 container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h3>
+                ordermodeswitch.simple
+              </h3>,
+              "className": "basic ",
+              "data-test": "INSTANT",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "ordermodeswitch.simple",
+              },
+              "ref": null,
+              "rendered": "ordermodeswitch.simple",
+              "type": "h3",
+            },
+            "type": "a",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h3>
+                ordermodeswitch.advanced
+              </h3>,
+              "className": "pro ",
+              "data-test": "ORDER_BOOK",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "ordermodeswitch.advanced",
+              },
+              "ref": null,
+              "rendered": "ordermodeswitch.advanced",
+              "type": "h3",
+            },
+            "type": "a",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

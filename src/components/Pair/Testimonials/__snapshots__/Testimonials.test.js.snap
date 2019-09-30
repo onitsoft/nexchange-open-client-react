@@ -1,0 +1,3500 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testimonials renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="header"
+        >
+          <div
+            className="container"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <h2
+                  className="title"
+                >
+                  testimonials.title
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>,
+        <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <div
+                className="swiper"
+              >
+                <div>
+                  <ReactIdSwiper
+                    ContainerEl="div"
+                    WrapperEl="div"
+                    containerClass="swiper-container"
+                    loop={true}
+                    pagination={
+                      Object {
+                        "clickable": true,
+                        "el": ".swiper-pagination",
+                      }
+                    }
+                    renderNextButton={[Function]}
+                    renderPagination={[Function]}
+                    renderParallax={[Function]}
+                    renderPrevButton={[Function]}
+                    renderScrollbar={[Function]}
+                    slideClass="swiper-slide"
+                    wrapperClass="swiper-wrapper"
+                  >
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 01:49 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="John Michael"
+                              src="john.jpg"
+                            />
+                            <h3>
+                              John Michael
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 07:51 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Hunterk13"
+                              src="hunterk.png"
+                            />
+                            <h3>
+                              Hunterk13
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          Best new instant exchange service! Fast, easy, low fees...
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 9, 2017, 22:30 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Tomo Adria"
+                              src="tomo.jpg"
+                            />
+                            <h3>
+                              Tomo Adria
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ReactIdSwiper>
+                </div>
+                <div
+                  className="prev arrow"
+                  data-test="prev"
+                  onClick={[Function]}
+                />
+                <div
+                  className="next arrow"
+                  data-test="next"
+                  onClick={[Function]}
+                />
+              </div>
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="container"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <h2
+                  className="title"
+                >
+                  testimonials.title
+                </h2>
+              </div>
+            </div>
+          </div>,
+          "className": "header",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <h2
+                  className="title"
+                >
+                  testimonials.title
+                </h2>
+              </div>
+            </div>,
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-xs-12"
+              >
+                <h2
+                  className="title"
+                >
+                  testimonials.title
+                </h2>
+              </div>,
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h2
+                  className="title"
+                >
+                  testimonials.title
+                </h2>,
+                "className": "col-xs-12",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "testimonials.title",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "testimonials.title",
+                "type": "h2",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <div
+                className="swiper"
+              >
+                <div>
+                  <ReactIdSwiper
+                    ContainerEl="div"
+                    WrapperEl="div"
+                    containerClass="swiper-container"
+                    loop={true}
+                    pagination={
+                      Object {
+                        "clickable": true,
+                        "el": ".swiper-pagination",
+                      }
+                    }
+                    renderNextButton={[Function]}
+                    renderPagination={[Function]}
+                    renderParallax={[Function]}
+                    renderPrevButton={[Function]}
+                    renderScrollbar={[Function]}
+                    slideClass="swiper-slide"
+                    wrapperClass="swiper-wrapper"
+                  >
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 01:49 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="John Michael"
+                              src="john.jpg"
+                            />
+                            <h3>
+                              John Michael
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 07:51 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Hunterk13"
+                              src="hunterk.png"
+                            />
+                            <h3>
+                              Hunterk13
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          Best new instant exchange service! Fast, easy, low fees...
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 9, 2017, 22:30 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Tomo Adria"
+                              src="tomo.jpg"
+                            />
+                            <h3>
+                              Tomo Adria
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ReactIdSwiper>
+                </div>
+                <div
+                  className="prev arrow"
+                  data-test="prev"
+                  onClick={[Function]}
+                />
+                <div
+                  className="next arrow"
+                  data-test="next"
+                  onClick={[Function]}
+                />
+              </div>
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="col-xs-12"
+            >
+              <div
+                className="swiper"
+              >
+                <div>
+                  <ReactIdSwiper
+                    ContainerEl="div"
+                    WrapperEl="div"
+                    containerClass="swiper-container"
+                    loop={true}
+                    pagination={
+                      Object {
+                        "clickable": true,
+                        "el": ".swiper-pagination",
+                      }
+                    }
+                    renderNextButton={[Function]}
+                    renderPagination={[Function]}
+                    renderParallax={[Function]}
+                    renderPrevButton={[Function]}
+                    renderScrollbar={[Function]}
+                    slideClass="swiper-slide"
+                    wrapperClass="swiper-wrapper"
+                  >
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 01:49 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="John Michael"
+                              src="john.jpg"
+                            />
+                            <h3>
+                              John Michael
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 07:51 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Hunterk13"
+                              src="hunterk.png"
+                            />
+                            <h3>
+                              Hunterk13
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          Best new instant exchange service! Fast, easy, low fees...
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 9, 2017, 22:30 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Tomo Adria"
+                              src="tomo.jpg"
+                            />
+                            <h3>
+                              Tomo Adria
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ReactIdSwiper>
+                </div>
+                <div
+                  className="prev arrow"
+                  data-test="prev"
+                  onClick={[Function]}
+                />
+                <div
+                  className="next arrow"
+                  data-test="next"
+                  onClick={[Function]}
+                />
+              </div>
+            </div>,
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="swiper"
+              >
+                <div>
+                  <ReactIdSwiper
+                    ContainerEl="div"
+                    WrapperEl="div"
+                    containerClass="swiper-container"
+                    loop={true}
+                    pagination={
+                      Object {
+                        "clickable": true,
+                        "el": ".swiper-pagination",
+                      }
+                    }
+                    renderNextButton={[Function]}
+                    renderPagination={[Function]}
+                    renderParallax={[Function]}
+                    renderPrevButton={[Function]}
+                    renderScrollbar={[Function]}
+                    slideClass="swiper-slide"
+                    wrapperClass="swiper-wrapper"
+                  >
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 01:49 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="John Michael"
+                              src="john.jpg"
+                            />
+                            <h3>
+                              John Michael
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 11, 2017, 07:51 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Hunterk13"
+                              src="hunterk.png"
+                            />
+                            <h3>
+                              Hunterk13
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      className="link"
+                      href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                      target="_blank"
+                    >
+                      <div
+                        className="slide"
+                      >
+                        <div
+                          className="text"
+                        >
+                          Best new instant exchange service! Fast, easy, low fees...
+                        </div>
+                        <div
+                          className="info"
+                        >
+                          <div
+                            className="date"
+                          >
+                            September 9, 2017, 22:30 PM
+                          </div>
+                          <div
+                            className="profile"
+                          >
+                            <img
+                              alt="Tomo Adria"
+                              src="tomo.jpg"
+                            />
+                            <h3>
+                              Tomo Adria
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </ReactIdSwiper>
+                </div>
+                <div
+                  className="prev arrow"
+                  data-test="prev"
+                  onClick={[Function]}
+                />
+                <div
+                  className="next arrow"
+                  data-test="next"
+                  onClick={[Function]}
+                />
+              </div>,
+              "className": "col-xs-12",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>
+                  </div>,
+                  <div
+                    className="prev arrow"
+                    data-test="prev"
+                    onClick={[Function]}
+                  />,
+                  <div
+                    className="next arrow"
+                    data-test="next"
+                    onClick={[Function]}
+                  />,
+                ],
+                "className": "swiper",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "ContainerEl": "div",
+                      "WrapperEl": "div",
+                      "children": Array [
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 01:49 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="John Michael"
+                                  src="john.jpg"
+                                />
+                                <h3>
+                                  John Michael
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>,
+                        <a
+                          className="link"
+                          href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 07:51 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Hunterk13"
+                                  src="hunterk.png"
+                                />
+                                <h3>
+                                  Hunterk13
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>,
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              Best new instant exchange service! Fast, easy, low fees...
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 9, 2017, 22:30 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Tomo Adria"
+                                  src="tomo.jpg"
+                                />
+                                <h3>
+                                  Tomo Adria
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>,
+                      ],
+                      "containerClass": "swiper-container",
+                      "loop": true,
+                      "pagination": Object {
+                        "clickable": true,
+                        "el": ".swiper-pagination",
+                      },
+                      "renderNextButton": [Function],
+                      "renderPagination": [Function],
+                      "renderParallax": [Function],
+                      "renderPrevButton": [Function],
+                      "renderScrollbar": [Function],
+                      "slideClass": "swiper-slide",
+                      "wrapperClass": "swiper-wrapper",
+                    },
+                    "ref": [Function],
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": "John Michael",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 01:49 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="John Michael"
+                                  src="john.jpg"
+                                />
+                                <h3>
+                                  John Michael
+                                </h3>
+                              </div>
+                            </div>
+                          </div>,
+                          "className": "link",
+                          "href": "https://www.facebook.com/rockztar.jm/posts/1475653122471191:0",
+                          "target": "_blank",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <div
+                                className="text"
+                              >
+                                N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                              </div>,
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 01:49 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="John Michael"
+                                    src="john.jpg"
+                                  />
+                                  <h3>
+                                    John Michael
+                                  </h3>
+                                </div>
+                              </div>,
+                            ],
+                            "className": "slide",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.",
+                                "className": "text",
+                              },
+                              "ref": null,
+                              "rendered": "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.",
+                              "type": "div",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": Array [
+                                  <div
+                                    className="date"
+                                  >
+                                    September 11, 2017, 01:49 PM
+                                  </div>,
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="John Michael"
+                                      src="john.jpg"
+                                    />
+                                    <h3>
+                                      John Michael
+                                    </h3>
+                                  </div>,
+                                ],
+                                "className": "info",
+                              },
+                              "ref": null,
+                              "rendered": Array [
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": "September 11, 2017, 01:49 PM",
+                                    "className": "date",
+                                  },
+                                  "ref": null,
+                                  "rendered": "September 11, 2017, 01:49 PM",
+                                  "type": "div",
+                                },
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": Array [
+                                      <img
+                                        alt="John Michael"
+                                        src="john.jpg"
+                                      />,
+                                      <h3>
+                                        John Michael
+                                      </h3>,
+                                    ],
+                                    "className": "profile",
+                                  },
+                                  "ref": null,
+                                  "rendered": Array [
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "alt": "John Michael",
+                                        "src": "john.jpg",
+                                      },
+                                      "ref": null,
+                                      "rendered": null,
+                                      "type": "img",
+                                    },
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "children": "John Michael",
+                                      },
+                                      "ref": null,
+                                      "rendered": "John Michael",
+                                      "type": "h3",
+                                    },
+                                  ],
+                                  "type": "div",
+                                },
+                              ],
+                              "type": "div",
+                            },
+                          ],
+                          "type": "div",
+                        },
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "Hunterk13",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 07:51 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Hunterk13"
+                                  src="hunterk.png"
+                                />
+                                <h3>
+                                  Hunterk13
+                                </h3>
+                              </div>
+                            </div>
+                          </div>,
+                          "className": "link",
+                          "href": "https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006",
+                          "target": "_blank",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <div
+                                className="text"
+                              >
+                                I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                              </div>,
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 07:51 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Hunterk13"
+                                    src="hunterk.png"
+                                  />
+                                  <h3>
+                                    Hunterk13
+                                  </h3>
+                                </div>
+                              </div>,
+                            ],
+                            "className": "slide",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊",
+                                "className": "text",
+                              },
+                              "ref": null,
+                              "rendered": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊",
+                              "type": "div",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": Array [
+                                  <div
+                                    className="date"
+                                  >
+                                    September 11, 2017, 07:51 PM
+                                  </div>,
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="Hunterk13"
+                                      src="hunterk.png"
+                                    />
+                                    <h3>
+                                      Hunterk13
+                                    </h3>
+                                  </div>,
+                                ],
+                                "className": "info",
+                              },
+                              "ref": null,
+                              "rendered": Array [
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": "September 11, 2017, 07:51 PM",
+                                    "className": "date",
+                                  },
+                                  "ref": null,
+                                  "rendered": "September 11, 2017, 07:51 PM",
+                                  "type": "div",
+                                },
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": Array [
+                                      <img
+                                        alt="Hunterk13"
+                                        src="hunterk.png"
+                                      />,
+                                      <h3>
+                                        Hunterk13
+                                      </h3>,
+                                    ],
+                                    "className": "profile",
+                                  },
+                                  "ref": null,
+                                  "rendered": Array [
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "alt": "Hunterk13",
+                                        "src": "hunterk.png",
+                                      },
+                                      "ref": null,
+                                      "rendered": null,
+                                      "type": "img",
+                                    },
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "children": "Hunterk13",
+                                      },
+                                      "ref": null,
+                                      "rendered": "Hunterk13",
+                                      "type": "h3",
+                                    },
+                                  ],
+                                  "type": "div",
+                                },
+                              ],
+                              "type": "div",
+                            },
+                          ],
+                          "type": "div",
+                        },
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "Tomo Adria",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              Best new instant exchange service! Fast, easy, low fees...
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 9, 2017, 22:30 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Tomo Adria"
+                                  src="tomo.jpg"
+                                />
+                                <h3>
+                                  Tomo Adria
+                                </h3>
+                              </div>
+                            </div>
+                          </div>,
+                          "className": "link",
+                          "href": "https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0",
+                          "target": "_blank",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <div
+                                className="text"
+                              >
+                                Best new instant exchange service! Fast, easy, low fees...
+                              </div>,
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 9, 2017, 22:30 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Tomo Adria"
+                                    src="tomo.jpg"
+                                  />
+                                  <h3>
+                                    Tomo Adria
+                                  </h3>
+                                </div>
+                              </div>,
+                            ],
+                            "className": "slide",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Best new instant exchange service! Fast, easy, low fees...",
+                                "className": "text",
+                              },
+                              "ref": null,
+                              "rendered": "Best new instant exchange service! Fast, easy, low fees...",
+                              "type": "div",
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": Array [
+                                  <div
+                                    className="date"
+                                  >
+                                    September 9, 2017, 22:30 PM
+                                  </div>,
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="Tomo Adria"
+                                      src="tomo.jpg"
+                                    />
+                                    <h3>
+                                      Tomo Adria
+                                    </h3>
+                                  </div>,
+                                ],
+                                "className": "info",
+                              },
+                              "ref": null,
+                              "rendered": Array [
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": "September 9, 2017, 22:30 PM",
+                                    "className": "date",
+                                  },
+                                  "ref": null,
+                                  "rendered": "September 9, 2017, 22:30 PM",
+                                  "type": "div",
+                                },
+                                Object {
+                                  "instance": null,
+                                  "key": undefined,
+                                  "nodeType": "host",
+                                  "props": Object {
+                                    "children": Array [
+                                      <img
+                                        alt="Tomo Adria"
+                                        src="tomo.jpg"
+                                      />,
+                                      <h3>
+                                        Tomo Adria
+                                      </h3>,
+                                    ],
+                                    "className": "profile",
+                                  },
+                                  "ref": null,
+                                  "rendered": Array [
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "alt": "Tomo Adria",
+                                        "src": "tomo.jpg",
+                                      },
+                                      "ref": null,
+                                      "rendered": null,
+                                      "type": "img",
+                                    },
+                                    Object {
+                                      "instance": null,
+                                      "key": undefined,
+                                      "nodeType": "host",
+                                      "props": Object {
+                                        "children": "Tomo Adria",
+                                      },
+                                      "ref": null,
+                                      "rendered": "Tomo Adria",
+                                      "type": "h3",
+                                    },
+                                  ],
+                                  "type": "div",
+                                },
+                              ],
+                              "type": "div",
+                            },
+                          ],
+                          "type": "div",
+                        },
+                        "type": "a",
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "prev arrow",
+                    "data-test": "prev",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "next arrow",
+                    "data-test": "next",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header"
+          >
+            <div
+              className="container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-xs-12"
+                >
+                  <h2
+                    className="title"
+                  >
+                    testimonials.title
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>,
+          <div
+            className="container"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <div
+                  className="swiper"
+                >
+                  <div>
+                    <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>
+                  </div>
+                  <div
+                    className="prev arrow"
+                    data-test="prev"
+                    onClick={[Function]}
+                  />
+                  <div
+                    className="next arrow"
+                    data-test="next"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-xs-12"
+                >
+                  <h2
+                    className="title"
+                  >
+                    testimonials.title
+                  </h2>
+                </div>
+              </div>
+            </div>,
+            "className": "header",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="row"
+              >
+                <div
+                  className="col-xs-12"
+                >
+                  <h2
+                    className="title"
+                  >
+                    testimonials.title
+                  </h2>
+                </div>
+              </div>,
+              "className": "container",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col-xs-12"
+                >
+                  <h2
+                    className="title"
+                  >
+                    testimonials.title
+                  </h2>
+                </div>,
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <h2
+                    className="title"
+                  >
+                    testimonials.title
+                  </h2>,
+                  "className": "col-xs-12",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "testimonials.title",
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": "testimonials.title",
+                  "type": "h2",
+                },
+                "type": "div",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="row"
+            >
+              <div
+                className="col-xs-12"
+              >
+                <div
+                  className="swiper"
+                >
+                  <div>
+                    <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>
+                  </div>
+                  <div
+                    className="prev arrow"
+                    data-test="prev"
+                    onClick={[Function]}
+                  />
+                  <div
+                    className="next arrow"
+                    data-test="next"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>
+            </div>,
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-xs-12"
+              >
+                <div
+                  className="swiper"
+                >
+                  <div>
+                    <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>
+                  </div>
+                  <div
+                    className="prev arrow"
+                    data-test="prev"
+                    onClick={[Function]}
+                  />
+                  <div
+                    className="next arrow"
+                    data-test="next"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>,
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="swiper"
+                >
+                  <div>
+                    <ReactIdSwiper
+                      ContainerEl="div"
+                      WrapperEl="div"
+                      containerClass="swiper-container"
+                      loop={true}
+                      pagination={
+                        Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        }
+                      }
+                      renderNextButton={[Function]}
+                      renderPagination={[Function]}
+                      renderParallax={[Function]}
+                      renderPrevButton={[Function]}
+                      renderScrollbar={[Function]}
+                      slideClass="swiper-slide"
+                      wrapperClass="swiper-wrapper"
+                    >
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 01:49 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="John Michael"
+                                src="john.jpg"
+                              />
+                              <h3>
+                                John Michael
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 11, 2017, 07:51 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Hunterk13"
+                                src="hunterk.png"
+                              />
+                              <h3>
+                                Hunterk13
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a
+                        className="link"
+                        href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                        target="_blank"
+                      >
+                        <div
+                          className="slide"
+                        >
+                          <div
+                            className="text"
+                          >
+                            Best new instant exchange service! Fast, easy, low fees...
+                          </div>
+                          <div
+                            className="info"
+                          >
+                            <div
+                              className="date"
+                            >
+                              September 9, 2017, 22:30 PM
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Tomo Adria"
+                                src="tomo.jpg"
+                              />
+                              <h3>
+                                Tomo Adria
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </ReactIdSwiper>
+                  </div>
+                  <div
+                    className="prev arrow"
+                    data-test="prev"
+                    onClick={[Function]}
+                  />
+                  <div
+                    className="next arrow"
+                    data-test="next"
+                    onClick={[Function]}
+                  />
+                </div>,
+                "className": "col-xs-12",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      <ReactIdSwiper
+                        ContainerEl="div"
+                        WrapperEl="div"
+                        containerClass="swiper-container"
+                        loop={true}
+                        pagination={
+                          Object {
+                            "clickable": true,
+                            "el": ".swiper-pagination",
+                          }
+                        }
+                        renderNextButton={[Function]}
+                        renderPagination={[Function]}
+                        renderParallax={[Function]}
+                        renderPrevButton={[Function]}
+                        renderScrollbar={[Function]}
+                        slideClass="swiper-slide"
+                        wrapperClass="swiper-wrapper"
+                      >
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 01:49 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="John Michael"
+                                  src="john.jpg"
+                                />
+                                <h3>
+                                  John Michael
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="link"
+                          href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 07:51 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Hunterk13"
+                                  src="hunterk.png"
+                                />
+                                <h3>
+                                  Hunterk13
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              Best new instant exchange service! Fast, easy, low fees...
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 9, 2017, 22:30 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Tomo Adria"
+                                  src="tomo.jpg"
+                                />
+                                <h3>
+                                  Tomo Adria
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </ReactIdSwiper>
+                    </div>,
+                    <div
+                      className="prev arrow"
+                      data-test="prev"
+                      onClick={[Function]}
+                    />,
+                    <div
+                      className="next arrow"
+                      data-test="next"
+                      onClick={[Function]}
+                    />,
+                  ],
+                  "className": "swiper",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <ReactIdSwiper
+                        ContainerEl="div"
+                        WrapperEl="div"
+                        containerClass="swiper-container"
+                        loop={true}
+                        pagination={
+                          Object {
+                            "clickable": true,
+                            "el": ".swiper-pagination",
+                          }
+                        }
+                        renderNextButton={[Function]}
+                        renderPagination={[Function]}
+                        renderParallax={[Function]}
+                        renderPrevButton={[Function]}
+                        renderScrollbar={[Function]}
+                        slideClass="swiper-slide"
+                        wrapperClass="swiper-wrapper"
+                      >
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 01:49 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="John Michael"
+                                  src="john.jpg"
+                                />
+                                <h3>
+                                  John Michael
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="link"
+                          href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 11, 2017, 07:51 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Hunterk13"
+                                  src="hunterk.png"
+                                />
+                                <h3>
+                                  Hunterk13
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          className="link"
+                          href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                          target="_blank"
+                        >
+                          <div
+                            className="slide"
+                          >
+                            <div
+                              className="text"
+                            >
+                              Best new instant exchange service! Fast, easy, low fees...
+                            </div>
+                            <div
+                              className="info"
+                            >
+                              <div
+                                className="date"
+                              >
+                                September 9, 2017, 22:30 PM
+                              </div>
+                              <div
+                                className="profile"
+                              >
+                                <img
+                                  alt="Tomo Adria"
+                                  src="tomo.jpg"
+                                />
+                                <h3>
+                                  Tomo Adria
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </ReactIdSwiper>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "ContainerEl": "div",
+                        "WrapperEl": "div",
+                        "children": Array [
+                          <a
+                            className="link"
+                            href="https://www.facebook.com/rockztar.jm/posts/1475653122471191:0"
+                            target="_blank"
+                          >
+                            <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 01:49 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="John Michael"
+                                    src="john.jpg"
+                                  />
+                                  <h3>
+                                    John Michael
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>
+                          </a>,
+                          <a
+                            className="link"
+                            href="https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006"
+                            target="_blank"
+                          >
+                            <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 07:51 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Hunterk13"
+                                    src="hunterk.png"
+                                  />
+                                  <h3>
+                                    Hunterk13
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>
+                          </a>,
+                          <a
+                            className="link"
+                            href="https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0"
+                            target="_blank"
+                          >
+                            <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                Best new instant exchange service! Fast, easy, low fees...
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 9, 2017, 22:30 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Tomo Adria"
+                                    src="tomo.jpg"
+                                  />
+                                  <h3>
+                                    Tomo Adria
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>
+                          </a>,
+                        ],
+                        "containerClass": "swiper-container",
+                        "loop": true,
+                        "pagination": Object {
+                          "clickable": true,
+                          "el": ".swiper-pagination",
+                        },
+                        "renderNextButton": [Function],
+                        "renderPagination": [Function],
+                        "renderParallax": [Function],
+                        "renderPrevButton": [Function],
+                        "renderScrollbar": [Function],
+                        "slideClass": "swiper-slide",
+                        "wrapperClass": "swiper-wrapper",
+                      },
+                      "ref": [Function],
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": "John Michael",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 01:49 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="John Michael"
+                                    src="john.jpg"
+                                  />
+                                  <h3>
+                                    John Michael
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>,
+                            "className": "link",
+                            "href": "https://www.facebook.com/rockztar.jm/posts/1475653122471191:0",
+                            "target": "_blank",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <div
+                                  className="text"
+                                >
+                                  N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.
+                                </div>,
+                                <div
+                                  className="info"
+                                >
+                                  <div
+                                    className="date"
+                                  >
+                                    September 11, 2017, 01:49 PM
+                                  </div>
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="John Michael"
+                                      src="john.jpg"
+                                    />
+                                    <h3>
+                                      John Michael
+                                    </h3>
+                                  </div>
+                                </div>,
+                              ],
+                              "className": "slide",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.",
+                                  "className": "text",
+                                },
+                                "ref": null,
+                                "rendered": "N.exchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want.",
+                                "type": "div",
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": Array [
+                                    <div
+                                      className="date"
+                                    >
+                                      September 11, 2017, 01:49 PM
+                                    </div>,
+                                    <div
+                                      className="profile"
+                                    >
+                                      <img
+                                        alt="John Michael"
+                                        src="john.jpg"
+                                      />
+                                      <h3>
+                                        John Michael
+                                      </h3>
+                                    </div>,
+                                  ],
+                                  "className": "info",
+                                },
+                                "ref": null,
+                                "rendered": Array [
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": "September 11, 2017, 01:49 PM",
+                                      "className": "date",
+                                    },
+                                    "ref": null,
+                                    "rendered": "September 11, 2017, 01:49 PM",
+                                    "type": "div",
+                                  },
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": Array [
+                                        <img
+                                          alt="John Michael"
+                                          src="john.jpg"
+                                        />,
+                                        <h3>
+                                          John Michael
+                                        </h3>,
+                                      ],
+                                      "className": "profile",
+                                    },
+                                    "ref": null,
+                                    "rendered": Array [
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "alt": "John Michael",
+                                          "src": "john.jpg",
+                                        },
+                                        "ref": null,
+                                        "rendered": null,
+                                        "type": "img",
+                                      },
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "children": "John Michael",
+                                        },
+                                        "ref": null,
+                                        "rendered": "John Michael",
+                                        "type": "h3",
+                                      },
+                                    ],
+                                    "type": "div",
+                                  },
+                                ],
+                                "type": "div",
+                              },
+                            ],
+                            "type": "div",
+                          },
+                          "type": "a",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "Hunterk13",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 11, 2017, 07:51 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Hunterk13"
+                                    src="hunterk.png"
+                                  />
+                                  <h3>
+                                    Hunterk13
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>,
+                            "className": "link",
+                            "href": "https://bitcointalk.org/index.php?topic=2165808.msg21736006#msg21736006",
+                            "target": "_blank",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <div
+                                  className="text"
+                                >
+                                  I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊
+                                </div>,
+                                <div
+                                  className="info"
+                                >
+                                  <div
+                                    className="date"
+                                  >
+                                    September 11, 2017, 07:51 PM
+                                  </div>
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="Hunterk13"
+                                      src="hunterk.png"
+                                    />
+                                    <h3>
+                                      Hunterk13
+                                    </h3>
+                                  </div>
+                                </div>,
+                              ],
+                              "className": "slide",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊",
+                                  "className": "text",
+                                },
+                                "ref": null,
+                                "rendered": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊",
+                                "type": "div",
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": Array [
+                                    <div
+                                      className="date"
+                                    >
+                                      September 11, 2017, 07:51 PM
+                                    </div>,
+                                    <div
+                                      className="profile"
+                                    >
+                                      <img
+                                        alt="Hunterk13"
+                                        src="hunterk.png"
+                                      />
+                                      <h3>
+                                        Hunterk13
+                                      </h3>
+                                    </div>,
+                                  ],
+                                  "className": "info",
+                                },
+                                "ref": null,
+                                "rendered": Array [
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": "September 11, 2017, 07:51 PM",
+                                      "className": "date",
+                                    },
+                                    "ref": null,
+                                    "rendered": "September 11, 2017, 07:51 PM",
+                                    "type": "div",
+                                  },
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": Array [
+                                        <img
+                                          alt="Hunterk13"
+                                          src="hunterk.png"
+                                        />,
+                                        <h3>
+                                          Hunterk13
+                                        </h3>,
+                                      ],
+                                      "className": "profile",
+                                    },
+                                    "ref": null,
+                                    "rendered": Array [
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "alt": "Hunterk13",
+                                          "src": "hunterk.png",
+                                        },
+                                        "ref": null,
+                                        "rendered": null,
+                                        "type": "img",
+                                      },
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "children": "Hunterk13",
+                                        },
+                                        "ref": null,
+                                        "rendered": "Hunterk13",
+                                        "type": "h3",
+                                      },
+                                    ],
+                                    "type": "div",
+                                  },
+                                ],
+                                "type": "div",
+                              },
+                            ],
+                            "type": "div",
+                          },
+                          "type": "a",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "Tomo Adria",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <div
+                              className="slide"
+                            >
+                              <div
+                                className="text"
+                              >
+                                Best new instant exchange service! Fast, easy, low fees...
+                              </div>
+                              <div
+                                className="info"
+                              >
+                                <div
+                                  className="date"
+                                >
+                                  September 9, 2017, 22:30 PM
+                                </div>
+                                <div
+                                  className="profile"
+                                >
+                                  <img
+                                    alt="Tomo Adria"
+                                    src="tomo.jpg"
+                                  />
+                                  <h3>
+                                    Tomo Adria
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>,
+                            "className": "link",
+                            "href": "https://www.facebook.com/permalink.php?story_fbid=1884024031850695&id=100007293495907&substory_index=0",
+                            "target": "_blank",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <div
+                                  className="text"
+                                >
+                                  Best new instant exchange service! Fast, easy, low fees...
+                                </div>,
+                                <div
+                                  className="info"
+                                >
+                                  <div
+                                    className="date"
+                                  >
+                                    September 9, 2017, 22:30 PM
+                                  </div>
+                                  <div
+                                    className="profile"
+                                  >
+                                    <img
+                                      alt="Tomo Adria"
+                                      src="tomo.jpg"
+                                    />
+                                    <h3>
+                                      Tomo Adria
+                                    </h3>
+                                  </div>
+                                </div>,
+                              ],
+                              "className": "slide",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": "Best new instant exchange service! Fast, easy, low fees...",
+                                  "className": "text",
+                                },
+                                "ref": null,
+                                "rendered": "Best new instant exchange service! Fast, easy, low fees...",
+                                "type": "div",
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "host",
+                                "props": Object {
+                                  "children": Array [
+                                    <div
+                                      className="date"
+                                    >
+                                      September 9, 2017, 22:30 PM
+                                    </div>,
+                                    <div
+                                      className="profile"
+                                    >
+                                      <img
+                                        alt="Tomo Adria"
+                                        src="tomo.jpg"
+                                      />
+                                      <h3>
+                                        Tomo Adria
+                                      </h3>
+                                    </div>,
+                                  ],
+                                  "className": "info",
+                                },
+                                "ref": null,
+                                "rendered": Array [
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": "September 9, 2017, 22:30 PM",
+                                      "className": "date",
+                                    },
+                                    "ref": null,
+                                    "rendered": "September 9, 2017, 22:30 PM",
+                                    "type": "div",
+                                  },
+                                  Object {
+                                    "instance": null,
+                                    "key": undefined,
+                                    "nodeType": "host",
+                                    "props": Object {
+                                      "children": Array [
+                                        <img
+                                          alt="Tomo Adria"
+                                          src="tomo.jpg"
+                                        />,
+                                        <h3>
+                                          Tomo Adria
+                                        </h3>,
+                                      ],
+                                      "className": "profile",
+                                    },
+                                    "ref": null,
+                                    "rendered": Array [
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "alt": "Tomo Adria",
+                                          "src": "tomo.jpg",
+                                        },
+                                        "ref": null,
+                                        "rendered": null,
+                                        "type": "img",
+                                      },
+                                      Object {
+                                        "instance": null,
+                                        "key": undefined,
+                                        "nodeType": "host",
+                                        "props": Object {
+                                          "children": "Tomo Adria",
+                                        },
+                                        "ref": null,
+                                        "rendered": "Tomo Adria",
+                                        "type": "h3",
+                                      },
+                                    ],
+                                    "type": "div",
+                                  },
+                                ],
+                                "type": "div",
+                              },
+                            ],
+                            "type": "div",
+                          },
+                          "type": "a",
+                        },
+                      ],
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "prev arrow",
+                      "data-test": "prev",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "next arrow",
+                      "data-test": "next",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

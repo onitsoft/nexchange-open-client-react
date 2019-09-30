@@ -1,0 +1,36 @@
+.input {
+    margin-top: 5px;
+    padding: 0 43px 0 0 !important;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+    box-shadow: 0px 0px !important;
+    -webkit-box-shadow: 0px 0px !important;
+    outline: 0;
+    border-color: transparent;
+    background-image: none;
+}
+
+.input-label {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.values-preview-container {
+    height: 25px;
+    @media (max-width: $screen-md-min) {
+        margin-bottom: 15px;
+    }
+    .values-preview {
+        display: flex;
+        flex-direction: column;
+        span {
+            flex: 1;
+            color: $grey;
+            font-size: 12px;
+        }
+    }
+}

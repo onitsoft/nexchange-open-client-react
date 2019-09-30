@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyOrdersCollapsed renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="heading"
+        >
+          <h4>
+            orderbookwidget.myorders
+          </h4>
+        </div>,
+        <div
+          className="content"
+        >
+          <p>
+            orderbookwidget.nomyorders
+          </p>
+        </div>,
+      ],
+      "className": "container",
+      "id": "myOrders",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h4>
+            orderbookwidget.myorders
+          </h4>,
+          "className": "heading",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "orderbookwidget.myorders",
+          },
+          "ref": null,
+          "rendered": "orderbookwidget.myorders",
+          "type": "h4",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            orderbookwidget.nomyorders
+          </p>,
+          "className": "content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "orderbookwidget.nomyorders",
+          },
+          "ref": null,
+          "rendered": "orderbookwidget.nomyorders",
+          "type": "p",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="heading"
+          >
+            <h4>
+              orderbookwidget.myorders
+            </h4>
+          </div>,
+          <div
+            className="content"
+          >
+            <p>
+              orderbookwidget.nomyorders
+            </p>
+          </div>,
+        ],
+        "className": "container",
+        "id": "myOrders",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h4>
+              orderbookwidget.myorders
+            </h4>,
+            "className": "heading",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "orderbookwidget.myorders",
+            },
+            "ref": null,
+            "rendered": "orderbookwidget.myorders",
+            "type": "h4",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              orderbookwidget.nomyorders
+            </p>,
+            "className": "content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "orderbookwidget.nomyorders",
+            },
+            "ref": null,
+            "rendered": "orderbookwidget.nomyorders",
+            "type": "p",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

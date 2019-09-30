@@ -1,0 +1,17 @@
+.label.label.label {
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $gray;
+
+  @media (min-width: $screen-md-min) {
+    margin-bottom: 36px;
+  }
+}
+
+.input.input.input {
+  padding: 0 0 15px 120px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+}

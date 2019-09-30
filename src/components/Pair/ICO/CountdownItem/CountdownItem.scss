@@ -1,0 +1,71 @@
+.container {
+  display: inline-block;
+}
+
+.item {
+  width: 50px;
+  height: 90px;
+  margin: 0 7px;
+  border-radius: 6px;
+  float: left;
+  text-align: center;
+  background: -moz-linear-gradient(270deg, rgba(25, 155, 137, 1) 0%, rgba(14, 55, 94, 1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(25, 155, 137, 1)),
+    color-stop(100%, rgba(14, 55, 94, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(25, 155, 137, 1) 0%, rgba(14, 55, 94, 1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, rgba(25, 155, 137, 1) 0%, rgba(14, 55, 94, 1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, rgba(25, 155, 137, 1) 0%, rgba(14, 55, 94, 1) 100%); /* ie10+ */
+  background: linear-gradient(180deg, rgba(25, 155, 137, 1) 0%, rgba(14, 55, 94, 1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#199B89', endColorstr='#0E375E',GradientType=0 ); /* ie6-9 */
+
+  @media (min-width: $screen-sm-min) {
+    width: 70px;
+    height: 90px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: 84px;
+    height: 102px;
+    margin: 0 12px;
+  }
+}
+
+.count {
+  margin: 24px 0 0 0;
+  font-size: 22px;
+  line-height: 24px;
+  font-family: 'Clan Offc Pro Medium';
+  color: #fff;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 18px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin: 20px 0 0 0;
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.period {
+  font-family: 'Clan Offc Pro Book';
+  font-size: 9px;
+  color: #fff;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 12px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 14px;
+  }
+}

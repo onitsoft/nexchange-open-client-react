@@ -1,0 +1,97 @@
+.member {
+  margin-bottom: 75px;
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    padding-right: 15%;
+  }
+}
+
+.profile {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  max-width: 225px;
+
+  @media (min-width: $screen-md-min) {
+    width: 220px;
+  }
+
+  img {
+    width: 100%;
+    filter: grayscale(100%);
+  }
+}
+
+.social {
+  margin: 10px 0;
+
+  a {
+    display: inline-block;
+    height: 42px;
+    width: 42px;
+    background: #efefef;
+    border-radius: 100px;
+    color: #9c9c9c;
+    text-align: center;
+    padding-top: 7px;
+    margin: 0 5px;
+    font-size: 20px;
+
+    &:hover {
+      &.wikipedia-w {
+        background: #494f57;
+      }
+      &.twitter {
+        background: #1da1f2;
+      }
+      &.medium {
+        background: #3cb371;
+      }
+      &.linkedin {
+        background: #0077b5;
+      }
+      &.github {
+        background: #222222;
+      }
+      &.rss {
+        background: #f26522;
+      }
+      &.stack-overflow {
+        background: #f48024;
+      }
+      &.facebook {
+        background: #3b5998;
+      }
+      &.slack {
+        background: #e01563;
+      }
+      &.telegram {
+        background: #0088cc;
+      }
+
+      color: #fff;
+    }
+  }
+}
+
+.name {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+}
+
+.description {
+  font-size: 14px;
+  color: #9c9c9c;
+
+  p {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}

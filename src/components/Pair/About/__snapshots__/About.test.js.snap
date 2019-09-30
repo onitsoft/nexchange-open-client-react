@@ -1,0 +1,902 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <h2
+              className="title"
+            >
+              about.title
+            </h2>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.1
+            </p>
+            <p>
+              about.2
+            </p>
+            <p>
+              about.3
+            </p>
+            <p>
+              about.4
+              :
+            </p>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.5
+            </p>
+            <p>
+              about.6
+            </p>
+            <Trans
+              i18nKey="about.7"
+            >
+              <p>
+                To support our mission of making crypto accessible to everyone, we’ve made our
+                 
+                <a
+                  href="https://github.com/onitsoft/nexchange-open-client-react"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  front end client completely open source
+                </a>
+                .
+              </p>
+            </Trans>
+          </div>
+        </div>
+      </div>,
+      "className": "about",
+      "id": "about",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <h2
+              className="title"
+            >
+              about.title
+            </h2>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.1
+            </p>
+            <p>
+              about.2
+            </p>
+            <p>
+              about.3
+            </p>
+            <p>
+              about.4
+              :
+            </p>
+          </div>
+          <div
+            className="col-xs-12 col-sm-6"
+          >
+            <p>
+              about.5
+            </p>
+            <p>
+              about.6
+            </p>
+            <Trans
+              i18nKey="about.7"
+            >
+              <p>
+                To support our mission of making crypto accessible to everyone, we’ve made our
+                 
+                <a
+                  href="https://github.com/onitsoft/nexchange-open-client-react"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  front end client completely open source
+                </a>
+                .
+              </p>
+            </Trans>
+          </div>
+        </div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-xs-12"
+            >
+              <h2
+                className="title"
+              >
+                about.title
+              </h2>
+            </div>,
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.1
+              </p>
+              <p>
+                about.2
+              </p>
+              <p>
+                about.3
+              </p>
+              <p>
+                about.4
+                :
+              </p>
+            </div>,
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.5
+              </p>
+              <p>
+                about.6
+              </p>
+              <Trans
+                i18nKey="about.7"
+              >
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
+              </Trans>
+            </div>,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <h2
+                className="title"
+              >
+                about.title
+              </h2>,
+              "className": "col-xs-12",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "about.title",
+                "className": "title",
+              },
+              "ref": null,
+              "rendered": "about.title",
+              "type": "h2",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  about.1
+                </p>,
+                <p>
+                  about.2
+                </p>,
+                <p>
+                  about.3
+                </p>,
+                <p>
+                  about.4
+                  :
+                </p>,
+              ],
+              "className": "col-xs-12 col-sm-6",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.1",
+                },
+                "ref": null,
+                "rendered": "about.1",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.2",
+                },
+                "ref": null,
+                "rendered": "about.2",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.3",
+                },
+                "ref": null,
+                "rendered": "about.3",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "about.4",
+                    ":",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "about.4",
+                  ":",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  about.5
+                </p>,
+                <p>
+                  about.6
+                </p>,
+                <Trans
+                  i18nKey="about.7"
+                >
+                  <p>
+                    To support our mission of making crypto accessible to everyone, we’ve made our
+                     
+                    <a
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      front end client completely open source
+                    </a>
+                    .
+                  </p>
+                </Trans>,
+              ],
+              "className": "col-xs-12 col-sm-6",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.5",
+                },
+                "ref": null,
+                "rendered": "about.5",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.6",
+                },
+                "ref": null,
+                "rendered": "about.6",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <p>
+                    To support our mission of making crypto accessible to everyone, we’ve made our
+                     
+                    <a
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      front end client completely open source
+                    </a>
+                    .
+                  </p>,
+                  "i18nKey": "about.7",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "To support our mission of making crypto accessible to everyone, we’ve made our",
+                      " ",
+                      <a
+                        href="https://github.com/onitsoft/nexchange-open-client-react"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        front end client completely open source
+                      </a>,
+                      ".",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "To support our mission of making crypto accessible to everyone, we’ve made our",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "front end client completely open source",
+                        "href": "https://github.com/onitsoft/nexchange-open-client-react",
+                        "rel": "noopener noreferrer",
+                        "target": "_blank",
+                      },
+                      "ref": null,
+                      "rendered": "front end client completely open source",
+                      "type": "a",
+                    },
+                    ".",
+                  ],
+                  "type": "p",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <h2
+                className="title"
+              >
+                about.title
+              </h2>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.1
+              </p>
+              <p>
+                about.2
+              </p>
+              <p>
+                about.3
+              </p>
+              <p>
+                about.4
+                :
+              </p>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.5
+              </p>
+              <p>
+                about.6
+              </p>
+              <Trans
+                i18nKey="about.7"
+              >
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
+              </Trans>
+            </div>
+          </div>
+        </div>,
+        "className": "about",
+        "id": "about",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="row"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <h2
+                className="title"
+              >
+                about.title
+              </h2>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.1
+              </p>
+              <p>
+                about.2
+              </p>
+              <p>
+                about.3
+              </p>
+              <p>
+                about.4
+                :
+              </p>
+            </div>
+            <div
+              className="col-xs-12 col-sm-6"
+            >
+              <p>
+                about.5
+              </p>
+              <p>
+                about.6
+              </p>
+              <Trans
+                i18nKey="about.7"
+              >
+                <p>
+                  To support our mission of making crypto accessible to everyone, we’ve made our
+                   
+                  <a
+                    href="https://github.com/onitsoft/nexchange-open-client-react"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    front end client completely open source
+                  </a>
+                  .
+                </p>
+              </Trans>
+            </div>
+          </div>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-xs-12"
+              >
+                <h2
+                  className="title"
+                >
+                  about.title
+                </h2>
+              </div>,
+              <div
+                className="col-xs-12 col-sm-6"
+              >
+                <p>
+                  about.1
+                </p>
+                <p>
+                  about.2
+                </p>
+                <p>
+                  about.3
+                </p>
+                <p>
+                  about.4
+                  :
+                </p>
+              </div>,
+              <div
+                className="col-xs-12 col-sm-6"
+              >
+                <p>
+                  about.5
+                </p>
+                <p>
+                  about.6
+                </p>
+                <Trans
+                  i18nKey="about.7"
+                >
+                  <p>
+                    To support our mission of making crypto accessible to everyone, we’ve made our
+                     
+                    <a
+                      href="https://github.com/onitsoft/nexchange-open-client-react"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      front end client completely open source
+                    </a>
+                    .
+                  </p>
+                </Trans>
+              </div>,
+            ],
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <h2
+                  className="title"
+                >
+                  about.title
+                </h2>,
+                "className": "col-xs-12",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "about.title",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "about.title",
+                "type": "h2",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    about.1
+                  </p>,
+                  <p>
+                    about.2
+                  </p>,
+                  <p>
+                    about.3
+                  </p>,
+                  <p>
+                    about.4
+                    :
+                  </p>,
+                ],
+                "className": "col-xs-12 col-sm-6",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "about.1",
+                  },
+                  "ref": null,
+                  "rendered": "about.1",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "about.2",
+                  },
+                  "ref": null,
+                  "rendered": "about.2",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "about.3",
+                  },
+                  "ref": null,
+                  "rendered": "about.3",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "about.4",
+                      ":",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "about.4",
+                    ":",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    about.5
+                  </p>,
+                  <p>
+                    about.6
+                  </p>,
+                  <Trans
+                    i18nKey="about.7"
+                  >
+                    <p>
+                      To support our mission of making crypto accessible to everyone, we’ve made our
+                       
+                      <a
+                        href="https://github.com/onitsoft/nexchange-open-client-react"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        front end client completely open source
+                      </a>
+                      .
+                    </p>
+                  </Trans>,
+                ],
+                "className": "col-xs-12 col-sm-6",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "about.5",
+                  },
+                  "ref": null,
+                  "rendered": "about.5",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "about.6",
+                  },
+                  "ref": null,
+                  "rendered": "about.6",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <p>
+                      To support our mission of making crypto accessible to everyone, we’ve made our
+                       
+                      <a
+                        href="https://github.com/onitsoft/nexchange-open-client-react"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        front end client completely open source
+                      </a>
+                      .
+                    </p>,
+                    "i18nKey": "about.7",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "To support our mission of making crypto accessible to everyone, we’ve made our",
+                        " ",
+                        <a
+                          href="https://github.com/onitsoft/nexchange-open-client-react"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          front end client completely open source
+                        </a>,
+                        ".",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "To support our mission of making crypto accessible to everyone, we’ve made our",
+                      " ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "front end client completely open source",
+                          "href": "https://github.com/onitsoft/nexchange-open-client-react",
+                          "rel": "noopener noreferrer",
+                          "target": "_blank",
+                        },
+                        "ref": null,
+                        "rendered": "front end client completely open source",
+                        "type": "a",
+                      },
+                      ".",
+                    ],
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+}
+`;

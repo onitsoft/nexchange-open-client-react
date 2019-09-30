@@ -1,0 +1,1354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderBookWidget renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <I18n
+    ns="translations"
+  >
+    [Function]
+  </I18n>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row"
+      >
+        <div
+          className="col-xs-12"
+        >
+          <div
+            className="widget"
+          >
+            <OrderModeSwitch />
+            <div
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            >
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+                limit_rate="57.304957061"
+              />
+              <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
+                </button>
+              </div>
+            </div>
+            <Connect(OrderDepth) />
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>
+        </div>
+      </div>,
+      "className": "container container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="col-xs-12"
+        >
+          <div
+            className="widget"
+          >
+            <OrderModeSwitch />
+            <div
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            >
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+                limit_rate="57.304957061"
+              />
+              <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
+                </button>
+              </div>
+            </div>
+            <Connect(OrderDepth) />
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>
+        </div>,
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="widget"
+          >
+            <OrderModeSwitch />
+            <div
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+            >
+              <div
+                className="col-xs-12 pair-selection"
+              >
+                <Unknown
+                  orderBook={true}
+                  type="deposit"
+                />
+                <Unknown
+                  orderBook={true}
+                  type="receive"
+                />
+              </div>
+              <ul
+                className="nav nav-tabs tabs"
+              >
+                <li>
+                  <a
+                    className="clickable active"
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy
+                  </a>
+                  <div
+                    className="arrow-down"
+                  />
+                </li>
+                <li>
+                  <a
+                    className="clickable "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.sell
+                  </a>
+                </li>
+              </ul>
+              <Connect(LimitOrderForm)
+                inputRef={[Function]}
+                limit_rate="57.304957061"
+              />
+              <Connect(WalletAddress)
+                focusWalletAddress={[Function]}
+                inputRef={[Function]}
+                withdraw_coin="receive"
+              />
+              <div
+                className="col-xs-12"
+              >
+                <button
+                  className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                  onClick={[Function]}
+                >
+                  orderbookwidget.buy ETH orderbookwidget.with OMG
+                </button>
+              </div>
+            </div>
+            <Connect(OrderDepth) />
+            <Connect(MyOrders)
+              collapseMyOrders={[Function]}
+              expandMyOrders={[Function]}
+              expanded={false}
+            />
+          </div>,
+          "className": "col-xs-12",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <OrderModeSwitch />,
+              <div
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+              >
+                <div
+                  className="col-xs-12 pair-selection"
+                >
+                  <Unknown
+                    orderBook={true}
+                    type="deposit"
+                  />
+                  <Unknown
+                    orderBook={true}
+                    type="receive"
+                  />
+                </div>
+                <ul
+                  className="nav nav-tabs tabs"
+                >
+                  <li>
+                    <a
+                      className="clickable active"
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy
+                    </a>
+                    <div
+                      className="arrow-down"
+                    />
+                  </li>
+                  <li>
+                    <a
+                      className="clickable "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.sell
+                    </a>
+                  </li>
+                </ul>
+                <Connect(LimitOrderForm)
+                  inputRef={[Function]}
+                  limit_rate="57.304957061"
+                />
+                <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
+                  inputRef={[Function]}
+                  withdraw_coin="receive"
+                />
+                <div
+                  className="col-xs-12"
+                >
+                  <button
+                    className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
+                  </button>
+                </div>
+              </div>,
+              <Connect(OrderDepth) />,
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />,
+            ],
+            "className": "widget",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "changeOrderMode": undefined,
+                "orderMode": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="col-xs-12 pair-selection"
+                  >
+                    <Unknown
+                      orderBook={true}
+                      type="deposit"
+                    />
+                    <Unknown
+                      orderBook={true}
+                      type="receive"
+                    />
+                  </div>,
+                  <ul
+                    className="nav nav-tabs tabs"
+                  >
+                    <li>
+                      <a
+                        className="clickable active"
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.buy
+                      </a>
+                      <div
+                        className="arrow-down"
+                      />
+                    </li>
+                    <li>
+                      <a
+                        className="clickable "
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.sell
+                      </a>
+                    </li>
+                  </ul>,
+                  <Connect(LimitOrderForm)
+                    inputRef={[Function]}
+                    limit_rate="57.304957061"
+                  />,
+                  <Connect(WalletAddress)
+                    focusWalletAddress={[Function]}
+                    inputRef={[Function]}
+                    withdraw_coin="receive"
+                  />,
+                  <div
+                    className="col-xs-12"
+                  >
+                    <button
+                      className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
+                    </button>
+                  </div>,
+                ],
+                "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <Unknown
+                        orderBook={true}
+                        type="deposit"
+                      />,
+                      <Unknown
+                        orderBook={true}
+                        type="receive"
+                      />,
+                    ],
+                    "className": "col-xs-12 pair-selection",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "orderBook": true,
+                        "type": "deposit",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "orderBook": true,
+                        "type": "receive",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <li>
+                        <a
+                          className="clickable active"
+                          onClick={[Function]}
+                        >
+                          orderbookwidget.buy
+                        </a>
+                        <div
+                          className="arrow-down"
+                        />
+                      </li>,
+                      <li>
+                        <a
+                          className="clickable "
+                          onClick={[Function]}
+                        >
+                          orderbookwidget.sell
+                        </a>
+                      </li>,
+                    ],
+                    "className": "nav nav-tabs tabs",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <a
+                            className="clickable active"
+                            onClick={[Function]}
+                          >
+                            orderbookwidget.buy
+                          </a>,
+                          <div
+                            className="arrow-down"
+                          />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "orderbookwidget.buy",
+                            "className": "clickable active",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "orderbookwidget.buy",
+                          "type": "a",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "arrow-down",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "div",
+                        },
+                      ],
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <a
+                            className="clickable "
+                            onClick={[Function]}
+                          >
+                            orderbookwidget.sell
+                          </a>,
+                          null,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "orderbookwidget.sell",
+                            "className": "clickable ",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "orderbookwidget.sell",
+                          "type": "a",
+                        },
+                        null,
+                      ],
+                      "type": "li",
+                    },
+                  ],
+                  "type": "ul",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "inputRef": [Function],
+                    "limit_rate": "57.304957061",
+                    "quantity": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "button": undefined,
+                    "focusWalletAddress": [Function],
+                    "inputRef": [Function],
+                    "withdraw_coin": "receive",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
+                    </button>,
+                    "className": "col-xs-12",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "orderbookwidget.buy ETH orderbookwidget.with OMG",
+                      "className": "btn btn-buy 
+                          disabled btn btn-block btn-primary proceed ",
+                      "onClick": [Function],
+                    },
+                    "ref": [Function],
+                    "rendered": "orderbookwidget.buy ETH orderbookwidget.with OMG",
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "collapseMyOrders": [Function],
+                "expandMyOrders": [Function],
+                "expanded": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <div
+              className="widget"
+            >
+              <OrderModeSwitch />
+              <div
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+              >
+                <div
+                  className="col-xs-12 pair-selection"
+                >
+                  <Unknown
+                    orderBook={true}
+                    type="deposit"
+                  />
+                  <Unknown
+                    orderBook={true}
+                    type="receive"
+                  />
+                </div>
+                <ul
+                  className="nav nav-tabs tabs"
+                >
+                  <li>
+                    <a
+                      className="clickable active"
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy
+                    </a>
+                    <div
+                      className="arrow-down"
+                    />
+                  </li>
+                  <li>
+                    <a
+                      className="clickable "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.sell
+                    </a>
+                  </li>
+                </ul>
+                <Connect(LimitOrderForm)
+                  inputRef={[Function]}
+                  limit_rate="57.304957061"
+                />
+                <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
+                  inputRef={[Function]}
+                  withdraw_coin="receive"
+                />
+                <div
+                  className="col-xs-12"
+                >
+                  <button
+                    className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
+                  </button>
+                </div>
+              </div>
+              <Connect(OrderDepth) />
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
+            </div>
+          </div>
+        </div>,
+        "className": "container container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="col-xs-12"
+          >
+            <div
+              className="widget"
+            >
+              <OrderModeSwitch />
+              <div
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+              >
+                <div
+                  className="col-xs-12 pair-selection"
+                >
+                  <Unknown
+                    orderBook={true}
+                    type="deposit"
+                  />
+                  <Unknown
+                    orderBook={true}
+                    type="receive"
+                  />
+                </div>
+                <ul
+                  className="nav nav-tabs tabs"
+                >
+                  <li>
+                    <a
+                      className="clickable active"
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy
+                    </a>
+                    <div
+                      className="arrow-down"
+                    />
+                  </li>
+                  <li>
+                    <a
+                      className="clickable "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.sell
+                    </a>
+                  </li>
+                </ul>
+                <Connect(LimitOrderForm)
+                  inputRef={[Function]}
+                  limit_rate="57.304957061"
+                />
+                <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
+                  inputRef={[Function]}
+                  withdraw_coin="receive"
+                />
+                <div
+                  className="col-xs-12"
+                >
+                  <button
+                    className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
+                  </button>
+                </div>
+              </div>
+              <Connect(OrderDepth) />
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
+            </div>
+          </div>,
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="widget"
+            >
+              <OrderModeSwitch />
+              <div
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+              >
+                <div
+                  className="col-xs-12 pair-selection"
+                >
+                  <Unknown
+                    orderBook={true}
+                    type="deposit"
+                  />
+                  <Unknown
+                    orderBook={true}
+                    type="receive"
+                  />
+                </div>
+                <ul
+                  className="nav nav-tabs tabs"
+                >
+                  <li>
+                    <a
+                      className="clickable active"
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy
+                    </a>
+                    <div
+                      className="arrow-down"
+                    />
+                  </li>
+                  <li>
+                    <a
+                      className="clickable "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.sell
+                    </a>
+                  </li>
+                </ul>
+                <Connect(LimitOrderForm)
+                  inputRef={[Function]}
+                  limit_rate="57.304957061"
+                />
+                <Connect(WalletAddress)
+                  focusWalletAddress={[Function]}
+                  inputRef={[Function]}
+                  withdraw_coin="receive"
+                />
+                <div
+                  className="col-xs-12"
+                >
+                  <button
+                    className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                    onClick={[Function]}
+                  >
+                    orderbookwidget.buy ETH orderbookwidget.with OMG
+                  </button>
+                </div>
+              </div>
+              <Connect(OrderDepth) />
+              <Connect(MyOrders)
+                collapseMyOrders={[Function]}
+                expandMyOrders={[Function]}
+                expanded={false}
+              />
+            </div>,
+            "className": "col-xs-12",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <OrderModeSwitch />,
+                <div
+                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4"
+                >
+                  <div
+                    className="col-xs-12 pair-selection"
+                  >
+                    <Unknown
+                      orderBook={true}
+                      type="deposit"
+                    />
+                    <Unknown
+                      orderBook={true}
+                      type="receive"
+                    />
+                  </div>
+                  <ul
+                    className="nav nav-tabs tabs"
+                  >
+                    <li>
+                      <a
+                        className="clickable active"
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.buy
+                      </a>
+                      <div
+                        className="arrow-down"
+                      />
+                    </li>
+                    <li>
+                      <a
+                        className="clickable "
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.sell
+                      </a>
+                    </li>
+                  </ul>
+                  <Connect(LimitOrderForm)
+                    inputRef={[Function]}
+                    limit_rate="57.304957061"
+                  />
+                  <Connect(WalletAddress)
+                    focusWalletAddress={[Function]}
+                    inputRef={[Function]}
+                    withdraw_coin="receive"
+                  />
+                  <div
+                    className="col-xs-12"
+                  >
+                    <button
+                      className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                      onClick={[Function]}
+                    >
+                      orderbookwidget.buy ETH orderbookwidget.with OMG
+                    </button>
+                  </div>
+                </div>,
+                <Connect(OrderDepth) />,
+                <Connect(MyOrders)
+                  collapseMyOrders={[Function]}
+                  expandMyOrders={[Function]}
+                  expanded={false}
+                />,
+              ],
+              "className": "widget",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "changeOrderMode": undefined,
+                  "orderMode": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="col-xs-12 pair-selection"
+                    >
+                      <Unknown
+                        orderBook={true}
+                        type="deposit"
+                      />
+                      <Unknown
+                        orderBook={true}
+                        type="receive"
+                      />
+                    </div>,
+                    <ul
+                      className="nav nav-tabs tabs"
+                    >
+                      <li>
+                        <a
+                          className="clickable active"
+                          onClick={[Function]}
+                        >
+                          orderbookwidget.buy
+                        </a>
+                        <div
+                          className="arrow-down"
+                        />
+                      </li>
+                      <li>
+                        <a
+                          className="clickable "
+                          onClick={[Function]}
+                        >
+                          orderbookwidget.sell
+                        </a>
+                      </li>
+                    </ul>,
+                    <Connect(LimitOrderForm)
+                      inputRef={[Function]}
+                      limit_rate="57.304957061"
+                    />,
+                    <Connect(WalletAddress)
+                      focusWalletAddress={[Function]}
+                      inputRef={[Function]}
+                      withdraw_coin="receive"
+                    />,
+                    <div
+                      className="col-xs-12"
+                    >
+                      <button
+                        className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.buy ETH orderbookwidget.with OMG
+                      </button>
+                    </div>,
+                  ],
+                  "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <Unknown
+                          orderBook={true}
+                          type="deposit"
+                        />,
+                        <Unknown
+                          orderBook={true}
+                          type="receive"
+                        />,
+                      ],
+                      "className": "col-xs-12 pair-selection",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "orderBook": true,
+                          "type": "deposit",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "orderBook": true,
+                          "type": "receive",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <li>
+                          <a
+                            className="clickable active"
+                            onClick={[Function]}
+                          >
+                            orderbookwidget.buy
+                          </a>
+                          <div
+                            className="arrow-down"
+                          />
+                        </li>,
+                        <li>
+                          <a
+                            className="clickable "
+                            onClick={[Function]}
+                          >
+                            orderbookwidget.sell
+                          </a>
+                        </li>,
+                      ],
+                      "className": "nav nav-tabs tabs",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <a
+                              className="clickable active"
+                              onClick={[Function]}
+                            >
+                              orderbookwidget.buy
+                            </a>,
+                            <div
+                              className="arrow-down"
+                            />,
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "orderbookwidget.buy",
+                              "className": "clickable active",
+                              "onClick": [Function],
+                            },
+                            "ref": null,
+                            "rendered": "orderbookwidget.buy",
+                            "type": "a",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "arrow-down",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "div",
+                          },
+                        ],
+                        "type": "li",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <a
+                              className="clickable "
+                              onClick={[Function]}
+                            >
+                              orderbookwidget.sell
+                            </a>,
+                            null,
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "orderbookwidget.sell",
+                              "className": "clickable ",
+                              "onClick": [Function],
+                            },
+                            "ref": null,
+                            "rendered": "orderbookwidget.sell",
+                            "type": "a",
+                          },
+                          null,
+                        ],
+                        "type": "li",
+                      },
+                    ],
+                    "type": "ul",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "inputRef": [Function],
+                      "limit_rate": "57.304957061",
+                      "quantity": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "button": undefined,
+                      "focusWalletAddress": [Function],
+                      "inputRef": [Function],
+                      "withdraw_coin": "receive",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <button
+                        className="btn btn-buy 
+                          disabled btn btn-block btn-primary proceed "
+                        onClick={[Function]}
+                      >
+                        orderbookwidget.buy ETH orderbookwidget.with OMG
+                      </button>,
+                      "className": "col-xs-12",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "orderbookwidget.buy ETH orderbookwidget.with OMG",
+                        "className": "btn btn-buy 
+                          disabled btn btn-block btn-primary proceed ",
+                        "onClick": [Function],
+                      },
+                      "ref": [Function],
+                      "rendered": "orderbookwidget.buy ETH orderbookwidget.with OMG",
+                      "type": "button",
+                    },
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "collapseMyOrders": [Function],
+                  "expandMyOrders": [Function],
+                  "expanded": false,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {
+      "storeSubscription": undefined,
+    },
+  },
+}
+`;
