@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchCoinDetails, fetchPairs, changeOrderMode } from 'Actions';
 import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
+import PriceChart from './PriceChart/PriceChart';
 import RecentOrders from './RecentOrders/RecentOrders';
 
 export class Pair extends Component {
@@ -28,6 +29,7 @@ export class Pair extends Component {
     return (
       <div>
         <Hero {...this.props} />
+        <PriceChart />
         <RecentOrders />
         <Articles />
       </div>
