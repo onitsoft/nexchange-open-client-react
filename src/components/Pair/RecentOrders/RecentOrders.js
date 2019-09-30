@@ -62,6 +62,7 @@ class RecentOrders extends Component {
   }
 
   render() {
+    let pairRef = this.props.match.params.pairRef;
     let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
       return (
         <I18n ns="translations" key={order.unique_reference}>
@@ -125,7 +126,7 @@ class RecentOrders extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h2 className="title">{t('recentorders.1')}</h2>
+                  <h2 className="title">{`${t('recentorders.1')} for ${pairRef}`}</h2>
                   <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
                 </div>
               </div>

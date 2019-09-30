@@ -88,11 +88,12 @@ class PriceChart extends Component {
   }
 
   render() {
+    let pairRef = this.props.match.params.pairRef;
     return (
       <div className={styles.container}>
         <div className={styles.row}>
           <div className="container">
-            <h2>Price Chart</h2>
+            <h2>{`Will be the Price Chart component, for ${pairRef}`}</h2>
             <Link to={{ pathname: "/", search: "?pair=ETHBTC" }} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ethbtc']}`}

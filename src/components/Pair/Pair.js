@@ -29,9 +29,9 @@ export class Pair extends Component {
     return (
       <div>
         <Hero {...this.props} />
-        <PriceChart />
-        <RecentOrders />
-        <Articles />
+        <PriceChart {...this.props} />
+        <RecentOrders {...this.props} />
+        <Articles {...this.props} />
         {/* TODO Referral Program Widget */}
         {/* TODO API Access Widget */}
       </div>
