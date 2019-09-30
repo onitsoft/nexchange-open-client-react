@@ -32,6 +32,8 @@ export class Pair extends Component {
         <PriceChart />
         <RecentOrders />
         <Articles />
+        {/* TODO Referral Program Widget */}
+        {/* TODO API Access Widget */}
       </div>
     );
   }
