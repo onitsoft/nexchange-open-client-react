@@ -212,7 +212,13 @@ export const fetchPairs = () => dispatch => {
     .then(async response => {
       if (!response.data.length) return;
 
-      const params = urlParams();
+      let params = urlParams();
+      const pathNameParams = window.location.pathname.split('/');
+      // Checks if pathname section of url has params.
+      if (pathNameParams[1] === 'pair') {
+        params = {};
+        params.pair = pathNameParams[2];
+      }
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
           return !pair.disabled;
