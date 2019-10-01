@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
 import debounce from 'Utils/debounce';
@@ -83,6 +84,7 @@ class CoinInput extends PureComponent {
   };
 
   render() {
+    console.log(`pathname received by CoinInput component's render method: ${this.props.location.pathname}`);
     return (
       <I18n ns="translations">
         {t => (
@@ -125,7 +127,10 @@ class CoinInput extends PureComponent {
 const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchPrice }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CoinInput);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(CoinInput)
+);
+
