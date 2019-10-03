@@ -210,14 +210,13 @@ export const fetchPairs = () => dispatch => {
 
   return request
     .then(async response => {
-      if (!response.data.length) return;
 
       let params = urlParams();
       const pathNameParams = window.location.pathname.split('/');
       // Checks if pathname section of url has params.
       if (pathNameParams[1] === 'pair') {
         params = {};
-        params.pair = pathNameParams[2];
+        params.pair = pathNameParams[2].toUpperCase();
       }
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
