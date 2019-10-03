@@ -31,11 +31,11 @@ class RecentOrders extends Component {
     depositCurrencies = depositCurrencies.map(coin => coin.code);
     receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
-    let { pairRef } = this.props.match.params;
-    pairRef = pairRef.toUpperCase();
+    let { tradingSymbolPair } = this.props.match.params;
+    tradingSymbolPair = tradingSymbolPair.toUpperCase();
 
     axios
-      .get(`${config.API_BASE_URL}/orders/?page=1&pair=${pairRef}&hours=168`)
+      .get(`${config.API_BASE_URL}/orders/?page=1&pair=${tradingSymbolPair}&hours=168`)
       .then(response => {
         let orders = response.data.results.filter(order => {
           return params && params.hasOwnProperty('test')
@@ -65,7 +65,7 @@ class RecentOrders extends Component {
   }
 
   render() {
-    let pairRef = this.props.match.params.pairRef;
+    let tradingSymbolPair = this.props.match.params.tradingSymbolPair;
     let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
       return (
         <I18n ns="translations" key={order.unique_reference}>
@@ -129,7 +129,7 @@ class RecentOrders extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h2 className="title">{`${t('recentorders.1')} for ${pairRef}`}</h2>
+                  <h2 className="title">{`${t('recentorders.1')} for ${tradingSymbolPair}`}</h2>
                   <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
                 </div>
               </div>

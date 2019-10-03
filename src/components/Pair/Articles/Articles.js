@@ -4,7 +4,7 @@ import styles from './Articles.scss';
 import { I18n } from 'react-i18next';
 
 function Articles() {
-  let { pairRef } = useParams();
+  let { tradingSymbolPair } = useParams();
   return (
     <I18n ns="translations">
       {t => (
@@ -13,7 +13,7 @@ function Articles() {
             <div className="row">
               <div className="col-xs-12">
                 <div>
-                  <h2 className="title">{t(`H2 header ${pairRef}`)}</h2>
+                  <h2 className="title">{t(`H2 header ${tradingSymbolPair}`)}</h2>
                   <p>
                     It is a text block with headers and paragraphs, here will be estimate 500 words of text
                 </p>

@@ -53,7 +53,7 @@ ReactDOM.render(
             render={props =>  <Home {...props} store={store} />}
           />
           <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route exact path="/pair/:pairRef"
+          <Route exact path="/pair/:tradingSymbolPair"
             render={props =>  <Pair {...props} store={store} />}
           />
           <Route component={NotFound} />
