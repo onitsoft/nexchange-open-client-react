@@ -31,8 +31,11 @@ class RecentOrders extends Component {
     depositCurrencies = depositCurrencies.map(coin => coin.code);
     receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
+    let { pairRef } = this.props.match.params;
+    pairRef = pairRef.toUpperCase();
+
     axios
-      .get(`${config.API_BASE_URL}/orders/?page=1`)
+      .get(`${config.API_BASE_URL}/orders/?page=1&pair=${pairRef}&hours=168`)
       .then(response => {
         let orders = response.data.results.filter(order => {
           return params && params.hasOwnProperty('test')
