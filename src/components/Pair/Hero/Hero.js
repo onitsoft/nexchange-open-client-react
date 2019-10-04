@@ -52,7 +52,13 @@ class Hero extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.brand}>
-                      <h1>{t('hero.1')} {this.props.selectedCoin.deposit} {this.props.selectedCoin.receive}</h1>
+                      <h1>{t('PerExchangePairBODY.H1', {
+                        depositCoinFullName: 'depositCoinFullName',
+                        depositCoinSymbol: this.props.selectedCoin.deposit,
+                        receiveCoinFullName: 'receiveCoinFullName',
+                        receiveCoinSymbol: this.props.selectedCoin.receive
+                      })}
+                      </h1>
                     <Trans i18nKey="hero.2">
                       <h2>
                         Simple. <span className="text-green">Secure</span>. Transparent.
