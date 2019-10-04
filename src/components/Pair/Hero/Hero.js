@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { I18n, Trans } from 'react-i18next';
 
 import ExchangeWidget from './ExchangeWidget/ExchangeWidget';
@@ -45,13 +46,30 @@ class Hero extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div className={styles.hero}>
-            <ErrorAlert />
+          <React.Fragment>
+            <Helmet>
+              <title>
+              {t('PerExchangePairHEAD.title', {
+                depositCoinFullName: 'depositCoinFullName',
+                depositCoinSymbol: this.props.selectedCoin.deposit,
+                receiveCoinFullName: 'receiveCoinFullName',
+                receiveCoinSymbol: this.props.selectedCoin.receive
+              })}
+              </title>
+              <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
+                depositCoinFullName: 'depositCoinFullName',
+                depositCoinSymbol: this.props.selectedCoin.deposit,
+                receiveCoinFullName: 'receiveCoinFullName',
+                receiveCoinSymbol: this.props.selectedCoin.receive
+              })}/>
+            </Helmet>
+            <div className={styles.hero}>
+              <ErrorAlert />
 
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-12">
-                  <div className={styles.brand}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-xs-12">
+                    <div className={styles.brand}>
                       <h1>{t('PerExchangePairBODY.H1', {
                         depositCoinFullName: 'depositCoinFullName',
                         depositCoinSymbol: this.props.selectedCoin.deposit,
@@ -59,26 +77,27 @@ class Hero extends Component {
                         receiveCoinSymbol: this.props.selectedCoin.receive
                       })}
                       </h1>
-                    <Trans i18nKey="hero.2">
-                      <h2>
-                        Simple. <span className="text-green">Secure</span>. Transparent.
+                      <Trans i18nKey="hero.2">
+                        <h2>
+                          Simple. <span className="text-green">Secure</span>. Transparent.
                       </h2>
-                    </Trans>
+                      </Trans>
+                    </div>
+                  </div>
+
+                  <div className={styles.widget}>
+                    {this.props.orderMode === 'INSTANT'
+                      ? <ExchangeWidget {...this.props} store={this.props.store} />
+                      : Config.ADVANCED_MODE_ENABLED ?
+                        <OrderBookWidget {...this.props} store={this.props.store} />
+                        : <OrderBookDisabled {...this.props} />}
                   </div>
                 </div>
-
-                <div className={styles.widget}>
-                  { this.props.orderMode === 'INSTANT'
-                    ? <ExchangeWidget {...this.props}  store={this.props.store} />
-                    : Config.ADVANCED_MODE_ENABLED ?
-                      <OrderBookWidget {...this.props}  store={this.props.store} />
-                    : <OrderBookDisabled {...this.props}/>}
-                </div>
               </div>
-            </div>
 
-            <CoinPrices />
-          </div>
+              <CoinPrices />
+            </div>
+          </React.Fragment>
         )}
       </I18n>
     );
