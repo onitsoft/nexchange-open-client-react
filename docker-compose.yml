@@ -1,7 +1,7 @@
 version: '2'
 services:
     web:
-        image: onitsoft/nginx
+        image: onitsoft/nginx:node
         volumes:
             - /nexchange/etc/letsencrypt:/etc/letsencrypt
             - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
