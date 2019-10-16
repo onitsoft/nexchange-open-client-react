@@ -455,7 +455,10 @@
   "error": {
     "warning": "Warning",
     "loading": "Sorry, there was a problem loading the page :(",
-    "notfound": "Page not found :(",
+    "notfound1": "Oops! Something went wrong...",
+    "notfound21": "The page you are looking for isn't available. Try to search again, or use the",
+    "notfound22": "Go Back",
+    "notfound23": "button bellow.",
     "invalidpair": "You cannot buy",
     "nousedeposit": "You cannot use",
     "nousedeposit2": "as deposit coin. Please try another one.",
