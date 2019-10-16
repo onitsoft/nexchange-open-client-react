@@ -16,8 +16,7 @@ import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
 import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
-import SignIn from 'Components/Accounts/SignIn/SignIn';
-import SignUp from 'Components/Accounts/SignUp/SignUp';
+import WhiteLabel from 'Components/WhiteLabel/WhiteLabel';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -58,6 +57,7 @@ ReactDOM.render(
           <Route exact path="/signup" component={SignUp} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
           <Route exact path="/not-found" component={NotFound} />
+          <Route exact path="/whitelabel" component={WhiteLabel} />
           <Route component={NotFoundRedirect} />
         </Switch>
 
