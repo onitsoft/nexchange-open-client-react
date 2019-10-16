@@ -1,7 +1,7 @@
 const config = {
   NAME: 'N.exchange',
   DOMAIN: 'https://n.exchange',
-  API_BASE_URL: 'https://api.nexchange.io/en/api/v1', // 'https://api.nexchange.io/en/api/v1', // http://207.154.223.232:8000/en/api/v1
+  API_BASE_URL: 'https://api.n.exchange/en/api/v1',
   SUPPORT_EMAIL: 'support@n.exchange',
   PRICE_FETCH_INTERVAL: 60000,
   ORDER_BOOK_FETCH_INTERVAL: 10000,

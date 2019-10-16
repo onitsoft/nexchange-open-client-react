@@ -57,6 +57,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <MyOrdersCollapsed
+        goToMyOrders={[Function]}
         myOrders={Array []}
       />,
       "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4 wrapper",
@@ -68,7 +69,9 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "expandMyOrders": undefined,
+        "goToMyOrders": [Function],
         "myOrders": Array [],
+        "shouldRedirect": undefined,
       },
       "ref": null,
       "rendered": null,
@@ -83,6 +86,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <MyOrdersCollapsed
+          goToMyOrders={[Function]}
           myOrders={Array []}
         />,
         "className": "col-xs-12 col-sm-12 col-md-6 col-lg-4 wrapper",
@@ -94,7 +98,9 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "expandMyOrders": undefined,
+          "goToMyOrders": [Function],
           "myOrders": Array [],
+          "shouldRedirect": undefined,
         },
         "ref": null,
         "rendered": null,

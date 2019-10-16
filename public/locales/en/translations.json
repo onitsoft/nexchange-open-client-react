@@ -64,9 +64,10 @@
     "nomyorders": "No order history...",
     "viewallmyorders": "View all my orders"
   },
-  "accounts": {
-    "signup": "Sign Up",
-    "signin": "Sign In"
+  "integrations": {
+    "error" : {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+    }
   },
   "recentorders": {
     "1": "Recent Orders",

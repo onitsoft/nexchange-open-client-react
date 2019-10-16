@@ -97,7 +97,7 @@ class LimitOrderForm extends PureComponent {
               </div>
               <div className={styles['values-preview-container']}>
               {this.state.quantity && this.state.limit_rate ?
-                <div className={styles['values-preview']}>
+                <div id='values-preview' className={styles['values-preview']}>
                   <span>
                     {`${t('order.deposit')}: `}
                     {this.props.orderBook.order_type === 'BUY' 

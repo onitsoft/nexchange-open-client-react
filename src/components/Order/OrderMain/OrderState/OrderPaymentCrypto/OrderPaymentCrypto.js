@@ -30,7 +30,10 @@ class OrderPayment extends Component {
             <div className={styles.container}>
               <OrderStateLoader />
               <h2 className={styles.title}>{t('order.payment1')}</h2>
-              <a href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} target="_blank">
+              <a 
+                href={`${config.API_BASE_URL}/orders/${this.props.order.unique_reference}`} 
+                target="_blank" 
+                rel="noopener noreferrer">
                 <h4 style={{ margin: '25px 0 0px', fontWeight: '500' }}>{t('order.api')}</h4>
               </a>
             </div>
@@ -52,7 +55,7 @@ class OrderPayment extends Component {
             </h2>
             <h3 className={styles.subtitle}>
               {t('order.txid')}:{' '}
-              <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank">
+              <a href={getBlockchainUrl(this.coin.code, this.txId)} target="_blank" rel="noopener noreferrer">
                 {this.tx.tx_id}
               </a>
             </h3>
