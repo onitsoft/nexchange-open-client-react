@@ -6,7 +6,7 @@ import KeyFeatures from './KeyFeatures/KeyFeatures'
 import MajorCard from './MajorCard/MajorCard'
 import SupportedAssets from './SupportedAssets/SupportedAssets'
 import MinorCard from './MinorCard/MinorCard'
-import WhiteLabelFAQ from './WhiteLabelFAQ2/WhiteLabelFAQ2';
+import WhiteLabelFAQ from './WhiteLabelFAQ/WhiteLabelFAQ';
 
 import styles from './WhiteLabel.scss'
 
