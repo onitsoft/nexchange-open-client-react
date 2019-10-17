@@ -67,6 +67,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^5.1.1",
     "react-stickynode": "^1.4.1",
+    "react-structured-data": "0.0.14",
     "react-svg-inline": "^2.1.0",
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.9.0",
