@@ -13,34 +13,36 @@ import styles from './WhiteLabel.scss'
 
 function WhiteLabel() {
   return (
-    <div className={styles.hero}>
-      <Container>
-        <Row>
-          <VideoCard />
-        </Row>
-        <Row>
-          <KeyFeatures />
-        </Row>
-        <Row>
-          <MajorCard />
-        </Row>
-        <Row>
-          <SupportedAssets />
-        </Row>
-        <Row>
-          <MinorCard topic="interface" />
-        </Row>
-        <Row>
-          <MinorCard topic="security" />
-        </Row>
-        <Row>
-          <MinorCard topic="techreq" />
-        </Row>
-        <Row>
-          <WhiteLabelFAQ />
-        </Row>
-      </Container>
-    </div>
+    <>
+      <div className={styles.hero}>
+        <Container>
+          <Row>
+            <VideoCard />
+          </Row>
+        </Container>
+      </div>
+      <Row>
+        <KeyFeatures />
+      </Row>
+      <Row>
+        <MajorCard />
+      </Row>
+      <Row>
+        <SupportedAssets />
+      </Row>
+      <Row>
+        <MinorCard topic="interface" />
+      </Row>
+      <Row>
+        <MinorCard topic="security" />
+      </Row>
+      <Row>
+        <MinorCard topic="techreq" />
+      </Row>
+      <Row>
+        <WhiteLabelFAQ />
+      </Row>
+    </>
   )
 }
 

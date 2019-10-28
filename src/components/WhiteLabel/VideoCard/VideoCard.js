@@ -4,11 +4,12 @@ import YouTube from 'react-youtube'
 import styles from './VideoCard.scss'
 import { I18n, Trans } from 'react-i18next'
 
+
 function VideoCard() {
   return (
     <React.Fragment>
       <div className={styles.container}>
-        <Col md={6}>
+        <Col md="6">
           <h1>Non-custodial Cryptocurrency Exchange White Label</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi nec nunc euismod condimentum.</p>
           <p>Aenean efficitur metus vel posuere hendrerit. </p>

@@ -24,6 +24,21 @@ function KeyFeatures() {
           <Col md={4}>
             < FeatureItem name='Sec' description='Top' />
           </Col>
+          <Col md={4}>
+            < FeatureItem name='Sec' description='Top' />
+          </Col>
+          <Col md={4}>
+            < FeatureItem name='Sec' description='Top' />
+          </Col>
+          <Col md={4}>
+            < FeatureItem name='Sec' description='Top' />
+          </Col>
+          <Col md={4}>
+            < FeatureItem name='Sec' description='Top' />
+          </Col>
+          <Col md={4}>
+            < FeatureItem name='Sec' description='Top' />
+          </Col>
         </React.Fragment>
       )}
     </I18n>

@@ -11,6 +11,7 @@ import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer/Footer';
 import NotFound from 'Components/NotFound/NotFound';
 import FAQ from 'Components/FAQ/FAQ';
+import FAQ2 from 'Components/FAQ2/FAQ';
 
 import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
@@ -56,6 +57,7 @@ ReactDOM.render(
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} /> 
           <Route exact path="/faqs/:id?" component={FAQ} />
+          <Route exact path="/faqs2/" component={FAQ2} />
           <Route exact path="/not-found" component={NotFound} />
           <Route exact path="/whitelabel" component={WhiteLabel} />
           <Route component={NotFoundRedirect} />
