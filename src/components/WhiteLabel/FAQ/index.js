@@ -3,7 +3,7 @@ import { Col } from 'reactstrap'
 import { Generic, GenericCollection, JSONLD } from 'react-structured-data'
 
 
-function WhiteLabelFAQ() {
+export default function FAQ() {
 
   const faqs = [
     {
@@ -52,5 +52,3 @@ function WhiteLabelFAQ() {
     </Col>
   )
 }
-
-export default WhiteLabelFAQ

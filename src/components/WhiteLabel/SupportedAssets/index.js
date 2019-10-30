@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './SupportedAssets.scss';
 import { I18n, Trans } from 'react-i18next';
-import SupportedAsset from './SupportedAsset/SupportedAsset'
+import SupportedAsset from './SupportedAsset'
 
 
-function SupportedAssets() {
+export default function SupportedAssets() {
   return (
     <React.Fragment>
       <div className="col-md-12">
@@ -16,5 +16,3 @@ function SupportedAssets() {
     </React.Fragment>
   )
 }
-
-export default SupportedAssets

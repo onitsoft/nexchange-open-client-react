@@ -1,26 +1,23 @@
 import React from 'react'
 import { Col } from 'reactstrap'
-import styles from './MinorCard.scss'
-import { I18n, Trans } from 'react-i18next'
+import styles from './MajorCard.scss'
+import { reactI18nextModule } from 'react-i18next/dist/commonjs/context'
 
 
-function MinorCard({ topic }) {
-
-  const featureImageLocation = `/img/white_label_page/feature/${topic}.jpg`
-
+export default function MajorCard() {
   return (
     <React.Fragment>
+      <Col md={12}>
+        <h2>Turn-Key Solution to Start Your Own Instant Exchange</h2>
+      </Col>
       <Col md={6}>
-        <h2>{topic}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi nec nunc euismod condimentum.</p>
         <p>Aenean efficitur metus vel posuere hendrerit. </p>
         <p>Sed ut arcu vel velit tempor fermentum vel varius dui. Duis lacus dolor, euismod id.</p>
       </Col>
       <Col md={6}>
-        <p>{featureImageLocation}</p>
+        <p>Image</p>
       </Col>
     </React.Fragment>
   )
 }
-
-export default MinorCard

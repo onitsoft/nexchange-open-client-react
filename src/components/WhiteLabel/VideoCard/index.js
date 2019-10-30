@@ -5,7 +5,7 @@ import styles from './VideoCard.scss'
 import { I18n, Trans } from 'react-i18next'
 
 
-function VideoCard() {
+export default function VideoCard() {
   return (
     <React.Fragment>
       <div className={styles.container}>
@@ -24,5 +24,3 @@ function VideoCard() {
     </React.Fragment>
   )
 }
-
-export default VideoCard

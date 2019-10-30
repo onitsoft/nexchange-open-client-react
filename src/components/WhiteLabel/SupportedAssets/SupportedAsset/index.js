@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SupportedAsset.scss';
 
 
-function SupportedAsset( { name } ) {
+export default function SupportedAsset( { name } ) {
 
   const supportedAssetImageLocation = `/img/supported_asset/${name}.jpg`
 
@@ -17,5 +17,3 @@ function SupportedAsset( { name } ) {
     </React.Fragment>
   )
 }
-
-export default SupportedAsset

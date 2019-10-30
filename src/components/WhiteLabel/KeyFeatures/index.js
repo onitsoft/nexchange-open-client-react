@@ -3,10 +3,10 @@ import { Col } from 'reactstrap'
 import styles from './KeyFeatures.scss'
 import { I18n } from 'react-i18next'
 
-import FeatureItem from './FeatureItem/FeatureItem'
+import FeatureItem from './FeatureItem'
 
 
-function KeyFeatures() {
+export default function KeyFeatures() {
 
   // const features = [
   //   { name: 'security', description: 'top' },
@@ -44,5 +44,3 @@ function KeyFeatures() {
     </I18n>
   )
 }
-
-export default KeyFeatures

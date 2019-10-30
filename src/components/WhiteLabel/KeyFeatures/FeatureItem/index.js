@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FeatureItem.scss';
 
 
-function FeatureItem( { name, description } ) {
+export default function FeatureItem( { name, description } ) {
 
   const keyFeatureImageLocation = `/img/white_label_page/key_feature/${name}.jpg`
 
@@ -17,5 +17,3 @@ function FeatureItem( { name, description } ) {
     </React.Fragment>
   )
 }
-
-export default FeatureItem
