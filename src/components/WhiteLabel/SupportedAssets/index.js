@@ -11,7 +11,7 @@ export default function SupportedAssets() {
         <h2>Supported Digital Assets</h2>
       </div>
       <div className="col-md-2">
-        <SupportedAsset />
+        <SupportedAsset name="BTC" />
       </div>
     </React.Fragment>
   )
