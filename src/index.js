@@ -6,9 +6,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
-import Referrals from 'Components/Referrals/Referrals';
-import Header from 'Components/Header/Header';
-import Footer from 'Components/Footer/Footer';
+import Layout from 'Components/Layout'
 import NotFound from 'Components/NotFound/NotFound';
 import FAQ from 'Components/FAQ/FAQ';
 
@@ -45,24 +43,19 @@ const NotFoundRedirect = () => <Redirect to='/not-found' />
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <div>
-        <Referrals />
-        <Header />
-
+      <Layout>
         <Switch>
           <Route exact path="/terms-and-conditions" component={TermsConditions} />
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" render={props => <Home {...props} store={store} />} />
           <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} /> 
+          <Route exact path="/signup" component={SignUp} />
           <Route exact path="/faqs/:id?" component={FAQ} />
           <Route exact path="/not-found" component={NotFound} />
           <Route component={NotFoundRedirect} />
         </Switch>
-
-        <Footer />
-      </div>
+      </Layout>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

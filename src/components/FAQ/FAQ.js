@@ -5,7 +5,7 @@ import debounce from 'Utils/debounce';
 import i18n from 'Src/i18n';
 
 import QuestionAnswer from './QuestionAnswer/QuestionAnswer';
-import Support from '../Header/Support/Support';
+import Support from 'Components/Layout/Header/Support/Support';
 import styles from './FAQ.scss';
 
 
