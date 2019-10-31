@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Referrals from 'Components/Layout/Referrals/Referrals'
 import Header from 'Components/Layout/Header/Header'
