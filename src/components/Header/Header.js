@@ -141,12 +141,12 @@ class Header extends Component {
 
                   <li>
                    <Link onClick={() => this.closeNavbar()} to="/signin" className={styles.link}>
-                        {t('accounts.signin')}
+                        {t('header.signin')}
                     </Link>
                   </li>
                   <li>
                    <Link onClick={() => this.closeNavbar()} to="/signup" className={`${styles.link} ${styles.main}`}>
-                        {t('accounts.signup')}
+                        {t('header.signup')}
                     </Link>
                   </li>
 
