@@ -1,24 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
 import styles from './MinorCard.scss'
-import { I18n, Trans } from 'react-i18next'
 
 
-export default function MinorCard({ topic }) {
+export default function MinorCard({ topic , text }) {
 
-  const featureImageLocation = `/img/white_label_page/feature/${topic}.jpg`
+  // const imgPath = `/img/white_label_page/feature/${topic}.jpg`
+  const imgPath = 'http://www.placekitten.com/200/200'
+  const imgAltText = { topic }
+
 
   return (
-    <React.Fragment>
-      <Col md={6}>
-        <h2>{topic}</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi nec nunc euismod condimentum.</p>
-        <p>Aenean efficitur metus vel posuere hendrerit. </p>
-        <p>Sed ut arcu vel velit tempor fermentum vel varius dui. Duis lacus dolor, euismod id.</p>
+    <Fragment>
+      <Col md={12}>
+        <h2>{ topic }</h2>
       </Col>
       <Col md={6}>
-        <p>{featureImageLocation}</p>
+        { text }
       </Col>
-    </React.Fragment>
+      <Col md={6}>
+        <img src={ imgPath } alt={ imgAltText } />
+      </Col>
+    </Fragment>
   )
 }

@@ -1,20 +1,20 @@
-import React from 'react';
-import styles from './FeatureItem.scss';
+import React, { Fragment } from 'react'
+import styles from './FeatureItem.scss'
 
 
 export default function FeatureItem( { name, description } ) {
 
-  // const keyFeatureImageLocation = `/img/white_label_page/key_feature/${name}.jpg`
-  const keyFeatureImageLocation = 'http://www.placekitten.com/120/110'
+  const imgPath = 'http://www.placekitten.com/120/110'
+  const imgAltText = name
 
   return (
-    <React.Fragment>
-      <div className={styles.profile}>
-        <img src={keyFeatureImageLocation} alt={`${name} feature`} />
+    <Fragment>
+      <div className={ styles.profile }>
+        <img src={ imgPath } alt={ imgAltText } />
       </div>
-      <div className={styles.description}>
-        {description}
+      <div className={ styles.description }>
+        { description }
       </div>
-    </React.Fragment>
+    </Fragment>
   )
 }

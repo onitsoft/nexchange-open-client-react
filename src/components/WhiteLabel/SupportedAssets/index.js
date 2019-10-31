@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { I18n, Trans } from 'react-i18next'
+import { I18n } from 'react-i18next'
 import SupportedAsset from './SupportedAsset'
 
 
@@ -27,13 +27,17 @@ const coins = [
 
 export default function SupportedAssets() {
   return (
-    <Fragment>
-      <div className="col-md-12">
-        <h2>Supported Digital Assets</h2>
-      </div>
-      <div className="col-md-2">
-        { coins.map(coin => <SupportedAsset coin={ coin }/>) }
-      </div>
-    </Fragment>
+    <I18n ns="translations">
+      {t => (
+        <Fragment>
+          <div className="col-md-12">
+            <h2>{t('supportedassets.title')}</h2>
+          </div>
+          <div className="col-md-2">
+            {coins.map(coin => <SupportedAsset coin={coin} />)}
+          </div>
+        </Fragment>
+      )}
+    </I18n>
   )
 }
