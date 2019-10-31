@@ -1,21 +1,15 @@
-import React from 'react';
-import styles from './SupportedAsset.scss';
+import React, { Fragment } from 'react'
+import styles from './SupportedAsset.scss'
 
-import coins from './images'
-
-export default function SupportedAsset({ name }) {
-
- const coin = coins.filter(coin => coin.name === name)
- console.log(coin)
-
+export default function SupportedAsset( { coin: { name, src } } ) {
   return (
-    <React.Fragment>
+    <Fragment>
       <div className={styles.profile}>
-        <img src={ coin.src } alt={ `${coin.name}` } />
+        <img src={ src } alt={ `${name}` } />
       </div>
       <div className={styles.title}>
-        {name}
+        { name }
       </div>
-    </React.Fragment>
+    </Fragment>
   )
 }
