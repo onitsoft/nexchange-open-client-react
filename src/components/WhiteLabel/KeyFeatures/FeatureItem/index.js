@@ -4,7 +4,7 @@ import styles from './FeatureItem.scss'
 
 export default function FeatureItem( { name, description } ) {
 
-  const imgPath = 'http://www.placekitten.com/120/110'
+  const imgPath = 'http://www.placekitten.com/200/200'
   const imgAltText = name
 
   return (

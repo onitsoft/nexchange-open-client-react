@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { I18n } from 'react-i18next'
 import SupportedAsset from './SupportedAsset'
+import { Col } from 'reactstrap'
 
 
 const coins = [
@@ -30,12 +31,10 @@ export default function SupportedAssets() {
     <I18n ns="translations">
       {t => (
         <Fragment>
-          <div className="col-md-12">
+          <Col md={12}>
             <h2>{t('supportedassets.title')}</h2>
-          </div>
-          <div className="col-md-2">
+          </Col>
             {coins.map(coin => <SupportedAsset coin={coin} />)}
-          </div>
         </Fragment>
       )}
     </I18n>

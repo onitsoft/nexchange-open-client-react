@@ -6,7 +6,7 @@ import styles from './MinorCard.scss'
 export default function MinorCard({ topic , text }) {
 
   // const imgPath = `/img/white_label_page/feature/${topic}.jpg`
-  const imgPath = 'http://www.placekitten.com/200/200'
+  const imgPath = 'http://www.placekitten.com/300/300'
   const imgAltText = { topic }
 
 

@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { Col } from 'reactstrap'
 import styles from './SupportedAsset.scss'
 
-export default function SupportedAsset( { coin: { name, src } } ) {
+export default function SupportedAsset({ coin: { name, src } }) {
   return (
-    <Fragment>
+    <Col md={3}>
       <div className={styles.profile}>
-        <img src={ src } alt={ `${name}` } />
+        <img src={src} alt={`${name}`} />
       </div>
       <div className={styles.title}>
-        { name }
+        {name}
       </div>
-    </Fragment>
+    </Col >
   )
 }
