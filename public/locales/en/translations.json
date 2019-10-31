@@ -27,7 +27,17 @@
     "signup": "Sign Up",
     "en": "English",
     "de": "German",
-    "ru": "Russian"
+    "ru": "Russian",
+    "resources": "Resources",
+    "whitelabel": "White Label",
+    "apidocumentation": "API Documentation",
+    "terms-and-conditions": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy"
+  },
+  "account": {
+    "account": "Account",
+    "signin": "Sign In",
+    "signup": "Sign Up"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
@@ -76,7 +86,7 @@
     "2": "Click to view on API",
     "3": "View on API"
   },
-  "testimonials": {
+  "testimonialsx": {
     "1": "Testimonials",
     "cryptotalk": "Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.",
     "john":

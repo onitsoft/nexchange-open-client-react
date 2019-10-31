@@ -8,7 +8,7 @@ import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
 import Header from 'Components/Header/Header';
-import Footer from 'Components/Footer/Footer';
+import Footer from 'Components/FooterNext/Footer';
 import NotFound from 'Components/NotFound/NotFound';
 import FAQ from 'Components/FAQ/FAQ';
 
