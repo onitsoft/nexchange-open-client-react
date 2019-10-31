@@ -7,18 +7,24 @@ import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
 import MinorCard from 'Components/WhiteLabel/MinorCard/'
 import FAQ from 'Components/WhiteLabel/FAQ/'
 
+import styles from './styles.css'
+import style from 'react-syntax-highlighter/dist/styles/hljs/dracula'
+
+
 
 export default function WhiteLabelSEO() {
   return (
-    <Fragment>
-      <VideoCard />
-      <KeyFeatures />
-      <MajorCard />
-      <SupportedAssets />
-      <MinorCard topic="interface" />
-      <MinorCard topic="security" />
-      <MinorCard topic="techreq" />
-      <FAQ />
-    </Fragment>
+    <div className={styles.whitelabel}>
+      <div className='container'> 
+        <VideoCard />
+        <KeyFeatures />
+        <MajorCard />
+        <SupportedAssets />
+        <MinorCard topic="interface" />
+        <MinorCard topic="security" />
+        <MinorCard topic="techreq" />
+        <FAQ />
+      </div>
+    </div>
   )
 }
