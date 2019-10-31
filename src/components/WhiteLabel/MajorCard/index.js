@@ -3,6 +3,7 @@ import { Col } from 'reactstrap'
 import styles from './MajorCard.scss'
 import { reactI18nextModule } from 'react-i18next/dist/commonjs/context'
 
+const imageLocation = 'http://www.placekitten.com/300/300'
 
 export default function MajorCard() {
   return (
@@ -16,7 +17,7 @@ export default function MajorCard() {
         <p>Sed ut arcu vel velit tempor fermentum vel varius dui. Duis lacus dolor, euismod id.</p>
       </Col>
       <Col md={6}>
-        <p>Image</p>
+        <img src={ imageLocation } />
       </Col>
     </React.Fragment>
   )
