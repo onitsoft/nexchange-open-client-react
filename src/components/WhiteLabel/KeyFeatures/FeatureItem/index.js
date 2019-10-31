@@ -4,7 +4,8 @@ import styles from './FeatureItem.scss';
 
 export default function FeatureItem( { name, description } ) {
 
-  const keyFeatureImageLocation = `/img/white_label_page/key_feature/${name}.jpg`
+  // const keyFeatureImageLocation = `/img/white_label_page/key_feature/${name}.jpg`
+  const keyFeatureImageLocation = 'http://www.placekitten.com/120/110'
 
   return (
     <React.Fragment>
