@@ -201,7 +201,7 @@ module.exports = {
 
           {
             test: /\.scss$/,
-            include: [path.resolve(__dirname, '../src/components')],
+            include: [path.resolve(__dirname, '../src/components'), path.resolve(__dirname, '../src/pages')],
             use: [
               {
                 loader: 'style-loader', // creates style nodes from JS strings

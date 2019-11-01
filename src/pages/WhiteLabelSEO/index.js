@@ -8,15 +8,14 @@ import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
 import MinorCard from 'Components/WhiteLabel/MinorCard/'
 import FAQ from 'Components/WhiteLabel/FAQ/'
 
-import styles from './styles.css'
-
+import styles from './WhiteLabelSEO.scss'
 
 
 export default function WhiteLabelSEO() {
   return (
     <I18n ns="translations">
       {t => (
-        <div className={ styles.whitelabel }>
+        <div className={styles.whitelabel}>
           <div className='container'>
             <VideoCard />
             <KeyFeatures />
