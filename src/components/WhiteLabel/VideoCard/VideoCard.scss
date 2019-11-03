@@ -1,4 +1,10 @@
 .videoContainer {
   position: relative;
   text-align: left;
+  min-height: 70vh;
+  @media screen and (min-width: 1040px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
