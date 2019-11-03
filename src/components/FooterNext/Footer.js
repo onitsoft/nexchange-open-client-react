@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { I18n } from 'react-i18next';
+import { I18n, Trans } from 'react-i18next';
 import { Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
 
@@ -63,6 +63,15 @@ const Footer = (props) => {
                   <Link to='/privacy'>{t('header.privacy-policy')}</Link>
                 </li>
               </ul>
+              
+              <Trans i18nKey="footer.3">
+                <p>
+                  All rights reserved, YOA LTD 2016-2020,<br />England & Wales{' '}
+                  <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
+                    registered company No. 10009845
+                  </a>
+                </p>
+              </Trans>
             </aside>
           </section>
         </StyledFooter>
@@ -129,13 +138,17 @@ const StyledFooter = styled.footer`
         display: flex;
         flex: 1 1 auto;
         justify-content: flex-end;
+        flex-direction: column;
+        > p {
+          margin: 2rem 0 0;
+          font-size: 1rem;
+          text-align: right;
+        }
         > ul {
           display: flex;
-          @media screen and (min-width: 640px) {
             flex-direction: row;
             justify-content: flex-end;
             align-items: flex-end;
-          }
           > li {
             padding: 0;
             &:not(:last-child) {
