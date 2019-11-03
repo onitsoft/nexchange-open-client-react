@@ -13,15 +13,17 @@ export default function VideoCard() {
   return (
     <I18n ns="translations">
       {t => (
-        <div className={styles.videoContainer + ' container'}>
-          <Col md="6">
-            <h1>{ t('videocard.title') }</h1>
-            <Button>{ t('videocard.livepreview') }</Button>
-            <Button>{ t('videocard.contactus') }</Button>
-          </Col>
-          <Col md="6">
-            <YouTube videoId="7ujmzb3HzCA" opts={youtubeOptions} />
-          </Col>
+        <div className={styles.videoContainer}>
+          <div className='container'>
+            <Col md="6">
+              <h1>{ t('videocard.title') }</h1>
+              <Button>{ t('videocard.livepreview') }</Button>
+              <Button>{ t('videocard.contactus') }</Button>
+            </Col>
+            <Col md="6">
+              <YouTube videoId="7ujmzb3HzCA" opts={youtubeOptions} />
+            </Col>
+          </div>
         </div>
       )}
     </I18n>

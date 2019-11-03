@@ -457,5 +457,13 @@
     "providevalid": "Please put valid"
   },
   "viewmore": "view more",
-  "to": "to"
+  "to": "to",
+  "whitelabel": {
+    "plans": {
+      "community": "Community",
+      "crypto": "Crypto",
+      "fiat": "Fiat",
+      "ieo": "IEO"
+    }
+  }
 }
