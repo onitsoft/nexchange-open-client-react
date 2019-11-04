@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
 
