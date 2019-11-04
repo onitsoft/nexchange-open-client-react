@@ -9,7 +9,7 @@ import { Generic, GenericCollection, JSONLD } from 'react-structured-data';
 import QuestionAnswer from './QuestionAnswer';
 import Support from 'Components/Header/Support/Support';
 import styles from './FAQ.scss';
-
+import { markdown } from 'markdown'
 
 const FAQ_COUNT = 14;
 
@@ -118,8 +118,27 @@ class FAQ extends Component {
     'why-whitelabel'
   ]
 
-  render() {
+  makeSEOQNA = (questions, t) => {
+    const seoqna = {
 
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ...questions.map((q) => ({
+          "@type": "Question",
+          "name": t(`whitelabel.faq.questions.${q}`),
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": markdown.toHTML(t(`whitelabel.faq.answers.${q}`))
+          }
+        }))
+      ]
+    }
+
+    return seoqna
+  }
+
+  render() {
 
 
     return (
@@ -165,6 +184,7 @@ class FAQ extends Component {
               }
               </div>
               <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
+              <script type="application/ld+json">{JSON.stringify(this.makeSEOQNA(this.questions, t))}</script>
             </Fragment>
         )}
       </I18n>
