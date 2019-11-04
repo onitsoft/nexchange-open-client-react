@@ -6,7 +6,7 @@ import KeyFeatures from 'Components/WhiteLabel/KeyFeatures/'
 import MajorCard from 'Components/WhiteLabel/MajorCard/'
 import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
 import MinorCard from 'Components/WhiteLabel/MinorCard/'
-import FAQ from 'Components/WhiteLabel/FAQ/'
+import FAQ from 'Components/WhiteLabel/FAQ2/'
 
 import styled from '@emotion/styled'
 import styles from './WhiteLabelSEO.scss'

@@ -6,8 +6,8 @@ import i18n from 'Src/i18n';
 import { Col } from 'reactstrap';
 import { Generic, GenericCollection, JSONLD } from 'react-structured-data';
 
-import QuestionAnswer from './QuestionAnswer/QuestionAnswer';
-import Support from '../Header/Support/Support';
+import QuestionAnswer from './QuestionAnswer';
+import Support from 'Components/Header/Support/Support';
 import styles from './FAQ.scss';
 
 
