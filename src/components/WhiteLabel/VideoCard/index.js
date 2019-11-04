@@ -73,7 +73,7 @@ const Button = styled.button`
   }
 `
 
-const Title = styled.h1`
+const PrimaryHeading = styled.h1`
   font-size: 3rem;
   @media(min-width: 750px) {
     font-size: 4rem;
@@ -122,7 +122,7 @@ export default function VideoCard() {
       {t => (
         <Wrapper>
           <Col md={6}>
-            <Title>{ t('videocard.title') }</Title>
+            <PrimaryHeading>{ t('videocard.title') }</PrimaryHeading>
             <Form action={ livePreviewURL }>
               <Button type="submit">{ t('videocard.livepreview') }</Button>
             </Form>
