@@ -470,8 +470,8 @@
       "setup": "Setup Fee",
       "duration": "Plan Duration",
       "coinlist": "Custom Coin Listing",
-      "devhours": "Developer Hours",
-      "hourprice": "Developer Hour Price"
+      "devhours": "Included Developer Hours",
+      "hourprice": "Additional Developer Hour Price"
     },
     "values": {
       "monthly": "{{value, big usd}}",
