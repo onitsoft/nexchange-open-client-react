@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col } from 'reactstrap'
 import { I18n } from 'react-i18next'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 
 const Wrapper = styled.div`
@@ -53,7 +53,7 @@ const Button = styled.button`
   vertical-align: middle;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  :hover {
+  &:hover {
     background-color: #033855;
   }
   @media(min-width: 365px) {
