@@ -16,7 +16,7 @@ const FAQ_COUNT = 14;
 class FAQ extends Component {
   showSearch = true
   questionsRoot = 'whitelabel.faq.questions'
-  answerRoot = 'whitelabel.faw.answers'
+  answerRoot = 'whitelabel.faq.answers'
   constructor(props) {
     super(props)
 
