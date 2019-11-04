@@ -5,17 +5,84 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
+  font-family: "Clan Offc Pro Book", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #fff;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media(min-width: 768px) {
+    width: 750px;
+  }
+  @media(min-width: 992px) {
+    width: 970px;
+  }
+  @media(min-width: 1200px) {
+    width: 1170px;
+  }
 `
 
 const Form = styled.form`
   display: inline;
 `
 
-export default function VideoCard() {
-  const youtubeOptions = {
-    width: '500px',
-    height: '300px'
+const Button = styled.button`
+  -webkit-appearance: button;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #044264;
+  border-radius: 4px;
+  border: none;
+  display: inline-block;
+  font-family: 'Clan Offc Pro Medium';
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.33333;
+  margin: 8px 8px;
+  padding: 8px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  :hover {
+    background-color: #033855;
+  }
+  @media(min-width: 365px) {
+    margin: 10px 10px;
+  }
+  @media(min-width: 750px) {
+    padding: 12px 30px;
+    border-radius: 4px;
+    margin: 12px 12px;
+    font-size: 16px;
+  }
+  @media(min-width: 1536px) {
+    padding: 14px 36px;
+    border-radius: 5px;
+    margin: 16px 16px;
+    font-size: 18px;
+  }
+`
+
+const Title = styled.h1`
+  font-size: 3rem;
+  @media(min-width: 750px) {
+    font-size: 4rem;
+  }
+  @media(min-width: 1536px) {
+    font-size: 5rem;
+  }
+  @media(min-width: 2048px) {
+    font-size: 7rem;
   }
 `
 
@@ -35,7 +102,7 @@ const Iframe = styled.iframe`
   height: 100%;
 `
 
-  const videoID = "7ujmzb3HzCA"
+const videoID = "7ujmzb3HzCA"
 
 const YTPlayer = () => {
   return (
@@ -48,16 +115,19 @@ const YTPlayer = () => {
 export default function VideoCard() {
 
   const contactFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=sf_link"
+  const livePreviewURL = "https://n.exchange"
 
   return (
     <I18n ns="translations">
       {t => (
-        <Wrapper className='container'>
+        <Wrapper>
           <Col md={6}>
-            <h1>{ t('videocard.title') }</h1>
-            <button className="btn btn-themed btn-lg"> { t('videocard.livepreview') } </button>
+            <Title>{ t('videocard.title') }</Title>
+            <Form action={ livePreviewURL }>
+              <Button type="submit">{ t('videocard.livepreview') }</Button>
+            </Form>
             <Form action={ contactFormURL }>
-              <button className="btn btn-themed btn-lg" type="submit">{ t('videocard.contactus') }</button>
+              <Button type="submit">{ t('videocard.contactus') }</Button>
             </Form>
           </Col>
           <Col md={6}>
