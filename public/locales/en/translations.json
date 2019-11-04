@@ -68,7 +68,17 @@
     "signup": "Sign Up",
     "en": "English",
     "de": "German",
-    "ru": "Russian"
+    "ru": "Russian",
+    "resources": "Resources",
+    "whitelabel": "White Label",
+    "apidocumentation": "API Documentation",
+    "terms-and-conditions": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy"
+  },
+  "account": {
+    "account": "Account",
+    "signin": "Sign In",
+    "signup": "Sign Up"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
@@ -117,7 +127,7 @@
     "2": "Click to view on API",
     "3": "View on API"
   },
-  "testimonials": {
+  "testimonialsx": {
     "1": "Testimonials",
     "cryptotalk": "Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.",
     "john": "Nexchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
@@ -481,5 +491,29 @@
     "providevalid": "Please put valid"
   },
   "viewmore": "view more",
-  "to": "to"
+  "to": "to",
+  "whitelabel": {
+    "plans": {
+      "community": "Community",
+      "crypto": "Crypto",
+      "fiat": "Fiat",
+      "ieo": "IEO"
+    },
+    "features": {
+      "monthly": "Monthly Price",
+      "setup": "Setup Fee",
+      "duration": "Plan Duration",
+      "coinlist": "Custom Coin Listing",
+      "devhours": "Included Developer Hours",
+      "hourprice": "Additional Developer Hour Price"
+    },
+    "values": {
+      "monthly": "{{value, big usd}}",
+      "setup": "{{value, big usd}}",
+      "duration": "{{value}} Months",
+      "coinlist": "{{value, big usd}}",
+      "devhours": "{{value}}",
+      "hourprice": "{{value, big usd}}"
+    }
+  }
 }

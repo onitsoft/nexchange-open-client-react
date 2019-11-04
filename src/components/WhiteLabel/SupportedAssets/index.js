@@ -37,7 +37,7 @@ export default function SupportedAssets() {
           <Col md={12}>
             <SectionHeading>{t('supportedassets.title')}</SectionHeading>
           </Col>
-            {coins.map(coin => <SupportedAsset coin={coin} />)}
+            {coins.map((coin, index) => <SupportedAsset coin={coin} key={`coin-${index}`} />)}
         </Fragment>
       )}
     </I18n>
