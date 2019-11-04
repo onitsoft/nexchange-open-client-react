@@ -1,0 +1,1027 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionAnswer renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <QuestionAnswer
+    answer={
+      <div>
+        <p>
+          We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+        </p>
+        <p>
+          We will be adding more currencies very soon, stay tuned!
+        </p>
+        <p>
+          Missing your favorite coin? Let us know here: 
+          <a
+            href="mailto:support@n.exchange"
+          >
+            support@n.exchange
+          </a>
+          .
+        </p>
+      </div>
+    }
+    id="ques1"
+    t={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="question"
+          data-test="question-opener"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="far fa-plus-square fa-2x"
+          />
+          <h3>
+            faq.ques1
+          </h3>
+        </div>,
+        <div
+          className="answer"
+        >
+          <div>
+            <p>
+              We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+            </p>
+            <p>
+              We will be adding more currencies very soon, stay tuned!
+            </p>
+            <p>
+              Missing your favorite coin? Let us know here: 
+              <a
+                href="mailto:support@n.exchange"
+              >
+                support@n.exchange
+              </a>
+              .
+            </p>
+          </div>
+          <div
+            className="feedback"
+          >
+            <div>
+              <span>
+                Whas this helpful?
+              </span>
+            </div>
+            <div
+              className="buttons"
+            >
+              <button
+                className="btn positive "
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-thumbs-up"
+                />
+                <span>
+                  YES
+                </span>
+              </button>
+              <button
+                className="btn negative "
+                onClick={[Function]}
+              >
+                <i
+                  className="fas fa-thumbs-down"
+                />
+                <span>
+                  NO
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>,
+        <hr />,
+      ],
+      "className": "question-answer container",
+      "id": "faq.ques1",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              aria-hidden="true"
+              className="far fa-plus-square fa-2x"
+            />,
+            <h3>
+              faq.ques1
+            </h3>,
+          ],
+          "className": "question",
+          "data-test": "question-opener",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "far fa-plus-square fa-2x",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "faq.ques1",
+            },
+            "ref": null,
+            "rendered": "faq.ques1",
+            "type": "h3",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <p>
+                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+              </p>
+              <p>
+                We will be adding more currencies very soon, stay tuned!
+              </p>
+              <p>
+                Missing your favorite coin? Let us know here: 
+                <a
+                  href="mailto:support@n.exchange"
+                >
+                  support@n.exchange
+                </a>
+                .
+              </p>
+            </div>,
+            <div
+              className="feedback"
+            >
+              <div>
+                <span>
+                  Whas this helpful?
+                </span>
+              </div>
+              <div
+                className="buttons"
+              >
+                <button
+                  className="btn positive "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-up"
+                  />
+                  <span>
+                    YES
+                  </span>
+                </button>
+                <button
+                  className="btn negative "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-down"
+                  />
+                  <span>
+                    NO
+                  </span>
+                </button>
+              </div>
+            </div>,
+          ],
+          "className": "answer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                </p>,
+                <p>
+                  We will be adding more currencies very soon, stay tuned!
+                </p>,
+                <p>
+                  Missing your favorite coin? Let us know here: 
+                  <a
+                    href="mailto:support@n.exchange"
+                  >
+                    support@n.exchange
+                  </a>
+                  .
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                },
+                "ref": null,
+                "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "We will be adding more currencies very soon, stay tuned!",
+                },
+                "ref": null,
+                "rendered": "We will be adding more currencies very soon, stay tuned!",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Missing your favorite coin? Let us know here: ",
+                    <a
+                      href="mailto:support@n.exchange"
+                    >
+                      support@n.exchange
+                    </a>,
+                    ".",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Missing your favorite coin? Let us know here: ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "support@n.exchange",
+                      "href": "mailto:support@n.exchange",
+                    },
+                    "ref": null,
+                    "rendered": "support@n.exchange",
+                    "type": "a",
+                  },
+                  ".",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  <span>
+                    Whas this helpful?
+                  </span>
+                </div>,
+                <div
+                  className="buttons"
+                >
+                  <button
+                    className="btn positive "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-up"
+                    />
+                    <span>
+                      YES
+                    </span>
+                  </button>
+                  <button
+                    className="btn negative "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-down"
+                    />
+                    <span>
+                      NO
+                    </span>
+                  </button>
+                </div>,
+              ],
+              "className": "feedback",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <span>
+                    Whas this helpful?
+                  </span>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Whas this helpful?",
+                  },
+                  "ref": null,
+                  "rendered": "Whas this helpful?",
+                  "type": "span",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <button
+                      className="btn positive "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-up"
+                      />
+                      <span>
+                        YES
+                      </span>
+                    </button>,
+                    <button
+                      className="btn negative "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-down"
+                      />
+                      <span>
+                        NO
+                      </span>
+                    </button>,
+                  ],
+                  "className": "buttons",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="fas fa-thumbs-up"
+                        />,
+                        <span>
+                          YES
+                        </span>,
+                      ],
+                      "className": "btn positive ",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-thumbs-up",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "YES",
+                        },
+                        "ref": null,
+                        "rendered": "YES",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="fas fa-thumbs-down"
+                        />,
+                        <span>
+                          NO
+                        </span>,
+                      ],
+                      "className": "btn negative ",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "fas fa-thumbs-down",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "NO",
+                        },
+                        "ref": null,
+                        "rendered": "NO",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="question"
+            data-test="question-opener"
+            onClick={[Function]}
+          >
+            <i
+              aria-hidden="true"
+              className="far fa-plus-square fa-2x"
+            />
+            <h3>
+              faq.ques1
+            </h3>
+          </div>,
+          <div
+            className="answer"
+          >
+            <div>
+              <p>
+                We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+              </p>
+              <p>
+                We will be adding more currencies very soon, stay tuned!
+              </p>
+              <p>
+                Missing your favorite coin? Let us know here: 
+                <a
+                  href="mailto:support@n.exchange"
+                >
+                  support@n.exchange
+                </a>
+                .
+              </p>
+            </div>
+            <div
+              className="feedback"
+            >
+              <div>
+                <span>
+                  Whas this helpful?
+                </span>
+              </div>
+              <div
+                className="buttons"
+              >
+                <button
+                  className="btn positive "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-up"
+                  />
+                  <span>
+                    YES
+                  </span>
+                </button>
+                <button
+                  className="btn negative "
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fas fa-thumbs-down"
+                  />
+                  <span>
+                    NO
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>,
+          <hr />,
+        ],
+        "className": "question-answer container",
+        "id": "faq.ques1",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="far fa-plus-square fa-2x"
+              />,
+              <h3>
+                faq.ques1
+              </h3>,
+            ],
+            "className": "question",
+            "data-test": "question-opener",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "far fa-plus-square fa-2x",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "faq.ques1",
+              },
+              "ref": null,
+              "rendered": "faq.ques1",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <p>
+                  We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                </p>
+                <p>
+                  We will be adding more currencies very soon, stay tuned!
+                </p>
+                <p>
+                  Missing your favorite coin? Let us know here: 
+                  <a
+                    href="mailto:support@n.exchange"
+                  >
+                    support@n.exchange
+                  </a>
+                  .
+                </p>
+              </div>,
+              <div
+                className="feedback"
+              >
+                <div>
+                  <span>
+                    Whas this helpful?
+                  </span>
+                </div>
+                <div
+                  className="buttons"
+                >
+                  <button
+                    className="btn positive "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-up"
+                    />
+                    <span>
+                      YES
+                    </span>
+                  </button>
+                  <button
+                    className="btn negative "
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fas fa-thumbs-down"
+                    />
+                    <span>
+                      NO
+                    </span>
+                  </button>
+                </div>
+              </div>,
+            ],
+            "className": "answer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.
+                  </p>,
+                  <p>
+                    We will be adding more currencies very soon, stay tuned!
+                  </p>,
+                  <p>
+                    Missing your favorite coin? Let us know here: 
+                    <a
+                      href="mailto:support@n.exchange"
+                    >
+                      support@n.exchange
+                    </a>
+                    .
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                  },
+                  "ref": null,
+                  "rendered": "We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "We will be adding more currencies very soon, stay tuned!",
+                  },
+                  "ref": null,
+                  "rendered": "We will be adding more currencies very soon, stay tuned!",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Missing your favorite coin? Let us know here: ",
+                      <a
+                        href="mailto:support@n.exchange"
+                      >
+                        support@n.exchange
+                      </a>,
+                      ".",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Missing your favorite coin? Let us know here: ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "support@n.exchange",
+                        "href": "mailto:support@n.exchange",
+                      },
+                      "ref": null,
+                      "rendered": "support@n.exchange",
+                      "type": "a",
+                    },
+                    ".",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    <span>
+                      Whas this helpful?
+                    </span>
+                  </div>,
+                  <div
+                    className="buttons"
+                  >
+                    <button
+                      className="btn positive "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-up"
+                      />
+                      <span>
+                        YES
+                      </span>
+                    </button>
+                    <button
+                      className="btn negative "
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fas fa-thumbs-down"
+                      />
+                      <span>
+                        NO
+                      </span>
+                    </button>
+                  </div>,
+                ],
+                "className": "feedback",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Whas this helpful?
+                    </span>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Whas this helpful?",
+                    },
+                    "ref": null,
+                    "rendered": "Whas this helpful?",
+                    "type": "span",
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <button
+                        className="btn positive "
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-thumbs-up"
+                        />
+                        <span>
+                          YES
+                        </span>
+                      </button>,
+                      <button
+                        className="btn negative "
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fas fa-thumbs-down"
+                        />
+                        <span>
+                          NO
+                        </span>
+                      </button>,
+                    ],
+                    "className": "buttons",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <i
+                            className="fas fa-thumbs-up"
+                          />,
+                          <span>
+                            YES
+                          </span>,
+                        ],
+                        "className": "btn positive ",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "fas fa-thumbs-up",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "i",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "YES",
+                          },
+                          "ref": null,
+                          "rendered": "YES",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <i
+                            className="fas fa-thumbs-down"
+                          />,
+                          <span>
+                            NO
+                          </span>,
+                        ],
+                        "className": "btn negative ",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "fas fa-thumbs-down",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "i",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "NO",
+                          },
+                          "ref": null,
+                          "rendered": "NO",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
