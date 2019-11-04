@@ -482,6 +482,8 @@
       "hourprice": "{{value, big usd}}"
     },
     "faq": {
+      "notfound": "Not found",
+      "openticket":"Open support ticket",
       "questions": {
         "what-is-whitelabel": "What is a white-label exchange?",
         "why-whitelabel": "Why should I use a white-label exchange?"

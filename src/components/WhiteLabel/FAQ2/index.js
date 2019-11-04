@@ -14,7 +14,7 @@ import { markdown } from 'markdown'
 const FAQ_COUNT = 14;
 
 class FAQ extends Component {
-  showSearch = false
+  showSearch = true
   questionsRoot = 'whitelabel.faq.questions'
   answerRoot = 'whitelabel.faw.answers'
   constructor(props) {
@@ -65,8 +65,8 @@ class FAQ extends Component {
       faqIdArray.forEach((id) => {
         let faq =  {
           id,
-          question: i18n.t(`${this.questionsRoot}.${id}`),
-          answer: i18n.t(`${this.answerRoot}.${id}`)
+          question: i18n.t(`whitelabelfaq.ques${id}`),
+          answer: i18n.t(`whitelabelfaq.ans${id}`)
         }
         faqs.push(faq);
       });
@@ -172,8 +172,8 @@ class FAQ extends Component {
               )}
               
               {_.isEmpty(this.state.filteredQuestionsIds) 
-              ? <div className={styles.notfound}><h3>{t('whitelabelfaq.notfound')}</h3>
-                  <a onClick={() => this.openSupportModal(this.state.searchText)}>{t('whitelabelfaq.openticket')}</a>
+              ? <div className={styles.notfound}><h3>{t('whitelabel.faq.notfound')}</h3>
+                  <a onClick={() => this.openSupportModal(this.state.searchText)}>{t('whitelabel.faq.openticket')}</a>
                 </div>
               : <div id='faq.list' className={styles.list}>
                 {this.questions.map((qid, index) => this.showQuestion(index + 1) && (
