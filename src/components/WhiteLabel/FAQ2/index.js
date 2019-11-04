@@ -14,6 +14,9 @@ import { markdown } from 'markdown'
 const FAQ_COUNT = 14;
 
 class FAQ extends Component {
+  showSearch = false
+  questionsRoot = 'whitelabel.faq.questions'
+  answerRoot = 'whitelabel.faw.answers'
   constructor(props) {
     super(props)
 
@@ -62,8 +65,8 @@ class FAQ extends Component {
       faqIdArray.forEach((id) => {
         let faq =  {
           id,
-          question: i18n.t(`whitelabelfaq.ques${id}`),
-          answer: i18n.t(`whitelabelfaq.ans${id}`)
+          question: i18n.t(`${this.questionsRoot}.${id}`),
+          answer: i18n.t(`${this.answerRoot}.${id}`)
         }
         faqs.push(faq);
       });
@@ -152,19 +155,21 @@ class FAQ extends Component {
               </div>
             </div>   
             <div className={`col-xs-12 ${styles.faqs}`}>
-              <form className="form-group" onSubmit={this.handleSubmit}>
-                <div className={`${styles.input}`}>
-                  <i className={`fas fa-search`}></i>
-                  <input
-                    type="text"
-                    className={`form-control`}
-                    id="faq-search"
-                    value={this.state.searchText}
-                    onChange={event => this.handleChange(event)}
-                    placeholder={t('faq.inputplaceholder')}
-                  />
-                </div>
+              {this.showSearch && (
+                <form className="form-group" onSubmit={this.handleSubmit}>
+                  <div className={`${styles.input}`}>
+                    <i className={`fas fa-search`}></i>
+                    <input
+                      type="text"
+                      className={`form-control`}
+                      id="faq-search"
+                      value={this.state.searchText}
+                      onChange={event => this.handleChange(event)}
+                      placeholder={t('faq.inputplaceholder')}
+                    />
+                  </div>
                 </form>
+              )}
               
               {_.isEmpty(this.state.filteredQuestionsIds) 
               ? <div className={styles.notfound}><h3>{t('whitelabelfaq.notfound')}</h3>
@@ -185,6 +190,8 @@ class FAQ extends Component {
               </div>
               <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
               <script type="application/ld+json">{JSON.stringify(this.makeSEOQNA(this.questions, t))}</script>
+
+              <p><small>Created on: Nov 2nd 2019 - Last Update: Nov 3rd 2019</small></p>
             </Fragment>
         )}
       </I18n>
