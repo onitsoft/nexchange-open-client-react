@@ -464,6 +464,22 @@
       "crypto": "Crypto",
       "fiat": "Fiat",
       "ieo": "IEO"
+    },
+    "features": {
+      "monthly": "Monthly Price",
+      "setup": "Setup Fee",
+      "duration": "Plan Duration",
+      "coinlist": "Custom Coin Listing",
+      "devhours": "Developer Hours",
+      "hourprice": "Developer Hour Price"
+    },
+    "values": {
+      "monthly": "{{value, big usd}}",
+      "setup": "{{value, big usd}}",
+      "duration": "{{value}} Months",
+      "coinlist": "{{value, big usd}}",
+      "devhours": "{{value}}",
+      "hourprice": "{{value, big usd}}"
     }
   }
 }
