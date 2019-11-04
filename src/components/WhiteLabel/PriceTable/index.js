@@ -8,8 +8,6 @@ const PriceTable = (props) => {
 
   if (!plans || !plans.length) return <span>Loading...</span>
 
-  console.log('plans:', plans)
-
   const forder = 'monthly, duration, setup, coinlist, devhours, hourprice'.split(', ')
 
   return (

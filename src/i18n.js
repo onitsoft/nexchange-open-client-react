@@ -19,9 +19,7 @@ i18n
       interpolation: {
         escapeValue: false,
         format: (value, format, lng) => {
-          console.log('lng of format:', {lng, value, format})
           if (format === 'big usd') return '$' + parseFloat(value).toFixed(0)
-
         }
       },
       detection: {

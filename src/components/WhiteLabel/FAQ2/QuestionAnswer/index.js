@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import Marked from 'react-markdown'
 
 import styles from './QuestionAnswer.scss';
 
@@ -56,11 +57,11 @@ class QuestionAnswer extends Component {
         <div className={`${styles.question}`} onClick={this.onClick} data-test="question-opener">
           <i className={`far fa-${this.state.open ? 'minus' : 'plus'}-square fa-2x`} aria-hidden="true" />
           <h3>
-            {this.props.t(`faq.${this.props.id}`)}
+            {this.props.t(`${this.props.qroot}.${this.props.id}`)}
           </h3>
         </div>
         <div className={`${this.state.open ? `${styles.answer} ${styles.active}` : `${styles.answer}`}`}>
-          {this.props.answer}
+          <Marked source={this.props.t(`${this.props.aroot}.${this.props.id}`)} />
           <div className={styles.feedback}>
             <div>
               <span>Whas this helpful?</span>
