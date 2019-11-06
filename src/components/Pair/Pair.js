@@ -11,7 +11,8 @@ import RecentOrders from './RecentOrders/RecentOrders';
 const Pair = (props) => {
 
   const { fetchCoinDetails, fetchPairs, match } = props
-  const { tradingSymbolPair: pair } = match.params
+  const { base, quote } = match.params
+  const pair = `${base}${quote}`
 
   useEffect(() => {
     fetchCoinDetails()

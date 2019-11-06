@@ -31,8 +31,8 @@ class RecentOrders extends Component {
     depositCurrencies = depositCurrencies.map(coin => coin.code);
     receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
-    let { tradingSymbolPair } = this.props.match.params;
-    tradingSymbolPair = tradingSymbolPair.toUpperCase();
+    const { base, quote } = this.props.match.params;
+    const tradingSymbolPair = `${base}${quote}`.toUpperCase();
 
     axios
       .get(`${config.API_BASE_URL}/orders/?page=1&pair=${tradingSymbolPair}&hours=168`)
