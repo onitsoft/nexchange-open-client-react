@@ -1,43 +1,35 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { fetchCoinDetails, fetchPairs, changeOrderMode } from 'Actions';
 import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
-import PriceChart from './PriceChart/PriceChart';
+import PriceChart from './PriceChartNext';
 import RecentOrders from './RecentOrders/RecentOrders';
 
-export class Pair extends Component {
-  componentDidMount() {
-    this.props.fetchCoinDetails();
-    this.props.fetchPairs();
-  }
-  componentDidUpdate(prevProps, prevState) {
-    // Detect coin change by link
-    const oldUrlParams = new URLSearchParams(prevProps.location.search);
-    const oldPairParam = oldUrlParams.get('pair');
-    const newUrlParams = new URLSearchParams(this.props.location.search);
-    const newPairParam = newUrlParams.get('pair');
-    if(newPairParam && newPairParam !== oldPairParam) {
-        this.props.fetchCoinDetails();
-        this.props.fetchPairs();
-    }
-  }
+const Pair = (props) => {
 
-  render() {
-    return (
-      <div>
-        <Hero {...this.props} />
-        <PriceChart {...this.props} />
-        <RecentOrders {...this.props} />
-        <Articles {...this.props} />
-        {/* TODO Referral Program Widget */}
-        {/* TODO API Access Widget */}
-      </div>
-    );
-  }
+  const { fetchCoinDetails, fetchPairs, match } = props
+  const { tradingSymbolPair: pair } = match.params
+
+  useEffect(() => {
+    fetchCoinDetails()
+    fetchPairs()
+  }, [pair])
+  
+  return (
+    <div>
+      <Hero {...props} />
+      <PriceChart pair={pair}/>
+      <RecentOrders {...props} />
+      <Articles {...props} />
+      {/* TODO Referral Program Widget */}
+      {/* TODO API Access Widget */}
+    </div>
+  );
 }
+
 
 const mapStateToProps = ({ orderMode, coinsInfo, selectedCoin }) => ({ orderMode, coinsInfo, selectedCoin });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs, changeOrderMode }, dispatch);
