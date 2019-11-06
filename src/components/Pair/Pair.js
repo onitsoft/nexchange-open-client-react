@@ -21,7 +21,10 @@ const Pair = (props) => {
   return (
     <div>
       <Hero {...props} />
-      <PriceChart pair={pair}/>
+      <div className='container'>
+        <h1>Price Chart for {pair}</h1>
+        <PriceChart pair={pair}/>
+      </div>
       <RecentOrders {...props} />
       <Articles {...props} />
       {/* TODO Referral Program Widget */}

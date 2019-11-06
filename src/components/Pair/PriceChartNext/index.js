@@ -19,11 +19,34 @@ const PriceChart = ({pair}) => {
   })
 
   const chartOptions = useMemo(() => ({
+    rangeSelector : {
+      enabled: false
+    },
+    navigator: {
+      // enabled: false
+    },
     series: [{
       data: data && data.length &&
         data.map(({ ticker: { ask, bid }, unix_time }) => [unix_time * 1000, +ask]),
-      type: 'line',
-      name: 'Ask'
+      type: 'area',
+      name: pair,
+      color: '#2cc5bd',
+      tooltip: {
+        valueDecimals: 2
+      },
+      fillColor: {
+          linearGradient: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+          },
+          stops: [
+              [0, '#2cc5bd'],
+              [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+          ]
+      },
+    threshold: null
     }]
   }), [data])
 
