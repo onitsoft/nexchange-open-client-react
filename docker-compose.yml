@@ -1,0 +1,15 @@
+version: '2'
+services:
+    web:
+        image: onitsoft/nginx:node
+        volumes:
+            - /nexchange/etc/letsencrypt:/etc/letsencrypt
+            - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
+            - /nexchange/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
+            - /nexchange/root:/nexchange/root
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: always
+        

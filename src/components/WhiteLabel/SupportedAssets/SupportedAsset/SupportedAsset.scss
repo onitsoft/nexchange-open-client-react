@@ -1,0 +1,35 @@
+.name {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+}
+
+.description {
+  font-size: 14px;
+  color: #9c9c9c;
+
+  p {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}
+
+.profile {
+  position: relative;
+
+  img {
+    filter: grayscale(100%);
+  }
+}
+
+.name {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+}
