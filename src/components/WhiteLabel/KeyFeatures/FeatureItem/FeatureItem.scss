@@ -5,6 +5,12 @@
   color: $black;
 }
 
+.art {
+  > img {
+    max-width: 120px;
+  }
+}
+
 .description {
   font-size: 14px;
   color: #9c9c9c;

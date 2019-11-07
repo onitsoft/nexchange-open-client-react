@@ -5,8 +5,7 @@ import { I18n } from 'react-i18next'
 
 import FeatureItem from './FeatureItem'
 
-
-export default function KeyFeatures() {
+const KeyFeatures = ({features, ...props}) => {
   return (
     <I18n ns="translations">
       {t => (
@@ -14,6 +13,11 @@ export default function KeyFeatures() {
           <Col md={12}>
             <h2>{ t('keyfeatures.title') }</h2>
           </Col>
+          {features && features.length && features.map(({title, content, art}, index) => (
+              <Col md={4} key={`feature-${index}`}>
+                <FeatureItem name={title} description={content} art={art && art.url} />
+              </Col>
+          ))}
           <Col md={4}>
             < FeatureItem name={ t('keyfeatures.feature1name') } description={ t('keyfeatures.feature1desc') } />
           </Col>
@@ -37,3 +41,5 @@ export default function KeyFeatures() {
     </I18n>
   )
 }
+
+export default KeyFeatures
