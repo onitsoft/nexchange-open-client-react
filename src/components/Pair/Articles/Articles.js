@@ -1,36 +1,54 @@
-import React from 'react';
-import { useParams } from "react-router-dom";
-import styles from './Articles.scss';
-import { I18n } from 'react-i18next';
+import React, { useMemo } from 'react'
+import moment from 'moment'
 
-function Articles() {
-  let { tradingSymbolPair } = useParams();
+import Marked from 'react-markdown'
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+
+
+const Articles = ({data, ...props}) => {
+  const page = useMemo(() => data && data.pages && data.pages[0], [data])
+  const articles = useMemo(() => page && page.articles, [page])
+
   return (
-    <I18n ns="translations">
-      {t => (
-        <div id="about" className={styles.articles}>
-          <div className="container">
-            <div className="row">
-              <div className="col-xs-12">
-                <div>
-                  <h2 className="title">{t(`H2 header ${tradingSymbolPair}`)}</h2>
-                  <p>
-                    It is a text block with headers and paragraphs, here will be estimate 500 words of text
-                </p>
-                </div>
-                <div>
-                  <h2 className="title">{t('H2 header')}</h2>
-                  <p>
-                    It is a text block with headers and paragraphs, here will be estimate 500 words of text
-                </p>
-                </div>
-              </div>
+    <div className="container">
+      {((articles && articles.length > 0) && (
+        articles.map(({title, content, date, createdAt}, index) => (
+          <div key={`article-${index}`} ackaclassName="row">
+            <div className="col-xs-12">
+              <Article {...{title, content, date, createdAt}} />
             </div>
           </div>
-        </div>
+        ))
+      )) || (
+        <small>No articles for pagename <code>{props.pagename}</code></small>
       )}
-    </I18n>
+    </div>
   )
 };
 
-export default Articles;
+const Article = ({title, content, date, createdAt}) => {
+  const timeof = useMemo(() => moment(date || createdAt).format('ddd MMM dd YYYY'), [date, createdAt])
+  return (
+    <article>
+      <h2>{title}</h2>
+      <aside><small>on <date datetime={date || createdAt}>{timeof}</date></small></aside>
+      <Marked source={content} />
+    </article>
+  )
+}
+
+const articles = gql`
+  query GetMahrticles ($pagename: String) {
+    pages (where: {name: $pagename}) {
+      articles {
+        title
+        content
+        date
+        createdAt
+      }
+    }
+  }
+`
+
+export default graphql(articles)(Articles)

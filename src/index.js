@@ -22,6 +22,8 @@ import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
 
 import reducers from './reducers';
+
+import GraphCMSProvider from './graphcms'
 import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
@@ -38,29 +40,32 @@ setAuthToken();
 crispEmailBinding(store);
 require('Utils/bindGa');
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <div>
-        <Referrals />
-        <Header />
+ReactDOM.render((
+  <GraphCMSProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <Referrals />
+          <Header />
 
-        <Switch>
-          <Route exact path="/terms-and-conditions" component={TermsConditions} />
-          <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/order/:orderRef" component={Order} />
-          <Route exact path="/"
-            render={props =>  <Home {...props} store={store} />}
-          />
-          <Route exact path="/faqs/:id?" component={FAQ} />
-          <Route exact path="/convert/:base-to-:quote"
-            render={props =>  <Pair {...props} store={store} />} />
-          <Route component={NotFound} />
-        </Switch>
+          <Switch>
+            <Route exact path="/terms-and-conditions" component={TermsConditions} />
+            <Route exact path="/privacy" component={Privacy} />
+            <Route exact path="/order/:orderRef" component={Order} />
+            <Route exact path="/"
+              render={props =>  <Home {...props} store={store} />}
+            />
+            <Route exact path="/faqs/:id?" component={FAQ} />
+            <Route exact path="/convert/:base-to-:quote"
+              render={props =>  <Pair {...props} store={store} />} />
+            <Route component={NotFound} />
+          </Switch>
 
-        <Footer />
-      </div>
-    </BrowserRouter>
-  </Provider>,
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </Provider>
+  </GraphCMSProvider>
+  ),
   document.getElementById('root')
 );

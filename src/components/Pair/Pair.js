@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchCoinDetails, fetchPairs, changeOrderMode, selectCoin } from 'Actions';
 import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
-import PriceChart from './PriceChartNext';
+import PriceChart from './PriceChart';
 import RecentOrders from './RecentOrders/RecentOrders';
 
 const Pair = (props) => {
@@ -22,7 +22,6 @@ const Pair = (props) => {
     fetchCoinDetails()
     fetchPairs({base, quote})
   }, [pair])
-
   
   return (
     <div>
@@ -32,7 +31,7 @@ const Pair = (props) => {
         <PriceChart pair={pair}/>
       </div>
       <RecentOrders {...props} />
-      <Articles {...props} />
+      <Articles pagename={pair} />
       {/* TODO Referral Program Widget */}
       {/* TODO API Access Widget */}
     </div>
