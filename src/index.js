@@ -64,7 +64,7 @@ ReactDOM.render((
             />
             <Route exact path="/whitelabel/" component={WhiteLabelSEO} />
             <Route exact path="/faqs/:id?" component={FAQ} />
-            <Route exact path="/convert/:base-to-:quote"
+            <Route exact path="/convert/:quote-to-:base"
               render={props =>  <Pair {...props} store={store} />} />
             <Route exact path="/not-found" component={NotFound} />
             <Route component={NotFoundRedirect} />
