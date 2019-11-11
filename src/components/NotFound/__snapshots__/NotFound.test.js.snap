@@ -709,13 +709,13 @@ ReactWrapper {
                       "key": null,
                       "lastEffect": null,
                       "memoizedProps": Object {
-                        "class": "fas fa-long-arrow-alt-left",
+                        "className": "fas fa-long-arrow-alt-left",
                       },
                       "memoizedState": null,
                       "mode": 0,
                       "nextEffect": null,
                       "pendingProps": Object {
-                        "class": "fas fa-long-arrow-alt-left",
+                        "className": "fas fa-long-arrow-alt-left",
                       },
                       "ref": null,
                       "return": [Circular],
@@ -775,7 +775,7 @@ ReactWrapper {
                     "memoizedProps": Object {
                       "children": Array [
                         <i
-                          class="fas fa-long-arrow-alt-left"
+                          className="fas fa-long-arrow-alt-left"
                         />,
                         "error.notfound22",
                       ],
@@ -787,7 +787,7 @@ ReactWrapper {
                     "pendingProps": Object {
                       "children": Array [
                         <i
-                          class="fas fa-long-arrow-alt-left"
+                          className="fas fa-long-arrow-alt-left"
                         />,
                         "error.notfound22",
                       ],
@@ -855,7 +855,7 @@ ReactWrapper {
                   </h5>,
                   <a>
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />
                     error.notfound22
                   </a>,
@@ -881,7 +881,7 @@ ReactWrapper {
                   </h5>,
                   <a>
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />
                     error.notfound22
                   </a>,
@@ -946,7 +946,7 @@ ReactWrapper {
                 </h5>
                 <a>
                   <i
-                    class="fas fa-long-arrow-alt-left"
+                    className="fas fa-long-arrow-alt-left"
                   />
                   error.notfound22
                 </a>
@@ -975,7 +975,7 @@ ReactWrapper {
                 </h5>
                 <a>
                   <i
-                    class="fas fa-long-arrow-alt-left"
+                    className="fas fa-long-arrow-alt-left"
                   />
                   error.notfound22
                 </a>
@@ -1497,7 +1497,7 @@ ReactWrapper {
             </h5>
             <a>
               <i
-                class="fas fa-long-arrow-alt-left"
+                className="fas fa-long-arrow-alt-left"
               />
               error.notfound22
             </a>
@@ -1548,7 +1548,7 @@ ReactWrapper {
                 </h5>,
                 <a>
                   <i
-                    class="fas fa-long-arrow-alt-left"
+                    className="fas fa-long-arrow-alt-left"
                   />
                   error.notfound22
                 </a>,
@@ -1631,7 +1631,7 @@ ReactWrapper {
                 "props": Object {
                   "children": Array [
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />,
                     "error.notfound22",
                   ],
@@ -1646,7 +1646,7 @@ ReactWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "class": "fas fa-long-arrow-alt-left",
+                      "className": "fas fa-long-arrow-alt-left",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -2365,13 +2365,13 @@ ReactWrapper {
                         "key": null,
                         "lastEffect": null,
                         "memoizedProps": Object {
-                          "class": "fas fa-long-arrow-alt-left",
+                          "className": "fas fa-long-arrow-alt-left",
                         },
                         "memoizedState": null,
                         "mode": 0,
                         "nextEffect": null,
                         "pendingProps": Object {
-                          "class": "fas fa-long-arrow-alt-left",
+                          "className": "fas fa-long-arrow-alt-left",
                         },
                         "ref": null,
                         "return": [Circular],
@@ -2431,7 +2431,7 @@ ReactWrapper {
                       "memoizedProps": Object {
                         "children": Array [
                           <i
-                            class="fas fa-long-arrow-alt-left"
+                            className="fas fa-long-arrow-alt-left"
                           />,
                           "error.notfound22",
                         ],
@@ -2443,7 +2443,7 @@ ReactWrapper {
                       "pendingProps": Object {
                         "children": Array [
                           <i
-                            class="fas fa-long-arrow-alt-left"
+                            className="fas fa-long-arrow-alt-left"
                           />,
                           "error.notfound22",
                         ],
@@ -2511,7 +2511,7 @@ ReactWrapper {
                     </h5>,
                     <a>
                       <i
-                        class="fas fa-long-arrow-alt-left"
+                        className="fas fa-long-arrow-alt-left"
                       />
                       error.notfound22
                     </a>,
@@ -2537,7 +2537,7 @@ ReactWrapper {
                     </h5>,
                     <a>
                       <i
-                        class="fas fa-long-arrow-alt-left"
+                        className="fas fa-long-arrow-alt-left"
                       />
                       error.notfound22
                     </a>,
@@ -2602,7 +2602,7 @@ ReactWrapper {
                   </h5>
                   <a>
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />
                     error.notfound22
                   </a>
@@ -2631,7 +2631,7 @@ ReactWrapper {
                   </h5>
                   <a>
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />
                     error.notfound22
                   </a>
@@ -3153,7 +3153,7 @@ ReactWrapper {
               </h5>
               <a>
                 <i
-                  class="fas fa-long-arrow-alt-left"
+                  className="fas fa-long-arrow-alt-left"
                 />
                 error.notfound22
               </a>
@@ -3204,7 +3204,7 @@ ReactWrapper {
                   </h5>,
                   <a>
                     <i
-                      class="fas fa-long-arrow-alt-left"
+                      className="fas fa-long-arrow-alt-left"
                     />
                     error.notfound22
                   </a>,
@@ -3287,7 +3287,7 @@ ReactWrapper {
                   "props": Object {
                     "children": Array [
                       <i
-                        class="fas fa-long-arrow-alt-left"
+                        className="fas fa-long-arrow-alt-left"
                       />,
                       "error.notfound22",
                     ],
@@ -3302,7 +3302,7 @@ ReactWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "class": "fas fa-long-arrow-alt-left",
+                        "className": "fas fa-long-arrow-alt-left",
                       },
                       "ref": null,
                       "rendered": Array [
