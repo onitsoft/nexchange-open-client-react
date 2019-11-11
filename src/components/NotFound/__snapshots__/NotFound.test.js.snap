@@ -1,108 +1,3328 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound renders correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <I18n
-    ns="translations"
-  >
-    [Function]
-  </I18n>,
+ReactWrapper {
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
     "getNode": [Function],
+    "getWrappingComponentRenderer": [Function],
     "render": [Function],
     "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
+    "wrapInvoke": [Function],
   },
+  Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__node__): Object {
-    "instance": null,
+    "instance": NotFound {
+      "_reactInternalFiber": FiberNode {
+        "_debugHookTypes": null,
+        "_debugID": 130,
+        "_debugIsCurrentlyTiming": false,
+        "_debugNeedsRemount": false,
+        "_debugOwner": FiberNode {
+          "_debugHookTypes": null,
+          "_debugID": 128,
+          "_debugIsCurrentlyTiming": false,
+          "_debugNeedsRemount": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "dependencies": null,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "refProp": null,
+            "wrappingComponentProps": null,
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "wrappingComponentProps": null,
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "refProp": null,
+            "wrappingComponentProps": null,
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 125,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 125,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": FiberRootNode {
+                "callbackExpirationTime": 0,
+                "callbackNode": null,
+                "callbackPriority": 90,
+                "containerInfo": <div>
+                  <div
+                    class="container"
+                    id="not-found"
+                  >
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                    >
+                      <h2>
+                        error.notfound1
+                      </h2>
+                      <h5>
+                        error.notfound21
+                         
+                        <strong>
+                          error.notfound22
+                        </strong>
+                         
+                        error.notfound23
+                      </h5>
+                      <a>
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />
+                        error.notfound22
+                      </a>
+                    </div>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "finishedExpirationTime": 0,
+                "finishedWork": null,
+                "firstPendingTime": 0,
+                "firstSuspendedTime": 0,
+                "hydrate": false,
+                "interactionThreadID": 17,
+                "lastExpiredTime": 0,
+                "lastPingedTime": 0,
+                "lastSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextKnownPendingLevel": 0,
+                "pendingChildren": null,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "tag": 0,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "history": [MockFunction],
+                        }
+                      }
+                      refProp={null}
+                      wrappingComponentProps={null}
+                    />,
+                  },
+                  "priority": 97,
+                  "suspenseConfig": null,
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "history": [MockFunction],
+                        }
+                      }
+                      refProp={null}
+                      wrappingComponentProps={null}
+                    />,
+                  },
+                  "priority": 97,
+                  "suspenseConfig": null,
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 0,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "history": [MockFunction],
+                  }
+                }
+                refProp={null}
+                wrappingComponentProps={null}
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": FiberRootNode {
+              "callbackExpirationTime": 0,
+              "callbackNode": null,
+              "callbackPriority": 90,
+              "containerInfo": <div>
+                <div
+                  class="container"
+                  id="not-found"
+                >
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                  >
+                    <h2>
+                      error.notfound1
+                    </h2>
+                    <h5>
+                      error.notfound21
+                       
+                      <strong>
+                        error.notfound22
+                      </strong>
+                       
+                      error.notfound23
+                    </h5>
+                    <a>
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />
+                      error.notfound22
+                    </a>
+                  </div>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "finishedExpirationTime": 0,
+              "finishedWork": null,
+              "firstPendingTime": 0,
+              "firstSuspendedTime": 0,
+              "hydrate": false,
+              "interactionThreadID": 17,
+              "lastExpiredTime": 0,
+              "lastPingedTime": 0,
+              "lastSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextKnownPendingLevel": 0,
+              "pendingChildren": null,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "tag": 0,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "history": [MockFunction],
+                    }
+                  }
+                  refProp={null}
+                  wrappingComponentProps={null}
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "wrappingComponentProps": null,
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_debugSource": null,
+        "actualDuration": 0,
+        "actualStartTime": -1,
+        "alternate": null,
+        "child": FiberNode {
+          "_debugHookTypes": null,
+          "_debugID": 132,
+          "_debugIsCurrentlyTiming": false,
+          "_debugNeedsRemount": false,
+          "_debugOwner": [Circular],
+          "_debugSource": Object {
+            "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+            "lineNumber": 17,
+          },
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 134,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+              "lineNumber": 19,
+            },
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 136,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                "lineNumber": 20,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": FiberNode {
+                "_debugHookTypes": null,
+                "_debugID": 138,
+                "_debugIsCurrentlyTiming": false,
+                "_debugNeedsRemount": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                  "lineNumber": 21,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "dependencies": null,
+                "effectTag": 0,
+                "elementType": "h2",
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "error.notfound1",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "error.notfound1",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": FiberNode {
+                  "_debugHookTypes": null,
+                  "_debugID": 139,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugNeedsRemount": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                    "lineNumber": 22,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": FiberNode {
+                    "_debugHookTypes": null,
+                    "_debugID": 143,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugNeedsRemount": false,
+                    "_debugOwner": null,
+                    "_debugSource": null,
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": null,
+                    "childExpirationTime": 0,
+                    "dependencies": null,
+                    "effectTag": 0,
+                    "elementType": null,
+                    "expirationTime": 0,
+                    "firstEffect": null,
+                    "index": 0,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": "error.notfound21",
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": "error.notfound21",
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": FiberNode {
+                      "_debugHookTypes": null,
+                      "_debugID": 144,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugNeedsRemount": false,
+                      "_debugOwner": null,
+                      "_debugSource": null,
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": null,
+                      "childExpirationTime": 0,
+                      "dependencies": null,
+                      "effectTag": 0,
+                      "elementType": null,
+                      "expirationTime": 0,
+                      "firstEffect": null,
+                      "index": 1,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": " ",
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": " ",
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": FiberNode {
+                        "_debugHookTypes": null,
+                        "_debugID": 145,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugNeedsRemount": false,
+                        "_debugOwner": [Circular],
+                        "_debugSource": Object {
+                          "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                          "lineNumber": 22,
+                        },
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": null,
+                        "childExpirationTime": 0,
+                        "dependencies": null,
+                        "effectTag": 0,
+                        "elementType": "strong",
+                        "expirationTime": 0,
+                        "firstEffect": null,
+                        "index": 2,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": Object {
+                          "children": "error.notfound22",
+                        },
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": Object {
+                          "children": "error.notfound22",
+                        },
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": FiberNode {
+                          "_debugHookTypes": null,
+                          "_debugID": 146,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugNeedsRemount": false,
+                          "_debugOwner": null,
+                          "_debugSource": null,
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "dependencies": null,
+                          "effectTag": 0,
+                          "elementType": null,
+                          "expirationTime": 0,
+                          "firstEffect": null,
+                          "index": 3,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": " ",
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": " ",
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": FiberNode {
+                            "_debugHookTypes": null,
+                            "_debugID": 147,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugNeedsRemount": false,
+                            "_debugOwner": null,
+                            "_debugSource": null,
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "dependencies": null,
+                            "effectTag": 0,
+                            "elementType": null,
+                            "expirationTime": 0,
+                            "firstEffect": null,
+                            "index": 4,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": "error.notfound23",
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": "error.notfound23",
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": null,
+                            "stateNode": error.notfound23,
+                            "tag": 6,
+                            "treeBaseDuration": 0,
+                            "type": null,
+                            "updateQueue": null,
+                          },
+                          "stateNode":  ,
+                          "tag": 6,
+                          "treeBaseDuration": 0,
+                          "type": null,
+                          "updateQueue": null,
+                        },
+                        "stateNode": <strong>
+                          error.notfound22
+                        </strong>,
+                        "tag": 5,
+                        "treeBaseDuration": 0,
+                        "type": "strong",
+                        "updateQueue": null,
+                      },
+                      "stateNode":  ,
+                      "tag": 6,
+                      "treeBaseDuration": 0,
+                      "type": null,
+                      "updateQueue": null,
+                    },
+                    "stateNode": error.notfound21,
+                    "tag": 6,
+                    "treeBaseDuration": 0,
+                    "type": null,
+                    "updateQueue": null,
+                  },
+                  "childExpirationTime": 0,
+                  "dependencies": null,
+                  "effectTag": 0,
+                  "elementType": "h5",
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 1,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": Array [
+                      "error.notfound21",
+                      " ",
+                      <strong>
+                        error.notfound22
+                      </strong>,
+                      " ",
+                      "error.notfound23",
+                    ],
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": Array [
+                      "error.notfound21",
+                      " ",
+                      <strong>
+                        error.notfound22
+                      </strong>,
+                      " ",
+                      "error.notfound23",
+                    ],
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugHookTypes": null,
+                    "_debugID": 140,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugNeedsRemount": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                      "lineNumber": 23,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": FiberNode {
+                      "_debugHookTypes": null,
+                      "_debugID": 154,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugNeedsRemount": false,
+                      "_debugOwner": [Circular],
+                      "_debugSource": Object {
+                        "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                        "lineNumber": 23,
+                      },
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": null,
+                      "childExpirationTime": 0,
+                      "dependencies": null,
+                      "effectTag": 0,
+                      "elementType": "i",
+                      "expirationTime": 0,
+                      "firstEffect": null,
+                      "index": 0,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": Object {
+                        "class": "fas fa-long-arrow-alt-left",
+                      },
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": Object {
+                        "class": "fas fa-long-arrow-alt-left",
+                      },
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": FiberNode {
+                        "_debugHookTypes": null,
+                        "_debugID": 155,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugNeedsRemount": false,
+                        "_debugOwner": null,
+                        "_debugSource": null,
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": null,
+                        "childExpirationTime": 0,
+                        "dependencies": null,
+                        "effectTag": 0,
+                        "elementType": null,
+                        "expirationTime": 0,
+                        "firstEffect": null,
+                        "index": 1,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": "error.notfound22",
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": "error.notfound22",
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": null,
+                        "stateNode": error.notfound22,
+                        "tag": 6,
+                        "treeBaseDuration": 0,
+                        "type": null,
+                        "updateQueue": null,
+                      },
+                      "stateNode": <i
+                        class="fas fa-long-arrow-alt-left"
+                      />,
+                      "tag": 5,
+                      "treeBaseDuration": 0,
+                      "type": "i",
+                      "updateQueue": null,
+                    },
+                    "childExpirationTime": 0,
+                    "dependencies": null,
+                    "effectTag": 0,
+                    "elementType": "a",
+                    "expirationTime": 0,
+                    "firstEffect": null,
+                    "index": 2,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": Array [
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />,
+                        "error.notfound22",
+                      ],
+                      "onClick": undefined,
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": Array [
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />,
+                        "error.notfound22",
+                      ],
+                      "onClick": undefined,
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": null,
+                    "stateNode": <a>
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />
+                      error.notfound22
+                    </a>,
+                    "tag": 5,
+                    "treeBaseDuration": 0,
+                    "type": "a",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>,
+                  "tag": 5,
+                  "treeBaseDuration": 0,
+                  "type": "h5",
+                  "updateQueue": null,
+                },
+                "stateNode": <h2>
+                  error.notfound1
+                </h2>,
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": "h2",
+                "updateQueue": null,
+              },
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": "div",
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": Array [
+                  <h2>
+                    error.notfound1
+                  </h2>,
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>,
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>,
+                ],
+                "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": Array [
+                  <h2>
+                    error.notfound1
+                  </h2>,
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>,
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>,
+                ],
+                "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": <div
+                class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+              >
+                <h2>
+                  error.notfound1
+                </h2>
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>
+              </div>,
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 0,
+            "elementType": "div",
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": <div
+                className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+              >
+                <h2>
+                  error.notfound1
+                </h2>
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>
+              </div>,
+              "className": "container",
+              "id": "not-found",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": <div
+                className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+              >
+                <h2>
+                  error.notfound1
+                </h2>
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>
+              </div>,
+              "className": "container",
+              "id": "not-found",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": <div
+              class="container"
+              id="not-found"
+            >
+              <div
+                class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+              >
+                <h2>
+                  error.notfound1
+                </h2>
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>
+              </div>
+            </div>,
+            "tag": 5,
+            "treeBaseDuration": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "dependencies": null,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "children": [Function],
+            "ns": "translations",
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "children": [Function],
+            "ns": "translations",
+          },
+          "ref": null,
+          "return": [Circular],
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": null,
+          "tag": 0,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "childExpirationTime": 0,
+        "dependencies": null,
+        "effectTag": 5,
+        "elementType": [Function],
+        "expirationTime": 0,
+        "firstEffect": null,
+        "index": 0,
+        "key": null,
+        "lastEffect": null,
+        "memoizedProps": Object {
+          "history": [MockFunction],
+        },
+        "memoizedState": null,
+        "mode": 0,
+        "nextEffect": null,
+        "pendingProps": Object {
+          "history": [MockFunction],
+        },
+        "ref": null,
+        "return": FiberNode {
+          "_debugHookTypes": null,
+          "_debugID": 128,
+          "_debugIsCurrentlyTiming": false,
+          "_debugNeedsRemount": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "dependencies": null,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstEffect": [Circular],
+          "index": 0,
+          "key": null,
+          "lastEffect": [Circular],
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "refProp": null,
+            "wrappingComponentProps": null,
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "wrappingComponentProps": null,
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "history": [MockFunction],
+            },
+            "refProp": null,
+            "wrappingComponentProps": null,
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 125,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 125,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": FiberRootNode {
+                "callbackExpirationTime": 0,
+                "callbackNode": null,
+                "callbackPriority": 90,
+                "containerInfo": <div>
+                  <div
+                    class="container"
+                    id="not-found"
+                  >
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                    >
+                      <h2>
+                        error.notfound1
+                      </h2>
+                      <h5>
+                        error.notfound21
+                         
+                        <strong>
+                          error.notfound22
+                        </strong>
+                         
+                        error.notfound23
+                      </h5>
+                      <a>
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />
+                        error.notfound22
+                      </a>
+                    </div>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "finishedExpirationTime": 0,
+                "finishedWork": null,
+                "firstPendingTime": 0,
+                "firstSuspendedTime": 0,
+                "hydrate": false,
+                "interactionThreadID": 17,
+                "lastExpiredTime": 0,
+                "lastPingedTime": 0,
+                "lastSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextKnownPendingLevel": 0,
+                "pendingChildren": null,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "tag": 0,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "history": [MockFunction],
+                        }
+                      }
+                      refProp={null}
+                      wrappingComponentProps={null}
+                    />,
+                  },
+                  "priority": 97,
+                  "suspenseConfig": null,
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "history": [MockFunction],
+                        }
+                      }
+                      refProp={null}
+                      wrappingComponentProps={null}
+                    />,
+                  },
+                  "priority": 97,
+                  "suspenseConfig": null,
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 0,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "history": [MockFunction],
+                  }
+                }
+                refProp={null}
+                wrappingComponentProps={null}
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": FiberRootNode {
+              "callbackExpirationTime": 0,
+              "callbackNode": null,
+              "callbackPriority": 90,
+              "containerInfo": <div>
+                <div
+                  class="container"
+                  id="not-found"
+                >
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                  >
+                    <h2>
+                      error.notfound1
+                    </h2>
+                    <h5>
+                      error.notfound21
+                       
+                      <strong>
+                        error.notfound22
+                      </strong>
+                       
+                      error.notfound23
+                    </h5>
+                    <a>
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />
+                      error.notfound22
+                    </a>
+                  </div>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "finishedExpirationTime": 0,
+              "finishedWork": null,
+              "firstPendingTime": 0,
+              "firstSuspendedTime": 0,
+              "hydrate": false,
+              "interactionThreadID": 17,
+              "lastExpiredTime": 0,
+              "lastPingedTime": 0,
+              "lastSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextKnownPendingLevel": 0,
+              "pendingChildren": null,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "tag": 0,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "history": [MockFunction],
+                    }
+                  }
+                  refProp={null}
+                  wrappingComponentProps={null}
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "wrappingComponentProps": null,
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "selfBaseDuration": 0,
+        "sibling": null,
+        "stateNode": [Circular],
+        "tag": 1,
+        "treeBaseDuration": 0,
+        "type": [Function],
+        "updateQueue": null,
+      },
+      "_reactInternalInstance": Object {},
+      "context": Object {},
+      "props": Object {
+        "history": [MockFunction],
+      },
+      "refs": Object {},
+      "state": null,
+      "updater": Object {
+        "enqueueForceUpdate": [Function],
+        "enqueueReplaceState": [Function],
+        "enqueueSetState": [Function],
+        "isMounted": [Function],
+      },
+    },
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <h1>
-          404
-        </h1>,
-        <h2>
-          error.notfound
-        </h2>,
-      ],
-      "className": "text-center",
-      "id": "not-found",
+      "history": [MockFunction],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": [Function],
+        "ns": "translations",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="container"
+          id="not-found"
+        >
+          <div
+            class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+          >
+            <h2>
+              error.notfound1
+            </h2>
+            <h5>
+              error.notfound21
+               
+              <strong>
+                error.notfound22
+              </strong>
+               
+              error.notfound23
+            </h5>
+            <a>
+              <i
+                class="fas fa-long-arrow-alt-left"
+              />
+              error.notfound22
+            </a>
+          </div>
+        </div>,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "404",
+          "children": <div
+            className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+          >
+            <h2>
+              error.notfound1
+            </h2>
+            <h5>
+              error.notfound21
+               
+              <strong>
+                error.notfound22
+              </strong>
+               
+              error.notfound23
+            </h5>
+            <a>
+              <i
+                class="fas fa-long-arrow-alt-left"
+              />
+              error.notfound22
+            </a>
+          </div>,
+          "className": "container",
+          "id": "not-found",
         },
         "ref": null,
-        "rendered": "404",
-        "type": "h1",
+        "rendered": Array [
+          Object {
+            "instance": <div
+              class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+            >
+              <h2>
+                error.notfound1
+              </h2>
+              <h5>
+                error.notfound21
+                 
+                <strong>
+                  error.notfound22
+                </strong>
+                 
+                error.notfound23
+              </h5>
+              <a>
+                <i
+                  class="fas fa-long-arrow-alt-left"
+                />
+                error.notfound22
+              </a>
+            </div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  error.notfound1
+                </h2>,
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>,
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>,
+              ],
+              "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <h2>
+                  error.notfound1
+                </h2>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "error.notfound1",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "error.notfound1",
+                ],
+                "type": "h2",
+              },
+              Object {
+                "instance": <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "error.notfound21",
+                    " ",
+                    <strong>
+                      error.notfound22
+                    </strong>,
+                    " ",
+                    "error.notfound23",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "error.notfound21",
+                  " ",
+                  Object {
+                    "instance": <strong>
+                      error.notfound22
+                    </strong>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "error.notfound22",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "error.notfound22",
+                    ],
+                    "type": "strong",
+                  },
+                  " ",
+                  "error.notfound23",
+                ],
+                "type": "h5",
+              },
+              Object {
+                "instance": <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />,
+                    "error.notfound22",
+                  ],
+                  "onClick": undefined,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <i
+                      class="fas fa-long-arrow-alt-left"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "class": "fas fa-long-arrow-alt-left",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "i",
+                  },
+                  "error.notfound22",
+                ],
+                "type": "a",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "error.notfound",
-        },
-        "ref": null,
-        "rendered": "error.notfound",
-        "type": "h2",
-      },
-    ],
-    "type": "div",
+      "type": [Function],
+    },
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
-      "instance": null,
+      "instance": NotFound {
+        "_reactInternalFiber": FiberNode {
+          "_debugHookTypes": null,
+          "_debugID": 130,
+          "_debugIsCurrentlyTiming": false,
+          "_debugNeedsRemount": false,
+          "_debugOwner": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 128,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 1,
+            "elementType": [Function],
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "wrappingComponentProps": null,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 125,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugHookTypes": null,
+                "_debugID": 125,
+                "_debugIsCurrentlyTiming": false,
+                "_debugNeedsRemount": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "dependencies": null,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": FiberRootNode {
+                  "callbackExpirationTime": 0,
+                  "callbackNode": null,
+                  "callbackPriority": 90,
+                  "containerInfo": <div>
+                    <div
+                      class="container"
+                      id="not-found"
+                    >
+                      <div
+                        class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                      >
+                        <h2>
+                          error.notfound1
+                        </h2>
+                        <h5>
+                          error.notfound21
+                           
+                          <strong>
+                            error.notfound22
+                          </strong>
+                           
+                          error.notfound23
+                        </h5>
+                        <a>
+                          <i
+                            class="fas fa-long-arrow-alt-left"
+                          />
+                          error.notfound22
+                        </a>
+                      </div>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "finishedExpirationTime": 0,
+                  "finishedWork": null,
+                  "firstPendingTime": 0,
+                  "firstSuspendedTime": 0,
+                  "hydrate": false,
+                  "interactionThreadID": 17,
+                  "lastExpiredTime": 0,
+                  "lastPingedTime": 0,
+                  "lastSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextKnownPendingLevel": 0,
+                  "pendingChildren": null,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "tag": 0,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "history": [MockFunction],
+                          }
+                        }
+                        refProp={null}
+                        wrappingComponentProps={null}
+                      />,
+                    },
+                    "priority": 97,
+                    "suspenseConfig": null,
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "history": [MockFunction],
+                          }
+                        }
+                        refProp={null}
+                        wrappingComponentProps={null}
+                      />,
+                    },
+                    "priority": 97,
+                    "suspenseConfig": null,
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "history": [MockFunction],
+                    }
+                  }
+                  refProp={null}
+                  wrappingComponentProps={null}
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": FiberRootNode {
+                "callbackExpirationTime": 0,
+                "callbackNode": null,
+                "callbackPriority": 90,
+                "containerInfo": <div>
+                  <div
+                    class="container"
+                    id="not-found"
+                  >
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                    >
+                      <h2>
+                        error.notfound1
+                      </h2>
+                      <h5>
+                        error.notfound21
+                         
+                        <strong>
+                          error.notfound22
+                        </strong>
+                         
+                        error.notfound23
+                      </h5>
+                      <a>
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />
+                        error.notfound22
+                      </a>
+                    </div>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "finishedExpirationTime": 0,
+                "finishedWork": null,
+                "firstPendingTime": 0,
+                "firstSuspendedTime": 0,
+                "hydrate": false,
+                "interactionThreadID": 17,
+                "lastExpiredTime": 0,
+                "lastPingedTime": 0,
+                "lastSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextKnownPendingLevel": 0,
+                "pendingChildren": null,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "tag": 0,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "history": [MockFunction],
+                      }
+                    }
+                    refProp={null}
+                    wrappingComponentProps={null}
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "history": [MockFunction],
+                },
+                "refProp": null,
+                "wrappingComponentProps": null,
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "history": [MockFunction],
+                },
+                "wrappingComponentProps": null,
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 1,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 132,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+              "lineNumber": 17,
+            },
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 134,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                "lineNumber": 19,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": FiberNode {
+                "_debugHookTypes": null,
+                "_debugID": 136,
+                "_debugIsCurrentlyTiming": false,
+                "_debugNeedsRemount": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                  "lineNumber": 20,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": FiberNode {
+                  "_debugHookTypes": null,
+                  "_debugID": 138,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugNeedsRemount": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                    "lineNumber": 21,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "dependencies": null,
+                  "effectTag": 0,
+                  "elementType": "h2",
+                  "expirationTime": 0,
+                  "firstEffect": null,
+                  "index": 0,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "error.notfound1",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "error.notfound1",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugHookTypes": null,
+                    "_debugID": 139,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugNeedsRemount": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                      "lineNumber": 22,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": FiberNode {
+                      "_debugHookTypes": null,
+                      "_debugID": 143,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugNeedsRemount": false,
+                      "_debugOwner": null,
+                      "_debugSource": null,
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": null,
+                      "childExpirationTime": 0,
+                      "dependencies": null,
+                      "effectTag": 0,
+                      "elementType": null,
+                      "expirationTime": 0,
+                      "firstEffect": null,
+                      "index": 0,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": "error.notfound21",
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": "error.notfound21",
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": FiberNode {
+                        "_debugHookTypes": null,
+                        "_debugID": 144,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugNeedsRemount": false,
+                        "_debugOwner": null,
+                        "_debugSource": null,
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": null,
+                        "childExpirationTime": 0,
+                        "dependencies": null,
+                        "effectTag": 0,
+                        "elementType": null,
+                        "expirationTime": 0,
+                        "firstEffect": null,
+                        "index": 1,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": " ",
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": " ",
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": FiberNode {
+                          "_debugHookTypes": null,
+                          "_debugID": 145,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugNeedsRemount": false,
+                          "_debugOwner": [Circular],
+                          "_debugSource": Object {
+                            "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                            "lineNumber": 22,
+                          },
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "dependencies": null,
+                          "effectTag": 0,
+                          "elementType": "strong",
+                          "expirationTime": 0,
+                          "firstEffect": null,
+                          "index": 2,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": Object {
+                            "children": "error.notfound22",
+                          },
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": Object {
+                            "children": "error.notfound22",
+                          },
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": FiberNode {
+                            "_debugHookTypes": null,
+                            "_debugID": 146,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugNeedsRemount": false,
+                            "_debugOwner": null,
+                            "_debugSource": null,
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "dependencies": null,
+                            "effectTag": 0,
+                            "elementType": null,
+                            "expirationTime": 0,
+                            "firstEffect": null,
+                            "index": 3,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": " ",
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": " ",
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": FiberNode {
+                              "_debugHookTypes": null,
+                              "_debugID": 147,
+                              "_debugIsCurrentlyTiming": false,
+                              "_debugNeedsRemount": false,
+                              "_debugOwner": null,
+                              "_debugSource": null,
+                              "actualDuration": 0,
+                              "actualStartTime": -1,
+                              "alternate": null,
+                              "child": null,
+                              "childExpirationTime": 0,
+                              "dependencies": null,
+                              "effectTag": 0,
+                              "elementType": null,
+                              "expirationTime": 0,
+                              "firstEffect": null,
+                              "index": 4,
+                              "key": null,
+                              "lastEffect": null,
+                              "memoizedProps": "error.notfound23",
+                              "memoizedState": null,
+                              "mode": 0,
+                              "nextEffect": null,
+                              "pendingProps": "error.notfound23",
+                              "ref": null,
+                              "return": [Circular],
+                              "selfBaseDuration": 0,
+                              "sibling": null,
+                              "stateNode": error.notfound23,
+                              "tag": 6,
+                              "treeBaseDuration": 0,
+                              "type": null,
+                              "updateQueue": null,
+                            },
+                            "stateNode":  ,
+                            "tag": 6,
+                            "treeBaseDuration": 0,
+                            "type": null,
+                            "updateQueue": null,
+                          },
+                          "stateNode": <strong>
+                            error.notfound22
+                          </strong>,
+                          "tag": 5,
+                          "treeBaseDuration": 0,
+                          "type": "strong",
+                          "updateQueue": null,
+                        },
+                        "stateNode":  ,
+                        "tag": 6,
+                        "treeBaseDuration": 0,
+                        "type": null,
+                        "updateQueue": null,
+                      },
+                      "stateNode": error.notfound21,
+                      "tag": 6,
+                      "treeBaseDuration": 0,
+                      "type": null,
+                      "updateQueue": null,
+                    },
+                    "childExpirationTime": 0,
+                    "dependencies": null,
+                    "effectTag": 0,
+                    "elementType": "h5",
+                    "expirationTime": 0,
+                    "firstEffect": null,
+                    "index": 1,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": Array [
+                        "error.notfound21",
+                        " ",
+                        <strong>
+                          error.notfound22
+                        </strong>,
+                        " ",
+                        "error.notfound23",
+                      ],
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": Array [
+                        "error.notfound21",
+                        " ",
+                        <strong>
+                          error.notfound22
+                        </strong>,
+                        " ",
+                        "error.notfound23",
+                      ],
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": FiberNode {
+                      "_debugHookTypes": null,
+                      "_debugID": 140,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugNeedsRemount": false,
+                      "_debugOwner": [Circular],
+                      "_debugSource": Object {
+                        "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                        "lineNumber": 23,
+                      },
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": FiberNode {
+                        "_debugHookTypes": null,
+                        "_debugID": 154,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugNeedsRemount": false,
+                        "_debugOwner": [Circular],
+                        "_debugSource": Object {
+                          "fileName": "/Users/eli/projects/temp/nexchange-open-client-react/src/components/NotFound/NotFound.js",
+                          "lineNumber": 23,
+                        },
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": null,
+                        "childExpirationTime": 0,
+                        "dependencies": null,
+                        "effectTag": 0,
+                        "elementType": "i",
+                        "expirationTime": 0,
+                        "firstEffect": null,
+                        "index": 0,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": Object {
+                          "class": "fas fa-long-arrow-alt-left",
+                        },
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": Object {
+                          "class": "fas fa-long-arrow-alt-left",
+                        },
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": FiberNode {
+                          "_debugHookTypes": null,
+                          "_debugID": 155,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugNeedsRemount": false,
+                          "_debugOwner": null,
+                          "_debugSource": null,
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "dependencies": null,
+                          "effectTag": 0,
+                          "elementType": null,
+                          "expirationTime": 0,
+                          "firstEffect": null,
+                          "index": 1,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": "error.notfound22",
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": "error.notfound22",
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": null,
+                          "stateNode": error.notfound22,
+                          "tag": 6,
+                          "treeBaseDuration": 0,
+                          "type": null,
+                          "updateQueue": null,
+                        },
+                        "stateNode": <i
+                          class="fas fa-long-arrow-alt-left"
+                        />,
+                        "tag": 5,
+                        "treeBaseDuration": 0,
+                        "type": "i",
+                        "updateQueue": null,
+                      },
+                      "childExpirationTime": 0,
+                      "dependencies": null,
+                      "effectTag": 0,
+                      "elementType": "a",
+                      "expirationTime": 0,
+                      "firstEffect": null,
+                      "index": 2,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": Object {
+                        "children": Array [
+                          <i
+                            class="fas fa-long-arrow-alt-left"
+                          />,
+                          "error.notfound22",
+                        ],
+                        "onClick": undefined,
+                      },
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": Object {
+                        "children": Array [
+                          <i
+                            class="fas fa-long-arrow-alt-left"
+                          />,
+                          "error.notfound22",
+                        ],
+                        "onClick": undefined,
+                      },
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": null,
+                      "stateNode": <a>
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />
+                        error.notfound22
+                      </a>,
+                      "tag": 5,
+                      "treeBaseDuration": 0,
+                      "type": "a",
+                      "updateQueue": null,
+                    },
+                    "stateNode": <h5>
+                      error.notfound21
+                       
+                      <strong>
+                        error.notfound22
+                      </strong>
+                       
+                      error.notfound23
+                    </h5>,
+                    "tag": 5,
+                    "treeBaseDuration": 0,
+                    "type": "h5",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <h2>
+                    error.notfound1
+                  </h2>,
+                  "tag": 5,
+                  "treeBaseDuration": 0,
+                  "type": "h2",
+                  "updateQueue": null,
+                },
+                "childExpirationTime": 0,
+                "dependencies": null,
+                "effectTag": 0,
+                "elementType": "div",
+                "expirationTime": 0,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": Array [
+                    <h2>
+                      error.notfound1
+                    </h2>,
+                    <h5>
+                      error.notfound21
+                       
+                      <strong>
+                        error.notfound22
+                      </strong>
+                       
+                      error.notfound23
+                    </h5>,
+                    <a>
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />
+                      error.notfound22
+                    </a>,
+                  ],
+                  "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": Array [
+                    <h2>
+                      error.notfound1
+                    </h2>,
+                    <h5>
+                      error.notfound21
+                       
+                      <strong>
+                        error.notfound22
+                      </strong>
+                       
+                      error.notfound23
+                    </h5>,
+                    <a>
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />
+                      error.notfound22
+                    </a>,
+                  ],
+                  "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": <div
+                  class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                >
+                  <h2>
+                    error.notfound1
+                  </h2>
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>
+                </div>,
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": "div",
+                "updateQueue": null,
+              },
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": "div",
+              "expirationTime": 0,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": <div
+                  className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                >
+                  <h2>
+                    error.notfound1
+                  </h2>
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>
+                </div>,
+                "className": "container",
+                "id": "not-found",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": <div
+                  className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                >
+                  <h2>
+                    error.notfound1
+                  </h2>
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>
+                </div>,
+                "className": "container",
+                "id": "not-found",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": <div
+                class="container"
+                id="not-found"
+              >
+                <div
+                  class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                >
+                  <h2>
+                    error.notfound1
+                  </h2>
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>
+                </div>
+              </div>,
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 1,
+            "elementType": [Function],
+            "expirationTime": 0,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": [Function],
+              "ns": "translations",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": [Function],
+              "ns": "translations",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": null,
+            "tag": 0,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "dependencies": null,
+          "effectTag": 5,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "history": [MockFunction],
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "history": [MockFunction],
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugHookTypes": null,
+            "_debugID": 128,
+            "_debugIsCurrentlyTiming": false,
+            "_debugNeedsRemount": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "dependencies": null,
+            "effectTag": 1,
+            "elementType": [Function],
+            "expirationTime": 0,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "wrappingComponentProps": null,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "history": [MockFunction],
+              },
+              "refProp": null,
+              "wrappingComponentProps": null,
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugHookTypes": null,
+              "_debugID": 125,
+              "_debugIsCurrentlyTiming": false,
+              "_debugNeedsRemount": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugHookTypes": null,
+                "_debugID": 125,
+                "_debugIsCurrentlyTiming": false,
+                "_debugNeedsRemount": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "dependencies": null,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": FiberRootNode {
+                  "callbackExpirationTime": 0,
+                  "callbackNode": null,
+                  "callbackPriority": 90,
+                  "containerInfo": <div>
+                    <div
+                      class="container"
+                      id="not-found"
+                    >
+                      <div
+                        class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                      >
+                        <h2>
+                          error.notfound1
+                        </h2>
+                        <h5>
+                          error.notfound21
+                           
+                          <strong>
+                            error.notfound22
+                          </strong>
+                           
+                          error.notfound23
+                        </h5>
+                        <a>
+                          <i
+                            class="fas fa-long-arrow-alt-left"
+                          />
+                          error.notfound22
+                        </a>
+                      </div>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "finishedExpirationTime": 0,
+                  "finishedWork": null,
+                  "firstPendingTime": 0,
+                  "firstSuspendedTime": 0,
+                  "hydrate": false,
+                  "interactionThreadID": 17,
+                  "lastExpiredTime": 0,
+                  "lastPingedTime": 0,
+                  "lastSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextKnownPendingLevel": 0,
+                  "pendingChildren": null,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "tag": 0,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "history": [MockFunction],
+                          }
+                        }
+                        refProp={null}
+                        wrappingComponentProps={null}
+                      />,
+                    },
+                    "priority": 97,
+                    "suspenseConfig": null,
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "history": [MockFunction],
+                          }
+                        }
+                        refProp={null}
+                        wrappingComponentProps={null}
+                      />,
+                    },
+                    "priority": 97,
+                    "suspenseConfig": null,
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "dependencies": null,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "history": [MockFunction],
+                    }
+                  }
+                  refProp={null}
+                  wrappingComponentProps={null}
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": FiberRootNode {
+                "callbackExpirationTime": 0,
+                "callbackNode": null,
+                "callbackPriority": 90,
+                "containerInfo": <div>
+                  <div
+                    class="container"
+                    id="not-found"
+                  >
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+                    >
+                      <h2>
+                        error.notfound1
+                      </h2>
+                      <h5>
+                        error.notfound21
+                         
+                        <strong>
+                          error.notfound22
+                        </strong>
+                         
+                        error.notfound23
+                      </h5>
+                      <a>
+                        <i
+                          class="fas fa-long-arrow-alt-left"
+                        />
+                        error.notfound22
+                      </a>
+                    </div>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "finishedExpirationTime": 0,
+                "finishedWork": null,
+                "firstPendingTime": 0,
+                "firstSuspendedTime": 0,
+                "hydrate": false,
+                "interactionThreadID": 17,
+                "lastExpiredTime": 0,
+                "lastPingedTime": 0,
+                "lastSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextKnownPendingLevel": 0,
+                "pendingChildren": null,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "tag": 0,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "history": [MockFunction],
+                      }
+                    }
+                    refProp={null}
+                    wrappingComponentProps={null}
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "history": [MockFunction],
+                },
+                "refProp": null,
+                "wrappingComponentProps": null,
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "history": [MockFunction],
+                },
+                "wrappingComponentProps": null,
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 1,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": [Circular],
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_reactInternalInstance": Object {},
+        "context": Object {},
+        "props": Object {
+          "history": [MockFunction],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+        },
+      },
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <h1>
-            404
-          </h1>,
-          <h2>
-            error.notfound
-          </h2>,
-        ],
-        "className": "text-center",
-        "id": "not-found",
+        "history": [MockFunction],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": [Function],
+          "ns": "translations",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": <div
+            class="container"
+            id="not-found"
+          >
+            <div
+              class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+            >
+              <h2>
+                error.notfound1
+              </h2>
+              <h5>
+                error.notfound21
+                 
+                <strong>
+                  error.notfound22
+                </strong>
+                 
+                error.notfound23
+              </h5>
+              <a>
+                <i
+                  class="fas fa-long-arrow-alt-left"
+                />
+                error.notfound22
+              </a>
+            </div>
+          </div>,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "404",
+            "children": <div
+              className="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+            >
+              <h2>
+                error.notfound1
+              </h2>
+              <h5>
+                error.notfound21
+                 
+                <strong>
+                  error.notfound22
+                </strong>
+                 
+                error.notfound23
+              </h5>
+              <a>
+                <i
+                  class="fas fa-long-arrow-alt-left"
+                />
+                error.notfound22
+              </a>
+            </div>,
+            "className": "container",
+            "id": "not-found",
           },
           "ref": null,
-          "rendered": "404",
-          "type": "h1",
+          "rendered": Array [
+            Object {
+              "instance": <div
+                class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1"
+              >
+                <h2>
+                  error.notfound1
+                </h2>
+                <h5>
+                  error.notfound21
+                   
+                  <strong>
+                    error.notfound22
+                  </strong>
+                   
+                  error.notfound23
+                </h5>
+                <a>
+                  <i
+                    class="fas fa-long-arrow-alt-left"
+                  />
+                  error.notfound22
+                </a>
+              </div>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    error.notfound1
+                  </h2>,
+                  <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>,
+                  <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>,
+                ],
+                "className": "col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": <h2>
+                    error.notfound1
+                  </h2>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "error.notfound1",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "error.notfound1",
+                  ],
+                  "type": "h2",
+                },
+                Object {
+                  "instance": <h5>
+                    error.notfound21
+                     
+                    <strong>
+                      error.notfound22
+                    </strong>
+                     
+                    error.notfound23
+                  </h5>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "error.notfound21",
+                      " ",
+                      <strong>
+                        error.notfound22
+                      </strong>,
+                      " ",
+                      "error.notfound23",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "error.notfound21",
+                    " ",
+                    Object {
+                      "instance": <strong>
+                        error.notfound22
+                      </strong>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "error.notfound22",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "error.notfound22",
+                      ],
+                      "type": "strong",
+                    },
+                    " ",
+                    "error.notfound23",
+                  ],
+                  "type": "h5",
+                },
+                Object {
+                  "instance": <a>
+                    <i
+                      class="fas fa-long-arrow-alt-left"
+                    />
+                    error.notfound22
+                  </a>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        class="fas fa-long-arrow-alt-left"
+                      />,
+                      "error.notfound22",
+                    ],
+                    "onClick": undefined,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <i
+                        class="fas fa-long-arrow-alt-left"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "class": "fas fa-long-arrow-alt-left",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "i",
+                    },
+                    "error.notfound22",
+                  ],
+                  "type": "a",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "error.notfound",
-          },
-          "ref": null,
-          "rendered": "error.notfound",
-          "type": "h2",
-        },
-      ],
-      "type": "div",
+        "type": [Function],
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -128,7 +3348,11 @@ ShallowWrapper {
         },
       },
     },
-    "context": Object {},
   },
+  Symbol(enzyme.__linkedRoots__): Array [],
+  Symbol(enzyme.__unrendered__): <NotFound
+    history={[MockFunction]}
+  />,
+  Symbol(enzyme.__updatedBy__): null,
 }
 `;
