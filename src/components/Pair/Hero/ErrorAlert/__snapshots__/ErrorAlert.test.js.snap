@@ -5,7 +5,11 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ErrorAlert
     dispatch={[Function]}
-    show={true}
+    error={
+      Object {
+        "show": true,
+      }
+    }
     store={
       Object {
         "clearActions": [Function],
@@ -99,6 +103,8 @@ ShallowWrapper {
     "context": Object {
       "storeSubscription": undefined,
     },
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;

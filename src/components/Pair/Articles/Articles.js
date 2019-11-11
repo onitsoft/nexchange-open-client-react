@@ -6,7 +6,7 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
 
-const Articles = ({data, ...props}) => {
+export const Articles = ({data, ...props}) => {
   const page = useMemo(() => data && data.pages && data.pages[0], [data])
   const articles = useMemo(() => page && page.articles, [page])
 
@@ -38,8 +38,8 @@ const Article = ({title, content, date, createdAt}) => {
   )
 }
 
-const articles = gql`
-  query GetMahrticles ($pagename: String) {
+export const GET_ARTILCES_QUERY = gql`
+  query GetArticles ($pagename: String) {
     pages (where: {name: $pagename}) {
       articles {
         title
@@ -51,4 +51,4 @@ const articles = gql`
   }
 `
 
-export default graphql(articles)(Articles)
+export default graphql(GET_ARTILCES_QUERY)(Articles)
