@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-  - 6
+  - 12
 cache:
   directories:
     - ~/.npm
     - node_modules
 install:
-  - npm install
+  - yarn install
 before_script:
-  - npm start -- --silent &
+  - yarn start -- --silent &
 script:
-  - npm run test -- -u
-  - npm run cypress:run
+  - yarn run test -- -u
+  - yarn run cypress:run
