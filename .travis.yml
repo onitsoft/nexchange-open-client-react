@@ -16,4 +16,3 @@ before_script:
   - yarn start -- --silent &
 script:
   - yarn run test -- -u
-  - yarn run cypress:run
