@@ -1,6 +1,7 @@
 import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
+import Marked from 'react-markdown'
 
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
@@ -21,6 +22,8 @@ const WhiteLabelSEO = ({data, ...props}) => {
   const { pages } = data
   const { articles, faq, features } = (pages && pages[0]) || {}
 
+
+  console.log('what are articles?', articles)
   return (
     <I18n ns="translations">
       {t => (
@@ -30,9 +33,9 @@ const WhiteLabelSEO = ({data, ...props}) => {
             <section className='row'><KeyFeatures features={features} /></section>
             <section className='row'><MajorCard /></section>
             <section className='row'><SupportedAssets /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic1title') } text={ t('minorcard.topic1text') } /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic2title') } text={ t('minorcard.topic2text') } /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic3title') } text={ t('minorcard.topic3text') } /></section>
+            <section className='row'>
+              <TopicsList articles={articles} />
+            </section>
             <section className='row'><PriceTable plans={plans} /></section>
             <section className='row'><FAQ items={faq} /></section>
           </StyledContainer>
@@ -41,6 +44,62 @@ const WhiteLabelSEO = ({data, ...props}) => {
     </I18n>
   )
 }
+
+const TopicsList = (props) => {
+  const { articles } = props
+  if (!articles || !articles.length) return <>Loading...</>
+  return articles.map((article, index) => 
+    <TopicCard key={`topic-${index}`} title={article.title} content={article.content} art={article.art.url} />
+  )
+}
+
+const TopicCard = ({ title, content, art }) => {
+  return (
+    <StyledTopic>
+      <div className='art'>
+        <img src={art} alt={title} />
+      </div>
+      <section>
+        <h3>{title}</h3>
+        <Marked source={content} />
+      </section>
+    </StyledTopic>
+  )
+}
+const StyledTopic = styled.article`
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
+  grid-template-areas: 
+    "art content";
+  
+  grid-template-columns: 330px auto;
+  grid-template-rows: auto;
+
+  &:nth-child(even) {
+    grid-template-areas: 
+      "content art";
+    
+    grid-template-columns: auto 330px;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+
+  > .art {
+    grid-area: art;
+    padding: 2rem;
+    > img {
+    }
+  }
+  > section {
+    grid-area: content;
+    text-align: left;
+  }
+`
+
+const TopicsContainer = styled.section`
+`
 
 const StyledContainer = styled.div`
   > .row:not(:first-of-type) {
@@ -92,6 +151,10 @@ const faq = gql`
         content
         date
         createdAt
+        art {
+          fileName
+          url
+        }
       }
       faq {
         title
