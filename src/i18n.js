@@ -20,6 +20,7 @@ i18n
         escapeValue: false,
         format: (value, format, lng) => {
           if (format === 'big usd') return '$' + parseFloat(value).toFixed(0)
+          if (format === 'include') return value ? 'Included' : ''
         }
       },
       detection: {

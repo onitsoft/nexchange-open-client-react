@@ -62,7 +62,7 @@ ReactDOM.render((
             <Route exact path="/"
               render={props =>  <Home {...props} store={store} />}
             />
-            <Route exact path="/whitelabel/" component={WhiteLabelSEO} />
+            <Route exact path="/whitelabel/" render={props => <WhiteLabelSEO {...props} pagename='whitelabel' />} />
             <Route exact path="/faqs/:id?" component={FAQ} />
             <Route exact path="/convert/:quote-to-:base"
               render={props =>  <Pair {...props} store={store} />} />

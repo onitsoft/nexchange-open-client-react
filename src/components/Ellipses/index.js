@@ -73,6 +73,7 @@ const StyledEllipses = styled.div`
     display: inline-block;
     width: auto;
     height: 100%;
+    top: 80px;
 
     & > img, & > svg {
       width: auto;

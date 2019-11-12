@@ -8,7 +8,7 @@ const PriceTable = (props) => {
 
   if (!plans || !plans.length) return <span>Loading...</span>
 
-  const forder = 'monthly, duration, setup, coinlist, devhours, hourprice'.split(', ')
+  const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ')
 
   return (
     <I18n ns="translations">
@@ -35,8 +35,34 @@ const PriceTable = (props) => {
               ))}
             </tr>
           ))}
+          <tr className='pt'>
+            <th colspan={plans.length + 1}><strong>Payment Terms</strong></th>
+          </tr>
+          <tr>
+            <th>
+              Total Cost First Year
+              <br />
+              <small>* 50% upfront, 50% upon delivery!</small>
+            </th>
+            {plans.map((plan) => (
+              <td>{t(`whitelabel.values.total`, {value: (plan.monthly * 12) + plan.setup})}</td>
+            ))}
+          </tr>
+          <tr>
+            <th>
+              Total Cost Second Year Onward
+              <br />
+              <small>* Billed monthly - deductible from fee earnings!</small>
+            </th>
+            {plans.map((plan) => (
+              <td>{t(`whitelabel.values.total`, {value: (plan.monthly * 12) / 2})}</td>
+            ))}
+          </tr>
         </tbody>
       </StyledTable>
+      <div>
+        <TagLink href='/'>Launch Your n.exchange Now!</TagLink>
+      </div>
     </>
       )}
     </I18n>
@@ -75,10 +101,9 @@ const tableStyle = `
 
   td, th {
     padding: 25px 0;
-    color: $black;
+    color: #000;
     background: #fff;
   }
-
   tbody tr {
     height: 55px;
     overflow: hidden;
@@ -119,6 +144,26 @@ const tableStyle = `
     td:last-child {
       padding: 0;
     }
+  }
+`
+
+const TagLink = styled.a`
+  display: inline-block;
+  background: #2cc5bd;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  min-width: 96px;
+  min-height: 18px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+    text-decoration: none;
   }
 `
 

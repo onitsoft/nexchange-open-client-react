@@ -6,26 +6,28 @@ import Marked from 'react-markdown'
 
 import nlogo from '../logo.png'
 
-const imageLocation = nlogo
-const imageAltText = 'placekitten'
-
-export default function MajorCard() {
+export const MajorCard = (props) => {
+  const { title, content, art } = props
   return (
     <I18n ns="translations">
       {t => (
         <StyledCard>
-          <h2>{ t('majorcard.title') }</h2>
+          <h2>{ title }</h2>
           <main>
             <div className='art'>
-              <img src={ imageLocation } alt={ imageAltText } />
+              <img src={ art || nlogo } alt={ title } />
             </div>
-            <Marked>{ t('majorcard.text') }</Marked>
+            <div className='content'>
+              <Marked source={content} />
+            </div>
           </main>
         </StyledCard>
       )}
     </I18n>
   )
 }
+
+export default MajorCard
 
 const StyledCard = styled.article`
   display: grid;
@@ -43,11 +45,14 @@ const StyledCard = styled.article`
     display: flex;
     
     > .art {
-      order: 2;
-      margin-left: 2rem;
+      margin: 0 8rem 0 0;
+      width: 320px;
       > img {
         width: 320px;
       }
+    }
+    > .content {
+      width: 100%;
     }
   }
   
