@@ -48,15 +48,33 @@ const WhiteLabelSEO = ({data, ...props}) => {
   )
 }
 
+const TagButton = styled.button`
+  background: #2cc5bd;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  width: 96px;
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  font-size: 10px;
+`
+
 const TopicsList = (props) => {
   const { articles } = props
   if (!articles || !articles.length) return <>Loading...</>
-  return articles.map((article, index) => 
-    <TopicCard key={`topic-${index}`} title={article.title} content={article.content} art={article.art.url} />
-  )
+  return articles.map((article, index) => (
+    <TopicCard
+      key={`topic-${index}`}
+      title={article.title}
+      btn={<TagButton>Try Now</TagButton>}
+      content={article.content}
+      art={article.art.url}
+    />
+  ))
 }
 
-const TopicCard = ({ title, content, art }) => {
+const TopicCard = ({ title, content, art, btn}) => {
   return (
     <StyledTopic>
       <div className='art'>
@@ -66,6 +84,7 @@ const TopicCard = ({ title, content, art }) => {
       </div>
       <section>
         <Bounce bottom>
+          {btn ? btn : null}
           <h3>{title}</h3>
           <Marked source={content} />
         </Bounce>
