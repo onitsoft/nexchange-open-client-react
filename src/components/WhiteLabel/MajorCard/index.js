@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { Col } from 'reactstrap'
 import { I18n } from 'react-i18next'
 
 import styled from '@emotion/styled'
@@ -35,14 +34,17 @@ const StyledCard = styled.article`
   grid-template-areas: 
     "title"
     "content";
+  text-align: left;
   > h2 {
     grid-area: title;
   }
   > main {
     grid-area: content;
     display: flex;
+    
     > .art {
-      align-self: flex-end;
+      order: 2;
+      margin-left: 2rem;
       > img {
         width: 320px;
       }
