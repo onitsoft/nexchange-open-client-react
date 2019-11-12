@@ -28,8 +28,10 @@ const WhiteLabelSEO = ({data, ...props}) => {
         <div className={ styles.whitelabel }>
           <VideoCard />
           <StyledContainer className='container'>
-            <section className='row'><KeyFeatures features={features} /></section>
-            <section className='row'><MajorCard /></section>
+            {/* <section className='row'><KeyFeatures features={features} /></section> */}
+            <TopicsContainer className='row'>
+              <MajorCard />
+            </TopicsContainer>
             <section className='row'><SupportedAssets /></section>
             <TopicsContainer className='row'>
               <TopicsList articles={articles} />
