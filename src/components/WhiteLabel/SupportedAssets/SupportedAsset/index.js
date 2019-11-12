@@ -2,16 +2,19 @@ import React from 'react'
 import { Col } from 'reactstrap'
 import styles from './SupportedAsset.scss'
 import styled from '@emotion/styled'
+import Bounce from 'react-reveal/Bounce'
 
 export default function SupportedAsset({ coin: { name, src } }) {
   return (
     <StyledCol md={3}>
-      <div className={styles.profile}>
-        <img src={src} alt={`${name}`} />
-      </div>
-      <div className={styles.title}>
-        {name}
-      </div>
+      <Bounce bottom>
+        <div className={styles.profile}>
+          <img src={src} alt={`${name}`} />
+        </div>
+        <div className={styles.title}>
+          {name}
+        </div>
+      </Bounce>
     </StyledCol >
   )
 }

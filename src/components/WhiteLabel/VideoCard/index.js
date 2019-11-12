@@ -57,7 +57,10 @@ const StyledContainer = styled.div`
     position: relative;
     z-index: 2;
     color: #FFF;
-    @media screen and (min-width: 1040px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 960px) {
       display: flex;
       flex-direction: row;
       align-items: center;

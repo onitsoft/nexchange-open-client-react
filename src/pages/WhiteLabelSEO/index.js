@@ -2,6 +2,7 @@ import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
 import Marked from 'react-markdown'
+import Bounce from 'react-reveal/Bounce'
 
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
@@ -26,19 +27,21 @@ const WhiteLabelSEO = ({data, ...props}) => {
     <I18n ns="translations">
       {t => (
         <div className={ styles.whitelabel }>
-          <VideoCard />
-          <StyledContainer className='container'>
-            {/* <section className='row'><KeyFeatures features={features} /></section> */}
-            <TopicsContainer className='row'>
-              <MajorCard />
-            </TopicsContainer>
-            <section className='row'><SupportedAssets /></section>
-            <TopicsContainer className='row'>
-              <TopicsList articles={articles} />
-            </TopicsContainer>
-            <section className='row'><PriceTable plans={plans} /></section>
-            <section className='row'><FAQ items={faq} /></section>
-          </StyledContainer>
+            <VideoCard />
+            <StyledContainer className='container'>
+              <Bounce bottom cascade>
+                {/* <section className='row'><KeyFeatures features={features} /></section> */}
+                <TopicsContainer className='row'>
+                  <MajorCard />
+                </TopicsContainer>
+                <section className='row'><SupportedAssets /></section>
+                <TopicsContainer className='row'>
+                  <TopicsList articles={articles} />
+                </TopicsContainer>
+                <section className='row'><PriceTable plans={plans} /></section>
+                <section className='row'><FAQ items={faq} /></section>
+              </Bounce>
+            </StyledContainer>
         </div>
       )}
     </I18n>
@@ -57,11 +60,15 @@ const TopicCard = ({ title, content, art }) => {
   return (
     <StyledTopic>
       <div className='art'>
-        <img src={art} alt={title} />
+        <Bounce bottom>
+          <img src={art} alt={title} />
+        </Bounce>
       </div>
       <section>
-        <h3>{title}</h3>
-        <Marked source={content} />
+        <Bounce bottom>
+          <h3>{title}</h3>
+          <Marked source={content} />
+        </Bounce>
       </section>
     </StyledTopic>
   )
@@ -73,14 +80,12 @@ const StyledTopic = styled.article`
   grid-template-areas: 
     "art content";
   
-  grid-template-columns: 330px auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 
   &:nth-child(even) {
     grid-template-areas: 
       "content art";
-    
-    grid-template-columns: auto 330px;
   }
   &:not(:last-of-type) {
     margin-bottom: 12rem;
@@ -98,6 +103,16 @@ const StyledTopic = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    > h2, > h3 {
+      font-family: Clan Offc Pro Medium, sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+    }
+    > p {
+      font-family: Clan Offc Pro Book,sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
 `
 
