@@ -2,8 +2,9 @@ import React, { Fragment } from 'react'
 import { Col } from 'reactstrap'
 import { I18n } from 'react-i18next'
 
+import nlogo from '../logo.png'
 
-const imageLocation = 'http://www.placekitten.com/550/350'
+const imageLocation = nlogo
 const imageAltText = 'placekitten'
 
 export default function MajorCard() {

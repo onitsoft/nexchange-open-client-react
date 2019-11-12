@@ -22,8 +22,6 @@ const WhiteLabelSEO = ({data, ...props}) => {
   const { pages } = data
   const { articles, faq, features } = (pages && pages[0]) || {}
 
-
-  console.log('what are articles?', articles)
   return (
     <I18n ns="translations">
       {t => (
@@ -33,9 +31,9 @@ const WhiteLabelSEO = ({data, ...props}) => {
             <section className='row'><KeyFeatures features={features} /></section>
             <section className='row'><MajorCard /></section>
             <section className='row'><SupportedAssets /></section>
-            <section className='row'>
+            <TopicsContainer className='row'>
               <TopicsList articles={articles} />
-            </section>
+            </TopicsContainer>
             <section className='row'><PriceTable plans={plans} /></section>
             <section className='row'><FAQ items={faq} /></section>
           </StyledContainer>
@@ -68,7 +66,7 @@ const TopicCard = ({ title, content, art }) => {
 }
 const StyledTopic = styled.article`
   display: grid;
-  grid-column-gap: 1rem;
+  grid-column-gap: 10rem;
   grid-row-gap: 2rem;
   grid-template-areas: 
     "art content";
@@ -83,7 +81,7 @@ const StyledTopic = styled.article`
     grid-template-columns: auto 330px;
   }
   &:not(:last-of-type) {
-    margin-bottom: 4rem;
+    margin-bottom: 12rem;
   }
 
   > .art {
@@ -95,10 +93,14 @@ const StyledTopic = styled.article`
   > section {
     grid-area: content;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `
 
 const TopicsContainer = styled.section`
+  margin: 8rem 0;
 `
 
 const StyledContainer = styled.div`
@@ -146,7 +148,7 @@ const plans = [
 const faq = gql`
   query GetWhitelabel {
     pages(where: {name: "whitelabel"}) {
-      articles {
+      articles (orderBy: sort_ASC) {
         title
         content
         date
