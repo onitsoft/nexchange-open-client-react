@@ -30,10 +30,9 @@ const TagLink = styled.a`
   min-width: 96px;
   min-height: 18px;
   line-height: 18px;
-  margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 10px;
   text-align: center;
-  padding: 8px 12px;
+  padding: 0 6px;
   text-decoration: none;
   &:hover {
     color: #000;
@@ -95,6 +94,7 @@ const StyledTopic = styled.article`
       font-family: Clan Offc Pro Medium, sans-serif;
       font-weight: 300;
       font-size: 22px;
+      margin-top: 1rem;
     }
     > p {
       font-family: Clan Offc Pro Book,sans-serif;
