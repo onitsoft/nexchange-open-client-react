@@ -16,3 +16,5 @@ before_script:
   - yarn start -- --silent &
 script:
   - yarn run test -- -u
+build:
+  - yarn run build
