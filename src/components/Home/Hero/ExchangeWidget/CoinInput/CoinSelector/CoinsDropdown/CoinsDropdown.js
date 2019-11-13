@@ -4,8 +4,10 @@ import Fuse from 'fuse.js';
 import cx from 'classnames';
 import { translate } from 'react-i18next';
 import urlParams from 'Utils/urlParams';
+import { getMatchingCoins } from 'Utils/walletAddress';
 import debounce from 'Utils/debounce';
 import styles from './CoinsDropdown.scss';
+
 
 class CoinsDropdown extends Component {
   state = { value: '' };
@@ -66,6 +68,10 @@ class CoinsDropdown extends Component {
     filteredCoins = _.sortBy(filteredCoins, (coin) => {return coin.is_crypto + coin.code});
     filteredCoins = this.searchCoins(filteredCoins);
 
+    if (this.props.selectedCoin.orderByAddress && this.props.type.toUpperCase() === 'RECEIVE') {
+      const matchingCoins  = getMatchingCoins(this.props.wallet.address);
+      filteredCoins = _.sortBy(filteredCoins, (coin) => {return matchingCoins.indexOf(coin.code) === -1});
+    }
 
     if(_.isEmpty(filteredCoins)){
       /* eslint max-len: ["error", { "code": 200 }] */

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setUserEmail } from 'Actions';
 import OrderNotifications from './OrderNotifications/OrderNotifications';
 import OrderReferrals from './OrderReferrals/OrderReferrals';
+import PnlTracking from '../OrderMain/PnlTracking/PnlTracking';
 import config from 'Config';
 import { I18n } from 'react-i18next';
 
@@ -67,6 +68,7 @@ class OrderCta extends Component {
     <I18n ns="translations">
     {(t) => (        
       <div>
+        <PnlTracking {...this.props}/>
         {!this.props.email.value &&
           this.state.show && (
             <OrderNotifications
