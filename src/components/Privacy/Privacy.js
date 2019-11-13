@@ -103,7 +103,7 @@ const Privacy = props => {
                   collect information about you when you interact with the “YOA LTD.” Services, including information about your browsing
                   behaviour on our “YOA LTD.” Services. Cookies are small data files sent from our web servers to your computer or mobile
                   device that enable us to, for example, capture how you arrived at the “YOA LTD.” Services, when you return, which pages on
-                  the “YOA LTD.” Services you visit, and to recognise that you are already logged on when we receive a page request from
+                  the “YOA LTD.” Services you visit, and to recognize that you are already logged on when we receive a page request from
                   your browser.
                 </p>
               </Trans>

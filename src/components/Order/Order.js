@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { fetchOrder, fetchPrice, setOrder } from 'Actions';
+import { fetchOrder, fetchPrice, setOrder, fetchCoinDetails } from 'Actions';
 
 import isFiatOrder from 'Utils/isFiatOrder';
 import config from 'Config';
@@ -30,6 +30,7 @@ class Order extends Component {
 
   componentDidMount() {
     this.props.fetchOrder(this.props.match.params.orderRef);
+    this.props.fetchCoinDetails();
   }
 
   componentDidUpdate(prevProps) {
@@ -90,9 +91,9 @@ class Order extends Component {
 }
 
 const mapStateToProps = ({ order, price }) => ({ order, price });
-const mapDistachToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder, fetchCoinDetails }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDistachToProps
+  mapDispatchToProps
 )(Order);

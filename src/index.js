@@ -19,6 +19,8 @@ import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
 import SignIn from 'Components/Accounts/SignIn/SignIn';
 import SignUp from 'Components/Accounts/SignUp/SignUp';
+import ForgotPassword from 'Components/Accounts/ForgotPassword/ForgotPassword';
+
 import WhiteLabelSEO from 'Pages/WhiteLabelSEO';
 
 import setAuthToken from 'Utils/setAuthToken';
@@ -64,6 +66,9 @@ ReactDOM.render((
             />
             <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
             <Route exact path="/faqs/:id?" component={FAQ} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} /> 
+            <Route exact path="/forgot-password" component={ForgotPassword} /> 
             <Route exact path="/convert/:quote-to-:base"
               render={props =>  <Pair {...props} store={store} />} />
             <Route exact path="/not-found" component={NotFound} />

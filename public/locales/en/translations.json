@@ -71,8 +71,6 @@
     "facebook": "Like us on Facebook",
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
-    "signin": "Sign In",
-    "signup": "Sign Up",
     "en": "English",
     "de": "German",
     "ru": "Russian",
@@ -124,9 +122,24 @@
     "nomyorders": "No order history...",
     "viewallmyorders": "View all my orders"
   },
-  "integrations": {
-    "error": {
-      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked"
+  "accounts": {
+    "signup": "Sign Up",
+    "signupheader": "White-labelling and B2B solutions",
+    "signin": "Sign In",
+    "signinheader": "Your trustful partner for crypto exchange",
+    "signinwithfacebook": "Sign In With Facebook",
+    "signupwithfacebook": "Sign Up With Facebook",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "repeatpassword": "Repeat Password",
+    "forgotpassword1": "Forgot your password?",
+    "forgotpassword2": "If you want to reset your password, please enter your email address",
+    "resetpassword": "Reset Password"
+  },
+ "integrations": {
+    "error" : {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
     }
   },
   "recentorders": {
@@ -465,6 +478,10 @@
   },
   "viewmore": "view more",
   "to": "to",
+  "pnl": {
+    "profit": "Profit",
+    "loss": "Loss"
+  },
   "whitelabel": {
     "plans": {
       "community": "Community",

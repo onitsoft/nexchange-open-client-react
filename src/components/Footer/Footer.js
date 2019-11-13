@@ -7,7 +7,8 @@ class Footer extends Component {
   hideFooter = () => {
     if (window.location.pathname === '/signin' 
     || window.location.pathname === '/signup'
-    || window.location.pathname === '/not-found') {
+    || window.location.pathname === '/not-found'
+    || window.location.pathname === '/forgot-password') {
       return true;
     }
     return false;

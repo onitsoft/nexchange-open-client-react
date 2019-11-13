@@ -245,6 +245,15 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
         });
       };
 
+      const pickMostTraded = () => { 
+        return new Promise((resolve, reject) => {
+          axios
+            .get(`${config.API_BASE_URL}/pair/most_traded/`)
+            .then(res => resolve(res.data))
+            .catch((err) => resolve(null));
+        });
+      };
+
       const pickRandomPair = async () => {
         const pair = pairs[Math.floor(Math.random() * pairs.length)];
         depositCoin = pair.quote;
@@ -278,7 +287,13 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
             console.log('Error:', err);
           }
         } else {
-          pickRandomPair();
+          const pair = await pickMostTraded();
+          if(pair){
+            depositCoin = pair.quote;
+            receiveCoin = pair.base;
+          } else {
+            pickRandomPair();
+          }
         }
       };
       await pickCoins();
