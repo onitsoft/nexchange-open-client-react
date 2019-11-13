@@ -2,8 +2,10 @@ import React, { useMemo } from 'react'
 import moment from 'moment'
 
 import Marked from 'react-markdown'
-import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
+
+import UpdatedTime from 'Components/updated-time'
+import GET_ARTILCES_QUERY from './get-articles.query'
 
 
 export const Articles = ({data, ...props}) => {
@@ -27,28 +29,17 @@ export const Articles = ({data, ...props}) => {
   )
 };
 
-const Article = ({title, content, date, createdAt}) => {
+const Article = ({title, content, date, createdAt, updatedAt}) => {
   const timeof = useMemo(() => moment(date || createdAt).format('ddd MMM dd YYYY'), [date, createdAt])
   return (
     <article>
       <h2>{title}</h2>
-      <aside><small>on <date datetime={date || createdAt}>{timeof}</date></small></aside>
+      <UpdatedTime created={createdAt} updated={updatedAt} />
+      {/* <aside><small>on <date datetime={date || createdAt}>{timeof}</date></small></aside> */}
       <Marked source={content} />
     </article>
   )
 }
 
-export const GET_ARTILCES_QUERY = gql`
-  query GetArticles ($pagename: String) {
-    pages (where: {name: $pagename}) {
-      articles {
-        title
-        content
-        date
-        createdAt
-      }
-    }
-  }
-`
-
+export { GET_ARTILCES_QUERY }
 export default graphql(GET_ARTILCES_QUERY)(Articles)
