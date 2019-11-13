@@ -1,0 +1,51 @@
+.container {
+    .separator-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .separator {
+            flex: 1;
+            height: 1px;
+            background-color: lighten($gray, 10);
+        }
+        span {
+            margin: 0 20px;
+            color: lighten($gray, 10);
+        }
+    }
+    
+    .integrations {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lighten($gray, 10);;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    //No text selection
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+    img {
+        height: 30px;
+        margin-right: 10px;
+        -webkit-filter: grayscale(1); /* Webkit */
+        filter: gray; /* IE6-9 */
+        filter: grayscale(1); /* W3C */
+    }
+}

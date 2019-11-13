@@ -5,6 +5,10 @@
     "email": "Email (required to notify you about your order)",
     "address": "address",
     "youraddress": "Enter your {{selectedCoin}} wallet address",
+    "usepreviousaddress": "Use previous address",
+    "destinationtag": "Destination tag",
+    "paymentid": "Payment id",
+    "memo": "Memo",
     "search": "Search",
     "submit": "Submit"
   },
@@ -19,13 +23,29 @@
     "facebook": "Like us on Facebook",
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
+    "signin": "Sign In",
+    "signup": "Sign Up",
     "en": "English",
     "de": "German",
-    "ru": "Russian"
+    "ru": "Russian",
+    "resources": "Resources",
+    "whitelabel": "White Label",
+    "apidocumentation": "API Documentation",
+    "terms-and-conditions": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy"
+  },
+  "account": {
+    "account": "Account",
+    "signin": "Sign In",
+    "signup": "Sign Up"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
     "2": "<0>Simple. <1>Secure</1>. Transparent.</0>"
+  },
+  "ordermodeswitch": {
+    "simple": "Simple",
+    "advanced": "Advanced"
   },
   "exchangewidget": {
     "1": "GET STARTED",
@@ -34,12 +54,39 @@
     "min": "Min amount",
     "max": "Max amount"
   },
+  "orderbookwidget": {
+    "disabledmessage1": "n.exchange will soon feature the first multi-chain non custodial order book!",
+    "disabledmessage2": "This unique technology will allow you to leverage limit orders and other advanced trading instruments while keeping the safety and simplicity you are familiar with.",
+    "disabledmessage3": "- Stay tuned",
+    "buy": "Buy",
+    "sell": "Sell",
+    "side": "Side",
+    "size": "Size ({{coin}})",
+    "price": "Price ({{coin}})",
+    "quantity": "Quantity",
+    "quantitycoin": "Quantity ({{coin}})",
+    "limitprice": "Limit Price",
+    "limitpricecoin": "Limit Price ({{coin}})",
+    "with": "with",
+    "for": "for",
+    "orderbook": "Order Book",
+    "nosellorders": "Currently there are no sell orders for this market...",
+    "nobuyorders": "Currently there are no buy orders for this market...",
+    "myorders": "My Orders",
+    "nomyorders": "No order history...",
+    "viewallmyorders": "View all my orders"
+  },
+  "integrations": {
+    "error" : {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+    }
+  },
   "recentorders": {
     "1": "Recent Orders",
     "2": "Click to view on API",
     "3": "View on API"
   },
-  "testimonials": {
+  "testimonialsx": {
     "1": "Testimonials",
     "cryptotalk": "Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.",
     "john":
@@ -74,7 +121,7 @@
     "paulina":
       "Product management magician. Loves to build and improve product usability. Blockchain novice. Women in tech supporter and recreational weight lifter.",
     "cyrus":
-      "Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralised and distributed systems.",
+      "Cornell University MEng, Computer Science. Learn how to teach, teach how to learn. Passionate about programming, astronomy and recently decentralized and distributed systems.",
     "justasv":
       "User experience specialist with 7 years of experience. Worked with plenty of successful projects in the blockchain, crypto, startup, e-commerce industries.",
     "alejandro":
@@ -122,7 +169,11 @@
     "presale": "Pre-sale starts in"
   },
   "faq": {
-    "inputplaceholder": "Search by keyword",
+    "heading1": "Frequently Asked Questions",
+    "heading2": "Do you have something in mind?",
+    "inputplaceholder": "What are you looking for?",
+    "notfound": "We did not find what you were looking for",
+    "openticket": "Open support ticket",
     "ques1": "Who are you?",
     "ques2": "What do you do?",
     "ques3": "What is your fee?",
@@ -149,13 +200,13 @@
       "<0>Here is how you use the exchange:</0><1><0><0>Enter</0> your desired <2>amount, choose</2> the currency type you <4>want to spend</4>, and the currency type you <6>want to buy</6> (e.g. if you want to spend 1 BTC to buy ETH at the exchange rate shown, you enter “1” and click on “GET STARTED”)<8></8></0><1><0>Enter your destination address</0> (e.g. if you are buying ETH, you enter your ETH wallet address)<2></2></1><2>You will be prompted to <1>send</1> your coins to a <3>specified address</3>.<5></5></2><3>Once we receive your coins, the processing of your order will start immediately.</3><4>Once everything is done, you will receive your ETH. Hurray! You just successfully exchanged your cryptocurrency.</4></1><2>Once you have paid for your order, it cannot be reversed. Please ensure that you have put in the right address.</2>",
     "ans6":
       "<0>For cryptocurrency only exchange orders , We do not collect or store any private information about you. The process is completely anonymous. For FIAT (USD,GBP,EUR etc) orders we do a strict compliance according to best KYC/AML standards out there.</0>",
-    "ans8": "<0>No, our solution is completely independant. We use our internal coin reserves to provide liquidity.</0>",
+    "ans8": "<0>No, our solution is completely independent. We use our internal coin reserves to provide liquidity.</0>",
     "ans9":
       "<0>We do not provide wallet hosting service at the moment. The exchange happens between two of your wallets:</0><1><0>The wallet you send the funds from (<1>spending</1> wallet)</0><1>The wallet you receive funds to (<1>receiving</1> wallet)</1></1><2>Once the transaction has been processed, you are in charge of your wallet balance security.</2>",
     "ans10":
       "<0>Every order has a unique id like this:</0><1></1><2>Make sure you record your order id. We recommend bookmarking the page, you can always navigate to it later.</2><3>Once you have sent the cryptocurrency, losing connection, closing the tab or navigating elsewhere will not impact the transaction.</3><4>If you need help, feel free to contact us.</4>",
     "ans11":
-      "<0>Whenever you create an order, a referral code is automatically generated for you.</0><1>Current referral conditions are as follows:</1><2><0>We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.</0><1>We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.</1><2>You will be receiving your funds to the withdraw address specified on this order.</2><3>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</3></2><3>These are subject to change at any time.</3>",
+      "<0>Whenever you create an order, a referral code is automatically generated for you.</0><1>Current referral conditions are as follows:</1><2><0>We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.</0><1>We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.</1><2>You will be receiving your funds to the withdraw address specified on this order.</2><3>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</3></2><3>These are subject to change at any time.</3>",
     "ans12":
       "<0>There's a 15-minute window between the moment you open the order and the moment we detect the coins that you sent on the blockchain. During this time interval, we effectively freeze the price for your order.</0><1>If the 15 minute time window closes, the order is canceled because the price will have expired and will need to be recalculated.</1><2>If you did not send your funds in time, simply initiate a new order.</2><3>If you did send your funds, but for some reason they were not detected, contact us through the support chat and we will help you out.</3>",
     "ans13":
@@ -207,7 +258,9 @@
   },
   "order": {
     "enteraddress": "Enter your wallet address",
-    "copy": "Wallet adress copied!",
+    "copy": "Wallet address copied!",
+    "copyaddress": "Wallet address copied!",
+    "copyaddressid": "{{addressIdType}} copied!",
     "reference": "Order Reference",
     "api": "See your order details on our API",
     "repeat": "Repeat order",
@@ -240,6 +293,12 @@
       "Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.",
     "status3": "3. All done",
     "status31": "We got the funds and now have transferred our funds to you.",
+    "bookstatus1": "1. Awaiting deposit",
+    "bookstatus11": "In this step we are waiting for your deposit.",
+    "bookstatus2": "2. Awaiting to be filled",
+    "bookstatus21": "We received your funds and your order is on open and waiting to be filled",
+    "bookstatus3": "3. Order filled",
+    "bookstatus31": "Your order was filled and the funds have been transferred to you",
     "success1": "Order success",
     "success2": "Order again!",
     "pay": "Pay",
@@ -359,8 +418,7 @@
     "title": "Refund Policy",
     "1": "We will refund the value of the purchased currency by the rate quoted by our API at the time the currency reaches our account.",
     "2": "Otherwise, no refunds are possible",
-    "3":
-      "and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+    "3": "and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
     "4": "Get in touch with us by chatting us or writing us an email at ",
     "5": "Success, you set a refund address.",
     "6": "Set refund address",
@@ -368,10 +426,9 @@
     "8": "Enter your refund address",
     "9": "Order Refunded",
     "10": "<0>Your order has been refunded. Please contact support at <1>support@n.exchange</1></0>",
-    "11":
-      "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
-    "12":
-      "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE."
+    "11": "We will revert any trade by the request of the customer according to the current market rate, provided the opposite trade direction is supported at the time the refund is requested.",
+    "12": "Otherwise, no refunds are possible and it is the sole responsibility of the user to make sure that he controls the wallet the address of which he uses to receive funds from N.EXCHANGE.",
+    "13": "On any case of a refund after more than a day after the purchase had been made, an administrative fee of 5% will be retained by n.exchange."
   },
   "loading": "Loading",
   "privacy": {
@@ -387,7 +444,7 @@
     "infosources":
       "<0>Information We Collect From Other Sources</0><1>We may also obtain information from other sources and combine that with information we collect through the “YOA LTD.” Services. For example, we may collect nonpublic personal information about you from third parties, including identity verification services.</1>",
     "infoauto":
-      "<0>Information We Collect Automatically</0><1>When you access or use the “YOA LTD.” Services, we automatically collect information as follows:</1><2>Transaction information: we collect information about the transaction you complete via the “YOA LTD.” Services, including the amount of funds associated with a trade, the types of trades executed and other transaction information.</2><3>Location information: with your prior consent, we may collect precise geolocation information from your mobile device when you access or use our mobile applications. For more details, please see Your Choices below.</3><4>Device and Log information: we collect information about the computer or mobile device you use to access the “YOA LTD.” Services, including device identifiers, mobile network information, type of operating system, and the type of browser used. We also log information about your use of the “YOA LTD.” Services, including access times, pages viewed, IP address, other standard web log data, and the page visited before and after navigating to our websites.</4><5>Cookies and similar tracking technologies: we may use cookies, pixel tags, web beacons, and other tracking technologies to collect information about you when you interact with the “YOA LTD.” Services, including information about your browsing behaviour on our “YOA LTD.” Services. Cookies are small data files sent from our web servers to your computer or mobile device that enable us to, for example, capture how you arrived at the “YOA LTD.” Services, when you return, which pages on the “YOA LTD.” Services you visit, and to recognise that you are already logged on when we receive a page request from your browser.</5>",
+      "<0>Information We Collect Automatically</0><1>When you access or use the “YOA LTD.” Services, we automatically collect information as follows:</1><2>Transaction information: we collect information about the transaction you complete via the “YOA LTD.” Services, including the amount of funds associated with a trade, the types of trades executed and other transaction information.</2><3>Location information: with your prior consent, we may collect precise geolocation information from your mobile device when you access or use our mobile applications. For more details, please see Your Choices below.</3><4>Device and Log information: we collect information about the computer or mobile device you use to access the “YOA LTD.” Services, including device identifiers, mobile network information, type of operating system, and the type of browser used. We also log information about your use of the “YOA LTD.” Services, including access times, pages viewed, IP address, other standard web log data, and the page visited before and after navigating to our websites.</4><5>Cookies and similar tracking technologies: we may use cookies, pixel tags, web beacons, and other tracking technologies to collect information about you when you interact with the “YOA LTD.” Services, including information about your browsing behaviour on our “YOA LTD.” Services. Cookies are small data files sent from our web servers to your computer or mobile device that enable us to, for example, capture how you arrived at the “YOA LTD.” Services, when you return, which pages on the “YOA LTD.” Services you visit, and to recognize that you are already logged on when we receive a page request from your browser.</5>",
     "useinfo":
       "<0>Use of information</0><1>We may use your information as follows: </1><2><0>Provide the “YOA LTD.” services and customer support;</0><1>Process transactions and send notices about your transactions;</1><2>Manage your account(s) and send technical notices, updates, security alerts and support and administrative messages;</2><3>Resolve disputes, collect fees, and troubleshoot problems;</3><4>Prevent potentially prohibited or illegal activities and enforce our user agreements;</4><5>Personalize, measure and improve the “YOA LTD.” Services;</5><6>Deliver marketing and promotional offers on behalf of “YOA LTD.” and others, including via SMS, voice calls or email;</6><7>Link or combine your personal information with information we obtain from others to help understand your needs and provide you with better service;</7><8>Carry out any other purpose for which the information was collected, to the extent such purpose is necessarily contemplated by the collection of such information or as otherwise notified in the “YOA LTD.” Services at the time of collection.</8></2>",
     "processinfo":
@@ -411,7 +468,10 @@
   "error": {
     "warning": "Warning",
     "loading": "Sorry, there was a problem loading the page :(",
-    "notfound": "Page not found :(",
+    "notfound1": "Oops! Something went wrong...",
+    "notfound21": "The page you are looking for isn't available. Try to search again, or use the",
+    "notfound22": "Go Back",
+    "notfound23": "button bellow.",
     "invalidpair": "You cannot buy",
     "nousedeposit": "You cannot use",
     "nousedeposit2": "as deposit coin. Please try another one.",

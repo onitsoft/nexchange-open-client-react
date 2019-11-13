@@ -91,9 +91,9 @@ class Order extends Component {
 }
 
 const mapStateToProps = ({ order, price }) => ({ order, price });
-const mapDistachToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder, fetchCoinDetails }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder, fetchCoinDetails }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDistachToProps
+  mapDispatchToProps
 )(Order);

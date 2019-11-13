@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.968 18.785">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.7;
+      }
+
+      .cls-2 {
+        fill: #ced6dd;
+      }
+    </style>
+  </defs>
+  <g id="Group_36" data-name="Group 36" transform="translate(-34.631 -32.265)">
+    <g id="Group_30" data-name="Group 30" class="cls-1" transform="translate(28.631 35.265)">
+      <g id="Symbol_1_1" data-name="Symbol 1 – 1">
+        <path id="_-_1_" class="cls-2" d="M54.128,60.8H42.536L41,65.13H52.662Z" transform="translate(-35 -56.607)"/>
+        <path id="D_1_" class="cls-2" d="M73.215,53.433a3.069,3.069,0,0,0-.489-1.536,2.193,2.193,0,0,0-1.187-1.047,3.45,3.45,0,0,0-1.676-.349H48.215l-1.536,4.679H66.3l-3.073,9.5H43.606L42,69.285H63.788a5.987,5.987,0,0,0,1.885-.349,10.678,10.678,0,0,0,1.885-1.187,8,8,0,0,0,1.536-1.536,15,15,0,0,0,.978-1.816l2.863-9.008a3.211,3.211,0,0,0,.279-1.955Z" transform="translate(-35.302 -53.5)"/>
+      </g>
+    </g>
+  </g>
+</svg>

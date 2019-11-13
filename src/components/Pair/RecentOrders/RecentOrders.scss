@@ -1,0 +1,126 @@
+.container {
+  padding-bottom: 70px;
+}
+
+.row {
+  height: 72px;
+  background: #fff;
+  margin: 6px 0;
+  padding: 0;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+  box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+
+  @media (min-width: $screen-sm-min) {
+    padding: 0 15px;
+  }
+
+  :global .col {
+    padding: 0 5px;
+
+    @media (min-width: $screen-sm-min) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.col {
+  height: 72px;
+
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 100%;
+    transform: translateY(-50%);
+    overflow: hidden;
+  }
+}
+
+.ago {
+  font-size: 12px;
+  color: $gray;
+  margin: 0;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 14px;
+  }
+}
+
+.coin {
+  float: left;
+  font-size: 12px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 16px;
+  }
+}
+
+.icon {
+  margin-right: 5px;
+
+  @media (min-width: $screen-ms-min) {
+    font-size: 25px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 36px;
+    margin-right: 12px;
+  }
+}
+
+.arrow {
+  width: 12px;
+
+  @media (min-width: $screen-ms-min) {
+    width: 20px;
+  }
+}
+
+.code {
+  margin-right: 5px;
+
+  @media (min-width: $screen-ms-min) {
+    position: relative;
+    top: -6px;
+    margin-right: 10px;
+  }
+}
+
+.amount {
+  @media (min-width: $screen-ms-min) {
+    position: relative;
+    top: -4px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    top: -6px;
+  }
+}
+
+.btn {
+  color: $gray;
+  border: 1px solid #efefef;
+  font-size: 10px;
+  border-radius: 6px;
+  padding: 5px;
+  float: right;
+  margin-right: 20px;
+  text-align: center;
+
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: 160px;
+    height: 42px;
+  }
+}

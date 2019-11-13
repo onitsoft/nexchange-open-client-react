@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    margin: 3px 0px;
+    height: 25px;
+    align-items: center;
+    padding-left: 10px;
+    a {
+       flex: 1; 
+    }
+}
+
+.SELL {
+    a {
+        color: darken( $red, 20% );
+        &:hover {
+            color: darken( $red, 20% );
+        }
+    }
+}
+
+.BUY {
+    a {
+        color: darken( $green, 20% );
+        &:hover {
+            color: darken( $green, 20% );
+        }
+    }
+}

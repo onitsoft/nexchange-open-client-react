@@ -5,6 +5,7 @@ describe('selected coin reducer', () => {
   const initialState = {
     deposit: null,
     receive: null,
+    orderByAddress: false,
     prev: {
       deposit: null,
       receive: null,

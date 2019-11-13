@@ -264,7 +264,7 @@ class FAQ extends Component {
                   openSupportModal={this.openSupportModal}
                   answer={
                     <Trans i18nKey="faq.ans8">
-                      <p>No, our solution is completely independant. We use our internal coin reserves to provide liquidity.</p>
+                      <p>No, our solution is completely independent. We use our internal coin reserves to provide liquidity.</p>
                     </Trans>
                   }
                 /> : null}
@@ -326,7 +326,7 @@ class FAQ extends Component {
                             of revenues for 3rd degree affiliates.
                           </li>
                           <li>
-                            We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is
+                            We send referral payouts once the funds accumulated on your account reach the threshold. The threshold amount is
                             typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you
                             would need to cover the tx fee yourself.
                           </li>
