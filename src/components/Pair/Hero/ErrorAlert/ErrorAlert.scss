@@ -1,0 +1,14 @@
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  text-align: left;
+
+  @media (min-width: $screen-sm-min) {
+    .alert {
+      position: absolute;
+    }
+  }
+}

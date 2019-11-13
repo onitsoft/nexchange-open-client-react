@@ -3,12 +3,30 @@ import { shallow } from 'enzyme';
 import CoinsDropdown from './CoinsDropdown.js';
 import coinsInfo from 'Mocks/currency.js';
 
+const setup = ({
+  selectedCoin = {
+    deposit: null,
+    receive: null,
+    orderByAddress: false,
+    prev: {
+      deposit: null,
+      receive: null,
+    },
+    lastSelected: 'deposit',
+    selectedByUser: {
+      deposit: false,
+      receive: false,
+    },
+  }
+}) => ({selectedCoin})
+
 describe('CoinsDropdown', () => {
   let wrapShallowDeposit, wrapShallowReceive;
 
   beforeEach(() => {
-    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
-    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} />).dive();
+    const props = setup({})
+    wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} {...props} />).dive();
+    wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} {...props} />).dive();
   });
 
   it('renders correctly', () => {

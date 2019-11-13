@@ -49,8 +49,7 @@ ShallowWrapper {
               className="icon-bar"
             />
           </button>
-          <Link
-            replace={false}
+          <ForwardRef
             to="/"
           >
             <div
@@ -62,7 +61,7 @@ ShallowWrapper {
                 src="/img/logo-white.svg"
               />
             </div>
-          </Link>
+          </ForwardRef>
         </div>
         <div
           className="collapse navbar-collapse"
@@ -72,29 +71,27 @@ ShallowWrapper {
             className="nav navbar-nav navbar-right"
           >
             <li>
-              <Link
+              <ForwardRef
                 className="link"
                 onClick={[Function]}
-                replace={false}
                 to="/#about"
               >
                 header.about
-              </Link>
+              </ForwardRef>
             </li>
             <li>
-              <Link
+              <ForwardRef
                 className="link"
                 data-test="faq-btn"
                 onClick={[Function]}
-                replace={false}
                 to="/faqs"
               >
                 header.faq
-              </Link>
+              </ForwardRef>
             </li>
             <li>
               <a
-                className="link hidden-sm"
+                className="link hidden-sm hidden-md"
                 data-test="api-link"
                 href="http://docs.nexchange2.apiary.io/"
                 onClick={[Function]}
@@ -105,26 +102,32 @@ ShallowWrapper {
               </a>
             </li>
             <li>
-              <Link
-                className="link"
-                data-test="compare-link"
-                onClick={[Function]}
-                replace={false}
-                to="/#compare"
-              >
-                header.compare
-              </Link>
-            </li>
-            <li>
-              <Link
+              <ForwardRef
                 className="link"
                 data-test="support-btn"
                 onClick={[Function]}
-                replace={false}
                 to="#"
               >
                 header.support
-              </Link>
+              </ForwardRef>
+            </li>
+            <li>
+              <ForwardRef
+                className="link"
+                onClick={[Function]}
+                to="/signin"
+              >
+                accounts.signin
+              </ForwardRef>
+            </li>
+            <li>
+              <ForwardRef
+                className="link main"
+                onClick={[Function]}
+                to="/signup"
+              >
+                accounts.signup
+              </ForwardRef>
             </li>
             <li
               className="ico-link"
@@ -194,12 +197,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.twitter"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/twitter"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.twitter"
               >
                 <i
                   aria-hidden="true"
@@ -212,12 +215,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.facebook"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/fb"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.facebook"
               >
                 <i
                   aria-hidden="true"
@@ -230,12 +233,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.slack"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/slack"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.slack"
               >
                 <i
                   aria-hidden="true"
@@ -248,12 +251,12 @@ ShallowWrapper {
             >
               <a
                 className="social btn btn-simple btn-just-icon"
-                data-original-title="header.telegram"
                 data-placement="bottom"
+                data-toggle="tooltip"
                 href="/telegram"
-                rel="tooltip"
+                rel="noopener noreferrer"
                 target="_blank"
-                title=""
+                title="header.telegram"
               >
                 <i
                   aria-hidden="true"
@@ -302,8 +305,7 @@ ShallowWrapper {
                 className="icon-bar"
               />
             </button>
-            <Link
-              replace={false}
+            <ForwardRef
               to="/"
             >
               <div
@@ -315,7 +317,7 @@ ShallowWrapper {
                   src="/img/logo-white.svg"
                 />
               </div>
-            </Link>
+            </ForwardRef>
           </div>,
           <div
             className="collapse navbar-collapse"
@@ -325,29 +327,27 @@ ShallowWrapper {
               className="nav navbar-nav navbar-right"
             >
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  replace={false}
                   to="/#about"
                 >
                   header.about
-                </Link>
+                </ForwardRef>
               </li>
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="/faqs"
                 >
                   header.faq
-                </Link>
+                </ForwardRef>
               </li>
               <li>
                 <a
-                  className="link hidden-sm"
+                  className="link hidden-sm hidden-md"
                   data-test="api-link"
                   href="http://docs.nexchange2.apiary.io/"
                   onClick={[Function]}
@@ -358,26 +358,32 @@ ShallowWrapper {
                 </a>
               </li>
               <li>
-                <Link
-                  className="link"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  replace={false}
-                  to="/#compare"
-                >
-                  header.compare
-                </Link>
-              </li>
-              <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="#"
                 >
                   header.support
-                </Link>
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link"
+                  onClick={[Function]}
+                  to="/signin"
+                >
+                  accounts.signin
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link main"
+                  onClick={[Function]}
+                  to="/signup"
+                >
+                  accounts.signup
+                </ForwardRef>
               </li>
               <li
                 className="ico-link"
@@ -447,12 +453,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -465,12 +471,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -483,12 +489,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -501,12 +507,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -552,8 +558,7 @@ ShallowWrapper {
                   className="icon-bar"
                 />
               </button>,
-              <Link
-                replace={false}
+              <ForwardRef
                 to="/"
               >
                 <div
@@ -565,7 +570,7 @@ ShallowWrapper {
                     src="/img/logo-white.svg"
                   />
                 </div>
-              </Link>,
+              </ForwardRef>,
             ],
             "className": "navbar-header",
           },
@@ -650,7 +655,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": <div
                   className="logo-container"
@@ -661,7 +666,6 @@ ShallowWrapper {
                     src="/img/logo-white.svg"
                   />
                 </div>,
-                "replace": false,
                 "to": "/",
               },
               "ref": null,
@@ -693,7 +697,18 @@ ShallowWrapper {
                 },
                 "type": "div",
               },
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "Link",
+                "propTypes": Object {
+                  "innerRef": [Function],
+                  "onClick": [Function],
+                  "replace": [Function],
+                  "target": [Function],
+                  "to": [Function],
+                },
+                "render": [Function],
+              },
             },
           ],
           "type": "div",
@@ -707,29 +722,27 @@ ShallowWrapper {
               className="nav navbar-nav navbar-right"
             >
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  replace={false}
                   to="/#about"
                 >
                   header.about
-                </Link>
+                </ForwardRef>
               </li>
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="/faqs"
                 >
                   header.faq
-                </Link>
+                </ForwardRef>
               </li>
               <li>
                 <a
-                  className="link hidden-sm"
+                  className="link hidden-sm hidden-md"
                   data-test="api-link"
                   href="http://docs.nexchange2.apiary.io/"
                   onClick={[Function]}
@@ -740,26 +753,32 @@ ShallowWrapper {
                 </a>
               </li>
               <li>
-                <Link
-                  className="link"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  replace={false}
-                  to="/#compare"
-                >
-                  header.compare
-                </Link>
-              </li>
-              <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="#"
                 >
                   header.support
-                </Link>
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link"
+                  onClick={[Function]}
+                  to="/signin"
+                >
+                  accounts.signin
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link main"
+                  onClick={[Function]}
+                  to="/signup"
+                >
+                  accounts.signup
+                </ForwardRef>
               </li>
               <li
                 className="ico-link"
@@ -829,12 +848,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -847,12 +866,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -865,12 +884,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -883,12 +902,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -908,29 +927,27 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    replace={false}
                     to="/#about"
                   >
                     header.about
-                  </Link>
+                  </ForwardRef>
                 </li>,
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="/faqs"
                   >
                     header.faq
-                  </Link>
+                  </ForwardRef>
                 </li>,
                 <li>
                   <a
-                    className="link hidden-sm"
+                    className="link hidden-sm hidden-md"
                     data-test="api-link"
                     href="http://docs.nexchange2.apiary.io/"
                     onClick={[Function]}
@@ -941,26 +958,32 @@ ShallowWrapper {
                   </a>
                 </li>,
                 <li>
-                  <Link
-                    className="link"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    replace={false}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </Link>
-                </li>,
-                <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="#"
                   >
                     header.support
-                  </Link>
+                  </ForwardRef>
+                </li>,
+                <li>
+                  <ForwardRef
+                    className="link"
+                    onClick={[Function]}
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>,
+                <li>
+                  <ForwardRef
+                    className="link main"
+                    onClick={[Function]}
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
                 </li>,
                 <li
                   className="ico-link"
@@ -1030,12 +1053,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -1048,12 +1071,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -1066,12 +1089,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -1084,12 +1107,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -1107,30 +1130,39 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <Link
+                  "children": <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    replace={false}
                     to="/#about"
                   >
                     header.about
-                  </Link>,
+                  </ForwardRef>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": "header.about",
                     "className": "link",
                     "onClick": [Function],
-                    "replace": false,
                     "to": "/#about",
                   },
                   "ref": null,
                   "rendered": "header.about",
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "Link",
+                    "propTypes": Object {
+                      "innerRef": [Function],
+                      "onClick": [Function],
+                      "replace": [Function],
+                      "target": [Function],
+                      "to": [Function],
+                    },
+                    "render": [Function],
+                  },
                 },
                 "type": "li",
               },
@@ -1139,32 +1171,41 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <Link
+                  "children": <ForwardRef
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="/faqs"
                   >
                     header.faq
-                  </Link>,
+                  </ForwardRef>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": "header.faq",
                     "className": "link",
                     "data-test": "faq-btn",
                     "onClick": [Function],
-                    "replace": false,
                     "to": "/faqs",
                   },
                   "ref": null,
                   "rendered": "header.faq",
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "Link",
+                    "propTypes": Object {
+                      "innerRef": [Function],
+                      "onClick": [Function],
+                      "replace": [Function],
+                      "target": [Function],
+                      "to": [Function],
+                    },
+                    "render": [Function],
+                  },
                 },
                 "type": "li",
               },
@@ -1174,7 +1215,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <a
-                    className="link hidden-sm"
+                    className="link hidden-sm hidden-md"
                     data-test="api-link"
                     href="http://docs.nexchange2.apiary.io/"
                     onClick={[Function]}
@@ -1191,7 +1232,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "header.apidocs",
-                    "className": "link hidden-sm",
+                    "className": "link hidden-sm hidden-md",
                     "data-test": "api-link",
                     "href": "http://docs.nexchange2.apiary.io/",
                     "onClick": [Function],
@@ -1209,32 +1250,41 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <Link
+                  "children": <ForwardRef
                     className="link"
-                    data-test="compare-link"
+                    data-test="support-btn"
                     onClick={[Function]}
-                    replace={false}
-                    to="/#compare"
+                    to="#"
                   >
-                    header.compare
-                  </Link>,
+                    header.support
+                  </ForwardRef>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "children": "header.compare",
+                    "children": "header.support",
                     "className": "link",
-                    "data-test": "compare-link",
+                    "data-test": "support-btn",
                     "onClick": [Function],
-                    "replace": false,
-                    "to": "/#compare",
+                    "to": "#",
                   },
                   "ref": null,
-                  "rendered": "header.compare",
-                  "type": [Function],
+                  "rendered": "header.support",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "Link",
+                    "propTypes": Object {
+                      "innerRef": [Function],
+                      "onClick": [Function],
+                      "replace": [Function],
+                      "target": [Function],
+                      "to": [Function],
+                    },
+                    "render": [Function],
+                  },
                 },
                 "type": "li",
               },
@@ -1243,32 +1293,80 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <Link
+                  "children": <ForwardRef
                     className="link"
-                    data-test="support-btn"
                     onClick={[Function]}
-                    replace={false}
-                    to="#"
+                    to="/signin"
                   >
-                    header.support
-                  </Link>,
+                    accounts.signin
+                  </ForwardRef>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "children": "header.support",
+                    "children": "accounts.signin",
                     "className": "link",
-                    "data-test": "support-btn",
                     "onClick": [Function],
-                    "replace": false,
-                    "to": "#",
+                    "to": "/signin",
                   },
                   "ref": null,
-                  "rendered": "header.support",
-                  "type": [Function],
+                  "rendered": "accounts.signin",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "Link",
+                    "propTypes": Object {
+                      "innerRef": [Function],
+                      "onClick": [Function],
+                      "replace": [Function],
+                      "target": [Function],
+                      "to": [Function],
+                    },
+                    "render": [Function],
+                  },
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <ForwardRef
+                    className="link main"
+                    onClick={[Function]}
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "accounts.signup",
+                    "className": "link main",
+                    "onClick": [Function],
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": "accounts.signup",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "Link",
+                    "propTypes": Object {
+                      "innerRef": [Function],
+                      "onClick": [Function],
+                      "replace": [Function],
+                      "target": [Function],
+                      "to": [Function],
+                    },
+                    "render": [Function],
+                  },
                 },
                 "type": "li",
               },
@@ -1499,12 +1597,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -1524,12 +1622,12 @@ ShallowWrapper {
                       className="fab fa-twitter"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.twitter",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/twitter",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.twitter",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1555,12 +1653,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -1580,12 +1678,12 @@ ShallowWrapper {
                       className="fab fa-facebook-f"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.facebook",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/fb",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.facebook",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1611,12 +1709,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -1636,12 +1734,12 @@ ShallowWrapper {
                       className="fab fa-slack-hash"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.slack",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/slack",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.slack",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1667,12 +1765,12 @@ ShallowWrapper {
                 "props": Object {
                   "children": <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -1692,12 +1790,12 @@ ShallowWrapper {
                       className="fab fa-telegram"
                     />,
                     "className": "social btn btn-simple btn-just-icon",
-                    "data-original-title": "header.telegram",
                     "data-placement": "bottom",
+                    "data-toggle": "tooltip",
                     "href": "/telegram",
-                    "rel": "tooltip",
+                    "rel": "noopener noreferrer",
                     "target": "_blank",
-                    "title": "",
+                    "title": "header.telegram",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1771,8 +1869,7 @@ ShallowWrapper {
                 className="icon-bar"
               />
             </button>
-            <Link
-              replace={false}
+            <ForwardRef
               to="/"
             >
               <div
@@ -1784,7 +1881,7 @@ ShallowWrapper {
                   src="/img/logo-white.svg"
                 />
               </div>
-            </Link>
+            </ForwardRef>
           </div>
           <div
             className="collapse navbar-collapse"
@@ -1794,29 +1891,27 @@ ShallowWrapper {
               className="nav navbar-nav navbar-right"
             >
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  replace={false}
                   to="/#about"
                 >
                   header.about
-                </Link>
+                </ForwardRef>
               </li>
               <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="/faqs"
                 >
                   header.faq
-                </Link>
+                </ForwardRef>
               </li>
               <li>
                 <a
-                  className="link hidden-sm"
+                  className="link hidden-sm hidden-md"
                   data-test="api-link"
                   href="http://docs.nexchange2.apiary.io/"
                   onClick={[Function]}
@@ -1827,26 +1922,32 @@ ShallowWrapper {
                 </a>
               </li>
               <li>
-                <Link
-                  className="link"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  replace={false}
-                  to="/#compare"
-                >
-                  header.compare
-                </Link>
-              </li>
-              <li>
-                <Link
+                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
-                  replace={false}
                   to="#"
                 >
                   header.support
-                </Link>
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link"
+                  onClick={[Function]}
+                  to="/signin"
+                >
+                  accounts.signin
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link main"
+                  onClick={[Function]}
+                  to="/signup"
+                >
+                  accounts.signup
+                </ForwardRef>
               </li>
               <li
                 className="ico-link"
@@ -1916,12 +2017,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.twitter"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/twitter"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.twitter"
                 >
                   <i
                     aria-hidden="true"
@@ -1934,12 +2035,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.facebook"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/fb"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.facebook"
                 >
                   <i
                     aria-hidden="true"
@@ -1952,12 +2053,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.slack"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/slack"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.slack"
                 >
                   <i
                     aria-hidden="true"
@@ -1970,12 +2071,12 @@ ShallowWrapper {
               >
                 <a
                   className="social btn btn-simple btn-just-icon"
-                  data-original-title="header.telegram"
                   data-placement="bottom"
+                  data-toggle="tooltip"
                   href="/telegram"
-                  rel="tooltip"
+                  rel="noopener noreferrer"
                   target="_blank"
-                  title=""
+                  title="header.telegram"
                 >
                   <i
                     aria-hidden="true"
@@ -2024,8 +2125,7 @@ ShallowWrapper {
                   className="icon-bar"
                 />
               </button>
-              <Link
-                replace={false}
+              <ForwardRef
                 to="/"
               >
                 <div
@@ -2037,7 +2137,7 @@ ShallowWrapper {
                     src="/img/logo-white.svg"
                   />
                 </div>
-              </Link>
+              </ForwardRef>
             </div>,
             <div
               className="collapse navbar-collapse"
@@ -2047,29 +2147,27 @@ ShallowWrapper {
                 className="nav navbar-nav navbar-right"
               >
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    replace={false}
                     to="/#about"
                   >
                     header.about
-                  </Link>
+                  </ForwardRef>
                 </li>
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="/faqs"
                   >
                     header.faq
-                  </Link>
+                  </ForwardRef>
                 </li>
                 <li>
                   <a
-                    className="link hidden-sm"
+                    className="link hidden-sm hidden-md"
                     data-test="api-link"
                     href="http://docs.nexchange2.apiary.io/"
                     onClick={[Function]}
@@ -2080,26 +2178,32 @@ ShallowWrapper {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    className="link"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    replace={false}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </Link>
-                </li>
-                <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="#"
                   >
                     header.support
-                  </Link>
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    onClick={[Function]}
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link main"
+                    onClick={[Function]}
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
                 </li>
                 <li
                   className="ico-link"
@@ -2169,12 +2273,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -2187,12 +2291,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -2205,12 +2309,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -2223,12 +2327,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -2274,8 +2378,7 @@ ShallowWrapper {
                     className="icon-bar"
                   />
                 </button>,
-                <Link
-                  replace={false}
+                <ForwardRef
                   to="/"
                 >
                   <div
@@ -2287,7 +2390,7 @@ ShallowWrapper {
                       src="/img/logo-white.svg"
                     />
                   </div>
-                </Link>,
+                </ForwardRef>,
               ],
               "className": "navbar-header",
             },
@@ -2372,7 +2475,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": <div
                     className="logo-container"
@@ -2383,7 +2486,6 @@ ShallowWrapper {
                       src="/img/logo-white.svg"
                     />
                   </div>,
-                  "replace": false,
                   "to": "/",
                 },
                 "ref": null,
@@ -2415,7 +2517,18 @@ ShallowWrapper {
                   },
                   "type": "div",
                 },
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "displayName": "Link",
+                  "propTypes": Object {
+                    "innerRef": [Function],
+                    "onClick": [Function],
+                    "replace": [Function],
+                    "target": [Function],
+                    "to": [Function],
+                  },
+                  "render": [Function],
+                },
               },
             ],
             "type": "div",
@@ -2429,29 +2542,27 @@ ShallowWrapper {
                 className="nav navbar-nav navbar-right"
               >
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    replace={false}
                     to="/#about"
                   >
                     header.about
-                  </Link>
+                  </ForwardRef>
                 </li>
                 <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="/faqs"
                   >
                     header.faq
-                  </Link>
+                  </ForwardRef>
                 </li>
                 <li>
                   <a
-                    className="link hidden-sm"
+                    className="link hidden-sm hidden-md"
                     data-test="api-link"
                     href="http://docs.nexchange2.apiary.io/"
                     onClick={[Function]}
@@ -2462,26 +2573,32 @@ ShallowWrapper {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    className="link"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    replace={false}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </Link>
-                </li>
-                <li>
-                  <Link
+                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
-                    replace={false}
                     to="#"
                   >
                     header.support
-                  </Link>
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    onClick={[Function]}
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link main"
+                    onClick={[Function]}
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
                 </li>
                 <li
                   className="ico-link"
@@ -2551,12 +2668,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.twitter"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/twitter"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.twitter"
                   >
                     <i
                       aria-hidden="true"
@@ -2569,12 +2686,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.facebook"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/fb"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.facebook"
                   >
                     <i
                       aria-hidden="true"
@@ -2587,12 +2704,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.slack"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/slack"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.slack"
                   >
                     <i
                       aria-hidden="true"
@@ -2605,12 +2722,12 @@ ShallowWrapper {
                 >
                   <a
                     className="social btn btn-simple btn-just-icon"
-                    data-original-title="header.telegram"
                     data-placement="bottom"
+                    data-toggle="tooltip"
                     href="/telegram"
-                    rel="tooltip"
+                    rel="noopener noreferrer"
                     target="_blank"
-                    title=""
+                    title="header.telegram"
                   >
                     <i
                       aria-hidden="true"
@@ -2630,29 +2747,27 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <li>
-                    <Link
+                    <ForwardRef
                       className="link"
                       onClick={[Function]}
-                      replace={false}
                       to="/#about"
                     >
                       header.about
-                    </Link>
+                    </ForwardRef>
                   </li>,
                   <li>
-                    <Link
+                    <ForwardRef
                       className="link"
                       data-test="faq-btn"
                       onClick={[Function]}
-                      replace={false}
                       to="/faqs"
                     >
                       header.faq
-                    </Link>
+                    </ForwardRef>
                   </li>,
                   <li>
                     <a
-                      className="link hidden-sm"
+                      className="link hidden-sm hidden-md"
                       data-test="api-link"
                       href="http://docs.nexchange2.apiary.io/"
                       onClick={[Function]}
@@ -2663,26 +2778,32 @@ ShallowWrapper {
                     </a>
                   </li>,
                   <li>
-                    <Link
-                      className="link"
-                      data-test="compare-link"
-                      onClick={[Function]}
-                      replace={false}
-                      to="/#compare"
-                    >
-                      header.compare
-                    </Link>
-                  </li>,
-                  <li>
-                    <Link
+                    <ForwardRef
                       className="link"
                       data-test="support-btn"
                       onClick={[Function]}
-                      replace={false}
                       to="#"
                     >
                       header.support
-                    </Link>
+                    </ForwardRef>
+                  </li>,
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      onClick={[Function]}
+                      to="/signin"
+                    >
+                      accounts.signin
+                    </ForwardRef>
+                  </li>,
+                  <li>
+                    <ForwardRef
+                      className="link main"
+                      onClick={[Function]}
+                      to="/signup"
+                    >
+                      accounts.signup
+                    </ForwardRef>
                   </li>,
                   <li
                     className="ico-link"
@@ -2752,12 +2873,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.twitter"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/twitter"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.twitter"
                     >
                       <i
                         aria-hidden="true"
@@ -2770,12 +2891,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.facebook"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/fb"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.facebook"
                     >
                       <i
                         aria-hidden="true"
@@ -2788,12 +2909,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.slack"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/slack"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.slack"
                     >
                       <i
                         aria-hidden="true"
@@ -2806,12 +2927,12 @@ ShallowWrapper {
                   >
                     <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.telegram"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/telegram"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.telegram"
                     >
                       <i
                         aria-hidden="true"
@@ -2829,30 +2950,39 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <Link
+                    "children": <ForwardRef
                       className="link"
                       onClick={[Function]}
-                      replace={false}
                       to="/#about"
                     >
                       header.about
-                    </Link>,
+                    </ForwardRef>,
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
                       "children": "header.about",
                       "className": "link",
                       "onClick": [Function],
-                      "replace": false,
                       "to": "/#about",
                     },
                     "ref": null,
                     "rendered": "header.about",
-                    "type": [Function],
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "displayName": "Link",
+                      "propTypes": Object {
+                        "innerRef": [Function],
+                        "onClick": [Function],
+                        "replace": [Function],
+                        "target": [Function],
+                        "to": [Function],
+                      },
+                      "render": [Function],
+                    },
                   },
                   "type": "li",
                 },
@@ -2861,32 +2991,41 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <Link
+                    "children": <ForwardRef
                       className="link"
                       data-test="faq-btn"
                       onClick={[Function]}
-                      replace={false}
                       to="/faqs"
                     >
                       header.faq
-                    </Link>,
+                    </ForwardRef>,
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
                       "children": "header.faq",
                       "className": "link",
                       "data-test": "faq-btn",
                       "onClick": [Function],
-                      "replace": false,
                       "to": "/faqs",
                     },
                     "ref": null,
                     "rendered": "header.faq",
-                    "type": [Function],
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "displayName": "Link",
+                      "propTypes": Object {
+                        "innerRef": [Function],
+                        "onClick": [Function],
+                        "replace": [Function],
+                        "target": [Function],
+                        "to": [Function],
+                      },
+                      "render": [Function],
+                    },
                   },
                   "type": "li",
                 },
@@ -2896,7 +3035,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": <a
-                      className="link hidden-sm"
+                      className="link hidden-sm hidden-md"
                       data-test="api-link"
                       href="http://docs.nexchange2.apiary.io/"
                       onClick={[Function]}
@@ -2913,7 +3052,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": "header.apidocs",
-                      "className": "link hidden-sm",
+                      "className": "link hidden-sm hidden-md",
                       "data-test": "api-link",
                       "href": "http://docs.nexchange2.apiary.io/",
                       "onClick": [Function],
@@ -2931,32 +3070,41 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <Link
+                    "children": <ForwardRef
                       className="link"
-                      data-test="compare-link"
+                      data-test="support-btn"
                       onClick={[Function]}
-                      replace={false}
-                      to="/#compare"
+                      to="#"
                     >
-                      header.compare
-                    </Link>,
+                      header.support
+                    </ForwardRef>,
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
-                      "children": "header.compare",
+                      "children": "header.support",
                       "className": "link",
-                      "data-test": "compare-link",
+                      "data-test": "support-btn",
                       "onClick": [Function],
-                      "replace": false,
-                      "to": "/#compare",
+                      "to": "#",
                     },
                     "ref": null,
-                    "rendered": "header.compare",
-                    "type": [Function],
+                    "rendered": "header.support",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "displayName": "Link",
+                      "propTypes": Object {
+                        "innerRef": [Function],
+                        "onClick": [Function],
+                        "replace": [Function],
+                        "target": [Function],
+                        "to": [Function],
+                      },
+                      "render": [Function],
+                    },
                   },
                   "type": "li",
                 },
@@ -2965,32 +3113,80 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": <Link
+                    "children": <ForwardRef
                       className="link"
-                      data-test="support-btn"
                       onClick={[Function]}
-                      replace={false}
-                      to="#"
+                      to="/signin"
                     >
-                      header.support
-                    </Link>,
+                      accounts.signin
+                    </ForwardRef>,
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
-                      "children": "header.support",
+                      "children": "accounts.signin",
                       "className": "link",
-                      "data-test": "support-btn",
                       "onClick": [Function],
-                      "replace": false,
-                      "to": "#",
+                      "to": "/signin",
                     },
                     "ref": null,
-                    "rendered": "header.support",
-                    "type": [Function],
+                    "rendered": "accounts.signin",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "displayName": "Link",
+                      "propTypes": Object {
+                        "innerRef": [Function],
+                        "onClick": [Function],
+                        "replace": [Function],
+                        "target": [Function],
+                        "to": [Function],
+                      },
+                      "render": [Function],
+                    },
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <ForwardRef
+                      className="link main"
+                      onClick={[Function]}
+                      to="/signup"
+                    >
+                      accounts.signup
+                    </ForwardRef>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "accounts.signup",
+                      "className": "link main",
+                      "onClick": [Function],
+                      "to": "/signup",
+                    },
+                    "ref": null,
+                    "rendered": "accounts.signup",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "displayName": "Link",
+                      "propTypes": Object {
+                        "innerRef": [Function],
+                        "onClick": [Function],
+                        "replace": [Function],
+                        "target": [Function],
+                        "to": [Function],
+                      },
+                      "render": [Function],
+                    },
                   },
                   "type": "li",
                 },
@@ -3221,12 +3417,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.twitter"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/twitter"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.twitter"
                     >
                       <i
                         aria-hidden="true"
@@ -3246,12 +3442,12 @@ ShallowWrapper {
                         className="fab fa-twitter"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.twitter",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/twitter",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.twitter",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3277,12 +3473,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.facebook"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/fb"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.facebook"
                     >
                       <i
                         aria-hidden="true"
@@ -3302,12 +3498,12 @@ ShallowWrapper {
                         className="fab fa-facebook-f"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.facebook",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/fb",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.facebook",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3333,12 +3529,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.slack"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/slack"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.slack"
                     >
                       <i
                         aria-hidden="true"
@@ -3358,12 +3554,12 @@ ShallowWrapper {
                         className="fab fa-slack-hash"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.slack",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/slack",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.slack",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3389,12 +3585,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": <a
                       className="social btn btn-simple btn-just-icon"
-                      data-original-title="header.telegram"
                       data-placement="bottom"
+                      data-toggle="tooltip"
                       href="/telegram"
-                      rel="tooltip"
+                      rel="noopener noreferrer"
                       target="_blank"
-                      title=""
+                      title="header.telegram"
                     >
                       <i
                         aria-hidden="true"
@@ -3414,12 +3610,12 @@ ShallowWrapper {
                         className="fab fa-telegram"
                       />,
                       "className": "social btn btn-simple btn-just-icon",
-                      "data-original-title": "header.telegram",
                       "data-placement": "bottom",
+                      "data-toggle": "tooltip",
                       "href": "/telegram",
-                      "rel": "tooltip",
+                      "rel": "noopener noreferrer",
                       "target": "_blank",
-                      "title": "",
+                      "title": "header.telegram",
                     },
                     "ref": null,
                     "rendered": Object {
@@ -3485,6 +3681,8 @@ ShallowWrapper {
       },
     },
     "context": Object {},
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;

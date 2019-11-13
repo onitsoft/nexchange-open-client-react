@@ -1,0 +1,52 @@
+.input.input.input {
+  margin-top: 5px;
+  padding: 0 45px 15px 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: $black;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 15px;
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &::-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: $black;
+  }
+}
+
+.previousAddress {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 2px solid $blue;
+  border-radius: 6px;
+  color: $blue;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;    
+  i {
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 6px 12px;
+  }
+}

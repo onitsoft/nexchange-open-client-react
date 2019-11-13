@@ -819,6 +819,22 @@ ShallowWrapper {
       ]
     }
     onClick={[MockFunction]}
+    selectedCoin={
+      Object {
+        "deposit": null,
+        "lastSelected": "deposit",
+        "orderByAddress": false,
+        "prev": Object {
+          "deposit": null,
+          "receive": null,
+        },
+        "receive": null,
+        "selectedByUser": Object {
+          "deposit": false,
+          "receive": false,
+        },
+      }
+    }
     t={[Function]}
     type="deposit"
   />,
@@ -8805,7 +8821,9 @@ ShallowWrapper {
       },
     },
     "context": Object {},
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;
@@ -9629,6 +9647,22 @@ ShallowWrapper {
       ]
     }
     onClick={[MockFunction]}
+    selectedCoin={
+      Object {
+        "deposit": null,
+        "lastSelected": "deposit",
+        "orderByAddress": false,
+        "prev": Object {
+          "deposit": null,
+          "receive": null,
+        },
+        "receive": null,
+        "selectedByUser": Object {
+          "deposit": false,
+          "receive": false,
+        },
+      }
+    }
     t={[Function]}
     type="receive"
   />,
@@ -15053,7 +15087,9 @@ ShallowWrapper {
       },
     },
     "context": Object {},
+    Symbol(enzyme.__providerValues__): Map {},
   },
+  Symbol(enzyme.__providerValues__): Map {},
   Symbol(enzyme.__childContext__): null,
 }
 `;

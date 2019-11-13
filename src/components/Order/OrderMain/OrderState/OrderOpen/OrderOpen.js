@@ -10,14 +10,18 @@ import OrderDepth from '../../../../Home/Hero/OrderBookWidget/OrderDepth/OrderDe
 import MyOrders from '../../../../Home/Hero/OrderBookWidget/MyOrders/MyOrders';
 
 class OrderOpen extends Component {
-    UNSAFE_componentWillMount() {
+    constructor(props) {
+        super(props);
+    } 
+
+    componentWillMount() {
         this.props.fetchPairs();
     }
 
-    UNSAFE_componentWillUpdate(nextProps) {
+    componentWillUpdate(nextProps) {
         const order = this.props.order;
         if(!order){return;}
-        const changedOrder = order.unique_reference !== nextProps.order.unique_reference;
+        const changedOrder = order.unique_reference != nextProps.order.unique_reference;
         const selectCoinEqualOrderCoin = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}` === order.pair.name;
         if(!_.isEmpty(order) && !_.isEmpty(this.props.pairs) && (changedOrder || !selectCoinEqualOrderCoin)) {
             this.props.selectCoin({

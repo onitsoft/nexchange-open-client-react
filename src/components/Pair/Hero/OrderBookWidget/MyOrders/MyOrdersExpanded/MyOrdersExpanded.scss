@@ -1,0 +1,133 @@
+
+.container {
+    max-height: 370px;
+
+    .no-history {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;  
+    }
+
+    .collapse {
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        float: right;
+        i {
+            font-size: 30px;
+            color: $gray;
+
+            @media (max-width: $screen-md-max) {
+                margin-right: 10px;
+            }
+
+        }
+    }
+
+    .heading {
+        text-align: center;
+        h2 {
+            margin: 0px 0px 10px 0px;
+        }
+    }
+
+    .list {
+        overflow: auto;
+        max-height: 300px;
+        padding: 0;
+    
+        .orders {
+            .order {
+                display: flex;
+                align-items: center;
+                margin: 10px; 
+                padding: 8px 0px;
+                background-color: #fff;
+                text-decoration: none;
+
+                .status {
+                    width: 90px;
+                    border-width: 2px;
+                    border-style: solid;
+                    border-radius: 6px;
+                    padding: 4px 12px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-left: 10px;
+                    &.NEW {
+                        border-color: $red;
+                        color: $red;
+                    }
+                    &.OPEN {
+                        border-color: $yellow-700;
+                        color: $yellow-700;
+                    }
+                    &.CLOSED {
+                        border-color: $green;
+                        color: $green;
+                    }
+                }
+
+                .timeAgo {
+                    flex: 2;
+                    color: $gray;
+                    font-size: 18px;
+                    margin: 0px 20px;
+
+                    @media (max-width: $screen-md-min) {
+                        flex: 2;
+                        font-size: 12px;
+                        margin-left: 0;
+                    }
+                }
+
+                .coin {
+                    display: flex;
+                    align-items: center;
+                    flex: 2;
+
+                    .icon {
+                        flex: 1;
+                        font-size: 38px;  
+                        @media (max-width: $screen-md-min) {
+                            font-size: 22px;
+                        }
+                    }
+                    .code {
+                        flex: 1;
+                        font-size: 18px;  
+                        font-weight: bold;
+                        margin-left: 5px;
+                        color: #000;
+                        @media (max-width: $screen-md-min) {
+                            font-size: 12px;
+                        }
+                    }
+                    .amount {
+                        flex: 4;
+                        font-size: 18px;  
+                        margin-left: 5px;
+                        color: #000;
+                        @media (max-width: $screen-md-min) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .arrow {
+                    flex: 1;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    img {
+                        width: 36px;
+                        @media (max-width: $screen-md-min) {
+                            width: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

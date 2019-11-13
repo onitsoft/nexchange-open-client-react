@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+
 import styles from '../OrderInitial.scss';
 
 class OrderInitial extends Component {
@@ -59,7 +60,7 @@ class OrderInitial extends Component {
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>
-          <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-4">
+          <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-6">
             <h3>
               {t('order.initial1')}:{' '}
               <span className={styles.time}>
@@ -118,7 +119,7 @@ class OrderInitial extends Component {
             </a>
           </div>
 
-          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-8 ${styles.cards}`}>
+          <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-6 ${styles.cards}`}>
             <h3>{t('order.fiat.cards')}:</h3>
 
             <div className="visible-xs-block visible-sm-block">

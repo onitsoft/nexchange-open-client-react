@@ -204,15 +204,20 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = () => dispatch => {
+export const fetchPairs = ({base, quote} = {}) => dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
   return request
     .then(async response => {
-      if (!response.data.length) return;
 
-      const params = urlParams();
+      let params = urlParams();
+      const pathNameParams = window.location.pathname.split('/');
+      // Checks if pathname section of url has params.
+      if (pathNameParams[1] === 'pair') {
+        params = {};
+        params.pair = pathNameParams[2].toUpperCase();
+      }
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
           return !pair.disabled;
@@ -227,13 +232,25 @@ export const fetchPairs = () => dispatch => {
         payload: processedPairs
       });
 
-      let depositCoin, receiveCoin;
-      const coinsFromUrlParams = () => { 
+      let depositCoin = base
+      let receiveCoin = quote
+
+      const loadPair = (pair) => { 
+        const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`
         return new Promise((resolve, reject) => {
           axios
-            .get(`${config.API_BASE_URL}/pair/${params['pair']}/`)
+            .get(url)
             .then(res => resolve(res.data))
             .catch((err) => {resolve(pickRandomPair());});
+        });
+      };
+
+      const pickMostTraded = () => { 
+        return new Promise((resolve, reject) => {
+          axios
+            .get(`${config.API_BASE_URL}/pair/most_traded/`)
+            .then(res => resolve(res.data))
+            .catch((err) => resolve(null));
         });
       };
 
@@ -246,9 +263,21 @@ export const fetchPairs = () => dispatch => {
       // Picks random deposit and receive coins.
       const pickCoins = async () => {
         // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-        if (params && params.hasOwnProperty('pair')) {
+        if (base && quote) {
           try {
-            const pair = await coinsFromUrlParams(params);
+            const pair = await loadPair(`${base}${quote}`);
+            if (pair) {
+              depositCoin = pair.quote;
+              receiveCoin = pair.base;
+            }
+          } catch (err) {
+            /* istanbul ignore next */
+            console.log('Error:', err);
+          }
+        }
+        else if (params && params.hasOwnProperty('pair')) {
+          try {
+            const pair = await loadPair(params.pair);
             if(pair){
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -258,7 +287,13 @@ export const fetchPairs = () => dispatch => {
             console.log('Error:', err);
           }
         } else {
-          pickRandomPair();
+          const pair = await pickMostTraded();
+          if(pair){
+            depositCoin = pair.quote;
+            receiveCoin = pair.base;
+          } else {
+            pickRandomPair();
+          }
         }
       };
       await pickCoins();
