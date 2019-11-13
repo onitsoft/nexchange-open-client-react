@@ -3,7 +3,11 @@ import gql from 'graphql-tag'
 export const GET_WHITELABEL = gql`
   query GetWhitelabel ($pagename: String) {
     pages(where: {name: $pagename}) {
-      articles (orderBy: sort_ASC) {
+      title
+      videoId: content
+      createdAt
+      updatedAt
+      topics: articles (orderBy: sort_ASC) {
         title
         content
         date

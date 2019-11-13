@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
 import Bounce from 'react-reveal/Bounce'
@@ -11,21 +11,33 @@ import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
 import FAQ from 'Components/WhiteLabel/FAQ2/'
 import PriceTable from 'Components/WhiteLabel/PriceTable/'
 import TopicsList from './topics'
+import YouTube from 'react-youtube'
+import UpdatedTime from 'Components/updated-time'
 
 import GET_WHITELABEL from './get-whitelabel.query' 
 
 const WhiteLabelSEO = ({data, ...props}) => {
   const { pages } = data
-  const { articles, faq, features, main } = (pages && pages[0]) || {}
-  console.log('what is dat main:', main)
+  const { title, videoId, topics, faq, main, createdAt, updatedAt } = (pages && pages[0]) || {}
+
+  const youtubeOptions = useMemo(() => ({
+    width: '480px',
+    height: '270px',
+    onPlay: () => {
+      window.gtag('event', 'Whitelabel Video', {event_category: 'interaction', event_label: `Video Start`});
+    },
+    onEnd: () => {
+      window.gtag('event', 'Whitelabel Video', {event_category: 'interaction', event_label: `Video Finished`});
+    }
+  }), [])
+
   return (
     <I18n ns="translations">
       {t => (
         <StyledWhitelabel>
-            <VideoCard />
+            <VideoCard title={title} content={<YouTube videoId={videoId} opts={youtubeOptions} />} />
             <div className='container'>
               <Bounce bottom cascade>
-                {/* <section className='row'><KeyFeatures features={features} /></section> */}
                 <section className='row'>
                   <MajorCard
                     title={main && main.title}
@@ -34,11 +46,14 @@ const WhiteLabelSEO = ({data, ...props}) => {
                   />
                 </section>
                 <section className='row'><SupportedAssets /></section>
-                <section className='row'><TopicsList articles={articles} /></section>
+                <section className='row'><TopicsList items={topics} /></section>
                 <section className='row'><PriceTable plans={plans} /></section>
                 <section className='row'><FAQ items={faq} /></section>
               </Bounce>
             </div>
+
+            <UpdatedTime created={createdAt} updated={updatedAt} />
+
         </StyledWhitelabel>
       )}
     </I18n>
@@ -49,7 +64,10 @@ const StyledWhitelabel = styled.main`
   padding: 100px 0 75px 0;
   text-align: center;
   strong {
-    font-family: Clan Offc Pro Medium;
+    font-family: Clan Offc Pro Book;
+  }
+  > aside {
+    margin: 8rem 0;
   }
   > section {
     margin: 12rem 0;
@@ -103,4 +121,6 @@ const plans = [
 ]
 
 
-export default graphql(GET_WHITELABEL)(WhiteLabelSEO)
+export default graphql(GET_WHITELABEL, {
+  options: () => ({ variables: { pagename: 'whitelabel' } })
+})(WhiteLabelSEO)

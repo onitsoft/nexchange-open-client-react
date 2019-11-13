@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { I18n, Trans } from 'react-i18next';
+import { I18n } from 'react-i18next';
 import Fuse from 'fuse.js';
 import debounce from 'Utils/debounce';
 import i18n from 'Src/i18n';
-import { Col } from 'reactstrap';
-import { Generic, GenericCollection, JSONLD } from 'react-structured-data';
 
 import QuestionAnswer from './QuestionAnswer';
 import Support from 'Components/Header/Support/Support';
@@ -190,8 +188,6 @@ class FAQ extends Component {
               </div>
               <Support show={this.state.showSupportModal} onClose={this.closeSupportModal} subject={this.state.subject} />
               <script type="application/ld+json">{JSON.stringify(this.makeSEOQNA(this.questions, t))}</script>
-
-              <p><small>Created on: Nov 2nd 2019 - Last Update: Nov 3rd 2019</small></p>
             </Fragment>
         )}
       </I18n>

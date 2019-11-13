@@ -68,12 +68,13 @@ const StyledEllipses = styled.div`
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
 
 
-  &__bg {
-    position: relative;
+  .Ellipses__bg {
+    position: absolute;
     display: inline-block;
     width: auto;
-    height: 100%;
     top: 80px;
+    left: 0;
+    right: 0;
 
     & > img, & > svg {
       width: auto;
@@ -122,6 +123,7 @@ const StyledEllipses = styled.div`
       transform: translate(-50%, -50%);
     }
   }
+
 
 `
 

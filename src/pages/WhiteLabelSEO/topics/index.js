@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom'
 import styled from '@emotion/styled'
 
 export const TopicsList = (props) => {
-  const { articles } = props
-  if (!articles || !articles.length) return <>Loading...</>
+  const { items } = props
+  if (!items || !items.length) return <>Loading...</>
 
-  return articles.map((article, index) => (
+  return items.map((article, index) => (
     <TopicCard
       key={`topic-${index}`}
       title={article.title}
