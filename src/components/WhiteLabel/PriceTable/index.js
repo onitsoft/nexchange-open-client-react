@@ -26,11 +26,14 @@ const PriceTable = (props) => {
           {forder && forder.length && forder.map(f => (
             <tr>
               <th className='feature'>{t(`whitelabel.features.${f}`)}</th>
-              {plans.map(({[f]: feature}) => (
+              {plans.map(({[f]: feature, name}) => (
                 ((feature || typeof feature === 'number') &&
                   <td>{t(`whitelabel.values.${f}`, {value: feature})}</td>)
                 ||
-                (!feature &&
+                (!feature && name === 'community' &&
+                  <td>N/A</td>)
+                ||
+                (!feature && 
                   <td>&nbsp;</td>)
               ))}
             </tr>
