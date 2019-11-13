@@ -1,0 +1,127 @@
+.compare {
+  padding-bottom: 70px;
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    text-align: center;
+  }
+
+  img {
+    width: auto;
+    max-height: 40px;
+  }
+
+  th,
+  tr {
+    font-size: 12px;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 16px;
+    }
+  }
+
+  thead th {
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  td {
+    padding: 25px 0;
+    width: 22.5%;
+    color: $black;
+    background: #fff;
+
+    &:first-child {
+      width: 10%;
+    }
+
+    &:last-child {
+      text-align: center;
+    }
+  }
+
+  tbody tr {
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    border-top: 6px solid #f0f0f0;
+    border-bottom: 6px solid #f0f0f0;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+    box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+
+    td:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    td:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    img {
+      max-height: 25px;
+      width: auto;
+      &.nexchange-logo {
+        max-height: 20px;
+        width: auto;
+      }
+      &.shapeshift-logo {
+        max-height: 30px;
+        width: auto;
+      }
+      &.changelly-logo {
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    td:last-child {
+      padding: 0;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    tbody tr img {
+      max-height: 35px;
+      width: auto;
+
+      &.nexchange-logo {
+        max-height: 30px;
+        width: auto;
+      }
+
+      &.shapeshift-logo {
+        max-height: 40px;
+        width: auto;
+      }
+
+      &.changelly-logo {
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    img {
+      max-height: 60px;
+    }
+  }
+}
+
+.comparison-table {
+  width: 100%;
+  overflow-y: scroll;
+  padding: 0 3px;
+
+  table {
+    min-width: 550px;
+  }
+}

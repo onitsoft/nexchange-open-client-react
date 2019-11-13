@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  padding: 0 0 75px 0;
+  text-align: center;
+  color: #fff;
+  background: -moz-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, rgba(2, 3, 31, 1)),
+    color-stop(44%, rgba(2, 3, 31, 1)),
+    color-stop(100%, rgba(26, 157, 139, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(2, 3, 31, 1) 0%,
+    rgba(2, 3, 31, 1) 44%,
+    rgba(26, 157, 139, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: $screen-md-min) {
+    background-color: #01031e;
+    background-image: url('../../../img/ellipse.svg');
+    background-position: 130% 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+  }
+}
+
+.brand {
+  margin-top: 110px;
+
+  @media (min-height: $screen-xl-height) and (min-width: $screen-md-min) {
+    margin-top: 170px;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 15px;
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Clan Offc Pro Book';
+
+    @media (min-width: $screen-md-min) {
+      font-size: 24px;
+    }
+
+    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-family: 'Clan Offc Pro Medium';
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+}
+@media (min-width: $screen-ms-min) {
+}
+@media (min-width: $screen-sm-min) {
+}
+@media (min-width: $screen-md-min) {
+}
+@media (min-width: $screen-lg-min) {
+}

@@ -1,0 +1,18 @@
+.about {
+  background: #fff;
+
+  p {
+    margin: 0 0 18px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    :global .col-sm-6 {
+      padding-right: 40px;
+
+      &:last-child {
+        padding-left: 40px;
+        padding-right: 15px;
+      }
+    }
+  }
+}

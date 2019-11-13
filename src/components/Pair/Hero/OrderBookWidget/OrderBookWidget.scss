@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 100px;
+    z-index: 3;
+  }
+}
+
+.widget {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  color: #000;
+  padding: 10px 0px 15px 0;
+  border-radius: 6px;
+  text-align: left;
+  
+
+  @media (min-width: $screen-md-max) {
+    height: 480px;
+    padding: 25px 55px;
+  }
+
+  .pair-selection {
+    display: flex;
+    padding: 0;
+  }
+
+  .my-orders {
+    float: right;
+    a {
+      font-size: 16px;
+      padding: 10px 14px;
+      border: 1px solid $gray;
+      color: $black;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;  
+      
+      &:hover {
+        background-color: darken( white, 2% );
+      }
+    }
+  }
+
+  .tabs {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    li {
+      margin: 0px 5px;
+      a {
+        border: 1px solid !important;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        border-color: $gray;
+        color: $gray;
+        
+        &.active {
+          background-color: $blue;
+          border-color: $blue;
+          color: #fff;
+        }
+      }
+
+      .arrow-down {
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        bottom: -3px;
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid $blue;
+      }        
+    }
+  }
+  .btn {
+    width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      width: 200px;
+    }
+
+    &.btn-buy {
+      background-color: $green;
+      &:hover,&:focus {
+        background-color: lighten( $green, 10% );
+      }
+    }
+
+    &.btn-sell {
+      background-color: $red;
+      &:hover,&:focus {
+        background-color: lighten( $red, 10% );
+      }
+    }
+  }
+}
+

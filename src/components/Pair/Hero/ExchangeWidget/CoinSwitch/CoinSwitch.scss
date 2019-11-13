@@ -1,0 +1,26 @@
+.container {
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  @media (min-width: $screen-sm-min) {
+    margin-top: 40px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    background: url("../../../../../img/switch.svg");
+    cursor: pointer;
+    @media (max-width: $screen-sm-min) {
+      display: flex;
+      justify-content: center;
+      transform: rotate(90deg);
+      margin-bottom: 30px;
+    }
+    &.icon-disabled {
+      cursor: auto;
+      opacity: 0.3;
+      filter: alpha(opacity = 30); 
+    }
+  }
+}

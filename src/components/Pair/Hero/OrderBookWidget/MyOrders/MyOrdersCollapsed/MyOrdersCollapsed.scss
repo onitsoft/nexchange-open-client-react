@@ -1,0 +1,81 @@
+
+.container {
+    margin: 15px 5px;
+    max-height: 400px;
+    border: 1px solid lighten( $gray, 30);
+
+    .heading {
+        text-align: center;
+        padding: 8px 0px;
+        background-color: lighten( $gray, 30);
+        h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .content {
+        p {
+            padding: 10px 10px 0px 10px;
+        }
+        .list {
+            padding-top: 15px;
+            padding: 10px 10px 0px 10px;
+
+            .orders {
+                max-height: 235px;
+                overflow: auto;
+                .order {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px 0px;
+                    border-bottom: 1px solid lighten( $gray, 30);
+                    text-decoration: none;
+
+                    .coin {
+                        display: flex;
+                        align-items: center;
+                        flex: 1;
+
+                        .icon {
+                            flex: 1;
+                            font-size: 20px;  
+                        }
+                        .code {
+                            flex: 1;
+                            font-size: 14px;  
+                            font-weight: bold;
+                            margin-left: 5px;
+                            color: #000;
+                        }
+                        .amount {
+                            flex: 4;
+                            font-size: 14px;  
+                            margin-left: 5px;
+                            color: #000;
+                        }
+                    }
+                    .arrow {
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        width: 16px;
+                    }
+                }
+            }
+
+            .viewAll {
+                padding: 15px;
+                text-align: center;
+                a,&:hover {
+                    color: $blue;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
