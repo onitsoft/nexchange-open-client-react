@@ -1,53 +1,83 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
+import Bounce from 'react-reveal/Bounce'
 
-import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
 import VideoCard from 'Components/WhiteLabel/VideoCard/'
-import KeyFeatures from 'Components/WhiteLabel/KeyFeatures/'
 import MajorCard from 'Components/WhiteLabel/MajorCard/'
 import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
-import MinorCard from 'Components/WhiteLabel/MinorCard/'
 import FAQ from 'Components/WhiteLabel/FAQ2/'
 import PriceTable from 'Components/WhiteLabel/PriceTable/'
+import TopicsList from './topics'
+import YouTube from 'react-youtube'
+import UpdatedTime from 'Components/updated-time'
 
-import styles from './styles.css'
-
-
+import GET_WHITELABEL from './get-whitelabel.query' 
 
 const WhiteLabelSEO = ({data, ...props}) => {
   const { pages } = data
-  const { articles, faq, features } = (pages && pages[0]) || {}
+  const { title, videoId, topics, faq, main, createdAt, updatedAt } = (pages && pages[0]) || {}
+
+  const youtubeOptions = useMemo(() => ({
+    width: '480px',
+    height: '270px',
+    onPlay: () => {
+      window.gtag('event', 'Whitelabel Video', {event_category: 'interaction', event_label: `Video Start`});
+    },
+    onEnd: () => {
+      window.gtag('event', 'Whitelabel Video', {event_category: 'interaction', event_label: `Video Finished`});
+    }
+  }), [])
 
   return (
     <I18n ns="translations">
       {t => (
-        <div className={ styles.whitelabel }>
-          <VideoCard />
-          <StyledContainer className='container'>
-            <section className='row'><KeyFeatures features={features} /></section>
-            <section className='row'><MajorCard /></section>
-            <section className='row'><SupportedAssets /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic1title') } text={ t('minorcard.topic1text') } /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic2title') } text={ t('minorcard.topic2text') } /></section>
-            <section className='row'><MinorCard topic={ t('minorcard.topic3title') } text={ t('minorcard.topic3text') } /></section>
-            <section className='row'><PriceTable plans={plans} /></section>
-            <section className='row'><FAQ items={faq} /></section>
-          </StyledContainer>
-        </div>
+        <StyledWhitelabel>
+            <VideoCard title={title} content={<YouTube videoId={videoId} opts={youtubeOptions} />} />
+            <div className='container'>
+              <Bounce bottom cascade>
+                <section className='row'>
+                  <MajorCard
+                    title={main && main.title}
+                    content={main && main.content}
+                    art={main && main.art && main.art.url}
+                  />
+                </section>
+                <section className='row'><SupportedAssets /></section>
+                <section className='row'><TopicsList items={topics} /></section>
+                <section className='row'><PriceTable plans={plans} /></section>
+                <section className='row'><FAQ items={faq} /></section>
+              </Bounce>
+            </div>
+
+            <UpdatedTime created={createdAt} updated={updatedAt} />
+
+        </StyledWhitelabel>
       )}
     </I18n>
   )
 }
 
-const StyledContainer = styled.div`
-  > .row:not(:first-of-type) {
-    margin-top: 5rem;
+const StyledWhitelabel = styled.main`
+  padding: 100px 0 75px 0;
+  text-align: center;
+  strong {
+    font-family: Clan Offc Pro Book;
+  }
+  > aside {
+    margin: 8rem 0;
+  }
+  > section {
+    margin: 12rem 0;
+  }
+  > .container {
+    > .row {
+      margin-top: 12rem;
+    }
   }
 `
-
 
 const plans = [
   {
@@ -58,11 +88,13 @@ const plans = [
   {
     name: 'crypto',
     setup: 2500,
-    monthly: 250,
+    monthly: 200,
     duration: 12,
     devhours: 1,
     hourprice: 100,
     coinlist: 5000,
+    chatbot: true,
+    support: true
   },
   {
     name: 'fiat',
@@ -72,6 +104,8 @@ const plans = [
     devhours: 2,
     hourprice: 100,
     coinlist: 5000,
+    chatbot: true,
+    support: true
   },
   {
     name: 'ieo',
@@ -81,32 +115,12 @@ const plans = [
     devhours: 4,
     hourprice: 100,
     coinlist: 0,
+    chatbot: true,
+    support: true
   }
 ]
 
-const faq = gql`
-  query GetWhitelabel {
-    pages(where: {name: "whitelabel"}) {
-      articles {
-        title
-        content
-        date
-        createdAt
-      }
-      faq {
-        title
-        content
-      }
-      features {
-        title
-        content
-        art {
-          fileName
-          url
-        }
-      }
-    }
-  }
-`
 
-export default graphql(faq)(WhiteLabelSEO)
+export default graphql(GET_WHITELABEL, {
+  options: () => ({ variables: { pagename: 'whitelabel' } })
+})(WhiteLabelSEO)

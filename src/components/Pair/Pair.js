@@ -7,16 +7,24 @@ import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
 import PriceChart from './PriceChart';
 import RecentOrders from './RecentOrders/RecentOrders';
+import { useCurrencyAPI } from 'Components/api'
 
 const Pair = (props) => {
 
-  const { fetchCoinDetails, fetchPairs, match } = props
+  const {
+    fetchCoinDetails,
+    fetchPairs,
+    match
+  } = props
   const { base, quote } = match.params
-  const pair = useMemo(() => `${base}${quote}`, [base, quote])
+  const pair = useMemo(() => `${quote}${base}`, [quote, base])
   const selectedCoin = useMemo(() => ({
     receive: base,
     deposit: quote
   }), [pair])
+
+  const baseCurrency = useCurrencyAPI(base)
+  const quoteCurrency = useCurrencyAPI(quote)
 
   useEffect(() => {
     fetchCoinDetails()
@@ -25,7 +33,7 @@ const Pair = (props) => {
   
   return (
     <div>
-      <Hero {...props} selectedCoin={selectedCoin} />
+      <Hero {...props} selectedCoin={selectedCoin} {...{baseCurrency, quoteCurrency}} />
       <div className='container'>
         <h1>Price Chart for {pair}</h1>
         <PriceChart pair={pair}/>

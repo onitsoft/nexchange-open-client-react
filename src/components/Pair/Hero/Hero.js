@@ -42,7 +42,9 @@ class Hero extends Component {
     }
   }
 
-  render() { 
+  render() {
+    const { baseCurrency, quoteCurrency } = this.props
+
     return (
       <I18n ns="translations">
         {t => (
@@ -50,16 +52,16 @@ class Hero extends Component {
             <Helmet>
               <title>
               {t('PerExchangePairHEAD.title', {
-                depositCoinFullName: 'depositCoinFullName',
+                receiveCoinFullName: baseCurrency && baseCurrency.name,
                 depositCoinSymbol: this.props.selectedCoin.deposit,
-                receiveCoinFullName: 'receiveCoinFullName',
+                depositCoinFullName: quoteCurrency && quoteCurrency.name,
                 receiveCoinSymbol: this.props.selectedCoin.receive
               })}
               </title>
               <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
-                depositCoinFullName: 'depositCoinFullName',
+                receiveCoinFullName: baseCurrency && baseCurrency.name,
                 depositCoinSymbol: this.props.selectedCoin.deposit,
-                receiveCoinFullName: 'receiveCoinFullName',
+                depositCoinFullName: quoteCurrency && quoteCurrency.name,
                 receiveCoinSymbol: this.props.selectedCoin.receive
               })}/>
             </Helmet>
@@ -71,9 +73,9 @@ class Hero extends Component {
                   <div className="col-xs-12">
                     <div className={styles.brand}>
                       <h1>{t('PerExchangePairBODY.H1', {
-                        depositCoinFullName: 'depositCoinFullName',
+                        receiveCoinFullName: baseCurrency && baseCurrency.name,
                         depositCoinSymbol: this.props.selectedCoin.deposit,
-                        receiveCoinFullName: 'receiveCoinFullName',
+                        depositCoinFullName: quoteCurrency && quoteCurrency.name,
                         receiveCoinSymbol: this.props.selectedCoin.receive
                       })}
                       </h1>

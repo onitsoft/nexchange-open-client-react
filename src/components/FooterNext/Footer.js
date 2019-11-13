@@ -46,7 +46,7 @@ const Footer = (props) => {
                 <h4>{t('header.resources')}</h4>
                 <ul>
                   <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
-                  <li><Link to='/whitelabel'>{t('header.whitelabel')}</Link></li>
+                  <li><Link to='/instant-white-label'>{t('header.whitelabel')}</Link></li>
                   <li><a href='/#support'>{t('header.support')}</a></li>
                 </ul>
 

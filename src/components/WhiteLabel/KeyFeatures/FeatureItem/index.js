@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 import styles from './FeatureItem.scss'
 
 
+import nlogo from '../../logo.png'
+
 export default function FeatureItem( { name, description, art } ) {
 
-  const imgPath = art || 'http://www.placekitten.com/200/200'
+  const imgPath = art ||nlogo
   const imgAltText = name
 
   return (
