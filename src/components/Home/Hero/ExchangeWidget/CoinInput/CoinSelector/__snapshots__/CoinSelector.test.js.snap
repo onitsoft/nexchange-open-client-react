@@ -977,6 +977,13 @@ ShallowWrapper {
     }
     t={[Function]}
     type="deposit"
+    wallet={
+      Object {
+        "address": "",
+        "show": false,
+        "valid": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -2202,6 +2209,13 @@ ShallowWrapper {
     }
     t={[Function]}
     type="receive"
+    wallet={
+      Object {
+        "address": "",
+        "show": false,
+        "valid": false,
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -103,16 +103,6 @@ ShallowWrapper {
             </li>
             <li>
               <ForwardRef
-                className="link hidden-sm"
-                data-test="compare-link"
-                onClick={[Function]}
-                to="/#compare"
-              >
-                header.compare
-              </ForwardRef>
-            </li>
-            <li>
-              <ForwardRef
                 className="link"
                 data-test="support-btn"
                 onClick={[Function]}
@@ -127,7 +117,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 to="/signin"
               >
-                header.signin
+                accounts.signin
               </ForwardRef>
             </li>
             <li>
@@ -136,7 +126,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 to="/signup"
               >
-                header.signup
+                accounts.signup
               </ForwardRef>
             </li>
             <li
@@ -369,16 +359,6 @@ ShallowWrapper {
               </li>
               <li>
                 <ForwardRef
-                  className="link hidden-sm"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  to="/#compare"
-                >
-                  header.compare
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
@@ -393,7 +373,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signin"
                 >
-                  header.signin
+                  accounts.signin
                 </ForwardRef>
               </li>
               <li>
@@ -402,7 +382,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signup"
                 >
-                  header.signup
+                  accounts.signup
                 </ForwardRef>
               </li>
               <li
@@ -774,16 +754,6 @@ ShallowWrapper {
               </li>
               <li>
                 <ForwardRef
-                  className="link hidden-sm"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  to="/#compare"
-                >
-                  header.compare
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
@@ -798,7 +768,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signin"
                 >
-                  header.signin
+                  accounts.signin
                 </ForwardRef>
               </li>
               <li>
@@ -807,7 +777,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signup"
                 >
-                  header.signup
+                  accounts.signup
                 </ForwardRef>
               </li>
               <li
@@ -989,16 +959,6 @@ ShallowWrapper {
                 </li>,
                 <li>
                   <ForwardRef
-                    className="link hidden-sm"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </ForwardRef>
-                </li>,
-                <li>
-                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
@@ -1013,7 +973,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signin"
                   >
-                    header.signin
+                    accounts.signin
                   </ForwardRef>
                 </li>,
                 <li>
@@ -1022,7 +982,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signup"
                   >
-                    header.signup
+                    accounts.signup
                   </ForwardRef>
                 </li>,
                 <li
@@ -1291,49 +1251,6 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": <ForwardRef
-                    className="link hidden-sm"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </ForwardRef>,
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "header.compare",
-                    "className": "link hidden-sm",
-                    "data-test": "compare-link",
-                    "onClick": [Function],
-                    "to": "/#compare",
-                  },
-                  "ref": null,
-                  "rendered": "header.compare",
-                  "type": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "displayName": "Link",
-                    "propTypes": Object {
-                      "innerRef": [Function],
-                      "onClick": [Function],
-                      "replace": [Function],
-                      "target": [Function],
-                      "to": [Function],
-                    },
-                    "render": [Function],
-                  },
-                },
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
@@ -1381,7 +1298,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signin"
                   >
-                    header.signin
+                    accounts.signin
                   </ForwardRef>,
                 },
                 "ref": null,
@@ -1390,13 +1307,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "header.signin",
+                    "children": "accounts.signin",
                     "className": "link",
                     "onClick": [Function],
                     "to": "/signin",
                   },
                   "ref": null,
-                  "rendered": "header.signin",
+                  "rendered": "accounts.signin",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "displayName": "Link",
@@ -1422,7 +1339,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signup"
                   >
-                    header.signup
+                    accounts.signup
                   </ForwardRef>,
                 },
                 "ref": null,
@@ -1431,13 +1348,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "header.signup",
+                    "children": "accounts.signup",
                     "className": "link main",
                     "onClick": [Function],
                     "to": "/signup",
                   },
                   "ref": null,
-                  "rendered": "header.signup",
+                  "rendered": "accounts.signup",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "displayName": "Link",
@@ -2006,16 +1923,6 @@ ShallowWrapper {
               </li>
               <li>
                 <ForwardRef
-                  className="link hidden-sm"
-                  data-test="compare-link"
-                  onClick={[Function]}
-                  to="/#compare"
-                >
-                  header.compare
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
                   className="link"
                   data-test="support-btn"
                   onClick={[Function]}
@@ -2030,7 +1937,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signin"
                 >
-                  header.signin
+                  accounts.signin
                 </ForwardRef>
               </li>
               <li>
@@ -2039,7 +1946,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   to="/signup"
                 >
-                  header.signup
+                  accounts.signup
                 </ForwardRef>
               </li>
               <li
@@ -2272,16 +2179,6 @@ ShallowWrapper {
                 </li>
                 <li>
                   <ForwardRef
-                    className="link hidden-sm"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </ForwardRef>
-                </li>
-                <li>
-                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
@@ -2296,7 +2193,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signin"
                   >
-                    header.signin
+                    accounts.signin
                   </ForwardRef>
                 </li>
                 <li>
@@ -2305,7 +2202,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signup"
                   >
-                    header.signup
+                    accounts.signup
                   </ForwardRef>
                 </li>
                 <li
@@ -2677,16 +2574,6 @@ ShallowWrapper {
                 </li>
                 <li>
                   <ForwardRef
-                    className="link hidden-sm"
-                    data-test="compare-link"
-                    onClick={[Function]}
-                    to="/#compare"
-                  >
-                    header.compare
-                  </ForwardRef>
-                </li>
-                <li>
-                  <ForwardRef
                     className="link"
                     data-test="support-btn"
                     onClick={[Function]}
@@ -2701,7 +2588,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signin"
                   >
-                    header.signin
+                    accounts.signin
                   </ForwardRef>
                 </li>
                 <li>
@@ -2710,7 +2597,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/signup"
                   >
-                    header.signup
+                    accounts.signup
                   </ForwardRef>
                 </li>
                 <li
@@ -2892,16 +2779,6 @@ ShallowWrapper {
                   </li>,
                   <li>
                     <ForwardRef
-                      className="link hidden-sm"
-                      data-test="compare-link"
-                      onClick={[Function]}
-                      to="/#compare"
-                    >
-                      header.compare
-                    </ForwardRef>
-                  </li>,
-                  <li>
-                    <ForwardRef
                       className="link"
                       data-test="support-btn"
                       onClick={[Function]}
@@ -2916,7 +2793,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       to="/signin"
                     >
-                      header.signin
+                      accounts.signin
                     </ForwardRef>
                   </li>,
                   <li>
@@ -2925,7 +2802,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       to="/signup"
                     >
-                      header.signup
+                      accounts.signup
                     </ForwardRef>
                   </li>,
                   <li
@@ -3194,49 +3071,6 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": <ForwardRef
-                      className="link hidden-sm"
-                      data-test="compare-link"
-                      onClick={[Function]}
-                      to="/#compare"
-                    >
-                      header.compare
-                    </ForwardRef>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "header.compare",
-                      "className": "link hidden-sm",
-                      "data-test": "compare-link",
-                      "onClick": [Function],
-                      "to": "/#compare",
-                    },
-                    "ref": null,
-                    "rendered": "header.compare",
-                    "type": Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "displayName": "Link",
-                      "propTypes": Object {
-                        "innerRef": [Function],
-                        "onClick": [Function],
-                        "replace": [Function],
-                        "target": [Function],
-                        "to": [Function],
-                      },
-                      "render": [Function],
-                    },
-                  },
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <ForwardRef
                       className="link"
                       data-test="support-btn"
                       onClick={[Function]}
@@ -3284,7 +3118,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       to="/signin"
                     >
-                      header.signin
+                      accounts.signin
                     </ForwardRef>,
                   },
                   "ref": null,
@@ -3293,13 +3127,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "function",
                     "props": Object {
-                      "children": "header.signin",
+                      "children": "accounts.signin",
                       "className": "link",
                       "onClick": [Function],
                       "to": "/signin",
                     },
                     "ref": null,
-                    "rendered": "header.signin",
+                    "rendered": "accounts.signin",
                     "type": Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "displayName": "Link",
@@ -3325,7 +3159,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       to="/signup"
                     >
-                      header.signup
+                      accounts.signup
                     </ForwardRef>,
                   },
                   "ref": null,
@@ -3334,13 +3168,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "function",
                     "props": Object {
-                      "children": "header.signup",
+                      "children": "accounts.signup",
                       "className": "link main",
                       "onClick": [Function],
                       "to": "/signup",
                     },
                     "ref": null,
-                    "rendered": "header.signup",
+                    "rendered": "accounts.signup",
                     "type": Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "displayName": "Link",
