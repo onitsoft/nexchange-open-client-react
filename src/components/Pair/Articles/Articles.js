@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import moment from 'moment'
 
 import Marked from 'react-markdown'
 import { graphql } from 'react-apollo'
@@ -30,12 +29,10 @@ export const Articles = ({data, ...props}) => {
 };
 
 const Article = ({title, content, date, createdAt, updatedAt}) => {
-  const timeof = useMemo(() => moment(date || createdAt).format('ddd MMM dd YYYY'), [date, createdAt])
   return (
     <article>
       <h2>{title}</h2>
-      <UpdatedTime created={createdAt} updated={updatedAt} />
-      {/* <aside><small>on <date datetime={date || createdAt}>{timeof}</date></small></aside> */}
+      <UpdatedTime created={date || createdAt} updated={updatedAt} />
       <Marked source={content} />
     </article>
   )

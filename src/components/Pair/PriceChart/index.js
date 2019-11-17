@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import React, { useMemo } from 'react'
 
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
@@ -13,7 +13,7 @@ const PriceChart = ({pair}) => {
     market_code: 'nex'
   }), [])
 
-  const [data, update, loading] = useHistoryApi(pair, {
+  const [data,, loading] = useHistoryApi(pair, {
     params,
     updateInterval: 30 // seconds
   })
