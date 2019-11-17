@@ -94,6 +94,16 @@ const StyledContainer = styled.div`
       }
     }
   }
+
+  > .Ellipses {
+    > .Ellipses__bg {
+      > img {
+        @media screen and (max-width: 960px) {
+          display: none;
+        }
+      }
+    }
+  }
 `
 
 export default VideoCard
