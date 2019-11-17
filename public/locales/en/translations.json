@@ -64,6 +64,7 @@
     "about": "About",
     "faq": "FAQ",
     "ico": "ICO PAGE",
+    "social": "Social",
     "apidocs": "API Docs",
     "compare": "Compare Rates",
     "support": "Support",
@@ -484,7 +485,7 @@
   },
   "whitelabel": {
     "plans": {
-      "community": "Community",
+      "community": "Free",
       "crypto": "Crypto",
       "fiat": "Fiat",
       "ieo": "IEO"

@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react'
 import { Col, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
 import { I18n } from 'react-i18next'
 import Support from './Support'
@@ -20,9 +21,9 @@ const VideoCard = (props) => {
       {t => (
         <StyledContainer>
           <div className='container'>
-            <Col md="6">
+            <Col md="6" className='tls'>
               <h1>{title}</h1>
-              <Button>{ t('videocard.livepreview') }</Button>
+              <Button><Link to='/'>{ t('videocard.livepreview') }</Link></Button>
               <Button onClick={onContactUs}>{ t('videocard.contactus') }</Button>
             </Col>
             <Col md="6">
@@ -54,6 +55,18 @@ const StyledContainer = styled.div`
       display: flex;
       flex-direction: row;
       align-items: center;
+    }
+
+    > .tls {
+      button {
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
     }
   }
 `

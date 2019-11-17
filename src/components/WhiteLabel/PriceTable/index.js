@@ -77,6 +77,7 @@ const tableStyle = `
   border-collapse: separate;
   border-spacing: 0 12px;
   text-align: center;
+  max-width: 880px;
 
   img {
     width: auto;
@@ -185,7 +186,8 @@ const StyledTable = styled.table`
           text-align: left;
         }
         &.p {
-          width: 110px;
+          min-width: 110px;
+          max-width: 180px;
           &-community {
 
           }

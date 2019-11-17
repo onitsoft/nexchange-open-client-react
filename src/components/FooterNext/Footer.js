@@ -24,10 +24,11 @@ const Footer = (props) => {
           <section className='links col-lg-9'>
             <main className=''>
               <section>
-                <h4>{t('account.account')}</h4>
+                <h4>{t('header.resources')}</h4>
                 <ul>
-                  <li><Link to='/signin'>{t('account.signin')}</Link></li>
-                  <li><Link to='/signup'>{t('account.signup')}</Link></li>
+                  <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
+                  <li><Link to='/instant-white-label'>{t('header.whitelabel')}</Link></li>
+                  <li><a href='/#support'>{t('header.support')}</a></li>
                 </ul>
               </section>
               <section>
@@ -36,20 +37,16 @@ const Footer = (props) => {
                   <li><a href='/#about'>{t('header.about')}</a></li>
                   <li><Link to='/faqs'>{t('header.faq')}</Link></li>
                   <li><span /></li>
+                </ul>
+              </section>
+              <section>
+                <h4>{t('header.social')}</h4>
+                <ul>
                   <li><a href='/twitter' target='_blank' rel='noopener noreferrer'>{t('header.twitter')}</a></li>
                   <li><a href='/fb' target='_blank' rel='noopener noreferrer'>{t('header.facebook')}</a></li>
                   <li><a href='/slack' target='_blank' rel='noopener noreferrer'>{t('header.slack')}</a></li>
                   <li><a href='/telegram' target='_blank' rel='noopener noreferrer'>{t('header.telegram')}</a></li>
                 </ul>
-              </section>
-              <section>
-                <h4>{t('header.resources')}</h4>
-                <ul>
-                  <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
-                  <li><Link to='/instant-white-label'>{t('header.whitelabel')}</Link></li>
-                  <li><a href='/#support'>{t('header.support')}</a></li>
-                </ul>
-
               </section>
 
 
