@@ -20,8 +20,8 @@ const WhiteLabelSEO = ({data, ...props}) => {
   const { title, videoId, topics, faq, main, createdAt, updatedAt } = (pages && pages[0]) || {}
 
   const youtubeOptions = useMemo(() => ({
-    width: '480px',
-    height: '270px',
+    width: '100%',
+    height: '100%',
     onPlay: () => {
       window.gtag('event', 'Whitelabel Video', {event_category: 'interaction', event_label: `Video Start`});
     },
