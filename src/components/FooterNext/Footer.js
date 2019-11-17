@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { I18n, Trans } from 'react-i18next';
 import { Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
+import moment from 'moment'
 
 const Footer = (props) => {
   const { location } = props
@@ -61,14 +62,14 @@ const Footer = (props) => {
                 </li>
               </ul>
               
-              <Trans i18nKey="footer.3">
+              {/* <Trans i18nKey="footer.3"> */}
                 <p>
-                  All rights reserved, YOA LTD 2016-2020,<br />England & Wales{' '}
+                  All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')},<br />England & Wales{' '}
                   <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
                     registered company No. 10009845
                   </a>
                 </p>
-              </Trans>
+              {/* </Trans> */}
             </aside>
           </section>
         </StyledFooter>
@@ -78,6 +79,7 @@ const Footer = (props) => {
 }
 
 const StyledFooter = styled.footer`
+margin-bottom: 80px;
   > section {
     padding: 24px 12px;
     &.logo {
