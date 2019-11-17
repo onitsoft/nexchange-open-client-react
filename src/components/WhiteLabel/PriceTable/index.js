@@ -1,6 +1,7 @@
 import React from 'react'
 import { I18n } from 'react-i18next'
 import styled from '@emotion/styled'
+import { TagLink } from 'Components/misc/TagLink'
 
 
 const PriceTable = (props) => {
@@ -53,19 +54,22 @@ const PriceTable = (props) => {
           </tr>
           <tr>
             <th>
-              Total Cost Second Year Onward
-              <br />
-              <small>* Billed monthly - deductible from fee earnings!</small>
+              Order Now
             </th>
-            {plans.map((plan) => (
-              <td>{t(`whitelabel.values.total`, {value: (plan.monthly * 12) / 2})}</td>
-            ))}
+            {plans
+              .map((plan) => ({...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`)}))
+              .map((plan) => (
+                <td>
+                  <TagLink
+                    target='_blank'
+                    href={t(`whitelabel.pricing.orderNowLink.${plan.name}.link`)}>
+                    {t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}
+                  </TagLink>
+                </td>
+              ))}
           </tr>
         </tbody>
       </StyledTable>
-      <div>
-        <TagLink href='/'>Launch Your n.exchange Now!</TagLink>
-      </div>
     </>
       )}
     </I18n>
@@ -77,6 +81,7 @@ const tableStyle = `
   border-collapse: separate;
   border-spacing: 0 12px;
   text-align: center;
+  max-width: 880px;
 
   img {
     width: auto;
@@ -150,26 +155,6 @@ const tableStyle = `
   }
 `
 
-const TagLink = styled.a`
-  display: inline-block;
-  background: #2cc5bd;
-  border-radius: 6px;
-  border: none;
-  color: #fff;
-  min-width: 96px;
-  min-height: 18px;
-  line-height: 18px;
-  margin-bottom: 20px;
-  font-size: 20px;
-  text-align: center;
-  padding: 8px 12px;
-  text-decoration: none;
-  &:hover {
-    color: #000;
-    text-decoration: none;
-  }
-`
-
 const StyledTable = styled.table`
   width: 100%;
   max-width: 780px;
@@ -185,7 +170,8 @@ const StyledTable = styled.table`
           text-align: left;
         }
         &.p {
-          width: 110px;
+          min-width: 110px;
+          max-width: 180px;
           &-community {
 
           }

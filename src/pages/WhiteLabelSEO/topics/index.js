@@ -1,8 +1,9 @@
 import React from 'react'
 import Bounce from 'react-reveal/Bounce'
 import Marked from 'react-markdown'
-import { NavLink } from 'react-router-dom'
 import styled from '@emotion/styled'
+
+import { TagLink, TagNavLink } from 'Components/misc/TagLink' 
 
 export const TopicsList = (props) => {
   const { items } = props
@@ -20,27 +21,6 @@ export const TopicsList = (props) => {
     />
   ))
 }
-
-const TagLink = styled.a`
-  display: inline-block;
-  background: #2cc5bd;
-  border-radius: 6px;
-  border: none;
-  color: #fff;
-  min-width: 96px;
-  min-height: 18px;
-  line-height: 18px;
-  font-size: 10px;
-  text-align: center;
-  padding: 0 6px;
-  text-decoration: none;
-  &:hover {
-    color: #000;
-    text-decoration: none;
-  }
-`
-const TagNavLink = TagLink.withComponent(NavLink)
-
 
 const TopicCard = ({ title, content, art, btn}) => {
   return (
@@ -70,12 +50,19 @@ const StyledTopic = styled.article`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 
-  &:nth-child(even) {
-    grid-template-areas: 
-      "content art";
+  @media screen and (min-width: 960px) {
+    &:nth-child(even) {
+      grid-template-areas: 
+        "content art";
+    }
   }
   &:not(:last-of-type) {
     margin-bottom: 12rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "art";
   }
 
   > .art {
@@ -100,6 +87,10 @@ const StyledTopic = styled.article`
       font-family: Clan Offc Pro Book,sans-serif;
       font-weight: 400;
       font-size: 14px;
+    }
+
+    @media screen and (max-width: 960px) {
+      padding: 0 4rem;
     }
   }
 `

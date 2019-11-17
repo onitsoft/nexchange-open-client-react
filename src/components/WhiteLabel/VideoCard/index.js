@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { Col, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
 import { I18n } from 'react-i18next'
 import Support from './Support'
@@ -20,12 +21,12 @@ const VideoCard = (props) => {
       {t => (
         <StyledContainer>
           <div className='container'>
-            <Col md="6">
+            <Col className='tls'>
               <h1>{title}</h1>
-              <Button>{ t('videocard.livepreview') }</Button>
+              <Button><Link to='/'>{ t('videocard.livepreview') }</Link></Button>
               <Button onClick={onContactUs}>{ t('videocard.contactus') }</Button>
             </Col>
-            <Col md="6">
+            <Col className='vid'>
               {content}
             </Col>
           </div>
@@ -37,6 +38,10 @@ const VideoCard = (props) => {
     </I18n>
   )
 }
+
+const Col = styled.div`
+
+`
 
 const StyledContainer = styled.div`
   position: relative;
@@ -50,10 +55,53 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     @media screen and (min-width: 960px) {
       display: flex;
       flex-direction: row;
       align-items: center;
+    }
+    @media screen and (max-width: 960px) {
+      > .tls {
+        padding: 6rem 0;
+        text-align: center;
+      }
+    }
+
+    > .tls {
+      button {
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+
+    > .vid {
+      width: 100%;
+      > div {
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        width: 100%;
+        position: relative;
+      }
+      iframe {
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+      }
+    }
+  }
+
+  > .Ellipses {
+    > .Ellipses__bg {
+      > img {
+        @media screen and (max-width: 960px) {
+          display: none;
+        }
+      }
     }
   }
 `
