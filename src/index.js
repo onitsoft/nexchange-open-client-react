@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch, Redirect, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
@@ -26,6 +26,8 @@ import WhiteLabelSEO from 'Pages/WhiteLabelSEO';
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
 
+import ToTop from 'Components/misc/ToTop'
+
 import reducers from './reducers';
 
 import GraphCMSProvider from './graphcms'
@@ -47,14 +49,6 @@ crispEmailBinding(store);
 require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
-
-const ToTop = ({children}) => {
-  const location = useLocation()
-  const { pathname, search } = location
-  useEffect(() => { window.scroll({ top: 0, left: 0, behavior: 'smooth' }) }, [pathname, search])
-
-  return children
-}
 
 ReactDOM.render((
   <GraphCMSProvider>
