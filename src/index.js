@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import './i18n';
 
 import Referrals from 'Components/Referrals/Referrals';
@@ -48,34 +48,43 @@ require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
 
+const ToTop = ({children}) => {
+  const location = useLocation()
+  const { pathname, search } = location
+  useEffect(() => { window.scroll({ top: 0, left: 0, behavior: 'smooth' }) }, [pathname, search])
+
+  return children
+}
 
 ReactDOM.render((
   <GraphCMSProvider>
     <Provider store={store}>
       <BrowserRouter>
         <div>
-          <Referrals />
-          <Header />
+          <ToTop>
+            <Referrals />
+            <Header />
 
-          <Switch>
-            <Route exact path="/terms-and-conditions" component={TermsConditions} />
-            <Route exact path="/privacy" component={Privacy} />
-            <Route exact path="/order/:orderRef" component={Order} />
-            <Route exact path="/"
-              render={props =>  <Home {...props} store={store} />}
-            />
-            <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
-            <Route exact path="/faqs/:id?" component={FAQ} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} /> 
-            <Route exact path="/forgot-password" component={ForgotPassword} /> 
-            <Route exact path="/convert/:quote-to-:base"
-              render={props =>  <Pair {...props} store={store} />} />
-            <Route exact path="/not-found" component={NotFound} />
-            <Route component={NotFoundRedirect} />
-          </Switch>
+            <Switch>
+              <Route exact path="/terms-and-conditions" component={TermsConditions} />
+              <Route exact path="/privacy" component={Privacy} />
+              <Route exact path="/order/:orderRef" component={Order} />
+              <Route exact path="/"
+                render={props =>  <Home {...props} store={store} />}
+              />
+              <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
+              <Route exact path="/faqs/:id?" component={FAQ} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path="/signup" component={SignUp} /> 
+              <Route exact path="/forgot-password" component={ForgotPassword} /> 
+              <Route exact path="/convert/:quote-to-:base"
+                render={props =>  <Pair {...props} store={store} />} />
+              <Route exact path="/not-found" component={NotFound} />
+              <Route component={NotFoundRedirect} />
+            </Switch>
 
-          <Footer />
+            <Footer />
+          </ToTop>
         </div>
       </BrowserRouter>
     </Provider>
