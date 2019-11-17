@@ -24,22 +24,8 @@ class FAQ extends Component {
       searchText: '',
       filteredQuestionsIds: Array(FAQ_COUNT).fill().map((e,i)=>i+1),
       showSupportModal: false,
-      subject: '',
-    };
-
-    const faqs = [
-      {
-        question: 'Some question?',
-        answer: 'Some answer',
-        id: 1
-      },
-      {
-        question: 'Another Q?',
-        answer: 'Another A',
-        id: 2
-      }
-    ]
-
+      subject: ''
+    }
   }
   
   UNSAFE_componentWillMount() {

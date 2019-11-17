@@ -53,7 +53,7 @@ class Header extends Component {
 
   isHomeHeader = () => {
     if (window.location.pathname === '/' 
-        || window.location.pathname.indexOf('/faqs') != -1
+        || window.location.pathname.indexOf('/faqs') !== -1
         || window.location.pathname === '/not-found') {
       return true;
     }
