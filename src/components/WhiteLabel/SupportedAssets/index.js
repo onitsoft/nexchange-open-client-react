@@ -1,10 +1,74 @@
-import React, { Fragment } from 'react'
-import { I18n } from 'react-i18next'
-import SupportedAsset from './SupportedAsset'
-import { Col } from 'reactstrap'
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
+import { NavLink } from 'react-router-dom'
+
 import Bounce from 'react-reveal/Bounce'
 
-const coins = [
+export const SupportedAssets = (props) => {
+  const [assets] = useState(ASSETS)
+
+  return (
+    <>
+      <h1>Supported Assets</h1>
+      <StyledAssets>
+        <Bounce bottom cascade>
+          {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
+        </Bounce>
+      </StyledAssets>
+    </>
+  )
+
+}
+
+const Asset = ({asset}) => {
+  const { linkTo, name, src } = asset
+  return (
+    <StyledAsset>
+      <NavLink to={linkTo}>
+        <div className='art'>
+          <img src={src} alt={name} />
+        </div>
+        <div className='name'>
+          {name}
+        </div>
+      </NavLink>
+    </StyledAsset>
+  )
+}
+
+const StyledAssets = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 2rem;
+`
+
+const StyledAsset = styled.div`
+  a {
+    transition: all 120ms ease-in-out;
+    display: inline-block;
+    filter: grayscale(100%);
+    transition: all 120ms ease-in-out;
+
+    img {
+      transition: all 120ms ease-in-out;
+      transform: scale(0.8);
+    }
+
+
+    &:hover {
+      text-decoration: none;
+      filter: grayscale(23%);
+
+      img {
+        transform: scale(1);
+      }
+    }
+    
+  }
+
+`
+
+const ASSETS = [
   { src: 'img/coins/BCH.png', name: 'BCH', linkTo: '/convert/BCH-to-EUR' },
   { src: 'img/coins/BNB.png', name: 'BNB', linkTo: '/convert/BNB-to-EUR' },
   { src: 'img/coins/BNT.png', name: 'BNT', linkTo: '/convert/BNT-to-EUR' },
@@ -26,19 +90,4 @@ const coins = [
   { src: 'img/coins/ZEC.png', name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
 ]
 
-export default function SupportedAssets() {
-  return (
-    <I18n ns="translations">
-      {t => (
-        <Fragment>
-          <Col md={12}>
-            <h2>{t('supportedassets.title')}</h2>
-            <br />
-          </Col>
-          {coins.map((coin, index) => <SupportedAsset coin={coin} key={`coin-${index}`} />)}
-
-        </Fragment>
-      )}
-    </I18n>
-  )
-}
+export default SupportedAssets

@@ -51,10 +51,17 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     @media screen and (min-width: 960px) {
       display: flex;
       flex-direction: row;
       align-items: center;
+    }
+    @media screen and (max-width: 960px) {
+      > .tls {
+        padding: 6rem 0;
+        text-align: center;
+      }
     }
 
     > .tls {
