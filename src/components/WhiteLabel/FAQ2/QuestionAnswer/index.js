@@ -52,16 +52,18 @@ class QuestionAnswer extends Component {
   }
 
   render() {
+    const { title, content } = this.props
+
     return (
       <div className={`question-answer ${styles.container}`} id={`faq.${this.props.id}`}>
         <div className={`${styles.question}`} onClick={this.onClick} data-test="question-opener">
           <i className={`far fa-${this.state.open ? 'minus' : 'plus'}-square fa-2x`} aria-hidden="true" />
           <h3>
-            {this.props.t(`${this.props.qroot}.${this.props.id}`)}
+            {title}
           </h3>
         </div>
         <div className={`${this.state.open ? `${styles.answer} ${styles.active}` : `${styles.answer}`}`}>
-          <Marked source={this.props.t(`${this.props.aroot}.${this.props.id}`)} />
+          <Marked source={content} />
           <div className={styles.feedback}>
             <div>
               <span>Whas this helpful?</span>

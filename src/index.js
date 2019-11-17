@@ -26,6 +26,8 @@ import WhiteLabelSEO from 'Pages/WhiteLabelSEO';
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
 
+import ToTop from 'Components/misc/ToTop'
+
 import reducers from './reducers';
 
 import GraphCMSProvider from './graphcms'
@@ -48,34 +50,35 @@ require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
 
-
 ReactDOM.render((
   <GraphCMSProvider>
     <Provider store={store}>
       <BrowserRouter>
         <div>
-          <Referrals />
-          <Header />
+          <ToTop>
+            <Referrals />
+            <Header />
 
-          <Switch>
-            <Route exact path="/terms-and-conditions" component={TermsConditions} />
-            <Route exact path="/privacy" component={Privacy} />
-            <Route exact path="/order/:orderRef" component={Order} />
-            <Route exact path="/"
-              render={props =>  <Home {...props} store={store} />}
-            />
-            <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
-            <Route exact path="/faqs/:id?" component={FAQ} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} /> 
-            <Route exact path="/forgot-password" component={ForgotPassword} /> 
-            <Route exact path="/convert/:quote-to-:base"
-              render={props =>  <Pair {...props} store={store} />} />
-            <Route exact path="/not-found" component={NotFound} />
-            <Route component={NotFoundRedirect} />
-          </Switch>
+            <Switch>
+              <Route exact path="/terms-and-conditions" component={TermsConditions} />
+              <Route exact path="/privacy" component={Privacy} />
+              <Route exact path="/order/:orderRef" component={Order} />
+              <Route exact path="/"
+                render={props =>  <Home {...props} store={store} />}
+              />
+              <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
+              <Route exact path="/faqs/:id?" component={FAQ} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path="/signup" component={SignUp} /> 
+              <Route exact path="/forgot-password" component={ForgotPassword} /> 
+              <Route exact path="/convert/:quote-to-:base"
+                render={props =>  <Pair {...props} store={store} />} />
+              <Route exact path="/not-found" component={NotFound} />
+              <Route component={NotFoundRedirect} />
+            </Switch>
 
-          <Footer />
+            <Footer />
+          </ToTop>
         </div>
       </BrowserRouter>
     </Provider>

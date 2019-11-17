@@ -140,17 +140,6 @@ class Header extends Component {
                     </Link>
                   </li>
 
-                  <li>
-                   <Link onClick={() => this.closeNavbar()} to="/signin" className={styles.link}>
-                        {t('accounts.signin')}
-                    </Link>
-                  </li>
-                  <li>
-                   <Link onClick={() => this.closeNavbar()} to="/signup" className={`${styles.link} ${styles.main}`}>
-                        {t('accounts.signup')}
-                    </Link>
-                  </li>
-
                   <li className={styles['ico-link']}>
                     <a
                       href="https://n.exchange/ico"
