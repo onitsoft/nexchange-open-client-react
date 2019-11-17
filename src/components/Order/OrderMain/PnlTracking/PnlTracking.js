@@ -14,7 +14,7 @@ class PnlTracking extends Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const fetchRates = () => {
       const order = this.props.order;
       const request =`https://api.nexchange.io/en/api/v1/price/${order.pair.name}/latest`;
@@ -37,7 +37,7 @@ class PnlTracking extends Component {
     clearInterval(this.interval);
   }
 
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     const order = this.props.order;
     if(!this.state.creationRate && order && order.price) {      
       const creationRate = 1/order.price.rate;

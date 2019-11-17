@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { I18n, Trans } from 'react-i18next';
+import { I18n } from 'react-i18next';
 import { Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
 import moment from 'moment'
