@@ -174,13 +174,11 @@ class FAQ extends Component {
                   <a onClick={() => this.openSupportModal(this.state.searchText)}>{t('whitelabel.faq.openticket')}</a>
                 </div>
               : <div id='faq.list' className={styles.list}>
-                {this.questions.map((qid, index) => this.showQuestion(index + 1) && (
+                {this.props.items && this.props.items.map((item, index) => this.showQuestion(index + 1) && (
                   <QuestionAnswer
-                    qroot="whitelabel.faq.questions"
-                    aroot="whitelabel.faq.answers"
-                    id={qid}
-                    key={`wqa-${qid}`}
+                    key={`wqa-${index}`}
                     openSupportModal={this.openSupportModal}
+                    {...item}
                   />
                 ))}
               </div>

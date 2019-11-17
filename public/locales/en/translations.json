@@ -490,6 +490,26 @@
       "fiat": "Fiat",
       "ieo": "IEO"
     },
+    "pricing": {
+      "orderNowLink": {
+        "community": {
+          "link": "https://nexchange2.docs.apiary.io/#",
+          "text": "API Docs"
+        },
+        "crypto": {
+          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
+          "text": "Order Now"
+        },
+        "fiat": {
+          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
+          "text": "Order Now"
+        },
+        "ieo": {
+          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
+          "text": "Order Now"
+        }
+      }
+    },
     "features": {
       "monthly": "Monthly Price",
       "setup": "Setup Fee",
