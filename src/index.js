@@ -1,27 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
-
-import Referrals from 'Components/Referrals/Referrals';
-import Header from 'Components/Header/Header';
-import Footer from 'Components/FooterNext/Footer';
-import NotFound from 'Components/NotFound/NotFound';
-import FAQ from 'Components/FAQ/FAQ';
-import Pair from 'Components/Pair/Pair';
-
-import Home from 'Components/Home/Home';
-import Order from 'Components/Order/Order';
-import TermsConditions from 'Components/TermsConditions/TermsConditions';
-import Privacy from 'Components/Privacy/Privacy';
-import SignIn from 'Components/Accounts/SignIn/SignIn';
-import SignUp from 'Components/Accounts/SignUp/SignUp';
-import ForgotPassword from 'Components/Accounts/ForgotPassword/ForgotPassword';
-
-import WhiteLabelSEO from 'Pages/WhiteLabelSEO';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -50,11 +33,27 @@ require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
 
+const Referrals = React.lazy(() => import('Components/Referrals/Referrals'))
+const Header = React.lazy(() => import('Components/Header/Header'))
+const Footer = React.lazy(() => import('Components/Footer/Footer'))
+const NotFound = React.lazy(() => import('Components/NotFound/NotFound'))
+const FAQ = React.lazy(() => import('Components/FAQ/FAQ'))
+const Pair = React.lazy(() => import('Components/Pair/Pair'))
+
+const Home = React.lazy(() => import('Components/Home/Home'))
+const TermsConditions = React.lazy(() => import('Components/TermsConditions/TermsConditions'))
+const Privacy = React.lazy(() => import('Components/Privacy/Privacy'))
+const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'))
+const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'))
+const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'))
+const Order = React.lazy(() => import('Components/Order/Order'))
+const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
+
 ReactDOM.render((
   <GraphCMSProvider>
     <Provider store={store}>
       <BrowserRouter>
-        <div>
+        <Suspense fallback={<></>}>
           <ToTop>
             <Referrals />
             <Header />
@@ -79,7 +78,7 @@ ReactDOM.render((
 
             <Footer />
           </ToTop>
-        </div>
+        </Suspense>
       </BrowserRouter>
     </Provider>
   </GraphCMSProvider>

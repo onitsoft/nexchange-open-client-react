@@ -1,6 +1,6 @@
 {
   "extends": "react-app",
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react"],
   "env": {
     "browser": true
   },
@@ -9,5 +9,10 @@
     "import/no-webpack-loader-syntax": 0,
     "max-len": [2, 140, 4, { "ignoreUrls": true }],
     "no-script-url": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

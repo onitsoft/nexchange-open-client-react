@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback, Suspense } from 'react'
+import React, { useState, useEffect, useCallback, Suspense } from 'react'
 
 const Ellipse = props => {
   const { coin, style } = props

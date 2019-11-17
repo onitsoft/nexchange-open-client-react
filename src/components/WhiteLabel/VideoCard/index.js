@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
