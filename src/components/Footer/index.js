@@ -64,7 +64,7 @@ const Footer = (props) => {
               
               {/* <Trans i18nKey="footer.3"> */}
                 <p>
-                  All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')},<br />England & Wales{' '}
+                  All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')}<br />England & Wales{' '}
                   <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
                     registered company No. 10009845
                   </a>
