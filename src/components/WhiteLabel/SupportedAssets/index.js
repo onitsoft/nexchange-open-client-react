@@ -11,9 +11,7 @@ export const SupportedAssets = (props) => {
     <>
       <h1>Supported Assets</h1>
       <StyledAssets>
-        <Bounce bottom cascade>
           {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
-        </Bounce>
       </StyledAssets>
     </>
   )
@@ -25,12 +23,14 @@ const Asset = ({asset}) => {
   return (
     <StyledAsset>
       <NavLink to={linkTo}>
-        <div className='art'>
-          <img src={src} alt={name} />
-        </div>
-        <div className='name'>
-          {name}
-        </div>
+        <Bounce bottom>
+          <div className='art'>
+            <img src={src} alt={name} />
+          </div>
+          <div className='name'>
+            {name}
+          </div>
+        </Bounce>
       </NavLink>
     </StyledAsset>
   )
