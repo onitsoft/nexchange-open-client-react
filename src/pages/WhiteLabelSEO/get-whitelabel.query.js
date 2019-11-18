@@ -27,7 +27,7 @@ export const GET_WHITELABEL = gql`
           url
         }
       }
-      faq {
+      faq (orderBy: sort_ASC) {
         title
         content
         link

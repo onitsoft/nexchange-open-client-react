@@ -27,8 +27,8 @@ const Footer = (props) => {
               <section>
                 <h4>{t('header.resources')}</h4>
                 <ul>
-                  <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
                   <li><Link to='/instant-white-label'>{t('header.whitelabel')}</Link></li>
+                  <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
                   <li><a href='/#support'>{t('header.support')}</a></li>
                 </ul>
               </section>
@@ -113,10 +113,7 @@ margin-bottom: 80px;
 
     &.links {
       display: flex;
-      @media screen and (max-width: 640px) {
-        border-top: 2px solid #E8E8C8;
-        flex-direction: column;
-      }
+      flex-direction: column;
       > main {
         display: flex;
         @media screen and (max-width: 640px) {
@@ -136,17 +133,18 @@ margin-bottom: 80px;
       > aside {
         display: flex;
         flex: 1 1 auto;
-        justify-content: flex-end;
+        justify-content: center;
         flex-direction: column;
+        margin: 4rem 0;
         > p {
           margin: 2rem 0 0;
           font-size: 1rem;
-          text-align: right;
+          text-align: center;
         }
         > ul {
           display: flex;
             flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: flex-end;
           > li {
             padding: 0;
