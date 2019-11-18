@@ -493,20 +493,20 @@
     "pricing": {
       "orderNowLink": {
         "community": {
-          "link": "https://nexchange2.docs.apiary.io/#",
-          "text": "API Docs"
+          "link": "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=Community+(Free)",
+          "text": "Apply Now"
         },
         "crypto": {
-          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
-          "text": "Order Now"
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=Crypto+only",
+          "text": "Apply Now"
         },
         "fiat": {
-          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
-          "text": "Order Now"
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+%2B+Fiat",
+          "text": "Apply Now"
         },
         "ieo": {
-          "link": "https://secure.safecharge.com/ppp/purchase.do?merchant_site_id=165678&merchant_id=6441517529625705125&currency=USD&total_amount=50.00&email=user5929%40n.exchange&item_name_1=ODWCVR&item_amount_1=50.00&item_quantity_1=1&user_token=auto&version=4.0.0&user_token_id=Anonymous5929&success_url=https%3A//n.exchange/order/ODWCVR&pending_url=https%3A//n.exchange/order/ODWCVR&error_url=https%3A//n.exchange/order/ODWCVR&back_url=https%3A//n.exchange/order/ODWCVR&notify_url=https%3A//api.nexchange.io/en/payments/safe_charge/dmn/listen&time_stamp=2019-11-15.11:13:48&checksum=883eb163689544d18c03ec8cd967f87ff8ef89b6147b7093e0e126158de254a0",
-          "text": "Order Now"
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=IEO+(Crypto+%2B+Fiat+%2B+Own+token)",
+          "text": "Apply Now"
         }
       }
     },

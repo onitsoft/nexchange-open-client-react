@@ -8,7 +8,7 @@ const ToTop = ({children}) => {
   const { pathname } = location
   useEffect(() => {
     if (prev && prev !== pathname) {
-      window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+      window.scroll({ top: 0, left: 0 })
     }
     setPrev(pathname)
   }, [pathname])
