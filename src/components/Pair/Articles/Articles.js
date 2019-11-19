@@ -29,13 +29,13 @@ export const Articles = ({data, ...props}) => {
     ...(base && base.articles) || []]), [base, quote])
 
   return (
-    <StyledArticles className="container">
+    <StyledArticles>
       {mainArticle && <Article {...mainArticle} />}
       {subArticle && <Article {...subArticle} />}
 
       {((articles && articles.length > 0) && (
         articles.map(({title, content, date, createdAt}, index) => (
-              <Article {...{title, content, date, createdAt}} />
+          <Article key={`article-${index}`} {...{title, content, date, createdAt}} />
         ))
       ))}
     </StyledArticles>
