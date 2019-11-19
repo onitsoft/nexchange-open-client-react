@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import styled from '@emotion/styled'
 
 import { fetchCoinDetails, fetchPairs, changeOrderMode, selectCoin } from 'Actions';
 import Hero from './Hero/Hero';
@@ -32,19 +33,24 @@ const Pair = (props) => {
   }, [pair])
   
   return (
-    <div>
+    <StyledPairPage>
       <Hero {...props} selectedCoin={selectedCoin} {...{baseCurrency, quoteCurrency}} />
       <div className='container'>
         <h1>Price Chart for {pair}</h1>
         <PriceChart pair={pair}/>
       </div>
-      <RecentOrders {...props} />
-      <Articles pagename={pair} />
+      <RecentOrders {...props} pair={pair} />
+      <hr />
+      <Articles baseName={`coin-${base.toLowerCase()}`} quoteName={`coin-${quote.toLowerCase()}`} quote={quote} base={base} />
       {/* TODO Referral Program Widget */}
       {/* TODO API Access Widget */}
-    </div>
+    </StyledPairPage>
   );
 }
+
+const StyledPairPage = styled.div`
+  margin-bottom: 8rem;
+`
 
 
 const mapStateToProps = ({ orderMode, coinsInfo, selectedCoin }) => ({ orderMode, coinsInfo, selectedCoin });

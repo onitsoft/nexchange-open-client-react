@@ -11,9 +11,9 @@ export const UpdatedTime = ({created, updated, format = 'MMM Do YYYY'}) => {
   return (
     <StyledUpdatedTime>
       <p>
-        {created && <span>Created on: <time datetime={created}>{createdTime}</time></span>}
+        {created && <span>Created on: <time dateTime={created}>{createdTime}</time></span>}
         {created && updated && <span> &mdash; </span>}
-        {updated && <span>Last Update: <time datetime={updated}>{updatedTime}</time></span>}
+        {updated && <span>Last Update: <time dateTime={updated}>{updatedTime}</time></span>}
       </p>
     </StyledUpdatedTime>
   )

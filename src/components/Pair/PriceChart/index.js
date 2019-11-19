@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import styled from '@emotion/styled'
 
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
@@ -19,16 +20,19 @@ const PriceChart = ({pair}) => {
   })
 
   const chartOptions = useMemo(() => ({
+    title: {
+      text: `${pair.toUpperCase()} Price Chart`
+    },
     rangeSelector : {
       enabled: false
     },
     navigator: {
-      // enabled: false
+      enabled: false
     },
     series: [{
       data: !loading && data && data.length
         ? data.map(({ ticker: { ask, bid }, unix_time }) => [unix_time * 1000, +ask])
-        : [...Array(24)] // Flatline when no data
+        : [...Array(23)] // Flatline when no data
             .map((a, b) => ([Date.now() - (b * 1000 * 60 * 60), 0, 0]))
             .sort(([a], [b]) => a > b ? 1 : -1),
       type: 'area',
@@ -55,14 +59,23 @@ const PriceChart = ({pair}) => {
 
   // if (loading) return <>Loading...</>
   return (
-    <>
+    <StyledContainer>
       <HighchartsReact
         highcharts={Highcharts}
         options={chartOptions}
         constructorType='stockChart'
       />
-    </>
+    </StyledContainer>
   )
 }
+
+const StyledContainer = styled.div`
+
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px 0px 3px 0px rgba(204, 204, 204, 0.4);
+
+  border-radius: 6px;
+
+`
 
 export default PriceChart

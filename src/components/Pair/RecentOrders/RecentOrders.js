@@ -65,7 +65,7 @@ class RecentOrders extends Component {
   }
 
   render() {
-    let tradingSymbolPair = this.props.match.params.tradingSymbolPair;
+    let tradingSymbolPair = this.props.pair;
     let orders = this.state.orders.slice(0, config.RECENT_ORDERS_COUNT).map(order => {
       return (
         <I18n ns="translations" key={order.unique_reference}>
