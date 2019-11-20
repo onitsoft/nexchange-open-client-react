@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Header from './Header';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('Header', () => {
   let wrapShallow;

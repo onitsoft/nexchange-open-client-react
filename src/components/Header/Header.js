@@ -52,7 +52,7 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    const { pathname } = this.props.location
+    const { pathname } = window.location
 
     if (pathname === '/' 
         || pathname.indexOf('/faqs') !== -1
@@ -63,7 +63,7 @@ class Header extends Component {
   }
 
   hideHeader = () => {
-    const { pathname } = this.props.location
+    const { pathname } = window.location
     if (pathname === '/signin' 
         || pathname === '/signup'
         || pathname === '/forgot-password') {
@@ -266,4 +266,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default Header;
