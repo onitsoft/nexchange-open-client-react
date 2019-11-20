@@ -111,24 +111,6 @@ ShallowWrapper {
                 header.support
               </ForwardRef>
             </li>
-            <li>
-              <ForwardRef
-                className="link"
-                onClick={[Function]}
-                to="/signin"
-              >
-                accounts.signin
-              </ForwardRef>
-            </li>
-            <li>
-              <ForwardRef
-                className="link main"
-                onClick={[Function]}
-                to="/signup"
-              >
-                accounts.signup
-              </ForwardRef>
-            </li>
             <li
               className="ico-link"
             >
@@ -365,24 +347,6 @@ ShallowWrapper {
                   to="#"
                 >
                   header.support
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
-                  className="link"
-                  onClick={[Function]}
-                  to="/signin"
-                >
-                  accounts.signin
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
-                  className="link main"
-                  onClick={[Function]}
-                  to="/signup"
-                >
-                  accounts.signup
                 </ForwardRef>
               </li>
               <li
@@ -762,24 +726,6 @@ ShallowWrapper {
                   header.support
                 </ForwardRef>
               </li>
-              <li>
-                <ForwardRef
-                  className="link"
-                  onClick={[Function]}
-                  to="/signin"
-                >
-                  accounts.signin
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
-                  className="link main"
-                  onClick={[Function]}
-                  to="/signup"
-                >
-                  accounts.signup
-                </ForwardRef>
-              </li>
               <li
                 className="ico-link"
               >
@@ -965,24 +911,6 @@ ShallowWrapper {
                     to="#"
                   >
                     header.support
-                  </ForwardRef>
-                </li>,
-                <li>
-                  <ForwardRef
-                    className="link"
-                    onClick={[Function]}
-                    to="/signin"
-                  >
-                    accounts.signin
-                  </ForwardRef>
-                </li>,
-                <li>
-                  <ForwardRef
-                    className="link main"
-                    onClick={[Function]}
-                    to="/signup"
-                  >
-                    accounts.signup
                   </ForwardRef>
                 </li>,
                 <li
@@ -1273,88 +1201,6 @@ ShallowWrapper {
                   },
                   "ref": null,
                   "rendered": "header.support",
-                  "type": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "displayName": "Link",
-                    "propTypes": Object {
-                      "innerRef": [Function],
-                      "onClick": [Function],
-                      "replace": [Function],
-                      "target": [Function],
-                      "to": [Function],
-                    },
-                    "render": [Function],
-                  },
-                },
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <ForwardRef
-                    className="link"
-                    onClick={[Function]}
-                    to="/signin"
-                  >
-                    accounts.signin
-                  </ForwardRef>,
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "accounts.signin",
-                    "className": "link",
-                    "onClick": [Function],
-                    "to": "/signin",
-                  },
-                  "ref": null,
-                  "rendered": "accounts.signin",
-                  "type": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "displayName": "Link",
-                    "propTypes": Object {
-                      "innerRef": [Function],
-                      "onClick": [Function],
-                      "replace": [Function],
-                      "target": [Function],
-                      "to": [Function],
-                    },
-                    "render": [Function],
-                  },
-                },
-                "type": "li",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <ForwardRef
-                    className="link main"
-                    onClick={[Function]}
-                    to="/signup"
-                  >
-                    accounts.signup
-                  </ForwardRef>,
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "accounts.signup",
-                    "className": "link main",
-                    "onClick": [Function],
-                    "to": "/signup",
-                  },
-                  "ref": null,
-                  "rendered": "accounts.signup",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "displayName": "Link",
@@ -1931,24 +1777,6 @@ ShallowWrapper {
                   header.support
                 </ForwardRef>
               </li>
-              <li>
-                <ForwardRef
-                  className="link"
-                  onClick={[Function]}
-                  to="/signin"
-                >
-                  accounts.signin
-                </ForwardRef>
-              </li>
-              <li>
-                <ForwardRef
-                  className="link main"
-                  onClick={[Function]}
-                  to="/signup"
-                >
-                  accounts.signup
-                </ForwardRef>
-              </li>
               <li
                 className="ico-link"
               >
@@ -2185,24 +2013,6 @@ ShallowWrapper {
                     to="#"
                   >
                     header.support
-                  </ForwardRef>
-                </li>
-                <li>
-                  <ForwardRef
-                    className="link"
-                    onClick={[Function]}
-                    to="/signin"
-                  >
-                    accounts.signin
-                  </ForwardRef>
-                </li>
-                <li>
-                  <ForwardRef
-                    className="link main"
-                    onClick={[Function]}
-                    to="/signup"
-                  >
-                    accounts.signup
                   </ForwardRef>
                 </li>
                 <li
@@ -2582,24 +2392,6 @@ ShallowWrapper {
                     header.support
                   </ForwardRef>
                 </li>
-                <li>
-                  <ForwardRef
-                    className="link"
-                    onClick={[Function]}
-                    to="/signin"
-                  >
-                    accounts.signin
-                  </ForwardRef>
-                </li>
-                <li>
-                  <ForwardRef
-                    className="link main"
-                    onClick={[Function]}
-                    to="/signup"
-                  >
-                    accounts.signup
-                  </ForwardRef>
-                </li>
                 <li
                   className="ico-link"
                 >
@@ -2785,24 +2577,6 @@ ShallowWrapper {
                       to="#"
                     >
                       header.support
-                    </ForwardRef>
-                  </li>,
-                  <li>
-                    <ForwardRef
-                      className="link"
-                      onClick={[Function]}
-                      to="/signin"
-                    >
-                      accounts.signin
-                    </ForwardRef>
-                  </li>,
-                  <li>
-                    <ForwardRef
-                      className="link main"
-                      onClick={[Function]}
-                      to="/signup"
-                    >
-                      accounts.signup
                     </ForwardRef>
                   </li>,
                   <li
@@ -3093,88 +2867,6 @@ ShallowWrapper {
                     },
                     "ref": null,
                     "rendered": "header.support",
-                    "type": Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "displayName": "Link",
-                      "propTypes": Object {
-                        "innerRef": [Function],
-                        "onClick": [Function],
-                        "replace": [Function],
-                        "target": [Function],
-                        "to": [Function],
-                      },
-                      "render": [Function],
-                    },
-                  },
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <ForwardRef
-                      className="link"
-                      onClick={[Function]}
-                      to="/signin"
-                    >
-                      accounts.signin
-                    </ForwardRef>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "accounts.signin",
-                      "className": "link",
-                      "onClick": [Function],
-                      "to": "/signin",
-                    },
-                    "ref": null,
-                    "rendered": "accounts.signin",
-                    "type": Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "displayName": "Link",
-                      "propTypes": Object {
-                        "innerRef": [Function],
-                        "onClick": [Function],
-                        "replace": [Function],
-                        "target": [Function],
-                        "to": [Function],
-                      },
-                      "render": [Function],
-                    },
-                  },
-                  "type": "li",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <ForwardRef
-                      className="link main"
-                      onClick={[Function]}
-                      to="/signup"
-                    >
-                      accounts.signup
-                    </ForwardRef>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "accounts.signup",
-                      "className": "link main",
-                      "onClick": [Function],
-                      "to": "/signup",
-                    },
-                    "ref": null,
-                    "rendered": "accounts.signup",
                     "type": Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "displayName": "Link",

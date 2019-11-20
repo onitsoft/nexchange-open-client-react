@@ -52,18 +52,21 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    if (window.location.pathname === '/' 
-        || window.location.pathname.indexOf('/faqs') !== -1
-        || window.location.pathname === '/not-found') {
+    const { pathname } = window.location
+
+    if (pathname === '/' 
+        || pathname.indexOf('/faqs') !== -1
+        || pathname === '/not-found') {
       return true;
     }
     return false;
   }
 
   hideHeader = () => {
-    if (window.location.pathname === '/signin' 
-        || window.location.pathname === '/signup'
-        || window.location.pathname === '/forgot-password') {
+    const { pathname } = window.location
+    if (pathname === '/signin' 
+        || pathname === '/signup'
+        || pathname === '/forgot-password') {
       return true;
     }
     return false;
