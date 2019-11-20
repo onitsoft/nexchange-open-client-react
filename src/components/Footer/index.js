@@ -79,7 +79,6 @@ const Footer = (props) => {
 }
 
 const StyledFooter = styled.footer`
-margin-bottom: 80px;
   > section {
     padding: 24px 12px;
     &.logo {
