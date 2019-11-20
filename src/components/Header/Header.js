@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import ScrollToElement from 'scroll-to-element';
 
@@ -52,18 +52,21 @@ class Header extends Component {
   }
 
   isHomeHeader = () => {
-    if (window.location.pathname === '/' 
-        || window.location.pathname.indexOf('/faqs') !== -1
-        || window.location.pathname === '/not-found') {
+    const { pathname } = this.props.location
+
+    if (pathname === '/' 
+        || pathname.indexOf('/faqs') !== -1
+        || pathname === '/not-found') {
       return true;
     }
     return false;
   }
 
   hideHeader = () => {
-    if (window.location.pathname === '/signin' 
-        || window.location.pathname === '/signup'
-        || window.location.pathname === '/forgot-password') {
+    const { pathname } = this.props.location
+    if (pathname === '/signin' 
+        || pathname === '/signup'
+        || pathname === '/forgot-password') {
       return true;
     }
     return false;
@@ -263,4 +266,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
