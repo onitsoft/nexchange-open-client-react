@@ -68,25 +68,25 @@ class Order extends Component {
   }
 
   render() {
-    if (this.state.order == null) {
-      return <OrderLoading />;
-    } else if (this.state.order === 404) {
-      return <NotFound />;
-    } else if (typeof this.state.order === 'object') {
-      return (
-        <div className={`${styles.container} ${isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto'}`}>
-          <div className="container">
-            <div className="row">
-              <OrderTop order={this.state.order} />
-              <OrderCoinsProcessed order={this.state.order} />
+    return (
+      <div className={`${styles.container} ${this.state.order && (isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto')}`}>
+        <div className="container">
+          <div className="row">
+            {
+              ((this.state.order == null) && <OrderLoading />)
+              || ((this.state.order === 404) && <NotFound />)
+              || ((typeof this.state.order === 'object') && <>
+                <OrderTop order={this.state.order} />
+                <OrderCoinsProcessed order={this.state.order} />
 
-              <OrderMain {...this.props} />
-              <OrderCta order={this.state.order} />
-            </div>
+                <OrderMain {...this.props} />
+                <OrderCta order={this.state.order} />
+                </>)
+            }
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
