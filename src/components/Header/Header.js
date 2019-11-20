@@ -1,8 +1,7 @@
-import React, { Component, useMemo, useCallback, useState } from 'react';
+import React, { useMemo, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router'
 import { I18n } from 'react-i18next';
-import ScrollToElement from 'scroll-to-element';
 
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
@@ -12,7 +11,7 @@ import styles from './Header.scss';
 
 const Header = props => {
   const [showSupportModal, setShowSupportModal] = useState(false)
-  const [showNavbar, setShowNavbar] = useState(false)
+  const [, setShowNavbar] = useState(false)
   const location = useLocation()
   console.log('LA LOCATION:', location)
 
