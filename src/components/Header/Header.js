@@ -13,8 +13,6 @@ const Header = props => {
   const [showSupportModal, setShowSupportModal] = useState(false)
   const [, setShowNavbar] = useState(false)
   const location = useLocation()
-  console.log('LA LOCATION:', location)
-
 
   const isHomeHeader = useMemo(() => {
     const { pathname } = location
