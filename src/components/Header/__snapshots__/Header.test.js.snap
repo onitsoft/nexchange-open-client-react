@@ -250,7 +250,6 @@ ShallowWrapper {
         </div>
         <Connect(Support)
           onClose={[Function]}
-          show={false}
         />
       </div>,
       "className": "header home",
@@ -488,7 +487,6 @@ ShallowWrapper {
           </div>,
           <Connect(Support)
             onClose={[Function]}
-            show={false}
           />,
         ],
         "className": "container",
@@ -1671,7 +1669,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "onClose": [Function],
-            "show": false,
+            "show": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -1916,7 +1914,6 @@ ShallowWrapper {
           </div>
           <Connect(Support)
             onClose={[Function]}
-            show={false}
           />
         </div>,
         "className": "header home",
@@ -2154,7 +2151,6 @@ ShallowWrapper {
             </div>,
             <Connect(Support)
               onClose={[Function]}
-              show={false}
             />,
           ],
           "className": "container",
@@ -3337,7 +3333,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "onClose": [Function],
-              "show": false,
+              "show": undefined,
             },
             "ref": null,
             "rendered": null,

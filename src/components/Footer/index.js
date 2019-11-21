@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { I18n } from 'react-i18next';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink as Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
 import moment from 'moment'
 
@@ -27,7 +27,7 @@ const Footer = (props) => {
               <section>
                 <h4>{t('header.resources')}</h4>
                 <ul>
-                  <li><Link to='/instant-white-label'>{t('header.whitelabel')}</Link></li>
+                  <li><Link to='/instant-white-label'><strong>{t('header.whitelabel')}</strong></Link></li>
                   <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
                   <li><a href='/#support'>{t('header.support')}</a></li>
                 </ul>
