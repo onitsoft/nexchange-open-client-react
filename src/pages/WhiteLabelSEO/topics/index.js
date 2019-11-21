@@ -51,7 +51,7 @@ const StyledTopic = styled.article`
   grid-template-rows: auto;
 
   @media screen and (min-width: 960px) {
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       grid-template-areas: 
         "content art";
     }
