@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 import styled from '@emotion/styled'
-import Bounce from 'react-reveal/Bounce'
 
 import { graphql } from 'react-apollo'
 
+import Bounce from 'Components/misc/reveal'
 import VideoCard from 'Components/WhiteLabel/VideoCard/'
 import MajorCard from 'Components/WhiteLabel/MajorCard/'
 import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
