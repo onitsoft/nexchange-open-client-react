@@ -1,29 +1,47 @@
 version: '2'
 services:
     web:
+        container_name: nexchange-fed
         image: onitsoft/nginx:node
         volumes:
-            - /nexchange/etc/letsencrypt:/etc/letsencrypt
-            - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
-            - /nexchange/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-            - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
-            - /nexchange/root:/nexchange/root
+            # - /nexchange/etc/letsencrypt:/etc/letsencrypt
+            # - react-client:/tmp/nexchage
+            - /tmp/nexchage:/tmp/nexchange
+            - clientvol:/tmp/nexchage/root/nexchange
+            - icovol:/tmp/nexchange/root/ico
+            # - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
+            # - /nexchange/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            # - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
+            # - /nexchange/root:/nexchange/root
+        ports:
+            - "8000:80"
+            - "8443:443"
+        restart: always
+        depends_on:
+            - react-client
+            - ico-page
+            - fed-proxy
+    react-client:
+        image: open-react-client
+        volumes:
+            - clientvol:/deploy/app/build
+    ico-page:
+        image: ico-landing-page
+        volumes:
+            - icovol:/deploy/app/build
+    fed-proxy:
+        image: fed-proxy
+        volumes:
+            - /tmp/nexchange/root:/deploy/app
         ports:
             - "80:80"
             - "443:443"
-        restart: always
-    # react-client:
-    #         image: onitsoft/nexchange-open-react-client
-    #         volumes:
-    #             - /deploy/app/build:/nexchange/root/nexchage-fed-proxy/nexchange
-    # ico-page:
-    #         image: onitsoft/ico-landing-page
-    #         volumes:
-    #             - /deploy/app/build:/nexchange/root/nexchage-fed-proxy/ico
-    # fed-proxy:
-    #         image: onitsoft/fed-proxy
-    #         ports:
-    #             - "80:80"
-    #             - "443:443"
+        depends_on:
+            - react-client
+            - ico-page
+        
+volumes:
+    clientvol:
+    icovol:
 
         
