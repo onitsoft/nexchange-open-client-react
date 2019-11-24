@@ -26,12 +26,16 @@ const TopicCard = ({ title, content, art, btn}) => {
   return (
     <StyledTopic>
       <div className='art'>
-        <img src={art} alt={title} />
+        <Bounce bottom>
+          <img src={art} alt={title} />
+        </Bounce>
       </div>
       <section>
-        {btn ? <div>{btn}</div> : null}
-        <h3>{title}</h3>
-        <Marked source={content} />
+        <Bounce bottom>
+          {btn ? btn : null}
+          <h3>{title}</h3>
+          <Marked source={content} />
+        </Bounce>
       </section>
     </StyledTopic>
   )
