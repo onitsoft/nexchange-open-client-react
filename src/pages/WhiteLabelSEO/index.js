@@ -1,7 +1,5 @@
 import React, { useMemo } from 'react'
 import styled from '@emotion/styled'
-import Bounce from 'react-reveal/Bounce'
-
 import { graphql } from 'react-apollo'
 
 import VideoCard from 'Components/WhiteLabel/VideoCard/'
@@ -34,19 +32,17 @@ const WhiteLabelSEO = ({data, ...props}) => {
     <StyledWhitelabel>
         <VideoCard title={title} content={<YouTube videoId={videoId} opts={youtubeOptions} />} />
         <div className='container'>
-          <Bounce bottom cascade>
-            <section className='row'>
-              <MajorCard
-                title={main && main.title}
-                content={main && main.content}
-                art={main && main.art && main.art.url}
-              />
-            </section>
-            <section className='row'><SupportedAssets /></section>
-            <section className='row'><TopicsList items={topics} /></section>
-            <section className='row'><PriceTable plans={plans} /></section>
-            <section className='row'><FAQ items={faq} /></section>
-          </Bounce>
+          <section className='row'>
+            <MajorCard
+              title={main && main.title}
+              content={main && main.content}
+              art={main && main.art && main.art.url}
+            />
+          </section>
+          <section className='row'><SupportedAssets /></section>
+          <section className='row'><TopicsList items={topics} /></section>
+          <section className='row'><PriceTable plans={plans} /></section>
+          <section className='row'><FAQ items={faq} /></section>
         </div>
 
         <UpdatedTime created={createdAt} updated={updatedAt} />
