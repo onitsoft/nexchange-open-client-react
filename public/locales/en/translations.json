@@ -514,7 +514,7 @@
     "features": {
       "monthly": "Monthly Price",
       "setup": "Setup Fee",
-      "duration": "Plan Duration",
+      "duration": "Min. Duration",
       "coinlist": "Custom Coin Listing",
       "devhours": "Included Developer Hours",
       "hourprice": "Additional Developer Hour Price",
