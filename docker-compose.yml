@@ -1,47 +1,29 @@
 version: '2'
 services:
     web:
-        container_name: nexchange-fed
         image: onitsoft/nginx:node
         volumes:
-            # - /nexchange/etc/letsencrypt:/etc/letsencrypt
-            # - react-client:/tmp/nexchage
-            - /tmp/nexchage:/tmp/nexchange
-            - clientvol:/tmp/nexchage/root/nexchange
-            - icovol:/tmp/nexchange/root/ico
-            # - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
-            # - /nexchange/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-            # - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
-            # - /nexchange/root:/nexchange/root
+            - /nexchange/etc/letsencrypt:/etc/letsencrypt
+            - /nexchange/etc/nginx/ssl:/etc/nginx/ssl
+            - /nexchange/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
+            - /nexchange/root:/nexchange/root
         ports:
             - "8000:80"
             - "8443:443"
         restart: always
-        depends_on:
-            - react-client
-            - ico-page
-            - fed-proxy
     react-client:
-        image: open-react-client
+        image: onitsoft/nexchange-open-client-react
         volumes:
-            - clientvol:/deploy/app/build
+            - /nexchange/root/nexchange:/deploy/app/build
     ico-page:
-        image: ico-landing-page
+        image: onitsoft/ico-landing-page
         volumes:
-            - icovol:/deploy/app/build
+            - /nexchange/root/ico:/deploy/app/build
     fed-proxy:
-        image: fed-proxy
+        image: onitsoft/nexchange-fed-proxy
         volumes:
-            - /tmp/nexchange/root:/deploy/app
+            - /nexchange/root:/deploy
         ports:
-            - "80:80"
-            - "443:443"
-        depends_on:
-            - react-client
-            - ico-page
-        
-volumes:
-    clientvol:
-    icovol:
-
-        
+            - "3000:3000"
+            
