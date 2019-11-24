@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
 
+import Bounce from 'Components/misc/reveal'
+
 export const SupportedAssets = (props) => {
   const [assets] = useState(ASSETS)
 
@@ -21,12 +23,14 @@ const Asset = ({asset}) => {
   return (
     <StyledAsset>
       <NavLink to={linkTo}>
-        <div className='art'>
-          <img src={src} alt={name} />
-        </div>
-        <div className='name'>
-          {name}
-        </div>
+        <Bounce bottom>
+          <div className='art'>
+            <img src={src} alt={name} />
+          </div>
+          <div className='name'>
+            {name}
+          </div>
+        </Bounce>
       </NavLink>
     </StyledAsset>
   )

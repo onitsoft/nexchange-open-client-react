@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react'
 import styled from '@emotion/styled'
+
 import { graphql } from 'react-apollo'
 
+import Bounce from 'Components/misc/reveal'
 import VideoCard from 'Components/WhiteLabel/VideoCard/'
 import MajorCard from 'Components/WhiteLabel/MajorCard/'
 import SupportedAssets from 'Components/WhiteLabel/SupportedAssets/'
@@ -32,17 +34,19 @@ const WhiteLabelSEO = ({data, ...props}) => {
     <StyledWhitelabel>
         <VideoCard title={title} content={<YouTube videoId={videoId} opts={youtubeOptions} />} />
         <div className='container'>
-          <section className='row'>
-            <MajorCard
-              title={main && main.title}
-              content={main && main.content}
-              art={main && main.art && main.art.url}
-            />
-          </section>
-          <section className='row'><SupportedAssets /></section>
-          <section className='row'><TopicsList items={topics} /></section>
-          <section className='row'><PriceTable plans={plans} /></section>
-          <section className='row'><FAQ items={faq} /></section>
+          <Bounce bottom cascade>
+            <section className='row'>
+              <MajorCard
+                title={main && main.title}
+                content={main && main.content}
+                art={main && main.art && main.art.url}
+              />
+            </section>
+            <section className='row'><SupportedAssets /></section>
+            <section className='row'><TopicsList items={topics} /></section>
+            <section className='row'><PriceTable plans={plans} /></section>
+            <section className='row'><FAQ items={faq} /></section>
+          </Bounce>
         </div>
 
         <UpdatedTime created={createdAt} updated={updatedAt} />
