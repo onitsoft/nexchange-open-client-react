@@ -13,6 +13,8 @@ import ToTop from 'Components/misc/ToTop'
 
 import reducers from './reducers';
 
+import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint'
+
 import GraphCMSProvider from './graphcms'
 import './css/index.scss';
 
@@ -52,34 +54,36 @@ const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
 ReactDOM.render((
   <GraphCMSProvider>
     <Provider store={store}>
-      <BrowserRouter>
-        <Suspense fallback={<></>}>
-          <ToTop>
-            <Referrals />
-            <Header />
+      <BreakpointProvider queries={defaultQuery}>
+        <BrowserRouter>
+          <Suspense fallback={<></>}>
+            <ToTop>
+              <Referrals />
+              <Header />
 
-            <Switch>
-              <Route exact path="/terms-and-conditions" component={TermsConditions} />
-              <Route exact path="/privacy" component={Privacy} />
-              <Route exact path="/order/:orderRef" component={Order} />
-              <Route exact path="/"
-                render={props =>  <Home {...props} store={store} />}
-              />
-              <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
-              <Route exact path="/faqs/:id?" component={FAQ} />
-              <Route exact path="/signin" component={SignIn} />
-              <Route exact path="/signup" component={SignUp} /> 
-              <Route exact path="/forgot-password" component={ForgotPassword} /> 
-              <Route exact path="/convert/:quote-to-:base"
-                render={props =>  <Pair {...props} store={store} />} />
-              <Route exact path="/not-found" component={NotFound} />
-              <Route component={NotFoundRedirect} />
-            </Switch>
+              <Switch>
+                <Route exact path="/terms-and-conditions" component={TermsConditions} />
+                <Route exact path="/privacy" component={Privacy} />
+                <Route exact path="/order/:orderRef" component={Order} />
+                <Route exact path="/"
+                  render={props =>  <Home {...props} store={store} />}
+                />
+                <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
+                <Route exact path="/faqs/:id?" component={FAQ} />
+                <Route exact path="/signin" component={SignIn} />
+                <Route exact path="/signup" component={SignUp} /> 
+                <Route exact path="/forgot-password" component={ForgotPassword} /> 
+                <Route exact path="/convert/:quote-to-:base"
+                  render={props =>  <Pair {...props} store={store} />} />
+                <Route exact path="/not-found" component={NotFound} />
+                <Route component={NotFoundRedirect} />
+              </Switch>
 
-            <Footer />
-          </ToTop>
-        </Suspense>
-      </BrowserRouter>
+              <Footer />
+            </ToTop>
+          </Suspense>
+        </BrowserRouter>
+      </BreakpointProvider>
     </Provider>
   </GraphCMSProvider>
   ),

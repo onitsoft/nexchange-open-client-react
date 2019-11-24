@@ -2,6 +2,7 @@ import React from 'react'
 import Marked from 'react-markdown'
 import styled from '@emotion/styled'
 
+import Bounce from 'Components/misc/reveal'
 import { TagLink, TagNavLink } from 'Components/misc/TagLink' 
 
 export const TopicsList = (props) => {
@@ -46,7 +47,7 @@ const StyledTopic = styled.article`
   grid-template-rows: auto;
 
   @media screen and (min-width: 960px) {
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       grid-template-areas: 
         "content art";
     }
