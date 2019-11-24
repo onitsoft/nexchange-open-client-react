@@ -12,4 +12,18 @@ services:
             - "80:80"
             - "443:443"
         restart: always
+    # react-client:
+    #         image: onitsoft/nexchange-open-react-client
+    #         volumes:
+    #             - /deploy/app/build:/nexchange/root/nexchage-fed-proxy/nexchange
+    # ico-page:
+    #         image: onitsoft/ico-landing-page
+    #         volumes:
+    #             - /deploy/app/build:/nexchange/root/nexchage-fed-proxy/ico
+    # fed-proxy:
+    #         image: onitsoft/fed-proxy
+    #         ports:
+    #             - "80:80"
+    #             - "443:443"
+
         
