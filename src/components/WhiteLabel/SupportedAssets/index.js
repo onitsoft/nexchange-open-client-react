@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense, useMemo } from 'react'
 import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
+import * as icons from './icons'
 
 export const SupportedAssets = (props) => {
   const [assets] = useState(ASSETS)
@@ -22,13 +23,35 @@ const Asset = ({asset}) => {
     <StyledAsset>
       <NavLink to={linkTo}>
         <div className='art'>
-          <img src={src} alt={name} />
+          {/* <img src={src} alt={name} /> */}
+          <AssetIcon name={name.toLowerCase()} />
         </div>
         <div className='name'>
           {name}
         </div>
       </NavLink>
     </StyledAsset>
+  )
+}
+
+const AssetIcon = (props) => {
+  const { name } = props
+  // const Icon = useMemo(() => {
+  //   try {
+  //     const res = require(`cryptocurrency-icons/32@2x/icon/${props.name}.png`)
+  //     // const imp = import(`cryptocurrency-icons/svg/icon/${props.name}.svg`)
+  //     console.log('what is res?', {res})
+  //     return <>res</>
+  //   } catch (err) {
+  //     return <>NA</>
+  //   }
+  // }, [name])
+
+  return (
+    <Suspense fallback={<>?</>}>
+      {/* <Icon /> */}
+      <img src={icons[`${name}Coin`]} alt={name} />
+    </Suspense>
   )
 }
 
@@ -85,5 +108,7 @@ const ASSETS = [
   { src: 'img/coins/XVG.png', name: 'XVG', linkTo: '/convert/XVG-to-EUR' },
   { src: 'img/coins/ZEC.png', name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
 ]
+
+console.log('ASSETS', ASSETS)
 
 export default SupportedAssets
