@@ -4,7 +4,7 @@ N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange
 
 ## Installation
 
-1.  Make sure you have [Node and yarn](https://docs.npmjs.com/getting-started/installing-node) installed on your system, then run `npm install -g yarn`.
+1.  Make sure you have [Node and npm](https://docs.npmjs.com/getting-started/installing-node) installed on your system, then run `npm install -g yarn`.
 2.  If you have Git on your terminal, type `git clone https://github.com/onitsoft/nexchange-open-client-react.git`.
 3.  Then go to repository by typing `cd nexchange-open-client-react`.
 4.  Install yarn dependencies `yarn install`.
