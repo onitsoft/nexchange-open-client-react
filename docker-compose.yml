@@ -31,9 +31,11 @@ services:
         image: onitsoft/nexchange-open-client-react
         volumes:
             - /nexchange/root/nexchange:/deploy/app/build
+        entrypoint: sleep infinity
         restart: always
     ico-page:
         image: onitsoft/ico-landing-page
         volumes:
             - /nexchange/root/ico:/deploy/app/build
+        entrypoint: sleep infinity
         restart: always
