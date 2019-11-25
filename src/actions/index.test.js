@@ -28,6 +28,10 @@ import order from 'Mocks/order';
 import kyc from 'Mocks/kyc.js';
 import preparePairs from '../utils/preparePairs';
 
+import config from '../config'
+
+const { API_BASE_URL } = config
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const axiosMock = new MockAdapter(axios);
@@ -121,7 +125,7 @@ describe('actions', () => {
   });
 
   it('fetchCoinDetails (default)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+    axiosMock.onGet(API_BASE_URL + '/currency/').reply(200, currency);
 
     const expectedActions = [
       {
@@ -136,7 +140,7 @@ describe('actions', () => {
   });
 
   it('fetchCoinDetails (test)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+    axiosMock.onGet(API_BASE_URL + '/currency/').reply(200, currency);
     window.history.pushState('', '', 'localhost/?test=true');
 
     const expectedActions = [
@@ -169,7 +173,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=undefined').reply(200, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_base=undefined').reply(200, mockData);
     const expectedActions = [
       {
         type: types.ERROR_ALERT,
@@ -213,7 +217,7 @@ describe('actions', () => {
 
     const payload = { pair: 'XVGBTC', lastEdited: 'deposit', coinSelector: true, deposit: 520 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/XVGBTC/').reply(200, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/XVGBTC/').reply(200, mockData);
     const expectedActions = [
       {
         type: types.ERROR_ALERT,
@@ -260,7 +264,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: '0.05' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockData);
 
     const expectedActions = [
       {
@@ -305,7 +309,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 0.7 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=0.7').reply(200, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_base=0.7').reply(200, mockData);
 
     const expectedActions = [
       {
@@ -347,7 +351,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_quote=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -388,7 +392,7 @@ describe('actions', () => {
   it('fetchPrice (initial quote too high and no error message received)', () => {
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_quote=100').reply(400);
 
     const expectedActions = [
       {
@@ -433,7 +437,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=100').reply(400, mockData);
+    axiosMock.onGet(API_BASE_URL + '/get_price/ETHBTC/?amount_base=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -475,7 +479,7 @@ describe('actions', () => {
   });
 
   it('fetchPairs (no initial selection)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
+    axiosMock.onGet(API_BASE_URL + '/pair/').reply(200, pair);
 
     const pairs = pair.filter(pair => !pair.disabled && !pair.test_mode);
     const processedPairs = preparePairs(pairs);
@@ -494,7 +498,7 @@ describe('actions', () => {
   });
 
   it('fetchPairs (no initial selection and test)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
+    axiosMock.onGet(API_BASE_URL + '/pair/').reply(200, pair);
     window.history.pushState('', '', 'localhost/?test=true');
 
     const pairs = pair.filter(pair => !pair.disabled);
@@ -514,8 +518,8 @@ describe('actions', () => {
   });
 
   it('fetchPairs (url param set)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/ETHBTC/').reply(200, {
+    axiosMock.onGet(API_BASE_URL + '/pair/').reply(200, pair);
+    axiosMock.onGet(API_BASE_URL + '/pair/ETHBTC/').reply(200, {
       name: 'ETHBTC',
       base: 'ETH',
       quote: 'BTC',
@@ -549,7 +553,7 @@ describe('actions', () => {
   });
 
   it('fetchOrder', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(200, order);
+    axiosMock.onGet(API_BASE_URL + '/orders/OVZL1O/').reply(200, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -565,7 +569,7 @@ describe('actions', () => {
   });
 
   it('fetchOrder (server error)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(500, order);
+    axiosMock.onGet(API_BASE_URL + '/orders/OVZL1O/').reply(500, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -581,7 +585,7 @@ describe('actions', () => {
   });
 
   it('fetchOrder (too many requests)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(429, order);
+    axiosMock.onGet(API_BASE_URL + '/orders/OVZL1O/').reply(429, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -597,7 +601,7 @@ describe('actions', () => {
   });
 
   it('fetchKyc', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/kyc/O3FZNP/').reply(200, kyc);
+    axiosMock.onGet(API_BASE_URL + '/kyc/O3FZNP/').reply(200, kyc);
 
     const payload = 'O3FZNP';
     const expectedActions = [{ type: types.SET_KYC, kyc }];
@@ -615,7 +619,7 @@ describe('actions', () => {
   });
 
   it('fetchUserEmail (with token)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/users/me/').reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
+    axiosMock.onGet(API_BASE_URL + '/users/me/').reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
     localStorage.setItem('token', 'some token');
 
     const expectedActions = [
@@ -646,7 +650,7 @@ describe('actions', () => {
     window.$crisp.push = jest.fn();
 
     axiosMock
-      .onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload })
+      .onPut(API_BASE_URL + '/users/me/', { email: payload })
       .reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
     localStorage.setItem('token', 'some token');
 
@@ -673,7 +677,7 @@ describe('actions', () => {
     window.$crisp.get = jest.fn();
     window.$crisp.push = jest.fn();
 
-    axiosMock.onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload }).reply(500);
+    axiosMock.onPut(API_BASE_URL + '/users/me/', { email: payload }).reply(500);
     localStorage.setItem('token', 'some token');
 
     const expectedActions = [

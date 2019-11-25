@@ -30,7 +30,7 @@ ShallowWrapper {
           order.payment1
         </h2>,
         <a
-          href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
+          href="https://api.n.exchange/en/api/v1/orders/OV2O6C"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -86,7 +86,7 @@ ShallowWrapper {
           >
             order.api
           </h4>,
-          "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
+          "href": "https://api.n.exchange/en/api/v1/orders/OV2O6C",
           "rel": "noopener noreferrer",
           "target": "_blank",
         },
@@ -125,7 +125,7 @@ ShallowWrapper {
             order.payment1
           </h2>,
           <a
-            href="https://api.nexchange.io/en/api/v1/orders/OV2O6C"
+            href="https://api.n.exchange/en/api/v1/orders/OV2O6C"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -181,7 +181,7 @@ ShallowWrapper {
             >
               order.api
             </h4>,
-            "href": "https://api.nexchange.io/en/api/v1/orders/OV2O6C",
+            "href": "https://api.n.exchange/en/api/v1/orders/OV2O6C",
             "rel": "noopener noreferrer",
             "target": "_blank",
           },
