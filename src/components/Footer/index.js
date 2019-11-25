@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
@@ -19,10 +19,10 @@ const Footer = (props) => {
     <I18n ns="translations">
       {(t) => (
         <StyledFooter>
-          <section className='logo col-lg-3'>
-            <img src="/img/logo.svg" alt="N.exchange Logo" />
+          <section className='logo'>
+            <Link to='/'><img src="/img/logo.svg" alt="N.exchange Logo" /></Link>
           </section>
-          <section className='links col-lg-9'>
+          <section className='links'>
             <main className=''>
               <section>
                 <h4>{t('header.resources')}</h4>
@@ -41,6 +41,10 @@ const Footer = (props) => {
                 </ul>
               </section>
               <section>
+                <h4>{t('footer.popular-pairs')}</h4>
+                <PopularPairs />
+              </section>
+              <section>
                 <h4>{t('header.social')}</h4>
                 <ul>
                   <li><a href='/twitter' target='_blank' rel='noopener noreferrer'>{t('header.twitter')}</a></li>
@@ -53,23 +57,12 @@ const Footer = (props) => {
 
             </main>
             <aside>
-              <ul>
-                <li>
-                  <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
-                </li>
-                <li>
-                  <Link to='/privacy'>{t('header.privacy-policy')}</Link>
-                </li>
-              </ul>
-              
-              {/* <Trans i18nKey="footer.3"> */}
-                <p>
-                  All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')}<br />England & Wales{' '}
-                  <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
-                    registered company No. 10009845
-                  </a>
-                </p>
-              {/* </Trans> */}
+              <p><CopyrightNotice /> — <RegisteredCompany /></p>
+              <p>
+                <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
+                <span> — </span>
+                <Link to='/privacy'>{t('header.privacy-policy')}</Link>
+              </p>
             </aside>
           </section>
         </StyledFooter>
@@ -77,6 +70,44 @@ const Footer = (props) => {
     </I18n>
   )
 }
+/*
+ETH to BTC
+BTC to ETH
+LTC to ETH
+USDT to BTC
+BTC to XMR
+BTC to USDT
+*/
+const defaultPairs = [
+  ['eth', 'btc'],
+  ['btc', 'eth'],
+  ['ltc', 'eth'],
+  ['usdt', 'btc'],
+  ['btc', 'xmr'],
+  ['btc', 'usdt'],
+]
+const PopularPairs = (props) => {
+  const [pairs] = useState(defaultPairs)
+  return (
+    <ul>
+      {pairs.map(([quote, base], index) => (
+        <li key={`pair-${index}`}>
+          <Link to={`/convert/${quote}-to-${base}`}>{quote.toUpperCase()} to {base.toUpperCase()}</Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+const CopyrightNotice = (props) => (
+  <>All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')} — England & Wales</>
+)
+
+const RegisteredCompany = (props) => (
+  <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
+    registered company No. 10009845
+  </a>
+)
 
 const StyledFooter = styled.footer`
   > section {
@@ -87,7 +118,7 @@ const StyledFooter = styled.footer`
         justify-content: center;
         align-items: center;
       }
-      > img {
+      img {
         margin: 0 2rem;
         width: 180px;
       }
@@ -139,6 +170,10 @@ const StyledFooter = styled.footer`
           margin: 2rem 0 0;
           font-size: 1rem;
           text-align: center;
+          a {
+            text-transform: uppercase;
+            color: #000;
+          }
         }
         > ul {
           display: flex;
