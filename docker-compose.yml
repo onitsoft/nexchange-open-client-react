@@ -9,8 +9,8 @@ services:
             - /nexchange/etc/nginx/.htpasswd:/etc/nginx/.htpasswd
             - /nexchange/root:/nexchange/root
         ports:
-            - "8000:80"
-            - "8443:443"
+            - "80:80"
+            - "443:443"
         restart: always
     react-client:
         image: onitsoft/nexchange-open-client-react
