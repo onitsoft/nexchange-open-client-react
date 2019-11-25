@@ -1,5 +1,18 @@
 version: '2'
 services:
+    fed-proxy:
+        image: onitsoft/nexchange-fed-proxy
+        volumes:
+            - /nexchange/root:/nexchange/root
+        ports:
+            - "3000:3000"
+        environment:
+            - NEXCHANGE_ROOT=/nexchange/root/nexchange
+            - ICO_ROOT=/nexchange/root/ico
+        depends_on:
+            - react-client
+            - ico-page
+        restart: always    
     web:
         image: onitsoft/nginx:node
         volumes:
@@ -11,5 +24,14 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        depends_on:
+            - fed-proxy
         restart: always
-        
+    react-client:
+        image: onitsoft/nexchange-open-client-react
+        volumes:
+            - /nexchange/root/nexchange:/deploy/app/build
+    ico-page:
+        image: onitsoft/ico-landing-page
+        volumes:
+            - /nexchange/root/ico:/deploy/app/build

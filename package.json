@@ -130,7 +130,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:ci": "CI=true node scripts/test.js --no-watchman --all --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
