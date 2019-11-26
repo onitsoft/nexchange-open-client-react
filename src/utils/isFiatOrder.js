@@ -1,3 +1,3 @@
 export default order => {
-  return !order.pair.quote.is_crypto;
+  return order && order.pair && order.pair.quote && !order.pair.quote.is_crypto;
 };
