@@ -24,6 +24,7 @@ const Asset = ({asset}) => {
       <NavLink to={linkTo}>
         <div className='art'>
           <img src={icons[`${name.toLowerCase()}Coin`]} alt={name} />
+          <span>{name}</span>
         </div>
         <div className='name'>
           {name}
@@ -46,16 +47,40 @@ const StyledAsset = styled.div`
     filter: grayscale(100%);
     transition: all 120ms ease-in-out;
 
-    img {
-      transition: all 120ms ease-in-out;
-      transform: scale(0.8);
+    .art {
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      background: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: .75rem; 
+      transition: all 680ms ease-out;
+
+      img {
+        transition: all 120ms ease-in-out;
+        transform: scale(0.8);
+        display: block;
+        width: 40%;
+        height: 40%;
+      }
+      span {
+        display: block;
+        text-align: center;
+        font-weight: strong;
+        font-family: "Clan Offc Pro Medium";
+        font-size: 18px;
+        margin-top: .5rem;
+      }
     }
 
 
     &:hover {
       text-decoration: none;
       filter: grayscale(23%);
-
+      
       img {
         transform: scale(1);
       }
