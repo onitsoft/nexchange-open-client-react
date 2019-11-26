@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
+import * as icons from './icons'
 
 export const SupportedAssets = (props) => {
   const [assets] = useState(ASSETS)
@@ -17,12 +18,13 @@ export const SupportedAssets = (props) => {
 }
 
 const Asset = ({asset}) => {
-  const { linkTo, name, src } = asset
+  const { linkTo, name } = asset
   return (
     <StyledAsset>
       <NavLink to={linkTo}>
         <div className='art'>
-          <img src={src} alt={name} />
+          <img src={icons[`${name.toLowerCase()}Coin`]} alt={name} />
+          <span>{name}</span>
         </div>
         <div className='name'>
           {name}
@@ -45,16 +47,40 @@ const StyledAsset = styled.div`
     filter: grayscale(100%);
     transition: all 120ms ease-in-out;
 
-    img {
-      transition: all 120ms ease-in-out;
-      transform: scale(0.8);
+    .art {
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      background: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: .75rem; 
+      transition: all 680ms ease-out;
+
+      img {
+        transition: all 120ms ease-in-out;
+        transform: scale(0.8);
+        display: block;
+        width: 40%;
+        height: 40%;
+      }
+      span {
+        display: block;
+        text-align: center;
+        font-weight: strong;
+        font-family: "Clan Offc Pro Medium";
+        font-size: 18px;
+        margin-top: .5rem;
+      }
     }
 
 
     &:hover {
       text-decoration: none;
       filter: grayscale(23%);
-
+      
       img {
         transform: scale(1);
       }
@@ -65,25 +91,25 @@ const StyledAsset = styled.div`
 `
 
 const ASSETS = [
-  { src: 'img/coins/BCH.png', name: 'BCH', linkTo: '/convert/BCH-to-EUR' },
-  { src: 'img/coins/BNB.png', name: 'BNB', linkTo: '/convert/BNB-to-EUR' },
-  { src: 'img/coins/BNT.png', name: 'BNT', linkTo: '/convert/BNT-to-EUR' },
-  { src: 'img/coins/BTC.png', name: 'BTC', linkTo: '/convert/BTC-to-EUR' },
-  { src: 'img/coins/DOGE.png', name: 'DOGE', linkTo: '/convert/DOGE-to-EUR' },
-  { src: 'img/coins/EOS.png', name: 'EOS', linkTo: '/convert/EOS-to-EUR' },
-  { src: 'img/coins/ETH.png', name: 'ETH', linkTo: '/convert/ETH-to-EUR' },
-  { src: 'img/coins/EUR.png', name: 'EUR', linkTo: '/convert/EUR-to-BTC' },
-  { src: 'img/coins/GBP.png', name: 'GBP', linkTo: '/convert/GBP-to-BTC' },
-  { src: 'img/coins/KCS.png', name: 'KCS', linkTo: '/convert/KCS-to-EUR' },
-  { src: 'img/coins/KNC.png', name: 'KNC', linkTo: '/convert/KNC-to-EUR' },
-  { src: 'img/coins/LTC.png', name: 'LTC', linkTo: '/convert/LTC-to-EUR' },
-  { src: 'img/coins/NANO.png', name: 'NANO', linkTo: '/convert/NANO-to-EUR' },
-  { src: 'img/coins/OMG.png', name: 'OMG', linkTo: '/convert/OMG-to-EUR' },
-  { src: 'img/coins/USD.png', name: 'USD', linkTo: '/convert/USD-to-BTC' },
-  { src: 'img/coins/USDT.png', name: 'USDT', linkTo: '/convert/USDT-to-EUR' },
-  { src: 'img/coins/XMR.png', name: 'XMR', linkTo: '/convert/XMR-to-EUR' },
-  { src: 'img/coins/XVG.png', name: 'XVG', linkTo: '/convert/XVG-to-EUR' },
-  { src: 'img/coins/ZEC.png', name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
+  { name: 'BCH', linkTo: '/convert/BCH-to-EUR' },
+  { name: 'BNB', linkTo: '/convert/BNB-to-EUR' },
+  { name: 'BNT', linkTo: '/convert/BNT-to-EUR' },
+  { name: 'BTC', linkTo: '/convert/BTC-to-EUR' },
+  { name: 'DOGE', linkTo: '/convert/DOGE-to-EUR' },
+  { name: 'EOS', linkTo: '/convert/EOS-to-EUR' },
+  { name: 'ETH', linkTo: '/convert/ETH-to-EUR' },
+  { name: 'EUR', linkTo: '/convert/EUR-to-BTC' },
+  { name: 'GBP', linkTo: '/convert/GBP-to-BTC' },
+  { name: 'KCS', linkTo: '/convert/KCS-to-EUR' },
+  { name: 'KNC', linkTo: '/convert/KNC-to-EUR' },
+  { name: 'LTC', linkTo: '/convert/LTC-to-EUR' },
+  { name: 'NANO', linkTo: '/convert/NANO-to-EUR' },
+  { name: 'OMG', linkTo: '/convert/OMG-to-EUR' },
+  { name: 'USD', linkTo: '/convert/USD-to-BTC' },
+  { name: 'USDT', linkTo: '/convert/USDT-to-EUR' },
+  { name: 'XMR', linkTo: '/convert/XMR-to-EUR' },
+  { name: 'XVG', linkTo: '/convert/XVG-to-EUR' },
+  { name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
 ]
 
 export default SupportedAssets

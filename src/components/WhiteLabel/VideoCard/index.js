@@ -69,6 +69,9 @@ const StyledContainer = styled.div`
     }
 
     > .tls {
+      h1 {
+        text-shadow: 0 0 8px rgba(22, 22, 22, 0.7);
+      }
       button {
         &:not(:last-of-type) {
           margin-right: 2rem;

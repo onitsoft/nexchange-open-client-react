@@ -51,9 +51,7 @@ const PriceTable = (props) => {
             ))}
           </tr>
           <tr>
-            <th>
-              Order Now
-            </th>
+            <th />
             {plans
               .map((plan) => ({...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`)}))
               .map((plan) => (
