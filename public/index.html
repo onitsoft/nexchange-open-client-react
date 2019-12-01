@@ -64,6 +64,10 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
+
+    <!-- Intercom Integration -->
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/l918os2x';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+
   </head>
   <body>
     <noscript>
@@ -72,26 +76,5 @@
     <div id="root"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script type="text/javascript">
-      window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#edeff5",
-              "text": "#838391"
-            },
-            "button": {
-              "background": "#4b81e8"
-            }
-          },
-          "content": {
-            "message": "This website uses cookies to track user behaviour so that we can make our exchange even easier to use. By continuing to navigate this site, you agree to our use of cookies."
-          },
-          "position": "bottom-left"
-        });
-
-        window.$crisp=[];window.CRISP_WEBSITE_ID="6eb9ed9e-2c8b-48e8-a0ce-62c3ce81fb61";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-      });
-    </script>
   </body>
 </html>
