@@ -61,6 +61,7 @@ class PnlTracking extends Component {
     if(order.status_name[0][1] === 'INITIAL') {
       change = 0;
     } else {
+      // Round off to two decimal digits (10000 / 100)
       change = Math.round((1 - (this.state.currentRate / this.state.creationRate)) * 10000) / 100
     }
     const className = (change >= 100) ? 'profit' : 'loss';
