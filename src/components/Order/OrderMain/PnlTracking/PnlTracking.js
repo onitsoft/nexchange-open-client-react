@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { I18n } from 'react-i18next';
 import axios from 'axios'
+import config from 'Config'
 
 import styles from './PnlTracking.scss';
+
+const { API_BASE_URL } = config
 
 class PnlTracking extends Component {
   constructor(props) {
@@ -17,11 +20,13 @@ class PnlTracking extends Component {
   UNSAFE_componentWillMount() {
     const fetchRates = () => {
       const order = this.props.order;
-      const request =`https://api.nexchange.io/en/api/v1/price/${order.pair.name}/latest`;
+      const request =`${API_BASE_URL}/price/${order.pair.name}/latest`;
       axios.get(request)
       .then((response) => {
           if(response && response.data && response.data[0] && response.data[0].ticker.ask) {
-            this.setState({currentRate: 1/response.data[0].ticker.ask});
+            const { ask } = response.data[0].ticker
+            const ASK = parseFloat(ask, 10)
+            this.setState({currentRate: 1/ASK});
           }
       })
       .catch((error) => {
