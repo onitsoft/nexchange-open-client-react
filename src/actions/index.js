@@ -3,6 +3,7 @@ import * as types from './types';
 import _ from 'lodash';
 import config from 'Config';
 import urlParams from 'Utils/urlParams';
+import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
@@ -497,10 +498,21 @@ export const loadAuth = () => dispatch => {
   if (localStorage.full_token) {
     const tokenData = JSON.parse(localStorage.full_token)
     dispatch({
-      type: 'auth.token_received',
+      type: types.AUTH_TOKEN_RECEIVED,
       payload: tokenData
     })
   }
+}
+
+export const loadUserDetails = () => dispatch => {
+  const BASE_URL = 'http://localhost:8000/en/api/v1' // config.API_BASE_URL
+  return axios.get(`${BASE_URL}/users/me`)
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_USER_PROFILE,
+        payload: data
+      })
+    })
 }
 
 export const signIn = (username, password) => dispatch => {
@@ -523,12 +535,16 @@ export const signIn = (username, password) => dispatch => {
 
   })
   .then(({ data, ...rest }) => {
+    const token = {
+      ...data,
+      issued_at: Date.now()
+    }
     if (data && data.access_token) {
       localStorage.token = data.access_token
-      localStorage.full_token = JSON.stringify(data)
+      localStorage.full_token = JSON.stringify(token)
       dispatch({
-        type: 'auth.token_received',
-        payload: data
+        type: types.AUTH_TOKEN_RECEIVED,
+        payload: token
       })
     } else {
       throw new Error('Unexpected authentication result:', {data, ...rest})
@@ -541,19 +557,3 @@ export const signIn = (username, password) => dispatch => {
     })
   })
 };
-
-// Utils
-const serialize = function(obj, prefix) {
-  var str = [],
-    p;
-  for (p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      var k = prefix ? prefix + "[" + p + "]" : p,
-        v = obj[p];
-      str.push((v !== null && typeof v === "object") ?
-        serialize(v, k) :
-        encodeURIComponent(k) + "=" + encodeURIComponent(v));
-    }
-  }
-  return str.join("&");
-}

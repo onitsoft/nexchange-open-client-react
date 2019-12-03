@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
-import { loadAuth } from 'Actions'
+import { loadAuth, loadUserDetails } from 'Actions'
 
 import styles from './Header.scss';
 
@@ -41,11 +41,23 @@ const Header = props => {
   useEffect(() => {
     props.loadAuth()
   }, [])
-  if (isHideHeader) return null
+
+  useEffect(() => {
+    console.log('😎props auth?', props.auth)
+    if (props.auth && props.auth.token && props.auth.token.access_token) {
+      console.log('get user profile!', props.loadUserDetails)
+      if (!props.auth.profile) {
+        const res = props.loadUserDetails()
+        console.log('get user profile!', res)
+      }
+    }
+  }, [props.auth])
 
 
   const closeNavbar = useCallback(() => { setShowNavbar(false) }, [setShowNavbar])
   const hideSupport = useCallback(() => { setShowSupportModal(false) }, [setShowSupportModal])
+  
+  if (isHideHeader) return null
   
   return (
     <HeaderStuff {...{ closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
@@ -245,7 +257,7 @@ export const HeaderStuff = (props) => {
 
 
 const mapStateToProps = ({ auth }) => ({ auth });
-const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth, loadUserDetails }, dispatch);
 
 export default connect(
   mapStateToProps,
