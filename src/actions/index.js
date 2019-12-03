@@ -492,3 +492,68 @@ export const fetchOrderBook = payload => dispatch => {
     });
   });
 }
+
+export const loadAuth = () => dispatch => {
+  if (localStorage.full_token) {
+    const tokenData = JSON.parse(localStorage.full_token)
+    dispatch({
+      type: 'auth.token_received',
+      payload: tokenData
+    })
+  }
+}
+
+export const signIn = (username, password) => dispatch => {
+
+  const params = {
+    'grant_type': 'password',
+    'client_id': config.AUTH_CLIENT_ID,
+    'username': username,
+    'password': password,
+  }
+
+  axios.post(`http://localhost:8000/en/api/v1/oAuth2/token/`, serialize(params), {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    auth: {
+      username: config.AUTH_CLIENT_ID,
+      password: config.AUTH_CLIENT_SECRET
+    }
+
+  })
+  .then(({ data, ...rest }) => {
+    if (data && data.access_token) {
+      localStorage.token = data.access_token
+      localStorage.full_token = JSON.stringify(data)
+      dispatch({
+        type: 'auth.token_received',
+        payload: data
+      })
+    } else {
+      throw new Error('Unexpected authentication result:', {data, ...rest})
+    }
+  })
+  .catch(err => {
+    dispatch({
+      type: 'auth.auth_failed',
+      payload: err
+    })
+  })
+};
+
+// Utils
+const serialize = function(obj, prefix) {
+  var str = [],
+    p;
+  for (p in obj) {
+    if (obj.hasOwnProperty(p)) {
+      var k = prefix ? prefix + "[" + p + "]" : p,
+        v = obj[p];
+      str.push((v !== null && typeof v === "object") ?
+        serialize(v, k) :
+        encodeURIComponent(k) + "=" + encodeURIComponent(v));
+    }
+  }
+  return str.join("&");
+}

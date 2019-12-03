@@ -1,11 +1,14 @@
-import React, { useMemo, useCallback, useState } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router'
 import { I18n } from 'react-i18next';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
-
+import { loadAuth } from 'Actions'
 
 import styles from './Header.scss';
 
@@ -34,6 +37,10 @@ const Header = props => {
     }
     return false
   }, [location]);
+
+  useEffect(() => {
+    props.loadAuth()
+  }, [])
   if (isHideHeader) return null
 
 
@@ -236,4 +243,11 @@ export const HeaderStuff = (props) => {
   )
 }
 
-export default Header;
+
+const mapStateToProps = ({ auth }) => ({ auth });
+const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
