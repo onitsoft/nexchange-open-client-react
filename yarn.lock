@@ -1363,6 +1363,11 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@salte-auth/salte-auth@^2.14.2":
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/@salte-auth/salte-auth/-/salte-auth-2.14.2.tgz#40f45f056cde507153c383a7b7a3955e0762e178"
+  integrity sha512-zHAv7jJWIaLlyRhBa6CYBErELv6FRX4IdjOFgW5U0qTxRgKqi3z+jAGavikUYht4rEicE0ptvMbpBMrpbUqS9Q==
+
 "@storybook/addon-actions@^5.0.8":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.2.6.tgz#4fe411fc3bdb1d44058f23fbc8eb8d1bac29d521"
