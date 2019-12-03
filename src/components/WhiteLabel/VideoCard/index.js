@@ -47,8 +47,10 @@ const StyledContainer = styled.div`
   position: relative;
   overflow: hidden;
   text-align: left;
+  margin-top: -70px;
   > .container {
     min-height: 80vh;
+    height: 100vh;
     position: relative;
     z-index: 2;
     color: #FFF;
