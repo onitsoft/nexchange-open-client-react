@@ -34,11 +34,12 @@ const Header = props => {
     }
     return false
   }, [location]);
-  if (isHideHeader) return null
 
 
   const closeNavbar = useCallback(() => { setShowNavbar(false) }, [setShowNavbar])
   const hideSupport = useCallback(() => { setShowSupportModal(false) }, [setShowSupportModal])
+  
+  if (isHideHeader) return null
   
   return (
     <HeaderStuff {...{ closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
