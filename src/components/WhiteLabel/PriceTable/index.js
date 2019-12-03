@@ -14,7 +14,7 @@ const PriceTable = (props) => {
   return (
     <I18n ns="translations">
       {t => (
-    <>
+    <PriceContainer>
       <h2>Pricing</h2>
       <StyledTable>
         <thead>
@@ -66,11 +66,17 @@ const PriceTable = (props) => {
           </tr>
         </tbody>
       </StyledTable>
-    </>
+    </PriceContainer>
       )}
     </I18n>
   )
 }
+
+const PriceContainer = styled.div`
+  > h2 {
+    margin-bottom: 4rem;
+  }
+`
 
 const tableStyle = `
   width: 100%;
