@@ -48,6 +48,8 @@ export const SignUp = (props) => {
 
 
   const signUp = (e) => {
+    const client_secret = 
+      `98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI`
     e.preventDefault();
     console.log('our state:', state)
     // axios.post(`${config.API_BASE_URL}/oAuth2/token`, { params: {
@@ -56,13 +58,17 @@ export const SignUp = (props) => {
       'client_id': config.AUTH_CLIENT_ID,
       'username': state.username,
       'password': state.password,
-      client_secret:
-      `98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI`
     }
+    // client_secret:
+    // `98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI`
     console.log('params before sending', params, serialize(params))
     axios.post(`http://localhost:8000/en/api/v1/oAuth2/token/`, serialize(params), {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      auth: {
+          username: config.AUTH_CLIENT_ID,
+          password: client_secret
       }
 
     })
