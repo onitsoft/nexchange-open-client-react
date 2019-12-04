@@ -125,6 +125,24 @@ ShallowWrapper {
                 header.ico
               </a>
             </li>
+            <React.Fragment>
+              <li>
+                <ForwardRef
+                  className="link"
+                  to="/signup"
+                >
+                  accounts.signup
+                </ForwardRef>
+              </li>
+              <li>
+                <ForwardRef
+                  className="link"
+                  to="/signin"
+                >
+                  accounts.signin
+                </ForwardRef>
+              </li>
+            </React.Fragment>
             <LanguagePicker />
             <li
               id="social-mobile"
@@ -362,6 +380,24 @@ ShallowWrapper {
                   header.ico
                 </a>
               </li>
+              <React.Fragment>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>
+              </React.Fragment>
               <LanguagePicker />
               <li
                 id="social-mobile"
@@ -738,6 +774,24 @@ ShallowWrapper {
                   header.ico
                 </a>
               </li>
+              <React.Fragment>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>
+              </React.Fragment>
               <LanguagePicker />
               <li
                 id="social-mobile"
@@ -925,6 +979,24 @@ ShallowWrapper {
                     header.ico
                   </a>
                 </li>,
+                <React.Fragment>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signup"
+                    >
+                      accounts.signup
+                    </ForwardRef>
+                  </li>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signin"
+                    >
+                      accounts.signin
+                    </ForwardRef>
+                  </li>
+                </React.Fragment>,
                 <LanguagePicker />,
                 <li
                   id="social-mobile"
@@ -1250,6 +1322,113 @@ ShallowWrapper {
                   "type": "a",
                 },
                 "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <li>
+                      <ForwardRef
+                        className="link"
+                        to="/signup"
+                      >
+                        accounts.signup
+                      </ForwardRef>
+                    </li>,
+                    <li>
+                      <ForwardRef
+                        className="link"
+                        to="/signin"
+                      >
+                        accounts.signin
+                      </ForwardRef>
+                    </li>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="link"
+                        to="/signup"
+                      >
+                        accounts.signup
+                      </ForwardRef>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "accounts.signup",
+                        "className": "link",
+                        "to": "/signup",
+                      },
+                      "ref": null,
+                      "rendered": "accounts.signup",
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "displayName": "Link",
+                        "propTypes": Object {
+                          "innerRef": [Function],
+                          "onClick": [Function],
+                          "replace": [Function],
+                          "target": [Function],
+                          "to": [Function],
+                        },
+                        "render": [Function],
+                      },
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="link"
+                        to="/signin"
+                      >
+                        accounts.signin
+                      </ForwardRef>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "accounts.signin",
+                        "className": "link",
+                        "to": "/signin",
+                      },
+                      "ref": null,
+                      "rendered": "accounts.signin",
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "displayName": "Link",
+                        "propTypes": Object {
+                          "innerRef": [Function],
+                          "onClick": [Function],
+                          "replace": [Function],
+                          "target": [Function],
+                          "to": [Function],
+                        },
+                        "render": [Function],
+                      },
+                    },
+                    "type": "li",
+                  },
+                ],
+                "type": Symbol(react.fragment),
               },
               Object {
                 "instance": null,
@@ -1789,6 +1968,24 @@ ShallowWrapper {
                   header.ico
                 </a>
               </li>
+              <React.Fragment>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signup"
+                  >
+                    accounts.signup
+                  </ForwardRef>
+                </li>
+                <li>
+                  <ForwardRef
+                    className="link"
+                    to="/signin"
+                  >
+                    accounts.signin
+                  </ForwardRef>
+                </li>
+              </React.Fragment>
               <LanguagePicker />
               <li
                 id="social-mobile"
@@ -2026,6 +2223,24 @@ ShallowWrapper {
                     header.ico
                   </a>
                 </li>
+                <React.Fragment>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signup"
+                    >
+                      accounts.signup
+                    </ForwardRef>
+                  </li>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signin"
+                    >
+                      accounts.signin
+                    </ForwardRef>
+                  </li>
+                </React.Fragment>
                 <LanguagePicker />
                 <li
                   id="social-mobile"
@@ -2402,6 +2617,24 @@ ShallowWrapper {
                     header.ico
                   </a>
                 </li>
+                <React.Fragment>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signup"
+                    >
+                      accounts.signup
+                    </ForwardRef>
+                  </li>
+                  <li>
+                    <ForwardRef
+                      className="link"
+                      to="/signin"
+                    >
+                      accounts.signin
+                    </ForwardRef>
+                  </li>
+                </React.Fragment>
                 <LanguagePicker />
                 <li
                   id="social-mobile"
@@ -2589,6 +2822,24 @@ ShallowWrapper {
                       header.ico
                     </a>
                   </li>,
+                  <React.Fragment>
+                    <li>
+                      <ForwardRef
+                        className="link"
+                        to="/signup"
+                      >
+                        accounts.signup
+                      </ForwardRef>
+                    </li>
+                    <li>
+                      <ForwardRef
+                        className="link"
+                        to="/signin"
+                      >
+                        accounts.signin
+                      </ForwardRef>
+                    </li>
+                  </React.Fragment>,
                   <LanguagePicker />,
                   <li
                     id="social-mobile"
@@ -2914,6 +3165,113 @@ ShallowWrapper {
                     "type": "a",
                   },
                   "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <li>
+                        <ForwardRef
+                          className="link"
+                          to="/signup"
+                        >
+                          accounts.signup
+                        </ForwardRef>
+                      </li>,
+                      <li>
+                        <ForwardRef
+                          className="link"
+                          to="/signin"
+                        >
+                          accounts.signin
+                        </ForwardRef>
+                      </li>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <ForwardRef
+                          className="link"
+                          to="/signup"
+                        >
+                          accounts.signup
+                        </ForwardRef>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": "accounts.signup",
+                          "className": "link",
+                          "to": "/signup",
+                        },
+                        "ref": null,
+                        "rendered": "accounts.signup",
+                        "type": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "displayName": "Link",
+                          "propTypes": Object {
+                            "innerRef": [Function],
+                            "onClick": [Function],
+                            "replace": [Function],
+                            "target": [Function],
+                            "to": [Function],
+                          },
+                          "render": [Function],
+                        },
+                      },
+                      "type": "li",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <ForwardRef
+                          className="link"
+                          to="/signin"
+                        >
+                          accounts.signin
+                        </ForwardRef>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": "accounts.signin",
+                          "className": "link",
+                          "to": "/signin",
+                        },
+                        "ref": null,
+                        "rendered": "accounts.signin",
+                        "type": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "displayName": "Link",
+                          "propTypes": Object {
+                            "innerRef": [Function],
+                            "onClick": [Function],
+                            "replace": [Function],
+                            "target": [Function],
+                            "to": [Function],
+                          },
+                          "render": [Function],
+                        },
+                      },
+                      "type": "li",
+                    },
+                  ],
+                  "type": Symbol(react.fragment),
                 },
                 Object {
                   "instance": null,
