@@ -139,12 +139,25 @@
     "resetpassword": "Reset Password",
     "registerationOptionalTitle": "Registeration is Optional!",
     "registerationOptional": "Please be advised that registration isn't required to use n.exchange",
+    "register": {
+      "successTitle": "Registration Successful",
+      "successBody": "Thank you for registering, and email was sent to your email address. You may proceed to sign in with your username."
+    },
     "errors": {
       "agreedTC": "Please accept Terms & Conditions",
       "username": "Username must be at least 4 characters long",
       "email": "Invalid email address",
       "password": "Password must be at least 6 characters long and contain both letters and numbers",
       "repeatPassword": "Passwords must match"
+    },
+    "accounts.errorKeys.username.This field must be unique.": "",
+    "errorKeys": {
+      "username": {
+        "This field must be unique": "Username unavailble. Please use a different username."
+      },
+      "email": {
+        "This field must be unique": "Email already in use."
+      }
     }
   },
  "integrations": {

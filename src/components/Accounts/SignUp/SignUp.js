@@ -1,23 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { css } from 'emotion'
 
 import { signUp } from 'Actions'
 
-import { Checkbox } from 'react-bootstrap'
+import { Checkbox, Modal, Button } from 'react-bootstrap'
 
 import styles from '../Accounts.scss';
 
 export const SignUp = (props) => {
   const { auth } = props
+  const [showSuccessModal, setShowSuccessModal] = useState()
   const [state, setState] = useState({
-    username: '',
-    email: '',
-    password: '',
-    repeatPassword: '',
-    agreedTC: false
+    username: 'modi',
+    email: 'modi@in.io',
+    password: '123qwe',
+    repeatPassword: '123qwe',
+    agreedTC: true
   })
 
   useEffect(() => {
@@ -60,6 +62,22 @@ export const SignUp = (props) => {
       error: (!st.error || name === st.error) ? null : st.error
     }))
   }, [setState])
+
+  const onHideModal = useCallback(() => {}, [])
+
+  useEffect(() => {
+    if (auth.registered) {
+      setShowSuccessModal(true)
+    } else if (auth.signup && auth.signup.error) {
+      const [error] = Object.keys(auth.signup.error)
+      const errorKey = (auth.signup.error[error][0]).replace('.', '')
+      setState(st => ({ ...st, error, errorKey }))
+    }
+  }, [auth])
+
+  // if (auth.registered) {
+  //   return <Redirect to='/signin' />
+  // }
 
   return (
     <I18n ns="translations">
@@ -138,9 +156,17 @@ export const SignUp = (props) => {
                   </Checkbox>
                 </div>
                 <div className={'input-container'}>
-                  {state.error ? (<div className='alert alert-danger'>
-                    <strong>Error:</strong> {t(`accounts.errors.${state.error}`)}
-                  </div>) : <>&nbsp;</>}
+                  {state.error
+                    ? !state.errorKey
+                      ? (<div className='alert alert-danger'>
+                        <strong>Error:</strong> {t(`accounts.errors.${state.error}`)}
+                        </div>)
+
+                      : (<div className='alert alert-danger'>
+                            <strong>Error:</strong> {t(`accounts.errorKeys.${state.error}.${state.errorKey}`)}
+                          </div>)
+                    : <>&nbsp;</>
+                  }
                 </div>
                 <button 
                   type='submit'
@@ -155,13 +181,51 @@ export const SignUp = (props) => {
               </Link>
               <button 
                 className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
+              
+              <pre>{JSON.stringify(state, 1, 1)}</pre>
+              <pre>{JSON.stringify(auth, 1, 1)}</pre>
             </div>
           </div>
+
+
+          <Modal show={showSuccessModal} onHide={onHideModal} dialogClassName={dialogStyle.toString()}>
+            <Modal.Header closeButton>
+              <Modal.Title>{t('accounts.register.successTitle')}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>{t('accounts.register.successBody')}</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Link className={`btn-primary btn`} to='/'>Home</Link>
+              <Link className={`btn-default btn`} to='/signin'>Sign In</Link>
+            </Modal.Footer>
+          </Modal>
         </div>
       )}
     </I18n>
   );
 }
+
+const dialogStyle = css`
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .modal-content {
+    min-width: 320px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    > .modal-body {
+      flex: 1 1 auto;
+    }
+    > .modal-footer {
+      > .btn {
+        margin-bottom: 0;
+      }
+    }
+  }
+`
 
 
 const mapStateToProps = ({ auth }) => ({ auth });

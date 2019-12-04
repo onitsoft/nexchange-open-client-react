@@ -7,6 +7,7 @@ import {
   AUTH_SIGN_UP,
   AUTH_SIGN_OUT,
   AUTH_USER_REGISTERED,
+  AUTH_REGISTRATION_FAILED,
   AUTH_LOAD_ORDERS
 } from 'Actions/types'
 
@@ -28,38 +29,48 @@ export default (state = {}, action) => {
         loading: false,
         error: null
       }
-      case AUTH_FAILED:
-        return {
-          ...state,
-          loading: false,
+    case AUTH_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      }
+    case AUTH_SIGN_UP:
+      return {
+        ...state,
+        loading: true,
+        signup: action.payload
+      }
+    case AUTH_USER_REGISTERED:
+      const { signup, ...nustate } = state 
+      return {
+        ...nustate,
+        loading: false,
+        registered: action.payload
+      }
+    case AUTH_REGISTRATION_FAILED:
+      return {
+        ...state,
+        loading: false,
+        signup: {
+          ...state.signup,
           error: action.payload
         }
-      case AUTH_SIGN_UP:
-        return {
-          ...state,
-          loading: true,
-          signup: action.payload
+      }
+    case AUTH_SIGN_OUT:
+      return {
+        loading: false
+      }
+    case AUTH_LOAD_ORDERS:
+      return {
+        ...state,
+        loading: false,
+        profile: {
+          ...(state.profile || {}),
+          orders: action.payload
         }
-      case AUTH_USER_REGISTERED:
-        return {
-          ...state,
-          loading: false,
-          registered: action.payload
-        }
-      case AUTH_SIGN_OUT:
-        return {
-          loading: false
-        }
-      case AUTH_LOAD_ORDERS:
-        return {
-          ...state,
-          loading: false,
-          profile: {
-            ...(state.profile || {}),
-            orders: action.payload
-          }
-        }
-      case AUTH_TOKEN_RECEIVED:
+      }
+    case AUTH_TOKEN_RECEIVED:
       return {
         ...state,
         token: {

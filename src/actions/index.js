@@ -572,7 +572,7 @@ export const signIn = (username, password) => dispatch => {
 };
 
 export const signUp = (details) => dispatch => {
-  const { username, password, email } = details
+  const { username, password, email, phone } = details
   dispatch({
     type: types.AUTH_SIGN_UP,
     payload: details
@@ -582,13 +582,27 @@ export const signUp = (details) => dispatch => {
     username,
     password,
     email,
-    phone: ''
+    phone
   })
     .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_USER_REGISTERED,
         payload: data
       })
+
+      return data
+    })
+    .catch(err => {
+      console.log('AUTH_REGISTRATION_FAILED', {...err})
+      const { response } = err
+      const { data } = response
+      console.log('AUTH_REGISTRATION_FAILED response data', data)
+      dispatch({
+        type: types.AUTH_REGISTRATION_FAILED,
+        payload: data
+      })
+
+      return err
     })
 }
 
