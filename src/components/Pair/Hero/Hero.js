@@ -51,18 +51,22 @@ class Hero extends Component {
           <React.Fragment>
             <Helmet>
               <title>
-              {t('PerExchangePairHEAD.title', {
-                receiveCoinFullName: baseCurrency && baseCurrency.name,
-                depositCoinSymbol: this.props.selectedCoin.deposit,
-                depositCoinFullName: quoteCurrency && quoteCurrency.name,
-                receiveCoinSymbol: this.props.selectedCoin.receive
-              })}
+                {t('PerExchangePairHEAD.title', {
+                  receiveCoinFullName: baseCurrency && baseCurrency.name &&
+                    baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                  depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
+                  depositCoinFullName: quoteCurrency && quoteCurrency.name &&
+                    quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                  receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
+                })}
               </title>
               <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
-                receiveCoinFullName: baseCurrency && baseCurrency.name,
-                depositCoinSymbol: this.props.selectedCoin.deposit,
-                depositCoinFullName: quoteCurrency && quoteCurrency.name,
-                receiveCoinSymbol: this.props.selectedCoin.receive
+                  receiveCoinFullName: baseCurrency && baseCurrency.name &&
+                    baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                  depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
+                  depositCoinFullName: quoteCurrency && quoteCurrency.name &&
+                    quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
               })}/>
             </Helmet>
             <div className={styles.hero}>
@@ -73,10 +77,12 @@ class Hero extends Component {
                   <div className="col-xs-12">
                     <div className={styles.brand}>
                       <h1>{t('PerExchangePairBODY.H1', {
-                        receiveCoinFullName: baseCurrency && baseCurrency.name,
-                        depositCoinSymbol: this.props.selectedCoin.deposit,
-                        depositCoinFullName: quoteCurrency && quoteCurrency.name,
-                        receiveCoinSymbol: this.props.selectedCoin.receive
+                        receiveCoinFullName: baseCurrency && baseCurrency.name &&
+                          baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                        depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
+                        depositCoinFullName: quoteCurrency && quoteCurrency.name &&
+                          quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                        receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
                       })}
                       </h1>
                       <Trans i18nKey="hero.2">
