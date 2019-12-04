@@ -4,7 +4,8 @@ import {
   AUTH_LOADING,
   AUTH_COMPLETE,
   AUTH_FAILED,
-  AUTH_SIGN_OUT
+  AUTH_SIGN_OUT,
+  AUTH_LOAD_ORDERS
 } from 'Actions/types'
 
 export default (state = {}, action) => {
@@ -34,6 +35,15 @@ export default (state = {}, action) => {
       case AUTH_SIGN_OUT:
         return {
           loading: false
+        }
+      case AUTH_LOAD_ORDERS:
+        return {
+          ...state,
+          loading: false,
+          profile: {
+            ...(state.profile || {}),
+            orders: action.payload
+          }
         }
       case AUTH_TOKEN_RECEIVED:
       return {

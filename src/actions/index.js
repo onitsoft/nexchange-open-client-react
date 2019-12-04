@@ -511,6 +511,18 @@ export const loadUserDetails = () => dispatch => {
     })
 }
 
+
+export const loadUserOrders = () => dispatch => {
+  const BASE_URL = 'http://localhost:8000/en/api/v1' // config.API_BASE_URL
+  return axios.get(`${BASE_URL}/users/me/orders`)
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_LOAD_ORDERS,
+        payload: data.results
+      })
+    })
+}
+
 export const signIn = (username, password) => dispatch => {
 
   const params = {

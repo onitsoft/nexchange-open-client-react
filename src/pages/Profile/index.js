@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { signOut } from 'Actions'
+import { signOut, loadUserOrders } from 'Actions'
 
 import { Nav, NavItem } from 'react-bootstrap'
 
 export const Profile = (props) => {
   const { auth } = props
+
+  useEffect(() => {
+    if (auth && auth.profile) {
+      if (!auth.profile.orders && !auth.loading) {
+        props.loadUserOrders()
+      }
+    }
+  }, [auth])
 
 
   return (
@@ -27,7 +35,6 @@ export const Profile = (props) => {
         <div className='col-md-8'>
           <h2>Content</h2>
           <NavLink to='/signout'>Sign Out</NavLink>
-          <pre>{JSON.stringify(auth, 1, 1)}</pre>
         </div>
       </div>
     </div>
@@ -35,7 +42,7 @@ export const Profile = (props) => {
 }
 
 const mapStateToProps = ({ auth }) => ({ auth });
-const mapDispatchToProps = dispatch => bindActionCreators({ signOut }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ signOut, loadUserOrders }, dispatch);
 
 export default connect(
   mapStateToProps,
