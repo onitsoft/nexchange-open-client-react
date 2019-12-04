@@ -40,7 +40,6 @@ const Pair = (props) => {
         <PriceChart pair={pair}/>
       </div>
       <RecentOrders {...props} pair={pair} />
-      <hr />
       <Articles baseName={`coin-${base.toLowerCase()}`} quoteName={`coin-${quote.toLowerCase()}`} quote={quote} base={base} />
       {/* TODO Referral Program Widget */}
       {/* TODO API Access Widget */}
