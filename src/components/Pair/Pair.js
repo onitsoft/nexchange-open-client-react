@@ -36,7 +36,7 @@ const Pair = (props) => {
     <StyledPairPage>
       <Hero {...props} selectedCoin={selectedCoin} {...{baseCurrency, quoteCurrency}} />
       <div className='container'>
-        <h1>Price Chart for {pair}</h1>
+        <h2>Price Chart for {pair.toUpperCase()}</h2>
         <PriceChart pair={pair}/>
       </div>
       <RecentOrders {...props} pair={pair} />

@@ -53,19 +53,19 @@ class Hero extends Component {
               <title>
                 {t('PerExchangePairHEAD.title', {
                   receiveCoinFullName: baseCurrency && baseCurrency.name &&
-                    baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                    capitalize(baseCurrency.name),
                   depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
                   depositCoinFullName: quoteCurrency && quoteCurrency.name &&
-                    quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                    capitalize(quoteCurrency.name),
                   receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
                 })}
               </title>
               <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
                   receiveCoinFullName: baseCurrency && baseCurrency.name &&
-                    baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                    capitalize(baseCurrency.name),
                   depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
                   depositCoinFullName: quoteCurrency && quoteCurrency.name &&
-                    quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                    capitalize(quoteCurrency.name),
                 receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
               })}/>
             </Helmet>
@@ -78,10 +78,10 @@ class Hero extends Component {
                     <div className={styles.brand}>
                       <h1>{t('PerExchangePairBODY.H1', {
                         receiveCoinFullName: baseCurrency && baseCurrency.name &&
-                          baseCurrency.name.charAt(0).toUpperCase() + baseCurrency.name,
+                          capitalize(baseCurrency.name),
                         depositCoinSymbol: this.props.selectedCoin.deposit.toUpperCase(),
                         depositCoinFullName: quoteCurrency && quoteCurrency.name &&
-                          quoteCurrency.name.charAt(0).toUpperCase() + quoteCurrency.name,
+                          capitalize(quoteCurrency.name),
                         receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
                       })}
                       </h1>
@@ -111,5 +111,7 @@ class Hero extends Component {
     );
   }
 }
+
+const capitalize = str => `${str[0].toUpperCase()}${str.substr(1)}`
 
 export default Hero;
