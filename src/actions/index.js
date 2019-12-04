@@ -578,7 +578,7 @@ export const signUp = (details) => dispatch => {
     payload: details
   })
 
-  return axios.post(`${config.API_BASE_URL}/users/me`, {
+  return axios.post(`${config.API_BASE_URL}/users`, {
     username,
     password,
     email,
