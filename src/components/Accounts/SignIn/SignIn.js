@@ -14,6 +14,8 @@ const SignIn = (props) => {
     password: '',
   })
 
+  const { loading } = props.auth
+
   useEffect(() => {
     $("#root").css({'padding-bottom': "0px"});
 
@@ -40,6 +42,7 @@ const SignIn = (props) => {
   if (loggedIn) {
     return <Redirect to='/' />
   }
+
   return (
     <I18n ns="translations">
       {t => (
@@ -59,29 +62,36 @@ const SignIn = (props) => {
               </div>
             </Link>
             <div className={`col-xs-8 col-offset-xs-2`}>
+              {props.auth.error && (
+                <div class="alert alert-danger" role="alert">{props.auth.error.toString()}</div>
+              )}
               <form className="form-group" onSubmit={onSubmit}>
-                    <div className={styles['input-container']}>
-                      <input
-                        type="text"
-                        className={`form-control`}
-                        id="email"
-                        value={state.email}
-                        onChange={({ target: { value } }) => setState(st => ({...st, email: value}))}
-                        placeholder={t('accounts.email')}
-                      />
-                    </div>
-                    <div className={styles['input-container']}>
-                    <input
-                      type="password"
-                      className={`form-control`}
-                      id="password"
-                      value={state.password}
-                      onChange={({ target: { value } }) => setState(st => ({...st, password: value}))}
-                      placeholder={t('accounts.password')}
-                      />
-                    </div>
-                    <button type='submit' className={`${styles.button} ${styles.main}`}>Sign in</button>
-                </form>
+                <div className={styles['input-container']}>
+                  <input
+                    type="text"
+                    className={`form-control`}
+                    id="email"
+                    value={state.email}
+                    onChange={({ target: { value } }) => setState(st => ({...st, email: value}))}
+                    placeholder={t('accounts.email')}
+                  />
+                </div>
+                <div className={styles['input-container']}>
+                <input
+                  type="password"
+                  className={`form-control`}
+                  id="password"
+                  value={state.password}
+                  onChange={({ target: { value } }) => setState(st => ({...st, password: value}))}
+                  placeholder={t('accounts.password')}
+                  />
+                </div>
+                <button
+                  disabled={loading}
+                  type='submit'
+                  className={`${styles.button} ${styles.main}`}
+                >{!loading ? 'Sign in' : 'Loading...' }</button>
+              </form>
               <Link to="/forgot-password" className={styles['not-registered']}>
                 <div>{t('accounts.forgotpassword1')}</div>
               </Link>

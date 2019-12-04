@@ -6,6 +6,8 @@ import { I18n } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import UserIcon from './user.svg'
+
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
 import { loadAuth, loadUserDetails } from 'Actions'
@@ -43,12 +45,9 @@ const Header = props => {
   }, [])
 
   useEffect(() => {
-    console.log('😎props auth?', props.auth)
     if (props.auth && props.auth.token && props.auth.token.access_token) {
-      console.log('get user profile!', props.loadUserDetails)
       if (!props.auth.profile) {
-        const res = props.loadUserDetails()
-        console.log('get user profile!', res)
+        props.loadUserDetails()
       }
     }
   }, [props.auth])
@@ -60,7 +59,7 @@ const Header = props => {
   if (isHideHeader) return null
   
   return (
-    <HeaderStuff {...{ closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
+    <HeaderStuff {...{ auth: props.auth, closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
   );
 }
 
@@ -148,6 +147,14 @@ export const HeaderStuff = (props) => {
                     {t('header.ico')}
                   </a>
                 </li>
+                
+                {props.auth && props.auth.profile && props.auth.profile.username && (
+                  <li>
+                    <Link className={styles.link} to='/profile/me'>
+                      <UserIcon style={{width: 18, height: 18}} title={props.auth.profile.username} />
+                    </Link>
+                  </li>
+                )}
 
                 <LanguagePicker />
 

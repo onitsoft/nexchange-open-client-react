@@ -393,10 +393,6 @@ export const setUserEmail = formData => async dispatch => {
 
   return request
     .then(res => {
-      if (!window.$crisp.get('user:email')) {
-        window.$crisp.push(['set', 'user:email', [payload.email]]);
-      }
-
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,
         value: res.data.email,
@@ -524,6 +520,10 @@ export const signIn = (username, password) => dispatch => {
     'password': password,
   }
 
+  dispatch({
+    type: types.AUTH_LOADING
+  })
+
   axios.post(`http://localhost:8000/en/api/v1/oAuth2/token/`, serialize(params), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -534,26 +534,36 @@ export const signIn = (username, password) => dispatch => {
     }
 
   })
-  .then(({ data, ...rest }) => {
-    const token = {
-      ...data,
-      issued_at: Date.now()
-    }
-    if (data && data.access_token) {
-      localStorage.token = data.access_token
-      localStorage.full_token = JSON.stringify(token)
-      dispatch({
-        type: types.AUTH_TOKEN_RECEIVED,
-        payload: token
-      })
-    } else {
-      throw new Error('Unexpected authentication result:', {data, ...rest})
-    }
-  })
-  .catch(err => {
-    dispatch({
-      type: 'auth.auth_failed',
-      payload: err
+    .then(({ data, ...rest }) => {
+      const token = {
+        ...data,
+        issued_at: Date.now()
+      }
+      if (data && data.access_token) {
+        localStorage.token = data.access_token
+        localStorage.full_token = JSON.stringify(token)
+        dispatch({
+          type: types.AUTH_TOKEN_RECEIVED,
+          payload: token
+        })
+        dispatch({
+          type: types.AUTH_COMPLETE
+        })
+      } else {
+        throw new Error('Unexpected authentication result:', {data, ...rest})
+      }
     })
-  })
+    .catch(err => {
+      dispatch({
+        type: types.AUTH_FAILED,
+        payload: err
+      })
+    })
 };
+
+export const signOut = () => dispatch => {
+  localStorage.token = localStorage.full_token = null
+  dispatch({
+    type: types.AUTH_SIGN_OUT
+  })
+}
