@@ -1,37 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import axios from 'axios'
-import config from 'Config'
-
-import { SalteAuth } from '@salte-auth/salte-auth';
+import { signUp } from 'Actions'
 
 import { Checkbox } from 'react-bootstrap'
 
 import styles from '../Accounts.scss';
 
-const serialize = function(obj, prefix) {
-  var str = [],
-    p;
-  for (p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      var k = prefix ? prefix + "[" + p + "]" : p,
-        v = obj[p];
-      str.push((v !== null && typeof v === "object") ?
-        serialize(v, k) :
-        encodeURIComponent(k) + "=" + encodeURIComponent(v));
-    }
-  }
-  return str.join("&");
-}
-
-
 export const SignUp = (props) => {
+  const { auth } = props
   const [state, setState] = useState({
-    username: 'onit',
+    username: '',
     email: '',
-    password: 'weare0nit',
+    password: '',
     repeatPassword: '',
     agreedTC: false
   })
@@ -39,46 +23,43 @@ export const SignUp = (props) => {
   useEffect(() => {
     $("#root").css({'padding-bottom': "0px"});
 
-    console.log('Axios:', axios)
-
     return () => {
       $("#root").css({'padding-bottom': "114px"});
     }
   }, [])
 
-
-  const signUp = (e) => {
-    const client_secret = 
-      `98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI`
-    e.preventDefault();
-    console.log('our state:', state)
-    // axios.post(`${config.API_BASE_URL}/oAuth2/token`, { params: {
-    const params = {
-      'grant_type': 'password',
-      'client_id': config.AUTH_CLIENT_ID,
-      'username': state.username,
-      'password': state.password,
+  const onSubmit = useCallback(e => {
+    const passCheck = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.{6,})/
+    const usernameCheck = /^(?=.*[a-zA-Z0-9])(?=.{4,})/
+    const emailCheck = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/
+    e.preventDefault()
+    if (!state.username || !usernameCheck.test(state.username)) {
+      setState(st => ({...st, error: 'username'}))
+    } else if (!state.email || !emailCheck.test(state.email)) {
+      setState(st => ({...st, error: 'email'}))
+    } else if (!state.password || !passCheck.test(state.password)) {
+      setState(st => ({...st, error: 'password'}))
+    } else if (state.password && state.password !== state.repeatPassword) {
+      setState(st => ({...st, error: 'repeatPassword'}))
+    } else if (!state.agreedTC) {
+      setState(st => ({...st, error: 'agreedTC'}))
+    } else {
+      props.signUp({
+        username: state.username,
+        email: state.email,
+        password: state.password,
+        phone: 'notset'
+      })
     }
-    // client_secret:
-    // `98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI`
-    console.log('params before sending', params, serialize(params))
-    axios.post(`http://localhost:8000/en/api/v1/oAuth2/token/`, serialize(params), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      auth: {
-          username: config.AUTH_CLIENT_ID,
-          password: client_secret
-      }
+  }, [state])
 
-    })
-    .then(d => {
-      console.log('result of token request:', d)
-    })
-    .catch(err => {
-      console.log('result of token is ERROR:', err)
-    })
-  }
+  const setValue = useCallback(name => ({target: { value }}) => {
+    setState(st => ({ 
+      ...st, 
+      [name]: value,
+      error: (!st.error || name === st.error) ? null : st.error
+    }))
+  }, [setState])
 
   return (
     <I18n ns="translations">
@@ -99,72 +80,79 @@ export const SignUp = (props) => {
               </div>
             </Link>
             <div className={`col-xs-8 col-offset-xs-2`}>
-              <form className="form-group" onSubmit={signUp}>
-                    <div className={styles['input-container']}>
-                      <input
-                        type="text"
-                        className={`form-control`}
-                        id="username"
-                        value={state.username}
-                        onChange={({target: { value }}) => setState(st => ({...st, username: value}))}
-                        placeholder={t('accounts.username')}
-                      />
-                    </div>
-                    <div className={styles['input-container']}>
-                      <input
-                        type="text"
-                        className={`form-control`}
-                        id="email"
-                        value={state.email}
-                        onChange={({target: { value }}) => setState(st => ({...st, email: value}))}
-                        placeholder={t('accounts.email')}
-                      />
-                    </div>
-                    <div className={styles['input-container']}>
-                      <input
-                      type="password"
-                      className={`form-control`}
-                      id="password"
-                      value={state.password}
-                      onChange={({target: { value }}) => setState(st => ({...st, password: value}))}
-                      placeholder={t('accounts.password')}
-                      />
-                    </div>
-                    <div className={styles['input-container']}>
-                      <input
-                      type="password"
-                      className={`form-control`}
-                      id="repeatPassword"
-                      value={state.repeatPassword}
-                      onChange={({target: { value }}) => setState(st => ({...st, repeatPassword: value}))}
-                      placeholder={t('accounts.repeatpassword')}
-                      />
-                    </div>
-                    <div className={'input-container'}>
-                      &nbsp;
-                    </div>
-                    <div className={'input-container'}>
-                      {/* <input
-                      type="checkbox"
-                      className={`form-control`}
-                      id="repeatPassword"
-                      value={state.repeatPassword}
-                      onChange={({target: { value }}) => setState(st => ({...st, repeatPassword: value}))}
-                      placeholder={t('accounts.repeatpassword')}
-                      /> */}
-                      <Checkbox
-                        onChange={({target: { value, checked }}) => setState(st => ({...st, agreedTC: checked}))}>
-                        Accept TOS
-                      </Checkbox>
-                    </div>
-                    <div className={'input-container'}>
-                      &nbsp;
-                    </div>
-                    <button 
-                      type='submit'
-                      className={`${styles.button} ${styles.main}`}>{t('accounts.signup')}</button>
+              <div className='alert alert-info' role='alert'>
+                <strong>{t('accounts.registerationOptionalTitle')}</strong> {t('accounts.registerationOptional')} 
+              </div>
+              <br />
+              <form className="form-group" onSubmit={onSubmit}>
+                <div className={styles['input-container']}>
+                  <input
+                    type="text"
+                    className={`form-control`}
+                    id="username"
+                    value={state.username}
+                    onChange={setValue('username')}
+                    placeholder={t('accounts.username')}
+                    disabled={auth.loading}
+                  />
+                </div>
+                <div className={styles['input-container']}>
+                  <input
+                    type="text"
+                    className={`form-control`}
+                    id="email"
+                    value={state.email}
+                    onChange={setValue('email')}
+                    placeholder={t('accounts.email')}
+                    disabled={auth.loading}
+                  />
+                </div>
+                <div className={styles['input-container']}>
+                  <input
+                    type="password"
+                    className={`form-control`}
+                    id="password"
+                    value={state.password}
+                    onChange={setValue('password')}
+                    placeholder={t('accounts.password')}
+                    disabled={auth.loading}
+                  />
+                </div>
+                <div className={styles['input-container']}>
+                  <input
+                    type="password"
+                    className={`form-control`}
+                    id="repeatPassword"
+                    value={state.repeatPassword}
+                    onChange={setValue('repeatPassword')}
+                    placeholder={t('accounts.repeatpassword')}
+                    disabled={auth.loading}
+                  />
+                </div>
+                <div className={'input-container'}>&nbsp;</div>
+                <div className={'input-container'}>
+                  <Checkbox
+                    disabled={auth.loading}
+                    onChange={({target: { value, checked }}) => setValue('agreedTC')({target: { value: checked }})} >
+                    Accept TOS
+                  </Checkbox>
+                </div>
+                <div className={'input-container'}>
+                  {state.error ? (<div className='alert alert-danger'>
+                    <strong>Error:</strong> {t(`accounts.errors.${state.error}`)}
+                  </div>) : <>&nbsp;</>}
+                </div>
+                <button 
+                  type='submit'
+                  disabled={auth.loading}
+                  className={`${styles.button} ${styles.main}`}>{
+                    !auth.loading ? t('accounts.signup') : 'Loading...'
+                  }</button>
                 </form>
               <div className={styles.separator}></div>
+              <Link to="/signin" className={styles['not-registered']}>
+                <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
+              </Link>
               <button 
                 className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
             </div>
@@ -175,4 +163,11 @@ export const SignUp = (props) => {
   );
 }
 
-export default SignUp;
+
+const mapStateToProps = ({ auth }) => ({ auth });
+const mapDispatchToProps = dispatch => bindActionCreators({ signUp }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUp);

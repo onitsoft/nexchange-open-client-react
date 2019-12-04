@@ -4,7 +4,9 @@ import {
   AUTH_LOADING,
   AUTH_COMPLETE,
   AUTH_FAILED,
+  AUTH_SIGN_UP,
   AUTH_SIGN_OUT,
+  AUTH_USER_REGISTERED,
   AUTH_LOAD_ORDERS
 } from 'Actions/types'
 
@@ -31,6 +33,18 @@ export default (state = {}, action) => {
           ...state,
           loading: false,
           error: action.payload
+        }
+      case AUTH_SIGN_UP:
+        return {
+          ...state,
+          loading: true,
+          signup: action.payload
+        }
+      case AUTH_USER_REGISTERED:
+        return {
+          ...state,
+          loading: false,
+          registered: action.payload
         }
       case AUTH_SIGN_OUT:
         return {

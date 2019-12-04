@@ -136,7 +136,16 @@
     "repeatpassword": "Repeat Password",
     "forgotpassword1": "Forgot your password?",
     "forgotpassword2": "If you want to reset your password, please enter your email address",
-    "resetpassword": "Reset Password"
+    "resetpassword": "Reset Password",
+    "registerationOptionalTitle": "Registeration is Optional!",
+    "registerationOptional": "Please be advised that registration isn't required to use n.exchange",
+    "errors": {
+      "agreedTC": "Please accept Terms & Conditions",
+      "username": "Username must be at least 4 characters long",
+      "email": "Invalid email address",
+      "password": "Password must be at least 6 characters long and contain both letters and numbers",
+      "repeatPassword": "Passwords must match"
+    }
   },
  "integrations": {
     "error" : {

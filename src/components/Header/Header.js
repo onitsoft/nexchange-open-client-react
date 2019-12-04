@@ -148,12 +148,25 @@ export const HeaderStuff = (props) => {
                   </a>
                 </li>
                 
-                {props.auth && props.auth.profile && props.auth.profile.username && (
+                {(props.auth && props.auth.profile && props.auth.profile.username && (
                   <li>
                     <Link className={styles.link} to='/profile/me'>
                       <UserIcon style={{width: 18, height: 18}} title={props.auth.profile.username} />
                     </Link>
                   </li>
+                )) || (
+                  <>
+                    <li>
+                      <Link className={styles.link} to='/signup'>
+                        {t('accounts.signup')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={styles.link} to='/signin'>
+                        {t('accounts.signin')}
+                      </Link>
+                    </li>
+                  </>
                 )}
 
                 <LanguagePicker />

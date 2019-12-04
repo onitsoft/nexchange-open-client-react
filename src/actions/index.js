@@ -501,8 +501,7 @@ export const loadAuth = () => dispatch => {
 }
 
 export const loadUserDetails = () => dispatch => {
-  const BASE_URL = 'http://localhost:8000/en/api/v1' // config.API_BASE_URL
-  return axios.get(`${BASE_URL}/users/me`)
+  return axios.get(`${config.API_BASE_URL}/users/me`)
     .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_USER_PROFILE,
@@ -513,8 +512,7 @@ export const loadUserDetails = () => dispatch => {
 
 
 export const loadUserOrders = () => dispatch => {
-  const BASE_URL = 'http://localhost:8000/en/api/v1' // config.API_BASE_URL
-  return axios.get(`${BASE_URL}/users/me/orders`)
+  return axios.get(`${config.API_BASE_URL}/users/me/orders`)
     .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_LOAD_ORDERS,
@@ -536,7 +534,7 @@ export const signIn = (username, password) => dispatch => {
     type: types.AUTH_LOADING
   })
 
-  axios.post(`http://localhost:8000/en/api/v1/oAuth2/token/`, serialize(params), {
+  axios.post(`${config.API_BASE_URL}/oAuth2/token/`, serialize(params), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     },
@@ -572,6 +570,27 @@ export const signIn = (username, password) => dispatch => {
       })
     })
 };
+
+export const signUp = (details) => dispatch => {
+  const { username, password, email } = details
+  dispatch({
+    type: types.AUTH_SIGN_UP,
+    payload: details
+  })
+
+  return axios.post(`${config.API_BASE_URL}/users/me`, {
+    username,
+    password,
+    email,
+    phone: ''
+  })
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_USER_REGISTERED,
+        payload: data
+      })
+    })
+}
 
 export const signOut = () => dispatch => {
   localStorage.token = localStorage.full_token = null

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ import styles from '../Accounts.scss';
 const SignIn = (props) => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [state, setState] = useState({
-    email: '',
+    username: '',
     password: '',
   })
 
@@ -27,7 +27,7 @@ const SignIn = (props) => {
 
   const onSubmit = useCallback((e) => {
     e.preventDefault()
-    props.signIn(state.email, state.password)
+    props.signIn(state.username, state.password)
   }, [state, props.signIn])
 
   useEffect(() => {
@@ -70,27 +70,29 @@ const SignIn = (props) => {
                   <input
                     type="text"
                     className={`form-control`}
-                    id="email"
-                    value={state.email}
-                    onChange={({ target: { value } }) => setState(st => ({...st, email: value}))}
-                    placeholder={t('accounts.email')}
+                    id="username"
+                    value={state.username}
+                    onChange={({ target: { value } }) => setState(st => ({...st, username: value}))}
+                    placeholder={t('accounts.username')}
+                    disabled={loading}
                   />
                 </div>
                 <div className={styles['input-container']}>
-                <input
-                  type="password"
-                  className={`form-control`}
-                  id="password"
-                  value={state.password}
-                  onChange={({ target: { value } }) => setState(st => ({...st, password: value}))}
-                  placeholder={t('accounts.password')}
+                  <input
+                    type="password"
+                    className={`form-control`}
+                    id="password"
+                    value={state.password}
+                    onChange={({ target: { value } }) => setState(st => ({...st, password: value}))}
+                    placeholder={t('accounts.password')}
+                    disabled={loading}
                   />
                 </div>
                 <button
                   disabled={loading}
                   type='submit'
                   className={`${styles.button} ${styles.main}`}
-                >{!loading ? 'Sign in' : 'Loading...' }</button>
+                >{!loading ? t('accounts.signin') : 'Loading...' }</button>
               </form>
               <Link to="/forgot-password" className={styles['not-registered']}>
                 <div>{t('accounts.forgotpassword1')}</div>
