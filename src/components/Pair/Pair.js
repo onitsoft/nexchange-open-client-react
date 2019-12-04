@@ -51,7 +51,8 @@ const Pair = (props) => {
 const StyledPairPage = styled.div`
   margin-bottom: 8rem;
   > .container {
-    margin-top: 6rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 `
 
