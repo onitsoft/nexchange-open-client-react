@@ -613,3 +613,8 @@ export const signOut = () => dispatch => {
     type: types.AUTH_SIGN_OUT
   })
 }
+export const completeRegistration = () => dispatch => {
+  dispatch({
+    type: types.AUTH_REGISTRATION_COMPLETE
+  })
+}

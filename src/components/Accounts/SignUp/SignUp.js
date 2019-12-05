@@ -7,7 +7,7 @@ import { css } from 'emotion'
 import styled from '@emotion/styled'
 import Marked from 'react-markdown'
 
-import { signUp } from 'Actions'
+import { signUp, signIn, completeRegistration } from 'Actions'
 
 import { Checkbox, Modal } from 'react-bootstrap'
 
@@ -69,7 +69,13 @@ export const SignUp = (props) => {
 
   useEffect(() => {
     if (auth.registered) {
-      setShowSuccessModal(true)
+      if (!auth.complete && !auth.loading && !auth.loggedIn) {
+        props.signIn(auth.signup.username, auth.signup.password)
+      } else if (!auth.complete && !auth.loading) {
+        props.completeRegistration()
+      } else if (auth.complete) {
+        setShowSuccessModal(true)
+      }
     } else if (auth.signup && auth.signup.error) {
       if (Object.keys(auth.signup.error).length) {
         const [error] = Object.keys(auth.signup.error)
@@ -210,7 +216,6 @@ export const SignUp = (props) => {
             </Modal.Body>
             <Modal.Footer>
               <Link className={`btn-primary btn`} to='/'>Home</Link>
-              <Link className={`btn-default btn`} to='/signin'>Sign In</Link>
             </Modal.Footer>
           </Modal>
           </div>
@@ -285,7 +290,7 @@ const dialogStyle = css`
 
 
 const mapStateToProps = ({ auth }) => ({ auth });
-const mapDispatchToProps = dispatch => bindActionCreators({ signUp }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ signUp, signIn, completeRegistration }, dispatch);
 
 export default connect(
   mapStateToProps,

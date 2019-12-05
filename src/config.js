@@ -15,9 +15,9 @@ const config = {
   ADVANCED_MODE_ENABLED: true,
   GRAPHCMS_API: 'https://api-euwest.graphcms.com/v1/ck2olkts50bo501i0h3ej7d1f/master',
   INTERCOM_APP_ID: 'a3zrft9d',
-  AUTH_CLIENT_ID: 'bW59HEU7snRQfu9dcToFVSBuwLQ5du4JbrxenYkS',
+  AUTH_CLIENT_ID: '1rftGOrlUDgZEGKFSg9yIbizOTM26N4QuOQHfBME',
   AUTH_CLIENT_SECRET:
-  '98L4ufYZ2iLXB3Ybwjy2XAKkem8sR3bMmtvjMKcg7o6sX2REmMax6ncAnvVIHwjEdRH2bH9aHYlkpzhlRkD3NqiAiEbA7CbcROplCPAsDPcxWEbnU63QSh7t6ZWgfzvI'
+  'hpS5mRTDN8EWRgTFlDetU6mlMJw5VintTSPazuP0MUil4KyvEQnNAZHN79PObFtjTR8lL9XwTWxboXiMA19f6s4AeWNuZK7X2d1B2icmRj9q1ol5m0Qpp8RAJHVBvSji'
 };
 
 export default config;

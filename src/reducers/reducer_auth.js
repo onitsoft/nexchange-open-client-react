@@ -7,6 +7,7 @@ import {
   AUTH_SIGN_UP,
   AUTH_SIGN_OUT,
   AUTH_USER_REGISTERED,
+  AUTH_REGISTRATION_COMPLETE,
   AUTH_REGISTRATION_FAILED,
   AUTH_LOAD_ORDERS
 } from 'Actions/types'
@@ -42,11 +43,17 @@ export default (state = {}, action) => {
         signup: action.payload
       }
     case AUTH_USER_REGISTERED:
-      const { signup, ...nustate } = state 
       return {
-        ...nustate,
+        ...state,
         loading: false,
         registered: action.payload
+      }
+    case AUTH_REGISTRATION_COMPLETE:
+      return {
+        ...state,
+        signup: null,
+        loading: false,
+        complete: true
       }
     case AUTH_REGISTRATION_FAILED:
       return {
@@ -75,7 +82,8 @@ export default (state = {}, action) => {
         ...state,
         token: {
           ...action.payload
-        }
+        },
+        loggedIn: true
       }
     default:
       return state;
