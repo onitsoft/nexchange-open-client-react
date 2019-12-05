@@ -172,7 +172,7 @@ const StyledFooter = styled.footer`
         flex: 1 1 auto;
         justify-content: center;
         flex-direction: column;
-        margin: 4rem 0;
+        margin: 4rem 0 0;
         > p {
           margin: 2rem 0 0;
           font-size: 1rem;
