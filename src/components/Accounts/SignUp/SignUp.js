@@ -166,7 +166,7 @@ export const SignUp = (props) => {
                       disabled={auth.loading}
                     />
                   </div>
-                  {state.error  === 'email' && <ErrorBlock {...state} />}
+                  {state.error  === 'repeatPassword' && <ErrorBlock {...state} />}
                 </>
                 
                 <div className={'input-container'}>&nbsp;</div>
