@@ -29,10 +29,14 @@ const PriceChart = ({pair}) => {
     navigator: {
       enabled: false
     },
+
+    scrollbar: {
+        enabled: false
+    },
     series: [{
       data: !loading && data && data.length
         ? data.map(({ ticker: { ask, bid }, unix_time }) => [unix_time * 1000, +ask])
-        : [...Array(23)] // Flatline when no data
+        : [...Array(28)] // Flatline when no data
             .map((a, b) => ([Date.now() - (b * 1000 * 60 * 60), 0, 0]))
             .sort(([a], [b]) => a > b ? 1 : -1),
       type: 'area',

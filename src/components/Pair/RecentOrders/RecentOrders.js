@@ -129,7 +129,7 @@ class RecentOrders extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h2 className="title">{`${t('recentorders.1')} for ${tradingSymbolPair}`}</h2>
+                  <h2 className="title">{`${t('recentorders.1')} for ${tradingSymbolPair.toUpperCase()}`}</h2>
                   <div className="recent-orders-container">{orders.length < 1 ? <LoadingComponent isLoading={true} /> : orders}</div>
                 </div>
               </div>
