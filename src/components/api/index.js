@@ -64,10 +64,10 @@ export const useHistoryApi = (pair, options) => {
 
 const currencyCache = new Map()
 
-export const useCurrencyAPI = (currency) => {
+export const useCurrencyAPI = (currency = '') => {
   const code = useMemo(() => currency.toUpperCase(), [currency])
   const [currencyData, setCurrencyData] = useState(currencyCache.get(code) || {})
-  const url = useMemo(() => `${config.API_BASE_URL}/currency/${code}/`, [config.API_BASE_URL, code]);
+  const url = useMemo(() => `${config.API_BASE_URL}/currency/${code ? code + '/' : ''}`, [config.API_BASE_URL, code]);
 
   const getData = useCallback(async () => {
     const result = await axios.get(url)
