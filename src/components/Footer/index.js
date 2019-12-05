@@ -16,58 +16,65 @@ const Footer = (props) => {
   if (hideFooter) return null
 
   return (
-    <I18n ns="translations">
-      {(t) => (
-        <StyledFooter>
-          <section className='logo'>
-            <Link to='/'><img src="/img/logo.svg" alt="N.exchange Logo" /></Link>
-          </section>
-          <section className='links'>
-            <main className=''>
-              <section>
-                <h4>{t('header.resources')}</h4>
-                <ul>
-                  <li><Link to='/instant-white-label'><strong>{t('header.whitelabel')}</strong></Link></li>
-                  <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
-                  <li><a href='/#support'>{t('header.support')}</a></li>
-                </ul>
-              </section>
-              <section>
-                <h4>{t('header.about')}</h4>
-                <ul>
-                  <li><a href='/#about'>{t('header.about')}</a></li>
-                  <li><Link to='/faqs'>{t('header.faq')}</Link></li>
-                  <li><span /></li>
-                </ul>
-              </section>
-              <section>
-                <h4>{t('footer.popular-pairs')}</h4>
-                <PopularPairs />
-              </section>
-              <section>
-                <h4>{t('header.social')}</h4>
-                <ul>
-                  <li><a href='/twitter' target='_blank' rel='noopener noreferrer'>{t('header.twitter')}</a></li>
-                  <li><a href='/fb' target='_blank' rel='noopener noreferrer'>{t('header.facebook')}</a></li>
-                  <li><a href='/slack' target='_blank' rel='noopener noreferrer'>{t('header.slack')}</a></li>
-                  <li><a href='/telegram' target='_blank' rel='noopener noreferrer'>{t('header.telegram')}</a></li>
-                </ul>
-              </section>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-12'>
+          <I18n ns="translations">
+            {(t) => (
+              <StyledFooter>
+                <section className='logo'>
+                  <Link to='/'><img src="/img/logo.svg" alt="N.exchange Logo" /></Link>
+                </section>
+                <section className='links'>
+                  <main className=''>
+                    <section>
+                      <h4>{t('header.resources')}</h4>
+                      <ul>
+                        <li><Link to='/instant-white-label'><strong>{t('header.whitelabel')}</strong></Link></li>
+                        <li><a href='https://nexchange2.docs.apiary.io/'>{t('header.apidocumentation')}</a></li>
+                        <li><a href='/#support'>{t('header.support')}</a></li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h4>{t('header.about')}</h4>
+                      <ul>
+                        <li><a href='/#about'>{t('header.about')}</a></li>
+                        <li><Link to='/faqs'>{t('header.faq')}</Link></li>
+                        <li><span /></li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h4>{t('footer.popular-pairs')}</h4>
+                      <PopularPairs />
+                    </section>
+                    <section>
+                      <h4>{t('header.social')}</h4>
+                      <ul>
+                        <li><a href='/twitter' target='_blank' rel='noopener noreferrer'>{t('header.twitter')}</a></li>
+                        <li><a href='/fb' target='_blank' rel='noopener noreferrer'>{t('header.facebook')}</a></li>
+                        <li><a href='/slack' target='_blank' rel='noopener noreferrer'>{t('header.slack')}</a></li>
+                        <li><a href='/telegram' target='_blank' rel='noopener noreferrer'>{t('header.telegram')}</a></li>
+                      </ul>
+                    </section>
 
 
-            </main>
-            <aside>
-              <p><CopyrightNotice /> — <RegisteredCompany /></p>
-              <p>
-                <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
-                <span> — </span>
-                <Link to='/privacy'>{t('header.privacy-policy')}</Link>
-              </p>
-            </aside>
-          </section>
-        </StyledFooter>
-      )}
-    </I18n>
+                  </main>
+                  <aside>
+                    <p><CopyrightNotice /> — <RegisteredCompany /></p>
+                    <p>
+                      <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
+                      <span> — </span>
+                      <Link to='/privacy'>{t('header.privacy-policy')}</Link>
+                    </p>
+                  </aside>
+                </section>
+              </StyledFooter>
+            )}
+          </I18n>
+          
+          </div>
+        </div>
+      </div>
   )
 }
 /*
@@ -111,7 +118,7 @@ const RegisteredCompany = (props) => (
 
 const StyledFooter = styled.footer`
   > section {
-    padding: 24px 12px;
+    padding: 12px 0;
     &.logo {
       @media screen and (max-width: 960px) {
         display: flex;
