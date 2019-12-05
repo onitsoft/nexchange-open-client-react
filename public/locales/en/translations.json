@@ -133,7 +133,7 @@
     "username": "Username",
     "email": "Email",
     "password": "Password",
-    "repeatpassword": "Repeat Password",
+    "repeatPassword": "Repeat Password",
     "forgotpassword1": "Forgot your password?",
     "forgotpassword2": "If you want to reset your password, please enter your email address",
     "resetpassword": "Reset Password",
@@ -152,6 +152,9 @@
     },
     "accounts.errorKeys.username.This field must be unique.": "",
     "errorKeys": {
+      "general": {
+        "Network Error": "Unable to reach remote server - please contact support"
+      },
       "username": {
         "This field must be unique": "Username unavailble. Please use a different username."
       },

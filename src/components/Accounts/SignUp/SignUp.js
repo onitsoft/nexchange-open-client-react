@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { css } from 'emotion'
+import styled from '@emotion/styled'
+import Marked from 'react-markdown'
 
 import { signUp } from 'Actions'
 
-import { Checkbox, Modal, Button } from 'react-bootstrap'
+import { Checkbox, Modal } from 'react-bootstrap'
 
 import styles from '../Accounts.scss';
 
@@ -15,11 +17,11 @@ export const SignUp = (props) => {
   const { auth } = props
   const [showSuccessModal, setShowSuccessModal] = useState()
   const [state, setState] = useState({
-    username: 'modi',
-    email: 'modi@in.io',
-    password: '123qwe',
-    repeatPassword: '123qwe',
-    agreedTC: true
+    username: '',
+    email: '',
+    password: '',
+    repeatPassword: '',
+    agreedTC: false
   })
 
   useEffect(() => {
@@ -63,26 +65,35 @@ export const SignUp = (props) => {
     }))
   }, [setState])
 
-  const onHideModal = useCallback(() => {}, [])
+  const onHideModal = useCallback(() => setShowSuccessModal(false), [])
 
   useEffect(() => {
     if (auth.registered) {
       setShowSuccessModal(true)
     } else if (auth.signup && auth.signup.error) {
-      const [error] = Object.keys(auth.signup.error)
-      const errorKey = (auth.signup.error[error][0]).replace('.', '')
-      setState(st => ({ ...st, error, errorKey }))
+      if (Object.keys(auth.signup.error).length) {
+        const [error] = Object.keys(auth.signup.error)
+        const errorKey = (auth.signup.error[error][0]).replace('.', '')
+        setState(st => ({ ...st, error, errorKey }))
+      } else {
+        const error = 'general'
+        const errorKey = (auth.signup.error).replace('.', '')
+        setState(st => ({ ...st, error, errorKey }))
+      }
     }
   }, [auth])
 
-  // if (auth.registered) {
-  //   return <Redirect to='/signin' />
-  // }
+  const ErrorMessage = useMemo(() => {
+    return (props) => <ErrorBlock {...state} {...props} />
+  }, [state])
 
+  const myError = useCallback((name) => `ief ${name === state.error ? 'error' : ''}`, [state.error])
+  
   return (
     <I18n ns="translations">
       {t => (
-        <div className='row'>
+        <StyledSignup>
+          <div className='row'>
           <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-7 ${styles.left}`}>
             <Link to="/">
               <div className={styles['logo-container']}>
@@ -99,75 +110,80 @@ export const SignUp = (props) => {
             </Link>
             <div className={`col-xs-8 col-offset-xs-2`}>
               <div className='alert alert-info' role='alert'>
-                <strong>{t('accounts.registerationOptionalTitle')}</strong> {t('accounts.registerationOptional')} 
+                <strong>{t('accounts.registerationOptionalTitle')}</strong>
+                <Marked>{t('accounts.registerationOptional')}</Marked>
               </div>
               <br />
               <form className="form-group" onSubmit={onSubmit}>
-                <div className={styles['input-container']}>
-                  <input
-                    type="text"
-                    className={`form-control`}
-                    id="username"
-                    value={state.username}
-                    onChange={setValue('username')}
-                    placeholder={t('accounts.username')}
-                    disabled={auth.loading}
-                  />
-                </div>
-                <div className={styles['input-container']}>
-                  <input
-                    type="text"
-                    className={`form-control`}
-                    id="email"
-                    value={state.email}
-                    onChange={setValue('email')}
-                    placeholder={t('accounts.email')}
-                    disabled={auth.loading}
-                  />
-                </div>
-                <div className={styles['input-container']}>
-                  <input
-                    type="password"
-                    className={`form-control`}
-                    id="password"
-                    value={state.password}
-                    onChange={setValue('password')}
-                    placeholder={t('accounts.password')}
-                    disabled={auth.loading}
-                  />
-                </div>
-                <div className={styles['input-container']}>
-                  <input
-                    type="password"
-                    className={`form-control`}
-                    id="repeatPassword"
-                    value={state.repeatPassword}
-                    onChange={setValue('repeatPassword')}
-                    placeholder={t('accounts.repeatpassword')}
-                    disabled={auth.loading}
-                  />
-                </div>
+                <>
+                  <div className={`${styles['input-container']} ${myError('username')}`}>
+                    <input
+                      type={'text'}
+                      className={`form-control`}
+                      id={'username'}
+                      value={state['username']}
+                      onChange={setValue('username')}
+                      placeholder={t(`accounts.${'username'}`)}
+                      disabled={auth.loading}
+                    />
+                  </div>
+                  {state.error  === 'username' && <ErrorBlock {...state} />}
+
+                  <div className={`${styles['input-container']} ${myError('email')}`}>
+                    <input
+                      type={'email'}
+                      className={`form-control`}
+                      id={'email'}
+                      value={state['email']}
+                      onChange={setValue('email')}
+                      placeholder={t(`accounts.${'email'}`)}
+                      disabled={auth.loading}
+                    />
+                  </div>
+                  {state.error  === 'email' && <ErrorBlock {...state} />}
+
+                  <div className={`${styles['input-container']} ${myError('password')}`}>
+                    <input
+                      type={'password'}
+                      className={`form-control`}
+                      id={'password'}
+                      value={state['password']}
+                      onChange={setValue('password')}
+                      placeholder={t(`accounts.${'password'}`)}
+                      disabled={auth.loading}
+                    />
+                  </div>
+                  {state.error  === 'password' && <ErrorBlock {...state} />}
+
+                  <div className={`${styles['input-container']} ${myError('repeatPassword')}`}>
+                    <input
+                      type={'password'}
+                      className={`form-control`}
+                      id={'repeatPassword'}
+                      value={state['repeatPassword']}
+                      onChange={setValue('repeatPassword')}
+                      placeholder={t(`accounts.${'repeatPassword'}`)}
+                      disabled={auth.loading}
+                    />
+                  </div>
+                  {state.error  === 'email' && <ErrorBlock {...state} />}
+                </>
+                
                 <div className={'input-container'}>&nbsp;</div>
-                <div className={'input-container'}>
+                <div className={`${myError('agreedTC')}`}>
                   <Checkbox
                     disabled={auth.loading}
-                    onChange={({target: { value, checked }}) => setValue('agreedTC')({target: { value: checked }})} >
+                    checked={state.agreedTC}
+                    onChange={({target: { checked }}) =>
+                      console.log('is checked?', checked) ||
+                      setValue('agreedTC')({target: { value: checked }})
+                    } >
                     Accept TOS
                   </Checkbox>
                 </div>
-                <div className={'input-container'}>
-                  {state.error
-                    ? !state.errorKey
-                      ? (<div className='alert alert-danger'>
-                        <strong>Error:</strong> {t(`accounts.errors.${state.error}`)}
-                        </div>)
+                {state.error  === 'agreedTC' && <ErrorMessage usekey />}
+                {state.error  === 'general' && <ErrorMessage />}
 
-                      : (<div className='alert alert-danger'>
-                            <strong>Error:</strong> {t(`accounts.errorKeys.${state.error}.${state.errorKey}`)}
-                          </div>)
-                    : <>&nbsp;</>
-                  }
-                </div>
                 <button 
                   type='submit'
                   disabled={auth.loading}
@@ -181,9 +197,6 @@ export const SignUp = (props) => {
               </Link>
               <button 
                 className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
-              
-              <pre>{JSON.stringify(state, 1, 1)}</pre>
-              <pre>{JSON.stringify(auth, 1, 1)}</pre>
             </div>
           </div>
 
@@ -200,11 +213,54 @@ export const SignUp = (props) => {
               <Link className={`btn-default btn`} to='/signin'>Sign In</Link>
             </Modal.Footer>
           </Modal>
-        </div>
+          </div>
+        </StyledSignup>
       )}
     </I18n>
   );
 }
+
+const StyledSignup = styled.div`
+  padding: 0 15px;
+  .ief {
+    &.error {
+      border: 1px solid #e41749;
+      border
+    }
+  }
+`
+
+const ErrorBlock = ({ error, errorKey, usekey}) => {
+  const nokey = (typeof usekey !== 'undefined')
+  return (
+    <I18n ns="translations">
+      {t => (
+        <StyledFormError className={'input-container'}>
+          {error
+            ? !errorKey || nokey
+              ? (<div className='msg'>
+                <strong>Error:</strong> {t(`accounts.errors.${error}`)}
+                </div>)
+
+              : (<div className='msg'>
+                    <strong>Error:</strong> {t(`accounts.errorKeys.${error}.${errorKey}`)}
+                  </div>)
+            : <>&nbsp;</>
+          }
+        </StyledFormError>
+      )}
+    </I18n>
+  )
+}
+
+const StyledFormError = styled.div`
+  .msg {
+    margin: 0 0 1rem;
+    border-radius: 4px;
+    padding: .25rem 1rem;
+    color: #e41749;
+  }
+`
 
 const dialogStyle = css`
   height: calc(100vh - 60px);

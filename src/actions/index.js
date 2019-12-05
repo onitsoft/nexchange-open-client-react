@@ -593,10 +593,11 @@ export const signUp = (details) => dispatch => {
       return data
     })
     .catch(err => {
-      console.log('AUTH_REGISTRATION_FAILED', {...err})
-      const { response } = err
-      const { data } = response
-      console.log('AUTH_REGISTRATION_FAILED response data', data)
+      const { response, message } = err
+      const { data } = response || {data: message}
+
+      console.error('Unable to signup. Error:', err)
+
       dispatch({
         type: types.AUTH_REGISTRATION_FAILED,
         payload: data
