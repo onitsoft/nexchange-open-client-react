@@ -30,6 +30,9 @@ export const Profile = (props) => {
             <NavItem>
               <NavLink to='/profile'>My Porfile</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink to='/orders'>My Orders</NavLink>
+            </NavItem>
           </Nav>
         </div>
         <div className='col-md-8'>

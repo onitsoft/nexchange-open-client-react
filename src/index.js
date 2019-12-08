@@ -49,6 +49,7 @@ const Privacy = React.lazy(() => import('Components/Privacy/Privacy'))
 const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'))
 const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'))
 const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'))
+const Orders = React.lazy(() => import('Components/Accounts/Orders'))
 const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'))
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
@@ -69,6 +70,7 @@ ReactDOM.render((
                 <Route exact path="/privacy" component={Privacy} />
                 <Route exact path="/profile/:user?" component={Profile} />
                 <Route exact path="/order/:orderRef" component={Order} />
+                <Route exact path="/orders/:orderRef?" component={Orders} />
                 <Route exact path="/"
                   render={props =>  <Home {...props} store={store} />}
                 />

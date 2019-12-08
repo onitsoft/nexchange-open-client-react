@@ -502,7 +502,7 @@ export const loadAuth = () => dispatch => {
 
 export const loadUserDetails = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me`)
-    .then(({ data, ...rest }) => {
+    .then(({ data }) => {
       dispatch({
         type: types.AUTH_USER_PROFILE,
         payload: data
@@ -513,7 +513,7 @@ export const loadUserDetails = () => dispatch => {
 
 export const loadUserOrders = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me/orders`)
-    .then(({ data, ...rest }) => {
+    .then(({ data }) => {
       dispatch({
         type: types.AUTH_LOAD_ORDERS,
         payload: data.results
@@ -523,9 +523,8 @@ export const loadUserOrders = () => dispatch => {
 
 export const requestPasswordReset = (email) => dispatch => {
   dispatch({ type: types.AUTH_LOADING })
-  console.log('what is passsord reset?', {email})
   return axios.post(`${config.API_BASE_URL}/users/me/forgot-password`, {email})
-    .then(({ data, ...rest }) => {
+    .then(({ data }) => {
       dispatch({
         type: types.AUTH_PASSWORD_RESET,
         payload: email
@@ -544,13 +543,9 @@ export const resetPassword = (token, password) => dispatch => {
   if (!password) throw new Error('Password is required')
   
   dispatch({ type: types.AUTH_LOADING })
-  if ('eli' === `${'eli'}`) return dispatch({
-    type: types.AUTH_PASSWORD_RESET_SUCCESS,
-    payload: {boo: 'bah'}
-  })
 
   return axios.post(`${config.API_BASE_URL}/users/me/forgot-password/${token}`, {password})
-    .then(({ data, ...rest }) => {
+    .then(({ data }) => {
       dispatch({
         type: types.AUTH_PASSWORD_RESET_SUCCESS,
         payload: data
@@ -625,7 +620,7 @@ export const signUp = (details) => dispatch => {
     email,
     phone
   })
-    .then(({ data, ...rest }) => {
+    .then(({ data }) => {
       dispatch({
         type: types.AUTH_USER_REGISTERED,
         payload: data
