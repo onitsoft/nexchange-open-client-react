@@ -521,6 +521,24 @@ export const loadUserOrders = () => dispatch => {
     })
 }
 
+export const requestPasswordReset = (email) => dispatch => {
+  dispatch({ type: types.AUTH_LOADING })
+  console.log('what is passsord reset?', {email})
+  return axios.post(`${config.API_BASE_URL}/users/me/forgot-password`, {email})
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET,
+        payload: email
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET,
+        payload: {error: err}
+      })
+    })
+}
+
 export const signIn = (username, password) => dispatch => {
 
   const params = {
@@ -530,9 +548,7 @@ export const signIn = (username, password) => dispatch => {
     'password': password,
   }
 
-  dispatch({
-    type: types.AUTH_LOADING
-  })
+  dispatch({ type: types.AUTH_LOADING })
 
   axios.post(`${config.API_BASE_URL}/oAuth2/token/`, serialize(params), {
     headers: {

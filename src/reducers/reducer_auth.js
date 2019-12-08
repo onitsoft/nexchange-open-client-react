@@ -6,6 +6,7 @@ import {
   AUTH_FAILED,
   AUTH_SIGN_UP,
   AUTH_SIGN_OUT,
+  AUTH_PASSWORD_RESET,
   AUTH_USER_REGISTERED,
   AUTH_REGISTRATION_COMPLETE,
   AUTH_REGISTRATION_FAILED,
@@ -35,6 +36,19 @@ export default (state = {}, action) => {
         ...state,
         loading: false,
         error: action.payload
+      }
+    case AUTH_PASSWORD_RESET:
+      if (action.payload && action.payload.error) {
+        return {
+          ...state,
+          loading: false,
+          resetError: action.payload.error
+        }
+      }
+      return {
+        ...state,
+        loading: false,
+        resetFor: action.payload
       }
     case AUTH_SIGN_UP:
       return {
