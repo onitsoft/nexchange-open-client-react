@@ -539,6 +539,31 @@ export const requestPasswordReset = (email) => dispatch => {
     })
 }
 
+export const resetPassword = (token, password) => dispatch => {
+  if (!token) throw new Error('Reset token is required')
+  if (!password) throw new Error('Password is required')
+  
+  dispatch({ type: types.AUTH_LOADING })
+  if ('eli' === `${'eli'}`) return dispatch({
+    type: types.AUTH_PASSWORD_RESET_SUCCESS,
+    payload: {boo: 'bah'}
+  })
+
+  return axios.post(`${config.API_BASE_URL}/users/me/forgot-password/${token}`, {password})
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET_SUCCESS,
+        payload: data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET_FAILED,
+        payload: err
+      })
+    })
+}
+
 export const signIn = (username, password) => dispatch => {
 
   const params = {

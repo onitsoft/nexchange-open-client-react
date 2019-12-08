@@ -77,7 +77,7 @@ ReactDOM.render((
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signout" component={SignOut} />
                 <Route exact path="/signup" component={SignUp} /> 
-                <Route exact path="/forgot-password/:reseToken?" component={ForgotPassword} /> 
+                <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />
                 <Route exact path="/not-found" component={NotFound} />

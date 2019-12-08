@@ -11,6 +11,13 @@ import { signUp, signIn, completeRegistration } from 'Actions'
 
 import { Checkbox, Modal } from 'react-bootstrap'
 
+import { 
+  passCheck,
+  usernameCheck,
+  emailCheck
+} from '../'
+
+
 import styles from '../Accounts.scss';
 
 export const SignUp = (props) => {
@@ -33,9 +40,6 @@ export const SignUp = (props) => {
   }, [])
 
   const onSubmit = useCallback(e => {
-    const passCheck = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.{6,})/
-    const usernameCheck = /^(?=.*[a-zA-Z0-9])(?=.{4,})/
-    const emailCheck = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/
     e.preventDefault()
     if (!state.username || !usernameCheck.test(state.username)) {
       setState(st => ({...st, error: 'username'}))
@@ -100,124 +104,124 @@ export const SignUp = (props) => {
       {t => (
         <StyledSignup>
           <div className='row'>
-          <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-7 ${styles.left}`}>
-            <Link to="/">
-              <div className={styles['logo-container']}>
-                <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
-              </div>
-            </Link>
-            <h1 className={styles.heading}>{t('accounts.signupheader')}</h1>
-          </div>
-          <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-5 ${styles.right}`}>
-            <Link to="/">
-              <div className={`${styles['logo-container']} hidden-md hidden-lg hidden-xl`}>
-                <img className={styles.logo} src="/img/logo.svg" alt="Logo" data-test="logo" />
-              </div>
-            </Link>
-            <div className={`col-xs-8 col-offset-xs-2`}>
-              <div className='alert alert-info' role='alert'>
-                <strong>{t('accounts.registerationOptionalTitle')}</strong>
-                <Marked>{t('accounts.registerationOptional')}</Marked>
-              </div>
-              <br />
-              <form className="form-group" onSubmit={onSubmit}>
-                <>
-                  <div className={`${styles['input-container']} ${myError('username')}`}>
-                    <input
-                      type={'text'}
-                      className={`form-control`}
-                      id={'username'}
-                      value={state['username']}
-                      onChange={setValue('username')}
-                      placeholder={t(`accounts.${'username'}`)}
-                      disabled={auth.loading}
-                    />
-                  </div>
-                  {state.error  === 'username' && <ErrorBlock {...state} />}
-
-                  <div className={`${styles['input-container']} ${myError('email')}`}>
-                    <input
-                      type={'email'}
-                      className={`form-control`}
-                      id={'email'}
-                      value={state['email']}
-                      onChange={setValue('email')}
-                      placeholder={t(`accounts.${'email'}`)}
-                      disabled={auth.loading}
-                    />
-                  </div>
-                  {state.error  === 'email' && <ErrorBlock {...state} />}
-
-                  <div className={`${styles['input-container']} ${myError('password')}`}>
-                    <input
-                      type={'password'}
-                      className={`form-control`}
-                      id={'password'}
-                      value={state['password']}
-                      onChange={setValue('password')}
-                      placeholder={t(`accounts.${'password'}`)}
-                      disabled={auth.loading}
-                    />
-                  </div>
-                  {state.error  === 'password' && <ErrorBlock {...state} />}
-
-                  <div className={`${styles['input-container']} ${myError('repeatPassword')}`}>
-                    <input
-                      type={'password'}
-                      className={`form-control`}
-                      id={'repeatPassword'}
-                      value={state['repeatPassword']}
-                      onChange={setValue('repeatPassword')}
-                      placeholder={t(`accounts.${'repeatPassword'}`)}
-                      disabled={auth.loading}
-                    />
-                  </div>
-                  {state.error  === 'repeatPassword' && <ErrorBlock {...state} />}
-                </>
-                
-                <div className={'input-container'}>&nbsp;</div>
-                <div className={`${myError('agreedTC')}`}>
-                  <Checkbox
-                    disabled={auth.loading}
-                    checked={state.agreedTC}
-                    onChange={({target: { checked }}) =>
-                      console.log('is checked?', checked) ||
-                      setValue('agreedTC')({target: { value: checked }})
-                    } >
-                    Accept TOS
-                  </Checkbox>
+            <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-7 ${styles.left}`}>
+              <Link to="/">
+                <div className={styles['logo-container']}>
+                  <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
                 </div>
-                {state.error  === 'agreedTC' && <ErrorMessage usekey />}
-                {state.error  === 'general' && <ErrorMessage />}
-
-                <button 
-                  type='submit'
-                  disabled={auth.loading}
-                  className={`${styles.button} ${styles.main}`}>{
-                    !auth.loading ? t('accounts.signup') : 'Loading...'
-                  }</button>
-                </form>
-              <div className={styles.separator}></div>
-              <Link to="/signin" className={styles['not-registered']}>
-                <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
               </Link>
-              <button 
-                className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
+              <h1 className={styles.heading}>{t('accounts.signupheader')}</h1>
             </div>
-          </div>
+            <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-5 ${styles.right}`}>
+              <Link to="/">
+                <div className={`${styles['logo-container']} hidden-md hidden-lg hidden-xl`}>
+                  <img className={styles.logo} src="/img/logo.svg" alt="Logo" data-test="logo" />
+                </div>
+              </Link>
+              <div className={`col-xs-8 col-offset-xs-2`}>
+                <div className='alert alert-info' role='alert'>
+                  <strong>{t('accounts.registerationOptionalTitle')}</strong>
+                  <Marked>{t('accounts.registerationOptional')}</Marked>
+                </div>
+                <br />
+                <form className="form-group" onSubmit={onSubmit}>
+                  <>
+                    <div className={`${styles['input-container']} ${myError('username')}`}>
+                      <input
+                        type={'text'}
+                        className={`form-control`}
+                        id={'username'}
+                        value={state['username']}
+                        onChange={setValue('username')}
+                        placeholder={t(`accounts.${'username'}`)}
+                        disabled={auth.loading}
+                      />
+                    </div>
+                    {state.error  === 'username' && <ErrorBlock {...state} />}
+
+                    <div className={`${styles['input-container']} ${myError('email')}`}>
+                      <input
+                        type={'email'}
+                        className={`form-control`}
+                        id={'email'}
+                        value={state['email']}
+                        onChange={setValue('email')}
+                        placeholder={t(`accounts.${'email'}`)}
+                        disabled={auth.loading}
+                      />
+                    </div>
+                    {state.error  === 'email' && <ErrorBlock {...state} />}
+
+                    <div className={`${styles['input-container']} ${myError('password')}`}>
+                      <input
+                        type={'password'}
+                        className={`form-control`}
+                        id={'password'}
+                        value={state['password']}
+                        onChange={setValue('password')}
+                        placeholder={t(`accounts.${'password'}`)}
+                        disabled={auth.loading}
+                      />
+                    </div>
+                    {state.error  === 'password' && <ErrorBlock {...state} />}
+
+                    <div className={`${styles['input-container']} ${myError('repeatPassword')}`}>
+                      <input
+                        type={'password'}
+                        className={`form-control`}
+                        id={'repeatPassword'}
+                        value={state['repeatPassword']}
+                        onChange={setValue('repeatPassword')}
+                        placeholder={t(`accounts.${'repeatPassword'}`)}
+                        disabled={auth.loading}
+                      />
+                    </div>
+                    {state.error  === 'repeatPassword' && <ErrorBlock {...state} />}
+                  </>
+                  
+                  <div className={'input-container'}>&nbsp;</div>
+                  <div className={`${myError('agreedTC')}`}>
+                    <Checkbox
+                      disabled={auth.loading}
+                      checked={state.agreedTC}
+                      onChange={({target: { checked }}) =>
+                        console.log('is checked?', checked) ||
+                        setValue('agreedTC')({target: { value: checked }})
+                      } >
+                      Accept TOS
+                    </Checkbox>
+                  </div>
+                  {state.error  === 'agreedTC' && <ErrorMessage usekey />}
+                  {state.error  === 'general' && <ErrorMessage />}
+
+                  <button 
+                    type='submit'
+                    disabled={auth.loading}
+                    className={`${styles.button} ${styles.main}`}>{
+                      !auth.loading ? t('accounts.signup') : 'Loading...'
+                    }</button>
+                  </form>
+                <div className={styles.separator}></div>
+                <Link to="/signin" className={styles['not-registered']}>
+                  <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
+                </Link>
+                <button 
+                  className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
+              </div>
+            </div>
 
 
-          <Modal show={showSuccessModal} onHide={onHideModal} dialogClassName={dialogStyle.toString()}>
-            <Modal.Header closeButton>
-              <Modal.Title>{t('accounts.register.successTitle')}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <p>{t('accounts.register.successBody')}</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Link className={`btn-primary btn`} to='/'>Home</Link>
-            </Modal.Footer>
-          </Modal>
+            <Modal show={showSuccessModal} onHide={onHideModal} dialogClassName={dialogStyle.toString()}>
+              <Modal.Header closeButton>
+                <Modal.Title>{t('accounts.register.successTitle')}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                  <p>{t('accounts.register.successBody')}</p>
+              </Modal.Body>
+              <Modal.Footer>
+                <Link className={`btn-primary btn`} to='/'>Home</Link>
+              </Modal.Footer>
+            </Modal>
           </div>
         </StyledSignup>
       )}
