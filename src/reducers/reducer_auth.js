@@ -40,23 +40,16 @@ export default (state = {}, action) => {
         error: action.payload
       }
     case AUTH_PASSWORD_RESET:
-      if (action.payload && action.payload.error) {
-        return {
-          ...state,
-          loading: false,
-          resetError: action.payload.error
-        }
-      }
       return {
         ...state,
         loading: false,
-        resetFor: action.payload
+        reset: action.payload
       }
     case AUTH_PASSWORD_RESET_SUCCESS:
       return {
         ...state,
         loading: false,
-        resetFor: action.payload,
+        reset: action.payload,
         passwordReset: true
       }
     case AUTH_PASSWORD_RESET_FAILED:

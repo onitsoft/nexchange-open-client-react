@@ -144,6 +144,10 @@
       "successTitle": "Registration Successful",
       "successBody": "Thank you for registering, and email was sent to your email address. You may proceed to sign in with your username."
     },
+    "requestResetPassword": {
+      "successTitle": "Check your email ",
+      "successBody": "We've sent you a link to reset your password"
+    },
     "resetPassword": {
       "successTitle": "Password Reset Successful",
       "successBody": "Your password has been reset - you may now sign in with your new password"
@@ -164,7 +168,8 @@
         "This field must be unique": "Username unavailble. Please use a different username."
       },
       "email": {
-        "This field must be unique": "Email already in use."
+        "This field must be unique": "Email already in use.",
+        "Invalid E-mail No such user": "Invalid E-mail. No such user."
       }
     }
   },
