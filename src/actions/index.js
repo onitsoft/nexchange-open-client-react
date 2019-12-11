@@ -3,6 +3,7 @@ import * as types from './types';
 import _ from 'lodash';
 import config from 'Config';
 import urlParams from 'Utils/urlParams';
+import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
@@ -408,10 +409,6 @@ export const setUserEmail = formData => async dispatch => {
 
   return request
     .then(res => {
-      if (!window.$crisp.get('user:email')) {
-        window.$crisp.push(['set', 'user:email', [payload.email]]);
-      }
-
       dispatch({
         type: types.SET_EMAIL_AND_MESSAGE,
         value: res.data.email,
@@ -507,4 +504,174 @@ export const fetchOrderBook = payload => dispatch => {
       orderBook
     });
   });
+}
+
+export const loadAuth = () => dispatch => {
+  if (localStorage.full_token) {
+    const tokenData = JSON.parse(localStorage.full_token)
+    dispatch({
+      type: types.AUTH_TOKEN_RECEIVED,
+      payload: tokenData
+    })
+  }
+}
+
+export const loadUserDetails = () => dispatch => {
+  return axios.get(`${config.API_BASE_URL}/users/me`)
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_USER_PROFILE,
+        payload: data
+      })
+    })
+}
+
+
+export const loadUserOrders = () => dispatch => {
+  return axios.get(`${config.API_BASE_URL}/users/me/orders`)
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_LOAD_ORDERS,
+        payload: data.results
+      })
+    })
+}
+
+export const requestPasswordReset = (email) => dispatch => {
+  dispatch({ type: types.AUTH_LOADING })
+  return axios.post(`${config.API_BASE_URL}/password_reset`, {email})
+    .then(({ data, ...rest }) => {
+      if (data && data.result && data.result === 'Please check your E-mail') {
+        dispatch({
+          type: types.AUTH_PASSWORD_RESET,
+          payload: data.result
+        })
+      }
+    })
+    .catch(err => {
+      if (err && err.response) {
+        const { response: { data } } = err
+        dispatch({
+          type: types.AUTH_PASSWORD_RESET_FAILED,
+          payload: data
+        })
+      }
+    })
+}
+
+export const resetPassword = (hash, password) => dispatch => {
+  if (!hash) throw new Error('Reset token is required')
+  if (!password) throw new Error('Password is required')
+  
+  dispatch({ type: types.AUTH_LOADING })
+
+  return axios.post(`${config.API_BASE_URL}/password_reset_complete`, {hash, password})
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET_SUCCESS,
+        payload: data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: types.AUTH_PASSWORD_RESET_FAILED,
+        payload: err
+      })
+    })
+}
+
+export const signIn = (username, password) => dispatch => {
+
+  const params = {
+    'grant_type': 'password',
+    'client_id': config.AUTH_CLIENT_ID,
+    'username': username,
+    'password': password,
+  }
+
+  dispatch({ type: types.AUTH_LOADING })
+
+  axios.post(`${config.API_BASE_URL}/oAuth2/token/`, serialize(params), {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    auth: {
+      username: config.AUTH_CLIENT_ID,
+      password: config.AUTH_CLIENT_SECRET
+    }
+
+  })
+    .then(({ data, ...rest }) => {
+      const token = {
+        ...data,
+        issued_at: Date.now()
+      }
+      if (data && data.access_token) {
+        localStorage.token = data.access_token
+        localStorage.full_token = JSON.stringify(token)
+        dispatch({
+          type: types.AUTH_TOKEN_RECEIVED,
+          payload: token
+        })
+        dispatch({
+          type: types.AUTH_COMPLETE
+        })
+      } else {
+        throw new Error('Unexpected authentication result:', {data, ...rest})
+      }
+    })
+    .catch(err => {
+      dispatch({
+        type: types.AUTH_FAILED,
+        payload: err
+      })
+    })
+};
+
+export const signUp = (details) => dispatch => {
+  const { username, password, email, phone } = details
+  dispatch({
+    type: types.AUTH_SIGN_UP,
+    payload: details
+  })
+
+  return axios.post(`${config.API_BASE_URL}/users`, {
+    username,
+    password,
+    email,
+    phone
+  })
+    .then(({ data, ...rest }) => {
+      dispatch({
+        type: types.AUTH_USER_REGISTERED,
+        payload: data
+      })
+
+      return data
+    })
+    .catch(err => {
+      const { response, message } = err
+      const { data } = response || {data: message}
+
+      console.error('Unable to signup. Error:', err)
+
+      dispatch({
+        type: types.AUTH_REGISTRATION_FAILED,
+        payload: data
+      })
+
+      return err
+    })
+}
+
+export const signOut = () => dispatch => {
+  localStorage.token = localStorage.full_token = null
+  dispatch({
+    type: types.AUTH_SIGN_OUT
+  })
+}
+export const completeRegistration = () => dispatch => {
+  dispatch({
+    type: types.AUTH_REGISTRATION_COMPLETE
+  })
 }
