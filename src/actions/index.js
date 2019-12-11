@@ -368,6 +368,22 @@ export const fetchKyc = orderId => async dispatch => {
   })).catch(error => {});
 };
 
+export const favoritePair = (pair, favorite = true) => async dispatch => {
+  const url = `${config.API_BASE_URL}/users/me/pairs`;
+  const request = axios.post(url, {
+    pair,
+    favorite
+  });
+
+  return request.then(res => dispatch({
+    type: types.FAVORITE_PAIR,
+    payload: {
+      pair,
+      favorite
+    }
+  })).catch(error => ({}));
+};
+
 export const fetchUserEmail = () => async dispatch => {
   if (!localStorage.token) return;
 

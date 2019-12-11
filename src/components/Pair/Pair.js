@@ -7,6 +7,7 @@ import { fetchCoinDetails, fetchPairs, changeOrderMode, selectCoin } from 'Actio
 import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
 import PriceChart from './PriceChart';
+import Favorite from './Favorite';
 import RecentOrders from './RecentOrders/RecentOrders';
 import { useCurrencyAPI } from 'Components/api'
 
@@ -36,7 +37,16 @@ const Pair = (props) => {
     <StyledPairPage>
       <Hero {...props} selectedCoin={selectedCoin} {...{baseCurrency, quoteCurrency}} />
       <div className='container'>
-        <h2>Price Chart for {pair.toUpperCase()}</h2>
+      </div>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-8'>
+            <h2>Price Chart for {pair.toUpperCase()}</h2>
+          </div>
+          <div className='col-md-4'>
+            <Favorite pair={pair} />
+          </div>
+        </div>
         <PriceChart pair={pair}/>
       </div>
       <RecentOrders {...props} pair={pair} />
