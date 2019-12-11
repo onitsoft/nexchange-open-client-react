@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 
 import { bindActionCreators } from 'redux';
 import { fetchOrder, fetchPrice, setOrder, fetchCoinDetails } from 'Actions';
@@ -10,7 +11,6 @@ import config from 'Config';
 import OrderMain from './OrderMain/OrderMain';
 import OrderTop from './OrderTop/OrderTop';
 
-import NotFound from 'Components/NotFound/NotFound';
 import OrderLoading from './OrderLoading/OrderLoading';
 import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
 import OrderCta from './OrderCta/OrderCta';
@@ -74,7 +74,7 @@ class Order extends Component {
           <div className="row">
             {
               ((this.state.order == null) && <OrderLoading />)
-              || ((this.state.order === 404) && <NotFound />)
+              || ((this.state.order === 404) && <Redirect to='/not-found' />)
               || ((typeof this.state.order === 'object') && <>
                 <OrderTop order={this.state.order} />
                 <OrderCoinsProcessed order={this.state.order} />
