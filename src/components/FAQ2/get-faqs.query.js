@@ -1,24 +1,12 @@
 import gql from 'graphql-tag'
 
 export const GET_WHITELABEL = gql`
-  query GetWhitelabel ($pagename: String) {
+  query GetFAQs ($pagename: String) {
     pages(where: {name: $pagename}) {
       title
-      videoId: content
+      content
       createdAt
       updatedAt
-      topics: articles (orderBy: sort_ASC) {
-        title
-        content
-        date
-        createdAt
-        link
-        linkText
-        art {
-          fileName
-          url
-        }
-      }
       main {
         title
         content
@@ -33,16 +21,6 @@ export const GET_WHITELABEL = gql`
         content
         link
         linkText
-      }
-      features {
-        title
-        content
-        link
-        linkText
-        art {
-          fileName
-          url
-        }
       }
     }
   }
