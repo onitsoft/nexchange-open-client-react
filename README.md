@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/onitsoft/nexchange-open-client-react.svg?branch=master)](https://travis-ci.org/onitsoft/nexchange-open-client-react)
+
 # N.exchange Open Client (ReactJS)
 
 N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange/) API. The API is available to the public and its [comprehensive documentation](https://n.exchange/apidocs) can be found here.
