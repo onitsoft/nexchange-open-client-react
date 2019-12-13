@@ -133,10 +133,45 @@
     "username": "Username",
     "email": "Email",
     "password": "Password",
-    "repeatpassword": "Repeat Password",
+    "repeatPassword": "Repeat Password",
     "forgotpassword1": "Forgot your password?",
     "forgotpassword2": "If you want to reset your password, please enter your email address",
-    "resetpassword": "Reset Password"
+    "resetpassword": "Reset Password",
+    "resetPasswordBody": "Enter your new password",
+    "registerationOptionalTitle": "Registeration is Optional!",
+    "registerationOptional": "Please be advised that registration isn't required to use n.exchange",
+    "register": {
+      "successTitle": "Registration Successful",
+      "successBody": "Thank you for registering, and email was sent to your email address. You may proceed to sign in with your username."
+    },
+    "requestResetPassword": {
+      "successTitle": "Check your email ",
+      "successBody": "We've sent you a link to reset your password"
+    },
+    "resetPassword": {
+      "successTitle": "Password Reset Successful",
+      "successBody": "Your password has been reset - you may now sign in with your new password"
+    },
+    "errors": {
+      "agreedTC": "Please accept Terms & Conditions",
+      "username": "Username must be at least 4 characters long",
+      "email": "Invalid email address",
+      "password": "Password must be at least 6 characters long and contain both letters and numbers",
+      "repeatPassword": "Passwords must match"
+    },
+    "accounts.errorKeys.username.This field must be unique.": "",
+    "errorKeys": {
+      "general": {
+        "Network Error": "Unable to reach remote server - please contact support"
+      },
+      "username": {
+        "This field must be unique": "Username unavailble. Please use a different username."
+      },
+      "email": {
+        "This field must be unique": "Email already in use.",
+        "Invalid E-mail No such user": "Invalid E-mail. No such user."
+      }
+    }
   },
  "integrations": {
     "error" : {
@@ -544,5 +579,6 @@
         "why-whitelabel": "Several reason why you should consider using a white-label exchange are:\n\n1. Time to market: Developing your own solution might take anywhere between one to three years. In a highly dynamic market such as crypto, this is basically eternity. all n.exchange white-label products are delivered within 30 working days. that's at least 12 times faster!\n\n2. Cost: our white-label will typically cost only the fraction of the money it takes to develop your own product while providing a rich set of features along with decent customisation capabilities.\n\n3. Liquidity: n.exchange white-labels is offered with a full access to our internal reserves as well as more than a dozen different liquidity providers which we have integrated.\n\n4. No risk: n.exchange will pay you a constant trading fee based on the volume of your exchange, you will never be exposed to the market.\n\n5. Customer support: n.exchange will handle customer inquiries on the behalf of your business.\n\n6. Verification: we handle the customer verification on behalf of our white-labels\n\n7. Access to top tier talent and the expert advise of a team successfully running a business in the crypto industry since 2016"
       }
     }
-  }
+  },
+  "continue": "Continue"
 }

@@ -1,11 +1,16 @@
-import React, { useMemo, useCallback, useState } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router'
 import { I18n } from 'react-i18next';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import UserIcon from './user.svg'
+
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
-
+import { loadAuth, loadUserDetails } from 'Actions'
 
 import styles from './Header.scss';
 
@@ -36,6 +41,18 @@ const Header = props => {
     return false
   }, [location]);
 
+  useEffect(() => {
+    props.loadAuth()
+  }, [])
+
+  useEffect(() => {
+    if (props.auth && props.auth.token && props.auth.token.access_token) {
+      if (!props.auth.profile) {
+        props.loadUserDetails()
+      }
+    }
+  }, [props.auth])
+
 
   const closeNavbar = useCallback(() => { setShowNavbar(false) }, [setShowNavbar])
   const hideSupport = useCallback(() => { setShowSupportModal(false) }, [setShowSupportModal])
@@ -43,7 +60,7 @@ const Header = props => {
   if (isHideHeader) return null
   
   return (
-    <HeaderStuff {...{ closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
+    <HeaderStuff {...{ auth: props.auth, closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />
   );
 }
 
@@ -131,6 +148,27 @@ export const HeaderStuff = (props) => {
                     {t('header.ico')}
                   </a>
                 </li>
+                
+                {(props.auth && props.auth.profile && props.auth.profile.username && (
+                  <li>
+                    <Link className={styles.link} to='/profile/me'>
+                      <UserIcon style={{width: 18, height: 18}} title={props.auth.profile.username} />
+                    </Link>
+                  </li>
+                )) || (
+                  <>
+                    <li>
+                      <Link className={styles.link} to='/signup'>
+                        {t('accounts.signup')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className={styles.link} to='/signin'>
+                        {t('accounts.signin')}
+                      </Link>
+                    </li>
+                  </>
+                )}
 
                 <LanguagePicker />
 
@@ -238,4 +276,11 @@ export const HeaderStuff = (props) => {
   )
 }
 
-export default Header;
+
+const mapStateToProps = ({ auth }) => ({ auth });
+const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth, loadUserDetails }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
