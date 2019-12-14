@@ -1,0 +1,128 @@
+.container {
+  position: relative;
+  padding: 100px 0 75px 0;
+  text-align: center;
+  color: #fff;
+  background: -moz-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, rgba(2, 3, 31, 1)),
+    color-stop(44%, rgba(2, 3, 31, 1)),
+    color-stop(100%, rgba(26, 157, 139, 1))
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(2, 3, 31, 1) 0%,
+    rgba(2, 3, 31, 1) 44%,
+    rgba(26, 157, 139, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
+
+  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: $screen-md-min) {
+    background-color: #01031e;
+    background-image: url('../../img/ellipse.svg');
+    background-position: -135vh -93vh;
+    background-size: 150%;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-bottom: 10px !important;
+    margin-top: 15px;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 15px !important;
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Clan Offc Pro Book';
+
+    @media (min-width: $screen-md-min) {
+      font-size: 24px;
+    }
+
+    @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.faqs {
+  float: none !important;
+  display: inline-block;
+  margin-top: 60px;
+  border-radius: 14px;
+  background-color: white;
+  color: $black;
+
+  @media (max-width: $screen-md-min) {
+    padding: 20px !important;
+  }
+  @media (min-width: $screen-md-min) {
+    padding: 40px !important;
+  }
+
+  .notfound {
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      cursor: pointer;
+    }
+  }
+  
+  form {
+    .input {
+      position: relative;
+    
+      i {
+        color: $gray;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+        font-size: 26px;
+      }
+    
+      input {
+        font-size: 26px !important;
+        margin-bottom: 26px !important;
+        padding-left: 32px !important;
+      }
+    
+      input::-webkit-input-placeholder { /* WebKit browsers */
+        font-size: 26px !important;
+      }
+    
+      input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: 26px !important;
+      }
+    
+      input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: 26px !important;
+      }
+    
+      input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-size: 26px !important;
+      }
+    }    
+  }
+}
+

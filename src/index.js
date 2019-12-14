@@ -40,17 +40,19 @@ const Referrals = React.lazy(() => import('Components/Referrals/Referrals'))
 const Header = React.lazy(() => import('Components/Header/Header'))
 const Footer = React.lazy(() => import('Components/Footer'))
 const NotFound = React.lazy(() => import('Components/NotFound/NotFound'))
-const FAQ = React.lazy(() => import('Components/FAQ/FAQ'))
+const FAQ = React.lazy(() => import('Components/FAQ2/FAQ'))
 const Pair = React.lazy(() => import('Components/Pair/Pair'))
 
 const Home = React.lazy(() => import('Components/Home/Home'))
 const TermsConditions = React.lazy(() => import('Components/TermsConditions/TermsConditions'))
 const Privacy = React.lazy(() => import('Components/Privacy/Privacy'))
 const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'))
+const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'))
 const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'))
 const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'))
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
+const Profile = React.lazy(() => import('Pages/Profile'))
 
 ReactDOM.render((
   <GraphCMSProvider>
@@ -65,6 +67,7 @@ ReactDOM.render((
               <Switch>
                 <Route exact path="/terms-and-conditions" component={TermsConditions} />
                 <Route exact path="/privacy" component={Privacy} />
+                <Route exact path="/profile/:user?" component={Profile} />
                 <Route exact path="/order/:orderRef" component={Order} />
                 <Route exact path="/"
                   render={props =>  <Home {...props} store={store} />}
@@ -72,8 +75,9 @@ ReactDOM.render((
                 <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/faqs/:id?" component={FAQ} />
                 <Route exact path="/signin" component={SignIn} />
+                <Route exact path="/signout" component={SignOut} />
                 <Route exact path="/signup" component={SignUp} /> 
-                <Route exact path="/forgot-password" component={ForgotPassword} /> 
+                <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />
                 <Route exact path="/not-found" component={NotFound} />

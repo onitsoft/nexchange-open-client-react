@@ -1,10 +1,12 @@
 {
   "extends": "react-app",
+  "parser": "babel-eslint",
   "plugins": ["prettier", "react"],
   "env": {
     "browser": true
   },
   "rules": {
+    "strict": 0,
     "no-undef": 0,
     "import/no-webpack-loader-syntax": 0,
     "max-len": [2, 140, 4, { "ignoreUrls": true }],
@@ -14,5 +16,5 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
 }
