@@ -202,7 +202,7 @@ export const SignUp = (props) => {
                     }</button>
                   </form>
                 <div className={styles.separator}></div>
-                <Link to="/signin" className={styles['not-registered']}>
+                <Link to="/login" className={styles['not-registered']}>
                   <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
                 </Link>
                 <button 

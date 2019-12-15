@@ -98,7 +98,7 @@ const SignIn = (props) => {
                 <div>{t('accounts.forgotpassword1')}</div>
               </Link>
               <div className={styles.separator}></div>
-              <Link to="/signup" className={styles['not-registered']}>
+              <Link to="/register" className={styles['not-registered']}>
                 <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signup')}</button>
               </Link>
               <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signinwithfacebook')}</button>
