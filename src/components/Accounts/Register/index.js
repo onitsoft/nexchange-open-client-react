@@ -175,7 +175,7 @@ export const SignUp = (props) => {
                   </>
                   
                   <div className={'input-container'}>&nbsp;</div>
-                  <div className={`${myError('agreedTC')}`}>
+                  <StyledTerms className={`${myError('agreedTC')}`}>
                     <Checkbox
                       disabled={auth.loading}
                       checked={state.agreedTC}
@@ -183,9 +183,11 @@ export const SignUp = (props) => {
                         console.log('is checked?', checked) ||
                         setValue('agreedTC')({target: { value: checked }})
                       } >
-                      Accept TOS
+                      <span>Accept </span>
+                      <span><Link to='/terms-and-conditions' rel='noopener noreferrer' target='_blank'>Terms & Conditions</Link> </span>
+                      <span>and <Link to='/privacy' rel='noopener noreferrer' target='_blank'>Privacy Policy</Link></span>
                     </Checkbox>
-                  </div>
+                  </StyledTerms>
                   {state.error  === 'agreedTC' && <ErrorMessage usekey />}
                   {state.error  === 'general' && <ErrorMessage />}
 
@@ -263,6 +265,8 @@ const StyledFormError = styled.div`
     padding: .25rem 1rem;
     color: #e41749;
   }
+
+  .
 `
 
 const dialogStyle = css`
@@ -284,6 +288,11 @@ const dialogStyle = css`
       }
     }
   }
+`
+
+const StyledTerms = styled.div`
+  border-radius: 20px;
+  padding: .25rem .5rem;
 `
 
 
