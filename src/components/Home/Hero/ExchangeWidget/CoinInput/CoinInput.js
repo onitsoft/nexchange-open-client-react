@@ -75,7 +75,7 @@ class CoinInput extends PureComponent {
       this.setState({ fetching: nextProps.price.fetching });
     }
 
-    if (nextProps.lastEdited !== nextProps.type || !this.state.value || this.state.value === '...') {
+    if (nextProps.price.lastEdited !== nextProps.type || !this.state.value || this.state.value === '...') {
       if (nextProps.type === 'receive') {
         this.setState({ value: nextProps.price.receive });
       } else if (nextProps.type === 'deposit') {
