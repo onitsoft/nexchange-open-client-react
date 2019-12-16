@@ -163,7 +163,7 @@ class ExchangeWidget extends Component {
 
                     <WalletAddress 
                       withdraw_coin="receive" 
-                      onSubmit={this.placeOrder} 
+                      onSubmit={() => ({})}
                       inputRef={el => (this.walletInputEl = el)} 
                       button={this.button} 
                       focusWalletAddress={this.focusWalletAddress}/>
