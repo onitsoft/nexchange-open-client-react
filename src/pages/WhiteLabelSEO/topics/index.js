@@ -38,7 +38,7 @@ const TopicCard = ({ title, content, art, btn}) => {
 const StyledTopic = styled.article`
   display: grid;
   grid-column-gap: 10rem;
-  grid-row-gap: 2rem;
+  grid-row-gap: 3rem;
   grid-template-areas: 
     "art content";
   
@@ -76,7 +76,7 @@ const StyledTopic = styled.article`
       font-family: Clan Offc Pro Medium, sans-serif;
       font-weight: 300;
       font-size: 22px;
-      margin-top: 1rem;
+      margin: 2rem 0;
     }
     > p {
       font-family: Clan Offc Pro Book,sans-serif;

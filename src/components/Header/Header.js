@@ -23,6 +23,7 @@ const Header = props => {
     const { pathname } = location
 
     if (pathname === '/' 
+        || pathname.indexOf('/instant-white-label') !== -1
         || pathname.indexOf('/faqs') !== -1
         || pathname === '/not-found') {
       return true;

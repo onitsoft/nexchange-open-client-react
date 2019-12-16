@@ -502,7 +502,7 @@ export const loadAuth = () => dispatch => {
 
 export const loadUserDetails = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me`)
-    .then(({ data }) => {
+    .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_USER_PROFILE,
         payload: data
@@ -513,7 +513,7 @@ export const loadUserDetails = () => dispatch => {
 
 export const loadUserOrders = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me/orders`)
-    .then(({ data }) => {
+    .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_LOAD_ORDERS,
         payload: data.results
@@ -523,29 +523,34 @@ export const loadUserOrders = () => dispatch => {
 
 export const requestPasswordReset = (email) => dispatch => {
   dispatch({ type: types.AUTH_LOADING })
-  return axios.post(`${config.API_BASE_URL}/users/me/forgot-password`, {email})
-    .then(({ data }) => {
-      dispatch({
-        type: types.AUTH_PASSWORD_RESET,
-        payload: email
-      })
+  return axios.post(`${config.API_BASE_URL}/password_reset`, {email})
+    .then(({ data, ...rest }) => {
+      if (data && data.result && data.result === 'Please check your E-mail') {
+        dispatch({
+          type: types.AUTH_PASSWORD_RESET,
+          payload: data.result
+        })
+      }
     })
     .catch(err => {
-      dispatch({
-        type: types.AUTH_PASSWORD_RESET,
-        payload: {error: err}
-      })
+      if (err && err.response) {
+        const { response: { data } } = err
+        dispatch({
+          type: types.AUTH_PASSWORD_RESET_FAILED,
+          payload: data
+        })
+      }
     })
 }
 
-export const resetPassword = (token, password) => dispatch => {
-  if (!token) throw new Error('Reset token is required')
+export const resetPassword = (hash, password) => dispatch => {
+  if (!hash) throw new Error('Reset token is required')
   if (!password) throw new Error('Password is required')
   
   dispatch({ type: types.AUTH_LOADING })
 
-  return axios.post(`${config.API_BASE_URL}/users/me/forgot-password/${token}`, {password})
-    .then(({ data }) => {
+  return axios.post(`${config.API_BASE_URL}/password_reset_complete`, {hash, password})
+    .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_PASSWORD_RESET_SUCCESS,
         payload: data
@@ -620,7 +625,7 @@ export const signUp = (details) => dispatch => {
     email,
     phone
   })
-    .then(({ data }) => {
+    .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_USER_REGISTERED,
         payload: data

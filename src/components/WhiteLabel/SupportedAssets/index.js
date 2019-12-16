@@ -7,12 +7,12 @@ export const SupportedAssets = (props) => {
   const [assets] = useState(ASSETS)
 
   return (
-    <>
-      <h1>Supported Assets</h1>
+    <AssetsContainer>
+      <h2>Supported Assets</h2>
       <StyledAssets>
           {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
       </StyledAssets>
-    </>
+    </AssetsContainer>
   )
 
 }
@@ -33,6 +33,12 @@ const Asset = ({asset}) => {
     </StyledAsset>
   )
 }
+
+const AssetsContainer = styled.div`
+  > h2 {
+    margin-bottom: 6rem;
+  }
+`
 
 const StyledAssets = styled.div`
   display: grid;
