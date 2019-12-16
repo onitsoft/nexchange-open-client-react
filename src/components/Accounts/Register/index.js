@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { css } from 'emotion'
 import styled from '@emotion/styled'
-import Marked from 'react-markdown'
 
 import { signUp, signIn, completeRegistration } from 'Actions'
 
