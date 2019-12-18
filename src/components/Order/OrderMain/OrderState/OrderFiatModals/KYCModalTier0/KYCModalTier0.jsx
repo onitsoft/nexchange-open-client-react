@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useRef, useCallback, useState } from 'react';
+import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -8,7 +8,7 @@ import config from 'Config';
 import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
 
-import Webcam from 'react-webcam'
+import FilesInput from 'Components/misc/files-input'
 
 class KYCModal extends Component {
   constructor(props) {
@@ -96,22 +96,20 @@ class KYCModal extends Component {
     });
 
     const formData = new FormData();
-    const governmentID = document.querySelector('#governmentID');
     const residenceProof = document.querySelector('#residenceProof');
 
     formData.append('order_reference', this.props.order.unique_reference);
     formData.append('user_input_comment', this.state.message.slice(0, 255));
 
-    if (governmentID) {
-      formData.append('identity_document', governmentID.files[0]);
-    }
-
     if (residenceProof) {
       formData.append('utility_document', residenceProof.files[0]);
     }
-
-    if (this.state.webcameFile) {
-      formData.append('identity_document_base64', this.state.webcameFile)
+    
+    if (this.state.files && this.state.files.length) {
+      this.state.files.map(f => formData.append('identity_document[]', f))
+    }
+    if (this.state.base64s) {
+      this.state.base64s.map(f => formData.append('identity_document_base64[]', f))
     }
 
     axios
@@ -159,7 +157,7 @@ class KYCModal extends Component {
       },
       () => {
         let needUploadResidence = document.querySelector('#residenceProof') ? true : false,
-          needUploadID = document.querySelector('#governmentID') ? true : false;
+          needUploadID = (this.props.kyc.identity_token && !this.state.showManualId) && !this.state.idApproved ? true : false;
 
         if (
           !this.state.email ||
@@ -176,9 +174,11 @@ class KYCModal extends Component {
   }
 
   handleWebcam = (data) => {
-    console.log(`📸`, 'Webcam Data:', data)
-
     this.setState({webcameFile: data})
+  }
+
+  onFiles = (files, base64s) => {
+    this.setState({files, base64s})
   }
 
   render() {
@@ -206,37 +206,12 @@ class KYCModal extends Component {
                       <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
                     </div>
                   )}
-                <button className='btn btn-themed btn-md' onClick={e => this.setState({isWebcam: !this.state.isWebcam})} />
-                <WebcamModal visible={this.state.isWebcam} onClose={() => this.setState({isWebcam: false})}
-                  onChange={this.handleWebcam} />
                 <form onSubmit={this.handleSubmit}
                   hidden={(this.props.kyc.identity_token && !this.state.showManualId) && !this.state.idApproved}>
                   {!this.state.idApproved &&
                     this.props.kyc.id_document_status !== 'APPROVED' && (
-                      <div>
-                        <label htmlFor="governmentID" style={{ 'cursor': 'pointer' }}>
-                          <h2>{t('order.fiat.kyc.1')}</h2>
-                          <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
-
-                          <div style={{ 'textAlign': 'center', 'maxWidth': '100%' }}>
-                            <div style={{ 'display': 'inline-block', 'maxWidth': '100%' }}>
-                              <img style={{
-                                'textAlign': 'center',
-                                margin: 'auto', 'width': '400px', 'maxWidth': '100%'
-                              }} src="/img/order/selfie.jpg"
-                                alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
-                              <input type="file" name="governmentID" id="governmentID"
-                                onChange={this.handleInputChange} accept="image/*" style={{ 'margin': '0 25% 20px 25%' }} />
-                            </div></div>
-                        </label>
-                        <div>
-                          <p><b>Preview</b></p>
-                          {this.state.webcameFile && (
-                            <img src={this.state.webcameFile} style={{width: 120}} />
-                          )}
-                        </div>
-                      </div>
-                    )}
+                    <FilesInput onFiles={this.onFiles} />
+                  )}
 
                   {/*
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
@@ -324,89 +299,6 @@ class KYCModal extends Component {
     );
   }
 }
-
-const WebcamModal = (props) => {
-  const { visible, onClose, onChange } = props
-  const [show, setShow] = useState(false)
-  const [myShot, setMyShot] = useState('')
-
-  const onHide = () => {
-    onClose()
-  }
-
-  useEffect(() => {
-    if (visible !== show) {
-      setShow(visible)
-    }
-  }, [visible, show])
-
-  const webcamRef = useRef(null)
- 
-  const capture = useCallback(
-    () => {
-      const imageSrc = webcamRef.current.getScreenshot()
-      setMyShot(imageSrc)
-    },
-    [webcamRef]
-  )
-
-  useEffect(() => {
-    if (myShot && typeof onChange === 'function') {
-      onChange(myShot)
-    }
-  }, [myShot])
-
-
-  return (
-    <>
-      Hello Webcam
-      <Modal id='webcam-modal' show={show} onHide={onHide}>
-        <div className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={onHide}>
-              <i className="material-icons">clear</i>
-            </button>
-            <h4 className={`modal-title`}>Selfie Mode</h4>
-            <h5 style={{ marginBottom: 0 }}>
-              <b>
-                Use your webcam like a PRO
-              </b>
-            </h5>
-          </div>
-
-          <div className="modal-body">
-            <Webcam 
-              ref={webcamRef}
-              audio={false}
-              screenshotFormat='image/jpeg'
-
-            />
-          </div>
-
-          <div className="modal-footer" onClick={capture}>
-            GO GO GO
-          </div>
-        </div>
-      </Modal>
-    </>
-  )
-}
-
-function dataURLtoFile(dataurl, filename) {
- 
-  let arr = dataurl.split(','),
-      mime = arr[0].match(/:(.*?);/)[1],
-      bstr = atob(arr[1]), 
-      n = bstr.length, 
-      u8arr = new Uint8Array(n);
-      
-  while(n--){
-      u8arr[n] = bstr.charCodeAt(n);
-  }
-  
-  return new File([u8arr], filename, {type:mime});
-}
-
 
 const mapStateToProps = ({ email }) => ({ email });
 const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
