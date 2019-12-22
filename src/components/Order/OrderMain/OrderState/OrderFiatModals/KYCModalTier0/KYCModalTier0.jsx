@@ -56,6 +56,10 @@ class KYCModal extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+    if (this.props.modalState && JSON.stringify(this.props.modalState) !== JSON.stringify(prevProps.modalState)) {
+      const { files, base64s } = this.props.modalState
+      this.setState({files, base64s})
+    }
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function () {
@@ -73,16 +77,17 @@ class KYCModal extends Component {
 
   close() {
     this.props.onClose();
-
-    this.setState({
-      filesReady: false,
-      governmentID: '',
-      residenceProof: '',
-      title: i18n.t('order.fiat.kyc.3'),
-      buttonText: i18n.t('order.fiat.kyc.4'),
-      titleClass: '',
-      message: '',
-    });
+    const { files, base64s } = this.state
+    if (typeof this.props.onUpdate === 'function') this.props.onUpdate({files, base64s})
+    // this.setState({
+    //   filesReady: false,
+    //   governmentID: '',
+    //   residenceProof: '',
+    //   title: i18n.t('order.fiat.kyc.3'),
+    //   buttonText: i18n.t('order.fiat.kyc.4'),
+    //   titleClass: '',
+    //   message: '',
+    // });
   }
 
   handleSubmit(event) {
