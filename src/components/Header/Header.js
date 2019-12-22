@@ -33,8 +33,8 @@ const Header = props => {
 
   const isHideHeader = useMemo(() => {
     const { pathname } = location
-    if (pathname === '/signin' 
-        || pathname === '/signup'
+    if (pathname === '/login' 
+        || pathname === '/register'
         || pathname === '/forgot-password') {
       return true;
     }
@@ -158,12 +158,12 @@ export const HeaderStuff = (props) => {
                 )) || (
                   <>
                     <li>
-                      <Link className={styles.link} to='/signup'>
+                      <Link className={styles.link} to='/register'>
                         {t('accounts.signup')}
                       </Link>
                     </li>
                     <li>
-                      <Link className={styles.link} to='/signin'>
+                      <Link className={styles.link} to='/login'>
                         {t('accounts.signin')}
                       </Link>
                     </li>
