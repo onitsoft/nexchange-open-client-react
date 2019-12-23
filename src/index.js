@@ -44,9 +44,9 @@ const Pair = React.lazy(() => import('Components/Pair/Pair'))
 const Home = React.lazy(() => import('Components/Home/Home'))
 const TermsConditions = React.lazy(() => import('Components/TermsConditions/TermsConditions'))
 const Privacy = React.lazy(() => import('Components/Privacy/Privacy'))
-const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'))
+const Register = React.lazy(() => import('Components/Accounts/Register'))
+const Login = React.lazy(() => import('Components/Accounts/Login'))
 const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'))
-const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'))
 const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'))
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
@@ -72,9 +72,9 @@ ReactDOM.render((
                 />
                 <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/faqs/:id?" component={FAQ} />
-                <Route exact path="/signin" component={SignIn} />
+                <Route exact path="/register" component={Register} /> 
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/signout" component={SignOut} />
-                <Route exact path="/signup" component={SignUp} /> 
                 <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />

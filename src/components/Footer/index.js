@@ -4,12 +4,18 @@ import { NavLink as Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
 import moment from 'moment'
 
+const COMPLIANCE = [
+  'mastercard',
+  'visa',
+  'bestchange'
+]
+
 const Footer = (props) => {
   const { location } = props
   const { pathname } = location
   const hideFooter = useMemo(() => (
-    pathname === '/signin'
-    || pathname === '/signup'
+    pathname === '/login'
+    || pathname === '/register'
     || pathname === '/not-found'
   ), [location])
 
@@ -60,6 +66,11 @@ const Footer = (props) => {
 
                   </main>
                   <aside>
+                    <div className='compliance'>
+                      {COMPLIANCE.map(e => (
+                        <img src={`/img/compliance/${e}.svg`} alt={e} className={e} />
+                      ))}
+                    </div>
                     <p><CopyrightNotice /> — <RegisteredCompany /></p>
                     <p>
                       <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
@@ -180,6 +191,22 @@ const StyledFooter = styled.footer`
           a {
             text-transform: uppercase;
             color: #000;
+          }
+        }
+        .compliance {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            max-width: 60px;
+            display: inline-block;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+
+            &.mastercard {
+              max-height: 32px;
+            }
           }
         }
         > ul {
