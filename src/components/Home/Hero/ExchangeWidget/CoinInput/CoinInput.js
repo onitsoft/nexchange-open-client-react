@@ -124,7 +124,7 @@ class CoinInput extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price, lastEdited: price.lastSelected });
+const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price, lastEdited: price.lastEdited });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchPrice }, dispatch);
 
 export default connect(
