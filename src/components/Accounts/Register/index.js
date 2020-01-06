@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { css } from 'emotion'
 import styled from '@emotion/styled'
-import Marked from 'react-markdown'
 
 import { signUp, signIn, completeRegistration } from 'Actions'
 
@@ -119,11 +118,6 @@ export const SignUp = (props) => {
                 </div>
               </Link>
               <div className={`col-xs-8 col-offset-xs-2`}>
-                <div className='alert alert-info' role='alert'>
-                  <strong>{t('accounts.registerationOptionalTitle')}</strong>
-                  <Marked>{t('accounts.registerationOptional')}</Marked>
-                </div>
-                <br />
                 <form className="form-group" onSubmit={onSubmit}>
                   <>
                     <div className={`${styles['input-container']} ${myError('username')}`}>
@@ -180,7 +174,7 @@ export const SignUp = (props) => {
                   </>
                   
                   <div className={'input-container'}>&nbsp;</div>
-                  <div className={`${myError('agreedTC')}`}>
+                  <StyledTerms className={`${myError('agreedTC')}`}>
                     <Checkbox
                       disabled={auth.loading}
                       checked={state.agreedTC}
@@ -188,9 +182,11 @@ export const SignUp = (props) => {
                         console.log('is checked?', checked) ||
                         setValue('agreedTC')({target: { value: checked }})
                       } >
-                      Accept TOS
+                      <span>Accept </span>
+                      <span><Link to='/terms-and-conditions' rel='noopener noreferrer' target='_blank'>Terms & Conditions</Link> </span>
+                      <span>and <Link to='/privacy' rel='noopener noreferrer' target='_blank'>Privacy Policy</Link></span>
                     </Checkbox>
-                  </div>
+                  </StyledTerms>
                   {state.error  === 'agreedTC' && <ErrorMessage usekey />}
                   {state.error  === 'general' && <ErrorMessage />}
 
@@ -202,7 +198,7 @@ export const SignUp = (props) => {
                     }</button>
                   </form>
                 <div className={styles.separator}></div>
-                <Link to="/signin" className={styles['not-registered']}>
+                <Link to="/login" className={styles['not-registered']}>
                   <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
                 </Link>
                 <button 
@@ -230,7 +226,6 @@ export const SignUp = (props) => {
 }
 
 const StyledSignup = styled.div`
-  padding: 0 15px;
   .ief {
     &.error {
       border: 1px solid #e41749;
@@ -269,6 +264,8 @@ const StyledFormError = styled.div`
     padding: .25rem 1rem;
     color: #e41749;
   }
+
+  .
 `
 
 const dialogStyle = css`
@@ -290,6 +287,11 @@ const dialogStyle = css`
       }
     }
   }
+`
+
+const StyledTerms = styled.div`
+  border-radius: 20px;
+  padding: .25rem .5rem;
 `
 
 

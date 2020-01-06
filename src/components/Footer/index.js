@@ -14,8 +14,8 @@ const Footer = (props) => {
   const { location } = props
   const { pathname } = location
   const hideFooter = useMemo(() => (
-    pathname === '/signin'
-    || pathname === '/signup'
+    pathname === '/login'
+    || pathname === '/register'
     || pathname === '/not-found'
   ), [location])
 
@@ -66,9 +66,11 @@ const Footer = (props) => {
 
                   </main>
                   <aside>
-                    <div className='compliance'>{COMPLIANCE.map(e => (
-                      <img src={`/img/compliance/${e}.svg`} alt='e' className={e} />
-                    ))}</div>
+                    <div className='compliance'>
+                      {COMPLIANCE.map(e => (
+                        <img src={`/img/compliance/${e}.svg`} alt={e} className={e} />
+                      ))}
+                    </div>
                     <p><CopyrightNotice /> — <RegisteredCompany /></p>
                     <p>
                       <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
