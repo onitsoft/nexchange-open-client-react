@@ -6,7 +6,7 @@ import styles from '../../OrderState.scss';
 class OrderPaymentTemplate extends Component {
   constructor(props) {
     super(props);
-    this.state = { showKYCModal: false };
+    this.state = { showKYCModal: false, modalState: false };
   }
 
   componentDidMount() {
@@ -53,6 +53,8 @@ class OrderPaymentTemplate extends Component {
               this.setState({ showKYCModal: false });
               this.props.fetchKyc(this.props.order.unique_reference);
             }}
+            onUpdate={modalState => this.setState({modalState})}
+            modalState={this.state.modalState}
             showInitial={this.props.showInitial}
             kyc={this.props.kyc}
             {...this.props}

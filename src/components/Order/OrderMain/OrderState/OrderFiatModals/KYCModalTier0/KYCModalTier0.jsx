@@ -8,6 +8,8 @@ import config from 'Config';
 import i18n from '../../../../../../i18n';
 import { I18n } from 'react-i18next';
 
+import FilesInput from 'Components/misc/files-input'
+
 class KYCModal extends Component {
   constructor(props) {
     super(props);
@@ -54,6 +56,10 @@ class KYCModal extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+    if (this.props.modalState && JSON.stringify(this.props.modalState) !== JSON.stringify(prevProps.modalState)) {
+      const { files, base64s } = this.props.modalState
+      this.setState({files, base64s})
+    }
     if (this.state.show !== this.props.show) {
       this.setState({ show: this.props.show }, () => {
         $(function () {
@@ -71,16 +77,17 @@ class KYCModal extends Component {
 
   close() {
     this.props.onClose();
-
-    this.setState({
-      filesReady: false,
-      governmentID: '',
-      residenceProof: '',
-      title: i18n.t('order.fiat.kyc.3'),
-      buttonText: i18n.t('order.fiat.kyc.4'),
-      titleClass: '',
-      message: '',
-    });
+    const { files, base64s } = this.state
+    if (typeof this.props.onUpdate === 'function') this.props.onUpdate({files, base64s})
+    // this.setState({
+    //   filesReady: false,
+    //   governmentID: '',
+    //   residenceProof: '',
+    //   title: i18n.t('order.fiat.kyc.3'),
+    //   buttonText: i18n.t('order.fiat.kyc.4'),
+    //   titleClass: '',
+    //   message: '',
+    // });
   }
 
   handleSubmit(event) {
@@ -94,18 +101,20 @@ class KYCModal extends Component {
     });
 
     const formData = new FormData();
-    const governmentID = document.querySelector('#governmentID');
     const residenceProof = document.querySelector('#residenceProof');
 
     formData.append('order_reference', this.props.order.unique_reference);
     formData.append('user_input_comment', this.state.message.slice(0, 255));
 
-    if (governmentID) {
-      formData.append('identity_document', governmentID.files[0]);
-    }
-
     if (residenceProof) {
       formData.append('utility_document', residenceProof.files[0]);
+    }
+    
+    if (this.state.files && this.state.files.length) {
+      this.state.files.map(f => formData.append('identity_document[]', f))
+    }
+    if (this.state.base64s) {
+      this.state.base64s.map(f => formData.append('identity_document_base64[]', f))
     }
 
     axios
@@ -153,7 +162,7 @@ class KYCModal extends Component {
       },
       () => {
         let needUploadResidence = document.querySelector('#residenceProof') ? true : false,
-          needUploadID = document.querySelector('#governmentID') ? true : false;
+          needUploadID = (this.props.kyc.identity_token && !this.state.showManualId) && !this.state.idApproved ? true : false;
 
         if (
           !this.state.email ||
@@ -167,6 +176,14 @@ class KYCModal extends Component {
         this.setState({ filesReady: true });
       }
     );
+  }
+
+  handleWebcam = (data) => {
+    this.setState({webcameFile: data})
+  }
+
+  onFiles = (files, base64s) => {
+    this.setState({files, base64s})
   }
 
   render() {
@@ -194,29 +211,12 @@ class KYCModal extends Component {
                       <iframe src={`https://ui.idenfy.com/?iframe=true&authToken=${this.props.kyc.identity_token}`} width="100%" height="600" allow="camera" frameBorder="0" title="idenfy" id="idenfy"></iframe>
                     </div>
                   )}
-
                 <form onSubmit={this.handleSubmit}
                   hidden={(this.props.kyc.identity_token && !this.state.showManualId) && !this.state.idApproved}>
                   {!this.state.idApproved &&
                     this.props.kyc.id_document_status !== 'APPROVED' && (
-                      <div>
-                        <label htmlFor="governmentID" style={{ 'cursor': 'pointer' }}>
-                          <h2>{t('order.fiat.kyc.1')}</h2>
-                          <small><b>{t('order.fiat.kyc.govSelfieDesc')}</b></small>
-
-                          <div style={{ 'textAlign': 'center', 'maxWidth': '100%' }}>
-                            <div style={{ 'display': 'inline-block', 'maxWidth': '100%' }}>
-                              <img style={{
-                                'textAlign': 'center',
-                                margin: 'auto', 'width': '400px', 'maxWidth': '100%'
-                              }} src="/img/order/selfie.jpg"
-                                alt={t('order.fiat.selfie')} title={t('order.fiat.click_to_upload')} />
-                              <input type="file" name="governmentID" id="governmentID"
-                                onChange={this.handleInputChange} accept="image/*" style={{ 'margin': '0 25% 20px 25%' }} />
-                            </div></div>
-                        </label>
-                      </div>
-                    )}
+                    <FilesInput onFiles={this.onFiles} />
+                  )}
 
                   {/*
               {this.props.kyc.residence_document_status !== 'APPROVED' && (
@@ -278,7 +278,11 @@ class KYCModal extends Component {
                     maxLength="255"
                   />
 
-                  <button type="submit" className="btn btn-themed btn-md" disabled={this.state.filesReady ? null : 'disabled'}>
+                  <button 
+                    type="submit" 
+                    className="btn btn-themed btn-md" 
+                    disabled={(this.state.filesReady || this.state.webcameFile) ? null : 'disabled'}
+                  >
                     <i
                       className="far fa-file"
                       aria-hidden="true"
