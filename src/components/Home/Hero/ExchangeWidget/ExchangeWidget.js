@@ -8,6 +8,7 @@ import axios from 'axios';
 import config from 'Config';
 
 import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from 'Actions/index.js';
+import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
@@ -88,6 +89,8 @@ class ExchangeWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
+        bindCrispEmail(this.props.store);
+
         window.gtag('event', 'Place order', {event_category: 'Order', event_label: `${response.data.unique_reference}`});
 
         //Store order history in local storage
@@ -163,7 +166,7 @@ class ExchangeWidget extends Component {
 
                     <WalletAddress 
                       withdraw_coin="receive" 
-                      onSubmit={() => ({})}
+                      onSubmit={this.placeOrder} 
                       inputRef={el => (this.walletInputEl = el)} 
                       button={this.button} 
                       focusWalletAddress={this.focusWalletAddress}/>
