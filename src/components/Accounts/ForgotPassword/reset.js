@@ -117,7 +117,7 @@ export const NewPassword = (props) => {
                     <Marked>{t('accounts.resetPassword.successBody')}</Marked>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Link className={`btn-primary btn`} to='/login'>Sign In</Link>
+                  <Link className={`btn-primary btn`} to='/signin'>Sign In</Link>
                   <Link className={`btn-default btn`} to='/'>Home</Link>
                 </Modal.Footer>
               </Modal>
