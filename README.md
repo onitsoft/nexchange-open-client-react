@@ -1,14 +1,16 @@
+[![Build Status](https://travis-ci.org/onitsoft/nexchange-open-client-react.svg?branch=master)](https://travis-ci.org/onitsoft/nexchange-open-client-react)
+
 # N.exchange Open Client (ReactJS)
 
 N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange/) API. The API is available to the public and its [comprehensive documentation](https://n.exchange/apidocs) can be found here.
 
 ## Installation
 
-1.  Make sure you have [NPM and Node](https://docs.npmjs.com/getting-started/installing-node) installed on your system.
+1.  Make sure you have [Node and npm](https://docs.npmjs.com/getting-started/installing-node) installed on your system, then run `npm install -g yarn`.
 2.  If you have Git on your terminal, type `git clone https://github.com/onitsoft/nexchange-open-client-react.git`.
 3.  Then go to repository by typing `cd nexchange-open-client-react`.
-4.  Install NPM dependencies `npm install`.
-5.  Start the project `npm start`.
+4.  Install yarn dependencies `yarn install`.
+5.  Start the project `yarn run start`.
 
 [Install N.exchange front-end on a server](https://medium.com/nexchange/nexchange-io-front-end-client-setup-on-a-server-501ea46f34aa)
 

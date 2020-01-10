@@ -1,0 +1,11 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "javascript.validate.enable": false,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+  }
+}

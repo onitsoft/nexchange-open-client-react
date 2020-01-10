@@ -449,6 +449,14 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-catch-binding" "^7.2.0"
 
+"@babel/plugin-proposal-optional-chaining@^7.7.5":
+  version "7.7.5"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining/-/plugin-proposal-optional-chaining-7.7.5.tgz#f0835f044cef85b31071a924010a2a390add11d4"
+  integrity sha512-sOwFqT8JSchtJeDD+CjmWCaiFoLxY4Ps7NjvwHC/U7l4e9i5pTRNt8nDMIFSOUL+ncFbYSwruHM8WknYItWdXw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-optional-chaining" "^7.7.4"
+
 "@babel/plugin-proposal-unicode-property-regex@^7.2.0", "@babel/plugin-proposal-unicode-property-regex@^7.4.4", "@babel/plugin-proposal-unicode-property-regex@^7.7.0":
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.7.0.tgz#549fe1717a1bd0a2a7e63163841cb37e78179d5d"
@@ -510,6 +518,13 @@
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.2.0.tgz#a94013d6eda8908dfe6a477e7f9eda85656ecf5c"
   integrity sha512-bDe4xKNhb0LI7IvZHiA13kff0KEfaGX/Hv4lMA9+7TEc63hMNvfKo6ZFpXhKuEp+II/q35Gc4NoMeDZyaUbj9w==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-optional-chaining@^7.7.4":
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.7.4.tgz#c91fdde6de85d2eb8906daea7b21944c3610c901"
+  integrity sha512-2MqYD5WjZSbJdUagnJvIdSfkb/ucOC9/1fRJxm7GAxY6YQLWlUvkfxoNbUPcPLHJyetKUDQ4+yyuUyAoc0HriA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -1205,7 +1220,7 @@
   dependencies:
     lodash.once "^4.1.1"
 
-"@emotion/cache@^10.0.17":
+"@emotion/cache@^10.0.14", "@emotion/cache@^10.0.17":
   version "10.0.19"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"
   integrity sha512-BoiLlk4vEsGBg2dAqGSJu0vJl/PgVtCYLBFJaEO8RmQzPugXewQCXZJNXTDFaRlfCs0W+quesayav4fvaif5WQ==
@@ -1253,7 +1268,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.3.tgz#5b6b1c11d6a6dddf1f2fc996f74cf3b219644d78"
   integrity sha512-2Md9mH6mvo+ygq1trTeVp2uzAKwE2P7In0cRpD/M9Q70aH8L+rxMLbb3JCN2JoSWsV2O+DdFjfbbXoMoLBczow==
 
-"@emotion/serialize@^0.11.12", "@emotion/serialize@^0.11.14":
+"@emotion/serialize@^0.11.12", "@emotion/serialize@^0.11.14", "@emotion/serialize@^0.11.8":
   version "0.11.14"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.14.tgz#56a6d8d04d837cc5b0126788b2134c51353c6488"
   integrity sha512-6hTsySIuQTbDbv00AnUO6O6Xafdwo5GswRlMZ5hHqiFx+4pZ7uGWXUQFW46Kc2taGhP89uXMXn/lWQkdyTosPA==
@@ -1362,6 +1377,11 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
+
+"@salte-auth/salte-auth@^2.14.2":
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/@salte-auth/salte-auth/-/salte-auth-2.14.2.tgz#40f45f056cde507153c383a7b7a3955e0762e178"
+  integrity sha512-zHAv7jJWIaLlyRhBa6CYBErELv6FRX4IdjOFgW5U0qTxRgKqi3z+jAGavikUYht4rEicE0ptvMbpBMrpbUqS9Q==
 
 "@storybook/addon-actions@^5.0.8":
   version "5.2.6"
@@ -3012,17 +3032,17 @@ babel-core@^7.0.0-bridge.0:
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
   integrity sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==
 
-babel-eslint@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-9.0.0.tgz#7d9445f81ed9f60aff38115f838970df9f2b6220"
-  integrity sha512-itv1MwE3TMbY0QtNfeL7wzak1mV47Uy+n6HtSOO4Xd7rvmO+tsGQSgyOEEgo6Y2vHZKZphaoelNeSVj4vkLA1g==
+babel-eslint@^10.0.3:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.0.3.tgz#81a2c669be0f205e19462fed2482d33e4687a88a"
+  integrity sha512-z3U7eMY6r/3f3/JB9mTsLjyxrv0Yb1zb8PCWCLpguxfCzBIZUwy23R1t/XKewP+8mEN2Ck8Dtr4q20z6ce6SoA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/parser" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
-    eslint-scope "3.7.1"
     eslint-visitor-keys "^1.0.0"
+    resolve "^1.12.0"
 
 babel-generator@^6.18.0, babel-generator@^6.26.0:
   version "6.26.1"
@@ -4867,6 +4887,16 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
+create-emotion@^10.0.14:
+  version "10.0.14"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-10.0.14.tgz#4c140aaef6a9588ed47c926f9c4679e4719be43e"
+  integrity sha512-5G4naKMxokOur+94eDz7iPKBfwzy4wa/+0isnPhxXyosIQHBq7yvBy4jjdZw/nnRm7G3PM7P9Ug8mUmtoqcaHg==
+  dependencies:
+    "@emotion/cache" "^10.0.14"
+    "@emotion/serialize" "^0.11.8"
+    "@emotion/sheet" "0.9.3"
+    "@emotion/utils" "0.11.2"
+
 create-error-class@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
@@ -5852,6 +5882,14 @@ emotion-theming@^10.0.14:
     "@emotion/weak-memoize" "0.2.4"
     hoist-non-react-statics "^3.3.0"
 
+emotion@^10.0.23:
+  version "10.0.23"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-10.0.23.tgz#b1722ca65f4d9955f0917cfcb7635bc34b52805c"
+  integrity sha512-H/x+5rJUnSvI0rdYsAFyDfuQwE0poZgTMj5TQsKirLzyHVWqs6CiUponsdE86sisXw0vS60j91HAbidJJeDt1g==
+  dependencies:
+    babel-plugin-emotion "^10.0.23"
+    create-emotion "^10.0.14"
+
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -6119,14 +6157,6 @@ eslint-plugin-react@^7.7.0:
     object.values "^1.1.0"
     prop-types "^15.7.2"
     resolve "^1.12.0"
-
-eslint-scope@3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-3.7.1.tgz#3d63c3edfda02e06e01a452ad88caacc7cdcb6e8"
-  integrity sha1-PWPD7f2gLgbgGkUq2IyqzHzctug=
-  dependencies:
-    esrecurse "^4.1.0"
-    estraverse "^4.1.1"
 
 eslint-scope@^3.7.1:
   version "3.7.3"

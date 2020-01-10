@@ -56,7 +56,7 @@ class OrderInitial extends Component {
     return (
       <div>
       {this.state.showPaymentIFrame ? 
-      <iframe title="SafeCharge" src={props.order.payment_url} height={500} width={"100%"} scrolling="no"/> :
+      <iframe title="SafeCharge" src={props.order.payment_url} height={620} width={"100%"} scrolling="no"/> :
       <I18n ns="translations">
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>

@@ -75,10 +75,12 @@ class CoinInput extends PureComponent {
       this.setState({ fetching: nextProps.price.fetching });
     }
 
-    if (nextProps.type === 'receive') {
-      this.setState({ value: nextProps.price.receive });
-    } else if (nextProps.type === 'deposit') {
-      this.setState({ value: nextProps.price.deposit });
+    if (nextProps.lastEdited !== nextProps.type || !this.state.value || this.state.value === '...') {
+      if (nextProps.type === 'receive') {
+        this.setState({ value: nextProps.price.receive });
+      } else if (nextProps.type === 'deposit') {
+        this.setState({ value: nextProps.price.deposit });
+      }
     }
   };
 
@@ -122,7 +124,7 @@ class CoinInput extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price });
+const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price, lastEdited: selectedCoin.lastSelected });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchPrice }, dispatch);
 
 export default connect(
