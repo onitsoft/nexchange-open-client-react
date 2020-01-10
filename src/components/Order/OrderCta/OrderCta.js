@@ -68,7 +68,9 @@ class OrderCta extends Component {
     <I18n ns="translations">
     {(t) => (        
       <div>
-        <PnlTracking {...this.props}/>
+        {this.props.order && this.props.order.status_name[0][0] >= 14 && (
+          <PnlTracking {...this.props}/>
+        )}
         {!this.props.email.value &&
           this.state.show && (
             <OrderNotifications
