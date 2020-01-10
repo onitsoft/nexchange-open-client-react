@@ -68,7 +68,7 @@ class CoinsDropdown extends Component {
     filteredCoins = _.sortBy(filteredCoins, (coin) => {return coin.is_crypto + coin.code});
     filteredCoins = this.searchCoins(filteredCoins);
 
-    if (this.props.selectedCoin && this.props.selectedCoin.orderByAddress && this.props.type.toUpperCase() === 'RECEIVE') {
+    if (this.props.selectedCoin.orderByAddress && this.props.type.toUpperCase() === 'RECEIVE') {
       const matchingCoins  = getMatchingCoins(this.props.wallet.address);
       filteredCoins = _.sortBy(filteredCoins, (coin) => {return matchingCoins.indexOf(coin.code) === -1});
     }

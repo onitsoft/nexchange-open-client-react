@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
 import setAuthToken from 'Utils/setAuthToken';
+import crispEmailBinding from 'Utils/crispEmailBinding';
 
 import ToTop from 'Components/misc/ToTop'
 
@@ -30,6 +31,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(reducers, enhancer);
 
 setAuthToken();
+crispEmailBinding(store);
 require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
