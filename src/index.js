@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
 
 import setAuthToken from 'Utils/setAuthToken';
+import crispEmailBinding from 'Utils/crispEmailBinding';
 
 import ToTop from 'Components/misc/ToTop'
 
@@ -30,6 +31,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(reducers, enhancer);
 
 setAuthToken();
+crispEmailBinding(store);
 require('Utils/bindGa');
 
 const NotFoundRedirect = () => <Redirect to='/not-found' />
@@ -44,9 +46,9 @@ const Pair = React.lazy(() => import('Components/Pair/Pair'))
 const Home = React.lazy(() => import('Components/Home/Home'))
 const TermsConditions = React.lazy(() => import('Components/TermsConditions/TermsConditions'))
 const Privacy = React.lazy(() => import('Components/Privacy/Privacy'))
-const Register = React.lazy(() => import('Components/Accounts/Register'))
-const Login = React.lazy(() => import('Components/Accounts/Login'))
+const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'))
 const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'))
+const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'))
 const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'))
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
@@ -72,9 +74,9 @@ ReactDOM.render((
                 />
                 <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/faqs/:id?" component={FAQ} />
-                <Route exact path="/register" component={Register} /> 
-                <Route exact path="/login" component={Login} />
+                <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signout" component={SignOut} />
+                <Route exact path="/signup" component={SignUp} /> 
                 <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />

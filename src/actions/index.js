@@ -19,8 +19,6 @@ export const setWallet = payload => ({
 });
 
 export const selectCoin = (selectedCoins, pairs) => dispatch => {
-  localStorage.setItem('selected-coin', JSON.stringify(selectedCoins))
-
   dispatch({
     type: types.COIN_SELECTED,
     payload: {
@@ -266,7 +264,6 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
       // Picks random deposit and receive coins.
       const pickCoins = async () => {
         // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-        const local = localStorage.getItem('selected-coin')
         if (base && quote) {
           try {
             const pair = await loadPair(`${base}${quote}`);
@@ -291,17 +288,6 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
             console.log('Error:', err);
           }
         } else {
-          if (local) {
-            try {
-              const data = JSON.parse(local)
-              const { deposit, receive } = data
-              if (deposit && receive) {
-                depositCoin = deposit;
-                receiveCoin = receive;
-                return
-              }
-            } catch (err) { }
-          }
           const pair = await pickMostTraded();
           if(pair){
             depositCoin = pair.quote;
