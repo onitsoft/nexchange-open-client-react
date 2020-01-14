@@ -83,8 +83,8 @@
   },
   "account": {
     "account": "Account",
-    "signin": "Log In",
-    "signup": "Register"
+    "signin": "Sign In",
+    "signup": "Sign Up"
   },
   "hero": {
     "1": "Exchange Cryptocurrencies",
@@ -124,12 +124,12 @@
     "viewallmyorders": "View all my orders"
   },
   "accounts": {
-    "signup": "Register",
+    "signup": "Sign Up",
     "signupheader": "White-labelling and B2B solutions",
-    "signin": "Log In",
+    "signin": "Sign In",
     "signinheader": "Your trustful partner for crypto exchange",
-    "signinwithfacebook": "Log In With Facebook",
-    "signupwithfacebook": "Register With Facebook",
+    "signinwithfacebook": "Sign In With Facebook",
+    "signupwithfacebook": "Sign Up With Facebook",
     "username": "Username",
     "email": "Email",
     "password": "Password",
