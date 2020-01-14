@@ -5,7 +5,7 @@ class Checkbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      enablePayment: false,
+     
     }
   }
 
@@ -24,10 +24,10 @@ class Checkbox extends Component {
                   let _box = document.getElementsByName('checkboxTC')[0];
                   let _box_kyc = document.getElementsByName("checkboxKYC")[0];
                   if (_box.checked && _box_kyc.checked) {
-                      this.setState({enablePayment: true});
+                      props.onTogglePayment(true)
                       _checkoutButton.classList.remove("disabled");
                   } else {
-                      this.setState({enablePayment: false});
+                      props.onTogglePayment(false)
                       _checkoutButton.classList.add("disabled");
                   }
               }.bind(this)}/>

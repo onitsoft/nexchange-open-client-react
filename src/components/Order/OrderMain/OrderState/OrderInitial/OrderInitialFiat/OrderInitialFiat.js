@@ -30,6 +30,12 @@ class OrderInitial extends Component {
     });
   }
 
+  toggleEnablePayment = (status) => {
+    this.setState({
+      enablePayment: status
+    })
+  }
+
   componentDidMount(){
     const safechargeStatus = getUrlPram('ppp_status');
     if(!_.isEmpty(safechargeStatus)) {
@@ -75,8 +81,8 @@ class OrderInitial extends Component {
               </b>
             </h4>
 
-            <Checkbox name='checkboxTC' order='order.iAgreedTC'/>
-            <Checkbox name='checkboxKYC'  order='order.iAcknowledgeKYC'/>
+            <Checkbox onTogglePayment = {this.toggleEnablePayment} name='checkboxTC' order='order.iAgreedTC'/>
+            <Checkbox onTogglePayment = {this.toggleEnablePayment} name='checkboxKYC'  order='order.iAcknowledgeKYC'/>
 
             <a className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
               title={t('order.tooltipTC')} style={{ pointerEvents: 'auto'}} 
