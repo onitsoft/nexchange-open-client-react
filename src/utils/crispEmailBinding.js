@@ -3,7 +3,7 @@ import { fetchUserEmail, setUserEmail } from 'Actions';
 export const bindCrispEmail = store => {
   store.dispatch(fetchUserEmail()).then(res => {
     const backendEmail = res ? res.value : null;
-    const crispEmail = window.$crisp.get('user:email');
+    const crispEmail = window.$crisp ? window.$crisp.get('user:email') : null;
     if (!backendEmail && crispEmail) {
       store.dispatch(setUserEmail(crispEmail));
     } else if (backendEmail && !crispEmail) {
