@@ -7,7 +7,11 @@ import moment from 'moment'
 const COMPLIANCE = [
   'mastercard',
   'visa',
-  'bestchange'
+  'bestchange',
+  'okchanger',
+  'kurs',
+  'exchangesumo',
+  'emon'
 ]
 
 const Footer = (props) => {
@@ -204,6 +208,9 @@ const StyledFooter = styled.footer`
 
             &.mastercard {
               max-height: 32px;
+            }
+            &.kurs {
+              max-height: 23px;
             }
           }
         }
