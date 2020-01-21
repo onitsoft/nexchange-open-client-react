@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { errorAlert, setMemo } from 'Actions/index.js';
+import { errorAlert, setMemo, setDestinationTag } from 'Actions/index.js';
 import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
 
@@ -18,6 +18,7 @@ class Memo extends Component {
     const memo = event.target.value.replace(new RegExp(/ /g, 'g'), '');
     this.setState({ memo });
     this.props.setMemo({ memo, valid: true })
+    this.props.setDestinationTag({ destinationTag: null, valid: false })
   }
 
   handleSubmit(event) {
@@ -49,7 +50,7 @@ class Memo extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, memo }) => ({ selectedCoin, memo });
-const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setMemo }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setMemo, setDestinationTag }, dispatch);
 
 export default connect(
   mapStateToProps,
