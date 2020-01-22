@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow, render } from 'enzyme';
 import { NotFound } from './NotFound';
 
 describe('NotFound', () => {
   it('renders correctly', () => {
     const goBack = jest.fn();
-    const wrapper = mount(<NotFound history={goBack} />);
+    const wrapper = render(<NotFound history={goBack} />);
     expect(wrapper).toMatchSnapshot();
   });
   // it('should call history.push', () => {

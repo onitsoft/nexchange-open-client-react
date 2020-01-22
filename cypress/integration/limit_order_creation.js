@@ -3,7 +3,7 @@ import config from '../../src/config';
 
 describe('Limit Order creation', function() {
   if(config.ADVANCED_MODE_ENABLED) {
-    it('creates DOGEBTC limit order and gets redirected to order page', function() {
+    it('Creates XRPXLM limit order and gets redirected to order page', function() {
       cy.server();
       cy.route({
         method: 'POST',
@@ -17,19 +17,23 @@ describe('Limit Order creation', function() {
         response: limitOrder,
       });
 
-      cy.visit('http://localhost:3000?advanced&pair=DOGEETH');
+      cy.visit('http://localhost:3000?advanced&pair=BTCXLM');
 
-      cy.wait(3000)
+      cy.wait(4000)
 
       cy.get('.selectedCoin-receive').click();
 
       cy.get('.coin-currency-dropdown')
-        .contains('BTC')
+        .contains('XRP')
         .click();
 
-      cy.get('#withdraw-addr').type('DAMiAKGvZkuUti1kneKP3jMSmLs3jDeY91');
+      cy.get('#withdraw-addr').type('rPrMs7KmbxcybK2bJy2kPiRK8Rjye4HNJo');
 
       cy.get('.proceed').click();
+
+      cy.wait(4000)
+
+      cy.url().should('include', '/order')
     });
   }
 });

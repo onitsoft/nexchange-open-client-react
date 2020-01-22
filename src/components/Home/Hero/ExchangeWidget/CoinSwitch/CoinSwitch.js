@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectCoin } from 'Actions/index.js';
+import { selectCoin, removeDestinationTag, removeMemo } from 'Actions/index.js';
 import styles from './CoinSwitch.scss';
 
 class CoinSwitch extends Component {
@@ -25,6 +25,9 @@ class CoinSwitch extends Component {
       orderByAddress: false,
     });
 
+    this.props.removeDestinationTag()
+    this.props.removeMemo()
+
     window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
   };
 
@@ -44,7 +47,8 @@ class CoinSwitch extends Component {
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
       <span 
-        className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`} 
+        className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`}
+        id='coin-switch'
         onClick={switchButtonEnabled ? this.handleClick : null}>
       </span>
       </div>
@@ -53,7 +57,7 @@ class CoinSwitch extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, pairs }) => ({ selectedCoin, pairs });
-const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, removeMemo, removeDestinationTag }, dispatch);
 
 export default connect(
   mapStateToProps,
