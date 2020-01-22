@@ -42,6 +42,15 @@ export const setMemo = payload => ({
   payload,
 });
 
+export const removeMemo = () => ({
+  type: types.SET_MEMO,
+  payload: null,
+});
+
+export const removeDestinationTag = () =>  ({
+  type: types.SET_DESTINATION_TAG,
+  payload: null,
+});
 
 export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { errorAlert, setDestinationTag, setMemo } from 'Actions/index.js';
+import { errorAlert, setDestinationTag } from 'Actions/index.js';
 import styles from './WalletAddress.scss';
 import { I18n } from 'react-i18next';
 
@@ -18,7 +18,6 @@ class DestinationTag extends Component {
     const destinationTag = event.target.value.replace(new RegExp(/ /g, 'g'), '');
     this.setState({ destinationTag });
     this.props.setDestinationTag({ destinationTag, valid: true })
-    this.props.setMemo({ memo: null, valid: false })
   }
 
   handleSubmit(event) {
@@ -50,7 +49,7 @@ class DestinationTag extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, destinationTag }) => ({ selectedCoin, destinationTag });
-const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setDestinationTag, setMemo }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setDestinationTag }, dispatch);
 
 export default connect(
   mapStateToProps,

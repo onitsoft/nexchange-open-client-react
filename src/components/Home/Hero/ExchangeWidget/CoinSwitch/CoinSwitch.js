@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectCoin } from 'Actions/index.js';
+import { selectCoin, removeDestinationTag, removeMemo } from 'Actions/index.js';
 import styles from './CoinSwitch.scss';
 
 class CoinSwitch extends Component {
@@ -24,6 +24,9 @@ class CoinSwitch extends Component {
       },
       orderByAddress: false,
     });
+
+    this.props.removeDestinationTag()
+    this.props.removeMemo()
 
     window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
   };
@@ -53,7 +56,7 @@ class CoinSwitch extends Component {
 }
 
 const mapStateToProps = ({ selectedCoin, pairs }) => ({ selectedCoin, pairs });
-const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin, removeMemo, removeDestinationTag }, dispatch);
 
 export default connect(
   mapStateToProps,
