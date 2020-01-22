@@ -53,6 +53,30 @@ class ExchangeWidget extends Component {
       return;
     }
 
+    let withdraw_address
+    if (this.props.destinationTag) {
+      withdraw_address = {
+        address: this.props.wallet.address,
+        name: '',
+        payment_id: this.props.paymentId.paymentId,
+        destination_tag: this.props.destinationTag.destinationTag,
+      }
+    }
+    else if (this.props.memo) {
+      withdraw_address = {
+        address: this.props.wallet.address,
+        name: '',
+        payment_id: this.props.paymentId.paymentId,
+        memo: this.props.memo.memo,
+      }
+    }
+    else {
+      withdraw_address = {
+        address: this.props.wallet.address,
+        name: '',
+        payment_id: this.props.paymentId.paymentId,
+      }
+    }
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -60,13 +84,7 @@ class ExchangeWidget extends Component {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`,
       },
-      withdraw_address: {
-        address: this.props.wallet.address,
-        name: '',
-        payment_id: this.props.paymentId.paymentId,
-        destination_tag: this.props.destinationTag.destinationTag,
-        memo: this.props.memo.memo,
-      },
+      withdraw_address: withdraw_address,
     };
 
     

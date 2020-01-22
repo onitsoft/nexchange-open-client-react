@@ -3,7 +3,7 @@ import config from '../../src/config';
 
 describe('Limit Order creation', function() {
   if(config.ADVANCED_MODE_ENABLED) {
-    it('creates DOGEBTC limit order and gets redirected to order page', function() {
+    it.skip('creates DOGEBTC limit order and gets redirected to order page', function() {
       cy.server();
       cy.route({
         method: 'POST',

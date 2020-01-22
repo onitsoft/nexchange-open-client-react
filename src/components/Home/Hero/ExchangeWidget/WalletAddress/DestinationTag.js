@@ -35,7 +35,7 @@ class DestinationTag extends Component {
                 type="text"
                 ref={this.props.inputRef}
                 className={`form-control ${styles.input}`}
-                id="withdraw-addr"
+                id="withdraw-addr-desttag"
                 onChange={this.handleChange}
                 value={this.state.destinationTag}
                 placeholder={t('generalterms.destinationtag')}
