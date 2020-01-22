@@ -68,7 +68,7 @@ class PnlTracking extends Component {
     return (
       <I18n ns="translations">
         {(t) => (
-        <div className={`col-sm-12 com-md-4 col-lg-4`}>
+        <div className={`col-xs-12 col-sm-12 col-md-4 col-lg-4`}>
           <div className={`${styles.container} ${styles[className]}`}>
           <div className={styles.top}>
             <span className="bold">{t('pnl.profit')} / {t('pnl.loss')}</span>

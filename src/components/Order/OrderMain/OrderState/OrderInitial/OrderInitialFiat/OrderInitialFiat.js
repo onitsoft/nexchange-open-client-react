@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-
+import Checkbox from '../Checkbox/Checkbox'
 import styles from '../OrderInitial.scss';
 
 class OrderInitial extends Component {
@@ -28,6 +28,12 @@ class OrderInitial extends Component {
     this.setState({
       showPaymentIFrame: !this.state.showPaymentIFrame
     });
+  }
+
+  toggleEnablePayment = (status) => {
+    this.setState({
+      enablePayment: status
+    })
   }
 
   componentDidMount(){
@@ -58,6 +64,7 @@ class OrderInitial extends Component {
       {this.state.showPaymentIFrame ? 
       <iframe title="SafeCharge" src={props.order.payment_url} height={620} width={"100%"} scrolling="no"/> :
       <I18n ns="translations">
+        
       {(t) => (
         <div id="order-payment" className={`row ${styles.container}`}>
           <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-6">
@@ -74,42 +81,8 @@ class OrderInitial extends Component {
               </b>
             </h4>
 
-            <label>
-              {/* eslint max-len: ["error", { "code": 200 }] */}
-              <input type="checkbox" name="checkboxTC" id="checkboxTC" value="check" style={{ width: '20px', height: '20px', cursor: 'pointer'}}
-              onClick={function togglePayNowButton() {
-                  let _checkoutButton = document.getElementsByName("checkoutButton")[0];
-                  let _box = document.getElementsByName("checkboxTC")[0];
-                  let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                  if (_box.checked && _box_kyc.checked) {
-                      this.setState({enablePayment: true});
-                      _checkoutButton.classList.remove("disabled");
-                  } else {
-                      this.setState({enablePayment: false});
-                      _checkoutButton.classList.add("disabled");
-                  }
-              }.bind(this)}/>
-              <strong style={{paddingLeft: "7px", cursor: 'pointer'}} dangerouslySetInnerHTML={{__html: t('order.iAgreedTC')}}/>
-            </label>
-
-            <label>
-            {/* eslint max-len: ["error", { "code": 200 }] */}
-            <input type="checkbox" name="checkboxKYC" id="checkboxKYC" value="check" style={{ width: '20px', height: '20px', cursor: 'pointer' }}
-            onClick={function togglePayNowButton() {
-                let _checkoutButton = document.getElementsByName("checkoutButton")[0];
-                let _box = document.getElementsByName("checkboxTC")[0];
-                let _box_kyc = document.getElementsByName("checkboxKYC")[0];
-                if (_box.checked && _box_kyc.checked) {
-                    this.setState({enablePayment: true});
-                    _checkoutButton.classList.remove("disabled");
-                } else {
-                    this.setState({enablePayment: false});
-                    _checkoutButton.classList.add("disabled");
-                }
-            }.bind(this)}/>
-                <strong style={{paddingLeft: "7px", cursor: 'pointer'}}>{t('order.iAcknowledgeKYC')}</strong>
-            </label>
-
+            <Checkbox onTogglePayment = {this.toggleEnablePayment} name='checkboxTC' order='order.iAgreedTC'/>
+            <Checkbox onTogglePayment = {this.toggleEnablePayment} name='checkboxKYC'  order='order.iAcknowledgeKYC'/>
 
             <a className="btn btn-default btn-lg disabled" name="checkoutButton" data-toggle="tooltip"
               title={t('order.tooltipTC')} style={{ pointerEvents: 'auto'}} 
