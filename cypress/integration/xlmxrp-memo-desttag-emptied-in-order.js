@@ -7,7 +7,7 @@ describe('XLM-XRP memo is emptied at coin switch', function() {
 
     cy.visit('http://localhost:3000/?pair=XLMXRP');
 
-    cy.wait(3000)
+    cy.wait(4000)
 
     cy.get('#withdraw-addr-memo').type('123456');
 
@@ -16,6 +16,10 @@ describe('XLM-XRP memo is emptied at coin switch', function() {
     cy.get('#withdraw-addr').type('rPrMs7KmbxcybK2bJy2kPiRK8Rjye4HNJo');
 
     cy.get('.proceed').click();
+
+    cy.wait(4000)
+
+    cy.url().should('include', '/order')
   });
 
     it('creates XLMXRP order after coin switch and gets redirected to order page - dest tag filled', function() {
@@ -23,7 +27,7 @@ describe('XLM-XRP memo is emptied at coin switch', function() {
 
     cy.visit('http://localhost:3000/?pair=XLMXRP');
 
-    cy.wait(3000)
+    cy.wait(4000)
 
     cy.get('#withdraw-addr-memo').type('123456');
 
@@ -34,6 +38,11 @@ describe('XLM-XRP memo is emptied at coin switch', function() {
     cy.get('#withdraw-addr-desttag').type('123456');
 
     cy.get('.proceed').click();
+
+    cy.wait(4000)
+
+    cy.url().should('include', '/order')
+
   });
 });
 
@@ -44,7 +53,7 @@ describe('XRP-XLM dest tag is emptied at coin switch', function() {
 
     cy.visit('http://localhost:3000/?pair=XRPXLM');
 
-    cy.wait(3000)
+    cy.wait(4000)
 
     cy.get('#withdraw-addr-desttag').type('123456');
 
@@ -53,6 +62,11 @@ describe('XRP-XLM dest tag is emptied at coin switch', function() {
     cy.get('#withdraw-addr').type('GCJFFZJ645AWY4ZZMAB455C2H4IND7YQUQITUFWP7J7DOCSOSEUBBY64');
 
     cy.get('.proceed').click();
+
+    cy.wait(4000)
+
+    cy.url().should('include', '/order')
+
   });
 
   it('creates XRPXLM order after coin switch and gets redirected to order page', function() {
@@ -60,7 +74,7 @@ describe('XRP-XLM dest tag is emptied at coin switch', function() {
 
     cy.visit('http://localhost:3000/?pair=XRPXLM');
 
-    cy.wait(3000)
+    cy.wait(4000)
 
     cy.get('#withdraw-addr-desttag').type('123456');
 
@@ -71,6 +85,11 @@ describe('XRP-XLM dest tag is emptied at coin switch', function() {
     cy.get('#withdraw-addr-memo').type('123456');
 
     cy.get('.proceed').click();
+
+    cy.wait(4000)
+
+    cy.url().should('include', '/order')
+
   });
 
 });

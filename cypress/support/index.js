@@ -18,3 +18,12 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+  // failing the test in case of form submit / url change
+  //
+
+  expect(err.message).to.include("Failed to execute 'scroll' on 'Window'")
+  return false
+})
