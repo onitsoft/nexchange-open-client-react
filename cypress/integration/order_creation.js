@@ -2,7 +2,7 @@ import orderFiat from '../../src/__mocks__/orderFiat';
 import orderCrypto from '../../src/__mocks__/orderCrypto';
 
 describe('Order creation', function() {
-  it('creates DOGEEUR (fiat) order and gets redirected to order page', function() {
+  it.skip('creates DOGEEUR (fiat) order and gets redirected to order page', function() {
     cy.server();
     cy.route({
       method: 'POST',
@@ -37,7 +37,7 @@ describe('Order creation', function() {
     cy.get('.proceed').click();
   });
 
-  it('creates DOGEBTC (crypto) order and gets redirected to order page', function() {
+  it.skip('creates DOGEBTC (crypto) order and gets redirected to order page', function() {
     cy.server();
     cy.route({
       method: 'POST',

@@ -47,7 +47,8 @@ class CoinSwitch extends Component {
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
       <span 
-        className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`} 
+        className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`}
+        id='coin-switch'
         onClick={switchButtonEnabled ? this.handleClick : null}>
       </span>
       </div>
