@@ -39,6 +39,8 @@ class CoinInput extends PureComponent {
 
     value = value.replace(/,/g, '.');
     this.setState({ value });
+
+    console.log("handleChange", value)
     this.fetchAmounts(value);
 
     window.gtag('event', 'Change amount', {event_category: 'Order', event_label: ``});
@@ -46,6 +48,7 @@ class CoinInput extends PureComponent {
 
   setValue = value => {
     const simulatedEvent ={target: {value: value.toString()}};
+
     this.handleChange(simulatedEvent);
   };
 
@@ -84,13 +87,11 @@ class CoinInput extends PureComponent {
     if (this.state.focused) {
       return
     }
-    if (this.props.price.lastEdited !== this.props.type || this.state.value === '...') {
 
-      if (this.props.type === 'receive') {
-        this.setState({ value: this.props.price.receive });
-      } if (this.props.type === 'deposit') {
-        this.setState({ value: this.props.price.deposit });
-      }
+    if (this.props.type === 'receive') {
+      this.setState({ value: this.props.price.receive });
+    } if (this.props.type === 'deposit') {
+      this.setState({ value: this.props.price.deposit });
     }
   };
 
