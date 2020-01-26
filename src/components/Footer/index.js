@@ -1,17 +1,23 @@
 import React, { useMemo, useState } from 'react';
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
+
+
 import styled from '@emotion/styled'
 import moment from 'moment'
 
 const COMPLIANCE = [
   'mastercard',
-  'visa',
+  'visa'
+]
+ const COMPLIANCE2 =[
   'bestchange',
   'okchanger',
   'kurs',
   'exchangesumo',
-  'emon'
+  'emon',
+  'allchange',
+  'bestcurs'
 ]
 
 const Footer = (props) => {
@@ -73,6 +79,12 @@ const Footer = (props) => {
                     <div className='compliance'>{COMPLIANCE.map(e => (
                       <img src={`/img/compliance/${e}.svg`} alt='e' className={e} />
                     ))}</div>
+                    <div className='compliance2'>{COMPLIANCE2.map(e => (
+                      <img src={`/img/compliance/${e}.svg`} alt='e' className={e} /> 
+                    ))}</div>
+                     
+                     
+                        
                     <p><CopyrightNotice /> — <RegisteredCompany /></p>
                     <p>
                       <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
@@ -209,10 +221,29 @@ const StyledFooter = styled.footer`
             &.mastercard {
               max-height: 32px;
             }
-            &.kurs {
+            
+          }
+        }
+        .compliance2 {
+           display: flex; 
+           justify-content: center;
+           align-items: center;
+           img {
+             max-width: 55px;
+             display: inline-block;
+             &:not(:last-child) {
+               margin-right: 1rem;
+             }
+             &.bestchange {
+               max-height: 40px;
+             }
+             &.kurs {
               max-height: 23px;
             }
-          }
+             &.bestcurs {
+               max-height: 24px; 
+             }
+           }
         }
         > ul {
           display: flex;
