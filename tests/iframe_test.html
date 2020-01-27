@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Test if page breaks out from an iframe - clickjacking protection -->
+  <meta charset="UTF-8">
+  <title>IFrame test</title>
+   <iframe src="http://localhost:3000">
+     <script>
+        alert("I'm in the iframe....");
+     </script>
+   </iframe>
+</head>
+<body>
+
+</body>
+</html>
