@@ -28,7 +28,7 @@ export const Profile = (props) => {
         <div className='col-md-4'>
           <Nav>
             <NavItem>
-              <NavLink to='/profile'>My Porfile</NavLink>
+              <NavLink to='/profile'>My Profile</NavLink>
             </NavItem>
             <NavItem>
               <NavLink to='/orders'>My Orders</NavLink>

@@ -83,7 +83,6 @@ ReactDOM.render((
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />
                 <Route exact path="/not-found" component={NotFound} />
-                <Route component={NotFoundRedirect} />
               </Switch>
 
               <Footer />
