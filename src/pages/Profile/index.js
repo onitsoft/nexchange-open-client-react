@@ -7,9 +7,6 @@ import { signOut, loadUserOrders } from 'Actions'
 
 import { Nav, NavItem } from 'react-bootstrap'
 
-import styles from './Profile.scss';
-
-
 export const Profile = (props) => {
   const { auth } = props
 
@@ -24,7 +21,7 @@ export const Profile = (props) => {
 
   return (
     <div className='container'>
-      <div className='row profile'>
+      <div className='row profile-menu'>
         <div className='col-md-4'>
           <h2>Menu</h2>
           <Nav>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { loadUserOrders } from 'Actions'
+import { I18n } from 'react-i18next';
 
 import OrdersList from './OrdersList'
 
@@ -16,13 +17,17 @@ export const Orders = (props) => {
   }, [auth])
 
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col-md-12'>
-          <OrdersList orders={profile && profile.orders} />
+  <I18n ns="translations">
+    {(t, { i18n }) => (
+      <div className='container'>
+        <div className='row profile-menu'>
+          <div className='col-md-12'>
+            <OrdersList orders={profile && profile.orders} />
+          </div>
         </div>
       </div>
-    </div>
+    )}
+  </I18n>
   )
 }
 
