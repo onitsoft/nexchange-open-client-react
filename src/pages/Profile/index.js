@@ -7,6 +7,9 @@ import { signOut, loadUserOrders } from 'Actions'
 
 import { Nav, NavItem } from 'react-bootstrap'
 
+import styles from './Profile.scss';
+
+
 export const Profile = (props) => {
   const { auth } = props
 
@@ -21,11 +24,9 @@ export const Profile = (props) => {
 
   return (
     <div className='container'>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'>
+      <div className='row profile'>
         <div className='col-md-4'>
+          <h2>Menu</h2>
           <Nav>
             <NavItem>
               <NavLink to='/profile'>My Profile</NavLink>
@@ -33,11 +34,10 @@ export const Profile = (props) => {
             <NavItem>
               <NavLink to='/orders'>My Orders</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink to='/signout'>Sign Out</NavLink>
+            </NavItem>
           </Nav>
-        </div>
-        <div className='col-md-8'>
-          <h2>Content</h2>
-          <NavLink to='/signout'>Sign Out</NavLink>
         </div>
       </div>
     </div>

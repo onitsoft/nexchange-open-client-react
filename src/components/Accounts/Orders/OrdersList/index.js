@@ -32,7 +32,7 @@ const OrdersList = (props, { t, i18n }) => {
           <div className="container">
             <div className="row">
               <div className="col-xs-12">
-                <h2 className="title">{t('recentorders.1')}</h2>
+                <h2>{t('recentorders.1')}</h2>
                 <div className="recent-orders-container">
                   {orderlist ? orderlist :
                     <p>{t('recentorders.4')}</p>

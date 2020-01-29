@@ -503,6 +503,8 @@ export const loadAuth = () => dispatch => {
 export const loadUserDetails = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me`)
     .then(({ data, ...rest }) => {
+      console.log("loadUserDetails received",data)
+//      data['profile'] = {}
       dispatch({
         type: types.AUTH_USER_PROFILE,
         payload: data
