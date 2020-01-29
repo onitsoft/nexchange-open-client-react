@@ -512,8 +512,11 @@ export const loadUserDetails = () => dispatch => {
 
 
 export const loadUserOrders = () => dispatch => {
+  console.log("loadUserOrders starts")
   return axios.get(`${config.API_BASE_URL}/users/me/orders`)
     .then(({ data, ...rest }) => {
+      console.log("loadUserOrders received data",data)
+
       dispatch({
         type: types.AUTH_LOAD_ORDERS,
         payload: data.results

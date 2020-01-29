@@ -40,7 +40,8 @@
   "recentorders": {
     "1": "Letzte Aufträge",
     "2": "Klicken Sie für Ansicht in API",
-    "3": "In der API anzeigen"
+    "3": "In der API anzeigen",
+    "4": "Sie haben keine aktuellen Bestellungen."
   },
   "testimonials": {
     "title": "Referenzen",
