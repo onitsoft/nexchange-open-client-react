@@ -84,7 +84,7 @@ const Footer = (props) => {
               </StyledFooter>
             )}
           </I18n>
-          
+
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ const PopularPairs = (props) => {
   return (
     <ul>
       {pairs.map(([quote, base], index) => (
-        <li key={`pair-${index}`}>
+        <li>
           <Link to={`/convert/${quote}-to-${base}`}>{quote.toUpperCase()} to {base.toUpperCase()}</Link>
         </li>
       ))}
