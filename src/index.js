@@ -34,8 +34,6 @@ setAuthToken();
 crispEmailBinding(store);
 require('Utils/bindGa');
 
-const NotFoundRedirect = () => <Redirect to='/not-found' />
-
 const Referrals = React.lazy(() => import('Components/Referrals/Referrals'))
 const Header = React.lazy(() => import('Components/Header/Header'))
 const Footer = React.lazy(() => import('Components/Footer'))
