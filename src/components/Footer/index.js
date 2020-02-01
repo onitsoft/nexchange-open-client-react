@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
 
@@ -6,19 +7,25 @@ import { NavLink as Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled'
 import moment from 'moment'
 
+
 const COMPLIANCE = [
   'mastercard',
   'visa'
 ]
  const COMPLIANCE2 =[
-  'bestchange',
-  'okchanger',
-  'kurs',
-  'exchangesumo',
-  'emon',
-  'allchange',
-  'bestcurs'
+
+  {img:'bestchange', url: "https://bestchange.com" , name: 'bestchange'},
+  {img: 'okchanger', url: "https://okchanger.com" , name: 'okchanger'},
+  {img: 'kurs', url: "https://kurs.expert" , name: 'kurs'},
+  {img:'exchangesumo', url: 'https://exchangesumo.com/', name: 'exchangesumo'},
+  {img:'emon', url: 'http://e-mon.ru/', name: 'emon'},
+  {img:'allchange', url: 'https://allchange.org/', name: 'allchange'},
+  {img:'bestcurs', url: 'https://bestcurs.org/', name: 'bestcurs'} 
+
 ]
+
+
+
 
 const Footer = (props) => {
   const { location } = props
@@ -79,12 +86,17 @@ const Footer = (props) => {
                     <div className='compliance'>{COMPLIANCE.map(e => (
                       <img src={`/img/compliance/${e}.svg`} alt='e' className={e} />
                     ))}</div>
+                    
+                  
                     <div className='compliance2'>{COMPLIANCE2.map(e => (
-                      <img src={`/img/compliance/${e}.svg`} alt='e' className={e} /> 
-                    ))}</div>
-                     
-                     
-                        
+                     <a href={`${e.url}`} target='_blank' rel='noopener noreferrer'>
+                      <img src={`/img/compliance/${e.img}.svg`} alt={`${e.name}`} className={`${e.name}`} /> 
+                     </a>
+                    ))}</div>  
+
+
+
+
                     <p><CopyrightNotice /> — <RegisteredCompany /></p>
                     <p>
                       <Link to='/terms-and-conditions'>{t('header.terms-and-conditions')}</Link>
@@ -196,8 +208,10 @@ const StyledFooter = styled.footer`
         display: flex;
         flex: 1 1 auto;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         margin: 4rem 0 0;
+       
         > p {
           margin: 2rem 0 0;
           font-size: 1rem;
@@ -211,6 +225,7 @@ const StyledFooter = styled.footer`
           display: flex;
           justify-content: center;
           align-items: center;
+          
           img {
             max-width: 60px;
             display: inline-block;
@@ -225,26 +240,28 @@ const StyledFooter = styled.footer`
           }
         }
         .compliance2 {
-           display: flex; 
-           justify-content: center;
-           align-items: center;
-           img {
-             max-width: 55px;
-             display: inline-block;
-             &:not(:last-child) {
-               margin-right: 1rem;
-             }
-             &.bestchange {
-               max-height: 40px;
-             }
-             &.kurs {
+          display: inline-block;
+          
+          justify-content: center;
+          align-items: center;
+          
+          img {
+            max-width: 60px;
+            display: inline-block;
+            margin-right: 2rem;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+
+            &.kurs {
               max-height: 23px;
             }
-             &.bestcurs {
-               max-height: 24px; 
-             }
-           }
+            
+          }
         }
+        }
+        
+          
         > ul {
           display: flex;
             flex-direction: row;
