@@ -66,7 +66,7 @@ class QuestionAnswer extends Component {
           <Marked source={content} />
           <div className={styles.feedback}>
             <div>
-              <span>Whas this helpful?</span>
+              <span>Was this helpful?</span>
             </div>
             <div className={styles.buttons}>
               <button className={`btn ${styles.positive} ${this.state.positiveFeedback ? styles.active : ''}`}
