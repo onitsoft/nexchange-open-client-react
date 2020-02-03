@@ -46,10 +46,8 @@ const Header = props => {
   }, [])
 
   useEffect(() => {
-    console.log('Header useEffect',props.auth)
     if (props.auth && props.auth.token && props.auth.token.access_token) {
       if (!props.auth.profile) {
-      console.log('Header useEffect loading loadUserDetails')
         props.loadUserDetails()
       }
     }
@@ -68,7 +66,6 @@ const Header = props => {
 
 export const HeaderStuff = (props) => {
   const { isHomeHeader, closeNavbar, setShowSupportModal, showSupportModal, hideSupport } = props
-  console.log("Header props.auth", props.auth)
   return (
     <I18n ns="translations">
       {(t, { i18n }) => (

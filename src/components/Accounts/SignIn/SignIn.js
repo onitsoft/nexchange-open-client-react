@@ -34,7 +34,6 @@ const SignIn = (props) => {
     if (props.auth && props.auth.token) {
       const { token } = props.auth
       if (token.issued_at + (token.expires_in * 1000) > Date.now()) {
-        console.log("SignIn useEffect",token)
         if (!loggedIn) { setLoggedIn(true) }
       }
     }
