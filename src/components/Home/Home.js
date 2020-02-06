@@ -34,7 +34,6 @@ export class Home extends Component {
         <Hero {...this.props} />
         <RecentOrders />
         <Testimonials />
-        <PriceComparison />
         <About />
         <Team />
         <SubscriptionForm />

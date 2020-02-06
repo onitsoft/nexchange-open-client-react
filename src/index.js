@@ -53,6 +53,8 @@ const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPasswo
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
 const Profile = React.lazy(() => import('Pages/Profile'))
+const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'))
+
 
 ReactDOM.render((
   <GraphCMSProvider>
@@ -74,9 +76,10 @@ ReactDOM.render((
                 />
                 <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/faqs/:id?" component={FAQ} />
+                <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signout" component={SignOut} />
-                <Route exact path="/signup" component={SignUp} /> 
+                <Route exact path="/pricecomparison" component={PriceComparison} />
                 <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />
