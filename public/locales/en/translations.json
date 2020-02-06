@@ -181,7 +181,8 @@
   "recentorders": {
     "1": "Recent Orders",
     "2": "Click to view on API",
-    "3": "View on API"
+    "3": "View on API",
+    "4": "You have no recent orders."
   },
   "testimonialsx": {
     "1": "Testimonials",
