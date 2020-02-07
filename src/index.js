@@ -65,22 +65,23 @@ ReactDOM.render((
               <Header />
 
               <Switch>
-                <Route exact path="/terms-and-conditions" component={TermsConditions} />
-                <Route exact path="/privacy" component={Privacy} />
-                <Route exact path="/profile/:user?" component={Profile} />
-                <Route exact path="/order/:orderRef" component={Order} />
-                <Route exact path="/"
+                <Route exact path="/:lang/terms-and-conditions" component={TermsConditions} />
+                <Route exact path="/:lang/privacy" component={Privacy} />
+                <Route exact path="/:lang/profile/:user?" component={Profile} />
+                <Route exact path="/:lang/order/:orderRef" component={Order} />
+                <Route exact path="/:lang"
                   render={props =>  <Home {...props} store={store} />}
                 />
-                <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
-                <Route exact path="/faqs/:id?" component={FAQ} />
-                <Route exact path="/signin" component={SignIn} />
-                <Route exact path="/signout" component={SignOut} />
-                <Route exact path="/signup" component={SignUp} /> 
-                <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
-                <Route exact path="/convert/:quote-to-:base"
+                <Redirect exact from='/' to="/en" />
+                <Route exact path="/:lang/instant-white-label/" component={WhiteLabelSEO} />
+                <Route exact path="/:lang/faqs/:id?" component={FAQ} />
+                <Route exact path="/:lang/signin" component={SignIn} />
+                <Route exact path="/:lang/signout" component={SignOut} />
+                <Route exact path="/:lang/signup" component={SignUp} />
+                <Route exact path="/:lang/forgot-password/:resetToken?" component={ForgotPassword} />
+                <Route exact path="/:lang/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />
-                <Route exact path="/not-found" component={NotFound} />
+                <Route exact path="/:lang/not-found" component={NotFound} />
                 <Route component={NotFoundRedirect} />
               </Switch>
 
