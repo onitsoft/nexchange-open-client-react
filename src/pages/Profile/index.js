@@ -21,20 +21,20 @@ export const Profile = (props) => {
 
   return (
     <div className='container'>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'><div className='col-md-12'>&nbsp;</div></div>
-      <div className='row'>
+      <div className='row profile-menu'>
         <div className='col-md-4'>
+          <h2>Menu</h2>
           <Nav>
             <NavItem>
-              <NavLink to='/profile'>My Porfile</NavLink>
+              <NavLink to='/profile'>My Profile</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to='/orders'>My Orders</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to='/signout'>Sign Out</NavLink>
             </NavItem>
           </Nav>
-        </div>
-        <div className='col-md-8'>
-          <h2>Content</h2>
-          <NavLink to='/signout'>Sign Out</NavLink>
         </div>
       </div>
     </div>
