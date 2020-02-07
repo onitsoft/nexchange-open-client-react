@@ -24,7 +24,9 @@ i18n
         }
       },
       detection: {
+        order: ['querystring', 'path'],
         lookupQuerystring: "lang",
+        lookupFromPathIndex: 0,
       },
       saveMissing: true,
 
