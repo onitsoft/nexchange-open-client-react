@@ -54,6 +54,8 @@ const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
 const Profile = React.lazy(() => import('Pages/Profile'))
 const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'))
+const Team = React.lazy(() => import('Components/Home/Team/Team'))
+const About = React.lazy(() => import('Components/Home/About/About'))
 
 
 ReactDOM.render((
@@ -74,12 +76,14 @@ ReactDOM.render((
                 <Route exact path="/"
                   render={props =>  <Home {...props} store={store} />}
                 />
+                <Route exact path="/about/" component={About} />
                 <Route exact path="/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/faqs/:id?" component={FAQ} />
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/signout" component={SignOut} />
                 <Route exact path="/pricecomparison" component={PriceComparison} />
+                <Route exact path="/team" component={Team} />
                 <Route exact path="/forgot-password/:resetToken?" component={ForgotPassword} /> 
                 <Route exact path="/convert/:quote-to-:base"
                   render={props =>  <Pair {...props} store={store} />} />

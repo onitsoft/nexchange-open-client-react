@@ -93,7 +93,7 @@ export const HeaderStuff = (props) => {
             <div className="collapse navbar-collapse" id="navigation-index">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link onClick={() => closeNavbar()} to="/#about" className={styles.link}>
+                  <Link onClick={() => closeNavbar()} to="/about" className={styles.link}>
                       {t('header.about')}
                   </Link>
                 </li>
@@ -107,6 +107,12 @@ export const HeaderStuff = (props) => {
                 <li>
                 <Link onClick={() => closeNavbar()} to="/pricecomparison" className={styles.link} data-test="pricecomparison-btn">
                       {t('header.pricecomparison')}
+                  </Link>
+                </li>
+
+                <li>
+                <Link onClick={() => closeNavbar()} to="/team" className={styles.link} data-test="pricecomparison-btn">
+                      {t('header.team')}
                   </Link>
                 </li>
 
