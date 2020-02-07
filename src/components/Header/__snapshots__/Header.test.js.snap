@@ -50,7 +50,7 @@ ShallowWrapper {
             />
           </button>
           <ForwardRef
-            to="/"
+            to="/en"
           >
             <div
               className="logo-container"
@@ -74,7 +74,7 @@ ShallowWrapper {
               <ForwardRef
                 className="link"
                 onClick={[Function]}
-                to="/#about"
+                to="/en/about"
               >
                 header.about
               </ForwardRef>
@@ -84,7 +84,7 @@ ShallowWrapper {
                 className="link"
                 data-test="faq-btn"
                 onClick={[Function]}
-                to="/faqs"
+                to="/en/faqs"
               >
                 header.faq
               </ForwardRef>
@@ -139,7 +139,7 @@ ShallowWrapper {
               <li>
                 <ForwardRef
                   className="link"
-                  to="/signup"
+                  to="/en/signup"
                 >
                   accounts.signup
                 </ForwardRef>
@@ -147,7 +147,7 @@ ShallowWrapper {
               <li>
                 <ForwardRef
                   className="link"
-                  to="/signin"
+                  to="/en/signin"
                 >
                   accounts.signin
                 </ForwardRef>
@@ -315,7 +315,7 @@ ShallowWrapper {
               />
             </button>
             <ForwardRef
-              to="/"
+              to="/en"
             >
               <div
                 className="logo-container"
@@ -339,7 +339,7 @@ ShallowWrapper {
                 <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  to="/#about"
+                  to="/en/about"
                 >
                   header.about
                 </ForwardRef>
@@ -349,7 +349,7 @@ ShallowWrapper {
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  to="/faqs"
+                  to="/en/faqs"
                 >
                   header.faq
                 </ForwardRef>
@@ -404,7 +404,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signup"
+                    to="/en/signup"
                   >
                     accounts.signup
                   </ForwardRef>
@@ -412,7 +412,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signin"
+                    to="/en/signin"
                   >
                     accounts.signin
                   </ForwardRef>
@@ -577,7 +577,7 @@ ShallowWrapper {
                 />
               </button>,
               <ForwardRef
-                to="/"
+                to="/en"
               >
                 <div
                   className="logo-container"
@@ -684,7 +684,7 @@ ShallowWrapper {
                     src="/img/logo-white.svg"
                   />
                 </div>,
-                "to": "/",
+                "to": "/en",
               },
               "ref": null,
               "rendered": Object {
@@ -743,7 +743,7 @@ ShallowWrapper {
                 <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  to="/#about"
+                  to="/en/about"
                 >
                   header.about
                 </ForwardRef>
@@ -753,7 +753,7 @@ ShallowWrapper {
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  to="/faqs"
+                  to="/en/faqs"
                 >
                   header.faq
                 </ForwardRef>
@@ -808,7 +808,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signup"
+                    to="/en/signup"
                   >
                     accounts.signup
                   </ForwardRef>
@@ -816,7 +816,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signin"
+                    to="/en/signin"
                   >
                     accounts.signin
                   </ForwardRef>
@@ -958,7 +958,7 @@ ShallowWrapper {
                   <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    to="/#about"
+                    to="/en/about"
                   >
                     header.about
                   </ForwardRef>
@@ -968,7 +968,7 @@ ShallowWrapper {
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    to="/faqs"
+                    to="/en/faqs"
                   >
                     header.faq
                   </ForwardRef>
@@ -1023,7 +1023,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signup"
+                      to="/en/signup"
                     >
                       accounts.signup
                     </ForwardRef>
@@ -1031,7 +1031,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signin"
+                      to="/en/signin"
                     >
                       accounts.signin
                     </ForwardRef>
@@ -1171,7 +1171,7 @@ ShallowWrapper {
                   "children": <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    to="/#about"
+                    to="/en/about"
                   >
                     header.about
                   </ForwardRef>,
@@ -1185,7 +1185,7 @@ ShallowWrapper {
                     "children": "header.about",
                     "className": "link",
                     "onClick": [Function],
-                    "to": "/#about",
+                    "to": "/en/about",
                   },
                   "ref": null,
                   "rendered": "header.about",
@@ -1213,7 +1213,7 @@ ShallowWrapper {
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    to="/faqs"
+                    to="/en/faqs"
                   >
                     header.faq
                   </ForwardRef>,
@@ -1228,7 +1228,7 @@ ShallowWrapper {
                     "className": "link",
                     "data-test": "faq-btn",
                     "onClick": [Function],
-                    "to": "/faqs",
+                    "to": "/en/faqs",
                   },
                   "ref": null,
                   "rendered": "header.faq",
@@ -1415,7 +1415,7 @@ ShallowWrapper {
                     <li>
                       <ForwardRef
                         className="link"
-                        to="/signup"
+                        to="/en/signup"
                       >
                         accounts.signup
                       </ForwardRef>
@@ -1423,7 +1423,7 @@ ShallowWrapper {
                     <li>
                       <ForwardRef
                         className="link"
-                        to="/signin"
+                        to="/en/signin"
                       >
                         accounts.signin
                       </ForwardRef>
@@ -1439,7 +1439,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": <ForwardRef
                         className="link"
-                        to="/signup"
+                        to="/en/signup"
                       >
                         accounts.signup
                       </ForwardRef>,
@@ -1452,7 +1452,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "accounts.signup",
                         "className": "link",
-                        "to": "/signup",
+                        "to": "/en/signup",
                       },
                       "ref": null,
                       "rendered": "accounts.signup",
@@ -1478,7 +1478,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": <ForwardRef
                         className="link"
-                        to="/signin"
+                        to="/en/signin"
                       >
                         accounts.signin
                       </ForwardRef>,
@@ -1491,7 +1491,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "accounts.signin",
                         "className": "link",
-                        "to": "/signin",
+                        "to": "/en/signin",
                       },
                       "ref": null,
                       "rendered": "accounts.signin",
@@ -1976,7 +1976,7 @@ ShallowWrapper {
               />
             </button>
             <ForwardRef
-              to="/"
+              to="/en"
             >
               <div
                 className="logo-container"
@@ -2000,7 +2000,7 @@ ShallowWrapper {
                 <ForwardRef
                   className="link"
                   onClick={[Function]}
-                  to="/#about"
+                  to="/en/about"
                 >
                   header.about
                 </ForwardRef>
@@ -2010,7 +2010,7 @@ ShallowWrapper {
                   className="link"
                   data-test="faq-btn"
                   onClick={[Function]}
-                  to="/faqs"
+                  to="/en/faqs"
                 >
                   header.faq
                 </ForwardRef>
@@ -2065,7 +2065,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signup"
+                    to="/en/signup"
                   >
                     accounts.signup
                   </ForwardRef>
@@ -2073,7 +2073,7 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    to="/signin"
+                    to="/en/signin"
                   >
                     accounts.signin
                   </ForwardRef>
@@ -2241,7 +2241,7 @@ ShallowWrapper {
                 />
               </button>
               <ForwardRef
-                to="/"
+                to="/en"
               >
                 <div
                   className="logo-container"
@@ -2265,7 +2265,7 @@ ShallowWrapper {
                   <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    to="/#about"
+                    to="/en/about"
                   >
                     header.about
                   </ForwardRef>
@@ -2275,7 +2275,7 @@ ShallowWrapper {
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    to="/faqs"
+                    to="/en/faqs"
                   >
                     header.faq
                   </ForwardRef>
@@ -2330,7 +2330,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signup"
+                      to="/en/signup"
                     >
                       accounts.signup
                     </ForwardRef>
@@ -2338,7 +2338,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signin"
+                      to="/en/signin"
                     >
                       accounts.signin
                     </ForwardRef>
@@ -2503,7 +2503,7 @@ ShallowWrapper {
                   />
                 </button>,
                 <ForwardRef
-                  to="/"
+                  to="/en"
                 >
                   <div
                     className="logo-container"
@@ -2610,7 +2610,7 @@ ShallowWrapper {
                       src="/img/logo-white.svg"
                     />
                   </div>,
-                  "to": "/",
+                  "to": "/en",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -2669,7 +2669,7 @@ ShallowWrapper {
                   <ForwardRef
                     className="link"
                     onClick={[Function]}
-                    to="/#about"
+                    to="/en/about"
                   >
                     header.about
                   </ForwardRef>
@@ -2679,7 +2679,7 @@ ShallowWrapper {
                     className="link"
                     data-test="faq-btn"
                     onClick={[Function]}
-                    to="/faqs"
+                    to="/en/faqs"
                   >
                     header.faq
                   </ForwardRef>
@@ -2734,7 +2734,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signup"
+                      to="/en/signup"
                     >
                       accounts.signup
                     </ForwardRef>
@@ -2742,7 +2742,7 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      to="/signin"
+                      to="/en/signin"
                     >
                       accounts.signin
                     </ForwardRef>
@@ -2884,7 +2884,7 @@ ShallowWrapper {
                     <ForwardRef
                       className="link"
                       onClick={[Function]}
-                      to="/#about"
+                      to="/en/about"
                     >
                       header.about
                     </ForwardRef>
@@ -2894,7 +2894,7 @@ ShallowWrapper {
                       className="link"
                       data-test="faq-btn"
                       onClick={[Function]}
-                      to="/faqs"
+                      to="/en/faqs"
                     >
                       header.faq
                     </ForwardRef>
@@ -2949,7 +2949,7 @@ ShallowWrapper {
                     <li>
                       <ForwardRef
                         className="link"
-                        to="/signup"
+                        to="/en/signup"
                       >
                         accounts.signup
                       </ForwardRef>
@@ -2957,7 +2957,7 @@ ShallowWrapper {
                     <li>
                       <ForwardRef
                         className="link"
-                        to="/signin"
+                        to="/en/signin"
                       >
                         accounts.signin
                       </ForwardRef>
@@ -3097,7 +3097,7 @@ ShallowWrapper {
                     "children": <ForwardRef
                       className="link"
                       onClick={[Function]}
-                      to="/#about"
+                      to="/en/about"
                     >
                       header.about
                     </ForwardRef>,
@@ -3111,7 +3111,7 @@ ShallowWrapper {
                       "children": "header.about",
                       "className": "link",
                       "onClick": [Function],
-                      "to": "/#about",
+                      "to": "/en/about",
                     },
                     "ref": null,
                     "rendered": "header.about",
@@ -3139,7 +3139,7 @@ ShallowWrapper {
                       className="link"
                       data-test="faq-btn"
                       onClick={[Function]}
-                      to="/faqs"
+                      to="/en/faqs"
                     >
                       header.faq
                     </ForwardRef>,
@@ -3154,7 +3154,7 @@ ShallowWrapper {
                       "className": "link",
                       "data-test": "faq-btn",
                       "onClick": [Function],
-                      "to": "/faqs",
+                      "to": "/en/faqs",
                     },
                     "ref": null,
                     "rendered": "header.faq",
@@ -3341,7 +3341,7 @@ ShallowWrapper {
                       <li>
                         <ForwardRef
                           className="link"
-                          to="/signup"
+                          to="/en/signup"
                         >
                           accounts.signup
                         </ForwardRef>
@@ -3349,7 +3349,7 @@ ShallowWrapper {
                       <li>
                         <ForwardRef
                           className="link"
-                          to="/signin"
+                          to="/en/signin"
                         >
                           accounts.signin
                         </ForwardRef>
@@ -3365,7 +3365,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": <ForwardRef
                           className="link"
-                          to="/signup"
+                          to="/en/signup"
                         >
                           accounts.signup
                         </ForwardRef>,
@@ -3378,7 +3378,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": "accounts.signup",
                           "className": "link",
-                          "to": "/signup",
+                          "to": "/en/signup",
                         },
                         "ref": null,
                         "rendered": "accounts.signup",
@@ -3404,7 +3404,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": <ForwardRef
                           className="link"
-                          to="/signin"
+                          to="/en/signin"
                         >
                           accounts.signin
                         </ForwardRef>,
@@ -3417,7 +3417,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": "accounts.signin",
                           "className": "link",
-                          "to": "/signin",
+                          "to": "/en/signin",
                         },
                         "ref": null,
                         "rendered": "accounts.signin",

@@ -30,7 +30,7 @@ class Checkbox extends Component {
                       props.onTogglePayment(false)
                       _checkoutButton.classList.add("disabled");
                   }
-              }.bind(this)}/>
+              }}/>
               <strong style={{paddingLeft: "7px", cursor: 'pointer'}} dangerouslySetInnerHTML={{__html: t(props.order)}}/>
             </label>
             )}

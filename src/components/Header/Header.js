@@ -2,6 +2,7 @@ import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router'
 import { I18n } from 'react-i18next';
+import i18n from 'i18next';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -20,9 +21,9 @@ const Header = props => {
   const location = useLocation()
 
   const isHomeHeader = useMemo(() => {
-    const { pathname } = location
+  const { pathname } = location
 
-    if (pathname === '/' 
+  if (pathname === '/en' || pathname === '/de' || pathname === '/ru'
         || pathname.indexOf('/instant-white-label') !== -1
         || pathname.indexOf('/faqs') !== -1
         || pathname === '/not-found') {
@@ -66,6 +67,9 @@ const Header = props => {
 
 export const HeaderStuff = (props) => {
   const { isHomeHeader, closeNavbar, setShowSupportModal, showSupportModal, hideSupport } = props
+  const lang = i18n.language ? i18n.language : 'en'
+
+
   return (
     <I18n ns="translations">
       {(t, { i18n }) => (
@@ -79,7 +83,7 @@ export const HeaderStuff = (props) => {
                 <span className="icon-bar" />
               </button>
 
-              <Link to="/">
+              <Link to={`/${lang}`}>
                 <div className={styles['logo-container']}>
                   {isHomeHeader ? (
                     <img src="/img/logo-white.svg" alt="Logo" data-test="logo" />
@@ -93,13 +97,13 @@ export const HeaderStuff = (props) => {
             <div className="collapse navbar-collapse" id="navigation-index">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link onClick={() => closeNavbar()} to="/about" className={styles.link}>
+                  <Link onClick={() => closeNavbar()} to={`/${lang}/about`} className={styles.link}>
                       {t('header.about')}
                   </Link>
                 </li>
 
                 <li>
-                <Link onClick={() => closeNavbar()} to="/faqs" className={styles.link} data-test="faq-btn">
+                <Link onClick={() => closeNavbar()} to={`/${lang}/faqs`} className={styles.link} data-test="faq-btn">
                       {t('header.faq')}
                   </Link>
                 </li>
@@ -170,12 +174,12 @@ export const HeaderStuff = (props) => {
                 )) || (
                   <>
                     <li>
-                      <Link className={styles.link} to='/signup'>
+                      <Link className={styles.link} to={`/${lang}/signup`} >
                         {t('accounts.signup')}
                       </Link>
                     </li>
                     <li>
-                      <Link className={styles.link} to='/signin'>
+                      <Link className={styles.link} to={`/${lang}/signin`} >
                         {t('accounts.signin')}
                       </Link>
                     </li>
