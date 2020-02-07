@@ -34,7 +34,6 @@ ShallowWrapper {
             <div
               className="widget"
             >
-              <OrderModeSwitch />
               <Connect(CoinInput)
                 type="deposit"
               />
@@ -93,7 +92,6 @@ ShallowWrapper {
             <div
               className="widget"
             >
-              <OrderModeSwitch />
               <Connect(CoinInput)
                 type="deposit"
               />
@@ -148,7 +146,6 @@ ShallowWrapper {
             <div
               className="widget"
             >
-              <OrderModeSwitch />
               <Connect(CoinInput)
                 type="deposit"
               />
@@ -199,7 +196,6 @@ ShallowWrapper {
             "children": <div
               className="widget"
             >
-              <OrderModeSwitch />
               <Connect(CoinInput)
                 type="deposit"
               />
@@ -247,7 +243,6 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <OrderModeSwitch />,
                 <Connect(CoinInput)
                   type="deposit"
                 />,
@@ -293,18 +288,6 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "changeOrderMode": undefined,
-                  "orderMode": undefined,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -474,7 +457,6 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderModeSwitch />
                 <Connect(CoinInput)
                   type="deposit"
                 />
@@ -533,7 +515,6 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderModeSwitch />
                 <Connect(CoinInput)
                   type="deposit"
                 />
@@ -588,7 +569,6 @@ ShallowWrapper {
               <div
                 className="widget"
               >
-                <OrderModeSwitch />
                 <Connect(CoinInput)
                   type="deposit"
                 />
@@ -639,7 +619,6 @@ ShallowWrapper {
               "children": <div
                 className="widget"
               >
-                <OrderModeSwitch />
                 <Connect(CoinInput)
                   type="deposit"
                 />
@@ -687,7 +666,6 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <OrderModeSwitch />,
                   <Connect(CoinInput)
                     type="deposit"
                   />,
@@ -733,18 +711,6 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "changeOrderMode": undefined,
-                    "orderMode": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
                 Object {
                   "instance": null,
                   "key": undefined,
