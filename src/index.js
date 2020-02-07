@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
+import i18n from 'i18next';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -52,6 +53,7 @@ const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPasswo
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
 const Profile = React.lazy(() => import('Pages/Profile'))
+const NotFoundRedirect = () => <Redirect to={`/${i18n.language}/not-found`} />
 
 ReactDOM.render((
   <GraphCMSProvider>
