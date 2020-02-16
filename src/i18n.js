@@ -24,7 +24,7 @@ i18n
         }
       },
       detection: {
-        order: ['querystring', 'path'],
+        order: ['path', 'cookie', 'localStorage',  'navigator', 'htmlTag'],
         lookupQuerystring: "lang",
         lookupFromPathIndex: 0,
       },

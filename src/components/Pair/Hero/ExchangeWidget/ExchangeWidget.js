@@ -89,7 +89,7 @@ class ExchangeWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
-        bindCrispEmail(this.props.store);
+        // bindCrispEmail(this.props.store);
 
         window.gtag('event', 'Place order', {event_category: 'Order', event_label: `${response.data.unique_reference}`});
 

@@ -69,7 +69,6 @@ export const HeaderStuff = (props) => {
   const { isHomeHeader, closeNavbar, setShowSupportModal, showSupportModal, hideSupport } = props
   const lang = i18n.language ? i18n.language : 'en'
 
-
   return (
     <I18n ns="translations">
       {(t, { i18n }) => (

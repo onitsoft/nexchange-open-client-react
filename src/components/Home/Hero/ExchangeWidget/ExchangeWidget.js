@@ -88,7 +88,7 @@ class ExchangeWidget extends Component {
           localStorage.setItem('token', response.data.token);
         }
 
-        bindCrispEmail(this.props.store);
+        // bindCrispEmail(this.props.store);
 
         window.gtag('event', 'Place order', {event_category: 'Order', event_label: `${response.data.unique_reference}`});
 
@@ -148,7 +148,9 @@ class ExchangeWidget extends Component {
   }
 
   render() {
-    if (this.state.orderPlaced) return <Redirect to={`/order/${this.state.orderRef}`} />;
+    const lang = i18n.language ? i18n.language : 'en'
+
+    if (this.state.orderPlaced) return <Redirect to={`/${lang}/order/${this.state.orderRef}`} />;
 
     return (
       <I18n ns="translations">
