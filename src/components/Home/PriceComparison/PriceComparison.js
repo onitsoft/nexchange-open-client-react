@@ -84,30 +84,30 @@ class PriceComparison extends Component {
       });
 
     // Request 404
-    // axios({
-    //   method: 'get',
-    //   url: `https://cors-anywhere.herokuapp.com/https://changelly.com/exchange/rates`,
-    // })
-    //   .then(response => {
-    //     this.setState(
-    //       {
-    //         changelly: {
-    //           btceth: (parseFloat(response.data['ETH']['BTC']) * 0.98).toFixed(4),
-    //           btcltc: (parseFloat(response.data['LTC']['BTC']) * 0.98).toFixed(4),
-    //           dogebtc: (parseFloat(response.data['BTC']['DOGE']) * 0.98).toFixed(1),
-    //           ethltc: (parseFloat(response.data['LTC']['ETH']) * 0.98).toFixed(4),
-    //           dogeeth: (parseFloat(response.data['ETH']['DOGE']) * 0.98).toFixed(1),
-    //           dogeltc: (parseFloat(response.data['LTC']['DOGE']) * 0.98).toFixed(1),
-    //         },
-    //       },
-    //       () => {
-    //         this.priceDiff();
-    //       }
-    //     );
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
+//     axios({
+//       method: 'get',
+//       url: `https://changelly.com/exchange/rates`,
+//     })
+//       .then(response => {
+//         this.setState(
+//           {
+//             changelly: {
+//               btceth: (parseFloat(response.data['ETH']['BTC']) * 0.98).toFixed(4),
+//               btcltc: (parseFloat(response.data['LTC']['BTC']) * 0.98).toFixed(4),
+//               dogebtc: (parseFloat(response.data['BTC']['DOGE']) * 0.98).toFixed(1),
+//               ethltc: (parseFloat(response.data['LTC']['ETH']) * 0.98).toFixed(4),
+//               dogeeth: (parseFloat(response.data['ETH']['DOGE']) * 0.98).toFixed(1),
+//               dogeltc: (parseFloat(response.data['LTC']['DOGE']) * 0.98).toFixed(1),
+//             },
+//           },
+//           () => {
+//             this.priceDiff();
+//           }
+//         );
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
 
     axios
       .all([

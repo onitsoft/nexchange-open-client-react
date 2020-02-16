@@ -108,6 +108,18 @@ export const HeaderStuff = (props) => {
                 </li>
 
                 <li>
+                <Link onClick={() => closeNavbar()} to="/pricecomparison" className={styles.link} data-test="pricecomparison-btn">
+                      {t('header.pricecomparison')}
+                  </Link>
+                </li>
+
+                <li>
+                <Link onClick={() => closeNavbar()} to="/team" className={styles.link} data-test="pricecomparison-btn">
+                      {t('header.team')}
+                  </Link>
+                </li>
+
+                <li>
                   <a
                     className={`${styles.link} hidden-sm hidden-md`}
                     href="http://docs.nexchange2.apiary.io/"
