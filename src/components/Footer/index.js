@@ -14,14 +14,14 @@ const COMPLIANCE = [
 ]
  const COMPLIANCE2 =[
 
-  {img:'bestchange', url: "https://bestchange.com" , name: 'bestchange'},
-  {img: 'okchanger', url: "https://okchanger.com" , name: 'okchanger'},
+  {img:'bestchange', url: "https://www.bestchange.net/nexchange-exchanger.html" , name: 'bestchange'},
+  {img: 'okchanger', url: "https://www.okchanger.com/exchangers/n.exchange" , name: 'okchanger'},
   {img: 'kurs', url: "https://kurs.expert" , name: 'kurs'},
   {img:'exchangesumo', url: 'https://exchangesumo.com/', name: 'exchangesumo'},
   {img:'emon', url: 'http://e-mon.ru/', name: 'emon'},
   {img:'allchange', url: 'https://allchange.org/', name: 'allchange'},
   {img:'bestcurs', url: 'https://bestcurs.org/', name: 'bestcurs'} 
-
+  
 ]
 
 
