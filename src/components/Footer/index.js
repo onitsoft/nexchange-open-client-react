@@ -14,7 +14,7 @@ const COMPLIANCE = [
 ]
  const COMPLIANCE2 =[
 
-  {img:'bestchange', url: "https://www.bestchange.net/nexchange-exchanger.html" , name: 'bestchange'},
+  {img:'bestchange', url: "https://www.bestchange.ru/nexchange-exchanger.html" , name: 'bestchange'},
   {img: 'okchanger', url: "https://www.okchanger.com/exchangers/n.exchange" , name: 'okchanger'},
   {img: 'kurs', url: "https://kurs.expert" , name: 'kurs'},
   {img:'exchangesumo', url: 'https://exchangesumo.com/', name: 'exchangesumo'},
