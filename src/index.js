@@ -23,6 +23,7 @@ import Home from 'Components/Home/Home';
 import Header from 'Components/Header/Header';
 import Footer from 'Components/Footer';
 import NotFound from 'Components/NotFound/NotFound';
+import Referrals from 'Components/Referrals/Referrals';
 
 import './css/index.scss';
 
@@ -40,7 +41,6 @@ setAuthToken();
 crispEmailBinding(store);
 require('Utils/bindGa');
 
-const Referrals = React.lazy(() => import(/* webpackChunkName: "Referrals" */ 'Components/Referrals/Referrals'));
 const FAQ = React.lazy(() => import(/* webpackChunkName: "FAQ" */ 'Components/FAQ2/FAQ'));
 const Pair = React.lazy(() => import(/* webpackChunkName: "Pair" */ 'Components/Pair/Pair'));
 
