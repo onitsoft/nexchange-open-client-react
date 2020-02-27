@@ -18,6 +18,12 @@ import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 
 import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
+
+import Home from 'Components/Home/Home';
+import Header from 'Components/Header/Header';
+import Footer from 'Components/Footer';
+import NotFound from 'Components/NotFound/NotFound';
+
 import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
@@ -35,13 +41,9 @@ crispEmailBinding(store);
 require('Utils/bindGa');
 
 const Referrals = React.lazy(() => import(/* webpackChunkName: "Referrals" */ 'Components/Referrals/Referrals'));
-const Header = React.lazy(() => import(/* webpackChunkName: "Header" */ 'Components/Header/Header'));
-const Footer = React.lazy(() => import(/* webpackChunkName: "Footer" */ 'Components/Footer'));
-const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ 'Components/NotFound/NotFound'));
 const FAQ = React.lazy(() => import(/* webpackChunkName: "FAQ" */ 'Components/FAQ2/FAQ'));
 const Pair = React.lazy(() => import(/* webpackChunkName: "Pair" */ 'Components/Pair/Pair'));
 
-const Home = React.lazy(() => import(/* webpackChunkName: "Home" */ 'Components/Home/Home'));
 const TermsConditions = React.lazy(() => import(/* webpackChunkName: "TermsConditions" */ 'Components/TermsConditions/TermsConditions'));
 const Privacy = React.lazy(() => import(/* webpackChunkName: "Privacy" */ 'Components/Privacy/Privacy'));
 const SignIn = React.lazy(() => import(/* webpackChunkName: "SignIn" */ 'Components/Accounts/SignIn/SignIn'));
@@ -65,8 +67,8 @@ ReactDOM.render(
   <GraphCMSProvider>
     <Provider store={store}>
       <BreakpointProvider queries={defaultQuery}>
-        <BrowserRouter>
-          <Suspense fallback={<></>}>
+        <Suspense fallback={<></>}>
+          <BrowserRouter>
             <ToTop>
               <Referrals />
               <Header />
@@ -93,8 +95,8 @@ ReactDOM.render(
               <Footer />
               <Intercom />
             </ToTop>
-          </Suspense>
-        </BrowserRouter>
+          </BrowserRouter>
+        </Suspense>
       </BreakpointProvider>
     </Provider>
   </GraphCMSProvider>,
