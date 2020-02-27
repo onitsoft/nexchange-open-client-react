@@ -21,4 +21,7 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
   argv.push('--watch');
 }
 
+argv.push('--detectOpenHandles')
+// argv.push('-u')
+
 jest.run(argv);
