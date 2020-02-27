@@ -21,6 +21,7 @@ class LanguagePicker extends Component {
 
   sortedSupportedLanguages() {
     const selectedLanguage = I18n.language || window.localStorage.i18nextLng;
+    
     let selectedLngPosition = this.supportedLanguages.indexOf(selectedLanguage);
     if(selectedLngPosition < 0) {
       selectedLngPosition = 0;
