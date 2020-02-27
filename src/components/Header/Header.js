@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { useLocation } from 'react-router';
 import { I18n } from 'react-i18next';
 import i18n from 'i18next';
@@ -106,25 +106,25 @@ export const HeaderStuff = props => {
             <div className="collapse navbar-collapse" id="navigation-index">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link onClick={() => closeNavbar()} to={`/${lang}#about`} className={styles.link}>
+                  <Link onClick={closeNavbar} to={`/${lang}#about`} href="/en#about" className={styles.link}>
                     {t('header.about')}
                   </Link>
                 </li>
 
                 <li>
-                  <Link onClick={() => closeNavbar()} to={`/${lang}/faqs`} className={styles.link} data-test="faq-btn">
+                  <Link onClick={closeNavbar} to={`/${lang}/faqs`} className={styles.link} data-test="faq-btn">
                     {t('header.faq')}
                   </Link>
                 </li>
 
                 <li>
-                  <Link onClick={() => closeNavbar()} to="/pricecomparison" className={styles.link} data-test="pricecomparison-btn">
+                  <Link onClick={closeNavbar} to="/pricecomparison" className={styles.link} data-test="pricecomparison-btn">
                     {t('header.pricecomparison')}
                   </Link>
                 </li>
 
                 <li>
-                  <Link onClick={() => closeNavbar()} to="/team" className={styles.link} data-test="pricecomparison-btn">
+                  <Link onClick={closeNavbar} to="/team" className={styles.link} data-test="pricecomparison-btn">
                     {t('header.team')}
                   </Link>
                 </li>
