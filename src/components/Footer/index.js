@@ -6,6 +6,7 @@ import trans from 'Src/i18n';
 
 import styled from '@emotion/styled';
 import moment from 'moment';
+import { useLang } from '../../utils/lang';
 
 const COMPLIANCE = ['mastercard', 'visa'];
 const COMPLIANCE2 = [
@@ -19,15 +20,7 @@ const COMPLIANCE2 = [
 ];
 
 const Footer = props => {
-  const [lang, setLang] = useState(trans.language);
-
-  const onLangChanged = useCallback(lang => setLang(lang), [setLang]);
-
-  useEffect(() => {
-    trans.on('languageChanged', onLangChanged);
-
-    return () => trans.off('languageChanged', onLangChanged);
-  }, [onLangChanged]);
+  const lang = useLang();
 
   const { location } = props;
   const { pathname } = location;
