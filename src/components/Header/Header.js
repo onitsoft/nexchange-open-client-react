@@ -118,13 +118,13 @@ export const HeaderStuff = props => {
                 </li>
 
                 <li>
-                  <Link onClick={closeNavbar} to="/pricecomparison" className={styles.link} data-test="pricecomparison-btn">
+                  <Link onClick={closeNavbar} to={`/${lang}/pricecomparsion`} className={styles.link} data-test="pricecomparison-btn">
                     {t('header.pricecomparison')}
                   </Link>
                 </li>
 
                 <li>
-                  <Link onClick={closeNavbar} to="/team" className={styles.link} data-test="pricecomparison-btn">
+                  <Link onClick={closeNavbar} to={`/${lang}/team`} className={styles.link} data-test="pricecomparison-btn">
                     {t('header.team')}
                   </Link>
                 </li>

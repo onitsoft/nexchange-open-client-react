@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './i18n';
-// import i18n from 'i18next';
+import i18n from 'i18next';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -44,9 +44,10 @@ const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPasswo
 const Order = React.lazy(() => import('Components/Order/Order'));
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'));
 const Profile = React.lazy(() => import('Pages/Profile'));
-// const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'));
-// const Team = React.lazy(() => import('Components/Home/Team/Team'));
+const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'));
+const Team = React.lazy(() => import('Components/Home/Team/Team'));
 // const About = React.lazy(() => import('Components/Home/About/About'));
+
 const NotFoundRedirect = () => <Redirect to={`/${i18n.language}/not-found`} />;
 
 const App = () => {
@@ -79,6 +80,8 @@ const App = () => {
                   <Route exact path="/:lang/signin" component={SignIn} />
                   <Route exact path="/:lang/signout" component={SignOut} />
                   <Route exact path="/:lang/signup" component={SignUp} />
+                  <Route exact path="/:lang/team" component={Team} />
+                  <Route exact path="/:lang/pricecomparsion" component={PriceComparison} />
                   <Route exact path="/:lang/forgot-password/:resetToken?" component={ForgotPassword} />
                   <Route exact path="/:lang/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
                   <Route exact path="/:lang/not-found" component={NotFound} />
