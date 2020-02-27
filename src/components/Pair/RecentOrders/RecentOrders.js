@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { I18n } from 'react-i18next';
 import axios from 'axios';
-import moment from 'moment/min/moment-with-locales.min.js';
-import 'moment/locale/en-gb';
+// import moment from 'moment/min/moment-with-locales.min.js';
+import moment from 'moment';
+// import 'moment/locale/en-gb';
 import _ from 'lodash';
-
 import urlParams from 'Utils/urlParams';
 import config from 'Config';
 
 import LoadingComponent from './LoadingComponent/LoadingComponent';
 import styles from './RecentOrders.scss';
 import arrow from 'Img/arrow-right-2.svg';
+
+moment.locale('en-gb');
 
 class RecentOrders extends Component {
   state = {

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-import moment from 'moment/min/moment-with-locales.min.js';
-import 'moment/locale/en-gb';
+// import moment from 'moment/min/moment-with-locales.min.js';
+// import 'moment/locale/en-gb';
+import moment from 'moment';
 import cx from 'classnames';
 
 import styles from './AddressHistory.scss';
 
 
 const DEFAULT_SHOW_COUNT = 5;
+
+moment.locale('en-gb')
 
 class AddressHistory extends Component {
   constructor(props) {

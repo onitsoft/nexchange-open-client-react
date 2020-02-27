@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-import moment from 'moment/min/moment-with-locales.min.js';
-import 'moment/locale/en-gb';
+import moment from 'moment';
+// import moment from 'moment/min/moment-with-locales.min.js';
+// import 'moment/locale/en-gb';
 import cx from 'classnames';
 
 import styles from './AddressHistory.scss';
+moment.locale('en-gb')
 
 
 const DEFAULT_SHOW_COUNT = 5;
