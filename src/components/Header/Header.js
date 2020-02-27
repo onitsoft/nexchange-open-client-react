@@ -179,7 +179,7 @@ export const HeaderStuff = props => {
 
                 {(props.auth && props.auth.profile && props.auth.profile.username && (
                   <li>
-                    <Link className={styles.link} to="/profile/me">
+                    <Link className={styles.link} to={`/${lang}/profile/me`}>
                       <UserIcon style={{ width: 18, height: 18 }} title={props.auth.profile.username} />
                     </Link>
                   </li>

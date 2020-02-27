@@ -6,8 +6,10 @@ import { bindActionCreators } from 'redux'
 import { signOut, loadUserOrders } from 'Actions'
 
 import { Nav, NavItem } from 'react-bootstrap'
+import { useLang } from '../../utils/lang'
 
 export const Profile = (props) => {
+  const lang = useLang();
   const { auth } = props
 
   useEffect(() => {
@@ -26,13 +28,13 @@ export const Profile = (props) => {
           <h2>Menu</h2>
           <Nav>
             <NavItem>
-              <NavLink to='/profile'>My Profile</NavLink>
+              <NavLink to={`/${lang}/profile`}>My Profile</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to='/orders'>My Orders</NavLink>
+              <NavLink to={`/${lang}/orders`}>My Orders</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to='/signout'>Sign Out</NavLink>
+              <NavLink to={`/${lang}/signout`}>Sign Out</NavLink>
             </NavItem>
           </Nav>
         </div>
