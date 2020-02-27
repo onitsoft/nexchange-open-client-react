@@ -12,6 +12,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const TerserPlugin = require('terser-webpack-plugin')
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -300,6 +301,7 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     // Generates an `index.html` file with the <script> injected.
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
