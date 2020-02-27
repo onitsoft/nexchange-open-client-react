@@ -32,6 +32,7 @@ const Footer = props => {
   const { location } = props;
   const { pathname } = location;
   const hideFooter = useMemo(() => pathname === '/signin' || pathname === '/signup' || pathname === '/not-found', [location]);
+  const showSupportModal = useCallback(() => props.setShowSupportModal(true), [props.setShowSupportModal]);
 
   if (hideFooter) return null;
 
@@ -61,7 +62,7 @@ const Footer = props => {
                           <a href="https://nexchange2.docs.apiary.io/">{t('header.apidocumentation')}</a>
                         </li>
                         <li>
-                          <a href={`/${lang}#support`}>{t('header.support')}</a>
+                          <a onClick={showSupportModal}>{t('header.support')}</a>
                         </li>
                       </ul>
                     </section>
