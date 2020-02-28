@@ -1,8 +1,7 @@
-import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
-import trans from 'Src/i18n';
 
 import styled from '@emotion/styled';
 import moment from 'moment';
