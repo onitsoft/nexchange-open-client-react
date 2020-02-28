@@ -6,6 +6,8 @@ addons:
     packages:
       # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
       - libgconf-2-4
+before_cache:
+  - rm -f /home/travis/.cache/node-gyp/
 cache:
   directories:
     - ~/.npm
