@@ -53,7 +53,7 @@ const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPasswo
 const Order = React.lazy(() => import('Components/Order/Order'))
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'))
 const Profile = React.lazy(() => import('Pages/Profile'))
-// const pricecomparsion = React.lazy(() => import('Components/Home/pricecomparsion/pricecomparsion'))
+// const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'))
 // const Team = React.lazy(() => import('Components/Home/Team/Team'))
 // const About = React.lazy(() => import('Components/Home/About/About'))
 const NotFoundRedirect = () => <Redirect to={`/${i18n.language}/not-found`} />
