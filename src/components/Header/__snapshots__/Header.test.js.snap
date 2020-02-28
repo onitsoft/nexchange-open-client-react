@@ -92,11 +92,11 @@ ShallowWrapper {
             <li>
               <ForwardRef
                 className="link"
-                data-test="pricecomparison-btn"
+                data-test="pricecomparsion-btn"
                 onClick={[Function]}
-                to="/pricecomparison"
+                to="/pricecomparsion"
               >
-                header.pricecomparison
+                header.pricecomparsion
               </ForwardRef>
             </li>
             <li>
@@ -367,11 +367,11 @@ ShallowWrapper {
               <li>
                 <ForwardRef
                   className="link"
-                  data-test="pricecomparison-btn"
+                  data-test="pricecomparsion-btn"
                   onClick={[Function]}
-                  to="/pricecomparison"
+                  to="/pricecomparsion"
                 >
-                  header.pricecomparison
+                  header.pricecomparsion
                 </ForwardRef>
               </li>
               <li>
@@ -781,11 +781,11 @@ ShallowWrapper {
               <li>
                 <ForwardRef
                   className="link"
-                  data-test="pricecomparison-btn"
+                  data-test="pricecomparsion-btn"
                   onClick={[Function]}
-                  to="/pricecomparison"
+                  to="/pricecomparsion"
                 >
-                  header.pricecomparison
+                  header.pricecomparsion
                 </ForwardRef>
               </li>
               <li>
@@ -1006,11 +1006,11 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    data-test="pricecomparison-btn"
+                    data-test="pricecomparsion-btn"
                     onClick={[Function]}
-                    to="/pricecomparison"
+                    to="/pricecomparsion"
                   >
-                    header.pricecomparison
+                    header.pricecomparsion
                   </ForwardRef>
                 </li>,
                 <li>
@@ -1294,11 +1294,11 @@ ShallowWrapper {
                 "props": Object {
                   "children": <ForwardRef
                     className="link"
-                    data-test="pricecomparison-btn"
+                    data-test="pricecomparsion-btn"
                     onClick={[Function]}
-                    to="/pricecomparison"
+                    to="/pricecomparsion"
                   >
-                    header.pricecomparison
+                    header.pricecomparsion
                   </ForwardRef>,
                 },
                 "ref": null,
@@ -1307,14 +1307,14 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "header.pricecomparison",
+                    "children": "header.pricecomparsion",
                     "className": "link",
-                    "data-test": "pricecomparison-btn",
+                    "data-test": "pricecomparsion-btn",
                     "onClick": [Function],
-                    "to": "/pricecomparison",
+                    "to": "/pricecomparsion",
                   },
                   "ref": null,
-                  "rendered": "header.pricecomparison",
+                  "rendered": "header.pricecomparsion",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "displayName": "Link",
@@ -2101,11 +2101,11 @@ ShallowWrapper {
               <li>
                 <ForwardRef
                   className="link"
-                  data-test="pricecomparison-btn"
+                  data-test="pricecomparsion-btn"
                   onClick={[Function]}
-                  to="/pricecomparison"
+                  to="/pricecomparsion"
                 >
-                  header.pricecomparison
+                  header.pricecomparsion
                 </ForwardRef>
               </li>
               <li>
@@ -2376,11 +2376,11 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    data-test="pricecomparison-btn"
+                    data-test="pricecomparsion-btn"
                     onClick={[Function]}
-                    to="/pricecomparison"
+                    to="/pricecomparsion"
                   >
-                    header.pricecomparison
+                    header.pricecomparsion
                   </ForwardRef>
                 </li>
                 <li>
@@ -2790,11 +2790,11 @@ ShallowWrapper {
                 <li>
                   <ForwardRef
                     className="link"
-                    data-test="pricecomparison-btn"
+                    data-test="pricecomparsion-btn"
                     onClick={[Function]}
-                    to="/pricecomparison"
+                    to="/pricecomparsion"
                   >
-                    header.pricecomparison
+                    header.pricecomparsion
                   </ForwardRef>
                 </li>
                 <li>
@@ -3015,11 +3015,11 @@ ShallowWrapper {
                   <li>
                     <ForwardRef
                       className="link"
-                      data-test="pricecomparison-btn"
+                      data-test="pricecomparsion-btn"
                       onClick={[Function]}
-                      to="/pricecomparison"
+                      to="/pricecomparsion"
                     >
-                      header.pricecomparison
+                      header.pricecomparsion
                     </ForwardRef>
                   </li>,
                   <li>
@@ -3303,11 +3303,11 @@ ShallowWrapper {
                   "props": Object {
                     "children": <ForwardRef
                       className="link"
-                      data-test="pricecomparison-btn"
+                      data-test="pricecomparsion-btn"
                       onClick={[Function]}
-                      to="/pricecomparison"
+                      to="/pricecomparsion"
                     >
-                      header.pricecomparison
+                      header.pricecomparsion
                     </ForwardRef>,
                   },
                   "ref": null,
@@ -3316,14 +3316,14 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "function",
                     "props": Object {
-                      "children": "header.pricecomparison",
+                      "children": "header.pricecomparsion",
                       "className": "link",
-                      "data-test": "pricecomparison-btn",
+                      "data-test": "pricecomparsion-btn",
                       "onClick": [Function],
-                      "to": "/pricecomparison",
+                      "to": "/pricecomparsion",
                     },
                     "ref": null,
-                    "rendered": "header.pricecomparison",
+                    "rendered": "header.pricecomparsion",
                     "type": Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "displayName": "Link",
