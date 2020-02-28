@@ -1,10 +1,12 @@
 import trans from 'Src/i18n';
 import { useState, useCallback, useEffect } from 'react';
 
-export const useLang = () => {
-  const [lang, setLang] = useState(trans.language);
+const DEFAULT_LANG = 'en';
 
-  const onLangChanged = useCallback(lang => setLang(lang), [setLang]);
+export const useLang = () => {
+  const [lang, setLang] = useState(trans.language || DEFAULT_LANG);
+
+  const onLangChanged = useCallback(lang => setLang(lang || DEFAULT_LANG), [setLang]);
 
   useEffect(() => {
     trans.on('languageChanged', onLangChanged);
@@ -13,4 +15,4 @@ export const useLang = () => {
   }, [onLangChanged]);
 
   return lang;
-}
+};
