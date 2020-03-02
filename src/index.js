@@ -16,7 +16,6 @@ import reducers from './reducers';
 
 import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 
-import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 
 import Home from 'Components/Home/Home';
@@ -57,48 +56,46 @@ const Order = React.lazy(() => import(/* webpackChunkName: "Order" */ 'Component
 const WhiteLabelSEO = React.lazy(() => import(/* webpackChunkName: "WhiteLabelSEO" */ 'Pages/WhiteLabelSEO'));
 const Profile = React.lazy(() => import(/* webpackChunkName: "Profile" */ 'Pages/Profile'));
 // const PriceComparison = React.lazy(() =>
-  // import(/* webpackChunkName: "PriceComparison" */ 'Components/Home/PriceComparison/PriceComparison')
+// import(/* webpackChunkName: "PriceComparison" */ 'Components/Home/PriceComparison/PriceComparison')
 // );
 // const Team = React.lazy(() => import(/* webpackChunkName: "Team" */ 'Components/Home/Team/Team'));
 // const About = React.lazy(() => import(/* webpackChunkName: "About" */ 'Components/Home/About/About'));
 const NotFoundRedirect = () => <Redirect to={`/${i18n.language}/not-found`} />;
 
 ReactDOM.render(
-  <GraphCMSProvider>
-    <Provider store={store}>
-      <BreakpointProvider queries={defaultQuery}>
-        <Suspense fallback={<></>}>
-          <BrowserRouter>
-            <ToTop>
-              <Referrals />
-              <Header />
+  <Provider store={store}>
+    <BreakpointProvider queries={defaultQuery}>
+      <Suspense fallback={<></>}>
+        <BrowserRouter>
+          <ToTop>
+            <Referrals />
+            <Header />
 
-              <Switch>
-                <Redirect exact from="/" to="/en" />
-                <Route exact path="/:lang/terms-and-conditions" component={TermsConditions} />
-                <Route exact path="/:lang/privacy" component={Privacy} />
-                <Route exact path="/:lang/profile/:user?" component={Profile} />
-                <Route exact path="/:lang/order/:orderRef" component={Order} />
-                <Route exact path="/:lang/orders/:orderRef?" component={Orders} />
-                <Route exact path="/:lang" render={props => <Home {...props} store={store} />} />
-                <Route exact path="/:lang/instant-white-label/" component={WhiteLabelSEO} />
-                <Route exact path="/:lang/faqs/:id?" component={FAQ} />
-                <Route exact path="/:lang/signin" component={SignIn} />
-                <Route exact path="/:lang/signout" component={SignOut} />
-                <Route exact path="/:lang/signup" component={SignUp} />
-                <Route exact path="/:lang/forgot-password/:resetToken?" component={ForgotPassword} />
-                <Route exact path="/:lang/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
-                <Route exact path="/:lang/not-found" component={NotFound} />
-                <Route component={NotFoundRedirect} />
-              </Switch>
+            <Switch>
+              <Redirect exact from="/" to="/en" />
+              <Route exact path="/:lang/terms-and-conditions" component={TermsConditions} />
+              <Route exact path="/:lang/privacy" component={Privacy} />
+              <Route exact path="/:lang/profile/:user?" component={Profile} />
+              <Route exact path="/:lang/order/:orderRef" component={Order} />
+              <Route exact path="/:lang/orders/:orderRef?" component={Orders} />
+              <Route exact path="/:lang" render={props => <Home {...props} store={store} />} />
+              <Route exact path="/:lang/instant-white-label/" component={WhiteLabelSEO} />
+              <Route exact path="/:lang/faqs/:id?" component={FAQ} />
+              <Route exact path="/:lang/signin" component={SignIn} />
+              <Route exact path="/:lang/signout" component={SignOut} />
+              <Route exact path="/:lang/signup" component={SignUp} />
+              <Route exact path="/:lang/forgot-password/:resetToken?" component={ForgotPassword} />
+              <Route exact path="/:lang/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
+              <Route exact path="/:lang/not-found" component={NotFound} />
+              <Route component={NotFoundRedirect} />
+            </Switch>
 
-              <Footer />
-              <Intercom />
-            </ToTop>
-          </BrowserRouter>
-        </Suspense>
-      </BreakpointProvider>
-    </Provider>
-  </GraphCMSProvider>,
+            <Footer />
+            <Intercom />
+          </ToTop>
+        </BrowserRouter>
+      </Suspense>
+    </BreakpointProvider>
+  </Provider>,
   document.getElementById('root')
 );
