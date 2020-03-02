@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-// import moment from 'moment/min/moment-with-locales.min.js';
-// import 'moment/locale/en-gb';
 import moment from 'moment';
 import cx from 'classnames';
 

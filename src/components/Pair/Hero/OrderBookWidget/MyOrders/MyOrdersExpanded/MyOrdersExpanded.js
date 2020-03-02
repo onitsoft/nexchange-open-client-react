@@ -1,8 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
 import arrow from 'Img/arrow-right-2.svg';
-// import moment from 'moment/min/moment-with-locales.min.js';
-// import 'moment/locale/en-gb';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 

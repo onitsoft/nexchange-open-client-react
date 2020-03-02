@@ -1,7 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-// import moment from 'moment/min/moment-with-locales.min.js';
-// import 'moment/locale/en-gb';
 import { I18n } from 'react-i18next';
 
 import config from 'Config';
