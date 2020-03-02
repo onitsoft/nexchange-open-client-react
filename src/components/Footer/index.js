@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
 
 import styled from '@emotion/styled';
 import moment from 'moment';
+import { useLang } from '../../utils/lang';
 
 const COMPLIANCE = ['mastercard', 'visa'];
 const COMPLIANCE2 = [
@@ -18,9 +19,12 @@ const COMPLIANCE2 = [
 ];
 
 const Footer = props => {
+  const lang = useLang();
+
   const { location } = props;
   const { pathname } = location;
   const hideFooter = useMemo(() => pathname === '/signin' || pathname === '/signup' || pathname === '/not-found', [location]);
+  const showSupportModal = useCallback(() => props.setShowSupportModal(true), [props.setShowSupportModal]);
 
   if (hideFooter) return null;
 
@@ -42,7 +46,7 @@ const Footer = props => {
                       <h4>{t('header.resources')}</h4>
                       <ul>
                         <li>
-                          <Link to="/instant-white-label">
+                          <Link to={`${lang}/instant-white-label`}>
                             <strong>{t('header.whitelabel')}</strong>
                           </Link>
                         </li>
@@ -50,7 +54,7 @@ const Footer = props => {
                           <a href="https://nexchange2.docs.apiary.io/">{t('header.apidocumentation')}</a>
                         </li>
                         <li>
-                          <a href="/#support">{t('header.support')}</a>
+                          <a onClick={showSupportModal}>{t('header.support')}</a>
                         </li>
                       </ul>
                     </section>
@@ -58,10 +62,10 @@ const Footer = props => {
                       <h4>{t('header.about')}</h4>
                       <ul>
                         <li>
-                          <a href="/#about">{t('header.about')}</a>
+                          <a href={`/${lang}#about`}>{t('header.about')}</a>
                         </li>
                         <li>
-                          <Link to="/faqs">{t('header.faq')}</Link>
+                          <Link to={`${lang}/faqs`}>{t('header.faq')}</Link>
                         </li>
                         <li>
                           <span />
@@ -70,7 +74,7 @@ const Footer = props => {
                     </section>
                     <section>
                       <h4>{t('footer.popular-pairs')}</h4>
-                      <PopularPairs />
+                      <PopularPairs lang={lang} />
                     </section>
                     <section>
                       <h4>{t('header.social')}</h4>
@@ -147,13 +151,13 @@ const defaultPairs = [
   ['btc', 'xmr'],
   ['btc', 'usdt'],
 ];
-const PopularPairs = props => {
+const PopularPairs = ({ lang = 'en' }) => {
   const [pairs] = useState(defaultPairs);
   return (
     <ul>
       {pairs.map(([quote, base], index) => (
-        <li key={`${quote}-to-${base}`}>
-          <Link to={`/convert/${quote}-to-${base}`}>
+        <li key={`pair-${index}`}>
+          <Link to={`/${lang}/convert/${quote}-to-${base}`}>
             {quote.toUpperCase()} to {base.toUpperCase()}
           </Link>
         </li>
