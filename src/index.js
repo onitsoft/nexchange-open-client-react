@@ -20,11 +20,9 @@ import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 import './css/index.scss';
 
-import './fonts/ClanOffcPro-Bold.woff2';
-import './fonts/ClanOffcPro-Bold.woff';
-
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
+
 // const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
 
