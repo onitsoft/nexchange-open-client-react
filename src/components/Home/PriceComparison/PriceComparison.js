@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import axios from 'axios';
 import config from 'Config';
-import styles from './PriceComparison.scss';
+import styles from './pricecomparsion.scss';
 
-class PriceComparison extends Component {
+class pricecomparsion extends Component {
   state = {
     nexchange: {},
     changelly: {},
@@ -159,7 +159,7 @@ class PriceComparison extends Component {
               <I18n ns="translations">
                 {t => (
                   <div>
-                    <h2 className="title">{t('pricecomparison.1')}</h2>
+                    <h2 className="title">{t('pricecomparsion.1')}</h2>
                   </div>
                 )}
               </I18n>
@@ -281,4 +281,4 @@ class PriceComparison extends Component {
   }
 }
 
-export default PriceComparison;
+export default pricecomparsion;
