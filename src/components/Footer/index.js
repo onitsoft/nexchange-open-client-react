@@ -105,13 +105,13 @@ const Footer = props => {
                   <aside>
                     <div className="compliance">
                       {COMPLIANCE.map(e => (
-                        <img src={`/img/compliance/${e}.svg`} alt="e" className={e} />
+                        <img src={`/img/compliance/${e}.svg`} alt="e" className={e} key={e} />
                       ))}
                     </div>
 
                     <div className="compliance2">
                       {COMPLIANCE2.map(e => (
-                        <a href={`${e.url}`} target="_blank" rel="noopener noreferrer">
+                        <a href={`${e.url}`} target="_blank" rel="noopener noreferrer" key={e.name}>
                           <img src={`/img/compliance/${e.img}.svg`} alt={`${e.name}`} className={`${e.name}`} />
                         </a>
                       ))}
