@@ -16,7 +16,7 @@ class OrderCoinsProcessed extends Component {
   componentDidMount() {
     const pair = `${this.props.order.pair.base.code}${this.props.order.pair.quote.code}`;
     const url = `${config.API_BASE_URL}/get_price/${pair}/`;
-    console.log('actual url is ', `${config.API_BASE_URL}/get_price/${pair}/`);
+
     axios
       .get(url)
       .then(res => {
