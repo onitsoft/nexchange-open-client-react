@@ -1,30 +1,34 @@
-import React from 'react'
-import Marked from 'react-markdown'
-import styled from '@emotion/styled'
+import React from 'react';
+import Marked from 'react-markdown';
+import styled from '@emotion/styled';
 
-import { TagLink, TagNavLink } from 'Components/misc/TagLink' 
+import { TagLink, TagNavLink } from 'Components/misc/TagLink';
 
-export const TopicsList = (props) => {
-  const { items } = props
-  if (!items || !items.length) return <>Loading...</>
+export const TopicsList = props => {
+  const { items } = props;
+  if (!items || !items.length) return <>Loading...</>;
 
   return items.map((article, index) => (
     <TopicCard
       key={`topic-${index}`}
       title={article.title}
-      btn={article.link && article.link[0] === '/'
-        ? <TagNavLink to={article.link}>{article.linkText}</TagNavLink>
-        : <TagLink href={`${article.link}?ref=whitelabel=page`}>{article.linkText}</TagLink>}
+      btn={
+        article.link && article.link[0] === '/' ? (
+          <TagNavLink to={article.link}>{article.linkText}</TagNavLink>
+        ) : (
+          <TagLink href={`${article.link}?ref=whitelabel=page`}>{article.linkText}</TagLink>
+        )
+      }
       content={article.content}
       art={article.art && article.art.url}
     />
-  ))
-}
+  ));
+};
 
-const TopicCard = ({ title, content, art, btn}) => {
+const TopicCard = ({ title, content, art, btn }) => {
   return (
     <StyledTopic>
-      <div className='art'>
+      <div className="art">
         <img src={art} alt={title} />
       </div>
       <section>
@@ -33,22 +37,20 @@ const TopicCard = ({ title, content, art, btn}) => {
         <Marked source={content} />
       </section>
     </StyledTopic>
-  )
-}
+  );
+};
 const StyledTopic = styled.article`
   display: grid;
   grid-column-gap: 10rem;
   grid-row-gap: 3rem;
-  grid-template-areas: 
-    "art content";
-  
+  grid-template-areas: 'art content';
+
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 
   @media screen and (min-width: 960px) {
     &:nth-of-type(even) {
-      grid-template-areas: 
-        "content art";
+      grid-template-areas: 'content art';
     }
   }
   &:not(:last-of-type) {
@@ -57,7 +59,7 @@ const StyledTopic = styled.article`
 
   @media screen and (max-width: 960px) {
     grid-template-columns: 1fr;
-    grid-template-areas: "content" "art";
+    grid-template-areas: 'content' 'art';
   }
 
   > .art {
@@ -72,14 +74,17 @@ const StyledTopic = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    > h2, > h3 {
-      font-family: Clan Offc Pro Medium, sans-serif;
+    > h2,
+    > h3 {
+      font-family: 'Clan Offc Pro Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
       font-weight: 300;
       font-size: 22px;
       margin: 2rem 0;
     }
     > p {
-      font-family: Clan Offc Pro Book,sans-serif;
+      font-family: 'Clan Offc Pro Book', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
       font-weight: 400;
       font-size: 14px;
     }
@@ -88,6 +93,6 @@ const StyledTopic = styled.article`
       padding: 0 4rem;
     }
   }
-`
+`;
 
-export default TopicsList
+export default TopicsList;

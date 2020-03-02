@@ -1,50 +1,47 @@
-import React, { useState } from 'react'
-import styled from '@emotion/styled'
-import { NavLink } from 'react-router-dom'
-import * as icons from './icons'
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
+import * as icons from './icons';
 
-export const SupportedAssets = (props) => {
-  const [assets] = useState(ASSETS)
+export const SupportedAssets = props => {
+  const [assets] = useState(ASSETS);
 
   return (
     <AssetsContainer>
       <h2>Supported Assets</h2>
       <StyledAssets>
-          {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
+        {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
       </StyledAssets>
     </AssetsContainer>
-  )
+  );
+};
 
-}
-
-const Asset = ({asset}) => {
-  const { linkTo, name } = asset
+const Asset = ({ asset }) => {
+  const { linkTo, name } = asset;
   return (
     <StyledAsset>
       <NavLink to={linkTo}>
-        <div className='art'>
+        <div className="art">
           <img src={icons[`${name.toLowerCase()}Coin`]} alt={name} />
           <span>{name}</span>
         </div>
-        <div className='name'>
-          {name}
-        </div>
+        <div className="name">{name}</div>
       </NavLink>
     </StyledAsset>
-  )
-}
+  );
+};
 
 const AssetsContainer = styled.div`
   > h2 {
     margin-bottom: 6rem;
   }
-`
+`;
 
 const StyledAssets = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 2rem;
-`
+`;
 
 const StyledAsset = styled.div`
   a {
@@ -62,7 +59,7 @@ const StyledAsset = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: .75rem; 
+      margin-bottom: 0.75rem;
       transition: all 680ms ease-out;
 
       img {
@@ -76,25 +73,23 @@ const StyledAsset = styled.div`
         display: block;
         text-align: center;
         font-weight: strong;
-        font-family: "Clan Offc Pro Medium";
+        font-family: 'Clan Offc Pro Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+          sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         font-size: 18px;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
       }
     }
-
 
     &:hover {
       text-decoration: none;
       filter: grayscale(23%);
-      
+
       img {
         transform: scale(1);
       }
     }
-    
   }
-
-`
+`;
 
 const ASSETS = [
   { name: 'BCH', linkTo: '/convert/BCH-to-EUR' },
@@ -115,7 +110,7 @@ const ASSETS = [
   { name: 'USDT', linkTo: '/convert/USDT-to-EUR' },
   { name: 'XMR', linkTo: '/convert/XMR-to-EUR' },
   { name: 'XVG', linkTo: '/convert/XVG-to-EUR' },
-  { name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
-]
+  { name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' },
+];
 
-export default SupportedAssets
+export default SupportedAssets;
