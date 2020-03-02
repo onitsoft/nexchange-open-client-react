@@ -55,11 +55,6 @@ const ForgotPassword = React.lazy(() =>
 const Order = React.lazy(() => import(/* webpackChunkName: "Order" */ 'Components/Order/Order'));
 const WhiteLabelSEO = React.lazy(() => import(/* webpackChunkName: "WhiteLabelSEO" */ 'Pages/WhiteLabelSEO'));
 const Profile = React.lazy(() => import(/* webpackChunkName: "Profile" */ 'Pages/Profile'));
-// const PriceComparison = React.lazy(() =>
-// import(/* webpackChunkName: "PriceComparison" */ 'Components/Home/PriceComparison/PriceComparison')
-// );
-// const Team = React.lazy(() => import(/* webpackChunkName: "Team" */ 'Components/Home/Team/Team'));
-// const About = React.lazy(() => import(/* webpackChunkName: "About" */ 'Components/Home/About/About'));
 const NotFoundRedirect = () => <Redirect to={`/${i18n.language}/not-found`} />;
 
 ReactDOM.render(
