@@ -96,6 +96,7 @@
     "sass-resources-loader": "^1.3.3",
     "scroll-to-element": "^2.0.0",
     "shallow-equals": "^1.0.0",
+    "source-map-explorer": "^2.3.1",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "^0.11.5",
     "uglifyjs-webpack-plugin": "^2.1.2",
@@ -107,23 +108,25 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
-    "babel-eslint": "^10.0.3",
     "@apollo/react-testing": "^3.1.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@storybook/addon-actions": "^5.0.8",
     "@storybook/addon-links": "^5.0.8",
     "@storybook/addons": "^3.4.12",
     "@storybook/react": "^5.0.8",
     "axios-mock-adapter": "^1.15.0",
+    "babel-eslint": "^10.0.3",
     "cypress": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-localstorage-mock": "^2.2.0",
     "jest-mock-axios": "^2.1.11",
+    "mini-css-extract-plugin": "^0.9.0",
     "mockdate": "^2.0.2",
     "react-test-renderer": "^16.4.1",
     "redux-mock-store": "^1.5.3",
     "start-server-and-test": "^1.4.1",
-    "terser-webpack-plugin": "^2.2.1"
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -135,7 +138,8 @@
     "cypress:run": "cypress run",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
-    "test:ci": "CI=true node scripts/test.js --no-watchman --all --env=jsdom"
+    "test:ci": "CI=true node scripts/test.js --no-watchman --all --env=jsdom",
+    "analyze": "yarn build && source-map-explorer 'build/static/js/*.js'"
   },
   "jest": {
     "collectCoverageFrom": [
