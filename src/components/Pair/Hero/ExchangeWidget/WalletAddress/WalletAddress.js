@@ -125,7 +125,7 @@ class WalletAddress extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit();
+    if (this.props.onSubmit) this.props.onSubmit();
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
