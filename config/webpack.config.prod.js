@@ -227,7 +227,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 2000,
-              name: utils.assetsPath('assets/fonts/[name].[ext]')
+              name: 'static/media/[name].[ext]',
             }
           },
 
