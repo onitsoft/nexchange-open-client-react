@@ -234,6 +234,15 @@ module.exports = {
           },
 
           {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+              limit: 2000,
+              name: 'static/media/[name].[ext]',
+            }
+          },
+
+          {
             test: /\.svg$/,
             exclude: [/font-awesome/, /ellipse/, /price-up/, /price-down/, /carret-down/, /arrow-right-2/, /get-notified/, /switch/],
             use: [
@@ -262,7 +271,7 @@ module.exports = {
             exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'static/media/[name].[contenthash:8].[ext]',
             },
           },
         ],
