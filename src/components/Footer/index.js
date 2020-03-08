@@ -20,7 +20,16 @@ const COMPLIANCE2 = [
 const Footer = props => {
   const { location } = props;
   const { pathname } = location;
-  const hideFooter = useMemo(() => pathname === '/signin' || pathname === '/signup' || pathname === '/not-found', [location]);
+  const lang = I18n.language || window.localStorage.i18nextLng || 'en';
+
+  const hideFooter = useMemo(() => {
+    const routes = ['signin', 'signup', 'forgot-password'].map(route => `/${lang}/${route}`);
+
+    if (routes.indexOf(pathname) !== -1) {
+      return true;
+    }
+    return false;
+  }, [location]);
 
   if (hideFooter) return null;
 
@@ -42,7 +51,7 @@ const Footer = props => {
                       <h4>{t('header.resources')}</h4>
                       <ul>
                         <li>
-                          <Link to="/instant-white-label">
+                          <Link to={`${lang}/instant-white-label`}>
                             <strong>{t('header.whitelabel')}</strong>
                           </Link>
                         </li>
@@ -58,10 +67,10 @@ const Footer = props => {
                       <h4>{t('header.about')}</h4>
                       <ul>
                         <li>
-                          <a href="/#about">{t('header.about')}</a>
+                          <Link to={`/${lang}#about`}>{t('header.about')}</Link>
                         </li>
                         <li>
-                          <Link to="/faqs">{t('header.faq')}</Link>
+                          <Link to={`/${lang}/faqs`}>{t('header.faq')}</Link>
                         </li>
                         <li>
                           <span />
@@ -70,7 +79,7 @@ const Footer = props => {
                     </section>
                     <section>
                       <h4>{t('footer.popular-pairs')}</h4>
-                      <PopularPairs />
+                      <PopularPairs lang={lang} />
                     </section>
                     <section>
                       <h4>{t('header.social')}</h4>
@@ -147,13 +156,13 @@ const defaultPairs = [
   ['btc', 'xmr'],
   ['btc', 'usdt'],
 ];
-const PopularPairs = props => {
+const PopularPairs = ({ lang }) => {
   const [pairs] = useState(defaultPairs);
   return (
     <ul>
       {pairs.map(([quote, base], index) => (
         <li key={`${quote}-to-${base}`}>
-          <Link to={`/convert/${quote}-to-${base}`}>
+          <Link to={`/${lang}/convert/${quote}-to-${base}`}>
             {quote.toUpperCase()} to {base.toUpperCase()}
           </Link>
         </li>
@@ -162,7 +171,7 @@ const PopularPairs = props => {
   );
 };
 
-const CopyrightNotice = props => <>All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')} — England & Wales</>;
+const CopyrightNotice = () => <>All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')} — England & Wales</>;
 
 const RegisteredCompany = props => (
   <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
