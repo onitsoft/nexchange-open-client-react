@@ -4,7 +4,6 @@ import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
 
 import styled from '@emotion/styled';
-import moment from 'moment';
 
 const COMPLIANCE = ['mastercard', 'visa'];
 const COMPLIANCE2 = [
@@ -23,9 +22,12 @@ const Footer = props => {
   const lang = I18n.language || window.localStorage.i18nextLng || 'en';
 
   const hideFooter = useMemo(() => {
-    const routes = ['signin', 'signup', 'forgot-password'].map(route => `/${lang}/${route}`);
+    const routes = ['signin', 'signup', 'forgot-password'];
 
-    if (routes.indexOf(pathname) !== -1) {
+    // Comment: Matches - /lang/route, /lang/route/
+    const shouldHide = routes.map(route => new RegExp(`^\/${lang}\/${route}(\/?)$`).test(pathname))
+
+    if (shouldHide.includes(true)) {
       return true;
     }
     return false;
@@ -171,7 +173,7 @@ const PopularPairs = ({ lang }) => {
   );
 };
 
-const CopyrightNotice = () => <>All rights reserved, YOA LTD 2016-{moment(Date.now()).format('YYYY')} — England & Wales</>;
+const CopyrightNotice = () => <>All rights reserved, YOA LTD 2016-{new Date().getFullYear()} — England & Wales</>;
 
 const RegisteredCompany = props => (
   <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">

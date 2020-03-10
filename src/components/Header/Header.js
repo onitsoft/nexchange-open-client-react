@@ -23,9 +23,12 @@ const Header = props => {
 
   const isHomeHeader = useMemo(() => {
     const { pathname } = location;
-    const routes = ['instant-white-label', 'faqs'].map(route => `/${lang}/${route}`);
+    const routes = ['instant-white-label', 'faqs'];
 
-    if (new RegExp('/' + lang + '(/?)$').test(pathname) || routes.indexOf(pathname) !== -1) {
+    // Comment: Matches - /lang, /lang/, /lang/route, /lang/route/, etc 
+    const showHomeHeader = routes.map(route => new RegExp(`^\/${lang}(\/${route})?(\/)?$`).test(pathname));
+
+    if (showHomeHeader.includes(true)) {
       return true;
     }
     return false;
@@ -33,9 +36,12 @@ const Header = props => {
 
   const isHideHeader = useMemo(() => {
     const { pathname } = location;
-    const routes = ['signin', 'signup', 'forgot-password'].map(route => `/${lang}/${route}`);
+    const routes = ['signin', 'signup', 'forgot-password'];
 
-    if (routes.indexOf(pathname) !== -1) {
+    // Comment: Matches - /lang/route, /lang/route/
+    const shouldHide = routes.map(route => new RegExp(`^\/${lang}\/${route}(\/?)$`).test(pathname));
+
+    if (shouldHide.includes(true)) {
       return true;
     }
     return false;
