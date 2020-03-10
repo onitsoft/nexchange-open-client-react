@@ -25,7 +25,7 @@ const Footer = props => {
     const routes = ['signin', 'signup', 'forgot-password'];
 
     // Comment: Matches - /lang/route, /lang/route/
-    const shouldHide = routes.map(route => new RegExp(`^\/${lang}\/${route}(\/?)$`).test(pathname))
+    const shouldHide = routes.map(route => new RegExp(`^/${lang}/${route}(/?)$`).test(pathname))
 
     if (shouldHide.includes(true)) {
       return true;

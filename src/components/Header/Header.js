@@ -26,7 +26,7 @@ const Header = props => {
     const routes = ['instant-white-label', 'faqs'];
 
     // Comment: Matches - /lang, /lang/, /lang/route, /lang/route/, etc 
-    const showHomeHeader = routes.map(route => new RegExp(`^\/${lang}(\/${route})?(\/)?$`).test(pathname));
+    const showHomeHeader = routes.map(route => new RegExp(`^/${lang}(/${route})?(/)?$`).test(pathname));
 
     if (showHomeHeader.includes(true)) {
       return true;
@@ -39,7 +39,7 @@ const Header = props => {
     const routes = ['signin', 'signup', 'forgot-password'];
 
     // Comment: Matches - /lang/route, /lang/route/
-    const shouldHide = routes.map(route => new RegExp(`^\/${lang}\/${route}(\/?)$`).test(pathname));
+    const shouldHide = routes.map(route => new RegExp(`^/${lang}/${route}(/?)$`).test(pathname));
 
     if (shouldHide.includes(true)) {
       return true;
