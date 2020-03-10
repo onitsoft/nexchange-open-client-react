@@ -12,27 +12,35 @@ class CoinInput extends PureComponent {
   state = {
     value: '...',
     fetching: this.props.price.fetching,
+    focused: false
   };
 
   handleFocus = event => {
+    let value = event.target.value
     if (event.target.value === '...') {
-      this.setState({ value: '' });
+      value = '';
     }
+    this.setState({ value: value, focused: true });
   };
 
   handleBlur = event => {
+    let value = event.target.value
     if (event.target.value === '') {
-      this.setState({ value: '...' });
+      value = '...';
     }
+    this.setState({ value: value, focused: false });
   };
 
   handleChange = event => {
     let { value } = event.target;
+
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
     this.setState({ value });
+
+    console.log("handleChange", value)
     this.fetchAmounts(value);
 
     window.gtag('event', 'Change amount', {event_category: 'Order', event_label: ``});
@@ -40,6 +48,7 @@ class CoinInput extends PureComponent {
 
   setValue = value => {
     const simulatedEvent ={target: {value: value.toString()}};
+
     this.handleChange(simulatedEvent);
   };
 
@@ -70,17 +79,19 @@ class CoinInput extends PureComponent {
     }
   };
 
-  UNSAFE_componentWillReceiveProps = nextProps => {
-    if (nextProps.price.fetching !== this.state.fetching) {
-      this.setState({ fetching: nextProps.price.fetching });
+  componentDidUpdate = prevProps =>  {
+    if (this.props.price.fetching !== this.state.fetching) {
+      this.setState({ fetching: this.props.price.fetching });
     }
 
-    if (nextProps.lastEdited !== nextProps.type || !this.state.value || this.state.value === '...') {
-      if (nextProps.type === 'receive') {
-        this.setState({ value: nextProps.price.receive });
-      } else if (nextProps.type === 'deposit') {
-        this.setState({ value: nextProps.price.deposit });
-      }
+    if (this.state.focused) {
+      return
+    }
+
+    if (this.props.type === 'receive') {
+      this.setState({ value: this.props.price.receive });
+    } if (this.props.type === 'deposit') {
+      this.setState({ value: this.props.price.deposit });
     }
   };
 
@@ -124,7 +135,7 @@ class CoinInput extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price, lastEdited: selectedCoin.lastSelected });
+const mapStateToProps = ({ selectedCoin, price }) => ({ selectedCoin, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchPrice }, dispatch);
 
 export default connect(
