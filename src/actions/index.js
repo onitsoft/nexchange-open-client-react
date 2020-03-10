@@ -320,6 +320,11 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
     });
 };
 
+export const showSupportModal = payload => ({
+  type: types.SHOW_SUPPORT_MODAL,
+  payload,
+});
+
 export const setOrder = order => ({
   type: types.SET_ORDER,
   order,

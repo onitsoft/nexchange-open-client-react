@@ -11,12 +11,11 @@ import UserIcon from './user.svg';
 
 import Support from './Support/Support';
 import LanguagePicker from './LanguagePicker/LanguagePicker';
-import { loadAuth, loadUserDetails } from 'Actions';
+import { loadAuth, loadUserDetails, showSupportModal } from 'Actions';
 
 import styles from './Header.scss';
 
 const Header = props => {
-  const [showSupportModal, setShowSupportModal] = useState(false);
   const [, setShowNavbar] = useState(false);
   const location = useLocation();
   const lang = i18n.language || window.localStorage.i18nextLng || 'en';
@@ -25,7 +24,7 @@ const Header = props => {
     const { pathname } = location;
     const routes = ['instant-white-label', 'faqs'];
 
-    // Comment: Matches - /lang, /lang/, /lang/route, /lang/route/, etc 
+    // Comment: Matches - /lang, /lang/, /lang/route, /lang/route/, etc
     const showHomeHeader = routes.map(route => new RegExp(`^/${lang}(/${route})?(/)?$`).test(pathname));
 
     if (showHomeHeader.includes(true)) {
@@ -62,17 +61,32 @@ const Header = props => {
   const closeNavbar = useCallback(() => {
     setShowNavbar(false);
   }, [setShowNavbar]);
+
   const hideSupport = useCallback(() => {
-    setShowSupportModal(false);
-  }, [setShowSupportModal]);
+    props.showSupportModal(false);
+  }, [props.supportModal]);
 
   if (isHideHeader) return null;
 
-  return <HeaderStuff {...{ auth: props.auth, lang, closeNavbar, isHomeHeader, setShowSupportModal, showSupportModal, hideSupport }} />;
+  return (
+    <HeaderStuff
+      {...{
+        auth: props.auth,
+        supportModal: props.supportModal,
+        showSupportModal: props.showSupportModal,
+        lang,
+        closeNavbar,
+        isHomeHeader,
+        hideSupport,
+      }}
+    />
+  );
 };
 
 export const HeaderStuff = props => {
-  const { isHomeHeader, lang, closeNavbar, setShowSupportModal, showSupportModal, hideSupport } = props;
+  const { isHomeHeader, lang, closeNavbar, hideSupport, supportModal } = props;
+
+  console.log(props);
 
   return (
     <I18n ns="translations">
@@ -147,7 +161,7 @@ export const HeaderStuff = props => {
                   <Link
                     onClick={() => {
                       closeNavbar();
-                      setShowSupportModal(true);
+                      props.showSupportModal(true);
                     }}
                     className={styles.link}
                     to="#"
@@ -291,7 +305,7 @@ export const HeaderStuff = props => {
               </ul>
             </div>
 
-            <Support show={showSupportModal} onClose={() => hideSupport()} />
+            <Support show={supportModal} onClose={() => hideSupport()} />
           </div>
         </div>
       )}
@@ -299,7 +313,7 @@ export const HeaderStuff = props => {
   );
 };
 
-const mapStateToProps = ({ auth }) => ({ auth });
-const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth, loadUserDetails }, dispatch);
+const mapStateToProps = ({ auth, supportModal }) => ({ auth, supportModal });
+const mapDispatchToProps = dispatch => bindActionCreators({ loadAuth, loadUserDetails, showSupportModal }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -2,6 +2,10 @@ import React, { useMemo, useState } from 'react';
 
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showSupportModal } from 'Actions';
+
 
 import styled from '@emotion/styled';
 
@@ -25,7 +29,7 @@ const Footer = props => {
     const routes = ['signin', 'signup', 'forgot-password'];
 
     // Comment: Matches - /lang/route, /lang/route/
-    const shouldHide = routes.map(route => new RegExp(`^/${lang}/${route}(/?)$`).test(pathname))
+    const shouldHide = routes.map(route => new RegExp(`^/${lang}/${route}(/?)$`).test(pathname));
 
     if (shouldHide.includes(true)) {
       return true;
@@ -61,7 +65,14 @@ const Footer = props => {
                           <a href="https://nexchange2.docs.apiary.io/">{t('header.apidocumentation')}</a>
                         </li>
                         <li>
-                          <a href="/#support">{t('header.support')}</a>
+                          <Link
+                            onClick={() => {
+                              props.showSupportModal(true);
+                            }}
+                            to="#"
+                          >
+                            {t('header.support')}
+                          </Link>
                         </li>
                       </ul>
                     </section>
@@ -307,4 +318,8 @@ const StyledFooter = styled.footer`
   }
 `;
 
-export default withRouter(Footer);
+
+const mapStateToProps = ({ supportModal }) => ({ supportModal });
+const mapDispatchToProps = dispatch => bindActionCreators({ showSupportModal }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Footer));
