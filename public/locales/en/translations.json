@@ -175,9 +175,9 @@
       }
     }
   },
- "integrations": {
-    "error" : {
-      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+  "integrations": {
+    "error": {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked"
     }
   },
   "recentorders": {
@@ -245,7 +245,37 @@
     "1": "TERMS AND CONDITIONS",
     "2": "PRIVACY POLICY",
     "3": "<0>All rights reserved, YOA LTD 2016-2017,<1></1> England & Wales <4>registered company No. 10009845</4></0>",
-    "popular-pairs": "Exchange"
+    "popular-pairs": "Exchange",
+    "aggregators": {
+      "bestchange": {
+        "name": "bestchange",
+        "url": "https://bestchange.com"
+      },
+      "okchanger": {
+        "name": "okchanger",
+        "url": "https://okchanger.com"
+      },
+      "kurs": {
+        "name": "ratesguru",
+        "url": "https://rates.guru/"
+      },
+      "exchangesumo": {
+        "name": "exchangesumo",
+        "url": "https://exchangesumo.com/"
+      },
+      "emon": {
+        "name": "emon",
+        "url": "http://e-mon.ru/"
+      },
+      "allchange": {
+        "name": "allchange",
+        "url": "https://allchange.org/"
+      },
+      "bestcurs": {
+        "name": "bestcurs",
+        "url": "https://bestcurs.org/"
+      }
+    }
   },
   "ico": {
     "action": "JOIN OUR ICO",
@@ -572,7 +602,7 @@
     },
     "faq": {
       "notfound": "Not found",
-      "openticket":"Open support ticket",
+      "openticket": "Open support ticket",
       "questions": {
         "what-is-whitelabel": "What is a white-label exchange?",
         "why-whitelabel": "Why should I use a white-label exchange?"
