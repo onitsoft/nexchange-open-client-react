@@ -1,5 +1,6 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from "react-router-hash-link";
 import { useLocation } from 'react-router';
 import { I18n } from 'react-i18next';
 import i18n from 'i18next';
@@ -113,9 +114,9 @@ export const HeaderStuff = props => {
             <div className="collapse navbar-collapse" id="navigation-index">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link onClick={() => closeNavbar()} to={{ pathname: `/${lang}`, hash: '#about' }} className={styles.link}>
+                  <HashLink smooth onClick={() => closeNavbar()} to={`/${lang}#about`} className={styles.link}>
                     {t('header.about')}
-                  </Link>
+                  </HashLink>
                 </li>
 
                 <li>

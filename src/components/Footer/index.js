@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import { I18n } from 'react-i18next';
 import { NavLink as Link, withRouter } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { showSupportModal } from 'Actions';
@@ -80,7 +81,7 @@ const Footer = props => {
                       <h4>{t('header.about')}</h4>
                       <ul>
                         <li>
-                          <Link to={`/${lang}#about`}>{t('header.about')}</Link>
+                          <HashLink smooth to={`/${lang}#about`}>{t('header.about')}</HashLink>
                         </li>
                         <li>
                           <Link to={`/${lang}/faqs`}>{t('header.faq')}</Link>
@@ -139,9 +140,9 @@ const Footer = props => {
                       <CopyrightNotice /> — <RegisteredCompany />
                     </p>
                     <p>
-                      <Link to="/terms-and-conditions">{t('header.terms-and-conditions')}</Link>
+                      <Link to={`/${lang}/terms-and-conditions`}>{t('header.terms-and-conditions')}</Link>
                       <span> — </span>
-                      <Link to="/privacy">{t('header.privacy-policy')}</Link>
+                      <Link to={`/${lang}/privacy`}>{t('header.privacy-policy')}</Link>
                     </p>
                   </aside>
                 </section>
