@@ -11,9 +11,7 @@ const Privacy = props => {
             <div className="col-xs-12" style={{ marginTop: 80 }}>
               {/* eslint max-len: ["error", { "code": 9999 }] */}
               <h2>{t('privacy.title')}</h2>
-              <h4 style={{ marginBottom: 30 }}>
-                Last updated: <strong>April 3rd, 2019</strong>
-              </h4>
+              <h4 style={{ marginBottom: 30 }}>Last updated: April 6th, 2020</h4>
 
               <p>DRAGONDEX Privacy Policy:</p>
 

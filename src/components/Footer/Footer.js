@@ -12,7 +12,9 @@ const Footer = () => (
             <div className="col-xs-12 col-sm-8 col-md-6">
               <Trans i18nKey="footer.3">
                 <p className={styles.address}>
-                  All rights reserved, DRAGONDEX 2019<br />Australia{' '}
+                  All rights reserved, DRAGONDEX {new Date().getFullYear()}
+                  <br />
+                  Australia{' '}
                 </p>
               </Trans>
             </div>
