@@ -16,7 +16,7 @@ describe('CoinSelector', () => {
   const axiosMock = new MockAdapter(axios);
 
   beforeEach(() => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHOMG/?amount_base=undefined').reply(200, {
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHOMG/?amount_base=undefined').reply(200, {
       amount_base: 1.40374611,
       amount_quote: 101.0,
       timestamp: 1533114712.278441,
@@ -86,7 +86,7 @@ describe('CoinSelector', () => {
   });
 
   it('selecting coin from dropdown causes correct action to be selected (deposit)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=101').reply(200, {
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_quote=101').reply(200, {
       amount_base: 4176.70201222,
       amount_quote: 59.0,
       price: 0.01412598,
@@ -110,7 +110,7 @@ describe('CoinSelector', () => {
   });
 
   it('selecting coin from dropdown causes correct coin to be selected (deposit)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/BTCOMG/?amount_quote=101').reply(200, {
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/BTCOMG/?amount_quote=101').reply(200, {
       amount_base: 4176.70201222,
       amount_quote: 59.0,
       price: 0.01412598,

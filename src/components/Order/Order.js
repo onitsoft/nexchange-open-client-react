@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Redirect,
-} from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
@@ -16,7 +14,7 @@ import OrderTop from './OrderTop/OrderTop';
 import NotFound from 'Components/NotFound/NotFound';
 import OrderLoading from './OrderLoading/OrderLoading';
 import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
-import OrderCta from './OrderCta/OrderCta';
+// import OrderCta from './OrderCta/OrderCta';
 
 import styles from './Order.scss';
 
@@ -27,7 +25,7 @@ class Order extends Component {
     if (this.props.order && this.props.match.params.orderRef === this.props.order.unique_reference) {
       this.state = { order: this.props.order, redirect: false };
     } else {
-      this.state = {redirect: false};
+      this.state = { redirect: false };
     }
   }
 
@@ -51,8 +49,8 @@ class Order extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ order: nextProps.order });
 
-    if(!this.state.redirect && !_.isEmpty(nextProps.order.payment_url)) {
-      this.setState({redirect: true});
+    if (!this.state.redirect && !_.isEmpty(nextProps.order.payment_url)) {
+      this.setState({ redirect: true });
     }
 
     this.timeout = setTimeout(() => {
@@ -68,14 +66,14 @@ class Order extends Component {
         this.props.order.status_name[0][0] === 11 &&
         nextProps.order.status_name[0][0] === 12
       ) {
-        window.gtag('event', 'Order paid', {event_category: 'Order', event_label: `${nextProps.unique_reference}`});
+        window.gtag('event', 'Order paid', { event_category: 'Order', event_label: `${nextProps.unique_reference}` });
       }
     }
   }
 
   render() {
-    if(this.state.redirect) {
-      return (<Redirect to={`/transitioning/${this.props.order.unique_reference}`} />);
+    if (this.state.redirect) {
+      return <Redirect to={`/transitioning/${this.props.order.unique_reference}`} />;
     }
 
     if (this.state.order == null) {
@@ -103,7 +101,4 @@ class Order extends Component {
 const mapStateToProps = ({ order, price }) => ({ order, price });
 const mapDistachToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDistachToProps
-)(Order);
+export default connect(mapStateToProps, mapDistachToProps)(Order);

@@ -24,7 +24,7 @@ describe('OrderCoinsProcessed', () => {
       min_amount_quote: 0.00613576,
     };
     const pairOrder = `${order.pair.base.code}${order.pair.quote.code}`;
-    axiosMock.onGet(`https://api.nexchange.io/en/api/v1/get_price/${pairOrder}/`).reply(200, mockDataOrder);
+    axiosMock.onGet(`https://api.n.exchange/en/api/v1/get_price/${pairOrder}/`).reply(200, mockDataOrder);
   });
 
   it('renders correctly', () => {

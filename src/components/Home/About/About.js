@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './About.scss';
-import { I18n, Trans } from 'react-i18next';
+import { I18n } from 'react-i18next';
 
 const About = () => (
   <I18n ns="translations">
