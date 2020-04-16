@@ -143,7 +143,37 @@
   "footer": {
     "1": "Geschäftsbedingungen",
     "2": "Datenschutzerklärung",
-    "3": "<0>Alle Rechte gesichert, YOA LTD 2016-2017,<1></1> England & Wales <4>Registiernummernr. 10009845</4></0>"
+    "3": "<0>Alle Rechte gesichert, YOA LTD 2016-2017,<1></1> England & Wales <4>Registiernummernr. 10009845</4></0>",
+    "aggregators": {
+      "bestchange": {
+        "name": "bestchange",
+        "url": "https://bestchange.com"
+      },
+      "okchanger": {
+        "name": "okchanger",
+        "url": "https://okchanger.com"
+      },
+      "kurs": {
+        "name": "ratesguru",
+        "url": "https://rates.guru/"
+      },
+      "exchangesumo": {
+        "name": "exchangesumo",
+        "url": "https://exchangesumo.com/"
+      },
+      "emon": {
+        "name": "emon",
+        "url": "http://e-mon.ru/"
+      },
+      "allchange": {
+        "name": "allchange",
+        "url": "https://allchange.org/"
+      },
+      "bestcurs": {
+        "name": "bestcurs",
+        "url": "https://bestcurs.org/"
+      }
+    }
   },
   "ico": {
     "action": "WERDEN SIE TEIL UNSERES ICO",
@@ -370,7 +400,7 @@
     "ans11": "<0>Wenn Sie einen Auftrag aufgeben, wird automatisch ein Empfehlungscode für Sie generiert.</0><1>Die Derzeitigen Bedingungen für das Empfehlungsprogramm sind wie folgt:</1><2><0> Wir zahlen die Hälfte unserer Einnahmen an unsere Empfehler. Ein Virtel der Einnahmen an Empfehler zweiten Grades und ein Achtel der Einnahmen an Empfehler dritten Grades.</0><1>Wir senden Empfehlungsauszahlungen, sobald das Guthaben auf Ihrem Konto den Schwellenwert erreicht. Der Schwellenbetrag beträgt in der Regel das 10-fache des Mindestbestellbetrags (keine Tx-Gebühr), kann jedoch nach unten angepasst werden. In diesem Fall müssten Sie die Tx-Gebühr selbst übernehmen.</1><2>Sie werden Ihre Gelder erhalten an der im Auftrag angegebenen Abhebe-Adresse.</2><3>Wenn Sie die Abhebe-Adresse oder die bevorzugte Währung ändern möchten, benachrichtigen Sie bitte den Kundendienst, und wir werden uns darum kümmern.</3></2><3>Diese Angaben können sich jederzeit ändern.</3>",
     "ans12": "<0>Es gibt ein Zeitfenster von 15 Minuten zwischen dem Öffnen dem Aufrufen des Auftrags und unserer Feststellung, dass Sie Coins in die Blockchain geschickt haben. Während dieses Zeitintervals frieren wir effektiv den Preis Ihres Auftrags ein.</0><1>Wenn sich das 15-Minuten Zeitfenster schließt, wird der Auftrag abgebrochen, da der Preis verfallen ist und erneut berechnet werden muss.</1><2>Wenn Sie Ihre Gelder nicht rechtzeitig abgeschickt haben, geben Sie einfach einen neuen Auftrag auf.</2><3>Wenn Sie Ihre Gelder rechtzeitig abgeschickt haben, aber aus irgendeinem Grund nicht festgestellt wurden, kontaktieren Sie uns über den Kundendienst-Chat, und wir werden Ihnen aushelfen.</3>",
     "ans13": "<0>Ja. Promoten Sie den Austausch auf sozialen Medien (wie Twitter). Wir würden Ihnen 1000 SAT für jedes Retweet von einem legitimen, echten Account mit über 500 Followern und 100 SAT für jedes like von einem Account mit den gleichen Kriterien zahlen.</0><1><0>Wir behalten uns das Recht vor, den Bonus aus Gründen, die wir für richtig halten, abzulehnen.</0></1>",
-    "ans14": "<0>Um N.EXCHANGE zu nutzen, benötigen Sie Ihre eigene Wallet. Der Hauptvorteil dieser Funktion besteht darin, dass wir Ihre Coins nicht aufbewahren, und Sie dadurch zu jeder Zeit die Kontrolle über Ihre Bestände bewahren.</0><1>Wenn Sie Hilfe benötigen, um eine Wallet in der gewünschten Kryptowährung zu erhalten, schauen Sie bitte hier </1><2><0>Bitcoin (BTC). <1>https.//bitcoin.org/en/choose-your-wallet</1></0><1>Ethereum (ETH). <1>https://github.com/ethereum/mist/releases</1></1><2>Litecoin (LTC). <1>https.//litecoin.org/</1></2></2><3>Bitte beachten Sie, dass wir mit den oben angegebenen Webseiten in keiner Verbindung stehen, diese Links dienen ausschließlich als Nutzer-Referenz. Wir werden keine Haftung, Verpflichtung oder Verantwortung für Inhalte externer Webseiten übernehmen.</3>"
+    "ans14": "<0>Um N.EXCHANGE zu nutzen, benötigen Sie Ihre eigene Wallet. Der Hauptvorteil dieser Funktion besteht darin, dass wir Ihre Coins nicht aufbewahren, und Sie dadurch zu jeder Zeit die Kontrolle über Ihre Bestände bewahren.</0><1>Wenn Sie Hilfe benötigen, um eine Wallet in der gewünschten Kryptowährung zu erhalten, schauen Sie bitte hier </1><2><0>Bitcoin (BTC). <1>https.//bitcoin.org/en/choose-your-wallet</1></0><1>Ethereum (ETH). <1>https.//github.com/ethereum/mist/releases</1></1><2>Litecoin (LTC). <1>https.//litecoin.org/</1></2></2><3>Bitte beachten Sie, dass wir mit den oben angegebenen Webseiten in keiner Verbindung stehen, diese Links dienen ausschließlich als Nutzer-Referenz. Wir werden keine Haftung, Verpflichtung oder Verantwortung für Inhalte externer Webseiten übernehmen.</3>"
   },
   "loading": "Lade",
   "privacy": {
