@@ -6,16 +6,8 @@ import { NavLink as Link, withRouter } from 'react-router-dom';
 import styled from '@emotion/styled';
 import moment from 'moment';
 
-const COMPLIANCE = ['mastercard', 'visa'];
-const COMPLIANCE2 = [
-  { img: 'bestchange', url: 'https://bestchange.com', name: 'bestchange' },
-  { img: 'okchanger', url: 'https://okchanger.com', name: 'okchanger' },
-  { img: 'kurs', url: 'https://kurs.expert', name: 'kurs' },
-  { img: 'exchangesumo', url: 'https://exchangesumo.com/', name: 'exchangesumo' },
-  { img: 'emon', url: 'http://e-mon.ru/', name: 'emon' },
-  { img: 'allchange', url: 'https://allchange.org/', name: 'allchange' },
-  { img: 'bestcurs', url: 'https://bestcurs.org/', name: 'bestcurs' },
-];
+const paymentGateways = ['mastercard', 'visa'];
+const aggregators = ['bestchange', 'okchanger', 'kurs', 'exchangesumo', 'emon', 'allchange', 'bestcurs'];
 
 const Footer = props => {
   const { location } = props;
@@ -100,15 +92,15 @@ const Footer = props => {
                   </main>
                   <aside>
                     <div className="compliance">
-                      {COMPLIANCE.map(e => (
+                      {paymentGateways.map(e => (
                         <img src={`/img/compliance/${e}.svg`} alt="e" className={e} key={e} />
                       ))}
                     </div>
 
                     <div className="compliance2">
-                      {COMPLIANCE2.map(e => (
-                        <a href={`${e.url}`} target="_blank" rel="noopener noreferrer" key={e.name}>
-                          <img src={`/img/compliance/${e.img}.svg`} alt={`${e.name}`} className={`${e.name}`} />
+                      {aggregators.map(e => (
+                        <a href={t(`footer.aggregators.${e}.url`)} target="_blank" rel="noopener noreferrer" key={e}>
+                          <img src={`/img/compliance/${e}.svg`} alt={t(`footer.aggregators.${e}.name`)} className={e} />
                         </a>
                       ))}
                     </div>
