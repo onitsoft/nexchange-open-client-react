@@ -20,7 +20,7 @@ import {
   fetchUserEmail,
   setUserEmail,
   changeOrderMode,
-  changeOrderBookValue
+  changeOrderBookValue,
 } from './index.js';
 import currency from 'Mocks/currency';
 import pair from 'Mocks/pair';
@@ -98,15 +98,17 @@ describe('actions', () => {
   it('selectCoin', () => {
     const payload = 'payload';
     const pairs = 'pairs';
-    const expectedActions = [{
-      type: types.COIN_SELECTED,
-      payload: {
-        selectedCoins: payload,
-        pairs: pairs
+    const expectedActions = [
+      {
+        type: types.COIN_SELECTED,
+        payload: {
+          selectedCoins: payload,
+          pairs: pairs,
+        },
       },
-    }];
+    ];
 
-    store.dispatch(selectCoin('payload','pairs'));
+    store.dispatch(selectCoin('payload', 'pairs'));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
@@ -121,7 +123,7 @@ describe('actions', () => {
   });
 
   it('fetchCoinDetails (default)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/currency/').reply(200, currency);
 
     const expectedActions = [
       {
@@ -136,7 +138,7 @@ describe('actions', () => {
   });
 
   it('fetchCoinDetails (test)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/currency/').reply(200, currency);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/currency/').reply(200, currency);
     window.history.pushState('', '', 'localhost/?test=true');
 
     const expectedActions = [
@@ -169,7 +171,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=undefined').reply(200, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_base=undefined').reply(200, mockData);
     const expectedActions = [
       {
         type: types.ERROR_ALERT,
@@ -187,7 +189,7 @@ describe('actions', () => {
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'deposit',
         },
-      }
+      },
     ];
 
     return store.dispatch(fetchPrice(payload)).then(() => {
@@ -213,7 +215,7 @@ describe('actions', () => {
 
     const payload = { pair: 'XVGBTC', lastEdited: 'deposit', coinSelector: true, deposit: 520 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/XVGBTC/').reply(200, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/XVGBTC/').reply(200, mockData);
     const expectedActions = [
       {
         type: types.ERROR_ALERT,
@@ -260,7 +262,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: '0.05' };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_quote=0.05').reply(200, mockData);
 
     const expectedActions = [
       {
@@ -279,7 +281,7 @@ describe('actions', () => {
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'deposit',
         },
-      }
+      },
     ];
 
     return store.dispatch(fetchPrice(payload)).then(() => {
@@ -305,7 +307,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 0.7 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=0.7').reply(200, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_base=0.7').reply(200, mockData);
 
     const expectedActions = [
       {
@@ -324,7 +326,7 @@ describe('actions', () => {
           max_amount_base: mockData.max_amount_base,
           lastEdited: 'receive',
         },
-      }
+      },
     ];
 
     return store.dispatch(fetchPrice(payload)).then(() => {
@@ -347,7 +349,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -388,7 +390,7 @@ describe('actions', () => {
   it('fetchPrice (initial quote too high and no error message received)', () => {
     const payload = { pair: 'ETHBTC', lastEdited: 'deposit', deposit: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_quote=100').reply(400);
 
     const expectedActions = [
       {
@@ -433,7 +435,7 @@ describe('actions', () => {
 
     const payload = { pair: 'ETHBTC', lastEdited: 'receive', receive: 100 };
 
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/get_price/ETHBTC/?amount_base=100').reply(400, mockData);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/get_price/ETHBTC/?amount_base=100').reply(400, mockData);
 
     const expectedActions = [
       {
@@ -475,7 +477,7 @@ describe('actions', () => {
   });
 
   it('fetchPairs (no initial selection)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/pair/').reply(200, pair);
 
     const pairs = pair.filter(pair => !pair.disabled && !pair.test_mode);
     const processedPairs = preparePairs(pairs);
@@ -494,7 +496,7 @@ describe('actions', () => {
   });
 
   it('fetchPairs (no initial selection and test)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/pair/').reply(200, pair);
     window.history.pushState('', '', 'localhost/?test=true');
 
     const pairs = pair.filter(pair => !pair.disabled);
@@ -514,8 +516,8 @@ describe('actions', () => {
   });
 
   it('fetchPairs (url param set)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/').reply(200, pair);
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/pair/ETHBTC/').reply(200, {
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/pair/').reply(200, pair);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/pair/ETHBTC/').reply(200, {
       name: 'ETHBTC',
       base: 'ETH',
       quote: 'BTC',
@@ -536,20 +538,28 @@ describe('actions', () => {
       },
       {
         type: types.COIN_SELECTED,
-        payload: { selectedCoins: { deposit: 'BTC', receive: 'ETH', lastSelected: 'deposit', prev: { deposit: 'BTC', receive: 'ETH' }, selectedByUser: {
-          deposit: false,
-          receive: false,
-        } } },
+        payload: {
+          selectedCoins: {
+            deposit: 'BTC',
+            receive: 'ETH',
+            lastSelected: 'deposit',
+            prev: { deposit: 'BTC', receive: 'ETH' },
+            selectedByUser: {
+              deposit: false,
+              receive: false,
+            },
+          },
+        },
       },
     ];
-    
+
     return store.dispatch(fetchPairs()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
 
   it('fetchOrder', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(200, order);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/orders/OVZL1O/').reply(200, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -565,7 +575,7 @@ describe('actions', () => {
   });
 
   it('fetchOrder (server error)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(500, order);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/orders/OVZL1O/').reply(500, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -581,7 +591,7 @@ describe('actions', () => {
   });
 
   it('fetchOrder (too many requests)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/orders/OVZL1O/').reply(429, order);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/orders/OVZL1O/').reply(429, order);
 
     const payload = 'OVZL1O';
     const expectedActions = [
@@ -597,7 +607,7 @@ describe('actions', () => {
   });
 
   it('fetchKyc', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/kyc/O3FZNP/').reply(200, kyc);
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/kyc/O3FZNP/').reply(200, kyc);
 
     const payload = 'O3FZNP';
     const expectedActions = [{ type: types.SET_KYC, kyc }];
@@ -615,7 +625,7 @@ describe('actions', () => {
   });
 
   it('fetchUserEmail (with token)', () => {
-    axiosMock.onGet('https://api.nexchange.io/en/api/v1/users/me/').reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
+    axiosMock.onGet('https://api.n.exchange/en/api/v1/users/me/').reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
     localStorage.setItem('token', 'some token');
 
     const expectedActions = [
@@ -646,7 +656,7 @@ describe('actions', () => {
     window.$crisp.push = jest.fn();
 
     axiosMock
-      .onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload })
+      .onPut('https://api.n.exchange/en/api/v1/users/me/', { email: payload })
       .reply(200, { username: 'Anonymous18878', email: 'email@email.com' });
     localStorage.setItem('token', 'some token');
 
@@ -673,7 +683,7 @@ describe('actions', () => {
     window.$crisp.get = jest.fn();
     window.$crisp.push = jest.fn();
 
-    axiosMock.onPut('https://api.nexchange.io/en/api/v1/users/me/', { email: payload }).reply(500);
+    axiosMock.onPut('https://api.n.exchange/en/api/v1/users/me/', { email: payload }).reply(500);
     localStorage.setItem('token', 'some token');
 
     const expectedActions = [
@@ -689,21 +699,19 @@ describe('actions', () => {
     });
   });
 
-
   //Order Book
   it('changeOrderMode', () => {
     const payload = 'ORDER_BOOK';
-    const expectedAction = 
-      {
-        type: types.ORDER_MODE_CHANGE,
-        mode: 'ORDER_BOOK',
-      };
+    const expectedAction = {
+      type: types.ORDER_MODE_CHANGE,
+      mode: 'ORDER_BOOK',
+    };
 
     return expect(changeOrderMode(payload)).toEqual(expectedAction);
   });
 
   it('changeOrderBookValue (order_type)', () => {
-    const payload = {    
+    const payload = {
       order_type: 'SELL',
       quantity: '',
       limit_rate: '',
@@ -712,11 +720,10 @@ describe('actions', () => {
       history: [],
       myOrders: [],
     };
-    const expectedAction = 
-      {
-        type: types.ORDER_BOOK_VALUE_CHANGE,
-        orderBook: payload,
-      };
+    const expectedAction = {
+      type: types.ORDER_BOOK_VALUE_CHANGE,
+      orderBook: payload,
+    };
 
     return expect(changeOrderBookValue(payload)).toEqual(expectedAction);
   });

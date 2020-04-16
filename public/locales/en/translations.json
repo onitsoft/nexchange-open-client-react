@@ -63,8 +63,8 @@
     "viewallmyorders": "View all my orders"
   },
   "integrations": {
-    "error" : {
-      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+    "error": {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked"
     }
   },
   "recentorders": {
@@ -95,11 +95,9 @@
   "testimonials": {
     "1": "Testimonials",
     "cryptotalk": "Check Out @NexchangeIO with a Simple, Secure and a transparent exchange that you use without registration.",
-    "john":
-      "Nexchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
+    "john": "Nexchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
     "tomo": "Best new instant exchange service! Fast, easy, low fees...",
-    "hunterk13":
-      "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊"
+    "hunterk13": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊"
   },
   "pricecomparison": {
     "1": "Real Time Rates",
@@ -132,8 +130,7 @@
     "1": "Do you have any questions?",
     "2": "Enter your email to receive updates about DRAGONDEX",
     "3": "Subscribe",
-    "4":
-      "Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.",
+    "4": "Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.",
     "5": "Something went wrong. Please try again later.",
     "6": "Subscribe to keep up to date with our changes"
   },
@@ -157,14 +154,10 @@
     "ques4": "Decentralised Exchange",
     "ques5": "Order page deposit",
     "ques6": "Order page all done",
-    "ans1":
-      "<0>DRAGONDEX is located in Melbourne, Australia.</0>",
-    "ans2":
-      "<0>DRAGONDEX transfers are instant.</0>",
-    "ans3":
-      "<0>In order to use DRAGONDEX you need to have your own wallet. MetaMask functionality has been provided.</0>",
-    "ans4":
-      "<0>A decentralised exchange is an exchange market that does not rely on a third-party service to hold the individuals's funds. Instead, trades occur directly between users (peer-to-peer) through an automated process.</0>"
+    "ans1": "<0>DRAGONDEX is located in Australia.</0>",
+    "ans2": "<0>DRAGONDEX transfers are instant.</0>",
+    "ans3": "<0>In order to use DRAGONDEX you need to have your own wallet. MetaMask functionality has been provided.</0>",
+    "ans4": "<0>A decentralised exchange is an exchange market that does not rely on a third-party service to hold the individuals's funds. Instead, trades occur directly between users (peer-to-peer) through an automated process.</0>"
   },
   "support": {
     "1": "Support",
@@ -198,8 +191,7 @@
     "txid": "Transaction ID",
     "expired1": "Order Expired",
     "expired2": "<0>Your order is expired. You can make a <1>new exchange order</1>.</0>",
-    "expired3":
-      "If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively.",
+    "expired3": "If you have already sent your coins, don’t worry. Once we get them, the status of the order will be updated retroactively.",
     "expired4": "Already sent?",
     "failure1": "Order Processing Failed",
     "failure2": "There’s been a problem with your order. Please contact support to resolve at",
@@ -217,8 +209,7 @@
     "status1": "1. Awaiting deposit",
     "status11": "In this step we are waiting for your deposit.",
     "status2": "2. Awaiting confirmations",
-    "status21":
-      "Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.",
+    "status21": "Your order is on the blockchain, we are now waiting for the required number of confirmations before you can receive your funds.",
     "status3": "3. All done",
     "status31": "We got the funds and now have transferred our funds to you.",
     "bookstatus1": "1. Awaiting deposit",
@@ -253,16 +244,12 @@
       "expirationformat": "MM/YY",
       "tier": {
         "limit": "Tier limits reached, additional verification needed",
-        "explanation":
-          "This is a one-time process. Once you are verified you will be able to complete future purchases instantly until current verification tier limits are reached.",
-        "explanation2":
-          "This is a one-time process. Once you are verified you will be able to complete future withdrawals to the whitelisted address instantly.",
+        "explanation": "This is a one-time process. Once you are verified you will be able to complete future purchases instantly until current verification tier limits are reached.",
+        "explanation2": "This is a one-time process. Once you are verified you will be able to complete future withdrawals to the whitelisted address instantly.",
         "selfie": "Selfie",
-        "selfieexplanation":
-          "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
+        "selfieexplanation": "i.e. you have to make a selfie of yourself with a provided credit card in your hands, identity card, plus a paper with today's date and 'N.EXCHANGE'. You may hide middle digits of the credit card.",
         "w_selfie": "Whitelist selfie",
-        "w_selfieexplanation":
-          "i.e. you have to make a selfie of yourself with a paper with today's date, 'N.EXCHANGE' and 'My BTC withdraw address is 18v8BJKqTMHc2eLBpHuwDrrZkQYKvdtUUB' for the currency you use for the purchase."
+        "w_selfieexplanation": "i.e. you have to make a selfie of yourself with a paper with today's date, 'N.EXCHANGE' and 'My BTC withdraw address is 18v8BJKqTMHc2eLBpHuwDrrZkQYKvdtUUB' for the currency you use for the purchase."
       },
       "status": {
         "success": "We will proceed to release your funds shortly",
@@ -270,18 +257,14 @@
         "reject": "Reason for rejection",
         "paid": "Payment & verification received",
         "1": "Payment received, awaiting verification",
-        "2":
-          "In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.",
+        "2": "In order to fulfill your order we must get to know you better by getting a copy of your government issued ID and proof of residence. If we do not get these documents within 2 hours, we will refund the order.",
         "3": "Verification received, awaiting approval",
-        "4":
-          "We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.",
+        "4": "We have received your government issued ID and proof of residence documents. Our team is now verifying them, keep checking this page for further information.",
         "5": "Approval status",
-        "6":
-          "We have received your payment and our team has verified your identity and proof of residence documents. We will shortly release your funds and send you the payment.",
+        "6": "We have received your payment and our team has verified your identity and proof of residence documents. We will shortly release your funds and send you the payment.",
         "7": "This is a one-time process, once verified you’ll be able to complete future purchases instantly.",
         "8": "It seems that you have already completed the verification process.",
-        "9":
-          "We are now validating that your documents are still valid i.e. not expired, and that you have not exceeded the trading limit of your current verification tier.",
+        "9": "We are now validating that your documents are still valid i.e. not expired, and that you have not exceeded the trading limit of your current verification tier.",
         "10": "In case we require any further documents from you, we will contact you via",
         "11": "In case you have any question feel free to contact us via the live chat or at",
         "12": "In this step we are waiting for your deposit.",
@@ -293,8 +276,7 @@
         "govSelfieDesc": "Please upload a picture of yourself, a picture of your ID in English (the ID can be an identity card, passport or drivers license), and a note that contains today’s date and ‘n.exchange’ written next to it. This is required according to KYC AML/AFT regulations. This also helps us to fight fraud and to protect our customers.",
         "11": "e.g. color scanned passport, driving license, ID card. Shows date of birth, has expiration date.",
         "2": "Proof of residence",
-        "21":
-          "A high-resolution photo/scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a fiscal, residence address (no PO boxes!).",
+        "21": "A high-resolution photo/scan of a  <b>physical</b> (non-digital: no screenshots, web pages or PDFs generated on the internet) utility bill from a known service provider, not older than 3 months old. Delivery address must be a fiscal, residence address (no PO boxes!).",
         "22": "Letters from the bank or credit card company  delivered to a <b>fiscal address (not a P.O. BOX)</b> are also accepted.",
         "3": "Get verified",
         "4": "Upload file(s)",
@@ -302,8 +284,7 @@
         "uploading": "Uploading...",
         "msg": "Message (optional)",
         "phone": "Mobile phone (optional)",
-        "6":
-          "Help us reach you in case we need any further information from you.\nThis will also allow us to send you updates about your orders, your referrals, and occasional info about our product.",
+        "6": "Help us reach you in case we need any further information from you.\nThis will also allow us to send you updates about your orders, your referrals, and occasional info about our product.",
         "retry": "Retry verification",
         "retry2": "Retry proof of residence verification",
         "retry3": "Retry government issued ID verification",
@@ -334,8 +315,7 @@
     "1": "Share this unique referral link with your friends to earn some coins!",
     "2": "Here is your unique referral link",
     "3": "Terms & Conditions",
-    "4":
-      "You will receive 50% of our revenues (0.25% of the turnover) of all of your referrals. This offer is currently not limited by time! For more details, and further assistance, please contact support via our Live chat!",
+    "4": "You will receive 50% of our revenues (0.25% of the turnover) of all of your referrals. This offer is currently not limited by time! For more details, and further assistance, please contact support via our Live chat!",
     "a": "Share it on social!",
     "copylink": "Copy link",
     "affiliate": "By the way, if you want you can share this unique referral link with your friends to earn some coins!",
@@ -360,37 +340,23 @@
   },
   "loading": "Loading",
   "privacy": {
-    "title": "Privacy",
+    "title": "Privacy Policy",
     "updated": "<0>Last updated <1>August 9th, 2017</1></0>",
-    "p1":
-      "<0>This Privacy Policy explains how “YOA LTD.”, and its wholly owned subsidiaries (collectively, “YOA LTD.” we or us), collects, uses, discloses and protects your information. This policy applies to information we collect when you access or use “YOA LTD.” websites and mobile applications (collectively, N.exchange services) or otherwise interact with us as described below. “YOA LTD.” provides the “YOA LTD.” Services through local operating entities that are wholly owned subsidiaries of “YOA LTD.” (each, a “YOA LTD.” Company). To determine which “YOA LTD.” Company collects your information and is responsible for processing your data.</0>",
-    "p2":
-      "<0>We may amend this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of this policy, and in some circumstances, we may provide you with additional notice, including, for example, by adding a statement to the homepage of the “YOA LTD.” Services or by sending you an email notification. We strongly encourage you to review the Privacy Policy whenever you access or use “YOA LTD.” Services to stay informed about our information practices and your privacy rights and choices.</0>",
+    "p1": "<0>This Privacy Policy explains how “YOA LTD.”, and its wholly owned subsidiaries (collectively, “YOA LTD.” we or us), collects, uses, discloses and protects your information. This policy applies to information we collect when you access or use “YOA LTD.” websites and mobile applications (collectively, N.exchange services) or otherwise interact with us as described below. “YOA LTD.” provides the “YOA LTD.” Services through local operating entities that are wholly owned subsidiaries of “YOA LTD.” (each, a “YOA LTD.” Company). To determine which “YOA LTD.” Company collects your information and is responsible for processing your data.</0>",
+    "p2": "<0>We may amend this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of this policy, and in some circumstances, we may provide you with additional notice, including, for example, by adding a statement to the homepage of the “YOA LTD.” Services or by sending you an email notification. We strongly encourage you to review the Privacy Policy whenever you access or use “YOA LTD.” Services to stay informed about our information practices and your privacy rights and choices.</0>",
     "collectinfo": "<0>Collection of information</0>",
-    "infoyou":
-      "<0>Information You Provide To Us.</0><1>We collect information you provide directly to us. For example, we collect information about you when you create an online account, complete a transaction, fill out a form, respond to surveys, post messages to our forums or wikis or otherwise communicate with us.</1><2>The types of information we may collect are as follows:</2><3><0>Contact information, such as your name, mailing address, telephone number, and email address. Financial information, such as bank account numbers, credit card numbers and virtual currency account information.</0><1>Government identification numbers, such as your social security number or a state-issued identification number.</1><2>Biographic or demographic information, such as your date of birth, gender, occupation, employment status and any other information you choose to provide about yourself.</2></3>",
-    "infosources":
-      "<0>Information We Collect From Other Sources</0><1>We may also obtain information from other sources and combine that with information we collect through the “YOA LTD.” Services. For example, we may collect nonpublic personal information about you from third parties, including identity verification services.</1>",
-    "infoauto":
-      "<0>Information We Collect Automatically</0><1>When you access or use the “YOA LTD.” Services, we automatically collect information as follows:</1><2>Transaction information: we collect information about the transaction you complete via the “YOA LTD.” Services, including the amount of funds associated with a trade, the types of trades executed and other transaction information.</2><3>Location information: with your prior consent, we may collect precise geolocation information from your mobile device when you access or use our mobile applications. For more details, please see Your Choices below.</3><4>Device and Log information: we collect information about the computer or mobile device you use to access the “YOA LTD.” Services, including device identifiers, mobile network information, type of operating system, and the type of browser used. We also log information about your use of the “YOA LTD.” Services, including access times, pages viewed, IP address, other standard web log data, and the page visited before and after navigating to our websites.</4><5>Cookies and similar tracking technologies: we may use cookies, pixel tags, web beacons, and other tracking technologies to collect information about you when you interact with the “YOA LTD.” Services, including information about your browsing behaviour on our “YOA LTD.” Services. Cookies are small data files sent from our web servers to your computer or mobile device that enable us to, for example, capture how you arrived at the “YOA LTD.” Services, when you return, which pages on the “YOA LTD.” Services you visit, and to recognise that you are already logged on when we receive a page request from your browser.</5>",
-    "useinfo":
-      "<0>Use of information</0><1>We may use your information as follows: </1><2><0>Provide the “YOA LTD.” services and customer support;</0><1>Process transactions and send notices about your transactions;</1><2>Manage your account(s) and send technical notices, updates, security alerts and support and administrative messages;</2><3>Resolve disputes, collect fees, and troubleshoot problems;</3><4>Prevent potentially prohibited or illegal activities and enforce our user agreements;</4><5>Personalize, measure and improve the “YOA LTD.” Services;</5><6>Deliver marketing and promotional offers on behalf of “YOA LTD.” and others, including via SMS, voice calls or email;</6><7>Link or combine your personal information with information we obtain from others to help understand your needs and provide you with better service;</7><8>Carry out any other purpose for which the information was collected, to the extent such purpose is necessarily contemplated by the collection of such information or as otherwise notified in the “YOA LTD.” Services at the time of collection.</8></2>",
-    "processinfo":
-      "<0>Processing of information</0><1>IBy accessing or using the “YOA LTD.” Services or otherwise providing information to us, you consent to the processing and transfer of information in and to the U.S. and other countries. Please refer to the U.S. – EU / Swiss Safe Harbor Compliance section below if you are a resident of the European Union or Switzerland.</1>",
-    "disclosure":
-      "<0>Disclosure of information</0><1>We may disclose any information we collect about you, whether you are a current or former customer, including nonpublic personal information and any other information we collect, to “YOA LTD.”, which processes information on behalf of all “YOA LTD.”, and with nonaffiliated third parties, which include non-financial companies, such as email service providers and fraud verification services, and others, such as other “YOA LTD.” users with which you engage in transactions. We may make such disclosures:</1><2><0>To service providers that perform marketing services on our behalf; and</0><1>For our everyday business purposes, such as to process transactions, maintain accounts, respond to court orders and legal investigations or report to credit bureaus. For example, in connection with our everyday business purposes, we may share information about you as follows:</1><2><0>With any party you intend to distribute funds to, or that intends to distribute funds to you, via the “YOA LTD.” Services, including information about whether your account is active and whether the account has been verified.</0><1>With vendors, consultants and other service providers who need access to your information to carry out work on our behalf. These service providers help with our business operations such as fraud prevention and technology services.</1><2>When we believe, in our sole discretion, that the disclosure of your information is necessary to prevent physical harm or financial loss, to report suspected illegal activity, or to investigate violations of or enforce our user agreements or other policies and agreements.</2><3>In connection with, or during negotiations of, any merger, sale of “YOA LTD.” assets, financing or acquisition or all or a portion of our business to another company. With your consent or at your direction.</3><4>If we are under a duty to disclose or share your information to comply with our legal obligations. Other than in connection with a merger, sale of “YOA LTD.” assets, financing or acquisition, we will not sell or rent any of your information to third parties for their own marketing purposes.</4></2></2><3>Please note that third parties that support our customer identification and anti-fraud controls may retain and use information about you to perform services on our behalf and to improve their services. By using our Services, you consent to the retention and use of such information by these providers to improve their services.</3><4>We may also share aggregated or de-identified information with our affiliated companies or nonaffiliated third parties, which cannot reasonably be used to identify you.</4>",
-    "analytics":
-      "<0>Analytics services provided by others</0><1>We allow other entities to provide analytics services on our behalf. These entities may use cookies, web beacons and other tracking technologies to collect information about your use of the “YOA LTD.” Services, including your IP address, web browser, pages viewed, time spent on pages and links clicked. This information may be used by “YOA LTD.” to, among other things, analyze and track data, determine the popularity of certain content, and better understand your online activity.</1>",
-    "security":
-      "<0>Security</0><1>We implement reasonable security practices and procedures to help protect the confidentiality and security of your information, including any nonpublic personal information. We protect your information using reasonable physical, technical and administrative security measures, including by limiting access to your information to employees with a need to know such information. U.S. – EU / SWISS SAFE HARBOR COMPLIANCE</1><2>“YOA LTD.” complies with the U.S.-EU Safe Harbor Framework and the U.S.-Swiss Safe Harbor Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information from European Union member countries and Switzerland. “YOA LTD.”has certified that it adheres to the Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more about the Safe Harbor program, and to view “YOA LTD.” certification, please visit http://www.export.gov/safeharbor/</2><3>If you have a complaint regarding “YOA LTD.” compliance with the U.S.-EU Safe Harbor Framework or the U.S.-Swiss Safe Harbor Framework, first contact us through support at support@nexchange.io. “YOA LTD.” has elected to use JAMS arbitration as an independent recourse mechanism available to settle unresolved complaints regarding “YOA LTD.” Safe Harbor commitments. Please refer to the section titled “Applicable Law; Arbitration” in our Terms of Service /en/articles/legal_privacy</3>",
-    "choices":
-      "<0>Your choices</0><1>Account Information: You may access and review or update your online account information at any time by logging into your account and viewing your profile. If you want to close your account, please contact us at support@nexchange.io. However, please note that if you close your account, we may retain your information as required by law or for our legitimate business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any investigations, prevent fraud or enforce our user agreements.</1><2>Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the instructions in those communications. You may also opt out of receiving the N.exchange newsletter or certain administrative emails by modifying your communications preferences through the settings feature of your online account. If you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as those about your account or our ongoing business relations.</2><3>Location: Our mobile applications may collect precise geolocation information from your mobile device with your prior consent. If you initially consent to our collection of location information, you may be able to subsequently stop the collection of this information through your device operating system settings. You may also stop our collection of location information by following the standard uninstall process to remove our mobile applications from your device.</3><4>Cookies: We use both session and persistent cookies. Session cookies expire when you log out of your account or close your browser. Persistent cookies remain on your computer or mobile device until you erase them or they otherwise expire. Most web browsers are set to accept cookies by default. You are free to decline most of our cookies if your browser or browser add-on permits, but choosing to remove or disable our cookies may interfere with your use and functionality of the “YOA LTD.” Services. Additionally, we may use certain persistent cookies that are not affected by your browser settings, but will use such cookies solely for identity verification and fraud prevention purposes. For more information about cookies and how to block, delete or disable them, please refer to your browser instructions, or contact us at support@nexchange.io.</4>",
-    "optout":
-      "<0>Why cant I opt out of any sharing?</0><1>We do not engage in any sharing that would require us to provide you with an ability to opt out of such sharing. For instance, we do not share any information about you with third parties for their own marketing purposes.</1>",
-    "access":
-      "<0>Access to information</0><1>You have a right to access the information we hold about you. We may ask you to pay a fee before providing you with this information.</1>",
-    "contact":
-      "<0>Contact us</0><1>If you have any questions or concerns regarding this Privacy Policy, please contact us at <1>support@nexchange.io</1>.</1>"
+    "infoyou": "<0>Information You Provide To Us.</0><1>We collect information you provide directly to us. For example, we collect information about you when you create an online account, complete a transaction, fill out a form, respond to surveys, post messages to our forums or wikis or otherwise communicate with us.</1><2>The types of information we may collect are as follows:</2><3><0>Contact information, such as your name, mailing address, telephone number, and email address. Financial information, such as bank account numbers, credit card numbers and virtual currency account information.</0><1>Government identification numbers, such as your social security number or a state-issued identification number.</1><2>Biographic or demographic information, such as your date of birth, gender, occupation, employment status and any other information you choose to provide about yourself.</2></3>",
+    "infosources": "<0>Information We Collect From Other Sources</0><1>We may also obtain information from other sources and combine that with information we collect through the “YOA LTD.” Services. For example, we may collect nonpublic personal information about you from third parties, including identity verification services.</1>",
+    "infoauto": "<0>Information We Collect Automatically</0><1>When you access or use the “YOA LTD.” Services, we automatically collect information as follows:</1><2>Transaction information: we collect information about the transaction you complete via the “YOA LTD.” Services, including the amount of funds associated with a trade, the types of trades executed and other transaction information.</2><3>Location information: with your prior consent, we may collect precise geolocation information from your mobile device when you access or use our mobile applications. For more details, please see Your Choices below.</3><4>Device and Log information: we collect information about the computer or mobile device you use to access the “YOA LTD.” Services, including device identifiers, mobile network information, type of operating system, and the type of browser used. We also log information about your use of the “YOA LTD.” Services, including access times, pages viewed, IP address, other standard web log data, and the page visited before and after navigating to our websites.</4><5>Cookies and similar tracking technologies: we may use cookies, pixel tags, web beacons, and other tracking technologies to collect information about you when you interact with the “YOA LTD.” Services, including information about your browsing behaviour on our “YOA LTD.” Services. Cookies are small data files sent from our web servers to your computer or mobile device that enable us to, for example, capture how you arrived at the “YOA LTD.” Services, when you return, which pages on the “YOA LTD.” Services you visit, and to recognise that you are already logged on when we receive a page request from your browser.</5>",
+    "useinfo": "<0>Use of information</0><1>We may use your information as follows: </1><2><0>Provide the “YOA LTD.” services and customer support;</0><1>Process transactions and send notices about your transactions;</1><2>Manage your account(s) and send technical notices, updates, security alerts and support and administrative messages;</2><3>Resolve disputes, collect fees, and troubleshoot problems;</3><4>Prevent potentially prohibited or illegal activities and enforce our user agreements;</4><5>Personalize, measure and improve the “YOA LTD.” Services;</5><6>Deliver marketing and promotional offers on behalf of “YOA LTD.” and others, including via SMS, voice calls or email;</6><7>Link or combine your personal information with information we obtain from others to help understand your needs and provide you with better service;</7><8>Carry out any other purpose for which the information was collected, to the extent such purpose is necessarily contemplated by the collection of such information or as otherwise notified in the “YOA LTD.” Services at the time of collection.</8></2>",
+    "processinfo": "<0>Processing of information</0><1>IBy accessing or using the “YOA LTD.” Services or otherwise providing information to us, you consent to the processing and transfer of information in and to the U.S. and other countries. Please refer to the U.S. – EU / Swiss Safe Harbor Compliance section below if you are a resident of the European Union or Switzerland.</1>",
+    "disclosure": "<0>Disclosure of information</0><1>We may disclose any information we collect about you, whether you are a current or former customer, including nonpublic personal information and any other information we collect, to “YOA LTD.”, which processes information on behalf of all “YOA LTD.”, and with nonaffiliated third parties, which include non-financial companies, such as email service providers and fraud verification services, and others, such as other “YOA LTD.” users with which you engage in transactions. We may make such disclosures:</1><2><0>To service providers that perform marketing services on our behalf; and</0><1>For our everyday business purposes, such as to process transactions, maintain accounts, respond to court orders and legal investigations or report to credit bureaus. For example, in connection with our everyday business purposes, we may share information about you as follows:</1><2><0>With any party you intend to distribute funds to, or that intends to distribute funds to you, via the “YOA LTD.” Services, including information about whether your account is active and whether the account has been verified.</0><1>With vendors, consultants and other service providers who need access to your information to carry out work on our behalf. These service providers help with our business operations such as fraud prevention and technology services.</1><2>When we believe, in our sole discretion, that the disclosure of your information is necessary to prevent physical harm or financial loss, to report suspected illegal activity, or to investigate violations of or enforce our user agreements or other policies and agreements.</2><3>In connection with, or during negotiations of, any merger, sale of “YOA LTD.” assets, financing or acquisition or all or a portion of our business to another company. With your consent or at your direction.</3><4>If we are under a duty to disclose or share your information to comply with our legal obligations. Other than in connection with a merger, sale of “YOA LTD.” assets, financing or acquisition, we will not sell or rent any of your information to third parties for their own marketing purposes.</4></2></2><3>Please note that third parties that support our customer identification and anti-fraud controls may retain and use information about you to perform services on our behalf and to improve their services. By using our Services, you consent to the retention and use of such information by these providers to improve their services.</3><4>We may also share aggregated or de-identified information with our affiliated companies or nonaffiliated third parties, which cannot reasonably be used to identify you.</4>",
+    "analytics": "<0>Analytics services provided by others</0><1>We allow other entities to provide analytics services on our behalf. These entities may use cookies, web beacons and other tracking technologies to collect information about your use of the “YOA LTD.” Services, including your IP address, web browser, pages viewed, time spent on pages and links clicked. This information may be used by “YOA LTD.” to, among other things, analyze and track data, determine the popularity of certain content, and better understand your online activity.</1>",
+    "security": "<0>Security</0><1>We implement reasonable security practices and procedures to help protect the confidentiality and security of your information, including any nonpublic personal information. We protect your information using reasonable physical, technical and administrative security measures, including by limiting access to your information to employees with a need to know such information. U.S. – EU / SWISS SAFE HARBOR COMPLIANCE</1><2>“YOA LTD.” complies with the U.S.-EU Safe Harbor Framework and the U.S.-Swiss Safe Harbor Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information from European Union member countries and Switzerland. “YOA LTD.”has certified that it adheres to the Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more about the Safe Harbor program, and to view “YOA LTD.” certification, please visit http://www.export.gov/safeharbor/</2><3>If you have a complaint regarding “YOA LTD.” compliance with the U.S.-EU Safe Harbor Framework or the U.S.-Swiss Safe Harbor Framework, first contact us through support at support@nexchange.io. “YOA LTD.” has elected to use JAMS arbitration as an independent recourse mechanism available to settle unresolved complaints regarding “YOA LTD.” Safe Harbor commitments. Please refer to the section titled “Applicable Law; Arbitration” in our Terms of Service /en/articles/legal_privacy</3>",
+    "choices": "<0>Your choices</0><1>Account Information: You may access and review or update your online account information at any time by logging into your account and viewing your profile. If you want to close your account, please contact us at support@nexchange.io. However, please note that if you close your account, we may retain your information as required by law or for our legitimate business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any investigations, prevent fraud or enforce our user agreements.</1><2>Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the instructions in those communications. You may also opt out of receiving the N.exchange newsletter or certain administrative emails by modifying your communications preferences through the settings feature of your online account. If you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as those about your account or our ongoing business relations.</2><3>Location: Our mobile applications may collect precise geolocation information from your mobile device with your prior consent. If you initially consent to our collection of location information, you may be able to subsequently stop the collection of this information through your device operating system settings. You may also stop our collection of location information by following the standard uninstall process to remove our mobile applications from your device.</3><4>Cookies: We use both session and persistent cookies. Session cookies expire when you log out of your account or close your browser. Persistent cookies remain on your computer or mobile device until you erase them or they otherwise expire. Most web browsers are set to accept cookies by default. You are free to decline most of our cookies if your browser or browser add-on permits, but choosing to remove or disable our cookies may interfere with your use and functionality of the “YOA LTD.” Services. Additionally, we may use certain persistent cookies that are not affected by your browser settings, but will use such cookies solely for identity verification and fraud prevention purposes. For more information about cookies and how to block, delete or disable them, please refer to your browser instructions, or contact us at support@nexchange.io.</4>",
+    "optout": "<0>Why cant I opt out of any sharing?</0><1>We do not engage in any sharing that would require us to provide you with an ability to opt out of such sharing. For instance, we do not share any information about you with third parties for their own marketing purposes.</1>",
+    "access": "<0>Access to information</0><1>You have a right to access the information we hold about you. We may ask you to pay a fee before providing you with this information.</1>",
+    "contact": "<0>Contact us</0><1>If you have any questions or concerns regarding this Privacy Policy, please contact us at <1>support@nexchange.io</1>.</1>"
   },
   "notfound": "Page not found",
   "error": {

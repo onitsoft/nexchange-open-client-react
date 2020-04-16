@@ -3,6 +3,7 @@ import Swiper from 'react-id-swiper';
 import styles from './Testimonials.scss';
 import data from './data.json';
 import { I18n } from 'react-i18next';
+import classNames from 'classnames';
 require('react-id-swiper/src/styles/css/swiper.css');
 
 class Testimonials extends Component {
@@ -25,7 +26,7 @@ class Testimonials extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-xs-12">
-                    <h2 className="title">{t('testimonials.title')}</h2>
+                    <h2 className={classNames(styles.testimonialHeading, 'title')}>{t('testimonials.title')}</h2>
                   </div>
                 </div>
               </div>
