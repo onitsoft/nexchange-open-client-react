@@ -56,7 +56,7 @@ const Profile = React.lazy(() => import('Pages/Profile'));
 // const Team = React.lazy(() => import('Components/Home/Team/Team'))
 // const About = React.lazy(() => import('Components/Home/About/About'))
 
-const lang = `/${i18n.language || window.localStorage.i18nextLng}` || '/en';
+const lang = i18n.language || window.localStorage.i18nextLng || 'en';
 
 const NotFoundRedirect = () => <Redirect to={`${lang}/not-found`} />;
 
@@ -71,7 +71,7 @@ ReactDOM.render(
               <Header />
 
               <Switch>
-                <Redirect exact from="/" to={lang} />
+                <Redirect exact from="/" to={`/${lang}`} />
                 <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                 <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
                 <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />
