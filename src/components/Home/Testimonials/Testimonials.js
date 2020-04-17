@@ -3,7 +3,6 @@ import Swiper from 'react-id-swiper';
 import styles from './Testimonials.scss';
 import data from './data.json';
 import { I18n } from 'react-i18next';
-require('react-id-swiper/src/styles/css/swiper.css');
 
 class Testimonials extends Component {
   swiper = null;
