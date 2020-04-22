@@ -50,7 +50,7 @@ const Footer = props => {
                       <h4>{t('header.resources')}</h4>
                       <ul>
                         <li>
-                          <Link to={`${lang}/instant-white-label`}>
+                          <Link to={`/${lang}/instant-white-label`}>
                             <strong>{t('header.whitelabel')}</strong>
                           </Link>
                         </li>

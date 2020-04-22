@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import './i18n';
 import i18n from 'i18next';
 
@@ -58,7 +58,14 @@ const Profile = React.lazy(() => import('Pages/Profile'));
 
 const lang = i18n.language || window.localStorage.i18nextLng || 'en';
 
-const NotFoundRedirect = () => <Redirect to={`${lang}/not-found`} />;
+const NotFoundRedirect = () => {
+  const languages = ['en', 'de', 'ru'];
+  const { pathname } = useLocation();
+
+  if (!languages.includes(pathname.split('/')[1])) return <Redirect to={`/${lang}${pathname}`} />;
+
+  return <Redirect to={`/${lang}/not-found`} />;
+};
 
 ReactDOM.render(
   <GraphCMSProvider>
