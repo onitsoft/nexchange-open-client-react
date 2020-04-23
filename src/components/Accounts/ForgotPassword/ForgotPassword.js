@@ -8,8 +8,8 @@ import NewPassword from './reset'
 const ForgotPassword = (props) => {
   return (
     <Switch>
-      <Route path='/forgot-password' exact component={RequestReset} />
-      <Route path='/forgot-password/:resetToken?' exact component={NewPassword} />
+      <Route path='/:lang(en|de|ru)/forgot-password' exact component={RequestReset} />
+      <Route path='/:lang(en|de|ru)/forgot-password/:resetToken?' exact component={NewPassword} />
     </Switch>
   );
 }

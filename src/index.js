@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import './i18n';
 import i18n from 'i18next';
 
@@ -58,7 +58,15 @@ const Profile = React.lazy(() => import('Pages/Profile'));
 
 const lang = i18n.language || window.localStorage.i18nextLng || 'en';
 
-const NotFoundRedirect = () => <Redirect to={`${lang}/not-found`} />;
+const NotFoundRedirect = () => {
+  const languages = ['en', 'de', 'ru'];
+  const { pathname } = useLocation();
+
+  // Comment: Redirects urls like /order/any to /en/order/any
+  if (!languages.includes(pathname.split('/')[1])) return <Redirect to={`/${lang}${pathname}`} />;
+
+  return <Redirect to={`/${lang}/not-found`} />;
+};
 
 ReactDOM.render(
   <GraphCMSProvider>
@@ -71,7 +79,7 @@ ReactDOM.render(
               <Header />
 
               <Switch>
-                <Redirect exact from="/" to={`/${lang}`} />
+                <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
                 <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                 <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
                 <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />

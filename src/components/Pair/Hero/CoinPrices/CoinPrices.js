@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import i18n from 'Src/i18n';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -88,12 +89,13 @@ class CoinPrices extends Component {
   }
 
   render() {
+  const lang = i18n.language || window.localStorage.i18nextLng || 'en';
 
     return (
       <div className={styles.container}>
         <div className={styles.row}>
           <div className="container">
-            <Link to='/convert/ETH-to-BTC' replace={false}>
+            <Link to={`/${lang}/convert/ETH-to-BTC`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ethbtc']}`}
                 ref={el => {
@@ -107,7 +109,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to="/convert/BDG-to-BTC" replace={false}>
+            <Link to={`/${lang}/convert/BDG-to-BTC`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['bdgbtc']}`}
                 ref={el => {
@@ -121,7 +123,7 @@ class CoinPrices extends Component {
               </div>
              </Link>
 
-            <Link to='/convert/LTC-to-BTC' replace={false}>
+            <Link to={`/${lang}/convert/LTC-to-BTC`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcbtc']}`}
                 ref={el => {
@@ -135,7 +137,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/BTC-to-DOGE' replace={false}>
+            <Link to={`/${lang}/convert/BTC-to-DOGE`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['btcdoge']}`}
                 ref={el => {
@@ -149,7 +151,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/LTC-to-ETH' replace={false}>
+            <Link to={`/${lang}/convert/LTC-to-ETH`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltceth']}`}
                 ref={el => {
@@ -163,7 +165,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/LTC-to-DOGE' replace={false}>
+            <Link to={`/${lang}/convert/LTC-to-DOGE`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcdoge']}`}
                 ref={el => {
@@ -177,7 +179,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/BTC-to-USD' replace={false}>
+            <Link to={`/${lang}/convert/BTC-to-USD`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['btcusd']}`}
                 ref={el => {
@@ -191,7 +193,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/LTC-to-USD' replace={false}>
+            <Link to={`/${lang}/convert/LTC-to-USD`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ltcusd']}`}
                 ref={el => {
@@ -205,7 +207,7 @@ class CoinPrices extends Component {
               </div>
             </Link>
 
-            <Link to='/convert/ETH-to-USD' replace={false}>
+            <Link to={`/${lang}/convert/ETH-to-USD`} replace={false}>
               <div
                 className={`${styles['coin-price']} ${this.state.change['ethusd']}`}
                 ref={el => {

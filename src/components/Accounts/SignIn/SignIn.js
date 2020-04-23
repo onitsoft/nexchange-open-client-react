@@ -45,7 +45,7 @@ const SignIn = (props) => {
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, {lng}) => (
         <div className='row'>
           <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-7 ${styles.left}`}>
             <Link to="/">
@@ -94,14 +94,14 @@ const SignIn = (props) => {
                   className={`${styles.button} ${styles.main}`}
                 >{!loading ? t('accounts.signin') : 'Loading...' }</button>
               </form>
-              <Link to="/forgot-password" className={styles['not-registered']}>
+              <Link to={`/${lng}/forgot-password`} className={styles['not-registered']}>
                 <div>{t('accounts.forgotpassword1')}</div>
               </Link>
               <div className={styles.separator}></div>
-              <Link to="/signup" className={styles['not-registered']}>
+              <Link to={`/${lng}/signup`} className={styles['not-registered']}>
                 <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signup')}</button>
               </Link>
-              <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signinwithfacebook')}</button>
+              {/* <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signinwithfacebook')}</button> */}
             </div>
           </div>
         </div>
