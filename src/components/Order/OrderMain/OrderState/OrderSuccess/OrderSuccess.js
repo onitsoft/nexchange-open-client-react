@@ -7,11 +7,11 @@ import { I18n } from 'react-i18next';
 
 const OrderSuccess = props => (
   <I18n ns="translations">
-    {t => (
+    {(t, {lng}) => (
       <div className={styles.container}>
         <OrderCheckIcon />
         <h2 className={styles.title}>{t('order.success1')}</h2>
-        <Link to="/" className={styles['another-order']}>
+        <Link to={`/${lng}`} className={styles['another-order']}>
           {t('order.success2')}
         </Link>
 

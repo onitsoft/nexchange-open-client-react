@@ -101,7 +101,7 @@ export const SignUp = (props) => {
   
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, {lng} )=> (
         <StyledSignup>
           <div className='row'>
             <div className={`col-xs-12 col-sm-12 col-md-6 col-lg-7 ${styles.left}`}>
@@ -202,11 +202,10 @@ export const SignUp = (props) => {
                     }</button>
                   </form>
                 <div className={styles.separator}></div>
-                <Link to="/signin" className={styles['not-registered']}>
+                <Link to={`/${lng}/signin`} className={styles['not-registered']}>
                   <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
                 </Link>
-                <button 
-                  className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button>
+                {/* <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button> */}
               </div>
             </div>
 

@@ -50,10 +50,10 @@ export const NewPassword = (props) => {
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, {lng}) => (
         <div className='row'>
           <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12 ${styles.container}`}>
-            <Link to="/">
+            <Link to={`/${lng}`}>
                 <div className={styles['logo-container']}>
                     <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
                 </div>
@@ -117,8 +117,8 @@ export const NewPassword = (props) => {
                     <Marked>{t('accounts.resetPassword.successBody')}</Marked>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Link className={`btn-primary btn`} to='/signin'>Sign In</Link>
-                  <Link className={`btn-default btn`} to='/'>Home</Link>
+                  <Link className={`btn-primary btn`} to={`/${lng}/signin`}>Sign In</Link>
+                  <Link className={`btn-default btn`} to={`/${lng}`}>Home</Link>
                 </Modal.Footer>
               </Modal>
             </div>

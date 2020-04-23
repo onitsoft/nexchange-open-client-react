@@ -62,6 +62,7 @@ const NotFoundRedirect = () => {
   const languages = ['en', 'de', 'ru'];
   const { pathname } = useLocation();
 
+  // Comment: Redirects urls like /order/any to /en/order/any
   if (!languages.includes(pathname.split('/')[1])) return <Redirect to={`/${lang}${pathname}`} />;
 
   return <Redirect to={`/${lang}/not-found`} />;
@@ -78,7 +79,7 @@ ReactDOM.render(
               <Header />
 
               <Switch>
-                <Redirect exact from="/" to={`/${lang}`} />
+                <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
                 <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                 <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
                 <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />
