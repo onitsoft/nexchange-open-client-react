@@ -5,12 +5,15 @@ import OrderCoinProcessed from './OrderCoinProcessed/OrderCoinProcessed';
 import styles from './OrderCoinsProcessed.scss';
 import ArrowRight from './images/arrow-right.svg';
 
+let ratesInterval;
 class OrderCoinsProcessed extends Component {
   state = {
     min_amount_quote: '...',
     max_amount_quote: '...',
     min_amount_base: '...',
     max_amount_base: '...',
+    updatedToAmount: undefined,
+    dynamicRates: false,
   };
 
   componentDidMount() {
@@ -34,6 +37,29 @@ class OrderCoinsProcessed extends Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState){
+    const deadlineFinished = new Date(this.props.order.payment_deadline).getTime() < Date.now();
+    if (deadlineFinished) {
+      if(!this.state.dynamicRates) this.setState({dynamicRates: true})
+      
+      if(!prevState.dynamicRates && this.state.dynamicRates) {
+        this.fetchCurrentAmount();
+        ratesInterval = setInterval(this.fetchCurrentAmount, config.PRICE_COMPARISON_INTERVAL);
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(ratesInterval);
+  }
+
+  fetchCurrentAmount = () => {
+    const pair = `${this.props.order.pair.base.code}${this.props.order.pair.quote.code}`;
+    axios.get(`${config.API_BASE_URL}/get_price/${pair}/?amount_quote=${this.props.order.amount_quote}`).then(({ data }) => {
+      this.setState({ updatedToAmount: data.amount_base });
+    });
+  };
+
   render() {
     return (
       <div>
@@ -41,7 +67,13 @@ class OrderCoinsProcessed extends Component {
         <div className={`${styles.container} hidden-xs hidden-sm`}>
           <ArrowRight className={styles.arrow} />
         </div>
-        <OrderCoinProcessed type="Receive" order={this.props.order} min={this.state.min_amount_base} max={this.state.max_amount_base} />
+        <OrderCoinProcessed
+          type="Receive"
+          order={this.props.order}
+          updatedToAmount={this.state.updatedToAmount}
+          min={this.state.min_amount_base}
+          max={this.state.max_amount_base}
+        />
       </div>
     );
   }

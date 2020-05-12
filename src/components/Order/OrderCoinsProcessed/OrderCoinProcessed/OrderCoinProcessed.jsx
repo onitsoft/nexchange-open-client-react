@@ -69,7 +69,7 @@ class OrderCoinProcessed extends Component {
       this.setState({
         coin: props.order.pair.base.code,
         oppositeCoin: props.order.pair.quote.code,
-        amount: parseFloat(props.order.amount_base),
+        amount: parseFloat(props.updatedToAmount || props.order.amount_base),
         address: props.order[addressField] ? props.order[addressField].address : '',
         paymentId: props.order.withdraw_address ? props.order.withdraw_address.payment_id : '',
         destinationTag: props.order.withdraw_address ? props.order.withdraw_address.destination_tag : '',

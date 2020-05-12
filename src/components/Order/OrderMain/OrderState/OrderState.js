@@ -4,7 +4,7 @@ import OrderInitial from './OrderInitial/OrderInitial';
 import OrderPreReleased from './OrderPreReleased/OrderPreReleased';
 import OrderReleased from './OrderReleased/OrderReleased';
 import OrderSuccess from './OrderSuccess/OrderSuccess';
-import OrderFailure from './OrderFailure/OrderFailure';
+import OrderExpired from './OrderExpired/OrderExpired';
 import OrderRefunded from './OrderRefunded/OrderRefunded';
 
 import OrderPaymentFiat from './OrderPaymentFiat/OrderPaymentFiat';
@@ -33,7 +33,7 @@ const OrderState = props => {
       case 'COMPLETED':
         return <OrderSuccess {...props} />;
       case 'CANCELLED':
-        return <OrderFailure {...props} />;
+        return <OrderExpired {...props} />;
       case 'REFUNDED':
         return <OrderRefunded {...props} />;
       default:
