@@ -22,7 +22,7 @@ describe('OrderState', () => {
     const orderPreRelease = { ...order, status_name: [[14, STATUS_CODES[14]]] };
     const orderRelease = { ...order, status_name: [[15, STATUS_CODES[15]]] };
     const orderCompleted = { ...order, status_name: [[16, STATUS_CODES[16]]] };
-    const orderCancelled = { ...order, status_name: [[0, STATUS_CODES[0]]] };
+    const orderExpired = { ...order, status_name: [[0, STATUS_CODES[0]]] };
     const orderRefunded = { ...order, status_name: [[8, STATUS_CODES[8]]] };
     const unknownState = { ...order, status_name: [[9, STATUS_CODES[9]]] };
 
@@ -35,7 +35,7 @@ describe('OrderState', () => {
     expect(shallow(<OrderState order={orderPreRelease} isFiat={false} />)).toMatchSnapshot();
     expect(shallow(<OrderState order={orderRelease} isFiat={false} />)).toMatchSnapshot();
     expect(shallow(<OrderState order={orderCompleted} isFiat={false} />)).toMatchSnapshot();
-    expect(shallow(<OrderState order={orderCancelled} isFiat={false} />)).toMatchSnapshot();
+    expect(shallow(<OrderState order={orderExpired} isFiat={false} />)).toMatchSnapshot();
     expect(shallow(<OrderState order={orderRefunded} isFiat={false} />)).toMatchSnapshot();
 
     expect(shallow(<OrderState order={orderPaidUnconfirmedFiat} isFiat={true} />)).toMatchSnapshot();
