@@ -51,7 +51,7 @@
     margin-bottom: 0px;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'Clan Offc Pro Book';
+    font-family: 'Clan Offc Pro Book', sans-serif;
 
     @media (min-width: $screen-md-min) {
       font-size: 24px;
@@ -62,7 +62,6 @@
     }
   }
 }
-
 
 .faqs {
   float: none !important;
@@ -88,11 +87,11 @@
       cursor: pointer;
     }
   }
-  
+
   form {
     .input {
       position: relative;
-    
+
       i {
         color: $gray;
         position: absolute;
@@ -100,29 +99,32 @@
         top: 2px;
         font-size: 26px;
       }
-    
+
       input {
         font-size: 26px !important;
         margin-bottom: 26px !important;
         padding-left: 32px !important;
       }
-    
-      input::-webkit-input-placeholder { /* WebKit browsers */
+
+      input::-webkit-input-placeholder {
+        /* WebKit browsers */
         font-size: 26px !important;
       }
-    
-      input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+
+      input:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
         font-size: 26px !important;
       }
-    
-      input::-moz-placeholder { /* Mozilla Firefox 19+ */
+
+      input::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
         font-size: 26px !important;
       }
-    
-      input:-ms-input-placeholder { /* Internet Explorer 10+ */
+
+      input:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
         font-size: 26px !important;
       }
-    }    
+    }
   }
 }
-
