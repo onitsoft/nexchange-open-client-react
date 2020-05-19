@@ -11,6 +11,19 @@ const PaymentNewTabText = styled.h4`
   padding: 2rem 0 0.75rem;
 `;
 
+const PaymentIframeContainer = styled.div`
+  position: relative;
+  iframe {
+    position: relative;
+  }
+`;
+const Spinner = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
 class OrderInitial extends Component {
   constructor(props) {
     super(props);
@@ -88,14 +101,19 @@ class OrderInitial extends Component {
                   </a>
                 </PaymentNewTabText>
 
-                <iframe
-                  title="SafeCharge"
-                  src={props.order.payment_url}
-                  height={620}
-                  width={'100%'}
-                  scrolling="no"
-                  style={{ border: 'none' }}
-                />
+                <PaymentIframeContainer>
+                  <Spinner>
+                    <img src="/img/spinner.gif" alt="" />
+                  </Spinner>
+                  <iframe
+                    title="SafeCharge"
+                    src={props.order.payment_url}
+                    height={620}
+                    width={'100%'}
+                    scrolling="no"
+                    style={{ border: 'none' }}
+                  />
+                </PaymentIframeContainer>
               </div>
             ) : (
               <I18n ns="translations">
