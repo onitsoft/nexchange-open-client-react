@@ -65,25 +65,24 @@ class OrderCta extends Component {
 
   render() {
     return (
-    <I18n ns="translations">
-    {(t) => (        
-      <div>
-        <PnlTracking {...this.props}/>
-        {!this.props.email.value &&
-          this.state.show && (
-            <OrderNotifications
-              order={this.props.order}
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              email={this.state.email}
-              message={this.state.message}
-            />
-          )}
+      <I18n ns="translations">
+        {t => (
+          <div>
+            {/* <PnlTracking {...this.props}/> */}
+            {!this.props.email.value && this.state.show && (
+              <OrderNotifications
+                order={this.props.order}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                email={this.state.email}
+                message={this.state.message}
+              />
+            )}
 
-        {this.props.email.value && this.state.show && <OrderReferrals order={this.props.order} />}
-      </div>
-	 )}
-	</I18n>
+            {this.props.email.value && this.state.show && <OrderReferrals order={this.props.order} />}
+          </div>
+        )}
+      </I18n>
     );
   }
 }
@@ -91,7 +90,4 @@ class OrderCta extends Component {
 const mapStateToProps = ({ email }) => ({ email });
 const mapDistachToProps = dispatch => bindActionCreators({ setUserEmail }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDistachToProps
-)(OrderCta);
+export default connect(mapStateToProps, mapDistachToProps)(OrderCta);
