@@ -39,7 +39,7 @@
   margin: 24px 0 0 0;
   font-size: 22px;
   line-height: 24px;
-  font-family: 'Clan Offc Pro Medium';
+  font-family: 'Clan Offc Pro Medium', sans-serif;
   color: #fff;
 
   @media (min-width: $screen-sm-min) {
@@ -56,7 +56,7 @@
 }
 
 .period {
-  font-family: 'Clan Offc Pro Book';
+  font-family: 'Clan Offc Pro Book', sans-serif;
   font-size: 9px;
   color: #fff;
   text-transform: uppercase;

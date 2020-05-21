@@ -19,7 +19,7 @@ class OrderCoinsProcessed extends Component {
   componentDidMount() {
     const pair = `${this.props.order.pair.base.code}${this.props.order.pair.quote.code}`;
     const url = `${config.API_BASE_URL}/get_price/${pair}/`;
-    console.log('actual url is ', `${config.API_BASE_URL}/get_price/${pair}/`);
+
     axios
       .get(url)
       .then(res => {
@@ -38,8 +38,11 @@ class OrderCoinsProcessed extends Component {
   }
 
   componentDidUpdate(prevProps, prevState){
+    const orderStatus = this.props.order.status_name[0][0];
     const deadlineFinished = new Date(this.props.order.payment_deadline).getTime() < Date.now();
-    if (deadlineFinished) {
+    
+    // Comment: Show dynamic rates only if order status is initial
+    if (deadlineFinished && orderStatus === 11) {
       if(!this.state.dynamicRates) this.setState({dynamicRates: true})
       
       if(!prevState.dynamicRates && this.state.dynamicRates) {
