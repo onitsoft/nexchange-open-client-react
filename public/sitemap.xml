@@ -24,6 +24,13 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/faq" />
   </url>
   <url>
+    <loc>https://n.exchange/en/about</loc>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/about" />
+  </url>
+  <url>
     <loc>https://n.exchange/en/signup</loc>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/signup" />
