@@ -14,6 +14,7 @@ class CoinInput extends PureComponent {
     value: '...',
     fetching: this.props.price.fetching,
     inputClass: undefined,
+    changed: false,
   };
 
   handleFocus = event => {
@@ -34,7 +35,7 @@ class CoinInput extends PureComponent {
     if (!re.test(value) && value !== '') return;
 
     value = value.replace(/,/g, '.');
-    this.setState({ value });
+    this.setState({ value, changed: true });
     this.fetchAmounts(value);
 
     // Add error class to input if less than min or more than max
@@ -85,14 +86,14 @@ class CoinInput extends PureComponent {
   };
 
   UNSAFE_componentWillReceiveProps = nextProps => {
-    if (nextProps.price.fetching !== this.state.fetching) {
-      this.setState({ fetching: nextProps.price.fetching });
-    }
+    if (nextProps.price.lastEdited !== this.props.type && this.state.changed) this.setState({ changed: false });
 
-    const updatedAmount = nextProps.price[this.props.type];
-
-    if ((updatedAmount && updatedAmount !== '...') || nextProps.lastEdited === this.props.type) {
-      if (updatedAmount !== this.state.value) this.setState({ value: updatedAmount });
+    if (nextProps.price.fetching && !this.state.changed) {
+      this.setState({ value: '...' });
+    } else {
+      this.setState({ fetching: false });
+      const updatedAmount = nextProps.price[this.props.type];
+      if (updatedAmount && updatedAmount !== '...' && updatedAmount !== this.state.value) this.setState({ value: updatedAmount });
     }
   };
 
