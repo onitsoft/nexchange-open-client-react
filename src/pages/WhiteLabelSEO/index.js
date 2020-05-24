@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import { graphql } from 'react-apollo';
@@ -94,35 +94,35 @@ const plans = [
   },
   {
     name: 'crypto',
-    setup: 2500,
-    monthly: 200,
-    duration: 12,
+    // setup: 2500,
+    monthly: 195,
+    // duration: 12,
     devhours: 1,
     hourprice: 100,
     coinlist: 5000,
-    chatbot: true,
+    chatbot: 195,
     support: true,
   },
   {
     name: 'fiat',
-    setup: 5000,
-    monthly: 400,
-    duration: 12,
+    // setup: 5000,
+    monthly: 375,
+    // duration: 12,
     devhours: 2,
     hourprice: 100,
     coinlist: 5000,
-    chatbot: true,
+    chatbot: 95,
     support: true,
   },
   {
     name: 'ieo',
-    setup: 9800,
-    monthly: 800,
-    duration: 12,
+    // setup: 9800,
+    monthly: 750,
+    // duration: 12,
     devhours: 4,
     hourprice: 100,
     coinlist: 0,
-    chatbot: true,
+    chatbot: 0,
     support: true,
   },
 ];

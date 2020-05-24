@@ -566,15 +566,15 @@
           "text": "Apply Now"
         },
         "crypto": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=Crypto+only",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+to+crypto+only+($195/month)",
           "text": "Apply Now"
         },
         "fiat": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+%2B+Fiat",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+%2B+Fiat+($375/month)",
           "text": "Apply Now"
         },
         "ieo": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=IEO+(Crypto+%2B+Fiat+%2B+Own+token)",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=IEO+-+Crypto+to+crypto,+Fiat+to+crypto,+Crypto+to+fiat,+Own+token+listing+($750/month)",
           "text": "Apply Now"
         }
       }
@@ -587,7 +587,7 @@
       "devhours": "Included Developer Hours",
       "hourprice": "Additional Developer Hour Price",
       "support": "24/7 Customer Support",
-      "chatbot": "Advanced Chatbot"
+      "chatbot": "Advanced Chatbot (Monthly)"
     },
     "values": {
       "monthly": "{{value, big usd}}",
@@ -597,7 +597,7 @@
       "devhours": "{{value}}",
       "hourprice": "{{value, big usd}}",
       "total": "{{value, big usd}}",
-      "chatbot": "{{value, include}}",
+      "chatbot": "{{value, big usd}}",
       "support": "{{value, include}}"
     },
     "faq": {
