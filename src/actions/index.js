@@ -123,29 +123,33 @@ export const fetchPrice = payload => dispatch => {
       };
 
       if (payload.deposit || payload.receive) {
+        // Comment: Deposit amount in API is same as entered by user
+        const depositIsSame = parseFloat(payload.deposit) === parseFloat(amounts.amount_quote);
+        const receiveIsSame = parseFloat(payload.receive) === parseFloat(amounts.amount_base);
+
         if (payload.deposit) {
-          if (payload.deposit >= amounts.min_amount_quote && payload.deposit <= amounts.max_amount_quote)
+          if (payload.deposit >= amounts.min_amount_quote && payload.deposit <= amounts.max_amount_quote) {
+            depositIsSame ? (data['deposit'] = payload.deposit) : (data['deposit'] = parseFloat(amounts.amount_quote));
             data['receive'] = parseFloat(amounts.amount_base);
-          else data['receive'] = '...';
+          } else {
+            data['deposit'] = parseFloat(amounts.amount_quote);
+            data['receive'] = parseFloat(amounts.amount_base);
+          }
         }
 
         if (payload.receive) {
-          if (payload.receive >= amounts.min_amount_base && payload.receive <= amounts.max_amount_base)
+          if (payload.receive >= amounts.min_amount_base && payload.receive <= amounts.max_amount_base) {
+            receiveIsSame ? (data['receive'] = payload.receive) : (data['receive'] = parseFloat(amounts.amount_base));
             data['deposit'] = parseFloat(amounts.amount_quote);
-          else data['deposit'] = '...';
+          } else {
+            data['deposit'] = parseFloat(amounts.amount_quote);
+            data['receive'] = parseFloat(amounts.amount_base);
+          }
         }
       } else {
         data['deposit'] = parseFloat(amounts.amount_quote);
         data['receive'] = parseFloat(amounts.amount_base);
       }
-
-      // if (payload.deposit || payload.receive) {
-      //   if (payload.deposit) data['receive'] = parseFloat(amounts.amount_base);
-      //   else data['deposit'] = parseFloat(amounts.amount_quote);
-      // } else {
-      //   data['deposit'] = parseFloat(amounts.amount_quote);
-      //   data['receive'] = parseFloat(amounts.amount_base);
-      // }
 
       data['min_amount_quote'] = parseFloat(amounts.min_amount_quote);
       data['max_amount_quote'] = parseFloat(amounts.max_amount_quote);
