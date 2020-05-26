@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HashLink } from "react-router-hash-link";
+import { HashLink } from 'react-router-hash-link';
 import { useLocation } from 'react-router';
 import { I18n } from 'react-i18next';
 import i18n from 'i18next';
@@ -137,7 +137,7 @@ export const HeaderStuff = props => {
                   </Link>
                 </li> */}
 
-                <li>
+                {/* <li>
                   <a
                     className={`${styles.link} hidden-sm hidden-md`}
                     href="http://docs.nexchange2.apiary.io/"
@@ -148,7 +148,7 @@ export const HeaderStuff = props => {
                   >
                     {t('header.apidocs')}
                   </a>
-                </li>
+                </li> */}
 
                 {/* <li>
                   <Link onClick={() => this.closeNavbar()} to="/#compare" className={`${styles.link} hidden-sm`} data-test="compare-link">
@@ -228,6 +228,15 @@ export const HeaderStuff = props => {
                   </a>
 
                   <a
+                    href="/youtube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
+                  >
+                    <i className="fab fa-youtube-f" aria-hidden="true" />
+                  </a>
+
+                  <a
                     href="/slack"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -257,6 +266,20 @@ export const HeaderStuff = props => {
                     data-placement="bottom"
                   >
                     <i className="fab fa-twitter" aria-hidden="true" />
+                  </a>
+                </li>
+
+                <li className="visible-md visible-lg social-desktop">
+                  <a
+                    href="/twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.social} btn btn-simple btn-just-icon`}
+                    title={t('header.youtube')}
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                  >
+                    <i className="fab fa-youtube" aria-hidden="true" />
                   </a>
                 </li>
 

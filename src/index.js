@@ -39,6 +39,7 @@ const Header = React.lazy(() => import('Components/Header/Header'));
 const Footer = React.lazy(() => import('Components/Footer'));
 const NotFound = React.lazy(() => import('Components/NotFound/NotFound'));
 const FAQ = React.lazy(() => import('Components/FAQ2/FAQ'));
+const About = React.lazy(() => import('Components/Home/About/About'));
 const Pair = React.lazy(() => import('Components/Pair/Pair'));
 
 const Home = React.lazy(() => import('Components/Home/Home'));
@@ -88,6 +89,7 @@ ReactDOM.render(
                 <Route exact path="/:lang(en|de|ru)" render={props => <Home {...props} store={store} />} />
                 <Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/:lang(en|de|ru)/faqs/:id?" component={FAQ} />
+                <Route exact path="/:lang(en|de|ru)/about" component={About} />
                 <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
                 <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
                 <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />
