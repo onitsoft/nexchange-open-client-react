@@ -142,7 +142,7 @@ class OrderInitial extends Component {
                         className="btn btn-default btn-lg"
                         name="checkoutButton"
                         data-toggle="tooltip"
-                        title={t('order.tooltipTC')}
+                        title={this.state.enablePayment ? '' : t('order.tooltipTC')}
                         style={{ pointerEvents: 'auto' }}
                         onClick={() => {
                           props.order.payment_url && this.state.enablePayment && this.tooglePaymentIFrame();
