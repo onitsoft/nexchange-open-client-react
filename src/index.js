@@ -57,10 +57,16 @@ const Profile = React.lazy(() => import('Pages/Profile'));
 // const Team = React.lazy(() => import('Components/Home/Team/Team'))
 // const About = React.lazy(() => import('Components/Home/About/About'))
 
-const lang = i18n.language || window.localStorage.i18nextLng || 'en';
+const languages = ['en', 'de', 'ru'];
+let lang = i18n.language || window.localStorage.i18nextLng || 'en';
+
+// If for some reason lang variable is not one of the available languages, change the language to en
+if (!languages.includes(lang)) {
+  lang = 'en';
+  i18n.changeLanguage('en');
+}
 
 const NotFoundRedirect = () => {
-  const languages = ['en', 'de', 'ru'];
   const { pathname } = useLocation();
 
   // Comment: Redirects urls like /order/any to /en/order/any
