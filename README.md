@@ -12,7 +12,10 @@ N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange
 4.  Install yarn dependencies `yarn install`.
 5.  Start the project `yarn run start`.
 
-[Install N.exchange front-end on a server](https://medium.com/nexchange/nexchange-io-front-end-client-setup-on-a-server-501ea46f34aa)
+### [Install n.exchange front-end on a server](https://medium.com/nexchange/nexchange-io-front-end-client-setup-on-a-server-501ea46f34aa)
+
+### [Full YouTube toturial on how to develop your own DEX exchange using n.exchange open-source](https://www.youtube.com/watch?v=7ujmzb3HzCA)
+
 
 ## Contributing
 
