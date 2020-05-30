@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 
 import { graphql } from 'react-apollo';
@@ -20,20 +20,56 @@ const youtubeOptions = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
+    mute: 1,
   },
 };
+const StyledYoutube = styled(YouTube)`
+  @media (min-width: 1280px) {
+    ${props =>
+      !props.videoInViewport && {
+        position: 'fixed !important',
+        height: '16rem',
+        width: '24rem',
+        top: 'initial !important',
+        bottom: '2rem !important',
+        left: '2rem !important',
+      }}
+  }
+`;
 
 const WhiteLabelSEO = ({ data, ...props }) => {
   const { pages } = data;
   const { title, videoId, topics, faq, main, createdAt, updatedAt } = (pages && pages[0]) || {};
+  const [videoInViewport, setVideoInViewport] = useState(true);
+
+  const scrollListener = () => {
+    if (window.pageYOffset > window.screen.height && videoInViewport) {
+      setVideoInViewport(false);
+      return;
+    }
+    if (window.pageYOffset < window.screen.height && !videoInViewport) {
+      setVideoInViewport(true);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, [scrollListener]);
 
   return (
     <StyledWhitelabel>
       <VideoCard
         title={title}
         content={
-          <YouTube
+          <StyledYoutube
+            id="whitelabel-video"
             videoId={videoId}
+            videoInViewport={videoInViewport}
             opts={youtubeOptions}
             onPlay={() => {
               window.gtag('event', 'Whitelabel Video', { event_category: 'interaction', event_label: `Video Start` });
