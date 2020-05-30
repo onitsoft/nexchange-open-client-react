@@ -20,12 +20,14 @@
     "compare": "Vergleich Kurse",
     "support": "Support",
     "twitter": "Folgen Sie uns Twitter",
+    "youtube": "Subscribe to our channel on Youtube",
     "facebook": "Liken Sie uns Facebook",
     "telegram": "Begleiten Sie uns auf Telegram",
     "slack": "Treten Sie uns auf Slack bei",
     "en": "Englisch",
     "de": "Deutsch",
-    "ru": "Russisch"
+    "ru": "Russisch",
+    "listcoin": "Bezahlte Kryptowährungsliste"
   },
   "hero": {
     "1": "Umtausch von Kryptowährungen",
@@ -266,6 +268,7 @@
     "rates": "Kurs bei Erstellung des Auftrages",
     "fee": "Auszahlungsgebühr",
     "feeinfo": "Der angegebene Preis ist endgültig, alle Gebühren sind inbegriffen.",
+    "tooltipTC": "Durch Klicken auf' JETZT ZAHLEN 'stimmen Sie unseren Nutzungsbedingungen und Datenschutzbestimmungen zu.",
     "refund": "Ihr Auftrag wurde storniert und rueckerstatet. Sollten Sie Fragen haben kontaktieren Sie unseren Support im Livechat oder unter der E-Mail ",
     "fiat": {
       "cardsaccepted": "Kreditkarten werden akzeptiert",
@@ -339,7 +342,7 @@
     "action": "Benachrichtigungen zum Vorgang erhalten",
     "kycupdate": "KYC Status wurde aktualisiert für den Auftrag",
     "email": "Geben Sie Ihre E-Mail ein",
-    "explanation": "Geben Sie Ihre E-Mail Adresse an, um unseren Empfehlungsprogramm beizutreten & um Benachrichtigungen über den Status Ihrer Transaktion zu erhalten."
+    "explanation": "Fügen Sie Ihre E-Mail-Adresse hinzu, um über den Status Ihrer Transaktionen informiert zu werden"
   },
   "referral": {
     "1": "Teilen Sie diesen einmaligen Verweis-Link mit Ihren Freunden, um einige Coins dazu zu verdienen!",
