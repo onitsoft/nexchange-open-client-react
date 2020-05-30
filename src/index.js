@@ -39,6 +39,7 @@ const Header = React.lazy(() => import('Components/Header/Header'));
 const Footer = React.lazy(() => import('Components/Footer'));
 const NotFound = React.lazy(() => import('Components/NotFound/NotFound'));
 const FAQ = React.lazy(() => import('Components/FAQ2/FAQ'));
+const About = React.lazy(() => import('Components/Home/About/About'));
 const Pair = React.lazy(() => import('Components/Pair/Pair'));
 
 const Home = React.lazy(() => import('Components/Home/Home'));
@@ -56,10 +57,16 @@ const Profile = React.lazy(() => import('Pages/Profile'));
 // const Team = React.lazy(() => import('Components/Home/Team/Team'))
 // const About = React.lazy(() => import('Components/Home/About/About'))
 
-const lang = i18n.language || window.localStorage.i18nextLng || 'en';
+const languages = ['en', 'de', 'ru'];
+let lang = i18n.language || window.localStorage.i18nextLng || 'en';
+
+// If for some reason lang variable is not one of the available languages, change the language to en
+if (!languages.includes(lang)) {
+  lang = 'en';
+  i18n.changeLanguage('en');
+}
 
 const NotFoundRedirect = () => {
-  const languages = ['en', 'de', 'ru'];
   const { pathname } = useLocation();
 
   // Comment: Redirects urls like /order/any to /en/order/any
@@ -88,6 +95,7 @@ ReactDOM.render(
                 <Route exact path="/:lang(en|de|ru)" render={props => <Home {...props} store={store} />} />
                 <Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />
                 <Route exact path="/:lang(en|de|ru)/faqs/:id?" component={FAQ} />
+                <Route exact path="/:lang(en|de|ru)/about" component={About} />
                 <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
                 <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
                 <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />

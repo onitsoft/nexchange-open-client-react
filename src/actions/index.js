@@ -23,7 +23,7 @@ export const selectCoin = (selectedCoins, pairs) => dispatch => {
     type: types.COIN_SELECTED,
     payload: {
       selectedCoins,
-      pairs
+      pairs,
     },
   });
 };
@@ -42,7 +42,6 @@ export const setMemo = payload => ({
   payload,
 });
 
-
 export const fetchCoinDetails = () => dispatch => {
   const url = `${config.API_BASE_URL}/currency/`;
   const request = axios.get(url);
@@ -57,7 +56,7 @@ export const fetchCoinDetails = () => dispatch => {
 
       if (params && params.hasOwnProperty('test')) {
         coins = _.filter(response.data, {
-          has_enabled_pairs_for_test: true
+          has_enabled_pairs_for_test: true,
         });
       } else if (isWhiteLabel) {
         coins = _.filter(response.data, {
@@ -66,13 +65,13 @@ export const fetchCoinDetails = () => dispatch => {
         });
       } else {
         coins = _.filter(response.data, {
-          has_enabled_pairs: true
+          has_enabled_pairs: true,
         });
       }
 
       dispatch({
         type: types.COINS_INFO,
-        payload: coins
+        payload: coins,
       });
     })
     .catch(error => {
@@ -85,10 +84,12 @@ export const fetchPrice = payload => dispatch => {
   const pair = payload.pair;
   const lastEdited = payload.lastEdited;
 
-  dispatch(errorAlert({
-    show: false,
-    type: types.INVALID_AMOUNT
-  }));
+  dispatch(
+    errorAlert({
+      show: false,
+      type: types.INVALID_AMOUNT,
+    })
+  );
 
   //Set deposit value using amount_quote param in url.
   if (payload && !payload.deposit) {
@@ -98,9 +99,9 @@ export const fetchPrice = payload => dispatch => {
     }
   }
 
-  if (payload.coinSelector) {
+  if (payload.coinSelector || payload.deposit || payload.receive) {
     dispatch({
-      type: types.FETCHING_PRICE
+      type: types.FETCHING_PRICE,
     });
   }
 
@@ -118,11 +119,38 @@ export const fetchPrice = payload => dispatch => {
 
     const setValidValues = amounts => {
       const data = {
-        pair
+        pair,
       };
 
-      data['deposit'] = parseFloat(amounts.amount_quote);
-      data['receive'] = parseFloat(amounts.amount_base);
+      if (payload.deposit || payload.receive) {
+        // Comment: Deposit amount in API is same as entered by user
+        const depositIsSame = parseFloat(payload.deposit) === parseFloat(amounts.amount_quote);
+        const receiveIsSame = parseFloat(payload.receive) === parseFloat(amounts.amount_base);
+
+        if (payload.deposit) {
+          if (payload.deposit >= amounts.min_amount_quote && payload.deposit <= amounts.max_amount_quote) {
+            depositIsSame ? (data['deposit'] = payload.deposit) : (data['deposit'] = parseFloat(amounts.amount_quote));
+            data['receive'] = parseFloat(amounts.amount_base);
+          } else {
+            data['deposit'] = parseFloat(amounts.amount_quote);
+            data['receive'] = parseFloat(amounts.amount_base);
+          }
+        }
+
+        if (payload.receive) {
+          if (payload.receive >= amounts.min_amount_base && payload.receive <= amounts.max_amount_base) {
+            receiveIsSame ? (data['receive'] = payload.receive) : (data['receive'] = parseFloat(amounts.amount_base));
+            data['deposit'] = parseFloat(amounts.amount_quote);
+          } else {
+            data['deposit'] = parseFloat(amounts.amount_quote);
+            data['receive'] = parseFloat(amounts.amount_base);
+          }
+        }
+      } else {
+        data['deposit'] = parseFloat(amounts.amount_quote);
+        data['receive'] = parseFloat(amounts.amount_base);
+      }
+
       data['min_amount_quote'] = parseFloat(amounts.min_amount_quote);
       data['max_amount_quote'] = parseFloat(amounts.max_amount_quote);
       data['min_amount_base'] = parseFloat(amounts.min_amount_base);
@@ -131,7 +159,7 @@ export const fetchPrice = payload => dispatch => {
 
       dispatch({
         type: types.PRICE_FETCHED,
-        payload: data
+        payload: data,
       });
 
       resolve();
@@ -139,7 +167,7 @@ export const fetchPrice = payload => dispatch => {
 
     const setFaultyValues = err => {
       let data = {
-        pair
+        pair,
       };
 
       if (err.response.data) {
@@ -149,7 +177,7 @@ export const fetchPrice = payload => dispatch => {
         data['max_amount_base'] = parseFloat(err.response.data.max_amount_base);
       }
 
-      window.gtag('event', 'Change amount', {event_category: 'Amount Input', event_label: `Amount too high/low error`});
+      window.gtag('event', 'Change amount', { event_category: 'Amount Input', event_label: `Amount too high/low error` });
 
       if ('receive' in payload) {
         data['deposit'] = '...';
@@ -163,7 +191,7 @@ export const fetchPrice = payload => dispatch => {
 
       dispatch({
         type: types.PRICE_FETCHED,
-        payload: data
+        payload: data,
       });
 
       if (err.response && err.response.data) {
@@ -175,10 +203,12 @@ export const fetchPrice = payload => dispatch => {
           })
         );
       } else {
-        dispatch(errorAlert({
-          show: false,
-          type: types.INVALID_AMOUNT
-        }));
+        dispatch(
+          errorAlert({
+            show: false,
+            type: types.INVALID_AMOUNT,
+          })
+        );
       }
 
       reject();
@@ -191,7 +221,7 @@ export const fetchPrice = payload => dispatch => {
       const amounts = await makeRequest(url);
       setValidValues(amounts);
     } catch (err) {
-      window.gtag('event', 'Fetch default amounts', {event_category: 'Coin Selector', event_label: ``});
+      window.gtag('event', 'Fetch default amounts', { event_category: 'Coin Selector', event_label: `` });
 
       if (payload.coinSelector) {
         const url = `${config.API_BASE_URL}/get_price/${pair}/`;
@@ -205,13 +235,12 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = ({base, quote} = {}) => dispatch => {
+export const fetchPairs = ({ base, quote } = {}) => dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
   return request
     .then(async response => {
-
       let params = urlParams();
       const pathNameParams = window.location.pathname.split('/');
       // Checks if pathname section of url has params.
@@ -230,28 +259,30 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
 
       dispatch({
         type: types.PAIRS_FETCHED,
-        payload: processedPairs
+        payload: processedPairs,
       });
 
-      let depositCoin = base
-      let receiveCoin = quote
+      let depositCoin = base;
+      let receiveCoin = quote;
 
-      const loadPair = (pair) => { 
-        const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`
+      const loadPair = pair => {
+        const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`;
         return new Promise((resolve, reject) => {
           axios
             .get(url)
             .then(res => resolve(res.data))
-            .catch((err) => {resolve(pickRandomPair());});
+            .catch(err => {
+              resolve(pickRandomPair());
+            });
         });
       };
 
-      const pickMostTraded = () => { 
+      const pickMostTraded = () => {
         return new Promise((resolve, reject) => {
           axios
             .get(`${config.API_BASE_URL}/pair/most_traded/`)
             .then(res => resolve(res.data))
-            .catch((err) => resolve(null));
+            .catch(err => resolve(null));
         });
       };
 
@@ -275,11 +306,10 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
             /* istanbul ignore next */
             console.log('Error:', err);
           }
-        }
-        else if (params && params.hasOwnProperty('pair')) {
+        } else if (params && params.hasOwnProperty('pair')) {
           try {
             const pair = await loadPair(params.pair);
-            if(pair){
+            if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
             }
@@ -289,7 +319,7 @@ export const fetchPairs = ({base, quote} = {}) => dispatch => {
           }
         } else {
           const pair = await pickMostTraded();
-          if(pair){
+          if (pair) {
             depositCoin = pair.quote;
             receiveCoin = pair.base;
           } else {
@@ -346,20 +376,20 @@ export const fetchOrder = orderId => async dispatch => {
         //If order ref not found in /orders, search in /limit_order
         const urlLimitOrder = `${config.API_BASE_URL}/limit_order/${orderId}/`;
         const requestLimitOrder = axios.get(urlLimitOrder);
-      
+
         return requestLimitOrder
-        .then(res => {
-          const order = res.data;
-          order.isLimitOrder = true;
-          dispatch(setOrder(order));
-        })
-        .catch(error => {
-          if (error.response && error.response.status === 429) {
-            dispatch(setOrder(429));
-          } else if (error.response) {
-            dispatch(setOrder(404));
-          }
-        });
+          .then(res => {
+            const order = res.data;
+            order.isLimitOrder = true;
+            dispatch(setOrder(order));
+          })
+          .catch(error => {
+            if (error.response && error.response.status === 429) {
+              dispatch(setOrder(429));
+            } else if (error.response) {
+              dispatch(setOrder(404));
+            }
+          });
       }
     });
 };
@@ -368,10 +398,14 @@ export const fetchKyc = orderId => async dispatch => {
   const url = `${config.API_BASE_URL}/kyc/${orderId}/`;
   const request = axios.get(url);
 
-  return request.then(res => dispatch({
-    type: types.SET_KYC,
-    kyc: res.data
-  })).catch(error => {});
+  return request
+    .then(res =>
+      dispatch({
+        type: types.SET_KYC,
+        kyc: res.data,
+      })
+    )
+    .catch(error => {});
 };
 
 export const fetchUserEmail = () => async dispatch => {
@@ -380,18 +414,22 @@ export const fetchUserEmail = () => async dispatch => {
   const url = `${config.API_BASE_URL}/users/me/`;
   const request = axios.get(url);
 
-  return request.then(res => dispatch({
-    type: types.SET_EMAIL,
-    value: res.data.email
-  }));
+  return request.then(res =>
+    dispatch({
+      type: types.SET_EMAIL,
+      value: res.data.email,
+    })
+  );
 };
 
 export const setUserEmail = formData => async dispatch => {
   if (!localStorage.token) return;
-  let isObject = typeof(formData) === 'object';
-  let payload = (isObject ? formData : {
-    email: formData
-  });
+  let isObject = typeof formData === 'object';
+  let payload = isObject
+    ? formData
+    : {
+        email: formData,
+      };
 
   const url = `${config.API_BASE_URL}/users/me/`;
   const request = axios.put(url, payload);
@@ -407,7 +445,7 @@ export const setUserEmail = formData => async dispatch => {
         },
       });
     })
-    .catch((e) => {
+    .catch(e => {
       let errorMessage = i18n.t('generalterms.formfailed');
 
       dispatch({
@@ -420,7 +458,6 @@ export const setUserEmail = formData => async dispatch => {
       });
     });
 };
-
 
 //ORDER BOOK
 export const changeOrderMode = mode => ({
@@ -436,232 +473,236 @@ export const changeOrderBookValue = orderBook => ({
 export const fetchOrderBook = payload => dispatch => {
   const orderBook = payload.orderBook;
 
-  if(!payload.pair){
+  if (!payload.pair) {
     dispatch({
       type: types.ORDER_BOOK_DATA_FETCHED,
-      orderBook
+      orderBook,
     });
   }
-  
-  let url = `${config.API_BASE_URL}/limit_order/?`
+
+  let url = `${config.API_BASE_URL}/limit_order/?`;
   url += `pair=${payload.pair}`;
-  if(payload.status){url += `&book_status=${payload.status}`;}
-  if(payload.type){url += `&order_type=${payload.type}`;}
-  
+  if (payload.status) {
+    url += `&book_status=${payload.status}`;
+  }
+  if (payload.type) {
+    url += `&order_type=${payload.type}`;
+  }
+
   const request = axios.get(url);
   let data = [];
-  const getData = () => new Promise((resolve, reject) => {
-   return request
-    .then(result => { 
-      data = data.concat(result.data.results) 
-      if (result.data.next != null) {
-        resolve(request());
-      } else {
-        resolve(data);
+  const getData = () =>
+    new Promise((resolve, reject) => {
+      return request
+        .then(result => {
+          data = data.concat(result.data.results);
+          if (result.data.next != null) {
+            resolve(request());
+          } else {
+            resolve(data);
+          }
+        })
+        .catch(error => {
+          /* istanbul ignore next */
+          console.log(error);
+          resolve([]);
+        });
+    });
+
+  return getData()
+    .then(result => {
+      if (payload.status === 'OPEN' && payload.type === 'SELL') {
+        orderBook.sellDepth = generateDepth(result, payload.type);
       }
+      if (payload.status === 'OPEN' && payload.type === 'BUY') {
+        orderBook.buyDepth = generateDepth(result, payload.type);
+      }
+      if (payload.status === 'CLOSED') {
+        orderBook.history = result;
+      }
+
+      dispatch({
+        type: types.ORDER_BOOK_DATA_FETCHED,
+        orderBook,
+      });
     })
     .catch(error => {
       /* istanbul ignore next */
       console.log(error);
-      resolve([]);
+      dispatch({
+        type: types.ORDER_BOOK_DATA_FETCHED,
+        orderBook,
+      });
     });
-  });
-
-
-  return getData()
-  .then(result => {
-    if(payload.status === 'OPEN' && payload.type === "SELL"){
-      orderBook.sellDepth = generateDepth(result, payload.type);
-    }
-    if(payload.status === 'OPEN' && payload.type === "BUY"){
-      orderBook.buyDepth = generateDepth(result, payload.type);
-    }
-    if(payload.status === 'CLOSED'){
-      orderBook.history = result;
-    }    
-
-    dispatch({
-      type: types.ORDER_BOOK_DATA_FETCHED,
-      orderBook
-    });
-  })    
-  .catch(error => {
-    /* istanbul ignore next */
-    console.log(error);
-    dispatch({
-      type: types.ORDER_BOOK_DATA_FETCHED,
-      orderBook
-    });
-  });
-}
+};
 
 export const loadAuth = () => dispatch => {
   if (localStorage.full_token) {
-    const tokenData = JSON.parse(localStorage.full_token)
+    const tokenData = JSON.parse(localStorage.full_token);
     dispatch({
       type: types.AUTH_TOKEN_RECEIVED,
-      payload: tokenData
-    })
+      payload: tokenData,
+    });
   }
-}
+};
 
 export const loadUserDetails = () => dispatch => {
-  return axios.get(`${config.API_BASE_URL}/users/me`)
-    .then(({ data, ...rest }) => {
-      dispatch({
-        type: types.AUTH_USER_PROFILE,
-        payload: data
-      })
-    })
-}
-
+  return axios.get(`${config.API_BASE_URL}/users/me`).then(({ data, ...rest }) => {
+    dispatch({
+      type: types.AUTH_USER_PROFILE,
+      payload: data,
+    });
+  });
+};
 
 export const loadUserOrders = () => dispatch => {
-  return axios.get(`${config.API_BASE_URL}/users/me/orders`)
-    .then(({ data, ...rest }) => {
+  return axios.get(`${config.API_BASE_URL}/users/me/orders`).then(({ data, ...rest }) => {
+    dispatch({
+      type: types.AUTH_LOAD_ORDERS,
+      payload: data.results,
+    });
+  });
+};
 
-      dispatch({
-        type: types.AUTH_LOAD_ORDERS,
-        payload: data.results
-      })
-    })
-}
-
-export const requestPasswordReset = (email) => dispatch => {
-  dispatch({ type: types.AUTH_LOADING })
-  return axios.post(`${config.API_BASE_URL}/password_reset`, {email})
+export const requestPasswordReset = email => dispatch => {
+  dispatch({ type: types.AUTH_LOADING });
+  return axios
+    .post(`${config.API_BASE_URL}/password_reset`, { email })
     .then(({ data, ...rest }) => {
       if (data && data.result && data.result === 'Please check your E-mail') {
         dispatch({
           type: types.AUTH_PASSWORD_RESET,
-          payload: data.result
-        })
+          payload: data.result,
+        });
       }
     })
     .catch(err => {
       if (err && err.response) {
-        const { response: { data } } = err
+        const {
+          response: { data },
+        } = err;
         dispatch({
           type: types.AUTH_PASSWORD_RESET_FAILED,
-          payload: data
-        })
+          payload: data,
+        });
       }
-    })
-}
+    });
+};
 
 export const resetPassword = (hash, password) => dispatch => {
-  if (!hash) throw new Error('Reset token is required')
-  if (!password) throw new Error('Password is required')
-  
-  dispatch({ type: types.AUTH_LOADING })
+  if (!hash) throw new Error('Reset token is required');
+  if (!password) throw new Error('Password is required');
 
-  return axios.post(`${config.API_BASE_URL}/password_reset_complete`, {hash, password})
+  dispatch({ type: types.AUTH_LOADING });
+
+  return axios
+    .post(`${config.API_BASE_URL}/password_reset_complete`, { hash, password })
     .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_PASSWORD_RESET_SUCCESS,
-        payload: data
-      })
+        payload: data,
+      });
     })
     .catch(err => {
       dispatch({
         type: types.AUTH_PASSWORD_RESET_FAILED,
-        payload: err
-      })
-    })
-}
+        payload: err,
+      });
+    });
+};
 
 export const signIn = (username, password) => dispatch => {
-
   const params = {
-    'grant_type': 'password',
-    'client_id': config.AUTH_CLIENT_ID,
-    'username': username,
-    'password': password,
-  }
+    grant_type: 'password',
+    client_id: config.AUTH_CLIENT_ID,
+    username: username,
+    password: password,
+  };
 
-  dispatch({ type: types.AUTH_LOADING })
+  dispatch({ type: types.AUTH_LOADING });
 
-  axios.post(`${config.API_BASE_URL}/oAuth2/token/`, serialize(params), {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    auth: {
-      username: config.AUTH_CLIENT_ID,
-      password: config.AUTH_CLIENT_SECRET
-    }
-
-  })
+  axios
+    .post(`${config.API_BASE_URL}/oAuth2/token/`, serialize(params), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      },
+      auth: {
+        username: config.AUTH_CLIENT_ID,
+        password: config.AUTH_CLIENT_SECRET,
+      },
+    })
     .then(({ data, ...rest }) => {
       const token = {
         ...data,
-        issued_at: Date.now()
-      }
+        issued_at: Date.now(),
+      };
       if (data && data.access_token) {
-        localStorage.token = data.access_token
-        localStorage.full_token = JSON.stringify(token)
+        localStorage.token = data.access_token;
+        localStorage.full_token = JSON.stringify(token);
         dispatch({
           type: types.AUTH_TOKEN_RECEIVED,
-          payload: token
-        })
+          payload: token,
+        });
         dispatch({
-          type: types.AUTH_COMPLETE
-        })
+          type: types.AUTH_COMPLETE,
+        });
       } else {
-        throw new Error('Unexpected authentication result:', {data, ...rest})
+        throw new Error('Unexpected authentication result:', { data, ...rest });
       }
     })
     .catch(err => {
       dispatch({
         type: types.AUTH_FAILED,
-        payload: err
-      })
-    })
+        payload: err,
+      });
+    });
 };
 
-export const signUp = (details) => dispatch => {
-  const { username, password, email, phone } = details
+export const signUp = details => dispatch => {
+  const { username, password, email, phone } = details;
   dispatch({
     type: types.AUTH_SIGN_UP,
-    payload: details
-  })
+    payload: details,
+  });
 
-  return axios.post(`${config.API_BASE_URL}/users`, {
-    username,
-    password,
-    email,
-    phone
-  })
+  return axios
+    .post(`${config.API_BASE_URL}/users`, {
+      username,
+      password,
+      email,
+      phone,
+    })
     .then(({ data, ...rest }) => {
       dispatch({
         type: types.AUTH_USER_REGISTERED,
-        payload: data
-      })
+        payload: data,
+      });
 
-      return data
+      return data;
     })
     .catch(err => {
-      const { response, message } = err
-      const { data } = response || {data: message}
+      const { response, message } = err;
+      const { data } = response || { data: message };
 
-      console.error('Unable to signup. Error:', err)
+      console.error('Unable to signup. Error:', err);
 
       dispatch({
         type: types.AUTH_REGISTRATION_FAILED,
-        payload: data
-      })
+        payload: data,
+      });
 
-      return err
-    })
-}
+      return err;
+    });
+};
 
 export const signOut = () => dispatch => {
-  localStorage.token = localStorage.full_token = null
+  localStorage.token = localStorage.full_token = null;
   dispatch({
-    type: types.AUTH_SIGN_OUT
-  })
-}
+    type: types.AUTH_SIGN_OUT,
+  });
+};
 export const completeRegistration = () => dispatch => {
   dispatch({
-    type: types.AUTH_REGISTRATION_COMPLETE
-  })
-}
+    type: types.AUTH_REGISTRATION_COMPLETE,
+  });
+};

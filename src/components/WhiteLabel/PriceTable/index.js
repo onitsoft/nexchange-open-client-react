@@ -1,82 +1,88 @@
-import React from 'react'
-import { I18n } from 'react-i18next'
-import styled from '@emotion/styled'
-import { TagLink } from 'Components/misc/TagLink'
+import React from 'react';
+import { I18n } from 'react-i18next';
+import styled from '@emotion/styled';
+import classNames from 'classnames';
+import { TagLink } from 'Components/misc/TagLink';
 
+const PriceTable = props => {
+  const { plans } = props;
 
-const PriceTable = (props) => {
-  const { plans } = props
+  if (!plans || !plans.length) return <span>Loading...</span>;
 
-  if (!plans || !plans.length) return <span>Loading...</span>
-
-  const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ')
+  // const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
+  const forder = 'monthly, coinlist, chatbot, devhours, hourprice, support'.split(', ');
 
   return (
     <I18n ns="translations">
       {t => (
-    <PriceContainer>
-      <h2>Pricing</h2>
-      <StyledTable>
-        <thead>
-          <tr>
-            <th className='plans'>Plans</th>
-            {plans.map(({name}) => <th key={`plan-${name}`} className={`p p-${name}`}>{t(`whitelabel.plans.${name}`)}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {forder && forder.length && forder.map(f => (
-            <tr key={`feature-${f}`}>
-              <th className='feature'>{t(`whitelabel.features.${f}`)}</th>
-              {plans.map(({[f]: feature, name}) => (<td key={`feat-${f}-${name}`}>
-                {((feature || typeof feature === 'number') &&
-                  t(`whitelabel.values.${f}`, {value: feature}))
-                ||
-                (!feature && name === 'community' && "N/A")
-                ||
-                (!feature && "&nbsp;")}
-              </td>))}
-            </tr>
-          ))}
-          <tr className='pt'>
-            <th colSpan={plans.length + 1}><strong>Payment Terms</strong></th>
-          </tr>
-          <tr>
-            <th>
-              Total Cost First Year
-              <br />
-              <small>* 50% upfront, 50% upon delivery!</small>
-            </th>
-            {plans.map((plan) => (
-              <td key={`plan-${plan.name}`}>{t(`whitelabel.values.total`, {value: (plan.monthly * 12) + plan.setup})}</td>
-            ))}
-          </tr>
-          <tr>
-            <th />
-            {plans
-              .map((plan) => ({...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`)}))
-              .map((plan) => (
-                <td key={`plankl-${plan.name}`}>
-                  <TagLink
-                    target='_blank'
-                    href={t(`whitelabel.pricing.orderNowLink.${plan.name}.link`)}>
-                    {t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}
-                  </TagLink>
-                </td>
-              ))}
-          </tr>
-        </tbody>
-      </StyledTable>
-    </PriceContainer>
+        <PriceContainer>
+          <h2>Pricing</h2>
+          <StyledTable>
+            <thead>
+              <tr>
+                <th className="plans">Plans</th>
+                {plans.map(({ name }) => (
+                  <th key={`plan-${name}`} className={`p p-${name}`}>
+                    {t(`whitelabel.plans.${name}`)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {forder &&
+                forder.length &&
+                forder.map(f => (
+                  <tr key={`feature-${f}`}>
+                    <th className={classNames('feature', f === 'coinlist' && 'coinlist')}>{t(`whitelabel.features.${f}`)}</th>
+                    {plans.map(({ [f]: feature, name }) => (
+                      <td key={`feat-${f}-${name}`}>
+                        {((feature || typeof feature === 'number') && t(`whitelabel.values.${f}`, { value: feature })) ||
+                          (!feature && name === 'community' && 'N/A') ||
+                          (!feature && '&nbsp;')}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              {/* <tr className="pt">
+                <th colSpan={plans.length + 1}>
+                  <strong>Payment Terms</strong>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  Total Cost First Year
+                  <br />
+                  <small>* 50% upfront, 50% upon delivery!</small>
+                </th>
+                {plans.map(plan => (
+                  <td key={`plan-${plan.name}`}>{t(`whitelabel.values.total`, { value: plan.monthly * 12 + plan.setup })}</td>
+                ))}
+              </tr> */}
+              <tr>
+                <th />
+                {plans
+                  .map(plan => ({ ...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`) }))
+                  .map(plan => (
+                    <td key={`plankl-${plan.name}`}>
+                      <TagLink href={t(`whitelabel.pricing.orderNowLink.${plan.name}.link`)} target="_blank" rel="noopener noreferrer">
+                        {t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}
+                      </TagLink>
+                    </td>
+                  ))}
+              </tr>
+            </tbody>
+          </StyledTable>
+        </PriceContainer>
       )}
     </I18n>
-  )
-}
+  );
+};
 
 const PriceContainer = styled.div`
   > h2 {
     margin-bottom: 4rem;
   }
-`
+`;
 
 const tableStyle = `
   width: 100%;
@@ -88,6 +94,10 @@ const tableStyle = `
   img {
     width: auto;
     max-height: 40px;
+  }
+
+  .coinlist {
+    color: #2cc5bd;
   }
 
   th,
@@ -155,7 +165,7 @@ const tableStyle = `
       padding: 0;
     }
   }
-`
+`;
 
 const StyledTable = styled.table`
   width: 100%;
@@ -175,7 +185,6 @@ const StyledTable = styled.table`
           min-width: 110px;
           max-width: 180px;
           &-community {
-
           }
         }
       }
@@ -197,8 +206,6 @@ const StyledTable = styled.table`
       }
     }
   }
-`
+`;
 
-
-
-export default PriceTable
+export default PriceTable;

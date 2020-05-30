@@ -24,7 +24,7 @@ i18n
         },
       },
       detection: {
-        order: ['cookie', 'localStorage', 'path', 'navigator', 'htmlTag'],
+        order: ['path', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
         lookupCookie: 'i18next',
         lookupLocalStorage: 'i18nextLng',
         lookupFromPathIndex: 0,
