@@ -7,46 +7,33 @@ import styles from './CoinSwitch.scss';
 class CoinSwitch extends Component {
   state = {};
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
-  switchCoins = () => {
+  handleClick = () => {
     const deposit = this.props.selectedCoin.receive;
     const receive = this.props.selectedCoin.deposit;
 
-    this.props.selectCoin({
-      ...this.props.selectedCoin,
-      deposit,
-      receive,
-      selectedByUser: {
-        deposit: true,
-        receive: true
+    this.props.selectCoin(
+      {
+        ...this.props.selectedCoin,
+        deposit,
+        receive,
+        selectedByUser: {
+          deposit: true,
+          receive: true,
+        },
+        orderByAddress: false,
       },
-      orderByAddress: false,
-    });
+      this.props.pairs
+    );
 
-    window.gtag('event', 'Switched coins', {event_category: 'Order', event_label: `${deposit} - ${receive}`});
-  };
-
-  handleClick = () => {
-    this.switchCoins();
+    window.gtag('event', 'Switched coins', { event_category: 'Order', event_label: `${deposit} - ${receive}` });
   };
 
   render() {
-    let switchButtonEnabled = false;
-    const nextDeposit = this.props.selectedCoin.receive;
-    const nextReceive = this.props.selectedCoin.deposit;
-
-    if(this.props.pairs && this.props.pairs[nextDeposit] && this.props.pairs[nextDeposit][nextReceive]){
-      switchButtonEnabled = true;
-    }
-
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
-      <span 
-        className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`} 
-        onClick={switchButtonEnabled ? this.handleClick : null}>
-      </span>
+        <span className={`${styles.icon}`} onClick={this.handleClick}></span>
       </div>
     );
   }
@@ -55,7 +42,4 @@ class CoinSwitch extends Component {
 const mapStateToProps = ({ selectedCoin, pairs }) => ({ selectedCoin, pairs });
 const mapDispatchToProps = dispatch => bindActionCreators({ selectCoin }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CoinSwitch);
+export default connect(mapStateToProps, mapDispatchToProps)(CoinSwitch);
