@@ -16,7 +16,6 @@ const config = {
   KYC_DETAILS_FETCH_INTERVAL: 20000,
   ADVANCED_MODE_ENABLED: true,
   GRAPHCMS_API: 'https://api-euwest.graphcms.com/v1/ck2olkts50bo501i0h3ej7d1f/master',
-  INTERCOM_APP_ID: 'a3zrft9d',
   AUTH_CLIENT_ID: development ? '1rftGOrlUDgZEGKFSg9yIbizOTM26N4QuOQHfBME' : '0JKglYaNEiGxTuAAFMYbXL4m7P6Qk4eWU62LhvMv',
   AUTH_CLIENT_SECRET: development
     ? 'hpS5mRTDN8EWRgTFlDetU6mlMJw5VintTSPazuP0MUil4KyvEQnNAZHN79PObFtjTR8lL9XwTWxboXiMA19f6s4AeWNuZK7X2d1B2icmRj9q1ol5m0Qpp8RAJHVBvSji'

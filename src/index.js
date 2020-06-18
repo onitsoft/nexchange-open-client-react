@@ -17,7 +17,6 @@ import reducers from './reducers';
 import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 
 import GraphCMSProvider from './services/graphcms';
-import Intercom from './services/intercom';
 import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
@@ -106,7 +105,6 @@ ReactDOM.render(
               </Switch>
 
               <Footer />
-              <Intercom />
             </ToTop>
           </Suspense>
         </BrowserRouter>
