@@ -12,10 +12,10 @@ import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMe
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
-import WalletAddress from './WalletAddress/WalletAddress';
-import DestinationTag from './WalletAddress/DestinationTag';
-import PaymentId from './WalletAddress/PaymentId';
-import Memo from './WalletAddress/Memo';
+// import WalletAddress from './WalletAddress/WalletAddress';
+// import DestinationTag from './WalletAddress/DestinationTag';
+// import PaymentId from './WalletAddress/PaymentId';
+// import Memo from './WalletAddress/Memo';
 import Integrations from '../Integrations/Integrations';
 
 import styles from './ExchangeWidget.scss';

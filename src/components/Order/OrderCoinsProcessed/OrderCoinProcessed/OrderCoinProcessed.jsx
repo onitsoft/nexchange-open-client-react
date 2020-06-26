@@ -10,7 +10,7 @@ import WalletAddress from './WalletAddress/WalletAddress';
 class OrderCoinProcessed extends Component {
   constructor(props) {
     super(props);
-    this.state = { order: this.props.order, hiddenAddress: true, showWalletAddressModal: false };
+    this.state = { order: this.props.order, hiddenAddress: true, showWalletAddressModal: true };
     this.hideModal = this.hideModal.bind(this);
   }
 
