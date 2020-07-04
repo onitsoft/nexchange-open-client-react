@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from '@emotion/styled';
+import cx from 'classnames';
 import { connect } from 'react-redux';
 
 import config from 'Config';
@@ -55,15 +56,36 @@ const Content = styled.div`
       padding-bottom: 4rem;
     }
   }
+`;
 
+const AddressInput = styled.div`
   #withdrawal_address,
   #withdrawal_extra_id {
-    width: 100%;
-    border: 1px solid #e0e5ea;
-    border-radius: 100px;
-    height: 5rem;
-    font-size: 1.5rem;
-    padding: 0 2.5rem;
+    input {
+      width: 100%;
+      border: 1px solid #e0e5ea;
+      border-radius: 100px;
+      height: 5rem;
+      font-size: 1.5rem;
+      padding: 0 2.5rem;
+    }
+  }
+
+  /* TODO: Start here */
+  .withdrawal_address_error {
+    display: none;
+  }
+
+  /* if address is invalid */
+  .address_invalid {
+    .withdrawal_address_error {
+      display: block;
+      text-align: right;
+      padding: 1rem 2rem;
+    }
+    input {
+      border: 1px solid #d9534f !important;
+    }
   }
 `;
 
@@ -131,6 +153,7 @@ const CloseButton = styled.button`
 const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
   const [walletAddress, setWalletAddress] = useState({});
   const [prevAddresses, setPrevAddresses] = useState([]);
+  const [addressValid, setAddressValid] = useState();
   const { unique_reference } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
@@ -170,6 +193,7 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
   }, [coin]);
 
   const handleAddressChange = e => {
+    if (addressValid === false) setAddressValid();
     setWalletAddress({ ...walletAddress, address: e.target.value });
   };
 
@@ -178,16 +202,26 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
   };
 
   const handleAddressClick = e => {
-    const selectedAddress = e.target.getAttribute('handleSubmitWalletAddressdata-addr');
+    if (addressValid === false) setAddressValid();
+    const selectedAddress = e.target.getAttribute('data-addr');
     setWalletAddress({ ...walletAddress, address: selectedAddress });
   };
 
   const handleSubmitWalletAddress = () => {
     if (walletAddress.address) {
-      axios.patch(`${config.API_BASE_URL}/orders/${unique_reference}`, {
-        ...walletAddress,
-      });
-    }
+      axios
+        .patch(`${config.API_BASE_URL}/orders/${unique_reference}`, {
+          ...walletAddress,
+        })
+        .catch(err => {
+          const { data } = err.response;
+
+          const invalidAddressRegex = new RegExp(`has invalid characters for a valid address`);
+
+          // address is invalid
+          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressValid(false);
+        });
+    } else setAddressValid(false);
   };
 
   return (
@@ -197,24 +231,33 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
           <img src="/img/icons/close.png" alt="close modal" />
         </CloseButton>
         <h3>What is your {coin} wallet address?</h3>
-        <div>
-          <input
-            type="text"
-            id="withdrawal_address"
-            value={walletAddress.address}
-            placeholder={`Enter your ${coin} wallet address`}
-            onChange={handleAddressChange}
-          />
-          {extraId ? (
+        <AddressInput>
+          <div id="withdrawal_address" className={cx(addressValid === false && 'address_invalid')}>
+            <div className="withdrawal_address_error text-danger">Address Invalid</div>
+            <label htmlFor="withdrawal_address" className="sr-only">
+              Enter your {coin} wallet address
+            </label>
             <input
               type="text"
-              id="withdrawal_extra_id"
-              value={walletAddress.extraId}
-              placeholder={`Enter ${extraName} (optional)`}
-              onChange={handleExtraIdChange}
+              value={walletAddress.address}
+              placeholder={`Enter your ${coin} wallet address`}
+              onChange={handleAddressChange}
             />
+          </div>
+          {extraId ? (
+            <div id="withdrawal_extra_id">
+              <label htmlFor="withdrawal_address" className="sr-only">
+                Enter {extraName} (optional)
+              </label>
+              <input
+                type="text"
+                value={walletAddress.extraId}
+                placeholder={`Enter ${extraName} (optional)`}
+                onChange={handleExtraIdChange}
+              />
+            </div>
           ) : null}
-        </div>
+        </AddressInput>
         {prevAddresses.length > 0 ? (
           <PrevAddress>
             <h4>PREVIOUSLY USED ADDRESSES</h4>
