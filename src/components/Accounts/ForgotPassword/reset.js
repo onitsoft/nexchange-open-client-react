@@ -104,7 +104,7 @@ export const NewPassword = (props) => {
                 )}
                 <div className={styles.resetPassword}>
                   <button disabled={auth.loading} type='submit' className={`${styles.button} ${styles.main}`}>
-                    {!auth.loading ? t('conteinue') : `${t('loading')}...`}
+                    {!auth.loading ? t('continue') : `${t('loading')}...`}
                   </button>
                 </div>
               </form>
