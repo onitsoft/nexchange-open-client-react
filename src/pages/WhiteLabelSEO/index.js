@@ -28,8 +28,8 @@ const StyledYoutube = styled(YouTube)`
     ${props =>
       !props.videoInViewport && {
         position: 'fixed !important',
-        height: '16rem',
-        width: '24rem',
+        height: '24rem',
+        width: '36rem',
         top: 'initial !important',
         bottom: '2rem !important',
         left: '2rem !important',
@@ -37,7 +37,7 @@ const StyledYoutube = styled(YouTube)`
   }
 `;
 
-const WhiteLabelSEO = ({ data, ...props }) => {
+const WhiteLabelSEO = ({ data }) => {
   const { pages } = data;
   const { title, videoId, topics, faq, main, createdAt, updatedAt } = (pages && pages[0]) || {};
   const [videoInViewport, setVideoInViewport] = useState(true);
