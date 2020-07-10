@@ -271,7 +271,7 @@ export const HeaderStuff = props => {
 
                 <li className="visible-md visible-lg social-desktop">
                   <a
-                    href="/twitter"
+                    href="/youtube"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.social} btn btn-simple btn-just-icon`}

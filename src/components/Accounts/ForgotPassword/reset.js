@@ -15,7 +15,7 @@ import styles from '../Accounts.scss';
 
 export const NewPassword = props => {
   const [showSuccessModal, setShowSuccessModal] = useState();
-  const { auth, match, resetToken } = props;
+  const { auth, resetToken } = props;
   const [errorFor, setErrorFor] = useState('');
   const [state, setState] = useState({
     password: '',
