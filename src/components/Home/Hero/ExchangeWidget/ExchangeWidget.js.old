@@ -7,11 +7,15 @@ import i18n from 'Src/i18n';
 import axios from 'axios';
 import config from 'Config';
 
-import { errorAlert, setOrder } from 'Actions/index.js';
+import { setWallet, errorAlert, setOrder, setDestinationTag, setPaymentId, setMemo } from 'Actions/index.js';
 // import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
+import WalletAddress from './WalletAddress/WalletAddress';
+import DestinationTag from './WalletAddress/DestinationTag';
+import PaymentId from './WalletAddress/PaymentId';
+import Memo from './WalletAddress/Memo';
 import Integrations from '../Integrations/Integrations';
 
 import styles from './ExchangeWidget.scss';
@@ -26,6 +30,10 @@ class ExchangeWidget extends Component {
     };
 
     this.placeOrder = this.placeOrder.bind(this);
+    this.focusWalletAddress = this.focusWalletAddress.bind(this);
+    this.focusDestinationTag = this.focusDestinationTag.bind(this);
+    this.focusPaymentId = this.focusPaymentId.bind(this);
+    this.focusMemo = this.focusMemo.bind(this);
   }
 
   componentWillUnmount() {
@@ -33,6 +41,19 @@ class ExchangeWidget extends Component {
   }
 
   placeOrder() {
+    if (!this.props.wallet.valid) {
+      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+        window.gtag('event', 'Place order with empty wallet address', { event_category: 'Order', event_label: `` });
+      }
+
+      this.props.errorAlert({
+        show: true,
+        message: `${i18n.t('error.providevalid')} ${this.props.selectedCoin.receive} ${i18n.t('generalterms.address')}.`,
+      });
+      this.focusWalletAddress();
+      return;
+    }
+
     let data = {
       amount_base: 0,
       amount_quote: 0,
@@ -40,13 +61,20 @@ class ExchangeWidget extends Component {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`,
       },
+      withdraw_address: {
+        address: this.props.wallet.address,
+        name: '',
+        payment_id: this.props.paymentId.paymentId,
+        destination_tag: this.props.destinationTag.destinationTag,
+        memo: this.props.memo.memo,
+      },
     };
 
     if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
     else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
     axios
-      .post(`https://sapi.n.exchange/en/api/v1/orders/`, data)
+      .post(`${config.API_BASE_URL}/orders/`, data)
       .then(response => {
         this.props.setOrder(response.data);
         this.setState({
@@ -71,6 +99,7 @@ class ExchangeWidget extends Component {
           amount_base: parseFloat(this.props.price.deposit),
           quote: this.props.selectedCoin.receive,
           amount_quote: parseFloat(this.props.price.receive),
+          withdraw_address: this.props.wallet.address,
           created_at: new Date(),
         };
         let orderHistory = localStorage['orderHistory'];
@@ -101,6 +130,24 @@ class ExchangeWidget extends Component {
       });
   }
 
+  focusWalletAddress() {
+    if (this.walletInputEl) {
+      this.walletInputEl.focus();
+    }
+  }
+
+  focusDestinationTag() {
+    this.destinationTagInputEl.focus();
+  }
+
+  focusPaymentId() {
+    this.paymentIdInputEl.focus();
+  }
+
+  focusMemo() {
+    this.memoInputEl.focus();
+  }
+
   render() {
     const lang = i18n.language ? i18n.language : 'en';
 
@@ -114,16 +161,34 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
-                    <CoinInput type="deposit" />
+                    <CoinInput type="deposit" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
                     <CoinSwitch />
-                    <CoinInput type="receive" />
+                    <CoinInput type="receive" onSubmit={this.showWalletAddress} walletInput={this.walletInputEl} />
 
+                    <WalletAddress
+                      withdraw_coin="receive"
+                      onSubmit={this.placeOrder}
+                      inputRef={el => (this.walletInputEl = el)}
+                      button={this.button}
+                      focusWalletAddress={this.focusWalletAddress}
+                    />
+                    {this.props.selectedCoin.receive === 'XRP' ? (
+                      <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />
+                    ) : null}
+                    {this.props.selectedCoin.receive === 'XMR' ? (
+                      <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} />
+                    ) : null}
+                    {this.props.selectedCoin.receive === 'XLM' ? (
+                      <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} />
+                    ) : null}
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 
                       {/* eslint max-len: ["error", { "code": 200 }] */}
                       <button
-                        className={`${styles.btn} ${!this.state.loading ? null : 'disabled'} btn btn-block btn-primary proceed `}
+                        className={`${styles.btn} ${
+                          this.props.wallet.valid && !this.state.loading ? null : 'disabled'
+                        } btn btn-block btn-primary proceed `}
                         onClick={this.placeOrder}
                         ref={el => {
                           this.button = el;
@@ -149,11 +214,16 @@ class ExchangeWidget extends Component {
   }
 }
 
-const mapStateToProps = ({ selectedCoin, price, error }) => ({
+const mapStateToProps = ({ selectedCoin, price, error, wallet, destinationTag, paymentId, memo }) => ({
   selectedCoin,
   price,
   error,
+  wallet,
+  destinationTag,
+  paymentId,
+  memo,
 });
-const mapDispatchToProps = dispatch => bindActionCreators({ setOrder, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setWallet, setOrder, errorAlert, setDestinationTag, setPaymentId, setMemo }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExchangeWidget);
