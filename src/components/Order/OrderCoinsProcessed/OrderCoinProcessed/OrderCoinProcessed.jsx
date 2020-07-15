@@ -5,9 +5,15 @@ import isFiatOrder from 'Utils/isFiatOrder';
 import styles from './OrderCoinProcessed.scss';
 import i18n from 'Src/i18n';
 import MinMax from 'Components/MinMax/MinMax';
+import WalletAddress from './WalletAddress/WalletAddress';
 
 class OrderCoinProcessed extends Component {
-  state = { order: this.props.order, hiddenAddress: true };
+  constructor(props) {
+    super(props);
+    this.state = { order: this.props.order, hiddenAddress: true, showWalletAddressModal: false };
+    this.hideModal = this.hideModal.bind(this);
+    this.setAddress = this.setAddress.bind(this);
+  }
 
   componentDidMount() {
     this.prepareState(this.props);
@@ -114,21 +120,16 @@ class OrderCoinProcessed extends Component {
 
   toggle() {
     this.setState({
-      hiddenAddress: !this.state.hiddenAddress
+      hiddenAddress: !this.state.hiddenAddress,
     });
   }
 
   hasAddressId() {
-    return (
-      !_.isEmpty(this.state.paymentId) ||
-      !_.isEmpty(this.state.destinationTag) ||
-      !_.isEmpty(this.state.memo));
+    return !_.isEmpty(this.state.paymentId) || !_.isEmpty(this.state.destinationTag) || !_.isEmpty(this.state.memo);
   }
 
   addressIsTooLong() {
-    return (
-      this.state.address != null && (this.state.address.length >= 42)
-      );
+    return this.state.address != null && this.state.address.length >= 42;
   }
 
   renderExpandButton() {
@@ -136,18 +137,27 @@ class OrderCoinProcessed extends Component {
     renderedExandButton = null;
 
     if (this.addressIsTooLong() || this.hasAddressId()) {
-      renderedExandButton =
+      renderedExandButton = (
         <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
           {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
-        </a>;
+        </a>
+      );
     } else {
-      renderedExandButton =
-        <a className={`${styles['expansion-button']} ${styles['expansion-button-mobile']}`} 
-        onClick={this.toggle.bind(this)}>
+      renderedExandButton = (
+        <a className={`${styles['expansion-button']} ${styles['expansion-button-mobile']}`} onClick={this.toggle.bind(this)}>
           {this.state.hiddenAddress ? 'Expand' : 'Collapse'}
-        </a>;
+        </a>
+      );
     }
     return renderedExandButton;
+  }
+
+  hideModal() {
+    this.setState({ showWalletAddressModal: false });
+  }
+
+  setAddress(address) {
+    this.setState({ address });
   }
 
   renderAddress() {
@@ -168,16 +178,30 @@ class OrderCoinProcessed extends Component {
       addressId = null;
     }
     if (this.state.hiddenAddress) {
-      renderedAddress =
+      renderedAddress = (
         <div className={styles.address}>
           <div className={styles.row}>
-            <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ?
-            styles['deposit'] : ''} ${styles['address-hidden']}`}>
-              <h6>{this.state.address}</h6>
+            <div
+              className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''} ${styles['address-hidden']}`}
+            >
+              {this.props.type === 'Receive' ? (
+                this.state.address ? (
+                  <h6>{this.state.address}</h6>
+                ) : (
+                  <a onClick={() => this.setState({ showWalletAddressModal: true })}>{`Set your wallet ${this.state.coin} Address`}</a>
+                )
+              ) : null}
+              {this.props.type === 'Receive' ? (
+                <WalletAddress
+                  coin={this.state.coin}
+                  showModal={this.state.showWalletAddressModal}
+                  hideModal={this.hideModal}
+                  setAddress={this.setAddress}
+                />
+              ) : null}
             </div>
             <div className={styles.copybuttonright}>
-              {this.props.type === 'Deposit' &&
-              !isFiatOrder(this.props.order) && (
+              {this.props.type === 'Deposit' && !isFiatOrder(this.props.order) && (
                 <i
                   id="copy-address-to-clipboard"
                   className={`${styles.copy} fas fa-copy`}
@@ -188,43 +212,44 @@ class OrderCoinProcessed extends Component {
             </div>
           </div>
         </div>
+      );
     } else {
-      renderedAddress =
-      <div className={styles.address}>
-        <div className={styles.row}>
-          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
-            <h6>{this.state.address}</h6>
+      renderedAddress = (
+        <div className={styles.address}>
+          <div className={styles.row}>
+            <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+              <h6>{this.state.address}</h6>
+            </div>
+            <div className={styles.copybuttonright}>
+              {this.props.type === 'Deposit' && !isFiatOrder(this.props.order) && (
+                <i
+                  id="copy-address-to-clipboard"
+                  className={`${styles.copy} fas fa-copy`}
+                  data-test="copy-address"
+                  onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
+                />
+              )}
+            </div>
           </div>
-          <div className={styles.copybuttonright}>
-            {this.props.type === 'Deposit' &&
-            !isFiatOrder(this.props.order) && (
-              <i
-                id="copy-address-to-clipboard"
-                className={`${styles.copy} fas fa-copy`}
-                data-test="copy-address"
-                onClick={() => this.triggerCopyAddressElementTooltip(this.props.order.deposit_address.address, 'address', null)}
-              />)}
+          <div className={styles.row}>
+            <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
+              <h6>{addressId}</h6>
+            </div>
+            <div className={styles.copybuttonright}>
+              {this.props.type === 'Deposit' &&
+                !isFiatOrder(this.props.order) &&
+                (addressId != null ? (
+                  <i
+                    id="copy-address-id-to-clipboard"
+                    className={`${styles.copy} fas fa-copy`}
+                    data-test="copy-address"
+                    onClick={() => this.triggerCopyAddressElementTooltip(addressId, 'addressId', addressIdType)}
+                  />
+                ) : null)}
+            </div>
           </div>
         </div>
-        <div className={styles.row}>
-          <div className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''}`}>
-            <h6>{addressId}</h6>
-          </div>
-          <div className={styles.copybuttonright}>
-            {this.props.type === 'Deposit' &&
-            !isFiatOrder(this.props.order) && (
-              addressId != null ?
-              <i
-                id="copy-address-id-to-clipboard"
-                className={`${styles.copy} fas fa-copy`}
-                data-test="copy-address"
-                onClick={() => this.triggerCopyAddressElementTooltip(addressId, 'addressId', addressIdType)}
-              /> :
-              null
-            )}
-          </div>
-        </div>
-     </div>
+      );
     }
     return renderedAddress;
   }
@@ -249,16 +274,15 @@ class OrderCoinProcessed extends Component {
                   <b>
                     {this.state.amount} {this.state.coin}
                   </b>
-                  {!this.props.order.isLimitOrder
-                  ?<i
-                    className="fa fa-question-circle"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    style={{ marginLeft: 8 }}
-                    data-original-title={this.renderRates()}
+                  {!this.props.order.isLimitOrder ? (
+                    <i
+                      className="fa fa-question-circle"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      style={{ marginLeft: 8 }}
+                      data-original-title={this.renderRates()}
                     />
-                  : null
-                  }
+                  ) : null}
                 </h5>
                 {this.renderAddress()}
                 {this.renderExpandButton()}
