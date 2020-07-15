@@ -129,7 +129,7 @@ export const fetchPrice = payload => dispatch => {
 
         if (payload.deposit) {
           if (payload.deposit >= amounts.min_amount_quote && payload.deposit <= amounts.max_amount_quote) {
-            depositIsSame ? (data['deposit'] = payload.deposit) : (data['deposit'] = parseFloat(amounts.amount_quote));
+            depositIsSame ? (data['deposit'] = parseFloat(payload.deposit)) : (data['deposit'] = parseFloat(amounts.amount_quote));
             data['receive'] = parseFloat(amounts.amount_base);
           } else {
             data['deposit'] = parseFloat(amounts.amount_quote);
