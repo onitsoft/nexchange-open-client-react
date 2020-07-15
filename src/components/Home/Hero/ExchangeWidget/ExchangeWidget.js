@@ -40,13 +40,14 @@ class ExchangeWidget extends Component {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`,
       },
+      withdraw_address: {},
     };
 
     if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
     else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
 
     axios
-      .post(`https://sapi.n.exchange/en/api/v1/orders/`, data)
+      .post(`${config.API_BASE_URL}/orders/`, data)
       .then(response => {
         this.props.setOrder(response.data);
         this.setState({

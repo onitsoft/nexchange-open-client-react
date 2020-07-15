@@ -150,7 +150,7 @@ const CloseButton = styled.button`
   background: none;
 `;
 
-const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
+const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, order }) => {
   const [walletAddress, setWalletAddress] = useState({});
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressValid, setAddressValid] = useState();
@@ -164,8 +164,13 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
     : null;
 
   useEffect(() => {
-    if (showModal) document.querySelector('#walletAddressModal').classList.add('show');
-    else document.querySelector('#walletAddressModal').classList.remove('show');
+    if (showModal) {
+      document.querySelector('#walletAddressModal').classList.add('show');
+      document.querySelector('body').style.overflowY = 'hidden';
+    } else {
+      document.querySelector('#walletAddressModal').classList.remove('show');
+      document.querySelector('body').style.overflowY = 'auto';
+    }
 
     return () => {
       document.querySelector('#walletAddressModal').classList.remove('show');
@@ -173,7 +178,6 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
   }, [showModal]);
 
   useEffect(() => {
-    document.querySelector('body').style.overflowY = 'hidden';
     const orderHistory = window.localStorage.orderHistory ? JSON.parse(window.localStorage.orderHistory) : null;
 
     if (orderHistory) {
@@ -186,10 +190,6 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
         setPrevAddresses(addresses);
       });
     }
-
-    return () => {
-      document.querySelector('body').overflowY = 'auto';
-    };
   }, [coin]);
 
   const handleAddressChange = e => {
@@ -210,8 +210,22 @@ const WalletAddress = ({ coin, showModal, hideModal, coinsInfo, order }) => {
   const handleSubmitWalletAddress = () => {
     if (walletAddress.address) {
       axios
-        .patch(`${config.API_BASE_URL}/orders/${unique_reference}`, {
-          ...walletAddress,
+        .patch(
+          `${config.API_BASE_URL}/orders/${unique_reference}`,
+          {
+            withdraw_address: {
+              ...walletAddress,
+            },
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.token}`,
+            },
+          }
+        )
+        .then(res => {
+          setAddress(walletAddress.address);
+          hideModal();
         })
         .catch(err => {
           const { data } = err.response;
