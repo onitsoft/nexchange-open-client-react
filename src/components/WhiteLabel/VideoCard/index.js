@@ -1,34 +1,85 @@
-import React, { useState, useCallback } from 'react'
-import { Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
-import styled from '@emotion/styled'
-import { I18n } from 'react-i18next'
-import Support from './Support'
-import Ellipses from 'Components/Ellipses'
+import React, { useState, useEffect, useCallback } from 'react';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { I18n } from 'react-i18next';
+import Support from './Support';
+import Ellipses from 'Components/Ellipses';
 
-const VideoCard = (props) => {
-  const { title, content } = props
-  const [showSupportModal, setShowSupportModal] = useState(false)
+const VideoCard = props => {
+  const { title, content } = props;
+  const [showSupportModal, setShowSupportModal] = useState(false);
+  const [videoInViewport, setVideoInViewport] = useState(true);
+  const [showPip, setShowPip] = useState(true);
 
   const onContactUs = useCallback(() => {
-    setShowSupportModal(s => !s)
-    window.gtag('event', 'Whitelabel Hero', {event_category: 'interaction', event_label: `Click Contact Us`});
-  }, [])
+    setShowSupportModal(s => !s);
+    window.gtag('event', 'Whitelabel Hero', { event_category: 'interaction', event_label: `Click Contact Us` });
+  }, []);
 
+  const scrollListener = () => {
+    if (showPip) {
+      if (window.pageYOffset > window.screen.height && videoInViewport) {
+        setVideoInViewport(false);
+        return;
+      }
+      if (window.pageYOffset < window.screen.height && !videoInViewport) {
+        setVideoInViewport(true);
+        return;
+      }
+    }
+  };
+
+  const handleClosePipMode = () => {
+    setShowPip(false);
+    setVideoInViewport(true);
+    window.removeEventListener('scroll', scrollListener);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, [scrollListener]);
 
   return (
     <I18n ns="translations">
       {t => (
-        <StyledContainer>
-          <div className='container'>
-            <Col className='tls'>
+        <StyledContainer videoInViewport={videoInViewport}>
+          <div className="container">
+            <Col className="tls">
               <h1>{title}</h1>
-              <Button><Link to='/'>{ t('videocard.livepreview') }</Link></Button>
-              <Button onClick={onContactUs}>{ t('videocard.contactus') }</Button>
+              <Button>
+                <Link to="/">{t('videocard.livepreview')}</Link>
+              </Button>
+              <Button onClick={onContactUs}>{t('videocard.contactus')}</Button>
             </Col>
-            <Col className='vid'>
-              {content}
-            </Col>
+            <StyledYoutube videoInViewport={videoInViewport} className="vid-container">
+              <div className="vid">{content}</div>
+              <div className="pip-icons">
+                <div className="social">
+                  <a
+                    href="https://twitter.com/intent/tweet?text=Set%20up%20your%20own%20DEX%20cryptocurrency%20exchange%20in%201%20hour%20by%20@cryptonexchange&url=https://www.youtube.com/watch?v=7ujmzb3HzCA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-twitter" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v=7ujmzb3HzCA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-facebook-f" aria-hidden="true" />
+                  </a>
+                </div>
+                <button type="button" onClick={handleClosePipMode}>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </StyledYoutube>
           </div>
 
           <Ellipses />
@@ -36,12 +87,24 @@ const VideoCard = (props) => {
         </StyledContainer>
       )}
     </I18n>
-  )
-}
+  );
+};
 
-const Col = styled.div`
+const Col = styled.div``;
 
-`
+const StyledYoutube = styled.div`
+  @media (min-width: 1280px) {
+    ${props =>
+      !props.videoInViewport && {
+        position: 'fixed !important',
+        width: '30rem',
+        top: 'initial !important',
+        bottom: '2rem !important',
+        left: '2rem !important',
+        background: '#222834',
+      }}
+  }
+`;
 
 const StyledContainer = styled.div`
   position: relative;
@@ -53,7 +116,7 @@ const StyledContainer = styled.div`
     height: 100vh;
     position: relative;
     z-index: 2;
-    color: #FFF;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,17 +148,40 @@ const StyledContainer = styled.div`
       }
     }
 
-    > .vid {
-      width: 100%;
-      > div {
+    > .vid-container {
+      width: ${props => props.videoInViewport && '100%'};
+      .vid {
         padding-top: 56.25%; /* 16:9 Aspect Ratio */
         width: 100%;
         position: relative;
       }
+
+      .pip-icons {
+        display: none;
+        @media (min-width: 1280px) {
+          padding: 1rem;
+          display: ${props => (props.videoInViewport ? 'none' : 'flex')};
+          justify-content: space-between;
+          align-items: center;
+          a {
+            padding: 0 1rem;
+          }
+          button {
+            background: none;
+            border: none;
+          }
+          i {
+            color: #ffffff;
+            font-size: 1.5rem;
+          }
+        }
+      }
       iframe {
         position: absolute;
-        left: 0; right: 0;
-        top: 0; bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
       }
     }
   }
@@ -109,6 +195,6 @@ const StyledContainer = styled.div`
       }
     }
   }
-`
+`;
 
-export default VideoCard
+export default VideoCard;
