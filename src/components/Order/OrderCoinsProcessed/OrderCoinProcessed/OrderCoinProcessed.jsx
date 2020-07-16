@@ -193,7 +193,9 @@ class OrderCoinProcessed extends Component {
                     {`Set your ${this.state.coin} wallet address`}
                   </a>
                 )
-              ) : null}
+              ) : (
+                <h6>{this.state.address}</h6>
+              )}
               {this.props.type === 'Receive' ? (
                 <WalletAddress
                   coin={this.state.coin}
