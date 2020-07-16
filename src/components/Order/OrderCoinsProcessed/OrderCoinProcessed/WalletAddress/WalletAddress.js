@@ -253,7 +253,7 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
         .catch(err => {
           const { data } = err.response;
 
-          const invalidAddressRegex = new RegExp(`has invalid characters for a valid address`);
+          const invalidAddressRegex = new RegExp(`has invalid characters`);
 
           // address is invalid
           if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressValid(false);
