@@ -188,7 +188,10 @@ class OrderCoinProcessed extends Component {
                 this.state.address ? (
                   <h6>{this.state.address}</h6>
                 ) : (
-                  <a onClick={() => this.setState({ showWalletAddressModal: true })}>{`Set your wallet ${this.state.coin} Address`}</a>
+                  <a onClick={() => this.setState({ showWalletAddressModal: true })}>
+                    <i className="fa fa-pencil-alt" /> &nbsp;
+                    {`Set your ${this.state.coin} wallet address`}
+                  </a>
                 )
               ) : null}
               {this.props.type === 'Receive' ? (
