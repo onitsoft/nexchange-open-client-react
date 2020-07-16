@@ -126,7 +126,7 @@ const Button = styled.div`
     margin-top: 2rem;
 
     @media (min-width: 769px) {
-      display: none;
+      visibility: hidden;
     }
   }
 
@@ -200,7 +200,7 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
       const addresses = [];
 
       orderHistory.forEach(({ quote, withdraw_address }) => {
-        if (quote === coin) {
+        if (quote === coin && withdraw_address) {
           if (!addresses.includes(withdraw_address)) addresses.push(withdraw_address);
         }
         setPrevAddresses(addresses);
@@ -241,6 +241,13 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
         )
         .then(res => {
           setAddress(walletAddress.address);
+
+          // set withdraw address in order history
+          const orderHistory = JSON.parse(window.localStorage.orderHistory);
+          const orderIndex = orderHistory.findIndex(e => e.id === unique_reference);
+          orderHistory[orderIndex].withdraw_address = walletAddress.address;
+          window.localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
           hideModal();
         })
         .catch(err => {
