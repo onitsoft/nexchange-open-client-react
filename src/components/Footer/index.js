@@ -10,7 +10,7 @@ import { showSupportModal } from 'Actions';
 import styled from '@emotion/styled';
 
 const paymentGateways = ['mastercard', 'visa'];
-const aggregators = ['bestchange', 'okchanger', 'kurs', 'exchangesumo', 'emon', 'allchange', 'bestcurs'];
+const aggregators = ['bestchange', 'okchanger', 'emon', 'allchange'];
 
 const Footer = props => {
   const { location } = props;

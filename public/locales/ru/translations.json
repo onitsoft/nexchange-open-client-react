@@ -149,14 +149,6 @@
         "name": "okchanger",
         "url": "https://okchanger.ru"
       },
-      "kurs": {
-        "name": "kurs",
-        "url": "https://kurs.expert"
-      },
-      "exchangesumo": {
-        "name": "exchangesumo",
-        "url": "https://exchangesumo.com/"
-      },
       "emon": {
         "name": "emon",
         "url": "http://e-mon.ru/"
@@ -164,10 +156,6 @@
       "allchange": {
         "name": "allchange",
         "url": "https://allchange.org/"
-      },
-      "bestcurs": {
-        "name": "bestcurs",
-        "url": "https://bestcurs.org/"
       }
     }
   },
