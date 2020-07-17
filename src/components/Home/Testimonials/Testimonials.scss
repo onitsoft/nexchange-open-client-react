@@ -130,3 +130,16 @@
   left: 60px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDM3MC44MTQgMzcwLjgxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzcwLjgxNCAzNzAuODE0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjI5Mi45MiwyNC44NDggMjY4Ljc4MSwwIDc3Ljg5NSwxODUuNDAxIDI2OC43ODEsMzcwLjgxNCAyOTIuOTIsMzQ1Ljk2MSAxMjcuNjM4LDE4NS40MDEgICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzE3NEU2QyIgZGF0YS1vbGRfY29sb3I9IiMxNzRlNmMiPjwvcG9seWdvbj4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+);
 }
+
+.trustpilotWidget {
+  position: absolute !important;
+  left: 100%;
+  width: max-content;
+  bottom: 0;
+  transform: translateX(-100%);
+  padding: 0 1rem 1.5rem 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
