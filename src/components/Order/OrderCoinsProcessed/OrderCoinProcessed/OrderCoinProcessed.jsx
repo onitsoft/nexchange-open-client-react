@@ -11,7 +11,7 @@ class OrderCoinProcessed extends Component {
   constructor(props) {
     super(props);
     this.state = { order: this.props.order, hiddenAddress: true, showWalletAddressModal: false };
-    this.hideModal = this.hideModal.bind(this);
+    this.setModalState = this.setModalState.bind(this);
     this.setAddress = this.setAddress.bind(this);
   }
 
@@ -152,8 +152,8 @@ class OrderCoinProcessed extends Component {
     return renderedExandButton;
   }
 
-  hideModal() {
-    this.setState({ showWalletAddressModal: false });
+  setModalState(givenState) {
+    this.setState({ showWalletAddressModal: givenState });
   }
 
   setAddress(address) {
@@ -199,8 +199,8 @@ class OrderCoinProcessed extends Component {
               {this.props.type === 'Receive' ? (
                 <WalletAddress
                   coin={this.state.coin}
-                  showModal={this.state.showWalletAddressModal}
-                  hideModal={this.hideModal}
+                  modalState={this.state.showWalletAddressModal}
+                  setModalState={this.setModalState}
                   setAddress={this.setAddress}
                 />
               ) : null}
