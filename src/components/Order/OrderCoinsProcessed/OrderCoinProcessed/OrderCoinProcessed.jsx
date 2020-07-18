@@ -136,6 +136,8 @@ class OrderCoinProcessed extends Component {
     let renderedExandButton;
     renderedExandButton = null;
 
+    if (!this.state.address) return null;
+
     if (this.addressIsTooLong() || this.hasAddressId()) {
       renderedExandButton = (
         <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
