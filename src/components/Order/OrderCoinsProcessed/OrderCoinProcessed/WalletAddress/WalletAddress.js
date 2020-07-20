@@ -221,7 +221,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
       } else if (kyc) {
         // fiat order
         const { out_of_limit, is_verifed } = kyc;
-        if (out_of_limit && is_verifed) {
+        if (!out_of_limit && is_verifed) {
           setModalState(true);
           setModalForced(true);
         }
