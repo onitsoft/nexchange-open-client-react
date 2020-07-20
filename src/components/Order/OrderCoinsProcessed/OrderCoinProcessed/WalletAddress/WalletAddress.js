@@ -81,7 +81,9 @@ const AddressInput = styled.div`
     .withdrawal_address_error {
       display: block;
       text-align: right;
-      padding: 1rem 2rem;
+      position: relative;
+      bottom: 1rem;
+      right: 2rem;
     }
     input {
       border: 1px solid #d9534f !important;
@@ -161,7 +163,7 @@ const CloseButton = styled.button`
 const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo, order, kyc }) => {
   const [walletAddress, setWalletAddress] = useState({});
   const [prevAddresses, setPrevAddresses] = useState([]);
-  const [addressValid, setAddressValid] = useState();
+  const [addressError, setAddressError] = useState();
   const [modalForced, setModalForced] = useState(false);
   const { unique_reference, withdraw_address, status_name, deposit_address } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
@@ -228,7 +230,8 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   }, [status_name, withdraw_address, modalForced, kyc]);
 
   const handleAddressChange = e => {
-    if (addressValid === false) setAddressValid();
+    console.log(addressError, !addressError, 'addressError');
+    if (addressError) setAddressError();
     setWalletAddress({ ...walletAddress, address: e.target.value });
   };
 
@@ -237,7 +240,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   };
 
   const handleAddressClick = e => {
-    if (addressValid === false) setAddressValid();
+    if (addressError) setAddressError();
     const selectedAddress = e.target.getAttribute('data-addr');
     setWalletAddress({ ...walletAddress, address: selectedAddress });
   };
@@ -275,9 +278,10 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
           const invalidAddressRegex = new RegExp(`has invalid characters`);
 
           // address is invalid
-          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressValid(false);
+          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressError('Address Invalid');
+          else setAddressError('Something went wrong. Please contact support.');
         });
-    } else setAddressValid(false);
+    } else setAddressError("Withdrawal Address can't be empty");
   };
 
   return (
@@ -288,8 +292,8 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
         </CloseButton>
         <h3>What is your {coin} wallet address?</h3>
         <AddressInput>
-          <div id="withdrawal_address" className={cx(addressValid === false && 'address_invalid')}>
-            <div className="withdrawal_address_error text-danger">Address Invalid</div>
+          <div id="withdrawal_address" className={cx(addressError && 'address_invalid')}>
+            <div className="withdrawal_address_error text-danger">{addressError}</div>
             <label htmlFor="withdrawal_address" className="sr-only">
               Enter your {coin} wallet address
             </label>
