@@ -158,12 +158,12 @@ const CloseButton = styled.button`
   background: none;
 `;
 
-const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo, order }) => {
+const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo, order, kyc }) => {
   const [walletAddress, setWalletAddress] = useState({});
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressValid, setAddressValid] = useState();
   const [modalForced, setModalForced] = useState(false);
-  const { unique_reference, withdraw_address, status_name } = order;
+  const { unique_reference, withdraw_address, status_name, deposit_address } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
     ? extraId
@@ -209,12 +209,23 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
     }
   }, [coin]);
 
+  // force modal
   useEffect(() => {
     if (!withdraw_address && status_name[0][0] === 12 && !modalForced) {
-      setModalState(true);
-      setModalForced(true);
+      // crypto order
+      if (deposit_address) {
+        setModalState(true);
+        setModalForced(true);
+      } else if (kyc) {
+        // fiat order
+        const { out_of_limit, is_verifed } = kyc;
+        if (out_of_limit && is_verifed) {
+          setModalState(true);
+          setModalForced(true);
+        }
+      }
     }
-  }, [status_name, withdraw_address, modalForced]);
+  }, [status_name, withdraw_address, modalForced, kyc]);
 
   const handleAddressChange = e => {
     if (addressValid === false) setAddressValid();
@@ -328,6 +339,6 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   );
 };
 
-const mapStateToProps = ({ coinsInfo, order }) => ({ coinsInfo, order });
+const mapStateToProps = ({ coinsInfo, order, kyc }) => ({ coinsInfo, order, kyc });
 
 export default connect(mapStateToProps)(WalletAddress);
