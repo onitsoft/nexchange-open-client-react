@@ -220,8 +220,8 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
         setModalForced(true);
       } else if (kyc) {
         // fiat order
-        const { out_of_limit, is_verifed } = kyc;
-        if (!out_of_limit && is_verifed) {
+        const { out_of_limit, is_verified } = kyc;
+        if (!out_of_limit && is_verified) {
           setModalState(true);
           setModalForced(true);
         }
@@ -230,7 +230,6 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   }, [status_name, withdraw_address, modalForced, kyc]);
 
   const handleAddressChange = e => {
-    console.log(addressError, !addressError, 'addressError');
     if (addressError) setAddressError();
     setWalletAddress({ ...walletAddress, address: e.target.value });
   };
