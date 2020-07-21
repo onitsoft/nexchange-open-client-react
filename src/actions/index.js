@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from './types';
-import _ from 'lodash';
+import Cookies from 'js-cookie';
 import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import serialize from 'Utils/serialize';
@@ -55,17 +55,21 @@ export const fetchCoinDetails = () => dispatch => {
       let coins;
 
       if (params && params.hasOwnProperty('test')) {
-        coins = _.filter(response.data, {
-          has_enabled_pairs_for_test: true,
+        coins = response.data.filter(elem => {
+          const { has_enabled_pairs_for_test } = elem;
+          return has_enabled_pairs_for_test === true;
         });
       } else if (isWhiteLabel) {
-        coins = _.filter(response.data, {
-          has_enabled_pairs: true,
-          is_crypto: true,
+        coins = response.data.filter(elem => {
+          const { has_enabled_pairs, is_crypto } = elem;
+          if (has_enabled_pairs && is_crypto) return elem;
+
+          return null;
         });
       } else {
-        coins = _.filter(response.data, {
-          has_enabled_pairs: true,
+        coins = response.data.filter(elem => {
+          const { has_enabled_pairs } = elem;
+          return has_enabled_pairs === true;
         });
       }
 
@@ -129,7 +133,7 @@ export const fetchPrice = payload => dispatch => {
 
         if (payload.deposit) {
           if (payload.deposit >= amounts.min_amount_quote && payload.deposit <= amounts.max_amount_quote) {
-            depositIsSame ? (data['deposit'] = payload.deposit) : (data['deposit'] = parseFloat(amounts.amount_quote));
+            depositIsSame ? (data['deposit'] = parseFloat(payload.deposit)) : (data['deposit'] = parseFloat(amounts.amount_quote));
             data['receive'] = parseFloat(amounts.amount_base);
           } else {
             data['deposit'] = parseFloat(amounts.amount_quote);
@@ -602,6 +606,7 @@ export const resetPassword = (hash, password) => dispatch => {
         type: types.AUTH_PASSWORD_RESET_SUCCESS,
         payload: data,
       });
+      Cookies.remove('resetToken');
     })
     .catch(err => {
       dispatch({

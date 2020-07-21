@@ -4,17 +4,13 @@
   margin-top: 30px;
   text-align: center;
   overflow: hidden;
-  
+
   a {
     color: inherit;
     cursor: pointer;
   }
-  
+
   @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
   }
 }
@@ -27,7 +23,7 @@
   float: left;
   width: 33.33%;
   text-align: left;
-  
+
   h5 {
     margin: 30px 0 0 0;
     font-size: 12px;
