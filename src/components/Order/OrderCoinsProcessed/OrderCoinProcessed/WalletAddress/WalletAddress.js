@@ -81,7 +81,9 @@ const AddressInput = styled.div`
     .withdrawal_address_error {
       display: block;
       text-align: right;
-      padding: 1rem 2rem;
+      position: relative;
+      bottom: 1rem;
+      right: 2rem;
     }
     input {
       border: 1px solid #d9534f !important;
@@ -98,17 +100,20 @@ const PrevAddress = styled.div`
   }
   > div {
     margin-top: 2.5rem;
+    max-height: 22rem;
+    overflow-y: auto;
   }
 `;
 
 const SingleAddress = styled.div`
-  padding: 0 0 1rem 0.5rem;
+  padding: 0 0 0.5rem 0.5rem;
   color: #000000;
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   border-bottom: 1px solid #e0e5ea;
   cursor: pointer;
+  margin-bottom: 2rem;
 `;
 
 const Button = styled.div`
@@ -121,6 +126,10 @@ const Button = styled.div`
     border: none;
     background: none;
     margin-top: 2rem;
+
+    @media (min-width: 769px) {
+      visibility: hidden;
+    }
   }
 
   #submit_address {
@@ -142,6 +151,7 @@ const Button = styled.div`
     }
   }
 `;
+
 const CloseButton = styled.button`
   position: absolute;
   top: 1.5rem;
@@ -150,11 +160,12 @@ const CloseButton = styled.button`
   background: none;
 `;
 
-const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, order }) => {
+const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo, order, kyc }) => {
   const [walletAddress, setWalletAddress] = useState({});
   const [prevAddresses, setPrevAddresses] = useState([]);
-  const [addressValid, setAddressValid] = useState();
-  const { unique_reference } = order;
+  const [addressError, setAddressError] = useState();
+  const [modalForced, setModalForced] = useState(false);
+  const { unique_reference, withdraw_address, status_name, deposit_address } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
     ? extraId
@@ -163,19 +174,27 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
         .join(' ')
     : null;
 
+  const enterPressed = e => {
+    if (e.keyCode === 13 && showModal === true) {
+      handleSubmitWalletAddress();
+    }
+  };
+
   useEffect(() => {
-    if (showModal) {
+    if (modalState) {
       document.querySelector('#walletAddressModal').classList.add('show');
       document.querySelector('body').style.overflowY = 'hidden';
+      window.addEventListener('keyup', enterPressed);
     } else {
       document.querySelector('#walletAddressModal').classList.remove('show');
       document.querySelector('body').style.overflowY = 'auto';
+      window.removeEventListener('keyup', enterPressed);
     }
 
     return () => {
       document.querySelector('#walletAddressModal').classList.remove('show');
     };
-  }, [showModal]);
+  }, [modalState]);
 
   useEffect(() => {
     const orderHistory = window.localStorage.orderHistory ? JSON.parse(window.localStorage.orderHistory) : null;
@@ -183,8 +202,8 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
     if (orderHistory) {
       const addresses = [];
 
-      orderHistory.forEach(({ base, withdraw_address }) => {
-        if (base === coin) {
+      orderHistory.forEach(({ quote, withdraw_address }) => {
+        if (quote === coin && withdraw_address) {
           if (!addresses.includes(withdraw_address)) addresses.push(withdraw_address);
         }
         setPrevAddresses(addresses);
@@ -192,8 +211,26 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
     }
   }, [coin]);
 
+  // force modal
+  useEffect(() => {
+    if (!withdraw_address && status_name[0][0] === 12 && !modalForced) {
+      // crypto order
+      if (deposit_address) {
+        setModalState(true);
+        setModalForced(true);
+      } else if (kyc) {
+        // fiat order
+        const { out_of_limit, is_verified } = kyc;
+        if (!out_of_limit && is_verified) {
+          setModalState(true);
+          setModalForced(true);
+        }
+      }
+    }
+  }, [status_name, withdraw_address, modalForced, kyc]);
+
   const handleAddressChange = e => {
-    if (addressValid === false) setAddressValid();
+    if (addressError) setAddressError();
     setWalletAddress({ ...walletAddress, address: e.target.value });
   };
 
@@ -202,7 +239,7 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
   };
 
   const handleAddressClick = e => {
-    if (addressValid === false) setAddressValid();
+    if (addressError) setAddressError();
     const selectedAddress = e.target.getAttribute('data-addr');
     setWalletAddress({ ...walletAddress, address: selectedAddress });
   };
@@ -225,29 +262,37 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
         )
         .then(res => {
           setAddress(walletAddress.address);
-          hideModal();
+
+          // set withdraw address in order history
+          const orderHistory = JSON.parse(window.localStorage.orderHistory);
+          const orderIndex = orderHistory.findIndex(e => e.id === unique_reference);
+          orderHistory[orderIndex].withdraw_address = walletAddress.address;
+          window.localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+          setModalState(false);
         })
         .catch(err => {
           const { data } = err.response;
 
-          const invalidAddressRegex = new RegExp(`has invalid characters for a valid address`);
+          const invalidAddressRegex = new RegExp(`has invalid characters`);
 
           // address is invalid
-          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressValid(false);
+          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressError('Address Invalid');
+          else setAddressError('Something went wrong. Please contact support.');
         });
-    } else setAddressValid(false);
+    } else setAddressError("Withdrawal Address can't be empty");
   };
 
   return (
     <Container id="walletAddressModal">
       <Content>
-        <CloseButton onClick={hideModal}>
+        <CloseButton onClick={() => setModalState(false)}>
           <img src="/img/icons/close.png" alt="close modal" />
         </CloseButton>
         <h3>What is your {coin} wallet address?</h3>
         <AddressInput>
-          <div id="withdrawal_address" className={cx(addressValid === false && 'address_invalid')}>
-            <div className="withdrawal_address_error text-danger">Address Invalid</div>
+          <div id="withdrawal_address" className={cx(addressError && 'address_invalid')}>
+            <div className="withdrawal_address_error text-danger">{addressError}</div>
             <label htmlFor="withdrawal_address" className="sr-only">
               Enter your {coin} wallet address
             </label>
@@ -285,11 +330,11 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
           </PrevAddress>
         ) : null}
         <Button>
-          <button type="button" id="close_modal" onClick={hideModal}>
+          <button type="button" id="close_modal" onClick={() => setModalState(false)}>
             Close this window
           </button>
           <button type="button" id="submit_address" onClick={handleSubmitWalletAddress}>
-            Submit
+            Submit address
           </button>
         </Button>
       </Content>
@@ -297,6 +342,6 @@ const WalletAddress = ({ coin, showModal, hideModal, setAddress, coinsInfo, orde
   );
 };
 
-const mapStateToProps = ({ coinsInfo, order }) => ({ coinsInfo, order });
+const mapStateToProps = ({ coinsInfo, order, kyc }) => ({ coinsInfo, order, kyc });
 
 export default connect(mapStateToProps)(WalletAddress);

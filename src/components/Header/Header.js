@@ -233,7 +233,7 @@ export const HeaderStuff = props => {
                     rel="noopener noreferrer"
                     className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
                   >
-                    <i className="fab fa-youtube-f" aria-hidden="true" />
+                    <i className="fab fa-youtube" aria-hidden="true" />
                   </a>
 
                   <a
@@ -271,7 +271,7 @@ export const HeaderStuff = props => {
 
                 <li className="visible-md visible-lg social-desktop">
                   <a
-                    href="/twitter"
+                    href="/youtube"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.social} btn btn-simple btn-just-icon`}

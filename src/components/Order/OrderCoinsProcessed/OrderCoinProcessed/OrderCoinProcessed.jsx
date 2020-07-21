@@ -11,7 +11,7 @@ class OrderCoinProcessed extends Component {
   constructor(props) {
     super(props);
     this.state = { order: this.props.order, hiddenAddress: true, showWalletAddressModal: false };
-    this.hideModal = this.hideModal.bind(this);
+    this.setModalState = this.setModalState.bind(this);
     this.setAddress = this.setAddress.bind(this);
   }
 
@@ -136,6 +136,8 @@ class OrderCoinProcessed extends Component {
     let renderedExandButton;
     renderedExandButton = null;
 
+    if (!this.state.address) return null;
+
     if (this.addressIsTooLong() || this.hasAddressId()) {
       renderedExandButton = (
         <a className={`${styles['expansion-button']}`} onClick={this.toggle.bind(this)}>
@@ -152,8 +154,8 @@ class OrderCoinProcessed extends Component {
     return renderedExandButton;
   }
 
-  hideModal() {
-    this.setState({ showWalletAddressModal: false });
+  setModalState(givenState) {
+    this.setState({ showWalletAddressModal: givenState });
   }
 
   setAddress(address) {
@@ -188,14 +190,19 @@ class OrderCoinProcessed extends Component {
                 this.state.address ? (
                   <h6>{this.state.address}</h6>
                 ) : (
-                  <a onClick={() => this.setState({ showWalletAddressModal: true })}>{`Set your wallet ${this.state.coin} Address`}</a>
+                  <a onClick={() => this.setState({ showWalletAddressModal: true })}>
+                    <i className="fa fa-pencil-alt" /> &nbsp;
+                    {`Set your ${this.state.coin} wallet address`}
+                  </a>
                 )
-              ) : null}
+              ) : (
+                <h6>{this.state.address}</h6>
+              )}
               {this.props.type === 'Receive' ? (
                 <WalletAddress
                   coin={this.state.coin}
-                  showModal={this.state.showWalletAddressModal}
-                  hideModal={this.hideModal}
+                  modalState={this.state.showWalletAddressModal}
+                  setModalState={this.setModalState}
                   setAddress={this.setAddress}
                 />
               ) : null}
