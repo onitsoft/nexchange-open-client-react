@@ -51,6 +51,7 @@
     "i18next-xhr-backend": "1.5.1",
     "jest": "23.6.0",
     "jquery": "^3.3.1",
+    "js-cookie": "^2.2.1",
     "js-yaml": "^3.13.1",
     "jsonp": "^0.2.1",
     "lodash": ">=4.17.5",
@@ -82,6 +83,7 @@
     "react-redux": "^5.0.7",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.1.1",
+    "react-router-hash-link": "^1.2.2",
     "react-stickynode": "^1.4.1",
     "react-structured-data": "0.0.14",
     "react-svg-inline": "^2.1.0",
@@ -191,5 +193,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

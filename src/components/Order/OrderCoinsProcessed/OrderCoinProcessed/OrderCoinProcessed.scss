@@ -91,6 +91,9 @@
 .address {
   float: left;
   max-width: calc(100% - 30px);
+  a {
+    cursor: pointer;
+  }
 }
 
 .row {

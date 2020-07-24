@@ -69,6 +69,7 @@
     "compare": "Compare Rates",
     "support": "Support",
     "twitter": "Follow us on Twitter!",
+    "youtube": "Subscribe to our channel on Youtube",
     "facebook": "Like us on Facebook",
     "slack": "Join us on Slack",
     "telegram": "Join us on Telegram",
@@ -77,10 +78,11 @@
     "ru": "Russian",
     "resources": "Resources",
     "whitelabel": "White Label",
+    "listcoin": "Custom Coin Listing",
     "apidocumentation": "API Documentation",
     "terms-and-conditions": "Terms and Conditions",
     "privacy-policy": "Privacy Policy",
-    "pricecomparison": "Pricecomparison",
+    "pricecomparsion": "pricecomparsion",
     "team": "Team"
   },
   "account": {
@@ -140,7 +142,7 @@
     "forgotpassword2": "If you want to reset your password, please enter your email address",
     "resetpassword": "Reset Password",
     "resetPasswordBody": "Enter your new password",
-    "registerationOptionalTitle": "Registeration is Optional!",
+    "registerationOptionalTitle": "Registration is Optional!",
     "registerationOptional": "Please be advised that registration isn't required to use n.exchange",
     "register": {
       "successTitle": "Registration Successful",
@@ -175,9 +177,9 @@
       }
     }
   },
- "integrations": {
-    "error" : {
-      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked" 
+  "integrations": {
+    "error": {
+      "metamask": "Metamask extension could not be accessed. Please ensure that it is enabled and it's not locked"
     }
   },
   "recentorders": {
@@ -193,7 +195,7 @@
     "tomo": "Best new instant exchange service! Fast, easy, low fees...",
     "hunterk13": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊"
   },
-  "pricecomparison": {
+  "pricecomparsion": {
     "1": "Real Time Rates",
     "2": "Best rate"
   },
@@ -245,7 +247,25 @@
     "1": "TERMS AND CONDITIONS",
     "2": "PRIVACY POLICY",
     "3": "<0>All rights reserved, YOA LTD 2016-2017,<1></1> England & Wales <4>registered company No. 10009845</4></0>",
-    "popular-pairs": "Exchange"
+    "popular-pairs": "Exchange",
+    "aggregators": {
+      "bestchange": {
+        "name": "bestchange",
+        "url": "https://bestchange.com"
+      },
+      "okchanger": {
+        "name": "okchanger",
+        "url": "https://okchanger.com"
+      },
+      "emon": {
+        "name": "emon",
+        "url": "http://e-mon.ru/"
+      },
+      "allchange": {
+        "name": "allchange",
+        "url": "https://allchange.org/"
+      }
+    }
   },
   "ico": {
     "action": "JOIN OUR ICO",
@@ -373,10 +393,10 @@
     "rates": "Rates at order creation",
     "fee": "Withdrawal fee",
     "feeinfo": "The indicated price is final, all fees are included.",
-    "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/terms-and-conditions'>T&C</a>)",
-    "iAgreedTC": "I have read and agree to the <a href='/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/privacy' target='_blank'>Privacy Policy</a>.",
+    "byclickTC": "*By clicking <b>{{buttonName}}</b> you agree to our Terms and Conditions (<a href='/en/terms-and-conditions'>T&C</a>)",
+    "iAgreedTC": "I have read and agree to the <a href='/en/terms-and-conditions' target='_blank'>Terms and Conditions</a> and <a href='/en/privacy' target='_blank'>Privacy Policy</a>.",
     "iAcknowledgeKYC": "I acknowledge that I have to upload my Identity Document after the payment.",
-    "tooltipTC": "You must agree with T&C and Privacy Policy.",
+    "tooltipTC": "By clicking 'PAY NOW' You agree to our T&C and Privacy Policy.",
     "refund": "Your order has been refunded. Please contact support in the live chat or at",
     "fiat": {
       "cardsaccepted": "Credit cards accepted",
@@ -451,7 +471,7 @@
     "alt": "Get notified",
     "kycupdate": "KYC status updated for order",
     "email": "Enter your e-mail address",
-    "explanation": "Add your email to join our referral program & get notified about the status of your transactions"
+    "explanation": "Add your email to get notified about the status of your transactions"
   },
   "referral": {
     "1": "Share this unique referral link with your friends to earn some coins!",
@@ -536,15 +556,15 @@
           "text": "Apply Now"
         },
         "crypto": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=Crypto+only",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+to+crypto+only+($195/month)",
           "text": "Apply Now"
         },
         "fiat": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+%2B+Fiat",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=Crypto+%2B+Fiat+($375/month)",
           "text": "Apply Now"
         },
         "ieo": {
-          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?usp=pp_url&entry.1162521466=IEO+(Crypto+%2B+Fiat+%2B+Own+token)",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSeb6gJNO3i1VEW3XqjAcXD9SJjQExu2ymw6pIMLniq7CTa_GQ/viewform?entry.1162521466=IEO+-+Crypto+to+crypto,+Fiat+to+crypto,+Crypto+to+fiat,+Own+token+listing+($750/month)",
           "text": "Apply Now"
         }
       }
@@ -557,7 +577,7 @@
       "devhours": "Included Developer Hours",
       "hourprice": "Additional Developer Hour Price",
       "support": "24/7 Customer Support",
-      "chatbot": "Advanced Chatbot"
+      "chatbot": "Advanced Chatbot (Monthly)"
     },
     "values": {
       "monthly": "{{value, big usd}}",
@@ -567,12 +587,12 @@
       "devhours": "{{value}}",
       "hourprice": "{{value, big usd}}",
       "total": "{{value, big usd}}",
-      "chatbot": "{{value, include}}",
+      "chatbot": "{{value, big usd}}",
       "support": "{{value, include}}"
     },
     "faq": {
       "notfound": "Not found",
-      "openticket":"Open support ticket",
+      "openticket": "Open support ticket",
       "questions": {
         "what-is-whitelabel": "What is a white-label exchange?",
         "why-whitelabel": "Why should I use a white-label exchange?"

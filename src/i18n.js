@@ -19,14 +19,17 @@ i18n
       interpolation: {
         escapeValue: false,
         format: (value, format, lng) => {
-          if (format === 'big usd') return '$' + parseFloat(value).toFixed(0)
-          if (format === 'include') return value ? 'Included' : ''
-        }
+          if (format === 'big usd') return '$' + parseFloat(value).toFixed(0);
+          if (format === 'include') return value ? 'Included' : '';
+        },
       },
       detection: {
-        order: ['path', 'cookie', 'localStorage',  'navigator', 'htmlTag'],
-        lookupQuerystring: "lang",
+        order: ['path', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+        lookupCookie: 'i18next',
+        lookupLocalStorage: 'i18nextLng',
         lookupFromPathIndex: 0,
+
+        caches: ['cookie', 'localStorage'],
       },
       saveMissing: true,
 

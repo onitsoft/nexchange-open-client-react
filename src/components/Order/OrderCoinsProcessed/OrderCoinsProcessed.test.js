@@ -4,10 +4,13 @@ import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import OrderCoinsProcessed from './OrderCoinsProcessed';
 import order from 'Mocks/order';
+import config from 'Config';
 
 const axiosMock = new MockAdapter(axios);
 
 describe('OrderCoinsProcessed', () => {
+  let wrapShallow;
+
   beforeEach(() => {
     const mockDataOrder = {
       amount_base: 16030.0,
@@ -23,11 +26,19 @@ describe('OrderCoinsProcessed', () => {
       min_amount_base: 150.0,
       min_amount_quote: 0.00613576,
     };
+
+    wrapShallow = shallow(<OrderCoinsProcessed order={order} />);
     const pairOrder = `${order.pair.base.code}${order.pair.quote.code}`;
-    axiosMock.onGet(`https://api.nexchange.io/en/api/v1/get_price/${pairOrder}/`).reply(200, mockDataOrder);
+    axiosMock.onGet(`${config.API_BASE_URL}/get_price/${pairOrder}/`).reply(200, mockDataOrder);
   });
 
   it('renders correctly', () => {
-    expect(shallow(<OrderCoinsProcessed order={order} />)).toMatchSnapshot();
+    expect(wrapShallow).toMatchSnapshot();
+  });
+
+  it('clears interval on unmount', () => {
+    const spy = jest.spyOn(window, 'clearInterval');
+    wrapShallow.unmount();
+    expect(spy).toHaveBeenCalled();
   });
 });

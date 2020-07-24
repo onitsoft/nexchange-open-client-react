@@ -68,17 +68,17 @@
       text-decoration: underline;
     }
     &.main {
-        background-color: $green;
-        border-radius: 6px;
-        &:hover {
-          background-color: $green !important;
-        }
-        @media (max-width: $screen-sm-min) {
-          color: #fff;
-        }
-        @media (min-width: $screen-sm-min) {
-          margin-right: 10px;
-        }
+      background-color: $green;
+      border-radius: 6px;
+      &:hover {
+        background-color: $green !important;
+      }
+      @media (max-width: $screen-sm-min) {
+        color: #fff;
+      }
+      @media (min-width: $screen-sm-min) {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -120,7 +120,7 @@
   padding: 8px 0;
   font-size: 12px;
   text-transform: uppercase;
-  font-family: 'Clan Offc Pro Medium';
+  font-family: 'Clan Offc Pro Medium', sans-serif;
   color: $black;
 
   &:hover,

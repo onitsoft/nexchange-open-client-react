@@ -23,10 +23,6 @@
   background: linear-gradient(45deg, rgba(2, 3, 31, 1) 0%, rgba(2, 3, 31, 1) 44%, rgba(26, 157, 139, 1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1A9D8B', endColorstr='#02031f',GradientType=1 ); /* ie6-9 */
 
-  @media (min-height: $screen-lg-height) and (min-width: $screen-md-min) {
-    min-height: 100vh;
-  }
-
   @media (min-width: $screen-md-min) {
     background-color: #01031e;
     background-image: url('../../../img/ellipse.svg');
@@ -58,7 +54,7 @@
     margin-bottom: 60px;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'Clan Offc Pro Book';
+    font-family: 'Clan Offc Pro Book', sans-serif;
 
     @media (min-width: $screen-md-min) {
       font-size: 24px;
@@ -69,7 +65,7 @@
     }
 
     span {
-      font-family: 'Clan Offc Pro Medium';
+      font-family: 'Clan Offc Pro Medium', sans-serif;
     }
   }
 }

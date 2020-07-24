@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
+import { Helmet } from 'react-helmet';
 import styles from './Testimonials.scss';
 import data from './data.json';
 import { I18n } from 'react-i18next';
@@ -22,6 +23,9 @@ class Testimonials extends Component {
         {t => (
           <div>
             <div className={styles.header}>
+              <Helmet>
+                <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+              </Helmet>
               <div className="container">
                 <div className="row">
                   <div className="col-xs-12">
@@ -46,12 +50,13 @@ class Testimonials extends Component {
                         pagination={{ el: '.swiper-pagination', clickable: true }}
                       >
                         {data.map(testimonial => (
-                          <a 
-                          className={styles.link} 
-                          href={testimonial.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          key={testimonial.name}>
+                          <a
+                            className={styles.link}
+                            href={testimonial.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={testimonial.name}
+                          >
                             <div className={styles.slide}>
                               <div className={styles.text}>{testimonial.text}</div>
                               <div className={styles.info}>
@@ -65,6 +70,15 @@ class Testimonials extends Component {
                           </a>
                         ))}
                       </Swiper>
+                      <div
+                        className={`trustpilot-widget ${styles.trustpilotWidget}`}
+                        data-locale="en-US"
+                        data-template-id="5419b6a8b0d04a076446a9ad"
+                        data-businessunit-id="59ccf3880000ff0005ac459a"
+                        data-style-height="24px"
+                        data-style-width="100%"
+                        data-theme="light"
+                      ></div>
                     </div>
 
                     <div className={`${styles.prev} ${styles.arrow}`} onClick={this.goPrev} data-test="prev" />

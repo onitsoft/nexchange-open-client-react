@@ -1,26 +1,33 @@
 @font-face {
   font-family: 'Clan Offc Pro Bold';
-  src: local('ClanOffcPro-Bold') format('woff2'), url('../fonts/ClanOffcPro-Bold.woff2') format('woff2'), url('../fonts/ClanOffcPro-Bold.woff') format('woff');
   font-style: normal;
+  src: local('Clan Offc Pro-Bold'), url('/fonts/ClanOffcPro-Bold.woff2') format('woff2'), url('/fonts/ClanOffcPro-Bold.woff') format('woff');
+  unicode-range: U+000-5FF;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Clan Offc Pro Medium';
-  src: local('ClanOffcPro-Medium') format('woff2'), url('../fonts/ClanOffcPro-Medium.woff2') format('woff2'), url('../fonts/ClanOffcPro-Medium.woff') format('woff');
   font-style: normal;
+  src: local('Clan Offc Pro-Medium'), url('/fonts/ClanOffcPro-Medium.woff2') format('woff2'),
+    url('/fonts/ClanOffcPro-Medium.woff') format('woff');
+  unicode-range: U+000-5FF;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Clan Offc Pro Book';
-  src: local('ClanOffcPro-Book') format('woff2'), url('../fonts/ClanOffcPro-Book.woff2') format('woff2'), url('../fonts/ClanOffcPro-Book.woff') format('woff');
   font-style: normal;
+  src: local('Clan Offc Pro-Book'), url('/fonts/ClanOffcPro-Book.woff2') format('woff2'), url('/fonts/ClanOffcPro-Book.woff') format('woff');
+  unicode-range: U+000-5FF;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: local('ClanOffcPro-Bold') format('woff2'), url(../fonts/material-icons.woff2) format('woff2');
+  src: local('ClanOffcPro-Bold'), url(../fonts/material-icons.woff2) format('woff2');
 }
 
 .material-icons {

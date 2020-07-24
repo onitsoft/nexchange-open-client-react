@@ -3,6 +3,8 @@ import { validateWalletAddress } from 'Utils/walletAddress';
 describe('Validate coin address', () => {
   it('validates valid BTC address', () => {
     expect(validateWalletAddress('1C394PrnPG1bw3r7ERJS1pbauRbtf1Kxcx', 'BTC')).toEqual(true);
+    expect(validateWalletAddress('3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy', 'BTC')).toEqual(true);
+    expect(validateWalletAddress('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq', 'BTC')).toEqual(true);
   });
 
   it('invalidates invalid BTC address', () => {

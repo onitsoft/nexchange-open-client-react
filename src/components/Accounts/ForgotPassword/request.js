@@ -48,10 +48,10 @@ const RequestReset = (props) => {
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, {lng}) => (
         <div className='row'>
           <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12 ${styles.container}`}>
-            <Link to="/">
+            <Link to={`/${lng}`}>
                 <div className={styles['logo-container']}>
                     <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
                 </div>

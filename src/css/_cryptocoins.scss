@@ -2,6 +2,7 @@
   font-family: 'cryptocoins';
   src: url('../fonts/cryptocoins/cryptocoins.woff2') format('woff2'), url('../fonts/cryptocoins/cryptocoins.woff') format('woff'),
     url('../fonts/cryptocoins/cryptocoins.ttf') format('truetype');
+  font-display: swap;
 }
 
 .cc::before {
@@ -12,6 +13,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
+  font-display: swap;
   text-decoration: none;
   text-transform: none;
   background-position: 50% 50%;
