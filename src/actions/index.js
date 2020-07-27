@@ -19,9 +19,12 @@ export const setWallet = payload => ({
 });
 
 export const selectCoin = (selectedCoins, pairs) => dispatch => {
-  let validPair = pairs && Object.keys(pairs[selectedCoins.deposit]).includes(selectedCoins.receive);
+  let pairIsValid = true;
 
-  if (selectedCoins.deposit === selectedCoins.receive || validPair === false) {
+  if (selectedCoins.selectedByUser?.deposit || selectedCoins.selectedByUser?.receive)
+    pairIsValid = Object.keys(pairs[selectedCoins.deposit]).includes(selectedCoins.receive);
+
+  if (selectedCoins.deposit === selectedCoins.receive || !pairIsValid) {
     const allPairs = pairs[selectedCoins.deposit];
     const validPairs = {};
 
@@ -30,7 +33,7 @@ export const selectCoin = (selectedCoins, pairs) => dispatch => {
     }
 
     const randomCoin = Math.floor(Math.random() * (Object.keys(validPairs).length - 1) + 1);
-    selectedCoins.receive = Object.keys(validPairs)[randomCoin];
+    if (typeof selectedCoins === 'object') selectedCoins.receive = Object.keys(validPairs)[randomCoin];
   }
 
   dispatch({
