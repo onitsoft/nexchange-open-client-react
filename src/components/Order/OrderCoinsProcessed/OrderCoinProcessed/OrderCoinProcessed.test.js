@@ -5,12 +5,17 @@ import axios from 'axios';
 import OrderCoinProcessed from './OrderCoinProcessed';
 import order from 'Mocks/order';
 import orderFiat from 'Mocks/orderFiat';
+import configureStore from 'redux-mock-store';
 window.$ = window.jQuery = require('jquery');
 
 const axiosMock = new MockAdapter(axios);
 
 describe('OrderCoinProcessed', () => {
+  const mockStore = configureStore();
+  let store;
   beforeEach(() => {
+    store = mockStore(order);
+
     const mockDataOrder = {
       amount_base: 16030.0,
       amount_quote: 0.45302314,
@@ -47,7 +52,7 @@ describe('OrderCoinProcessed', () => {
   });
 
   it('renders correctly and updates props (deposit and crypto)', () => {
-    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" order={order} />).dive();
+    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" store={store} order={order} />).dive();
     expect(wrapShallow).toMatchSnapshot();
     wrapShallow.setProps({ order });
     expect(wrapShallow).toMatchSnapshot();
@@ -55,111 +60,106 @@ describe('OrderCoinProcessed', () => {
 
   it('renders correctly and passes payment id to order initial', () => {
     const order = {
-      "amount_base": "2.79715421",
-      "is_default_rule": false,
-      "unique_reference": "OB9UVL",
-      "amount_quote": "0.05000000",
-      "pair": {
-          "name": "XMRBTC",
-          "base": {
-              "code": "XMR",
-              "name": "monero",
-              "min_confirmations": 10,
-              "is_crypto": true,
-              "minimal_amount": "0.10000000",
-              "maximal_amount": "15.00000000",
-              "is_base_of_enabled_pair": true,
-              "is_quote_of_enabled_pair": true,
-              "has_enabled_pairs": true,
-              "is_base_of_enabled_pair_for_test": true,
-              "is_quote_of_enabled_pair_for_test": true,
-              "has_enabled_pairs_for_test": true,
-              "withdrawal_fee": "0.01100000"
-          },
-          "quote": {
-              "code": "BTC",
-              "name": "bitcoin",
-              "min_confirmations": 2,
-              "is_crypto": true,
-              "minimal_amount": "0.00100000",
-              "maximal_amount": "5.00000000",
-              "is_base_of_enabled_pair": true,
-              "is_quote_of_enabled_pair": true,
-              "has_enabled_pairs": true,
-              "is_base_of_enabled_pair_for_test": true,
-              "is_quote_of_enabled_pair_for_test": true,
-              "has_enabled_pairs_for_test": true,
-              "withdrawal_fee": "0.00050000"
-          },
-          "fee_ask": 0.01,
-          "fee_bid": 0.01
+      amount_base: '2.79715421',
+      is_default_rule: false,
+      unique_reference: 'OB9UVL',
+      amount_quote: '0.05000000',
+      pair: {
+        name: 'XMRBTC',
+        base: {
+          code: 'XMR',
+          name: 'monero',
+          min_confirmations: 10,
+          is_crypto: true,
+          minimal_amount: '0.10000000',
+          maximal_amount: '15.00000000',
+          is_base_of_enabled_pair: true,
+          is_quote_of_enabled_pair: true,
+          has_enabled_pairs: true,
+          is_base_of_enabled_pair_for_test: true,
+          is_quote_of_enabled_pair_for_test: true,
+          has_enabled_pairs_for_test: true,
+          withdrawal_fee: '0.01100000',
+        },
+        quote: {
+          code: 'BTC',
+          name: 'bitcoin',
+          min_confirmations: 2,
+          is_crypto: true,
+          minimal_amount: '0.00100000',
+          maximal_amount: '5.00000000',
+          is_base_of_enabled_pair: true,
+          is_quote_of_enabled_pair: true,
+          has_enabled_pairs: true,
+          is_base_of_enabled_pair_for_test: true,
+          is_quote_of_enabled_pair_for_test: true,
+          has_enabled_pairs_for_test: true,
+          withdrawal_fee: '0.00050000',
+        },
+        fee_ask: 0.01,
+        fee_bid: 0.01,
       },
-      "withdraw_address": {
-          "type": "W",
-          "name": "",
-          "address": "48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM",
-          "currency_code": "XMR",
-          "destination_tag": null,
-          "payment_id": "420fa29b2d9a49f5"
+      withdraw_address: {
+        type: 'W',
+        name: '',
+        address: '48RMNAj52Haj8GWcLW5ehi9ca1u8F7HrUX4mTNLJLiAacRVarB6KJ8wHdZFetHsvzcAXRcLs99etSVCkmJ5Cuv8kNq51PvM',
+        currency_code: 'XMR',
+        destination_tag: null,
+        payment_id: '420fa29b2d9a49f5',
       },
-      "deposit_address": {
-          "type": "D",
-          "name": "",
-          "address": "BTC_0_HACUB8",
-          "currency_code": "BTC",
-          "destination_tag": null,
-          "payment_id": null
+      deposit_address: {
+        type: 'D',
+        name: '',
+        address: 'BTC_0_HACUB8',
+        currency_code: 'BTC',
+        destination_tag: null,
+        payment_id: null,
       },
-      "created_on": "2018-10-01T07:51:39.480190Z",
-      "from_default_rule": false,
-      "payment_window": 15,
-      "payment_deadline": "2018-10-01T08:06:39.480190Z",
-      "kyc_deadline": null,
-      "status_name": [
-          [
-              11,
-              "INITIAL"
-          ]
+      created_on: '2018-10-01T07:51:39.480190Z',
+      from_default_rule: false,
+      payment_window: 15,
+      payment_deadline: '2018-10-01T08:06:39.480190Z',
+      kyc_deadline: null,
+      status_name: [[11, 'INITIAL']],
+      transactions: [],
+      referral_code: [
+        {
+          code: 'REZCI9KXJK5',
+          created_on: '2018-10-01T07:51:39.003237Z',
+          modified_on: '2018-10-01T07:51:39.003288Z',
+        },
       ],
-      "transactions": [],
-      "referral_code": [
-          {
-              "code": "REZCI9KXJK5",
-              "created_on": "2018-10-01T07:51:39.003237Z",
-              "modified_on": "2018-10-01T07:51:39.003288Z"
-          }
-      ],
-      "withdrawal_fee": 0.011,
-      "withdrawal_fee_quote": 0.00019585819,
-      "user_provided_amount": 1,
-      "payment_url": null,
-      "token": "Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi"
-    }
-    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" order={order} />).dive();
+      withdrawal_fee: 0.011,
+      withdrawal_fee_quote: 0.00019585819,
+      user_provided_amount: 1,
+      payment_url: null,
+      token: 'Qft5l4T7UzkdHrAP4UrSwlvsVPlMAi',
+    };
+    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" store={store} order={order} />).dive();
     expect(wrapShallow).toMatchSnapshot();
     wrapShallow.setProps({ order });
     expect(wrapShallow).toMatchSnapshot();
   });
 
   it('renders correctly and updates props (receive and crypto)', () => {
-    const wrapShallow = shallow(<OrderCoinProcessed type="Receive" order={order} />).dive();
+    const wrapShallow = shallow(<OrderCoinProcessed type="Receive" store={store} order={order} />).dive();
     expect(wrapShallow).toMatchSnapshot();
     wrapShallow.setProps({ order });
     expect(wrapShallow).toMatchSnapshot();
   });
 
   it('renders correctly (deposit and fiat)', () => {
-    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" order={orderFiat} />).dive();
+    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" store={store} order={orderFiat} />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 
   it('renders correctly (receive and fiat)', () => {
-    const wrapShallow = shallow(<OrderCoinProcessed type="Receive" order={orderFiat} />).dive();
+    const wrapShallow = shallow(<OrderCoinProcessed type="Receive" store={store} order={orderFiat} />).dive();
     expect(wrapShallow).toMatchSnapshot();
   });
 
   it('copy trigger is called', () => {
-    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" order={order} />);
+    const wrapShallow = shallow(<OrderCoinProcessed type="Deposit" store={store} order={order} />).dive();
     const spy = jest.spyOn(wrapShallow.instance(), 'triggerCopyAddressElementTooltip');
 
     expect(spy).not.toHaveBeenCalled();

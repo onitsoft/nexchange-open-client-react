@@ -9,8 +9,7 @@ const PriceTable = props => {
 
   if (!plans || !plans.length) return <span>Loading...</span>;
 
-  // const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
-  const forder = 'monthly, coinlist, chatbot, devhours, hourprice, support'.split(', ');
+  const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
 
   return (
     <I18n ns="translations">
