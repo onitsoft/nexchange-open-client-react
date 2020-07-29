@@ -30,7 +30,7 @@ export const forceWalletAddressModal = payload => ({
 
 export const selectCoin = (selectedCoins, pairs) => dispatch => {
   let pairIsValid = true;
-
+  
   if (selectedCoins.selectedByUser?.deposit || selectedCoins.selectedByUser?.receive)
     pairIsValid = Object.keys(pairs[selectedCoins.deposit]).includes(selectedCoins.receive);
 
