@@ -4,6 +4,7 @@ import Checkbox from '../Checkbox/Checkbox';
 import styles from '../OrderInitial.scss';
 import { Helmet } from 'react-helmet';
 import styled from '@emotion/styled';
+import OrderPreReleased from '../../OrderPreReleased/OrderPreReleased';
 import OrderFailed from '../../OrderFailure/OrderFailure';
 
 const PaymentNewTabText = styled.h4`
@@ -17,6 +18,7 @@ const PaymentIframeContainer = styled.div`
     position: relative;
   }
 `;
+
 const Spinner = styled.div`
   position: absolute;
   top: 50%;
@@ -31,12 +33,16 @@ class OrderInitial extends Component {
     this.state = {
       enablePayment: true,
       showPaymentIFrame: false,
+      paymentStatus: 'pending',
     };
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const currentPaymentURL = removeUnnecessaryURLParams(this.props.order.payment_url);
     const nextPaymentURL = removeUnnecessaryURLParams(nextProps.order.payment_url);
+
+    if (this.state.paymentStatus !== nextState.paymentStatus) return true;
+
     if (this.state.showPaymentIFrame && currentPaymentURL === nextPaymentURL) {
       return false;
     } else {
@@ -60,6 +66,22 @@ class OrderInitial extends Component {
     });
   };
 
+  iFrameMessage = e => {
+    if (e.origin === 'https://secure.safecharge.com') {
+      const data = JSON.parse(e.data);
+
+      if (['success', 'error', 'canceledByUser'].includes(data)) {
+        this.setState({ paymentStatus: data });
+
+        if (data === 'error') {
+          document.querySelector('#safecharge_payment_iframe').src = this.props.order.payment_url;
+        }
+
+        if (data === 'canceledByUser') window.location.reload();
+      }
+    }
+  };
+
   componentDidMount() {
     const safechargeStatus = getUrlPram('ppp_status');
     if (!_.isEmpty(safechargeStatus)) {
@@ -67,6 +89,8 @@ class OrderInitial extends Component {
     }
 
     if (localStorage.termsAgreed) this.setState({ showPaymentIFrame: true });
+
+    window.addEventListener('message', this.iFrameMessage);
   }
 
   UNSAFE_componentWillUpdate() {
@@ -82,8 +106,14 @@ class OrderInitial extends Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('message', this.iFrameMessage);
+  }
+
   render() {
     const props = this.props;
+
+    if (this.state.paymentStatus === 'success') return <OrderPreReleased />;
 
     return (
       <>
@@ -107,6 +137,7 @@ class OrderInitial extends Component {
                   </Spinner>
                   <iframe
                     title="SafeCharge"
+                    id="safecharge_payment_iframe"
                     src={props.order.payment_url}
                     height={620}
                     width={'100%'}

@@ -24,9 +24,8 @@ describe('ExchangeWidget', () => {
     expect(wrapShallow).toMatchSnapshot();
   });
 
-  it('contains CoinInput, WalletAddress', () => {
+  it('contains CoinInput', () => {
     expect(wrapShallow.find('Connect(CoinInput)').length).toBe(2);
-    expect(wrapShallow.find('Connect(WalletAddress)').length).toBe(1);
   });
 
   it('submit button changes on wallet shown', () => {
