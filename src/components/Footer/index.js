@@ -279,10 +279,8 @@ const StyledFooter = styled.footer`
           img {
             max-width: 60px;
             display: inline-block;
-            margin-right: 2rem;
-            &:not(:last-child) {
-              margin-right: 1rem;
-            }
+            margin: 0 1rem;
+            
 
             &.kurs {
               max-height: 23px;

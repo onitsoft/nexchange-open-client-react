@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchKyc } from 'Actions';
+import { fetchKyc, forceWalletAddressModal } from 'Actions';
 import config from 'Config';
 import KYCModalTier0 from '../OrderFiatModals/KYCModalTier0/KYCModalTier0';
 import KYCModalTier1 from '../OrderFiatModals/KYCModalTier1/KYCModalTier1';
@@ -39,11 +39,11 @@ class OrderPayment extends Component {
     if (!this.props.kyc) {
       return (
         <I18n ns="translations">
-        {(t) => (
-        <div className="text-center order-status-section">
-          <h2>{t('order.fiat.kyc.statustitle')}...</h2>
-        </div>
-        )}
+          {t => (
+            <div className="text-center order-status-section">
+              <h2>{t('order.fiat.kyc.statustitle')}...</h2>
+            </div>
+          )}
         </I18n>
       );
     }
@@ -62,11 +62,8 @@ class OrderPayment extends Component {
         title = <h2 className={styles.title}>{i18n.t('order.fiat.status.2')}</h2>;
         inner = (
           <div>
-            
             <h3 className={styles.subtitle}>
-              <b>
-                {i18n.t('order.fiat.status.7')}
-              </b>
+              <b>{i18n.t('order.fiat.status.7')}</b>
             </h3>
           </div>
         );
@@ -110,7 +107,12 @@ class OrderPayment extends Component {
 
       const tier = this.props.kyc.limits_message.tier.name;
       const { selfie_document_status, whitelist_selfie_document_status } = this.props.kyc;
-      const withdrawAddressStatus = this.props.kyc.limits_message.whitelisted_addresses_info[this.props.order.withdraw_address.address];
+      let withdrawAddressStatus;
+      if (this.props.order.withdraw_address) {
+        withdrawAddressStatus = this.props.kyc.limits_message.whitelisted_addresses_info[this.props.order.withdraw_address.address];
+      } else {
+        this.props.forceWalletAddressModal(true);
+      }
 
       if (
         (tier === 'Tier 1' && selfie_document_status === 'UNDEFINED') ||
@@ -119,9 +121,7 @@ class OrderPayment extends Component {
         inner = (
           <div>
             <h3 className={styles.subtitle}>
-              <b>
-                {i18n.t('order.fiat.tier.explanation')}
-              </b>
+              <b>{i18n.t('order.fiat.tier.explanation')}</b>
             </h3>
           </div>
         );
@@ -129,20 +129,20 @@ class OrderPayment extends Component {
         modal = tier === 'Tier 1' ? KYCModalTier1 : KYCModalTier2;
         buttonText = i18n.t('order.fiat.kyc.3');
         showInitial = true;
-      } else if (tier === 'Tier 3' && (withdrawAddressStatus !== 'PENDING' && withdrawAddressStatus !== 'REJECTED')) {
-        inner = (
-          <div>
-            <h3 className={styles.subtitle}>
-              <b>
-                {i18n.t('order.fiat.tier.explanation2')}
-              </b>
-            </h3>
-          </div>
-        );
+      } else if (tier === 'Tier 3' && withdrawAddressStatus !== 'PENDING' && withdrawAddressStatus !== 'REJECTED') {
+        if (this.props.order.withdraw_address) {
+          inner = (
+            <div>
+              <h3 className={styles.subtitle}>
+                <b>{i18n.t('order.fiat.tier.explanation2')}</b>
+              </h3>
+            </div>
+          );
 
-        modal = KYCModalTier2;
-        buttonText = i18n.t('order.fiat.kyc.3');
-        showInitial = true;
+          modal = KYCModalTier2;
+          buttonText = i18n.t('order.fiat.kyc.3');
+          showInitial = true;
+        } else title = <h2 className={styles.title}>Please enter wallet address to continue</h2>;
       } else {
         title = (
           <div>
@@ -206,9 +206,6 @@ class OrderPayment extends Component {
 }
 
 const mapStateToProps = ({ kyc }) => ({ kyc });
-const mapDistachToProps = dispatch => bindActionCreators({ fetchKyc }, dispatch);
+const mapDistachToProps = dispatch => bindActionCreators({ fetchKyc, forceWalletAddressModal }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDistachToProps
-)(OrderPayment);
+export default connect(mapStateToProps, mapDistachToProps)(OrderPayment);

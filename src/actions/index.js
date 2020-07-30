@@ -18,9 +18,19 @@ export const setWallet = payload => ({
   payload,
 });
 
+export const showWalletAddressModal = payload => ({
+  type: types.SHOW_WALLET_ADDRESS_MODAL,
+  payload,
+});
+
+export const forceWalletAddressModal = payload => ({
+  type: types.FORCE_WALLET_ADDRESS_MODAL,
+  payload,
+});
+
 export const selectCoin = (selectedCoins, pairs) => dispatch => {
   let pairIsValid = true;
-
+  
   if (selectedCoins.selectedByUser?.deposit || selectedCoins.selectedByUser?.receive)
     pairIsValid = Object.keys(pairs[selectedCoins.deposit]).includes(selectedCoins.receive);
 
