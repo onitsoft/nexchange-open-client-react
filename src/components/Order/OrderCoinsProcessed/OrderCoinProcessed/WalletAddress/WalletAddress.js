@@ -165,6 +165,7 @@ const CloseButton = styled.button`
 const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAddressModal, setAddress, coinsInfo, order, kyc, wallet }) => {
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressError, setAddressError] = useState();
+  const [submitBtnText, setSubmitBtnText] = useState('Submit address');
   const { unique_reference, withdraw_address, status_name, deposit_address } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
@@ -247,6 +248,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
 
   const handleSubmitWalletAddress = () => {
     if (wallet.userAddress.address) {
+      setSubmitBtnText('Submitting...');
       axios
         .patch(
           `${config.API_BASE_URL}/orders/${unique_reference}`,
@@ -273,6 +275,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
           showWalletAddressModal(false);
         })
         .catch(err => {
+          setSubmitBtnText('Submit address');
           const { data } = err.response;
 
           const invalidAddressRegex = new RegExp(`has invalid characters`);
@@ -334,8 +337,8 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
           <button type="button" id="close_modal" onClick={() => showWalletAddressModal(false)}>
             Close this window
           </button>
-          <button type="button" id="submit_address" onClick={handleSubmitWalletAddress}>
-            Submit address
+          <button type="button" id="submit_address" onClick={handleSubmitWalletAddress} disabled={submitBtnText === 'Submitting...'}>
+            {submitBtnText}
           </button>
         </Button>
       </Content>
