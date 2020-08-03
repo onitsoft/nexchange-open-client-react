@@ -7,7 +7,6 @@ import i18n from 'Src/i18n';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MinMax from 'Components/MinMax/MinMax';
-import WalletAddress from './WalletAddress/WalletAddress';
 
 import { showWalletAddressModal } from 'Actions';
 
@@ -15,7 +14,6 @@ class OrderCoinProcessed extends Component {
   constructor(props) {
     super(props);
     this.state = { order: this.props.order, hiddenAddress: true };
-    this.setAddress = this.setAddress.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +21,12 @@ class OrderCoinProcessed extends Component {
     $(function() {
       $('[data-toggle="tooltip"]').tooltip();
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.order.withdraw_address?.address !== this.props.order.withdraw_address?.address) {
+      this.setState({ address: this.props.order.withdraw_address.address });
+    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -157,10 +161,6 @@ class OrderCoinProcessed extends Component {
     return renderedExandButton;
   }
 
-  setAddress(address) {
-    this.setState({ address });
-  }
-
   renderAddress() {
     let renderedAddress;
     let addressId;
@@ -197,7 +197,6 @@ class OrderCoinProcessed extends Component {
               ) : (
                 <h6>{this.state.address}</h6>
               )}
-              {this.props.type === 'Receive' ? <WalletAddress coin={this.state.coin} setAddress={this.setAddress} /> : null}
             </div>
             <div className={styles.copybuttonright}>
               {this.props.type === 'Deposit' && !isFiatOrder(this.props.order) && (
@@ -254,6 +253,8 @@ class OrderCoinProcessed extends Component {
   }
 
   render() {
+    if (this.props.hasAddress && !this.state.address) this.setState({ address: this.props.wallet.userAddress.address });
+
     return (
       <I18n ns="translations">
         {t => (

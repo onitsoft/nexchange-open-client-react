@@ -37,15 +37,15 @@ class OrderCoinsProcessed extends Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState){
+  componentDidUpdate(prevProps, prevState) {
     const orderStatus = this.props.order.status_name[0][0];
     const deadlineFinished = new Date(this.props.order.payment_deadline).getTime() < Date.now();
-    
+
     // Comment: Show dynamic rates only if order status is initial
     if (deadlineFinished && orderStatus === 11) {
-      if(!this.state.dynamicRates) this.setState({dynamicRates: true})
-      
-      if(!prevState.dynamicRates && this.state.dynamicRates) {
+      if (!this.state.dynamicRates) this.setState({ dynamicRates: true });
+
+      if (!prevState.dynamicRates && this.state.dynamicRates) {
         this.fetchCurrentAmount();
         ratesInterval = setInterval(this.fetchCurrentAmount, config.PRICE_COMPARISON_INTERVAL);
       }
@@ -73,6 +73,7 @@ class OrderCoinsProcessed extends Component {
         <OrderCoinProcessed
           type="Receive"
           order={this.props.order}
+          hasAddress={this.props.hasAddress}
           updatedToAmount={this.state.updatedToAmount}
           min={this.state.min_amount_base}
           max={this.state.max_amount_base}
