@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
-import { fetchOrder, fetchPrice, setOrder, fetchCoinDetails } from 'Actions';
+import { fetchOrder, fetchPrice, fetchCoinDetails, setOrder, setWallet } from 'Actions';
 
 import isFiatOrder from 'Utils/isFiatOrder';
 import WalletAddress from './WalletAddress/WalletAddress';
@@ -46,6 +46,7 @@ class Order extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
     clearTimeout(this.timeout);
+    this.props.setWallet({ address: '' });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -98,6 +99,6 @@ class Order extends Component {
 }
 
 const mapStateToProps = ({ order, price }) => ({ order, price });
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder, fetchCoinDetails }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, fetchCoinDetails, setOrder, setWallet }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Order);
