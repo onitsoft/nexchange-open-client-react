@@ -46,7 +46,7 @@ class Order extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
     clearTimeout(this.timeout);
-    this.props.setWallet({ address: '' });
+    if (!this.props.order.withdraw_address) this.props.setWallet({ address: '' });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
