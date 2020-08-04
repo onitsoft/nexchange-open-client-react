@@ -37,7 +37,7 @@ class OrderCoinsProcessed extends Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_prevProps, prevState) {
     const orderStatus = this.props.order.status_name[0][0];
     const deadlineFinished = new Date(this.props.order.payment_deadline).getTime() < Date.now();
 

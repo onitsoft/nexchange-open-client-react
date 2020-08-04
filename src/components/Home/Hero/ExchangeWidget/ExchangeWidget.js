@@ -38,11 +38,10 @@ class ExchangeWidget extends Component {
 
   componentDidMount() {
     if (localStorage.orderHistory && localStorage.optWithdrawalAddress === undefined) {
-      let oldUser = localStorage.orderHistory.findIndex(({ created_at }) => new Date(created_at).getTime() < 1595657926013);
+      let oldUser = JSON.parse(localStorage.orderHistory).findIndex(({ created_at }) => new Date(created_at).getTime() < 1595657926013);
 
-      if (oldUser >= 0) {
-        localStorage.setItem('optWithdrawalAddress', false);
-      } else localStorage.setItem('optWithdrawalAddress', true);
+      if (oldUser >= 0) localStorage.setItem('optWithdrawalAddress', false);
+      else localStorage.setItem('optWithdrawalAddress', true);
     } else if (!localStorage.orderHistory && localStorage.optWithdrawalAddress === undefined) {
       localStorage.setItem('optWithdrawalAddress', true);
     }
