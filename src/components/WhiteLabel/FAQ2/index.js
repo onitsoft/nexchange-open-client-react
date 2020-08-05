@@ -31,7 +31,7 @@ class FAQ extends Component {
   }
 
   componentDidMount() {
-    window.gtag('event', 'WhiteLabel FAQs open', { event_category: 'WhiteLabelFAQ', event_label: `` });
+    window.gtag('event', 'WhiteLabel FAQ opened', { event_category: 'WhiteLabelFAQ', event_label: `` });
   }
 
   showQuestion(id) {

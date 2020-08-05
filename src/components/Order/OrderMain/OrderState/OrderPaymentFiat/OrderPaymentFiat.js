@@ -180,7 +180,9 @@ class OrderPayment extends Component {
 
         notificationsCtaVisible = true;
       }
-    } else {
+    } 
+    else {
+      window.gtag('event', 'KYC passed', {event_category: 'KYC', event_label: `${tier}`});
       title = (
         <div>
           <OrderStateLoader />

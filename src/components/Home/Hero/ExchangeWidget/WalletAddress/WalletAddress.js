@@ -35,6 +35,8 @@ class WalletAddress extends Component {
         valid: false,
       });
 
+      window.gtag('event', 'Invalid wallet address entered', {event_category: 'Order History'});
+      
       return this.props.errorAlert({ show: false });
     }
 

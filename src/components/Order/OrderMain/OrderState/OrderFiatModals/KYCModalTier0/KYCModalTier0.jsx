@@ -47,9 +47,11 @@ class KYCModal extends Component {
   handleFrameTasks = (e) => {
     if (e.data.status === "failed") {
       this.setState({ showManualId: true });
+      window.gtag('event', 'KYC failed (AUTO)', {event_category: 'KYC'});
     } else if (e.data.status === 'approved') {
       setTimeout(function () {
         this.setState({ idApproved: true });
+        window.gtag('event', 'KYC passed (AUTO)', {event_category: 'KYC'});
       }.bind(this), 3000)
     }
   }

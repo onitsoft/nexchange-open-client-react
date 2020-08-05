@@ -38,13 +38,13 @@ class OrderBookWidget extends Component {
     const params = urlParams();
     if (params && params.hasOwnProperty('myorders')) {
       this.setState({myOrdersExpanded: true});
-      window.gtag('event', 'Entered my orders via URL', {event_category: 'Order Book', event_label: ``});
+      // window.gtag('event', 'Entered my orders via URL', {event_category: 'Order Book', event_label: ``});
     }
   }
 
 
   componentDidMount(){
-    window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
+    // window.gtag('event', 'Advanced Mode open', {event_category: 'Order Book', event_label: ``});
     if(this.props.selectedCoin){
       this.setState({loading: false});
       this.fetchOrderBook();
@@ -137,9 +137,8 @@ class OrderBookWidget extends Component {
 
   placeOrder() {
     if (!this.props.wallet.valid) {
-      if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
-        window.gtag('event', 'Place order with empty wallet address', {event_category: 'Order Book', event_label: ``});
-      }
+      // if (this.props.selectedCoin.receive && this.props.wallet.address === '') {
+      //  window.gtag('event', 'Place order with empty wallet address', {event_category: 'Order Book', event_label: ``});      }
 
       this.props.errorAlert({
         show: true,
@@ -192,7 +191,7 @@ class OrderBookWidget extends Component {
 
         // bindCrispEmail(this.props.store);
 
-        window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
+        // window.gtag('event', 'Place order', {event_category: 'Order Book', event_label: `${response.data.unique_reference}`});
 
         //Store order history in local storage
         let newOrder = {
@@ -226,7 +225,7 @@ class OrderBookWidget extends Component {
         /* eslint max-len: ['error', { 'code': 200 }] */
         let message = error.response && error.response.data.non_field_errors && 
         error.response.data.non_field_errors.length ? error.response.data.non_field_errors[0] : `${i18n.t('subscription.5')}`;
-        window.gtag('event', 'Error placing order', {event_category: 'Order Book', event_label: `${message}`});
+        //window.gtag('event', 'Error placing order', {event_category: 'Order Book', event_label: `${message}`});
         this.props.errorAlert({
           message: message,
           show: true,
