@@ -53,6 +53,7 @@ const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPasswo
 const Order = React.lazy(() => import('Components/Order/Order'));
 const WhiteLabelSEO = React.lazy(() => import('Pages/WhiteLabelSEO'));
 const Profile = React.lazy(() => import('Pages/Profile'));
+const Security = React.lazy(() => import('Components/Security/Security'));
 // const PriceComparison = React.lazy(() => import('Components/Home/PriceComparison/PriceComparison'))
 // const Team = React.lazy(() => import('Components/Home/Team/Team'))
 // const About = React.lazy(() => import('Components/Home/About/About'))
@@ -102,6 +103,7 @@ ReactDOM.render(
                 <Route exact path="/:lang(en|de|ru)/forgot-password" component={ForgotPassword} />
                 <Route exact path="/:lang(en|de|ru)/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
                 <Route exact path="/:lang(en|de|ru)/not-found" component={NotFound} />
+                <Route exact path="/:lang(en|de|ru)/security" component={Security} />
                 <Route component={NotFoundRedirect} />
               </Switch>
 
