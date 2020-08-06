@@ -132,7 +132,7 @@ class OrderCoinProcessed extends Component {
   }
 
   addressIsTooLong() {
-    return this.state.address != null && this.state.address.length >= 42;
+    return this.state.address != null && this.state.address.length >= 44;
   }
 
   renderExpandButton() {
