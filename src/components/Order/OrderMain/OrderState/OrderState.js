@@ -5,6 +5,7 @@ import OrderPreReleased from './OrderPreReleased/OrderPreReleased';
 import OrderReleased from './OrderReleased/OrderReleased';
 import OrderSuccess from './OrderSuccess/OrderSuccess';
 import OrderExpired from './OrderExpired/OrderExpired';
+import OrderRefundInitiated from './OrderRefundInitiated/OrderRefundInitiated';
 import OrderRefunded from './OrderRefunded/OrderRefunded';
 
 import OrderPaymentFiat from './OrderPaymentFiat/OrderPaymentFiat';
@@ -18,7 +19,7 @@ import OrderOpen from './OrderOpen/OrderOpen';
 import { STATUS_CODES, BOOK_STATUS_CODES } from 'StatusCodes';
 
 const OrderState = props => {
-  if(!props.isLimitOrder){
+  if (!props.isLimitOrder) {
     switch (STATUS_CODES[props.order.status_name[0][0]]) {
       case 'INITIAL':
         return <OrderInitial {...props} />;
@@ -34,6 +35,8 @@ const OrderState = props => {
         return <OrderSuccess {...props} />;
       case 'CANCELLED':
         return <OrderExpired {...props} />;
+      case 'INITIATED REFUND':
+        return <OrderRefundInitiated {...props} />;
       case 'REFUNDED':
         return <OrderRefunded {...props} />;
       default:
