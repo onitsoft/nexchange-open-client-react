@@ -31,6 +31,8 @@ class CoinInput extends PureComponent {
 
   handleChange = event => {
     let { value } = event.target;
+    // remove any whitespaces from amount
+    value = value.replace(' ', '');
     const re = /^[0-9.,\b]+$/;
     if (!re.test(value) && value !== '') return;
 
