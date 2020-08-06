@@ -32,7 +32,7 @@ class QuestionAnswer extends Component {
 
   onClick = () => {
     this.setState({ open: !this.state.open });
-    window.gtag('event', 'Question opened', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
+    window.gtag('event', 'Opened question', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
   };
 
   setPositiveFeedback = () => {
