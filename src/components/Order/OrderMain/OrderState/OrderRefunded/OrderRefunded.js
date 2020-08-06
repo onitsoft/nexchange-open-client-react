@@ -3,7 +3,7 @@ import config from 'Config';
 import OrderLinks from '../OrderLinks/OrderLinks';
 import { I18n, Trans } from 'react-i18next';
 
-const OrderRefunded = () => (
+const OrderRefunded = props => (
   <I18n ns="translations">
     {t => (
       <div id="order-failure" className="text-center">
