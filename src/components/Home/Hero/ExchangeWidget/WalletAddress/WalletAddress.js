@@ -145,7 +145,9 @@ class WalletAddress extends Component {
     try {
       let orderHistory = localStorage['orderHistory'];
       //Most recent order for each address
-      this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
+      this.orderHistory = orderHistory
+        ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address').filter(o => o.withdraw_address)
+        : [];
       if (nextProps.selectedCoin.selectedByUser.receive) {
         this.orderHistory = _.filter(this.orderHistory, function(order) {
           return order.quote === nextProps.selectedCoin.receive;

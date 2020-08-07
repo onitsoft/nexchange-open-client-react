@@ -36,17 +36,6 @@ class ExchangeWidget extends Component {
     this.focusMemo = this.focusMemo.bind(this);
   }
 
-  componentDidMount() {
-    if (localStorage.orderHistory && localStorage.optWithdrawalAddress === undefined) {
-      let oldUser = JSON.parse(localStorage.orderHistory).findIndex(({ created_at }) => new Date(created_at).getTime() < 1595657926013);
-
-      if (oldUser >= 0) localStorage.setItem('optWithdrawalAddress', false);
-      else localStorage.setItem('optWithdrawalAddress', true);
-    } else if (!localStorage.orderHistory && localStorage.optWithdrawalAddress === undefined) {
-      localStorage.setItem('optWithdrawalAddress', true);
-    }
-  }
-
   componentWillUnmount() {
     clearTimeout(this.timeout);
   }
@@ -59,18 +48,15 @@ class ExchangeWidget extends Component {
       pair: {
         name: `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`,
       },
-      withdraw_address:
-        localStorage.optWithdrawalAddress === 'false'
-          ? this.props.wallet.userAddress.address
-            ? {
-                address: this.props.wallet.userAddress.address,
-                name: '',
-                payment_id: this.props.paymentId.paymentId,
-                destination_tag: this.props.destinationTag.destinationTag,
-                memo: this.props.memo.memo,
-              }
-            : {}
-          : {},
+      withdraw_address: this.props.wallet.userAddress.address
+        ? {
+            address: this.props.wallet.userAddress.address,
+            name: '',
+            payment_id: this.props.paymentId.paymentId,
+            destination_tag: this.props.destinationTag.destinationTag,
+            memo: this.props.memo.memo,
+          }
+        : {},
     };
 
     if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
@@ -168,26 +154,23 @@ class ExchangeWidget extends Component {
                     <CoinSwitch />
                     <CoinInput type="receive" />
 
-                    {localStorage.optWithdrawalAddress === 'false' ? (
-                      <>
-                        <WalletAddress
-                          withdraw_coin="receive"
-                          onSubmit={this.placeOrder}
-                          inputRef={el => (this.walletInputEl = el)}
-                          button={this.button}
-                          focusWalletAddress={this.focusWalletAddress}
-                        />
-                        {this.props.selectedCoin.receive === 'XRP' ? (
-                          <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />
-                        ) : null}
-                        {this.props.selectedCoin.receive === 'XMR' ? (
-                          <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} />
-                        ) : null}
-                        {this.props.selectedCoin.receive === 'XLM' ? (
-                          <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} />
-                        ) : null}
-                      </>
+                    <WalletAddress
+                      withdraw_coin="receive"
+                      onSubmit={this.placeOrder}
+                      inputRef={el => (this.walletInputEl = el)}
+                      button={this.button}
+                      focusWalletAddress={this.focusWalletAddress}
+                    />
+                    {this.props.selectedCoin.receive === 'XRP' ? (
+                      <DestinationTag onSubmit={this.placeOrder} inputRef={el => (this.destinationTagInputEl = el)} />
                     ) : null}
+                    {this.props.selectedCoin.receive === 'XMR' ? (
+                      <PaymentId onSubmit={this.placeOrder} inputRef={el => (this.paymentIdInputEl = el)} />
+                    ) : null}
+                    {this.props.selectedCoin.receive === 'XLM' ? (
+                      <Memo onSubmit={this.placeOrder} inputRef={el => (this.memoInputEl = el)} />
+                    ) : null}
+
                     <div className={styles.submit}>
                       <p className={styles.info}>{t('order.feeinfo')}</p>
 

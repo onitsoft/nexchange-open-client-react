@@ -79,6 +79,8 @@ class CoinInput extends PureComponent {
 
   focus = () => {
     if (this.props.type === 'deposit') {
+      this.props.walletInput.focus();
+    } else {
       this.nameInput.focus();
     }
   };
