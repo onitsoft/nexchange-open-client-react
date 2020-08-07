@@ -61,13 +61,15 @@ class ExchangeWidget extends Component {
       },
       withdraw_address:
         localStorage.optWithdrawalAddress === 'false'
-          ? {
-              address: this.props.wallet.userAddress.address,
-              name: '',
-              payment_id: this.props.paymentId.paymentId,
-              destination_tag: this.props.destinationTag.destinationTag,
-              memo: this.props.memo.memo,
-            }
+          ? this.props.wallet.userAddress.address
+            ? {
+                address: this.props.wallet.userAddress.address,
+                name: '',
+                payment_id: this.props.paymentId.paymentId,
+                destination_tag: this.props.destinationTag.destinationTag,
+                memo: this.props.memo.memo,
+              }
+            : {}
           : {},
     };
 

@@ -52,7 +52,7 @@
     "formfailed": "Something went wrong during the form submission, please try again later.",
     "email": "Email (required to notify you about your order)",
     "address": "address",
-    "youraddress": "Enter your {{selectedCoin}} wallet address",
+    "youraddress": "Enter your {{selectedCoin}} wallet address or leave blank to add it later.",
     "usepreviousaddress": "Use previous address",
     "destinationtag": "Destination tag",
     "paymentid": "Payment id",
