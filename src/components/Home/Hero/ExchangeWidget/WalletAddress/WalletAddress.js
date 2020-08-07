@@ -10,12 +10,11 @@ import i18n from '../../../../../i18n';
 
 import urlParams from 'Utils/urlParams';
 
-
 class WalletAddress extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { address: props.wallet.address, firstLoad: true, showHistory: false };
+    this.state = { address: props.wallet.userAddress.address, firstLoad: true, showHistory: false };
     this.fireOnBlur = true;
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
@@ -70,7 +69,7 @@ class WalletAddress extends Component {
 
   handleFocus(event) {
     this.setState({
-      showHistory: true
+      showHistory: true,
     });
   }
 
@@ -81,7 +80,7 @@ class WalletAddress extends Component {
   handleBlur(event) {
     if (this.fireOnBlur) {
       this.setState({
-        showHistory: false
+        showHistory: false,
       });
     }
     this.fireOnBlur = true;
@@ -100,7 +99,9 @@ class WalletAddress extends Component {
         //Check if matching coins are in the order history
         let orderHistory = localStorage['orderHistory'];
         orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-        const mostRecentMatchingOrder = _.find(orderHistory, function (order) { return matchingCoins.indexOf(order.quote) !== -1; });
+        const mostRecentMatchingOrder = _.find(orderHistory, function(order) {
+          return matchingCoins.indexOf(order.quote) !== -1;
+        });
         if (mostRecentMatchingOrder) {
           //Set most recent matching coin
           this.setCoin('EUR', mostRecentMatchingOrder.quote);
@@ -112,10 +113,9 @@ class WalletAddress extends Component {
     }
   }
 
-
   onKeyDown(event) {
     if (event.keyCode === 9) {
-      event.preventDefault();;
+      event.preventDefault();
       this.fireOnBlur = false;
       this.addressSearchInput.focus();
     }
@@ -128,17 +128,17 @@ class WalletAddress extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectedCoin[this.props.withdraw_coin] !== this.props.selectedCoin[this.props.withdraw_coin]) {
-      this.validate(nextProps.wallet.address, nextProps.selectedCoin[this.props.withdraw_coin]);
+      this.validate(nextProps.wallet.userAddress.address, nextProps.selectedCoin[this.props.withdraw_coin]);
     }
 
     if (!this.props.wallet.valid && nextProps.wallet.valid) {
       this.setState({
-        showHistory: false
+        showHistory: false,
       });
     }
 
-    if(nextProps.wallet.address !== this.props.wallet.address) {
-      const simulatedEvent = { target: { value: nextProps.wallet.address } };
+    if (nextProps.wallet.userAddress.address !== this.props.wallet.userAddress.address) {
+      const simulatedEvent = { target: { value: nextProps.wallet.userAddress.address } };
       this.handleChange(simulatedEvent);
     }
 
@@ -146,8 +146,8 @@ class WalletAddress extends Component {
       let orderHistory = localStorage['orderHistory'];
       //Most recent order for each address
       this.orderHistory = orderHistory ? _.uniqBy(JSON.parse(orderHistory).reverse(), 'withdraw_address') : [];
-      if(nextProps.selectedCoin.selectedByUser.receive) {
-        this.orderHistory = _.filter(this.orderHistory, function (order) {
+      if (nextProps.selectedCoin.selectedByUser.receive) {
+        this.orderHistory = _.filter(this.orderHistory, function(order) {
           return order.quote === nextProps.selectedCoin.receive;
         });
       }
@@ -159,8 +159,13 @@ class WalletAddress extends Component {
   componentDidUpdate() {
     //Check if withdraw_address url param exists. If exists, prefill address field with that value
     const params = urlParams();
-    if (params && params.hasOwnProperty('withdraw_address') && !this.props.wallet.address
-      && this.props.selectedCoin[this.props.withdraw_coin] && this.state.firstLoad) {
+    if (
+      params &&
+      params.hasOwnProperty('withdraw_address') &&
+      !this.props.wallet.userAddress.address &&
+      this.props.selectedCoin[this.props.withdraw_coin] &&
+      this.state.firstLoad
+    ) {
       const simulatedEvent = { target: { value: params['withdraw_address'].toString() } };
       this.handleChange(simulatedEvent);
       this.setState({ firstLoad: false });
@@ -176,17 +181,22 @@ class WalletAddress extends Component {
 
   setCoin(depositCoin, receiveCoin) {
     const selectedByUser = this.props.selectedCoin.selectedByUser;
-    if (!this.props.selectedCoin.selectedByUser.receive &&
+    if (
+      !this.props.selectedCoin.selectedByUser.receive &&
       depositCoin !== this.props.selectedCoin.deposit &&
-      receiveCoin !== this.props.selectedCoin.receive) {
+      receiveCoin !== this.props.selectedCoin.receive
+    ) {
       //Select coin
-      this.props.selectCoin({
-        ...this.props.selectedCoin,
-        deposit: depositCoin,
-        receive: receiveCoin,
-        selectedByUser,
-        orderByAddress: true
-      }, this.props.pairs);
+      this.props.selectCoin(
+        {
+          ...this.props.selectedCoin,
+          deposit: depositCoin,
+          receive: receiveCoin,
+          selectedByUser,
+          orderByAddress: true,
+        },
+        this.props.pairs
+      );
 
       //Update quote value
       const pair = `${receiveCoin}${depositCoin}`;
@@ -222,17 +232,19 @@ class WalletAddress extends Component {
                 autoComplete="off"
                 placeholder={t('generalterms.youraddress', { selectedCoin: coin })}
               />
-              {!_.isEmpty(this.orderHistory) 
-               ?  <button onMouseDown={(e) => this.setFocus(e)} className={styles.previousAddress}>
-                    <div className="visible-xs visible-sm"><i className="fas fa-history"></i></div>
-                    <div className="visible-md visible-lg">
-                      <span>
-                        {this.props.orderMode !== 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
-                      </span>
-                    </div>
-                  </button>
-               :  null}
-              {this.state.showHistory ?
+              {!_.isEmpty(this.orderHistory) ? (
+                <button onMouseDown={e => this.setFocus(e)} className={styles.previousAddress}>
+                  <div className="visible-xs visible-sm">
+                    <i className="fas fa-history"></i>
+                  </div>
+                  <div className="visible-md visible-lg">
+                    <span>
+                      {this.props.orderMode !== 'ORDER_BOOK' ? t('generalterms.usepreviousaddress') : <i className="fas fa-history"></i>}
+                    </span>
+                  </div>
+                </button>
+              ) : null}
+              {this.state.showHistory ? (
                 <AddressHistory
                   history={this.orderHistory}
                   setAddress={this.setAddress}
@@ -241,7 +253,7 @@ class WalletAddress extends Component {
                   fireBlur={this.handleBlur}
                   addressSearchInput={el => (this.addressSearchInput = el)}
                 />
-                : null}
+              ) : null}
             </form>
           </div>
         )}
@@ -253,7 +265,4 @@ class WalletAddress extends Component {
 const mapStateToProps = ({ orderMode, selectedCoin, wallet, pairs }) => ({ orderMode, selectedCoin, wallet, pairs });
 const mapDispatchToProps = dispatch => bindActionCreators({ errorAlert, setWallet, selectCoin, fetchPrice }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WalletAddress);
+export default connect(mapStateToProps, mapDispatchToProps)(WalletAddress);

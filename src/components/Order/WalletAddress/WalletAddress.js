@@ -162,11 +162,13 @@ const CloseButton = styled.button`
   background: none;
 `;
 
-const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAddressModal, setAddress, coinsInfo, order, kyc, wallet }) => {
+const WalletAddress = ({ setWallet, showWalletAddressModal, forceWalletAddressModal, coinsInfo, order, kyc, wallet, hasAddress }) => {
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressError, setAddressError] = useState();
-  const { unique_reference, withdraw_address, status_name, deposit_address } = order;
-  const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
+  const [submitBtnText, setSubmitBtnText] = useState('Submit address');
+  const { unique_reference, withdraw_address, status_name, deposit_address, pair } = order;
+  const coin = pair.base.code;
+  const extraId = coinsInfo.find(e => e.code === pair.base.code)?.extra_id;
   const extraName = extraId
     ? extraId
         .split('_')
@@ -209,7 +211,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
         setPrevAddresses(addresses);
       });
     }
-  }, [coin]);
+  }, []);
 
   // force modal
   useEffect(() => {
@@ -219,7 +221,6 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
         showWalletAddressModal(true);
         forceWalletAddressModal(true);
       } else if (kyc) {
-        console.log(kyc);
         // fiat order
         const { out_of_limit, is_verified, limits_message } = kyc;
         if ((!out_of_limit || limits_message.tier.name === 'Tier 3') && is_verified) {
@@ -247,6 +248,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
 
   const handleSubmitWalletAddress = () => {
     if (wallet.userAddress.address) {
+      setSubmitBtnText('Submitting...');
       axios
         .patch(
           `${config.API_BASE_URL}/orders/${unique_reference}`,
@@ -261,9 +263,8 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
             },
           }
         )
-        .then(res => {
-          setAddress(wallet.userAddress.address);
-
+        .then(_res => {
+          hasAddress(true);
           // set withdraw address in order history
           const orderHistory = JSON.parse(window.localStorage.orderHistory);
           const orderIndex = orderHistory.findIndex(e => e.id === unique_reference);
@@ -273,6 +274,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
           showWalletAddressModal(false);
         })
         .catch(err => {
+          setSubmitBtnText('Submit address');
           const { data } = err.response;
 
           const invalidAddressRegex = new RegExp(`has invalid characters`);
@@ -334,8 +336,8 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
           <button type="button" id="close_modal" onClick={() => showWalletAddressModal(false)}>
             Close this window
           </button>
-          <button type="button" id="submit_address" onClick={handleSubmitWalletAddress}>
-            Submit address
+          <button type="button" id="submit_address" onClick={handleSubmitWalletAddress} disabled={submitBtnText === 'Submitting...'}>
+            {submitBtnText}
           </button>
         </Button>
       </Content>
@@ -343,7 +345,7 @@ const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAdd
   );
 };
 
-const mapStateToProps = ({ coinsInfo, order, kyc, wallet }) => ({ coinsInfo, order, kyc, wallet });
+const mapStateToProps = ({ coinsInfo, kyc, wallet }) => ({ coinsInfo, kyc, wallet });
 const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, showWalletAddressModal, forceWalletAddressModal }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletAddress);

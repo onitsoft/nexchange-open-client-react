@@ -1,7 +1,9 @@
 import { SET_WALLET, SHOW_WALLET_ADDRESS_MODAL, FORCE_WALLET_ADDRESS_MODAL } from 'Actions/types';
 
 const initialState = {
-  userAddress: {},
+  userAddress: {
+    address: '',
+  },
   valid: false,
   show: false,
   forced: false,

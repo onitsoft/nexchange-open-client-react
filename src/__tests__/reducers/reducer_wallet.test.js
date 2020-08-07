@@ -3,7 +3,9 @@ import * as types from 'Actions/types';
 
 describe('wallet reducer', () => {
   const initialState = {
-    userAddress: {},
+    userAddress: {
+      address: '',
+    },
     valid: false,
     show: false,
     forced: false,
