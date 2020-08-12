@@ -7,6 +7,7 @@ import OrderSuccess from './OrderSuccess/OrderSuccess';
 import OrderExpired from './OrderExpired/OrderExpired';
 import OrderRefundInitiated from './OrderRefundInitiated/OrderRefundInitiated';
 import OrderRefunded from './OrderRefunded/OrderRefunded';
+import OrderRefundFailed from './OrderRefundFailed/OrderRefundFailed';
 
 import OrderPaymentFiat from './OrderPaymentFiat/OrderPaymentFiat';
 import OrderPaidFiat from './OrderPaidFiat/OrderPaidFiat';
@@ -37,6 +38,8 @@ const OrderState = props => {
         return <OrderExpired {...props} />;
       case 'INITIATED REFUND':
         return <OrderRefundInitiated {...props} />;
+      case 'REFUND FAILED':
+        return <OrderRefundFailed {...props} />;
       case 'REFUNDED':
         return <OrderRefunded {...props} />;
       default:
