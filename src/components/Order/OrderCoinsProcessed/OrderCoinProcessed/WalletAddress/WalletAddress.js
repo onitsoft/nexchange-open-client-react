@@ -3,8 +3,10 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 import cx from 'classnames';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import config from 'Config';
+import { setWallet, showWalletAddressModal, forceWalletAddressModal } from 'Actions';
 
 const Container = styled.div`
   position: fixed;
@@ -160,11 +162,9 @@ const CloseButton = styled.button`
   background: none;
 `;
 
-const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo, order, kyc }) => {
-  const [walletAddress, setWalletAddress] = useState({});
+const WalletAddress = ({ coin, setWallet, showWalletAddressModal, forceWalletAddressModal, setAddress, coinsInfo, order, kyc, wallet }) => {
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressError, setAddressError] = useState();
-  const [modalForced, setModalForced] = useState(false);
   const { unique_reference, withdraw_address, status_name, deposit_address } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
@@ -181,7 +181,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   };
 
   useEffect(() => {
-    if (modalState) {
+    if (wallet.show) {
       document.querySelector('#walletAddressModal').classList.add('show');
       document.querySelector('body').style.overflowY = 'hidden';
       window.addEventListener('keyup', enterPressed);
@@ -194,7 +194,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
     return () => {
       document.querySelector('#walletAddressModal').classList.remove('show');
     };
-  }, [modalState]);
+  }, [wallet.show]);
 
   useEffect(() => {
     const orderHistory = window.localStorage.orderHistory ? JSON.parse(window.localStorage.orderHistory) : null;
@@ -213,45 +213,46 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
 
   // force modal
   useEffect(() => {
-    if (!withdraw_address && status_name[0][0] === 12 && !modalForced) {
+    if (!withdraw_address && status_name[0][0] === 12 && !wallet.forced) {
       // crypto order
       if (deposit_address) {
-        setModalState(true);
-        setModalForced(true);
+        showWalletAddressModal(true);
+        forceWalletAddressModal(true);
       } else if (kyc) {
+        console.log(kyc);
         // fiat order
-        const { out_of_limit, is_verified } = kyc;
-        if (!out_of_limit && is_verified) {
-          setModalState(true);
-          setModalForced(true);
+        const { out_of_limit, is_verified, limits_message } = kyc;
+        if ((!out_of_limit || limits_message.tier.name === 'Tier 3') && is_verified) {
+          showWalletAddressModal(true);
+          forceWalletAddressModal(true);
         }
       }
     }
-  }, [status_name, withdraw_address, modalForced, kyc]);
+  }, [status_name, withdraw_address, wallet.forced, kyc]);
 
   const handleAddressChange = e => {
     if (addressError) setAddressError();
-    setWalletAddress({ ...walletAddress, address: e.target.value });
+    setWallet({ ...wallet.userAddress, address: e.target.value });
   };
 
   const handleExtraIdChange = e => {
-    setWalletAddress({ ...walletAddress, [extraId]: e.target.value });
+    setWallet({ ...wallet.userAddress, [extraId]: e.target.value });
   };
 
   const handleAddressClick = e => {
     if (addressError) setAddressError();
     const selectedAddress = e.target.getAttribute('data-addr');
-    setWalletAddress({ ...walletAddress, address: selectedAddress });
+    setWallet({ ...wallet.userAddress, address: selectedAddress });
   };
 
   const handleSubmitWalletAddress = () => {
-    if (walletAddress.address) {
+    if (wallet.userAddress.address) {
       axios
         .patch(
           `${config.API_BASE_URL}/orders/${unique_reference}`,
           {
             withdraw_address: {
-              ...walletAddress,
+              ...wallet.userAddress,
             },
           },
           {
@@ -261,15 +262,15 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
           }
         )
         .then(res => {
-          setAddress(walletAddress.address);
+          setAddress(wallet.userAddress.address);
 
           // set withdraw address in order history
           const orderHistory = JSON.parse(window.localStorage.orderHistory);
           const orderIndex = orderHistory.findIndex(e => e.id === unique_reference);
-          orderHistory[orderIndex].withdraw_address = walletAddress.address;
+          orderHistory[orderIndex].withdraw_address = wallet.userAddress.address;
           window.localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-          setModalState(false);
+          showWalletAddressModal(false);
         })
         .catch(err => {
           const { data } = err.response;
@@ -286,7 +287,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   return (
     <Container id="walletAddressModal">
       <Content>
-        <CloseButton onClick={() => setModalState(false)}>
+        <CloseButton onClick={() => showWalletAddressModal(false)}>
           <img src="/img/icons/close.png" alt="close modal" />
         </CloseButton>
         <h3>What is your {coin} wallet address?</h3>
@@ -298,7 +299,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
             </label>
             <input
               type="text"
-              value={walletAddress.address}
+              value={wallet.userAddress.address}
               placeholder={`Enter your ${coin} wallet address`}
               onChange={handleAddressChange}
             />
@@ -310,7 +311,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
               </label>
               <input
                 type="text"
-                value={walletAddress.extraId}
+                value={wallet.userAddress.extraId}
                 placeholder={`Enter ${extraName} (optional)`}
                 onChange={handleExtraIdChange}
               />
@@ -330,7 +331,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
           </PrevAddress>
         ) : null}
         <Button>
-          <button type="button" id="close_modal" onClick={() => setModalState(false)}>
+          <button type="button" id="close_modal" onClick={() => showWalletAddressModal(false)}>
             Close this window
           </button>
           <button type="button" id="submit_address" onClick={handleSubmitWalletAddress}>
@@ -342,6 +343,7 @@ const WalletAddress = ({ coin, modalState, setModalState, setAddress, coinsInfo,
   );
 };
 
-const mapStateToProps = ({ coinsInfo, order, kyc }) => ({ coinsInfo, order, kyc });
+const mapStateToProps = ({ coinsInfo, order, kyc, wallet }) => ({ coinsInfo, order, kyc, wallet });
+const mapDispatchToProps = dispatch => bindActionCreators({ setWallet, showWalletAddressModal, forceWalletAddressModal }, dispatch);
 
-export default connect(mapStateToProps)(WalletAddress);
+export default connect(mapStateToProps, mapDispatchToProps)(WalletAddress);
