@@ -61,7 +61,7 @@ const VideoCard = props => {
               <div className="pip-icons">
                 <div className="social">
                   <a
-                    href="https://twitter.com/intent/tweet?text=Set%20up%20your%20own%20DEX%20cryptocurrency%20exchange%20in%201%20hour%20by%20@cryptonexchange&url=https://www.youtube.com/watch?v=7ujmzb3HzCA"
+                    href="https://twitter.com/intent/tweet?text=Set%20up%20your%20own%20DEX%20cryptocurrency%20exchange%20in%201%20hour%20by%20@nexchangeCC&url=https://www.youtube.com/watch?v=7ujmzb3HzCA"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
