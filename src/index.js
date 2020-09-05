@@ -37,6 +37,7 @@ require('Utils/bindGa');
 const Referrals = React.lazy(() => import('Components/Referrals/Referrals'));
 const Header = React.lazy(() => import('Components/Header/Header'));
 const Footer = React.lazy(() => import('Components/Footer'));
+const Announcement = React.lazy(() => import('Components/misc/Anouncement/Anouncement'));
 const NotFound = React.lazy(() => import('Components/NotFound/NotFound'));
 const FAQ = React.lazy(() => import('Components/FAQ2/FAQ'));
 const About = React.lazy(() => import('Components/Home/About/About'));
@@ -83,6 +84,7 @@ ReactDOM.render(
           <Suspense fallback={<></>}>
             <ToTop>
               <Referrals />
+              <Announcement />
               <Header />
 
               <Switch>
