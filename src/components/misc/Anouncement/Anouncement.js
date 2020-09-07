@@ -4,29 +4,27 @@ import cx from 'classnames';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-  position: fixed;
-  bottom: 0;
-  padding: 8px;
   display: flex;
   grid-auto-flow: row;
   place-items: center;
   background: #ffffff;
   z-index: 10;
-  width: 25rem;
-  left: 100%;
-  transform: translateX(-100%);
+  width: 100%;
+  max-height: 150px;
+
   box-shadow: 0 11px 32px -5px rgba(54, 61, 77, 0.15);
-  transition: bottom 0.5s ease-out;
+  transition: max-height 0.4s ease-out;
 
   > img {
     display: none;
   }
 
   &.hide-announcement {
-    bottom: -200px;
+    max-height: 0px;
   }
 
   @media (min-width: 769px) {
+    position: fixed;
     left: 50%;
     bottom: 16px;
     transform: translateX(-50%);
@@ -35,6 +33,8 @@ const Container = styled.div`
     grid-auto-flow: column;
     border-radius: 8px;
     box-shadow: 0 10px 24px 0 rgba(54, 61, 77, 0.15);
+    max-height: initial;
+    transition: bottom 0.5s ease-out;
 
     > img {
       display: block;
@@ -51,14 +51,17 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 8px;
 
-  > p {
+  > div {
     color: #222c31;
-    font-size: 12px;
     h4 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       display: block;
+    }
+    p {
+      font-size: 14px;
     }
   }
 
@@ -67,7 +70,7 @@ const Content = styled.div`
     height: 4rem;
     border: none;
     border-radius: 4px;
-    padding: 0 18px;
+    padding: 0 32px;
   }
 
   a {
@@ -78,15 +81,18 @@ const Content = styled.div`
     flex-direction: row;
     padding: 0 16px;
 
-    > p {
-      font-size: 14px;
+    > div {
       h4 {
         font-size: 16px;
+      }
+      p {
+        font-size: 14px;
       }
     }
 
     button {
       margin-left: 16px;
+      padding: 0 18px;
     }
   }
 `;
@@ -97,6 +103,7 @@ const CloseButton = styled.button`
   right: 8px;
   background-color: transparent;
   border: none;
+  padding: 8px;
 
   img {
     height: 24px;
@@ -128,10 +135,10 @@ const Anouncement = () => {
     <Container className={cx(showAnnouncement ? null : 'hide-announcement')}>
       <img src="/img/icons/star.svg" alt="" />
       <Content>
-        <p>
+        <div>
           <h4>Great News</h4>
-          We have released a new version of our web app.
-        </p>
+          <p>We have released a new version of our web app.</p>
+        </div>
         <button>
           <a href={`https://beta.n.exchange${pathname}${search}`}>Check it out</a>
         </button>
