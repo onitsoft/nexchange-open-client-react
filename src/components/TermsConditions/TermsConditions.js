@@ -24,6 +24,10 @@ const TermsConditions = () => {
                 <li>{t('terms.13')}</li>
                 <li>{t('terms.14')}</li>
                 <li>{t('terms.15')}</li>
+                <li>{t('terms.16')}</li>
+                <li>{t('terms.17')}</li>
+                <li>{t('terms.18')}</li>
+                <li>{t('terms.19')}</li>
               </ol>
 
               <p>{t('terms.12')}</p>
