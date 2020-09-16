@@ -93,7 +93,7 @@ const FAQ = props => {
                 )}
                 {items.map((faq, index) => (
                   <QuestionAnswer
-                    key={`faq-${index}`}
+                    key={faq.id}
                     id={`faq-${index}`}
                     openSupportModal={openSupportModal}
                     question={faq.title}

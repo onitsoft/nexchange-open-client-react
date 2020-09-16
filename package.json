@@ -88,6 +88,7 @@
     "react-structured-data": "0.0.14",
     "react-svg-inline": "^2.1.0",
     "react-svg-loader": "^2.1.0",
+    "react-typeform-embed": "^0.2.1",
     "react-webcam": "^4.1.1",
     "react-youtube": "^7.9.0",
     "reactstrap": "^6.5.0",

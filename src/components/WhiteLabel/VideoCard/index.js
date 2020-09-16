@@ -76,7 +76,7 @@ const VideoCard = props => {
                   </a>
                 </div>
                 <button type="button" onClick={handleClosePipMode}>
-                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <i className="fa fa-times" aria-hidden="true"></i>
                 </button>
               </div>
             </StyledYoutube>
@@ -100,7 +100,7 @@ const StyledYoutube = styled.div`
         width: '30rem',
         top: 'initial !important',
         bottom: '2rem !important',
-        left: '2rem !important',
+        right: '2rem !important',
         background: '#222834',
       }}
   }
