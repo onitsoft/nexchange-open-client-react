@@ -100,7 +100,7 @@ const StyledYoutube = styled.div`
         width: '30rem',
         top: 'initial !important',
         bottom: '2rem !important',
-        left: '2rem !important',
+        right: '2rem !important',
         background: '#222834',
       }}
   }
