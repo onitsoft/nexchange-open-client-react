@@ -308,6 +308,7 @@ const StyledFooter = styled.footer`
   }
 `;
 
+const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => bindActionCreators({ showSupportModal }, dispatch);
 
-export default connect(mapDispatchToProps)(withRouter(Footer));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Footer));

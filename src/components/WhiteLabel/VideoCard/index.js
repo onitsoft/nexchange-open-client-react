@@ -76,7 +76,7 @@ const VideoCard = props => {
                   </a>
                 </div>
                 <button type="button" onClick={handleClosePipMode}>
-                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <i className="fa fa-times" aria-hidden="true"></i>
                 </button>
               </div>
             </StyledYoutube>
