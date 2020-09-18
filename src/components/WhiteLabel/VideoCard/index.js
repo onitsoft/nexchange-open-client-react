@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from '@emotion/styled';
 import { I18n } from 'react-i18next';
 import Support from './Support';
@@ -11,11 +11,6 @@ const VideoCard = props => {
   const [showSupportModal, setShowSupportModal] = useState(false);
   const [videoInViewport, setVideoInViewport] = useState(true);
   const [showPip, setShowPip] = useState(true);
-
-  const onContactUs = useCallback(() => {
-    setShowSupportModal(s => !s);
-    window.gtag('event', 'Whitelabel Hero', { event_category: 'interaction', event_label: `Click Contact Us` });
-  }, []);
 
   const scrollListener = () => {
     if (showPip) {
@@ -46,15 +41,14 @@ const VideoCard = props => {
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, { lng }) => (
         <StyledContainer videoInViewport={videoInViewport}>
           <div className="container">
             <Col className="tls">
               <h1>{title}</h1>
-              <Button>
-                <Link to="/">{t('videocard.livepreview')}</Link>
-              </Button>
-              <Button onClick={onContactUs}>{t('videocard.contactus')}</Button>
+              <HashLink smooth to={`/${lng}/instant-white-label#application`}>
+                <Button>Apply Now</Button>
+              </HashLink>
             </Col>
             <StyledYoutube videoInViewport={videoInViewport} className="vid-container">
               <div className="vid">{content}</div>
