@@ -87,11 +87,23 @@ const PriceTable = props => {
               </tbody>
             </table>
           </StyledTable>
+          <h2>Whitelabel Application</h2>
+          <StyledReactTypeform>
+            <ReactTypeformEmbed popup={false} url="https://nexchangecc.typeform.com/to/g6x8oGrU" />
+          </StyledReactTypeform>
         </PriceContainer>
       )}
     </I18n>
   );
 };
+
+const StyledReactTypeform = styled.div`
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  height: 400px;
+  max-width: 880px;
+`;
 
 const PriceContainer = styled.div`
   > h2 {
