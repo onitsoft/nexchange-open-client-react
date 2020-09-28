@@ -18,6 +18,16 @@ export const setWallet = payload => ({
   payload,
 });
 
+export const showWalletAddressModal = payload => ({
+  type: types.SHOW_WALLET_ADDRESS_MODAL,
+  payload,
+});
+
+export const forceWalletAddressModal = payload => ({
+  type: types.FORCE_WALLET_ADDRESS_MODAL,
+  payload,
+});
+
 export const selectCoin = (selectedCoins, pairs) => dispatch => {
   let pairIsValid = true;
 
@@ -32,7 +42,7 @@ export const selectCoin = (selectedCoins, pairs) => dispatch => {
       if (allPairs[item] === true) validPairs[item] = true;
     }
 
-    const randomCoin = Math.floor(Math.random() * (Object.keys(validPairs).length - 1) + 1);
+    const randomCoin = Math.floor(Math.random() * Math.floor(Object.keys(validPairs).length));
     if (typeof selectedCoins === 'object') selectedCoins.receive = Object.keys(validPairs)[randomCoin];
   }
 

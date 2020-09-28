@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from '@emotion/styled';
 import { I18n } from 'react-i18next';
 import Support from './Support';
@@ -11,11 +11,6 @@ const VideoCard = props => {
   const [showSupportModal, setShowSupportModal] = useState(false);
   const [videoInViewport, setVideoInViewport] = useState(true);
   const [showPip, setShowPip] = useState(true);
-
-  const onContactUs = useCallback(() => {
-    setShowSupportModal(s => !s);
-    window.gtag('event', 'Whitelabel Hero', { event_category: 'interaction', event_label: `Click Contact Us` });
-  }, []);
 
   const scrollListener = () => {
     if (showPip) {
@@ -46,22 +41,21 @@ const VideoCard = props => {
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, { lng }) => (
         <StyledContainer videoInViewport={videoInViewport}>
           <div className="container">
             <Col className="tls">
               <h1>{title}</h1>
-              <Button>
-                <Link to="/">{t('videocard.livepreview')}</Link>
-              </Button>
-              <Button onClick={onContactUs}>{t('videocard.contactus')}</Button>
+              <HashLink smooth to={`/${lng}/instant-white-label#application`}>
+                <Button>Apply Now</Button>
+              </HashLink>
             </Col>
             <StyledYoutube videoInViewport={videoInViewport} className="vid-container">
               <div className="vid">{content}</div>
               <div className="pip-icons">
                 <div className="social">
                   <a
-                    href="https://twitter.com/intent/tweet?text=Set%20up%20your%20own%20DEX%20cryptocurrency%20exchange%20in%201%20hour%20by%20@cryptonexchange&url=https://www.youtube.com/watch?v=7ujmzb3HzCA"
+                    href="https://twitter.com/intent/tweet?text=Set%20up%20your%20own%20DEX%20cryptocurrency%20exchange%20in%201%20hour%20by%20@nexchangeCC&url=https://www.youtube.com/watch?v=7ujmzb3HzCA"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -76,14 +70,14 @@ const VideoCard = props => {
                   </a>
                 </div>
                 <button type="button" onClick={handleClosePipMode}>
-                  <i class="fa fa-times" aria-hidden="true"></i>
+                  <i className="fa fa-times" aria-hidden="true"></i>
                 </button>
               </div>
             </StyledYoutube>
           </div>
 
           <Ellipses />
-          <Support show={showSupportModal} onClose={() => setShowSupportModal(false)} />
+          <Support show={showSupportModal} onClose={() => setShowSupportModal(false)} subject="Whitelabel Enquiry" />
         </StyledContainer>
       )}
     </I18n>
@@ -100,7 +94,7 @@ const StyledYoutube = styled.div`
         width: '30rem',
         top: 'initial !important',
         bottom: '2rem !important',
-        left: '2rem !important',
+        right: '2rem !important',
         background: '#222834',
       }}
   }

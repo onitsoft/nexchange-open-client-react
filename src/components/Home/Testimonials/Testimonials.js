@@ -62,7 +62,13 @@ class Testimonials extends Component {
                               <div className={styles.info}>
                                 <div className={styles.date}>{testimonial.date}</div>
                                 <div className={styles.profile}>
-                                  <img src={require(`../../../img/testimonials/${testimonial.image}`)} alt={testimonial.name} />
+                                  <img
+                                    src={require(`../../../img/testimonials/${testimonial.image}`)}
+                                    alt={testimonial.name}
+                                    loading="lazy"
+                                    height="55"
+                                    width="55"
+                                  />
                                   <h3>{testimonial.name}</h3>
                                 </div>
                               </div>

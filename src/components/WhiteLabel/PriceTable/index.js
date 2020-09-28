@@ -1,20 +1,21 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+import { HashLink } from 'react-router-hash-link';
 import styled from '@emotion/styled';
 import classNames from 'classnames';
 import { TagLink } from 'Components/misc/TagLink';
+import { ReactTypeformEmbed } from 'react-typeform-embed';
 
 const PriceTable = props => {
   const { plans } = props;
 
   if (!plans || !plans.length) return <span>Loading...</span>;
 
-  // const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
-  const forder = 'monthly, coinlist, chatbot, devhours, hourprice, support'.split(', ');
+  const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
 
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, { lng }) => (
         <PriceContainer>
           <h2>Pricing</h2>
           <StyledTable>
@@ -65,24 +66,42 @@ const PriceTable = props => {
                     .map(plan => ({ ...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`) }))
                     .map(plan => (
                       <td key={`plankl-${plan.name}`}>
-                        <TagLink href={t(`whitelabel.pricing.orderNowLink.${plan.name}.link`)} target="_blank" rel="noopener noreferrer">
-                          {t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}
-                        </TagLink>
+                        <HashLink smooth to={`/${lng}/instant-white-label#application`}>
+                          <TagLink>{t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}</TagLink>
+                        </HashLink>
                       </td>
                     ))}
                 </tr>
               </tbody>
             </table>
           </StyledTable>
+          <h2 id="application">Whitelabel Application</h2>
+          <StyledReactTypeform>
+            <ReactTypeformEmbed popup={false} url="https://nexchangecc.typeform.com/to/g6x8oGrU" />
+          </StyledReactTypeform>
         </PriceContainer>
       )}
     </I18n>
   );
 };
 
+const StyledReactTypeform = styled.div`
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  height: 400px;
+  max-width: 880px;
+`;
+
 const PriceContainer = styled.div`
+  padding: 2rem 0;
+
   > h2 {
     margin-bottom: 4rem;
+  }
+
+  #application {
+    padding-top: 2rem;
   }
 `;
 
