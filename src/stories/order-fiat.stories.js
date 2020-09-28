@@ -4,14 +4,28 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import order from '../__mocks__/orderFiat';
-import orderExpired from '../__mocks__/orderFiatExpired';
 import kyc from '../__mocks__/kyc';
 
 import OrderMain from '../components/Order/OrderMain/OrderMain';
 
 import '../css/index.scss';
 
-import { STATUS_CODES } from '../statusCodes';
+const STATUS_CODES = {
+  0: 'CANCELLED',
+  8: 'REFUNDED',
+  11: 'INITIAL',
+  12: 'PAID_UNCONFIRMED',
+  13: 'PAID',
+  14: 'PRE_RELEASE',
+  15: 'RELEASE',
+  16: 'COMPLETED',
+};
+
+const BOOK_STATUS_CODES = {
+  0: 'NEW',
+  5: 'OPEN',
+  10: 'CLOSED',
+};
 
 window.$ = window.jQuery = require('jquery');
 require('../js/bootstrap.min.js');
@@ -22,6 +36,9 @@ const orderPaid = { ...order, status_name: [[13, STATUS_CODES[13]]] };
 const orderPreRelease = { ...order, status_name: [[14, STATUS_CODES[14]]] };
 const orderRelease = { ...order, status_name: [[15, STATUS_CODES[15]]] };
 const orderCompleted = { ...order, status_name: [[16, STATUS_CODES[16]]] };
+const orderCancelled = { ...order, status_name: [[0, STATUS_CODES[0]]]};
+const orderRefunded = {...order, status_name: [[8, STATUS_CODES[8]]]};
+const orderUnknown = {...order, status_name: [[88, STATUS_CODES[88]]]};
 
 const store = {
   getState: () => {
@@ -89,8 +106,20 @@ Completed16.story = {
   name: 'completed (16)',
 };
 
-export const Expired = () => <OrderMain order={orderExpired} />;
+export const Cancelled = () => <OrderMain order={orderCancelled} />;
 
-Expired.story = {
-  name: 'expired',
+Cancelled.story = {
+  name: 'cancelled (0)',
 };
+
+export const Refunded = () => <OrderMain order={orderRefunded} />;
+
+Refunded.story = {
+  name: 'refunded',
+}
+
+export const unknownOrder = () => <OrderMain order={orderUnknown}/>;
+
+unknownOrder.story = {
+  name: 'unknown',
+}

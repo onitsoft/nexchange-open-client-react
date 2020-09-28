@@ -27,7 +27,7 @@ class FAQ extends Component {
   }
 
   componentDidMount() {
-    window.gtag('event', 'FAQs open', { event_category: 'FAQ', event_label: `` });
+    window.gtag('event', 'FAQ opened', { event_category: 'FAQ', event_label: `` });
   }
 
   showQuestion(id) {
@@ -228,7 +228,7 @@ class FAQ extends Component {
                                 <li>
                                   <b>Enter</b> your desired <b>amount, choose</b> the currency type you
                                   <b>want to spend</b>, and the currency type you <b>want to buy</b> (e.g. if you want to spend 1 BTC to buy
-                                  ETH at the exchange rate shown, you enter “1” and click on “GET STARTED”)
+                                  ETH at the exchange rate shown, you enter “1” and click on “BUY NOW”)
                                   <img src="/img/faq/step1.png" alt="How does it work, step 1" />
                                 </li>
                                 <li>

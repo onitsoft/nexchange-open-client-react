@@ -61,8 +61,16 @@ class Order extends Component {
         this.props.order.status_name.length > 0 &&
         this.props.order.status_name[0][0] === 11 &&
         nextProps.order.status_name[0][0] === 12
-      ) {
-        window.gtag('event', 'Order paid', {event_category: 'Order', event_label: `${nextProps.unique_reference}`});
+      ) 
+      {
+        if (this.props.order.isFiatOrder)
+        {
+          window.gtag('event', 'Order paid fiat', {event_category: 'Order', event_label: `${this.props.order.pair.quote.code}`});
+        }
+        else
+        {
+          window.gtag('event', 'Order paid crypto', {event_category: 'Order', event_label: `${this.props.order.pair.quote.code}`})
+        }
       }
     }
   }

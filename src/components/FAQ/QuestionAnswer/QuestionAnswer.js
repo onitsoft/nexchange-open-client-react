@@ -32,19 +32,17 @@ class QuestionAnswer extends Component {
 
   onClick = () => {
     this.setState({ open: !this.state.open });
-    window.gtag('event', 'Question open', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
+    window.gtag('event', 'Question opened', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
   };
 
   setPositiveFeedback = () => {
     if(!this.state.positiveFeedback) {
-      window.gtag('event', 'Positive Feedback', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
       this.setState({positiveFeedback: true, negativeFeedback: false});
     }
   }
   
   setNegativeFeedback = () => {
     if(!this.state.negativeFeedback) {
-      window.gtag('event', 'Negative Feedback', {event_category: 'FAQ', event_label: `${this.props.t(`faq.${this.props.id}`)}`});
       this.setState({positiveFeedback: false, negativeFeedback: true});
       this.props.openSupportModal(this.props.t(`faq.${this.props.id}`));
     }

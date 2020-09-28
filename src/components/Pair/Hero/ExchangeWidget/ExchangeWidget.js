@@ -91,7 +91,7 @@ class ExchangeWidget extends Component {
 
         // bindCrispEmail(this.props.store);
 
-        window.gtag('event', 'Place order', {event_category: 'Order', event_label: `${response.data.unique_reference}`});
+        window.gtag('event', 'Placed order coins', {event_category: 'Coin Selection', event_label: `${this.props.selectedCoin.deposit}`});
 
         //Store order history in local storage
         let newOrder = {

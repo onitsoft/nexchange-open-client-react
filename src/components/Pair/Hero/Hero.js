@@ -25,7 +25,7 @@ class Hero extends Component {
     const params = urlParams();
     if (params && params.hasOwnProperty('advanced') && this.props.orderMode === 'INSTANT') {
       this.props.changeOrderMode('ORDER_BOOK');
-      window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
+      // window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
     } if(this.props.location.search.indexOf('advanced') !== -1 && nextProps.location.search.indexOf('advanced') === -1) {
       this.props.changeOrderMode('INSTANT');
     }
@@ -34,7 +34,7 @@ class Hero extends Component {
   changeOrderMode() {
     if(this.props.orderMode === 'INSTANT'){
       this.props.changeOrderMode('ORDER_BOOK');
-      window.gtag('event', 'Order Mode Switch', {event_category: 'Order Book', event_label: ``});
+      // window.gtag('event', 'Order Mode Switch', {event_category: 'Order Book', event_label: ``});
     } else if(this.props.orderMode === 'ORDER_BOOK'){
       this.props.changeOrderMode('INSTANT');
     } else {

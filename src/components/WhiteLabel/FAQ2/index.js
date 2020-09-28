@@ -18,9 +18,14 @@ const FAQ = props => {
 
   const [searchValue, setSearchValue] = useState('');
 
+  componentDidMount() {
+    window.gtag('event', 'WhiteLabel FAQ opened', { event_category: 'WhiteLabelFAQ', event_label: `` });
+  }
+
   const onSubmit = useCallback(({ preventDefault }) => {
     preventDefault();
   }, []);
+
 
   const searchOptions = useMemo(
     () => ({
