@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { I18n } from 'react-i18next';
+import { HashLink } from 'react-router-hash-link';
 import styled from '@emotion/styled';
 import classNames from 'classnames';
 import { TagLink } from 'Components/misc/TagLink';
@@ -7,30 +8,15 @@ import { ReactTypeformEmbed } from 'react-typeform-embed';
 
 const PriceTable = props => {
   const { plans } = props;
-  const typeformRef = useRef(null);
 
   if (!plans || !plans.length) return <span>Loading...</span>;
 
   const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
 
-  const handleFormOpen = () => {
-    typeformRef.current.typeform.open();
-  };
-
   return (
     <I18n ns="translations">
-      {t => (
+      {(t, { lng }) => (
         <PriceContainer>
-          <ReactTypeformEmbed
-            popup
-            url="https://nexchangecc.typeform.com/to/g6x8oGrU"
-            hideHeaders
-            hideFooter
-            buttonText="Go!"
-            style={{ display: 'none' }}
-            ref={typeformRef}
-            onClose={() => alert('closed')}
-          />
           <h2>Pricing</h2>
           <StyledTable>
             <table>
@@ -80,22 +66,42 @@ const PriceTable = props => {
                     .map(plan => ({ ...plan, glink: t(`whitelabel.pricing.orderNowLink.${plan.name}`) }))
                     .map(plan => (
                       <td key={`plankl-${plan.name}`}>
-                        <TagLink onClick={handleFormOpen}>{t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}</TagLink>
+                        <HashLink smooth to={`/${lng}/instant-white-label#application`}>
+                          <TagLink>{t(`whitelabel.pricing.orderNowLink.${plan.name}.text`)}</TagLink>
+                        </HashLink>
                       </td>
                     ))}
                 </tr>
               </tbody>
             </table>
           </StyledTable>
+          <h2 id="application">Whitelabel Application</h2>
+          <StyledReactTypeform>
+            <ReactTypeformEmbed popup={false} url="https://nexchangecc.typeform.com/to/g6x8oGrU" />
+          </StyledReactTypeform>
         </PriceContainer>
       )}
     </I18n>
   );
 };
 
+const StyledReactTypeform = styled.div`
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  height: 400px;
+  max-width: 880px;
+`;
+
 const PriceContainer = styled.div`
+  padding: 2rem 0;
+
   > h2 {
     margin-bottom: 4rem;
+  }
+
+  #application {
+    padding-top: 2rem;
   }
 `;
 

@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import styled from '@emotion/styled'
+import { NavLink } from 'react-router-dom';
+import styled from '@emotion/styled';
 
 const TagLink = styled.a`
   display: inline-block;
@@ -19,9 +19,11 @@ const TagLink = styled.a`
     color: #222;
     text-decoration: none;
   }
-`
-const TagNavLink = TagLink.withComponent(NavLink)
+  &:focus {
+    color: #222;
+  }
+`;
+const TagNavLink = TagLink.withComponent(NavLink);
 
-
-export default TagLink
-export { TagLink, TagNavLink }
+export default TagLink;
+export { TagLink, TagNavLink };
