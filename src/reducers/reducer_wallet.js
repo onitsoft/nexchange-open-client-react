@@ -1,10 +1,11 @@
-import { SET_WALLET, SHOW_WALLET_ADDRESS_MODAL, FORCE_WALLET_ADDRESS_MODAL } from 'Actions/types';
+import { SET_WALLET, SET_WALLET_SUCCESS, SHOW_WALLET_ADDRESS_MODAL, FORCE_WALLET_ADDRESS_MODAL } from 'Actions/types';
 
 const initialState = {
   userAddress: {},
   valid: false,
   show: false,
   forced: false,
+  success: false,
 };
 
 export default (state = initialState, action) => {
@@ -15,6 +16,11 @@ export default (state = initialState, action) => {
         userAddress: {
           ...action.payload,
         },
+      };
+    case SET_WALLET_SUCCESS:
+      return {
+        ...state,
+        success: action.payload,
       };
     case SHOW_WALLET_ADDRESS_MODAL:
       return {

@@ -15,7 +15,6 @@ class OrderCoinProcessed extends Component {
   constructor(props) {
     super(props);
     this.state = { order: this.props.order, hiddenAddress: true };
-    this.setAddress = this.setAddress.bind(this);
   }
 
   componentDidMount() {
@@ -157,10 +156,6 @@ class OrderCoinProcessed extends Component {
     return renderedExandButton;
   }
 
-  setAddress(address) {
-    this.setState({ address });
-  }
-
   renderAddress() {
     let renderedAddress;
     let addressId;
@@ -186,8 +181,8 @@ class OrderCoinProcessed extends Component {
               className={`${styles['address-left']} ${this.props.type === 'Deposit' ? styles['deposit'] : ''} ${styles['address-hidden']}`}
             >
               {this.props.type === 'Receive' ? (
-                this.state.address ? (
-                  <h6>{this.state.address}</h6>
+                this.state.address || this.props.wallet.success ? (
+                  <h6>{this.props.wallet.userAddress.address || this.state.address}</h6>
                 ) : (
                   <a onClick={() => this.props.showWalletAddressModal(true)}>
                     <i className="fa fa-pencil-alt" /> &nbsp;
@@ -197,7 +192,7 @@ class OrderCoinProcessed extends Component {
               ) : (
                 <h6>{this.state.address}</h6>
               )}
-              {this.props.type === 'Receive' ? <WalletAddress coin={this.state.coin} setAddress={this.setAddress} /> : null}
+              {this.props.type === 'Receive' ? <WalletAddress coin={this.state.coin} /> : null}
             </div>
             <div className={styles.copybuttonright}>
               {this.props.type === 'Deposit' && !isFiatOrder(this.props.order) && (

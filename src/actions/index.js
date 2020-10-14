@@ -18,6 +18,11 @@ export const setWallet = payload => ({
   payload,
 });
 
+export const setWalletSuccess = payload => ({
+  type: types.SET_WALLET_SUCCESS,
+  payload,
+});
+
 export const showWalletAddressModal = payload => ({
   type: types.SHOW_WALLET_ADDRESS_MODAL,
   payload,

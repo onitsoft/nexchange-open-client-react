@@ -1,5 +1,6 @@
 export const ERROR_ALERT = 'ERROR_ALERT';
 export const SET_WALLET = 'SET_WALLET';
+export const SET_WALLET_SUCCESS = 'SET_WALLET_SUCCESS';
 export const SET_DESTINATION_TAG = 'SET_DESTINATION_TAG';
 export const SET_PAYMENT_ID = 'SET_PAYMENT_ID';
 export const SET_MEMO = 'SET_MEMO';
