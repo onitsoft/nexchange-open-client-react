@@ -131,6 +131,8 @@ const Anouncement = () => {
     if (window.sessionStorage.hideAnnouncement === 'true') setShowAnnouncement(false);
   }, []);
 
+  if (/order/.test(pathname)) return null;
+
   return (
     <Container className={cx(showAnnouncement ? null : 'hide-announcement')}>
       <img src="/img/icons/star.svg" alt="" />
