@@ -23,6 +23,10 @@ export const setWalletSuccess = payload => ({
   payload,
 });
 
+export const resetWallet = () => ({
+  type: types.RESET_WALLET,
+});
+
 export const showWalletAddressModal = payload => ({
   type: types.SHOW_WALLET_ADDRESS_MODAL,
   payload,
