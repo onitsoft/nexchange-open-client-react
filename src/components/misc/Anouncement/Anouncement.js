@@ -120,6 +120,7 @@ const CloseButton = styled.button`
 
 const Anouncement = () => {
   const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [annoncementHover, setAnnoncementHover] = useState(false);
   const { pathname, search } = useLocation();
 
   const handleHideAnnouncement = () => {
@@ -127,12 +128,28 @@ const Anouncement = () => {
     window.sessionStorage.setItem('hideAnnouncement', true);
   };
 
+  const handleAnnouncementHover = () => {
+    if (!annoncementHover) setAnnoncementHover(true);
+  };
+
   useEffect(() => {
     if (window.sessionStorage.hideAnnouncement === 'true') setShowAnnouncement(false);
   }, []);
 
+  useEffect(() => {
+    const hideAnnouncement = () => {
+      if (!annoncementHover) setShowAnnouncement(false);
+    };
+
+    setTimeout(hideAnnouncement, 30000);
+
+    return () => clearTimeout(hideAnnouncement);
+  }, [annoncementHover]);
+
+  if (/order/.test(pathname)) return null;
+
   return (
-    <Container className={cx(showAnnouncement ? null : 'hide-announcement')}>
+    <Container className={cx(showAnnouncement ? null : 'hide-announcement')} onMouseOver={handleAnnouncementHover}>
       <img src="/img/icons/star.svg" alt="" />
       <Content>
         <div>
