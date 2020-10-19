@@ -40,7 +40,6 @@ class OrderExpired extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {console.log(props.order)}
                 {t('order.repeat')}
               </a>
             )}
