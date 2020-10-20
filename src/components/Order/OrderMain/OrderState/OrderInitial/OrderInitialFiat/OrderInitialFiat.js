@@ -70,14 +70,32 @@ class OrderInitial extends Component {
     if (e.origin === 'https://secure.safecharge.com') {
       const data = JSON.parse(e.data);
 
-      if (['success', 'error', 'canceledByUser'].includes(data)) {
+      const { amount_quote, amount_usd, pair, unique_reference } = this.props.order;
+      const amount = parseFloat(Number(amount_quote).toFixed(2));
+
+      if (['success', 'error', 'canceledByUser', 'backToMerchantSite'].includes(data)) {
         this.setState({ paymentStatus: data });
+
+        if (data === 'success') {
+          gtag('event', 'purchase', {
+            transaction_id: unique_reference,
+            value: amount,
+            currency: pair.quote.code,
+            items: [
+              {
+                id: pair.name,
+                name: `${amount} ${pair.quote.code} to ${pair.base.code}`,
+                price: amount_usd,
+              },
+            ],
+          });
+        }
 
         if (data === 'error') {
           document.querySelector('#safecharge_payment_iframe').src = this.props.order.payment_url;
         }
 
-        if (data === 'canceledByUser') window.location.reload();
+        if (['canceledByUser', 'backToMerchantSite'].includes(data)) window.location.reload();
       }
     }
   };
