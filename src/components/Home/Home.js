@@ -12,7 +12,7 @@ import SubscriptionForm from './SubscriptionForm/SubscriptionForm';
 export class Home extends Component {
   componentDidMount() {
     this.props.fetchCoinDetails();
-    this.props.fetchPairs();
+    if (!this.props.selectedCoin.selectedByUser.deposit && !this.props.selectedCoin.selectedByUser.receive) this.props.fetchPairs();
   }
   componentDidUpdate(prevProps, prevState) {
     // Detect coin change by link
@@ -20,9 +20,9 @@ export class Home extends Component {
     const oldPairParam = oldUrlParams.get('pair');
     const newUrlParams = new URLSearchParams(this.props.location.search);
     const newPairParam = newUrlParams.get('pair');
-    if(newPairParam && newPairParam !== oldPairParam) {
-        this.props.fetchCoinDetails();
-        this.props.fetchPairs();
+    if (newPairParam && newPairParam !== oldPairParam) {
+      this.props.fetchCoinDetails();
+      this.props.fetchPairs();
     }
   }
 
@@ -42,7 +42,4 @@ export class Home extends Component {
 const mapStateToProps = ({ orderMode, coinsInfo, selectedCoin }) => ({ orderMode, coinsInfo, selectedCoin });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs, changeOrderMode }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
