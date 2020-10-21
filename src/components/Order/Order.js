@@ -63,7 +63,10 @@ class Order extends Component {
         this.props.order.status_name[0][0] === 11 &&
         nextProps.order.status_name[0][0] === 12
       ) {
-        window.gtag('event', 'Order paid', { event_category: 'Order', event_label: `${nextProps.unique_reference}` });
+        window.gtag('event', `Order paid ${isFiatOrder(this.props.order) ? 'fiat' : 'crypto'}`, {
+          event_category: 'Order',
+          event_label: `${nextProps.unique_reference}`,
+        });
       }
     }
   }

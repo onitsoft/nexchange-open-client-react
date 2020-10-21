@@ -70,7 +70,7 @@ class OrderInitial extends Component {
     if (e.origin === 'https://secure.safecharge.com') {
       const data = JSON.parse(e.data);
 
-      const { amount_quote, amount_usd, pair, unique_reference } = this.props.order;
+      const { amount_quote, pair, unique_reference } = this.props.order;
       const amount = parseFloat(Number(amount_quote).toFixed(2));
 
       if (['success', 'error', 'canceledByUser', 'backToMerchantSite'].includes(data)) {
@@ -85,7 +85,6 @@ class OrderInitial extends Component {
               {
                 id: pair.name,
                 name: `${amount} ${pair.quote.code} to ${pair.base.code}`,
-                price: amount_usd,
               },
             ],
           });

@@ -32,19 +32,19 @@ class OrderNotifications extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div className="col-xs-12">
             <div className={`box ${styles.container}`}>
               <div className="row">
                 <div className="col-xs-12 visible-xs text-center">
                   <img className={styles.img} src={GetNotified} alt={t('notify.alt')} />
                 </div>
 
-                <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
+                <div className={`col-xs-12 col-sm-8 ${styles.text}`}>
                   <h2 className={styles.title}>{t('notify.explanation')}</h2>
                   {this.renderForm(t)}
                 </div>
 
-                <div className="col-ms-2 col-sm-5 hidden-xs text-center">
+                <div className="col-ms-2 col-sm-4 hidden-xs text-center">
                   <img className={styles.img} src={GetNotified} alt={t('notify.alt')} />
                 </div>
               </div>

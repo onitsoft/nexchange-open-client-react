@@ -175,7 +175,7 @@ const WalletAddress = ({
 }) => {
   const [prevAddresses, setPrevAddresses] = useState([]);
   const [addressError, setAddressError] = useState();
-  const { unique_reference, withdraw_address, status_name, deposit_address } = order;
+  const { unique_reference, withdraw_address, status_name, deposit_address, pair } = order;
   const extraId = coinsInfo.find(e => e.code === coin)?.extra_id;
   const extraName = extraId
     ? extraId
@@ -285,11 +285,16 @@ const WalletAddress = ({
         .catch(err => {
           const { data } = err.response;
 
-          const invalidAddressRegex = new RegExp(`has invalid characters`);
-
           // address is invalid
-          if (invalidAddressRegex.test(data.non_field_errors?.[0])) setAddressError('Address Invalid');
-          else setAddressError('Something went wrong. Please contact support.');
+          if (/has invalid characters/.test(data.non_field_errors?.[0])) {
+            setAddressError('Address Invalid');
+            window.gtag('event', 'Invalid wallet address entered', { event_category: 'Wallet Address', event_label: pair.quote.code });
+          } else {
+            if (/do not have permission/.test(data.detail)) {
+              window.gtag('event', 'Unauthorized Set address', { event_category: 'Wallet Address', event_label: unique_reference });
+            }
+            setAddressError('Something went wrong. Please contact support.');
+          }
         });
     } else setAddressError("Withdrawal Address can't be empty");
   };
