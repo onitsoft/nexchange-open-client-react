@@ -87,38 +87,38 @@ class OrderCoinProcessed extends Component {
     }
   };
 
-  renderRates() {
-    let rates = ``;
+  // renderRates() {
+  //   let rates = ``;
 
-    if (this.state.order && this.state.order.price) {
-      rates += `${i18n.t('order.rates')}: \n`;
-      rates += `1 ${this.state.coin} = `;
+  //   if (this.state.order && this.state.order.price) {
+  //     rates += `${i18n.t('order.rates')}: \n`;
+  //     rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${(1 / this.state.order.price.rate).toFixed(6)} ${this.state.oppositeCoin}\n`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate.toFixed(6)} ${this.state.oppositeCoin}\n`;
+  //     if (this.props.type === 'Deposit' && ) rates += `${(1 / this.state.order.price.rate).toFixed(6)} ${this.state.oppositeCoin}\n`;
+  //     else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate.toFixed(6)} ${this.state.oppositeCoin}\n`;
 
-      rates += `1 ${this.state.coin} = `;
+  //     rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit')
-        rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_usd).toFixed(6)} USD\n`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(6)} USD\n`;
+  //     if (this.props.type === 'Deposit')
+  //       rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_usd).toFixed(6)} USD\n`;
+  //     else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_usd.toFixed(6)} USD\n`;
 
-      rates += `1 ${this.state.coin} = `;
+  //     rates += `1 ${this.state.coin} = `;
 
-      if (this.props.type === 'Deposit') rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_btc).toFixed(6)} BTC`;
-      else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(6)} BTC`;
+  // if (this.props.type === 'Deposit') rates += `${((1 / this.state.order.price.rate) * this.state.order.price.rate_btc).toFixed(6)} BTC`;
+  //     else if (this.props.type === 'Receive') rates += `${this.state.order.price.rate_btc.toFixed(6)} BTC`;
 
-      if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
-        rates += `\n\n${i18n.t('order.fee')}: \n`;
-        rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
-      } else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
-        rates += `\n\n${i18n.t('order.fee')}: \n`;
-        rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
-      }
-    }
+  //     if (this.state.order.user_provided_amount === 1 && this.props.type === 'Receive') {
+  //       rates += `\n\n${i18n.t('order.fee')}: \n`;
+  //       rates += `${this.state.order.withdrawal_fee} ${this.state.order.pair.base.code}`;
+  //     } else if (this.state.order.user_provided_amount === 0 && this.props.type === 'Deposit') {
+  //       rates += `\n\n${i18n.t('order.fee')}: \n`;
+  //       rates += `${this.state.order.withdrawal_fee_quote} ${this.state.order.pair.quote.code}`;
+  //     }
+  //   }
 
-    return rates;
-  }
+  //   return rates;
+  // }
 
   toggle() {
     this.setState({
@@ -268,7 +268,7 @@ class OrderCoinProcessed extends Component {
                   <b>
                     {this.state.amount} {this.state.coin}
                   </b>
-                  {!this.props.order.isLimitOrder ? (
+                  {/* {!this.props.order.isLimitOrder ? (
                     <i
                       className="fa fa-question-circle"
                       data-toggle="tooltip"
@@ -276,7 +276,7 @@ class OrderCoinProcessed extends Component {
                       style={{ marginLeft: 8 }}
                       data-original-title={this.renderRates()}
                     />
-                  ) : null}
+                  ) : null} */}
                 </h5>
                 {this.renderAddress()}
                 {this.renderExpandButton()}
