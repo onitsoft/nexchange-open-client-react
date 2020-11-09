@@ -21,11 +21,11 @@ describe('Prepare pairs', () => {
   });
 
   it('returns correct LTC url', () => {
-    expect(getBlockchainUrl('LTC', '123')).toBe('https://live.blockcypher.com/ltc/tx/123/');
+    expect(getBlockchainUrl('LTC', '123')).toBe('https://blockchair.com/litecoin/transaction/123');
   });
 
   it('returns correct BTC url', () => {
-    expect(getBlockchainUrl('BTC', '123')).toBe('https://blockchain.info/tx/123');
+    expect(getBlockchainUrl('BTC', '123')).toBe('https://blockchair.com/bitcoin/transaction/123');
   });
 
   it('returns correct DOGE url', () => {
@@ -53,7 +53,7 @@ describe('Prepare pairs', () => {
   });
 
   it('returns correct XMR url', () => {
-    expect(getBlockchainUrl('XMR', '123')).toBe('https://moneroexplorer.com/tx/123');
+    expect(getBlockchainUrl('XMR', '123')).toBe('https://xmrchain.net/tx/123');
   });
 
   it('returns null for invalid coin', () => {
