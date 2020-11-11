@@ -41,7 +41,7 @@ describe('Prepare pairs', () => {
   });
 
   it('returns correct NANO url', () => {
-    expect(getBlockchainUrl('NANO', '123')).toBe('https://www.raiblocks.club/block/123');
+    expect(getBlockchainUrl('NANO', '123')).toBe('https://nanocrawler.cc/explorer/block/123');
   });
 
   it('returns correct ZEC url', () => {
