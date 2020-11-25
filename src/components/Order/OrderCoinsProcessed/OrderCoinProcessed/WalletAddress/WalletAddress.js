@@ -73,7 +73,10 @@ const AddressInput = styled.div`
     }
   }
 
-  /* TODO: Start here */
+  #withdrawal_extra_id {
+    margin-top: 3rem;
+  }
+
   .withdrawal_address_error {
     display: none;
   }
