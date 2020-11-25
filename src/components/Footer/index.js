@@ -54,7 +54,7 @@ const Footer = props => {
                           </Link>
                         </li>
                         <li>
-                          <a href="https://forms.gle/4huiErgdSrXie5VD6" target="_blank" rel="noopener noreferrer">
+                          <a href="https://nexchangecc.typeform.com/to/AIh5cCyL" target="_blank" rel="noopener noreferrer">
                             {t('header.listcoin')}
                           </a>
                         </li>
