@@ -52,8 +52,16 @@ describe('Prepare pairs', () => {
     expect(getBlockchainUrl('USDT', '123')).toBe('https://omniexplorer.info/tx/123');
   });
 
+  it('returns correct XLM url', () => {
+    expect(getBlockchainUrl('XLM', '123')).toBe('https://steexp.com/tx/123');
+  });
+
   it('returns correct XMR url', () => {
     expect(getBlockchainUrl('XMR', '123')).toBe('https://xmrchain.net/tx/123');
+  });
+
+  it('returns correct XRP url', () => {
+    expect(getBlockchainUrl('XRP', '123')).toBe('https://xrpcharts.ripple.com/#/transactions/123');
   });
 
   it('returns null for invalid coin', () => {

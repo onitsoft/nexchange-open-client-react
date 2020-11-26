@@ -9,7 +9,9 @@ export default (coin, txId) => {
   else if (coin === 'NANO') return `https://nanocrawler.cc/explorer/block/${txId}`;
   else if (coin === 'ZEC') return `https://explorer.zcha.in/transactions/${txId}`;
   else if (coin === 'USDT') return `https://omniexplorer.info/tx/${txId}`;
+  else if (coin === 'XLM') return `https://steexp.com/tx/${txId}`;
   else if (coin === 'XMR') return `https://xmrchain.net/tx/${txId}`;
+  else if (coin === 'XRP') return `https://xrpcharts.ripple.com/#/transactions/${txId}`;
 
   return null;
 };
