@@ -38,8 +38,10 @@ class OrderReferrals extends Component {
               <CopyToClipboard
                 text={this.state.link}
                 onCopy={() => {
-                  /* eslint max-len: ["error", { "code": 200 }] */
-                  window.gtag('event', 'Link click body', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
+                  window.gtag('event', 'Link click body', {
+                    event_category: 'Referrals',
+                    event_label: `${this.props.order.pair.base.name}`,
+                  });
                   this.triggerCopyTooltip();
                 }}
               >
@@ -50,8 +52,10 @@ class OrderReferrals extends Component {
                   title="Click to copy!"
                   onFocus={e => e.target.blur()}
                   onMouseEnter={() => {
-                    /* eslint max-len: ["error", { "code": 200 }] */
-                    window.gtag('event', 'Link hover body', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
+                    window.gtag('event', 'Link hover body', {
+                      event_category: 'Referrals',
+                      event_label: `${this.props.order.pair.base.name}`,
+                    });
                   }}
                   required
                 />
@@ -60,8 +64,10 @@ class OrderReferrals extends Component {
               <CopyToClipboard
                 text={this.state.link}
                 onCopy={() => {
-                  /* eslint max-len: ["error", { "code": 200 }] */
-                  window.gtag('event', 'Link click button', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
+                  window.gtag('event', 'Link click button', {
+                    event_category: 'Referrals',
+                    event_label: `${this.props.order.pair.base.name}`,
+                  });
                   this.triggerCopyTooltip();
                 }}
               >
@@ -70,7 +76,10 @@ class OrderReferrals extends Component {
                   type="button"
                   className={`btn btn-primary ${styles.btn}`}
                   onMouseEnter={() => {
-                    window.gtag('event', 'Link hover link', {event_category: 'Referrals', event_label: `${this.props.order.pair.base.name}`});
+                    window.gtag('event', 'Link hover link', {
+                      event_category: 'Referrals',
+                      event_label: `${this.props.order.pair.base.name}`,
+                    });
                   }}
                 >
                   {t('referral.copylink')}
@@ -86,7 +95,7 @@ class OrderReferrals extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      window.gtag('event', 'Social click', {event_category: 'Referrals', event_label: `Facebook`});
+                      window.gtag('event', 'Social click', { event_category: 'Referrals', event_label: `Facebook` });
                     }}
                   >
                     <i className="fab fa-facebook-f" aria-hidden="true" />
@@ -97,7 +106,7 @@ class OrderReferrals extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      window.gtag('event', 'Social click', {event_category: 'Referrals', event_label: `Twitter`});
+                      window.gtag('event', 'Social click', { event_category: 'Referrals', event_label: `Twitter` });
                     }}
                   >
                     <i className="fab fa-twitter" aria-hidden="true" />
@@ -108,7 +117,7 @@ class OrderReferrals extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      window.gtag('event', 'Social click', {event_category: 'Referrals', event_label: `LinkedIn`});
+                      window.gtag('event', 'Social click', { event_category: 'Referrals', event_label: `LinkedIn` });
                     }}
                   >
                     <i className="fab fa-linkedin-in" aria-hidden="true" />
@@ -126,21 +135,21 @@ class OrderReferrals extends Component {
     return (
       <I18n ns="translations">
         {t => (
-          <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div className="col-xs-12">
             <div className={`box ${styles.container}`}>
               <div className="row">
                 <div className="col-xs-12 visible-xs text-center">
                   <img className={styles.img} src={Man} alt={t('notify.alt')} />
                 </div>
 
-                <div className={`col-xs-12 col-sm-7 ${styles.text}`}>
+                <div className={`col-xs-12 col-sm-8 ${styles.text}`}>
                   <h2 className={styles.title}>
                     <Interpolate i18nKey="referral.affiliate2" selectedCoin={this.props.order.pair.base.name} />
                   </h2>
                   {this.renderForm()}
                 </div>
 
-                <div className="col-ms-2 col-sm-5 hidden-xs text-center">
+                <div className="col-ms-2 col-sm-4 hidden-xs text-center">
                   <img className={styles.img} src={Man} alt={t('notify.alt')} />
                 </div>
               </div>
