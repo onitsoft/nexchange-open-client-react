@@ -17,11 +17,11 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/instant-white-label" />
   </url>
   <url>
-    <loc>https://n.exchange/en/faq</loc>
+    <loc>https://n.exchange/en/faqs</loc>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/faq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/faq" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/faq" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/faqs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/faqs" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/faqs" />
   </url>
   <url>
     <loc>https://n.exchange/en/about</loc>
