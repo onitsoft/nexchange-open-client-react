@@ -12,6 +12,8 @@ const PriceTable = props => {
   if (!plans || !plans.length) return <span>Loading...</span>;
 
   const forder = 'monthly, duration, setup, coinlist, chatbot, devhours, hourprice, support'.split(', ');
+  
+  const handleSubmit = () => window.open('https://beta.n.exchange/instant-white-label/thank-you', '_blank');
 
   return (
     <I18n ns="translations">
@@ -77,7 +79,7 @@ const PriceTable = props => {
           </StyledTable>
           <h2 id="application">Whitelabel Application</h2>
           <StyledReactTypeform>
-            <ReactTypeformEmbed popup={false} url="https://nexchangecc.typeform.com/to/g6x8oGrU" />
+            <ReactTypeformEmbed popup={false} onSubmit={handleSubmit} url="https://nexchangecc.typeform.com/to/g6x8oGrU" />
           </StyledReactTypeform>
         </PriceContainer>
       )}
