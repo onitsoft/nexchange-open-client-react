@@ -3,11 +3,11 @@ import _ from 'lodash';
 import Fuse from 'fuse.js';
 import cx from 'classnames';
 import { translate } from 'react-i18next';
+import config from 'Config';
 import urlParams from 'Utils/urlParams';
 import { getMatchingCoins } from 'Utils/walletAddress';
 import debounce from 'Utils/debounce';
 import styles from './CoinsDropdown.scss';
-
 
 class CoinsDropdown extends Component {
   state = { value: '' };
@@ -38,7 +38,7 @@ class CoinsDropdown extends Component {
   };
 
   trackEvent = debounce(coinSearched => {
-    window.gtag('event', 'Coins dropdown search', {event_category: 'Order', event_label: `${this.props.type} - ${coinSearched}`});
+    window.gtag('event', 'Coins dropdown search', { event_category: 'Order', event_label: `${this.props.type} - ${coinSearched}` });
   }, 100);
 
   searchCoins = coins => {
@@ -62,20 +62,33 @@ class CoinsDropdown extends Component {
         return this.props.type.toUpperCase() === 'DEPOSIT' ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
       }
 
-      return this.props.type.toUpperCase() === 'DEPOSIT' ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
+      const isWhiteLabel = config.REFERRAL_CODE && config.REFERRAL_CODE.length > 0;
+
+      return this.props.type.toUpperCase() === 'DEPOSIT'
+        ? coin.is_quote_of_enabled_pair && isWhiteLabel
+          ? coin.is_crypto
+          : !coin.is_crypto
+        : coin.is_base_of_enabled_pair;
     });
     //Non cryptos first, then alphabetical
-    filteredCoins = _.sortBy(filteredCoins, (coin) => {return coin.is_crypto + coin.code});
+    filteredCoins = _.sortBy(filteredCoins, coin => {
+      return coin.is_crypto + coin.code;
+    });
     filteredCoins = this.searchCoins(filteredCoins);
 
     if (this.props.selectedCoin.orderByAddress && this.props.type.toUpperCase() === 'RECEIVE') {
-      const matchingCoins  = getMatchingCoins(this.props.wallet.address);
-      filteredCoins = _.sortBy(filteredCoins, (coin) => {return matchingCoins.indexOf(coin.code) === -1});
+      const matchingCoins = getMatchingCoins(this.props.wallet.address);
+      filteredCoins = _.sortBy(filteredCoins, coin => {
+        return matchingCoins.indexOf(coin.code) === -1;
+      });
     }
 
-    if(_.isEmpty(filteredCoins)){
+    if (_.isEmpty(filteredCoins)) {
       /* eslint max-len: ["error", { "code": 200 }] */
-      window.gtag('event', 'Coins dropdown search - Not Found', {event_category: 'Order', event_label: `${this.props.type} - ${this.state.value}`});
+      window.gtag('event', 'Coins dropdown search - Not Found', {
+        event_category: 'Order',
+        event_label: `${this.props.type} - ${this.state.value}`,
+      });
     }
 
     return filteredCoins;
