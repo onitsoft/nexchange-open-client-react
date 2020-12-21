@@ -17,14 +17,14 @@ const setup = ({
       deposit: false,
       receive: false,
     },
-  }
-}) => ({selectedCoin})
+  },
+}) => ({ selectedCoin });
 
 describe('CoinsDropdown', () => {
   let wrapShallowDeposit, wrapShallowReceive;
 
   beforeEach(() => {
-    const props = setup({})
+    const props = setup({});
     wrapShallowDeposit = shallow(<CoinsDropdown type="deposit" onClick={jest.fn()} coinsInfo={coinsInfo} {...props} />).dive();
     wrapShallowReceive = shallow(<CoinsDropdown type="receive" onClick={jest.fn()} coinsInfo={coinsInfo} {...props} />).dive();
   });
@@ -36,7 +36,7 @@ describe('CoinsDropdown', () => {
 
   it('dropdown contains correct coins (deposit)', () => {
     for (const coin of coinsInfo) {
-      if (coin.is_quote_of_enabled_pair) {
+      if (coin.is_quote_of_enabled_pair && !coin.is_crypto) {
         expect(wrapShallowDeposit.find(`[data-test="${coin.code}"]`).length).toEqual(1);
       } else {
         expect(wrapShallowDeposit.find(`[data-test="${coin.code}"]`).length).toEqual(0);
@@ -58,17 +58,16 @@ describe('CoinsDropdown', () => {
     let input = wrapShallowDeposit.find('[data-test="search"]');
 
     input.simulate('change', {
-      target: { value: 'bit' },
+      target: { value: 'usd' },
     });
 
     input = wrapShallowDeposit.find(`[data-test="search"]`);
 
-    expect(wrapShallowDeposit.state().value).toEqual('bit');
-    expect(input.props().value).toEqual('bit');
+    expect(wrapShallowDeposit.state().value).toEqual('usd');
+    expect(input.props().value).toEqual('usd');
 
-    expect(wrapShallowDeposit.find(`[data-test="BTC"]`).length).toEqual(1);
-    expect(wrapShallowDeposit.find(`[data-test="BCH"]`).length).toEqual(1);
-    expect(wrapShallowDeposit.find(`.coin`).length).toEqual(2);
+    expect(wrapShallowDeposit.find(`[data-test="USD"]`).length).toEqual(1);
+    expect(wrapShallowDeposit.find(`.coin`).length).toEqual(1);
   });
 
   it('search input gets correct value after typing and filters coins (receive)', () => {

@@ -94,8 +94,8 @@ describe('CoinSelector', () => {
 
     expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('OMG');
     wrapMountDeposit.find('[data-test="selector"]').simulate('click');
-    wrapMountDeposit.find('[data-test="BTC"]').simulate('click');
-    expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('BTC');
+    wrapMountDeposit.find('[data-test="USD"]').simulate('click');
+    expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('USD');
   });
 
   it('initially coins dropdown is hidden (receive)', () => {
@@ -128,12 +128,12 @@ describe('CoinSelector', () => {
     let input = wrapMountDeposit.find('[data-test="search"]');
 
     input.simulate('change', {
-      target: { value: 'bit' },
+      target: { value: 'usd' },
     });
 
     let searchForm = wrapMountDeposit.find('[data-test="search-form"]');
     searchForm.simulate('submit', { preventDefault() {} });
 
-    expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('BCH');
+    expect(wrapMountDeposit.find('[data-test="selected"]').text()).toBe('USD');
   });
 });
