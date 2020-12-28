@@ -141,9 +141,9 @@ const Anouncement = () => {
       if (!annoncementHover) setShowAnnouncement(false);
     };
 
-    setTimeout(hideAnnouncement, 30000);
+    const timeout = setTimeout(hideAnnouncement, 30000);
 
-    return () => clearTimeout(hideAnnouncement);
+    return () => clearTimeout(timeout);
   }, [annoncementHover]);
 
   if (/order/.test(pathname)) return null;
