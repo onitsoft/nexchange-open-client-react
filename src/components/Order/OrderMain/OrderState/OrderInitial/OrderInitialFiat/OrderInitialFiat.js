@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+import axios from 'axios';
 import Checkbox from '../Checkbox/Checkbox';
 import styles from '../OrderInitial.scss';
 import { Helmet } from 'react-helmet';
 import styled from '@emotion/styled';
 import OrderPreReleased from '../../OrderPreReleased/OrderPreReleased';
 import OrderFailed from '../../OrderFailure/OrderFailure';
+import config from 'Config';
 
 const PaymentNewTabText = styled.h4`
   text-align: center;
@@ -17,6 +19,17 @@ const PaymentIframeContainer = styled.div`
   iframe {
     position: relative;
   }
+`;
+
+const UserEmail = styled.div`
+  input {
+    width: 100%;
+    max-width: 24rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+  }
+  margin-bottom: 1.6rem;
 `;
 
 const Spinner = styled.div`
@@ -34,7 +47,11 @@ class OrderInitial extends Component {
       enablePayment: true,
       showPaymentIFrame: false,
       paymentStatus: 'pending',
+      userEmail: '',
     };
+
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -51,13 +68,7 @@ class OrderInitial extends Component {
   }
 
   tooglePaymentIFrame() {
-    this.setState({
-      showPaymentIFrame: !this.state.showPaymentIFrame,
-    });
-
-    if (!localStorage.termsAgreed) {
-      localStorage.setItem('termsAgreed', JSON.stringify({ on: Date.now(), order: this.props.order.unique_reference }));
-    }
+    this.setState(prevState => ({ showPaymentIFrame: !prevState.showPaymentIFrame }));
   }
 
   toggleEnablePayment = status => {
@@ -82,13 +93,31 @@ class OrderInitial extends Component {
     }
   };
 
+  handleEmailChange(e) {
+    this.setState({ userEmail: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    axios.put(`${config.API_BASE_URL}/users/me/`, { email: this.state.userEmail }).then(() => {
+      localStorage.setItem(
+        'termsAgreed',
+        JSON.stringify({ on: Date.now(), order: this.props.order.unique_reference, email: this.state.userEmail })
+      );
+    });
+
+    this.props.order.payment_url && this.state.enablePayment && this.tooglePaymentIFrame();
+  }
+
   componentDidMount() {
+    const { email } = JSON.parse(localStorage.termsAgreed || '{}');
     const safechargeStatus = getUrlPram('ppp_status');
     if (!_.isEmpty(safechargeStatus)) {
       $('body').hide();
     }
 
-    if (localStorage.termsAgreed) this.setState({ showPaymentIFrame: true });
+    if (email) this.setState({ showPaymentIFrame: true });
 
     window.addEventListener('message', this.iFrameMessage);
   }
@@ -150,7 +179,7 @@ class OrderInitial extends Component {
               <I18n ns="translations">
                 {t => (
                   <div id="order-payment" className={`row ${styles.container}`}>
-                    <div id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-6">
+                    <form id="order-payment-details" className="col-xs-12 col-ms-6 col-sm-6 col-md-6" onSubmit={this.handleSubmit}>
                       {props.time !== '00:00' && (
                         <h3>
                           {t('order.initial1')}:{' '}
@@ -166,23 +195,37 @@ class OrderInitial extends Component {
                         </b>
                       </h4>
 
+                      <UserEmail>
+                        <label htmlFor="userEmail" className="sr-only">
+                          Your email
+                        </label>
+                        <input
+													type="email"
+													pattern="^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$"
+                          id="userEmail"
+                          name="userEmail"
+                          placeholder="Enter your email"
+                          value={this.state.userEmail}
+                          onChange={this.handleEmailChange}
+                          required
+                        />
+                      </UserEmail>
+
                       <Checkbox onTogglePayment={this.toggleEnablePayment} name="checkboxTC" order="order.iAgreedTC" />
                       <Checkbox onTogglePayment={this.toggleEnablePayment} name="checkboxKYC" order="order.iAcknowledgeKYC" />
 
-                      <a
+                      <button
+                        type="submit"
                         className="btn btn-default btn-lg"
                         name="checkoutButton"
                         data-toggle="tooltip"
                         title={this.state.enablePayment ? '' : t('order.tooltipTC')}
                         style={{ pointerEvents: 'auto' }}
-                        onClick={() => {
-                          props.order.payment_url && this.state.enablePayment && this.tooglePaymentIFrame();
-                        }}
                       >
                         <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
                         {t('order.fiat.status.pay')}
-                      </a>
-                    </div>
+                      </button>
+                    </form>
 
                     <div className={`col-xs-12 col-ms-6 col-sm-6 col-md-6 ${styles.cards}`}>
                       <h3>{t('order.fiat.cards')}:</h3>
