@@ -200,7 +200,8 @@ class OrderInitial extends Component {
                           Your email
                         </label>
                         <input
-                          type="email"
+													type="email"
+													pattern="^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$"
                           id="userEmail"
                           name="userEmail"
                           placeholder="Enter your email"
