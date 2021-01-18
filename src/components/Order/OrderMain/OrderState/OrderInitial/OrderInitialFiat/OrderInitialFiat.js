@@ -90,8 +90,11 @@ class OrderInitial extends Component {
 
     if (localStorage.termsAgreed) this.setState({ showPaymentIFrame: true });
 
-    window.addEventListener('message', this.iFrameMessage);
-  }
+		window.addEventListener('message', this.iFrameMessage);
+		
+		//double click to open link on mobile
+		enableDoubleClickOnMobile();
+	}
 
   UNSAFE_componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
@@ -243,5 +246,25 @@ const getUrlPram = parameter => {
   const value = url.searchParams.get(parameter);
   return value;
 };
+
+const enableDoubleClickOnMobile = () => {
+	if(window.mobileCheck()) {
+		  $('[data-toggle="tooltip"]').tooltip();
+			const termsAndConditionsLink = document.getElementById("terms-and-conditions");	
+			const termsAndConditionsHref = termsAndConditionsLink.href;
+			termsAndConditionsLink.removeAttribute("href");
+			termsAndConditionsLink.removeAttribute("target");
+			$("#terms-and-conditions").dblclick(() => {
+				window.open(termsAndConditionsHref, '_blank');
+			});
+			const privacyLink = document.getElementById("privacy");
+			const privacyHref = termsAndConditionsLink.href;
+			privacyLink.removeAttribute("href");
+			privacyLink.removeAttribute("target");
+			$("#privacy").dblclick(() => {
+				 window.open(privacyHref, '_blank');
+			});
+	}
+}
 
 export default OrderInitial;
