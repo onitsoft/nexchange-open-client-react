@@ -249,11 +249,12 @@ const getUrlPram = parameter => {
 
 const enableDoubleClickOnMobile = () => {
 	if(window.mobileCheck()) {
-		  $('[data-toggle="tooltip"]').tooltip();
 			const termsAndConditionsLink = document.getElementById("terms-and-conditions");	
 			const termsAndConditionsHref = termsAndConditionsLink.href;
 			termsAndConditionsLink.removeAttribute("href");
 			termsAndConditionsLink.removeAttribute("target");
+			termsAndConditionsLink.setAttribute("data-toggle", "tooltip");
+			termsAndConditionsLink.setAttribute("title", "Double click to open");
 			$("#terms-and-conditions").dblclick(() => {
 				window.open(termsAndConditionsHref, '_blank');
 			});
@@ -261,9 +262,12 @@ const enableDoubleClickOnMobile = () => {
 			const privacyHref = termsAndConditionsLink.href;
 			privacyLink.removeAttribute("href");
 			privacyLink.removeAttribute("target");
+			privacyLink.setAttribute("data-toggle", "tooltip");
+			privacyLink.setAttribute("title", "Double click to open");
 			$("#privacy").dblclick(() => {
 				 window.open(privacyHref, '_blank');
 			});
+			$('[data-toggle="tooltip"]').tooltip();
 	}
 }
 
