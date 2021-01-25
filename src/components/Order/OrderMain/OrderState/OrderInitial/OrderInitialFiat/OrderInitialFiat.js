@@ -259,7 +259,7 @@ const enableDoubleClickOnMobile = () => {
 				window.open(termsAndConditionsHref, '_blank');
 			});
 			const privacyLink = document.getElementById("privacy");
-			const privacyHref = termsAndConditionsLink.href;
+			const privacyHref = privacyLink.href;
 			privacyLink.removeAttribute("href");
 			privacyLink.removeAttribute("target");
 			privacyLink.setAttribute("data-toggle", "tooltip");
