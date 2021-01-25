@@ -23,6 +23,7 @@ import './css/index.scss';
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
+require('./js/utils.js');
 
 // const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
