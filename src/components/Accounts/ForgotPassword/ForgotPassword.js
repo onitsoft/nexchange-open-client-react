@@ -4,14 +4,10 @@ import Cookies from 'js-cookie';
 import RequestReset from './request';
 import NewPassword from './reset';
 
-const resetToken = Cookies.get('resetToken');
+const resetTokenCookie = Cookies.get('resetToken');
 
-const ForgotPassword = () => {
-  useEffect(() => {
-    return () => {
-      Cookies.remove('resetToken');
-    };
-  }, []);
+const ForgotPassword = (props) => {
+	const resetToken = props.match.params.token || resetTokenCookie;
 
   if (resetToken) return <NewPassword resetToken={resetToken} />;
 

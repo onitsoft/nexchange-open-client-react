@@ -108,7 +108,7 @@ const App = () => {
                     <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
                     <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
                     <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />
-                    <Route exact path="/:lang(en|de|ru)/forgot-password" component={ForgotPassword} />
+                    <Route exact path="/:lang(en|de|ru)/forgot-password/:token?" component={ForgotPassword} />
                     <Route exact path="/:lang(en|de|ru)/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
                     <Route exact path="/:lang(en|de|ru)/not-found" component={NotFound} />
                     <Route component={NotFoundRedirect} />
