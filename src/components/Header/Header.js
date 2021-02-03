@@ -86,6 +86,7 @@ const Header = props => {
 
 export const HeaderStuff = props => {
   const { isHomeHeader, lang, closeNavbar, hideSupport, supportModal } = props;
+	const { pathname, search } = useLocation();
 
   return (
     <I18n ns="translations">
@@ -123,6 +124,12 @@ export const HeaderStuff = props => {
                   <Link onClick={() => closeNavbar()} to={`/${lang}/faqs`} className={styles.link} data-test="faq-btn">
                     {t('header.faq')}
                   </Link>
+                </li>
+
+                <li>
+                  <a href={`https://beta.n.exchange${pathname}${search}`} className={styles.link} data-test="faq-btn">
+                    {t('header.beta')}
+                  </a>
                 </li>
 
                 {/* <li>
