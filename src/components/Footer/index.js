@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import { I18n } from 'react-i18next';
-import { NavLink as Link, withRouter } from 'react-router-dom';
+import { NavLink as Link, withRouter, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,7 +14,7 @@ const aggregators = ['bestchange', 'okchanger', 'emon', 'allchange'];
 
 const Footer = props => {
   const { location } = props;
-  const { pathname } = location;
+  const { pathname, search } = location;
   const lang = I18n.language || window.localStorage.i18nextLng || 'en';
 
   const hideFooter = useMemo(() => {
@@ -29,7 +29,7 @@ const Footer = props => {
     return false;
   }, [location]);
 
-  if (hideFooter) return null;
+	if (hideFooter) return null;
 
   return (
     <div className="container">
@@ -52,6 +52,11 @@ const Footer = props => {
                           <Link to={`/${lang}/instant-white-label`}>
                             <strong>{t('header.whitelabel')}</strong>
                           </Link>
+                        </li>
+												<li>
+                          <a href={`https://beta.n.exchange${pathname}${search}`}>
+                            {t('header.beta')}
+                          </a>
                         </li>
                         <li>
                           <a href="https://nexchangecc.typeform.com/to/AIh5cCyL" target="_blank" rel="noopener noreferrer">
