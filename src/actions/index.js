@@ -7,6 +7,7 @@ import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
+import pickedPair from './pickPair';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -275,19 +276,37 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = ({ base, quote } = {}) => dispatch => {
+export const fetchPairs = ({ base, quote } = {}) => async dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
+  let params = urlParams();
+  const pathNameParams = window.location.pathname.split('/');
+  // Checks if pathname section of url has params.
+  if (pathNameParams[1] === 'pair') {
+    params = {};
+    params.pair = pathNameParams[2].toUpperCase();
+  }
+
+  let { base: deposit, quote: receive } = await pickedPair({ base, quote }, params);
+  dispatch(
+    selectCoin({
+      deposit,
+      receive,
+      prev: {
+        deposit,
+        receive,
+      },
+      lastSelected: 'deposit',
+      selectedByUser: {
+        deposit: false,
+        receive: false,
+      },
+    })
+  );
+
   return request
     .then(async response => {
-      let params = urlParams();
-      const pathNameParams = window.location.pathname.split('/');
-      // Checks if pathname section of url has params.
-      if (pathNameParams[1] === 'pair') {
-        params = {};
-        params.pair = pathNameParams[2].toUpperCase();
-      }
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
           return !pair.disabled;
@@ -301,88 +320,6 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
         type: types.PAIRS_FETCHED,
         payload: processedPairs,
       });
-
-      let depositCoin = base;
-      let receiveCoin = quote;
-
-      const loadPair = pair => {
-        const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`;
-        return new Promise((resolve, reject) => {
-          axios
-            .get(url)
-            .then(res => resolve(res.data))
-            .catch(err => {
-              resolve(pickRandomPair());
-            });
-        });
-      };
-
-      const pickMostTraded = () => {
-        return new Promise((resolve, reject) => {
-          axios
-            .get(`${config.API_BASE_URL}/pair/most_traded/`)
-            .then(res => resolve(res.data))
-            .catch(err => resolve(null));
-        });
-      };
-
-      const pickRandomPair = async () => {
-        const pair = pairs[Math.floor(Math.random() * pairs.length)];
-        depositCoin = pair.quote;
-        receiveCoin = pair.base;
-      };
-
-      // Picks random deposit and receive coins.
-      const pickCoins = async () => {
-        // Checks if url has params. If yes then update accordingly and if no then pick random coins.
-        if (base && quote) {
-          try {
-            const pair = await loadPair(`${base}${quote}`);
-            if (pair) {
-              depositCoin = pair.quote;
-              receiveCoin = pair.base;
-            }
-          } catch (err) {
-            /* istanbul ignore next */
-            console.log('Error:', err);
-          }
-        } else if (params && params.hasOwnProperty('pair')) {
-          try {
-            const pair = await loadPair(params.pair);
-            if (pair) {
-              depositCoin = pair.quote;
-              receiveCoin = pair.base;
-            }
-          } catch (err) {
-            /* istanbul ignore next */
-            console.log('Error:', err);
-          }
-        } else {
-          const pair = await pickMostTraded();
-          if (pair) {
-            depositCoin = pair.quote;
-            receiveCoin = pair.base;
-          } else {
-            pickRandomPair();
-          }
-        }
-      };
-      await pickCoins();
-      dispatch(
-        selectCoin({
-          deposit: depositCoin,
-          receive: receiveCoin,
-          prev: {
-            deposit: depositCoin,
-            receive: receiveCoin,
-          },
-          lastSelected: 'deposit',
-          selectedByUser: {
-            deposit: false,
-            receive: false,
-          },
-        })
-      );
     })
     .catch(error => {
       /* istanbul ignore next */
