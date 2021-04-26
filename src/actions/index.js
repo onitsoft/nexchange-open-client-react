@@ -7,7 +7,7 @@ import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
-import { pickedCoinsPair, mostTradedPair } from './pickCoins';
+import pickedPair from './pickPair';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -286,25 +286,25 @@ export const fetchPairs = ({ base, quote } = {}) => async dispatch => {
   if (pathNameParams[1] === 'pair') {
     params = {};
     params.pair = pathNameParams[2].toUpperCase();
-  } else {
-    //Assuming that we can safely choose most traded pair if there is no URL param
-    let { base: deposit, quote: receive } = await mostTradedPair();
-    dispatch(
-      selectCoin({
+  }
+
+  let { base: deposit, quote: receive } = await pickedPair({ base, quote }, params);
+  dispatch(
+    selectCoin({
+      deposit,
+      receive,
+      prev: {
         deposit,
         receive,
-        prev: {
-          deposit,
-          receive,
-        },
-        lastSelected: 'deposit',
-        selectedByUser: {
-          deposit: false,
-          receive: false,
-        },
-      })
-    );
-  }
+      },
+      lastSelected: 'deposit',
+      selectedByUser: {
+        deposit: false,
+        receive: false,
+      },
+    })
+  );
+
   return request
     .then(async response => {
       const pairs = response.data.filter(pair => {
@@ -320,24 +320,6 @@ export const fetchPairs = ({ base, quote } = {}) => async dispatch => {
         type: types.PAIRS_FETCHED,
         payload: processedPairs,
       });
-
-      let { base: deposit, quote: receive } = await pickedCoinsPair(base, quote, params, pairs);
-
-      dispatch(
-        selectCoin({
-          deposit,
-          receive,
-          prev: {
-            deposit,
-            receive,
-          },
-          lastSelected: 'deposit',
-          selectedByUser: {
-            deposit: false,
-            receive: false,
-          },
-        })
-      );
     })
     .catch(error => {
       /* istanbul ignore next */
