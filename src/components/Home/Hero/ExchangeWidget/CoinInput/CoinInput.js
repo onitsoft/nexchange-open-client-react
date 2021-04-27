@@ -66,6 +66,7 @@ class CoinInput extends PureComponent {
   };
 
   fetchAmounts = debounce(value => {
+    console.log('fetch amounts');
     const pair = `${this.props.selectedCoin.receive}${this.props.selectedCoin.deposit}`;
     const data = {
       pair,
@@ -77,7 +78,7 @@ class CoinInput extends PureComponent {
     if (value.length) {
       this.props.fetchPrice(data);
     }
-  }, 600);
+  }, 500);
 
   focus = () => {
     if (this.props.type === 'deposit') {
@@ -96,7 +97,6 @@ class CoinInput extends PureComponent {
       if (updatedAmount && updatedAmount !== '...' && updatedAmount !== this.state.value) this.setState({ value: updatedAmount });
     }
   };
-
   render() {
     return (
       <I18n ns="translations">
