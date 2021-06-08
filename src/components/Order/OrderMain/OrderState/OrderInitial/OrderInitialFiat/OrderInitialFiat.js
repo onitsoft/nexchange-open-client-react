@@ -173,9 +173,9 @@ class OrderInitial extends Component {
                   <PaymentIFrame />
                 ) : (
                   <ReCAPTCHA
+                    style={{ width: '40%', margin: 'auto', padding: '25px' }}
                     sitekey={config.RECAPTCHA_SITE_KEY_FIAT_PAYMENT}
                     onChange={this.setIsHuman}
-                    style={{ display: 'inline-block' }}
                   />
                 )}
               </Fragment>
