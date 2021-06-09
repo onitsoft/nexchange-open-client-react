@@ -3,6 +3,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch, Redirect, useLocation } from 'react-router-dom';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
 import styled from '@emotion/styled';
 
 import './i18n';
@@ -20,6 +22,7 @@ import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 import './css/index.scss';
+import config from './config';
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
@@ -88,36 +91,38 @@ const App = () => {
         <BreakpointProvider queries={defaultQuery}>
           <BrowserRouter>
             <Suspense fallback={<></>}>
-              <ToTop>
-                <Referrals />
-                <Announcement />
-                <Container>
-                  <Header />
+              <GoogleReCaptchaProvider reCaptchaKey={config.GOOGLE_RECAPTCHA_V3_SITE_KEY}>
+                <ToTop>
+                  <Referrals />
+                  <Announcement />
+                  <Container>
+                    <Header />
 
-                  <Switch>
-                    <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
-                    <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
-                    <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
-                    <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />
-                    <Route exact path="/:lang(en|de|ru)/order/:orderRef" component={Order} />
-                    <Route exact path="/:lang(en|de|ru)/orders/:orderRef?" component={Orders} />
-                    <Route exact path="/:lang(en|de|ru)" render={props => <Home {...props} store={store} />} />
-                    <Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />
-                    <Route exact path="/:lang(en|de|ru)/faqs/:id?" component={FAQ} />
-                    <Route exact path="/:lang(en|de|ru)/about" component={About} />
-                    <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
-                    <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
-                    <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />
-                    <Route exact path="/:lang(en|de|ru)/forgot-password" component={ForgotPassword} />
-                    <Route exact path="/:lang(en|de|ru)/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
-                    <Route exact path="/:lang(en|de|ru)/not-found" component={NotFound} />
-                    <Route component={NotFoundRedirect} />
-                  </Switch>
+                    <Switch>
+                      <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
+                      <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
+                      <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
+                      <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />
+                      <Route exact path="/:lang(en|de|ru)/order/:orderRef" component={Order} />
+                      <Route exact path="/:lang(en|de|ru)/orders/:orderRef?" component={Orders} />
+                      <Route exact path="/:lang(en|de|ru)" render={props => <Home {...props} store={store} />} />
+                      <Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />
+                      <Route exact path="/:lang(en|de|ru)/faqs/:id?" component={FAQ} />
+                      <Route exact path="/:lang(en|de|ru)/about" component={About} />
+                      <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
+                      <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
+                      <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />
+                      <Route exact path="/:lang(en|de|ru)/forgot-password" component={ForgotPassword} />
+                      <Route exact path="/:lang(en|de|ru)/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
+                      <Route exact path="/:lang(en|de|ru)/not-found" component={NotFound} />
+                      <Route component={NotFoundRedirect} />
+                    </Switch>
 
-                  <Footer />
-                </Container>
-                <Intercom />
-              </ToTop>
+                    <Footer />
+                  </Container>
+                  <Intercom />
+                </ToTop>
+              </GoogleReCaptchaProvider>
             </Suspense>
           </BrowserRouter>
         </BreakpointProvider>
