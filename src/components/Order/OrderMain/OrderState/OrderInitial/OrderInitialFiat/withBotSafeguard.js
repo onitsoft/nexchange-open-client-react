@@ -23,7 +23,6 @@ const withBotSafeguard = (ComponentToSafeguard, actionName) => props => {
     if (executeRecaptcha) {
       (async () => {
         setIsVerificationInProgress(true);
-
         const token = await executeRecaptcha(actionName);
         const isHuman = await verifyRecaptchaV3IsHuman(token, actionName);
         setIsVerifiedAsHuman(isHuman);
