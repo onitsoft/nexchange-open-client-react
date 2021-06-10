@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+import { Helmet } from 'react-helmet';
+
+import styled from '@emotion/styled';
+
 import Checkbox from '../Checkbox/Checkbox';
 import styles from '../OrderInitial.scss';
-import { Helmet } from 'react-helmet';
-import styled from '@emotion/styled';
 import OrderPreReleased from '../../OrderPreReleased/OrderPreReleased';
 import OrderFailed from '../../OrderFailure/OrderFailure';
+import withBotSafeguard from "./withBotSafeguard";
+import constant from "../../../../../../constant";
 
 const PaymentNewTabText = styled.h4`
   text-align: center;
@@ -244,4 +248,4 @@ const getUrlPram = parameter => {
   return value;
 };
 
-export default OrderInitial;
+export default withBotSafeguard(OrderInitial, constant.reCaptchaActions.FIAT_PAYMENT);

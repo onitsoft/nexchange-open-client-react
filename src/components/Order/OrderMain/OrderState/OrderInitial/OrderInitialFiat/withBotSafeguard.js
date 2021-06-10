@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import styled from '@emotion/styled';
+
 import OrderFailed from '../../OrderFailure/OrderFailure';
 import verifyRecaptchaV3IsHuman from '../../../../../../utils/recaptchaVerification';
 
@@ -23,8 +24,9 @@ const withBotSafeguard = (ComponentToSafeguard, actionName) => props => {
     if (executeRecaptcha) {
       (async () => {
         setIsVerificationInProgress(true);
+        
         const token = await executeRecaptcha(actionName);
-        const isHuman = await verifyRecaptchaV3IsHuman(token, actionName);
+        const isHuman = await verifyRecaptchaV3IsHuman(token);
         setIsVerifiedAsHuman(isHuman);
 
         setIsVerificationInProgress(false);
