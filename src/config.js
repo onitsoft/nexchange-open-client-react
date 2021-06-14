@@ -23,8 +23,6 @@ const config = {
   AUTH_CLIENT_SECRET: development
     ? 'hpS5mRTDN8EWRgTFlDetU6mlMJw5VintTSPazuP0MUil4KyvEQnNAZHN79PObFtjTR8lL9XwTWxboXiMA19f6s4AeWNuZK7X2d1B2icmRj9q1ol5m0Qpp8RAJHVBvSji'
     : '5cNFTdJGtR0qwRYevWOMFjNIepkl6TMieZP6wdqOOIVplL0YWB8Lw5WvizU6CHiIBn21JnUd0Twc1W52MyzFRsGrV8AixFcZJpnHY3fzgiaYv9AyXS1zDbNP0xUqAxgp',
-
-  GOOGLE_RECAPTCHA_V3_SITE_KEY: '6LdY-x0bAAAAALW7N1fb7eAFqCwgRNYQKY_GTuhm',
 };
 
 export default config;

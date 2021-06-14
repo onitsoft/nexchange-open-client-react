@@ -22,7 +22,6 @@ import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 import './css/index.scss';
-import config from './config';
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
@@ -91,7 +90,7 @@ const App = () => {
         <BreakpointProvider queries={defaultQuery}>
           <BrowserRouter>
             <Suspense fallback={<></>}>
-              <GoogleReCaptchaProvider reCaptchaKey={config.GOOGLE_RECAPTCHA_V3_SITE_KEY}>
+              <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_GOOGLE_RECAPTCHA_V3_SITE_KEY}>
                 <ToTop>
                   <Referrals />
                   <Announcement />
