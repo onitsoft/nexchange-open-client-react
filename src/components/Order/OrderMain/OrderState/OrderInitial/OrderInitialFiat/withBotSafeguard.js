@@ -20,21 +20,21 @@ const withBotSafeguard = (ComponentToSafeguard, actionName) => props => {
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  useEffect(() => {
-    if (executeRecaptcha) {
-      (async () => {
-        setIsVerificationInProgress(true);
-        
-        const token = await executeRecaptcha(actionName);
-        const isHuman = await verifyRecaptchaV3IsHuman(token);
-        setIsVerifiedAsHuman(isHuman);
+  const triggerBotValidation = () => {
+    (async () => {
+      setIsVerificationInProgress(true);
 
-        setIsVerificationInProgress(false);
-        if (isInitialLoading) {
-          setIsInitialLoading(false);
-        }
-      })();
-    }
+      const token = await executeRecaptcha(actionName);
+      const isHuman = await verifyRecaptchaV3IsHuman(token);
+      setIsVerifiedAsHuman(isHuman);
+
+      setIsVerificationInProgress(false);
+      if (isInitialLoading) setIsInitialLoading(false);
+    })();
+  };
+
+  useEffect(() => {
+    if (executeRecaptcha) triggerBotValidation();
   }, [executeRecaptcha]);
 
   if (isInitialLoading || isVerificationInProgress) {
@@ -45,7 +45,7 @@ const withBotSafeguard = (ComponentToSafeguard, actionName) => props => {
     );
   }
   if (isVerifiedHuman) {
-    return <ComponentToSafeguard {...props} />;
+    return <ComponentToSafeguard {...props} triggerBotValidation={triggerBotValidation} />;
   }
   return <OrderFailed title="error.notfound1" />;
 };

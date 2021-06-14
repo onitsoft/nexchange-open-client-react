@@ -8,8 +8,8 @@ import Checkbox from '../Checkbox/Checkbox';
 import styles from '../OrderInitial.scss';
 import OrderPreReleased from '../../OrderPreReleased/OrderPreReleased';
 import OrderFailed from '../../OrderFailure/OrderFailure';
-import withBotSafeguard from "./withBotSafeguard";
-import constant from "../../../../../../constant";
+import withBotSafeguard from './withBotSafeguard';
+import constant from '../../../../../../constant';
 
 const PaymentNewTabText = styled.h4`
   text-align: center;
@@ -54,7 +54,7 @@ class OrderInitial extends Component {
     }
   }
 
-  tooglePaymentIFrame() {
+  togglePaymentIFrame() {
     this.setState({
       showPaymentIFrame: !this.state.showPaymentIFrame,
     });
@@ -78,6 +78,8 @@ class OrderInitial extends Component {
         this.setState({ paymentStatus: data });
 
         if (data === 'error') {
+          const { triggerBotValidation } = props;
+          if (triggerBotValidation) triggerBotValidation();
           document.querySelector('#safecharge_payment_iframe').src = this.props.order.payment_url;
         }
 
@@ -180,7 +182,7 @@ class OrderInitial extends Component {
                         title={this.state.enablePayment ? '' : t('order.tooltipTC')}
                         style={{ pointerEvents: 'auto' }}
                         onClick={() => {
-                          props.order.payment_url && this.state.enablePayment && this.tooglePaymentIFrame();
+                          props.order.payment_url && this.state.enablePayment && this.togglePaymentIFrame();
                         }}
                       >
                         <i className="fas fa-credit-card" aria-hidden="true" style={{ position: 'relative', left: -13 }} />
