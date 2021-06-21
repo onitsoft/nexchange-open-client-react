@@ -4,8 +4,10 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import styled from '@emotion/styled';
 
 import OrderFailed from '../OrderMain/OrderState/OrderFailure/OrderFailure';
-import OrderLoading from "../OrderLoading/OrderLoading";
+import OrderLoading from '../OrderLoading/OrderLoading';
 import { verifyRecaptchaV3IsHuman, verifyRecaptchaV2IsHuman } from './recaptchaVerification';
+
+import styles from '../Order.scss';
 
 const RecaptchaV2Container = styled.div`
   width: 30%;
@@ -15,7 +17,7 @@ const RecaptchaV2Container = styled.div`
 
 export const BotValidationContext = createContext({});
 
-const BotValidationProvider = ({ children, recaptchaV2SiteKey, orderId, initialActionName = 'initializing_bot_provider' }) => {
+const BotValidationProvider = ({ children, orderId, initialActionName = 'initializing_bot_provider' }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   // region States
@@ -92,16 +94,21 @@ const BotValidationProvider = ({ children, recaptchaV2SiteKey, orderId, initialA
   }, [executeRecaptcha]);
 
   // region Rendering
-
   if (isInitialLoading || isVerificationInProgress) {
-    return <OrderLoading />;
+    return (
+      <div className={`${styles.container} order-fiat`}>
+        <OrderLoading />
+      </div>
+    );
   }
 
   if (isAdditionalValidationNeeded) {
     return (
-      <RecaptchaV2Container>
-        <ReCAPTCHA sitekey={recaptchaV2SiteKey} onChange={validateWithUserInteraction} />
-      </RecaptchaV2Container>
+      <div className={`${styles.container} order-fiat`}>
+        <RecaptchaV2Container>
+          <ReCAPTCHA sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_V2_SITE_KEY} onChange={validateWithUserInteraction} />
+        </RecaptchaV2Container>
+      </div>
     );
   }
 
@@ -126,7 +133,11 @@ const BotValidationProvider = ({ children, recaptchaV2SiteKey, orderId, initialA
     );
   }
 
-  return <OrderFailed title="error.notfound1" />;
+  return (
+    <div className={`${styles.container} order-fiat`}>
+      <OrderFailed title="error.notfound1" />
+    </div>
+  );
 
   // endregion
 };
