@@ -1,3 +1,1 @@
-export default order => {
-  return order && order.pair && order.pair.quote && !order.pair.quote.is_crypto;
-};
+export default isFiatOrder = order => Boolean(order && order.pair && order.pair.quote && !order.pair.quote.is_crypto);
