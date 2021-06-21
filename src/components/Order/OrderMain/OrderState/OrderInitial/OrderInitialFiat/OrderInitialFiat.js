@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import styled from '@emotion/styled';
 import OrderPreReleased from '../../OrderPreReleased/OrderPreReleased';
 import OrderFailed from '../../OrderFailure/OrderFailure';
+import { BotValidationContext } from '../../../../BotValidation/BotValidationProvider';
 
 const PaymentNewTabText = styled.h4`
   text-align: center;
@@ -27,6 +28,8 @@ const Spinner = styled.div`
 `;
 
 class OrderInitial extends Component {
+  static contextType = BotValidationContext;
+
   constructor(props) {
     super(props);
 
@@ -75,6 +78,8 @@ class OrderInitial extends Component {
 
         if (data === 'error') {
           document.querySelector('#safecharge_payment_iframe').src = this.props.order.payment_url;
+          const { verifyIfHuman } = this.context;
+          verifyIfHuman();
         }
 
         if (data === 'canceledByUser') window.location.reload();
