@@ -14,6 +14,7 @@ import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
 
 import styles from './ExchangeWidget.scss';
+import isFiatOrder from '../../../../utils/isFiatOrder';
 
 class ExchangeWidget extends Component {
   constructor(props) {
@@ -48,7 +49,10 @@ class ExchangeWidget extends Component {
     axios
       .post(`${config.API_BASE_URL}/orders/`, data)
       .then(response => {
-        this.props.setOrder(response.data);
+        const orderData = response.data;
+        const isFiat = isFiatOrder(orderData);
+        this.props.setOrder({ ...orderData, isFiat });
+        
         this.setState({
           orderRef: response.data.unique_reference,
           orderPlaced: true,
@@ -73,6 +77,7 @@ class ExchangeWidget extends Component {
           amount_quote: parseFloat(this.props.price.receive),
           created_at: new Date(),
         };
+
         let orderHistory = localStorage['orderHistory'];
         if (!orderHistory) {
           orderHistory = [newOrder];
