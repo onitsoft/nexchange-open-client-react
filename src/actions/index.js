@@ -7,6 +7,7 @@ import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
+import isFiatOrder from '../utils/isFiatOrder';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -407,7 +408,8 @@ export const fetchOrder = orderId => async dispatch => {
   return request
     .then(res => {
       const order = res.data;
-      dispatch(setOrder(order));
+      const isFiat = isFiatOrder(order);
+      dispatch(setOrder({ ...order, isFiat }));
     })
     .catch(error => {
       if (error.response && error.response.status === 429) {
