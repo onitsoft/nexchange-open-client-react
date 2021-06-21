@@ -5,22 +5,20 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { fetchOrder, fetchPrice, setOrder, fetchCoinDetails, resetWallet } from 'Actions';
 
-import isFiatOrder from 'Utils/isFiatOrder';
-import config from 'Config';
-
 import OrderMain from './OrderMain/OrderMain';
 import OrderTop from './OrderTop/OrderTop';
 
 import OrderLoading from './OrderLoading/OrderLoading';
 import OrderCoinsProcessed from './OrderCoinsProcessed/OrderCoinsProcessed';
 import OrderCta from './OrderCta/OrderCta';
+import withOrderDataProvider from './withOrderDataProvider';
 
 import styles from './Order.scss';
 
 class Order extends Component {
   constructor(props) {
     super(props);
-
+    
     if (this.props.order && this.props.match.params.orderRef === this.props.order.unique_reference) {
       this.state = { order: this.props.order };
     } else {
@@ -28,32 +26,13 @@ class Order extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.fetchOrder(this.props.match.params.orderRef);
-    this.props.fetchCoinDetails();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
-      clearTimeout(this.timeout);
-      clearInterval(this.interval);
-      this.props.fetchOrder(this.props.match.params.orderRef);
-    }
-  }
-
   componentWillUnmount() {
-    clearInterval(this.interval);
-    clearTimeout(this.timeout);
     this.props.resetWallet();
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ order: nextProps.order });
-
-    this.timeout = setTimeout(() => {
-      this.props.fetchOrder(this.props.match.params.orderRef);
-    }, config.ORDER_DETAILS_FETCH_INTERVAL);
-
+    
     if (nextProps.order !== 429) {
       this.setState({ order: nextProps.order });
 
@@ -70,7 +49,7 @@ class Order extends Component {
 
   render() {
     return (
-      <div className={`${styles.container} ${this.state.order && (isFiatOrder(this.state.order) ? 'order-fiat' : 'order-crypto')}`}>
+      <div className={`${styles.container} ${this.state.order && this.state.order.isFiat ? 'order-fiat' : 'order-crypto'}`}>
         <div className="container">
           <div className="row">
             {(this.state.order == null && <OrderLoading />) ||
@@ -94,4 +73,4 @@ class Order extends Component {
 const mapStateToProps = ({ order, price }) => ({ order, price });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchOrder, fetchPrice, setOrder, fetchCoinDetails, resetWallet }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default connect(mapStateToProps, mapDispatchToProps)(withOrderDataProvider(Order));
