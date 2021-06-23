@@ -63,6 +63,13 @@ const Footer = props => {
                         </li>
                         <li>
                           <Link
+                            to="/blog"
+                          >
+                            {t('header.blog')}
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
                             onClick={() => {
                               props.showSupportModal(true);
                             }}
