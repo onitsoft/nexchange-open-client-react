@@ -81,6 +81,11 @@ const App = () => {
 
     return <Redirect to={`/${lang}/not-found`} />;
   };
+  
+  const redirectToBlog = () => {
+    window.location.replace(`${window.location.host}/blog`);
+    window.location.reload();
+  }
 
   return (
     <GraphCMSProvider>
@@ -95,6 +100,7 @@ const App = () => {
                   <Header />
 
                   <Switch>
+                    <Route exact path="/blog(/:post_or_page)" render={redirectToBlog}/>
                     <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
                     <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                     <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
