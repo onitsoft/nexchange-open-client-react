@@ -100,7 +100,7 @@ const App = () => {
                   <Header />
 
                   <Switch>
-                    <Route path="/blog(/*)" render={redirectToBlog}/>
+                    <Route exact path="/blog" render={redirectToBlog}/>
                     <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
                     <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                     <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
