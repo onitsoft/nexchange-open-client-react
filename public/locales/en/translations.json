@@ -191,7 +191,7 @@
   "testimonialsx": {
     "1": "Testimonials",
     "cryptotalk": "Check Out @nexchangeCC with a Simple, Secure and a transparent exchange that you use without registration.",
-    "john": "Nexchange is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
+    "john": "Yoa.ltd is the next big exchange… clean ui, mobile friendly, smooth transaction and transparent platform. I have tried different types exchanges but this platform delivers what I want…",
     "tomo": "Best new instant exchange service! Fast, easy, low fees...",
     "hunterk13": "I traded $24,000 worth of BTC to LTC yesterday, great trustworthy exchange. Had a few hiccups but everything was sorted out. Would use again. 😊"
   },
@@ -202,7 +202,7 @@
   "about": {
     "title": "About Us",
     "teamtitle": "The People Who Make it Happen",
-    "1": "Nexchange is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.",
+    "1": "Yoa.ltd is a fast, reliable and fully transparent cryptocurrency exchange built by crypto enthusiasts, for crypto enthusiasts.",
     "2": "We are a group of multi-national, multi-disciplinary cryptocurrency professionals.",
     "3": "Our team came together to make this platform after seeing firsthand the need for a fast and reliable exchange on the crypto market.",
     "4": "We pride ourselves on total transparency",
@@ -237,7 +237,7 @@
   },
   "subscription": {
     "1": "Do you have any questions?",
-    "2": "Enter your email to receive updates about Nexchange",
+    "2": "Enter your email to receive updates about Yoa.ltd",
     "3": "Subscribe",
     "4": "Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.",
     "5": "Something went wrong. Please try again later.",
@@ -293,7 +293,7 @@
     "ques12": "I see a 15-minute timer on my order window, what happens when it runs out?",
     "ques13": "Do you have any promotions running at the moment?",
     "ques14": "Do I need a wallet? How do I get one?",
-    "ans1": "<0><0>Nexchange is an automated cryptocurrency exchange service, operated by <1>YOA LTD. (registered company No. 10009845)</1>.</0><1>Our VAT number - GB233 5420 37.<1></1>Our registered office address - Suite 11, Penhurst House, 352-254 Battersea Park Road, London, England, SW11 3BY.</1><2>Our customer support phone number in UK is <1>+442081442192</1>.</2></0>",
+    "ans1": "<0><0>Yoa.ltd is an automated cryptocurrency exchange service, operated by <1>YOA LTD. (registered company No. 10009845)</1>.</0><1>Our VAT number - GB233 5420 37.<1></1>Our registered office address - Suite 11, Penhurst House, 352-254 Battersea Park Road, London, England, SW11 3BY.</1><2>Our customer support phone number in UK is <1>+442081442192</1>.</2></0>",
     "ans2": "<0>We allow you to exchange one cryptocurrency for another. To view our currently supported coins, please click on the coin selection widget in the top of fold of the page.</0><1>We will be adding more currencies very soon, stay tuned!</1><2>Missing your favorite coin? Let us know here: <1>support@nexchange.io</1>.</2>",
     "ans3": "<0>Our service fee is 0.5%. There are no hidden fees here: the amount you see on the screen is the exact amount you get in your wallet.</0>",
     "ans4": "<0>Initiating a transaction doesn’t take more than a couple of minutes. The actual processing takes about 10–60 minutes before you receive your coins in your desired currency. The transaction time depends on the selected currencies and their respective blockchains.</0>",
@@ -305,7 +305,7 @@
     "ans11": "<0>Whenever you create an order, a referral code is automatically generated for you.</0><1>Current referral conditions are as follows:</1><2><0>We pay half of our revenues to the affiliates. One fourth of revenues for 2nd degree affiliates and one eighth of revenues for 3rd degree affiliates.</0><1>We send referral payouts once the funds accumulated on your account reach the threshold. The treshold amount is typically 10 times the minimal order amount (no tx fee), but it can be adjusted downward, in which case, you would need to cover the tx fee yourself.</1><2>You will be receiving your funds to the withdraw address specified on this order.</2><3>If you would like to change withdrawal address or preferred currency, let us know in support, and we will take care of it.</3></2><3>These are subject to change at any time.</3>",
     "ans12": "<0>There's a 15-minute window between the moment you open the order and the moment we detect the coins that you sent on the blockchain. During this time interval, we effectively freeze the price for your order.</0><1>If the 15 minute time window closes, the order is canceled because the price will have expired and will need to be recalculated.</1><2>If you did not send your funds in time, simply initiate a new order.</2><3>If you did send your funds, but for some reason they were not detected, contact us through the support chat and we will help you out.</3>",
     "ans13": "<0>Yes. Promote Yoa.ltd on social media (such as Twitter). We would pay you 1000 SAT for every retweet from a legitimate, real account with over 500 followers and 100 SAT for each like from an account of the same criteria.</0><1><0>We reserve the right to deny the bonus coins on any grounds we see fit.</0></1>",
-    "ans14": "<0>In order to use Nexchange, you need to have your own wallet. The main upside of this feature is that we don’t hold your coins, and thus you retain full control over your assets at all times.</0><1>If you need some help obtaining a wallet for your desired cryptocurrency, please look here:</1><2><0>Bitcoin (BTC): <1>https://bitcoin.org/en/choose-your-wallet</1></0><1>Ethereum (ETH): <1>https://github.com/ethereum/mist/releases</1></1><2>Litecoin (LTC): <1>https://litecoin.org/</1></2></2><3>Please note that we are not affiliated with the websites mentioned above, these links are for user’s reference purposes only. We will not accept any liability, obligation or responsibility whatsoever for the content of external websites.</3>"
+    "ans14": "<0>In order to use Yoa.ltd, you need to have your own wallet. The main upside of this feature is that we don’t hold your coins, and thus you retain full control over your assets at all times.</0><1>If you need some help obtaining a wallet for your desired cryptocurrency, please look here:</1><2><0>Bitcoin (BTC): <1>https://bitcoin.org/en/choose-your-wallet</1></0><1>Ethereum (ETH): <1>https://github.com/ethereum/mist/releases</1></1><2>Litecoin (LTC): <1>https://litecoin.org/</1></2></2><3>Please note that we are not affiliated with the websites mentioned above, these links are for user’s reference purposes only. We will not accept any liability, obligation or responsibility whatsoever for the content of external websites.</3>"
   },
   "support": {
     "1": "Support",
@@ -603,7 +603,7 @@
       },
       "answers": {
         "what-is-whitelabel": "A white-label exchange is your way to launch your own cryptocurrency trading solution, simply, easily, cost-effectively and without needing to worry about the technical implementation.",
-        "why-whitelabel": "Several reason why you should consider using a white-label exchange are:\n\n1. Time to market: Developing your own solution might take anywhere between one to three years. In a highly dynamic market such as crypto, this is basically eternity. all Yoa.ltd white-label products are delivered within 30 working days. that's at least 12 times faster!\n\n2. Cost: our white-label will typically cost only the fraction of the money it takes to develop your own product while providing a rich set of features along with decent customisation capabilities.\n\n3. Liquidity: Yoa.ltd white-labels is offered with a full access to our internal reserves as well as more than a dozen different liquidity providers which we have integrated.\n\n4. No risk: n.exchange will pay you a constant trading fee based on the volume of your exchange, you will never be exposed to the market.\n\n5. Customer support: n.exchange will handle customer inquiries on the behalf of your business.\n\n6. Verification: we handle the customer verification on behalf of our white-labels\n\n7. Access to top tier talent and the expert advise of a team successfully running a business in the crypto industry since 2016"
+        "why-whitelabel": "Several reason why you should consider using a white-label exchange are:\n\n1. Time to market: Developing your own solution might take anywhere between one to three years. In a highly dynamic market such as crypto, this is basically eternity. all Yoa.ltd white-label products are delivered within 30 working days. that's at least 12 times faster!\n\n2. Cost: our white-label will typically cost only the fraction of the money it takes to develop your own product while providing a rich set of features along with decent customisation capabilities.\n\n3. Liquidity: Yoa.ltd white-labels is offered with a full access to our internal reserves as well as more than a dozen different liquidity providers which we have integrated.\n\n4. No risk: Yoa.ltd will pay you a constant trading fee based on the volume of your exchange, you will never be exposed to the market.\n\n5. Customer support: Yoa.ltd will handle customer inquiries on the behalf of your business.\n\n6. Verification: we handle the customer verification on behalf of our white-labels\n\n7. Access to top tier talent and the expert advise of a team successfully running a business in the crypto industry since 2016"
       }
     }
   },

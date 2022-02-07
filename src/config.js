@@ -2,7 +2,7 @@ const development = process.env.NODE_ENV !== 'production';
 
 const config = {
   NAME: 'Yoa.ltd',
-  DOMAIN: 'https://n.exchange',
+  DOMAIN: 'https://yoa.ltd',
   API_BASE_URL: 'https://api.n.exchange/en/api/v1',
   //   API_BASE_URL: 'http://localhost:8000/en/api/v1',
   SUPPORT_EMAIL: 'support@n.exchange',

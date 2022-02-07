@@ -26,7 +26,7 @@ const ICO = () => {
                 <h3>{t('ico.desc')}</h3>
 
                 <a
-                  href="https://n.exchange/ico"
+                  href="https://yoa.ltd/ico"
                   className={`${styles.btn} btn btn-block btn-primary`}
                   target="_blank"
                   rel="noopener noreferrer"
