@@ -51,21 +51,27 @@ class CoinsDropdown extends Component {
     });
 
     this.trackEvent(this.state.value);
-
+    
     return fuse.search(this.state.value);
   };
 
   getCoins = () => {
     const params = urlParams();
+    const isQuoteDropdown = this.props.type.toUpperCase() === 'DEPOSIT';
+    
     let filteredCoins = this.props.coinsInfo.filter(coin => {
-      if (params && params.hasOwnProperty('test')) {
-        return this.props.type.toUpperCase() === 'DEPOSIT' ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
-      }
+      // if (params && params.hasOwnProperty('test')) {
+      //   return isQuoteDropdown ? coin.is_quote_of_enabled_pair_for_test : coin.is_base_of_enabled_pair_for_test;
+      // }
+      const isCoinEnabled = isQuoteDropdown ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
 
-      return this.props.type.toUpperCase() === 'DEPOSIT' ? coin.is_quote_of_enabled_pair : coin.is_base_of_enabled_pair;
+      if (!isCoinEnabled) return false; // Filter out fiat & disabled from receive choice
+      if (isQuoteDropdown && coin.is_crypto) return false; // Filter out crypto from deposit choice
+      return true;
     });
+    
     //Non cryptos first, then alphabetical
-    filteredCoins = _.sortBy(filteredCoins, (coin) => {return coin.is_crypto + coin.code});
+    filteredCoins = _.sortBy(filteredCoins, (coin) => coin.is_crypto + coin.code);
     filteredCoins = this.searchCoins(filteredCoins);
 
     if (this.props.selectedCoin.orderByAddress && this.props.type.toUpperCase() === 'RECEIVE') {
@@ -112,11 +118,13 @@ class CoinsDropdown extends Component {
             <div className="col-xs-3 text-center">
               <i className={`cc ${coin.code} ${coin.code}`} />
             </div>
+            
             <div className="col-xs-3">
               <p>
                 <b>{coin.code}</b>
               </p>
             </div>
+            
             <div className="col-xs-6 text-capitalize">
               <p>{coin.name}</p>
             </div>

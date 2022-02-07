@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { translate } from 'react-i18next';
 import onClickOutside from 'react-onclickoutside';
+
 import { selectCoin, fetchPrice, errorAlert } from 'Actions/index.js';
 import CoinsDropdown from './CoinsDropdown/CoinsDropdown';
 import styles from './CoinSelector.scss';
@@ -20,9 +21,11 @@ class CoinSelector extends Component {
 
   selectCoin = coin => {
     const selectedByUser = this.props.selectedCoin.selectedByUser;
+    
     if (!_.isEmpty(selectedByUser) && !_.isEmpty(this.props.type)) {
       selectedByUser[this.props.type] = true;
     }
+    
     this.props.selectCoin(
       {
         ...this.props.selectedCoin,
@@ -146,9 +149,11 @@ class CoinSelector extends Component {
           onClick={() => this.setState({ isDropdownVisible: !this.state.isDropdownVisible })}
         >
           <i className={`${styles['coin-icon']} cc ${selectedCoin}`} />
+          
           <span className={styles.span} data-test="selected">
             {selectedCoin}
           </span>
+          
           <div className={styles.carret} />
         </div>
 
