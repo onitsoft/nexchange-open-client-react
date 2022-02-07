@@ -19,7 +19,7 @@ const TermsConditions = () => {
               <p>{t('terms.9')}</p>
               <p>{t('terms.10')}</p>
               <p>{t('terms.11')}</p>
-
+              
               <ol>
                 <li>{t('terms.13')}</li>
                 <li>{t('terms.14')}</li>
@@ -28,6 +28,24 @@ const TermsConditions = () => {
                 <li>{t('terms.17')}</li>
                 <li>{t('terms.18')}</li>
                 <li>{t('terms.19')}</li>
+                <li>{t('terms.20')}</li>
+                <li>{t('terms.21')}</li>
+                <li>{t('terms.22')}</li>
+                <li>{t('terms.23')}</li>
+                <li>{t('terms.24')}</li>
+                <li>{t('terms.25')}</li>
+                <li>{t('terms.26')}</li>
+                <li>{t('terms.27')}</li>
+                <li>{t('terms.28')}</li>
+                <li>{t('terms.29')}</li>
+                <li>{t('terms.30')}</li>
+                <li>{t('terms.31')}</li>
+                <li>{t('terms.32')}</li>
+                <li>{t('terms.33')}</li>
+                <li>{t('terms.34')}</li>
+                <li>{t('terms.35')}</li>
+                <li>{t('terms.36')}</li>
+                <li>{t('terms.37')}</li>
               </ol>
 
               <p>{t('terms.12')}</p>
