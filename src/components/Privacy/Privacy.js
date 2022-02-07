@@ -239,6 +239,10 @@ const Privacy = props => {
                   commitments. Please refer to the section titled “Applicable Law; Arbitration” in our Terms of Service
                   /en/articles/legal_privacy
                 </p>
+
+                <h3>Security</h3>
+                
+                <p>The services offered by us are subject to and governed by England and Wales law. All disputes arising from or under our policy and Terms and Conditions shall be subject to the exclusive jurisdiction of the competent courts of London, England.</p>
               </Trans>
 
               <Trans i18nKey="privacy.choices">
