@@ -20,6 +20,7 @@ import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 import './css/index.scss';
+import CookiePolicyModal from "./components/misc/CoockiePolicyModal/CookiePolicyModal";
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
@@ -90,7 +91,7 @@ const App = () => {
             <Suspense fallback={<></>}>
               <ToTop>
                 <Referrals />
-                <Announcement />
+                <CookiePolicyModal />
                 <Container>
                   <Header />
 

@@ -3,10 +3,10 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { I18n } from 'react-i18next';
-import i18n from 'Src/i18n';
 import axios from 'axios';
-import config from 'Config';
 
+import i18n from 'Src/i18n';
+import config from 'Config';
 import { errorAlert, setOrder } from 'Actions/index.js';
 // import { bindCrispEmail } from 'Utils/crispEmailBinding';
 
@@ -114,6 +114,7 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
+                    
                     <CoinInput type="deposit" />
                     <CoinSwitch />
                     <CoinInput type="receive" />
@@ -137,6 +138,7 @@ class ExchangeWidget extends Component {
                         dangerouslySetInnerHTML={{ __html: t('order.byclickTC', { buttonName: t('exchangewidget.2') }) }}
                       />
                     </div>
+                    
                   </div>
                 </div>
               </div>
