@@ -63,6 +63,7 @@ export const selectCoin = (selectedCoins, pairs) => dispatch => {
     },
   });
 };
+
 export const setDestinationTag = payload => ({
   type: types.SET_DESTINATION_TAG,
   payload,
@@ -275,7 +276,7 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = ({ base, quote } = {}) => dispatch => {
+export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
@@ -283,11 +284,13 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
     .then(async response => {
       let params = urlParams();
       const pathNameParams = window.location.pathname.split('/');
+      
       // Checks if pathname section of url has params.
       if (pathNameParams[1] === 'pair') {
         params = {};
         params.pair = pathNameParams[2].toUpperCase();
       }
+      
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
           return !pair.disabled;
@@ -295,6 +298,7 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
           return !pair.disabled && !pair.test_mode;
         }
       });
+      
       const processedPairs = preparePairs(pairs);
 
       dispatch({
@@ -304,9 +308,12 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
 
       let depositCoin = base;
       let receiveCoin = quote;
+      
+      console.log('base:', depositCoin, 'quote:', receiveCoin)
 
       const loadPair = pair => {
         const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`;
+        
         return new Promise((resolve, reject) => {
           axios
             .get(url)
@@ -328,7 +335,7 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
 
       const pickRandomPair = async () => {
         const pair = pairs[Math.floor(Math.random() * pairs.length)];
-        depositCoin = pair.quote;
+        //depositCoin = pair.quote;
         receiveCoin = pair.base;
       };
 
@@ -338,6 +345,9 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
         if (base && quote) {
           try {
             const pair = await loadPair(`${base}${quote}`);
+            
+            console.log('1 CASE', pair)
+            
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -349,25 +359,33 @@ export const fetchPairs = ({ base, quote } = {}) => dispatch => {
         } else if (params && params.hasOwnProperty('pair')) {
           try {
             const pair = await loadPair(params.pair);
+
+            console.log('2 CASE', pair)
+            
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
             }
           } catch (err) {
-            /* istanbul ignore next */
             console.log('Error:', err);
           }
         } else {
           const pair = await pickMostTraded();
+
+          console.log('3 CASE', pair)
+          
           if (pair) {
-            depositCoin = pair.quote;
-            receiveCoin = pair.base;
+            depositCoin = 'EUR' // pair.quote;
+            receiveCoin = 'BTC' // pair.base;
           } else {
+            console.log('4 CASE')
             pickRandomPair();
           }
         }
       };
+      
       await pickCoins();
+      
       dispatch(
         selectCoin({
           deposit: depositCoin,

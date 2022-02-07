@@ -89,10 +89,10 @@ const Footer = props => {
                         </li>
                       </ul>
                     </section>
-                    <section>
-                      <h4>{t('footer.popular-pairs')}</h4>
-                      <PopularPairs lang={lang} />
-                    </section>
+                    {/*<section>*/}
+                    {/*  <h4>{t('footer.popular-pairs')}</h4>*/}
+                    {/*  <PopularPairs lang={lang} />*/}
+                    {/*</section>*/}
                     <section>
                       <h4>{t('header.social')}</h4>
                       <ul>

@@ -32,9 +32,17 @@ class RecentOrders extends Component {
     receiveCurrencies = receiveCurrencies.map(coin => coin.code);
 
     axios
-      .get(`${config.API_BASE_URL}/orders/?page=1`)
+      .get(`${config.API_BASE_URL}/orders/?page=1&page_size=100`)
       .then(response => {
+        
+        console.log('ORDERS', response.data.results);
+        
         let orders = response.data.results.filter(order => {
+          // Filter out C2C orders, leave only F2C
+          if (!_.includes(['EUR', 'RUB', 'USD', 'GBP'], order.pair.quote)) {
+            return false;
+          }
+          
           return params && params.hasOwnProperty('test')
             ? true
             : _.includes(receiveCurrencies, order.pair.base.code) && _.includes(depositCurrencies, order.pair.quote.code);
