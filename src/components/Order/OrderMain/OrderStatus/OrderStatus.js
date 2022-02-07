@@ -8,6 +8,7 @@ import styles from './OrderStatus.scss';
 const OrderStatus = props => {
   let width = '0%';
   const status = props.status;
+  
   if(!props.isLimitOrder) {
     if (STATUS_CODES[status] === 'COMPLETED') {
       width = '100%';

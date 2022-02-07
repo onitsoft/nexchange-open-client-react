@@ -677,13 +677,16 @@ export const signIn = (username, password) => dispatch => {
         ...data,
         issued_at: Date.now(),
       };
+      
       if (data && data.access_token) {
         localStorage.token = data.access_token;
         localStorage.full_token = JSON.stringify(token);
+        
         dispatch({
           type: types.AUTH_TOKEN_RECEIVED,
           payload: token,
         });
+        
         dispatch({
           type: types.AUTH_COMPLETE,
         });
