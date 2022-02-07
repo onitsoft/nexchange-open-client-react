@@ -156,7 +156,7 @@ class FAQ extends Component {
                                 3BY.
                               </p>
                               <p>
-                                Our customer support phone number in UK is <a href="tel:+442081442192">+442081442192</a>.
+                                Our customer support phone number in UK is <a href="tel:+441163183915">+441163183915</a>.
                               </p>
                             </div>
                           </Trans>

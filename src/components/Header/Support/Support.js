@@ -109,11 +109,11 @@ class Support extends Component {
                     <div onClick={() => window.gtag('event', 'Support number click', {event_category: 'Support', event_label: ``})}>
                       <div className="hidden-xs hidden-sm">
                         {/*desktop link structure*/}
-                        <a href="tel:+442030971920">+442030971920</a>
+                        <a href="tel:+441163183915">+441163183915</a>
                       </div>
                       <div className="hidden-md hidden-lg">
                         {/*mobile link structure*/}
-                        <a href="tel:+442030971920">+442030971920</a>
+                        <a href="tel:+441163183915">+441163183915</a>
                       </div>
                       <br />
                       {/*+16464612858 (US)*/}
