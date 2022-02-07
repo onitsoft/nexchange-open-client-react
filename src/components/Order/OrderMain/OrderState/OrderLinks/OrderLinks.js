@@ -22,7 +22,8 @@ const OrderLinks = props => {
               {t('order.repeat')}
             </a>
           )}
-          {/* {props.coin &&
+          {/* {props.coin &&n
+          
           props.txId && (
             <a href={getBlockchainUrl(props.coin, props.txId)} className={`btn ${styles.btn}`} target="_blank">
               {t('order.blockchain')}

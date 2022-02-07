@@ -22,16 +22,18 @@ class Hero extends Component {
 
   UNSAFE_componentWillUpdate(nextProps) {
     const params = urlParams();
+    
     if (params && params.hasOwnProperty('advanced') && this.props.orderMode === 'INSTANT') {
       this.props.changeOrderMode('ORDER_BOOK');
       window.gtag('event', 'Entered advanced mode via URL', {event_category: 'Order Book', event_label: ``});
-    } if(this.props.location.search.indexOf('advanced') !== -1 && nextProps.location.search.indexOf('advanced') === -1) {
+    }
+    if(this.props.location.search.indexOf('advanced') !== -1 && nextProps.location.search.indexOf('advanced') === -1) {
       this.props.changeOrderMode('INSTANT');
     }
   }
 
   changeOrderMode() {
-    if(this.props.orderMode === 'INSTANT'){
+    if (this.props.orderMode === 'INSTANT'){
       this.props.changeOrderMode('ORDER_BOOK');
       window.gtag('event', 'Order Mode Switch', {event_category: 'Order Book', event_label: ``});
     } else if(this.props.orderMode === 'ORDER_BOOK'){
@@ -52,12 +54,15 @@ class Hero extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.brand}>
+                    
                     <h1>{t('hero.1')}</h1>
+                    
                     <Trans i18nKey="hero.2">
                       <h2>
                         Simple. <span className="text-green">Secure</span>. Transparent.
                       </h2>
                     </Trans>
+                    
                   </div>
                 </div>
 

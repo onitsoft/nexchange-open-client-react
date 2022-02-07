@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/onitsoft/nexchange-open-client-react.svg?branch=master)](https://travis-ci.org/onitsoft/nexchange-open-client-react)
 
-# N.exchange Open Client (ReactJS)
+# Yoa.ltd Open Client (ReactJS)
 
-N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange/) API. The API is available to the public and its [comprehensive documentation](https://n.exchange/apidocs) can be found here.
+Yoa.ltd Open Client is a front-end client for [Yoa.ltd](https://Yoa.ltd/) API. The API is available to the public and its [comprehensive documentation](https://Yoa.ltd/apidocs) can be found here.
 
 ## Installation
 
@@ -12,9 +12,9 @@ N.exchange Open Client is a front-end client for [n.exchange](https://n.exchange
 4.  Install yarn dependencies `yarn install`.
 5.  Start the project `yarn run start`.
 
-### [Install n.exchange front-end on a server](https://medium.com/nexchange/nexchange-io-front-end-client-setup-on-a-server-501ea46f34aa)
+### [Install Yoa.ltd front-end on a server](https://medium.com/nexchange/nexchange-io-front-end-client-setup-on-a-server-501ea46f34aa)
 
-### [Full YouTube toturial on how to develop your own DEX exchange using n.exchange open-source](https://www.youtube.com/watch?v=7ujmzb3HzCA)
+### [Full YouTube toturial on how to develop your own DEX exchange using Yoa.ltd open-source](https://www.youtube.com/watch?v=7ujmzb3HzCA)
 
 
 ## Contributing
@@ -23,4 +23,4 @@ Anybody is welcome to make contributions to our repository, especially if you di
 
 ## License
 
-n.exchange Open Client (ReactJS) is [Apache 2.0 licensed](https://github.com/onitsoft/nexchange-open-client-react/blob/master/LICENSE). Please give us credit in a clearly visible manner in at least 3 locations - FAQ, Footer and 'About Us' section. It should say `Powered by n.exchange` and include a link to [our exchange](https://n.exchange/). Also, make sure to include your referral code in every one of your links. This will ensure that you get your commission wherever the trade is made, be it your own implementation of our front-end client or our own.
+Yoa.ltd Open Client (ReactJS) is [Apache 2.0 licensed](https://github.com/onitsoft/nexchange-open-client-react/blob/master/LICENSE). Please give us credit in a clearly visible manner in at least 3 locations - FAQ, Footer and 'About Us' section. It should say `Powered by Yoa.ltd` and include a link to [our exchange](https://Yoa.ltd/). Also, make sure to include your referral code in every one of your links. This will ensure that you get your commission wherever the trade is made, be it your own implementation of our front-end client or our own.

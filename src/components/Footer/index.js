@@ -42,7 +42,7 @@ const Footer = props => {
                   <main className="">
                     <section className="logo">
                       <Link to="/">
-                        <img src="/img/logo.svg" alt="N.exchange Logo" />
+                        <img src="/img/logo.svg" alt="Yoa.ltd Logo" />
                       </Link>
                     </section>
                     <section>
@@ -89,10 +89,10 @@ const Footer = props => {
                         </li>
                       </ul>
                     </section>
-                    <section>
-                      <h4>{t('footer.popular-pairs')}</h4>
-                      <PopularPairs lang={lang} />
-                    </section>
+                    {/*<section>*/}
+                    {/*  <h4>{t('footer.popular-pairs')}</h4>*/}
+                    {/*  <PopularPairs lang={lang} />*/}
+                    {/*</section>*/}
                     <section>
                       <h4>{t('header.social')}</h4>
                       <ul>

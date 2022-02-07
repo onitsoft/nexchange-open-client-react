@@ -169,7 +169,7 @@ class pricecomparsion extends Component {
                     <tr>
                       <th className="text-center" />
                       <th>
-                        <img className="nexchange-logo" src="/img/prices/logo-icon.svg" alt="N.exchange" />
+                        <img className="nexchange-logo" src="/img/prices/logo-icon.svg" alt="Yoa.ltd" />
                       </th>
                       <th>
                         <img src="/img/prices/shapeshift.png" alt="Shapeshift" />

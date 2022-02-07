@@ -143,7 +143,7 @@ class FAQ extends Component {
                           <Trans i18nKey="faq.ans1">
                             <div>
                               <p>
-                                N.exchange is an automated cryptocurrency exchange service, operated by
+                                Yoa.ltd is an automated cryptocurrency exchange service, operated by
                                 <a href="https://beta.companieshouse.gov.uk/company/10009845" target="_blank" rel="noopener noreferrer">
                                   YOA LTD. (registered company No. 10009845)
                                 </a>
@@ -401,7 +401,7 @@ class FAQ extends Component {
                           <div>
                             <Trans i18nKey="faq.ans13">
                               <p>
-                                Yes. Promote N.exchange on social media (such as Twitter). We would pay you 1000 SAT for every retweet from
+                                Yes. Promote Yoa.ltd on social media (such as Twitter). We would pay you 1000 SAT for every retweet from
                                 a legitimate, real account with over 500 followers and 100 SAT for each like from an account of the same
                                 criteria.
                               </p>
@@ -423,7 +423,7 @@ class FAQ extends Component {
                           <div>
                             <Trans i18nKey="faq.ans14">
                               <p>
-                                In order to use N.exchange, you need to have your own wallet. The main upside of this feature is that we
+                                In order to use Yoa.ltd, you need to have your own wallet. The main upside of this feature is that we
                                 don’t hold your coins, and thus you retain full control over your assets at all times.
                               </p>
                               <p>If you need some help obtaining a wallet for your desired cryptocurrency, please look here:</p>

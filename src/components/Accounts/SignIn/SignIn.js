@@ -32,7 +32,9 @@ const SignIn = (props) => {
 
   useEffect(() => {
     if (props.auth && props.auth.token) {
+      
       const { token } = props.auth
+      
       if (token.issued_at + (token.expires_in * 1000) > Date.now()) {
         if (!loggedIn) { setLoggedIn(true) }
       }

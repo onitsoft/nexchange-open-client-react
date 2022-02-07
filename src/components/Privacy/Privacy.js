@@ -9,6 +9,7 @@ const Privacy = props => {
           <div className="row">
             <div className="col-xs-12">
               <h2 style={{ marginBottom: 0 }}>{t('privacy.title')}</h2>
+              
               <Trans i18nKey="privacy.updated">
                 <h4 style={{ marginBottom: 30 }}>
                   Last updated: <strong>August 9th, 2017</strong>
@@ -19,7 +20,7 @@ const Privacy = props => {
                 <p>
                   This Privacy Policy explains how “YOA LTD.”, and its wholly owned subsidiaries (collectively, “YOA LTD.” we or us),
                   collects, uses, discloses and protects your information. This policy applies to information we collect when you access or
-                  use “YOA LTD.” websites and mobile applications (collectively, N.exchange services) or otherwise interact with us as
+                  use “YOA LTD.” websites and mobile applications (collectively, Yoa.ltd services) or otherwise interact with us as
                   described below. “YOA LTD.” provides the “YOA LTD.” Services through local operating entities that are wholly owned
                   subsidiaries of “YOA LTD.” (each, a “YOA LTD.” Company). To determine which “YOA LTD.” Company collects your information
                   and is responsible for processing your data.
@@ -232,12 +233,11 @@ const Privacy = props => {
                   and to view “YOA LTD.” certification, please visit http://www.export.gov/safeharbor/
                 </p>
 
-                <p>
-                  If you have a complaint regarding “YOA LTD.” compliance with the U.S.-EU Safe Harbor Framework or the U.S.-Swiss Safe
-                  Harbor Framework, first contact us through support at support@n.exchange. “YOA LTD.” has elected to use JAMS arbitration
-                  as an independent recourse mechanism available to settle unresolved complaints regarding “YOA LTD.” Safe Harbor
-                  commitments. Please refer to the section titled “Applicable Law; Arbitration” in our Terms of Service
-                  /en/articles/legal_privacy
+                <h3>Govern Law and Jurisdiction</h3>
+                
+                <p>The services offered by us are subject to and governed by England and Wales law. All disputes arising 
+                  from or under our policy and Terms and Conditions shall be subject to the exclusive jurisdiction of 
+                  the competent courts of London, England.
                 </p>
               </Trans>
 
@@ -254,7 +254,7 @@ const Privacy = props => {
 
                 <p>
                   Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the
-                  instructions in those communications. You may also opt out of receiving the N.exchange newsletter or certain
+                  instructions in those communications. You may also opt out of receiving the Yoa.ltd newsletter or certain
                   administrative emails by modifying your communications preferences through the settings feature of your online account. If
                   you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as
                   those about your account or our ongoing business relations.

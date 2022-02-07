@@ -31,6 +31,7 @@ class CoinInput extends PureComponent {
 
   handleChange = event => {
     let { value } = event.target;
+    
     // remove any whitespaces from amount
     value = value.replace(' ', '');
     const re = /^[0-9.,\b]+$/;
@@ -42,6 +43,7 @@ class CoinInput extends PureComponent {
 
     // Add error class to input if less than min or more than max
     const { min_amount_base, max_amount_base, min_amount_quote, max_amount_quote } = this.props.price;
+    
     if (this.props.type === 'deposit') {
       parseFloat(value) < min_amount_quote || parseFloat(value) > max_amount_quote
         ? this.setState({ inputClass: 'error' })
@@ -106,6 +108,7 @@ class CoinInput extends PureComponent {
               <label htmlFor={this.props.type} className={styles.label}>
                 {t('order.' + this.props.type)}
               </label>
+              
               <input
                 type="text"
                 className={classNames('form-control', styles.input, this.state.inputClass)}
@@ -123,6 +126,7 @@ class CoinInput extends PureComponent {
             </form>
 
             <CoinSelector type={this.props.type} onSelect={this.focus} />
+            
             <MinMax
               home={true}
               min={this.props.type === 'deposit' ? this.props.price.min_amount_quote : this.props.price.min_amount_base}

@@ -30,7 +30,8 @@ export class Home extends Component {
     return (
       <div>
         <Hero {...this.props} />
-        <RecentOrders />
+        {/* Since we have no F2C orders currently*/}
+        {/*<RecentOrders />*/}
         <Testimonials />
         <About />
         <SubscriptionForm />
