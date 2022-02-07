@@ -9,6 +9,7 @@ const Privacy = props => {
           <div className="row">
             <div className="col-xs-12">
               <h2 style={{ marginBottom: 0 }}>{t('privacy.title')}</h2>
+              
               <Trans i18nKey="privacy.updated">
                 <h4 style={{ marginBottom: 30 }}>
                   Last updated: <strong>August 9th, 2017</strong>
@@ -232,17 +233,12 @@ const Privacy = props => {
                   and to view “YOA LTD.” certification, please visit http://www.export.gov/safeharbor/
                 </p>
 
-                <p>
-                  If you have a complaint regarding “YOA LTD.” compliance with the U.S.-EU Safe Harbor Framework or the U.S.-Swiss Safe
-                  Harbor Framework, first contact us through support at support@n.exchange. “YOA LTD.” has elected to use JAMS arbitration
-                  as an independent recourse mechanism available to settle unresolved complaints regarding “YOA LTD.” Safe Harbor
-                  commitments. Please refer to the section titled “Applicable Law; Arbitration” in our Terms of Service
-                  /en/articles/legal_privacy
-                </p>
-
-                <h3>Security</h3>
+                <h3>Govern Law and Jurisdiction</h3>
                 
-                <p>The services offered by us are subject to and governed by England and Wales law. All disputes arising from or under our policy and Terms and Conditions shall be subject to the exclusive jurisdiction of the competent courts of London, England.</p>
+                <p>The services offered by us are subject to and governed by England and Wales law. All disputes arising 
+                  from or under our policy and Terms and Conditions shall be subject to the exclusive jurisdiction of 
+                  the competent courts of London, England.
+                </p>
               </Trans>
 
               <Trans i18nKey="privacy.choices">

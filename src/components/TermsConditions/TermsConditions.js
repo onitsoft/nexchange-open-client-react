@@ -5,10 +5,11 @@ const TermsConditions = () => {
   return (
     <I18n ns="translations">
       {t => (
-        <div className="container">
+        <div className="container terms">
           <div className="row">
             <div className="col-xs-12">
               <h2>{t('terms.1')}</h2>
+              
               <p>{t('terms.2')}</p>
               <p>{t('terms.3')}</p>
               <p>{t('terms.4')}</p>
