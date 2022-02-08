@@ -15,6 +15,7 @@ import styles from '../Accounts.scss';
 
 export const NewPassword = props => {
   const [showSuccessModal, setShowSuccessModal] = useState();
+
   const { auth, resetToken } = props;
   const [errorFor, setErrorFor] = useState('');
   const [state, setState] = useState({
@@ -56,15 +57,19 @@ export const NewPassword = props => {
       {(t, { lng }) => (
         <div className="row">
           <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12 ${styles.container}`}>
+
             <Link to={`/${lng}`}>
               <div className={styles['logo-container']}>
                 <img className={styles.logo} src="/img/logo-white.svg" alt="Logo" data-test="logo" />
               </div>
             </Link>
+
             <div className={`col-xs-12 col-sm-12 col-md-8 col-lg-6 ${styles['sub-container']}`}>
               <h3>{t('accounts.resetpassword')}</h3>
               <span>{t('accounts.resetPasswordBody')}</span>
+
               <form className="form-group" onSubmit={onSubmit}>
+
                 <div className={`${styles['input-container']} ${errorFor && errorFor === 'password' && 'error'}`}>
                   <input
                     type="password"
@@ -76,12 +81,14 @@ export const NewPassword = props => {
                     disabled={auth.loading}
                   />
                 </div>
+
                 {errorFor && errorFor === 'password' && (
                   <div className={'input-container'}>
                     <strong>Error:</strong>
                     {t(`accounts.errors.${errorFor}`)}
                   </div>
                 )}
+
                 <div className={`${styles['input-container']} ${errorFor && errorFor === 'passwordRepeat' && 'error'}`}>
                   <input
                     type="password"
@@ -93,18 +100,21 @@ export const NewPassword = props => {
                     disabled={auth.loading}
                   />
                 </div>
+
                 {errorFor && errorFor === 'passwordRepeat' && (
                   <div className={'input-container'}>
                     <strong>Error:</strong>
                     {t(`accounts.errors.${errorFor}`)}
                   </div>
                 )}
+
                 {auth.error && (
                   <div className={'input-container'}>
                     <strong>Error:</strong>
                     {t(`accounts.errorKeys.general.${auth.error}`)}
                   </div>
                 )}
+
                 <div className={styles.resetPassword}>
                   <button disabled={auth.loading} type="submit" className={`${styles.button} ${styles.main}`}>
                     {!auth.loading ? t('continue') : `${t('loading')}...`}
@@ -113,12 +123,15 @@ export const NewPassword = props => {
               </form>
 
               <Modal show={showSuccessModal} onHide={onHideModal} dialogClassName={dialogStyle.toString()}>
+
                 <Modal.Header closeButton>
                   <Modal.Title>{t('accounts.resetPassword.successTitle')}</Modal.Title>
                 </Modal.Header>
+
                 <Modal.Body>
                   <Marked>{t('accounts.resetPassword.successBody')}</Marked>
                 </Modal.Body>
+
                 <Modal.Footer>
                   <Link className={`btn-primary btn`} to={`/${lng}/signin`}>
                     Sign In
@@ -126,8 +139,10 @@ export const NewPassword = props => {
                   <Link className={`btn-default btn`} to={`/${lng}`}>
                     Home
                   </Link>
+
                 </Modal.Footer>
               </Modal>
+
             </div>
           </div>
         </div>
