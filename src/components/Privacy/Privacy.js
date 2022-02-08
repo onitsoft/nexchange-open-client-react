@@ -246,7 +246,7 @@ const Privacy = props => {
 
                 <p>
                   Account Information: You may access and review or update your online account information at any time by logging into your
-                  account and viewing your profile. If you want to close your account, please contact us at support@n.exchange. However,
+                  account and viewing your profile. If you want to close your account, please contact us at support@nexchange.co.uk. However,
                   please note that if you close your account, we may retain your information as required by law or for our legitimate
                   business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any investigations,
                   prevent fraud or enforce our user agreements.
@@ -274,7 +274,7 @@ const Privacy = props => {
                   add-on permits, but choosing to remove or disable our cookies may interfere with your use and functionality of the “YOA
                   LTD.” Services. Additionally, we may use certain persistent cookies that are not affected by your browser settings, but
                   will use such cookies solely for identity verification and fraud prevention purposes. For more information about cookies
-                  and how to block, delete or disable them, please refer to your browser instructions, or contact us at support@n.exchange.
+                  and how to block, delete or disable them, please refer to your browser instructions, or contact us at support@nexchange.co.uk.
                 </p>
               </Trans>
 
@@ -298,7 +298,7 @@ const Privacy = props => {
                 <h2>Contact us</h2>
                 <p>
                   If you have any questions or concerns regarding this Privacy Policy, please contact us at{' '}
-                  <a href="mailto:support@n.exchange">support@n.exchange</a>.
+                  <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>.
                 </p>
               </Trans>
             </div>

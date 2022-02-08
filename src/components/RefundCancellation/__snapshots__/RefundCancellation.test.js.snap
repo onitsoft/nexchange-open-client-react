@@ -44,9 +44,9 @@ ShallowWrapper {
             refund.4
              
             <a
-              href="mailto:support@n.exchange"
+              href="mailto:support@nexchange.co.uk"
             >
-              support@n.exchange
+              support@nexchange.co.uk
             </a>
           </p>
         </div>
@@ -78,9 +78,9 @@ ShallowWrapper {
             refund.4
              
             <a
-              href="mailto:support@n.exchange"
+              href="mailto:support@nexchange.co.uk"
             >
-              support@n.exchange
+              support@nexchange.co.uk
             </a>
           </p>
         </div>,
@@ -109,9 +109,9 @@ ShallowWrapper {
               refund.4
                
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>
             </p>,
           ],
@@ -172,9 +172,9 @@ ShallowWrapper {
                 "refund.4",
                 " ",
                 <a
-                  href="mailto:support@n.exchange"
+                  href="mailto:support@nexchange.co.uk"
                 >
-                  support@n.exchange
+                  support@nexchange.co.uk
                 </a>,
               ],
             },
@@ -187,11 +187,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "support@n.exchange",
-                  "href": "mailto:support@n.exchange",
+                  "children": "support@nexchange.co.uk",
+                  "href": "mailto:support@nexchange.co.uk",
                 },
                 "ref": null,
-                "rendered": "support@n.exchange",
+                "rendered": "support@nexchange.co.uk",
                 "type": "a",
               },
             ],
@@ -232,9 +232,9 @@ ShallowWrapper {
               refund.4
                
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>
             </p>
           </div>
@@ -266,9 +266,9 @@ ShallowWrapper {
               refund.4
                
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>
             </p>
           </div>,
@@ -297,9 +297,9 @@ ShallowWrapper {
                 refund.4
                  
                 <a
-                  href="mailto:support@n.exchange"
+                  href="mailto:support@nexchange.co.uk"
                 >
-                  support@n.exchange
+                  support@nexchange.co.uk
                 </a>
               </p>,
             ],
@@ -360,9 +360,9 @@ ShallowWrapper {
                   "refund.4",
                   " ",
                   <a
-                    href="mailto:support@n.exchange"
+                    href="mailto:support@nexchange.co.uk"
                   >
-                    support@n.exchange
+                    support@nexchange.co.uk
                   </a>,
                 ],
               },
@@ -375,11 +375,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "support@n.exchange",
-                    "href": "mailto:support@n.exchange",
+                    "children": "support@nexchange.co.uk",
+                    "href": "mailto:support@nexchange.co.uk",
                   },
                   "ref": null,
-                  "rendered": "support@n.exchange",
+                  "rendered": "support@nexchange.co.uk",
                   "type": "a",
                 },
               ],

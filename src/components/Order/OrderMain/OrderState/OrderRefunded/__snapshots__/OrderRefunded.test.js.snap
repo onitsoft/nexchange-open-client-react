@@ -32,9 +32,9 @@ ShallowWrapper {
           <h5>
             Your order has been refunded. Please contact support at
             <a
-              href="mailto:support@n.exchange"
+              href="mailto:support@nexchange.co.uk"
             >
-              support@n.exchange
+              support@nexchange.co.uk
             </a>
              for more information.
           </h5>
@@ -186,9 +186,9 @@ ShallowWrapper {
           "children": <h5>
             Your order has been refunded. Please contact support at
             <a
-              href="mailto:support@n.exchange"
+              href="mailto:support@nexchange.co.uk"
             >
-              support@n.exchange
+              support@nexchange.co.uk
             </a>
              for more information.
           </h5>,
@@ -203,9 +203,9 @@ ShallowWrapper {
             "children": Array [
               "Your order has been refunded. Please contact support at",
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>,
               " for more information.",
             ],
@@ -218,11 +218,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "support@n.exchange",
-                "href": "mailto:support@n.exchange",
+                "children": "support@nexchange.co.uk",
+                "href": "mailto:support@nexchange.co.uk",
               },
               "ref": null,
-              "rendered": "support@n.exchange",
+              "rendered": "support@nexchange.co.uk",
               "type": "a",
             },
             " for more information.",
@@ -378,9 +378,9 @@ ShallowWrapper {
             <h5>
               Your order has been refunded. Please contact support at
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>
                for more information.
             </h5>
@@ -532,9 +532,9 @@ ShallowWrapper {
             "children": <h5>
               Your order has been refunded. Please contact support at
               <a
-                href="mailto:support@n.exchange"
+                href="mailto:support@nexchange.co.uk"
               >
-                support@n.exchange
+                support@nexchange.co.uk
               </a>
                for more information.
             </h5>,
@@ -549,9 +549,9 @@ ShallowWrapper {
               "children": Array [
                 "Your order has been refunded. Please contact support at",
                 <a
-                  href="mailto:support@n.exchange"
+                  href="mailto:support@nexchange.co.uk"
                 >
-                  support@n.exchange
+                  support@nexchange.co.uk
                 </a>,
                 " for more information.",
               ],
