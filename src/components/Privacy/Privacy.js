@@ -9,7 +9,7 @@ const Privacy = props => {
           <div className="row">
             <div className="col-xs-12">
               <h2 style={{ marginBottom: 0 }}>{t('privacy.title')}</h2>
-              
+
               <Trans i18nKey="privacy.updated">
                 <h4 style={{ marginBottom: 30 }}>
                   Last updated: <strong>August 9th, 2017</strong>
@@ -234,10 +234,10 @@ const Privacy = props => {
                 </p>
 
                 <h3>Govern Law and Jurisdiction</h3>
-                
-                <p>The services offered by us are subject to and governed by England and Wales law. All disputes arising 
-                  from or under our policy and Terms and Conditions shall be subject to the exclusive jurisdiction of 
-                  the competent courts of London, England.
+
+                <p>
+                  The services offered by us are subject to and governed by England and Wales law. All disputes arising from or under our
+                  policy and Terms and Conditions shall be subject to the exclusive jurisdiction of the competent courts of London, England.
                 </p>
               </Trans>
 
@@ -246,18 +246,18 @@ const Privacy = props => {
 
                 <p>
                   Account Information: You may access and review or update your online account information at any time by logging into your
-                  account and viewing your profile. If you want to close your account, please contact us at support@nexchange.co.uk. However,
-                  please note that if you close your account, we may retain your information as required by law or for our legitimate
-                  business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any investigations,
-                  prevent fraud or enforce our user agreements.
+                  account and viewing your profile. If you want to close your account, please contact us at support@nexchange.co.uk.
+                  However, please note that if you close your account, we may retain your information as required by law or for our
+                  legitimate business purposes, such as to collect fees owed, resolve disputes, troubleshoot problems, assist with any
+                  investigations, prevent fraud or enforce our user agreements.
                 </p>
 
                 <p>
                   Communications Preferences: You may opt out of receiving promotional communications from “YOA LTD.” by following the
-                  instructions in those communications. You may also opt out of receiving the Yoa.ltd newsletter or certain
-                  administrative emails by modifying your communications preferences through the settings feature of your online account. If
-                  you opt out of receiving promotional communications, we may still send you transactional or relationship messages, such as
-                  those about your account or our ongoing business relations.
+                  instructions in those communications. You may also opt out of receiving the Yoa.ltd newsletter or certain administrative
+                  emails by modifying your communications preferences through the settings feature of your online account. If you opt out of
+                  receiving promotional communications, we may still send you transactional or relationship messages, such as those about
+                  your account or our ongoing business relations.
                 </p>
 
                 <p>
@@ -274,7 +274,8 @@ const Privacy = props => {
                   add-on permits, but choosing to remove or disable our cookies may interfere with your use and functionality of the “YOA
                   LTD.” Services. Additionally, we may use certain persistent cookies that are not affected by your browser settings, but
                   will use such cookies solely for identity verification and fraud prevention purposes. For more information about cookies
-                  and how to block, delete or disable them, please refer to your browser instructions, or contact us at support@nexchange.co.uk.
+                  and how to block, delete or disable them, please refer to your browser instructions, or contact us at
+                  support@nexchange.co.uk.
                 </p>
               </Trans>
 
