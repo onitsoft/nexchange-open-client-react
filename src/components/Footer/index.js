@@ -142,7 +142,7 @@ const Footer = props => {
                       <span> — </span>
                       <Link to={`/${lang}/privacy`}>{t('header.privacy-policy')}</Link>
                       <span> — </span>
-                      <Link to={`/${lang}/cookie-policy`}>Cookie Policy}</Link>
+                      <Link to={`/${lang}/cookie-policy`}>Cookie Policy</Link>
                     </p>
                   </aside>
                 </section>
