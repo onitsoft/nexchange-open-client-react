@@ -17,7 +17,7 @@ const TermsConditions = () => {
               </p>
               <p>
                 Please carefully read these terms of use (“Terms“) as well as our Privacy Policy, which we may update from time to time, a
-                current version of which is available here.
+                current version of which is available <a href='/privacy'>here</a>.
               </p>
               <p>
                 By accessing the Services, you agree to the Terms, Privacy Policy and Cookie Policy located here. “User” means a user of the
