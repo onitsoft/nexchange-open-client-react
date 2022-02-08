@@ -141,6 +141,8 @@ const Footer = props => {
                       <Link to={`/${lang}/terms-and-conditions`}>{t('header.terms-and-conditions')}</Link>
                       <span> — </span>
                       <Link to={`/${lang}/privacy`}>{t('header.privacy-policy')}</Link>
+                      <span> — </span>
+                      <Link to={`/${lang}/cookie-policy`}>{t('header.cookie-policy')}</Link>
                     </p>
                   </aside>
                 </section>

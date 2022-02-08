@@ -17,12 +17,19 @@ const TermsConditions = () => {
               </p>
               <p>
                 Please carefully read these terms of use (“Terms“) as well as our Privacy Policy, which we may update from time to time, a
-                current version of which is available <a href='/privacy'>here</a>.
+                current version of which is available{' '}
+                <a target="_blank" href="/privacy">
+                  here
+                </a>
+                .
               </p>
               <p>
-                By accessing the Services, you agree to the Terms, Privacy Policy and Cookie Policy located here. “User” means a user of the
-                Services. If you do not agree to the Terms Privacy Policy and Cookie Policy, you should stop using the Services immediately
-                and not use or review any of the information that is provided through the Services.
+                By accessing the Services, you agree to the Terms, Privacy Policy and Cookie Policy located{' '}
+                <a target="_blank" href="/cookie-policy">
+                  here
+                </a>
+                . “User” means a user of the Services. If you do not agree to the Terms Privacy Policy and Cookie Policy, you should stop
+                using the Services immediately and not use or review any of the information that is provided through the Services.
               </p>
               <p>
                 We may revise the Terms at any time without notice by updating this Website. All updates to the Terms will be posted on this

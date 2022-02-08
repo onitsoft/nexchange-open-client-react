@@ -20,7 +20,7 @@ import { BreakpointProvider, defaultQuery } from 'Components/misc/breakpoint';
 import GraphCMSProvider from './services/graphcms';
 import Intercom from './services/intercom';
 import './css/index.scss';
-import CookiePolicyModal from "./components/misc/CoockiePolicyModal/CookiePolicyModal";
+import CookiePolicyModal from './components/misc/CoockiePolicyModal/CookiePolicyModal';
 
 window.$ = window.jQuery = require('jquery');
 require('./js/bootstrap.min.js');
@@ -48,6 +48,7 @@ const Pair = React.lazy(() => import('Components/Pair/Pair'));
 const Home = React.lazy(() => import('Components/Home/Home'));
 const TermsConditions = React.lazy(() => import('Components/TermsConditions/TermsConditions'));
 const Privacy = React.lazy(() => import('Components/Privacy/Privacy'));
+const CookiePolicy = React.lazy(() => import('Components/CookiePolicy/CookiePolicy'));
 const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'));
 const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'));
 const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'));
@@ -99,6 +100,7 @@ const App = () => {
                     <Route exact path="/" render={props => <Redirect to={`/${lang}${props.location.search}`} />} />
                     <Route exact path="/:lang(en|de|ru)/terms-and-conditions" component={TermsConditions} />
                     <Route exact path="/:lang(en|de|ru)/privacy" component={Privacy} />
+                    <Route exact path="/:lang(en|de|ru)/cookie-policy" component={CookiePolicy} />
                     <Route exact path="/:lang(en|de|ru)/profile/:user?" component={Profile} />
                     <Route exact path="/:lang(en|de|ru)/order/:orderRef" component={Order} />
                     <Route exact path="/:lang(en|de|ru)/orders/:orderRef?" component={Orders} />
