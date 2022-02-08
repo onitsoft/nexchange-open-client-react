@@ -208,122 +208,122 @@ export const HeaderStuff = props => {
 
                 <LanguagePicker />
 
-                <li id="social-mobile">
-                  <a
-                    href="/twitter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                  >
-                    <i className="fab fa-twitter" aria-hidden="true" />
-                  </a>
+                {/*<li id="social-mobile">*/}
+                {/*  <a*/}
+                {/*    href="/twitter"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-twitter" aria-hidden="true" />*/}
+                {/*  </a>*/}
 
-                  <a
-                    href="/fb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                  >
-                    <i className="fab fa-facebook-f" aria-hidden="true" />
-                  </a>
+                {/*  <a*/}
+                {/*    href="/fb"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-facebook-f" aria-hidden="true" />*/}
+                {/*  </a>*/}
 
-                  <a
-                    href="/youtube"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                  >
-                    <i className="fab fa-youtube" aria-hidden="true" />
-                  </a>
+                {/*  <a*/}
+                {/*    href="/youtube"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-youtube" aria-hidden="true" />*/}
+                {/*  </a>*/}
 
-                  <a
-                    href="/slack"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                  >
-                    <i className="fab fa-slack-hash" aria-hidden="true" />
-                  </a>
+                {/*  <a*/}
+                {/*    href="/slack"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-slack-hash" aria-hidden="true" />*/}
+                {/*  </a>*/}
 
-                  <a
-                    href="/telegram"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}
-                  >
-                    <i className="fab fa-telegram" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*  <a*/}
+                {/*    href="/telegram"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon visible-xs`}*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-telegram" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
 
-                <li className="visible-md visible-lg social-desktop">
-                  <a
-                    href="/twitter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon`}
-                    title={t('header.twitter')}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                  >
-                    <i className="fab fa-twitter" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*<li className="visible-md visible-lg social-desktop">*/}
+                {/*  <a*/}
+                {/*    href="/twitter"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon`}*/}
+                {/*    title={t('header.twitter')}*/}
+                {/*    data-toggle="tooltip"*/}
+                {/*    data-placement="bottom"*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-twitter" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
 
-                <li className="visible-md visible-lg social-desktop">
-                  <a
-                    href="/youtube"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon`}
-                    title={t('header.youtube')}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                  >
-                    <i className="fab fa-youtube" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*<li className="visible-md visible-lg social-desktop">*/}
+                {/*  <a*/}
+                {/*    href="/youtube"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon`}*/}
+                {/*    title={t('header.youtube')}*/}
+                {/*    data-toggle="tooltip"*/}
+                {/*    data-placement="bottom"*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-youtube" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
 
-                <li className="visible-md visible-lg social-desktop">
-                  <a
-                    href="/fb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon`}
-                    title={t('header.facebook')}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                  >
-                    <i className="fab fa-facebook-f" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*<li className="visible-md visible-lg social-desktop">*/}
+                {/*  <a*/}
+                {/*    href="/fb"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon`}*/}
+                {/*    title={t('header.facebook')}*/}
+                {/*    data-toggle="tooltip"*/}
+                {/*    data-placement="bottom"*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-facebook-f" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
 
-                <li className="visible-md visible-lg social-desktop">
-                  <a
-                    href="/slack"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon`}
-                    title={t('header.slack')}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                  >
-                    <i className="fab fa-slack-hash" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*<li className="visible-md visible-lg social-desktop">*/}
+                {/*  <a*/}
+                {/*    href="/slack"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon`}*/}
+                {/*    title={t('header.slack')}*/}
+                {/*    data-toggle="tooltip"*/}
+                {/*    data-placement="bottom"*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-slack-hash" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
 
-                <li className="visible-md visible-lg social-desktop">
-                  <a
-                    href="/telegram"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.social} btn btn-simple btn-just-icon`}
-                    title={t('header.telegram')}
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                  >
-                    <i className="fab fa-telegram" aria-hidden="true" />
-                  </a>
-                </li>
+                {/*<li className="visible-md visible-lg social-desktop">*/}
+                {/*  <a*/}
+                {/*    href="/telegram"*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*    className={`${styles.social} btn btn-simple btn-just-icon`}*/}
+                {/*    title={t('header.telegram')}*/}
+                {/*    data-toggle="tooltip"*/}
+                {/*    data-placement="bottom"*/}
+                {/*  >*/}
+                {/*    <i className="fab fa-telegram" aria-hidden="true" />*/}
+                {/*  </a>*/}
+                {/*</li>*/}
               </ul>
             </div>
 
