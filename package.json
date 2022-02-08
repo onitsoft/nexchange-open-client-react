@@ -4,7 +4,6 @@
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime-corejs2": "^7.0.0",
-    "@colony/purser-metamask": "^2.2.0",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "@salte-auth/salte-auth": "^2.14.2",
@@ -196,6 +195,6 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": "10.x"
+    "node": "14.x"
   }
 }
