@@ -172,7 +172,7 @@ export const HeaderStuff = props => {
 
                 <li className={styles['ico-link']}>
                   <a
-                    href="https://n.exchange/ico"
+                    href="https://yoa.ltd/ico"
                     className={`${styles.btn} btn btn-block btn-primary`}
                     onClick={() => {
                       window.gtag('event', 'ICO open', { event_category: 'ICO', event_label: `` });

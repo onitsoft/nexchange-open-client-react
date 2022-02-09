@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://n.exchange/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://yoa.ltd/sitemap.xsl"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://n.exchange/en</loc>
+    <loc>https://yoa.ltd/en</loc>
     <priority>1</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru" />
   </url>
   <url>
-    <loc>https://n.exchange/en/instant-white-label</loc>
+    <loc>https://yoa.ltd/en/instant-white-label</loc>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/instant-white-label" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/instant-white-label" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/instant-white-label" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/instant-white-label" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/instant-white-label" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/instant-white-label" />
   </url>
   <url>
-    <loc>https://n.exchange/en/faq</loc>
+    <loc>https://yoa.ltd/en/faq</loc>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/faq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/faq" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/faq" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/faq" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/faq" />
   </url>
   <url>
-    <loc>https://n.exchange/en/about</loc>
+    <loc>https://yoa.ltd/en/about</loc>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/about" />
   </url>
   <url>
-    <loc>https://n.exchange/en/signup</loc>
+    <loc>https://yoa.ltd/en/signup</loc>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/signup" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/signup" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/signup" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/signup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/signup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/signup" />
   </url>
   <url>
-    <loc>https://n.exchange/en/signin</loc>
+    <loc>https://yoa.ltd/en/signin</loc>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/signin" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/signin" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/signin" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/signin" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/signin" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/signin" />
   </url>
   <url>
-    <loc>https://n.exchange/en/terms-and-conditions</loc>
+    <loc>https://yoa.ltd/en/terms-and-conditions</loc>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/terms-and-conditions" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/terms-and-conditions" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/terms-and-conditions" />
   </url>
   <url>
-    <loc>https://n.exchange/en/privacy</loc>
+    <loc>https://yoa.ltd/en/privacy</loc>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://n.exchange/de/privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://n.exchange/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://n.exchange/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://yoa.ltd/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://yoa.ltd/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yoa.ltd/ru/privacy" />
   </url>
 </urlset>

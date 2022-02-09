@@ -142,7 +142,7 @@ const Footer = props => {
                     <p>
                       <CopyrightNotice /> — <RegisteredCompany />
                     </p>
-                    +
+
                     <p>
                       <Link to={`/${lang}/terms-and-conditions`}>{t('header.terms-and-conditions')}</Link>
                       <span> — </span>

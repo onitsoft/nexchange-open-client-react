@@ -137,7 +137,7 @@ ShallowWrapper {
               <a
                 className="btn btn btn-block btn-primary"
                 data-test="ico-link"
-                href="https://n.exchange/ico"
+                href="https://yoa.ltd/ico"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -412,7 +412,7 @@ ShallowWrapper {
                 <a
                   className="btn btn btn-block btn-primary"
                   data-test="ico-link"
-                  href="https://n.exchange/ico"
+                  href="https://yoa.ltd/ico"
                   onClick={[Function]}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -826,7 +826,7 @@ ShallowWrapper {
                 <a
                   className="btn btn btn-block btn-primary"
                   data-test="ico-link"
-                  href="https://n.exchange/ico"
+                  href="https://yoa.ltd/ico"
                   onClick={[Function]}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -1051,7 +1051,7 @@ ShallowWrapper {
                   <a
                     className="btn btn btn-block btn-primary"
                     data-test="ico-link"
-                    href="https://n.exchange/ico"
+                    href="https://yoa.ltd/ico"
                     onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -1460,7 +1460,7 @@ ShallowWrapper {
                   "children": <a
                     className="btn btn btn-block btn-primary"
                     data-test="ico-link"
-                    href="https://n.exchange/ico"
+                    href="https://yoa.ltd/ico"
                     onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -1478,7 +1478,7 @@ ShallowWrapper {
                     "children": "header.ico",
                     "className": "btn btn btn-block btn-primary",
                     "data-test": "ico-link",
-                    "href": "https://n.exchange/ico",
+                    "href": "https://yoa.ltd/ico",
                     "onClick": [Function],
                     "rel": "noopener noreferrer",
                     "target": "_blank",
@@ -2146,7 +2146,7 @@ ShallowWrapper {
                 <a
                   className="btn btn btn-block btn-primary"
                   data-test="ico-link"
-                  href="https://n.exchange/ico"
+                  href="https://yoa.ltd/ico"
                   onClick={[Function]}
                   rel="noopener noreferrer"
                   target="_blank"

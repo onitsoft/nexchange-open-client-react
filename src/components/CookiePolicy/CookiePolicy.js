@@ -11,7 +11,7 @@ const CookiePolicy = () => {
               <h2>Cookie Policy</h2>
 
               <p>
-                Yoa Ltd(hereinafter referred to as “we”, “us”, “n.exchange”, or “our”) uses cookies and other similar technologies for
+                Yoa Ltd(hereinafter referred to as “we”, “us”, “Yoa.ltd”, or “our”) uses cookies and other similar technologies for
                 accessing or storage of information on the end user's terminal equipment. You can find out more about cookies and other
                 similar technologies and how to control them in the information below.
               </p>
@@ -39,7 +39,7 @@ const CookiePolicy = () => {
                 </li>
               </ul>
 
-              <h3>What Local Storage do we use on n.exchange?</h3>
+              <h3>What Local Storage do we use on Yoa.ltd?</h3>
               <ul>
                 <li>Session Storage is stored temporarily. Session Storage files are automatically deleted when you close your browser.</li>
                 <li>
@@ -48,7 +48,7 @@ const CookiePolicy = () => {
                 </li>
               </ul>
 
-              <h3>What cookies do we use on n.exchange?</h3>
+              <h3>What cookies do we use on Yoa.ltd?</h3>
               <p>
                 Strictly necessary cookies are essential for the website to operate properly. These cookies enable you to navigate the
                 website and use its features. For example, a so-called ”session” cookie which makes sure that you don’t have to keep logging

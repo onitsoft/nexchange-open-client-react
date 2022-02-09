@@ -1,6 +1,6 @@
 export default {
   count: 12900,
-  next: 'https://api.n.exchange/en/api/v1/orders/?format=json&page=2',
+  next: 'https://api.yoa.ltd/en/api/v1/orders/?format=json&page=2',
   previous: null,
   results: [
     {

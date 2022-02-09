@@ -722,9 +722,9 @@ ShallowWrapper {
                   <p>
                     Missing your favorite coin? Let us know here: 
                     <a
-                      href="mailto:support@n.exchange"
+                      href="mailto:support@nexchange.co.uk"
                     >
-                      support@n.exchange
+                      support@nexchange.co.uk
                     </a>
                     .
                   </p>,
@@ -762,9 +762,9 @@ ShallowWrapper {
                     "children": Array [
                       "Missing your favorite coin? Let us know here: ",
                       <a
-                        href="mailto:support@n.exchange"
+                        href="mailto:support@nexchange.co.uk"
                       >
-                        support@n.exchange
+                        support@nexchange.co.uk
                       </a>,
                       ".",
                     ],
@@ -777,11 +777,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "support@n.exchange",
-                        "href": "mailto:support@n.exchange",
+                        "children": "support@nexchange.co.uk",
+                        "href": "mailto:support@nexchange.co.uk",
                       },
                       "ref": null,
-                      "rendered": "support@n.exchange",
+                      "rendered": "support@nexchange.co.uk",
                       "type": "a",
                     },
                     ".",

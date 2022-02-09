@@ -629,7 +629,7 @@ ShallowWrapper {
               </h3>
               <a
                 className="btn btn btn-block btn-primary"
-                href="https://n.exchange/ico"
+                href="https://yoa.ltd/ico"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -711,7 +711,7 @@ ShallowWrapper {
                 </h3>
                 <a
                   className="btn btn btn-block btn-primary"
-                  href="https://n.exchange/ico"
+                  href="https://yoa.ltd/ico"
                   onClick={[Function]}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -791,7 +791,7 @@ ShallowWrapper {
                   </h3>,
                   <a
                     className="btn btn btn-block btn-primary"
-                    href="https://n.exchange/ico"
+                    href="https://yoa.ltd/ico"
                     onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -832,7 +832,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "ico.action",
                     "className": "btn btn btn-block btn-primary",
-                    "href": "https://n.exchange/ico",
+                    "href": "https://yoa.ltd/ico",
                     "onClick": [Function],
                     "rel": "noopener noreferrer",
                     "target": "_blank",
