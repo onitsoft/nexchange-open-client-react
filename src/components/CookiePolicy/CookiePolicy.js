@@ -11,7 +11,7 @@ const CookiePolicy = () => {
               <h2>Cookie Policy</h2>
 
               <p>
-                Yoa Ltd(hereinafter referred to as “we”, “us”, “Yoa.ltd”, or “our”) uses cookies and other similar technologies for
+                Yoa Ltd (hereinafter referred to as “we”, “us”, “Yoa.ltd”, or “our”) uses cookies and other similar technologies for
                 accessing or storage of information on the end user's terminal equipment. You can find out more about cookies and other
                 similar technologies and how to control them in the information below.
               </p>
@@ -27,7 +27,7 @@ const CookiePolicy = () => {
                   website. Cookies are then sent back to the originating website on each subsequent visit, or to another website that
                   recognizes that cookie. Cookies are useful because they allow a website to recognize a user’s device. You can find more
                   information about cookies at:{' '}
-                  <a target="_blank" href="www.allaboutcookies.org">
+                  <a target="_blank" href="www.allaboutcookies.org" rel="noreferrer">
                     www.allaboutcookies.org
                   </a>
                   .
@@ -102,18 +102,18 @@ const CookiePolicy = () => {
                 If you are located in the European Union, the transfer of your information from the EEA to the United States is permitted
                 under the Article 45 of the General Data Protection Regulation (GDPR), as Google adheres to the EU-US Privacy Shield
                 self-regulatory framework. You can find the details of the framework{' '}
-                <a target="_blank" href="https://www.privacyshield.gov/list">
+                <a target="_blank" href="https://www.privacyshield.gov/list" rel="noreferrer">
                   here
                 </a>
                 .
               </p>
               <p>
                 We use an Intercom cookie. These cookies enable the functionality of a chat. You can find Intercom cookie policy{' '}
-                <a target="_blank" href="https://www.intercom.com/legal/privacy">
+                <a target="_blank" href="https://www.intercom.com/legal/privacy" rel="noreferrer">
                   here
                 </a>
                 . Intercom Inc has certified to the EU-U.S. and Swiss-U.S.{' '}
-                <a target="_blank" href="https://www.privacyshield.gov/participant?id=a2zt0000000TNQvAAO">
+                <a target="_blank" href="https://www.privacyshield.gov/participant?id=a2zt0000000TNQvAAO" rel="noreferrer">
                   Privacy Shield FrameWork
                 </a>
                 .
