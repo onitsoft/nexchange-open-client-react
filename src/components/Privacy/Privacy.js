@@ -12,7 +12,7 @@ const Privacy = props => {
 
               <Trans i18nKey="privacy.updated">
                 <h4 style={{ marginBottom: 30 }}>
-                  Last updated: <strong>August 9th, 2017</strong>
+                  Last updated: <strong>December 9th, 2021</strong>
                 </h4>
               </Trans>
 
