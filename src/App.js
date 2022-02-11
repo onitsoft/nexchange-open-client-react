@@ -52,6 +52,7 @@ const CookiePolicy = React.lazy(() => import('Components/CookiePolicy/CookiePoli
 const SignIn = React.lazy(() => import('Components/Accounts/SignIn/SignIn'));
 const SignOut = React.lazy(() => import('Components/Accounts/SignOut/SignOut'));
 const SignUp = React.lazy(() => import('Components/Accounts/SignUp/SignUp'));
+const EditResidenceLocation = React.lazy(() => import('Components/Accounts/EditResidenceLocation/EditResidenceLocation'));
 const Orders = React.lazy(() => import('Components/Accounts/Orders'));
 const ForgotPassword = React.lazy(() => import('Components/Accounts/ForgotPassword/ForgotPassword'));
 const Order = React.lazy(() => import('Components/Order/Order'));
@@ -105,12 +106,14 @@ const App = () => {
                     <Route exact path="/:lang(en|de|ru)/order/:orderRef" component={Order} />
                     <Route exact path="/:lang(en|de|ru)/orders/:orderRef?" component={Orders} />
                     <Route exact path="/:lang(en|de|ru)" render={props => <Home {...props} store={store} />} />
-                    <Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />
+                    {/*<Route exact path="/:lang(en|de|ru)/instant-white-label/" component={WhiteLabelSEO} />*/}
                     <Route exact path="/:lang(en|de|ru)/faqs/:id?" component={FAQ} />
                     <Route exact path="/:lang(en|de|ru)/about" component={About} />
                     <Route exact path="/:lang(en|de|ru)/signin" component={SignIn} />
                     <Route exact path="/:lang(en|de|ru)/signout" component={SignOut} />
                     <Route exact path="/:lang(en|de|ru)/signup" component={SignUp} />
+                    <Route exact path="/:lang(en|de|ru)/edit-residence-location" component={EditResidenceLocation} />
+
                     <Route exact path="/:lang(en|de|ru)/forgot-password" component={ForgotPassword} />
                     <Route exact path="/:lang(en|de|ru)/convert/:quote-to-:base" render={props => <Pair {...props} store={store} />} />
                     <Route exact path="/:lang(en|de|ru)/not-found" component={NotFound} />

@@ -65,8 +65,6 @@ class CoinPrices extends Component {
         if (!response.data.length) return;
 
         const rates = this.state.rates;
-
-        console.log('RATES', rates);
         const rate = parseFloat(response.data[0].ticker.ask);
 
         if (rates[pair] !== '') {

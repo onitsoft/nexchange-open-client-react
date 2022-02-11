@@ -3,32 +3,28 @@ import { Link } from 'react-router-dom';
 import { I18n } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Modal } from 'react-bootstrap';
 import { css } from 'emotion';
 import styled from '@emotion/styled';
-import { Checkbox, Modal } from 'react-bootstrap';
 
 import { signUp, signIn, completeRegistration } from 'Actions';
 
-import { passCheck, usernameCheck, emailCheck } from '../';
 import styles from '../Accounts.scss';
 import CountryStateSelect from '../components/Select/CountryStateSelect';
 import { isUserResidenceLocationLegal } from '../../../utils/restrictedCountires/restirctionCheck';
+import { loadUserDetails } from '../../../actions';
+import { setResidenceLocation } from '../../../utils/restrictedCountires/residenceLocationStorage';
 
-export const SignUp = props => {
+export const EditResidenceLocation = props => {
   const { auth } = props;
 
   const [showSuccessModal, setShowSuccessModal] = useState();
   const [state, setState] = useState({
-    username: '',
-    email: '',
-    password: '',
-    repeatPassword: '',
     residenceLocation: {
       country: null,
       state: null,
       isStateRequired: false,
     },
-    agreedTC: false,
   });
 
   useEffect(() => {
@@ -42,45 +38,20 @@ export const SignUp = props => {
   const onSubmit = useCallback(
     e => {
       e.preventDefault();
-      if (!state.username || !usernameCheck.test(state.username)) {
-        setState(st => ({ ...st, error: 'username' }));
-      } else if (!state.email || !emailCheck.test(state.email)) {
-        setState(st => ({ ...st, error: 'email' }));
-      } else if (!state.password || !passCheck.test(state.password)) {
-        setState(st => ({ ...st, error: 'password' }));
-      } else if (state.password && state.password !== state.repeatPassword) {
-        setState(st => ({ ...st, error: 'repeatPassword' }));
-      } else if (!state.residenceLocation.country) {
+
+      if (!state.residenceLocation.country) {
         setState(st => ({ ...st, error: 'residenceLocation.country' }));
       } else if (!state.residenceLocation.state && state.residenceLocation.isStateRequired) {
         setState(st => ({ ...st, error: 'residenceLocation.state' }));
-      } else if (!state.agreedTC) {
-        setState(st => ({ ...st, error: 'agreedTC' }));
       } else {
-        props.signUp({
-          username: state.username,
-          email: state.email,
-          password: state.password,
-          phone: 'notset',
-          residenceLocation: state.residenceLocation,
-        });
+        setResidenceLocation(auth.profile.username, state.residenceLocation);
+        setShowSuccessModal(true);
       }
     },
     [state]
   );
 
-  const setValue = useCallback(
-    name => ({ target: { value } }) => {
-      setState(st => ({
-        ...st,
-        [name]: value,
-        error: !st.error || name === st.error ? null : st.error,
-      }));
-    },
-    [setState]
-  );
-
-  const setResidenceLocation = residenceLocationDto => {
+  const setResidenceLocationValue = residenceLocationDto => {
     setState(state => ({
       ...state,
       residenceLocation: residenceLocationDto,
@@ -88,28 +59,6 @@ export const SignUp = props => {
   };
 
   const onHideModal = useCallback(() => setShowSuccessModal(false), []);
-
-  useEffect(() => {
-    if (auth.registered) {
-      if (!auth.complete && !auth.loading && !auth.loggedIn) {
-        props.signIn(auth.signup.username, auth.signup.password);
-      } else if (!auth.complete && !auth.loading) {
-        props.completeRegistration();
-      } else if (auth.complete) {
-        setShowSuccessModal(true);
-      }
-    } else if (auth.signup && auth.signup.error) {
-      if (Object.keys(auth.signup.error).length) {
-        const [error] = Object.keys(auth.signup.error);
-        const errorKey = auth.signup.error[error][0].replace('.', '');
-        setState(st => ({ ...st, error, errorKey }));
-      } else {
-        const error = 'general';
-        const errorKey = auth.signup.error.replace('.', '');
-        setState(st => ({ ...st, error, errorKey }));
-      }
-    }
-  }, [auth]);
 
   const ErrorMessage = useMemo(() => {
     return props => <ErrorBlock {...state} {...props} />;
@@ -141,64 +90,10 @@ export const SignUp = props => {
 
               <div className={`col-xs-8 col-offset-xs-2`}>
                 <form className="form-group" onSubmit={onSubmit}>
-                  <>
-                    <div className={`${styles['input-container']} ${myError('username')}`}>
-                      <input
-                        type={'text'}
-                        className={`form-control`}
-                        id={'username'}
-                        value={state['username']}
-                        onChange={setValue('username')}
-                        placeholder={t(`accounts.${'username'}`)}
-                        disabled={auth.loading}
-                      />
-                    </div>
-                    {state.error === 'username' && <ErrorBlock {...state} />}
-
-                    <div className={`${styles['input-container']} ${myError('email')}`}>
-                      <input
-                        type={'email'}
-                        className={`form-control`}
-                        id={'email'}
-                        value={state['email']}
-                        onChange={setValue('email')}
-                        placeholder={t(`accounts.${'email'}`)}
-                        disabled={auth.loading}
-                      />
-                    </div>
-                    {state.error === 'email' && <ErrorBlock {...state} />}
-
-                    <div className={`${styles['input-container']} ${myError('password')}`}>
-                      <input
-                        type={'password'}
-                        className={`form-control`}
-                        id={'password'}
-                        value={state['password']}
-                        onChange={setValue('password')}
-                        placeholder={t(`accounts.${'password'}`)}
-                        disabled={auth.loading}
-                      />
-                    </div>
-                    {state.error === 'password' && <ErrorBlock {...state} />}
-
-                    <div className={`${styles['input-container']} ${myError('repeatPassword')}`}>
-                      <input
-                        type={'password'}
-                        className={`form-control`}
-                        id={'repeatPassword'}
-                        value={state['repeatPassword']}
-                        onChange={setValue('repeatPassword')}
-                        placeholder={t(`accounts.${'repeatPassword'}`)}
-                        disabled={auth.loading}
-                      />
-                    </div>
-                    {state.error === 'repeatPassword' && <ErrorBlock {...state} />}
-                  </>
-
-                  <br />
-
                   <h4>Residence Location</h4>
-                  <CountryStateSelect myError={myError} setValue={setResidenceLocation} value={state.residenceLocation} />
+
+                  <CountryStateSelect myError={myError} setValue={setResidenceLocationValue} value={state.residenceLocation} />
+
                   {(state.error === 'residenceLocation.country' || state.error === 'residenceLocation.state') && (
                     <StyledFormError className={'input-container'}>
                       <div className="msg">
@@ -208,32 +103,12 @@ export const SignUp = props => {
                   )}
 
                   <div className={'input-container'}>&nbsp;</div>
-
-                  <div className={`${myError('agreedTC')}`}>
-                    <Checkbox
-                      disabled={auth.loading}
-                      checked={state.agreedTC}
-                      onChange={({ target: { checked } }) =>
-                        console.log('is checked?', checked) || setValue('agreedTC')({ target: { value: checked } })
-                      }
-                    >
-                      Accept TOS
-                    </Checkbox>
-                  </div>
-                  {state.error === 'agreedTC' && <ErrorMessage usekey />}
                   {state.error === 'general' && <ErrorMessage />}
 
-                  <button type="submit" disabled={auth.loading} className={`${styles.button} ${styles.main}`}>
-                    {!auth.loading ? t('accounts.signup') : 'Loading...'}
+                  <button type="submit" className={`${styles.button} ${styles.main}`}>
+                    Submit
                   </button>
                 </form>
-
-                <div className={styles.separator} />
-
-                <Link to={`/${lng}/signin`} className={styles['not-registered']}>
-                  <button className={`${styles.button} ${styles.secondary}`}>{t('accounts.signin')}</button>
-                </Link>
-                {/* <button className={`${styles.button} ${styles.facebook}`}>{t('accounts.signupwithfacebook')}</button> */}
               </div>
             </div>
 
@@ -339,4 +214,4 @@ const dialogStyle = css`
 const mapStateToProps = ({ auth }) => ({ auth });
 const mapDispatchToProps = dispatch => bindActionCreators({ signUp, signIn, completeRegistration }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(EditResidenceLocation);

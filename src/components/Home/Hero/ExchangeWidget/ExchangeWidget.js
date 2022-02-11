@@ -7,13 +7,13 @@ import axios from 'axios';
 
 import i18n from 'Src/i18n';
 import config from 'Config';
-import { errorAlert, setOrder } from 'Actions/index.js';
-// import { bindCrispEmail } from 'Utils/crispEmailBinding';
+import { errorAlert, loadUserDetails, setOrder } from 'Actions/index.js';
 
 import CoinInput from './CoinInput/CoinInput';
 import CoinSwitch from './CoinSwitch/CoinSwitch';
 
 import styles from './ExchangeWidget.scss';
+import { PlaceOrderFailureReason, handlePlaceOrderValidation } from '../../../../utils/order/validatePlaceOrder';
 
 class ExchangeWidget extends Component {
   constructor(props) {
@@ -31,8 +31,8 @@ class ExchangeWidget extends Component {
     clearTimeout(this.timeout);
   }
 
-  placeOrder() {
-    let data = {
+  async placeOrder() {
+    let orderData = {
       amount_base: 0,
       amount_quote: 0,
       is_default_rule: true,
@@ -42,11 +42,39 @@ class ExchangeWidget extends Component {
       withdraw_address: {},
     };
 
-    if (this.props.price.lastEdited === 'receive') data['amount_base'] = parseFloat(this.props.price.receive);
-    else if (this.props.price.lastEdited === 'deposit') data['amount_quote'] = parseFloat(this.props.price.deposit);
+    if (this.props.price.lastEdited === 'receive') orderData['amount_base'] = parseFloat(this.props.price.receive);
+    else if (this.props.price.lastEdited === 'deposit') orderData['amount_quote'] = parseFloat(this.props.price.deposit);
+
+    const { isUserAuthorizedToPlaceOrder, placeOrderFailureReason, userData } = await handlePlaceOrderValidation({
+      loadUserDetails: this.props.loadUserDetails,
+      submittedOrderData: orderData,
+    });
+    const { residenceLocation } = userData || {};
+
+    console.log('isUserAuthorizedToPlaceOrder', isUserAuthorizedToPlaceOrder, 'placeOrderFailureReason', placeOrderFailureReason);
+
+    if (!isUserAuthorizedToPlaceOrder) {
+      switch (placeOrderFailureReason) {
+        case PlaceOrderFailureReason.NOT_AUTH:
+          return this.props.history.push('/signin');
+
+        case PlaceOrderFailureReason.MISSING_RESIDENCE_LOCATION:
+          return this.props.history.push('/edit-residence-location');
+
+        case PlaceOrderFailureReason.RESTRICTED_RESIDENCE_LOCATION:
+          this.props.errorAlert({
+            message: `Currently we do not provide service at your residence location: ${residenceLocation.country.name}${
+              residenceLocation.isStateRequired ? ` ${residenceLocation.country.name}` : ''
+            }.`,
+            show: true,
+            type: 'PLACE_ORDER',
+          });
+          return null;
+      }
+    }
 
     axios
-      .post(`${config.API_BASE_URL}/orders/`, data)
+      .post(`${config.API_BASE_URL}/orders/`, orderData)
       .then(response => {
         this.props.setOrder(response.data);
         this.setState({
@@ -73,7 +101,9 @@ class ExchangeWidget extends Component {
           amount_quote: parseFloat(this.props.price.receive),
           created_at: new Date(),
         };
+
         let orderHistory = localStorage['orderHistory'];
+
         if (!orderHistory) {
           orderHistory = [newOrder];
         } else {
@@ -114,7 +144,6 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
-                    
                     <CoinInput type="deposit" />
                     <CoinSwitch />
                     <CoinInput type="receive" />
@@ -133,12 +162,12 @@ class ExchangeWidget extends Component {
                         {t('exchangewidget.2')}
                         {this.state.loading ? <i className="fab fa-spinner fa-spin" style={{ marginLeft: '10px' }} /> : null}
                       </button>
+
                       <p
                         className={styles.infotc}
                         dangerouslySetInnerHTML={{ __html: t('order.byclickTC', { buttonName: t('exchangewidget.2') }) }}
                       />
                     </div>
-                    
                   </div>
                 </div>
               </div>
@@ -155,6 +184,6 @@ const mapStateToProps = ({ selectedCoin, price, error }) => ({
   price,
   error,
 });
-const mapDispatchToProps = dispatch => bindActionCreators({ setOrder, errorAlert }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ setOrder, loadUserDetails, errorAlert }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExchangeWidget);

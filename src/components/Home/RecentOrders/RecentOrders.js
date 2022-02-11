@@ -34,9 +34,6 @@ class RecentOrders extends Component {
     axios
       .get(`${config.API_BASE_URL}/orders/?page=1&page_size=100`)
       .then(response => {
-        
-        console.log('ORDERS', response.data.results);
-        
         let orders = response.data.results.filter(order => {
           // Filter out C2C orders, leave only F2C
           if (!_.includes(['EUR', 'RUB', 'USD', 'GBP'], order.pair.quote)) {

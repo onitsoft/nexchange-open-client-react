@@ -310,8 +310,6 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
       let depositCoin = base;
       let receiveCoin = quote;
 
-      console.log('base:', depositCoin, 'quote:', receiveCoin);
-
       const loadPair = pair => {
         const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`;
 
@@ -347,8 +345,6 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
           try {
             const pair = await loadPair(`${base}${quote}`);
 
-            console.log('1 CASE', pair);
-
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -361,8 +357,6 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
           try {
             const pair = await loadPair(params.pair);
 
-            console.log('2 CASE', pair);
-
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -372,8 +366,6 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
           }
         } else {
           const pair = await pickMostTraded();
-
-          console.log('3 CASE - most picked pair:', pair);
           depositCoin = 'EUR';
           receiveCoin = 'BTC';
 
@@ -381,7 +373,6 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
           //   depositCoin = pair.quote;
           //   receiveCoin = pair.base;
           // } else {
-          //   console.log('4 CASE');
           //   pickRandomPair();
           // }
         }
@@ -600,6 +591,7 @@ export const fetchOrderBook = payload => dispatch => {
 export const loadAuth = () => dispatch => {
   if (localStorage.full_token) {
     const tokenData = JSON.parse(localStorage.full_token);
+
     dispatch({
       type: types.AUTH_TOKEN_RECEIVED,
       payload: tokenData,
@@ -609,10 +601,15 @@ export const loadAuth = () => dispatch => {
 
 export const loadUserDetails = () => dispatch => {
   return axios.get(`${config.API_BASE_URL}/users/me`).then(({ data, ...rest }) => {
+    const residenceLocation = getResidenceLocation(data.username);
+    const fullUserData = { residenceLocation, ...data };
+
     dispatch({
       type: types.AUTH_USER_PROFILE,
-      payload: data,
+      payload: fullUserData,
     });
+
+    return fullUserData;
   });
 };
 
