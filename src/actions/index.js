@@ -692,6 +692,7 @@ export const signIn = (username, password) => dispatch => {
     })
     .then(({ data, ...rest }) => {
       const token = {
+        residenceLocation: getResidenceLocation(username),
         ...data,
         issued_at: Date.now(),
       };
@@ -738,6 +739,8 @@ export const signUp = details => dispatch => {
     .then(({ data, ...rest }) => {
       setResidenceLocation(username, residenceLocation);
       const userData = { residenceLocation, ...data };
+
+      signIn(username, password)(dispatch);
 
       dispatch({
         type: types.AUTH_USER_REGISTERED,
