@@ -51,8 +51,6 @@ class ExchangeWidget extends Component {
     });
     const { residenceLocation } = userData || {};
 
-    console.log('isUserAuthorizedToPlaceOrder', isUserAuthorizedToPlaceOrder, 'placeOrderFailureReason', placeOrderFailureReason);
-
     if (!isUserAuthorizedToPlaceOrder) {
       switch (placeOrderFailureReason) {
         case PlaceOrderFailureReason.NOT_AUTH:
