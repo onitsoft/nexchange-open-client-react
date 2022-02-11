@@ -8,7 +8,11 @@ const TermsConditions = () => {
         <div className="container terms">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Terms and Conditions</h2>
+              <h2 style={{ marginTop: 100, marginBottom: 0 }}>Terms and Conditions</h2>
+
+              <h4 style={{ marginBottom: 30 }}>
+                Last updated: <strong>August 9th, 2021</strong>
+              </h4>
 
               <p>Welcome to yoa.ltd!</p>
               <p>

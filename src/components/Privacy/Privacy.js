@@ -8,13 +8,11 @@ const Privacy = props => {
         <div className="container terms">
           <div className="row">
             <div className="col-xs-12">
-              <h2 style={{ marginBottom: 0 }}>{t('privacy.title')}</h2>
+              <h2 style={{ marginBottom: 0, marginTop: 100 }}>{t('privacy.title')}</h2>
 
-              <Trans i18nKey="privacy.updated">
-                <h4 style={{ marginBottom: 30 }}>
-                  Last updated: <strong>December 9th, 2021</strong>
-                </h4>
-              </Trans>
+              <h4 style={{ marginBottom: 30 }}>
+                Last updated: <strong>December 9th, 2021</strong>
+              </h4>
 
               <Trans i18nKey="privacy.p1">
                 <p>

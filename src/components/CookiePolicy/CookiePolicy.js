@@ -8,7 +8,11 @@ const CookiePolicy = () => {
         <div className="container terms">
           <div className="row">
             <div className="col-xs-12">
-              <h2>Cookie Policy</h2>
+
+              <h2 style={{ marginTop: 100, marginBottom: 0 }}>Cookie Policy</h2>
+              <h4 style={{ marginBottom: 30 }}>
+                Last updated: <strong>December 9th, 2021</strong>
+              </h4>
 
               <p>
                 Yoa Ltd (hereinafter referred to as “we”, “us”, “Yoa.ltd”, or “our”) uses cookies and other similar technologies for
