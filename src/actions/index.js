@@ -7,6 +7,7 @@ import serialize from 'Utils/serialize';
 import preparePairs from 'Utils/preparePairs';
 import i18n from 'Src/i18n';
 import generateDepth from '../utils/generateDepth';
+import { getResidenceLocation, setResidenceLocation } from '../utils/restrictedCountires/residenceLocationStorage';
 
 export const errorAlert = payload => ({
   type: types.ERROR_ALERT,
@@ -276,7 +277,7 @@ export const fetchPrice = payload => dispatch => {
   });
 };
 
-export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
+export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
   const url = `${config.API_BASE_URL}/pair/`;
   const request = axios.get(url);
 
@@ -284,13 +285,13 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
     .then(async response => {
       let params = urlParams();
       const pathNameParams = window.location.pathname.split('/');
-      
+
       // Checks if pathname section of url has params.
       if (pathNameParams[1] === 'pair') {
         params = {};
         params.pair = pathNameParams[2].toUpperCase();
       }
-      
+
       const pairs = response.data.filter(pair => {
         if (params && params.hasOwnProperty('test')) {
           return !pair.disabled;
@@ -298,7 +299,7 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
           return !pair.disabled && !pair.test_mode;
         }
       });
-      
+
       const processedPairs = preparePairs(pairs);
 
       dispatch({
@@ -308,12 +309,12 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
 
       let depositCoin = base;
       let receiveCoin = quote;
-      
-      console.log('base:', depositCoin, 'quote:', receiveCoin)
+
+      console.log('base:', depositCoin, 'quote:', receiveCoin);
 
       const loadPair = pair => {
         const url = `${config.API_BASE_URL}/pair/${pair.toUpperCase()}/`;
-        
+
         return new Promise((resolve, reject) => {
           axios
             .get(url)
@@ -345,9 +346,9 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
         if (base && quote) {
           try {
             const pair = await loadPair(`${base}${quote}`);
-            
-            console.log('1 CASE', pair)
-            
+
+            console.log('1 CASE', pair);
+
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -360,8 +361,8 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
           try {
             const pair = await loadPair(params.pair);
 
-            console.log('2 CASE', pair)
-            
+            console.log('2 CASE', pair);
+
             if (pair) {
               depositCoin = pair.quote;
               receiveCoin = pair.base;
@@ -372,20 +373,20 @@ export const fetchPairs = ({ base , quote='EUR' } = {}) => dispatch => {
         } else {
           const pair = await pickMostTraded();
 
-          console.log('3 CASE', pair)
-          
+          console.log('3 CASE', pair);
+
           if (pair) {
-            depositCoin = 'EUR' // pair.quote;
-            receiveCoin = 'BTC' // pair.base;
+            depositCoin = 'EUR'; // pair.quote;
+            receiveCoin = 'BTC'; // pair.base;
           } else {
-            console.log('4 CASE')
+            console.log('4 CASE');
             pickRandomPair();
           }
         }
       };
-      
+
       await pickCoins();
-      
+
       dispatch(
         selectCoin({
           deposit: depositCoin,
@@ -695,16 +696,16 @@ export const signIn = (username, password) => dispatch => {
         ...data,
         issued_at: Date.now(),
       };
-      
+
       if (data && data.access_token) {
         localStorage.token = data.access_token;
         localStorage.full_token = JSON.stringify(token);
-        
+
         dispatch({
           type: types.AUTH_TOKEN_RECEIVED,
           payload: token,
         });
-        
+
         dispatch({
           type: types.AUTH_COMPLETE,
         });
@@ -721,7 +722,8 @@ export const signIn = (username, password) => dispatch => {
 };
 
 export const signUp = details => dispatch => {
-  const { username, password, email, phone } = details;
+  const { username, password, email, phone, residenceLocation } = details;
+
   dispatch({
     type: types.AUTH_SIGN_UP,
     payload: details,
@@ -735,12 +737,15 @@ export const signUp = details => dispatch => {
       phone,
     })
     .then(({ data, ...rest }) => {
+      setResidenceLocation(username, residenceLocation);
+      const userData = { residenceLocation, ...data };
+
       dispatch({
         type: types.AUTH_USER_REGISTERED,
-        payload: data,
+        payload: userData,
       });
 
-      return data;
+      return userData;
     })
     .catch(err => {
       const { response, message } = err;

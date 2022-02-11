@@ -26,6 +26,7 @@ output {
   padding: $mdb-input-padding-base-vertical $mdb-input-padding-base-horizontal;
   font-size: $mdb-input-font-size-base;
   line-height: $mdb-input-line-height-base;
+  border: none;
 }
 
 // Special styles for iOS temporal inputs
