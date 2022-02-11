@@ -373,15 +373,17 @@ export const fetchPairs = ({ base, quote = 'EUR' } = {}) => dispatch => {
         } else {
           const pair = await pickMostTraded();
 
-          console.log('3 CASE', pair);
+          console.log('3 CASE - most picked pair:', pair);
+          depositCoin = 'EUR';
+          receiveCoin = 'BTC';
 
-          if (pair) {
-            depositCoin = 'EUR'; // pair.quote;
-            receiveCoin = 'BTC'; // pair.base;
-          } else {
-            console.log('4 CASE');
-            pickRandomPair();
-          }
+          // if (pair) {
+          //   depositCoin = pair.quote;
+          //   receiveCoin = pair.base;
+          // } else {
+          //   console.log('4 CASE');
+          //   pickRandomPair();
+          // }
         }
       };
 
