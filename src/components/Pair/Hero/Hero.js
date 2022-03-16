@@ -60,6 +60,7 @@ class Hero extends Component {
                   receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
                 })}
               </title>
+
               <meta name="description" content={t('PerExchangePairHEAD.meta_description', {
                   receiveCoinFullName: baseCurrency && baseCurrency.name &&
                     capitalize(baseCurrency.name),
@@ -69,6 +70,7 @@ class Hero extends Component {
                 receiveCoinSymbol: this.props.selectedCoin.receive.toUpperCase()
               })}/>
             </Helmet>
+
             <div className={styles.hero}>
               <ErrorAlert />
 
