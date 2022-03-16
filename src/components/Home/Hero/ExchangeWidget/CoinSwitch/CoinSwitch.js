@@ -33,7 +33,7 @@ class CoinSwitch extends Component {
   render() {
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
-        <span className={`${styles.icon}`} onClick={this.handleClick}></span>
+        {/*<span className={`${styles.icon}`} onClick={this.handleClick}></span>*/}
       </div>
     );
   }

@@ -14,6 +14,7 @@ class OrderModeSwitch extends Component {
                 onClick={() => this.props.changeOrderMode('INSTANT')} data-test='INSTANT'>
                   <h3>{t('ordermodeswitch.simple')}</h3>
               </a>
+
               <a className={`${styles.pro} ${this.props.orderMode === 'ORDER_BOOK' ? styles.active : ''}`}
                 onClick={() => this.props.changeOrderMode('ORDER_BOOK')} data-test='ORDER_BOOK'>
                   <h3>{t('ordermodeswitch.advanced')}</h3>

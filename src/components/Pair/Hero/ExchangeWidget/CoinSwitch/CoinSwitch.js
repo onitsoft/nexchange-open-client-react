@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { selectCoin } from 'Actions/index.js';
 import styles from './CoinSwitch.scss';
 
@@ -32,6 +33,7 @@ class CoinSwitch extends Component {
 
   render() {
     let switchButtonEnabled = false;
+    console.log('switchButtonEnabled', switchButtonEnabled)
     // const nextDeposit = this.props.selectedCoin.receive;
     // const nextReceive = this.props.selectedCoin.deposit;
     //
