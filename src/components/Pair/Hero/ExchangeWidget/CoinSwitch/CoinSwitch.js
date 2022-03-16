@@ -32,19 +32,19 @@ class CoinSwitch extends Component {
 
   render() {
     let switchButtonEnabled = false;
-    const nextDeposit = this.props.selectedCoin.receive;
-    const nextReceive = this.props.selectedCoin.deposit;
-
-    if (this.props.pairs && this.props.pairs[nextDeposit] && this.props.pairs[nextDeposit][nextReceive]) {
-      switchButtonEnabled = true;
-    }
+    // const nextDeposit = this.props.selectedCoin.receive;
+    // const nextReceive = this.props.selectedCoin.deposit;
+    //
+    // if (this.props.pairs && this.props.pairs[nextDeposit] && this.props.pairs[nextDeposit][nextReceive]) {
+    //   switchButtonEnabled = true;
+    // }
 
     return (
       <div className={`col-xs-12 col-sm-1 ${styles.container}`}>
-        {/*<span */}
-        {/*  className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`} */}
-        {/*  onClick={switchButtonEnabled ? this.handleClick : null}>*/}
-        {/*</span>*/}
+        <span
+          className={`${styles.icon} ${!switchButtonEnabled ? styles['icon-disabled'] : ''}`}
+          onClick={switchButtonEnabled ? this.handleClick : null}>
+        </span>
       </div>
     );
   }
