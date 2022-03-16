@@ -61,14 +61,14 @@ const TermsConditions = () => {
               <p>
                 The use and access to the Services is specifically prohibited for citizens, nationals, residents (tax or otherwise), or any
                 person, legal or natural, organized in, or national card holders of each of, among others: (i) Afghanistan, Algeria,
-                Bahrain, Bangladesh, Bolivia, China, Crimea region of Ukraine, Cuba, Ecuador, Egypt, Iceland, Iran, Iraq, Israel,
-                Kyrgyzstan, Macedonia, Morocco, Namibia, Nepal, North Korea, Pakistan, Qatar, Saudi Arabia, Syria, United Kingdom, United
-                States of America (USA); or (ii) a country or territory that is the subject of country wide or territory wide sanctions,
-                embargoes, or other restrictive measures administered or enforced by any country or government or inter-governmental
-                organization; (iii) any other jurisdiction which prohibits the possession, dissemination or communication of the Available
-                Information or prohibits participation in the Collectibles or receipt of Collectibles or any such similar activity
-                (collectively, the “Restricted Jurisdictions“) or any other Restricted Persons are not permitted to use or access the
-                Services. The term “Restricted Persons” refers to any person, firm, company, partnership, trust, corporation, entity,
+                Bahrain, Bangladesh, Belarus, Bolivia, China, Crimea region of Ukraine, Cuba, Ecuador, Egypt, Iceland, Iran, Iraq, Israel,
+                Kyrgyzstan, Macedonia, Morocco, Namibia, Nepal, North Korea, Pakistan, Qatar, Russian Federation, Saudi Arabia, Syria,
+                United Kingdom, United States of America (USA); or (ii) a country or territory that is the subject of country wide or
+                territory wide sanctions, embargoes, or other restrictive measures administered or enforced by any country or government or
+                inter-governmental organization; (iii) any other jurisdiction which prohibits the possession, dissemination or communication
+                of the Available Information or prohibits participation in the Collectibles or receipt of Collectibles or any such similar
+                activity (collectively, the “Restricted Jurisdictions“) or any other Restricted Persons are not permitted to use or access
+                the Services. The term “Restricted Persons” refers to any person, firm, company, partnership, trust, corporation, entity,
                 government, state or agency of a state or any other incorporated or unincorporated body or association, association or
                 partnership (whether or not having separate legal personality) that is established or lawfully existing under the laws of a
                 Restricted Jurisdiction.
