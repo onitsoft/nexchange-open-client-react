@@ -123,7 +123,7 @@ class Support extends Component {
                   <div className="col-xs-12 col-sm-6">
                     <h3>{t('support.3')}</h3>
                     <p>
-                      <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>
+                      <a href="mailto:support@yoa.ltd">support@yoa.ltd</a>
                     </p>
                   </div>
                 </div>

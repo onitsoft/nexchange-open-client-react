@@ -253,7 +253,7 @@ export const SignUp = props => {
                         Terms and Conditions
                       </a>
                       . If you have any questions please contact our support by intercom chat or{' '}
-                      <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>
+                      <a href="mailto:support@yoa.ltd">support@yoa.ltd</a>
                     </p>
                   </>
                 )}

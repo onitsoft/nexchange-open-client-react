@@ -19,7 +19,7 @@ describe('QuestionAnswer', () => {
             </p>
             <p>We will be adding more currencies very soon, stay tuned!</p>
             <p>
-              Missing your favorite coin? Let us know here: <a href="mailto:support@nexchange.co.uk">support@nexchange.co.uk</a>.
+              Missing your favorite coin? Let us know here: <a href="mailto:support@yoa.ltd">support@yoa.ltd</a>.
             </p>
           </div>
         }

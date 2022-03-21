@@ -287,7 +287,7 @@ const TermsConditions = () => {
               <h3>How to Contact us?</h3>
 
               <p>
-                The best way to get in touch with us is via: support@nexchange.co.uk. We’d love to hear your questions, concerns, feedback,
+                The best way to get in touch with us is via: support@yoa.ltd. We’d love to hear your questions, concerns, feedback,
                 or complaints about our Services. When contacting us we request that you include identifying information such as your name
                 and email address, and the issue for which you have feedback, questions, or complaints, so we can address your matter
                 appropriately.

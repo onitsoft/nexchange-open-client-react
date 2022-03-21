@@ -140,7 +140,7 @@ const Footer = props => {
                       ))}
                     </div>
                     <p>
-                      <CopyrightNotice /> — <RegisteredCompany />
+                      <CopyrightNotice />
                     </p>
 
                     <p>
@@ -191,28 +191,39 @@ const PopularPairs = ({ lang }) => {
   );
 };
 
-const CopyrightNotice = () => <>All rights reserved, YOA LTD 2016-{new Date().getFullYear()} — England & Wales</>;
+const CopyrightNotice = () => (
+  <div>
+    <div>All rights reserved to yoa.ltd trademark of Yoa Ltd which operates through the following entities:</div>
 
-const RegisteredCompany = props => (
-  <a href="https://beta.companieshouse.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
-    registered company No. 10009845
-  </a>
+    <div>
+      YOA LTD 2016-2022 — England & Wales —{' '}
+      <a href="https://find-and-update.company-information.service.gov.uk/company/10009845" rel="noopener noreferrer" target="_blank">
+        REGISTERED COMPANY NO. 10009845
+      </a>
+    </div>
+
+    <div>Nexchange solutions, UAB - Lithuania - REGISTERED COMPANY NO. 305704673</div>
+  </div>
 );
 
 const StyledFooter = styled.footer`
   > section {
     padding: 12px 0;
+
     h4 {
       text-transform: uppercase;
       font-weight: bold;
     }
+    
     ul {
       > li {
         display: block;
+        
         > a {
           text-transform: none;
           padding: 0;
         }
+        
         > span {
           display: block;
           height: 2rem;
@@ -223,18 +234,23 @@ const StyledFooter = styled.footer`
     &.links {
       display: flex;
       flex-direction: column;
+      
       > main {
         display: flex;
         justify-content: center;
+        
         @media screen and (max-width: 640px) {
           flex-direction: column;
         }
+        
         > section {
           width: 180px;
           padding: 0 2rem;
+          
           &.logo {
             width: 24rem;
           }
+          
           @media screen and (max-width: 640px) {
             width: 100%;
             &:not(:last-child) {
@@ -255,6 +271,7 @@ const StyledFooter = styled.footer`
           margin: 2rem 0 0;
           font-size: 1rem;
           text-align: center;
+          
           a {
             text-transform: uppercase;
             color: #000;
@@ -268,6 +285,7 @@ const StyledFooter = styled.footer`
           img {
             max-width: 60px;
             display: inline-block;
+            
             &:not(:last-child) {
               margin-right: 1rem;
             }
@@ -304,8 +322,10 @@ const StyledFooter = styled.footer`
             flex-direction: row;
             justify-content: center;
             align-items: flex-end;
+          
           > li {
             padding: 0;
+            
             &:not(:last-child) {
               margin-right: 1rem;
             }

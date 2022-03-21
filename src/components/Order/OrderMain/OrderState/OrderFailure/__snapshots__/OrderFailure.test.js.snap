@@ -30,9 +30,9 @@ ShallowWrapper {
           order.failure2
            
           <a
-            href="mailto:support@nexchange.co.uk"
+            href="mailto:support@yoa.ltd"
           >
-            support@nexchange.co.uk
+            support@yoa.ltd
             .
           </a>
         </h5>,
@@ -63,9 +63,9 @@ ShallowWrapper {
             "order.failure2",
             " ",
             <a
-              href="mailto:support@nexchange.co.uk"
+              href="mailto:support@yoa.ltd"
             >
-              support@nexchange.co.uk
+              support@yoa.ltd
               .
             </a>,
           ],
@@ -80,14 +80,14 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "support@nexchange.co.uk",
+                "support@yoa.ltd",
                 ".",
               ],
-              "href": "mailto:support@nexchange.co.uk",
+              "href": "mailto:support@yoa.ltd",
             },
             "ref": null,
             "rendered": Array [
-              "support@nexchange.co.uk",
+              "support@yoa.ltd",
               ".",
             ],
             "type": "a",
@@ -121,9 +121,9 @@ ShallowWrapper {
             order.failure2
              
             <a
-              href="mailto:support@nexchange.co.uk"
+              href="mailto:support@yoa.ltd"
             >
-              support@nexchange.co.uk
+              support@yoa.ltd
               .
             </a>
           </h5>,
@@ -154,9 +154,9 @@ ShallowWrapper {
               "order.failure2",
               " ",
               <a
-                href="mailto:support@nexchange.co.uk"
+                href="mailto:support@yoa.ltd"
               >
-                support@nexchange.co.uk
+                support@yoa.ltd
                 .
               </a>,
             ],
@@ -171,14 +171,14 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "support@nexchange.co.uk",
+                  "support@yoa.ltd",
                   ".",
                 ],
-                "href": "mailto:support@nexchange.co.uk",
+                "href": "mailto:support@yoa.ltd",
               },
               "ref": null,
               "rendered": Array [
-                "support@nexchange.co.uk",
+                "support@yoa.ltd",
                 ".",
               ],
               "type": "a",

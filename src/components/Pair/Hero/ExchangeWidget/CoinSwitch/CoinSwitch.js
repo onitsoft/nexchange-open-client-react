@@ -33,7 +33,6 @@ class CoinSwitch extends Component {
 
   render() {
     let switchButtonEnabled = false;
-    console.log('switchButtonEnabled', switchButtonEnabled)
     // const nextDeposit = this.props.selectedCoin.receive;
     // const nextReceive = this.props.selectedCoin.deposit;
     //

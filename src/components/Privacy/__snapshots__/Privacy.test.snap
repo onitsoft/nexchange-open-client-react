@@ -4176,7 +4176,7 @@ ShallowWrapper {
                     <a
                       href="mailto:support@Yoa.ltd"
                     >
-                      support@n.exchange
+                      support@yoa.ltdexchange
                     </a>
                     .
                   </p>,
@@ -4205,9 +4205,9 @@ ShallowWrapper {
                       "If you have any questions or concerns regarding this Privacy Policy, please contact us at",
                       " ",
                       <a
-                        href="mailto:support@n.exchange"
+                        href="mailto:support@yoa.ltdexchange"
                       >
-                        support@n.exchange
+                        support@yoa.ltdexchange
                       </a>,
                       ".",
                     ],
@@ -4221,11 +4221,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "support@n.exchange",
-                        "href": "mailto:support@n.exchange",
+                        "children": "support@yoa.ltdexchange",
+                        "href": "mailto:support@yoa.ltdexchange",
                       },
                       "ref": null,
-                      "rendered": "support@n.exchange",
+                      "rendered": "support@yoa.ltdexchange",
                       "type": "a",
                     },
                     ".",
