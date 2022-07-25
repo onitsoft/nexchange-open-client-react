@@ -67,7 +67,7 @@ class CoinsDropdown extends Component {
 
       if (!isCoinEnabled) return false; // Filter out fiat & disabled from receive choice
       if (isQuoteDropdown && coin.is_crypto) return false; // Filter out crypto from deposit choice
-      return true;
+      return !['DASH', 'XMR', 'ZEC'].includes(coin.code);
     });
     
     //Non cryptos first, then alphabetical

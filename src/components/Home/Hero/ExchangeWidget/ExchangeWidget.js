@@ -142,6 +142,7 @@ class ExchangeWidget extends Component {
               <div className="row">
                 <div className="col-xs-12">
                   <div className={styles.widget}>
+
                     <CoinInput type="deposit" />
                     <CoinSwitch />
                     <CoinInput type="receive" />
