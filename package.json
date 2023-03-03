@@ -119,7 +119,7 @@
     "@storybook/react": "^5.0.8",
     "axios-mock-adapter": "^1.15.0",
     "babel-eslint": "^10.0.3",
-    "cypress": "^2.1.0",
+    "cypress": "^12.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-localstorage-mock": "^2.2.0",
     "jest-mock-axios": "^2.1.11",
