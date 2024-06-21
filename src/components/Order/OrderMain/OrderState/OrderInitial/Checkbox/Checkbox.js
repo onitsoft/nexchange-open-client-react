@@ -14,8 +14,7 @@ class Checkbox extends Component {
       <div>
         <I18n ns="translations">
           {t => (
-            <label>
-              {/* eslint max-len: ["error", { "code": 200 }] */}
+            <div style={{marginBottom: "5px"}}>
               <input
                 type="checkbox"
                 name={props.name}
@@ -36,8 +35,8 @@ class Checkbox extends Component {
                 }}
                 defaultChecked={true}
               />
-              <strong style={{ paddingLeft: '7px', cursor: 'pointer' }} dangerouslySetInnerHTML={{ __html: t(props.order) }} />
-            </label>
+              <strong style={{ paddingLeft: '7px' }} dangerouslySetInnerHTML={{ __html: t(props.order) }} />
+            </div>
           )}
         </I18n>
       </div>

@@ -90,8 +90,11 @@ class OrderInitial extends Component {
 
     if (localStorage.termsAgreed) this.setState({ showPaymentIFrame: true });
 
-    window.addEventListener('message', this.iFrameMessage);
-  }
+		window.addEventListener('message', this.iFrameMessage);
+		
+		//double click to open link on mobile
+		enableDoubleClickOnMobile();
+	}
 
   UNSAFE_componentWillUpdate() {
     const safechargeStatus = getUrlPram('ppp_status');
@@ -243,5 +246,29 @@ const getUrlPram = parameter => {
   const value = url.searchParams.get(parameter);
   return value;
 };
+
+const enableDoubleClickOnMobile = () => {
+	if(window.mobileCheck()) {
+			const termsAndConditionsLink = document.getElementById("terms-and-conditions");	
+			const termsAndConditionsHref = termsAndConditionsLink.href;
+			termsAndConditionsLink.removeAttribute("href");
+			termsAndConditionsLink.removeAttribute("target");
+			termsAndConditionsLink.setAttribute("data-toggle", "tooltip");
+			termsAndConditionsLink.setAttribute("title", "Double click to open");
+			$("#terms-and-conditions").dblclick(() => {
+				window.open(termsAndConditionsHref, '_blank');
+			});
+			const privacyLink = document.getElementById("privacy");
+			const privacyHref = privacyLink.href;
+			privacyLink.removeAttribute("href");
+			privacyLink.removeAttribute("target");
+			privacyLink.setAttribute("data-toggle", "tooltip");
+			privacyLink.setAttribute("title", "Double click to open");
+			$("#privacy").dblclick(() => {
+				 window.open(privacyHref, '_blank');
+			});
+			$('[data-toggle="tooltip"]').tooltip();
+	}
+}
 
 export default OrderInitial;
