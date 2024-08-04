@@ -1,50 +1,62 @@
-import React, { useState } from 'react'
-import styled from '@emotion/styled'
-import { NavLink } from 'react-router-dom'
-import * as icons from './icons'
+import React, { useEffect, useMemo } from 'react';
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { isEmpty } from 'lodash';
 
-export const SupportedAssets = (props) => {
-  const [assets] = useState(ASSETS)
+import { fetchCoinDetails } from 'Actions';
+
+import * as icons from './icons';
+
+export const SupportedAssets = ({ coinsInfo, fetchCoinDetails }) => {
+  useEffect(() => {
+    isEmpty(coinsInfo) && fetchCoinDetails();
+  }, []);
+
+  const getAvailableAssets = (availableAssetComponentList, asset, index) => {
+    const coinInfo = coinsInfo.find(coin => coin.code === asset.name);
+    return coinInfo && coinInfo.has_enabled_pairs
+      ? [...availableAssetComponentList, <Asset asset={asset} key={`asset-${index}`} />]
+      : availableAssetComponentList;
+  };
+
+  const assetComponentList = useMemo(() => ASSETS.reduce(getAvailableAssets, []), [ASSETS, coinsInfo]);
 
   return (
     <AssetsContainer>
       <h2>Supported Assets</h2>
-      <StyledAssets>
-          {assets && assets.length && assets.map((asset, index) => <Asset asset={asset} key={`asset-${index}`}></Asset>)}
-      </StyledAssets>
+      <StyledAssets>{assetComponentList}</StyledAssets>
     </AssetsContainer>
-  )
+  );
+};
 
-}
-
-const Asset = ({asset}) => {
-  const { linkTo, name } = asset
+const Asset = ({ asset }) => {
+  const { linkTo, name } = asset;
   return (
     <StyledAsset>
       <NavLink to={linkTo}>
-        <div className='art'>
+        <div className="art">
           <img src={icons[`${name.toLowerCase()}Coin`]} alt={name} />
           <span>{name}</span>
         </div>
-        <div className='name'>
-          {name}
-        </div>
+        <div className="name">{name}</div>
       </NavLink>
     </StyledAsset>
-  )
-}
+  );
+};
 
 const AssetsContainer = styled.div`
   > h2 {
     margin-bottom: 6rem;
   }
-`
+`;
 
 const StyledAssets = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 2rem;
-`
+`;
 
 const StyledAsset = styled.div`
   a {
@@ -62,7 +74,7 @@ const StyledAsset = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: .75rem; 
+      margin-bottom: 0.75rem;
       transition: all 680ms ease-out;
 
       img {
@@ -76,25 +88,22 @@ const StyledAsset = styled.div`
         display: block;
         text-align: center;
         font-weight: strong;
-        font-family: "Clan Offc Pro Medium";
+        font-family: 'Clan Offc Pro Medium';
         font-size: 18px;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
       }
     }
-
 
     &:hover {
       text-decoration: none;
       filter: grayscale(23%);
-      
+
       img {
         transform: scale(1);
       }
     }
-    
   }
-
-`
+`;
 
 const ASSETS = [
   { name: 'BCH', linkTo: '/convert/BCH-to-EUR' },
@@ -115,7 +124,10 @@ const ASSETS = [
   { name: 'USDT', linkTo: '/convert/USDT-to-EUR' },
   { name: 'XMR', linkTo: '/convert/XMR-to-EUR' },
   { name: 'XVG', linkTo: '/convert/XVG-to-EUR' },
-  { name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' }
-]
+  { name: 'ZEC', linkTo: '/convert/ZEC-to-EUR' },
+];
 
-export default SupportedAssets
+const mapStateToProps = ({ coinsInfo }) => ({ coinsInfo });
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SupportedAssets);

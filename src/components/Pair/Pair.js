@@ -1,43 +1,44 @@
 import React, { useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { isEmpty } from 'lodash';
 
 import { fetchCoinDetails, fetchPairs, changeOrderMode, selectCoin } from 'Actions';
 import Hero from './Hero/Hero';
 import Articles from './Articles/Articles';
 import PriceChart from './PriceChart';
 import RecentOrders from './RecentOrders/RecentOrders';
-import { useCurrencyAPI } from 'Components/api'
+import { useCurrencyAPI } from 'Components/api';
 
-const Pair = (props) => {
 
-  const {
-    fetchCoinDetails,
-    fetchPairs,
-    match
-  } = props
-  const { base, quote } = match.params
-  const pair = useMemo(() => `${quote}${base}`, [quote, base])
-  const selectedCoin = useMemo(() => ({
-    receive: base,
-    deposit: quote
-  }), [pair])
+const Pair = props => {
+  const { coinsInfo, fetchCoinDetails, fetchPairs, match } = props;
 
-  const baseCurrency = useCurrencyAPI(base)
-  const quoteCurrency = useCurrencyAPI(quote)
+  const { base, quote } = match.params;
+  const pair = useMemo(() => `${quote}${base}`, [quote, base]);
+  const selectedCoin = useMemo(
+    () => ({
+      receive: base,
+      deposit: quote,
+    }),
+    [pair]
+  );
+
+  const baseCurrency = useCurrencyAPI(base);
+  const quoteCurrency = useCurrencyAPI(quote);
 
   useEffect(() => {
-    fetchCoinDetails()
-    fetchPairs({base, quote})
-  }, [pair])
-  
+    isEmpty(coinsInfo) && fetchCoinDetails();
+    fetchPairs({ base, quote });
+  }, [pair]);
+
   return (
     <StyledPairPage>
-      <Hero {...props} selectedCoin={selectedCoin} {...{baseCurrency, quoteCurrency}} />
-      <div className='container'>
+      <Hero {...props} selectedCoin={selectedCoin} {...{ baseCurrency, quoteCurrency }} />
+      <div className="container">
         <h2>Price Chart for {pair.toUpperCase()}</h2>
-        <PriceChart pair={pair}/>
+        <PriceChart pair={pair} />
       </div>
       <RecentOrders {...props} pair={pair} />
       <Articles baseName={`coin-${base.toLowerCase()}`} quoteName={`coin-${quote.toLowerCase()}`} quote={quote} base={base} />
@@ -45,7 +46,7 @@ const Pair = (props) => {
       {/* TODO API Access Widget */}
     </StyledPairPage>
   );
-}
+};
 
 const StyledPairPage = styled.div`
   margin-bottom: 8rem;
@@ -53,13 +54,9 @@ const StyledPairPage = styled.div`
     margin-top: 8rem;
     margin-bottom: 8rem;
   }
-`
-
+`;
 
 const mapStateToProps = ({ orderMode, coinsInfo, selectedCoin }) => ({ orderMode, coinsInfo, selectedCoin });
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchCoinDetails, fetchPairs, changeOrderMode, selectCoin }, dispatch);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Pair);
+export default connect(mapStateToProps, mapDispatchToProps)(Pair);

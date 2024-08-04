@@ -75,26 +75,24 @@
 }
 
 .btn.btn.btn {
-  color: $green;
-  background-color: #fff;
-  border: 1px solid $green;
   padding: 8px 10px;
   margin: 10px 0;
   font-size: 14px;
   width: 100%;
   white-space: normal;
 
-  &:hover {
-    box-shadow: none;
-  }
-
+  color: $green;
+  background-color: #fff;
+  border: 1px solid $green;
+  
   &:focus,
   &:hover,
   &:active {
-    color: $green;
-    background-color: #fff;
-    border: 1px solid $green;
+    color: #fff;
+    background-color: $green;
+    box-shadow: $btn-box-shadow;
   }
+  
 
   @media (min-width: $screen-sm-min) {
     margin: 10px;
